@@ -1,0 +1,152 @@
+.header-wrapper .header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 3.5em 2.5em 3.5em;
+
+  .logo-nav-wrapper {
+    display: flex;
+    padding-top: 2em;
+    flex-grow: 2;
+
+    .logo {
+      align-self: center;
+    }
+    .navigation {
+      align-self: flex-end;
+      flex-grow: 2;
+
+      .desktop.menu {
+        display: flex;
+        justify-content: flex-end;
+
+        a.item {
+          margin: 0 5px;
+          padding: 0 5px;
+          color: @black;
+          font-size: 18px;
+          font-weight: 600;
+          line-height: 24px;
+        }
+      }
+
+      .mobile-menu {
+        .mobile-menu-nav {
+          > div {
+            display: flex;
+            flex-direction: column;
+          }
+          a.item {
+            padding: 2em 1.2em 1.5em 1.2em;
+            width: 100%;
+            color: @black;
+            font-size: @18px;
+
+            &.active {
+              border-bottom: 4px solid @black;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .tools-search-wrapper {
+    .tools .anontools {
+      display: flex;
+      > div {
+        padding: 0 0.5em;
+
+        &:first-of-type {
+          border-right: 1px solid @black;
+        }
+      }
+      a {
+        color: @black;
+      }
+    }
+
+    .search {
+      padding-top: 2em;
+
+      .searchbox {
+        display: flex;
+        input {
+          border: none;
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+
+      .search-button {
+        text-align: right;
+      }
+
+      button {
+        border: none;
+        background-color: transparent;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .search-bar {
+        position: absolute;
+        top: -100%;
+        left: 0;
+        z-index: 10;
+        width: 100%;
+        background-color: @lightgrey;
+        height: 152px;
+        transition: top 200ms ease-in, height 300ms ease-out 1000ms;
+
+        &.active {
+          top: 0;
+        }
+        .ui.container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+
+          form {
+            width: 100%;
+
+            .searchbox {
+              border-left: none;
+              justify-content: space-between;
+
+              input {
+                border-bottom: 2px solid @black;
+                margin-right: 3.5em;
+                color: @black;
+                font-size: 1.5em;
+                width: 100%;
+                background-color: @lightgrey;
+
+                &::placeholder {
+                  color: @black;
+                  opacity: 0.5;
+                }
+              }
+
+              button {
+                margin-left: 20px;
+                padding: 8px;
+
+                &:hover {
+                  background-color: rgba(@white, 0.75);
+                  border-radius: 50%;
+                }
+                svg {
+                  fill: @black !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

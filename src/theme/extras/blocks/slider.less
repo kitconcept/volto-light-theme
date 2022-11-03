@@ -1,0 +1,135 @@
+// Slider Block
+.block.slider {
+  // Reset original
+  &:not(.inner):not([role="presentation"]) {
+    padding-bottom: 0;
+  }
+
+  .teaser-item,
+  .grid-teaser-item {
+    flex-direction: column;
+  }
+
+  .slide-wrapper:not(.empty-slide) {
+    padding-bottom: 80px;
+  }
+
+  h2 {
+    margin-top: 15px;
+    color: #fff;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 56px;
+
+    @media only screen and (max-width: @largestMobileScreen) {
+      .word-break();
+    }
+  }
+
+  .supertitle {
+    color: #ffffff;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 36px;
+  }
+
+  .slick-arrow {
+    display: none !important;
+  }
+
+  .slick-dots {
+    bottom: 34px;
+    line-height: 0;
+
+    li,
+    button {
+      width: 46px;
+      height: 6px;
+      padding: 0;
+      background-color: @grey;
+    }
+
+    li.slick-active button {
+      background-color: @white;
+    }
+
+    li {
+      margin: 0 3px;
+    }
+
+    button:before {
+      display: none;
+      content: "";
+    }
+  }
+
+  .teaser-item.top {
+    position: relative;
+  }
+
+  .teaser-item-title {
+    position: absolute;
+    top: 50%;
+    width: 570px;
+    min-height: 321px;
+    padding: 50px;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    transform: translateY(-50%);
+
+    @media only screen and (max-width: 1200px) {
+      position: static;
+      width: 100%;
+      transform: none;
+    }
+
+    .title {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      font-family: "Inter";
+      color: @white;
+      font-size: @36px;
+      font-weight: 700;
+      line-height: 42px;
+    }
+
+    .supertitle {
+      font-family: "Inter";
+      color: @white;
+      font-size: @20px;
+      font-weight: 700;
+      line-height: 24px;
+      letter-spacing: 1px;
+    }
+
+    p {
+      font-family: "Inter";
+      color: @white;
+      font-weight: 300;
+      font-size: @18px;
+      line-height: 30px;
+      // OPTIONAL
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 5;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .ui.button {
+    display: initial;
+    padding: 11px 29px;
+    border: 1px solid currentColor;
+    border-radius: 0;
+    color: inherit;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+  }
+}

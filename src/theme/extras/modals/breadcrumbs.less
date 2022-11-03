@@ -1,0 +1,37 @@
+body.contenttype-plone-site,
+body.contenttype-lrf {
+  div.breadcrumbs {
+    display: none;
+  }
+}
+
+div.breadcrumbs {
+  background-color: @lightgrey;
+  padding: 2em 0;
+
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+
+    .divider {
+      transform: rotate(90deg);
+      &:before {
+        content: "\25B2";
+        font-size: 7px;
+        color: @black;
+      }
+    }
+
+    .home {
+      margin-right: 0.5em;
+    }
+
+    .section {
+      margin: 0 7px 0 4px;
+
+      &.active {
+        font-weight: 700;
+      }
+    }
+  }
+}

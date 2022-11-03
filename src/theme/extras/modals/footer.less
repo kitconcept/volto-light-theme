@@ -1,0 +1,33 @@
+#footer {
+  background-color: @lightgrey;
+  padding: 5.5em 2em;
+  text-align: center;
+
+  .ui.container {
+    > div {
+      font-weight: @bold;
+      font-size: @18px;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin-top: 1.8em;
+
+      li {
+        padding: 0 5px;
+        border-right: 1px solid @linkColor;
+        font-size: @18px;
+
+        &:last-of-type {
+          border: none;
+        }
+      }
+    }
+
+    .logo {
+      margin: 5em 0 1.8em 0;
+    }
+  }
+}
