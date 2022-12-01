@@ -24,22 +24,6 @@ GREEN=`tput setaf 2`
 RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
 
-
-# Top-level targets
-
-.PHONY: project
-project:
-	npm install -g yo
-	npm install -g @plone/generator-volto
-	npm install -g mrs-developer
-	yo @plone/volto project --addon ${ADDON} --workspace "src/addons/${DIR}" --no-interactive
-	ln -sf $$(pwd) project/src/addons/
-	cp .project.eslintrc.js .eslintrc.js
-	cd project && yarn
-	@echo "-------------------"
-	@echo "$(GREEN)Volto project is ready!$(RESET)"
-	@echo "$(RED)Now run: cd project && yarn start$(RESET)"
-
 .PHONY: all
 all: project
 
@@ -52,6 +36,12 @@ start-test-backend: ## Start Test Plone Backend
 start-backend-docker:		## Starts a Docker-based backend
 	@echo "$(GREEN)==> Start Docker-based Plone Backend$(RESET)"
 	docker run -it --rm --name=plone -p 8080:8080 -e SITE=Plone -e ADDONS="plone.volto" -e ZCML="plone.volto.cors" plone
+
+.PHONY: project
+project:		## Bootstraps a project with the add-on set up
+	@echo "$(GREEN)==> Bootstrapping a project in "project" folder$(RESET)"
+	yarn
+	npx -p @plone/scripts addon clone . project
 
 .PHONY: help
 help:		## Show this help.
