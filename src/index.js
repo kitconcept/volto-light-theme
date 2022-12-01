@@ -1,6 +1,5 @@
-import "./theme/main.less";
-import { TeaserStylingSchema } from "./components/Blocks/Teaser/schema";
-import AlignWidget from "./components/Widgets/AlignWidget";
+import { TeaserStylingSchema } from './components/Blocks/Teaser/schema';
+import AlignWidget from './components/Widgets/AlignWidget';
 
 const applyConfig = (config) => {
   config.settings = {
@@ -26,8 +25,8 @@ const applyConfig = (config) => {
     ...config.blocks.blocksConfig.teaser,
     enableStyling: true,
     stylesSchema: TeaserStylingSchema,
-    group: "teasers",
-    imageScale: "larger",
+    group: 'teasers',
+    imageScale: 'larger',
     // schemaEnhancer: teaserSchemaEnhancer,
   };
 
