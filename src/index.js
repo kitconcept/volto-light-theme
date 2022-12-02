@@ -3,6 +3,8 @@ import {
   gridTeaserDisableStylingSchema,
   teaserSchemaEnhancer,
 } from './components/Blocks/Teaser/schema';
+import ContainerQueriesPolyfill from './components/CQPolyfill';
+
 import gridSVG from './icons/block_icn_grid.svg';
 
 const BG_COLORS = [
@@ -15,6 +17,14 @@ const applyConfig = (config) => {
     ...config.settings,
     slidingSearchAnimation: true,
   };
+
+  config.settings.appExtras = [
+    ...config.settings.appExtras,
+    {
+      match: '',
+      component: ContainerQueriesPolyfill,
+    },
+  ];
 
   config.blocks.blocksConfig.__grid = {
     ...config.blocks.blocksConfig.__grid,
