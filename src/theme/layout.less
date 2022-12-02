@@ -1,0 +1,141 @@
+//
+// These has to be synced with the less vars
+// in `container.overrides`, because the media queries
+// do not support CSS properties :(
+// @computerWidth: 940px;
+// @largeMonitorWidth: 1440px;
+:root {
+  --layout-container-width: 1440px;
+  --default-container-width: 940px;
+  --narrow-container-width: 620px;
+}
+
+.narrow-container-width() {
+  max-width: var(--narrow-container-width);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.default-container-width() {
+  max-width: var(--default-container-width);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.layout-container-width() {
+  max-width: var(--layout-container-width);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.has--align--center {
+  .narrow-container-width();
+}
+
+.has--align--wide {
+  .default-container-width();
+}
+
+.has--align--full {
+  .layout-container-width();
+}
+
+// Reset .ui.container
+#page-document,
+#page-contents,
+#page-history,
+#page-add,
+#page-edit {
+  &.ui.container {
+    width: unset !important;
+    container-type: inline-size;
+  }
+
+  & > .ui.container {
+    width: unset !important;
+  }
+}
+
+#page-document > * {
+  .layout-container-width();
+}
+
+#page-history > * {
+  .layout-container-width();
+}
+
+// Content Layout Styling
+#page-document {
+  & > h2,
+  & > h3,
+  & > h4,
+  & > h5,
+  & > h6,
+  & > ul,
+  & > ol,
+  & > p,
+  & > span,
+  & > .block.image.align.left.medium,
+  & > .block.image.align.left.small,
+  & > .block.image.align.right.medium,
+  & > .block.image.align.right.small,
+  .block.image.align.center figure,
+  .event-details,
+  .download-event,
+  .block.separator.has--align--left .line {
+    .narrow-container-width();
+  }
+
+  & > .block.image.align.left,
+  & > .block.image.align.right,
+  & > .block.image.align.wide figure,
+  & > .block.heading .heading-wrapper,
+  & > .block.separator .line,
+  & > .block.teaser .grid-teaser-item.default,
+  & > .slate blockquote {
+    .default-container-width();
+  }
+
+  & > h1.documentFirstHeading,
+  & > .block.teaser,
+  & > .block.separator,
+  & > .block.image.align.full,
+  & > .block.video.align.full,
+  & > .block.maps.align.full {
+    .layout-container-width();
+    color: red;
+  }
+
+  // Slate content with a wrapper
+  & > .slate,
+  & > .block.dasdlr .block-container {
+    .layout-container-width();
+
+    & > h2,
+    & > h3,
+    & > h4,
+    & > h5,
+    & > h6,
+    & > ul,
+    & > ol,
+    & > p {
+      .narrow-container-width();
+    }
+  }
+
+  // :not(.slate) + .slate:not(.has--backgroundColor--grey),
+  // .slate.has--backgroundColor--grey + .slate:not(.has--backgroundColor--grey) {
+  //   margin-top: @blockVerticalSpace;
+  // }
+
+  // .block.separator + .slate {
+  //   margin-top: 0;
+  // }
+}
+
+@container (max-width: 1400px) {
+  #page-document > h1.documentFirstHeading {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}

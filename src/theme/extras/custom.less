@@ -1,10 +1,16 @@
+@import '../typography';
+@import '../layout';
+@import '../utils';
+
+@import '../atoms/container';
+
 @import 'modals/header';
 @import 'modals/footer';
 @import 'modals/breadcrumbs';
 @import 'blocks/teaser';
 @import 'blocks/slider';
-@import 'typography';
 
+body,
 h1,
 h2,
 h3,
@@ -16,32 +22,7 @@ a,
 li,
 span,
 div {
-  font-family: 'Inter';
+  font-family: @pageFont;
+  font-style: normal;
+  font-weight: @light;
 }
-
-/* Colours */
-@white: #ffffff;
-@black: #000;
-@grey: #666;
-@lightgrey: #ecebeb;
-@linkColor: #205c90;
-
-/* Fonts & Sizes */
-@thin: 100;
-@extra-light: 200;
-@light: 300;
-@regular: 400;
-@medium: 500;
-@semi-bold: 600;
-@bold: 700;
-@extra-bold: 800;
-@bolder: 900;
-
-@18px: 18px;
-@20px: 20px;
-@24px: 24px;
-@36px: 36px;
-@48px: 48px;
-
-/* Breakpoints */
-@largestMobileScreen: 900px;
