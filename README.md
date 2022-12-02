@@ -40,3 +40,11 @@ The Layout sized elements snap to 1440px. The breakpoints are also different tha
 This new layout uses mixin's and CSS that can be found in `layout.less` in the theme folder.
 
 Since the new container queries spec is out, we will be introducing it to the current CSS in order to implement the complexities that the "inner container" (the one between the toolbar and the sidebar) width presents. Until now, we did complex calculations given into account if the size of the inner container depending if the toolbar, the sidebar, or both were presents. With container queries we can do that in a more sensible and easy way.
+
+### Organization of the files
+
+We will start organising de files in the root of `theme` folder, to differentiate from a normal "SemanticIU" theme. Take a look at the current state. We will follow this convention:
+
+- One less file per component/block
+- All less files loading are centralized in one main less file `custom.less` in this project, could be different in the future.
+- Vanilla headless components are named under `atoms` folder.
