@@ -1,11 +1,6 @@
-/**
- * Header component.
- * @module components/theme/Header/Header
- */
-
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
+import Container from '@kitconcept/volto-light-theme/components/Atoms/Container/Container';
 
 import {
   Anontools,
@@ -15,65 +10,44 @@ import {
   SearchWidget,
 } from '@plone/volto/components';
 
-/**
- * Header component class.
- * @class Header
- * @extends Component
- */
-class Header extends Component {
-  /**
-   * Property types.
-   * @property {Object} propTypes Property types.
-   * @static
-   */
-  static propTypes = {
-    token: PropTypes.string,
-    pathname: PropTypes.string.isRequired,
-  };
+const Header = (props) => {
+  const { pathname } = props;
+  const token = useSelector((state) => state.userSession.token);
 
-  /**
-   * Default properties.
-   * @property {Object} defaultProps Default properties.
-   * @static
-   */
-  static defaultProps = {
-    token: null,
-  };
-
-  /**
-   * Render method.
-   * @method render
-   * @returns {string} Markup for the component.
-   */
-  render() {
-    return (
-      <div className="header-wrapper">
-        <div className="ui container">
-          <div className="header">
-            <div className="logo-nav-wrapper">
-              <div className="logo">
-                <Logo />
-              </div>
-              <Navigation pathname={this.props.pathname} />
+  return (
+    <div className="header-wrapper">
+      <Container layout>
+        <div className="header">
+          <div className="logo-nav-wrapper">
+            <div className="logo">
+              <Logo />
             </div>
-            <div className="tools-search-wrapper">
-              <LanguageSelector />
-              {!this.props.token && (
-                <div className="tools">
-                  <Anontools />
-                </div>
-              )}
-              <div className="search">
-                <SearchWidget />
+            <Navigation pathname={pathname} />
+          </div>
+          <div className="tools-search-wrapper">
+            <LanguageSelector />
+            {!token && (
+              <div className="tools">
+                <Anontools />
               </div>
+            )}
+            <div className="search">
+              <SearchWidget />
             </div>
           </div>
         </div>
-      </div>
-    );
-  }
-}
+      </Container>
+    </div>
+  );
+};
 
-export default connect((state) => ({
-  token: state.userSession.token,
-}))(Header);
+Header.propTypes = {
+  token: PropTypes.string,
+  pathname: PropTypes.string.isRequired,
+};
+
+Header.defaultProps = {
+  token: null,
+};
+
+export default Header;
