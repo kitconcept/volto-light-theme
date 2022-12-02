@@ -1,1 +1,42 @@
 # volto-light-theme
+
+## Vision
+
+The Volto Light Theme main vision is to provide kitconcept a theme to build upon the projects to come after the release of Plone 6.
+
+It should contain all the feedback and success stories in UI/UX side that the company had during the last years projects.
+
+It should also be future proof, so it has to be aligned with the upcoming Volto vision in terms of theming strategy decided by the Plone community.
+
+## Requirements
+
+### Figma mockup
+
+https://www.figma.com/file/eYUCbivnNrnjXjBDUizSVX/Plone-6?t=kSfnRbG3X8LmHfge-7
+
+### It should not use any SemanticUI component or styling
+
+Volto will abandon SemanticUI as default design component system in the mid term, and we should be prepared for it.
+
+We will achieve that not using any SemanticUI component, nor any related styling (`.ui.XXX`) in our upcoming themes.
+
+The Volto strategy is:
+
+- To provide a very basic Vanilla components to build upon theming and CMSUI as well.
+- These components will be based in a headless component system. The best positioned right now is [react-aria](https://react-spectrum.adobe.com/react-aria/).
+- The theming could be done using these basic components or dropping in the component system of the developer/integrator choice. The presence of Volto's component registry system could help for adapting, if required.
+- The CMSUI will be isolated from the theming because it will be extremely CSS specific, so leaks from theming-CMSUI won't happen.
+
+### It should use kitconcept's layout used in FZJ/DLR
+
+Since FZJ/DLR projects we've been trying a new concept in layout for Volto. This new layout uses three widths for the content elements:
+
+- Narrow (text)
+- Default (blocks)
+- Layout (main screen elements like Header, Footer)
+
+The Layout sized elements snap to 1440px. The breakpoints are also different than default Volto.
+
+This new layout uses mixin's and CSS that can be found in `layout.less` in the theme folder.
+
+Since the new container queries spec is out, we will be introducing it to the current CSS in order to implement the complexities that the "inner container" (the one between the toolbar and the sidebar) width presents. Until now, we did complex calculations given into account if the size of the inner container depending if the toolbar, the sidebar, or both were presents. With container queries we can do that in a more sensible and easy way.
