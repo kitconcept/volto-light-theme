@@ -4,6 +4,7 @@ import {
   teaserSchemaEnhancer,
 } from './components/Blocks/Teaser/schema';
 import ContainerQueriesPolyfill from './components/CQPolyfill';
+import Container from './components/Atoms/Container/Container';
 
 import gridSVG from './icons/block_icn_grid.svg';
 
@@ -13,6 +14,12 @@ const BG_COLORS = [
 ];
 
 const applyConfig = (config) => {
+  // Register custom Container component
+  config.registerComponent({
+    name: 'Container',
+    component: Container,
+  });
+
   config.settings = {
     ...config.settings,
     slidingSearchAnimation: true,
