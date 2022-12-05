@@ -48,3 +48,51 @@ We will start organising de files in the root of `theme` folder, to differentiat
 - One less file per component/block
 - All less files loading are centralized in one main less file `custom.less` in this project, could be different in the future.
 - Vanilla headless components are named under `atoms` folder.
+
+## Development Setup
+
+## Prerequisits
+
+- Docker
+- Node 16 (e.g. via nvm)
+- yo (run "npm install -g yo")
+- @plone/generator-volto (run "npm install -g @plone/generator-volto")
+- Build project by running "make"
+
+### Build a project
+
+Run
+
+````
+make project
+````
+
+### Start Backend (Docker)
+
+Run:
+
+````
+make start-backend-docker
+````
+
+### Start Frontend (Volto)
+
+````
+cd project
+yarn start
+````
+
+## Specification
+
+volto-light-theme works with the following Plone Blocks:
+
+- Grid-Block (https://www.npmjs.com/package/@kitconcept/volto-blocks-grid)
+- Teaser-Block (https://www.npmjs.com/package/@kitconcept/volto-blocks-grid)
+- Slider-Block (https://www.npmjs.com/package/@kitconcept/volto-slider-block)
+- Button-Block (https://www.npmjs.com/package/@kitconcept/volto-button-block)
+- Separator-Block (https://www.npmjs.com/package/@kitconcept/volto-separator-block)
+- Introduction-Block (not open source yet)
+
+and the following add-ons:
+
+- DSGVO-Banner (https://www.npmjs.com/package/@kitconcept/volto-dsgvo-banner)
