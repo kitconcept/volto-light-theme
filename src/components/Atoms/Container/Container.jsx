@@ -3,11 +3,15 @@ import { getElementType } from '../helpers';
 import cx from 'classnames';
 
 const Container = (props) => {
-  const { children, className, layout, narrow } = props;
+  const { children, className, layout, narrow, ...rest } = props;
   const classes = cx('a', 'container', className, { layout, narrow });
 
   const Component = getElementType(Container, props);
-  return <Component className={classes}>{children}</Component>;
+  return (
+    <Component {...rest} className={classes}>
+      {children}
+    </Component>
+  );
 };
 
 Container.propTypes = {
