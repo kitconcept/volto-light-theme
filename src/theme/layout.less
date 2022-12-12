@@ -1,9 +1,3 @@
-//
-// These has to be synced with the less vars
-// in `container.overrides`, because the media queries
-// do not support CSS properties :(
-// @computerWidth: 940px;
-// @largeMonitorWidth: 1440px;
 :root {
   --layout-container-width: 1440px;
   --default-container-width: 940px;
@@ -28,6 +22,8 @@
   margin-left: auto;
 }
 
+// Container widths for configurable via block styling wrapper
+// TODO: consider renaming "align" property to something more meaningful
 .has--align--center {
   .narrow-container-width();
 }
@@ -40,22 +36,7 @@
   .layout-container-width();
 }
 
-// Reset .ui.container
-// #page-document,
-// #page-contents,
-// #page-history,
-// #page-add,
-// #page-edit {
-//   &.ui.container {
-//     width: unset !important;
-//     container-type: inline-size;
-//   }
-
-//   & > .ui.container {
-//     width: unset !important;
-//   }
-// }
-
+// Container definitions for elements
 #page-document > * {
   .layout-container-width();
 }
@@ -122,17 +103,9 @@
       .narrow-container-width();
     }
   }
-
-  // :not(.slate) + .slate:not(.has--backgroundColor--grey),
-  // .slate.has--backgroundColor--grey + .slate:not(.has--backgroundColor--grey) {
-  //   margin-top: @blockVerticalSpace;
-  // }
-
-  // .block.separator + .slate {
-  //   margin-top: 0;
-  // }
 }
 
+// Container queries for elements
 @container (max-width: 1400px) {
   #page-document > h1.documentFirstHeading {
     padding-right: 1rem;
