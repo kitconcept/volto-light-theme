@@ -54,163 +54,163 @@
   .layout-container-width();
 }
 
-// Content Layout Styling
-#page-document {
-  & > h2,
-  & > h3,
-  & > h4,
-  & > h5,
-  & > h6,
-  & > ul,
-  & > ol,
-  & > p,
-  & > span,
-  & > .block.image.align.left.medium,
-  & > .block.image.align.left.small,
-  & > .block.image.align.right.medium,
-  & > .block.image.align.right.small,
-  .block.image.align.center figure,
-  .event-details,
-  .download-event,
-  .block.separator.has--align--left .line {
-    .narrow-container-width();
-  }
+// // Content Layout Styling
+// #page-document {
+//   & > h2,
+//   & > h3,
+//   & > h4,
+//   & > h5,
+//   & > h6,
+//   & > ul,
+//   & > ol,
+//   & > p,
+//   & > span,
+//   & > .block.image.align.left.medium,
+//   & > .block.image.align.left.small,
+//   & > .block.image.align.right.medium,
+//   & > .block.image.align.right.small,
+//   .block.image.align.center figure,
+//   .event-details,
+//   .download-event,
+//   .block.separator.has--align--left .line {
+//     .narrow-container-width();
+//   }
 
-  & > .block.image.align.left,
-  & > .block.image.align.right,
-  & > .block.image.align.wide figure,
-  & > .block.heading .heading-wrapper,
-  & > .block.separator .line,
-  & > .block.teaser .grid-teaser-item.default,
-  & > .slate blockquote {
-    .default-container-width();
-  }
+//   & > .block.image.align.left,
+//   & > .block.image.align.right,
+//   & > .block.image.align.wide figure,
+//   & > .block.heading .heading-wrapper,
+//   & > .block.separator .line,
+//   & > .block.teaser .grid-teaser-item.default,
+//   & > .slate blockquote {
+//     .default-container-width();
+//   }
 
-  & > h1.documentFirstHeading,
-  & > .block.teaser,
-  & > .block.separator,
-  & > .block.image.align.full,
-  & > .block.video.align.full,
-  & > .block.maps.align.full {
-    .layout-container-width();
-    color: red;
-  }
+//   & > h1.documentFirstHeading,
+//   & > .block.teaser,
+//   & > .block.separator,
+//   & > .block.image.align.full,
+//   & > .block.video.align.full,
+//   & > .block.maps.align.full {
+//     .layout-container-width();
+//     color: red;
+//   }
 
-  // Slate content with a wrapper
-  & > .slate,
-  & > .block.dasdlr .block-container {
-    .layout-container-width();
+//   // Slate content with a wrapper
+//   & > .slate,
+//   & > .block.dasdlr .block-container {
+//     .layout-container-width();
 
-    & > h2,
-    & > h3,
-    & > h4,
-    & > h5,
-    & > h6,
-    & > ul,
-    & > ol,
-    & > p {
-      .narrow-container-width();
-    }
-  }
-}
-
-// Add/Edit views
-#page-add,
-#page-edit {
-  .block.slate .slate-editor,
-  .block-editor-image.left.medium,
-  .block-editor-image.left.small,
-  .block-editor-image.right.medium,
-  .block-editor-image.right.small,
-  .block-editor-image.center figure,
-  .block-editor-separator.has--align--left .block.separator {
-    .narrow-container-width();
-  }
-
-  .block-editor-image.left.large,
-  .block-editor-image.right.large,
-  .block-editor-image.wide.large figure,
-  .block.introduction .slate-editor,
-  .block.heading .heading-wrapper,
-  .block-editor-listing .items,
-  .block-editor-listing .listing.message,
-  .block-editor-separator.has--align--full .block.separator,
-  .block-editor-separator .block.separator.has--align--full,
-  .block.teaser.has--align--center,
-  .block-editor-teaser .grid-teaser-item.default {
-    .default-container-width();
-  }
-
-  .block-editor-title,
-  .block-editor-slate,
-  .block-editor-image,
-  .block-editor-slider,
-  .block.dasdlr .block-container,
-  .block-editor-teaser,
-  .block-editor-separator.has--align--left {
-    .layout-container-width();
-  }
-}
-
-@container (max-width: @narrow-container-width) {
-  #page-add,
-  #page-edit {
-    .block.slate .slate-editor,
-    .block-editor-image.left.medium,
-    .block-editor-image.left.small,
-    .block-editor-image.right.medium,
-    .block-editor-image.right.small,
-    .block-editor-image.center figure,
-    .block-editor-separator.has--align--left .block.separator {
-      .adjustToContainer();
-    }
-  }
-}
-
-@container (max-width: @default-container-width) {
-  #page-add,
-  #page-edit {
-    .block-editor-image.left.large,
-    .block-editor-image.right.large,
-    .block-editor-image.wide.large figure,
-    .block.introduction .slate-editor,
-    .block.heading .heading-wrapper,
-    .block-editor-listing .items,
-    .block-editor-listing .listing.message,
-    .block-editor-separator.has--align--full .block.separator,
-    .block-editor-separator .block.separator.has--align--full,
-    .block.teaser.has--align--center,
-    .block-editor-teaser .grid-teaser-item.default {
-      .adjustToContainer();
-    }
-  }
-}
-
-@container (max-width: @layout-container-width) {
-  #page-add,
-  #page-edit {
-    .block-editor-title,
-    .block-editor-slate,
-    .block-editor-slider,
-    .block-editor-image,
-    .block.dasdlr .block-container,
-    .block-editor-teaser,
-    .block-editor-separator.has--align--left {
-      .adjustToContainer();
-    }
-  }
-}
-
-// Container queries for elements
-@container (max-width: 1400px) {
-  #page-document > h1.documentFirstHeading {
-    padding-right: 1rem;
-    padding-left: 1rem;
-  }
-}
-
-// @container (max-width: 1400px) {
-//   #page-edit .block-editor-title {
-//     width: 90cqb;
+//     & > h2,
+//     & > h3,
+//     & > h4,
+//     & > h5,
+//     & > h6,
+//     & > ul,
+//     & > ol,
+//     & > p {
+//       .narrow-container-width();
+//     }
 //   }
 // }
+
+// // Add/Edit views
+// #page-add,
+// #page-edit {
+//   .block.slate .slate-editor,
+//   .block-editor-image.left.medium,
+//   .block-editor-image.left.small,
+//   .block-editor-image.right.medium,
+//   .block-editor-image.right.small,
+//   .block-editor-image.center figure,
+//   .block-editor-separator.has--align--left .block.separator {
+//     .narrow-container-width();
+//   }
+
+//   .block-editor-image.left.large,
+//   .block-editor-image.right.large,
+//   .block-editor-image.wide.large figure,
+//   .block.introduction .slate-editor,
+//   .block.heading .heading-wrapper,
+//   .block-editor-listing .items,
+//   .block-editor-listing .listing.message,
+//   .block-editor-separator.has--align--full .block.separator,
+//   .block-editor-separator .block.separator.has--align--full,
+//   .block.teaser.has--align--center,
+//   .block-editor-teaser .grid-teaser-item.default {
+//     .default-container-width();
+//   }
+
+//   .block-editor-title,
+//   .block-editor-slate,
+//   .block-editor-image,
+//   .block-editor-slider,
+//   .block.dasdlr .block-container,
+//   .block-editor-teaser,
+//   .block-editor-separator.has--align--left {
+//     .layout-container-width();
+//   }
+// }
+
+// @container (max-width: @narrow-container-width) {
+//   #page-add,
+//   #page-edit {
+//     .block.slate .slate-editor,
+//     .block-editor-image.left.medium,
+//     .block-editor-image.left.small,
+//     .block-editor-image.right.medium,
+//     .block-editor-image.right.small,
+//     .block-editor-image.center figure,
+//     .block-editor-separator.has--align--left .block.separator {
+//       .adjustToContainer();
+//     }
+//   }
+// }
+
+// @container (max-width: @default-container-width) {
+//   #page-add,
+//   #page-edit {
+//     .block-editor-image.left.large,
+//     .block-editor-image.right.large,
+//     .block-editor-image.wide.large figure,
+//     .block.introduction .slate-editor,
+//     .block.heading .heading-wrapper,
+//     .block-editor-listing .items,
+//     .block-editor-listing .listing.message,
+//     .block-editor-separator.has--align--full .block.separator,
+//     .block-editor-separator .block.separator.has--align--full,
+//     .block.teaser.has--align--center,
+//     .block-editor-teaser .grid-teaser-item.default {
+//       .adjustToContainer();
+//     }
+//   }
+// }
+
+// @container (max-width: @layout-container-width) {
+//   #page-add,
+//   #page-edit {
+//     .block-editor-title,
+//     .block-editor-slate,
+//     .block-editor-slider,
+//     .block-editor-image,
+//     .block.dasdlr .block-container,
+//     .block-editor-teaser,
+//     .block-editor-separator.has--align--left {
+//       .adjustToContainer();
+//     }
+//   }
+// }
+
+// // Container queries for elements
+// @container (max-width: 1400px) {
+//   #page-document > h1.documentFirstHeading {
+//     padding-right: 1rem;
+//     padding-left: 1rem;
+//   }
+// }
+
+// // @container (max-width: 1400px) {
+// //   #page-edit .block-editor-title {
+// //     width: 90cqb;
+// //   }
+// // }

@@ -1,0 +1,65 @@
+// // Semantic UI related - Sync'd
+// Colors
+$text-color: #000;
+$font-size: 18px;
+$line-height: 24px;
+
+// Headers font size
+$heading1: 60px;
+$heading2: 30px;
+$heading3: 24px;
+
+$block-title-h2: $42px;
+
+$heading-title-top-spacing: 100px;
+$heading-title-bottom-spacing: 75px;
+$padding-colored-pills: 20px;
+
+$heading-text-top-spacing: 50px;
+$heading-text-bottom-spacing: 25px;
+
+// Fonts
+$custom-fontname: 'Inter';
+$page-font-template: $custom-fontname, sans-serif;
+$page-font: var(--custom-main-font, $page-font-template);
+$header-font: var(--custom-headers-font, $page-font);
+
+// Breakpoints
+$tablet-breakpoint: 769px;
+$computer-width: 940px;
+$computer-breakpoint: 1012px;
+$large-monitor-width: 1440px;
+$large-monitor-breakpoint: 1441px;
+
+$largest-mobile-screen: 900px; // ?
+
+// Rest of theme variables
+
+:root {
+  --text-color: #666;
+  --text-size: 18px;
+}
+
+// Image Aspect Ratio
+$aspect-ratio: var(--image-aspect-ratio, 16/9);
+
+// Weights
+$thin: 100;
+$extra-light: 200;
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semi-bold: 600;
+$bold: 700;
+$extra-bold: 800;
+$bolder: 900;
+
+// Vertical Spacing
+$block-vertical-space: 25px;
+
+// Change of color
+$color-block-change-vertical-spacing: 100px;
+
+// Grids
+$grid-block-vertical-spacing-top: 100px;
+$grid-block-vertical-spacing-bottom: 100px;

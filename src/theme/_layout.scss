@@ -1,0 +1,176 @@
+:root {
+  --layout-container-width: 1440px;
+  --default-container-width: 940px;
+  --narrow-container-width: 620px;
+}
+
+$layout-container-width: 1440px;
+$default-container-width: 940px;
+$narrow-container-width: 620px;
+
+@mixin narrow-container-width {
+  max-width: var(--narrow-container-width);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin default-container-width {
+  max-width: var(--default-container-width);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin layout-container-width {
+  max-width: var(--layout-container-width);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+// One still cannot use variables or CSS properties directly on @container queries
+@mixin adjustMarginsToContainer($width) {
+  @container (max-width: #{$width}) {
+    margin-right: 2rem;
+    margin-left: 2rem;
+  }
+}
+
+// Container widths for configurable via block styling wrapper
+// TODO: consider renaming "align" property to something more meaningful
+.has--align--center {
+  @include narrow-container-width;
+}
+
+.has--align--wide {
+  @include default-container-width;
+}
+
+.has--align--full {
+  @include layout-container-width;
+}
+
+// Container definitions for elements
+#page-document > * {
+  @include layout-container-width;
+}
+
+#page-history > * {
+  @include layout-container-width;
+}
+
+// Content Layout Styling
+#page-document {
+  & > h2,
+  & > h3,
+  & > h4,
+  & > h5,
+  & > h6,
+  & > ul,
+  & > ol,
+  & > p,
+  & > span,
+  & > .block.image.align.left.medium,
+  & > .block.image.align.left.small,
+  & > .block.image.align.right.medium,
+  & > .block.image.align.right.small,
+  .block.image.align.center figure,
+  .event-details,
+  .download-event,
+  .block.separator.has--align--left .line {
+    @include narrow-container-width;
+  }
+
+  & > .block.image.align.left,
+  & > .block.image.align.right,
+  & > .block.image.align.wide figure,
+  & > .block.heading .heading-wrapper,
+  & > .block.separator .line,
+  & > .block.teaser .grid-teaser-item.default,
+  & > .slate blockquote {
+    @include default-container-width;
+  }
+
+  & > h1.documentFirstHeading,
+  & > .block.teaser,
+  & > .block.separator,
+  & > .block.image.align.full,
+  & > .block.video.align.full,
+  & > .block.maps.align.full {
+    @include layout-container-width;
+    color: red;
+  }
+
+  // Slate content with a wrapper
+  & > .slate,
+  & > .block.dasdlr .block-container {
+    @include layout-container-width;
+
+    & > h2,
+    & > h3,
+    & > h4,
+    & > h5,
+    & > h6,
+    & > ul,
+    & > ol,
+    & > p {
+      @include narrow-container-width;
+    }
+  }
+}
+
+// Add/Edit views
+#page-add,
+#page-edit {
+  .block.slate .slate-editor,
+  .block-editor-image.left.medium,
+  .block-editor-image.left.small,
+  .block-editor-image.right.medium,
+  .block-editor-image.right.small,
+  .block-editor-image.center figure,
+  .block-editor-separator.has--align--left .block.separator {
+    @include narrow-container-width;
+    @include adjustMarginsToContainer($narrow-container-width);
+  }
+
+  .block-editor-image.left.large,
+  .block-editor-image.right.large,
+  .block-editor-image.wide.large figure,
+  .block.introduction .slate-editor,
+  .block.heading .heading-wrapper,
+  .block-editor-listing .items,
+  .block-editor-listing .listing.message,
+  .block-editor-separator.has--align--full .block.separator,
+  .block-editor-separator .block.separator.has--align--full,
+  .block.teaser.has--align--center,
+  .block-editor-teaser .grid-teaser-item.default {
+    @include default-container-width;
+    @include adjustMarginsToContainer($default-container-width);
+  }
+
+  .block-editor-title,
+  .block-editor-slate,
+  .block-editor-image,
+  .block-editor-slider,
+  .block.dasdlr .block-container,
+  .block-editor-teaser,
+  .block-editor-separator.has--align--left {
+    @include layout-container-width;
+    @include adjustMarginsToContainer($layout-container-width);
+  }
+}
+
+// handlers adjustments
+body.has-toolbar.has-sidebar .drag.handle.wrapper {
+  margin-left: -30px !important;
+}
+
+body.has-toolbar.has-sidebar .block .ui.basic.button.delete-button {
+  margin-right: -30px !important;
+}
+
+// Container queries for elements
+@container (max-width: 1400px) {
+  #page-document > h1.documentFirstHeading {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
