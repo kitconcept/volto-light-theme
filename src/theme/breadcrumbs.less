@@ -6,8 +6,8 @@ body.contenttype-lrf {
 }
 
 div.breadcrumbs {
-  background-color: @lightgrey;
   padding: 2em 0;
+  background-color: @lightgrey;
 
   .breadcrumb {
     display: flex;
@@ -15,10 +15,11 @@ div.breadcrumbs {
 
     .divider {
       transform: rotate(90deg);
-      &:before {
-        content: "\25B2";
-        font-size: 7px;
+
+      &::before {
         color: @black;
+        content: '\25B2';
+        font-size: 7px;
       }
     }
 

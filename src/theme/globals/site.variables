@@ -1,6 +1,79 @@
-/* We put all variables in the same place,
-   even the SemanticUI ones */
+// // Semantic UI related
+// Colors
+@textColor: #000;
+@darkBlue: #023d6b;
+@white: #fff;
+@veryLightGrey: #eee;
+@darkGrey: #555555;
+@black: #000;
+@grey: #666;
+@lightgrey: #ecebeb;
+@linkColor: #205c90;
 
-@import '../variables';
+@emSize: 18px;
+@fontSize: 18px;
+@lineHeight: 24px;
 
-/* No variables beyond this point */
+@importGoogleFonts: false;
+@selectedTextColor: @textColor;
+
+// Headers font size
+@h1: @60px;
+@h2: @30px;
+@h3: @24px;
+
+@BlockTitleH2: @42px;
+
+@headingTitleTopSpacing: 100px;
+@headingTitleBottomSpacing: 75px;
+@paddingColoredPills: 20px;
+
+@headingTextTopSpacing: 50px;
+@headingTextBottomSpacing: 25px;
+
+@blockVerticalSpace: 25px;
+
+// Fonts
+@customFontName: 'Inter';
+@pageFontTemplate: @customFontName, sans-serif;
+@pageFont: var(--custom-main-font, @pageFontTemplate);
+@headerFont: var(--custom-headers-font, @pageFont);
+
+// Breakpoints
+@tabletBreakpoint: 769px;
+@computerWidth: 940px;
+@computerBreakpoint: 1012px;
+@largeMonitorWidth: 1440px;
+@largeMonitorBreakpoint: 1441px;
+
+/* Breakpoints */
+@largestMobileScreen: 900px; // ?
+
+// Rest of theme variables
+
+:root {
+  --text-color: #666;
+  --text-size: 18px;
+}
+
+// Image Aspect Ratio
+@aspectRatio: var(--image-aspect-ratio, 16/9);
+
+// Weights
+@thin: 100;
+@extra-light: 200;
+@light: 300;
+@regular: 400;
+@medium: 500;
+@semi-bold: 600;
+@bold: 700;
+@extra-bold: 800;
+@bolder: 900;
+
+// Vertical Spacing
+// Change of color
+@colorBlockChangeVerticalSpacing: 100px;
+
+// Grids
+@gridBlockVerticalSpacingTop: 100px;
+@gridBlockVerticalSpacingBottom: 100px;
