@@ -1,13 +1,11 @@
 #footer {
-  padding: 5.5em 2em;
-  background-color: $lightgrey;
   text-align: center;
 
-  .ui.container {
-    > div {
-      font-size: 18px;
-      font-weight: $bold;
-    }
+  .footer {
+    padding: 5.5em 2em;
+    background-color: $lightgrey;
+    font-size: 18px;
+    font-weight: $bold;
 
     ul {
       display: flex;

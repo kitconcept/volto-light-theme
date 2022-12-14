@@ -51,24 +51,12 @@
 
 // Rest of theme variables
 
-:root {
-  --text-color: #666;
-  --text-size: 18px;
-}
-
 // Image Aspect Ratio
 @aspectRatio: var(--image-aspect-ratio, 16/9);
 
 // Weights
-@thin: 100;
-@extra-light: 200;
 @light: 300;
-@regular: 400;
-@medium: 500;
-@semi-bold: 600;
 @bold: 700;
-@extra-bold: 800;
-@bolder: 900;
 
 // Vertical Spacing
 // Change of color

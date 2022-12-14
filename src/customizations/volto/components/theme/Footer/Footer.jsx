@@ -8,6 +8,7 @@ import React from 'react';
 import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
 import { useSelector } from 'react-redux';
 import { UniversalLink, Logo } from '@plone/volto/components';
+import Container from '@kitconcept/volto-light-theme/components/Atoms/Container/Container';
 import config from '@plone/volto/registry';
 
 const messages = defineMessages({
@@ -28,7 +29,7 @@ const Footer = ({ intl }) => {
   const lang = useSelector((state) => state.intl.locale);
   return (
     <div id="footer">
-      <div className="ui container">
+      <Container layout className="footer">
         <div>
           <FormattedMessage
             id="The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
@@ -121,7 +122,7 @@ const Footer = ({ intl }) => {
             defaultMessage="Powered by Plone & Python"
           />
         </a>
-      </div>
+      </Container>
     </div>
   );
 };

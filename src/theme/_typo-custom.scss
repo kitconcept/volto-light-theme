@@ -15,6 +15,14 @@ div {
   font-weight: $light;
 }
 
+h1.documentFirstHeading {
+  border: none;
+
+  &::before {
+    display: none;
+  }
+}
+
 @font-face {
   font-family: 'Inter';
   font-style: thin;
