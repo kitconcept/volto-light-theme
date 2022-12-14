@@ -10,9 +10,9 @@ a,
 li,
 span,
 div {
-  font-family: @pageFont;
+  font-family: $page-font;
   font-style: normal;
-  font-weight: @light;
+  font-weight: $light;
 }
 
 @font-face {

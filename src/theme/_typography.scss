@@ -1,6 +1,6 @@
 @import 'typo-custom';
 
-.word-break() {
+@mixin word-break {
   -ms-hyphens: auto;
   -moz-hyphens: auto;
   -webkit-hyphens: auto;
@@ -23,22 +23,22 @@
 
 #sidebar *,
 #toolbar * {
-  font-family: 'Metropolis', @pageFont !important;
+  font-family: 'Metropolis', $page-font !important;
 }
 
 #sidebar,
 #toolbar {
-  font-size: @16px;
+  font-size: 16px;
 
   .ui.checkbox label,
   .ui.input,
   .ui.segments .segment,
   .ui.segment {
-    font-size: @16px;
+    font-size: 16px;
   }
 
   .ui.secondary.segment {
-    font-size: @14px;
+    font-size: 14px;
   }
 }
 

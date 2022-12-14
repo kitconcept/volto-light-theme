@@ -23,7 +23,7 @@
         a.item {
           padding: 0 5px;
           margin: 0 5px;
-          color: @black;
+          color: $black;
           font-size: 18px;
           font-weight: 600;
           line-height: 24px;
@@ -40,11 +40,11 @@
           a.item {
             width: 100%;
             padding: 2em 1.2em 1.5em 1.2em;
-            color: @black;
-            font-size: @18px;
+            color: $black;
+            font-size: 18px;
 
             &.active {
-              border-bottom: 4px solid @black;
+              border-bottom: 4px solid $black;
             }
           }
         }
@@ -60,12 +60,12 @@
         padding: 0 0.5em;
 
         &:first-of-type {
-          border-right: 1px solid @black;
+          border-right: 1px solid $black;
         }
       }
 
       a {
-        color: @black;
+        color: $black;
       }
     }
 
@@ -104,7 +104,7 @@
         left: 0;
         width: 100%;
         height: 152px;
-        background-color: @lightgrey;
+        background-color: $lightgrey;
         transition: top 200ms ease-in, height 300ms ease-out 1000ms;
 
         &.active {
@@ -126,14 +126,14 @@
 
               input {
                 width: 100%;
-                border-bottom: 2px solid @black;
+                border-bottom: 2px solid $black;
                 margin-right: 3.5em;
-                background-color: @lightgrey;
-                color: @black;
+                background-color: $lightgrey;
+                color: $black;
                 font-size: 1.5em;
 
                 &::placeholder {
-                  color: @black;
+                  color: $black;
                   opacity: 0.5;
                 }
               }
@@ -143,12 +143,12 @@
                 margin-left: 20px;
 
                 &:hover {
-                  background-color: rgba(@white, 0.75);
+                  background-color: rgba($white, 0.75);
                   border-radius: 50%;
                 }
 
                 svg {
-                  fill: @black !important;
+                  fill: $black !important;
                 }
               }
             }

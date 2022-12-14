@@ -1,12 +1,12 @@
 #footer {
   padding: 5.5em 2em;
-  background-color: @lightgrey;
+  background-color: $lightgrey;
   text-align: center;
 
   .ui.container {
     > div {
-      font-size: @18px;
-      font-weight: @bold;
+      font-size: 18px;
+      font-weight: $bold;
     }
 
     ul {
@@ -17,8 +17,8 @@
 
       li {
         padding: 0 5px;
-        border-right: 1px solid @linkColor;
-        font-size: @18px;
+        border-right: 1px solid #205c90;
+        font-size: 18px;
 
         &:last-of-type {
           border: none;

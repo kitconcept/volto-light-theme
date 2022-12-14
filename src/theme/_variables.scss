@@ -9,7 +9,7 @@ $heading1: 60px;
 $heading2: 30px;
 $heading3: 24px;
 
-$block-title-h2: $42px;
+$block-title-h2: 42px;
 
 $heading-title-top-spacing: 100px;
 $heading-title-bottom-spacing: 75px;
@@ -39,6 +39,14 @@ $largest-mobile-screen: 900px; // ?
   --text-color: #666;
   --text-size: 18px;
 }
+
+// Colors
+$white: #fff;
+$veryLightGrey: #eee;
+$darkGrey: #555555;
+$black: #000;
+$grey: #666;
+$lightgrey: #ecebeb;
 
 // Image Aspect Ratio
 $aspect-ratio: var(--image-aspect-ratio, 16/9);

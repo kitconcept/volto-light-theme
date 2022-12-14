@@ -7,7 +7,7 @@ body.contenttype-lrf {
 
 div.breadcrumbs {
   padding: 2em 0;
-  background-color: @lightgrey;
+  background-color: $lightgrey;
 
   .breadcrumb {
     display: flex;
@@ -17,7 +17,7 @@ div.breadcrumbs {
       transform: rotate(90deg);
 
       &::before {
-        color: @black;
+        color: $black;
         content: '\25B2';
         font-size: 7px;
       }

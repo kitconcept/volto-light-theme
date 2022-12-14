@@ -1,7 +1,7 @@
 // Slider Block
 .block.slider {
   // Reset original
-  &:not(.inner):not([role="presentation"]) {
+  &:not(.inner):not([role='presentation']) {
     padding-bottom: 0;
   }
 
@@ -22,8 +22,8 @@
     font-weight: 700;
     line-height: 56px;
 
-    @media only screen and (max-width: @largestMobileScreen) {
-      .word-break();
+    @media only screen and (max-width: $largest-mobile-screen) {
+      @include word-break;
     }
   }
 
@@ -48,11 +48,11 @@
       width: 46px;
       height: 6px;
       padding: 0;
-      background-color: @grey;
+      background-color: $grey;
     }
 
     li.slick-active button {
-      background-color: @white;
+      background-color: $white;
     }
 
     li {
@@ -61,7 +61,7 @@
 
     button:before {
       display: none;
-      content: "";
+      content: '';
     }
   }
 
@@ -90,33 +90,33 @@
     }
 
     h2 {
-      font-family: "Inter";
-      color: @white;
-      font-size: @36px;
+      color: $white;
+      font-family: 'Inter';
+      font-size: 36px;
       font-weight: 700;
       line-height: 42px;
     }
 
     .supertitle {
-      font-family: "Inter";
-      color: @white;
-      font-size: @20px;
+      color: $white;
+      font-family: 'Inter';
+      font-size: 20px;
       font-weight: 700;
-      line-height: 24px;
       letter-spacing: 1px;
+      line-height: 24px;
     }
 
     p {
-      font-family: "Inter";
-      color: @white;
-      font-weight: 300;
-      font-size: @18px;
-      line-height: 30px;
       // OPTIONAL
       display: -webkit-box;
       overflow: hidden;
       -webkit-box-orient: vertical;
+      color: $white;
+      font-family: 'Inter';
+      font-size: 18px;
+      font-weight: 300;
       -webkit-line-clamp: 5;
+      line-height: 30px;
       text-overflow: ellipsis;
     }
   }
