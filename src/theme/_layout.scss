@@ -28,7 +28,7 @@ $narrow-container-width: 620px;
 
 // One still cannot use variables or CSS properties directly on @container queries
 @mixin adjustMarginsToContainer($width) {
-  @container (max-width: #{$width}) {
+  @container (max-width: #{$width - 1}) {
     margin-right: 2rem;
     margin-left: 2rem;
   }
@@ -57,6 +57,11 @@ $narrow-container-width: 620px;
   @include layout-container-width;
 }
 
+.header-wrapper .header {
+  @include layout-container-width;
+  @include adjustMarginsToContainer($layout-container-width);
+}
+
 // Content Layout Styling
 #page-document {
   & > h2,
@@ -77,6 +82,7 @@ $narrow-container-width: 620px;
   .download-event,
   .block.separator.has--align--left .line {
     @include narrow-container-width;
+    @include adjustMarginsToContainer($narrow-container-width + 2 * 36px);
   }
 
   & > .block.image.align.left,
@@ -96,24 +102,10 @@ $narrow-container-width: 620px;
   & > .block.video.align.full,
   & > .block.maps.align.full {
     @include layout-container-width;
-    color: red;
   }
 
-  // Slate content with a wrapper
-  & > .slate,
-  & > .block.dasdlr .block-container {
-    @include layout-container-width;
-
-    & > h2,
-    & > h3,
-    & > h4,
-    & > h5,
-    & > h6,
-    & > ul,
-    & > ol,
-    & > p {
-      @include narrow-container-width;
-    }
+  & > h1.documentFirstHeading {
+    @include adjustMarginsToContainer($layout-container-width);
   }
 }
 
@@ -165,12 +157,4 @@ body.has-toolbar.has-sidebar .drag.handle.wrapper {
 
 body.has-toolbar.has-sidebar .block .ui.basic.button.delete-button {
   margin-right: -30px !important;
-}
-
-// Container queries for elements
-@container (max-width: 1400px) {
-  #page-document > h1.documentFirstHeading {
-    padding-right: 1rem;
-    padding-left: 1rem;
-  }
 }
