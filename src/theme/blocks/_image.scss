@@ -1,0 +1,242 @@
+figure {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+// Image  Block (FZJ https://github.com/kitconcept/fzj-internet/blob/7043ff8317dde8e5bfe5b0b1e76c5fdd8f331e7e/theme/extras/custom.less#L1814)
+.block-editor-image.full figcaption,
+.block.image.full figcaption {
+  padding-right: 25px;
+  padding-left: 25px;
+}
+
+.block.image {
+  margin: 0;
+
+  &.align.left,
+  &.align.right {
+    // This is to equal the heading margin in case of the
+    // floating image + heading use case
+    // It matches the mocks for standalone images anyways
+    margin-top: $heading-text-top-spacing;
+    margin-bottom: 0;
+  }
+
+  &.align.left.has--backgroundColor--grey,
+  &.align.right.has--backgroundColor--grey {
+    margin-top: 0;
+
+    figure {
+      // Paddings do not collapse, so we have to substract the ever
+      // present padding bottom for every block
+      padding-top: $heading-text-top-spacing - $block-vertical-space;
+    }
+  }
+
+  figure {
+    img {
+      width: 100% !important;
+      height: auto;
+      object-fit: contain;
+    }
+
+    &.right {
+      margin-bottom: 16px;
+      margin-left: 2rem;
+      float: right;
+
+      img {
+        margin-right: 0 !important;
+        margin-bottom: 0px;
+        margin-left: 0 !important;
+        float: none;
+        object-fit: contain;
+        object-position: right;
+      }
+    }
+
+    &.left {
+      margin-right: 2rem;
+      margin-bottom: 16px;
+      float: left;
+
+      img {
+        margin-right: 0 !important;
+        margin-bottom: 0px;
+        float: none;
+        object-fit: contain;
+        object-position: left;
+      }
+    }
+
+    &.left,
+    &.right {
+      &.large {
+        width: 50%;
+        height: auto;
+
+        @media only screen and (max-width: 768px) {
+          width: 100%;
+        }
+      }
+
+      &.medium {
+        width: 50%;
+        height: auto;
+        @media only screen and (max-width: 768px) {
+          width: 100%;
+        }
+      }
+
+      &.small {
+        width: 25%;
+        height: auto;
+        @media only screen and (max-width: 768px) {
+          width: 100%;
+        }
+
+        figcaption {
+          padding: 15px 10px;
+
+          &.rights {
+            padding-top: 5px;
+          }
+        }
+      }
+    }
+
+    &.center {
+      width: 100% !important;
+      margin-right: auto;
+      margin-left: auto;
+      object-fit: cover;
+
+      img {
+        height: auto;
+        margin-right: initial;
+        margin-left: initial;
+      }
+
+      &.large,
+      &.medium,
+      &.small {
+        width: 100% !important;
+      }
+
+      &.large {
+        figcaption {
+          text-align: start;
+        }
+      }
+
+      &.medium {
+        figcaption {
+          width: 100%;
+          margin-right: auto;
+          margin-left: auto;
+          text-align: start;
+        }
+      }
+    }
+  }
+
+  img {
+    max-width: 100% !important;
+    height: auto;
+  }
+}
+
+// image/video captions
+figcaption {
+  margin: 25px 0 9px 0;
+  color: $grey;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 18px;
+  text-align: left;
+  white-space: initial;
+
+  .title {
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+
+  .description {
+    margin-bottom: 10px;
+  }
+
+  .credits {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    -webkit-font-smoothing: anitaliased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+
+    div {
+      display: inline;
+    }
+
+    p {
+      display: inline;
+      color: inherit;
+      line-height: inherit;
+    }
+
+    a {
+      color: $blue-for-grey-contrast;
+    }
+  }
+}
+
+// video block
+
+#page-document .block.video.align.left,
+.block.video.align.left,
+#page-document .block.video.align.right,
+.block.video.align.right {
+  @include default-container-width;
+}
+
+#page-document .block.video.align.center figure,
+.block.video.align.center figure {
+  @include default-container-width;
+}
+
+.block.video {
+  .figure {
+    width: 100%;
+  }
+
+  &.full figcaption {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+
+  &.align.left.has--backgroundColor--grey figure,
+  &.align.right.has--backgroundColor--grey figure {
+    padding-top: 25px;
+  }
+
+  &.align.left.has--backgroundColor--grey,
+  &.align.right.has--backgroundColor--grey {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  &.align.left,
+  &.align.right {
+    margin-top: 50px;
+
+    figure.video-inner {
+      @media only screen and (max-width: $tablet-breakpoint) {
+        width: 100%;
+      }
+    }
+
+    img {
+      margin: 0 !important;
+    }
+  }
+}
