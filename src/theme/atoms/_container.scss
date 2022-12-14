@@ -2,10 +2,10 @@
   container-type: inline-size;
 
   &.layout {
-    .layout-container-width();
+    @include layout-container-width;
   }
 
   &.narrow {
-    .narrow-container-width();
+    @include narrow-container-width;
   }
 }

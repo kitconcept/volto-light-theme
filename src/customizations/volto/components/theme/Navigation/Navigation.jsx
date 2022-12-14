@@ -160,6 +160,7 @@ class Navigation extends Component {
           role="button"
           tabIndex={0}
           onClick={this.closeMobileMenu}
+          aria-hidden="true"
         >
           <NavItems items={this.props.items} lang={this.props.lang} />
         </div>
@@ -172,7 +173,12 @@ class Navigation extends Component {
           <div key="mobile-menu-key" className="mobile-menu">
             <BodyClass className="has-mobile-menu-open" />
             <div className="mobile-menu-nav">
-              <div role="button" tabIndex={0} onClick={this.closeMobileMenu}>
+              <div
+                role="button"
+                aria-hidden="true"
+                tabIndex={0}
+                onClick={this.closeMobileMenu}
+              >
                 <NavItems items={this.props.items} lang={this.props.lang} />
               </div>
             </div>

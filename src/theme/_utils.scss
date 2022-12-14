@@ -1,5 +1,5 @@
 // This puts the default image wrapping and ratio for grid-image-wrapper classes
-.default-image-fit() {
+@mixin default-image-fit {
   .grid-image-wrapper {
     display: flex;
     // This one is because Safari has a bug with flexed items, the default is
@@ -35,9 +35,9 @@
   }
 }
 
-.default-aspect-ratio() {
+@mixin default-aspect-ratio {
   height: auto; // needed width width, height props and aspect ratio
-  aspect-ratio: @aspectRatio;
+  aspect-ratio: $aspect-ratio;
   object-fit: cover;
   object-position: top left;
 }
