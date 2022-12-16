@@ -1,13 +1,3 @@
-// @mixin search($zIndex, $searchOn: false) {
-//   z-index: $zIndex;
-
-//   @if $searchOn {
-//     z-index: 11;
-//   } @else {
-//     z-index: auto;
-//   }
-// }
-
 .header-wrapper .header {
   display: flex;
   flex-direction: column-reverse;
@@ -24,7 +14,6 @@
       padding-left: 50px;
       z-index: 11;
     }
-    
 
     .navigation {
       flex-grow: 2;
@@ -130,12 +119,10 @@
         background-color: $lightgrey;
         transition-property: top height;
         transition: top 300ms ease-in-out, height 700ms ease-in-out;
-        //@include search($searchOn: false);
 
         &.active {
           top: 0;
           height: 190px;
-          //@include search($searchOn: true);
         }
 
         .ui.container {
@@ -183,7 +170,6 @@
                 svg {
                   fill: $black !important;
                 }
-                
               }
             }
           }
