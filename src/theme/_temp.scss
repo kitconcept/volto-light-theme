@@ -1,0 +1,13 @@
+.ui.basic.button.block-add-button {
+  &.new-add-block {
+    transform: none;
+  }
+}
+
+.blocks-chooser {
+  position: static;
+
+  &.new-add-block {
+    transform: none;
+  }
+}
