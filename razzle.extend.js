@@ -1,5 +1,9 @@
 const plugins = (defaultPlugins) => {
-  return defaultPlugins.concat(['scss']);
+  if (!defaultPlugins.includes('scss')) {
+    return defaultPlugins.concat(['scss']);
+  } else {
+    return defaultPlugins;
+  }
 };
 const modify = (config, { target, dev }, webpack) => {
   const themeConfigPath = `${__dirname}/src/theme/theme.config`;
