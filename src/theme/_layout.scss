@@ -109,6 +109,15 @@ $narrow-container-width: 620px;
   }
 }
 
+// Setting a default, for all blocks
+#page-add,
+#page-edit {
+  [class*='block-editor-'] {
+    @include layout-container-width;
+    @include adjustMarginsToContainer($layout-container-width);
+  }
+}
+
 // Add/Edit views
 #page-add,
 #page-edit {
@@ -142,7 +151,6 @@ $narrow-container-width: 620px;
   .block-editor-slate,
   .block-editor-image,
   .block-editor-slider,
-  .block.dasdlr .block-container,
   .block-editor-teaser,
   .block-editor-separator.has--align--left {
     @include layout-container-width;
