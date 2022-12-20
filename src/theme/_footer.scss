@@ -8,11 +8,11 @@
     font-size: 18px;
     height: inherit;
 
-    > a:nth-child(4){
+    a.powered-by {
       font-size: 14px;
     }
 
-    div {
+    .footer-message {
       font-weight: $bold !important;
       a {
         font-weight: inherit;
