@@ -104,6 +104,17 @@ class SearchWidget extends Component {
     this.setState({ active: false });
   };
 
+  clickHandler() {
+    this.setState({ active: !this.state.active });
+    const searchInput = document.getElementById('searchInput');
+    searchInput.select();
+  }
+  handleEscapeKeyDown = (e) => {
+    if (e.key === 'Escape') {
+      this.setState({ active: false });
+    }
+  };
+
   searchbar = React.createRef();
 
   /**
@@ -124,8 +135,10 @@ class SearchWidget extends Component {
             <form action="/search" onSubmit={this.onSubmit}>
               <div className="searchbox">
                 <input
+                  id="searchInput"
                   aria-label={this.props.intl.formatMessage(messages.search)}
                   onChange={(e) => this.onChangeText(e)}
+                  onKeyDown={(e) => this.handleEscapeKeyDown(e)}
                   name="SearchableText"
                   value={this.state.text}
                   autoComplete="off"
@@ -146,7 +159,7 @@ class SearchWidget extends Component {
         <div className="search-button">
           <button
             aria-label={this.props.intl.formatMessage(messages.search)}
-            onClick={() => this.setState({ active: !this.state.active })}
+            onClick={() => this.clickHandler()}
           >
             {' '}
             <Icon name={zoomSVG} size="48px" />
