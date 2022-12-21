@@ -8,19 +8,19 @@ $layout-container-width: 1440px;
 $default-container-width: 940px;
 $narrow-container-width: 620px;
 
-@mixin narrow-container-width {
+@mixin narrow-container-width() {
   max-width: var(--narrow-container-width);
   margin-right: auto;
   margin-left: auto;
 }
 
-@mixin default-container-width {
+@mixin default-container-width() {
   max-width: var(--default-container-width);
   margin-right: auto;
   margin-left: auto;
 }
 
-@mixin layout-container-width {
+@mixin layout-container-width() {
   max-width: var(--layout-container-width);
   margin-right: auto;
   margin-left: auto;
@@ -37,28 +37,28 @@ $narrow-container-width: 620px;
 // Container widths for configurable via block styling wrapper
 // TODO: consider renaming "align" property to something more meaningful
 .has--align--center {
-  @include narrow-container-width;
+  @include narrow-container-width();
 }
 
 .has--align--wide {
-  @include default-container-width;
+  @include default-container-width();
 }
 
 .has--align--full {
-  @include layout-container-width;
+  @include layout-container-width();
 }
 
 // Container definitions for elements
 #page-document > * {
-  @include layout-container-width;
+  @include layout-container-width();
 }
 
 #page-history > * {
-  @include layout-container-width;
+  @include layout-container-width();
 }
 
 .header-wrapper .header {
-  @include layout-container-width;
+  @include layout-container-width();
   @include adjustMarginsToContainer($layout-container-width);
 }
 
@@ -81,7 +81,7 @@ $narrow-container-width: 620px;
   .event-details,
   .download-event,
   .block.separator.has--align--left .line {
-    @include narrow-container-width;
+    @include narrow-container-width();
     @include adjustMarginsToContainer($narrow-container-width + 2 * 36px);
   }
 
@@ -89,11 +89,13 @@ $narrow-container-width: 620px;
   & > .block.image.align.right,
   & > .block.image.align.wide figure,
   & > .block.__button,
+  & > .block.listing .listing-item,
+  & > .block h2.headline,
   & > .block.heading .heading-wrapper,
   & > .block.separator .line,
   & > .block.teaser .grid-teaser-item.default,
   & > .slate blockquote {
-    @include default-container-width;
+    @include default-container-width();
   }
 
   & > h1.documentFirstHeading,
@@ -102,7 +104,7 @@ $narrow-container-width: 620px;
   & > .block.image.align.full,
   & > .block.video.align.full,
   & > .block.maps.align.full {
-    @include layout-container-width;
+    @include layout-container-width();
   }
 
   & > h1.documentFirstHeading {
@@ -114,7 +116,7 @@ $narrow-container-width: 620px;
 #page-add,
 #page-edit {
   [class*='block-editor-'] {
-    @include layout-container-width;
+    @include layout-container-width();
     @include adjustMarginsToContainer($layout-container-width);
   }
 }
@@ -129,7 +131,7 @@ $narrow-container-width: 620px;
   .block-editor-image.right.small,
   .block-editor-image.center figure,
   .block-editor-separator.has--align--left .block.separator {
-    @include narrow-container-width;
+    @include narrow-container-width();
     @include adjustMarginsToContainer($narrow-container-width);
   }
 
@@ -146,7 +148,7 @@ $narrow-container-width: 620px;
   .block-editor-separator .block.separator.has--align--full,
   .block.teaser.has--align--center,
   .block-editor-teaser .grid-teaser-item.default {
-    @include default-container-width;
+    @include default-container-width();
     @include adjustMarginsToContainer($default-container-width);
   }
 
@@ -156,7 +158,7 @@ $narrow-container-width: 620px;
   .block-editor-slider,
   .block-editor-teaser,
   .block-editor-separator.has--align--left {
-    @include layout-container-width;
+    @include layout-container-width();
     @include adjustMarginsToContainer($layout-container-width);
   }
 }
@@ -165,7 +167,7 @@ $narrow-container-width: 620px;
 // TODO: Move to our own grid component
 .block.block.__grid,
 .block.__grid .ui.stackable {
-  @include default-container-width;
+  @include default-container-width();
   max-width: calc(var(--default-container-width) + 1rem);
 }
 
