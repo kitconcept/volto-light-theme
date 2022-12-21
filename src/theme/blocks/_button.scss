@@ -1,0 +1,11 @@
+.block-editor-__button.has--buttonAlign--center {
+  .button.container {
+    @include narrow-container-width();
+  }
+}
+
+.block-editor-__button.has--buttonAlign--wide {
+  .button.container {
+    @include default-container-width();
+  }
+}
