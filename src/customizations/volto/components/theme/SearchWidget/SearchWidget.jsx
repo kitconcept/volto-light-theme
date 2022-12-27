@@ -95,6 +95,12 @@ class SearchWidget extends Component {
     document.removeEventListener('mousedown', this.handleClickOutside, false);
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (!prevState.active && this.state.active) {
+      this.refInput.select();
+    }
+  }
+
   handleClickOutside = (e) => {
     if (
       this.searchbar.current &&
@@ -102,6 +108,12 @@ class SearchWidget extends Component {
     )
       return;
     this.setState({ active: false });
+  };
+
+  handleEscapeKeyDown = (e) => {
+    if (e.key === 'Escape') {
+      this.setState({ active: false });
+    }
   };
 
   searchbar = React.createRef();
@@ -124,8 +136,10 @@ class SearchWidget extends Component {
             <form action="/search" onSubmit={this.onSubmit}>
               <div className="searchbox">
                 <input
+                  id="searchInput"
                   aria-label={this.props.intl.formatMessage(messages.search)}
                   onChange={(e) => this.onChangeText(e)}
+                  onKeyDown={(e) => this.handleEscapeKeyDown(e)}
                   name="SearchableText"
                   value={this.state.text}
                   autoComplete="off"
@@ -133,6 +147,9 @@ class SearchWidget extends Component {
                     messages.searchSite,
                   )}
                   title={this.props.intl.formatMessage(messages.search)}
+                  ref={(input) => {
+                    this.refInput = input;
+                  }}
                 />
                 <button
                   aria-label={this.props.intl.formatMessage(messages.search)}
