@@ -30,7 +30,7 @@ const Footer = ({ intl }) => {
   return (
     <div id="footer">
       <Container layout className="footer">
-        <div>
+        <div className="footer-message">
           <FormattedMessage
             id="The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
             defaultMessage="The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
@@ -116,7 +116,7 @@ const Footer = ({ intl }) => {
         <div className="logo">
           <Logo />
         </div>
-        <a className="item" href="https://plone.org">
+        <a className="item powered-by" href="https://plone.org">
           <FormattedMessage
             id="Powered by Plone & Python"
             defaultMessage="Powered by Plone & Python"
