@@ -1,3 +1,5 @@
+// Remove when https://github.com/plone/volto/pull/4141 is merged
+// and released
 import React from 'react';
 import { doesNodeContainClick } from 'semantic-ui-react/dist/commonjs/lib';
 import addSVG from '@plone/volto/icons/circle-plus.svg';
