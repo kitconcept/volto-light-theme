@@ -20,6 +20,12 @@ h1.documentFirstHeading {
   font-size: 64px;
   font-weight: $bold;
   line-height: 72px;
+  span {
+    border: none;
+    font-size: 64px;
+    font-weight: $bold;
+    line-height: 72px;
+  }
 
   &::before {
     display: none;
@@ -28,7 +34,8 @@ h1.documentFirstHeading {
 
 // Heading block
 .heading-wrapper {
-  h2.heading {
+  h2.heading,
+  .editable {
     font-weight: $light;
     font-size: 52px;
     line-height: 60px;
@@ -44,6 +51,11 @@ h2 {
   line-height: 56px;
   padding-top: 2.5rem;
   padding-bottom: 1rem;
+  span {
+    font-weight: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
 }
 h3 {
   font-weight: $bold;
@@ -51,6 +63,11 @@ h3 {
   line-height: 42px;
   padding-top: 1.5rem;
   padding-bottom: 0.3rem;
+  span {
+    font-weight: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
 }
 
 @font-face {
