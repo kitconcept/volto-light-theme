@@ -156,7 +156,7 @@ class Navigation extends Component {
           </button>
         </div>
         <div
-          className="desktop menu mobile hidden"
+          className="desktop menu computer large screen widescreen only"
           role="button"
           tabIndex={0}
           onClick={this.closeMobileMenu}

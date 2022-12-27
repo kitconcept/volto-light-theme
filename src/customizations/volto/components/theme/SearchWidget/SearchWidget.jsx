@@ -95,6 +95,12 @@ class SearchWidget extends Component {
     document.removeEventListener('mousedown', this.handleClickOutside, false);
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (!prevState.active && this.state.active) {
+      this.refInput.select();
+    }
+  }
+
   handleClickOutside = (e) => {
     if (
       this.searchbar.current &&
@@ -104,11 +110,6 @@ class SearchWidget extends Component {
     this.setState({ active: false });
   };
 
-  clickHandler() {
-    this.setState({ active: !this.state.active });
-    const searchInput = document.getElementById('searchInput');
-    searchInput.select();
-  }
   handleEscapeKeyDown = (e) => {
     if (e.key === 'Escape') {
       this.setState({ active: false });
@@ -146,6 +147,9 @@ class SearchWidget extends Component {
                     messages.searchSite,
                   )}
                   title={this.props.intl.formatMessage(messages.search)}
+                  ref={(input) => {
+                    this.refInput = input;
+                  }}
                 />
                 <button
                   aria-label={this.props.intl.formatMessage(messages.search)}
@@ -159,7 +163,7 @@ class SearchWidget extends Component {
         <div className="search-button">
           <button
             aria-label={this.props.intl.formatMessage(messages.search)}
-            onClick={() => this.clickHandler()}
+            onClick={() => this.setState({ active: !this.state.active })}
           >
             {' '}
             <Icon name={zoomSVG} size="48px" />
