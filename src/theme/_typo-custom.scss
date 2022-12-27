@@ -17,10 +17,40 @@ div {
 
 h1.documentFirstHeading {
   border: none;
+  font-size: 64px;
+  font-weight: $bold;
+  line-height: 72px;
 
   &::before {
     display: none;
   }
+}
+
+// Heading block
+.heading-wrapper {
+  h2.heading {
+    font-weight: $light;
+    font-size: 52px;
+    line-height: 60px;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+  }
+}
+
+// Slate headings
+h2 {
+  font-weight: $bold;
+  font-size: 48px;
+  line-height: 56px;
+  padding-top: 2.5rem;
+  padding-bottom: 1rem;
+}
+h3 {
+  font-weight: $bold;
+  font-size: 36px;
+  line-height: 42px;
+  padding-top: 1.5rem;
+  padding-bottom: 0.3rem;
 }
 
 @font-face {
