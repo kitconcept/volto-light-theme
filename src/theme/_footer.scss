@@ -1,19 +1,18 @@
 #footer {
   text-align: center;
-  height: 429px;
+  height: fit-content;
 
   .footer {
-    padding: 4.2em 2em;
+    padding: 4.2rem 2rem;
     background-color: $lightgrey;
     font-size: 18px;
-    height: inherit;
 
     a.powered-by {
       font-size: 14px;
     }
 
     .footer-message {
-      font-weight: $bold !important;
+      font-weight: $bold;
       a {
         font-weight: inherit;
       }
@@ -23,7 +22,7 @@
     ul {
       display: flex;
       justify-content: center;
-      margin-top: 1.4em;
+      margin-top: 1.4rem;
       padding-left: 0;
       list-style: none;
 
@@ -40,7 +39,7 @@
     }
 
     .logo {
-      margin: 5em 0 1.8em 0;
+      margin: 5rem 0 1.8rem 0;
     }
   }
 }
