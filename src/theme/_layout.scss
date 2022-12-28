@@ -80,7 +80,8 @@ $narrow-container-width: 620px;
   .block.image.align.center figure,
   .event-details,
   .download-event,
-  .block.separator.has--align--left .line {
+  .block.separator.has--align--left .line,
+  .block.separator.has--align--center .line {
     @include narrow-container-width();
     @include adjustMarginsToContainer($narrow-container-width + 2 * 36px);
   }
@@ -100,7 +101,7 @@ $narrow-container-width: 620px;
 
   & > h1.documentFirstHeading,
   & > .block.teaser,
-  & > .block.separator,
+  & > .block.separator.has--align--full .line,
   & > .block.image.align.full,
   & > .block.video.align.full,
   & > .block.maps.align.full {
@@ -130,7 +131,8 @@ $narrow-container-width: 620px;
   .block-editor-image.right.medium,
   .block-editor-image.right.small,
   .block-editor-image.center figure,
-  .block-editor-separator.has--align--left .block.separator {
+  .block-editor-separator.has--align--left .block.separator,
+  .block-editor-separator.has--align--center .block.separator {
     @include narrow-container-width();
     @include adjustMarginsToContainer($narrow-container-width);
   }

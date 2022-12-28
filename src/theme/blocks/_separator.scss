@@ -33,58 +33,6 @@
     }
   }
 
-  &.has--align--center {
-    clear: both;
-
-    .line {
-      &::after {
-        @include narrow-container-width();
-        
-        @media only screen and (max-width: 650px) {
-          margin-left: 2rem !important;
-          margin-right: 2rem !important;
-        }
-      }
-    }
-  }
-
-  &.has--align--full {
-    clear: both;
-   
-
-    .line {
-      margin-left: auto !important;
-      @media only screen and (min-width: $large-monitor-width) {
-        margin-left: 0 !important;
-      }
-
-      &::after {
-        
-        @media only screen and (min-width: $large-monitor-width) {
-          width: $layout-container-width !important;
-          margin-left: 0 !important;
-        }
-        @media only screen and (max-width: $large-monitor-width) {
-          @include default-container-width();
-        }
-        @media only screen and (max-width: 950px) {
-          @include narrow-container-width();
-        
-          margin-left: auto !important;
-          margin-right: auto !important;
-        }
-        @media only screen and (max-width: 640px) {
-          @include narrow-container-width();
-        
-          margin-left: 1rem !important;
-          margin-right: 1rem !important;
-        }
-          
-        
-      }
-    }
-  }
-
   &.has--noLine--true {
     .line::after {
       display: none;
@@ -104,7 +52,4 @@
     }
   }
 
-  &.has--align--center .block.separator {
-    @include narrow-container-width();
-  }
 }
