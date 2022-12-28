@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import Container from '@kitconcept/volto-light-theme/components/Atoms/Container/Container';
+import { Link } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
 
 import {
   Anontools,
@@ -23,16 +25,27 @@ const Header = (props) => {
               <Logo />
             </div>
             <Navigation pathname={pathname} />
-          </div>
-          <div className="tools-search-wrapper">
-            <LanguageSelector />
-            {!token && (
-              <div className="tools">
-                <Anontools />
+            <div className="search-wrapper">
+              <div className="search">
+                <SearchWidget />
               </div>
-            )}
-            <div className="search">
-              <SearchWidget />
+            </div>
+          </div>
+          <div className="tools-wrapper">
+            <LanguageSelector />
+
+            <div className="tools">
+              {!token && <Anontools />}
+
+              <Link aria-label="register" to="/register">
+                <FormattedMessage id="Register" defaultMessage="Registration" />
+              </Link>
+              <Link aria-label="press" to="/press">
+                <FormattedMessage id="Press" defaultMessage="Press" />
+              </Link>
+              <Link aria-label="sitemap" to="/sitemap">
+                <FormattedMessage id="Sitemap" defaultMessage="Sitemap" />
+              </Link>
             </div>
           </div>
         </div>
