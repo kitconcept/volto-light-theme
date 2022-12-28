@@ -1,4 +1,5 @@
 import { defaultStylingSchema } from './components/Blocks/schema';
+import { separatorStyleEnhancer } from './components/Blocks/Separator/schema';
 import {
   gridTeaserDisableStylingSchema,
   teaserSchemaEnhancer,
@@ -55,6 +56,12 @@ const applyConfig = (config) => {
     imageScale: 'larger',
     colors: BG_COLORS,
     schemaEnhancer: teaserSchemaEnhancer,
+  };
+
+  config.blocks.blocksConfig.separator = {
+    ...config.blocks.blocksConfig.separator,
+    schemaEnhancer: defaultStylingSchema,
+    sidebarTab: 1,
   };
 
   return config;
