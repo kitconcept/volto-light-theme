@@ -25,13 +25,12 @@ $page-font: var(--custom-main-font, $page-font-template);
 $header-font: var(--custom-headers-font, $page-font);
 
 // Breakpoints
+$largest-mobile-screen: 768px;
 $tablet-breakpoint: 769px;
-$computer-width: 940px;
 $computer-breakpoint: 1012px;
-$large-monitor-width: 1440px;
+$computer-width: 940px;
 $large-monitor-breakpoint: 1441px;
-
-$largest-mobile-screen: 900px; // ?
+$large-monitor-width: 1440px;
 
 // Rest of theme variables
 
