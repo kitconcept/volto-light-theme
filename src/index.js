@@ -60,7 +60,7 @@ const applyConfig = (config) => {
 
   config.blocks.blocksConfig.separator = {
     ...config.blocks.blocksConfig.separator,
-    schemaEnhancer: defaultStylingSchema,
+    schemaEnhancer: separatorStyleEnhancer,
     sidebarTab: 1,
   };
 
