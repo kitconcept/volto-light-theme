@@ -42,6 +42,15 @@ h1.documentFirstHeading {
     padding-top: 4rem;
     padding-bottom: 2rem;
   }
+  
+  h3.heading,
+  .editable {
+    font-weight: $light;
+    font-size: 42px;
+    line-height: 48px;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+  }
 }
 
 // Slate headings
