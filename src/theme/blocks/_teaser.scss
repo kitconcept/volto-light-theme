@@ -51,7 +51,7 @@
 
       .grid-image-wrapper {
         margin-right: 0;
-        margin-left: 20px;
+        margin-left: 26px;
 
         @media only screen and (max-width: $largest-mobile-screen) {
           margin-right: 0;
@@ -97,21 +97,23 @@
     align-self: flex-start;
 
     .headline {
-      padding-bottom: 7px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding-bottom: 20px;
       margin: 0;
       color: $black;
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 700;
-      line-height: 18px;
+      line-height: 20px;
     }
 
     h2 {
       padding: 0 20px 0 0;
-      margin: 0 0 15px 0;
+      margin: 0 0 40px 0;
       color: $black;
       font-size: 30px;
-      font-weight: 700;
-      line-height: 36px;
+      font-size: 48px;
+      line-height: 56px;
     }
 
     p {
@@ -120,6 +122,18 @@
       font-weight: 300;
       line-height: 24px;
     }
+    // data.button not implemented yet in volto-blocks-gird
+    // button {
+    //   margin-top: 55px;
+    //   border: 1px solid $black;
+    //   border-top-width: 1.5px;
+    //   border-right-width: 1.5px;
+    //   padding: 10px 25px 10px 25px;
+    //   background-color: $white;
+    //   font-weight: 900;
+    //   font-size: 16px;
+    //   line-height: 20px;
+    // }
   }
 }
 
@@ -141,7 +155,7 @@
     flex-direction: row;
 
     .grid-image-wrapper {
-      margin-right: 20px;
+      margin-right: 26px;
       margin-left: 0;
     }
   }

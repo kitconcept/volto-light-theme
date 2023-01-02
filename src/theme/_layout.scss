@@ -94,7 +94,7 @@ $narrow-container-width: 620px;
   & > .block h2.headline,
   & > .block.heading .heading-wrapper,
   & > .block.separator .line,
-  & > .block.teaser .grid-teaser-item.default,
+  //& > .block.teaser .grid-teaser-item.default,
   & > .slate blockquote {
     @include default-container-width();
   }
