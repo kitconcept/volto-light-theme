@@ -85,6 +85,48 @@
   }
 }
 
+// Dynamic font sizes depending on number of columns in grid
+.four.column {
+  .content h2 {
+    padding-top: 20px !important;
+    font-size: 30px !important;
+    line-height: 36px !important;
+  }
+}
+
+.three.column {
+  .content h2 {
+    padding-top: 20px !important;
+    font-size: 36px !important;
+    line-height: 42px !important;
+  }
+}
+
+.two.column, .one {
+  .content h2 {
+    font-size: 48px !important;
+    line-height: 56px !important;
+    padding-top: 20px !important;
+    padding-bottom: 40px !important;
+  }
+}
+
+.grid-block-teaser {
+  .block.teaser {
+    background-color: $lightgrey;
+    .content {
+      padding: 0 26px 60px 26px;
+      font-size: 18px;
+      line-height: 24px;
+
+      h2 {
+        font-weight: 700;
+        padding-bottom: 20px;
+      }
+    }
+  }
+}
+
 .block.teaser {
   // We want the image to extend in all its container width
   height: 100%;
@@ -136,6 +178,8 @@
     // }
   }
 }
+
+//border: 2px solid red;;
 
 // Block Teaser Standalone Edit
 
