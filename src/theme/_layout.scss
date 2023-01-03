@@ -94,7 +94,7 @@ $narrow-container-width: 620px;
   & > .block h2.headline,
   & > .block.heading .heading-wrapper,
   & > .block.separator .line,
-  & > .grid-teaser-item.default,
+  & > .block.teaser .grid-teaser-item.default,
   & > .slate blockquote {
     @include default-container-width();
   }
@@ -167,11 +167,14 @@ $narrow-container-width: 620px;
 
 // Grids adjustments (has to be paired with collections/grid.variables)
 // TODO: Move to our own grid component
-.block.block.__grid,
-.block.__grid .ui.stackable {
-  @include default-container-width();
-  max-width: calc(var(--default-container-width) + 5rem);
+#page-document > {
+  .block.__grid,
+  .block.__grid .ui.stackable {
+    @include default-container-width();
+    max-width: calc(var(--default-container-width) + 1rem);
+  }
 }
+
 
 // handlers adjustments
 body.has-toolbar.has-sidebar .drag.handle.wrapper {
