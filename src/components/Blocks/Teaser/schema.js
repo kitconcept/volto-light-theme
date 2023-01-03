@@ -29,10 +29,7 @@ export const teaserSchemaEnhancer = ({ schema, formData, intl }) => {
 
   defaultStylingSchema({ schema, formData, intl });
 
-  schema.properties.styles.schema.fieldsets[0].fields = [
-    'align',
-    'backgroundColor',
-  ];
+  schema.properties.styles.schema.fieldsets[0].fields = ['align'];
 
   schema.properties.styles.schema.properties.align = {
     widget: 'align',
