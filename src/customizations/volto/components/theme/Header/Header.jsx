@@ -17,7 +17,7 @@ const Header = (props) => {
   const token = useSelector((state) => state.userSession.token);
 
   return (
-    <div className="header-wrapper">
+    <header className="header-wrapper">
       <Container layout>
         <div className="header">
           <div className="logo-nav-wrapper">
@@ -50,7 +50,7 @@ const Header = (props) => {
           </div>
         </div>
       </Container>
-    </div>
+    </header>
   );
 };
 
