@@ -28,7 +28,7 @@ const Footer = ({ intl }) => {
   const { settings } = config;
   const lang = useSelector((state) => state.intl.locale);
   return (
-    <div id="footer">
+    <footer id="footer">
       <Container layout className="footer">
         <div className="footer-message">
           <FormattedMessage
@@ -123,7 +123,7 @@ const Footer = ({ intl }) => {
           />
         </a>
       </Container>
-    </div>
+    </footer>
   );
 };
 
