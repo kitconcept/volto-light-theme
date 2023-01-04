@@ -64,6 +64,12 @@ const applyConfig = (config) => {
     sidebarTab: 1,
   };
 
+  config.blocks.blocksConfig.heading = {
+    ...config.blocks.blocksConfig.heading,
+    sidebarTab: 0,
+    allowed_headings: [['h2', 'h2']],
+  };
+
   return config;
 };
 
