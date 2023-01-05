@@ -1,6 +1,7 @@
 .block.__grid {
-    margin-bottom: 0.5rem;
-  .teaser{
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  .teaser {
     margin-bottom: 0;
   }
   .headline {
@@ -11,7 +12,31 @@
   .ui.grid > .column:not(.row) {
     padding-top: 0.5rem;
   }
-  .column.grid-block-teaser{
+  .ui.stackable.stretched.column.grid {
+    //background-color: red;
+    justify-content: space-between;
+  }
+  .column.grid-block-teaser {
     padding-bottom: 0;
   }
+  .column.grid-block-slate {
+    background-color: $lightgrey;
+    padding: 2.5rem 1.5rem 1.5rem 1.5rem !important;
+  }
+  .two.column {
+    .grid-block-slate {
+      width: 49% !important;
+    }
+  }
+  .three.column {
+    .grid-block-slate {
+      width: 32% !important;
+    }
+  }
+  .four.column {
+    .grid-block-slate {
+      width: 23.5% !important;
+    }
+  }
+  
 }
