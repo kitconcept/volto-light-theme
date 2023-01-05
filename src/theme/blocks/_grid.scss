@@ -1,7 +1,17 @@
 .block.__grid {
+    margin-bottom: 0.5rem;
+  .teaser{
+    margin-bottom: 0;
+  }
   .headline {
     font-weight: 300;
     font-size: 42px;
     line-height: 48px;
+  }
+  .ui.grid > .column:not(.row) {
+    padding-top: 0.5rem;
+  }
+  .column.grid-block-teaser{
+    padding-bottom: 0;
   }
 }
