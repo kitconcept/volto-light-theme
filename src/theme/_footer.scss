@@ -14,6 +14,7 @@
       font-weight: $bold;
       a {
         font-weight: inherit;
+        text-decoration: underline;
       }
     }
 
@@ -29,7 +30,7 @@
         padding: 0 7px;
         border-right: 1px solid #205c90;
         font-size: 18px;
-        
+
 
         &:last-of-type {
           border: none;
