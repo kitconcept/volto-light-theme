@@ -51,7 +51,7 @@
 
       .grid-image-wrapper {
         margin-right: 0;
-        margin-left: 20px;
+        margin-left: 26px;
 
         @media only screen and (max-width: $largest-mobile-screen) {
           margin-right: 0;
@@ -85,6 +85,48 @@
   }
 }
 
+// Dynamic font sizes depending on number of columns in grid
+.four.column {
+  .content h2 {
+    padding-top: 20px !important;
+    font-size: 30px !important;
+    line-height: 36px !important;
+  }
+}
+
+.three.column {
+  .content h2 {
+    padding-top: 20px !important;
+    font-size: 36px !important;
+    line-height: 42px !important;
+  }
+}
+
+.two.column, .one {
+  .content h2 {
+    font-size: 48px !important;
+    line-height: 56px !important;
+    padding-top: 20px !important;
+    padding-bottom: 40px !important;
+  }
+}
+
+.grid-block-teaser {
+  .block.teaser {
+    background-color: $lightgrey;
+    .content {
+      padding: 0 26px 60px 26px;
+      font-size: 18px;
+      line-height: 24px;
+
+      h2 {
+        font-weight: 700;
+        padding-bottom: 20px;
+      }
+    }
+  }
+}
+
 .block.teaser {
   // We want the image to extend in all its container width
   height: 100%;
@@ -97,21 +139,22 @@
     align-self: flex-start;
 
     .headline {
-      padding-bottom: 7px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding-bottom: 20px;
       margin: 0;
       color: $black;
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 700;
-      line-height: 18px;
+      line-height: 20px;
     }
 
     h2 {
       padding: 0 20px 0 0;
-      margin: 0 0 15px 0;
+      margin: 0 0 40px 0;
       color: $black;
-      font-size: 30px;
-      font-weight: 700;
-      line-height: 36px;
+      font-size: 48px;
+      line-height: 56px;
     }
 
     p {
@@ -120,6 +163,18 @@
       font-weight: 300;
       line-height: 24px;
     }
+    // data.button not implemented yet in TeaserDefaultTemplate in volto-blocks-gird
+    // button {
+    //   margin-top: 55px;
+    //   border: 1px solid $black;
+    //   border-top-width: 1.5px;
+    //   border-right-width: 1.5px;
+    //   padding: 10px 25px 10px 25px;
+    //   background-color: $white;
+    //   font-weight: 900;
+    //   font-size: 16px;
+    //   line-height: 20px;
+    // }
   }
 }
 
@@ -141,7 +196,7 @@
     flex-direction: row;
 
     .grid-image-wrapper {
-      margin-right: 20px;
+      margin-right: 26px;
       margin-left: 0;
     }
   }
