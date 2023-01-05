@@ -1,42 +1,98 @@
 .block.__grid {
   margin-bottom: 1rem;
   margin-top: 1rem;
+
   .teaser {
     margin-bottom: 0;
   }
+
   .headline {
     font-weight: 300;
     font-size: 42px;
     line-height: 48px;
   }
-  .ui.grid > .column:not(.row) {
-    padding-top: 0.5rem;
-  }
-  .ui.stackable.stretched.column.grid {
-    //background-color: red;
+
+  .stackable.grid {
     justify-content: space-between;
+
+    @media only screen and (max-width: $tablet-breakpoint) {
+      .grid-block-slate {
+        margin-top: 1rem !important;
+      }
+    }
+
+    > .column:not(.row) {
+      padding-top: 0.5rem;
+    }
   }
+
   .column.grid-block-teaser {
     padding-bottom: 0;
   }
+
+  .column.grid-block-image {
+    padding-bottom: 0;
+    padding-top: 0 !important;
+
+    figcaption {
+      position: absolute;
+      bottom: 0;
+      z-index: 100;
+      color: $white;
+      padding: 1rem 1rem 0.5rem 1rem;
+
+      .title {
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-size: 18px;
+        line-height: 22px;
+      }
+
+      .credits {
+        font-size: 10px;
+        margin-bottom: 0;
+      }
+    }
+    img {
+      z-index: revert !important;
+    }
+    figure {
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    figure:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 35%;
+      background-color: $black;
+      opacity: 0.75;
+    }
+  }
+
   .column.grid-block-slate {
     background-color: $lightgrey;
     padding: 2.5rem 1.5rem 1.5rem 1.5rem !important;
   }
-  .two.column {
-    .grid-block-slate {
-      width: 49% !important;
+
+  @media only screen and (min-width: $tablet-breakpoint) {
+    .two {
+      .grid-block-slate {
+        width: 49% !important;
+      }
+    }
+    .three {
+      .grid-block-slate {
+        width: 32% !important;
+      }
+    }
+    .four {
+      .grid-block-slate {
+        width: 23.5% !important;
+      }
     }
   }
-  .three.column {
-    .grid-block-slate {
-      width: 32% !important;
-    }
-  }
-  .four.column {
-    .grid-block-slate {
-      width: 23.5% !important;
-    }
-  }
-  
 }
