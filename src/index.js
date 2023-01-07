@@ -4,6 +4,7 @@ import {
   gridTeaserDisableStylingSchema,
   teaserSchemaEnhancer,
 } from './components/Blocks/Teaser/schema';
+import ExtraAlignWrapper from './components/Blocks/Slate/ExtraAlignWrapper';
 import ContainerQueriesPolyfill from './components/CQPolyfill';
 import Container from './components/Atoms/Container/Container';
 
@@ -68,6 +69,14 @@ const applyConfig = (config) => {
     ...config.blocks.blocksConfig.heading,
     sidebarTab: 0,
     allowed_headings: [['h2', 'h2']],
+  };
+
+  config.blocks.blocksConfig.slate = {
+    ...config.blocks.blocksConfig.slate,
+    colors: BG_COLORS,
+    schemaEnhancer: defaultStylingSchema,
+    sidebarTab: 1,
+    view: ExtraAlignWrapper(config.blocks.blocksConfig.slate.view),
   };
 
   return config;

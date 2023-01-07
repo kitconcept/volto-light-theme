@@ -170,8 +170,8 @@ $narrow-container-width: 620px;
 #page-document > {
   .block.__grid,
   .block.__grid .ui.stackable {
-    @include default-container-width();
-    max-width: calc(var(--default-container-width) + 1rem);
+    @include layout-container-width();
+    max-width: calc(var(--layout-container-width) + 1rem);
   }
 }
 
