@@ -48,6 +48,13 @@ const applyConfig = (config) => {
         ...config.blocks.blocksConfig.teaser,
         schemaEnhancer: gridTeaserDisableStylingSchema,
       },
+      slate: {
+        ...config.blocks.blocksConfig.slate,
+        colors: BG_COLORS,
+        schemaEnhancer: defaultStylingSchema,
+        sidebarTab: 1,
+        view: ExtraAlignWrapper(config.blocks.blocksConfig.slate.view),
+      },
     },
   };
 
@@ -69,14 +76,6 @@ const applyConfig = (config) => {
     ...config.blocks.blocksConfig.heading,
     sidebarTab: 0,
     allowed_headings: [['h2', 'h2']],
-  };
-
-  config.blocks.blocksConfig.slate = {
-    ...config.blocks.blocksConfig.slate,
-    colors: BG_COLORS,
-    schemaEnhancer: defaultStylingSchema,
-    sidebarTab: 1,
-    view: ExtraAlignWrapper(config.blocks.blocksConfig.slate.view),
   };
 
   return config;
