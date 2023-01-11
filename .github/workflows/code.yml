@@ -1,0 +1,45 @@
+name: Code analysis checks
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+        python-version: [3.8]
+    env:
+        GIT_NAME: volto-light-theme
+        NAMESPACE: "@kitconcept"
+        GIT_USER: 'kitconcept'
+    steps:
+      - name: Main checkout
+        uses: actions/checkout@v2
+
+      # node setup
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'yarn'
+
+      # node install
+      - name: Install dependencies
+        run: yarn
+
+      - name: Install yo and @plone/generator-volto
+        run: npm i -g yo @plone/generator-volto
+
+      - name: Setup addon testing environment
+        run: npx -p @plone/scripts addon clone .
+
+      # ESlint
+      - name: ESlint
+        run: cd addon-testing-project && yarn lint
+
+      # Stylelint
+      - name: Stylelint
+        run: cd addon-testing-project && yarn stylelint --allow-empty-input
+
+      # Prettier
+      - name: Prettier
+        run: cd addon-testing-project && yarn prettier
