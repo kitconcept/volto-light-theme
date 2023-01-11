@@ -4,6 +4,7 @@ import { separatorStyleEnhancer } from './components/Blocks/Separator/schema';
 import { teaserSchemaEnhancer } from './components/Blocks/Teaser/schema';
 import { gridTeaserDisableStylingSchema } from '@kitconcept/volto-blocks-grid/components/Teaser/schema';
 
+import ExtraAlignWrapper from './components/Blocks/Slate/ExtraAlignWrapper';
 import ContainerQueriesPolyfill from './components/CQPolyfill';
 import Container from './components/Atoms/Container/Container';
 
@@ -49,6 +50,13 @@ const applyConfig = (config) => {
           gridTeaserDisableStylingSchema,
           teaserSchemaEnhancer,
         ),
+      },
+      slate: {
+        ...config.blocks.blocksConfig.slate,
+        colors: BG_COLORS,
+        schemaEnhancer: defaultStylingSchema,
+        sidebarTab: 1,
+        view: ExtraAlignWrapper(config.blocks.blocksConfig.slate.view),
       },
     },
   };
