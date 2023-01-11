@@ -33,14 +33,11 @@ jobs:
         run: npx -p @plone/scripts addon clone .
 
       # ESlint
+      - name: Prepare ESlint
+        run: cd addon-testing-project && echo -e '\nsrc/addons/volto-light-theme/src/static/container-query-polyfill.modern.js' >> .eslintignore && echo -e '\nsrc/addons/volto-light-theme/src/static/container-query-polyfill.modern.js' >> .prettierignore
+
       - name: ESlint
-        run: |
-          cd addon-testing-project && echo -e '\nsrc/addons/volto-light-theme/src/static/container-query-polyfill.modern.js' >> .eslintignore
-          cd addon-testing-project && echo -e '\nsrc/addons/volto-light-theme/src/static/container-query-polyfill.modern.js' >> .prettierignore
-          # This one is for disable the peer dependency on @kitconcept/volto-blocks-grid
-          # One could add it as dependency, but then we will have to maintain the versions and
-          # we risk to deal with hoisting issues :( and dealing with develop/release use cases
-          cd addon-testing-project && yarn lint --rule 'import/no-unresolved: 0'
+        run: cd addon-testing-project && yarn lint --rule 'import/no-unresolved: 0'
 
       # Stylelint
       - name: Stylelint
