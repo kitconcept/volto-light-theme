@@ -1,0 +1,159 @@
+#page-document,
+#page-add,
+#page-edit {
+  .block.search {
+    .search-wrapper {
+      margin-bottom: 0px;
+    }
+
+    .search-input-resultscount-sort {
+      display: flex;
+      @media only screen and (max-width: 786px) {
+        display: block;
+      }
+      justify-content: space-between;
+    }
+
+    .search-input {
+      position: relative;
+      height: 75px;
+      background-color: #ececec;
+
+      .ui.input {
+        height: 75px;
+        background-color: #eee;
+
+        input {
+          padding: 19px 0 19px 24px;
+          border: none;
+          background-color: transparent;
+          color: #000;
+          font-size: 24px;
+
+          &::placeholder {
+            color: #000;
+            opacity: 1;
+          }
+        }
+      }
+
+      .search-input-live-icon-button {
+        position: absolute;
+        top: 19px;
+        right: 24px;
+        padding-left: 14px;
+        background-color: #eee !important;
+
+        svg {
+          width: 36px !important;
+          height: 36px !important;
+          color: #023d6b !important;
+        }
+      }
+    }
+
+    .search-details-sort {
+      display: flex;
+      @media only screen and (max-width: 768px) {
+        display: block;
+        margin-top: 24px;
+      }
+      align-items: center;
+    }
+
+    .search-details {
+      padding: 0 20px;
+      margin: 0;
+      color: #000;
+      font-size: 20px;
+
+      .number {
+        font-size: 30px;
+      }
+
+      .label {
+        font-size: 14px;
+      }
+    }
+
+    .search-wrapper {
+      width: 49%;
+      @media only screen and (max-width: 768px) {
+        width: 100%;
+      }
+    }
+
+    .sort-on-wrapper {
+      .search-sort-wrapper {
+        margin: 7px 0 0 0;
+      }
+
+      .search-sort-wrapper > * {
+        height: 50px;
+        border-width: 1px 1px 1px 0;
+        border-style: solid;
+        border-color: #000;
+        margin: 0;
+        border-radius: 0;
+      }
+
+      .search-sort-wrapper > .search-sort-on {
+        border-left-width: 1px;
+        font-size: 14px;
+
+        svg {
+          width: 12px !important;
+          margin-right: 7px;
+        }
+
+        div {
+          border: 0;
+        }
+
+        .react-select__menu {
+          border: solid 1px #000;
+          margin-top: 5px;
+        }
+
+        .react-select__option:not(.react-select__option--is-selected) {
+          svg {
+            visibility: hidden;
+          }
+        }
+
+        .react-select__option--is-selected {
+          svg {
+            fill: #000 !important;
+          }
+        }
+      }
+
+      button {
+        width: 50px;
+        text-align: center;
+
+        svg {
+          height: 30px !important;
+        }
+      }
+
+      .sort-label {
+        display: none;
+      }
+
+      svg path {
+        fill: #000;
+        stroke: #000;
+      }
+
+      .active {
+        background-color: #000 !important;
+
+        svg path {
+          fill: #ffffff;
+          stroke: #ffffff;
+        }
+      }
+    }
+  }
+}

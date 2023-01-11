@@ -6,6 +6,7 @@ import { gridTeaserDisableStylingSchema } from '@kitconcept/volto-blocks-grid/co
 
 import ContainerQueriesPolyfill from './components/CQPolyfill';
 import Container from './components/Atoms/Container/Container';
+import TopSideFacets from './components/Blocks/Search/TopSideFacets';
 
 import gridSVG from './icons/block_icn_grid.svg';
 
@@ -72,6 +73,15 @@ const applyConfig = (config) => {
     sidebarTab: 0,
     allowed_headings: [['h2', 'h2']],
   };
+
+  config.blocks.blocksConfig.search.variations = [
+    {
+      id: 'facetsTopSide',
+      title: 'Facets on top',
+      view: TopSideFacets,
+      isDefault: true,
+    },
+  ];
 
   return config;
 };
