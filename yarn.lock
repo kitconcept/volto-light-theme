@@ -1556,7 +1556,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@kitconcept/volto-light-theme@workspace:."
   dependencies:
-    "@plone/scripts": ^2.2.1
+    "@plone/scripts": ^2.2.2
     postcss-scss: 4.0.6
     prettier: 2.0.5
     razzle-plugin-scss: 4.2.18
@@ -1603,9 +1603,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@plone/scripts@npm:^2.2.1":
-  version: 2.2.1
-  resolution: "@plone/scripts@npm:2.2.1"
+"@plone/scripts@npm:^2.2.2":
+  version: 2.2.2
+  resolution: "@plone/scripts@npm:2.2.2"
   dependencies:
     babel-plugin-react-intl: 5.1.17
     babel-preset-razzle: 4.2.17
@@ -1620,7 +1620,7 @@ __metadata:
     addon: addon/index.js
     changelogupdater: changelogupdater.cjs
     i18n: i18n.cjs
-  checksum: f630c724137a07457203a73d954e46bddd4dea8cd16bb96e0358f6b99270dfcda5aca5352a93b07565c5a86dd5752b980d899fcc9a9ec233a40c50f1b46b04a8
+  checksum: 33d63c1d0fe096984aa3a37b0842f65f13ef84065ffa88f66b6ada38c73a545f2236c8d24987881c50be36c903ec4b96bf5dc63dc3e4409985174efc122f737a
   languageName: node
   linkType: hard
 
