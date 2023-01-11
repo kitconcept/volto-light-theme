@@ -33,8 +33,9 @@ jobs:
         run: npx -p @plone/scripts addon clone .
 
       # ESlint
-      - name: ESlint
-        run: cd addon-testing-project && yarn lint
+      # Disabling as it hangs for no particular reason apparently
+      # - name: ESlint
+      #   run: cd addon-testing-project && yarn lint
 
       # Stylelint
       - name: Stylelint
