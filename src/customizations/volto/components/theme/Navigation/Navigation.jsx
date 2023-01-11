@@ -109,8 +109,11 @@ class Navigation extends Component {
    * @method closeMobileMenu
    * @returns {undefined}
    */
-  closeMobileMenu() {
+  closeMobileMenu(e) {
     if (!this.state.isMobileMenuOpen) {
+      return;
+    }
+    if (e.key && e.key !== 'Enter') {
       return;
     }
     this.setState({ isMobileMenuOpen: false });
@@ -155,13 +158,7 @@ class Navigation extends Component {
             </span>
           </button>
         </div>
-        <div
-          className="desktop menu computer large screen widescreen only"
-          role="button"
-          tabIndex={0}
-          onClick={this.closeMobileMenu}
-          aria-hidden="true"
-        >
+        <div className="desktop menu computer large screen widescreen only">
           <NavItems items={this.props.items} lang={this.props.lang} />
         </div>
         <CSSTransition
@@ -175,9 +172,9 @@ class Navigation extends Component {
             <div className="mobile-menu-nav">
               <div
                 role="button"
-                aria-hidden="true"
                 tabIndex={0}
                 onClick={this.closeMobileMenu}
+                onKeyUp={this.closeMobileMenu}
               >
                 <NavItems items={this.props.items} lang={this.props.lang} />
               </div>

@@ -1,9 +1,9 @@
+import { composeSchema } from '@plone/volto/helpers';
 import { defaultStylingSchema } from './components/Blocks/schema';
 import { separatorStyleEnhancer } from './components/Blocks/Separator/schema';
-import {
-  gridTeaserDisableStylingSchema,
-  teaserSchemaEnhancer,
-} from './components/Blocks/Teaser/schema';
+import { teaserSchemaEnhancer } from './components/Blocks/Teaser/schema';
+import { gridTeaserDisableStylingSchema } from '@kitconcept/volto-blocks-grid/components/Teaser/schema';
+
 import ExtraAlignWrapper from './components/Blocks/Slate/ExtraAlignWrapper';
 import ContainerQueriesPolyfill from './components/CQPolyfill';
 import Container from './components/Atoms/Container/Container';
@@ -46,7 +46,10 @@ const applyConfig = (config) => {
       ...config.blocks.blocksConfig,
       teaser: {
         ...config.blocks.blocksConfig.teaser,
-        schemaEnhancer: gridTeaserDisableStylingSchema,
+        schemaEnhancer: composeSchema(
+          gridTeaserDisableStylingSchema,
+          teaserSchemaEnhancer,
+        ),
       },
       slate: {
         ...config.blocks.blocksConfig.slate,
