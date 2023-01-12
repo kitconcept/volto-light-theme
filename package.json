@@ -14,7 +14,7 @@
     "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon"
   },
   "devDependencies": {
-    "@plone/scripts": "^2.2.1",
+    "@plone/scripts": "^2.2.2",
     "postcss-scss": "4.0.6",
     "prettier": "2.0.5",
     "razzle-plugin-scss": "4.2.18",
