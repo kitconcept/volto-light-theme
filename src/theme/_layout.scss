@@ -4,6 +4,9 @@
   --narrow-container-width: 620px;
 }
 
+// Container queries still do not work with CSS properties
+// They should be exact numbers
+// For now, maintain in sync with the above
 $layout-container-width: 1440px;
 $default-container-width: 940px;
 $narrow-container-width: 620px;
