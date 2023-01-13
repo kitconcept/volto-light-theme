@@ -60,7 +60,8 @@ $narrow-container-width: 620px;
   @include layout-container-width();
 }
 
-.header-wrapper .header {
+.header-wrapper .header,
+#main .breadcrumb {
   @include layout-container-width();
   @include adjustMarginsToContainer($layout-container-width);
 }
