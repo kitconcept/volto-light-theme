@@ -22,10 +22,14 @@ We will achieve that not using any SemanticUI component, nor any related styling
 
 The Volto strategy is:
 
-- To provide a very basic Vanilla components to build upon theming and CMSUI as well.
+- To provide a very basic and structural Vanilla components to build upon theming and CMSUI as well.
 - These components will be based in a headless component system. The best positioned right now is [react-aria](https://react-spectrum.adobe.com/react-aria/).
 - The theming could be done using these basic components or dropping in the component system of the developer/integrator choice. The presence of Volto's component registry system could help for adapting, if required.
 - The CMSUI will be isolated from the theming because it will be extremely CSS specific, so leaks from theming-CMSUI won't happen.
+
+#### Volto components `customizations` use case
+
+In the case of Volto customizations (eg. Search block), we should stick using what the original is using (SemanticUI). When Volto will make the switch in the future, we should then adapt all the customizations to match the one in the Volto core.
 
 ### It should use kitconcept's layout used in FZJ/DLR
 
