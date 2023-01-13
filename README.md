@@ -29,7 +29,7 @@ The Volto strategy is:
 
 #### Volto components `customizations` use case
 
-In the case of Volto customizations (eg. Search block), we should stick using what the original is using (SemanticUI). When Volto will make the switch in the future, we should then adapt all the customizations to match the one in the Volto core.
+If possible, we will switch to SemanticUI-less (`Atom`) components in case of they exist. Specially if the elements that we are customizing are clearly "theme" (eg. header/footer, etc). In the case of other Volto customizations that are not clear part of the theme (eg. Search block), it's fine to stick using what the original is using (SemanticUI). When Volto will make the switch in the future, we should then adapt all the customizations to match the one in the Volto core.
 
 ### It should use kitconcept's layout used in FZJ/DLR
 
