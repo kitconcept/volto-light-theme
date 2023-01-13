@@ -10,7 +10,7 @@ import { getTeaserImageURL } from '@kitconcept/volto-blocks-grid/components/Teas
 import { MaybeWrap } from '@plone/volto/components';
 import { UniversalLink } from '@plone/volto/components';
 import cx from 'classnames';
-import config from '@plone/volto/registry';
+// import config from '@plone/volto/registry';
 
 const messages = defineMessages({
   PleaseChooseContent: {
