@@ -1,11 +1,11 @@
 body.contenttype-plone-site,
 body.contenttype-lrf {
-  div.breadcrumbs {
+  #main .breadcrumbs {
     display: none;
   }
 }
 
-div.breadcrumbs {
+#main .breadcrumbs {
   padding: 2em 0;
   background-color: $lightgrey;
 
