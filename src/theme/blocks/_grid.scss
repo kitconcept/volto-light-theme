@@ -7,11 +7,17 @@
   }
 
   .headline {
-    margin-left: 0.3rem !important;
     font-size: 42px;
     font-weight: 300;
     line-height: 48px;
   }
+  .slate {
+  margin: 0 !important;
+  background-color: $lightgrey;
+  p {
+    padding: 1.5rem 1.5rem 2.4rem 1.5rem !important;
+  }
+}
 }
 
 .grid-block-slate {
@@ -70,14 +76,6 @@
     opacity: 0.75;
   }
 }
-
-// .slate {
-//   margin: 0 !important;
-//   background-color: $lightgrey;
-//   p {
-//     padding: 1.5rem 1.5rem 2.4rem 1.5rem !important;
-//   }
-// }
 
 .block.__grid.has--backgroundColor--grey,
 #page-add .block-editor-__grid.has--backgroundColor--grey,
