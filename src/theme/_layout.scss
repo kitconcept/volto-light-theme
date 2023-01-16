@@ -90,6 +90,7 @@ $narrow-container-width: 620px;
     @include adjustMarginsToContainer($narrow-container-width + 2 * 36px);
   }
 
+  & > h1.documentFirstHeading,
   & > .block.image.align.left,
   & > .block.image.align.right,
   & > .block.image.align.wide figure,
@@ -103,7 +104,6 @@ $narrow-container-width: 620px;
     @include default-container-width();
   }
 
-  & > h1.documentFirstHeading,
   & > .block.teaser,
   & > .block.separator.has--align--full .line,
   & > .block.image.align.full,
@@ -113,7 +113,7 @@ $narrow-container-width: 620px;
   }
 
   & > h1.documentFirstHeading {
-    @include adjustMarginsToContainer($layout-container-width);
+    @include adjustMarginsToContainer($default-container-width);
   }
 }
 
@@ -141,6 +141,7 @@ $narrow-container-width: 620px;
     @include adjustMarginsToContainer($narrow-container-width);
   }
 
+  .block-editor-title h1,
   .block-editor-image.left.large,
   .block-editor-image.right.large,
   .block-editor-image.wide figure, // Wide images are always large
@@ -158,7 +159,6 @@ $narrow-container-width: 620px;
     @include adjustMarginsToContainer($default-container-width);
   }
 
-  .block-editor-title,
   .block-editor-slate,
   .block-editor-image,
   .block-editor-slider,
