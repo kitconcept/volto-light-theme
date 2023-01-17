@@ -22,6 +22,13 @@
 
 .grid-block-slate {
   padding-top: 0 !important;
+  .slate-editor {
+    margin: 0 !important;
+    background-color: $lightgrey !important;
+    p {
+      padding: 1.5rem 1.5rem 2.4rem 1.5rem !important;
+    }
+  }
 }
 
 .grid-block-teaser {
@@ -88,6 +95,12 @@
     padding: 0 !important;
     margin: 0 1rem 1rem 1rem;
     background-color: $white;
+  }
+
+  .slate-editor {
+    padding: 0 !important;
+    margin: 0 1rem 1rem 1rem;
+    background-color: $white !important;
   }
 
   .grid-block-image {
