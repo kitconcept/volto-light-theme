@@ -1,22 +1,26 @@
+# Translation of plone.pot to German
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2023-01-17T18:05:19.044Z\n"
-"Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
-"Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-04-27T19:30:59.079Z\n"
+"PO-Revision-Date: 2016-10-22 16:41-0500\n"
+"Last-Translator: German <plone-i18n@lists.sf.net>\n"
+"Language: de\n"
+"Language-Team: German <plone-i18n@lists.sf.net>\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"Language-Code: en\n"
-"Language-Name: English\n"
-"Preferred-Encodings: utf-8\n"
-"Domain: volto\n"
+"MIME-Version: 1.0\n"
+"Language-Code: de\n"
+"Language-Name: Deutsch\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"X-Is-Fallback-For: de-at de-li de-lu de-ch de-de\n"
 
 #: components/Blocks/Separator/schema
 # defaultMessage: Alignment
 msgid "Alignment"
-msgstr ""
+msgstr "Ausrichtung"
 
 #: components/Blocks/schema
 # defaultMessage: Background color
@@ -46,7 +50,7 @@ msgstr ""
 #: index
 # defaultMessage: Press
 msgid "Press"
-msgstr ""
+msgstr "Presse"
 
 #: components/Widgets/AlignWidget
 # defaultMessage: Right
@@ -56,7 +60,7 @@ msgstr ""
 #: index
 # defaultMessage: Sitemap
 msgid "Sitemap"
-msgstr ""
+msgstr "Übersicht"
 
 #: components/Widgets/AlignWidget
 # defaultMessage: Wide
