@@ -1,3 +1,5 @@
+import { defineMessages } from 'react-intl';
+
 import { composeSchema } from '@plone/volto/helpers';
 import { defaultStylingSchema } from './components/Blocks/schema';
 import { separatorStyleEnhancer } from './components/Blocks/Separator/schema';
@@ -14,6 +16,17 @@ const BG_COLORS = [
   { name: 'transparent', label: 'Transparent' },
   { name: 'grey', label: 'Grey' },
 ];
+
+defineMessages({
+  Press: {
+    id: 'Press',
+    defaultMessage: 'Press',
+  },
+  Sitemap: {
+    id: 'Sitemap',
+    defaultMessage: 'Sitemap',
+  },
+});
 
 const applyConfig = (config) => {
   // Register custom Container component
