@@ -25,33 +25,3 @@
   }
 }
 
-.block.listing {
-  .listing-item {
-    padding-bottom: 25px;
-    border-bottom: 1px solid $black;
-    a {
-      .listing-body {
-        h2 {
-          color: $black;
-          font-size: 30px;
-          font-weight: 700;
-          line-height: 36px;
-        }
-      }
-    }
-  }
-}
-// summary listing block
-.block.listing.summary .listing-item {
-  a {
-    img {
-      width: 300px;
-      object-fit: cover;
-    }
-
-    h3 {
-      margin-bottom: 15px;
-      color: $black;
-    }
-  }
-}
