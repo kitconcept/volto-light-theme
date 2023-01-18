@@ -10,7 +10,7 @@ import { getTeaserImageURL } from '@kitconcept/volto-blocks-grid/components/Teas
 import { MaybeWrap } from '@plone/volto/components';
 import { UniversalLink } from '@plone/volto/components';
 import cx from 'classnames';
-// import config from '@plone/volto/registry';
+import config from '@plone/volto/registry';
 
 const messages = defineMessages({
   PleaseChooseContent: {
@@ -29,7 +29,7 @@ const TeaserDefaultTemplate = (props) => {
   const image = data.preview_image?.[0];
   const align = data?.styles?.align;
 
-  const Image = DefaultImage;
+  const Image = config.getComponent('Image').component || DefaultImage;
 
   return (
     <div className={cx('block teaser', className)}>
@@ -53,9 +53,8 @@ const TeaserDefaultTemplate = (props) => {
               {(href.hasPreviewImage || href.image_field || image) && (
                 <div className="grid-image-wrapper">
                   <Image
-                    src={flattenToAppURL(
-                      getTeaserImageURL({ href, image, align }),
-                    )}
+                    src={href}
+                    defaultScale="teaser"
                     alt=""
                     loading="lazy"
                   />
