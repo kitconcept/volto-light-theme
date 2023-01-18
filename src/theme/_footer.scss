@@ -18,19 +18,17 @@
       }
     }
 
-
     ul {
       display: flex;
       justify-content: center;
-      margin-top: 1.4rem;
       padding-left: 0;
+      margin-top: 1.4rem;
       list-style: none;
 
       li {
         padding: 0 7px;
         border-right: 1px solid #205c90;
         font-size: 18px;
-
 
         &:last-of-type {
           border: none;

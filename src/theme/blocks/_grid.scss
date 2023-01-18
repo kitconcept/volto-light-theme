@@ -1,0 +1,111 @@
+.block.__grid {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  .teaser {
+    margin-bottom: 0;
+  }
+
+  .headline {
+    font-size: 42px;
+    font-weight: 300;
+    line-height: 48px;
+  }
+  .slate {
+    margin: 0 !important;
+    background-color: $lightgrey;
+    p {
+      padding: 1.5rem 1.5rem 2.4rem 1.5rem !important;
+    }
+  }
+}
+
+.grid-block-slate {
+  padding-top: 0 !important;
+  .slate-editor {
+    margin: 0 !important;
+    background-color: $lightgrey !important;
+    p {
+      padding: 1.5rem 1.5rem 2.4rem 1.5rem !important;
+    }
+  }
+}
+
+.grid-block-teaser {
+  padding-top: 0 !important;
+}
+
+.grid-block-image {
+  padding-top: 0 !important;
+  padding-bottom: 0;
+
+  figcaption {
+    position: absolute;
+    z-index: 100;
+    bottom: 0;
+    padding: 1rem 1rem 0.5rem 1rem;
+
+    .title {
+      color: $white !important;
+      font-size: 18px;
+      letter-spacing: 1px;
+      line-height: 22px;
+      text-transform: uppercase;
+    }
+
+    .description {
+      color: $white !important;
+    }
+
+    .credits {
+      margin-bottom: 0;
+      color: $white !important;
+      font-size: 10px;
+    }
+  }
+  img {
+    z-index: revert !important;
+  }
+  figure {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 !important;
+  }
+
+  figure:after {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 35%;
+    background-color: $black;
+    content: '';
+    opacity: 0.75;
+  }
+}
+
+.block.__grid.has--backgroundColor--grey,
+#page-add .block-editor-__grid.has--backgroundColor--grey,
+#page-edit .block-editor-__grid.has--backgroundColor--grey {
+  background-color: $lightgrey;
+  .grid-teaser-item {
+    background: white;
+  }
+  .slate {
+    padding: 0 !important;
+    margin: 0 1rem 1rem 1rem;
+    background-color: $white;
+  }
+
+  .slate-editor {
+    padding: 0 !important;
+    margin: 0 1rem 1rem 1rem;
+    background-color: $white !important;
+  }
+
+  .grid-block-image {
+    .block.image {
+      background: white;
+    }
+  }
+}

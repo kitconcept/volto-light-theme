@@ -6,9 +6,10 @@
 import React from 'react';
 
 import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
-import { useSelector } from 'react-redux';
+import { useSelector, shallowEqual } from 'react-redux';
 import { UniversalLink, Logo } from '@plone/volto/components';
 import Container from '@kitconcept/volto-light-theme/components/Atoms/Container/Container';
+import { flattenToAppURL, addAppURL } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
 
 const messages = defineMessages({
@@ -26,7 +27,13 @@ const messages = defineMessages({
  */
 const Footer = ({ intl }) => {
   const { settings } = config;
-  const lang = useSelector((state) => state.intl.locale);
+  const { lang, siteActions = [] } = useSelector(
+    (state) => ({
+      lang: state.intl.locale,
+      siteActions: state.actions?.actions?.site_actions,
+    }),
+    shallowEqual,
+  );
   return (
     <footer id="footer">
       <Container layout className="footer">
@@ -77,41 +84,28 @@ const Footer = ({ intl }) => {
         </div>
         <ul>
           {/* wrap in div for a11y reasons: listitem role cannot be on the <a> element directly */}
-          <li className="item">
-            <UniversalLink
-              className="item"
-              href={settings.isMultilingual ? `/${lang}/sitemap` : '/sitemap'}
-            >
-              <FormattedMessage id="Site Map" defaultMessage="Site Map" />
-            </UniversalLink>
-          </li>
-          <li className="item">
-            <UniversalLink
-              className="item"
-              href={
-                settings.isMultilingual
-                  ? `/${lang}/accesibility-info`
-                  : '/accesibility-info'
-              }
-            >
-              <FormattedMessage
-                id="Accessibility"
-                defaultMessage="Accessibility"
-              />
-            </UniversalLink>
-          </li>
-          <li className="item">
-            <UniversalLink
-              className="item"
-              href={
-                settings.isMultilingual
-                  ? `/${lang}/contact-form`
-                  : '/contact-form'
-              }
-            >
-              <FormattedMessage id="Contact" defaultMessage="Contact" />
-            </UniversalLink>
-          </li>
+          {siteActions?.length
+            ? siteActions.map((item) => (
+                <li className="item" key={item.id}>
+                  <UniversalLink
+                    className="item"
+                    href={
+                      settings.isMultilingual
+                        ? `/${lang}/${
+                            item.url
+                              ? flattenToAppURL(item.url)
+                              : addAppURL(item.id)
+                          }`
+                        : item.url
+                        ? flattenToAppURL(item.url)
+                        : addAppURL(item.id)
+                    }
+                  >
+                    {item?.title}
+                  </UniversalLink>
+                </li>
+              ))
+            : null}
         </ul>
         <div className="logo">
           <Logo />
