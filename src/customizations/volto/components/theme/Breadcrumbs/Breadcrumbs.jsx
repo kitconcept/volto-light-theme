@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { Link } from 'react-router-dom';
 import { defineMessages, injectIntl } from 'react-intl';
+import Container from '@kitconcept/volto-light-theme/components/Atoms/Container/Container';
 
 import { Icon } from '@plone/volto/components';
 import { getBreadcrumbs } from '@plone/volto/actions';
@@ -80,7 +81,7 @@ export class BreadcrumbsComponent extends Component {
         aria-label={this.props.intl.formatMessage(messages.breadcrumbs)}
         className="breadcrumbs"
       >
-        <div className="ui container">
+        <Container layout>
           <div className="breadcrumb">
             <Link
               to={this.props.root || '/'}
@@ -102,7 +103,7 @@ export class BreadcrumbsComponent extends Component {
               ),
             ])}
           </div>
-        </div>
+        </Container>
       </div>
     );
   }

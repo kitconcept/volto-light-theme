@@ -4,6 +4,9 @@
   --narrow-container-width: 620px;
 }
 
+// Container queries still do not work with CSS properties
+// They should be exact numbers
+// For now, maintain in sync with the above
 $layout-container-width: 1440px;
 $default-container-width: 940px;
 $narrow-container-width: 620px;
@@ -57,7 +60,8 @@ $narrow-container-width: 620px;
   @include layout-container-width();
 }
 
-.header-wrapper .header {
+.header-wrapper .header,
+#main .breadcrumb {
   @include layout-container-width();
   @include adjustMarginsToContainer($layout-container-width);
 }
@@ -86,6 +90,7 @@ $narrow-container-width: 620px;
     @include adjustMarginsToContainer($narrow-container-width + 2 * 36px);
   }
 
+  & > h1.documentFirstHeading,
   & > .block.image.align.left,
   & > .block.image.align.right,
   & > .block.image.align.wide figure,
@@ -99,7 +104,6 @@ $narrow-container-width: 620px;
     @include default-container-width();
   }
 
-  & > h1.documentFirstHeading,
   & > .block.teaser,
   & > .block.separator.has--align--full .line,
   & > .block.image.align.full,
@@ -109,11 +113,13 @@ $narrow-container-width: 620px;
   }
 
   & > h1.documentFirstHeading {
-    @include adjustMarginsToContainer($layout-container-width);
+    @include adjustMarginsToContainer($default-container-width);
   }
 }
 
 // Setting a default, for all blocks
+// We want all blocks in edit go layout by default
+// But block's inner containers can go less (eg. grid)
 #page-add,
 #page-edit {
   [class*='block-editor-'] {
@@ -137,6 +143,7 @@ $narrow-container-width: 620px;
     @include adjustMarginsToContainer($narrow-container-width);
   }
 
+  .block-editor-title h1,
   .block-editor-image.left.large,
   .block-editor-image.right.large,
   .block-editor-image.wide figure, // Wide images are always large
@@ -154,7 +161,6 @@ $narrow-container-width: 620px;
     @include adjustMarginsToContainer($default-container-width);
   }
 
-  .block-editor-title,
   .block-editor-slate,
   .block-editor-image,
   .block-editor-slider,
@@ -167,12 +173,9 @@ $narrow-container-width: 620px;
 
 // Grids adjustments (has to be paired with collections/grid.variables)
 // TODO: Move to our own grid component
-#page-document > {
-  .block.__grid,
-  .block.__grid .ui.stackable {
-    @include default-container-width();
-    max-width: calc(var(--default-container-width) + 1rem);
-  }
+.block.__grid .ui.stackable {
+  @include default-container-width();
+  max-width: calc(var(--default-container-width) + 1rem);
 }
 
 // handlers adjustments
