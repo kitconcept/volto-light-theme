@@ -2,13 +2,20 @@
 #page-add,
 #page-edit {
   .block.search {
+    .search-input-resultscount-sort,
+    .facets,
+    .listing.message,
+    .listing-item {
+      @include default-container-width();
+    }
+
     .search-wrapper {
       margin-bottom: 0px;
     }
 
     .search-input-resultscount-sort {
       display: flex;
-      @media only screen and (max-width: 786px) {
+      @media only screen and (max-width: $largest-mobile-screen) {
         display: block;
       }
       justify-content: space-between;
@@ -17,21 +24,21 @@
     .search-input {
       position: relative;
       height: 75px;
-      background-color: #ececec;
+      background-color: $secondary-grey;
 
       .ui.input {
         height: 75px;
-        background-color: #eee;
+        background-color: $veryLightGrey;
 
         input {
           padding: 19px 0 19px 24px;
           border: none;
           background-color: transparent;
-          color: #000;
+          color: $black;
           font-size: 24px;
 
           &::placeholder {
-            color: #000;
+            color: $black;
             opacity: 1;
           }
         }
@@ -42,19 +49,19 @@
         top: 19px;
         right: 24px;
         padding-left: 14px;
-        background-color: #eee !important;
+        background-color: $veryLightGrey !important;
 
         svg {
           width: 36px !important;
           height: 36px !important;
-          color: #023d6b !important;
+          color: $darkBlue !important;
         }
       }
     }
 
     .search-details-sort {
       display: flex;
-      @media only screen and (max-width: 768px) {
+      @media only screen and (max-width: $largest-mobile-screen) {
         display: block;
         margin-top: 24px;
       }
@@ -64,7 +71,7 @@
     .search-details {
       padding: 0 20px;
       margin: 0;
-      color: #000;
+      color: $black;
       font-size: 20px;
 
       .number {
@@ -78,12 +85,14 @@
 
     .search-wrapper {
       width: 49%;
-      @media only screen and (max-width: 768px) {
+      @media only screen and (max-width: $largest-mobile-screen) {
         width: 100%;
       }
     }
 
     .sort-on-wrapper {
+      display: flex;
+      align-items: center;
       .search-sort-wrapper {
         margin: 7px 0 0 0;
       }
@@ -92,7 +101,7 @@
         height: 50px;
         border-width: 1px 1px 1px 0;
         border-style: solid;
-        border-color: #000;
+        border-color: $black;
         margin: 0;
         border-radius: 0;
       }
@@ -111,7 +120,7 @@
         }
 
         .react-select__menu {
-          border: solid 1px #000;
+          border: solid 1px $black;
           margin-top: 5px;
         }
 
@@ -123,7 +132,7 @@
 
         .react-select__option--is-selected {
           svg {
-            fill: #000 !important;
+            fill: $black !important;
           }
         }
       }
@@ -142,16 +151,16 @@
       }
 
       svg path {
-        fill: #000;
-        stroke: #000;
+        fill: $black;
+        stroke: $black;
       }
 
       .active {
-        background-color: #000 !important;
+        background-color: $black !important;
 
         svg path {
-          fill: #ffffff;
-          stroke: #ffffff;
+          fill: $white;
+          stroke: $white;
         }
       }
     }
