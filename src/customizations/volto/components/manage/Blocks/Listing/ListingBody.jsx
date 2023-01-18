@@ -42,7 +42,6 @@ const ListingBody = withQuerystringResults((props) => {
     galleryRef = useRef();
   }
   const listingRef = createRef();
-  console.log('thisis is rohit teml');
   return listingItems?.length > 0 ? (
     <div ref={listingRef}>
       <ListingBodyTemplate

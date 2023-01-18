@@ -18,8 +18,6 @@ const DefaultTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
   } else if (href) {
     link = <a href={href}>{linkTitle || href}</a>;
   }
-
-  console.log('thisis is default teml');
   return (
     <>
       <div className="items">
