@@ -173,7 +173,8 @@ $narrow-container-width: 620px;
 
 // Grids adjustments (has to be paired with collections/grid.variables)
 // TODO: Move to our own grid component
-.block.__grid .ui.stackable {
+.block.__grid .ui.stackable,
+.block.__grid h2.headline {
   @include default-container-width();
   max-width: calc(var(--default-container-width) + 1rem);
 }
