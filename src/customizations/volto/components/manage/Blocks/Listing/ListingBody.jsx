@@ -1,4 +1,4 @@
-import React, { createRef, useRef } from 'react';
+import React, { createRef } from 'react';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import { Pagination, Dimmer, Loader } from 'semantic-ui-react';
 import config from '@plone/volto/registry';
@@ -36,18 +36,13 @@ const ListingBody = withQuerystringResults((props) => {
     ListingBodyTemplate =
       variation?.template ?? defaultVariation?.template ?? null;
   }
-  let galleryRef;
 
-  if (data.variation === 'imageGallery') {
-    galleryRef = useRef();
-  }
   const listingRef = createRef();
   return listingItems?.length > 0 ? (
     <div ref={listingRef}>
       <ListingBodyTemplate
         items={listingItems}
         isEditMode={isEditMode}
-        ref={galleryRef}
         {...data}
       />
       {totalPages > 1 && (
