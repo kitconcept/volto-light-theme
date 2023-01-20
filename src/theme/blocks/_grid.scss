@@ -1,21 +1,34 @@
 .block.__grid {
-  margin-bottom: 0;
   margin-top: 0;
+  margin-bottom: 0;
 
   .teaser {
     margin-bottom: 0;
   }
 
   .headline {
-    font-weight: 300;
     font-size: 42px;
+    font-weight: 300;
     line-height: 48px;
-    margin-left: 0.3rem !important;
+  }
+  .slate {
+    margin: 0 !important;
+    background-color: $lightgrey;
+    p {
+      padding: 1.5rem 1.5rem 2.4rem 1.5rem !important;
+    }
   }
 }
 
 .grid-block-slate {
   padding-top: 0 !important;
+  .slate-editor {
+    margin: 0 !important;
+    background-color: $lightgrey !important;
+    p {
+      padding: 1.5rem 1.5rem 2.4rem 1.5rem !important;
+    }
+  }
 }
 
 .grid-block-teaser {
@@ -24,20 +37,19 @@
 
 .grid-block-image {
   padding-bottom: 0;
-  padding-top: 0 !important;
 
   figcaption {
     position: absolute;
-    bottom: 0;
     z-index: 100;
+    bottom: 0;
     padding: 1rem 1rem 0.5rem 1rem;
 
     .title {
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      font-size: 18px;
-      line-height: 22px;
       color: $white !important;
+      font-size: 18px;
+      letter-spacing: 1px;
+      line-height: 22px;
+      text-transform: uppercase;
     }
 
     .description {
@@ -45,9 +57,9 @@
     }
 
     .credits {
-      font-size: 10px;
       margin-bottom: 0;
       color: $white !important;
+      font-size: 10px;
     }
   }
   img {
@@ -61,21 +73,13 @@
   }
 
   figure:after {
-    content: '';
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 35%;
     background-color: $black;
+    content: '';
     opacity: 0.75;
-  }
-}
-
-.slate {
-  background-color: $lightgrey;
-  margin: 0 !important;
-  p {
-    padding: 1.5rem 1.5rem 2.4rem 1.5rem !important;
   }
 }
 
@@ -87,9 +91,15 @@
     background: white;
   }
   .slate {
-    background-color: $white;
     padding: 0 !important;
     margin: 0 1rem 1rem 1rem;
+    background-color: $white;
+  }
+
+  .slate-editor {
+    padding: 0 !important;
+    margin: 0 1rem 1rem 1rem;
+    background-color: $white !important;
   }
 
   .grid-block-image {

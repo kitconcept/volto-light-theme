@@ -1,4 +1,6 @@
-import { composeSchema } from '@plone/volto/helpers';
+import { defineMessages } from 'react-intl';
+
+import { composeSchema, getPreviousNextBlock } from '@plone/volto/helpers';
 import { defaultStylingSchema } from './components/Blocks/schema';
 import { teaserSchemaEnhancer } from './components/Blocks/Teaser/schema';
 import { gridTeaserDisableStylingSchema } from '@kitconcept/volto-blocks-grid/components/Teaser/schema';
@@ -6,6 +8,7 @@ import { gridTeaserDisableStylingSchema } from '@kitconcept/volto-blocks-grid/co
 import ExtraAlignWrapper from './components/Blocks/Slate/ExtraAlignWrapper';
 import ContainerQueriesPolyfill from './components/CQPolyfill';
 import Container from './components/Atoms/Container/Container';
+import TopSideFacets from './components/Blocks/Search/TopSideFacets';
 
 import gridSVG from './icons/block_icn_grid.svg';
 
@@ -14,6 +17,17 @@ const BG_COLORS = [
   { name: 'grey', label: 'Grey' },
 ];
 
+defineMessages({
+  Press: {
+    id: 'Press',
+    defaultMessage: 'Press',
+  },
+  Sitemap: {
+    id: 'Sitemap',
+    defaultMessage: 'Sitemap',
+  },
+});
+
 const applyConfig = (config) => {
   // Register custom Container component
   config.registerComponent({
@@ -21,10 +35,65 @@ const applyConfig = (config) => {
     component: Container,
   });
 
-  config.settings = {
-    ...config.settings,
-    slidingSearchAnimation: true,
-  };
+  // Register custom StyleWrapper ClassNames
+  config.settings.styleClassNameExtenders = [
+    ({ block, content, data, classNames }) => {
+      let styles = [];
+      const [previousBlock, nextBlock] = getPreviousNextBlock({
+        content,
+        block,
+      });
+
+      // Inject a class depending of which type is the next block
+      if (nextBlock?.['@type']) {
+        styles.push(`next--is--${nextBlock['@type']}`);
+      }
+
+      // Inject a class depending if previous is the same type of block
+      if (data?.['@type'] === previousBlock?.['@type']) {
+        styles.push('previous--is--same--block-type');
+      }
+
+      // Inject a class depending if next is the same type of block
+      if (data?.['@type'] === nextBlock?.['@type']) {
+        styles.push('next--is--same--block-type');
+      }
+
+      // Inject a class depending if it's the first of block type
+      if (data?.['@type'] !== previousBlock?.['@type']) {
+        styles.push('is--first--of--block-type');
+      }
+
+      // Inject a class depending if it's the last of block type
+      if (data?.['@type'] !== nextBlock?.['@type']) {
+        styles.push('is--last--of--block-type');
+      }
+
+      // Given a StyleWrapper defined `backgroundColor` style
+      const previousColor =
+        previousBlock?.styles?.backgroundColor ?? 'transparent';
+      const currentColor = data?.styles?.backgroundColor ?? 'transparent';
+      const nextColor = nextBlock?.styles?.backgroundColor ?? 'transparent';
+
+      // Inject a class depending if the previous block has the same `backgroundColor`
+      if (currentColor === previousColor) {
+        styles.push('previous--has--same--backgroundColor');
+      } else if (currentColor !== previousColor) {
+        styles.push('previous--has--different--backgroundColor');
+      }
+
+      // Inject a class depending if the next block has the same `backgroundColor`
+      if (currentColor === nextColor) {
+        styles.push('next--has--same--backgroundColor');
+      } else if (currentColor !== nextColor) {
+        styles.push('next--has--different--backgroundColor');
+      }
+
+      return [...classNames, ...styles];
+    },
+  ];
+
+  config.settings.slidingSearchAnimation = true;
 
   config.settings.appExtras = [
     ...config.settings.appExtras,
@@ -73,6 +142,15 @@ const applyConfig = (config) => {
     sidebarTab: 0,
     allowed_headings: [['h2', 'h2']],
   };
+
+  config.blocks.blocksConfig.search.variations = [
+    {
+      id: 'facetsTopSide',
+      title: 'Facets on top',
+      view: TopSideFacets,
+      isDefault: true,
+    },
+  ];
 
   return config;
 };
