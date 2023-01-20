@@ -2,7 +2,6 @@ import { defineMessages } from 'react-intl';
 
 import { composeSchema, getPreviousNextBlock } from '@plone/volto/helpers';
 import { defaultStylingSchema } from './components/Blocks/schema';
-import { separatorStyleEnhancer } from './components/Blocks/Separator/schema';
 import { teaserSchemaEnhancer } from './components/Blocks/Teaser/schema';
 import { gridTeaserDisableStylingSchema } from '@kitconcept/volto-blocks-grid/components/Teaser/schema';
 
@@ -136,12 +135,6 @@ const applyConfig = (config) => {
     imageScale: 'larger',
     colors: BG_COLORS,
     schemaEnhancer: teaserSchemaEnhancer,
-  };
-
-  config.blocks.blocksConfig.separator = {
-    ...config.blocks.blocksConfig.separator,
-    schemaEnhancer: separatorStyleEnhancer,
-    sidebarTab: 1,
   };
 
   config.blocks.blocksConfig.heading = {
