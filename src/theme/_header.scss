@@ -20,6 +20,9 @@
       flex-grow: 2;
       align-self: center;
       justify-content: center;
+      @media only screen and (max-width: $computer-width) {
+        justify-content: flex-end;
+      }
 
       .desktop.menu {
         display: flex;
