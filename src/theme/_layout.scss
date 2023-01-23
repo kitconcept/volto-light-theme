@@ -98,7 +98,7 @@ $narrow-container-width: 620px;
   & > .block.listing .listing-item,
   & > .block h2.headline,
   & > .block.heading .heading-wrapper,
-  & > .block.separator .line,
+  & > .block.separator.has--align--full .line,
   & > .block.introduction .block-container,
   & > .block.teaser .grid-teaser-item.default,
   & > .slate blockquote {
@@ -106,7 +106,6 @@ $narrow-container-width: 620px;
   }
 
   & > .block.teaser,
-  & > .block.separator.has--align--full .line,
   & > .block.image.align.full,
   & > .block.video.align.full,
   & > .block.maps.align.full {
