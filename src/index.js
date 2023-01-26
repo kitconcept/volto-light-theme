@@ -29,6 +29,9 @@ defineMessages({
 });
 
 const applyConfig = (config) => {
+  // No required blocks (eg. Title)
+  config.blocks.requiredBlocks = [];
+
   // Register custom Container component
   config.registerComponent({
     name: 'Container',
