@@ -1,4 +1,4 @@
-.block-editor-__button.has--buttonAlign--center {
+.block.__button {
   .button.container {
     @include narrow-container-width();
   }
@@ -8,4 +8,21 @@
   .button.container {
     @include default-container-width();
   }
+}
+
+.block.__button.has--buttonAlign--wide {
+  .button.container {
+    @include default-container-width();
+  }
+}
+
+
+.block.__button .ui.button {
+  border: 1px solid #000;
+  background: none;
+  border-radius: unset;
+  color: #000;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 20px;
 }
