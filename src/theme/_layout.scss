@@ -179,6 +179,11 @@ $narrow-container-width: 620px;
   max-width: calc(var(--default-container-width) + 1rem);
 }
 
+// Fix for Image Grid with only one image
+#page-document .block.__grid .block.image.align.center figure {
+  max-width: unset;
+}
+
 // handlers adjustments
 body.has-toolbar.has-sidebar .drag.handle.wrapper {
   margin-left: -30px !important;
