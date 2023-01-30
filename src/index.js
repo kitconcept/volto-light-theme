@@ -39,6 +39,7 @@ const applyConfig = (config) => {
   });
 
   config.settings.apiExpanders = [
+    ...config.settings.apiExpanders,
     {
       match: '',
       GET_CONTENT: ['breadcrumbs', 'navigation', 'actions', 'types'],
