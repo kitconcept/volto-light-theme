@@ -38,6 +38,14 @@ const applyConfig = (config) => {
     component: Container,
   });
 
+  config.settings.apiExpanders = [
+    ...config.settings.apiExpanders,
+    {
+      match: '',
+      GET_CONTENT: ['breadcrumbs', 'navigation', 'actions', 'types'],
+    },
+  ];
+
   // Register custom StyleWrapper ClassNames
   config.settings.styleClassNameExtenders = [
     ({ block, content, data, classNames }) => {
