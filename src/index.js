@@ -11,6 +11,7 @@ import Container from './components/Atoms/Container/Container';
 import TopSideFacets from './components/Blocks/Search/TopSideFacets';
 
 import gridSVG from './icons/block_icn_grid.svg';
+import { ButtonStylingSchema } from './components/Blocks/Button/schema';
 
 const BG_COLORS = [
   { name: 'transparent', label: 'Transparent' },
@@ -162,6 +163,11 @@ const applyConfig = (config) => {
       isDefault: true,
     },
   ];
+  config.blocks.blocksConfig.__button = {
+    ...config.blocks.blocksConfig.__button,
+
+    schemaEnhancer: ButtonStylingSchema,
+  };
 
   return config;
 };
