@@ -138,6 +138,9 @@
 
   .content {
     align-self: flex-start;
+    @media only screen and (max-width: $largest-mobile-screen) {
+      margin-left: 0.5rem;
+    }
 
     .headline {
       padding-bottom: 20px;
