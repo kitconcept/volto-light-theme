@@ -15,12 +15,13 @@
   }
 
   h2 {
+    padding-top: 1rem;
     margin-top: 15px;
-    color: #fff;
-    font-size: 48px;
+    color: $white;
+    font-size: 48px !important;
     font-style: normal;
     font-weight: 700;
-    line-height: 56px;
+    line-height: 56px !important;
 
     @media only screen and (max-width: $largest-mobile-screen) {
       @include word-break;
@@ -28,11 +29,11 @@
   }
 
   .supertitle {
-    color: #ffffff;
-    font-size: 30px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 300;
-    line-height: 36px;
+    line-height: 24px;
+    text-transform: uppercase;
   }
 
   .slick-arrow {
@@ -40,7 +41,10 @@
   }
 
   .slick-dots {
-    bottom: 34px;
+    bottom: 4.5rem;
+    @media only screen and (max-width: $computer-width) {
+      bottom: 2rem;
+    }
     line-height: 0;
 
     li,
@@ -56,7 +60,7 @@
     }
 
     li {
-      margin: 0 3px;
+      margin: 0 0.4rem;
     }
 
     button:before {
@@ -74,9 +78,9 @@
     top: 50%;
     width: 570px;
     min-height: 321px;
-    padding: 50px;
-    background: rgba(0, 0, 0, 0.4);
-    color: #fff;
+    padding: 3rem 3rem 3rem 5.5rem;
+    background: rgba(0, 0, 0, 0.75);
+    color: $white;
     transform: translateY(-50%);
 
     @media only screen and (max-width: 1200px) {
@@ -113,7 +117,7 @@
       -webkit-box-orient: vertical;
       color: $white;
       font-family: 'Inter';
-      font-size: 18px;
+      font-size: 24px;
       font-weight: 300;
       -webkit-line-clamp: 5;
       line-height: 30px;
