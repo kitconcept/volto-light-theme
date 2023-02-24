@@ -10,6 +10,9 @@ const modify = (config, { target, dev }, webpack) => {
   config.resolve.alias['../../theme.config$'] = themeConfigPath;
   config.resolve.alias['../../theme.config'] = themeConfigPath;
 
+  const customThemePath = `${__dirname}/src/theme/custom`;
+  config.resolve.alias['themeCustomizations'] = customThemePath;
+
   return config;
 };
 
