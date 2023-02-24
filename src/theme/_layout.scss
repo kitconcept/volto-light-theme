@@ -85,7 +85,9 @@ $narrow-container-width: 620px;
   .event-details,
   .download-event,
   .block.separator.has--align--left .line,
-  .block.separator.has--align--center .line {
+  .block.separator.has--align--center .line,
+  & > pre,
+  & > .block.code {
     @include narrow-container-width();
     @include adjustMarginsToContainer($narrow-container-width + 2 * 36px);
   }
@@ -101,6 +103,7 @@ $narrow-container-width: 620px;
   & > .block.separator.has--align--full .line,
   & > .block.introduction .block-container,
   & > .block.teaser .grid-teaser-item.default,
+  & > .table-of-contents,
   & > .slate blockquote {
     @include default-container-width();
   }
@@ -138,7 +141,8 @@ $narrow-container-width: 620px;
   .block-editor-image.right.small,
   .block-editor-image.center figure,
   .block-editor-separator.has--align--left .block.separator,
-  .block-editor-separator.has--align--center .block.separator {
+  .block-editor-separator.has--align--center .block.separator,
+  .block-editor-codeBlock {
     @include narrow-container-width();
     @include adjustMarginsToContainer($narrow-container-width);
   }
@@ -155,7 +159,8 @@ $narrow-container-width: 620px;
   .block-editor-separator.has--align--full .block.separator,
   .block-editor-separator .block.separator.has--align--full,
   .block.teaser.has--align--center,
-  .block-editor-teaser .grid-teaser-item.default {
+  .block-editor-teaser .grid-teaser-item.default,
+  .block-editor-toc {
     @include default-container-width();
     @include adjustMarginsToContainer($default-container-width);
   }
