@@ -86,6 +86,7 @@ $narrow-container-width: 620px;
   .download-event,
   .block.separator.has--align--left .line,
   .block.separator.has--align--center .line,
+  & > table,
   & > pre,
   & > .block.code {
     @include narrow-container-width();
@@ -142,7 +143,9 @@ $narrow-container-width: 620px;
   .block-editor-image.center figure,
   .block-editor-separator.has--align--left .block.separator,
   .block-editor-separator.has--align--center .block.separator,
-  .block-editor-codeBlock {
+  .block-editor-slateTable,
+  .block-editor-codeBlock,
+  .block-editor-mermaidBlock {
     @include narrow-container-width();
     @include adjustMarginsToContainer($narrow-container-width);
   }
