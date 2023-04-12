@@ -8,6 +8,9 @@ ARG ADDON_PATH
 # Copy linter / prettier configs
 COPY --chown=node:node .eslintignore* .prettierignore* /app/
 
+# Copy volto.config.js
+COPY --chown=node:node volto.config.js* /app/
+
 # Copy jsconfig.json configuration
 COPY --chown=node:node package.json /app/src/addons/${ADDON_PATH}/
 
