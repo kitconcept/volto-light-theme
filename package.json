@@ -22,7 +22,7 @@
     "stylelint-config-sass-guidelines": "9.0.1",
     "stylelint-prettier": "1.1.2"
   },
-  "dependencies": {
-    "react-aria": "^3.21.0"
+  "peerDependencies": {
+    "@plone/volto": "^16.20.0 || ^17.0.0-alpha.4"
   }
 }
