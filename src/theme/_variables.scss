@@ -82,51 +82,51 @@ $grid-block-vertical-spacing-bottom: 100px;
 // Patterns
 @mixin first() {
   font-size: 48px;
-  line-height: 56px;
   font-weight: $bold;
+  line-height: 56px;
 }
 @mixin two() {
   font-size: 18px;
-  line-height: 24px;
   font-weight: $light;
+  line-height: 24px;
 }
 @mixin second() {
   font-size: 30px;
-  line-height: 36px;
   font-weight: $light;
+  line-height: 36px;
 }
 @mixin third() {
   font-size: 30px;
-  line-height: 36px;
   font-weight: $bold;
+  line-height: 36px;
 }
 @mixin three() {
   font-size: 14px;
-  line-height: 18px;
   font-weight: $bold;
+  line-height: 18px;
 }
 @mixin fourth() {
   font-size: 24px;
-  line-height: 30px;
   font-weight: $bold;
+  line-height: 30px;
 }
 @mixin one() {
   font-size: 24px;
-  line-height: 33px;
   font-weight: $light;
+  line-height: 33px;
 }
 @mixin four() {
   font-size: 14px;
-  line-height: 18px;
   font-weight: $bold;
+  line-height: 18px;
 }
 @mixin five() {
   font-size: 12px;
-  line-height: 16px;
   font-weight: $bold;
+  line-height: 16px;
 }
 @mixin fifth() {
   font-size: 18px;
-  line-height: 24px;
   font-weight: $bold;
+  line-height: 24px;
 }
