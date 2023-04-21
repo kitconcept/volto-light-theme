@@ -78,3 +78,55 @@ $color-block-change-vertical-spacing: 100px;
 // Grids
 $grid-block-vertical-spacing-top: 100px;
 $grid-block-vertical-spacing-bottom: 100px;
+
+// Patterns
+@mixin first() {
+  font-size: 48px;
+  line-height: 56px;
+  font-weight: $bold;
+}
+@mixin two() {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: $light;
+}
+@mixin second() {
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: $light;
+}
+@mixin third() {
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: $bold;
+}
+@mixin three() {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: $bold;
+}
+@mixin fourth() {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: $bold;
+}
+@mixin one() {
+  font-size: 24px;
+  line-height: 33px;
+  font-weight: $light;
+}
+@mixin four() {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: $bold;
+}
+@mixin five() {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: $bold;
+}
+@mixin fifth() {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: $bold;
+}

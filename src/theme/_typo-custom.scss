@@ -12,19 +12,15 @@ span,
 div {
   font-family: $page-font;
   font-style: normal;
-  font-weight: $light;
+  @include two();
 }
 
 h1.documentFirstHeading {
   border: none;
-  font-size: 64px;
-  font-weight: $bold;
-  line-height: 72px;
+  @include first();
   span {
     border: none;
-    font-size: 64px;
-    font-weight: $bold;
-    line-height: 72px;
+    @include first();
   }
 
   &::before {
@@ -36,9 +32,7 @@ h1.documentFirstHeading {
 .heading-wrapper h2 {
   padding-top: 4rem;
   padding-bottom: 2rem;
-  font-size: 52px;
-  font-weight: $light;
-  line-height: 60px;
+  @include second();
 }
 .heading-wrapper h3 {
   padding-top: 3rem;
@@ -52,9 +46,7 @@ h1.documentFirstHeading {
 h2 {
   padding-top: 2.5rem;
   padding-bottom: 1rem;
-  font-size: 48px;
-  font-weight: $bold;
-  line-height: 56px;
+  @include third();
   span {
     font-size: inherit;
     font-weight: inherit;
@@ -64,9 +56,7 @@ h2 {
 h3 {
   padding-top: 1.5rem;
   padding-bottom: 0.3rem;
-  font-size: 36px;
-  font-weight: $bold;
-  line-height: 42px;
+  @include fourth();
   span {
     font-size: inherit;
     font-weight: inherit;

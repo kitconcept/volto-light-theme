@@ -7,15 +7,11 @@
       .listing-body {
         h2 {
           color: $black;
-          font-size: 36px;
-          font-weight: 700;
-          line-height: 42px;
+          @include third();
         }
         p {
           margin-bottom: 0;
-          font-size: 18px;
-          font-weight: 300;
-          line-height: 24px;
+          @include two();
         }
         p:empty {
           display: none;

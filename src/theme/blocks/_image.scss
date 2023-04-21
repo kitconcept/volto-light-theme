@@ -159,11 +159,12 @@ figcaption {
 
   .title {
     margin-bottom: 10px;
-    font-weight: 700;
+    @include three();
   }
 
   .description {
     margin-bottom: 10px;
+    @include four();
   }
 
   .credits {
@@ -173,6 +174,7 @@ figcaption {
     -webkit-font-smoothing: anitaliased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    @include four();
 
     div {
       display: inline;
