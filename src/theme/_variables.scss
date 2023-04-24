@@ -80,12 +80,12 @@ $grid-block-vertical-spacing-top: 100px;
 $grid-block-vertical-spacing-bottom: 100px;
 
 // Patterns
-@mixin font-xs-b() {
+@mixin font-xs-bold() {
   font-size: 12px;
   font-weight: $bold;
   line-height: 16px;
 }
-@mixin font-s-b() {
+@mixin font-s-bold() {
   font-size: 14px;
   font-weight: $bold;
   line-height: 18px;
@@ -100,7 +100,7 @@ $grid-block-vertical-spacing-bottom: 100px;
   font-weight: $light;
   line-height: 24px;
 }
-@mixin font-m-b() {
+@mixin font-m-bold() {
   font-size: 18px;
   font-weight: $bold;
   line-height: 24px;
@@ -110,7 +110,7 @@ $grid-block-vertical-spacing-bottom: 100px;
   font-weight: $light;
   line-height: 33px;
 }
-@mixin font-l-b() {
+@mixin font-l-bold() {
   font-size: 24px;
   font-weight: $bold;
   line-height: 30px;
@@ -120,17 +120,17 @@ $grid-block-vertical-spacing-bottom: 100px;
   font-weight: $light;
   line-height: 36px;
 }
-@mixin font-xl-b() {
+@mixin font-xl-bold() {
   font-size: 30px;
   font-weight: $bold;
   line-height: 36px;
 }
-@mixin font-2xl-b() {
+@mixin font-2xl-bold() {
   font-size: 36px;
   font-weight: $bold;
   line-height: 44px;
 }
-@mixin font-3xl-b() {
+@mixin font-3xl-bold() {
   font-size: 48px;
   font-weight: $bold;
   line-height: 56px;

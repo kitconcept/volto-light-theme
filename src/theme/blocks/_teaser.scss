@@ -79,7 +79,7 @@
     padding: 0 20px 0 0;
     margin: 0 0 15px 0;
     color: $black;
-    @include font-3xl-b();
+    @include font-3xl-bold();
   }
 }
 
@@ -89,7 +89,7 @@
     .content h2 {
       padding-top: 20px !important;
       padding-bottom: 40px !important;
-      @include font-xl-b();
+      @include font-xl-bold();
     }
   }
   .two.column {
@@ -98,7 +98,7 @@
         h2 {
           padding-top: 15px !important;
           padding-bottom: 20px !important;
-          @include font-l-b();
+          @include font-l-bold();
         }
       }
     }
@@ -108,7 +108,7 @@
       h2 {
         padding-top: 15px !important;
         padding-bottom: 20px !important;
-        @include font-l-b();
+        @include font-l-bold();
       }
     }
   }
@@ -116,7 +116,7 @@
     .grid-teaser-item .content {
       h2 {
         padding-bottom: 20px !important;
-        @include font-m-b();
+        @include font-m-bold();
       }
     }
   }
@@ -151,14 +151,14 @@
       color: $black;
       letter-spacing: 1px;
       text-transform: uppercase;
-      @include font-s-b();
+      @include font-s-bold();
     }
 
     h2 {
       padding: 0 20px 0 0;
       margin: 0 0 40px 0;
       color: $black;
-      @include font-xl-b();
+      @include font-xl-bold();
     }
 
     p {

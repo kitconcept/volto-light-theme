@@ -7,7 +7,7 @@
       .listing-body {
         h2 {
           color: $black;
-          @include font-xl-b();
+          @include font-xl-bold();
         }
         p {
           margin-bottom: 0;

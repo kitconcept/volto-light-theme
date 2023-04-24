@@ -159,7 +159,7 @@ figcaption {
 
   .title {
     margin-bottom: 10px;
-    @include font-s-b();
+    @include font-s-bold();
   }
 
   .description {

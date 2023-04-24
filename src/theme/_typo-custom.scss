@@ -17,10 +17,10 @@ div {
 
 h1.documentFirstHeading {
   border: none;
-  @include font-3xl-b();
+  @include font-3xl-bold();
   span {
     border: none;
-    @include font-3xl-b();
+    @include font-3xl-bold();
   }
 
   &::before {
@@ -46,7 +46,7 @@ h1.documentFirstHeading {
 h2 {
   padding-top: 2.5rem;
   padding-bottom: 1rem;
-  @include font-xl-b();
+  @include font-xl-bold();
   span {
     font-size: inherit;
     font-weight: inherit;
@@ -56,7 +56,7 @@ h2 {
 h3 {
   padding-top: 1.5rem;
   padding-bottom: 0.3rem;
-  @include font-l-b();
+  @include font-l-bold();
   span {
     font-size: inherit;
     font-weight: inherit;
