@@ -80,53 +80,58 @@ $grid-block-vertical-spacing-top: 100px;
 $grid-block-vertical-spacing-bottom: 100px;
 
 // Patterns
-@mixin first() {
-  font-size: 48px;
-  font-weight: $bold;
-  line-height: 56px;
-}
-@mixin two() {
-  font-size: 18px;
-  font-weight: $light;
-  line-height: 24px;
-}
-@mixin second() {
-  font-size: 30px;
-  font-weight: $light;
-  line-height: 36px;
-}
-@mixin third() {
-  font-size: 30px;
-  font-weight: $bold;
-  line-height: 36px;
-}
-@mixin three() {
-  font-size: 14px;
-  font-weight: $bold;
-  line-height: 18px;
-}
-@mixin fourth() {
-  font-size: 24px;
-  font-weight: $bold;
-  line-height: 30px;
-}
-@mixin one() {
-  font-size: 24px;
-  font-weight: $light;
-  line-height: 33px;
-}
-@mixin four() {
-  font-size: 14px;
-  font-weight: $bold;
-  line-height: 18px;
-}
-@mixin five() {
+@mixin font-xs-b() {
   font-size: 12px;
   font-weight: $bold;
   line-height: 16px;
 }
-@mixin fifth() {
+@mixin font-s-b() {
+  font-size: 14px;
+  font-weight: $bold;
+  line-height: 18px;
+}
+@mixin font-s() {
+  font-size: 14px;
+  font-weight: $light;
+  line-height: 18px;
+}
+@mixin font-m() {
+  font-size: 18px;
+  font-weight: $light;
+  line-height: 24px;
+}
+@mixin font-m-b() {
   font-size: 18px;
   font-weight: $bold;
   line-height: 24px;
+}
+@mixin font-l() {
+  font-size: 24px;
+  font-weight: $light;
+  line-height: 33px;
+}
+@mixin font-l-b() {
+  font-size: 24px;
+  font-weight: $bold;
+  line-height: 30px;
+}
+@mixin font-xl() {
+  font-size: 30px;
+  font-weight: $light;
+  line-height: 36px;
+}
+@mixin font-xl-b() {
+  font-size: 30px;
+  font-weight: $bold;
+  line-height: 36px;
+}
+@mixin font-2xl-b() {
+  font-size: 36px;
+  font-weight: $bold;
+  line-height: 44px;
+}
+@mixin font-3xl-b() {
+  font-size: 48px;
+  font-weight: $bold;
+  line-height: 56px;
 }

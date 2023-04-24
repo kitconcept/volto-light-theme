@@ -7,11 +7,11 @@
       .listing-body {
         h2 {
           color: $black;
-          @include third();
+          @include font-xl-b();
         }
         p {
           margin-bottom: 0;
-          @include two();
+          @include font-m();
         }
         p:empty {
           display: none;

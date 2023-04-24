@@ -79,54 +79,53 @@
     padding: 0 20px 0 0;
     margin: 0 0 15px 0;
     color: $black;
-    font-size: 48px;
-    font-weight: 700;
-    line-height: 56px;
+    @include font-3xl-b();
   }
 }
 
 // Dynamic font sizes depending on number of columns in grid
-.four.column {
-  .content h2 {
-    padding-top: 20px !important;
-    @include fifth();
+.block.__grid {
+  .one.column {
+    .content h2 {
+      padding-top: 20px !important;
+      padding-bottom: 40px !important;
+      @include font-xl-b();
+    }
   }
-}
-
-.three.column {
-  .content h2 {
-    padding-top: 20px !important;
-    @include fourth();
+  .two.column {
+    .grid-teaser-item {
+      .content {
+        h2 {
+          padding-top: 15px !important;
+          padding-bottom: 20px !important;
+          @include font-l-b();
+        }
+      }
+    }
   }
-}
-
-.two.column {
-  .content h2 {
-    padding-top: 20px !important;
-    padding-bottom: 40px !important;
-    @include fourth();
-  }
-}
-
-.one.column {
-  .content h2 {
-    padding-top: 20px !important;
-    padding-bottom: 40px !important;
-    @include third();
-  }
-}
-
-.grid-block-teaser {
-  .block.teaser {
-    background-color: $lightgrey;
-    .content {
-      padding: 0 26px 60px 26px;
-      font-size: 18px;
-      line-height: 24px;
-
+  .three.column.grid {
+    .grid-teaser-item .content {
       h2 {
-        padding-bottom: 20px;
-        font-weight: 700;
+        padding-top: 15px !important;
+        padding-bottom: 20px !important;
+        @include font-l-b();
+      }
+    }
+  }
+  .four.column {
+    .grid-teaser-item .content {
+      h2 {
+        padding-bottom: 20px !important;
+        @include font-m-b();
+      }
+    }
+  }
+  .grid-block-teaser {
+    .block.teaser {
+      background-color: $lightgrey;
+      .content {
+        padding: 0 26px 60px 26px;
+        @include font-m();
       }
     }
   }
@@ -152,19 +151,19 @@
       color: $black;
       letter-spacing: 1px;
       text-transform: uppercase;
-      @include four();
+      @include font-s-b();
     }
 
     h2 {
       padding: 0 20px 0 0;
       margin: 0 0 40px 0;
       color: $black;
-      @include third();
+      @include font-xl-b();
     }
 
     p {
       margin: 0;
-      @include two();
+      @include font-m();
     }
   }
 }

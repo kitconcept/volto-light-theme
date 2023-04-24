@@ -23,5 +23,5 @@
   background: none;
   border-radius: unset;
   color: $black;
-  @include two();
+  @include font-m-b();
 }
