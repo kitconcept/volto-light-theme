@@ -63,6 +63,15 @@ h3 {
     line-height: inherit;
   }
 }
+// Head-title
+.head-title,
+.head-title span {
+  letter-spacing: 1px;
+  padding-bottom: 10px;
+  @include font-m-bold();
+  text-transform: uppercase !important;
+  
+};
 
 @font-face {
   font-family: 'Inter';
