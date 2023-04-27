@@ -18,6 +18,7 @@ div {
 h1.documentFirstHeading {
   border: none;
   @include font-3xl-bold();
+  margin-bottom: 4.5rem;
   span {
     border: none;
     @include font-3xl-bold();
