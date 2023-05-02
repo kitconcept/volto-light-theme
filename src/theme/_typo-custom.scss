@@ -65,14 +65,25 @@ h3 {
   }
 }
 // Head-title
-.head-title,
-.head-title span {
-  letter-spacing: 1px;
-  padding-bottom: 10px;
-  @include font-m-bold();
-  text-transform: uppercase !important;
-  
-};
+.documentFirstHeading {
+  .head-title,
+  .head-title span {
+    @include font-m-bold();
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    text-transform: uppercase !important;
+  }
+}
+
+#page-add,
+#page-edit {
+  .documentFirstHeading {
+    .head-title,
+    .head-title span {
+      user-select: none;
+    }
+  }
+}
 
 @font-face {
   font-family: 'Inter';
