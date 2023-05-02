@@ -65,23 +65,19 @@ h3 {
   }
 }
 // Head-title
-.documentFirstHeading {
-  .head-title,
-  .head-title span {
-    @include font-m-bold();
-    letter-spacing: 1px;
-    padding-bottom: 10px;
-    text-transform: uppercase !important;
-  }
+.head-title,
+.head-title span {
+  @include font-m-bold();
+  letter-spacing: 1px;
+  padding-bottom: 10px;
+  text-transform: uppercase !important;
 }
 
 #page-add,
 #page-edit {
-  .documentFirstHeading {
-    .head-title,
-    .head-title span {
-      user-select: none;
-    }
+  .head-title,
+  .head-title span {
+    user-select: none;
   }
 }
 
