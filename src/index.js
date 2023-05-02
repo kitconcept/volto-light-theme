@@ -11,6 +11,8 @@ import ContainerQueriesPolyfill from './components/CQPolyfill';
 import Container from './components/Atoms/Container/Container';
 import TopSideFacets from './components/Blocks/Search/TopSideFacets';
 
+import AboveTitle from './components/Blocks/Title/AboveTitle';
+
 import gridSVG from './icons/block_icn_grid.svg';
 import { ButtonStylingSchema } from './components/Blocks/Button/schema';
 
@@ -169,6 +171,10 @@ const applyConfig = (config) => {
 
     schemaEnhancer: ButtonStylingSchema,
   };
+  config.registerComponent({
+    name: 'AvobeTitle',
+    component: AboveTitle,
+  });
 
   return config;
 };
