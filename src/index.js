@@ -40,10 +40,11 @@ const applyConfig = (config) => {
     name: 'Container',
     component: Container,
   });
-  // Register custom AboveTitle component
+  // Register custom AboveTitle component for News Item
   config.registerComponent({
     name: 'AboveTitle',
     component: AboveTitle,
+    dependencies: 'News Item',
   });
 
   config.settings.apiExpanders = [

@@ -15,15 +15,13 @@ const AboveTitle = ({ item }) => {
     month: 'numeric',
     day: 'numeric',
   };
-
-  return item['@type'] === 'News Item' ? (
+  return (
     <header className="head-title">
       <FormattedDate date={item.effective} format={dateOptions} />
-
-      {item['@type'] === 'News Item' && item.head_title && ' | '}
+      {item.effective && item.head_title && ' | '}
       {item.head_title && <span>{item.head_title}</span>}
     </header>
-  ) : null;
+  );
 };
 
 /**
