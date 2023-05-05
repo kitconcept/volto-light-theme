@@ -163,13 +163,15 @@ figcaption {
   }
 
   .description {
-    margin-bottom: 10px;
-    @include marginal-description();
+    div,
+    a {
+      margin-bottom: 10px;
+      @include marginal-description();
+    }
   }
 
-  .credits {
+  .credits div {
     display: flex;
-    justify-content: space-between;
     margin-bottom: 10px;
     -webkit-font-smoothing: anitaliased;
     -moz-osx-font-smoothing: grayscale;
@@ -188,6 +190,8 @@ figcaption {
 
     a {
       color: $blue-for-grey-contrast;
+      margin-left: .5rem;
+      @include marginal-description();
     }
   }
 }

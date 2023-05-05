@@ -23,5 +23,6 @@
   background: none;
   border-radius: unset;
   color: $black;
+  padding: 8px 20px;
   @include body-text-bold();
 }
