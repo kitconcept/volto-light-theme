@@ -8,7 +8,7 @@
   .slate-editor ul,
   .slate-editor ol {
     margin: 0;
-    @include font-l();
+    @include introduction();
     strong,
     strong span {
       font-weight: bold;

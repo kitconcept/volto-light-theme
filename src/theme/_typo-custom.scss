@@ -15,6 +15,10 @@ div {
   @include body-text();
 }
 
+strong > * {
+  @include body-text-bold();
+}
+
 h1.documentFirstHeading {
   border: none;
   @include page-title();
@@ -27,6 +31,11 @@ h1.documentFirstHeading {
   &::before {
     display: none;
   }
+}
+
+// Block Title
+.block h2.headline {
+  @include block-title();
 }
 
 // Heading block
@@ -64,6 +73,17 @@ h3 {
     line-height: inherit;
   }
 }
+h4 {
+  padding-top: 1.5rem;
+  padding-bottom: 0.3rem;
+  @include text-heading-h4();
+  span {
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+  }
+}
+
 // Head-title
 .head-title,
 .head-title span {

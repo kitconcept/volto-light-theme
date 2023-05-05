@@ -159,12 +159,12 @@ figcaption {
 
   .title {
     margin-bottom: 10px;
-    @include font-s-bold();
+    @include marginal-title();
   }
 
   .description {
     margin-bottom: 10px;
-    @include font-s();
+    @include marginal-description();
   }
 
   .credits {
@@ -174,7 +174,7 @@ figcaption {
     -webkit-font-smoothing: anitaliased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    @include font-s();
+    @include marginal-description();
 
     div {
       display: inline;

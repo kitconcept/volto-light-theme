@@ -166,40 +166,39 @@ $line-heights: (
   @include add(height, m);
   @include add(weight, bold);
 }
+
 @mixin introduction() {
   @include add(size, l);
   @include add(height, xl);
   @include add(weight, light);
 }
-////////// TODO: Finish rest of patterns
-@mixin font-s-bold() {
-  font-size: 14px;
-  font-weight: $bold;
-  line-height: 18px;
-}
-@mixin font-s() {
-  font-size: 14px;
-  font-weight: $light;
-  line-height: 18px;
+
+@mixin headtitle1() {
+  @include add(size, s);
+  @include add(height, s);
+  @include add(weight, bold);
 }
 
-@mixin font-l() {
-  font-size: 24px;
-  font-weight: $light;
-  line-height: 33px;
+@mixin headtitle2() {
+  @include add(size, xs);
+  @include add(height, xs);
+  @include add(weight, bold);
 }
-@mixin font-l-bold() {
-  font-size: 24px;
-  font-weight: $bold;
-  line-height: 30px;
+
+@mixin highlight-title() {
+  @include add(size, 2xl);
+  @include add(height, 3xl);
+  @include add(weight, bold);
 }
-@mixin font-xl-bold() {
-  font-size: 30px;
-  font-weight: $bold;
-  line-height: 36px;
+
+@mixin marginal-title() {
+  @include add(size, s);
+  @include add(height, s);
+  @include add(weight, bold);
 }
-@mixin font-2xl-bold() {
-  font-size: 36px;
-  font-weight: $bold;
-  line-height: 44px;
+
+@mixin marginal-description() {
+  @include add(size, s);
+  @include add(height, s);
+  @include add(weight, light);
 }

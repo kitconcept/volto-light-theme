@@ -1,5 +1,8 @@
 // Listing Block
 .block.listing.default {
+  .headline {
+    @include block-title();
+  }
   .listing-item {
     padding-bottom: 25px;
     border-bottom: 1px solid $black;

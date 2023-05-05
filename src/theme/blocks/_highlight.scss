@@ -1,0 +1,11 @@
+.highlight {
+  .title h2 {
+    @include highlight-title();
+  }
+  .description p {
+    @include introduction();
+  }
+  .button a {
+    @include body-text();
+  }
+}

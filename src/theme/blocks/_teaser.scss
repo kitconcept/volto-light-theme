@@ -114,6 +114,13 @@
   }
   .four.column {
     .grid-teaser-item .content {
+      .headline {
+        padding-bottom: 20px;
+        margin: 0;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        @include headtitle2();
+      }
       h2 {
         padding-bottom: 20px !important;
         @include text-heading-h4();
@@ -148,10 +155,9 @@
     .headline {
       padding-bottom: 20px;
       margin: 0;
-      color: $black;
       letter-spacing: 1px;
       text-transform: uppercase;
-      @include font-s-bold();
+      @include headtitle1();
     }
 
     h2 {
