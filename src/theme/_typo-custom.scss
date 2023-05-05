@@ -15,8 +15,20 @@ div {
   @include body-text();
 }
 
-strong > * {
+strong,
+strong span span {
   @include body-text-bold();
+}
+
+em,
+em span span {
+  font-style: italic;
+}
+
+#page-document {
+  blockquote {
+    padding: 18px 40px;
+  }
 }
 
 h1.documentFirstHeading {

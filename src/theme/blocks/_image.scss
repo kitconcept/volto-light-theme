@@ -189,8 +189,8 @@ figcaption {
     }
 
     a {
+      margin-left: 0.5rem;
       color: $blue-for-grey-contrast;
-      margin-left: .5rem;
       @include marginal-description();
     }
   }

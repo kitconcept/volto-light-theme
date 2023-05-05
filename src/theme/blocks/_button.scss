@@ -17,12 +17,13 @@
 }
 
 .block.__button .ui.button {
+  padding: 8px 20px;
   border: 1px solid $black;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   background: none;
   border-radius: unset;
   color: $black;
-  padding: 8px 20px;
+
   @include body-text-bold();
 }
