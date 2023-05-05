@@ -129,48 +129,48 @@ $line-heights: (
   @include add(size, m);
   @include add(height, m);
   @include add(weight, light);
-};
+}
 
 @mixin body-text-bold() {
   @include add(size, m);
   @include add(height, m);
   @include add(weight, bold);
-};
+}
 
 @mixin page-title() {
   @include add(size, 3xl);
   @include add(height, 4xl);
   @include add(weight, bold);
-};
+}
 
 @mixin block-title() {
   @include add(size, xl);
   @include add(height, 2xl);
   @include add(weight, light);
-};
+}
 
 @mixin text-heading-h2() {
   @include add(size, xl);
   @include add(height, 2xl);
   @include add(weight, bold);
-};
+}
 
 @mixin text-heading-h3() {
   @include add(size, l);
   @include add(height, l);
   @include add(weight, bold);
-};
+}
 
 @mixin text-heading-h4() {
   @include add(size, m);
   @include add(height, m);
   @include add(weight, bold);
-};
+}
 @mixin introduction() {
   @include add(size, l);
   @include add(height, xl);
   @include add(weight, light);
-};
+}
 ////////// TODO: Finish rest of patterns
 @mixin font-s-bold() {
   font-size: 14px;
