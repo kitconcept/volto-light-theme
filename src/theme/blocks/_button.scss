@@ -23,5 +23,5 @@
   background: none;
   border-radius: unset;
   color: $black;
-  @include font-m-bold();
+  @include body-text-bold();
 }

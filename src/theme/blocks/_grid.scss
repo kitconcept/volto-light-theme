@@ -9,7 +9,7 @@
   .headline {
     padding-top: 5.5rem;
     padding-bottom: 2rem;
-    @include font-xl();
+    @include block-title();
   }
   .slate {
     margin: 0 !important;

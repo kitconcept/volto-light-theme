@@ -79,7 +79,7 @@
     padding: 0 20px 0 0;
     margin: 0 0 15px 0;
     color: $black;
-    @include font-3xl-bold();
+    @include text-heading-h3();
   }
 }
 
@@ -89,7 +89,7 @@
     .content h2 {
       padding-top: 20px !important;
       padding-bottom: 40px !important;
-      @include font-xl-bold();
+      @include text-heading-h2();
     }
   }
   .two.column {
@@ -98,7 +98,7 @@
         h2 {
           padding-top: 15px !important;
           padding-bottom: 20px !important;
-          @include font-l-bold();
+          @include text-heading-h3();
         }
       }
     }
@@ -108,7 +108,7 @@
       h2 {
         padding-top: 15px !important;
         padding-bottom: 20px !important;
-        @include font-l-bold();
+        @include text-heading-h3();
       }
     }
   }
@@ -116,7 +116,7 @@
     .grid-teaser-item .content {
       h2 {
         padding-bottom: 20px !important;
-        @include font-m-bold();
+        @include text-heading-h4();
       }
     }
   }
@@ -125,7 +125,7 @@
       background-color: $lightgrey;
       .content {
         padding: 0 26px 60px 26px;
-        @include font-m();
+        @include body-text();
       }
     }
   }
@@ -158,12 +158,12 @@
       padding: 0 20px 0 0;
       margin: 0 0 40px 0;
       color: $black;
-      @include font-xl-bold();
+      @include text-heading-h2();
     }
 
     p {
       margin: 0;
-      @include font-m();
+      @include body-text();
     }
   }
 }

@@ -1,4 +1,5 @@
 // // Semantic UI related - Sync'd
+@use "sass:map";
 // Colors
 $text-color: #000;
 $font-size: 18px;
@@ -79,12 +80,98 @@ $color-block-change-vertical-spacing: 100px;
 $grid-block-vertical-spacing-top: 100px;
 $grid-block-vertical-spacing-bottom: 100px;
 
-// Patterns
-@mixin font-xs-bold() {
-  font-size: 12px;
-  font-weight: $bold;
-  line-height: 16px;
+// Maps
+$font-weights: (
+  thin: 100,
+  extra-light: 200,
+  light: 300,
+  regular: 400,
+  medium: 500,
+  semi-bold: 600,
+  bold: 700,
+  extra-bold: 800,
+  bolder: 900,
+);
+
+$font-sizes: (
+  xs: 12px,
+  s: 14px,
+  m: 18px,
+  l: 24px,
+  xl: 30px,
+  2xl: 36px,
+  3xl: 48px,
+);
+
+$line-heights: (
+  xs: 16px,
+  s: 18px,
+  m: 24px,
+  l: 30px,
+  xl: 33px,
+  2xl: 36px,
+  3xl: 48px,
+  4xl: 56px,
+);
+
+@mixin add($property, $value) {
+  @if $property == size {
+    #{"font-" + $property}: map.get($font-sizes, $value);
+  } @else if $property == height {
+    #{"line-" + $property}: map.get($line-heights, $value);
+  } @else if $property == weight {
+    #{"font-" + $property}: map.get($font-weights, $value);
+  }
 }
+
+// Patterns
+@mixin body-text() {
+  @include add(size, m);
+  @include add(height, m);
+  @include add(weight, light);
+};
+
+@mixin body-text-bold() {
+  @include add(size, m);
+  @include add(height, m);
+  @include add(weight, bold);
+};
+
+@mixin page-title() {
+  @include add(size, 3xl);
+  @include add(height, 4xl);
+  @include add(weight, bold);
+};
+
+@mixin block-title() {
+  @include add(size, xl);
+  @include add(height, 2xl);
+  @include add(weight, light);
+};
+
+@mixin text-heading-h2() {
+  @include add(size, xl);
+  @include add(height, 2xl);
+  @include add(weight, bold);
+};
+
+@mixin text-heading-h3() {
+  @include add(size, l);
+  @include add(height, l);
+  @include add(weight, bold);
+};
+
+@mixin text-heading-h4() {
+  @include add(size, m);
+  @include add(height, m);
+  @include add(weight, bold);
+};
+@mixin introduction() {
+  @include add(size, l);
+  @include add(height, xl);
+  @include add(weight, light);
+};
+////////// TODO: Finish rest of patterns
 @mixin font-s-bold() {
   font-size: 14px;
   font-weight: $bold;
@@ -95,16 +182,7 @@ $grid-block-vertical-spacing-bottom: 100px;
   font-weight: $light;
   line-height: 18px;
 }
-@mixin font-m() {
-  font-size: 18px;
-  font-weight: $light;
-  line-height: 24px;
-}
-@mixin font-m-bold() {
-  font-size: 18px;
-  font-weight: $bold;
-  line-height: 24px;
-}
+
 @mixin font-l() {
   font-size: 24px;
   font-weight: $light;
@@ -115,11 +193,6 @@ $grid-block-vertical-spacing-bottom: 100px;
   font-weight: $bold;
   line-height: 30px;
 }
-@mixin font-xl() {
-  font-size: 30px;
-  font-weight: $light;
-  line-height: 36px;
-}
 @mixin font-xl-bold() {
   font-size: 30px;
   font-weight: $bold;
@@ -129,9 +202,4 @@ $grid-block-vertical-spacing-bottom: 100px;
   font-size: 36px;
   font-weight: $bold;
   line-height: 44px;
-}
-@mixin font-3xl-bold() {
-  font-size: 48px;
-  font-weight: $bold;
-  line-height: 56px;
 }

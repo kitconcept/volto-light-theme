@@ -12,16 +12,16 @@ span,
 div {
   font-family: $page-font;
   font-style: normal;
-  @include font-m();
+  @include body-text();
 }
 
 h1.documentFirstHeading {
   border: none;
-  @include font-3xl-bold();
+  @include page-title();
   margin-bottom: 4.5rem;
   span {
     border: none;
-    @include font-3xl-bold();
+    @include page-title();
   }
 
   &::before {
@@ -33,7 +33,7 @@ h1.documentFirstHeading {
 .heading-wrapper h2 {
   padding-top: 4rem;
   padding-bottom: 2rem;
-  @include font-xl();
+  @include block-title();
 }
 .heading-wrapper h3 {
   padding-top: 3rem;
@@ -47,7 +47,7 @@ h1.documentFirstHeading {
 h2 {
   padding-top: 2.5rem;
   padding-bottom: 1rem;
-  @include font-xl-bold();
+  @include text-heading-h2();
   span {
     font-size: inherit;
     font-weight: inherit;
@@ -57,7 +57,7 @@ h2 {
 h3 {
   padding-top: 1.5rem;
   padding-bottom: 0.3rem;
-  @include font-l-bold();
+  @include text-heading-h3();
   span {
     font-size: inherit;
     font-weight: inherit;
@@ -67,7 +67,7 @@ h3 {
 // Head-title
 .head-title,
 .head-title span {
-  @include font-m-bold();
+  @include body-text-bold();
   padding-bottom: 10px;
   letter-spacing: 1px;
   text-transform: uppercase !important;
