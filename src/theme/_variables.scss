@@ -1,4 +1,5 @@
 // // Semantic UI related - Sync'd
+@use "sass:map";
 // Colors
 $text-color: #000;
 $font-size: 18px;
@@ -78,3 +79,126 @@ $color-block-change-vertical-spacing: 100px;
 // Grids
 $grid-block-vertical-spacing-top: 100px;
 $grid-block-vertical-spacing-bottom: 100px;
+
+// Maps
+$font-weights: (
+  thin: 100,
+  extra-light: 200,
+  light: 300,
+  regular: 400,
+  medium: 500,
+  semi-bold: 600,
+  bold: 700,
+  extra-bold: 800,
+  bolder: 900,
+);
+
+$font-sizes: (
+  xs: 12px,
+  s: 14px,
+  m: 18px,
+  l: 24px,
+  xl: 30px,
+  2xl: 36px,
+  3xl: 48px,
+);
+
+$line-heights: (
+  xs: 16px,
+  s: 18px,
+  m: 24px,
+  l: 30px,
+  xl: 33px,
+  2xl: 36px,
+  3xl: 48px,
+  4xl: 56px,
+);
+
+@mixin add($property, $value) {
+  @if $property == size {
+    #{"font-" + $property}: map.get($font-sizes, $value);
+  } @else if $property == height {
+    #{"line-" + $property}: map.get($line-heights, $value);
+  } @else if $property == weight {
+    #{"font-" + $property}: map.get($font-weights, $value);
+  }
+}
+
+// Patterns
+@mixin body-text() {
+  @include add(size, m);
+  @include add(height, m);
+  @include add(weight, light);
+}
+
+@mixin body-text-bold() {
+  @include add(size, m);
+  @include add(height, m);
+  @include add(weight, bold);
+}
+
+@mixin page-title() {
+  @include add(size, 3xl);
+  @include add(height, 4xl);
+  @include add(weight, bold);
+}
+
+@mixin block-title() {
+  @include add(size, xl);
+  @include add(height, 2xl);
+  @include add(weight, light);
+}
+
+@mixin text-heading-h2() {
+  @include add(size, xl);
+  @include add(height, 2xl);
+  @include add(weight, bold);
+}
+
+@mixin text-heading-h3() {
+  @include add(size, l);
+  @include add(height, l);
+  @include add(weight, bold);
+}
+
+@mixin text-heading-h4() {
+  @include add(size, m);
+  @include add(height, m);
+  @include add(weight, bold);
+}
+
+@mixin introduction() {
+  @include add(size, l);
+  @include add(height, xl);
+  @include add(weight, light);
+}
+
+@mixin headtitle1() {
+  @include add(size, s);
+  @include add(height, s);
+  @include add(weight, bold);
+}
+
+@mixin headtitle2() {
+  @include add(size, xs);
+  @include add(height, xs);
+  @include add(weight, bold);
+}
+
+@mixin highlight-title() {
+  @include add(size, 2xl);
+  @include add(height, 3xl);
+  @include add(weight, bold);
+}
+
+@mixin marginal-title() {
+  @include add(size, s);
+  @include add(height, s);
+  @include add(weight, bold);
+}
+
+@mixin marginal-description() {
+  @include add(size, s);
+  @include add(height, s);
+  @include add(weight, light);
+}
