@@ -101,6 +101,7 @@ volto-light-theme works with the following Plone Blocks:
 - Slider-Block (https://www.npmjs.com/package/@kitconcept/volto-slider-block)
 - Button-Block (https://www.npmjs.com/package/@kitconcept/volto-button-block)
 - Separator-Block (https://www.npmjs.com/package/@kitconcept/volto-separator-block)
+- Heading-Block (https://www.npmjs.com/package/@kitconcept/volto-heading-block)
 - Introduction-Block (not open source yet)
 
 and the following add-ons:
