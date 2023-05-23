@@ -79,50 +79,60 @@
     padding: 0 20px 0 0;
     margin: 0 0 15px 0;
     color: $black;
-    font-size: 48px;
-    font-weight: 700;
-    line-height: 56px;
+    @include text-heading-h3();
   }
 }
 
 // Dynamic font sizes depending on number of columns in grid
-.four.column {
-  .content h2 {
-    padding-top: 20px !important;
-    font-size: 30px !important;
-    line-height: 36px !important;
+.block.__grid {
+  .one.column {
+    .content h2 {
+      padding-top: 20px !important;
+      padding-bottom: 40px !important;
+      @include text-heading-h2();
+    }
   }
-}
-
-.three.column {
-  .content h2 {
-    padding-top: 20px !important;
-    font-size: 36px !important;
-    line-height: 42px !important;
+  .two.column {
+    .grid-teaser-item {
+      .content {
+        h2 {
+          padding-top: 15px !important;
+          padding-bottom: 20px !important;
+          @include text-heading-h3();
+        }
+      }
+    }
   }
-}
-
-.two.column,
-.one {
-  .content h2 {
-    padding-top: 20px !important;
-    padding-bottom: 40px !important;
-    font-size: 48px !important;
-    line-height: 56px !important;
-  }
-}
-
-.grid-block-teaser {
-  .block.teaser {
-    background-color: $lightgrey;
-    .content {
-      padding: 0 26px 60px 26px;
-      font-size: 18px;
-      line-height: 24px;
-
+  .three.column.grid {
+    .grid-teaser-item .content {
       h2 {
+        padding-top: 15px !important;
+        padding-bottom: 20px !important;
+        @include text-heading-h3();
+      }
+    }
+  }
+  .four.column {
+    .grid-teaser-item .content {
+      .headline {
         padding-bottom: 20px;
-        font-weight: 700;
+        margin: 0;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        @include headtitle2();
+      }
+      h2 {
+        padding-bottom: 20px !important;
+        @include text-heading-h4();
+      }
+    }
+  }
+  .grid-block-teaser {
+    .block.teaser {
+      background-color: $lightgrey;
+      .content {
+        padding: 0 26px 60px 26px;
+        @include body-text();
       }
     }
   }
@@ -145,27 +155,21 @@
     .headline {
       padding-bottom: 20px;
       margin: 0;
-      color: $black;
-      font-size: 16px;
-      font-weight: 700;
       letter-spacing: 1px;
-      line-height: 20px;
       text-transform: uppercase;
+      @include headtitle1();
     }
 
     h2 {
       padding: 0 20px 0 0;
       margin: 0 0 40px 0;
       color: $black;
-      font-size: 48px;
-      line-height: 56px;
+      @include text-heading-h2();
     }
 
     p {
       margin: 0;
-      font-size: 18px;
-      font-weight: 300;
-      line-height: 24px;
+      @include body-text();
     }
   }
 }

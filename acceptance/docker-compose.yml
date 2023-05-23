@@ -1,0 +1,57 @@
+version: "3"
+
+services:
+
+  addon-dev:
+    build:
+      context: ../
+      dockerfile: ./dockerfiles/Dockerfile.acceptance
+      args:
+        ADDON_NAME: "${ADDON_NAME}"
+        ADDON_PATH: "${ADDON_PATH}"
+        VOLTO_VERSION: ${VOLTO_VERSION:-16}
+    volumes:
+      - ${CURRENT_DIR}:/app/src/addons/${ADDON_PATH}/
+    environment:
+      RAZZLE_INTERNAL_API_PATH: http://backend-acceptance:55001/plone
+      RAZZLE_API_PATH: http://localhost:55001/plone
+    ports:
+      - 3000:3000
+      - 3001:3001
+    depends_on:
+      - backend-acceptance
+    profiles:
+      - dev
+
+  addon-acceptance:
+    build:
+      context: ../
+      dockerfile: ./dockerfiles/Dockerfile
+      args:
+        ADDON_NAME: "${ADDON_NAME}"
+        ADDON_PATH: "${ADDON_PATH}"
+        VOLTO_VERSION: ${VOLTO_VERSION:-16}
+    environment:
+      RAZZLE_INTERNAL_API_PATH: http://backend-acceptance:55001/plone
+      RAZZLE_API_PATH: http://localhost:55001/plone
+    ports:
+      - 3000:3000
+    depends_on:
+      - backend-acceptance
+    profiles:
+      - prod
+
+  backend-acceptance:
+    image: plone/plone-backend:${PLONE_VERSION:-6}
+    command: ./bin/robot-server plone.app.robotframework.testing.VOLTO_ROBOT_TESTING
+    environment:
+      ZSERVER_HOST: 0.0.0.0
+      ZSERVER_PORT: 55001
+      ADDONS: 'plone.app.robotframework==2.0.0'
+      APPLY_PROFILES: plone.app.contenttypes:plone-content,plone.restapi:default,plone.volto:default-homepage
+      CONFIGURE_PACKAGES: plone.app.contenttypes,plone.restapi,plone.volto,plone.volto.cors
+    ports:
+      - 55001:55001
+    profiles:
+      - dev
+      - prod

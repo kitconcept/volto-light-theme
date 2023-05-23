@@ -159,20 +159,24 @@ figcaption {
 
   .title {
     margin-bottom: 10px;
-    font-weight: 700;
+    @include marginal-title();
   }
 
   .description {
-    margin-bottom: 10px;
+    div,
+    a {
+      margin-bottom: 10px;
+      @include marginal-description();
+    }
   }
 
-  .credits {
+  .credits div {
     display: flex;
-    justify-content: space-between;
     margin-bottom: 10px;
     -webkit-font-smoothing: anitaliased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    @include marginal-description();
 
     div {
       display: inline;
@@ -185,7 +189,9 @@ figcaption {
     }
 
     a {
+      margin-left: 0.5rem;
       color: $blue-for-grey-contrast;
+      @include marginal-description();
     }
   }
 }
