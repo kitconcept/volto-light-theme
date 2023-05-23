@@ -12,19 +12,32 @@ span,
 div {
   font-family: $page-font;
   font-style: normal;
-  font-weight: $light;
+  @include body-text();
+}
+
+strong,
+strong span span {
+  @include body-text-bold();
+}
+
+em,
+em span span {
+  font-style: italic;
+}
+
+#page-document {
+  blockquote {
+    padding: 18px 40px;
+  }
 }
 
 h1.documentFirstHeading {
   border: none;
-  font-size: 64px;
-  font-weight: $bold;
-  line-height: 72px;
+  @include page-title();
+  margin-bottom: 4.5rem;
   span {
     border: none;
-    font-size: 64px;
-    font-weight: $bold;
-    line-height: 72px;
+    @include page-title();
   }
 
   &::before {
@@ -32,13 +45,16 @@ h1.documentFirstHeading {
   }
 }
 
+// Block Title
+.block h2.headline {
+  @include block-title();
+}
+
 // Heading block
 .heading-wrapper h2 {
   padding-top: 4rem;
   padding-bottom: 2rem;
-  font-size: 52px;
-  font-weight: $light;
-  line-height: 60px;
+  @include block-title();
 }
 .heading-wrapper h3 {
   padding-top: 3rem;
@@ -52,9 +68,7 @@ h1.documentFirstHeading {
 h2 {
   padding-top: 2.5rem;
   padding-bottom: 1rem;
-  font-size: 48px;
-  font-weight: $bold;
-  line-height: 56px;
+  @include text-heading-h2();
   span {
     font-size: inherit;
     font-weight: inherit;
@@ -64,13 +78,38 @@ h2 {
 h3 {
   padding-top: 1.5rem;
   padding-bottom: 0.3rem;
-  font-size: 36px;
-  font-weight: $bold;
-  line-height: 42px;
+  @include text-heading-h3();
   span {
     font-size: inherit;
     font-weight: inherit;
     line-height: inherit;
+  }
+}
+h4 {
+  padding-top: 1.5rem;
+  padding-bottom: 0.3rem;
+  @include text-heading-h4();
+  span {
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+  }
+}
+
+// Head-title
+.head-title,
+.head-title span {
+  @include body-text-bold();
+  padding-bottom: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase !important;
+}
+
+#page-add,
+#page-edit {
+  .head-title,
+  .head-title span {
+    user-select: none;
   }
 }
 

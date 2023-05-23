@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'addonsThemeCustomizationsVariables';
 @import 'typography';
 @import 'utils';
 @import 'layout';
@@ -17,7 +18,10 @@
 @import 'blocks/button';
 @import 'blocks/search';
 @import 'blocks/listing';
+@import 'blocks/highlight';
 
 @import 'temp';
+
+@import 'addonsThemeCustomizationsMain';
 
 /* No CSS beyond this point */
