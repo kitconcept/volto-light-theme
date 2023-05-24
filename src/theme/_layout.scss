@@ -133,6 +133,22 @@ $narrow-container-width: 620px;
   }
 }
 
+#page-edit {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  .a.container {
+    container-type: normal;
+  }
+}
+
+
+// SlashMenu
+#page-edit {
+  .power-user-menu {
+    left: unset;
+  }
+}
+
 // Add/Edit views
 #page-add,
 #page-edit {
