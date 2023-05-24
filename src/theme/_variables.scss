@@ -1,38 +1,41 @@
-// // Semantic UI related - Sync'd
+// All variables has to be `!default`'ed in order to be able to
+// be overrided by add-ons
 @use "sass:map";
+
+// // Semantic UI related - Sync'd
 // Colors
-$text-color: #000;
-$font-size: 18px;
-$line-height: 24px;
+$text-color: #000 !default;
+$font-size: 18px !default;
+$line-height: 24px !default;
 
 // Headers font size
-$heading1: 60px;
-$heading2: 30px;
-$heading3: 24px;
+$heading1: 60px !default;
+$heading2: 30px !default;
+$heading3: 24px !default;
 
-$block-title-h2: 42px;
+$block-title-h2: 42px !default;
 
-$heading-title-top-spacing: 100px;
-$heading-title-bottom-spacing: 75px;
-$padding-colored-pills: 20px;
+$heading-title-top-spacing: 100px !default;
+$heading-title-bottom-spacing: 75px !default;
+$padding-colored-pills: 20px !default;
 
-$heading-text-top-spacing: 50px;
-$heading-text-bottom-spacing: 25px;
+$heading-text-top-spacing: 50px !default;
+$heading-text-bottom-spacing: 25px !default;
 
 // Fonts
-$custom-fontname: 'Inter';
-$page-font-template: $custom-fontname, sans-serif;
-$page-font: var(--custom-main-font, $page-font-template);
-$header-font: var(--custom-headers-font, $page-font);
+$custom-fontname: 'Inter' !default;
+$page-font-template: $custom-fontname, sans-serif !default;
+$page-font: var(--custom-main-font, $page-font-template) !default;
+$header-font: var(--custom-headers-font, $page-font) !default;
 
 // Breakpoints
 // Mobile / Tablet portrait < 769 | Tablet landscape / Small desktop < 941 | Computer desktop < 1440 | Large Monitor > 1440
-$largest-mobile-screen: 768px; // not finished in `-width` for historical reasons (SemanticUI naming)
-$tablet-breakpoint: 769px;
-$computer-width: 940px;
-$computer-breakpoint: 941px;
-$large-monitor-width: 1440px;
-$large-monitor-breakpoint: 1441px;
+$largest-mobile-screen: 768px !default; // not finished in `-width` for historical reasons (SemanticUI naming)
+$tablet-breakpoint: 769px !default;
+$computer-width: 940px !default;
+$computer-breakpoint: 941px !default;
+$large-monitor-width: 1440px !default;
+$large-monitor-breakpoint: 1441px !default;
 
 // Rest of theme variables
 
@@ -42,43 +45,43 @@ $large-monitor-breakpoint: 1441px;
 }
 
 // Colors
-$white: #fff;
-$veryLightGrey: #eee;
-$darkGrey: #555555;
-$black: #000;
-$grey: #666;
-$lightgrey: #ecebeb;
-$blue-for-grey-contrast: #0070a2;
-$brown: #826a6a;
-$blueArctic: #e2f1fd;
-$greySnow: #f3f5f7;
-$greySmoke: #e4e8ec;
-$darkBlue: #023d6b;
-$secondary-grey: #ececec;
+$white: #fff !default;
+$veryLightGrey: #eee !default;
+$darkGrey: #555555 !default;
+$black: #000 !default;
+$grey: #666 !default;
+$lightgrey: #ecebeb !default;
+$blue-for-grey-contrast: #0070a2 !default;
+$brown: #826a6a !default;
+$blueArctic: #e2f1fd !default;
+$greySnow: #f3f5f7 !default;
+$greySmoke: #e4e8ec !default;
+$darkBlue: #023d6b !default;
+$secondary-grey: #ececec !default;
 
 // Image Aspect Ratio
-$aspect-ratio: var(--image-aspect-ratio, 16/9);
+$aspect-ratio: var(--image-aspect-ratio, 16/9) !default;
 
 // Weights
-$thin: 100;
-$extra-light: 200;
-$light: 300;
-$regular: 400;
-$medium: 500;
-$semi-bold: 600;
-$bold: 700;
-$extra-bold: 800;
-$bolder: 900;
+$thin: 100 !default;
+$extra-light: 200 !default;
+$light: 300 !default;
+$regular: 400 !default;
+$medium: 500 !default;
+$semi-bold: 600 !default;
+$bold: 700 !default;
+$extra-bold: 800 !default;
+$bolder: 900 !default;
 
 // Vertical Spacing
-$block-vertical-space: 25px;
+$block-vertical-space: 25px !default;
 
 // Change of color
-$color-block-change-vertical-spacing: 100px;
+$color-block-change-vertical-spacing: 100px !default;
 
 // Grids
-$grid-block-vertical-spacing-top: 100px;
-$grid-block-vertical-spacing-bottom: 100px;
+$grid-block-vertical-spacing-top: 100px !default;
+$grid-block-vertical-spacing-bottom: 100px !default;
 
 // Maps
 $font-weights: (
