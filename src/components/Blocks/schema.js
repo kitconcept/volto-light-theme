@@ -10,13 +10,13 @@ const messages = defineMessages({
 });
 
 export const defaultStylingSchema = ({ schema, formData, intl }) => {
-  const DLR_BG_COLORS = [
+  const BG_COLORS = [
     { name: 'transparent', label: 'Transparent' },
     { name: 'grey', label: 'Grey' },
   ];
 
   const colors =
-    config.blocks?.blocksConfig?.[formData['@type']]?.colors || DLR_BG_COLORS;
+    config.blocks?.blocksConfig?.[formData['@type']]?.colors || BG_COLORS;
 
   const defaultBGColor =
     config.blocks?.blocksConfig?.[formData['@type']]?.defaultBGColor;

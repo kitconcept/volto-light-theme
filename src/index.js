@@ -170,6 +170,7 @@ const applyConfig = (config) => {
     ...config.blocks.blocksConfig.__button,
 
     schemaEnhancer: ButtonStylingSchema,
+    colors: BG_COLORS,
   };
 
   return config;
