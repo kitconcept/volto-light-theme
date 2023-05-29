@@ -78,6 +78,7 @@ const RenderBlocks = (props) => {
     <CustomTag>
       {map(grouped, (group) => (
         <MaybeWrap
+          key={`block-group-${group[0]}`}
           condition={config.settings.enableAutoBlockGroupingByBackgroundColor}
           className={cx(
             'blocks-group-wrapper',
