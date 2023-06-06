@@ -37,6 +37,37 @@ $narrow-container-width: 620px;
   }
 }
 
+// Container adjustments for dealing correctly with absoluted elements
+@mixin container-preference-order($zindex) {
+  position: relative;
+  z-index: $zindex;
+}
+
+// We expect initially three main containers
+.header-wrapper {
+  .a.container {
+    @include container-preference-order(12);
+  }
+}
+
+.content-area {
+  .a.container {
+    @include container-preference-order(10);
+  }
+}
+
+footer {
+  .a.container {
+    @include container-preference-order(8);
+  }
+}
+
+// If using popperjs, we need also to set preference too to the
+// popperjs container.
+[data-popper-placement] {
+  @include container-preference-order(100);
+}
+
 // Container widths for configurable via block styling wrapper
 // TODO: consider renaming "align" property to something more meaningful
 .has--align--center {
