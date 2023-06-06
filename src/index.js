@@ -31,7 +31,7 @@ defineMessages({
 });
 
 const applyConfig = (config) => {
-  config.settings.enableAutoBlockGroupingByBackgroundColor = false;
+  config.settings.enableAutoBlockGroupingByBackgroundColor = true;
 
   // No required blocks (eg. Title)
   config.blocks.requiredBlocks = [];
