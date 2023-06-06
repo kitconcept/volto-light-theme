@@ -1,0 +1,21 @@
+.blocks-group-wrapper {
+  padding-top: $color-block-change-vertical-spacing;
+  padding-bottom: $color-block-change-vertical-spacing;
+}
+
+.blocks-group-wrapper.grey {
+  background-color: #ecebeb;
+}
+
+#page-document .blocks-group-wrapper {
+  .block:first-child h2.headline {
+    padding-top: 0;
+  }
+}
+
+// For grids
+.block.__grid {
+  &.is--last--of--block-type.next--has--same--backgroundColor {
+    margin-bottom: $grid-block-vertical-spacing-bottom;
+  }
+}

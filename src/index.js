@@ -31,6 +31,8 @@ defineMessages({
 });
 
 const applyConfig = (config) => {
+  config.settings.enableAutoBlockGroupingByBackgroundColor = true;
+
   // No required blocks (eg. Title)
   config.blocks.requiredBlocks = [];
 
@@ -168,6 +170,7 @@ const applyConfig = (config) => {
     ...config.blocks.blocksConfig.__button,
 
     schemaEnhancer: ButtonStylingSchema,
+    colors: BG_COLORS,
   };
 
   return config;
