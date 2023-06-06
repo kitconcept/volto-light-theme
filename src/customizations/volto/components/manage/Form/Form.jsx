@@ -1,8 +1,9 @@
 /**
- * Form component.
- * @module components/manage/Form/Form
+ * OVERRIDE Form.jsx
+ * REASON: This version enables a custom container for the form
+ * DEVELOPER: @sneridagh
+ * REMOVE: when https://github.com/plone/volto/pull/4849 is merged
  */
-
 import { BlocksForm, Field, Icon, Toast } from '@plone/volto/components';
 import {
   difference,
