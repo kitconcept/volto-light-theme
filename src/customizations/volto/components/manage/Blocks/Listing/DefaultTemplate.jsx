@@ -1,3 +1,4 @@
+// Remove when https://github.com/plone/volto/pull/4848 is merged
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ConditionalLink, UniversalLink } from '@plone/volto/components';

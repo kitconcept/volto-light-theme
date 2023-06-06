@@ -1,3 +1,7 @@
+/**
+ * OVERRIDE SearchDetails.jsx
+ * REASON: Special template for displaying this component
+ */
 import React from 'react';
 import { Button, Input } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';

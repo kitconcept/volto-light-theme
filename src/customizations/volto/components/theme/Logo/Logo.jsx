@@ -1,48 +1,11 @@
 /**
- * Logo component.
- * @module components/theme/Logo/Logo
+ * OVERRIDE Logo.jsx
+ * REASON: This theme uses a custom pre-@plone/components component
+ * SemanticUI-free located at the components folder.
+ * To override it, override the @kitconcept/volto-light-theme one instead of
+ * this one.
  */
 
-import { defineMessages, useIntl } from 'react-intl';
-import { useSelector } from 'react-redux';
-import config from '@plone/volto/registry';
-import { UniversalLink } from '@plone/volto/components';
-import LogoImage from '@plone/volto/components/theme/Logo/Logo.svg';
-
-const messages = defineMessages({
-  site: {
-    id: 'Site',
-    defaultMessage: 'Site',
-  },
-  plonesite: {
-    id: 'Plone Site',
-    defaultMessage: 'Plone Site',
-  },
-});
-
-/**
- * Logo component class.
- * @function Logo
- * @param {Object} intl Intl object
- * @returns {string} Markup of the component.
- */
-const Logo = () => {
-  const { settings } = config;
-  const lang = useSelector((state) => state.intl.locale);
-  const intl = useIntl();
-
-  return (
-    <UniversalLink
-      href={settings.isMultilingual ? `/${lang}` : '/'}
-      title={intl.formatMessage(messages.site)}
-    >
-      <img
-        src={LogoImage}
-        alt={intl.formatMessage(messages.plonesite)}
-        title={intl.formatMessage(messages.plonesite)}
-      />
-    </UniversalLink>
-  );
-};
+import Logo from '../../../../../components/Logo/Logo';
 
 export default Logo;
