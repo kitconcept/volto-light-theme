@@ -11,7 +11,10 @@ const messages = defineMessages({
 export const ButtonStylingSchema = ({ schema, formData, intl }) => {
   defaultStylingSchema({ schema, formData, intl });
 
-  schema.properties.styles.schema.fieldsets[0].fields = ['buttonAlign'];
+  schema.properties.styles.schema.fieldsets[0].fields = [
+    'buttonAlign',
+    ...schema.properties.styles.schema.fieldsets[0].fields,
+  ];
 
   schema.properties.styles.schema.properties.buttonAlign = {
     widget: 'align',

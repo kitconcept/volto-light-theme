@@ -67,7 +67,7 @@ $narrow-container-width: 620px;
 }
 
 // Content Layout Styling
-#page-document {
+#page-document .blocks-group-wrapper {
   & > h2,
   & > h3,
   & > h4,
@@ -206,3 +206,5 @@ body.has-toolbar.has-sidebar .block .ui.basic.button.delete-button {
     text-decoration: underline;
   }
 }
+
+@import 'bgcolor-blocks-layout';
