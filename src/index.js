@@ -6,7 +6,6 @@ import { teaserSchemaEnhancer } from './components/Blocks/Teaser/schema';
 // eslint-disable-next-line import/no-unresolved
 import { gridTeaserDisableStylingSchema } from '@kitconcept/volto-blocks-grid/components/Teaser/schema';
 
-import ExtraAlignWrapper from './components/Blocks/Slate/ExtraAlignWrapper';
 import ContainerQueriesPolyfill from './components/CQPolyfill';
 import Container from './components/Atoms/Container/Container';
 import TopSideFacets from './components/Blocks/Search/TopSideFacets';
