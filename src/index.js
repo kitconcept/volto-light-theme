@@ -6,7 +6,6 @@ import { teaserSchemaEnhancer } from './components/Blocks/Teaser/schema';
 // eslint-disable-next-line import/no-unresolved
 import { gridTeaserDisableStylingSchema } from '@kitconcept/volto-blocks-grid/components/Teaser/schema';
 
-import ExtraAlignWrapper from './components/Blocks/Slate/ExtraAlignWrapper';
 import ContainerQueriesPolyfill from './components/CQPolyfill';
 import Container from './components/Atoms/Container/Container';
 import TopSideFacets from './components/Blocks/Search/TopSideFacets';
@@ -134,14 +133,14 @@ const applyConfig = (config) => {
           teaserSchemaEnhancer,
         ),
       },
-      slate: {
-        ...config.blocks.blocksConfig.slate,
-        colors: BG_COLORS,
-        schemaEnhancer: defaultStylingSchema,
-        sidebarTab: 1,
-        view: ExtraAlignWrapper(config.blocks.blocksConfig.slate.view),
-      },
     },
+  };
+
+  config.blocks.blocksConfig.slate = {
+    ...config.blocks.blocksConfig.slate,
+    colors: BG_COLORS,
+    schemaEnhancer: defaultStylingSchema,
+    sidebarTab: 1,
   };
 
   config.blocks.blocksConfig.teaser = {
@@ -168,7 +167,6 @@ const applyConfig = (config) => {
   ];
   config.blocks.blocksConfig.__button = {
     ...config.blocks.blocksConfig.__button,
-
     schemaEnhancer: ButtonStylingSchema,
     colors: BG_COLORS,
   };
