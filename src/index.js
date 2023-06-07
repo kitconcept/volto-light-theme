@@ -134,14 +134,14 @@ const applyConfig = (config) => {
           teaserSchemaEnhancer,
         ),
       },
-      slate: {
-        ...config.blocks.blocksConfig.slate,
-        colors: BG_COLORS,
-        schemaEnhancer: defaultStylingSchema,
-        sidebarTab: 1,
-        view: ExtraAlignWrapper(config.blocks.blocksConfig.slate.view),
-      },
     },
+  };
+
+  config.blocks.blocksConfig.slate = {
+    ...config.blocks.blocksConfig.slate,
+    colors: BG_COLORS,
+    schemaEnhancer: defaultStylingSchema,
+    sidebarTab: 1,
   };
 
   config.blocks.blocksConfig.teaser = {
@@ -168,7 +168,6 @@ const applyConfig = (config) => {
   ];
   config.blocks.blocksConfig.__button = {
     ...config.blocks.blocksConfig.__button,
-
     schemaEnhancer: ButtonStylingSchema,
     colors: BG_COLORS,
   };
