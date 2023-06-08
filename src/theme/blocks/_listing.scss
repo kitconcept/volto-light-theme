@@ -23,3 +23,50 @@
     }
   }
 }
+
+// Grid Listing Block
+.block.listing.grid {
+  .items {
+    display: flex;
+    flex-wrap: wrap;
+    @media only screen and (max-width: $tablet-breakpoint) {
+      flex-direction: column;
+    }
+  }
+  .headline {
+    @include block-title();
+  }
+  .listing-item {
+    @media only screen and (min-width: $tablet-breakpoint) {
+      width: 50%;
+    }
+    margin-bottom: 0;
+
+    .card-container {
+      width: 100%;
+    }
+
+    img.grid-item-image {
+      width: 100%;
+    }
+
+    .content {
+      padding: 0 26px 60px 26px;
+      h2 {
+        color: $black;
+        @include text-heading-h3();
+      }
+      p {
+        margin-bottom: 0;
+        @include body-text();
+      }
+      p:empty {
+        display: none;
+      }
+    }
+    a {
+      background-color: $lightgrey;
+      margin: 0.5rem;
+    }
+  }
+}

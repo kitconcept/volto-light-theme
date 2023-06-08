@@ -10,6 +10,8 @@ import ContainerQueriesPolyfill from './components/CQPolyfill';
 import Container from './components/Atoms/Container/Container';
 import TopSideFacets from './components/Blocks/Search/TopSideFacets';
 
+import GridListingBlockTemplate from './components/Blocks/Listing/GridTemplate';
+
 import gridSVG from './icons/block_icn_grid.svg';
 import { ButtonStylingSchema } from './components/Blocks/Button/schema';
 
@@ -169,6 +171,19 @@ const applyConfig = (config) => {
     ...config.blocks.blocksConfig.__button,
     schemaEnhancer: ButtonStylingSchema,
     colors: BG_COLORS,
+  };
+
+  config.blocks.blocksConfig.listing = {
+    ...config.blocks.blocksConfig.listing,
+    allowed_headline_tags: [['h2', 'h2']],
+    variations: [
+      ...config.blocks.blocksConfig.listing.variations,
+      {
+        id: 'grid',
+        title: 'Grid',
+        template: GridListingBlockTemplate,
+      },
+    ],
   };
 
   return config;
