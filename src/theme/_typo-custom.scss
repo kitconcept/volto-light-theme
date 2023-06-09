@@ -7,17 +7,14 @@ h5,
 h6,
 p,
 a,
-li,
-span,
-div {
+li {
   font-family: $page-font;
   font-style: normal;
   @include body-text();
 }
 
-strong,
-strong span span {
-  @include body-text-bold();
+strong {
+  @include add(weight, bold);
 }
 
 em,
