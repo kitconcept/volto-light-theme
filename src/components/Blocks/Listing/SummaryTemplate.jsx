@@ -26,7 +26,7 @@ const SummaryTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
         {items.map((item) => {
           const hasType = item['@type'];
           const CustomItemBodyTemplate = config.getComponent({
-            name: 'ListingItemTemplate',
+            name: 'SummaryListingItemTemplate',
             dependencies: [hasType],
           }).component;
 
