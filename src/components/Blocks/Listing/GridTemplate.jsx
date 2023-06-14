@@ -24,14 +24,14 @@ const GridTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
     <>
       <div className="items">
         {items.map((item) => {
-          const hasType = item['@type'];
-          const CustomItemBodyTemplate = config.getComponent({
-            name: 'GridListingItemTemplate',
-            dependencies: [hasType],
-          }).component;
+          const ItemBodyTemplate = () => {
+            const hasType = item['@type'];
+            const CustomItemBodyTemplate = config.getComponent({
+              name: 'GridListingItemTemplate',
+              dependencies: [hasType],
+            }).component;
 
-          const ItemBodyTemplate = () =>
-            CustomItemBodyTemplate ? (
+            return CustomItemBodyTemplate ? (
               <CustomItemBodyTemplate item={item} />
             ) : (
               <div className="card-container">
@@ -55,6 +55,7 @@ const GridTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
                 </div>
               </div>
             );
+          };
           return (
             <div className="listing-item" key={item['@id']}>
               <ConditionalLink item={item} condition={!isEditMode}>

@@ -25,6 +25,7 @@
 }
 
 // Grid Listing Block
+
 .block.listing.grid {
   .items {
     display: flex;
@@ -44,6 +45,11 @@
 
     .card-container {
       width: 100%;
+      margin: 0.5rem;
+      @media only screen and (max-width: $tablet-breakpoint) {
+        margin-left: 0;
+      }
+      background-color: $lightgrey;
     }
 
     img.grid-item-image {
@@ -51,8 +57,11 @@
     }
 
     .content {
-      padding: 0 26px 60px 26px;
+      padding: 0 1rem 2.5rem 1rem;
+
       h2 {
+        padding-top: 2rem;
+        margin-bottom: 0;
         color: $black;
         @include text-heading-h3();
       }
@@ -63,10 +72,6 @@
       p:empty {
         display: none;
       }
-    }
-    a {
-      margin: 0.5rem;
-      background-color: $lightgrey;
     }
   }
 }
