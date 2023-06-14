@@ -233,15 +233,9 @@ describe('groupByBGColor', () => {
         },
         5: {
           '@type': 'slate',
-          styles: {
-            backgroundColor: '',
-          },
         },
         6: {
           '@type': 'slate',
-          styles: {
-            backgroundColor: '',
-          },
         },
       },
       blocks_layout: {
@@ -253,6 +247,62 @@ describe('groupByBGColor', () => {
       [1, 2],
       [3, 4],
       [5, 6],
+    ]);
+  });
+
+  it('grid + grid + slate grey + slate grey + slate + slate - transparent mixed', () => {
+    const content = {
+      blocks: {
+        1: {
+          '@type': '__grid',
+          styles: {
+            backgroundColor: 'transparent',
+          },
+        },
+        2: {
+          '@type': '__grid',
+        },
+        3: {
+          '@type': '__grid',
+          styles: {
+            backgroundColor: 'transparent',
+          },
+        },
+        4: {
+          '@type': 'slate',
+          styles: {
+            backgroundColor: 'grey',
+          },
+        },
+        5: {
+          '@type': 'slate',
+          styles: {
+            backgroundColor: 'grey',
+          },
+        },
+        6: {
+          '@type': 'slate',
+        },
+        7: {
+          '@type': 'slate',
+        },
+        8: {
+          '@type': 'slate',
+          styles: {
+            backgroundColor: 'transparent',
+          },
+        },
+      },
+      blocks_layout: {
+        items: [1, 2, 3, 4, 5, 6, 7, 8],
+      },
+    };
+    const { blocks, blocks_layout } = content;
+
+    expect(groupByBGColor(blocks, blocks_layout)).toStrictEqual([
+      [1, 2, 3],
+      [4, 5],
+      [6, 7, 8],
     ]);
   });
 });
