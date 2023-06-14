@@ -96,7 +96,7 @@ footer {
 }
 
 .header-wrapper .header,
-#main .breadcrumb {
+.breadcrumbs .breadcrumb {
   @include layout-container-width();
   @include adjustMarginsToContainer($layout-container-width);
 }
