@@ -91,6 +91,10 @@ footer {
   @include layout-container-width();
 }
 
+#page-contents > * {
+  @include layout-container-width();
+}
+
 .header-wrapper .header,
 #main .breadcrumb {
   @include layout-container-width();
