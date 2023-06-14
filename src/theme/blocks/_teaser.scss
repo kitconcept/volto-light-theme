@@ -1,5 +1,6 @@
 // Block Teaser Standalone
-#page-document > .block.teaser {
+
+#page-document .blocks-group-wrapper > .block.teaser {
   padding: 25px 0;
 
   &.has--align--left,
