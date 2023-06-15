@@ -41,21 +41,18 @@ export function groupByBGColor(blocks, blocks_layout) {
   let currentBGColor;
 
   blocks_layout.items.forEach((blockId) => {
-    if (blocks[blockId]?.styles?.backgroundColor) {
-      if (blocks[blockId].styles.backgroundColor !== currentBGColor) {
-        currentBGColor = blocks[blockId].styles.backgroundColor;
-        if (currentArr.length > 0) {
-          result.push(currentArr);
-          currentArr = [];
-        }
-      }
-    } else {
-      if (currentBGColor) {
-        currentBGColor = '';
+    let currentBlockColor =
+      blocks[blockId]?.styles?.backgroundColor ?? 'transparent';
+
+    if (currentBlockColor !== currentBGColor) {
+      currentBGColor = currentBlockColor;
+      // write it only if the array has some block inside
+      if (currentArr.length > 0) {
         result.push(currentArr);
         currentArr = [];
       }
     }
+
     currentArr.push(blockId);
   });
   result.push(currentArr);
