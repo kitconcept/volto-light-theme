@@ -18,14 +18,21 @@
 }
 
 // For grids
+
 .block.__grid {
   &.is--first--of--block-type.previous--has--same--backgroundColor {
     margin-top: $grid-block-vertical-spacing-top;
   }
   &.is--last--of--block-type.next--has--same--backgroundColor {
     margin-bottom: $grid-block-vertical-spacing-bottom;
+    .column > .block {
+      margin-bottom: $block-vertical-space !important;
+    }
   }
   &.next--is--same--block-type.next--has--same--backgroundColor {
-    margin-bottom: -1rem;
+    margin-bottom: -1rem !important;
+  }
+  .column > .block {
+    margin-bottom: 0 !important;
   }
 }
