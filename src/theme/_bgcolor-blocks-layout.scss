@@ -8,14 +8,24 @@
 }
 
 #page-document .blocks-group-wrapper {
-  .block:first-child h2.headline {
+  &.transparent:first-child {
     padding-top: 0;
+  }
+  .block:first-child h2,
+  .block:first-child h2.headline {
+    margin-top: 0;
   }
 }
 
 // For grids
 .block.__grid {
+  &.is--first--of--block-type.previous--has--same--backgroundColor {
+    margin-top: $grid-block-vertical-spacing-top;
+  }
   &.is--last--of--block-type.next--has--same--backgroundColor {
     margin-bottom: $grid-block-vertical-spacing-bottom;
+  }
+  &.next--is--same--block-type.next--has--same--backgroundColor {
+    margin-bottom: -1rem;
   }
 }
