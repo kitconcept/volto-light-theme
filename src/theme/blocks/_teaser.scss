@@ -2,6 +2,18 @@
 
 #page-document .blocks-group-wrapper > .block.teaser {
   padding: 25px 0;
+}
+
+.block.teaser,
+.block-editor-teaser .block.teaser {
+  // We want the image to extend in all its container width
+  height: 100%;
+  padding: 0;
+
+  .grid-image-wrapper {
+    width: 100%;
+    margin: 0;
+  }
 
   &.has--align--left,
   &.has--align--right {
@@ -16,9 +28,7 @@
         flex-direction: column !important;
 
         .grid-image-wrapper {
-          margin-right: 0;
-          margin-bottom: 25px;
-          margin-left: 0;
+          margin: 0;
 
           img {
             width: 100%;
@@ -35,12 +45,13 @@
       flex-direction: row;
 
       .grid-image-wrapper {
-        margin-right: 20px;
+        margin-right: 1.5rem;
         margin-left: 0;
 
         @media only screen and (max-width: $largest-mobile-screen) {
           margin-right: 0;
           margin-left: 0;
+          margin-bottom: 1.5rem;
         }
       }
     }
@@ -52,11 +63,12 @@
 
       .grid-image-wrapper {
         margin-right: 0;
-        margin-left: 26px;
+        margin-left: 1.5rem;
 
         @media only screen and (max-width: $largest-mobile-screen) {
           margin-right: 0;
           margin-left: 0;
+          margin-bottom: 1.5rem;
         }
       }
     }
@@ -65,26 +77,41 @@
   &.has--align--center {
     .grid-teaser-item.default {
       display: block;
-
       a {
         display: block;
       }
 
       .grid-image-wrapper {
-        margin-bottom: 25px;
+        margin-bottom: 1.5rem;
       }
     }
   }
 
-  .content h3 {
-    padding: 0 20px 0 0;
-    margin: 0 0 15px 0;
-    color: $black;
-    @include text-heading-h3();
+  .content {
+    @media only screen and (max-width: $largest-mobile-screen) {
+      padding: 0 0.5rem;
+    }
+    h2 {
+      padding: 0 0 1rem 0 !important;
+      margin: 0 !important;
+      color: $black;
+      @include text-heading-h2();
+    }
+    .headline {
+      padding-bottom: 1rem;
+      margin: 0;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      @include headtitle1();
+    }
+    p {
+      margin: 0;
+      @include body-text();
+    }
   }
 }
 
-// Dynamic font sizes depending on number of columns in grid
+// Dynamic font sizes depending on number of columns for in-grid Teaser
 .block.__grid {
   .one.column {
     .content h2 {
@@ -135,87 +162,6 @@
         padding: 0 26px 60px 26px;
         @include body-text();
       }
-    }
-  }
-}
-
-.block.teaser {
-  // We want the image to extend in all its container width
-  height: 100%;
-
-  .grid-image-wrapper {
-    width: 100%;
-  }
-
-  .content {
-    align-self: flex-start;
-    @media only screen and (max-width: $largest-mobile-screen) {
-      margin-left: 0.5rem;
-    }
-
-    .headline {
-      padding-bottom: 20px;
-      margin: 0;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      @include headtitle1();
-    }
-
-    h2 {
-      padding: 0 20px 0 0;
-      margin: 0 0 40px 0;
-      color: $black;
-      @include text-heading-h2();
-    }
-
-    p {
-      margin: 0;
-      @include body-text();
-    }
-  }
-}
-
-// Block Teaser Standalone Edit
-
-.block-editor-teaser.has--align--left .block.teaser,
-.block-editor-teaser.has--align--right .block.teaser {
-  .grid-teaser-item.default {
-    display: flex;
-
-    .grid-image-wrapper {
-      align-self: flex-start;
-    }
-  }
-}
-
-.block-editor-teaser.has--align--left .block.teaser {
-  .grid-teaser-item.default {
-    flex-direction: row;
-
-    .grid-image-wrapper {
-      margin-right: 26px;
-      margin-left: 0;
-    }
-  }
-}
-
-.block-editor-teaser.has--align--right .block.teaser {
-  .grid-teaser-item.default {
-    flex-direction: row-reverse;
-
-    .grid-image-wrapper {
-      margin-right: 0;
-      margin-left: 20px;
-    }
-  }
-}
-
-.block-editor-teaser.has--align--center .block.teaser {
-  .grid-teaser-item.default {
-    display: block;
-
-    .grid-image-wrapper {
-      margin: 0 0 25px 0;
     }
   }
 }
