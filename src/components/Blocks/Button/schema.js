@@ -22,5 +22,7 @@ export const ButtonStylingSchema = ({ schema, formData, intl }) => {
     actions: ['center', 'wide'],
   };
 
+  schema.properties.inneralign.actions = ['left', 'center', 'right'];
+
   return schema;
 };
