@@ -135,6 +135,7 @@ footer {
   & > .block.image.align.wide figure,
   & > .block.__button,
   & > .block.listing .listing-item,
+  & > .block.listing .emptyListing,
   & > .block.listing.grid,
   & > .block h2.headline,
   & > .block.heading .heading-wrapper,
@@ -155,6 +156,15 @@ footer {
 
   & > h1.documentFirstHeading {
     @include adjustMarginsToContainer($default-container-width);
+  }
+
+  & > .block {
+    // This is the default, same color spacing for all blocks
+    margin-bottom: $block-vertical-space;
+  }
+
+  &:last-child {
+    margin-bottom: -1rem !important;
   }
 }
 
