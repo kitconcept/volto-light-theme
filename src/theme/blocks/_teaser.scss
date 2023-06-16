@@ -3,6 +3,12 @@
 .block-editor-teaser .block.teaser {
   // We want the image to extend in all its container width
   height: 100%;
+  
+  .grid-teaser-item.default {
+    border-bottom: 1px solid $black;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+  }
 
   .grid-image-wrapper {
     width: 100%;
