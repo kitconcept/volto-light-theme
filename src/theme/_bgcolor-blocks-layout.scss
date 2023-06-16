@@ -35,4 +35,7 @@
   .column > .block {
     margin-bottom: 0 !important;
   }
+  &.next--is--same--block-type.next--has--same--backgroundColor {
+    margin-bottom: -1rem;
+  }
 }
