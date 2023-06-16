@@ -46,8 +46,8 @@
         margin-left: 20px;
 
         @media only screen and (max-width: $largest-mobile-screen) {
-          margin-left: 0;
           margin-bottom: 26px;
+          margin-left: 0;
         }
       }
     }
@@ -77,8 +77,8 @@
       @include headtitle1();
     }
     h2 {
-      margin-bottom: 40px;
       margin-top: 0;
+      margin-bottom: 40px;
       @include text-heading-h2();
     }
     p {

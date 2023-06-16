@@ -57,10 +57,10 @@
         @include body-text();
 
         .headline {
+          padding: 0 !important;
           margin-bottom: 20px;
           letter-spacing: 1px;
           text-transform: uppercase;
-          padding: 0 !important;
           @include headtitle1();
         }
 
