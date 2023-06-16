@@ -79,7 +79,8 @@ const RenderBlocks = (props) => {
           condition={config.settings.enableAutoBlockGroupingByBackgroundColor}
           className={cx(
             'blocks-group-wrapper',
-            content[blocksFieldname][group[0]]?.styles?.backgroundColor,
+            content[blocksFieldname][group[0]]?.styles?.backgroundColor ??
+              'transparent',
           )}
         >
           {map(group, (block) => {

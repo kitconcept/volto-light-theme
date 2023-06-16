@@ -1,5 +1,5 @@
 .block.introduction {
-  margin: 0 0 3.5rem 0;
+  @include vertical-space-introduction();
 
   .block-container p,
   .block-container ul,

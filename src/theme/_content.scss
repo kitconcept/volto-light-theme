@@ -1,0 +1,7 @@
+.ui.basic.segment.content-area {
+  // We cancel the padding and margin from the segment
+  // allowing the content elements to be the ones that push for
+  // the required vertical spacing
+  padding: 0;
+  margin-top: 0;
+}
