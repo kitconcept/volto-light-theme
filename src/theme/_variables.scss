@@ -76,6 +76,36 @@ $bolder: 900 !default;
 // Vertical Spacing
 $block-vertical-space: 25px !default;
 
+@mixin vertical-space-h1() {
+  margin-top: 40px;
+  margin-bottom: 80px;
+}
+
+@mixin vertical-space-h2() {
+  margin-top: 80px;
+  margin-bottom: 40px;
+}
+
+@mixin vertical-space-h3() {
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+@mixin vertical-space-h4() {
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+@mixin vertical-space-introduction() {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+@mixin vertical-space-button() {
+  margin-top: 40px;
+  margin-bottom: 80px;
+}
+
 // Change of color
 $color-block-change-vertical-spacing: 100px !default;
 

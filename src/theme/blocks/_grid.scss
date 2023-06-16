@@ -7,8 +7,6 @@
   }
 
   .headline {
-    padding-top: 5.5rem;
-    padding-bottom: 2rem;
     @include block-title();
   }
   .slate {

@@ -13,6 +13,16 @@ li {
   @include body-text();
 }
 
+p,
+ul,
+ol {
+  margin-bottom: $block-vertical-space;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
 strong {
   @include add(weight, bold);
 }
@@ -31,7 +41,7 @@ em span span {
 h1.documentFirstHeading {
   border: none;
   @include page-title();
-  margin-bottom: 4.5rem;
+  @include vertical-space-h1();
   span {
     border: none;
     @include page-title();
@@ -45,13 +55,15 @@ h1.documentFirstHeading {
 // Block Title
 .block h2.headline {
   @include block-title();
+  @include vertical-space-h2();
 }
 
 // Heading block
-.heading-wrapper h2 {
-  padding-top: 4rem;
-  padding-bottom: 2rem;
+.heading-wrapper h2,
+.block .heading-wrapper h2:last-child {
+  // Needed to cancel the Semantic one
   @include block-title();
+  @include vertical-space-h2();
 }
 .heading-wrapper h3 {
   padding-top: 3rem;
@@ -63,9 +75,8 @@ h1.documentFirstHeading {
 
 // Slate headings
 h2 {
-  padding-top: 2.5rem;
-  padding-bottom: 1rem;
   @include text-heading-h2();
+  @include vertical-space-h2();
   span {
     font-size: inherit;
     font-weight: inherit;
@@ -73,9 +84,8 @@ h2 {
   }
 }
 h3 {
-  padding-top: 1.5rem;
-  padding-bottom: 0.3rem;
   @include text-heading-h3();
+  @include vertical-space-h3();
   span {
     font-size: inherit;
     font-weight: inherit;
@@ -83,9 +93,8 @@ h3 {
   }
 }
 h4 {
-  padding-top: 1.5rem;
-  padding-bottom: 0.3rem;
   @include text-heading-h4();
+  @include vertical-space-h4();
   span {
     font-size: inherit;
     font-weight: inherit;

@@ -150,7 +150,7 @@ const applyConfig = (config) => {
     group: 'teasers',
     imageScale: 'larger',
     colors: BG_COLORS,
-    schemaEnhancer: teaserSchemaEnhancer,
+    schemaEnhancer: composeSchema(defaultStylingSchema, teaserSchemaEnhancer),
   };
 
   config.blocks.blocksConfig.heading = {
@@ -175,6 +175,8 @@ const applyConfig = (config) => {
 
   config.blocks.blocksConfig.listing = {
     ...config.blocks.blocksConfig.listing,
+    colors: BG_COLORS,
+    schemaEnhancer: defaultStylingSchema,
     allowed_headline_tags: [['h2', 'h2']],
     variations: [
       ...config.blocks.blocksConfig.listing.variations,
