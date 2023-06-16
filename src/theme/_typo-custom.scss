@@ -84,9 +84,8 @@ h2 {
   }
 }
 h3 {
-  padding-top: 1.5rem;
-  padding-bottom: 0.3rem;
   @include text-heading-h3();
+  @include vertical-space-h3();
   span {
     font-size: inherit;
     font-weight: inherit;
@@ -94,9 +93,8 @@ h3 {
   }
 }
 h4 {
-  padding-top: 1.5rem;
-  padding-bottom: 0.3rem;
   @include text-heading-h4();
+  @include vertical-space-h4();
   span {
     font-size: inherit;
     font-weight: inherit;
