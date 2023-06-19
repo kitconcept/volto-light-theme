@@ -113,6 +113,9 @@
 }
 
 .grid-block-image {
+  .renderer-wrapper .ui.basic.button.remove-block-button {
+    z-index: 102;
+  }
   figcaption {
     position: absolute;
     z-index: 100;
@@ -181,4 +184,8 @@
       background: white;
     }
   }
+}
+
+.block.imagesGrid .toolbar {
+  z-index: 110;
 }
