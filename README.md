@@ -92,6 +92,12 @@ cd project
 yarn start
 ````
 
+## Vertical spacing block model
+
+This theme has the concept of block "grouping" given two consecutive blocks with the same styling block wrapper property `backgroundColor`. You have to add this property to your blocks in your blocks code. This add-on customizes `RenderBlocks.jsx` component in order to do so.
+
+The wrappers have the classnames `blocks-group-wrapper` and the name of the background color, eg. `grey`, defaulting to `transparent` if no `backgroundColor` property is set in the styling block wrapper in the block.
+
 ## Specification
 
 volto-light-theme works with the following Plone Blocks:
