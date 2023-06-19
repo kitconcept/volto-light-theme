@@ -17,6 +17,11 @@
   }
 }
 
+// If next block has different bgcolor, cancel all margin-bottom
+#page-document .block.next--has--different--backgroundColor {
+  margin-bottom: 0 !important;
+}
+
 // For grids
 #page-document .blocks-group-wrapper .block.__grid {
   &.is--first--of--block-type.previous--has--same--backgroundColor {
@@ -24,19 +29,19 @@
   }
   &.is--last--of--block-type.next--has--same--backgroundColor {
     margin-bottom: $grid-block-vertical-spacing-bottom;
-    // Why?
-    // .column > .block {
-    //   margin-bottom: $block-vertical-space !important;
-    // }
   }
   &.next--is--same--block-type.next--has--same--backgroundColor {
     margin-bottom: -1rem;
   }
-  // Why?
-  // .column > .block {
-  //   margin-bottom: 0 !important;
-  // }
-  // &.next--is--same--block-type.next--has--same--backgroundColor {
-  //   margin-bottom: -1rem;
-  // }
+}
+
+// Buttons
+#page-document
+  .blocks-group-wrapper
+  .block.__button.next--has--different--backgroundColor {
+  margin-bottom: 0;
+
+  .button.container {
+    margin-bottom: 0;
+  }
 }
