@@ -23,7 +23,10 @@ export const defaultStylingSchema = ({ schema, formData, intl }) => {
 
   addStyling({ schema, intl });
 
-  schema.properties.styles.schema.fieldsets[0].fields = ['backgroundColor'];
+  schema.properties.styles.schema.fieldsets[0].fields = [
+    ...schema.properties.styles.schema.fieldsets[0].fields,
+    'backgroundColor',
+  ];
   schema.properties.styles.schema.properties.backgroundColor = {
     widget: 'color_picker',
     title: intl.formatMessage(messages.backgroundColor),

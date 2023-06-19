@@ -85,6 +85,7 @@ h2 {
 }
 h3 {
   @include text-heading-h3();
+  @include vertical-space-h3();
   span {
     font-size: inherit;
     font-weight: inherit;
@@ -93,6 +94,7 @@ h3 {
 }
 h4 {
   @include text-heading-h4();
+  @include vertical-space-h4();
   span {
     font-size: inherit;
     font-weight: inherit;
