@@ -1,13 +1,16 @@
 // Block Teaser Standalone
+#page-document .block.teaser {
+  @include vertical-space-teaser();
+}
+
 .blocks-group-wrapper > .block.teaser,
 .block-editor-teaser .block.teaser {
   // We want the image to extend in all its container width
   height: 100%;
 
   .grid-teaser-item.default {
-    padding-bottom: 40px;
+    padding-bottom: 40px; // same as vertical spacing in margin-bottom
     border-bottom: 1px solid $black;
-    margin-bottom: 40px;
   }
 
   .grid-image-wrapper {
