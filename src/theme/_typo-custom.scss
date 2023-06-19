@@ -63,7 +63,7 @@ h1.documentFirstHeading {
 .block .heading-wrapper h2:last-child {
   // Needed to cancel the Semantic one
   @include block-title();
-  @include vertical-space-h2();
+  @include vertical-space-heading();
 }
 .heading-wrapper h3 {
   padding-top: 3rem;
