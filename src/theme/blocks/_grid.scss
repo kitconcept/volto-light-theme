@@ -42,7 +42,6 @@
 }
 
 .grid-block-teaser {
-  padding-bottom: 0 !important;
   .block.teaser {
     background-color: $lightgrey;
     .grid-teaser-item {
@@ -181,4 +180,9 @@
       background: white;
     }
   }
+}
+
+// Teasers in grids specific
+#page-document .block.__grid .block.teaser {
+  margin-bottom: 0;
 }
