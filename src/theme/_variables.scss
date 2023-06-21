@@ -115,6 +115,11 @@ $block-vertical-space: 25px !default;
   margin-bottom: 40px;
 }
 
+@mixin vertical-space-separator() {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
 // Change of color
 $color-block-change-vertical-spacing: 100px !default;
 
