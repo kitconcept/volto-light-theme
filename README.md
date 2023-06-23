@@ -115,11 +115,11 @@ These main rules spec applies to the theme:
 - On each change of color, a vertical padding (both `padding-bottom` and `padding-top`) of `80px` defined with the main variable `$color-block-change-vertical-spacing`.
 - The default bottom margin is defined with the main variable `$block-vertical-space` and set by default to `25px`.
 - [grid] Vertical spacing for grids should be `80px` for both top and bottom, even if the previous and next blocks are of the same color.
-- [grid+grid] When two grids happen side by side and are of the same color. It should be equal to the grid gap, so it's set to `@gutterWidth` and currently `1rem`. It has to be adjusted with a bit of negative margin since he have to cancel the current inner padding in grid cells.
+- [grid+grid] When two grids happen side by side and are of the same color. It should be equal to the grid gap, so it's set to `@gutterWidth` and currently `1rem`. It has to be adjusted with a bit of negative margin to cancel the current inner padding in grid cells.
 - [grid+grid] Grids columns belonging to the same grid and same color in small mobile viewports. They should be closer to match the other adjacent ones, so they seem to belong to the same grid set.
 - [footer] The footer has a top vertical spacing of `80px`.
-- [teasers] The last teaser, except if the following is a button, do NOT have a line at the bottom.
-- [listing] The last listing, except if the following is a button, do NOT have a line at the bottom.
+- [teasers] The last teaser, except if the following is a button, does NOT have a line at the bottom.
+- [listing] The last listing, except if the following is a button, does NOT have a line at the bottom.
 - [listing] After two consecutive listings, the vertical spacing should be `200px`.
 - [text+button] If there's a text and a button, then the vertical spacing betweeen them is `60px`.
 - [image+separator-block] If after image comes a separator block, the vertical spacing between them is `40px`.
