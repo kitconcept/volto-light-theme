@@ -10,9 +10,9 @@
     @include block-title();
   }
   .slate {
+    padding: 40px 20px 20px 20px;
     margin: 0;
     background-color: $lightgrey;
-    padding: 40px 20px 20px 20px;
     p {
       padding: 0;
       margin-bottom: 20px;
@@ -31,8 +31,8 @@
 
   .slate-editor {
     height: 100%;
-    margin: 0;
     padding: 40px 20px 20px 20px;
+    margin: 0;
     background-color: $lightgrey !important;
     p {
       padding: 0;
