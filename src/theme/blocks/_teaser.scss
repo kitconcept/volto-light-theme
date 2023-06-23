@@ -87,6 +87,14 @@
 // Dynamic font sizes depending on number of columns in grid
 .block.__grid {
   .one.column {
+    .grid-block-image {
+      figure:after {
+        height: 76px;
+      }
+      .title {
+        @include text-heading-h2();
+      }
+    }
     .content h2 {
       padding-top: 20px !important;
       padding-bottom: 40px !important;
@@ -94,6 +102,11 @@
     }
   }
   .two.column {
+    .grid-block-image {
+      .title {
+        @include text-heading-h3();
+      }
+    }
     .grid-teaser-item {
       .content {
         h2 {
@@ -105,6 +118,11 @@
     }
   }
   .three.column.grid {
+    .grid-block-image {
+      .title {
+        @include text-heading-h3();
+      }
+    }
     .grid-teaser-item .content {
       h2 {
         padding-top: 15px !important;
@@ -114,6 +132,16 @@
     }
   }
   .four.column {
+    .grid-block-image {
+      figure:after {
+        height: 59px;
+      }
+      .title {
+        padding-top: 20px;
+        margin-bottom: -6px;
+        @include text-heading-h4();
+      }
+    }
     .grid-teaser-item .content {
       .headline {
         padding-bottom: 20px;
