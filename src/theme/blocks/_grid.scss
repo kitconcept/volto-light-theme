@@ -68,6 +68,7 @@
       font-size: 18px;
       letter-spacing: 1px;
       line-height: 22px;
+      margin-bottom: 0px;
     }
 
     .description {
@@ -94,7 +95,7 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 35%;
+    height: 70px;
     background-color: $black;
     content: '';
     opacity: 0.75;
