@@ -119,8 +119,8 @@ const applyConfig = (config) => {
     },
   ];
 
-  config.blocks.blocksConfig.__grid = {
-    ...config.blocks.blocksConfig.__grid,
+  config.blocks.blocksConfig.gridBlock = {
+    ...config.blocks.blocksConfig.gridBlock,
     colors: BG_COLORS,
     schemaEnhancer: defaultStylingSchema,
     icon: gridSVG,

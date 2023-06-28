@@ -1,5 +1,12 @@
 # Volto Light Theme by kitconcept
 
+[![NPM](https://img.shields.io/npm/v/@kitconcept/volto-light-theme.svg)](https://www.npmjs.com/package/@kitconcept/volto-light-theme)
+[![Build Status](https://github.com/kitconcept/volto-light-theme/actions/workflows/code.yml/badge.svg)](https://github.com/kitconcept/volto-light-theme/actions)
+[![Build Status](https://github.com/kitconcept/volto-light-theme/actions/workflows/unit.yml/badge.svg)](https://github.com/kitconcept/volto-light-theme/actions)
+[![Build Status](https://github.com/kitconcept/volto-light-theme/actions/workflows/acceptance.yml/badge.svg)](https://github.com/kitconcept/volto-light-theme/actions)
+
+![kitconcept GmbH](https://github.com/kitconcept/volto-blocks/raw/master/kitconcept.png)
+
 ## Vision
 
 The Volto Light Theme main vision is to provide kitconcept a theme to build upon the projects to come after the release of Plone 6.
