@@ -1,4 +1,4 @@
-# volto-light-theme
+# Volto Light Theme by kitconcept
 
 ## Vision
 
@@ -29,9 +29,10 @@ The Volto strategy is:
 
 #### Volto components `customizations` use case
 
-If possible, we will switch to SemanticUI-less (`Atom`) components in case of they exist. Specially if the elements that we are customizing are clearly "theme" (eg. header/footer, etc). In the case of other Volto customizations that are not clear part of the theme (eg. Search block), it's fine to stick using what the original is using (SemanticUI). When Volto will make the switch in the future, we should then adapt all the customizations to match the one in the Volto core.
+If possible, we will switch to SemanticUI-less components in case of they exist. Specially if the elements that we are customizing are clearly "theme" (eg. header/footer, etc). In the case of other Volto customizations that are not clear part of the theme (eg. Search block), it's fine to stick using what the original is using (SemanticUI). When Volto will make the switch in the future, we should then adapt all the customizations to match the one in the Volto core.
+The approach used is to use a proxy to a component of the `components` folder. This way it's easier to keep track of changes, and another add-on can customize again the light theme component, not the original Volto customization.
 
-### It should use kitconcept's layout used in FZJ/DLR
+### It should use kitconcept's layout used in FZJ/DLR projects
 
 Since FZJ/DLR projects we've been trying a new concept in layout for Volto. This new layout uses three widths for the content elements:
 
@@ -53,56 +54,11 @@ We will start organising de files in the root of `theme` folder, to differentiat
 - All less files loading are centralized in one main less file `custom.less` in this project, could be different in the future.
 - Vanilla headless components are named under `atoms` folder.
 
-
 ## Why a headless component system?
 
 https://medium.com/@nirbenyair/headless-components-in-react-and-why-i-stopped-using-ui-libraries-a8208197c268
 
-
-## Development Setup
-
-## Prerequisits
-
-- Docker
-- Node 16 (e.g. via nvm)
-- yo (run "npm install -g yo")
-- @plone/generator-volto (run "npm install -g @plone/generator-volto")
-- Build project by running "make"
-
-### Build a project
-
-Run
-
-````
-make project
-````
-
-### Start Backend (Docker)
-
-Run:
-
-````
-make start-backend-docker
-````
-
-### Start Frontend (Volto)
-
-````
-cd project
-yarn start
-````
-
-## Block model
-
-The block model we use in the light theme is following these rules:
-
-- The vertical spacing between blocks is driven by `margin-bottom` alone.
-- The block starts right at the very beginning of its container (no `margin-top`)
-
-Some blocks, especially the textual ones, are exceptions to these rules and can have both `margin-top` and `margin-bottom`.
-These take advantage of the vertical margin collapse to relate well with each other.
-
-### Vertical spacing block model
+## Vertical spacing block model
 
 This theme has the concept of block "grouping" given two consecutive blocks with the same styling block wrapper property `backgroundColor`. You have to add this property to your blocks in your blocks code. This add-on customizes `RenderBlocks.jsx` component in order to do so.
 
@@ -126,7 +82,7 @@ These main rules spec applies to the theme:
 
 ## Specification
 
-volto-light-theme works with the following Plone Blocks:
+`@kitconcept/volto-light-theme` works with the following Plone Blocks:
 
 - Grid-Block (https://www.npmjs.com/package/@kitconcept/volto-blocks-grid)
 - Teaser-Block (https://www.npmjs.com/package/@kitconcept/volto-blocks-grid)
@@ -134,8 +90,33 @@ volto-light-theme works with the following Plone Blocks:
 - Button-Block (https://www.npmjs.com/package/@kitconcept/volto-button-block)
 - Separator-Block (https://www.npmjs.com/package/@kitconcept/volto-separator-block)
 - Heading-Block (https://www.npmjs.com/package/@kitconcept/volto-heading-block)
-- Introduction-Block (not open source yet)
+- Introduction-Block (https://www.npmjs.com/package/@kitconcept/volto-introduction-block)
 
 and the following add-ons:
 
 - DSGVO-Banner (https://www.npmjs.com/package/@kitconcept/volto-dsgvo-banner)
+
+## Development Setup
+
+This theme works better under Volto 17 (and alphas).
+
+### Prerequisites
+
+- Docker
+- Node 18 (e.g. via nvm)
+
+### Build a project
+
+Run
+
+````
+make start-dev
+````
+
+### Stop Backend (Docker)
+
+Run:
+
+````
+make stop-backend-docker
+````

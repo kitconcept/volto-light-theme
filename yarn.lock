@@ -1470,7 +1470,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@kitconcept/volto-light-theme@workspace:."
   dependencies:
-    "@plone/scripts": ^2.3.0
+    "@plone/scripts": ^3.0.0
     postcss-scss: 4.0.6
     prettier: 2.0.5
     razzle-plugin-scss: 4.2.18
@@ -1518,9 +1518,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@plone/scripts@npm:^2.3.0":
-  version: 2.3.0
-  resolution: "@plone/scripts@npm:2.3.0"
+"@plone/scripts@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@plone/scripts@npm:3.0.0"
   dependencies:
     babel-plugin-react-intl: 5.1.17
     babel-preset-razzle: 4.2.17
@@ -1530,12 +1530,11 @@ __metadata:
     git-url-parse: ^11.6.0
     mrs-developer: "*"
     pofile: 1.0.10
-    simple-git: 3.5.0
   bin:
     addon: addon/index.js
     changelogupdater: changelogupdater.cjs
     i18n: i18n.cjs
-  checksum: 32dbbe4f9233e8d9b16ffc451c42d4753907b3f700665a4bed796c5642194890d8bda21deddd3d1efb1559df288b29c69d32cf7437f6f4ef0a5113722b6b79ba
+  checksum: c5a03a68fd16f731fd40bbf94e3bc6addb4395a04049eb98fbb95f1e1ebcc2468e003149b829261a1b577d50cce032d80dc99c8e812a126621f730f6e431cb97
   languageName: node
   linkType: hard
 
@@ -3903,17 +3902,6 @@ __metadata:
   version: 3.0.7
   resolution: "signal-exit@npm:3.0.7"
   checksum: a2f098f247adc367dffc27845853e9959b9e88b01cb301658cfe4194352d8d2bb32e18467c786a7fe15f1d44b233ea35633d076d5e737870b7139949d1ab6318
-  languageName: node
-  linkType: hard
-
-"simple-git@npm:3.5.0":
-  version: 3.5.0
-  resolution: "simple-git@npm:3.5.0"
-  dependencies:
-    "@kwsites/file-exists": ^1.1.1
-    "@kwsites/promise-deferred": ^1.1.1
-    debug: ^4.3.3
-  checksum: be078d9e898d1dea99bb15d4f6927c0f61aafde73114c7423fb0efca6d6f99012da2a2f43b5e2151a1707994cc9c75139bc12e3d307dd25da48ed1dce1167748
   languageName: node
   linkType: hard
 
