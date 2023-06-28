@@ -126,7 +126,22 @@ const applyConfig = (config) => {
     ...config.blocks.blocksConfig.accordion,
     icon: accordionSVG,
     allowedBlocks: ['slate', 'teaser', 'image', 'listing', 'slateTable'],
-    schemaEnhancer: AccordionSchemaEnhancer,
+    colors: BG_COLORS,
+    schemaEnhancer: composeSchema(
+      AccordionSchemaEnhancer,
+      defaultStylingSchema,
+    ),
+    sidebarTab: 1,
+    blocksConfig: {
+      ...config.blocks.blocksConfig,
+      teaser: {
+        ...config.blocks.blocksConfig.teaser,
+        schemaEnhancer: composeSchema(
+          gridTeaserDisableStylingSchema,
+          teaserSchemaEnhancer,
+        ),
+      },
+    },
   };
 
   config.blocks.blocksConfig.__grid = {

@@ -33,5 +33,6 @@ export const defaultStylingSchema = ({ schema, formData, intl }) => {
     colors,
     default: defaultBGColor,
   };
+
   return schema;
 };
