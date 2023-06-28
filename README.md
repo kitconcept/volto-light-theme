@@ -105,7 +105,11 @@ and the following add-ons:
 
 ## Development Setup
 
-This theme works better under Volto 17 (and alphas).
+This theme works under Volto 17 alpha 16 onwards.
+Compatibility with Volto 16 might be achieved, but it has to be at customization level in the
+specific project add-on.
+This is mainly due to the `RenderBlocks` customization that is based in the one in 17 because of the Grid block in core and the autogrouping feature.
+See more information about the other dependencies in `peerDependencies` in `package.json`.
 
 ### Prerequisites
 
