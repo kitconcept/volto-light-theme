@@ -95,4 +95,15 @@
       @include body-text();
     }
   }
+
+  &.is--last--of--block-type {
+    .grid-teaser-item.default {
+      border-bottom: none;
+    }
+    &.next--is--__button {
+      .grid-teaser-item.default {
+        border-bottom: 1px solid $black;
+      }
+    }
+  }
 }
