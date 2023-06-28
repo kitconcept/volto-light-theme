@@ -151,6 +151,11 @@ const applyConfig = (config) => {
     },
   };
 
+  config.blocks.blocksConfig.introduction = {
+    ...config.blocks.blocksConfig.introduction,
+    unwantedButtons: ['heading-three', 'blockquote'],
+  };
+
   config.blocks.blocksConfig.slate = {
     ...config.blocks.blocksConfig.slate,
     colors: BG_COLORS,
