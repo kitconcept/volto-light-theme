@@ -121,11 +121,14 @@ $block-vertical-space: 25px !default;
 }
 
 // Change of color
-$color-block-change-vertical-spacing: 100px !default;
+$color-block-change-vertical-spacing: 80px !default;
 
 // Grids
-$grid-block-vertical-spacing-top: 100px !default;
-$grid-block-vertical-spacing-bottom: 100px !default;
+$grid-block-vertical-spacing-top: 80px !default;
+$grid-block-vertical-spacing-bottom: 80px !default;
+
+// Footer
+$footer-vertical-spacing-top: 80px !default;
 
 // Maps
 $font-weights: (

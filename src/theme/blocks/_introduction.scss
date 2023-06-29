@@ -1,6 +1,8 @@
-.block.introduction {
+#page-document .block.introduction {
   @include vertical-space-introduction();
+}
 
+.block.introduction {
   .block-container p,
   .block-container ul,
   .block-container ol,

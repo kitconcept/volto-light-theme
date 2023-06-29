@@ -4,5 +4,10 @@
     padding: 0 !important;
   }
 
+  &.has--align--center {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
   @include vertical-space-separator();
 }

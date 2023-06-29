@@ -153,6 +153,19 @@ const applyConfig = (config) => {
     // One could customize the blocks inside the grid like this:
     blocksConfig: {
       ...config.blocks.blocksConfig,
+      slate: {
+        ...config.blocks.blocksConfig.slate,
+        // Slate in grids must have an extra wrapper with the `slate` className
+        view: (props) => {
+          const EnhancedSlateViewComponent =
+            config.blocks.blocksConfig.slate.view;
+          return (
+            <div className="slate">
+              <EnhancedSlateViewComponent {...props} />
+            </div>
+          );
+        },
+      },
       teaser: {
         ...config.blocks.blocksConfig.teaser,
         schemaEnhancer: composeSchema(
