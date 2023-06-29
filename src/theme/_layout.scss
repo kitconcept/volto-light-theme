@@ -110,6 +110,7 @@ footer {
   & > h6,
   & > ul,
   & > ol,
+  & > li,
   & > p,
   & > span,
   & > blockquote,
@@ -237,7 +238,7 @@ footer {
 }
 
 // Fix for Image Grid with only one image
-#page-document .block.__grid .block.image.align.center figure,
+#page-document .block.gridBlock .block.image.align.center figure,
 #page-document .block.gridBlock .block.image.align.center figure {
   max-width: unset;
 }

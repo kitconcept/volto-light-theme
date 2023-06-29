@@ -1,58 +1,19 @@
-.block.__grid {
+.block.gridBlock {
   margin-top: 0;
   margin-bottom: 0;
 
-  .teaser {
-    margin-bottom: 0;
-  }
-
-  .headline {
-    @include block-title();
-  }
-  .slate {
-    padding: 40px 20px 20px 20px;
-    margin: 0;
-    background-color: $lightgrey;
-    p {
-      padding: 0;
-      margin-bottom: 20px;
-    }
-    h2,
-    h3 {
-      margin-bottom: 40px !important;
-    }
-  }
-}
-
-.grid-block-slate {
-  .text-slate-editor-inner {
-    height: 100%;
-  }
-
-  .slate-editor {
-    height: 100%;
-    padding: 40px 20px 20px 20px;
-    margin: 0;
-    background-color: $lightgrey !important;
-    p {
-      padding: 0;
-    }
-    h2,
-    h3 {
-      padding: 0;
-      margin-bottom: 40px !important;
-    }
-  }
-}
-
-.grid-block-teaser {
   .block.teaser {
+    margin-bottom: 0;
     background-color: $lightgrey;
     .grid-teaser-item {
       height: 100%;
 
       .grid-image-wrapper {
-        margin-bottom: 40px !important;
+        margin: 0 0 40px 0 !important;
+
+        img {
+          position: relative;
+        }
       }
       .content {
         padding: 0 20px 20px 20px;
@@ -77,85 +38,30 @@
       }
     }
   }
-}
 
-// Dynamic font sizes depending on number of columns for in-grid blocks
-.block.__grid {
-  .one.column {
-    .content h2 {
-      margin-bottom: 40px !important;
-      @include text-heading-h2();
-    }
-  }
-
-  .two.column,
-  .three.column {
-    .grid-teaser-item .content {
-      h2 {
-        margin-bottom: 20px !important;
-        @include text-heading-h3();
-      }
-    }
-    .grid-block-image {
-      figcaption {
-        .title {
-          @include text-heading-h3();
-          margin: 0 0 20px 0;
-        }
-      }
-      figure:after {
-        height: 70px;
-      }
-    }
-    .grid-block-slate .slate {
-      h2,
-      h3 {
-        margin-bottom: 20px !important;
-      }
-    }
-  }
-
-  .four.column {
+  .block-editor-teaser {
+    padding: 0;
+    margin: 0.5rem !important;
     .grid-teaser-item {
-      .grid-image-wrapper {
-        margin-bottom: 20px !important;
-      }
-      .content {
-        .headline {
-          @include headtitle2();
-        }
-        h2 {
-          margin-bottom: 20px !important;
-          @include text-heading-h4();
-        }
-      }
-    }
-
-    .grid-block-image {
-      figcaption {
-        .title {
-          margin: 0 0 15px 0;
-          color: $white !important;
-          letter-spacing: 1px;
-          @include text-heading-h4();
-        }
-      }
-      figure:after {
-        height: 59px;
-      }
-    }
-
-    .grid-block-slate .slate {
-      h2,
-      h3 {
-        margin-bottom: 20px !important;
-      }
+      border: none !important;
     }
   }
-}
 
-.block.__grid {
-  .grid-block-image {
+  .slate:not(.inner) {
+    padding: 40px 20px 20px 20px;
+    margin: 0;
+    background-color: $lightgrey;
+    p {
+      padding: 0;
+      margin-bottom: 20px;
+    }
+  }
+
+  .block-editor-slate {
+    padding: 0;
+  }
+
+  .block.image {
     figcaption {
       position: absolute;
       z-index: 100;
@@ -201,10 +107,112 @@
       opacity: 0.75;
     }
   }
+
+  .block-editor-image {
+    padding: 0;
+    margin: 0.5rem !important;
+  }
+
+  .block-editor-empty {
+    padding: 0;
+    margin: 1rem 0.5rem 1rem 0.5rem !important;
+  }
 }
-.block.__grid.has--backgroundColor--grey,
-#page-add .block-editor-__grid.has--backgroundColor--grey,
-#page-edit .block-editor-__grid.has--backgroundColor--grey {
+
+// Dynamic font sizes depending on number of columns for in-grid blocks
+.block.gridBlock,
+.block-editor-gridBlock {
+  .one {
+    .grid-teaser-item .content h2 {
+      margin-bottom: 40px !important;
+      @include text-heading-h2();
+    }
+
+    .slate {
+      h2 {
+        margin-bottom: 40px !important;
+      }
+    }
+  }
+
+  .two,
+  .three {
+    .teaser {
+      .grid-teaser-item .content {
+        h2 {
+          margin-bottom: 20px !important;
+          @include text-heading-h3();
+        }
+      }
+    }
+    .image {
+      figcaption {
+        .title {
+          @include text-heading-h3();
+          margin: 0 0 20px 0;
+        }
+      }
+      figure:after {
+        height: 70px;
+      }
+    }
+    .slate {
+      h2 {
+        margin-bottom: 20px !important;
+        @include text-heading-h3();
+      }
+    }
+  }
+
+  .four {
+    .teaser {
+      .grid-teaser-item {
+        .grid-image-wrapper {
+          margin-bottom: 20px !important;
+        }
+        .content {
+          .headline {
+            @include headtitle2();
+          }
+          h2 {
+            margin-bottom: 20px !important;
+            @include text-heading-h4();
+          }
+          p {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
+    .image {
+      figcaption {
+        .title {
+          margin: 0 0 15px 0;
+          color: $white !important;
+          letter-spacing: 1px;
+          @include text-heading-h4();
+        }
+      }
+      figure:after {
+        height: 59px;
+      }
+    }
+
+    .slate {
+      h2 {
+        margin-bottom: 20px !important;
+        @include text-heading-h4();
+      }
+
+      padding-top: 20px !important;
+    }
+  }
+}
+
+.block.gridBlock.has--backgroundColor--grey,
+#page-add .block-editor-gridBlock.has--backgroundColor--grey,
+#page-edit .block-editor-gridBlock.has--backgroundColor--grey {
   background-color: $lightgrey;
   .grid-teaser-item {
     background: white;
@@ -229,6 +237,6 @@
 }
 
 // Teasers in grids specific
-#page-document .block.__grid .block.teaser {
+#page-document .block.gridBlock .block.teaser {
   margin-bottom: 0;
 }
