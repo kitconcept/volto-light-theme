@@ -15,8 +15,5 @@
     "release": true,
     "releaseName": "${version}",
     "releaseNotes": "cat .changelog.draft"
-  },
-  "npm": {
-    "publish": false
   }
 }
