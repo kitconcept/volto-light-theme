@@ -4,14 +4,14 @@
  * in the StylingWrapper. In the future one could improve it by enabling a way to choose the
  * grouping property, eg. using a property other than `backgroundColor`.
  * FILE: https://github.com/plone/volto/blob/9882c66da42e5440ca1c949d829b78f2b1328683/src/components/theme/View/RenderBlocks.jsx#L25
- * FILE VERSION: Volto 17.0.0-alpha.8
- * DATE: 2023-05-25
+ * FILE VERSION: Volto 17.0.0-alpha.16
+ * DATE: 2023-06-28
  * DEVELOPER: @sneridagh
  */
 
 import React from 'react';
 import { getBaseUrl, applyBlockDefaults } from '@plone/volto/helpers';
-import { defineMessages, injectIntl } from 'react-intl';
+import { defineMessages, useIntl } from 'react-intl';
 import { map } from 'lodash';
 import {
   getBlocksFieldname,
@@ -23,6 +23,7 @@ import config from '@plone/volto/registry';
 import { ViewDefaultBlock } from '@plone/volto/components';
 import cx from 'classnames';
 import MaybeWrap from '@plone/volto/components/manage/MaybeWrap/MaybeWrap';
+import RenderEmptyBlock from '@plone/volto/components/theme/View/RenderEmptyBlock';
 
 const messages = defineMessages({
   unknownBlock: {
@@ -60,7 +61,8 @@ export function groupByBGColor(blocks, blocks_layout) {
 }
 
 const RenderBlocks = (props) => {
-  const { content, intl, location, metadata } = props;
+  const { blockWrapperTag, content, isContainer, location, metadata } = props;
+  const intl = useIntl();
   const blocksFieldname = getBlocksFieldname(content);
   const blocksLayoutFieldname = getBlocksLayoutFieldname(content);
   const blocksConfig = props.blocksConfig || config.blocks.blocksConfig;
@@ -76,7 +78,10 @@ const RenderBlocks = (props) => {
       {map(grouped, (group) => (
         <MaybeWrap
           key={`block-group-${group[0]}`}
-          condition={config.settings.enableAutoBlockGroupingByBackgroundColor}
+          condition={
+            config.settings.enableAutoBlockGroupingByBackgroundColor &&
+            !isContainer
+          }
           className={cx(
             'blocks-group-wrapper',
             content[blocksFieldname][group[0]]?.styles?.backgroundColor ??
@@ -95,30 +100,56 @@ const RenderBlocks = (props) => {
               properties: content,
             });
 
-            return Block ? (
-              <StyleWrapper
-                key={block}
-                {...props}
-                id={block}
-                block={block}
-                data={blockData}
-              >
-                <Block
-                  id={block}
-                  metadata={metadata}
-                  properties={content}
-                  data={blockData}
-                  path={getBaseUrl(location?.pathname || '')}
-                  blocksConfig={blocksConfig}
-                />
-              </StyleWrapper>
-            ) : blockData ? (
-              <div key={block}>
-                {intl.formatMessage(messages.unknownBlock, {
-                  block: content[blocksFieldname]?.[block]?.['@type'],
-                })}
-              </div>
-            ) : (
+            if (content[blocksFieldname]?.[block]?.['@type'] === 'empty') {
+              return (
+                <MaybeWrap
+                  key={block}
+                  condition={blockWrapperTag}
+                  as={blockWrapperTag}
+                >
+                  <RenderEmptyBlock />
+                </MaybeWrap>
+              );
+            }
+
+            if (Block) {
+              return (
+                <MaybeWrap
+                  key={block}
+                  condition={blockWrapperTag}
+                  as={blockWrapperTag}
+                >
+                  <StyleWrapper
+                    key={block}
+                    {...props}
+                    id={block}
+                    block={block}
+                    data={blockData}
+                  >
+                    <Block
+                      id={block}
+                      metadata={metadata}
+                      properties={content}
+                      data={blockData}
+                      path={getBaseUrl(location?.pathname || '')}
+                      blocksConfig={blocksConfig}
+                    />
+                  </StyleWrapper>
+                </MaybeWrap>
+              );
+            }
+
+            if (blockData) {
+              return (
+                <div key={block}>
+                  {intl.formatMessage(messages.unknownBlock, {
+                    block: content[blocksFieldname]?.[block]?.['@type'],
+                  })}
+                </div>
+              );
+            }
+
+            return (
               <div key={block}>{intl.formatMessage(messages.invalidBlock)}</div>
             );
           })}
@@ -130,4 +161,4 @@ const RenderBlocks = (props) => {
   );
 };
 
-export default injectIntl(RenderBlocks);
+export default RenderBlocks;

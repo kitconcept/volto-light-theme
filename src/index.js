@@ -146,8 +146,8 @@ const applyConfig = (config) => {
     },
   };
 
-  config.blocks.blocksConfig.__grid = {
-    ...config.blocks.blocksConfig.__grid,
+  config.blocks.blocksConfig.gridBlock = {
+    ...config.blocks.blocksConfig.gridBlock,
     colors: BG_COLORS,
     schemaEnhancer: defaultStylingSchema,
     icon: gridSVG,
@@ -176,6 +176,11 @@ const applyConfig = (config) => {
         ),
       },
     },
+  };
+
+  config.blocks.blocksConfig.introduction = {
+    ...config.blocks.blocksConfig.introduction,
+    unwantedButtons: ['heading-three', 'blockquote'],
   };
 
   config.blocks.blocksConfig.slate = {
