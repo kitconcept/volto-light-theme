@@ -41,9 +41,6 @@ const Header = (props) => {
               <Link aria-label="register" to="/register">
                 <FormattedMessage id="Register" defaultMessage="Registration" />
               </Link>
-              <Link aria-label="press" to="/press">
-                <FormattedMessage id="Press" defaultMessage="Press" />
-              </Link>
               <Link aria-label="sitemap" to="/sitemap">
                 <FormattedMessage id="Sitemap" defaultMessage="Sitemap" />
               </Link>
