@@ -11,9 +11,12 @@ import Container from './components/Atoms/Container/Container';
 import TopSideFacets from './components/Blocks/Search/TopSideFacets';
 
 import GridListingBlockTemplate from './components/Blocks/Listing/GridTemplate';
+import { ButtonStylingSchema } from './components/Blocks/Button/schema';
+
+import { AccordionSchemaEnhancer } from './components/Blocks/Accordion/schema';
 
 import gridSVG from './icons/block_icn_grid.svg';
-import { ButtonStylingSchema } from './components/Blocks/Button/schema';
+import accordionSVG from './icons/block_icn_accordion.svg';
 
 const BG_COLORS = [
   { name: 'transparent', label: 'Transparent' },
@@ -118,6 +121,30 @@ const applyConfig = (config) => {
       component: ContainerQueriesPolyfill,
     },
   ];
+
+  config.blocks.blocksConfig.accordion = {
+    ...config.blocks.blocksConfig.accordion,
+    mostUsed: true,
+    icon: accordionSVG,
+    allowedBlocks: ['slate', 'teaser', 'image', 'listing', 'slateTable'],
+    colors: BG_COLORS,
+    schemaEnhancer: composeSchema(
+      AccordionSchemaEnhancer,
+      defaultStylingSchema,
+    ),
+    sidebarTab: 1,
+  };
+
+  config.blocks.blocksConfig.accordion.blocksConfig = {
+    ...config.blocks.blocksConfig,
+    teaser: {
+      ...config.blocks.blocksConfig.teaser,
+      schemaEnhancer: composeSchema(
+        gridTeaserDisableStylingSchema,
+        teaserSchemaEnhancer,
+      ),
+    },
+  };
 
   config.blocks.blocksConfig.__grid = {
     ...config.blocks.blocksConfig.__grid,
