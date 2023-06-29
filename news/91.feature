@@ -1,1 +1,0 @@
-Add Grid listing variation @danalvrz
