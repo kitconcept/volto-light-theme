@@ -252,6 +252,16 @@ body.has-toolbar.has-sidebar .block .ui.basic.button.delete-button {
   margin-right: -30px !important;
 }
 
+#page-add,
+#page-edit {
+  .block-editor-accordion {
+    [class*='block-editor-'] {
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+}
+
 .contenttype-file {
   a {
     text-decoration: underline;
