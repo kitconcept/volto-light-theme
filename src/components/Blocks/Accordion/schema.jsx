@@ -1,12 +1,3 @@
-import { defineMessages } from 'react-intl';
-
-const messages = defineMessages({
-  headline: {
-    id: 'Headline',
-    defaultMessage: 'Headline',
-  },
-});
-
 export function AccordionSchemaEnhancer({ schema, formData, intl }) {
   // Opinionated removal of the options fieldset
   schema.fieldsets = schema.fieldsets.filter((item) => item.id !== 'options');
