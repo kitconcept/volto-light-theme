@@ -1,1 +1,0 @@
-Customize SummaryTemplate to render dynamic ItemBodyTemplates from the registry, depending on the item's type @danalvrz
