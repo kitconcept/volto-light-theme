@@ -124,6 +124,7 @@ const applyConfig = (config) => {
 
   config.blocks.blocksConfig.accordion = {
     ...config.blocks.blocksConfig.accordion,
+    mostUsed: true,
     icon: accordionSVG,
     allowedBlocks: ['slate', 'teaser', 'image', 'listing', 'slateTable'],
     colors: BG_COLORS,
@@ -132,15 +133,16 @@ const applyConfig = (config) => {
       defaultStylingSchema,
     ),
     sidebarTab: 1,
-    blocksConfig: {
-      ...config.blocks.blocksConfig,
-      teaser: {
-        ...config.blocks.blocksConfig.teaser,
-        schemaEnhancer: composeSchema(
-          gridTeaserDisableStylingSchema,
-          teaserSchemaEnhancer,
-        ),
-      },
+  };
+
+  config.blocks.blocksConfig.accordion.blocksConfig = {
+    ...config.blocks.blocksConfig,
+    teaser: {
+      ...config.blocks.blocksConfig.teaser,
+      schemaEnhancer: composeSchema(
+        gridTeaserDisableStylingSchema,
+        teaserSchemaEnhancer,
+      ),
     },
   };
 
