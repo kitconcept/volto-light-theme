@@ -27,21 +27,21 @@
 }
 
 .block.listing.summary {
-.listing-item {
-  padding-top: 0 !important;
-  padding-bottom: 40px !important;
-  margin-bottom: 40px;
-  img {
-    width: 25%;
-    height: min-content;
-    aspect-ratio: $aspect-ratio;
-  }
-  h3 {
-    color: $black;
+  .listing-item {
+    padding-top: 0 !important;
+    padding-bottom: 40px !important;
     margin-bottom: 40px;
-    @include text-heading-h2();
+    img {
+      width: 25%;
+      height: min-content;
+      aspect-ratio: $aspect-ratio;
+    }
+    h3 {
+      color: $black;
+      margin-bottom: 40px;
+      @include text-heading-h2();
+    }
   }
-}
 }
 
 // Grid Listing Block
@@ -113,20 +113,18 @@
 .block.listing.has--backgroundColor--grey {
   background-color: $lightgrey;
 
-  &.grid { 
+  &.grid {
     .listing-item {
       .card-container {
         background-color: $white;
       }
     }
   }
-  .block.listing.grid { 
+  .block.listing.grid {
     .listing-item {
       .card-container {
         background-color: $white;
       }
     }
   }
-
 }
-
