@@ -10,8 +10,8 @@
 
   .grid-teaser-item.default {
     padding-bottom: 40px; // same as vertical spacing in margin-bottom
-    border-bottom: 1px solid $black;
     align-items: start;
+    border-bottom: 1px solid $black;
   }
 
   .grid-image-wrapper {
@@ -103,13 +103,13 @@
   &.is--last--of--block-type,
   &.next--has--different--backgroundColor {
     .grid-teaser-item.default {
-      border-bottom: none;
       padding-bottom: 0;
+      border-bottom: none;
     }
     &.next--is--__button {
       .grid-teaser-item.default {
-        border-bottom: 1px solid $black;
         padding-bottom: 40px;
+        border-bottom: 1px solid $black;
       }
     }
   }

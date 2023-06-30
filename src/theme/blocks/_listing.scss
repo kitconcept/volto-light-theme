@@ -4,8 +4,8 @@
     @include block-title();
   }
   .listing-item {
-    margin-bottom: 40px;
     padding-bottom: 40px;
+    margin-bottom: 40px;
     border-bottom: 1px solid $black;
 
     a {
@@ -37,8 +37,8 @@
       aspect-ratio: $aspect-ratio;
     }
     h3 {
-      color: $black;
       margin-bottom: 40px;
+      color: $black;
       @include text-heading-h2();
     }
   }
@@ -87,8 +87,8 @@
         padding: 0 !important;
         margin-bottom: 20px;
         letter-spacing: 1px;
-        text-transform: uppercase;
         color: $black;
+        text-transform: uppercase;
         @include headtitle1();
       }
 
