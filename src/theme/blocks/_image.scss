@@ -38,7 +38,7 @@ figure {
     img {
       width: 100% !important;
       height: auto;
-      object-fit: contain;
+      aspect-ratio: $aspect-ratio;
     }
 
     &.right {
@@ -51,7 +51,6 @@ figure {
         margin-bottom: 0px;
         margin-left: 0 !important;
         float: none;
-        object-fit: contain;
         object-position: right;
       }
     }
@@ -65,7 +64,6 @@ figure {
         margin-right: 0 !important;
         margin-bottom: 0px;
         float: none;
-        object-fit: contain;
         object-position: left;
       }
     }

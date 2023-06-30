@@ -4,8 +4,10 @@
     @include block-title();
   }
   .listing-item {
-    padding-bottom: 25px;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
     border-bottom: 1px solid $black;
+
     a {
       .listing-body {
         h2 {
@@ -24,8 +26,25 @@
   }
 }
 
-// Grid Listing Block
+.block.listing.summary {
+.listing-item {
+  padding-top: 0 !important;
+  padding-bottom: 40px !important;
+  margin-bottom: 40px;
+  img {
+    width: 25%;
+    height: min-content;
+    aspect-ratio: $aspect-ratio;
+  }
+  h3 {
+    color: $black;
+    margin-bottom: 40px;
+    @include text-heading-h2();
+  }
+}
+}
 
+// Grid Listing Block
 .block.listing.grid {
   .items {
     display: flex;
@@ -54,14 +73,27 @@
 
     img.grid-item-image {
       width: 100%;
+      aspect-ratio: $aspect-ratio;
+    }
+
+    .grid-item {
+      margin-top: 40px;
     }
 
     .content {
-      padding: 0 1rem 2.5rem 1rem;
+      padding: 0 20px 40px 20px;
+
+      .headline {
+        padding: 0 !important;
+        margin-bottom: 20px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: $black;
+        @include headtitle1();
+      }
 
       h2 {
-        padding-top: 2rem;
-        margin-bottom: 0;
+        margin: 0 0 20px 0;
         color: $black;
         @include text-heading-h3();
       }
@@ -75,3 +107,26 @@
     }
   }
 }
+
+#page-add .block-editor-listing.has--backgroundColor--grey,
+#page-edit .block-editor-listing.has--backgroundColor--grey,
+.block.listing.has--backgroundColor--grey {
+  background-color: $lightgrey;
+
+  &.grid { 
+    .listing-item {
+      .card-container {
+        background-color: $white;
+      }
+    }
+  }
+  .block.listing.grid { 
+    .listing-item {
+      .card-container {
+        background-color: $white;
+      }
+    }
+  }
+
+}
+

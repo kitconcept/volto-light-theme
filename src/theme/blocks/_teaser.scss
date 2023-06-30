@@ -11,10 +11,14 @@
   .grid-teaser-item.default {
     padding-bottom: 40px; // same as vertical spacing in margin-bottom
     border-bottom: 1px solid $black;
+    align-items: start;
   }
 
   .grid-image-wrapper {
     width: 100%;
+    img {
+      object-position: center;
+    }
   }
 
   &.has--align--left,
@@ -96,14 +100,21 @@
     }
   }
 
-  &.is--last--of--block-type {
+  &.is--last--of--block-type,
+  &.next--has--different--backgroundColor {
     .grid-teaser-item.default {
       border-bottom: none;
+      padding-bottom: 0;
     }
     &.next--is--__button {
       .grid-teaser-item.default {
         border-bottom: 1px solid $black;
+        padding-bottom: 40px;
       }
     }
   }
+}
+
+#page-edit .block-editor-teaser.has--backgroundColor--grey {
+  background-color: $lightgrey;
 }

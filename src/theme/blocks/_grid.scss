@@ -2,6 +2,18 @@
   margin-top: 0;
   margin-bottom: 0;
 
+  &.is--first--of--block-type {
+    .column {
+      padding-top: 0;
+    }
+  }
+  &.is--last--of--block-type {
+    .column {
+      padding-bottom: 0;
+    }
+
+  }
+
   .block.teaser {
     margin-bottom: 0;
     background-color: $lightgrey;
@@ -116,6 +128,12 @@
   .block-editor-image {
     padding: 0;
     margin: 0.5rem !important;
+  }
+
+  .listing {
+    h2 {
+      margin-bottom: 40px !important;
+    }
   }
 
   .block-editor-empty {

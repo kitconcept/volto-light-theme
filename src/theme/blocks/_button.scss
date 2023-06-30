@@ -1,7 +1,7 @@
 .block.__button {
   .button.container {
     @include narrow-container-width();
-
+    
     @include vertical-space-button();
   }
 
@@ -30,4 +30,8 @@
   color: $black;
 
   @include body-text-bold();
+}
+
+.block-editor-__button.has--backgroundColor--grey {
+  background-color: $lightgrey;
 }
