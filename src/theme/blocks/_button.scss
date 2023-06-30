@@ -4,6 +4,10 @@
 
     @include vertical-space-button();
   }
+
+  button {
+    margin: 0;
+  }
 }
 
 .block-editor-__button.has--buttonAlign--wide {

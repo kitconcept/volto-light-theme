@@ -212,9 +212,16 @@ const applyConfig = (config) => {
       isDefault: true,
     },
   ];
+
   config.blocks.blocksConfig.__button = {
     ...config.blocks.blocksConfig.__button,
     schemaEnhancer: ButtonStylingSchema,
+    colors: BG_COLORS,
+  };
+
+  config.blocks.blocksConfig.separator = {
+    ...config.blocks.blocksConfig.separator,
+    schemaEnhancer: defaultStylingSchema,
     colors: BG_COLORS,
   };
 
