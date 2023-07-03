@@ -14,6 +14,7 @@ import GridListingBlockTemplate from './components/Blocks/Listing/GridTemplate';
 
 import gridSVG from './icons/block_icn_grid.svg';
 import { ButtonStylingSchema } from './components/Blocks/Button/schema';
+import EventView from './components/Theme/EventView';
 
 const BG_COLORS = [
   { name: 'transparent', label: 'Transparent' },
@@ -187,6 +188,7 @@ const applyConfig = (config) => {
       },
     ],
   };
+  config.views.contentTypesViews.Event = EventView;
 
   return config;
 };
