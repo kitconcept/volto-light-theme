@@ -51,5 +51,8 @@
     "@kitconcept/volto-separator-block": "^3.2.0",
     "@kitconcept/volto-slider-block": "^4.2.0",
     "@plone/volto": "^17.0.0-alpha.16"
+  },
+  "dependencies": {
+    "date-fns": "1.30.1"
   }
 }
