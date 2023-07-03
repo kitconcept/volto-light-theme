@@ -11,9 +11,12 @@ import Container from './components/Atoms/Container/Container';
 import TopSideFacets from './components/Blocks/Search/TopSideFacets';
 
 import GridListingBlockTemplate from './components/Blocks/Listing/GridTemplate';
+import { ButtonStylingSchema } from './components/Blocks/Button/schema';
+
+import { AccordionSchemaEnhancer } from './components/Blocks/Accordion/schema';
 
 import gridSVG from './icons/block_icn_grid.svg';
-import { ButtonStylingSchema } from './components/Blocks/Button/schema';
+import accordionSVG from './icons/block_icn_accordion.svg';
 import EventView from './components/Theme/EventView';
 
 const BG_COLORS = [
@@ -120,8 +123,32 @@ const applyConfig = (config) => {
     },
   ];
 
-  config.blocks.blocksConfig.__grid = {
-    ...config.blocks.blocksConfig.__grid,
+  config.blocks.blocksConfig.accordion = {
+    ...config.blocks.blocksConfig.accordion,
+    mostUsed: true,
+    icon: accordionSVG,
+    allowedBlocks: ['slate', 'teaser', 'image', 'listing', 'slateTable'],
+    colors: BG_COLORS,
+    schemaEnhancer: composeSchema(
+      AccordionSchemaEnhancer,
+      defaultStylingSchema,
+    ),
+    sidebarTab: 1,
+  };
+
+  config.blocks.blocksConfig.accordion.blocksConfig = {
+    ...config.blocks.blocksConfig,
+    teaser: {
+      ...config.blocks.blocksConfig.teaser,
+      schemaEnhancer: composeSchema(
+        gridTeaserDisableStylingSchema,
+        teaserSchemaEnhancer,
+      ),
+    },
+  };
+
+  config.blocks.blocksConfig.gridBlock = {
+    ...config.blocks.blocksConfig.gridBlock,
     colors: BG_COLORS,
     schemaEnhancer: defaultStylingSchema,
     icon: gridSVG,
@@ -129,6 +156,19 @@ const applyConfig = (config) => {
     // One could customize the blocks inside the grid like this:
     blocksConfig: {
       ...config.blocks.blocksConfig,
+      slate: {
+        ...config.blocks.blocksConfig.slate,
+        // Slate in grids must have an extra wrapper with the `slate` className
+        view: (props) => {
+          const EnhancedSlateViewComponent =
+            config.blocks.blocksConfig.slate.view;
+          return (
+            <div className="slate">
+              <EnhancedSlateViewComponent {...props} />
+            </div>
+          );
+        },
+      },
       teaser: {
         ...config.blocks.blocksConfig.teaser,
         schemaEnhancer: composeSchema(
@@ -137,6 +177,11 @@ const applyConfig = (config) => {
         ),
       },
     },
+  };
+
+  config.blocks.blocksConfig.introduction = {
+    ...config.blocks.blocksConfig.introduction,
+    unwantedButtons: ['heading-three', 'blockquote'],
   };
 
   config.blocks.blocksConfig.slate = {

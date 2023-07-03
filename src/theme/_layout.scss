@@ -110,6 +110,7 @@ footer {
   & > h6,
   & > ul,
   & > ol,
+  & > li,
   & > p,
   & > span,
   & > blockquote,
@@ -228,13 +229,17 @@ footer {
 // Grids adjustments (has to be paired with collections/grid.variables)
 // TODO: Move to our own grid component
 .block.__grid .ui.stackable,
-.block.__grid h2.headline {
+.block.__grid h2.headline,
+.block.gridBlock .ui.stackable,
+.block.gridBlock .grid-items,
+.block.gridBlock h2.headline {
   @include default-container-width();
   max-width: calc(var(--default-container-width) + 1rem);
 }
 
 // Fix for Image Grid with only one image
-#page-document .block.__grid .block.image.align.center figure {
+#page-document .block.gridBlock .block.image.align.center figure,
+#page-document .block.gridBlock .block.image.align.center figure {
   max-width: unset;
 }
 
@@ -245,6 +250,16 @@ body.has-toolbar.has-sidebar .drag.handle.wrapper {
 
 body.has-toolbar.has-sidebar .block .ui.basic.button.delete-button {
   margin-right: -30px !important;
+}
+
+#page-add,
+#page-edit {
+  .block-editor-accordion {
+    [class*='block-editor-'] {
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
 }
 
 .contenttype-file {

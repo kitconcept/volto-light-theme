@@ -23,7 +23,7 @@
 }
 
 // For grids
-#page-document .blocks-group-wrapper .block.__grid {
+#page-document .blocks-group-wrapper .block.gridBlock {
   &.is--first--of--block-type.previous--has--same--backgroundColor {
     margin-top: $grid-block-vertical-spacing-top;
   }

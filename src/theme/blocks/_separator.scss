@@ -1,3 +1,13 @@
 #page-document .block.separator {
-  margin: 0;
+  // cancel the original padding from the add-on
+  &:not(.inner):not([role='presentation']) {
+    padding: 0 !important;
+  }
+
+  &.has--align--center {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @include vertical-space-separator();
 }

@@ -1,4 +1,11 @@
-# volto-light-theme
+# Volto Light Theme by kitconcept
+
+[![NPM](https://img.shields.io/npm/v/@kitconcept/volto-light-theme.svg)](https://www.npmjs.com/package/@kitconcept/volto-light-theme)
+[![Build Status](https://github.com/kitconcept/volto-light-theme/actions/workflows/code.yml/badge.svg)](https://github.com/kitconcept/volto-light-theme/actions)
+[![Build Status](https://github.com/kitconcept/volto-light-theme/actions/workflows/unit.yml/badge.svg)](https://github.com/kitconcept/volto-light-theme/actions)
+[![Build Status](https://github.com/kitconcept/volto-light-theme/actions/workflows/acceptance.yml/badge.svg)](https://github.com/kitconcept/volto-light-theme/actions)
+
+![kitconcept GmbH](https://github.com/kitconcept/volto-blocks/raw/master/kitconcept.png)
 
 ## Vision
 
@@ -29,9 +36,10 @@ The Volto strategy is:
 
 #### Volto components `customizations` use case
 
-If possible, we will switch to SemanticUI-less (`Atom`) components in case of they exist. Specially if the elements that we are customizing are clearly "theme" (eg. header/footer, etc). In the case of other Volto customizations that are not clear part of the theme (eg. Search block), it's fine to stick using what the original is using (SemanticUI). When Volto will make the switch in the future, we should then adapt all the customizations to match the one in the Volto core.
+If possible, we will switch to SemanticUI-less components in case of they exist. Specially if the elements that we are customizing are clearly "theme" (eg. header/footer, etc). In the case of other Volto customizations that are not clear part of the theme (eg. Search block), it's fine to stick using what the original is using (SemanticUI). When Volto will make the switch in the future, we should then adapt all the customizations to match the one in the Volto core.
+The approach used is to use a proxy to a component of the `components` folder. This way it's easier to keep track of changes, and another add-on can customize again the light theme component, not the original Volto customization.
 
-### It should use kitconcept's layout used in FZJ/DLR
+### It should use kitconcept's layout used in FZJ/DLR projects
 
 Since FZJ/DLR projects we've been trying a new concept in layout for Volto. This new layout uses three widths for the content elements:
 
@@ -53,44 +61,9 @@ We will start organising de files in the root of `theme` folder, to differentiat
 - All less files loading are centralized in one main less file `custom.less` in this project, could be different in the future.
 - Vanilla headless components are named under `atoms` folder.
 
-
 ## Why a headless component system?
 
 https://medium.com/@nirbenyair/headless-components-in-react-and-why-i-stopped-using-ui-libraries-a8208197c268
-
-
-## Development Setup
-
-## Prerequisits
-
-- Docker
-- Node 16 (e.g. via nvm)
-- yo (run "npm install -g yo")
-- @plone/generator-volto (run "npm install -g @plone/generator-volto")
-- Build project by running "make"
-
-### Build a project
-
-Run
-
-````
-make project
-````
-
-### Start Backend (Docker)
-
-Run:
-
-````
-make start-backend-docker
-````
-
-### Start Frontend (Volto)
-
-````
-cd project
-yarn start
-````
 
 ## Vertical spacing block model
 
@@ -98,9 +71,25 @@ This theme has the concept of block "grouping" given two consecutive blocks with
 
 The wrappers have the classnames `blocks-group-wrapper` and the name of the background color, eg. `grey`, defaulting to `transparent` if no `backgroundColor` property is set in the styling block wrapper in the block.
 
+### Vertical spacing rules
+
+These main rules spec applies to the theme:
+
+- On each change of color, a vertical padding (both `padding-bottom` and `padding-top`) of `80px` defined with the main variable `$color-block-change-vertical-spacing`.
+- The default bottom margin is defined with the main variable `$block-vertical-space` and set by default to `25px`.
+- [grid] Vertical spacing for grids should be `80px` for both top and bottom, even if the previous and next blocks are of the same color.
+- [grid+grid] When two grids happen side by side and are of the same color. It should be equal to the grid gap, so it's set to `@gutterWidth` and currently `1rem`. It has to be adjusted with a bit of negative margin to cancel the current inner padding in grid cells.
+- [grid+grid] Grids columns belonging to the same grid and same color in small mobile viewports. They should be closer to match the other adjacent ones, so they seem to belong to the same grid set.
+- [footer] The footer has a top vertical spacing of `80px`.
+- [teasers] The last teaser, except if the following is a button, does NOT have a line at the bottom.
+- [listing] The last listing, except if the following is a button, does NOT have a line at the bottom.
+- [listing] After two consecutive listings, the vertical spacing should be `200px`.
+- [text+button] If there's a text and a button, then the vertical spacing betweeen them is `60px`.
+- [image+separator-block] If after image comes a separator block, the vertical spacing between them is `40px`.
+
 ## Specification
 
-volto-light-theme works with the following Plone Blocks:
+`@kitconcept/volto-light-theme` works with the following Plone Blocks:
 
 - Grid-Block (https://www.npmjs.com/package/@kitconcept/volto-blocks-grid)
 - Teaser-Block (https://www.npmjs.com/package/@kitconcept/volto-blocks-grid)
@@ -108,8 +97,37 @@ volto-light-theme works with the following Plone Blocks:
 - Button-Block (https://www.npmjs.com/package/@kitconcept/volto-button-block)
 - Separator-Block (https://www.npmjs.com/package/@kitconcept/volto-separator-block)
 - Heading-Block (https://www.npmjs.com/package/@kitconcept/volto-heading-block)
-- Introduction-Block (not open source yet)
+- Introduction-Block (https://www.npmjs.com/package/@kitconcept/volto-introduction-block)
 
 and the following add-ons:
 
 - DSGVO-Banner (https://www.npmjs.com/package/@kitconcept/volto-dsgvo-banner)
+
+## Development Setup
+
+This theme works under Volto 17 alpha 16 onwards.
+Compatibility with Volto 16 might be achieved, but it has to be at customization level in the
+specific project add-on.
+This is mainly due to the `RenderBlocks` customization that is based in the one in 17 because of the Grid block in core and the autogrouping feature.
+See more information about the other dependencies in `peerDependencies` in `package.json`.
+
+### Prerequisites
+
+- Docker
+- Node 18 (e.g. via nvm)
+
+### Build a project
+
+Run
+
+````
+make start-dev
+````
+
+### Stop Backend (Docker)
+
+Run:
+
+````
+make stop-backend-docker
+````
