@@ -11,3 +11,6 @@
 
   @include vertical-space-separator();
 }
+.block-editor-separator.has--backgroundColor--grey {
+  background-color: $lightgrey;
+}
