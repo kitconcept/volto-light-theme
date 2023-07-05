@@ -22,6 +22,7 @@
   }
 
   h2 {
+    @include highlight-title();
     margin-bottom: 60px;
   }
 }
