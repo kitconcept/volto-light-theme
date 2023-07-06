@@ -44,17 +44,11 @@ setup(
     include_package_data=True,
     zip_safe=False,
     python_requires=">=3.11",
-    install_requires=[
-        "setuptools",
-        "Plone",
-        "plone.distribution",
-        "plone.api",
-    ],
+    install_requires=["setuptools", "Plone", "plone.distribution"],
     extras_require={
         "test": [
             "zest.releaser[recommended]",
             "zestreleaser.towncrier",
-            "plone.app.testing",
             "plone.restapi[test]",
             "pytest",
             "pytest-cov",

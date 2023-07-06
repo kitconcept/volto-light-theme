@@ -8,3 +8,7 @@
 -->
 
 <!-- towncrier release notes start -->
+
+## 100.0.0 (2023-07-06)
+
+No significant changes.

@@ -100,6 +100,14 @@ format: bin/tox ## Format the codebase according to our standards
 lint: ## check code style
 	bin/tox -e lint
 
+.PHONY: dependencies
+dependencies: ## check dependencies
+	bin/tox -e dependencies
+
+.PHONY: release-check
+release-check: ## check if package is ready for release
+	bin/tox -e release-check
+
 # i18n
 bin/i18ndude: bin/pip
 	@echo "$(GREEN)==> Install translation tools$(RESET)"
