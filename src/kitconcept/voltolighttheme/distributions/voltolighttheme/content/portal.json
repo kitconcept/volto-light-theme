@@ -1,0 +1,90 @@
+[{
+    "@id": "/Plone",
+    "@type": "Plone Site",
+    "UID": "71846cd61b404039a69de1298738c493",
+    "allow_discussion": null,
+    "blocks": {
+        "4b7b41d2-30d4-48c3-8606-ff3a4b0eb710": {
+            "@type": "slate",
+            "plaintext": "",
+            "value": [
+                {
+                    "children": [
+                        {
+                            "text": ""
+                        }
+                    ],
+                    "type": "p"
+                }
+            ]
+        },
+        "4d697d5d-7b2f-4f50-ab3c-efaa1f6f6a60": {
+            "@type": "image",
+            "alt": "Plone Foundation Logo",
+            "openLinkInNewTab": true,
+            "url": "/images/plone-foundation-logo.png"
+        },
+        "8836cd7f-35ca-49e7-96d9-39bdadd01fdf": {
+            "@type": "title"
+        },
+        "b9cf9e11-fea1-4440-a826-8288278e63e2": {
+            "@type": "slate",
+            "plaintext": "This is the home page of your newly created Plone Distribution !",
+            "value": [
+                {
+                    "children": [
+                        {
+                            "text": "This is the home page of your newly created "
+                        },
+                        {
+                            "children": [
+                                {
+                                    "text": "Plone Distribution"
+                                }
+                            ],
+                            "data": {
+                                "url": "https://plone.github.io/plone.distribution/"
+                            },
+                            "type": "link"
+                        },
+                        {
+                            "text": "!"
+                        }
+                    ],
+                    "type": "p"
+                }
+            ]
+        }
+    },
+    "blocks_layout": {
+        "items": [
+            "8836cd7f-35ca-49e7-96d9-39bdadd01fdf",
+            "b9cf9e11-fea1-4440-a826-8288278e63e2",
+            "4d697d5d-7b2f-4f50-ab3c-efaa1f6f6a60",
+            "4b7b41d2-30d4-48c3-8606-ff3a4b0eb710"
+        ]
+    },
+    "contributors": [],
+    "creators": [
+        "admin"
+    ],
+    "description": "A Plone Site",
+    "effective": null,
+    "exclude_from_nav": false,
+    "expires": null,
+    "id": "Plone",
+    "is_folderish": true,
+    "items_total": 1,
+    "language": "en-us",
+    "lock": {
+        "locked": false,
+        "stealable": true
+    },
+    "parent": {},
+    "review_state": null,
+    "rights": "",
+    "subjects": [],
+    "table_of_contents": null,
+    "title": "Welcome to Plone 6!",
+    "type_title": "Plone Site"
+}]

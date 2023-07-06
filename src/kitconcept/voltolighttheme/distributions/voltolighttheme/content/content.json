@@ -1,0 +1,162 @@
+[{
+    "@id": "/images",
+    "@type": "Document",
+    "UID": "99b8577ad8f0402cac90361fee5b157a",
+    "allow_discussion": false,
+    "blocks": {
+        "03483c36-60a4-413c-8a65-1fc45cb13b6e": {
+            "@type": "description"
+        },
+        "3e5b4f77-ffa9-45f7-adc0-af622f831b63": {
+            "@type": "slate",
+            "plaintext": "",
+            "value": [
+                {
+                    "children": [
+                        {
+                            "text": ""
+                        }
+                    ],
+                    "type": "p"
+                }
+            ]
+        },
+        "8f4c6430-3fe0-46de-9f1c-5ce15bdccf7d": {
+            "@type": "listing",
+            "block": "8f4c6430-3fe0-46de-9f1c-5ce15bdccf7d",
+            "headlineTag": "h2",
+            "query": [],
+            "querystring": {
+                "query": [
+                    {
+                        "i": "path",
+                        "o": "plone.app.querystring.operation.string.absolutePath",
+                        "v": "/images/"
+                    },
+                    {
+                        "i": "portal_type",
+                        "o": "plone.app.querystring.operation.selection.any",
+                        "v": [
+                            "Image"
+                        ]
+                    }
+                ],
+                "sort_on": "getObjPositionInParent",
+                "sort_order": "ascending"
+            },
+            "variation": "imageGallery"
+        },
+        "a73911e3-900f-4ca2-bee6-2e69fbd06ca6": {
+            "@type": "title"
+        }
+    },
+    "blocks_layout": {
+        "items": [
+            "a73911e3-900f-4ca2-bee6-2e69fbd06ca6",
+            "03483c36-60a4-413c-8a65-1fc45cb13b6e",
+            "8f4c6430-3fe0-46de-9f1c-5ce15bdccf7d",
+            "3e5b4f77-ffa9-45f7-adc0-af622f831b63"
+        ]
+    },
+    "contributors": [],
+    "created": "2023-06-24T19:36:58+00:00",
+    "creators": [
+        "admin"
+    ],
+    "description": "Images used in this site",
+    "effective": "2023-06-24T16:37:02",
+    "exclude_from_nav": true,
+    "expires": null,
+    "id": "images",
+    "is_folderish": true,
+    "language": "en-us",
+    "layout": "document_view",
+    "lock": {
+        "locked": false,
+        "stealable": true
+    },
+    "modified": "2023-06-24T19:38:00+00:00",
+    "parent": {
+        "@id": "/",
+        "@type": "Plone Site",
+        "UID": "71846cd61b404039a69de1298738c493",
+        "description": "A Plone Site",
+        "title": "Welcome to Plone 6!",
+        "type_title": "Plone Site"
+    },
+    "preview_caption": null,
+    "preview_image": null,
+    "review_state": "published",
+    "rights": "",
+    "subjects": [],
+    "title": "Images",
+    "type_title": "Page",
+    "version": "current",
+    "workflow_history": {
+        "simple_publication_workflow": [
+            {
+                "action": null,
+                "actor": "admin",
+                "comments": "",
+                "review_state": "private",
+                "time": "2023-06-24T19:36:58+00:00"
+            },
+            {
+                "action": "publish",
+                "actor": "admin",
+                "comments": "",
+                "review_state": "published",
+                "time": "2023-06-24T19:37:02+00:00"
+            }
+        ]
+    },
+    "working_copy": null,
+    "working_copy_of": null
+},{
+    "@id": "/images/plone-foundation-logo.png",
+    "@type": "Image",
+    "UID": "2fa170f408524d45bf194f15008b123a",
+    "allow_discussion": false,
+    "contributors": [],
+    "created": "2023-06-24T19:37:23+00:00",
+    "creators": [
+        "admin"
+    ],
+    "description": "",
+    "effective": null,
+    "exclude_from_nav": false,
+    "expires": null,
+    "id": "plone-foundation-logo.png",
+    "image": {
+        "blob_path": "blobs/2fa170f408524d45bf194f15008b123a-image/plone-foundation-logo.png",
+        "content-type": "image/png",
+        "filename": "plone-foundation-logo.png",
+        "height": 700,
+        "size": 60300,
+        "width": 2000
+    },
+    "is_folderish": false,
+    "language": "en-us",
+    "layout": "image_view",
+    "lock": {},
+    "modified": "2023-06-24T19:37:23+00:00",
+    "parent": {
+        "@id": "/images",
+        "@type": "Document",
+        "UID": "99b8577ad8f0402cac90361fee5b157a",
+        "description": "Images used in this site",
+        "image_field": null,
+        "image_scales": null,
+        "review_state": "published",
+        "title": "Images",
+        "type_title": "Page"
+    },
+    "review_state": null,
+    "rights": "",
+    "subjects": [],
+    "title": "Plone Foundation Logo",
+    "type_title": "Image",
+    "version": "current",
+    "working_copy": null,
+    "working_copy_of": null
+}]
