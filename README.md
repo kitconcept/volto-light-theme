@@ -20,10 +20,11 @@ Install kitconcept.voltolighttheme with `pip`:
 ```shell
 pip install kitconcept.voltolighttheme
 ```
+
 And to create the Plone site:
 
 ```shell
-make create_site
+make create-site
 ```
 
 ## Contribute

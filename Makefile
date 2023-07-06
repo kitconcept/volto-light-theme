@@ -91,6 +91,10 @@ start: ## Start a Plone instance on localhost:8080
 console: ## Start a zope console
 	DEVELOP_DISTRIBUTIONS=$(DISTRIBUTIONS) PYTHONWARNINGS=ignore ./bin/zconsole debug instance/etc/zope.conf
 
+.PHONY: create-site
+create-site: ## Create a new Plone site using this distribution
+	DEVELOP_DISTRIBUTIONS=$(DISTRIBUTIONS) PYTHONWARNINGS=ignore ./bin/zconsole run instance/etc/zope.conf ./scripts/create_site.py
+
 .PHONY: format
 format: bin/tox ## Format the codebase according to our standards
 	@echo "$(GREEN)==> Format codebase$(RESET)"
