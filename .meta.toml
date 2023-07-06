@@ -20,6 +20,7 @@ use_mxdev = true
 constrain_package_deps = false
 
 [github]
+ref = "issue-151-tox-mxdev"
 extra_lines = """
   image:
     runs-on: ubuntu-latest

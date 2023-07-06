@@ -15,17 +15,17 @@ on:
 
 jobs:
   qa:
-    uses: plone/meta/.github/workflows/qa.yml@main
+    uses: plone/meta/.github/workflows/qa.yml@issue-151-tox-mxdev
   test:
-    uses: plone/meta/.github/workflows/test.yml@main
+    uses: plone/meta/.github/workflows/test.yml@issue-151-tox-mxdev
   coverage:
-    uses: plone/meta/.github/workflows/coverage.yml@main
+    uses: plone/meta/.github/workflows/coverage.yml@issue-151-tox-mxdev
   dependencies:
-    uses: plone/meta/.github/workflows/dependencies.yml@main
+    uses: plone/meta/.github/workflows/dependencies.yml@issue-151-tox-mxdev
   release_ready:
-    uses: plone/meta/.github/workflows/release_ready.yml@main
+    uses: plone/meta/.github/workflows/release_ready.yml@issue-151-tox-mxdev
   circular:
-    uses: plone/meta/.github/workflows/circular.yml@main
+    uses: plone/meta/.github/workflows/circular.yml@issue-151-tox-mxdev
 
 ##
 # To modify the list of default jobs being created add in .meta.toml:
