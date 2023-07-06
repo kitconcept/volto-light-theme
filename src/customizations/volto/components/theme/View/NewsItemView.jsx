@@ -21,7 +21,6 @@ import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
  * @returns {string} Markup of the component.
  */
 const NewsItemView = ({ content }) => {
-  var deLocale = require('date-fns/locale/de');
   return (
     <div id="page-document" className="ui container viewwrapper event-view">
       <div className="dates">
