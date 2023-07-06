@@ -10,9 +10,10 @@
  * @module components/theme/View/NewsItemView
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
+import React from "react";
+import PropTypes from "prop-types";
+import RenderBlocks from "@plone/volto/components/theme/View/RenderBlocks";
+import { FormattedDate } from "@plone/volto/components";
 
 /**
  * NewsItemView view component class.
@@ -26,11 +27,11 @@ const NewsItemView = ({ content }) => {
       <div className="dates">
         {content?.effective ? (
           <span className="day">
-            <FormattedDate date={content?.effective}/>{' '}
+            <FormattedDate date={content?.effective} />{" "}
           </span>
         ) : (
           <span className="day">No date</span>
-        )}{' '}
+        )}{" "}
         <span className="headtitle">| {content?.head_title}</span>
       </div>
       <RenderBlocks content={content} />
