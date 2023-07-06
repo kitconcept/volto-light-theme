@@ -6,7 +6,7 @@ template = "default"
 commit-id = "64766061"
 
 [pyproject]
-codespell_skip = "*.min.js"
+codespell_skip = "*.min.js,*.json"
 codespell_ignores = "vew"
 dependencies_ignores = "['plone.volto', 'zestreleaser.towncrier', 'zest.releaser', 'pytest', 'pytest-cov', 'pytest-plone']"
 dependencies_mappings = [

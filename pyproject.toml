@@ -71,7 +71,7 @@ target-version = ["py38"]
 
 [tool.codespell]
 ignore-words-list = "discreet,vew"
-skip = "*.po,*.min.js"
+skip = "*.po,*.min.js,*.json"
 ##
 # Add extra configuration options in .meta.toml:
 #  [pyproject]

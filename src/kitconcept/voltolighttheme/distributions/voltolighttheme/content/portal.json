@@ -4,64 +4,63 @@
     "UID": "71846cd61b404039a69de1298738c493",
     "allow_discussion": null,
     "blocks": {
-        "4b7b41d2-30d4-48c3-8606-ff3a4b0eb710": {
+        "26f74823-46c6-4cbd-a8db-be57619b3a08": {
+            "@type": "listing",
+            "block": "47a047b5-bbb7-4adb-90f1-c5d6954013b5",
+            "headlineTag": "h2",
+            "query": [],
+            "querystring": {
+                "query": [
+                    {
+                        "i": "path",
+                        "o": "plone.app.querystring.operation.string.relativePath",
+                        "v": "./examples/"
+                    }
+                ],
+                "sort_order": "ascending"
+            },
+            "styles": {},
+            "variation": "default"
+        },
+        "270e457d-ea26-4f16-82d8-40c116134c43": {
             "@type": "slate",
-            "plaintext": "",
+            "plaintext": "A website consists of individual pages. These pages can represent different types of content, e.g. a news item, an event, but also an institute or a research facility. A page consists of different visual elements, such as a text paragraph, an image, a table. These visual elements are called \"blocks\".",
             "value": [
                 {
                     "children": [
                         {
-                            "text": ""
+                            "text": "A website consists of individual pages. These pages can represent different types of content, e.g. a news item, an event, but also an institute or a research facility. A page consists of different visual elements, such as a text paragraph, an image, a table. These visual elements are called \"blocks\"."
                         }
                     ],
                     "type": "p"
                 }
             ]
         },
-        "4d697d5d-7b2f-4f50-ab3c-efaa1f6f6a60": {
-            "@type": "image",
-            "alt": "Plone Foundation Logo",
-            "openLinkInNewTab": true,
-            "url": "/images/plone-foundation-logo.png"
+        "444a5819-de69-47c9-812a-b41d1616935b": {
+            "@type": "slate",
+            "plaintext": "All available content types and blocks configured in the volto-light-theme are here on this page.",
+            "styles": {},
+            "value": [
+                {
+                    "children": [
+                        {
+                            "text": "All available content types and blocks configured in the volto-light-theme are here on this page."
+                        }
+                    ],
+                    "type": "p"
+                }
+            ]
         },
         "8836cd7f-35ca-49e7-96d9-39bdadd01fdf": {
             "@type": "title"
-        },
-        "b9cf9e11-fea1-4440-a826-8288278e63e2": {
-            "@type": "slate",
-            "plaintext": "This is the home page of your newly created Plone Distribution !",
-            "value": [
-                {
-                    "children": [
-                        {
-                            "text": "This is the home page of your newly created "
-                        },
-                        {
-                            "children": [
-                                {
-                                    "text": "Plone Distribution"
-                                }
-                            ],
-                            "data": {
-                                "url": "https://plone.github.io/plone.distribution/"
-                            },
-                            "type": "link"
-                        },
-                        {
-                            "text": "!"
-                        }
-                    ],
-                    "type": "p"
-                }
-            ]
         }
     },
     "blocks_layout": {
         "items": [
             "8836cd7f-35ca-49e7-96d9-39bdadd01fdf",
-            "b9cf9e11-fea1-4440-a826-8288278e63e2",
-            "4d697d5d-7b2f-4f50-ab3c-efaa1f6f6a60",
-            "4b7b41d2-30d4-48c3-8606-ff3a4b0eb710"
+            "270e457d-ea26-4f16-82d8-40c116134c43",
+            "444a5819-de69-47c9-812a-b41d1616935b",
+            "26f74823-46c6-4cbd-a8db-be57619b3a08"
         ]
     },
     "contributors": [],
@@ -75,7 +74,7 @@
     "id": "Plone",
     "is_folderish": true,
     "items_total": 1,
-    "language": "en-us",
+    "language": "en",
     "lock": {
         "locked": false,
         "stealable": true
@@ -85,6 +84,6 @@
     "rights": "",
     "subjects": [],
     "table_of_contents": null,
-    "title": "Welcome to Plone 6!",
+    "title": "Welcome to volto-light-theme",
     "type_title": "Plone Site"
 }]

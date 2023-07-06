@@ -85,15 +85,15 @@ clean: ## Remove old virtualenv and creates a new one
 
 .PHONY: start
 start: ## Start a Plone instance on localhost:8080
-	DEVELOP_DISTRIBUTIONS=$(DISTRIBUTIONS) PYTHONWARNINGS=ignore ./bin/runwsgi instance/etc/zope.ini
+	ALLOWED_DISTRIBUTIONS=$(DISTRIBUTIONS) DEVELOP_DISTRIBUTIONS=$(DISTRIBUTIONS) PYTHONWARNINGS=ignore ./bin/runwsgi instance/etc/zope.ini
 
 .PHONY: console
 console: ## Start a zope console
-	DEVELOP_DISTRIBUTIONS=$(DISTRIBUTIONS) PYTHONWARNINGS=ignore ./bin/zconsole debug instance/etc/zope.conf
+	ALLOWED_DISTRIBUTIONS=$(DISTRIBUTIONS) DEVELOP_DISTRIBUTIONS=$(DISTRIBUTIONS) PYTHONWARNINGS=ignore ./bin/zconsole debug instance/etc/zope.conf
 
 .PHONY: create-site
 create-site: ## Create a new Plone site using this distribution
-	DEVELOP_DISTRIBUTIONS=$(DISTRIBUTIONS) PYTHONWARNINGS=ignore ./bin/zconsole run instance/etc/zope.conf ./scripts/create_site.py
+	ALLOWED_DISTRIBUTIONS=$(DISTRIBUTIONS) DEVELOP_DISTRIBUTIONS=$(DISTRIBUTIONS) PYTHONWARNINGS=ignore ./bin/zconsole run instance/etc/zope.conf ./scripts/create_site.py
 
 .PHONY: format
 format: bin/tox ## Format the codebase according to our standards
@@ -125,11 +125,11 @@ i18n: bin/i18ndude ## Update locales
 # Tests
 .PHONY: test
 test: bin/tox ## run tests
-	DEVELOP_DISTRIBUTIONS=$(DISTRIBUTIONS) bin/tox -e test
+	ALLOWED_DISTRIBUTIONS=$(DISTRIBUTIONS) DEVELOP_DISTRIBUTIONS=$(DISTRIBUTIONS) bin/tox -e test
 
 .PHONY: test-coverage
 test-coverage: bin/tox ## run tests with coverage
-	DEVELOP_DISTRIBUTIONS=$(DISTRIBUTIONS) bin/tox -e coverage
+	ALLOWED_DISTRIBUTIONS=$(DISTRIBUTIONS) DEVELOP_DISTRIBUTIONS=$(DISTRIBUTIONS) bin/tox -e coverage
 
 # Docker image
 .PHONY: build-image
