@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import { hasBlocksData, flattenHTMLToAppURL } from '@plone/volto/helpers';
 import { Image, Grid } from 'semantic-ui-react';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
-import { format, parse } from 'date-fns';
+import { FormattedDate } from '@plone/volto/components';
 
 const EventTextfieldView = ({ content }) => (
   <React.Fragment>
@@ -41,19 +41,21 @@ const EventTextfieldView = ({ content }) => (
  */
 const EventView = (props) => {
   const { content } = props;
-  var deLocale = require('date-fns/locale/de');
-
+  const dateOptions = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  };
   return (
     <div id="page-document" className="ui container view-wrapper event-view">
       <Grid>
         <Grid.Column width={12}>
           <div>
             <div className="dates">
+
               {content?.start ? (
                 <span className="day">
-                  {format(parse(content?.start), 'D. MMMM YYYY, HH:mm', {
-                    locale: deLocale,
-                  })}{' '}
+                   <FormattedDate date={content?.start} format={dateOptions}/>{' '}
                   {}
                   UHR
                 </span>
@@ -63,9 +65,8 @@ const EventView = (props) => {
               &mdash;&nbsp;
               {content?.end ? (
                 <span className="day">
-                  {format(parse(content?.end), 'D. MMMM YYYY, HH:mm', {
-                    locale: deLocale,
-                  })}{' '}
+                <FormattedDate date={content?.end} format={dateOptions}/>
+                {' '}
                   UHR
                 </span>
               ) : (
