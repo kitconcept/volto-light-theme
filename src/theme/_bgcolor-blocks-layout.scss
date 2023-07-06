@@ -31,7 +31,9 @@
     margin-bottom: $grid-block-vertical-spacing-bottom;
   }
   &.next--is--same--block-type.next--has--same--backgroundColor {
-    margin-bottom: -1rem;
+    // We rely on the grid gutter to keep the vertical spacing in case grid + grid
+    // So here we cancel the default block margin-bottom
+    margin-bottom: 0;
   }
 }
 
