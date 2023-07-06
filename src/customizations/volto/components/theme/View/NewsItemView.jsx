@@ -13,7 +13,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
-import { format, parse } from 'date-fns';
 
 /**
  * NewsItemView view component class.
@@ -28,9 +27,7 @@ const NewsItemView = ({ content }) => {
       <div className="dates">
         {content?.effective ? (
           <span className="day">
-            {format(parse(content?.effective), 'D.MM.YYYY', {
-              locale: deLocale,
-            })}{' '}
+            <FormattedDate date={content?.effective}/>{' '}
           </span>
         ) : (
           <span className="day">No date</span>
