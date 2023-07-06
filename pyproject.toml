@@ -151,6 +151,11 @@ ignore = [
 #  """
 ##
 
+[tool.coverage.run]
+omit = [
+  "*/locales/update.py",
+  "*/setuphandlers/__init__.py",
+]
 
 ##
 # Add extra configuration options in .meta.toml:

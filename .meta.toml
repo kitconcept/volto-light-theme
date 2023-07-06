@@ -12,6 +12,13 @@ dependencies_ignores = "['plone.volto', 'zestreleaser.towncrier', 'zest.releaser
 dependencies_mappings = [
     "Plone = ['Products.CMFPlone', 'Products.CMFCore', 'Products.GenericSetup']",
     ]
+extra_lines = """
+[tool.coverage.run]
+omit = [
+  "*/locales/update.py",
+  "*/setuphandlers/__init__.py"
+]
+"""
 
 [tox]
 test_runner = "pytest"
