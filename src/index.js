@@ -3,7 +3,7 @@ import { defineMessages } from 'react-intl';
 import { composeSchema, getPreviousNextBlock } from '@plone/volto/helpers';
 import { defaultStylingSchema } from './components/Blocks/schema';
 import { teaserSchemaEnhancer } from './components/Blocks/Teaser/schema';
-import { gridTeaserDisableStylingSchema } from '@kitconcept/volto-light-theme/components/Blocks/Teaser/schema';
+import { gridTeaserDisableStylingSchema } from '@plone/volto/components/manage/Blocks/Teaser/schema';
 
 import ContainerQueriesPolyfill from './components/CQPolyfill';
 import Container from './components/Atoms/Container/Container';
