@@ -13,7 +13,7 @@
     border-bottom: 1px solid $black;
     margin-bottom: 40px;
 
-    &:last-child {
+    &:last-child:not(> .column) {
       padding-bottom: 0 !important;
       border-bottom: none !important;
       margin-bottom: 0;
@@ -71,7 +71,8 @@
 
   // Grid variation
   &.grid {
-    &.next--has--same--backgroundColor.next--is--same--block-type {
+    &.next--has--same--backgroundColor.next--is--same--block-type,
+    &.next--is--__button {
       .listing-item:last-child {
         padding-bottom: 0 !important;
         border-bottom: none !important;
@@ -103,23 +104,28 @@
             margin-right: 0.5rem;
           }
         }
+
+        &:last-child,
+        &:nth-last-child(2):not(:nth-child(2n)) {
+          .card-container {
+            margin-bottom: 0 !important;
+          }
+        }
+
+        &:first-child,
+        &:nth-child(2) {
+          .card-container {
+            margin-top: 0 !important;
+          }
+        }
       }
+
       padding-bottom: 0 !important;
       border-bottom: none !important;
       margin-bottom: 0 !important;
 
-      &:first-child,
-      &:nth-child(2) {
-        .card-container {
-          margin-top: 0 !important;
-        }
-      }
-
-      &:last-child,
-      &:nth-last-child(2) {
-        .card-container {
-          margin-bottom: 0 !important;
-        }
+      &:last-child:nth-child(2n + 1) {
+        margin-left: 0 !important;
       }
 
       .card-container {
@@ -170,11 +176,7 @@
     }
   }
 
-  // CSS-only approach to be used instead, when :has() pseudo-class is supported by default Firefox.
-  // .block.listing.previous--is--same--block-type.previous--has--same--backgroundColor:not(:has(.headline)) {
-  //   margin-top: 200px;
-  // }
-  &.previous--is--same--block-type.previous--has--same--backgroundColor.no-headline {
+  &.previous--is--same--block-type.previous--has--same--backgroundColor:not(.has--headline) {
     margin-top: 200px;
   }
 }

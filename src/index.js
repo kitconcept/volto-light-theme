@@ -88,6 +88,11 @@ const applyConfig = (config) => {
         styles.push('is--last--of--block-type');
       }
 
+      // Inject a class depending if it has a headline
+      if (data?.headline || previousBlock?.['@type'] === 'heading') {
+        styles.push('has--headline');
+      }
+
       // Given a StyleWrapper defined `backgroundColor` style
       const previousColor =
         previousBlock?.styles?.backgroundColor ?? 'transparent';
