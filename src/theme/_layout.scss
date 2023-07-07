@@ -4,12 +4,12 @@
   --narrow-container-width: 620px;
 }
 
-// Container queries still do not work with CSS properties
+// Container queries still do not work with CSS custom properties
 // They should be exact numbers
 // For now, maintain in sync with the above
-$layout-container-width: 1440px;
-$default-container-width: 940px;
-$narrow-container-width: 620px;
+$layout-container-width: 1440px !default;
+$default-container-width: 940px !default;
+$narrow-container-width: 620px !default;
 
 @mixin narrow-container-width() {
   max-width: var(--narrow-container-width);
@@ -21,6 +21,13 @@ $narrow-container-width: 620px;
   max-width: var(--default-container-width);
   margin-right: auto;
   margin-left: auto;
+
+  // This is mostly aesthetical if you don't want to "see" the jump
+  // but a nice animation instead - PoC (WIP)
+  // @media only screen and (max-width: #{$default-container-width + 5px}) {
+  //   margin-right: 5px;
+  //   margin-left: 5px;
+  // }
 }
 
 @mixin layout-container-width() {
@@ -29,11 +36,24 @@ $narrow-container-width: 620px;
   margin-left: auto;
 }
 
-// One still cannot use variables or CSS properties directly on @container queries
+// One still cannot use CSS custom properties directly on @container queries
 @mixin adjustMarginsToContainer($width) {
+  // Next two ones are mostly aesthetical if you don't want to "see" the jump - PoC (WIP)
+  // transition: margin 1s ease;
+
+  // @container (max-width: #{$width + 5px}) {
+  //   margin-right: 5px;
+  //   margin-left: 5px;
+  // }
+
+  // @container (max-width: #{$width}) {
+  //   margin-right: 0px;
+  //   margin-left: 0px;
+  // }
+
   @container (max-width: #{$width - 1}) {
-    margin-right: 2rem;
-    margin-left: 2rem;
+    margin-right: 20px;
+    margin-left: 20px;
   }
 }
 
@@ -127,7 +147,9 @@ footer {
   & > pre,
   & > .block.code {
     @include narrow-container-width();
-    @include adjustMarginsToContainer($narrow-container-width + 2 * 36px);
+    // Why was this for? Removing for now (Victor: 2023-07-06)
+    // @include adjustMarginsToContainer($narrow-container-width + 2 * 36px);
+    @include adjustMarginsToContainer($narrow-container-width);
   }
 
   & > h1.documentFirstHeading,
@@ -146,6 +168,7 @@ footer {
   & > .table-of-contents,
   & > .slate blockquote {
     @include default-container-width();
+    @include adjustMarginsToContainer($default-container-width);
   }
 
   & > .block.teaser,
@@ -234,7 +257,18 @@ footer {
 .block.gridBlock .grid-items,
 .block.gridBlock h2.headline {
   @include default-container-width();
-  max-width: calc(var(--default-container-width) + 1rem);
+  // Adding 2 * 20px (one for each side) we force the container to extend the value of
+  // the gutter
+  max-width: calc(var(--default-container-width) + 2 * 20px);
+}
+
+.block.gridBlock {
+  .ui.grid > .column:not(.row):first-child {
+    padding-left: 20px;
+  }
+  .ui.grid > .column:not(.row):last-child {
+    padding-right: 20px;
+  }
 }
 
 // Fix for Image Grid with only one image
@@ -250,6 +284,11 @@ body.has-toolbar.has-sidebar .drag.handle.wrapper {
 
 body.has-toolbar.has-sidebar .block .ui.basic.button.delete-button {
   margin-right: -30px !important;
+}
+
+// Listings edge case, conflicting with Pastanaga CSS
+.listing-item {
+  width: initial;
 }
 
 #page-add,
