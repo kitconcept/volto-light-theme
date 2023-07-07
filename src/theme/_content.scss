@@ -29,4 +29,46 @@
       text-transform: uppercase;
     }
   }
+
+  .two.column.row {
+    max-width: var(--default-container-width);
+    margin-right: auto;
+    margin-left: auto;
+
+
+  }
 }
+  .event-title {
+    margin-bottom: 25px;
+    .event-heading{
+      font-family: Inter;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 16px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .event-detail{
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 33px;
+      margin-top: 10px;
+    }
+  }
+  .event-button{
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    flex-shrink: 0;
+    .button.event-btn{
+    padding: 8px 20px;
+    background-color: transparent;
+    border: 1px solid #000;
+    color: #000;
+    font-size: 16px;
+   font-weight: 900;
+    line-height: 20px;
+    }
+  }
