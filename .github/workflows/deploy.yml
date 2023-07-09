@@ -72,7 +72,7 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: $${{ steps.meta.outputs.labels }}
   deploy:
-    if: ${{ github.ref == 'refs/heads/issue-72-dev-deploy' }}
+    if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     needs:
       - meta
