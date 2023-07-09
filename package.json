@@ -41,6 +41,16 @@
     "stylelint-config-sass-guidelines": "9.0.1",
     "stylelint-prettier": "1.1.2"
   },
+  "peerAddons": [
+    "@eeacms/volto-accordion-block",
+    "@kitconcept/volto-button-block",
+    "@kitconcept/volto-dsgvo-banner",
+    "@kitconcept/volto-heading-block",
+    "@kitconcept/volto-image-block",
+    "@kitconcept/volto-introduction-block",
+    "@kitconcept/volto-separator-block",
+    "@kitconcept/volto-slider-block"
+  ],
   "peerDependencies": {
     "@eeacms/volto-accordion-block": "^9.0.0",
     "@kitconcept/volto-button-block": "^2.1.0",

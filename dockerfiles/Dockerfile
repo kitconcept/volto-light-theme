@@ -16,9 +16,12 @@ EOT
 
 FROM plone/frontend-prod-config:${VOLTO_VERSION}
 
-LABEL maintainer="Plone Community <dev@plone.org>" \
-      org.label-schema.name="volto-social-blocks" \
-      org.label-schema.description="Plone frontend image" \
-      org.label-schema.vendor="Plone Foundation"
+LABEL maintainer="kitconcept GmbH <contact@kitconcept.com>" \
+      org.label-schema.name="ghcr.io/kitconcept/lighttheme" \
+      org.label-schema.description="Volto project with @kitconcept/volto-light-theme" \
+      org.label-schema.vendor="kitconcept GmbH"
+
+
+ENV THEME='@kitconcept/volto-light-theme'
 
 COPY --from=builder /app/ /app/
