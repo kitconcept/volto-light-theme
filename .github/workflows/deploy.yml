@@ -65,8 +65,8 @@ jobs:
           context: ./
           file: dockerfiles/Dockerfile
           build-args: |
-            ADDON_NAME='@kitconcept/volto-light-theme'
-            ADDON_PATH='volto-light-theme'
+            ADDON_NAME=@kitconcept/volto-light-theme
+            ADDON_PATH=volto-light-theme
             VOLTO_VERSION=${{ env.VOLTO_VERSION }}
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
