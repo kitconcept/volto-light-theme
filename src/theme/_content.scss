@@ -10,16 +10,16 @@
 .contenttype-event {
   .documentFirstHeading {
     margin-top: 0px;
+    @include default-container-width();
   }
   .blocks-group-wrapper {
     padding-top: 0px;
   }
   .dates {
-    max-width: var(--default-container-width);
     margin-top: 40px;
-    margin-right: auto;
     margin-bottom: 40px;
-    margin-left: auto;
+    @include default-container-width();
+
     .day {
       font-size: 18px;
 
@@ -31,44 +31,65 @@
   }
 
   .two.column.row {
-    max-width: var(--default-container-width);
-    margin-right: auto;
-    margin-left: auto;
-
-
+    @include default-container-width();
+    padding-bottom: 50px;
   }
 }
-  .event-title {
-    margin-bottom: 25px;
-    .event-heading{
-      font-family: Inter;
-      font-size: 12px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 16px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-    .event-detail{
+.event-title{
+  margin-bottom: 25px;
+  .event-heading {
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .event-detail {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 33px;
+    margin-top: 10px;
+    p,a{
+      margin-bottom: 10px;
       font-size: 24px;
-      font-style: normal;
-      font-weight: 300;
-      line-height: 33px;
-      margin-top: 10px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 33px;
+    margin-top: 10px;
     }
   }
-  .event-button{
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    flex-shrink: 0;
-    .button.event-btn{
+  .separator{
+    width: 170px;
+    border-bottom: 1px solid #000;
+    border-right: none;
+    height: 30px;
+  }
+}
+
+
+
+.event-button {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  flex-shrink: 0;
+  padding-top: 50px;
+  .button.event-btn {
     padding: 8px 20px;
     background-color: transparent;
     border: 1px solid #000;
     color: #000;
     font-size: 16px;
-   font-weight: 900;
+    font-weight: 900;
     line-height: 20px;
+    a{
+      color: #000;
+      font-size: 16px;
+      font-weight: 900;
+      line-height: 20px;
     }
   }
+}

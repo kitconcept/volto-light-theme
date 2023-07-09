@@ -3,8 +3,8 @@
  * @module components/theme/View/EventView
  */
 
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 import {
   hasBlocksData,
   flattenHTMLToAppURL,
@@ -12,11 +12,12 @@ import {
   getBlocksFieldname,
   getBlocksLayoutFieldname,
   getBaseUrl,
-} from "@plone/volto/helpers";
-import { Image, Grid, Button } from "semantic-ui-react";
-import { FormattedDate } from "@plone/volto/components";
-import config from "@plone/volto/registry";
-import { map } from "lodash";
+} from '@plone/volto/helpers';
+import { Image, Grid, Button } from 'semantic-ui-react';
+import { FormattedDate } from '@plone/volto/components';
+import config from '@plone/volto/registry';
+import { map } from 'lodash';
+import { UniversalLink } from '@plone/volto/components';
 
 const EventTextfieldView = ({ content }) => (
   <React.Fragment>
@@ -50,33 +51,33 @@ const EventTextfieldView = ({ content }) => (
 const EventView = (props) => {
   const { content } = props;
   const dateOptions = {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    hour: "numeric",
-    minute: "numeric",
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
   };
 
-  console.log(content, "i am event");
+  console.log(content, 'i am event');
 
   const blocksFieldname = getBlocksFieldname(content);
   const blocksLayoutFieldname = getBlocksLayoutFieldname(content);
 
   return (
-    <div id="page-document" className="ui container view-wrapper event-view">
+    <div id="page-document" className="view-wrapper event-view">
       <Grid>
         <Grid.Column width={12}>
           <div>
             <div className="dates">
               {content?.start ? (
                 <span className="day">
-                  <FormattedDate date={content?.start} format={dateOptions} />{" "}
+                  <FormattedDate date={content?.start} format={dateOptions} />{' '}
                   {}
                   UHR
                 </span>
               ) : (
                 <span className="day">No date</span>
-              )}{" "}
+              )}{' '}
               &mdash;&nbsp;
               {content?.end ? (
                 <span className="day">
@@ -92,12 +93,12 @@ const EventView = (props) => {
               {map(content[blocksLayoutFieldname].items, (block) => {
                 const Block =
                   config.blocks.blocksConfig[
-                    content[blocksFieldname]?.[block]?.["@type"]
-                  ]?.["view"] || null;
+                    content[blocksFieldname]?.[block]?.['@type']
+                  ]?.['view'] || null;
                 if (
                   config.blocks.blocksConfig[
-                    content[blocksFieldname]?.[block]?.["@type"]
-                  ]?.["id"] === "title"
+                    content[blocksFieldname]?.[block]?.['@type']
+                  ]?.['id'] === 'title'
                 ) {
                   return (
                     <>
@@ -106,95 +107,127 @@ const EventView = (props) => {
                         id={block}
                         properties={content}
                         data={content[blocksFieldname][block]}
-                        path={getBaseUrl(props.location?.pathname || "")}
+                        path={getBaseUrl(props.location?.pathname || '')}
                       />
                       {content.description && (
                         <p className="description">{content.description}</p>
                       )}
-                      <Grid.Row columns={2}>
-                        <Grid.Column>
-                          <div>
-                            <div className="event-title">
-                              <span className="event-heading">Anfang</span>
-                              <div className="event-detail">
-                                {" "}
-                                <FormattedDate
-                                  date={content?.start}
-                                  format={dateOptions}
-                                />{" "}
-                                {}
-                                Uhr
+                      <Grid>
+                        <Grid.Row columns={2}>
+                          <Grid.Column>
+                            <div>
+                              <div className="event-title">
+                                <span className="event-heading">Anfang</span>
+                                <div className="event-detail">
+                                  {' '}
+                                  <FormattedDate
+                                    date={content?.start}
+                                    format={dateOptions}
+                                  />{' '}
+                                  {}
+                                  Uhr
+                                </div>
+                                <div className="separator"></div>
+                              </div>
+                              <div className="event-title">
+                                <span className="event-heading">ende</span>
+                                <div className="event-detail">
+                                  {' '}
+                                  <FormattedDate
+                                    date={content?.end}
+                                    format={dateOptions}
+                                  />{' '}
+                                  Uhr
+                                </div>
+                                <div className="separator"></div>
+                              </div>
+                              <div className="event-title">
+                                <span className="event-heading">
+                                  Veranstaltungsort
+                                </span>
+                                <div className="event-detail">
+                                  {content?.location}
+                                </div>
                               </div>
                             </div>
-                            <div className="event-title">
-                              <span className="event-heading">ende</span>
-                              <div className="event-detail">
-                                {" "}
-                                <FormattedDate
-                                  date={content?.end}
-                                  format={dateOptions}
-                                />{" "}
-                                Uhr
+                          </Grid.Column>
+                          <Grid.Column>
+                            <div>
+                              <div className="event-title">
+                                <span className="event-heading">
+                                  Veranstalter
+                                </span>
+                                <div className="event-detail">
+                                  Musterevents GmbH
+                                </div>
+                                <div className="separator"></div>
+                              </div>
+                              <div className="event-title">
+                                <span className="event-heading">
+                                  Veranstalter-website
+                                </span>
+                                <div className="event-detail">
+                                  <UniversalLink
+                                    className="event-url"
+                                    href={content.event_url}
+                                  >
+                                    {content.event_url}
+                                  </UniversalLink>
+                                </div>
+                                <div className="separator"></div>
+                              </div>
+                              <div className="event-title">
+                                <span className="event-heading">
+                                  ANsprechpERSON
+                                </span>
+                                <div className="event-detail">
+                                  <div>
+                                    {content?.contact_name && (
+                                      <p>{content.contact_name}</p>
+                                    )}
+                                    {content?.contact_email && (
+                                      <p>
+                                        <a
+                                          href={`mailto:${content.contact_email}`}
+                                        >
+                                          {content.contact_email}
+                                        </a>
+                                      </p>
+                                    )}
+                                    {content?.contact_phone && (
+                                      <p>
+                                        Tel.{' '}
+                                        <a
+                                          href={`tel:${content.contact_phone}`}
+                                        >
+                                          {content.contact_phone}
+                                        </a>
+                                      </p>
+                                    )}
+                                  </div>
+                                </div>
                               </div>
                             </div>
-                            <div className="event-title">
-                              <span className="event-heading">
-                                Veranstaltungsort
-                              </span>
-                              <div className="event-detail">
-                                {content?.location}
-                              </div>
-                            </div>
+                          </Grid.Column>
+                          <div className="event-button">
+                            <Button className="event-btn">
+                              <a
+                                className="ics-download"
+                                target="_blank"
+                                rel="noreferrer"
+                                href={`${expandToBackendURL(
+                                  content['@id'],
+                                )}/ics_view`}
+                              >
+                                ICS-Download
+                              </a>
+                            </Button>
+                            <Button className="event-btn">
+                              Jetzt anmelden
+                            </Button>
                           </div>
-                        </Grid.Column>
-                        <Grid.Column>
-                          <div>
-                            <div className="event-title">
-                              <span className="event-heading">
-                                Veranstalter
-                              </span>
-                              <div className="event-detail">
-                                Musterevents GmbH
-                              </div>
-                            </div>
-                            <div className="event-title">
-                              <span className="event-heading">
-                                Veranstalter-website
-                              </span>
-                              <div className="event-detail">
-                                {content.event_url}
-                              </div>
-                            </div>
-                            <div className="event-title">
-                              <span className="event-heading">
-                                ANsprechpERSON
-                              </span>
-                              <div className="event-detail">
-                                {" "}
-                                {content.contact_name} <br />{" "}
-                                {content.contact_email}
-                                <br />
-                                {content.contact_phone}
-                              </div>
-                            </div>
-                          </div>
-                        </Grid.Column>
-                        <div className="event-button">
-                          <Button className="event-btn">
-                            <a
-                              className="ics-download"
-                              target="_blank"
-                              rel="noreferrer"
-                              href={`${expandToBackendURL(
-                                content["@id"]
-                              )}/ics_view`}
-                            >
-                              ICS-Download
-                            </a>
-                          </Button>
-                          <Button className="event-btn">Jetzt anmelden</Button>
-                        </div>
-                      </Grid.Row>
+                        </Grid.Row>
+                      </Grid>
                     </>
                   );
                 }
@@ -204,14 +237,10 @@ const EventView = (props) => {
                     id={block}
                     properties={content}
                     data={content[blocksFieldname][block]}
-                    path={getBaseUrl(props.location?.pathname || "")}
+                    path={getBaseUrl(props.location?.pathname || '')}
                   />
                 ) : (
-                  <div key={block}>
-                    {intl.formatMessage(messages.unknownBlock, {
-                      block: content[blocksFieldname]?.[block]?.["@type"],
-                    })}
-                  </div>
+                  <div key={block}>Unknown block</div>
                 );
               })}
             </div>
