@@ -9,6 +9,11 @@ figure {
 .block.image.full figcaption {
   padding-right: 25px;
   padding-left: 25px;
+
+  @media only screen and (min-width: 1470px) {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
 }
 
 .block.image {
@@ -38,7 +43,7 @@ figure {
     img {
       width: 100% !important;
       height: auto;
-      object-fit: contain;
+      aspect-ratio: $aspect-ratio;
     }
 
     &.right {
@@ -51,7 +56,6 @@ figure {
         margin-bottom: 0px;
         margin-left: 0 !important;
         float: none;
-        object-fit: contain;
         object-position: right;
       }
     }
@@ -65,7 +69,6 @@ figure {
         margin-right: 0 !important;
         margin-bottom: 0px;
         float: none;
-        object-fit: contain;
         object-position: left;
       }
     }

@@ -8,6 +8,22 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-rc.2 (2023-07-07)
+
+### Bugfix
+
+- Add NewsItemView @iFlamieng [#127](https://github.com/kitconcept/volto-light-theme/pull/127)
+- Add support for margins in responsive. Improve the spacing in grids. @sneridagh [#129](https://github.com/kitconcept/volto-light-theme/pull/129)
+
+
+## 1.0.0-rc.1 (2023-07-05)
+
+### Bugfix
+
+- Fix css issue of image block full width variante @iFlameing [#115](https://github.com/kitconcept/volto-light-theme/pull/115)
+- Fix minor style bugs in several components. @danalvrz [#122](https://github.com/kitconcept/volto-light-theme/pull/122)
+
+
 ## 1.0.0-rc.0 (2023-06-29)
 
 ### Feature

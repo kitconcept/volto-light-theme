@@ -1,2 +1,7 @@
 // We want the separation between cells in grids to be 1rem only
-@gutterWidth: 1rem;
+@gutterWidth: 20px;
+@rowSpacing: 20px;
+
+// This has to be 2 * 20px because it's going to be 1/2 in the source.
+@stackableGutter: 2 * 20px;
+

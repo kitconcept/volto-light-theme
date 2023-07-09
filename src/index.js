@@ -203,6 +203,8 @@ const applyConfig = (config) => {
     ...config.blocks.blocksConfig.heading,
     sidebarTab: 0,
     allowed_headings: [['h2', 'h2']],
+    colors: BG_COLORS,
+    schemaEnhancer: defaultStylingSchema,
   };
 
   config.blocks.blocksConfig.search.variations = [
@@ -213,9 +215,19 @@ const applyConfig = (config) => {
       isDefault: true,
     },
   ];
+
   config.blocks.blocksConfig.__button = {
     ...config.blocks.blocksConfig.__button,
     schemaEnhancer: ButtonStylingSchema,
+    colors: BG_COLORS,
+  };
+
+  config.blocks.blocksConfig.separator = {
+    ...config.blocks.blocksConfig.separator,
+    schemaEnhancer: composeSchema(
+      config.blocks.blocksConfig.separator.schemaEnhancer,
+      defaultStylingSchema,
+    ),
     colors: BG_COLORS,
   };
 

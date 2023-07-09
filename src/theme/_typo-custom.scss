@@ -55,7 +55,7 @@ h1.documentFirstHeading {
 // Block Title
 .block h2.headline {
   @include block-title();
-  @include vertical-space-h2();
+  @include vertical-space-block-title();
 }
 
 // Heading block
