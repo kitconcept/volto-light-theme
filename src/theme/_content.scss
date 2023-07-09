@@ -35,57 +35,56 @@
     padding-bottom: 50px;
   }
 }
-.event-title{
+.event-title {
   margin-bottom: 25px;
   .event-heading {
     font-family: Inter;
     font-size: 12px;
     font-style: normal;
     font-weight: 700;
-    line-height: 16px;
     letter-spacing: 1px;
+    line-height: 16px;
     text-transform: uppercase;
   }
   .event-detail {
+    margin-top: 10px;
     font-size: 24px;
     font-style: normal;
     font-weight: 300;
     line-height: 33px;
-    margin-top: 10px;
-    p,a{
+    p,
+    a {
+      margin-top: 10px;
       margin-bottom: 10px;
       font-size: 24px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 33px;
-    margin-top: 10px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 33px;
     }
   }
-  .separator{
+  .separator {
     width: 170px;
-    border-bottom: 1px solid #000;
-    border-right: none;
     height: 30px;
+    border-right: none;
+    border-bottom: 1px solid #000;
   }
 }
 
-
-
 .event-button {
   display: flex;
-  align-items: flex-start;
-  gap: 10px;
   flex-shrink: 0;
+  align-items: flex-start;
   padding-top: 50px;
+  gap: 10px;
   .button.event-btn {
     padding: 8px 20px;
-    background-color: transparent;
     border: 1px solid #000;
+    background-color: transparent;
     color: #000;
     font-size: 16px;
     font-weight: 900;
     line-height: 20px;
-    a{
+    a {
       color: #000;
       font-size: 16px;
       font-weight: 900;

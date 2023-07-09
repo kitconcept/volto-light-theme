@@ -58,8 +58,6 @@ const EventView = (props) => {
     minute: 'numeric',
   };
 
-  console.log(content, 'i am event');
-
   const blocksFieldname = getBlocksFieldname(content);
   const blocksLayoutFieldname = getBlocksLayoutFieldname(content);
 
