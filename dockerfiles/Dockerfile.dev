@@ -5,6 +5,9 @@ FROM plone/frontend-dev:${VOLTO_VERSION}
 ARG ADDON_NAME
 ARG ADDON_PATH
 
+# Copy helper.py as /setupAddon
+COPY dockerfiles/helper.py /setupAddon
+
 # Copy linter / prettier configs
 COPY --chown=node:node .eslintignore* .prettierignore* /app/
 
@@ -15,6 +18,7 @@ COPY --chown=node:node volto.config.js* /app/
 COPY --chown=node:node package.json /app/src/addons/${ADDON_PATH}/
 
 RUN <<EOT
+    set -e
     /setupAddon
     yarn install --network-timeout 1000000
 EOT
