@@ -1,72 +1,114 @@
-[{
+[
+  {
     "@id": "/Plone",
     "@type": "Plone Site",
     "UID": "71846cd61b404039a69de1298738c493",
     "allow_discussion": null,
     "blocks": {
-        "26f74823-46c6-4cbd-a8db-be57619b3a08": {
-            "@type": "listing",
-            "block": "47a047b5-bbb7-4adb-90f1-c5d6954013b5",
-            "headlineTag": "h2",
-            "query": [],
-            "querystring": {
-                "query": [
-                    {
-                        "i": "path",
-                        "o": "plone.app.querystring.operation.string.relativePath",
-                        "v": "./examples/"
-                    }
-                ],
-                "sort_order": "ascending"
+      "26f74823-46c6-4cbd-a8db-be57619b3a08": {
+        "@type": "listing",
+        "block": "47a047b5-bbb7-4adb-90f1-c5d6954013b5",
+        "headlineTag": "h2",
+        "query": [],
+        "querystring": {
+          "query": [
+            {
+              "i": "path",
+              "o": "plone.app.querystring.operation.string.relativePath",
+              "v": "./examples/"
             },
-            "styles": {},
-            "variation": "default"
+            {
+              "i": "Title",
+              "o": "plone.app.querystring.operation.string.contains",
+              "v": "Block:"
+            }
+          ],
+          "sort_order": "ascending"
         },
-        "270e457d-ea26-4f16-82d8-40c116134c43": {
-            "@type": "slate",
-            "plaintext": "A website consists of individual pages. These pages can represent different types of content, e.g. a news item, an event, but also an institute or a research facility. A page consists of different visual elements, such as a text paragraph, an image, a table. These visual elements are called \"blocks\".",
-            "value": [
-                {
-                    "children": [
-                        {
-                            "text": "A website consists of individual pages. These pages can represent different types of content, e.g. a news item, an event, but also an institute or a research facility. A page consists of different visual elements, such as a text paragraph, an image, a table. These visual elements are called \"blocks\"."
-                        }
-                    ],
-                    "type": "p"
-                }
-            ]
-        },
-        "444a5819-de69-47c9-812a-b41d1616935b": {
-            "@type": "slate",
-            "plaintext": "All available content types and blocks configured in the volto-light-theme are here on this page.",
-            "styles": {},
-            "value": [
-                {
-                    "children": [
-                        {
-                            "text": "All available content types and blocks configured in the volto-light-theme are here on this page."
-                        }
-                    ],
-                    "type": "p"
-                }
-            ]
-        },
-        "8836cd7f-35ca-49e7-96d9-39bdadd01fdf": {
-            "@type": "title"
+        "styles": {},
+        "variation": "default"
+      },
+      "2db1fdb0-69ca-4d22-8bbf-415e323df05c": {
+        "@type": "separator",
+        "styles": {
+          "align": "full"
         }
+      },
+      "6f16c601-3efc-44b7-8771-39c1fb62866a": {
+        "@type": "introduction",
+        "plaintext": "A website consists of individual pages. These pages can represent different types of content, e.g. a news item, an event, but also an institute or a research facility. A page consists of different visual elements, such as a text paragraph, an image, a table. These visual elements are called \"blocks\".\n\nAll available content types and blocks configured in the volto-light-theme are here on this page.",
+        "value": [
+          {
+            "children": [
+              {
+                "text": "A website consists of individual pages. These pages can represent different types of content, e.g. a news item, an event, but also an institute or a research facility. A page consists of different visual elements, such as a text paragraph, an image, a table. These visual elements are called \"blocks\"."
+              }
+            ],
+            "type": "p"
+          },
+          {
+            "children": [
+              {
+                "text": ""
+              }
+            ],
+            "type": "p"
+          },
+          {
+            "children": [
+              {
+                "text": "All available content types and blocks configured in the volto-light-theme are here on this page."
+              }
+            ],
+            "type": "p"
+          }
+        ]
+      },
+      "8836cd7f-35ca-49e7-96d9-39bdadd01fdf": {
+        "@type": "title"
+      },
+      "991a3fb4-f538-4b98-ae3c-a6f68cbd2627": {
+        "@type": "listing",
+        "block": "47a047b5-bbb7-4adb-90f1-c5d6954013b5",
+        "headlineTag": "h2",
+        "query": [],
+        "querystring": {
+          "query": [
+            {
+              "i": "path",
+              "o": "plone.app.querystring.operation.string.relativePath",
+              "v": "./examples/"
+            },
+            {
+              "i": "Title",
+              "o": "plone.app.querystring.operation.string.contains",
+              "v": "Inhaltstyp"
+            }
+          ],
+          "sort_order": "ascending"
+        },
+        "styles": {},
+        "variation": "default"
+      },
+      "9d0fc9b8-1dba-4819-a3a6-081f5eff3e8f": {
+        "@type": "separator",
+        "styles": {
+          "align": "full"
+        }
+      }
     },
     "blocks_layout": {
-        "items": [
-            "8836cd7f-35ca-49e7-96d9-39bdadd01fdf",
-            "270e457d-ea26-4f16-82d8-40c116134c43",
-            "444a5819-de69-47c9-812a-b41d1616935b",
-            "26f74823-46c6-4cbd-a8db-be57619b3a08"
-        ]
+      "items": [
+        "8836cd7f-35ca-49e7-96d9-39bdadd01fdf",
+        "2db1fdb0-69ca-4d22-8bbf-415e323df05c",
+        "6f16c601-3efc-44b7-8771-39c1fb62866a",
+        "9d0fc9b8-1dba-4819-a3a6-081f5eff3e8f",
+        "26f74823-46c6-4cbd-a8db-be57619b3a08",
+        "991a3fb4-f538-4b98-ae3c-a6f68cbd2627"
+      ]
     },
     "contributors": [],
-    "creators": [
-        "admin"
-    ],
+    "creators": ["admin"],
     "description": "A Plone Site",
     "effective": null,
     "exclude_from_nav": false,
@@ -76,8 +118,8 @@
     "items_total": 1,
     "language": "en",
     "lock": {
-        "locked": false,
-        "stealable": true
+      "locked": false,
+      "stealable": true
     },
     "parent": {},
     "review_state": null,
@@ -86,4 +128,5 @@
     "table_of_contents": null,
     "title": "Welcome to volto-light-theme",
     "type_title": "Plone Site"
-}]
+  }
+]

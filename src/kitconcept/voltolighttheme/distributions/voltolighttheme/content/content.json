@@ -13,6 +13,19 @@
         "block": "47a047b5-bbb7-4adb-90f1-c5d6954013b5",
         "headlineTag": "h2",
         "query": [],
+        "querystring": {
+          "b_size": "50",
+          "query": [
+            {
+              "i": "portal_type",
+              "o": "plone.app.querystring.operation.selection.any",
+              "v": ["Document"]
+            }
+          ],
+          "sort_on": "sortable_title",
+          "sort_order": "ascending"
+        },
+        "styles": {},
         "variation": "default"
       }
     },
