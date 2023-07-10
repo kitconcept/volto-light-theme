@@ -26,36 +26,43 @@ VOLTO_VERSION=17.0.0-alpha.16
 
 ADDON_NAME='@kitconcept/volto-light-theme'
 ADDON_PATH='volto-light-theme'
-DEV_COMPOSE=dockerfiles/docker-compose.yml
+COMPOSE_FILE=dockerfiles/docker-compose.yml
 ACCEPTANCE_COMPOSE=acceptance/docker-compose.yml
 CMD=CURRENT_DIR=${CURRENT_DIR} ADDON_NAME=${ADDON_NAME} ADDON_PATH=${ADDON_PATH} VOLTO_VERSION=${VOLTO_VERSION} PLONE_VERSION=${PLONE_VERSION} docker compose
-DOCKER_COMPOSE=${CMD} -p ${ADDON_PATH} -f ${DEV_COMPOSE}
+DOCKER_COMPOSE=${CMD} -p ${ADDON_PATH} -f ${COMPOSE_FILE}
+DEV_COMPOSE=COMPOSE_PROFILES=dev ${DOCKER_COMPOSE}
+LIVE_COMPOSE=COMPOSE_PROFILES=dev ${DOCKER_COMPOSE}
 ACCEPTANCE=${CMD} -p ${ADDON_PATH}-acceptance -f ${ACCEPTANCE_COMPOSE}
 
 .PHONY: build-backend
 build-backend: ## Build
 	@echo "$(GREEN)==> Build Backend Container $(RESET)"
-	${DOCKER_COMPOSE} build backend
+	${DEV_COMPOSE} build backend
 
 .PHONY: start-backend
 start-backend: ## Starts Docker backend
 	@echo "$(GREEN)==> Start Docker-based Plone Backend $(RESET)"
-	${DOCKER_COMPOSE} up backend -d
+	${DEV_COMPOSE} up backend -d
 
 .PHONY: stop-backend
 stop-backend: ## Stop Docker backend
 	@echo "$(GREEN)==> Stop Docker-based Plone Backend $(RESET)"
-	${DOCKER_COMPOSE} stop backend
+	${DEV_COMPOSE} stop backend
+
+.PHONY: build-live
+build-live: ## Build Addon live
+	@echo "$(GREEN)==> Build Addon development container $(RESET)"
+	${LIVE_COMPOSE} build addon-live
 
 .PHONY: build-addon
 build-addon: ## Build Addon dev
 	@echo "$(GREEN)==> Build Addon development container $(RESET)"
-	${DOCKER_COMPOSE} build addon-dev
+	${DEV_COMPOSE} build addon-dev
 
 .PHONY: start-dev
 start-dev: ## Starts Dev container
 	@echo "$(GREEN)==> Start Addon Development container $(RESET)"
-	${DOCKER_COMPOSE} up addon-dev
+	${DEV_COMPOSE} up addon-dev
 
 .PHONY: dev
 dev: ## Develop the addon
@@ -72,27 +79,27 @@ help:		## Show this help.
 # Dev Helpers
 .PHONY: i18n
 i18n: ## Sync i18n
-	${DOCKER_COMPOSE} run addon-dev i18n
+	${DEV_COMPOSE} run addon-dev i18n
 
 .PHONY: format
 format: ## Format codebase
-	${DOCKER_COMPOSE} run addon-dev lint:fix
-	${DOCKER_COMPOSE} run addon-dev prettier:fix
-	${DOCKER_COMPOSE} run addon-dev stylelint:fix
+	${DEV_COMPOSE} run addon-dev lint:fix
+	${DEV_COMPOSE} run addon-dev prettier:fix
+	${DEV_COMPOSE} run addon-dev stylelint:fix
 
 .PHONY: lint
 lint: ## Lint Codebase
-	${DOCKER_COMPOSE} run addon-dev lint
-	${DOCKER_COMPOSE} run addon-dev prettier
-	${DOCKER_COMPOSE} run addon-dev stylelint --allow-empty-input
+	${DEV_COMPOSE} run addon-dev lint
+	${DEV_COMPOSE} run addon-dev prettier
+	${DEV_COMPOSE} run addon-dev stylelint --allow-empty-input
 
 .PHONY: test
 test: ## Run unit tests
-	${DOCKER_COMPOSE} run addon-dev test --watchAll
+	${DEV_COMPOSE} run addon-dev test --watchAll
 
 .PHONY: test-ci
 test-ci: ## Run unit tests in CI
-	${DOCKER_COMPOSE} run -e CI=1 addon-dev test
+	${DEV_COMPOSE} run -e CI=1 addon-dev test
 
 ## Acceptance
 .PHONY: install-acceptance
@@ -126,4 +133,4 @@ status-test-acceptance-server: ## Status of Acceptance Server
 
 .PHONY: debug-frontend
 debug-frontend:  ## Run bash in the Frontend container
-	${DOCKER_COMPOSE} run --entrypoint bash addon-dev
+	${DEV_COMPOSE} run --entrypoint bash addon-dev
