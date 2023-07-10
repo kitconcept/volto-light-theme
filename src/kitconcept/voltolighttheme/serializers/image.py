@@ -1,4 +1,4 @@
-from kitconcept import api
+from plone import api
 from plone.app.uuid.utils import uuidToCatalogBrain
 from plone.restapi.behaviors import IBlocks
 from plone.restapi.interfaces import IBlockFieldSerializationTransformer
