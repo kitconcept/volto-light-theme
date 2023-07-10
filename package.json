@@ -1,6 +1,6 @@
 {
   "name": "@kitconcept/volto-light-theme",
-  "version": "1.0.0-rc.2",
+  "version": "1.0.0-rc.3",
   "description": "Volto Light Theme by kitconcept",
   "main": "src/index.js",
   "repository": {
@@ -36,7 +36,7 @@
     "postcss-scss": "4.0.6",
     "prettier": "2.0.5",
     "razzle-plugin-scss": "4.2.18",
-    "release-it": "15.11.0",
+    "release-it": "^16.1.0",
     "stylelint-config-prettier": "9.0.4",
     "stylelint-config-sass-guidelines": "9.0.1",
     "stylelint-prettier": "1.1.2"
