@@ -16,10 +16,10 @@
   .block.teaser {
     margin-bottom: 0;
     background-color: $lightgrey;
-    .grid-teaser-item {
+    .teaser-item {
       height: 100%;
 
-      .grid-image-wrapper {
+      .image-wrapper {
         margin: 0 0 40px 0 !important;
 
         img {
@@ -54,7 +54,7 @@
   .block-editor-teaser {
     padding: 0;
     margin: 0.5rem !important;
-    .grid-teaser-item {
+    .teaser-item {
       border: none !important;
     }
   }
@@ -144,7 +144,7 @@
 .block.gridBlock,
 .block-editor-gridBlock {
   .one {
-    .grid-teaser-item .content h2 {
+    .teaser-item .content h2 {
       margin-bottom: 40px !important;
       @include text-heading-h2();
     }
@@ -159,7 +159,7 @@
   .two,
   .three {
     .teaser {
-      .grid-teaser-item .content {
+      .teaser-item .content {
         h2 {
           margin-bottom: 20px !important;
           @include text-heading-h3();
@@ -187,8 +187,8 @@
 
   .four {
     .teaser {
-      .grid-teaser-item {
-        .grid-image-wrapper {
+      .teaser-item {
+        .image-wrapper {
           margin-bottom: 20px !important;
         }
         .content {
@@ -239,7 +239,7 @@
 #page-add .block-editor-gridBlock.has--backgroundColor--grey,
 #page-edit .block-editor-gridBlock.has--backgroundColor--grey {
   background-color: $lightgrey;
-  .grid-teaser-item {
+  .teaser-item {
     background: white;
   }
   .slate {

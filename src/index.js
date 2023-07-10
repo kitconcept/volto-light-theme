@@ -35,6 +35,7 @@ defineMessages({
 
 const applyConfig = (config) => {
   config.settings.enableAutoBlockGroupingByBackgroundColor = true;
+  config.settings.navDepth = 3;
 
   // No required blocks (eg. Title)
   config.blocks.requiredBlocks = [];
@@ -49,7 +50,14 @@ const applyConfig = (config) => {
     ...config.settings.apiExpanders,
     {
       match: '',
-      GET_CONTENT: ['breadcrumbs', 'navigation', 'actions', 'types'],
+      GET_CONTENT: ['breadcrumbs', 'actions', 'types'],
+    },
+    {
+      match: '',
+      GET_CONTENT: ['navigation'],
+      querystring: {
+        'expand.navigation.depth': config.settings.navDepth,
+      },
     },
   ];
 
