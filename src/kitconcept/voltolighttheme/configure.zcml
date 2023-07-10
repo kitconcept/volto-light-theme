@@ -15,6 +15,7 @@
   <include file="distributions.zcml" />
   <include file="profiles.zcml" />
 
+  <include package=".serializers" />
   <include package=".indexers" />
   <include package=".vocabularies" />
 
