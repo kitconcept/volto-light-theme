@@ -225,14 +225,17 @@ const applyConfig = (config) => {
     colors: BG_COLORS,
   };
 
-  config.blocks.blocksConfig.separator = {
-    ...config.blocks.blocksConfig.separator,
-    schemaEnhancer: composeSchema(
-      config.blocks.blocksConfig.separator.schemaEnhancer,
-      defaultStylingSchema,
-    ),
-    colors: BG_COLORS,
-  };
+  // Check if the separator is present before enhancing it
+  if (config.blocks.blocksConfig.separator.id) {
+    config.blocks.blocksConfig.separator = {
+      ...config.blocks.blocksConfig.separator,
+      schemaEnhancer: composeSchema(
+        config.blocks.blocksConfig.separator.schemaEnhancer,
+        defaultStylingSchema,
+      ),
+      colors: BG_COLORS,
+    };
+  }
 
   config.blocks.blocksConfig.listing = {
     ...config.blocks.blocksConfig.listing,
