@@ -126,14 +126,6 @@ const applyConfig = (config) => {
 
   config.settings.slidingSearchAnimation = true;
 
-  config.settings.appExtras = [
-    ...config.settings.appExtras,
-    {
-      match: '',
-      component: ContainerQueriesPolyfill,
-    },
-  ];
-
   config.blocks.blocksConfig.accordion = {
     ...config.blocks.blocksConfig.accordion,
     mostUsed: true,
@@ -256,6 +248,18 @@ const applyConfig = (config) => {
       },
     ],
   };
+
+  return config;
+};
+
+export const withContainerQueryPolyfill = (config) => {
+  config.settings.appExtras = [
+    ...config.settings.appExtras,
+    {
+      match: '',
+      component: ContainerQueriesPolyfill,
+    },
+  ];
 
   return config;
 };

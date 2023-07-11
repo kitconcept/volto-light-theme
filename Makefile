@@ -103,20 +103,20 @@ test-ci: ## Run unit tests in CI
 
 ## Acceptance
 .PHONY: install-acceptance
-install-acceptance: ## Install Cypress, build containers
+install-acceptance: ## Install Cypress, build acceptance containers
 	(cd acceptance && yarn)
 	${ACCEPTANCE} --profile dev --profile prod build
 
 .PHONY: start-test-acceptance-server
-start-test-acceptance-server: ## Start acceptance server
-	${ACCEPTANCE} --profile dev up -d
+start-test-acceptance-server: ## Start acceptance server (for use it in while developing)
+	${ACCEPTANCE} --profile dev up
 
 .PHONY: start-test-acceptance-server-prod
-start-test-acceptance-server-prod: ## Start acceptance server
+start-test-acceptance-server-prod: ## Start acceptance server in prod (used by CI)
 	${ACCEPTANCE} --profile prod up -d
 
 .PHONY: test-acceptance
-test-acceptance: ## Start Cypress
+test-acceptance: ## Start Cypress (for use it while developing)
 	(cd acceptance && ./node_modules/.bin/cypress open)
 
 .PHONY: test-acceptance-headless
@@ -124,13 +124,18 @@ test-acceptance-headless: ## Run cypress tests in CI
 	(cd acceptance && ./node_modules/.bin/cypress run)
 
 .PHONY: stop-test-acceptance-server
-stop-test-acceptance-server: ## Stop acceptance server
-	${ACCEPTANCE} down
+stop-test-acceptance-server: ## Stop acceptance server (for use it while finished developing)
+	${ACCEPTANCE} --profile dev down
 
 .PHONY: status-test-acceptance-server
-status-test-acceptance-server: ## Status of Acceptance Server
+status-test-acceptance-server: ## Status of Acceptance Server (for use it while developing)
 	${ACCEPTANCE} ps
 
 .PHONY: debug-frontend
-debug-frontend:  ## Run bash in the Frontend container
+debug-frontend:  ## Run bash in the Frontend container (for debug infrastructure purposes)
 	${DEV_COMPOSE} run --entrypoint bash addon-dev
+
+.PHONY: install-local
+install-local:  ## Installs essentials for developing locally (ESlint, prettier...) (for use it while developing)
+	yarn remove -A @plone/volto && yarn add @plone/volto && git co -- package.json yarn.lock
+	mv .eslintrc.local.js .eslintrc.js
