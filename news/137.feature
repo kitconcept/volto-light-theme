@@ -1,1 +1,1 @@
-Upgrade to Volto 17a17 as baseline @sneridagh
+Add acceptance tests layer, update docker files and Makefile @sneridagh
