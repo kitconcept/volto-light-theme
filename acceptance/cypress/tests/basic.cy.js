@@ -61,10 +61,8 @@ context('Basic Acceptance Tests', () => {
 
       cy.log('then the page view should contain a link');
 
-      cy.get('.ui.container p').contains(
-        'Colorless green ideas sleep furiously.',
-      );
-      cy.get('.ui.container p a')
+      cy.get('.container p').contains('Colorless green ideas sleep furiously.');
+      cy.get('.container p a')
         .should('have.text', 'furiously')
         .and('have.attr', 'href')
         .and('include', 'https://google.com');
