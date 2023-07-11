@@ -112,9 +112,6 @@ const EventView = (props) => {
                         data={content[blocksFieldname][block]}
                         path={getBaseUrl(props.location?.pathname || '')}
                       />
-                      {content.description && (
-                        <p className="description">{content.description}</p>
-                      )}
                       <Grid>
                         <Grid.Row columns={2}>
                           <Grid.Column>
