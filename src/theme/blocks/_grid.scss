@@ -128,9 +128,17 @@
     margin: 0.5rem !important;
   }
 
-  .listing {
+  .block.listing {
     h2 {
       margin-bottom: 40px !important;
+    }
+    &.previous--is--same--block-type.previous--has--same--backgroundColor:not(.has--headline) {
+      margin-top: unset;
+    }
+    .listing-item,
+    .listing-item:last-child {
+      padding-bottom: 40px !important;
+      border-bottom: 1px solid $black !important;
     }
   }
 

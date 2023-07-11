@@ -8,13 +8,13 @@
   // We want the image to extend in all its container width
   height: 100%;
 
-  .grid-teaser-item.default {
+  .teaser-item.default {
     align-items: start;
     padding-bottom: 40px; // same as vertical spacing in margin-bottom
     border-bottom: 1px solid $black;
   }
 
-  .grid-image-wrapper {
+  .image-wrapper {
     width: 100%;
     img {
       object-position: center;
@@ -23,10 +23,10 @@
 
   &.has--align--left,
   &.has--align--right {
-    .grid-teaser-item.default {
+    .teaser-item.default {
       display: flex;
 
-      .grid-image-wrapper {
+      .image-wrapper {
         align-self: flex-start;
       }
 
@@ -37,10 +37,10 @@
   }
 
   &.has--align--left {
-    .grid-teaser-item.default {
+    .teaser-item.default {
       flex-direction: row;
 
-      .grid-image-wrapper {
+      .image-wrapper {
         margin-right: 20px;
 
         @media only screen and (max-width: $largest-mobile-screen) {
@@ -52,10 +52,10 @@
   }
 
   &.has--align--right {
-    .grid-teaser-item.default {
+    .teaser-item.default {
       flex-direction: row-reverse;
 
-      .grid-image-wrapper {
+      .image-wrapper {
         margin-left: 20px;
 
         @media only screen and (max-width: $largest-mobile-screen) {
@@ -67,13 +67,13 @@
   }
 
   &.has--align--center {
-    .grid-teaser-item.default {
+    .teaser-item.default {
       display: block;
       a {
         display: block;
       }
 
-      .grid-image-wrapper {
+      .image-wrapper {
         margin-bottom: 26px;
       }
     }
@@ -102,12 +102,12 @@
 
   &.is--last--of--block-type,
   &.next--has--different--backgroundColor {
-    .grid-teaser-item.default {
+    .teaser-item.default {
       padding-bottom: 0;
       border-bottom: none;
     }
     &.next--is--__button {
-      .grid-teaser-item.default {
+      .teaser-item.default {
         padding-bottom: 40px;
         border-bottom: 1px solid $black;
       }
