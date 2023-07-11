@@ -8,6 +8,28 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-rc.4 (2023-07-11)
+
+### Bugfix
+
+- Fix Teaser block CSS. @danalvrz [#134](https://github.com/kitconcept/volto-light-theme/pull/134)
+
+
+## 1.0.0-rc.3 (2023-07-10)
+
+### Breaking
+
+- Remove `@kitconcept/volto-blocks-grid` dependency @sneridagh [#131](https://github.com/kitconcept/volto-light-theme/pull/131)
+
+### Bugfix
+
+- Fix minor style bugs for Listing block @danalvrz [#130](https://github.com/kitconcept/volto-light-theme/pull/130)
+
+### Internal
+
+- Create deploy to https://light-theme.kitconcept.io [@ericof] [#72](https://github.com/kitconcept/volto-light-theme/pull/72)
+
+
 ## 1.0.0-rc.2 (2023-07-07)
 
 ### Bugfix

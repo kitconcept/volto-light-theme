@@ -1,6 +1,6 @@
 {
   "name": "@kitconcept/volto-light-theme",
-  "version": "1.0.0-rc.2",
+  "version": "1.0.0-rc.4",
   "description": "Volto Light Theme by kitconcept",
   "main": "src/index.js",
   "repository": {
@@ -36,11 +36,21 @@
     "postcss-scss": "4.0.6",
     "prettier": "2.0.5",
     "razzle-plugin-scss": "4.2.18",
-    "release-it": "15.11.0",
+    "release-it": "^16.1.0",
     "stylelint-config-prettier": "9.0.4",
     "stylelint-config-sass-guidelines": "9.0.1",
     "stylelint-prettier": "1.1.2"
   },
+  "peerAddons": [
+    "@eeacms/volto-accordion-block",
+    "@kitconcept/volto-button-block",
+    "@kitconcept/volto-dsgvo-banner",
+    "@kitconcept/volto-heading-block",
+    "@kitconcept/volto-image-block",
+    "@kitconcept/volto-introduction-block",
+    "@kitconcept/volto-separator-block",
+    "@kitconcept/volto-slider-block"
+  ],
   "peerDependencies": {
     "@eeacms/volto-accordion-block": "^9.0.0",
     "@kitconcept/volto-button-block": "^2.1.0",
@@ -50,6 +60,6 @@
     "@kitconcept/volto-introduction-block": "^1.0.0",
     "@kitconcept/volto-separator-block": "^3.2.0",
     "@kitconcept/volto-slider-block": "^4.2.0",
-    "@plone/volto": "^17.0.0-alpha.16"
+    "@plone/volto": "^17.0.0-alpha.17"
   }
 }

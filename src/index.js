@@ -3,8 +3,7 @@ import { defineMessages } from 'react-intl';
 import { composeSchema, getPreviousNextBlock } from '@plone/volto/helpers';
 import { defaultStylingSchema } from './components/Blocks/schema';
 import { teaserSchemaEnhancer } from './components/Blocks/Teaser/schema';
-// eslint-disable-next-line import/no-unresolved
-import { gridTeaserDisableStylingSchema } from '@kitconcept/volto-blocks-grid/components/Teaser/schema';
+import { gridTeaserDisableStylingSchema } from '@plone/volto/components/manage/Blocks/Teaser/schema';
 
 import ContainerQueriesPolyfill from './components/CQPolyfill';
 import Container from './components/Atoms/Container/Container';
@@ -37,6 +36,7 @@ defineMessages({
 
 const applyConfig = (config) => {
   config.settings.enableAutoBlockGroupingByBackgroundColor = true;
+  config.settings.navDepth = 3;
 
   // No required blocks (eg. Title)
   config.blocks.requiredBlocks = [];
@@ -51,7 +51,14 @@ const applyConfig = (config) => {
     ...config.settings.apiExpanders,
     {
       match: '',
-      GET_CONTENT: ['breadcrumbs', 'navigation', 'actions', 'types'],
+      GET_CONTENT: ['breadcrumbs', 'actions', 'types'],
+    },
+    {
+      match: '',
+      GET_CONTENT: ['navigation'],
+      querystring: {
+        'expand.navigation.depth': config.settings.navDepth,
+      },
     },
   ];
 
@@ -87,6 +94,11 @@ const applyConfig = (config) => {
       // Inject a class depending if it's the last of block type
       if (data?.['@type'] !== nextBlock?.['@type']) {
         styles.push('is--last--of--block-type');
+      }
+
+      // Inject a class depending if it has a headline
+      if (data?.headline || previousBlock?.['@type'] === 'heading') {
+        styles.push('has--headline');
       }
 
       // Given a StyleWrapper defined `backgroundColor` style
