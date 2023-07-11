@@ -40,7 +40,7 @@ context('Basic Acceptance Tests', () => {
       cy.url().should('eq', Cypress.config().baseUrl + '/my-page');
     });
 
-    it.only('As editor I can add a link to a text block', function () {
+    it('As editor I can add a link to a text block', function () {
       cy.navigate('/document/edit');
       cy.wait('@schema');
 
@@ -55,7 +55,8 @@ context('Basic Acceptance Tests', () => {
       cy.get('.slate-toolbar .link-form-container input').type(
         'https://google.com{enter}',
       );
-      cy.toolbarSave();
+
+      cy.get('#toolbar-save', { timeout: 10000 }).click();
       cy.wait('@content');
 
       cy.log('then the page view should contain a link');
