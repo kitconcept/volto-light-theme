@@ -11,16 +11,6 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-#: components/Theme/EventView
-# defaultMessage: Contact person
-msgid " Contact-person"
-msgstr ""
-
-#: components/Theme/EventView
-# defaultMessage:  Organizer-website
-msgid " Organizer-website"
-msgstr ""
-
 #: components/Blocks/schema
 # defaultMessage: Background color
 msgid "Background color"
@@ -44,6 +34,11 @@ msgstr ""
 #: components/Navigation/Navigation
 # defaultMessage: Close menu
 msgid "Close menu"
+msgstr ""
+
+#: components/Theme/EventView
+# defaultMessage: Contact
+msgid "Contact"
 msgstr ""
 
 #: components/Footer/Footer
@@ -104,6 +99,11 @@ msgstr ""
 #: components/Navigation/Navigation
 # defaultMessage: Open menu
 msgid "Open menu"
+msgstr ""
+
+#: components/Theme/EventView
+# defaultMessage: Phone
+msgid "Phone"
 msgstr ""
 
 #: components/Footer/Footer
@@ -170,13 +170,8 @@ msgid "Sorting"
 msgstr ""
 
 #: components/Theme/EventView
-# defaultMessage: start
+# defaultMessage: Start
 msgid "Start"
-msgstr ""
-
-#: components/Theme/EventView
-# defaultMessage: Tel.
-msgid "Tel."
 msgstr ""
 
 #: components/Footer/Footer
@@ -187,6 +182,11 @@ msgstr ""
 #: components/Theme/EventView
 # defaultMessage: Unknown block
 msgid "Unknown block"
+msgstr ""
+
+#: components/Theme/EventView
+# defaultMessage: Website
+msgid "Website"
 msgstr ""
 
 #: components/Widgets/AlignWidget

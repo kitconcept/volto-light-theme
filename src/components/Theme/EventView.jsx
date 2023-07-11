@@ -120,7 +120,7 @@ const EventView = (props) => {
                                 <span className="event-heading">
                                   <FormattedMessage
                                     id="Start"
-                                    defaultMessage="start"
+                                    defaultMessage="Start"
                                   />
                                 </span>
                                 <div className="event-detail">
@@ -170,8 +170,8 @@ const EventView = (props) => {
                               <div className="event-title">
                                 <span className="event-heading">
                                   <FormattedMessage
-                                    id=" Organizer-website"
-                                    defaultMessage=" Organizer-website"
+                                    id="Website"
+                                    defaultMessage="Website"
                                   />
                                 </span>
                                 <div className="event-detail">
@@ -187,8 +187,8 @@ const EventView = (props) => {
                               <div className="event-title">
                                 <span className="event-heading">
                                   <FormattedMessage
-                                    id=" Contact-person"
-                                    defaultMessage="Contact person"
+                                    id="Contact"
+                                    defaultMessage="Contact"
                                   />
                                 </span>
                                 <div className="event-detail">
@@ -208,8 +208,8 @@ const EventView = (props) => {
                                     {content?.contact_phone && (
                                       <p>
                                         <FormattedMessage
-                                          id="Tel."
-                                          defaultMessage="Tel."
+                                          id="Phone"
+                                          defaultMessage="Phone"
                                         />{' '}
                                         <a
                                           href={`tel:${content.contact_phone}`}
