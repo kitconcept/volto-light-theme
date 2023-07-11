@@ -8,6 +8,13 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-rc.4 (2023-07-11)
+
+### Bugfix
+
+- Fix Teaser block CSS. @danalvrz [#134](https://github.com/kitconcept/volto-light-theme/pull/134)
+
+
 ## 1.0.0-rc.3 (2023-07-10)
 
 ### Breaking
