@@ -37,5 +37,6 @@ COPY --from=builder /app /app
 RUN <<EOT
     set -e
     ln -s /data /app/var
+    chown -R 500:500 /app/etc/
     ./docker-entrypoint.sh create-site
 EOT
