@@ -40,10 +40,10 @@ const GridTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
                     componentName="PreviewImage"
                     item={item}
                     alt=""
-                    className="grid-item-image"
+                    className="item-image"
                   />
                 )}
-                <div className="grid-item">
+                <div className="item">
                   <div className="content">
                     {item?.head_title && (
                       <div className="headline">{item.head_title}</div>
