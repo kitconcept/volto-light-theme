@@ -18,6 +18,7 @@ import { FormattedDate } from '@plone/volto/components';
 import config from '@plone/volto/registry';
 import { map } from 'lodash';
 import { UniversalLink } from '@plone/volto/components';
+import { FormattedMessage, injectIntl } from 'react-intl';
 
 const EventTextfieldView = ({ content }) => (
   <React.Fragment>
@@ -70,19 +71,23 @@ const EventView = (props) => {
               {content?.start ? (
                 <span className="day">
                   <FormattedDate date={content?.start} format={dateOptions} />{' '}
-                  {}
-                  UHR
+                  {props.intl.locale === 'de' ? ' Uhr' : ''}
                 </span>
               ) : (
-                <span className="day">No date</span>
+                <span className="day">
+                  <FormattedMessage id="No date" defaultMessage="No date" />
+                </span>
               )}{' '}
               &mdash;&nbsp;
               {content?.end ? (
                 <span className="day">
-                  <FormattedDate date={content?.end} format={dateOptions} /> UHR
+                  <FormattedDate date={content?.end} format={dateOptions} />{' '}
+                  {props.intl.locale === 'de' ? ' Uhr' : ''}
                 </span>
               ) : (
-                <span className="day">No date</span>
+                <span className="day">
+                  <FormattedMessage id="No date" defaultMessage="No date" />
+                </span>
               )}
             </div>
           </div>
@@ -115,33 +120,47 @@ const EventView = (props) => {
                           <Grid.Column>
                             <div>
                               <div className="event-title">
-                                <span className="event-heading">Anfang</span>
+                                <span className="event-heading">
+                                  <FormattedMessage
+                                    id="Start"
+                                    defaultMessage="start"
+                                  />
+                                </span>
                                 <div className="event-detail">
                                   {' '}
                                   <FormattedDate
                                     date={content?.start}
                                     format={dateOptions}
                                   />{' '}
-                                  {}
-                                  Uhr
+                                  {props.intl.locale === 'de' ? ' Uhr' : ''}
                                 </div>
                                 <div className="separator"></div>
                               </div>
                               <div className="event-title">
-                                <span className="event-heading">ende</span>
+                                <span className="event-heading">
+                                  {' '}
+                                  <FormattedMessage
+                                    id="End"
+                                    defaultMessage="End"
+                                  />
+                                </span>
                                 <div className="event-detail">
                                   {' '}
                                   <FormattedDate
                                     date={content?.end}
                                     format={dateOptions}
                                   />{' '}
-                                  Uhr
+                                  {props.intl.locale === 'de' ? ' Uhr' : ''}
                                 </div>
                                 <div className="separator"></div>
                               </div>
                               <div className="event-title">
                                 <span className="event-heading">
-                                  Veranstaltungsort
+                                  {' '}
+                                  <FormattedMessage
+                                    id="Location"
+                                    defaultMessage="Location"
+                                  />
                                 </span>
                                 <div className="event-detail">
                                   {content?.location}
@@ -153,16 +172,10 @@ const EventView = (props) => {
                             <div>
                               <div className="event-title">
                                 <span className="event-heading">
-                                  Veranstalter
-                                </span>
-                                <div className="event-detail">
-                                  Musterevents GmbH
-                                </div>
-                                <div className="separator"></div>
-                              </div>
-                              <div className="event-title">
-                                <span className="event-heading">
-                                  Veranstalter-website
+                                  <FormattedMessage
+                                    id=" Organizer-website"
+                                    defaultMessage=" Organizer-website"
+                                  />
                                 </span>
                                 <div className="event-detail">
                                   <UniversalLink
@@ -176,7 +189,10 @@ const EventView = (props) => {
                               </div>
                               <div className="event-title">
                                 <span className="event-heading">
-                                  ANsprechpERSON
+                                  <FormattedMessage
+                                    id=" Contact-person"
+                                    defaultMessage="Contact person"
+                                  />
                                 </span>
                                 <div className="event-detail">
                                   <div>
@@ -194,7 +210,10 @@ const EventView = (props) => {
                                     )}
                                     {content?.contact_phone && (
                                       <p>
-                                        Tel.{' '}
+                                        <FormattedMessage
+                                          id="Tel."
+                                          defaultMessage="Tel."
+                                        />{' '}
                                         <a
                                           href={`tel:${content.contact_phone}`}
                                         >
@@ -217,11 +236,11 @@ const EventView = (props) => {
                                   content['@id'],
                                 )}/ics_view`}
                               >
-                                ICS-Download
+                                <FormattedMessage
+                                  id="ICS-Download"
+                                  defaultMessage="ICS Download"
+                                />
                               </a>
-                            </Button>
-                            <Button className="event-btn">
-                              Jetzt anmelden
                             </Button>
                           </div>
                         </Grid.Row>
@@ -238,7 +257,12 @@ const EventView = (props) => {
                     path={getBaseUrl(props.location?.pathname || '')}
                   />
                 ) : (
-                  <div key={block}>Unknown block</div>
+                  <div key={block}>
+                    <FormattedMessage
+                      id="Unknown block"
+                      defaultMessage="Unknown block"
+                    />
+                  </div>
                 );
               })}
             </div>
@@ -277,5 +301,4 @@ EventView.propTypes = {
     whole_day: PropTypes.bool,
   }).isRequired,
 };
-
-export default EventView;
+export default injectIntl(EventView);

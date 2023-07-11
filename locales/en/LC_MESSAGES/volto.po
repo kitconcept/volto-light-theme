@@ -11,9 +11,14 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-#: components/Blocks/Separator/schema
-# defaultMessage: Alignment
-msgid "Alignment"
+#: components/Theme/EventView
+# defaultMessage: Contact person
+msgid " Contact-person"
+msgstr ""
+
+#: components/Theme/EventView
+# defaultMessage:  Organizer-website
+msgid " Organizer-website"
 msgstr ""
 
 #: components/Blocks/schema
@@ -21,9 +26,39 @@ msgstr ""
 msgid "Background color"
 msgstr ""
 
+#: components/Blocks/Button/schema
+# defaultMessage: Block Width
+msgid "Block Width"
+msgstr ""
+
+#: components/Breadcrumbs/Breadcrumbs
+# defaultMessage: Breadcrumbs
+msgid "Breadcrumbs"
+msgstr ""
+
 #: components/Widgets/AlignWidget
 # defaultMessage: Center
 msgid "Center"
+msgstr ""
+
+#: components/Navigation/Navigation
+# defaultMessage: Close menu
+msgid "Close menu"
+msgstr ""
+
+#: components/Footer/Footer
+# defaultMessage: Copyright
+msgid "Copyright"
+msgstr ""
+
+#: components/Footer/Footer
+# defaultMessage: Distributed under the {license}.
+msgid "Distributed under the {license}."
+msgstr ""
+
+#: components/Theme/EventView
+# defaultMessage: End
+msgid "End"
 msgstr ""
 
 #: components/Widgets/AlignWidget
@@ -31,9 +66,19 @@ msgstr ""
 msgid "Full"
 msgstr ""
 
-#: components/Blocks/Separator/schema
-# defaultMessage: Hide Separator Line
-msgid "Hide Separator Line"
+#: components/Footer/Footer
+# defaultMessage: GNU GPL license
+msgid "GNU GPL license"
+msgstr ""
+
+#: components/Breadcrumbs/Breadcrumbs
+# defaultMessage: Home
+msgid "Home"
+msgstr ""
+
+#: components/Theme/EventView
+# defaultMessage: ICS Download
+msgid "ICS-Download"
 msgstr ""
 
 #: components/Widgets/AlignWidget
@@ -41,9 +86,55 @@ msgstr ""
 msgid "Left"
 msgstr ""
 
+#: components/Theme/EventView
+# defaultMessage: Location
+msgid "Location"
+msgstr ""
+
+#: components/Anontools/Anontools
+# defaultMessage: Log in
+msgid "Log in"
+msgstr ""
+
+#: components/Theme/EventView
+# defaultMessage: No date
+msgid "No date"
+msgstr ""
+
+#: components/Navigation/Navigation
+# defaultMessage: Open menu
+msgid "Open menu"
+msgstr ""
+
+#: components/Footer/Footer
+# defaultMessage: Plone Foundation
+msgid "Plone Foundation"
+msgstr ""
+
+#: components/Logo/Logo
+# defaultMessage: Plone Site
+msgid "Plone Site"
+msgstr ""
+
+#: components/Footer/Footer
+# defaultMessage: Plone{reg} Open Source CMS/WCM
+msgid "Plone{reg} Open Source CMS/WCM"
+msgstr ""
+
+#: components/Footer/Footer
+# defaultMessage: Powered by Plone & Python
+msgid "Powered by Plone & Python"
+msgstr ""
+
 #: index
 # defaultMessage: Press
 msgid "Press"
+msgstr ""
+
+#: components/Anontools/Anontools
+#: components/Header/Header
+# defaultMessage: Register
+msgid "Register"
 msgstr ""
 
 #: components/Widgets/AlignWidget
@@ -51,9 +142,51 @@ msgstr ""
 msgid "Right"
 msgstr ""
 
+#: components/Blocks/Search/TopSideFacets
+#: components/SearchWidget/SearchWidget
+# defaultMessage: Search
+msgid "Search"
+msgstr ""
+
+#: components/SearchWidget/SearchWidget
+# defaultMessage: Search Site
+msgid "Search Site"
+msgstr ""
+
+#: components/Logo/Logo
+# defaultMessage: Site
+msgid "Site"
+msgstr ""
+
+#: components/Header/Header
 #: index
 # defaultMessage: Sitemap
 msgid "Sitemap"
+msgstr ""
+
+#: components/Blocks/Search/TopSideFacets
+# defaultMessage: Sorting
+msgid "Sorting"
+msgstr ""
+
+#: components/Theme/EventView
+# defaultMessage: start
+msgid "Start"
+msgstr ""
+
+#: components/Theme/EventView
+# defaultMessage: Tel.
+msgid "Tel."
+msgstr ""
+
+#: components/Footer/Footer
+# defaultMessage: The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends.
+msgid "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
+msgstr ""
+
+#: components/Theme/EventView
+# defaultMessage: Unknown block
+msgid "Unknown block"
 msgstr ""
 
 #: components/Widgets/AlignWidget

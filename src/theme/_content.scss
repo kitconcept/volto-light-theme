@@ -58,7 +58,7 @@
 
   .two.column.row {
     @include default-container-width();
-    padding-bottom: 50px;
+    margin-bottom: 50px;
   }
 }
 .event-title {
