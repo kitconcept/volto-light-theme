@@ -1,6 +1,11 @@
 name: Release and deploy
 on:
-  push:
+  workflow_run:
+    workflows: [Acceptance Tests]
+    types:
+      - completed
+    branches:
+      - main
   workflow_dispatch:
 
 env:
