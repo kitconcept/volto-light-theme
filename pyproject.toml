@@ -154,7 +154,7 @@ ignore = [
 [tool.coverage.run]
 omit = [
   "*/locales/update.py",
-  "*/setuphandlers/__init__.py",
+  "*/setuphandlers/__init__.py"
 ]
 
 ##

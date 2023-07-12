@@ -15,21 +15,21 @@ on:
 
 jobs:
   qa:
-    uses: plone/meta/.github/workflows/qa.yml@issue-151-tox-mxdev
+    uses: plone/meta/.github/workflows/qa.yml@main
   test:
-    uses: plone/meta/.github/workflows/test.yml@issue-151-tox-mxdev
+    uses: plone/meta/.github/workflows/test.yml@main
   coverage:
-    uses: plone/meta/.github/workflows/coverage.yml@issue-151-tox-mxdev
+    uses: plone/meta/.github/workflows/coverage.yml@main
   dependencies:
-    uses: plone/meta/.github/workflows/dependencies.yml@issue-151-tox-mxdev
+    uses: plone/meta/.github/workflows/dependencies.yml@main
   release_ready:
-    uses: plone/meta/.github/workflows/release_ready.yml@issue-151-tox-mxdev
+    uses: plone/meta/.github/workflows/release_ready.yml@main
   circular:
-    uses: plone/meta/.github/workflows/circular.yml@issue-151-tox-mxdev
+    uses: plone/meta/.github/workflows/circular.yml@main
 
 ##
 # To modify the list of default jobs being created add in .meta.toml:
-# [githb]
+# [github]
 # jobs = [
 #    "qa",
 #    "test",
@@ -43,7 +43,7 @@ jobs:
 ##
 # To request that some OS level dependencies get installed
 # when running tests/coverage jobs, add in .meta.toml:
-# [githb]
+# [github]
 # os_dependencies = "git libxml2 libxslt"
 ##
 
