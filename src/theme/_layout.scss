@@ -255,8 +255,8 @@ footer {
 // It's a media query because we have to cancel the one imposed by SemanticUI Grid
 @media only screen and (max-width: $default-container-width + 2 * 20px) {
   .block.gridBlock {
-    margin-left: 10px;
     margin-right: 10px;
+    margin-left: 10px;
   }
 }
 
@@ -264,8 +264,8 @@ footer {
 // above rule
 #page-document .blocks-group-wrapper > .block h2.headline {
   @container (max-width: #{$default-container-width + 2 * 20px}) {
-    margin-left: 10px;
     margin-right: 10px;
+    margin-left: 10px;
   }
 }
 
