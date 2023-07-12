@@ -185,12 +185,13 @@
     }
   }
 
-  &.previous--is--same--block-type.previous--has--same--backgroundColor:not(.has--headline) {
+  &.previous--has--same--backgroundColor:not(.has--headline) {
     margin-top: 200px;
   }
 
-  p + &:not(.has--headline) {
-    margin-top: 80px;
+  .documentFirstHeading
+    + &.previous--has--same--backgroundColor:not(.has--headline) {
+    margin-top: 0;
   }
 }
 

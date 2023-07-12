@@ -109,10 +109,14 @@ footer {
   @include layout-container-width();
 }
 
-.header-wrapper .header,
-.breadcrumbs .breadcrumb {
+.header-wrapper .header {
   @include layout-container-width();
   @include adjustMarginsToContainer($layout-container-width);
+}
+
+.breadcrumbs .breadcrumb {
+  @include default-container-width();
+  @include adjustMarginsToContainer($default-container-width);
 }
 
 // Content Layout Styling
@@ -160,6 +164,7 @@ footer {
   & > .block.introduction .block-container,
   & > .block.teaser .teaser-item.default,
   & > .table-of-contents,
+  & > .accordion-block,
   & > .slate blockquote {
     @include default-container-width();
     @include adjustMarginsToContainer($default-container-width);
