@@ -91,13 +91,17 @@
       @include block-title();
     }
     .listing-item {
-      margin-left: auto !important;
+
+      padding-bottom: 0 !important;
+      border-bottom: none !important;
       margin-right: auto !important;
-      
+      margin-bottom: 0 !important;
+      margin-left: auto !important;
+
       @media only screen and (max-width: $largest-mobile-screen) {
         margin: 0 !important;
       }
-  
+
       @media only screen and (min-width: $tablet-breakpoint) {
         width: 50%;
 
@@ -127,10 +131,6 @@
           }
         }
       }
-
-      padding-bottom: 0 !important;
-      border-bottom: none !important;
-      margin-bottom: 0 !important;
 
       &:last-child:nth-child(2n + 1) {
         @media only screen and (min-width: $largest-mobile-screen) {
