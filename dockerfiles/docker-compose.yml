@@ -42,6 +42,8 @@ services:
 
   backend:
     image: ghcr.io/kitconcept/voltolighttheme:latest
+    environment:
+      CORS_: true
     ports:
       - 8080:8080
     profiles:

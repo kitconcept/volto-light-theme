@@ -73,6 +73,15 @@ $bold: 700 !default;
 $extra-bold: 800 !default;
 $bolder: 900 !default;
 
+// Spacing
+$spacing-small: 20px !default;
+$spacing-medium: 40px !default;
+$spacing-large: 60px !default;
+$spacing-xlarge: 80px !default;
+
+// Horizontal Spacing
+$horizontal-space-small-screens: $spacing-small !default;
+
 // Vertical Spacing
 $block-vertical-space: 25px !default;
 
