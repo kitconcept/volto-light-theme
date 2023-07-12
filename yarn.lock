@@ -1482,6 +1482,7 @@ __metadata:
     prettier: 2.0.5
     razzle-plugin-scss: 4.2.18
     release-it: ^16.1.0
+    stylelint-config-idiomatic-order: 8.1.0
     stylelint-config-prettier: 9.0.4
     stylelint-config-sass-guidelines: 9.0.1
     stylelint-prettier: 1.1.2
@@ -4706,7 +4707,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:4.17.21, lodash@npm:^4.17.21":
+"lodash@npm:4.17.21, lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.17.21":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
@@ -5471,6 +5472,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"picocolors@npm:^0.2.1":
+  version: 0.2.1
+  resolution: "picocolors@npm:0.2.1"
+  checksum: 3b0f441f0062def0c0f39e87b898ae7461c3a16ffc9f974f320b44c799418cabff17780ee647fda42b856a1dc45897e2c62047e1b546d94d6d5c6962f45427b2
+  languageName: node
+  linkType: hard
+
 "picocolors@npm:^1.0.0":
   version: 1.0.0
   resolution: "picocolors@npm:1.0.0"
@@ -5612,6 +5620,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss-sorting@npm:^5.0.1":
+  version: 5.0.1
+  resolution: "postcss-sorting@npm:5.0.1"
+  dependencies:
+    lodash: ^4.17.14
+    postcss: ^7.0.17
+  checksum: 0a410afab47e1ec10f1bd8768d7118cad93d00990a298816bb6c30f72f66ed05d29f152c8a04b943749fef134413171d6c91ef9915a1b95281573c1c7d13f76c
+  languageName: node
+  linkType: hard
+
 "postcss-sorting@npm:^7.0.1":
   version: 7.0.1
   resolution: "postcss-sorting@npm:7.0.1"
@@ -5636,6 +5654,16 @@ __metadata:
     source-map: ^0.6.1
     supports-color: ^6.1.0
   checksum: 4cfc0989b9ad5d0e8971af80d87f9c5beac5c84cb89ff22ad69852edf73c0a2fa348e7e0a135b5897bf893edad0fe86c428769050431ad9b532f072ff530828d
+  languageName: node
+  linkType: hard
+
+"postcss@npm:^7.0.17":
+  version: 7.0.39
+  resolution: "postcss@npm:7.0.39"
+  dependencies:
+    picocolors: ^0.2.1
+    source-map: ^0.6.1
+  checksum: 4ac793f506c23259189064bdc921260d869a115a82b5e713973c5af8e94fbb5721a5cc3e1e26840500d7e1f1fa42a209747c5b1a151918a9bc11f0d7ed9048e3
   languageName: node
   linkType: hard
 
@@ -6637,6 +6665,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"stylelint-config-idiomatic-order@npm:8.1.0":
+  version: 8.1.0
+  resolution: "stylelint-config-idiomatic-order@npm:8.1.0"
+  dependencies:
+    stylelint-order: ^3.1.1
+  peerDependencies:
+    stylelint: ">=11"
+  checksum: f83ebfb90a506e0c01df8f1e25e11a55cfd881dbb07bc9714a25fe8fa1d31cb50aa160561692edd15aa654f2d200cd08e10620f7ac2a7d6a2b3bde955d49f6f7
+  languageName: node
+  linkType: hard
+
 "stylelint-config-prettier@npm:9.0.4":
   version: 9.0.4
   resolution: "stylelint-config-prettier@npm:9.0.4"
@@ -6660,6 +6699,19 @@ __metadata:
     postcss: ^8.3.3
     stylelint: ^14.0.1
   checksum: 9844e0858b1175b30786cbca873cc5856313475de4b3cf3e4a8504d19f2673899f0fe4d56bef5cf73c93d0ed6c7c8c3d5a3dd91b7a9586aa52ddab12ef52a64b
+  languageName: node
+  linkType: hard
+
+"stylelint-order@npm:^3.1.1":
+  version: 3.1.1
+  resolution: "stylelint-order@npm:3.1.1"
+  dependencies:
+    lodash: ^4.17.15
+    postcss: ^7.0.17
+    postcss-sorting: ^5.0.1
+  peerDependencies:
+    stylelint: ">=10.0.1"
+  checksum: 35388f28bd9a4d91ab35eea3518ba83b4b72514aa169015fd3187ce94061be201e47e557165b6ffad20baaaf69be4770785a4e4b7b56e4317759f84112bc1d8d
   languageName: node
   linkType: hard
 

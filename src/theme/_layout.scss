@@ -44,6 +44,13 @@ $narrow-container-width: 620px !default;
   }
 }
 
+@mixin adjustMarginsToEditContainer($width) {
+  @container (max-width: #{$width + 2 * $spacing-medium}) {
+    margin-right: $spacing-medium;
+    margin-left: $spacing-medium;
+  }
+}
+
 // Container adjustments for dealing correctly with absoluted elements
 @mixin container-preference-order($zindex) {
   position: relative;
@@ -186,7 +193,7 @@ footer {
 #page-edit {
   [class*='block-editor-'] {
     @include layout-container-width();
-    @include adjustMarginsToContainer($layout-container-width);
+    @include adjustMarginsToEditContainer($layout-container-width);
   }
 }
 
@@ -205,7 +212,7 @@ footer {
   .block-editor-codeBlock,
   .block-editor-mermaidBlock {
     @include narrow-container-width();
-    @include adjustMarginsToContainer($narrow-container-width);
+    @include adjustMarginsToEditContainer($narrow-container-width);
   }
 
   .block-editor-title h1,
@@ -223,7 +230,7 @@ footer {
   .block-editor-teaser .teaser-item.default,
   .block-editor-toc {
     @include default-container-width();
-    @include adjustMarginsToContainer($default-container-width);
+    @include adjustMarginsToEditContainer($default-container-width);
   }
 
   .block-editor-slate,
@@ -232,7 +239,7 @@ footer {
   .block-editor-teaser,
   .block-editor-separator.has--align--left {
     @include layout-container-width();
-    @include adjustMarginsToContainer($layout-container-width);
+    @include adjustMarginsToEditContainer($layout-container-width);
   }
 }
 
