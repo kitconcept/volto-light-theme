@@ -58,7 +58,7 @@
       padding-top: 0 !important;
 
       img {
-        width: 25%;
+        width: 220px;
         height: min-content;
         aspect-ratio: $aspect-ratio;
       }
@@ -91,6 +91,13 @@
       @include block-title();
     }
     .listing-item {
+      margin-left: auto !important;
+      margin-right: auto !important;
+      
+      @media only screen and (max-width: $largest-mobile-screen) {
+        margin: 0 !important;
+      }
+  
       @media only screen and (min-width: $tablet-breakpoint) {
         width: 50%;
 
@@ -126,7 +133,9 @@
       margin-bottom: 0 !important;
 
       &:last-child:nth-child(2n + 1) {
-        margin-left: 0 !important;
+        @media only screen and (min-width: $largest-mobile-screen) {
+          margin-left: 0 !important;
+        }
       }
 
       .card-container {
