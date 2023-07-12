@@ -16,6 +16,7 @@ import { AccordionSchemaEnhancer } from './components/Blocks/Accordion/schema';
 
 import gridSVG from './icons/block_icn_grid.svg';
 import accordionSVG from './icons/block_icn_accordion.svg';
+import EventView from './components/Theme/EventView';
 
 const BG_COLORS = [
   { name: 'transparent', label: 'Transparent' },
@@ -126,14 +127,6 @@ const applyConfig = (config) => {
 
   config.settings.slidingSearchAnimation = true;
 
-  config.settings.appExtras = [
-    ...config.settings.appExtras,
-    {
-      match: '',
-      component: ContainerQueriesPolyfill,
-    },
-  ];
-
   config.blocks.blocksConfig.accordion = {
     ...config.blocks.blocksConfig.accordion,
     mostUsed: true,
@@ -233,14 +226,17 @@ const applyConfig = (config) => {
     colors: BG_COLORS,
   };
 
-  config.blocks.blocksConfig.separator = {
-    ...config.blocks.blocksConfig.separator,
-    schemaEnhancer: composeSchema(
-      config.blocks.blocksConfig.separator.schemaEnhancer,
-      defaultStylingSchema,
-    ),
-    colors: BG_COLORS,
-  };
+  // Check if the separator is present before enhancing it
+  if (config.blocks.blocksConfig.separator.id) {
+    config.blocks.blocksConfig.separator = {
+      ...config.blocks.blocksConfig.separator,
+      schemaEnhancer: composeSchema(
+        config.blocks.blocksConfig.separator.schemaEnhancer,
+        defaultStylingSchema,
+      ),
+      colors: BG_COLORS,
+    };
+  }
 
   config.blocks.blocksConfig.listing = {
     ...config.blocks.blocksConfig.listing,
@@ -256,6 +252,19 @@ const applyConfig = (config) => {
       },
     ],
   };
+  config.views.contentTypesViews.Event = EventView;
+
+  return config;
+};
+
+export const withContainerQueryPolyfill = (config) => {
+  config.settings.appExtras = [
+    ...config.settings.appExtras,
+    {
+      match: '',
+      component: ContainerQueriesPolyfill,
+    },
+  ];
 
   return config;
 };

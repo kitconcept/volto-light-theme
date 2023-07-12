@@ -1,12 +1,17 @@
 name: Release and deploy
 on:
-  push:
+  workflow_run:
+    workflows: [Acceptance Tests]
+    types:
+      - completed
+    branches:
+      - main
   workflow_dispatch:
 
 env:
   ENVIRONMENT: "light-theme.kitconcept.io"
   IMAGE_NAME: "ghcr.io/kitconcept/voltolighttheme-frontend"
-  VOLTO_VERSION: "17.0.0-alpha.16"
+  VOLTO_VERSION: "17.0.0-alpha.17"
 
 jobs:
   meta:

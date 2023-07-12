@@ -8,6 +8,32 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-rc.6 (2023-07-12)
+
+### Bugfix
+
+- Fix Event content type @iRohitSingh [#16](https://github.com/kitconcept/volto-light-theme/pull/16)
+- Fix local linting, add proper eslintignore @sneridagh [#139](https://github.com/kitconcept/volto-light-theme/pull/139)
+- Minor fix for Listing margins. @danalvrz [#140](https://github.com/kitconcept/volto-light-theme/pull/140)
+- Fix gutter for grids for small screens. Improve overall margins calculations for all blocks in the content area. @sneridagh [#141](https://github.com/kitconcept/volto-light-theme/pull/141)
+
+
+## 1.0.0-rc.5 (2023-07-11)
+
+### Breaking
+
+- Move the container query polyfill to an add-on profile, disabled by default @sneridagh [#137](https://github.com/kitconcept/volto-light-theme/pull/137)
+
+### Feature
+
+- Upgrade to Volto 17a17 as baseline @sneridagh [#136](https://github.com/kitconcept/volto-light-theme/pull/136)
+- Add acceptance tests layer, update docker files and Makefile @sneridagh [#137](https://github.com/kitconcept/volto-light-theme/pull/137)
+
+### Bugfix
+
+- Check if the separator is present before enhancing it @sneridagh [#138](https://github.com/kitconcept/volto-light-theme/pull/138)
+
+
 ## 1.0.0-rc.4 (2023-07-11)
 
 ### Bugfix
