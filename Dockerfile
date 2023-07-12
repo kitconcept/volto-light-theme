@@ -1,5 +1,6 @@
 # syntax=docker/dockerfile:1
 ARG PLONE_VERSION=6
+ARG SEED=1000
 FROM plone/server-builder:${PLONE_VERSION} as builder
 
 # https://github.com/pypa/pip/issues/12079
@@ -38,5 +39,5 @@ RUN <<EOT
     set -e
     ln -s /data /app/var
     chown -R 500:500 /app/etc/
-    ./docker-entrypoint.sh create-site
+    SEED=${SEED} ./docker-entrypoint.sh create-site
 EOT
