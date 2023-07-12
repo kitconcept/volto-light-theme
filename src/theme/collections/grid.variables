@@ -1,7 +1,4 @@
-// We want the separation between cells in grids to be 1rem only
+// We want the separation between cells in grids to be $horizontal-space-small-screens
+// Keep in sync with _variables.scss $horizontal-space-small-screens
 @gutterWidth: 20px;
 @rowSpacing: 20px;
-
-// This has to be 2 * 20px because it's going to be 1/2 in the source.
-@stackableGutter: 2 * 20px;
-
