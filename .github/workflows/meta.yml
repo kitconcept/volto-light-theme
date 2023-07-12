@@ -98,11 +98,12 @@ jobs:
           mxdev -c mx.ini
 
       - name: "Create image and publish it on ghcr.io"
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           context: ./
           platforms: linux/amd64,linux/arm64
           file: Dockerfile
+          build-args: SEED=${{ github.run_id }}
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
