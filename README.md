@@ -98,10 +98,67 @@ These main rules spec applies to the theme:
 - Separator-Block (https://www.npmjs.com/package/@kitconcept/volto-separator-block)
 - Heading-Block (https://www.npmjs.com/package/@kitconcept/volto-heading-block)
 - Introduction-Block (https://www.npmjs.com/package/@kitconcept/volto-introduction-block)
+- Accordion-Block (https://www.npmjs.com/package/@eeacms/volto-accordion-block)
 
 and the following add-ons:
 
 - DSGVO-Banner (https://www.npmjs.com/package/@kitconcept/volto-dsgvo-banner)
+
+## Installation
+
+It is recommended that your project or policy add-on `package.json` include the aforementioned add-ons.
+
+```json
+  "dependencies": {
+    "@eeacms/volto-accordion-block": "9.0.0",
+    "@kitconcept/volto-button-block": "2.1.0",
+    "@kitconcept/volto-dsgvo-banner": "1.3.0",
+    "@kitconcept/volto-heading-block": "2.2.0",
+    "@kitconcept/volto-introduction-block": "1.0.0",
+    "@kitconcept/volto-light-theme": "1.0.0",
+    "@kitconcept/volto-separator-block": "3.2.0",
+  }
+```
+
+This theme won't install them for you, as they are declared as `peerDependencies`.
+This is because the theme won't have to force you to use any specific add-on version, and avoids package hoisting issues.
+
+In your project or policy add-on `package.json` you should declare all of them as Volto add-ons
+
+```json
+  "addons": [
+    "@eeacms/volto-accordion-block",
+    "@kitconcept/volto-button-block",
+    "@kitconcept/volto-heading-block",
+    "@kitconcept/volto-introduction-block",
+    "@kitconcept/volto-highlight-block",
+    "@kitconcept/volto-separator-block",
+    "@kitconcept/volto-light-theme",
+    "your_policy_addon_here"
+  ],
+```
+
+Make sure your policy add-on is the last one, as you would want that its configuration has priority over all the others. Make sure also that `@kitconcept/volto-light-theme` is the one before your policy add-on.
+
+Then, declare the theme in your project `package.json`:
+
+```json
+  "theme": "@kitconcept/volto-light-theme",
+```
+
+Alternativelly, you can also declare it in your project's `volto.config.js`:
+
+```js
+const addons = [];
+const theme = '@kitconcept/volto-light-theme';
+
+module.exports = {
+  addons,
+  theme,
+};
+```
+
+You can specify your project add-ons in `volto.config.js`, but sometimes is better to have them all in one place (in your policy add-on) for portability.
 
 ## Development Setup
 
@@ -110,24 +167,139 @@ Compatibility with Volto 16 might be achieved, but it has to be at customization
 specific project add-on.
 This is mainly due to the `RenderBlocks` customization that is based in the one in 17 because of the Grid block in core and the autogrouping feature.
 See more information about the other dependencies in `peerDependencies` in `package.json`.
+It is possible to develop this add-on using docker containers and the provided convenience Makefile commands.
+Run `make help` to list the available commands.
+
+````text
+    build-backend                       Build
+    start-backend                       Starts Docker backend
+    stop-backend                        Stop Docker backend
+    build-live                          Build Addon live
+    build-addon                         Build Addon dev
+    start-dev                           Starts Dev container
+    dev                                 Develop the addon
+    help                                Show this help.
+    i18n                                Sync i18n
+    format                              Format codebase
+    lint                                Lint Codebase
+    test                                Run unit tests
+    test-ci                             Run unit tests in CI
+    install-acceptance                  Install Cypress, build acceptance containers
+    start-test-acceptance-server        Start acceptance server (for use it in while developing)
+    start-test-acceptance-server-prod   Start acceptance server in prod (used by CI)
+    test-acceptance                     Start Cypress (for use it while developing)
+    test-acceptance-headless            Run cypress tests in CI
+    stop-test-acceptance-server         Stop acceptance server (for use it while finished developing)
+    status-test-acceptance-server       Status of Acceptance Server (for use it while developing)
+    debug-frontend                      Run bash in the Frontend container (for debug infrastructure purposes)
+    pull-backend-image                  Pulls and updates the backend image (for use it while developing)
+````
 
 ### Prerequisites
 
 - Docker
 - Node 18 (e.g. via nvm)
 
-### Build a project
+### Development environment Setup
+
+Run once
+
+```shell
+make dev
+```
+
+which will build and launch the backend and frontend containers.
+There's no need to build them again after doing it the first time unless something has changed from the container setup.
+
+### Build the containers manually
 
 Run
 
-````
+```shell
+make build-backend
+make build-addon
+```
+
+## Run the containers
+
+Run
+
+```shell
 make start-dev
-````
+```
+
+This will start both the frontend and backend containers.
 
 ### Stop Backend (Docker)
 
-Run:
+After developing, in order to stop the running backend, don't forget to run:
 
-````
-make stop-backend-docker
-````
+Run
+
+```shell
+make stop-backend
+```
+
+### Linting
+
+Run
+
+```shell
+make lint
+```
+
+### Formatting
+
+Run
+
+```shell
+make format
+```
+
+### i18n
+
+Run
+
+```shell
+make i18n
+```
+
+### Unit tests
+
+Run
+
+```shell
+make test
+```
+
+### Acceptance tests
+
+Run once
+
+```shell
+make install-acceptance
+```
+
+For starting the servers
+
+Run
+
+```shell
+make start-test-acceptance-server
+```
+
+The frontend is run in dev mode, so development while writing tests is possible.
+
+Run
+
+```shell
+make test-acceptance
+```
+
+To run Cypress tests afterwards.
+
+When finished, don't forget to shutdown the backend server.
+
+```shell
+make stop-test-acceptance-server
+```
