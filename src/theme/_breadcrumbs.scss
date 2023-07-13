@@ -7,7 +7,7 @@ body.view-contentsview {
 }
 
 #main .breadcrumbs {
-  padding: 2em 0;
+  padding: 20px 0;
   background-color: $lightgrey;
 
   .breadcrumb {
@@ -26,6 +26,10 @@ body.view-contentsview {
 
     .home {
       margin-right: 0.5em;
+
+      svg {
+        margin-bottom: -4px;
+      }
     }
 
     .section {
