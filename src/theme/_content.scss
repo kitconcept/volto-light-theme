@@ -145,3 +145,40 @@
     }
   }
 }
+.contenttype-image {
+  .content-area {
+    max-width: var(--default-container-width) !important;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 0;
+    .documentFirstHeading {
+      @media only screen and (max-width: 769px) {
+       margin-bottom: 60px;
+      }
+    }
+    figure{
+      img{
+        aspect-ratio: $aspect-ratio;
+      }
+      figcaption {
+        margin-top: 20px;
+        margin-bottom: 0;
+        .title {
+          margin-bottom: 5px;
+        }
+        .description div {
+          margin-bottom: 5px;
+        }
+        .credits {
+          color: #0066CC;
+          padding-bottom: 20px;
+          margin-bottom: 0;
+        }
+      }
+
+    }
+
+  }
+}
+
+
