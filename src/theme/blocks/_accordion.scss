@@ -2,3 +2,54 @@
 .block.accordion [data-rbd-draggable-context-id] {
   margin-bottom: 2rem;
 }
+
+.accordion-block {
+  .ui.styled.accordion {
+    border-top: 1px solid $black;
+
+    &:last-child {
+      border-bottom: 1px solid $black;
+    }
+    .title.accordion-title {
+      padding: 20px 0 20px 0;
+      background-color: unset;
+
+      & > svg {
+        height: 50px !important;
+        fill: $grey !important;
+        transform: rotate(-90deg);
+      }
+
+      & > span {
+        @include introduction();
+        color: $darkGrey;
+      }
+
+      &.active > span {
+        color: $black;
+      }
+
+      &.active > svg {
+        fill: $black !important;
+        transform: rotate(180deg);
+      }
+    }
+
+    .block.listing {
+      &:first-child {
+        margin-top: 0;
+      }
+      .listing-item:last-child {
+        border-bottom: none !important;
+      }
+    }
+
+    .block:last-child {
+      margin-bottom: 0 !important;
+    }
+
+    .content {
+      padding: 0;
+    }
+  }
+}

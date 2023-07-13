@@ -129,6 +129,9 @@
   }
 
   .block.listing {
+    &.previous--has--same--backgroundColor:not(.has--headline) {
+      margin-top: 0;
+    }
     h2 {
       margin-bottom: 40px !important;
     }
