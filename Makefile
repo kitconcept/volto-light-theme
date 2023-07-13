@@ -139,3 +139,7 @@ debug-frontend:  ## Run bash in the Frontend container (for debug infrastructure
 install-local:  ## Installs essentials for developing locally (ESlint, prettier...) (for use it while developing)
 	yarn remove -A @plone/volto && yarn add @plone/volto && git co -- package.json yarn.lock
 	mv .eslintrc.local.js .eslintrc.js
+
+.PHONY: pull-backend-image
+pull-backend-image:  ## Pulls and updates the backend image (for use it while developing)
+	docker pull ghcr.io/kitconcept/voltolighttheme:latest
