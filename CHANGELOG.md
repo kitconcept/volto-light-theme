@@ -8,6 +8,16 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-rc.7 (2023-07-13)
+
+### Bugfix
+
+- Fix File content type @iRohitSingh [#17](https://github.com/kitconcept/volto-light-theme/pull/17)
+- Add idiomatic order CSS package @sneridagh
+  Fix margin in edit mode for all blocks @sneridagh [#142](https://github.com/kitconcept/volto-light-theme/pull/142)
+- Fix CSS for Accordion block. @danalvrz [#143](https://github.com/kitconcept/volto-light-theme/pull/143)
+
+
 ## 1.0.0-rc.6 (2023-07-12)
 
 ### Bugfix
