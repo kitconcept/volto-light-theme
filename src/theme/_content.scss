@@ -149,15 +149,15 @@
   .content-area {
     max-width: var(--default-container-width) !important;
     margin-right: auto;
-    margin-left: auto;
     margin-bottom: 0;
+    margin-left: auto;
     .documentFirstHeading {
       @media only screen and (max-width: 769px) {
-       margin-bottom: 60px;
+        margin-bottom: 60px;
       }
     }
-    figure{
-      img{
+    figure {
+      img {
         aspect-ratio: $aspect-ratio;
       }
       figcaption {
@@ -170,15 +170,11 @@
           margin-bottom: 5px;
         }
         .credits {
-          color: #0066CC;
           padding-bottom: 20px;
           margin-bottom: 0;
+          color: #0066cc;
         }
       }
-
     }
-
   }
 }
-
-
