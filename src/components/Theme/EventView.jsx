@@ -96,11 +96,11 @@ const EventView = (props) => {
               {map(content[blocksLayoutFieldname].items, (block) => {
                 const Block =
                   config.blocks.blocksConfig[
-                    content[blocksFieldname]?.[block]?.['@type']
+                  content[blocksFieldname]?.[block]?.['@type']
                   ]?.['view'] || null;
                 if (
                   config.blocks.blocksConfig[
-                    content[blocksFieldname]?.[block]?.['@type']
+                  content[blocksFieldname]?.[block]?.['@type']
                   ]?.['id'] === 'title'
                 ) {
                   return (
@@ -224,21 +224,21 @@ const EventView = (props) => {
                             </div>
                           </Grid.Column>
                           <div className="event-button">
-                            <Button className="event-btn">
-                              <a
-                                className="ics-download"
-                                target="_blank"
-                                rel="noreferrer"
-                                href={`${expandToBackendURL(
-                                  content['@id'],
-                                )}/ics_view`}
-                              >
+                            <a
+                              className="ics-download"
+                              target="_blank"
+                              rel="noreferrer"
+                              href={`${expandToBackendURL(
+                                content['@id'],
+                              )}/ics_view`}
+                            >
+                              <Button className="event-btn">
                                 <FormattedMessage
                                   id="ICS-Download"
                                   defaultMessage="ICS Download"
                                 />
-                              </a>
-                            </Button>
+                              </Button>
+                            </a>
                           </div>
                         </Grid.Row>
                       </Grid>
