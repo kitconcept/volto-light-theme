@@ -53,3 +53,15 @@
     }
   }
 }
+#page-add .block-editor-accordion,
+#page-edit .block-editor-accordion {
+  clear: both;
+}
+
+.block.accordion-block.has--backgroundColor--grey,
+#page-add .block-editor-accordion.has--backgroundColor--grey,
+#page-edit .block-editor-accordion.has--backgroundColor--grey {
+  .accordion.ui.fluid.styled {
+    background-color: $lightgrey;
+  }
+}
