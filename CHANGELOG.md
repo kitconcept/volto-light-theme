@@ -8,6 +8,19 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-rc.8 (2023-07-14)
+
+### Bugfix
+
+- Fix Image content type @iRohitSingh [#18](https://github.com/kitconcept/volto-light-theme/pull/18)
+- Fix a11y issues in EventView @steffenri [#147](https://github.com/kitconcept/volto-light-theme/pull/147)
+- Remove typo in fileview @steffenri [#148](https://github.com/kitconcept/volto-light-theme/pull/148)
+
+### Documentation
+
+- Documentation on local docker development - local ESlint working @sneridagh [#144](https://github.com/kitconcept/volto-light-theme/pull/144)
+
+
 ## 1.0.0-rc.7 (2023-07-13)
 
 ### Bugfix
