@@ -32,7 +32,9 @@ const NewsItemView = ({ content }) => {
         ) : (
           <span className="day">No date</span>
         )}{' '}
-        <span className="headtitle">| {content?.head_title}</span>
+        <span className="headtitle">
+          <span className="pre-headtitle">|</span> {content?.head_title}
+        </span>
       </div>
       <RenderBlocks content={content} />
     </div>
