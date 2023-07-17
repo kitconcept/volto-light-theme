@@ -178,3 +178,17 @@
     }
   }
 }
+
+.contenttype-link {
+  #view {
+    max-width: var(--default-container-width);
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  #page-document p {
+    max-width: var(--narrow-container-width);
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
