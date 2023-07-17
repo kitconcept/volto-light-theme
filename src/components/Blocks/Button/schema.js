@@ -19,7 +19,8 @@ export const ButtonStylingSchema = ({ schema, formData, intl }) => {
   schema.properties.styles.schema.properties.buttonAlign = {
     widget: 'align',
     title: intl.formatMessage(messages.BlockWidth),
-    actions: ['center', 'wide'],
+    actions: ['wide', 'center'],
+    default: 'wide',
   };
 
   schema.properties.inneralign.actions = ['left', 'center', 'right'];
