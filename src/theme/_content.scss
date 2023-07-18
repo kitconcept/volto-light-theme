@@ -14,15 +14,13 @@
     padding-top: 0px;
   }
   .dates {
-    max-width: var(--default-container-width) !important;
+    @include default-container-width();
+    @include adjustMarginsToContainer($default-container-width);
     margin-top: 40px;
-    margin-right: auto;
     margin-bottom: 40px;
-    margin-left: auto;
     .day,
     .headtitle {
       font-size: 18px;
-
       font-weight: 700;
       letter-spacing: 1px;
       line-height: 24px;

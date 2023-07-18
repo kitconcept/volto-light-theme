@@ -14,6 +14,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 import { FormattedDate } from '@plone/volto/components';
+import config from '@plone/volto/registry';
 
 /**
  * NewsItemView view component class.
@@ -22,8 +23,10 @@ import { FormattedDate } from '@plone/volto/components';
  * @returns {string} Markup of the component.
  */
 const NewsItemView = ({ content }) => {
+  const Container =
+    config.getComponent({ name: 'Container' }).component || SemanticContainer;
   return (
-    <div id="page-document" className="ui container viewwrapper event-view">
+    <Container id="page-document" className="view-wrapper newsitem-view">
       <div className="dates">
         {content?.effective ? (
           <span className="day">
@@ -32,10 +35,12 @@ const NewsItemView = ({ content }) => {
         ) : (
           <span className="day">No date</span>
         )}{' '}
-        <span className="headtitle">| {content?.head_title}</span>
+        {content?.head_title && (
+          <span className="headtitle">| {content?.head_title}</span>
+        )}
       </div>
       <RenderBlocks content={content} />
-    </div>
+    </Container>
   );
 };
 
