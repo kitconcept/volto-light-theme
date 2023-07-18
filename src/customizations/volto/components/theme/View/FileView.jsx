@@ -30,7 +30,7 @@ const FileView = ({ content }) => (
     </h1>
     <div className="file-detail">
       {content.description && (
-        <p className="documentDescription">{content.description}iRohitSingh</p>
+        <p className="documentDescription">{content.description}</p>
       )}
       {content.file?.download && (
         <>
