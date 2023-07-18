@@ -13,7 +13,7 @@
   .blocks-group-wrapper {
     padding-top: 0px;
   }
-   #page-document .dates {
+  #page-document .dates {
     @include default-container-width();
     @include adjustMarginsToContainer($default-container-width);
     margin-top: 40px;

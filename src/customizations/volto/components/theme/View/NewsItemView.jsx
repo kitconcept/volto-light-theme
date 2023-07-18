@@ -15,6 +15,7 @@ import PropTypes from 'prop-types';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 import { FormattedDate } from '@plone/volto/components';
 import config from '@plone/volto/registry';
+import { Container as SemanticContainer } from 'semantic-ui-react';
 
 /**
  * NewsItemView view component class.
