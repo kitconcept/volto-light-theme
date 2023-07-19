@@ -4,6 +4,7 @@ import { composeSchema, getPreviousNextBlock } from '@plone/volto/helpers';
 import { defaultStylingSchema } from './components/Blocks/schema';
 import { teaserSchemaEnhancer } from './components/Blocks/Teaser/schema';
 import { gridTeaserDisableStylingSchema } from '@plone/volto/components/manage/Blocks/Teaser/schema';
+import { disableBgColorSchema } from './components/Blocks/disableBgColorSchema';
 
 import ContainerQueriesPolyfill from './components/CQPolyfill';
 import Container from './components/Atoms/Container/Container';
@@ -127,28 +128,50 @@ const applyConfig = (config) => {
 
   config.settings.slidingSearchAnimation = true;
 
+  config.blocks.blocksConfig.listing = {
+    ...config.blocks.blocksConfig.listing,
+    colors: BG_COLORS,
+    schemaEnhancer: defaultStylingSchema,
+    allowed_headline_tags: [['h2', 'h2']],
+    variations: [
+      ...config.blocks.blocksConfig.listing.variations,
+      {
+        id: 'grid',
+        title: 'Grid',
+        template: GridListingBlockTemplate,
+      },
+    ],
+  };
+
   config.blocks.blocksConfig.accordion = {
     ...config.blocks.blocksConfig.accordion,
     mostUsed: true,
     icon: accordionSVG,
-    allowedBlocks: ['slate', 'teaser', 'image', 'listing', 'slateTable'],
+    allowedBlocks: [
+      'slate',
+      'teaser',
+      'image',
+      'listing',
+      'slateTable',
+      'separator',
+    ],
     colors: BG_COLORS,
     schemaEnhancer: composeSchema(
       AccordionSchemaEnhancer,
       defaultStylingSchema,
     ),
     sidebarTab: 1,
-  };
-
-  config.blocks.blocksConfig.accordion.blocksConfig = {
-    ...config.blocks.blocksConfig,
-    teaser: {
-      ...config.blocks.blocksConfig.teaser,
-      schemaEnhancer: composeSchema(
-        gridTeaserDisableStylingSchema,
-        teaserSchemaEnhancer,
-      ),
-    },
+    // One could customize the blocks inside the accordion like this:
+    blocksConfig: {
+      ...config.blocks.blocksConfig,
+      teaser: {
+        ...config.blocks.blocksConfig.teaser,
+        schemaEnhancer: composeSchema(
+          teaserSchemaEnhancer,
+          disableBgColorSchema,
+        ),
+      },
+    }
   };
 
   config.blocks.blocksConfig.gridBlock = {
@@ -179,6 +202,11 @@ const applyConfig = (config) => {
           gridTeaserDisableStylingSchema,
           teaserSchemaEnhancer,
         ),
+      },
+      listing: {
+        ...config.blocks.blocksConfig.listing,
+        allowed_headline_tags: [['h2', 'h2']],
+        variations: config.blocks.blocksConfig.listing.variations,
       },
     },
   };
@@ -238,20 +266,6 @@ const applyConfig = (config) => {
     };
   }
 
-  config.blocks.blocksConfig.listing = {
-    ...config.blocks.blocksConfig.listing,
-    colors: BG_COLORS,
-    schemaEnhancer: defaultStylingSchema,
-    allowed_headline_tags: [['h2', 'h2']],
-    variations: [
-      ...config.blocks.blocksConfig.listing.variations,
-      {
-        id: 'grid',
-        title: 'Grid',
-        template: GridListingBlockTemplate,
-      },
-    ],
-  };
   config.views.contentTypesViews.Event = EventView;
 
   return config;

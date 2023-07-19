@@ -3,7 +3,8 @@
   margin-bottom: 2rem;
 }
 
-.accordion-block {
+.accordion-block,
+.block-editor-accordion {
   .ui.styled.accordion {
     border-top: 1px solid $black;
 
@@ -20,7 +21,8 @@
         transform: rotate(-90deg);
       }
 
-      & > span {
+      & > span,
+      .input-accordion-title {
         @include introduction();
         color: $darkGrey;
       }
@@ -35,30 +37,89 @@
       }
     }
 
-    .block.listing {
-      &:first-child {
-        margin-top: 0;
-      }
-      .listing-item:last-child {
-        border-bottom: none !important;
-      }
-    }
-
-    .block:last-child {
-      margin-bottom: 0 !important;
-    }
-
     .content {
       padding: 0;
+
+      h2,
+      h3 {
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+      h2 {
+        margin-bottom: 40px !important;
+      }
+      h3 {
+        margin-bottom: 20px !important;
+      }
+      .block.listing {
+        & > h2.headline {
+          margin-bottom: 80px !important;
+        }
+        &:first-child {
+          margin-top: 0;
+        }
+        .listing-item:last-child {
+          border-bottom: none !important;
+        }
+      }
+
+      .block.image {
+
+        figure {
+          &.right {
+            margin-left: 20px;}
+            &.left {
+              margin-right: 20px;}
+        }
+        figcaption {
+        margin-bottom: 0;
+        padding: 0;
+
+        .description > div {
+          margin-bottom: 0;
+        }
+          .title {
+            margin-bottom: 10px;
+            background-color: transparent;
+            color: $grey;
+            padding: 0;
+            text-transform: none;
+            @include marginal-title();
+          }
+      
+        
+        }
+
+      }
+
+      .block.teaser {
+        .teaser-item > .content {
+        
+          h2 {
+
+            margin-bottom: 40px !important;
+
+          }
+
+        }
+      }
+
+      .block:last-child {
+        margin-bottom: 0 !important;
+      }
     }
   }
+  
 }
 #page-add .block-editor-accordion,
 #page-edit .block-editor-accordion {
   clear: both;
+  .ui.drag.block.wrapper.inner.listing:nth-child(2) {
+    margin-top: 0;
+  }
 }
 
-.block.accordion-block.has--backgroundColor--grey,
+.accordion-block.has--backgroundColor--grey,
 #page-add .block-editor-accordion.has--backgroundColor--grey,
 #page-edit .block-editor-accordion.has--backgroundColor--grey {
   .accordion.ui.fluid.styled {

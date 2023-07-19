@@ -4,13 +4,30 @@
     padding: 0 !important;
   }
 
-  &.has--align--center {
+  &.has--align--center,
+  &.inner {
     margin-right: auto;
     margin-left: auto;
   }
 
   @include vertical-space-separator();
 }
-.block-editor-separator.has--backgroundColor--grey {
-  background-color: $lightgrey;
+#page-edit .block-editor-separator {
+  &.has--backgroundColor--grey {
+    background-color: $lightgrey;
+  }
+  .block.separator {
+
+    &.inner {
+      margin-right: auto;
+      margin-left: auto;
+
+      .block.separator {
+        margin-right: auto;
+          margin-left: auto;}
+    }
+  }
+  
+
 }
+
