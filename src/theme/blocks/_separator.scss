@@ -17,17 +17,14 @@
     background-color: $lightgrey;
   }
   .block.separator {
-
     &.inner {
       margin-right: auto;
       margin-left: auto;
 
       .block.separator {
         margin-right: auto;
-          margin-left: auto;}
+        margin-left: auto;
+      }
     }
   }
-  
-
 }
-

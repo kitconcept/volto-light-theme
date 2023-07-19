@@ -42,8 +42,8 @@
 
       h2,
       h3 {
-        margin-left: auto !important;
         margin-right: auto !important;
+        margin-left: auto !important;
       }
       h2 {
         margin-bottom: 40px !important;
@@ -64,43 +64,37 @@
       }
 
       .block.image {
-
         figure {
           &.right {
-            margin-left: 20px;}
-            &.left {
-              margin-right: 20px;}
+            margin-left: 20px;
+          }
+          &.left {
+            margin-right: 20px;
+          }
         }
         figcaption {
-        margin-bottom: 0;
-        padding: 0;
-
-        .description > div {
+          padding: 0;
           margin-bottom: 0;
-        }
+
+          .description > div {
+            margin-bottom: 0;
+          }
           .title {
+            padding: 0;
             margin-bottom: 10px;
             background-color: transparent;
             color: $grey;
-            padding: 0;
             text-transform: none;
             @include marginal-title();
           }
-      
-        
         }
-
       }
 
       .block.teaser {
         .teaser-item > .content {
-        
           h2 {
-
             margin-bottom: 40px !important;
-
           }
-
         }
       }
 
@@ -109,7 +103,6 @@
       }
     }
   }
-  
 }
 #page-add .block-editor-accordion,
 #page-edit .block-editor-accordion {
