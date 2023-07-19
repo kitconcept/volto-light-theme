@@ -8,6 +8,26 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-rc.9 (2023-07-19)
+
+### Breaking
+
+- Refactor existing customizations, removing the ones no longer needed (because they are present in Volto already) and using the new pattern in the others. Volto 17a20 is required in order to retain consistency. @sneridagh [#166](https://github.com/kitconcept/volto-light-theme/pull/166)
+
+### Bugfix
+
+- Fix NewsItemView as wella sd Link View @iFlameing [#127](https://github.com/kitconcept/volto-light-theme/pull/127)
+- Fix Image View in edit mode @iFlameing. [#154](https://github.com/kitconcept/volto-light-theme/pull/154)
+- Update volto-image-block @sneridagh [#159](https://github.com/kitconcept/volto-light-theme/pull/159)
+- Fix File View implementation @iFlameing [#162](https://github.com/kitconcept/volto-light-theme/pull/162)
+
+### Internal
+
+- Upgrade volto-image-block to fix the image upload @sneridagh [#149](https://github.com/kitconcept/volto-light-theme/pull/149)
+- Upgrade to Volto 17a20 @sneridagh [#163](https://github.com/kitconcept/volto-light-theme/pull/163)
+- Remove the `apiExpanders` existing locally in the package since it's already in Volto 17a20 @sneridagh [#164](https://github.com/kitconcept/volto-light-theme/pull/164)
+
+
 ## 1.0.0-rc.8 (2023-07-14)
 
 ### Bugfix
