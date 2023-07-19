@@ -113,21 +113,6 @@ const applyConfig = (config) => {
 
   config.settings.slidingSearchAnimation = true;
 
-  config.blocks.blocksConfig.listing = {
-    ...config.blocks.blocksConfig.listing,
-    colors: BG_COLORS,
-    schemaEnhancer: defaultStylingSchema,
-    allowed_headline_tags: [['h2', 'h2']],
-    variations: [
-      ...config.blocks.blocksConfig.listing.variations,
-      {
-        id: 'grid',
-        title: 'Grid',
-        template: GridListingBlockTemplate,
-      },
-    ],
-  };
-
   config.blocks.blocksConfig.accordion = {
     ...config.blocks.blocksConfig.accordion,
     mostUsed: true,
@@ -146,17 +131,29 @@ const applyConfig = (config) => {
       defaultStylingSchema,
     ),
     sidebarTab: 1,
-    // One could customize the blocks inside the accordion like this:
-    blocksConfig: {
-      ...config.blocks.blocksConfig,
-      teaser: {
-        ...config.blocks.blocksConfig.teaser,
-        schemaEnhancer: composeSchema(
-          teaserSchemaEnhancer,
-          disableBgColorSchema,
-        ),
-      },
+  };
+
+  config.blocks.blocksConfig.accordion.blocksConfig = {
+    ...config.blocks.blocksConfig,
+    teaser: {
+      ...config.blocks.blocksConfig.teaser,
+      schemaEnhancer: composeSchema(teaserSchemaEnhancer, disableBgColorSchema),
     },
+  };
+
+  config.blocks.blocksConfig.listing = {
+    ...config.blocks.blocksConfig.listing,
+    colors: BG_COLORS,
+    schemaEnhancer: defaultStylingSchema,
+    allowed_headline_tags: [['h2', 'h2']],
+    variations: [
+      ...config.blocks.blocksConfig.listing.variations,
+      {
+        id: 'grid',
+        title: 'Grid',
+        template: GridListingBlockTemplate,
+      },
+    ],
   };
 
   config.blocks.blocksConfig.gridBlock = {
