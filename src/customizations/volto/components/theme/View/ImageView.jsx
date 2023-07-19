@@ -1,7 +1,7 @@
 /**
- * OVERRIDE NewsItemView.jsx
+ * OVERRIDE ImageView.jsx
  * REASON: Using custom component to render Image and Caption.
- * DATE: 2023-07-04
+ * DATE: 2023-07-19
  * DEVELOPER: @IFlameing
  */
 
