@@ -16,14 +16,12 @@
   #page-document .dates {
     @include default-container-width();
     @include adjustMarginsToContainer($default-container-width);
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: $spacing-medium;
+    margin-bottom: $spacing-medium;
     .day,
     .headtitle {
-      font-size: 18px;
-      font-weight: 700;
+      @include body-text-bold();
       letter-spacing: 1px;
-      line-height: 24px;
       text-transform: uppercase;
     }
   }

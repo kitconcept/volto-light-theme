@@ -1,47 +1,16 @@
-// Remove when https://github.com/plone/volto/pull/4848 is merged
-import React from 'react';
-import PropTypes from 'prop-types';
-import { ConditionalLink, UniversalLink } from '@plone/volto/components';
-import { flattenToAppURL } from '@plone/volto/helpers';
+/**
+ * OVERRIDE DefaultTemplate.jsx
+ * REASON: This was going to be removed when
+ * https://github.com/plone/volto/pull/4848 was merged.
+ * However, as per decission of the Volto Team, the team
+ * will explore changing the headings inside a listing to a
+ * better semantically structure, using no headings at all.
+ * So, decission by Víctor (19/07/2023) to freeze this for now in the theme
+ * still using h2 and change it (if appropiate) when the change is made.
+ * To override it, override the @kitconcept/volto-light-theme one instead of
+ * this one.
+ */
 
-import { isInternalURL } from '@plone/volto/helpers/Url/Url';
+import DefaultTemplate from '../../../../../../components/Blocks/Listing/DefaultTemplate';
 
-const DefaultTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
-  let link = null;
-  let href = linkHref?.[0]?.['@id'] || '';
-
-  if (isInternalURL(href)) {
-    link = (
-      <ConditionalLink to={flattenToAppURL(href)} condition={!isEditMode}>
-        {linkTitle || href}
-      </ConditionalLink>
-    );
-  } else if (href) {
-    link = <UniversalLink href={href}>{linkTitle || href}</UniversalLink>;
-  }
-
-  return (
-    <>
-      <div className="items">
-        {items.map((item) => (
-          <div className="listing-item" key={item['@id']}>
-            <ConditionalLink item={item} condition={!isEditMode}>
-              <div className="listing-body">
-                <h2>{item.title ? item.title : item.id}</h2>
-                <p>{item.description}</p>
-              </div>
-            </ConditionalLink>
-          </div>
-        ))}
-      </div>
-
-      {link && <div className="footer">{link}</div>}
-    </>
-  );
-};
-DefaultTemplate.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.any).isRequired,
-  linkMore: PropTypes.any,
-  isEditMode: PropTypes.bool,
-};
 export default DefaultTemplate;
