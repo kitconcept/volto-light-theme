@@ -171,7 +171,7 @@ const applyConfig = (config) => {
           disableBgColorSchema,
         ),
       },
-    }
+    },
   };
 
   config.blocks.blocksConfig.gridBlock = {
