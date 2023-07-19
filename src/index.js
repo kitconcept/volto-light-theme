@@ -47,21 +47,6 @@ const applyConfig = (config) => {
     component: Container,
   });
 
-  config.settings.apiExpanders = [
-    ...config.settings.apiExpanders,
-    {
-      match: '',
-      GET_CONTENT: ['breadcrumbs', 'actions', 'types'],
-    },
-    {
-      match: '',
-      GET_CONTENT: ['navigation'],
-      querystring: {
-        'expand.navigation.depth': config.settings.navDepth,
-      },
-    },
-  ];
-
   // Register custom StyleWrapper ClassNames
   config.settings.styleClassNameExtenders = [
     ({ block, content, data, classNames }) => {
