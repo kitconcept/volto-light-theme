@@ -16,14 +16,12 @@
   #page-document .dates {
     @include default-container-width();
     @include adjustMarginsToContainer($default-container-width);
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: $spacing-medium;
+    margin-bottom: $spacing-medium;
     .day,
     .headtitle {
-      font-size: 18px;
-      font-weight: 700;
+      @include body-text-bold();
       letter-spacing: 1px;
-      line-height: 24px;
       text-transform: uppercase;
     }
   }
@@ -119,47 +117,22 @@
 
 .contenttype-file {
   .content-area {
-    .documentFirstHeading {
-      max-width: var(--default-container-width) !important;
-      margin-right: auto;
-      margin-left: auto;
+    a {
+      text-decoration: underline;
     }
-    .file-detail {
-      max-width: var(--narrow-container-width) !important;
-      margin-right: auto;
-      margin-left: auto;
-      .documentDescription {
-        padding-top: 40px;
-        padding-bottom: 40px;
-        margin-bottom: 0;
-      }
-
-      a {
-        text-decoration: underline;
-      }
-      span {
-        color: #808080;
-      }
+    span {
+      color: #808080;
     }
   }
 }
 .contenttype-image {
   .content-area {
-    max-width: var(--default-container-width) !important;
-    margin-right: auto;
-    margin-bottom: 0;
-    margin-left: auto;
-    .documentFirstHeading {
-      @media only screen and (max-width: 769px) {
-        margin-bottom: 60px;
-      }
-    }
     figure {
       img {
         aspect-ratio: $aspect-ratio;
       }
       figcaption {
-        margin-top: 20px;
+        margin-top: $spacing-small;
         margin-bottom: 0;
         .title {
           margin-bottom: 5px;
@@ -168,7 +141,7 @@
           margin-bottom: 5px;
         }
         .credits {
-          padding-bottom: 20px;
+          padding-bottom: $spacing-small;
           margin-bottom: 0;
           color: #0066cc;
         }
@@ -177,7 +150,9 @@
   }
 }
 
-.contenttype-link {
+.contenttype-link,
+.contenttype-file,
+.contenttype-image {
   #page-document > *,
   #page-edit > *,
   #page-add > * {
@@ -191,5 +166,7 @@
   }
   .documentDescription {
     margin-bottom: $spacing-medium;
+    color: $black;
+    @include body-text();
   }
 }
