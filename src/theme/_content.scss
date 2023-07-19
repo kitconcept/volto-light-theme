@@ -119,27 +119,11 @@
 
 .contenttype-file {
   .content-area {
-    .documentFirstHeading {
-      max-width: var(--default-container-width) !important;
-      margin-right: auto;
-      margin-left: auto;
+    a {
+      text-decoration: underline;
     }
-    .file-detail {
-      max-width: var(--narrow-container-width) !important;
-      margin-right: auto;
-      margin-left: auto;
-      .documentDescription {
-        padding-top: 40px;
-        padding-bottom: 40px;
-        margin-bottom: 0;
-      }
-
-      a {
-        text-decoration: underline;
-      }
-      span {
-        color: #808080;
-      }
+    span {
+      color: #808080;
     }
   }
 }
@@ -177,7 +161,8 @@
   }
 }
 
-.contenttype-link {
+.contenttype-link,
+.contenttype-file {
   #page-document > *,
   #page-edit > *,
   #page-add > * {
@@ -191,5 +176,7 @@
   }
   .documentDescription {
     margin-bottom: $spacing-medium;
+    color: $black;
+    @include body-text();
   }
 }
