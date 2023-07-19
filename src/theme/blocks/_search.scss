@@ -7,6 +7,18 @@
     .listing.message,
     .listing-item {
       @include default-container-width();
+
+      h2,
+      h3 {
+        color: $black;
+        @include text-heading-h2();
+      }
+
+      img {
+        width: 220px;
+        height: min-content;
+        aspect-ratio: $aspect-ratio;
+      }
     }
 
     .search-wrapper {

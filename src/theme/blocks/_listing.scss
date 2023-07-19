@@ -1,6 +1,8 @@
 // Listing Block
 .block.listing,
-.column > .block.listing {
+.column > .block.listing,
+.block.search,
+.block-editor-search {
   &.next--has--same--backgroundColor.next--is--same--block-type,
   &.next--is--__button {
     .listing-item:last-child {
