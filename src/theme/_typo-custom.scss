@@ -42,6 +42,7 @@ h1.documentFirstHeading {
   border: none;
   @include page-title();
   @include vertical-space-h1();
+  @include overrideMarginBottomInMobile();
   span {
     border: none;
     @include page-title();
@@ -64,6 +65,8 @@ h1.documentFirstHeading {
   // Needed to cancel the Semantic one
   @include block-title();
   @include vertical-space-heading();
+  @include overrideMarginTopInMobile();
+  @include overrideMarginBottomInMobile();
 }
 .heading-wrapper h3 {
   padding-top: 3rem;

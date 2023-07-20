@@ -179,6 +179,7 @@ footer {
 
   & > h1.documentFirstHeading {
     @include adjustMarginsToContainer($default-container-width);
+    @include overrideMarginBottomInMobile();
   }
 
   & > .block {
