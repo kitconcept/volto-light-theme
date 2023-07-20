@@ -266,3 +266,14 @@ $line-heights: (
   @include add(height, s);
   @include add(weight, light);
 }
+@mixin overrideMarginTopInMobile() {
+  @container (max-width: #{ $computer-width + $spacing-medium}) {
+   margin-top: $spacing-large;
+  }
+}
+@mixin overrideMarginBottomInMobile() {
+  @container (max-width: #{ $computer-width + $spacing-medium}) {
+   margin-bottom: $spacing-large;
+  }
+}
+
