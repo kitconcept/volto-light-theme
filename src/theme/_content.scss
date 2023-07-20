@@ -30,6 +30,22 @@
 // Event content type
 
 .contenttype-event {
+  // Doing this because of semantic ui react important mark
+  @media only screen and (max-width: 768px) {
+    .ui.stackable.grid {
+      margin-right: $spacing-small !important;
+      margin-left: $spacing-small !important;
+    }
+
+    .ui.grid.details-container .row .column {
+      padding: 0px !important;
+    }
+  }
+
+  .ui.grid.details-container .row .column {
+    padding: 0px;
+  }
+
   .documentFirstHeading {
     margin-top: 0px;
     margin-bottom: 0px;
@@ -37,6 +53,7 @@
 
   .blocks-group-wrapper {
     padding-top: 0px;
+    padding-bottom: 60px;
   }
   #page-document {
     .dates,
@@ -56,53 +73,54 @@
     }
   }
 
-  .two.column.row {
+  .details-container {
     margin-bottom: 50px;
-
-    .event-title {
-      margin-bottom: 25px;
-      .event-heading {
-        @include headtitle2();
-        letter-spacing: 1px;
-        text-transform: uppercase;
-      }
-      .event-detail {
-        margin-top: 10px;
-        font-size: 24px;
-        font-weight: 300;
-        line-height: 33px;
-        p,
-        a {
+    .two.column.row {
+      .event-title {
+        margin-bottom: 25px;
+        .event-heading {
+          @include headtitle2();
+          letter-spacing: 1px;
+          text-transform: uppercase;
+        }
+        .event-detail {
           margin-top: 10px;
-          margin-bottom: 10px;
           font-size: 24px;
           font-weight: 300;
           line-height: 33px;
+          p,
+          a {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 24px;
+            font-weight: 300;
+            line-height: 33px;
+          }
+        }
+        .separator {
+          width: 170px;
+          height: 30px;
+          border-right: none;
+          border-bottom: 1px solid #000;
         }
       }
-      .separator {
-        width: 170px;
-        height: 30px;
-        border-right: none;
-        border-bottom: 1px solid #000;
-      }
-    }
 
-    .event-button {
-      padding-top: 50px;
-      .button.event-btn {
-        padding: 8px 20px;
-        border: 1px solid #000;
-        background-color: transparent;
-        color: #000;
-        font-size: 16px;
-        font-weight: 900;
-        line-height: 20px;
-        a {
+      .event-button {
+        padding-top: 50px;
+        .button.event-btn {
+          padding: 8px 20px;
+          border: 1px solid #000;
+          background-color: transparent;
           color: #000;
           font-size: 16px;
           font-weight: 900;
           line-height: 20px;
+          a {
+            color: #000;
+            font-size: 16px;
+            font-weight: 900;
+            line-height: 20px;
+          }
         }
       }
     }

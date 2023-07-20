@@ -100,7 +100,7 @@ const EventView = (props) => {
               },
             }}
           />
-          <Grid className="details-container">
+          <Grid stackable className="details-container">
             <Grid.Row columns={2}>
               <Grid.Column>
                 <div>
