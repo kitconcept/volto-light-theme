@@ -39,9 +39,10 @@
     padding-top: 0px;
   }
   #page-document {
-    .dates, .details-container {
+    .dates,
+    .details-container {
       @include default-container-width();
-    @include adjustMarginsToContainer($default-container-width);
+      @include adjustMarginsToContainer($default-container-width);
     }
   }
   .dates {
