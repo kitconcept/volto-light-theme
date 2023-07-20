@@ -268,12 +268,11 @@ $line-heights: (
 }
 @mixin overrideMarginTopInMobile() {
   @container (max-width: #{ $computer-width + $spacing-medium}) {
-   margin-top: $spacing-large;
+    margin-top: $spacing-large;
   }
 }
 @mixin overrideMarginBottomInMobile() {
   @container (max-width: #{ $computer-width + $spacing-medium}) {
-   margin-bottom: $spacing-large;
+    margin-bottom: $spacing-large;
   }
 }
-
