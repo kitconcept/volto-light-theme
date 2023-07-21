@@ -88,10 +88,10 @@
     }
     .listing-item {
       padding-bottom: 0 !important;
-      border-bottom: none !important;
-      margin-right: auto !important;
-      margin-bottom: 0 !important;
-      margin-left: auto !important;
+      border-bottom: none;
+      margin-right: auto;
+      margin-bottom: 0;
+      margin-left: auto;
 
       @media only screen and (max-width: $largest-mobile-screen) {
         margin: 0 !important;
@@ -188,6 +188,18 @@
   .documentFirstHeading
     + &.previous--has--same--backgroundColor:not(.has--headline) {
     margin-top: 0;
+  }
+}
+
+#page-add .block-editor-listing,
+#page-edit .block-editor-listing {
+  .block.listing {
+    margin-top: 0;
+
+    .items {
+      margin-right: 0;
+      margin-left: 0;
+    }
   }
 }
 
