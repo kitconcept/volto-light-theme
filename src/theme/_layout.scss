@@ -194,9 +194,10 @@ footer {
 // Setting a default, for all blocks
 // We want all blocks in edit go layout by default
 // But block's inner containers can go less (eg. grid)
+// Excluding the contained (blocks in block) ones
 #page-add,
 #page-edit {
-  [class*='block-editor-'] {
+  [class*='block-editor-']:not(.contained) {
     @include layout-container-width();
     @include adjustMarginsToEditContainer($layout-container-width);
   }
