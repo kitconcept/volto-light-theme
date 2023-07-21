@@ -50,12 +50,6 @@
 
   // Summary variation
   &.summary {
-    &.next--has--same--backgroundColor {
-      .listing-item:last-child {
-        padding-bottom: 40px;
-        border-bottom: 1px solid $black !important;
-      }
-    }
     .listing-item {
       padding-top: 0 !important;
 
@@ -187,7 +181,7 @@
     }
   }
 
-  &.previous--has--same--backgroundColor:not(.has--headline) {
+  &:not(.has--headline) {
     margin-top: 200px;
   }
 
