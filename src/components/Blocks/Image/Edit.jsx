@@ -248,9 +248,8 @@ class Edit extends Component {
    * @returns {string} Markup for the component.
    */
   render() {
-    const { blocksConfig, data } = this.props;
+    const { data } = this.props;
     const Image = config.getComponent({ name: 'Image' }).component;
-    const dataAdapter = blocksConfig[data['@type']].dataAdapter;
     const placeholder =
       this.props.data.placeholder ||
       this.props.intl.formatMessage(messages.ImageBlockInputPlaceholder);
