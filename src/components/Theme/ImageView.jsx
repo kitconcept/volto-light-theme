@@ -11,7 +11,7 @@ import { flattenToAppURL } from '@plone/volto/helpers';
 
 // BEGIN CUSTOMIZATION
 import config from '@plone/volto/registry';
-import Caption from '@kitconcept/volto-image-block/components/Caption/Caption';
+import Caption from '../Caption/Caption';
 
 // END CUSTOMIZATION
 
@@ -25,6 +25,7 @@ const ImageView = ({ content }) => {
   const Image = config.getComponent('Image').component;
   const Container =
     config.getComponent({ name: 'Container' }).component || SemanticContainer;
+
   return (
     <Container id="page-document" className="view-wrapper image-view">
       {/* BEGIN CUSTOMIZATION */}
@@ -32,6 +33,12 @@ const ImageView = ({ content }) => {
       {content?.image?.download && (
         <figure>
           <Image
+            item={content}
+            imageField="image"
+            alt={content.title}
+            responsive={true}
+          />
+          {/* <Image
             width={content.image?.width}
             height={content.image?.height}
             alt={content.alt_tag || ''}
@@ -42,7 +49,7 @@ const ImageView = ({ content }) => {
               style: {},
             }}
             style={{ maxWidth: '100%', height: 'auto' }}
-          />
+          /> */}
           <Caption
             title={content.title}
             description={content.description}
