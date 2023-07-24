@@ -31,7 +31,7 @@
 
 .contenttype-event {
   // Doing this because of semantic ui react important mark
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: $tablet-breakpoint) {
     .ui.stackable.grid {
       margin-right: $spacing-small !important;
       margin-left: $spacing-small !important;
