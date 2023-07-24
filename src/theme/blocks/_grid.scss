@@ -13,6 +13,11 @@
     }
   }
 
+  // Override the Image component `aspect-ratio`
+  .block.image img {
+    aspect-ratio: $aspect-ratio !important;
+  }
+
   .block.teaser {
     margin-bottom: 0;
     background-color: $lightgrey;

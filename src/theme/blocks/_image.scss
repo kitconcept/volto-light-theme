@@ -43,7 +43,7 @@ figure {
     img {
       width: 100% !important;
       height: auto;
-      aspect-ratio: $aspect-ratio;
+      aspect-ratio: $aspect-ratio !important;
     }
 
     &.right {

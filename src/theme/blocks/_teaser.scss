@@ -1,3 +1,8 @@
+// Override the Image component `aspect-ratio`
+.teaser-item .image-wrapper img {
+  aspect-ratio: $aspect-ratio !important;
+}
+
 // Block Teaser Standalone
 #page-document .block.teaser {
   @include vertical-space-teaser();
