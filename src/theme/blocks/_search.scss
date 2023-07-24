@@ -2,11 +2,39 @@
 #page-add,
 #page-edit {
   .block.search {
+    &.grid {
+      .card-container > img {
+        width: 100% !important;
+      }
+      .items {
+        @include default-container-width();
+      }
+    }
     .search-input-resultscount-sort,
     .facets,
     .listing.message,
     .listing-item {
       @include default-container-width();
+
+      &:last-child {
+        padding-bottom: 0 !important;
+        border-bottom: none !important;
+        margin-bottom: 0;
+      }
+
+      h2,
+      h3 {
+        color: $black;
+        @include text-heading-h2();
+      }
+
+      &:not(.grid) {
+        img {
+          width: 220px;
+          height: min-content;
+          aspect-ratio: $aspect-ratio;
+        }
+      }
     }
 
     .search-wrapper {
@@ -163,6 +191,17 @@
           stroke: $white;
         }
       }
+    }
+  }
+}
+
+#page-edit {
+  .block-editor-search {
+    &:not(.has--headline) {
+      margin-top: 0;
+    }
+    .block.search {
+      margin-top: 0;
     }
   }
 }

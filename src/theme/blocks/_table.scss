@@ -1,0 +1,28 @@
+.ui.table.slate-table-block {
+  th {
+    padding: $spacing-small;
+    background: $darkGrey;
+    color: $white;
+    p {
+      font-weight: bold;
+    }
+  }
+}
+
+.blocks-group-wrapper.transparent,
+.block-editor-slateTable.has--backgroundColor--transparent {
+  .ui.striped.table.slate-table-block tbody tr:nth-child(2n) {
+    background-color: $lightgrey;
+  }
+}
+
+.blocks-group-wrapper.grey,
+.block-editor-slateTable.has--backgroundColor--grey {
+  .ui.striped.table.slate-table-block tbody tr:nth-child(2n) {
+    background: $white;
+  }
+  .slate-table-block,
+  .slateTable {
+    background-color: $lightgrey;
+  }
+}

@@ -56,6 +56,8 @@
     margin: 0.5rem !important;
     .teaser-item {
       border: none !important;
+      margin-right: auto !important;
+      margin-left: auto !important;
     }
   }
 
@@ -73,6 +75,11 @@
   .block-editor-slate {
     padding: 0;
     margin: 0.5rem !important;
+    .text-slate-editor-inner > .slate-editor {
+      max-width: inherit !important;
+      margin-right: auto !important;
+      margin-left: auto !important;
+    }
   }
 
   .block.image {
@@ -138,10 +145,20 @@
     &.previous--is--same--block-type.previous--has--same--backgroundColor:not(.has--headline) {
       margin-top: unset;
     }
-    .listing-item,
-    .listing-item:last-child {
-      padding-bottom: 40px !important;
-      border-bottom: 1px solid $black !important;
+    &:not(.grid) {
+      .listing-item,
+      .listing-item:last-child {
+        padding-bottom: 40px !important;
+        border-bottom: 1px solid $black !important;
+      }
+    }
+
+    &.grid {
+      .listing-item,
+      .listing-item:last-child {
+        padding-bottom: 0 !important;
+        border-bottom: none !important;
+      }
     }
   }
 
