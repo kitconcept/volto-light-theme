@@ -133,6 +133,12 @@ const applyConfig = (config) => {
     sidebarTab: 1,
   };
 
+  config.blocks.blocksConfig.slateTable = {
+    ...config.blocks.blocksConfig.slateTable,
+    schemaEnhancer: defaultStylingSchema,
+    colors: BG_COLORS,
+  };
+
   config.blocks.blocksConfig.accordion.blocksConfig = {
     ...config.blocks.blocksConfig,
     teaser: {
