@@ -311,3 +311,19 @@ When finished, don't forget to shutdown the backend server.
 ```shell
 make stop-test-acceptance-server
 ```
+
+### Release
+
+Run
+
+```shell
+make release
+```
+
+For releasing a RC version
+
+Run
+
+```shell
+make release-rc
+```
