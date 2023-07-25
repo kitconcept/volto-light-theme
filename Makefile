@@ -138,3 +138,11 @@ debug-frontend:  ## Run bash in the Frontend container (for debug infrastructure
 .PHONY: pull-backend-image
 pull-backend-image:  ## Pulls and updates the backend image (for use it while developing)
 	docker pull ghcr.io/kitconcept/voltolighttheme:latest
+
+.PHONY: release
+release:  ## Release a version of the add-on
+	yarn release
+
+.PHONY: release-rc
+release-rc:  ## Release a RC version of the add-on
+	npx release-it --preRelease=rc
