@@ -1,13 +1,13 @@
 .block.video {
   &.align.left,
-    &.align.right,
-    &.align.center {
-      .video-inner {
-        @media only screen and (max-width:$tablet-breakpoint) {
-          width: 100%;
-          padding-left: $spacing-small;
-          padding-right: $spacing-small;
-        }
+  &.align.right,
+  &.align.center {
+    .video-inner {
+      @media only screen and (max-width: $tablet-breakpoint) {
+        width: 100%;
+        padding-right: $spacing-small;
+        padding-left: $spacing-small;
       }
     }
+  }
 }
