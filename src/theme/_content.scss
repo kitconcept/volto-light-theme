@@ -168,5 +168,9 @@
     margin-bottom: $spacing-medium;
     color: $black;
     @include body-text();
+
+    @media only screen and (max-width: $largest-mobile-screen) {
+      margin-bottom: $spacing-large;
+    }
   }
 }

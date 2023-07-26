@@ -23,6 +23,9 @@
 
   h2 {
     @include highlight-title();
-    margin-bottom: 60px;
+    margin-bottom: $spacing-large;
+    @media only screen and (max-width: $largest-mobile-screen) {
+      margin-bottom: $spacing-medium;
+    }
   }
 }
