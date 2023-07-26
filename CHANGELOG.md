@@ -8,6 +8,22 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-rc.10 (2023-07-26)
+
+### Bugfix
+
+- Fix styles for blocks inside the Accordion block. @danalvrz [#146](https://github.com/kitconcept/volto-light-theme/pull/146)
+- Fix styles for Search block's results default and summary listings. @danalvrz [#168](https://github.com/kitconcept/volto-light-theme/pull/168)
+- Fix container problem of Event View @iFlameing [#170](https://github.com/kitconcept/volto-light-theme/pull/170)
+- Add missing translation. @danalvrz [#172](https://github.com/kitconcept/volto-light-theme/pull/172)
+- Fix contained block editor wrapper (for listings) @sneridagh [#173](https://github.com/kitconcept/volto-light-theme/pull/173)
+- Update volto-button-block to 2.3.1 @steffenri [#174](https://github.com/kitconcept/volto-light-theme/pull/174)
+- Update Table block to contain styling fieldset and css fix. @iFlameing [#175](https://github.com/kitconcept/volto-light-theme/pull/175)
+- Remove levels choices h1,h4,h5 and h6 from Toc block @iRohitSingh [#178](https://github.com/kitconcept/volto-light-theme/pull/178)
+- Fix responsiveness of video block. @iFlameing [#180](https://github.com/kitconcept/volto-light-theme/pull/180)
+- Fixed responsive spacings & font sizes for mobile screens. @danalvrz [#181](https://github.com/kitconcept/volto-light-theme/pull/181)
+
+
 ## 1.0.0-rc.9 (2023-07-19)
 
 ### Breaking
