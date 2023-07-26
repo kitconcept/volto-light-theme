@@ -36,12 +36,6 @@ $narrow-container-width: 620px !default;
   margin-left: auto;
 }
 
-@mixin overrideWidth() {
-  @container (max-width: #{$largest-mobile-screen}) {
-    width: 100%;
-  }
-}
-
 // One still cannot use CSS custom properties directly on @container queries
 @mixin adjustMarginsToContainer($width) {
   @container (max-width: #{$width + 2 * $horizontal-space-small-screens}) {
@@ -190,6 +184,14 @@ footer {
     @include layout-container-width();
   }
 
+  /* Styling align left and right in mobile view */
+  .block.video.align.right .video-inner,
+  .block.video.align.left .video-inner {
+    @container (max-width: #{$largest-mobile-screen}) {
+      width: 100%;
+    }
+  }
+
   & > h1.documentFirstHeading {
     @include adjustMarginsToContainer($default-container-width);
   }
@@ -265,6 +267,14 @@ footer {
   .block-editor-separator.has--align--left {
     @include layout-container-width();
     @include adjustMarginsToEditContainer($layout-container-width);
+  }
+
+  /* Styling align left and right in mobile view */
+  .block.video.align.right .video-inner,
+  .block.video.align.left .video-inner {
+    @container (max-width: #{$largest-mobile-screen}) {
+      width: 100%;
+    }
   }
 }
 
