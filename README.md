@@ -87,6 +87,16 @@ These main rules spec applies to the theme:
 - [text+button] If there's a text and a button, then the vertical spacing betweeen them is `60px`.
 - [image+separator-block] If after image comes a separator block, the vertical spacing between them is `40px`.
 
+### Media queries vs container queries
+
+We use media queries when the styling it's generic enough to apply only to the View.
+
+We use container queries when do care explicitly about how the styling is being applied in edit mode as well and we want the content area to behave 1:1 with the view mode.
+
+Reason: The container queries allow us to abstract the width from the sidebar and toolbar in edit mode, showing the content area as it will be in that size, in view mode.
+
+Remember: The margins in responsive are being taken care with container queries in `layout.scss`. So everything related to that, goes like it works in there, with container queries. See implementations for details in case you need it.
+
 ## Specification
 
 `@kitconcept/volto-light-theme` works with the following Plone Blocks:
@@ -310,4 +320,20 @@ When finished, don't forget to shutdown the backend server.
 
 ```shell
 make stop-test-acceptance-server
+```
+
+### Release
+
+Run
+
+```shell
+make release
+```
+
+For releasing a RC version
+
+Run
+
+```shell
+make release-rc
 ```

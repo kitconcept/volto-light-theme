@@ -28,7 +28,8 @@
     "dry-release": "release-it --dry-run",
     "release": "release-it",
     "release-major-alpha": "release-it major --preRelease=alpha",
-    "release-alpha": "release-it --preRelease=alpha"
+    "release-alpha": "release-it --preRelease=alpha",
+    "release-rc": "release-it --preRelease=rc"
   },
   "devDependencies": {
     "@plone/scripts": "^3.0.0",
@@ -54,7 +55,6 @@
   "peerAddons": [
     "@eeacms/volto-accordion-block",
     "@kitconcept/volto-button-block",
-    "@kitconcept/volto-dsgvo-banner",
     "@kitconcept/volto-heading-block",
     "@kitconcept/volto-image-block",
     "@kitconcept/volto-introduction-block",
