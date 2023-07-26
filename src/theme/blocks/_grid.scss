@@ -2,14 +2,27 @@
   margin-top: 0;
   margin-bottom: 0;
 
-  &.is--first--of--block-type {
-    .column {
-      padding-top: 0;
+  &.is--first--of--block-type,
+  &.previous--is--same--block-type.previous--has--different--backgroundColor {
+    @media only screen and (min-width: $largest-mobile-screen) {
+      .ui.stackable.grid > .column {
+        padding-top: 0 !important;
+      }
+    }
+    .ui.stackable.grid > .column:first-child {
+      padding-top: 0 !important;
     }
   }
-  &.is--last--of--block-type {
-    .column {
-      padding-bottom: 0;
+
+  &.is--last--of--block-type,
+  &.next--is--same--block-type.next--has--different--backgroundColor {
+    @media only screen and (min-width: $largest-mobile-screen) {
+      .ui.stackable.grid > .column {
+        padding-bottom: 0 !important;
+      }
+    }
+    .ui.stackable.grid > .column:last-child {
+      padding-bottom: 0 !important;
     }
   }
 
@@ -41,7 +54,8 @@
 
         h2 {
           padding: 0;
-          margin-bottom: 20px;
+          margin-bottom: 20px !important;
+          @include text-heading-h3();
         }
 
         p {
@@ -53,11 +67,10 @@
 
   .block-editor-teaser {
     padding: 0;
-    margin: 0.5rem !important;
-    .teaser-item {
-      border: none !important;
-      margin-right: auto !important;
-      margin-left: auto !important;
+    margin: 10px !important;
+    .teaser-item.default {
+      padding-bottom: 0;
+      border: none;
     }
   }
 
@@ -69,6 +82,11 @@
     p {
       padding: 0;
       margin-bottom: 20px;
+    }
+
+    h2 {
+      margin-bottom: 20px !important;
+      @include text-heading-h3();
     }
   }
 
@@ -94,7 +112,7 @@
         margin: 0 0 20px 0;
         color: $white !important;
         letter-spacing: 1px;
-        @include text-heading-h2();
+        @include text-heading-h3();
       }
 
       .description {
@@ -169,96 +187,108 @@
 }
 
 // Dynamic font sizes depending on number of columns for in-grid blocks
-.block.gridBlock,
-.block-editor-gridBlock {
-  .one {
-    .teaser-item .content h2 {
-      margin-bottom: 40px !important;
-      @include text-heading-h2();
-    }
-
-    .slate {
-      h2 {
+#page-document .block.gridBlock,
+#page-edit .block-editor-gridBlock,
+#page-add .block-editor-gridBlock {
+  @media only screen and (min-width: $largest-mobile-screen) {
+    .one {
+      .teaser-item .content h2 {
         margin-bottom: 40px !important;
+        @include text-heading-h2();
+      }
+
+      .slate {
+        h2 {
+          margin-bottom: 40px !important;
+          @include text-heading-h2();
+        }
+      }
+
+      .image {
+        figcaption {
+          .title {
+            @include text-heading-h2();
+          }
+        }
       }
     }
-  }
 
-  .two,
-  .three {
-    .teaser {
-      .teaser-item .content {
+    .two,
+    .three {
+      .teaser {
+        .teaser-item .content {
+          h2 {
+            margin-bottom: 20px !important;
+            @include text-heading-h3();
+          }
+        }
+      }
+      .image {
+        figcaption {
+          .title {
+            @include text-heading-h3();
+            margin: 0 0 20px 0;
+          }
+        }
+        figure:after {
+          height: 70px;
+        }
+      }
+      .slate {
         h2 {
           margin-bottom: 20px !important;
           @include text-heading-h3();
         }
       }
     }
-    .image {
-      figcaption {
-        .title {
-          @include text-heading-h3();
-          margin: 0 0 20px 0;
-        }
-      }
-      figure:after {
-        height: 70px;
-      }
-    }
-    .slate {
-      h2 {
-        margin-bottom: 20px !important;
-        @include text-heading-h3();
-      }
-    }
-  }
 
-  .four {
-    .teaser {
-      .teaser-item {
-        .image-wrapper {
-          margin-bottom: 20px !important;
-        }
-        .content {
-          .headline {
-            @include headtitle2();
-          }
-          h2 {
+    .four {
+      .teaser {
+        .teaser-item {
+          .image-wrapper {
             margin-bottom: 20px !important;
+          }
+          .content {
+            .headline {
+              @include headtitle2();
+            }
+            h2 {
+              margin-bottom: 20px !important;
+              @include text-heading-h4();
+            }
+            p {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+
+      .image {
+        figcaption {
+          .title {
+            margin: 0 0 15px 0;
+            color: $white !important;
+            letter-spacing: 1px;
             @include text-heading-h4();
           }
-          p {
-            margin-bottom: 0;
-          }
+        }
+        figure:after {
+          height: 59px;
         }
       }
-    }
 
-    .image {
-      figcaption {
-        .title {
-          margin: 0 0 15px 0;
-          color: $white !important;
-          letter-spacing: 1px;
+      .slate {
+        h2 {
+          margin-bottom: 20px !important;
           @include text-heading-h4();
         }
-      }
-      figure:after {
-        height: 59px;
-      }
-    }
 
-    .slate {
-      h2 {
-        margin-bottom: 20px !important;
-        @include text-heading-h4();
-      }
+        p {
+          margin-bottom: 0;
+        }
 
-      p {
-        margin-bottom: 0;
+        padding-top: 20px !important;
       }
-
-      padding-top: 20px !important;
     }
   }
 }

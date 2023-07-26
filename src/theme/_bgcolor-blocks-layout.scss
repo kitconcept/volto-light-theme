@@ -1,6 +1,5 @@
 .blocks-group-wrapper {
-  padding-top: $color-block-change-vertical-spacing;
-  padding-bottom: $color-block-change-vertical-spacing;
+  @include color-block-change-vertical-spacing();
 }
 
 .blocks-group-wrapper.grey {
@@ -25,7 +24,7 @@
 // For grids
 #page-document .blocks-group-wrapper .block.gridBlock {
   &.is--first--of--block-type.previous--has--same--backgroundColor {
-    margin-top: $grid-block-vertical-spacing-top;
+    @include grid-block-vertical-spacing-top();
   }
   &.is--last--of--block-type.next--has--same--backgroundColor {
     margin-bottom: $grid-block-vertical-spacing-bottom;
