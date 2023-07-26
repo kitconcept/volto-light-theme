@@ -3,6 +3,7 @@ import { defineMessages } from 'react-intl';
 import { composeSchema, getPreviousNextBlock } from '@plone/volto/helpers';
 import { defaultStylingSchema } from './components/Blocks/schema';
 import { teaserSchemaEnhancer } from './components/Blocks/Teaser/schema';
+import { videoBlockSchemaEnhancer } from './components/Blocks/Video/schema';
 import { gridTeaserDisableStylingSchema } from '@plone/volto/components/manage/Blocks/Teaser/schema';
 import { disableBgColorSchema } from './components/Blocks/disableBgColorSchema';
 
@@ -218,6 +219,15 @@ const applyConfig = (config) => {
     imageScale: 'larger',
     colors: BG_COLORS,
     schemaEnhancer: composeSchema(defaultStylingSchema, teaserSchemaEnhancer),
+  };
+
+  config.blocks.blocksConfig.video = {
+    ...config.blocks.blocksConfig.video,
+    colors: BG_COLORS,
+    schemaEnhancer: composeSchema(
+      defaultStylingSchema,
+      videoBlockSchemaEnhancer,
+    ),
   };
 
   config.blocks.blocksConfig.heading = {

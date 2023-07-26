@@ -135,7 +135,10 @@ footer {
   & > .block.image.align.left.medium,
   & > .block.image.align.left.small,
   & > .block.image.align.right.medium,
+  & > .block.video.align.left,
+  & > .block.video.align.right,
   & > .block.image.align.right.small,
+  & > .block.video.align.center .video-inner,
   .block.image.align.center figure,
   .event-details,
   .download-event,
@@ -153,6 +156,9 @@ footer {
   & > .block.image.align.left,
   & > .block.image.align.right,
   & > .block.image.align.wide figure,
+  & > .block.video.align.left,
+  & > .block.video.align.right,
+  & > .block.video.align.wide .video-inner,
   & > .block.__button,
   & > .block.listing .listing-item,
   & > .block.listing .emptyListing,
@@ -176,6 +182,14 @@ footer {
   & > .block.video.align.full,
   & > .block.maps.align.full {
     @include layout-container-width();
+  }
+
+  /* Styling align left and right in mobile view */
+  .block.video.align.right .video-inner,
+  .block.video.align.left .video-inner {
+    @container (max-width: #{$largest-mobile-screen}) {
+      width: 100%;
+    }
   }
 
   & > h1.documentFirstHeading {
@@ -213,6 +227,9 @@ footer {
   .block-editor-image.right.medium,
   .block-editor-image.right.small,
   .block-editor-image.center figure,
+  .block-editor-video.align.left,
+  .block-editor-video.align.right,
+  .block-editor-video.center .video-inner,
   .block-editor-separator.has--align--left .block.separator,
   .block-editor-separator.has--align--center .block.separator,
   .block-editor-codeBlock,
@@ -226,6 +243,9 @@ footer {
   .block-editor-image.right.large,
   .block-editor-image.wide figure, // Wide images are always large
   .block-editor-image.wide.large figure,
+  .block-editor-video.align.left,
+  .block-editor-video.align.right,
+  .block.video.align.wide .video-inner,
   .block.introduction .slate-editor,
   .block.heading .heading-wrapper,
   .block-editor-listing .items,
@@ -247,6 +267,14 @@ footer {
   .block-editor-separator.has--align--left {
     @include layout-container-width();
     @include adjustMarginsToEditContainer($layout-container-width);
+  }
+
+  /* Styling align left and right in mobile view */
+  .block.video.align.right .video-inner,
+  .block.video.align.left .video-inner {
+    @container (max-width: #{$largest-mobile-screen}) {
+      width: 100%;
+    }
   }
 }
 
