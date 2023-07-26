@@ -196,9 +196,10 @@
   .block.listing {
     margin-top: 0;
 
-    .items {
-      margin-right: 0;
-      margin-left: 0;
+    h2 {
+      @include default-container-width();
+      margin-right: auto;
+      margin-left: auto;
     }
   }
 }
