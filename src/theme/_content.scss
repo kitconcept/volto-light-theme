@@ -29,14 +29,14 @@
 
 // Event content type
 
+
 .contenttype-event {
   // Doing this because of semantic ui react important mark
-  @media only screen and (max-width: $tablet-breakpoint) {
-    .ui.stackable.grid {
+  @container (max-width: #{$largest-mobile-screen} ) {
+    .ui.stackable.grid.details-container {
       margin-right: $spacing-small !important;
       margin-left: $spacing-small !important;
     }
-
     .ui.grid.details-container .row .column {
       padding: 0px !important;
     }
