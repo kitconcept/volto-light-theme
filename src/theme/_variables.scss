@@ -196,13 +196,16 @@ $font-weights: (
 );
 
 $font-sizes: (
-  xs: 12px,
-  s: 14px,
-  m: 18px,
+  2xs: 12px,
+  xs: 14px,
+  s: 18px,
+  m: 21px,
   l: 24px,
   xl: 30px,
-  2xl: 36px,
-  3xl: 48px,
+  2xl: 33px,
+  3xl: 36px,
+  4xl: 42px,
+  5xl: 48px,
 );
 
 $line-heights: (
@@ -212,8 +215,9 @@ $line-heights: (
   l: 30px,
   xl: 33px,
   2xl: 36px,
-  3xl: 48px,
-  4xl: 56px,
+  3xl: 42px,
+  4xl: 48px,
+  5xl: 56px,
 );
 
 @mixin add($property, $value) {
@@ -228,27 +232,37 @@ $line-heights: (
 
 // Patterns
 @mixin body-text() {
-  @include add(size, m);
+  @include add(size, s);
   @include add(height, m);
   @include add(weight, light);
 }
 
 @mixin body-text-bold() {
-  @include add(size, m);
+  @include add(size, s);
   @include add(height, m);
   @include add(weight, bold);
 }
 
 @mixin page-title() {
-  @include add(size, 3xl);
-  @include add(height, 4xl);
+  @include add(size, 5xl);
+  @include add(height, 5xl);
   @include add(weight, bold);
+
+  @container (max-width: #{$largest-mobile-screen}) {
+    @include add(size, 4xl);
+    @include add(height, 4xl);
+  }
 }
 
 @mixin block-title() {
-  @include add(size, xl);
-  @include add(height, 2xl);
+  @include add(size, 2xl);
+  @include add(height, 3xl);
   @include add(weight, light);
+
+  @container (max-width: #{$largest-mobile-screen}) {
+    @include add(size, xl);
+    @include add(height, 2xl);
+  }
 }
 
 @mixin text-heading-h2() {
@@ -264,7 +278,7 @@ $line-heights: (
 }
 
 @mixin text-heading-h4() {
-  @include add(size, m);
+  @include add(size, s);
   @include add(height, m);
   @include add(weight, bold);
 }
@@ -273,34 +287,44 @@ $line-heights: (
   @include add(size, l);
   @include add(height, xl);
   @include add(weight, light);
+
+  @container (max-width: #{$largest-mobile-screen}) {
+    @include add(size, m);
+    @include add(height, l);
+  }
 }
 
 @mixin headtitle1() {
-  @include add(size, s);
+  @include add(size, xs);
   @include add(height, s);
   @include add(weight, bold);
 }
 
 @mixin headtitle2() {
-  @include add(size, xs);
+  @include add(size, 2xs);
   @include add(height, xs);
   @include add(weight, bold);
 }
 
 @mixin highlight-title() {
-  @include add(size, 2xl);
-  @include add(height, 3xl);
+  @include add(size, 3xl);
+  @include add(height, 4xl);
   @include add(weight, bold);
+
+  @container (max-width: #{$largest-mobile-screen}) {
+    @include add(size, 2xl);
+    @include add(height, 3xl);
+  }
 }
 
 @mixin marginal-title() {
-  @include add(size, s);
+  @include add(size, xs);
   @include add(height, s);
   @include add(weight, bold);
 }
 
 @mixin marginal-description() {
-  @include add(size, s);
+  @include add(size, xs);
   @include add(height, s);
   @include add(weight, light);
 }

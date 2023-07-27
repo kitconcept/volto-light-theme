@@ -195,6 +195,10 @@
 #page-edit .block-editor-listing {
   .block.listing {
     margin-top: 0;
+    .items {
+      margin-right: auto;
+      margin-left: auto;
+    }
 
     h2 {
       @include default-container-width();
