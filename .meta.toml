@@ -3,7 +3,7 @@
 # See the inline comments on how to expand/tweak this configuration file
 [meta]
 template = "default"
-commit-id = "e3bfb27e"
+commit-id = "b3ba013b"
 
 [pyproject]
 codespell_skip = "*.min.js,*.json"
@@ -27,7 +27,14 @@ use_mxdev = true
 constrain_package_deps = false
 
 [github]
-ref = "main"
+ref = "1.0.0"
+jobs = [
+    "qa",
+    "test",
+    "coverage",
+    "dependencies",
+    "release_ready",
+    ]
 extra_lines = """
   image:
     runs-on: ubuntu-latest
@@ -37,7 +44,6 @@ extra_lines = """
       - coverage
       - release_ready
       - dependencies
-      - circular
 
     permissions:
       contents: read

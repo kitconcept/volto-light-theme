@@ -13,19 +13,27 @@ on:
       - main
   workflow_dispatch:
 
+##
+# To set environment variables for all jobs, add in .meta.toml:
+# [github]
+# env = """
+#     debug: 1
+#     image-name: 'org/image'
+#     image-tag: 'latest'
+# """
+##
+
 jobs:
   qa:
-    uses: plone/meta/.github/workflows/qa.yml@main
+    uses: plone/meta/.github/workflows/qa.yml@1.0.0
   test:
-    uses: plone/meta/.github/workflows/test.yml@main
+    uses: plone/meta/.github/workflows/test.yml@1.0.0
   coverage:
-    uses: plone/meta/.github/workflows/coverage.yml@main
+    uses: plone/meta/.github/workflows/coverage.yml@1.0.0
   dependencies:
-    uses: plone/meta/.github/workflows/dependencies.yml@main
+    uses: plone/meta/.github/workflows/dependencies.yml@1.0.0
   release_ready:
-    uses: plone/meta/.github/workflows/release_ready.yml@main
-  circular:
-    uses: plone/meta/.github/workflows/circular.yml@main
+    uses: plone/meta/.github/workflows/release_ready.yml@1.0.0
 
 ##
 # To modify the list of default jobs being created add in .meta.toml:
@@ -55,7 +63,6 @@ jobs:
       - coverage
       - release_ready
       - dependencies
-      - circular
 
     permissions:
       contents: read
