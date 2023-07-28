@@ -14,6 +14,9 @@ import TopSideFacets from './components/Blocks/Search/TopSideFacets';
 import GridListingBlockTemplate from './components/Blocks/Listing/GridTemplate';
 import { ButtonStylingSchema } from './components/Blocks/Button/schema';
 
+import { imageBlockSchemaEnhancer } from './components/Blocks/Image/schema';
+import { ImageBlockDataAdapter } from './components/Blocks/Image/adapter';
+
 import { AccordionSchemaEnhancer } from './components/Blocks/Accordion/schema';
 
 import gridSVG from './icons/block_icn_grid.svg';
@@ -264,6 +267,12 @@ const applyConfig = (config) => {
       colors: BG_COLORS,
     };
   }
+
+  config.blocks.blocksConfig.image = {
+    ...config.blocks.blocksConfig.image,
+    schemaEnhancer: imageBlockSchemaEnhancer,
+    dataAdapter: ImageBlockDataAdapter,
+  };
 
   config.views.contentTypesViews.Event = EventView;
 

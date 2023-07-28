@@ -7,11 +7,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Container as SemanticContainer } from 'semantic-ui-react';
 
-import { flattenToAppURL } from '@plone/volto/helpers';
-
 // BEGIN CUSTOMIZATION
 import config from '@plone/volto/registry';
-import Caption from '@kitconcept/volto-image-block/components/Caption/Caption';
+import Caption from '../Caption/Caption';
 
 // END CUSTOMIZATION
 
@@ -25,36 +23,18 @@ const ImageView = ({ content }) => {
   const Image = config.getComponent('Image').component;
   const Container =
     config.getComponent({ name: 'Container' }).component || SemanticContainer;
+
   return (
     <Container id="page-document" className="view-wrapper image-view">
       {/* BEGIN CUSTOMIZATION */}
       <h1 className="documentFirstHeading">{content.title}</h1>
       {content?.image?.download && (
         <figure>
-          <Image
-            width={content.image?.width}
-            height={content.image?.height}
-            alt={content.alt_tag || ''}
-            src={content.image}
-            blurhash={content.blurhash}
-            blurhashOptions={{
-              // override default width 100%
-              style: {},
-            }}
-            style={{ maxWidth: '100%', height: 'auto' }}
-          />
+          <Image item={content} imageField="image" alt="" responsive={true} />
           <Caption
             title={content.title}
             description={content.description}
-            credit={content.credit?.data}
-            downloadFilename={content.title}
-            downloadHref={
-              content.allow_image_download &&
-              flattenToAppURL(
-                content.image.scales.fullscreen?.download ||
-                  content.image.download,
-              )
-            }
+            credit={content?.copyright_and_sources || content.credit?.data}
           />
         </figure>
       )}
@@ -80,11 +60,10 @@ ImageView.propTypes = {
       }),
     }),
     // BEGIN CUSTOMIZATION
-    allow_image_download: PropTypes.bool,
+    copyright_and_sources: PropTypes.string,
     credit: PropTypes.shape({
       data: PropTypes.string,
     }),
-    alt_tag: PropTypes.string,
     // END CUSTOMIZATION
   }).isRequired,
 };
