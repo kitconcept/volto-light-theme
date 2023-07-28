@@ -139,6 +139,10 @@ $grid-block-vertical-spacing-bottom: 80px !default;
 @mixin vertical-space-button() {
   margin-top: 80px;
   margin-bottom: 80px;
+  @media only screen and (max-width: $largest-mobile-screen) {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
 }
 
 @mixin vertical-space-teaser() {
