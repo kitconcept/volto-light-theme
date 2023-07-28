@@ -8,6 +8,16 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-rc.11 (2023-07-28)
+
+### Breaking
+
+- Update to Volto 17a21
+  Deprecate volto-image-block
+  Use new core Image component
+  @sneridagh [#177](https://github.com/kitconcept/volto-light-theme/pull/177)
+
+
 ## 1.0.0-rc.10 (2023-07-26)
 
 ### Bugfix
