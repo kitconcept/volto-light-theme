@@ -114,15 +114,7 @@ export const ImageView = ({ className, data, detached, properties }) => {
                 <Caption
                   title={data.title}
                   description={data.description}
-                  credit={data.credit?.data}
-                  downloadFilename={data.title}
-                  downloadHref={
-                    data.allow_image_download &&
-                    `${flattenToAppURL(data.url)}/${
-                      data.image_scales?.image[0].scales?.fullscreen
-                        ?.download || data.image_scales?.image[0].download
-                    }`
-                  }
+                  credit={data?.copyright_and_sources ?? data.credit?.data}
                 />
               </figure>
             );

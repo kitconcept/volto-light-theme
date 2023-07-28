@@ -177,8 +177,6 @@ class Edit extends Component {
     this.props.onChangeBlock(this.props.block, {
       ...this.props.data,
       url: flattenToAppURL(this.state.url),
-      image_field: undefined,
-      image_scales: undefined,
     });
   };
 
@@ -248,11 +246,12 @@ class Edit extends Component {
    * @returns {string} Markup for the component.
    */
   render() {
-    const { data } = this.props;
     const Image = config.getComponent({ name: 'Image' }).component;
+    const { block, data, onChangeBlock } = this.props;
     const placeholder =
       this.props.data.placeholder ||
       this.props.intl.formatMessage(messages.ImageBlockInputPlaceholder);
+    const dataAdapter = this.props.blocksConfig[data['@type']].dataAdapter;
 
     return (
       <div
@@ -328,15 +327,7 @@ class Edit extends Component {
             <Caption
               title={data.title}
               description={data.description}
-              credit={data.credit?.data}
-              downloadFilename={data.title}
-              downloadHref={
-                data.allow_image_download &&
-                `${flattenToAppURL(data.url)}/${
-                  data.image_scales?.image[0].scales.fullscreen ||
-                  data.image_scales?.image[0].download
-                }`
-              }
+              credit={data?.copyright_and_sources ?? data.credit?.data}
             />
             {/* // END CUSTOMIZATION - Added `figure` tag */}
           </figure>
@@ -374,16 +365,14 @@ class Edit extends Component {
                                 e.stopPropagation();
                                 e.preventDefault();
                                 this.props.openObjectBrowser({
-                                  onSelectItem: (
-                                    url,
-                                    { title, image_field, image_scales },
-                                  ) => {
-                                    this.props.onChangeBlock(this.props.block, {
-                                      ...this.props.data,
-                                      url,
-                                      image_field,
-                                      image_scales,
-                                      alt: this.props.data.alt || title || '',
+                                  onSelectItem: (url, item) => {
+                                    dataAdapter({
+                                      block,
+                                      data,
+                                      onChangeBlock,
+                                      id: 'url',
+                                      value: url,
+                                      item,
                                     });
                                   },
                                 });

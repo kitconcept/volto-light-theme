@@ -41,12 +41,25 @@ export const ImageBlockDataAdapter = ({
   }
 
   if (id === 'url') {
-    dataSaved = {
-      ...dataSaved,
-      credit: { data: item?.credit },
-      description: item?.Description,
-      title: item?.Title,
-    };
+    if (value) {
+      dataSaved = {
+        ...dataSaved,
+        credit: { data: item?.credit },
+        description: item?.Description,
+        title: item?.Title,
+        image_field: item?.image_field,
+        image_scales: item?.image_scales,
+      };
+    } else {
+      [
+        'alt',
+        'credit',
+        'description',
+        'image_scales',
+        'image_field',
+        'title',
+      ].forEach((id) => delete dataSaved[id]);
+    }
   }
   onChangeBlock(block, dataSaved);
 };

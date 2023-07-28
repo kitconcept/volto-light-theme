@@ -28,13 +28,15 @@ const ImageSidebar = (props) => {
             basic
             disabled={!data.url}
             onClick={() => {
-              onChangeBlock(block, {
-                ...data,
-                url: undefined,
-                image_scales: undefined,
-                image_field: undefined,
-                alt: data.url.title === data.alt ? undefined : data.alt,
+              // START CUSTOMIZATION
+              dataAdapter({
+                block,
+                data,
+                id: 'url',
+                onChangeBlock,
+                value: null,
               });
+              // END CUSTOMIZATION
             }}
           >
             <Icon name={trashSVG} size="24px" color="red" />

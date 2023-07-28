@@ -56,7 +56,7 @@
       img {
         width: 220px;
         height: min-content;
-        aspect-ratio: $aspect-ratio;
+        aspect-ratio: $aspect-ratio !important;
       }
       h3 {
         margin-bottom: 40px !important;
