@@ -5,6 +5,7 @@ import { defaultStylingSchema } from './components/Blocks/schema';
 import { teaserSchemaEnhancer } from './components/Blocks/Teaser/schema';
 import { videoBlockSchemaEnhancer } from './components/Blocks/Video/schema';
 import { gridTeaserDisableStylingSchema } from '@plone/volto/components/manage/Blocks/Teaser/schema';
+import { gridImageDisableSizeAndPositionHandlersSchema } from '@plone/volto/components/manage/Blocks/Image/schema';
 import { disableBgColorSchema } from './components/Blocks/disableBgColorSchema';
 
 import ContainerQueriesPolyfill from './components/CQPolyfill';
@@ -167,6 +168,12 @@ const applyConfig = (config) => {
     ],
   };
 
+  config.blocks.blocksConfig.image = {
+    ...config.blocks.blocksConfig.image,
+    schemaEnhancer: imageBlockSchemaEnhancer,
+    dataAdapter: ImageBlockDataAdapter,
+  };
+
   config.blocks.blocksConfig.gridBlock = {
     ...config.blocks.blocksConfig.gridBlock,
     colors: BG_COLORS,
@@ -188,6 +195,13 @@ const applyConfig = (config) => {
             </div>
           );
         },
+      },
+      image: {
+        ...config.blocks.blocksConfig.image,
+        schemaEnhancer: composeSchema(
+          imageBlockSchemaEnhancer,
+          gridImageDisableSizeAndPositionHandlersSchema,
+        ),
       },
       teaser: {
         ...config.blocks.blocksConfig.teaser,
@@ -267,12 +281,6 @@ const applyConfig = (config) => {
       colors: BG_COLORS,
     };
   }
-
-  config.blocks.blocksConfig.image = {
-    ...config.blocks.blocksConfig.image,
-    schemaEnhancer: imageBlockSchemaEnhancer,
-    dataAdapter: ImageBlockDataAdapter,
-  };
 
   config.views.contentTypesViews.Event = EventView;
 
