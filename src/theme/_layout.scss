@@ -137,8 +137,11 @@ footer {
   & > .block.image.align.right.medium,
   & > .block.video.align.left,
   & > .block.video.align.right,
+  & > .block.maps.align.left,
+  & > .block.maps.align.right,
   & > .block.image.align.right.small,
   & > .block.video.align.center .video-inner,
+  & > .block.maps.align.center .maps-inner,
   .block.image.align.center figure,
   .event-details,
   .download-event,
@@ -158,7 +161,10 @@ footer {
   & > .block.image.align.wide figure,
   & > .block.video.align.left,
   & > .block.video.align.right,
+  & > .block.maps.align.left,
+  & > .block.maps.align.right,
   & > .block.video.align.wide .video-inner,
+  & > .block.maps.align.wide .maps-inner,
   & > .block.__button,
   & > .block.listing .listing-item,
   & > .block.listing .emptyListing,
@@ -186,7 +192,9 @@ footer {
 
   /* Styling align left and right in mobile view */
   .block.video.align.right .video-inner,
-  .block.video.align.left .video-inner {
+  .block.video.align.left .video-inner,
+  .block.maps.align.right iframe,
+  .block.maps.align.left iframe {
     @container (max-width: #{$largest-mobile-screen}) {
       width: 100%;
     }
@@ -229,7 +237,10 @@ footer {
   .block-editor-image.center figure,
   .block-editor-video.align.left,
   .block-editor-video.align.right,
+  .block.maps.align.left,
+  .block.maps.align.right,
   .block-editor-video.center .video-inner,
+  .block.maps.align.center .maps-inner,
   .block-editor-separator.has--align--left .block.separator,
   .block-editor-separator.has--align--center .block.separator,
   .block-editor-codeBlock,
@@ -245,7 +256,11 @@ footer {
   .block-editor-image.wide.large figure,
   .block-editor-video.align.left,
   .block-editor-video.align.right,
+ .block.maps.align.left,
+.block.maps.align.right,
   .block.video.align.wide .video-inner,
+.block.maps.align.wide .maps-inner,
+
   .block.introduction .slate-editor,
   .block.heading .heading-wrapper,
   .block-editor-listing .items,

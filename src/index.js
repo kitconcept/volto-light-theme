@@ -20,6 +20,7 @@ import gridSVG from './icons/block_icn_grid.svg';
 import accordionSVG from './icons/block_icn_accordion.svg';
 import EventView from './components/Theme/EventView';
 import { tocBlockSchemaEnhancer } from './components/Blocks/Toc/schema';
+import { mapsBlockSchemaEnhancer } from './components/Blocks/Maps/schema';
 
 const BG_COLORS = [
   { name: 'transparent', label: 'Transparent' },
@@ -227,6 +228,14 @@ const applyConfig = (config) => {
     schemaEnhancer: composeSchema(
       defaultStylingSchema,
       videoBlockSchemaEnhancer,
+    ),
+  };
+  config.blocks.blocksConfig.maps = {
+    ...config.blocks.blocksConfig.maps,
+    colors: BG_COLORS,
+    schemaEnhancer: composeSchema(
+      defaultStylingSchema,
+      mapsBlockSchemaEnhancer,
     ),
   };
 
