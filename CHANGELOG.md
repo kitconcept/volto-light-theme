@@ -8,6 +8,18 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-rc.12 (2023-07-28)
+
+### Feature
+
+- Upgrade to Volto 17a22. @davisagli [#186](https://github.com/kitconcept/volto-light-theme/pull/186)
+
+### Bugfix
+
+- Fix responsive font sizing for headings. @danalvrz [#182](https://github.com/kitconcept/volto-light-theme/pull/182)
+- Fix map block. @iFlameing [#183](https://github.com/kitconcept/volto-light-theme/pull/183)
+
+
 ## 1.0.0-rc.11 (2023-07-28)
 
 ### Breaking
