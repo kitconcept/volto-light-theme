@@ -185,3 +185,11 @@
     }
   }
 }
+
+/* maps */
+.block.maps iframe,
+.block.align.right.maps iframe,
+.block.align.left.maps iframe {
+  height: unset;
+  aspect-ratio: $aspect-ratio;
+}
