@@ -1,6 +1,6 @@
 {
   "name": "@kitconcept/volto-light-theme",
-  "version": "1.0.0-rc.10",
+  "version": "1.0.0-rc.11",
   "description": "Volto Light Theme by kitconcept",
   "main": "src/index.js",
   "repository": {
@@ -56,7 +56,6 @@
     "@eeacms/volto-accordion-block",
     "@kitconcept/volto-button-block",
     "@kitconcept/volto-heading-block",
-    "@kitconcept/volto-image-block",
     "@kitconcept/volto-introduction-block",
     "@kitconcept/volto-separator-block",
     "@kitconcept/volto-slider-block"
@@ -66,10 +65,9 @@
     "@kitconcept/volto-button-block": "^2.3.1",
     "@kitconcept/volto-dsgvo-banner": "^1.3.0",
     "@kitconcept/volto-heading-block": "^2.2.0",
-    "@kitconcept/volto-image-block": "^1.0.3",
     "@kitconcept/volto-introduction-block": "^1.0.0",
     "@kitconcept/volto-separator-block": "^3.2.2",
     "@kitconcept/volto-slider-block": "^4.2.0",
-    "@plone/volto": "^17.0.0-alpha.20"
+    "@plone/volto": "^17.0.0-alpha.21"
   }
 }
