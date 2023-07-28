@@ -4,6 +4,10 @@
       a {
         text-decoration: underline;
       }
+
+      &::before {
+        color: $blue-for-grey-contrast !important;
+      }
     }
   }
 }
