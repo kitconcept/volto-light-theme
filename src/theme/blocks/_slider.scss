@@ -9,34 +9,31 @@
   .grid-teaser-item {
     flex-direction: column;
   }
+  .teaser-item {
+    padding-bottom: 80px;
+  }
 
   .slide-wrapper:not(.empty-slide) {
     padding-bottom: 80px;
   }
 
-  h2 {
-    margin-top: 15px;
-    color: #fff;
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 56px;
-
-    @media only screen and (max-width: $largest-mobile-screen) {
-      @include word-break;
+  .slick-arrow {
+    width: 50px;
+    height: 50px;
+    color: $white;
+  }
+  .slick-next {
+    right: 10px;
+    @media only screen and (max-width: $largest-tablet-breakpoint) {
+      display: none !important;
     }
   }
-
-  .supertitle {
-    color: #ffffff;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 36px;
-  }
-
-  .slick-arrow {
-    display: none !important;
+  .slick-prev {
+    z-index: 9;
+    left: 10px;
+    @media only screen and (max-width: $largest-tablet-breakpoint) {
+      display: none !important;
+    }
   }
 
   .slick-dots {
@@ -48,15 +45,16 @@
       width: 46px;
       height: 6px;
       padding: 0;
-      background-color: $grey;
+      background-color: $secondary-grey;
     }
 
     li.slick-active button {
-      background-color: $white;
+      background-color: $black;
     }
 
     li {
-      margin: 0 3px;
+      margin-right: 13px;
+      margin-left: 0;
     }
 
     button:before {
@@ -74,62 +72,67 @@
     top: 50%;
     width: 570px;
     min-height: 321px;
-    padding: 50px;
-    background: rgba(0, 0, 0, 0.4);
+    padding: 60px 50px 60px 100px;
+    background: rgba(0, 0, 0, 0.75);
     color: #fff;
     transform: translateY(-50%);
 
-    @media only screen and (max-width: 1200px) {
+    @media only screen and (max-width: $largest-tablet-breakpoint) {
       position: static;
       width: 100%;
+      padding: 60px 20px;
+      background: $black;
       transform: none;
+    }
+    &.has--slider--flagAlign--right {
+      right: 0;
     }
 
     .title {
-      margin-bottom: 30px;
+      .supertitle {
+        //    margin-bottom: 20px !important;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        line-height: 18px;
+        text-transform: uppercase;
+      }
+      h2 {
+        margin-top: 20px;
+        margin-bottom: 40px;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 36px;
+      }
     }
-
-    h2 {
-      color: $white;
-      font-family: 'Inter';
-      font-size: 36px;
-      font-weight: 700;
-      line-height: 42px;
-    }
-
-    .supertitle {
-      color: $white;
-      font-family: 'Inter';
-      font-size: 20px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      line-height: 24px;
-    }
-
     p {
       // OPTIONAL
       display: -webkit-box;
       overflow: hidden;
+      margin-bottom: 50px;
       -webkit-box-orient: vertical;
-      color: $white;
-      font-family: 'Inter';
-      font-size: 18px;
+      font-size: 24px;
       font-weight: 300;
       -webkit-line-clamp: 5;
-      line-height: 30px;
+      line-height: 33px;
       text-overflow: ellipsis;
+      @media only screen and (max-width: $largest-tablet-breakpoint) {
+        margin-bottom: 60px;
+        font-size: 21px;
+      }
     }
   }
 
   .ui.button {
     display: initial;
-    padding: 11px 29px;
+    padding: 8px 20px;
     border: 1px solid currentColor;
+    background-color: transparent;
     border-radius: 0;
     color: inherit;
     font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
+    font-weight: 900;
+    line-height: 20px;
     text-align: center;
   }
 }

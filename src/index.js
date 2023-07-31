@@ -20,6 +20,7 @@ import gridSVG from './icons/block_icn_grid.svg';
 import accordionSVG from './icons/block_icn_accordion.svg';
 import EventView from './components/Theme/EventView';
 import { tocBlockSchemaEnhancer } from './components/Blocks/Toc/schema';
+import { sliderBlockSchemaEnhancer } from './components/Blocks/Slider/schema';
 
 const BG_COLORS = [
   { name: 'transparent', label: 'Transparent' },
@@ -271,6 +272,12 @@ const applyConfig = (config) => {
   config.blocks.blocksConfig.toc = {
     ...config.blocks.blocksConfig.toc,
     schemaEnhancer: tocBlockSchemaEnhancer,
+  };
+
+  // Slider Block
+  config.blocks.blocksConfig.slider = {
+    ...config.blocks.blocksConfig.slider,
+    schemaEnhancer: sliderBlockSchemaEnhancer,
   };
 
   return config;
