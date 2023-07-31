@@ -1,4 +1,5 @@
-.block.gridBlock {
+.block.gridBlock,
+#page-edit .block-editor-gridBlock .block.gridBlock {
   margin-top: 0;
   margin-bottom: 0;
 
@@ -26,6 +27,11 @@
     }
   }
 
+  // Override the Image component `aspect-ratio`
+  .block.image img {
+    aspect-ratio: $aspect-ratio !important;
+  }
+
   .block.teaser {
     margin-bottom: 0;
     background-color: $lightgrey;
@@ -33,7 +39,7 @@
       height: 100%;
 
       .image-wrapper {
-        margin: 0 0 40px 0 !important;
+        margin-bottom: 40px;
 
         img {
           position: relative;
@@ -45,7 +51,6 @@
         @include body-text();
 
         .headline {
-          padding: 0 !important;
           margin-bottom: 20px;
           letter-spacing: 1px;
           text-transform: uppercase;
@@ -67,10 +72,15 @@
 
   .block-editor-teaser {
     padding: 0;
-    margin: 10px !important;
-    .teaser-item.default {
-      padding-bottom: 0;
-      border: none;
+    margin: 10px;
+
+    .ui.block.inner.teaser {
+      .block.teaser > .block.teaser > .teaser-item.default {
+        padding-bottom: 0;
+        border: none;
+        margin-right: auto;
+        margin-left: auto;
+      }
     }
   }
 

@@ -34,6 +34,7 @@ body.view-contentsview {
 
     .section {
       margin: 0 7px 0 4px;
+      @include marginal-description();
 
       &.active {
         font-weight: 700;

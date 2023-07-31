@@ -6,6 +6,10 @@
   background-color: #ecebeb;
 }
 
+.has--backgroundColor--grey {
+  background: $lightgrey;
+}
+
 #page-document .blocks-group-wrapper {
   &.transparent:first-child {
     padding-top: 0;

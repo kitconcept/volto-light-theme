@@ -43,7 +43,7 @@ figure {
     img {
       width: 100% !important;
       height: auto;
-      aspect-ratio: $aspect-ratio;
+      aspect-ratio: $aspect-ratio !important;
     }
 
     &.right {
@@ -111,8 +111,8 @@ figure {
 
     &.center {
       width: 100% !important;
-      margin-right: auto;
-      margin-left: auto;
+      margin-right: auto !important;
+      margin-left: auto !important;
       object-fit: cover;
 
       img {

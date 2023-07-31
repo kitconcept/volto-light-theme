@@ -13,6 +13,16 @@ li {
   @include body-text();
 }
 
+li::marker {
+  line-height: 32px;
+}
+
+p > a,
+li > a {
+  color: $blue-for-grey-contrast !important;
+  text-decoration: underline;
+}
+
 p,
 ul,
 ol {
