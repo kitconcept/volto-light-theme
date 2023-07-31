@@ -32,6 +32,7 @@ $header-font: var(--custom-headers-font, $page-font) !default;
 // Mobile / Tablet portrait < 769 | Tablet landscape / Small desktop < 941 | Computer desktop < 1440 | Large Monitor > 1440
 $largest-mobile-screen: 768px !default; // not finished in `-width` for historical reasons (SemanticUI naming)
 $tablet-breakpoint: 769px !default;
+$largest-tablet-breakpoint: 1024px !default;
 $computer-width: 940px !default;
 $computer-breakpoint: 941px !default;
 $large-monitor-width: 1440px !default;
