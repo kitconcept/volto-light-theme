@@ -1,3 +1,8 @@
+// Override the Image component `aspect-ratio`
+.teaser-item .image-wrapper img {
+  aspect-ratio: $aspect-ratio !important;
+}
+
 // Block Teaser Standalone
 #page-document .block.teaser {
   @include vertical-space-teaser();
@@ -93,6 +98,10 @@
       margin-top: 0;
       margin-bottom: 40px;
       @include text-heading-h2();
+      @container (max-width: #{$largest-mobile-screen}) {
+        @include text-heading-h3();
+        margin-bottom: 20px;
+      }
     }
     p {
       margin: 0;
