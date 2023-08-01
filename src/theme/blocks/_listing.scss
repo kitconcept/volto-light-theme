@@ -58,7 +58,7 @@
         height: min-content;
         aspect-ratio: $aspect-ratio !important;
         @container (max-width: #{$largest-mobile-screen}) {
-         width: 100%;
+          width: 100%;
         }
       }
       h3 {
