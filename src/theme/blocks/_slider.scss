@@ -10,11 +10,11 @@
     flex-direction: column;
   }
   .teaser-item {
-    padding-bottom: 80px;
+    padding-bottom: $spacing-xlarge;
   }
 
   .slide-wrapper:not(.empty-slide) {
-    padding-bottom: 80px;
+    padding-bottom: $spacing-xlarge;
   }
 
   .slick-arrow {
@@ -98,8 +98,8 @@
         text-transform: uppercase;
       }
       h2 {
-        margin-top: 20px;
-        margin-bottom: 40px;
+        margin-top: $spacing-small;
+        margin-bottom: $spacing-medium;
         font-size: 30px;
         font-weight: 700;
         line-height: 36px;
@@ -117,7 +117,7 @@
       line-height: 33px;
       text-overflow: ellipsis;
       @media only screen and (max-width: $largest-tablet-breakpoint) {
-        margin-bottom: 60px;
+        margin-bottom: $spacing-large;
         font-size: 21px;
       }
     }
