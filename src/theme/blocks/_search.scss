@@ -6,22 +6,22 @@
       .card-container > img {
         width: 100% !important;
       }
-      .items {
-        @include default-container-width();
+    }
+    .items {
+      padding: 0 !important;
+      margin-bottom: 80px;
+      @container (max-width: #{$largest-mobile-screen}) {
+        margin-bottom: 60px;
       }
     }
-    .search-input-resultscount-sort,
+    .ui.stackable.searchBlock-facets > .row,
+    .ui.stackable.searchBlock-facets > .row > .column {
+      padding: 0 !important;
+    }
+
     .facets,
     .listing.message,
     .listing-item {
-      @include default-container-width();
-
-      &:last-child {
-        padding-bottom: 0 !important;
-        border-bottom: none !important;
-        margin-bottom: 0;
-      }
-
       h2,
       h3 {
         color: $black;
@@ -33,20 +33,29 @@
           width: 220px;
           height: min-content;
           aspect-ratio: $aspect-ratio;
+          @container (max-width: #{$largest-mobile-screen}) {
+            width: 100%;
+          }
         }
       }
     }
 
     .search-wrapper {
-      margin-bottom: 0px;
+      margin-bottom: 0;
+      @container (max-width: #{$largest-mobile-screen}) {
+        margin-bottom: 20px;
+      }
     }
 
     .search-input-resultscount-sort {
       display: flex;
-      @media only screen and (max-width: $largest-mobile-screen) {
-        display: block;
-      }
       justify-content: space-between;
+      margin-bottom: 80px;
+
+      @container (max-width: #{$largest-mobile-screen}) {
+        display: block;
+        margin-bottom: 60px;
+      }
     }
 
     .search-input {
@@ -82,18 +91,48 @@
         svg {
           width: 36px !important;
           height: 36px !important;
-          color: $darkBlue !important;
+          color: $black !important;
         }
       }
     }
 
     .search-details-sort {
       display: flex;
-      @media only screen and (max-width: $largest-mobile-screen) {
-        display: block;
-        margin-top: 24px;
-      }
       align-items: center;
+
+      @container (max-width: #{$largest-mobile-screen}) {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: stretch;
+
+        .search-details {
+          padding: 0;
+        }
+
+        .sort-on-wrapper {
+          margin-bottom: 50px;
+          .search-sort-wrapper {
+            width: 100%;
+            margin: 0;
+
+            button {
+              width: 50px;
+            }
+
+            .search-sort-on {
+              flex-grow: 100;
+
+              #select-search-sort-on {
+                width: 100%;
+                .react-select__control,
+                .react-select__menu {
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
     }
 
     .search-details {
