@@ -17,10 +17,14 @@ li::marker {
   line-height: 32px;
 }
 
-p > a,
-li > a {
-  color: $blue-for-grey-contrast !important;
-  text-decoration: underline;
+.content-area,
+.breadcrumbs {
+  p > a,
+  li > a,
+  .breadcrumb a {
+    color: $blue-for-grey-contrast !important;
+    text-decoration: underline;
+  }
 }
 
 p,

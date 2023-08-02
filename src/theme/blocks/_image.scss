@@ -47,8 +47,8 @@ figure {
     }
 
     &.right {
-      margin-bottom: 16px;
-      margin-left: 2rem;
+      margin-bottom: 20px;
+      margin-left: 20px;
       float: right;
 
       img {
@@ -61,8 +61,8 @@ figure {
     }
 
     &.left {
-      margin-right: 2rem;
-      margin-bottom: 16px;
+      margin-right: 20px;
+      margin-bottom: 20px;
       float: left;
 
       img {
@@ -152,7 +152,7 @@ figure {
 
 // image/video captions
 figcaption {
-  margin: 25px 0 9px 0;
+  margin: 25px 0 0 0;
   color: $grey;
   font-size: 14px;
   font-weight: 300;
@@ -168,7 +168,6 @@ figcaption {
   .description {
     div,
     a {
-      margin-bottom: 10px;
       @include marginal-description();
     }
   }

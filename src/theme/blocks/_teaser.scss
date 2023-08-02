@@ -80,14 +80,14 @@
 
       .image-wrapper {
         margin-bottom: 26px;
+        @container (max-width: #{$largest-mobile-screen}) {
+          margin: 0 0 20px 0 !important;
+        }
       }
     }
   }
 
   .content {
-    @media only screen and (max-width: $largest-mobile-screen) {
-      padding: 0 0.5rem;
-    }
     .headline {
       margin-bottom: 20px;
       letter-spacing: 1px;
