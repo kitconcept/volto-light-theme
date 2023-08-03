@@ -93,56 +93,46 @@
     .items {
       display: flex;
       flex-wrap: wrap;
-      @media only screen and (max-width: $tablet-breakpoint) {
+      @media only screen and (max-width: $largest-mobile-screen) {
         flex-direction: column;
+        
+        .listing-item {
+          padding-bottom: 20px !important;
+        }
       }
     }
     .headline {
       @include block-title();
+      margin-left: 0 !important;
+      margin-right: 0 !important;
     }
     .listing-item {
       align-items: normal;
-      padding-bottom: 0 !important;
       border-bottom: none;
-      margin-right: auto;
-      margin-bottom: 0;
-      margin-left: auto;
+      margin: 0 !important;
 
-      & > a {
-        padding: 10px;
-      }
 
-      @media only screen and (max-width: $largest-mobile-screen) {
-        margin: 0 !important;
-      }
-
-      @media only screen and (min-width: $tablet-breakpoint) {
+      @media only screen and (min-width: $largest-mobile-screen) {
         width: 50%;
+        padding-bottom: 10px !important;
+        padding-top: 10px;
 
         &:nth-child(2n) {
-          .card-container {
-            margin-left: 0.5rem;
-          }
+          padding-left: 10px !important;
         }
 
         &:nth-child(2n + 1) {
-          .card-container {
-            margin-right: 0.5rem;
-          }
+          padding-right: 10px !important;
         }
 
         &:last-child,
         &:nth-last-child(2):not(:nth-child(2n)) {
-          .card-container {
-            margin-bottom: 0 !important;
-          }
+          padding-bottom: 0 !important;
         }
 
         &:first-child,
         &:nth-child(2) {
-          .card-container {
-            margin-top: 0 !important;
-          }
+          padding-top: 0 !important;
         }
       }
 
@@ -155,14 +145,7 @@
       .card-container {
         width: 100%;
         height: 100% !important;
-        // margin-top: 20px;
-        // margin-bottom: 20px;
-        // margin: 0 !important;
-        // padding: 20px;
         background-color: $lightgrey;
-        @media only screen and (max-width: $tablet-breakpoint) {
-          margin-left: 0;
-        }
       }
 
       img.item-image {
@@ -212,65 +195,57 @@
     margin-top: 0;
   }
 
-  .ui.pagination.menu {
-    min-height: 37px !important;
-    border: 1px solid $black;
-    margin-bottom: 30px;
-    border-radius: 0;
+  // Pagination
+  .pagination-wrapper {
+    display: table;
+    margin: auto;
+    border-collapse: collapse;
+    @include body-text();
 
-    a {
-      padding: 0;
-      cursor: pointer;
+    .ui.pagination.menu {
+      display: table-row;
+      margin-bottom: 30px;
 
-      &[type='prevItem'],
-      &[type='nextItem'] {
-        padding: 6.5px 15px 6.5px 15px !important;
-        color: $black !important;
-        @container (max-width: #{$largest-mobile-screen}) {
-          min-width: 37px !important;
-          padding: 0 !important;
-          font-size: 0;
+      .item {
+        display: table-cell;
+        padding: 6.5px 10px;
+        min-width: 32px;
+        border: solid 1px $black;
+        border-collapse: collapse;
+        border-radius: 0;
+        color: $black;
 
-          &[type='prevItem']::before {
-            top: 5px;
-            left: -3px;
-            display: block;
-            width: 100%;
-            border: none;
-            background-color: transparent;
-            content: url('data:image/svg+xml,<svg width="11" height="18" viewBox="0 0 11 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.586 0.472656L11 1.88666L3.707 9.17966L11 16.4727L9.586 17.8867L0.879 9.17966L9.586 0.472656Z" fill="black"/></svg>');
-            font-size: 25px;
-          }
-          &[type='nextItem']::before {
-            top: 5px;
-            left: 0px;
-            display: block;
-            width: 100%;
-            border: none;
-            background-color: transparent;
-            content: url('data:image/svg+xml,<svg width="11" height="18" viewBox="0 0 11 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.414 17.8867L1.68618e-08 16.4727L7.293 9.17972L1.90798e-07 1.88672L1.414 0.472717L10.121 9.17972L1.414 17.8867Z" fill="black"/></svg>');
-            font-size: 25px;
-            text-align: center;
-          }
+        &:first-child,
+        &:last-child {
+          padding: 6.5px 15px 6.5px 15px;
         }
-      }
-
-      &.item:not(:last-child):not(:first-child) {
-        min-width: 37px !important;
-        justify-content: center;
-        border-right: 1px solid $black;
-        border-radius: 0 !important;
-        color: $black !important;
 
         &.active {
-          background-color: $black !important;
-          color: $white !important;
-        }
-
-        &:nth-child(2) {
-          border-left: 1px solid $black;
+          background-color: $black;
+          color: $white;
         }
       }
+
+      &.mobile-pagination {
+        display: none;
+      }
+
+      @container (max-width: #{$largest-mobile-screen}) {
+        &.mobile-pagination {
+          display: unset;
+        }
+
+        &.desktop-pagination {
+          display: none;
+        }
+      }
+    }
+
+    .total {
+      display: table-caption;
+      margin-top: 30px;
+      caption-side: bottom;
+      text-align: center;
     }
   }
 }

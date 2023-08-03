@@ -24,6 +24,19 @@
       letter-spacing: 1px;
       text-transform: uppercase;
     }
+
+    @container (min-width: #{$largest-mobile-screen} ) {
+      .day + .headtitle::before {
+        content: '|';
+      }
+    }
+    
+
+    @container (max-width: #{$largest-mobile-screen} ) {
+      .day {
+        display: none;
+      }
+    }
   }
 }
 
@@ -70,6 +83,7 @@
       letter-spacing: 1px;
       text-transform: uppercase;
     }
+    
   }
 
   .details-container {

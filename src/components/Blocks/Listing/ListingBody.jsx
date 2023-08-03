@@ -1,4 +1,4 @@
-import React, { createRef, useMemo } from 'react';
+import React, { createRef, useRef, useMemo } from 'react';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import cx from 'classnames';
 import { Pagination, Dimmer, Loader } from 'semantic-ui-react';
@@ -28,19 +28,21 @@ const Headline = ({ headlineTag, id, data = {}, listingItems, isEditMode }) => {
 
 const ListingBody = withQuerystringResults((props) => {
   const {
-    data,
+    data = {},
     isEditMode,
     listingItems,
     totalPages,
     onPaginationChange,
     variation,
     currentPage,
+    batch_size,
     prevBatch,
     nextBatch,
     isFolderContentsListing,
     hasLoaded,
     id,
     total,
+    properties,
   } = props;
 
   let ListingBodyTemplate;
@@ -57,20 +59,17 @@ const ListingBody = withQuerystringResults((props) => {
     ListingBodyTemplate =
       variation?.template ?? defaultVariation?.template ?? null;
   }
+  let galleryRef;
 
+  if (data.variation === 'imageGallery') {
+    galleryRef = useRef();
+  }
   const listingRef = createRef();
-
   const NoResults = variation?.noResultsComponent
     ? variation.noResultsComponent
     : config.blocks?.blocksConfig['listing'].noResultsComponent;
 
   const HeadlineTag = data.headlineTag || 'h2';
-
-  const batchSize =
-    (data?.b_size
-      ? parseInt(data?.b_size)
-      : parseInt(data?.querystring?.b_size)) ?? undefined;
-
   return (
     <>
       {data.headline && (
@@ -87,12 +86,14 @@ const ListingBody = withQuerystringResults((props) => {
           <ListingBodyTemplate
             items={listingItems}
             isEditMode={isEditMode}
+            ref={galleryRef}
             {...data}
             {...variation}
           />
           {totalPages > 1 && (
             <div className="pagination-wrapper">
               <Pagination
+                className="desktop-pagination"
                 activePage={currentPage}
                 totalPages={totalPages}
                 onPageChange={(e, { activePage }) => {
@@ -125,25 +126,29 @@ const ListingBody = withQuerystringResults((props) => {
                   className: !nextBatch ? 'disabled' : null,
                 }}
               />
-              {batchSize && (
-                <div className="total-results-summary">
-                  <FormattedMessage
-                    id="Results {currentBatch} of {totalResults}"
-                    defaultMessage="Results {currentBatch} of {totalResults}"
-                    values={{
-                      currentBatch: (
-                        <span>
-                          {batchSize * (currentPage - 1) + 1}-
-                          {batchSize * (currentPage - 1) + batchSize > total
-                            ? total
-                            : batchSize * (currentPage - 1) + batchSize}
-                        </span>
-                      ),
-                      totalResults: <span>{total}</span>,
-                    }}
-                  />
-                </div>
-              )}
+              <Pagination
+                className="mobile-pagination"
+                activePage={currentPage}
+                totalPages={totalPages}
+                boundaryRange={1}
+                siblingRange={0}
+                onPageChange={(e, { activePage }) => {
+                  !isEditMode &&
+                    listingRef.current.scrollIntoView({ behavior: 'smooth' });
+                  onPaginationChange(e, { activePage });
+                }}
+                firstItem={null}
+                lastItem={null}
+                prevItem={undefined}
+                nextItem={undefined}
+              />
+              <div className="total">
+                <FormattedMessage id="Result" defaultMessage="Result" />{' '}
+                {(currentPage - 1) * batch_size + 1}-
+                {(currentPage - 1) * batch_size + listingItems.length}{' '}
+                <FormattedMessage id="of" defaultMessage="of" />{' '}
+                {total || properties.items_total}
+              </div>
             </div>
           )}
         </div>
