@@ -11,7 +11,7 @@
     }
   }
 
-   .items + .pagination-wrapper {
+  .items + .pagination-wrapper {
     margin-top: 80px;
     @container (max-width: #{$largest-mobile-screen}) {
       margin-top: 60px;
