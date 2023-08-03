@@ -47,8 +47,8 @@ figure {
     }
 
     &.right {
-      margin-bottom: 16px;
-      margin-left: 2rem;
+      margin-bottom: 20px;
+      margin-left: 20px;
       float: right;
 
       img {
@@ -61,8 +61,8 @@ figure {
     }
 
     &.left {
-      margin-right: 2rem;
-      margin-bottom: 16px;
+      margin-right: 20px;
+      margin-bottom: 20px;
       float: left;
 
       img {
@@ -97,14 +97,6 @@ figure {
         height: auto;
         @media only screen and (max-width: 768px) {
           width: 100%;
-        }
-
-        figcaption {
-          padding: 15px 10px;
-
-          &.rights {
-            padding-top: 5px;
-          }
         }
       }
     }
@@ -152,7 +144,7 @@ figure {
 
 // image/video captions
 figcaption {
-  margin: 25px 0 9px 0;
+  margin: 25px 0 0 0;
   color: $grey;
   font-size: 14px;
   font-weight: 300;
@@ -168,34 +160,17 @@ figcaption {
   .description {
     div,
     a {
-      margin-bottom: 10px;
       @include marginal-description();
     }
   }
 
-  .credits div {
-    display: flex;
-    margin-bottom: 10px;
+  .credits {
+    margin-top: 5px;
+    color: $blue-for-grey-contrast;
     -webkit-font-smoothing: anitaliased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     @include marginal-description();
-
-    div {
-      display: inline;
-    }
-
-    p {
-      display: inline;
-      color: inherit;
-      line-height: inherit;
-    }
-
-    a {
-      margin-left: 0.5rem;
-      color: $blue-for-grey-contrast;
-      @include marginal-description();
-    }
   }
 }
 
