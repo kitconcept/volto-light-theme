@@ -319,6 +319,10 @@
     background-color: $white !important;
   }
 
+  .slate:not(.inner) {
+    background-color: $white !important;
+  }
+
   .grid-block-image {
     .block.image {
       background: white;
