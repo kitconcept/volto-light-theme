@@ -35,7 +35,7 @@ msgstr ""
 #: components/Blocks/Image/Edit
 # defaultMessage: Browse the site, drop an image, or type an URL
 msgid "Browse the site, drop an image, or type an URL"
-msgstr ""
+msgstr "Bild auswählen, hochladen oder URL angeben"
 
 #: components/Blocks/Slider/schema
 # defaultMessage: Button text
@@ -70,7 +70,7 @@ msgstr ""
 #: components/Blocks/Image/schema
 # defaultMessage: Description
 msgid "Description"
-msgstr ""
+msgstr "Beschreibung"
 
 #: components/Footer/Footer
 # defaultMessage: Distributed under the {license}.
@@ -115,7 +115,7 @@ msgstr "ICS-Download"
 #: components/Blocks/Image/ImageSidebar
 # defaultMessage: Image
 msgid "Image"
-msgstr ""
+msgstr "Bild"
 
 #: components/Widgets/AlignWidget
 # defaultMessage: Left
@@ -132,6 +132,11 @@ msgstr "Veranstaltungsort"
 msgid "Log in"
 msgstr ""
 
+#: components/Blocks/Listing/ListingBody
+# defaultMessage: Next Page
+msgid "Next Page"
+msgstr "Nächste Seite"
+
 #: components/Theme/EventView
 # defaultMessage: No date
 msgid "No date"
@@ -140,7 +145,12 @@ msgstr ""
 #: components/Blocks/Image/ImageSidebar
 # defaultMessage: No image selected
 msgid "No image selected"
-msgstr ""
+msgstr "Kein Bild ausgewählt"
+
+#: components/Blocks/Listing/ListingBody
+# defaultMessage: No items found in this container.
+msgid "No items found in this container."
+msgstr "Keine Elemente im Ordner gefunden."
 
 #: components/Navigation/Navigation
 # defaultMessage: Open menu
@@ -155,7 +165,7 @@ msgstr ""
 #: components/Blocks/Slider/DefaultBody
 # defaultMessage: Please choose an existing content as source for this element
 msgid "Please choose an existing content as source for this element"
-msgstr ""
+msgstr "Bitte wählen Sie einen bestehenden Inhalt als Quelle für dieses Element"
 
 #: components/Footer/Footer
 # defaultMessage: Plone Foundation
@@ -182,11 +192,21 @@ msgstr ""
 msgid "Press"
 msgstr "Presse"
 
+#: components/Blocks/Listing/ListingBody
+# defaultMessage: Previous Page
+msgid "Previous Page"
+msgstr "Vorherige Seite"
+
 #: components/Anontools/Anontools
 #: components/Header/Header
 # defaultMessage: Register
 msgid "Register"
 msgstr ""
+
+#: components/Blocks/Listing/ListingBody
+# defaultMessage: Result
+msgid "Result"
+msgstr "Ergebnis"
 
 #: components/Widgets/AlignWidget
 # defaultMessage: Right
@@ -208,7 +228,7 @@ msgstr ""
 #: components/Blocks/Search/components/SearchDetails
 # defaultMessage: Search results
 msgid "Search results"
-msgstr ""
+msgstr "Ergebnisse"
 
 #: components/Blocks/Search/components/SearchDetails
 # defaultMessage: Searched for
@@ -234,7 +254,7 @@ msgstr ""
 #: components/Blocks/Slider/DefaultBody
 # defaultMessage: Source
 msgid "Source"
-msgstr ""
+msgstr "Quelle"
 
 #: components/Theme/EventView
 # defaultMessage: Start
@@ -249,12 +269,12 @@ msgstr ""
 #: components/Blocks/Image/schema
 # defaultMessage: Title
 msgid "Title"
-msgstr ""
+msgstr "Titel"
 
 #: components/Blocks/Image/Edit
 # defaultMessage: Uploading image
 msgid "Uploading image"
-msgstr ""
+msgstr "Bild hochladen"
 
 #: components/Theme/EventView
 # defaultMessage: Website
@@ -269,14 +289,24 @@ msgstr ""
 #: components/Blocks/Image/ImageSidebar
 # defaultMessage: Clear image
 msgid "image_block_clear"
-msgstr ""
+msgstr "Bild löschen"
 
 #: components/Blocks/Image/ImageSidebar
 # defaultMessage: Image preview
 msgid "image_block_preview"
 msgstr ""
 
+#: components/Blocks/Listing/ListingBody
+# defaultMessage: Loading
+msgid "loading"
+msgstr "laden"
+
 #: components/Blocks/Slider/DefaultBody
 # defaultMessage: More info
 msgid "moreInfo"
-msgstr ""
+msgstr "mehr Information"
+
+#: components/Blocks/Listing/ListingBody
+# defaultMessage: of
+msgid "of"
+msgstr "von"

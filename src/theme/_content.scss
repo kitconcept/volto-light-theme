@@ -18,11 +18,22 @@
     @include adjustMarginsToContainer($default-container-width);
     margin-top: $spacing-medium;
     margin-bottom: $spacing-medium;
-    .day,
-    .headtitle {
+    .day {
       @include body-text-bold();
       letter-spacing: 1px;
       text-transform: uppercase;
+    }
+
+    @container (min-width: #{$tablet-breakpoint} ) {
+      .day + .head-title::before {
+        content: '|';
+      }
+    }
+
+    @container (max-width: #{$largest-mobile-screen} ) {
+      .day {
+        display: none;
+      }
     }
   }
 }

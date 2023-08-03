@@ -13,20 +13,35 @@ li {
   @include body-text();
 }
 
+@mixin word-break {
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
 li::marker {
   line-height: 32px;
 }
 
-p > a,
-li > a {
-  color: $blue-for-grey-contrast !important;
-  text-decoration: underline;
+.content-area,
+.breadcrumbs {
+  p > a,
+  li > a,
+  .breadcrumb a {
+    color: $blue-for-grey-contrast !important;
+    text-decoration: underline;
+  }
 }
 
 p,
 ul,
 ol {
   margin-bottom: $block-vertical-space;
+  @include word-break();
 
   &:last-child {
     margin-bottom: 0;
@@ -52,6 +67,7 @@ h1.documentFirstHeading {
   border: none;
   @include page-title();
   @include vertical-space-h1();
+  @include word-break();
   span {
     border: none;
     @include page-title();
@@ -87,6 +103,7 @@ h1.documentFirstHeading {
 h2 {
   @include text-heading-h2();
   @include vertical-space-h2();
+  @include word-break();
   span {
     font-size: inherit;
     font-weight: inherit;
@@ -96,6 +113,7 @@ h2 {
 h3 {
   @include text-heading-h3();
   @include vertical-space-h3();
+  @include word-break();
   span {
     font-size: inherit;
     font-weight: inherit;
@@ -105,6 +123,7 @@ h3 {
 h4 {
   @include text-heading-h4();
   @include vertical-space-h4();
+  @include word-break();
   span {
     font-size: inherit;
     font-weight: inherit;
@@ -116,6 +135,7 @@ h4 {
 .head-title,
 .head-title span {
   @include body-text-bold();
+  @include word-break();
   padding-bottom: 10px;
   letter-spacing: 1px;
   text-transform: uppercase !important;

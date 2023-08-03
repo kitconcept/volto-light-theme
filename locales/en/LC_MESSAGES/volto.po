@@ -126,6 +126,11 @@ msgstr ""
 msgid "Log in"
 msgstr ""
 
+#: components/Blocks/Listing/ListingBody
+# defaultMessage: Next Page
+msgid "Next Page"
+msgstr ""
+
 #: components/Theme/EventView
 # defaultMessage: No date
 msgid "No date"
@@ -134,6 +139,11 @@ msgstr ""
 #: components/Blocks/Image/ImageSidebar
 # defaultMessage: No image selected
 msgid "No image selected"
+msgstr ""
+
+#: components/Blocks/Listing/ListingBody
+# defaultMessage: No items found in this container.
+msgid "No items found in this container."
 msgstr ""
 
 #: components/Navigation/Navigation
@@ -176,10 +186,20 @@ msgstr ""
 msgid "Press"
 msgstr ""
 
+#: components/Blocks/Listing/ListingBody
+# defaultMessage: Previous Page
+msgid "Previous Page"
+msgstr ""
+
 #: components/Anontools/Anontools
 #: components/Header/Header
 # defaultMessage: Register
 msgid "Register"
+msgstr ""
+
+#: components/Blocks/Listing/ListingBody
+# defaultMessage: Result
+msgid "Result"
 msgstr ""
 
 #: components/Widgets/AlignWidget
@@ -270,7 +290,17 @@ msgstr ""
 msgid "image_block_preview"
 msgstr ""
 
+#: components/Blocks/Listing/ListingBody
+# defaultMessage: Loading
+msgid "loading"
+msgstr ""
+
 #: components/Blocks/Slider/DefaultBody
 # defaultMessage: More info
 msgid "moreInfo"
+msgstr ""
+
+#: components/Blocks/Listing/ListingBody
+# defaultMessage: of
+msgid "of"
 msgstr ""
