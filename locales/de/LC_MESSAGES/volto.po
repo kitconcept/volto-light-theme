@@ -32,6 +32,16 @@ msgstr "Block Breite"
 msgid "Breadcrumbs"
 msgstr ""
 
+#: components/Blocks/Image/Edit
+# defaultMessage: Browse the site, drop an image, or type an URL
+msgid "Browse the site, drop an image, or type an URL"
+msgstr "Bild auswählen, hochladen oder URL angeben"
+
+#: components/Blocks/Slider/schema
+# defaultMessage: Button text
+msgid "Button text"
+msgstr ""
+
 #: components/Widgets/AlignWidget
 # defaultMessage: Center
 msgid "Center"
@@ -47,10 +57,20 @@ msgstr ""
 msgid "Contact"
 msgstr ""
 
+#: components/Blocks/Slider/DefaultBody
+# defaultMessage: Continue reading
+msgid "Continue reading"
+msgstr "mehr erfahren"
+
 #: components/Footer/Footer
 # defaultMessage: Copyright
 msgid "Copyright"
 msgstr ""
+
+#: components/Blocks/Image/schema
+# defaultMessage: Description
+msgid "Description"
+msgstr "Beschreibung"
 
 #: components/Footer/Footer
 # defaultMessage: Distributed under the {license}.
@@ -62,6 +82,11 @@ msgstr ""
 msgid "End"
 msgstr "ende"
 
+#: components/Blocks/Slider/schema
+# defaultMessage: Flag align
+msgid "Flag align"
+msgstr "Flagge Ausrichtung"
+
 #: components/Widgets/AlignWidget
 # defaultMessage: Full
 msgid "Full"
@@ -70,6 +95,11 @@ msgstr ""
 #: components/Footer/Footer
 # defaultMessage: GNU GPL license
 msgid "GNU GPL license"
+msgstr ""
+
+#: components/Blocks/Slider/schema
+# defaultMessage: Hide Button
+msgid "Hide Button"
 msgstr ""
 
 #: components/Breadcrumbs/Breadcrumbs
@@ -81,6 +111,11 @@ msgstr ""
 # defaultMessage: ICS Download
 msgid "ICS-Download"
 msgstr "ICS-Download"
+
+#: components/Blocks/Image/ImageSidebar
+# defaultMessage: Image
+msgid "Image"
+msgstr "Bild"
 
 #: components/Widgets/AlignWidget
 # defaultMessage: Left
@@ -97,10 +132,25 @@ msgstr "Veranstaltungsort"
 msgid "Log in"
 msgstr ""
 
+#: components/Blocks/Listing/ListingBody
+# defaultMessage: Next Page
+msgid "Next Page"
+msgstr "Nächste Seite"
+
 #: components/Theme/EventView
 # defaultMessage: No date
 msgid "No date"
 msgstr ""
+
+#: components/Blocks/Image/ImageSidebar
+# defaultMessage: No image selected
+msgid "No image selected"
+msgstr "Kein Bild ausgewählt"
+
+#: components/Blocks/Listing/ListingBody
+# defaultMessage: No items found in this container.
+msgid "No items found in this container."
+msgstr "Keine Elemente im Ordner gefunden."
 
 #: components/Navigation/Navigation
 # defaultMessage: Open menu
@@ -111,6 +161,11 @@ msgstr ""
 # defaultMessage: Phone
 msgid "Phone"
 msgstr ""
+
+#: components/Blocks/Slider/DefaultBody
+# defaultMessage: Please choose an existing content as source for this element
+msgid "Please choose an existing content as source for this element"
+msgstr "Bitte wählen Sie einen bestehenden Inhalt als Quelle für dieses Element"
 
 #: components/Footer/Footer
 # defaultMessage: Plone Foundation
@@ -137,17 +192,28 @@ msgstr ""
 msgid "Press"
 msgstr "Presse"
 
+#: components/Blocks/Listing/ListingBody
+# defaultMessage: Previous Page
+msgid "Previous Page"
+msgstr "Vorherige Seite"
+
 #: components/Anontools/Anontools
 #: components/Header/Header
 # defaultMessage: Register
 msgid "Register"
 msgstr ""
 
+#: components/Blocks/Listing/ListingBody
+# defaultMessage: Result
+msgid "Result"
+msgstr "Ergebnis"
+
 #: components/Widgets/AlignWidget
 # defaultMessage: Right
 msgid "Right"
 msgstr ""
 
+#: components/Blocks/Search/components/SearchInput
 #: components/Blocks/Search/TopSideFacets
 #: components/SearchWidget/SearchWidget
 # defaultMessage: Search
@@ -157,6 +223,16 @@ msgstr ""
 #: components/SearchWidget/SearchWidget
 # defaultMessage: Search Site
 msgid "Search Site"
+msgstr ""
+
+#: components/Blocks/Search/components/SearchDetails
+# defaultMessage: Search results
+msgid "Search results"
+msgstr "Ergebnisse"
+
+#: components/Blocks/Search/components/SearchDetails
+# defaultMessage: Searched for
+msgid "Searched for"
 msgstr ""
 
 #: components/Logo/Logo
@@ -175,6 +251,11 @@ msgstr "Übersicht"
 msgid "Sorting"
 msgstr ""
 
+#: components/Blocks/Slider/DefaultBody
+# defaultMessage: Source
+msgid "Source"
+msgstr "Quelle"
+
 #: components/Theme/EventView
 # defaultMessage: Start
 msgid "Start"
@@ -185,10 +266,15 @@ msgstr "Anfang"
 msgid "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
 msgstr ""
 
-#: components/Theme/EventView
-# defaultMessage: Unknown block
-msgid "Unknown block"
-msgstr ""
+#: components/Blocks/Image/schema
+# defaultMessage: Title
+msgid "Title"
+msgstr "Titel"
+
+#: components/Blocks/Image/Edit
+# defaultMessage: Uploading image
+msgid "Uploading image"
+msgstr "Bild hochladen"
 
 #: components/Theme/EventView
 # defaultMessage: Website
@@ -199,3 +285,28 @@ msgstr ""
 # defaultMessage: Wide
 msgid "Wide"
 msgstr ""
+
+#: components/Blocks/Image/ImageSidebar
+# defaultMessage: Clear image
+msgid "image_block_clear"
+msgstr "Bild löschen"
+
+#: components/Blocks/Image/ImageSidebar
+# defaultMessage: Image preview
+msgid "image_block_preview"
+msgstr ""
+
+#: components/Blocks/Listing/ListingBody
+# defaultMessage: Loading
+msgid "loading"
+msgstr "laden"
+
+#: components/Blocks/Slider/DefaultBody
+# defaultMessage: More info
+msgid "moreInfo"
+msgstr "mehr Information"
+
+#: components/Blocks/Listing/ListingBody
+# defaultMessage: of
+msgid "of"
+msgstr "von"
