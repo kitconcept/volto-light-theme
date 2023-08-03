@@ -95,7 +95,7 @@
       flex-wrap: wrap;
       @media only screen and (max-width: $largest-mobile-screen) {
         flex-direction: column;
-        
+
         .listing-item {
           padding-bottom: 20px !important;
         }
@@ -103,19 +103,18 @@
     }
     .headline {
       @include block-title();
-      margin-left: 0 !important;
       margin-right: 0 !important;
+      margin-left: 0 !important;
     }
     .listing-item {
       align-items: normal;
       border-bottom: none;
       margin: 0 !important;
 
-
       @media only screen and (min-width: $largest-mobile-screen) {
         width: 50%;
-        padding-bottom: 10px !important;
         padding-top: 10px;
+        padding-bottom: 10px !important;
 
         &:nth-child(2n) {
           padding-left: 10px !important;
@@ -208,8 +207,8 @@
 
       .item {
         display: table-cell;
-        padding: 6.5px 10px;
         min-width: 32px;
+        padding: 6.5px 10px;
         border: solid 1px $black;
         border-collapse: collapse;
         border-radius: 0;

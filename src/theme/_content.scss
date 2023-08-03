@@ -30,7 +30,6 @@
         content: '|';
       }
     }
-    
 
     @container (max-width: #{$largest-mobile-screen} ) {
       .day {
@@ -83,7 +82,6 @@
       letter-spacing: 1px;
       text-transform: uppercase;
     }
-    
   }
 
   .details-container {
