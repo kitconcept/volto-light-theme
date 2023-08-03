@@ -34,7 +34,11 @@ const ImageView = ({ content }) => {
           <Caption
             title={content.title}
             description={content.description}
-            credit={content?.copyright_and_sources || content.credit?.data}
+            credit={
+              content?.copyright_and_sources ||
+              content.credit?.data ||
+              content?.rights
+            }
           />
         </figure>
       )}
@@ -64,6 +68,7 @@ ImageView.propTypes = {
     credit: PropTypes.shape({
       data: PropTypes.string,
     }),
+    rights: PropTypes.string,
     // END CUSTOMIZATION
   }).isRequired,
 };
