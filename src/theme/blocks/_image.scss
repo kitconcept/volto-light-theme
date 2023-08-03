@@ -98,12 +98,6 @@ figure {
         @media only screen and (max-width: 768px) {
           width: 100%;
         }
-
-        figcaption {
-          &.rights {
-            padding-top: 5px;
-          }
-        }
       }
     }
 
@@ -170,29 +164,13 @@ figcaption {
     }
   }
 
-  .credits div {
-    display: flex;
-    margin-bottom: 10px;
+  .credits {
+    margin-top: 5px;
     -webkit-font-smoothing: anitaliased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     @include marginal-description();
-
-    div {
-      display: inline;
-    }
-
-    p {
-      display: inline;
-      color: inherit;
-      line-height: inherit;
-    }
-
-    a {
-      margin-left: 0.5rem;
-      color: $blue-for-grey-contrast;
-      @include marginal-description();
-    }
+    color: $blue-for-grey-contrast;
   }
 }
 
