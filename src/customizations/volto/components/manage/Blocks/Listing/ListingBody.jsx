@@ -1,5 +1,5 @@
 /**
- * OVERRIDE BodyListinng.jsx
+ * OVERRIDE ListingBody.jsx
  * REASON: To implement Pagination Wrapper according to Theme style.
  */
 

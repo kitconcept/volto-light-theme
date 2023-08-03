@@ -149,9 +149,7 @@ const TopSideFacets = (props) => {
         </Grid.Row>
 
         <Grid.Row>
-          <Grid.Column total={totalItems} data={data}>
-            {children}
-          </Grid.Column>
+          <Grid.Column>{children}</Grid.Column>
         </Grid.Row>
       </Grid>
     </>

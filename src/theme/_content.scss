@@ -24,8 +24,8 @@
       text-transform: uppercase;
     }
 
-    @container (min-width: #{$largest-mobile-screen} ) {
-      .day + .headtitle::before {
+    @container (min-width: #{$tablet-breakpoint} ) {
+      .day + .head-title::before {
         content: '|';
       }
     }
