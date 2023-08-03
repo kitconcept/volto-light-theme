@@ -106,19 +106,15 @@
       }
     }
     p {
-      // OPTIONAL
+      @include introduction();
       display: -webkit-box;
       overflow: hidden;
       margin-bottom: 50px;
       -webkit-box-orient: vertical;
-      font-size: 24px;
-      font-weight: 300;
       -webkit-line-clamp: 5;
-      line-height: 33px;
       text-overflow: ellipsis;
       @media only screen and (max-width: $computer-width) {
         margin-bottom: $spacing-large;
-        font-size: 21px;
       }
     }
   }
