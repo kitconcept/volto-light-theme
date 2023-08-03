@@ -43,7 +43,6 @@
 
         img {
           position: relative;
-          object-position: center;
         }
       }
       .content {
@@ -137,7 +136,6 @@
     }
     img {
       z-index: revert !important;
-      object-position: center;
     }
     figure {
       position: relative;

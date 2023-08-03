@@ -11,10 +11,10 @@
     }
   }
 
-  .items {
-    margin-bottom: 80px;
+  .items + .pagination-wrapper {
+    margin-top: 80px;
     @container (max-width: #{$largest-mobile-screen}) {
-      margin-bottom: 60px;
+      margin-top: 60px;
     }
   }
 
