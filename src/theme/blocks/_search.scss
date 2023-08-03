@@ -9,10 +9,6 @@
     }
     .items {
       padding: 0 !important;
-      margin-bottom: 80px;
-      @container (max-width: #{$largest-mobile-screen}) {
-        margin-bottom: 60px;
-      }
     }
     .ui.stackable.searchBlock-facets > .row,
     .ui.stackable.searchBlock-facets > .row > .column {

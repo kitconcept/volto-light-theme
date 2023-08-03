@@ -348,6 +348,14 @@ body.has-toolbar.has-sidebar .block .ui.basic.button.delete-button {
 }
 
 #page-add,
+#page-edit,
+#page-document {
+  img {
+    object-position: center;
+  }
+}
+
+#page-add,
 #page-edit {
   .block-editor-accordion {
     [class*='block-editor-'] {
