@@ -77,7 +77,6 @@ h1.documentFirstHeading {
 // Block Title
 .block h2.headline {
   @include block-title();
-  @include word-break();
   @include vertical-space-block-title();
 }
 
@@ -86,11 +85,9 @@ h1.documentFirstHeading {
 .block .heading-wrapper h2:last-child {
   // Needed to cancel the Semantic one
   @include block-title();
-  @include word-break();
   @include vertical-space-heading();
 }
 .heading-wrapper h3 {
-  @include word-break();
   padding-top: 3rem;
   padding-bottom: 1rem;
   font-size: 42px;

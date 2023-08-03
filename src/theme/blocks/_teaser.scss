@@ -98,7 +98,6 @@
       margin-top: 0;
       margin-bottom: 40px;
       @include text-heading-h2();
-      @include word-break();
       @container (max-width: #{$largest-mobile-screen}) {
         @include text-heading-h3();
         margin-bottom: 20px;
@@ -107,7 +106,6 @@
     p {
       margin: 0;
       @include body-text();
-      @include word-break();
     }
   }
 

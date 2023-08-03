@@ -11,7 +11,6 @@
   .slate-editor ol {
     margin: 0;
     @include introduction();
-    @include word-break();
     strong,
     strong span {
       font-weight: bold;
