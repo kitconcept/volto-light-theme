@@ -167,6 +167,7 @@
           letter-spacing: 1px;
           text-transform: uppercase;
           @include headtitle1();
+          @include word-break();
         }
 
         h2 {

@@ -237,6 +237,7 @@
         figcaption {
           .title {
             @include text-heading-h3();
+            @include word-break();
             margin: 0 0 20px 0;
           }
         }
