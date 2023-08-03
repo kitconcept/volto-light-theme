@@ -1,6 +1,6 @@
 import React from 'react';
 import { useIntl, defineMessages } from 'react-intl';
-import { getTeaserImageURL } from './utils';
+import { getTeaserImageURL } from '@kitconcept/volto-slider-block/helpers/Image/Image';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { Icon, MaybeWrap, UniversalLink } from '@plone/volto/components';
 import { Input, Button, Message } from 'semantic-ui-react';
@@ -29,8 +29,6 @@ const messages = defineMessages({
   },
 });
 
-const DefaultImage = (props) => <img {...props} alt={props.alt || ''} />;
-
 const SliderBody = ({
   index,
   onChangeBlock,
@@ -41,13 +39,16 @@ const SliderBody = ({
   openObjectBrowser,
 }) => {
   const intl = useIntl();
+  // START CUSTOMIZATION
   const href = data.href?.[0];
-  const image = data.preview_image?.[0];
+  const imageOverride = data.preview_image?.[0];
 
-  const hasImageComponent = config.getComponent('Image').component;
-  const Image = config.getComponent('Image').component || DefaultImage;
-  const defaultImageSrc =
-    href && flattenToAppURL(getTeaserImageURL({ href, image }));
+  // default img expects string src
+  const src = flattenToAppURL(
+    getTeaserImageURL({ href, image: imageOverride }),
+  );
+  const renderedImage = <img src={src} alt="" loading="lazy" />;
+  // END CUSTOMIZATION
 
   const handleClick = () => {
     openObjectBrowser({
@@ -105,16 +106,10 @@ const SliderBody = ({
             target={data.openLinkInNewTab ? '_blank' : null}
             tabIndex="-1"
           >
-            {(href?.hasPreviewImage || image) && (
-              <div className="highlight-image-wrapper gradient">
-                <Image
-                  src={hasImageComponent ? href : defaultImageSrc}
-                  alt=""
-                  loading="lazy"
-                />
-              </div>
-            )}
             {/* START CUSTOMIZATION */}
+            <div className="highlight-image-wrapper gradient">
+              {renderedImage}
+            </div>
             <div
               className={cx(
                 'teaser-item-title fix-width-issue',
