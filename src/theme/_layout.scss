@@ -97,8 +97,7 @@ footer {
 }
 
 // Container definitions for elements
-#page-document > *,
-#page-add > * {
+#page-document > * {
   @include layout-container-width();
 }
 
