@@ -7,7 +7,6 @@ import { Input, Button, Message } from 'semantic-ui-react';
 import cx from 'classnames';
 import navTreeSVG from '@plone/volto/icons/nav.svg';
 import imageBlockSVG from '@plone/volto/components/manage/Blocks/Image/block-image.svg';
-import config from '@plone/volto/registry';
 
 const messages = defineMessages({
   PleaseChooseContent: {
