@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2023-07-11T14:53:29.388Z\n"
+"POT-Creation-Date: 2023-08-03T04:35:51.482Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -28,6 +28,16 @@ msgstr ""
 msgid "Breadcrumbs"
 msgstr ""
 
+#: components/Blocks/Image/Edit
+# defaultMessage: Browse the site, drop an image, or type an URL
+msgid "Browse the site, drop an image, or type an URL"
+msgstr ""
+
+#: components/Blocks/Slider/schema
+# defaultMessage: Button text
+msgid "Button text"
+msgstr ""
+
 #: components/Widgets/AlignWidget
 # defaultMessage: Center
 msgid "Center"
@@ -43,9 +53,19 @@ msgstr ""
 msgid "Contact"
 msgstr ""
 
+#: components/Blocks/Slider/DefaultBody
+# defaultMessage: Continue reading
+msgid "Continue reading"
+msgstr ""
+
 #: components/Footer/Footer
 # defaultMessage: Copyright
 msgid "Copyright"
+msgstr ""
+
+#: components/Blocks/Image/schema
+# defaultMessage: Description
+msgid "Description"
 msgstr ""
 
 #: components/Footer/Footer
@@ -58,6 +78,11 @@ msgstr ""
 msgid "End"
 msgstr ""
 
+#: components/Blocks/Slider/schema
+# defaultMessage: Flag align
+msgid "Flag align"
+msgstr ""
+
 #: components/Widgets/AlignWidget
 # defaultMessage: Full
 msgid "Full"
@@ -68,6 +93,11 @@ msgstr ""
 msgid "GNU GPL license"
 msgstr ""
 
+#: components/Blocks/Slider/schema
+# defaultMessage: Hide Button
+msgid "Hide Button"
+msgstr ""
+
 #: components/Breadcrumbs/Breadcrumbs
 # defaultMessage: Home
 msgid "Home"
@@ -76,6 +106,11 @@ msgstr ""
 #: components/Theme/EventView
 # defaultMessage: ICS Download
 msgid "ICS-Download"
+msgstr ""
+
+#: components/Blocks/Image/ImageSidebar
+# defaultMessage: Image
+msgid "Image"
 msgstr ""
 
 #: components/Widgets/AlignWidget
@@ -98,6 +133,11 @@ msgstr ""
 msgid "No date"
 msgstr ""
 
+#: components/Blocks/Image/ImageSidebar
+# defaultMessage: No image selected
+msgid "No image selected"
+msgstr ""
+
 #: components/Navigation/Navigation
 # defaultMessage: Open menu
 msgid "Open menu"
@@ -106,6 +146,11 @@ msgstr ""
 #: components/Theme/EventView
 # defaultMessage: Phone
 msgid "Phone"
+msgstr ""
+
+#: components/Blocks/Slider/DefaultBody
+# defaultMessage: Please choose an existing content as source for this element
+msgid "Please choose an existing content as source for this element"
 msgstr ""
 
 #: components/Footer/Footer
@@ -144,6 +189,7 @@ msgstr ""
 msgid "Right"
 msgstr ""
 
+#: components/Blocks/Search/components/SearchInput
 #: components/Blocks/Search/TopSideFacets
 #: components/SearchWidget/SearchWidget
 # defaultMessage: Search
@@ -153,6 +199,16 @@ msgstr ""
 #: components/SearchWidget/SearchWidget
 # defaultMessage: Search Site
 msgid "Search Site"
+msgstr ""
+
+#: components/Blocks/Search/components/SearchDetails
+# defaultMessage: Search results
+msgid "Search results"
+msgstr ""
+
+#: components/Blocks/Search/components/SearchDetails
+# defaultMessage: Searched for
+msgid "Searched for"
 msgstr ""
 
 #: components/Logo/Logo
@@ -171,6 +227,11 @@ msgstr ""
 msgid "Sorting"
 msgstr ""
 
+#: components/Blocks/Slider/DefaultBody
+# defaultMessage: Source
+msgid "Source"
+msgstr ""
+
 #: components/Theme/EventView
 # defaultMessage: Start
 msgid "Start"
@@ -181,9 +242,14 @@ msgstr ""
 msgid "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
 msgstr ""
 
-#: components/Theme/EventView
-# defaultMessage: Unknown block
-msgid "Unknown block"
+#: components/Blocks/Image/schema
+# defaultMessage: Title
+msgid "Title"
+msgstr ""
+
+#: components/Blocks/Image/Edit
+# defaultMessage: Uploading image
+msgid "Uploading image"
 msgstr ""
 
 #: components/Theme/EventView
@@ -194,4 +260,19 @@ msgstr ""
 #: components/Widgets/AlignWidget
 # defaultMessage: Wide
 msgid "Wide"
+msgstr ""
+
+#: components/Blocks/Image/ImageSidebar
+# defaultMessage: Clear image
+msgid "image_block_clear"
+msgstr ""
+
+#: components/Blocks/Image/ImageSidebar
+# defaultMessage: Image preview
+msgid "image_block_preview"
+msgstr ""
+
+#: components/Blocks/Slider/DefaultBody
+# defaultMessage: More info
+msgid "moreInfo"
 msgstr ""
