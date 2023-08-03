@@ -19,17 +19,12 @@ import { Container as SemanticContainer } from 'semantic-ui-react';
 const NewsItemView = ({ content }) => {
   const Container =
     config.getComponent({ name: 'Container' }).component || SemanticContainer;
-  const format = {
-    year: 'numeric',
-    month: 'numeric',
-    day: 'numeric',
-  };
   return (
     <Container id="page-document" className="view-wrapper newsitem-view">
       <div className="dates">
         {content?.effective ? (
           <span className="day">
-            <FormattedDate date={content?.effective} format={format} />{' '}
+            <FormattedDate date={content?.effective} />{' '}
           </span>
         ) : (
           <span className="day">No date</span>
