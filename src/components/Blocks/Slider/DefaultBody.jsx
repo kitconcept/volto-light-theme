@@ -43,9 +43,8 @@ const SliderBody = ({
   const imageOverride = data.preview_image?.[0];
 
   // default img expects string src
-  const src = flattenToAppURL(
-    getTeaserImageURL({ href, image: imageOverride }),
-  );
+  const src =
+    href && flattenToAppURL(getTeaserImageURL({ href, image: imageOverride }));
   const renderedImage = <img src={src} alt="" loading="lazy" />;
   // END CUSTOMIZATION
 
