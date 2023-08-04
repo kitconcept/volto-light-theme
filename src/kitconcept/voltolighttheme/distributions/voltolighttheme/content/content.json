@@ -27456,4 +27456,752 @@
     },
     "working_copy": null,
     "working_copy_of": null
+},
+{
+  "@id": "/slider-block",
+  "@type": "Document",
+  "UID": "6544619a81f4461899f9f7c12602da3f",
+  "allow_discussion": false,
+  "blocks": {
+    "0143dde2-02cc-41c1-b435-3cac421d4fe1": {
+      "@type": "title"
+    },
+    "156794ae-0fc1-4ef8-a18f-58d3baae8e41": {
+      "@type": "slider",
+      "slides": [
+        {
+          "@id": "bf4d9e6c-c260-40e5-be86-8154a5a3218c",
+          "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          "flagAlign": "right",
+          "head_title": "Head title ",
+          "href": [
+            {
+              "@id": "/example/teaser-block",
+              "@type": "Document",
+              "Description": "Der Teaser-Block erlaubt das Hinzuf\u00fcgen eines Elements welches einen bestehenden Inhalte der Webseite mit einem Bild, einem Titel und einer Beschreibung anteasert.",
+              "Title": "Block: Teaser",
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "image_scales": {
+                "preview_image": [
+                  {
+                    "content-type": "image/jpeg",
+                    "download": "@@images/preview_image-1126-6bc958650b861d2282f085cada472359.jpeg",
+                    "filename": "bfs-image-2.jpg",
+                    "height": 1126,
+                    "scales": {
+                      "icon": {
+                        "download": "@@images/preview_image-32-68fba311fd949fb19f87dc7dd05c8af6.jpeg",
+                        "height": 32,
+                        "width": 32
+                      },
+                      "large": {
+                        "download": "@@images/preview_image-800-08cabedc98cd5dea4cb2d30b941aba05.jpeg",
+                        "height": 800,
+                        "width": 800
+                      },
+                      "larger": {
+                        "download": "@@images/preview_image-1000-149608267f05db49f8a92f9868af3999.jpeg",
+                        "height": 1000,
+                        "width": 1000
+                      },
+                      "mini": {
+                        "download": "@@images/preview_image-200-986852c8b66918ce30f52cfe7f218d80.jpeg",
+                        "height": 200,
+                        "width": 200
+                      },
+                      "preview": {
+                        "download": "@@images/preview_image-400-85b8feb742ef1ecc1b0160e4fb4a6004.jpeg",
+                        "height": 400,
+                        "width": 400
+                      },
+                      "teaser": {
+                        "download": "@@images/preview_image-600-7cfda7b521133763ed449e146b76c981.jpeg",
+                        "height": 600,
+                        "width": 600
+                      },
+                      "thumb": {
+                        "download": "@@images/preview_image-128-3d03b2054008c84cfecb97cf1f73199b.jpeg",
+                        "height": 128,
+                        "width": 128
+                      },
+                      "tile": {
+                        "download": "@@images/preview_image-64-6d5a245acec5cd27f4d9e8dd95460ab6.jpeg",
+                        "height": 64,
+                        "width": 64
+                      }
+                    },
+                    "size": 951578,
+                    "width": 1126
+                  }
+                ]
+              },
+              "title": "Block: Teaser"
+            }
+          ],
+          "title": "Slide Headline"
+        },
+        {
+          "@id": "3cff0af7-1f70-4774-ab22-62ff2a14b432",
+          "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          "flagAlign": "right",
+          "head_title": "Head title ",
+          "hideButton": true,
+          "href": [
+            {
+              "@id": "/example/button-block",
+              "@type": "Document",
+              "Description": "Der Button-Block zeigt einen Button an f\u00fcr den ein Link (intern oder extern) hinterlegt werden kann. Der Button kann links, rechts oder mittig angezeigt werden und eine Hintergrundfarbe haben.",
+              "Title": "Block: Button",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "",
+              "image_scales": null,
+              "title": "Block: Button"
+            }
+          ],
+          "preview_image": [
+            {
+              "@id": "/example/image-1",
+              "@type": "Image",
+              "CreationDate": "2023-07-07T03:05:08+05:30",
+              "Creator": "admin",
+              "Date": "2023-07-28T01:20:13+05:30",
+              "Description": "Der Inhaltstyp Bild kann verwendet werden um ein Bild in verschiedenen Formate (JPG, GIF, PNG, SVG) hochzuladen. Das hochgeladene Bild sollte dabei immer eine hohe Aufl\u00f6sung haben, damit es flexibel, z.B. auch als Banner-Bild eingesetzt werden kann. Plone liefert die Bilder automatisch in der besten Skalierung aus, so dass es nicht n\u00f6tig ist Bilder manuell herunter zu skalieren.",
+              "EffectiveDate": "None",
+              "ExpirationDate": "None",
+              "ModificationDate": "2023-07-28T01:20:13+05:30",
+              "Subject": [],
+              "Title": "Inhaltstyp: Image-1",
+              "Type": "Image",
+              "UID": "970ec24c76784c66a06d8c8d8b6522b2",
+              "author_name": null,
+              "cmf_uid": null,
+              "commentators": [],
+              "created": "2023-07-06T21:35:08+00:00",
+              "description": "Der Inhaltstyp Bild kann verwendet werden um ein Bild in verschiedenen Formate (JPG, GIF, PNG, SVG) hochzuladen. Das hochgeladene Bild sollte dabei immer eine hohe Aufl\u00f6sung haben, damit es flexibel, z.B. auch als Banner-Bild eingesetzt werden kann. Plone liefert die Bilder automatisch in der besten Skalierung aus, so dass es nicht n\u00f6tig ist Bilder manuell herunter zu skalieren.",
+              "effective": "1969-12-30T18:30:00+00:00",
+              "end": null,
+              "exclude_from_nav": false,
+              "expires": "2499-12-30T18:30:00+00:00",
+              "getIcon": true,
+              "getId": "image-1",
+              "getObjSize": "929.3 KB",
+              "getPath": "/Plone/example/image-1",
+              "getRemoteUrl": null,
+              "getURL": "http://127.0.0.1:8080/Plone/example/image-1",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "id": "image-1",
+              "image_field": "image",
+              "image_scales": {
+                "image": [
+                  {
+                    "content-type": "image/jpeg",
+                    "download": "@@images/image-1126-545c61a5535570877a1e03282b8bce32.jpeg",
+                    "filename": "bfs-image-2.jpg",
+                    "height": 1126,
+                    "scales": {
+                      "icon": {
+                        "download": "@@images/image-32-496efe613c0487bd303363ccd5c6a397.jpeg",
+                        "height": 32,
+                        "width": 32
+                      },
+                      "large": {
+                        "download": "@@images/image-800-bd648a1c4ada060eca335fbf5ca34ba2.jpeg",
+                        "height": 800,
+                        "width": 800
+                      },
+                      "larger": {
+                        "download": "@@images/image-1000-b906dcbce6a3e1474c4b2309be6881fe.jpeg",
+                        "height": 1000,
+                        "width": 1000
+                      },
+                      "mini": {
+                        "download": "@@images/image-200-2aef4a0c1086b93070ca5c49851617a9.jpeg",
+                        "height": 200,
+                        "width": 200
+                      },
+                      "preview": {
+                        "download": "@@images/image-400-91ed7252698a0bd68fd2e57e6dc9664b.jpeg",
+                        "height": 400,
+                        "width": 400
+                      },
+                      "teaser": {
+                        "download": "@@images/image-600-80fb05d18ab41e69a0869cc94f88594d.jpeg",
+                        "height": 600,
+                        "width": 600
+                      },
+                      "thumb": {
+                        "download": "@@images/image-128-8cc73f4998aac986726e69376800f56e.jpeg",
+                        "height": 128,
+                        "width": 128
+                      },
+                      "tile": {
+                        "download": "@@images/image-64-90d624129cf78c6e99acea0aa119bc3b.jpeg",
+                        "height": 64,
+                        "width": 64
+                      }
+                    },
+                    "size": 951578,
+                    "width": 1126
+                  }
+                ]
+              },
+              "in_response_to": null,
+              "is_folderish": false,
+              "last_comment_date": null,
+              "listCreators": ["admin"],
+              "location": null,
+              "mime_type": "image/jpeg",
+              "modified": "2023-07-27T19:50:13+00:00",
+              "nav_title": null,
+              "portal_type": "Image",
+              "review_state": null,
+              "start": null,
+              "sync_uid": null,
+              "title": "Inhaltstyp: Image-1",
+              "total_comments": 0,
+              "type_title": "Image"
+            }
+          ],
+          "title": "Slide Headline"
+        }
+      ],
+      "styles": {}
+    },
+    "3a44975e-f63f-48ae-8445-2e3d3b00411a": {
+      "@type": "slider",
+      "slides": [
+        {
+          "@id": "c98e991a-48a4-4fec-8dfd-96ce49dc5c94",
+          "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          "flagAlign": "left",
+          "head_title": "Head title ",
+          "hideButton": true,
+          "href": [
+            {
+              "@id": "/example/page",
+              "@type": "Document",
+              "Description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+              "Title": "Inhaltstyp: Seite (Page)",
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "image_scales": {
+                "preview_image": [
+                  {
+                    "content-type": "image/jpeg",
+                    "download": "@@images/preview_image-1182-d57bf7632cb8ee43d409f4940c8dbd8c.jpeg",
+                    "filename": "halfdome2022.jpg",
+                    "height": 665,
+                    "scales": {
+                      "icon": {
+                        "download": "@@images/preview_image-32-183d785da23f650a6124eaa7af7a0388.jpeg",
+                        "height": 18,
+                        "width": 32
+                      },
+                      "large": {
+                        "download": "@@images/preview_image-800-5be1897e10fa3fef0b476e3db758be82.jpeg",
+                        "height": 450,
+                        "width": 800
+                      },
+                      "larger": {
+                        "download": "@@images/preview_image-1000-31e8b8662bb7461f9297b63597941b45.jpeg",
+                        "height": 562,
+                        "width": 1000
+                      },
+                      "mini": {
+                        "download": "@@images/preview_image-200-ddd9dfa4dc903bf2823d33f99779ce52.jpeg",
+                        "height": 112,
+                        "width": 200
+                      },
+                      "preview": {
+                        "download": "@@images/preview_image-400-00bc5f09f56a645ba9287d1de84322b4.jpeg",
+                        "height": 225,
+                        "width": 400
+                      },
+                      "teaser": {
+                        "download": "@@images/preview_image-600-807bc5ac21f8277aab2291f582b3f0c7.jpeg",
+                        "height": 337,
+                        "width": 600
+                      },
+                      "thumb": {
+                        "download": "@@images/preview_image-128-c2e98f542d79cb0233f815f1a53d5cb1.jpeg",
+                        "height": 72,
+                        "width": 128
+                      },
+                      "tile": {
+                        "download": "@@images/preview_image-64-54ba11bc735be7b900f3808bfafd963d.jpeg",
+                        "height": 36,
+                        "width": 64
+                      }
+                    },
+                    "size": 319364,
+                    "width": 1182
+                  }
+                ]
+              },
+              "title": "Inhaltstyp: Seite (Page)"
+            }
+          ],
+          "preview_image": [
+            {
+              "@id": "/example/image-1",
+              "@type": "Image",
+              "CreationDate": "2023-07-07T03:05:08+05:30",
+              "Creator": "admin",
+              "Date": "2023-07-28T01:20:13+05:30",
+              "Description": "Der Inhaltstyp Bild kann verwendet werden um ein Bild in verschiedenen Formate (JPG, GIF, PNG, SVG) hochzuladen. Das hochgeladene Bild sollte dabei immer eine hohe Aufl\u00f6sung haben, damit es flexibel, z.B. auch als Banner-Bild eingesetzt werden kann. Plone liefert die Bilder automatisch in der besten Skalierung aus, so dass es nicht n\u00f6tig ist Bilder manuell herunter zu skalieren.",
+              "EffectiveDate": "None",
+              "ExpirationDate": "None",
+              "ModificationDate": "2023-07-28T01:20:13+05:30",
+              "Subject": [],
+              "Title": "Inhaltstyp: Image-1",
+              "Type": "Image",
+              "UID": "970ec24c76784c66a06d8c8d8b6522b2",
+              "author_name": null,
+              "cmf_uid": null,
+              "commentators": [],
+              "created": "2023-07-06T21:35:08+00:00",
+              "description": "Der Inhaltstyp Bild kann verwendet werden um ein Bild in verschiedenen Formate (JPG, GIF, PNG, SVG) hochzuladen. Das hochgeladene Bild sollte dabei immer eine hohe Aufl\u00f6sung haben, damit es flexibel, z.B. auch als Banner-Bild eingesetzt werden kann. Plone liefert die Bilder automatisch in der besten Skalierung aus, so dass es nicht n\u00f6tig ist Bilder manuell herunter zu skalieren.",
+              "effective": "1969-12-30T18:30:00+00:00",
+              "end": null,
+              "exclude_from_nav": false,
+              "expires": "2499-12-30T18:30:00+00:00",
+              "getIcon": true,
+              "getId": "image-1",
+              "getObjSize": "929.3 KB",
+              "getPath": "/Plone/example/image-1",
+              "getRemoteUrl": null,
+              "getURL": "http://127.0.0.1:8080/Plone/example/image-1",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "id": "image-1",
+              "image_field": "image",
+              "image_scales": {
+                "image": [
+                  {
+                    "content-type": "image/jpeg",
+                    "download": "@@images/image-1126-545c61a5535570877a1e03282b8bce32.jpeg",
+                    "filename": "bfs-image-2.jpg",
+                    "height": 1126,
+                    "scales": {
+                      "icon": {
+                        "download": "@@images/image-32-496efe613c0487bd303363ccd5c6a397.jpeg",
+                        "height": 32,
+                        "width": 32
+                      },
+                      "large": {
+                        "download": "@@images/image-800-bd648a1c4ada060eca335fbf5ca34ba2.jpeg",
+                        "height": 800,
+                        "width": 800
+                      },
+                      "larger": {
+                        "download": "@@images/image-1000-b906dcbce6a3e1474c4b2309be6881fe.jpeg",
+                        "height": 1000,
+                        "width": 1000
+                      },
+                      "mini": {
+                        "download": "@@images/image-200-2aef4a0c1086b93070ca5c49851617a9.jpeg",
+                        "height": 200,
+                        "width": 200
+                      },
+                      "preview": {
+                        "download": "@@images/image-400-91ed7252698a0bd68fd2e57e6dc9664b.jpeg",
+                        "height": 400,
+                        "width": 400
+                      },
+                      "teaser": {
+                        "download": "@@images/image-600-80fb05d18ab41e69a0869cc94f88594d.jpeg",
+                        "height": 600,
+                        "width": 600
+                      },
+                      "thumb": {
+                        "download": "@@images/image-128-8cc73f4998aac986726e69376800f56e.jpeg",
+                        "height": 128,
+                        "width": 128
+                      },
+                      "tile": {
+                        "download": "@@images/image-64-90d624129cf78c6e99acea0aa119bc3b.jpeg",
+                        "height": 64,
+                        "width": 64
+                      }
+                    },
+                    "size": 951578,
+                    "width": 1126
+                  }
+                ]
+              },
+              "in_response_to": null,
+              "is_folderish": false,
+              "last_comment_date": null,
+              "listCreators": ["admin"],
+              "location": null,
+              "mime_type": "image/jpeg",
+              "modified": "2023-07-27T19:50:13+00:00",
+              "nav_title": null,
+              "portal_type": "Image",
+              "review_state": null,
+              "start": null,
+              "sync_uid": null,
+              "title": "Inhaltstyp: Image-1",
+              "total_comments": 0,
+              "type_title": "Image"
+            }
+          ],
+          "title": "Slide Headline"
+        },
+        {
+          "@id": "e3f52e38-65f6-47cd-859a-d2d560f37778",
+          "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          "flagAlign": "left",
+          "head_title": "Head title ",
+          "hideButton": true,
+          "href": [
+            {
+              "@id": "/example/teaser-block",
+              "@type": "Document",
+              "Description": "Der Teaser-Block erlaubt das Hinzuf\u00fcgen eines Elements welches einen bestehenden Inhalte der Webseite mit einem Bild, einem Titel und einer Beschreibung anteasert.",
+              "Title": "Block: Teaser",
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "image_scales": {
+                "preview_image": [
+                  {
+                    "content-type": "image/jpeg",
+                    "download": "@@images/preview_image-1126-6bc958650b861d2282f085cada472359.jpeg",
+                    "filename": "bfs-image-2.jpg",
+                    "height": 1126,
+                    "scales": {
+                      "icon": {
+                        "download": "@@images/preview_image-32-68fba311fd949fb19f87dc7dd05c8af6.jpeg",
+                        "height": 32,
+                        "width": 32
+                      },
+                      "large": {
+                        "download": "@@images/preview_image-800-08cabedc98cd5dea4cb2d30b941aba05.jpeg",
+                        "height": 800,
+                        "width": 800
+                      },
+                      "larger": {
+                        "download": "@@images/preview_image-1000-149608267f05db49f8a92f9868af3999.jpeg",
+                        "height": 1000,
+                        "width": 1000
+                      },
+                      "mini": {
+                        "download": "@@images/preview_image-200-986852c8b66918ce30f52cfe7f218d80.jpeg",
+                        "height": 200,
+                        "width": 200
+                      },
+                      "preview": {
+                        "download": "@@images/preview_image-400-85b8feb742ef1ecc1b0160e4fb4a6004.jpeg",
+                        "height": 400,
+                        "width": 400
+                      },
+                      "teaser": {
+                        "download": "@@images/preview_image-600-7cfda7b521133763ed449e146b76c981.jpeg",
+                        "height": 600,
+                        "width": 600
+                      },
+                      "thumb": {
+                        "download": "@@images/preview_image-128-3d03b2054008c84cfecb97cf1f73199b.jpeg",
+                        "height": 128,
+                        "width": 128
+                      },
+                      "tile": {
+                        "download": "@@images/preview_image-64-6d5a245acec5cd27f4d9e8dd95460ab6.jpeg",
+                        "height": 64,
+                        "width": 64
+                      }
+                    },
+                    "size": 951578,
+                    "width": 1126
+                  }
+                ]
+              },
+              "title": "Block: Teaser"
+            }
+          ],
+          "title": "Slide Headline"
+        }
+      ],
+      "styles": {}
+    },
+    "3bde5073-fe48-474f-9169-706946764c93": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "Slider with Flag align (Right)",
+      "styles": {},
+      "tag": "h2"
+    },
+    "7ef8a21f-879d-4e74-b79b-c04098869203": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "Slider without Button",
+      "styles": {}
+    },
+    "dda3f78d-f703-4658-8f39-96baa334945a": {
+      "@type": "slider",
+      "slides": [
+        {
+          "@id": "a8bd153a-f27d-4a3a-a9aa-92df45574ac9",
+          "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          "flagAlign": "left",
+          "head_title": "Head title ",
+          "href": [
+            {
+              "@id": "/example/button-block",
+              "@type": "Document",
+              "Description": "Der Button-Block zeigt einen Button an f\u00fcr den ein Link (intern oder extern) hinterlegt werden kann. Der Button kann links, rechts oder mittig angezeigt werden und eine Hintergrundfarbe haben.",
+              "Title": "Block: Button",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "",
+              "image_scales": null,
+              "title": "Block: Button"
+            }
+          ],
+          "preview_image": [
+            {
+              "@id": "/example/image-1",
+              "@type": "Image",
+              "CreationDate": "2023-07-07T03:05:08+05:30",
+              "Creator": "admin",
+              "Date": "2023-07-28T01:20:13+05:30",
+              "Description": "Der Inhaltstyp Bild kann verwendet werden um ein Bild in verschiedenen Formate (JPG, GIF, PNG, SVG) hochzuladen. Das hochgeladene Bild sollte dabei immer eine hohe Aufl\u00f6sung haben, damit es flexibel, z.B. auch als Banner-Bild eingesetzt werden kann. Plone liefert die Bilder automatisch in der besten Skalierung aus, so dass es nicht n\u00f6tig ist Bilder manuell herunter zu skalieren.",
+              "EffectiveDate": "None",
+              "ExpirationDate": "None",
+              "ModificationDate": "2023-07-28T01:20:13+05:30",
+              "Subject": [],
+              "Title": "Inhaltstyp: Image-1",
+              "Type": "Image",
+              "UID": "970ec24c76784c66a06d8c8d8b6522b2",
+              "author_name": null,
+              "cmf_uid": null,
+              "commentators": [],
+              "created": "2023-07-06T21:35:08+00:00",
+              "description": "Der Inhaltstyp Bild kann verwendet werden um ein Bild in verschiedenen Formate (JPG, GIF, PNG, SVG) hochzuladen. Das hochgeladene Bild sollte dabei immer eine hohe Aufl\u00f6sung haben, damit es flexibel, z.B. auch als Banner-Bild eingesetzt werden kann. Plone liefert die Bilder automatisch in der besten Skalierung aus, so dass es nicht n\u00f6tig ist Bilder manuell herunter zu skalieren.",
+              "effective": "1969-12-30T18:30:00+00:00",
+              "end": null,
+              "exclude_from_nav": false,
+              "expires": "2499-12-30T18:30:00+00:00",
+              "getIcon": true,
+              "getId": "image-1",
+              "getObjSize": "929.3 KB",
+              "getPath": "/Plone/example/image-1",
+              "getRemoteUrl": null,
+              "getURL": "http://127.0.0.1:8080/Plone/example/image-1",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "id": "image-1",
+              "image_field": "image",
+              "image_scales": {
+                "image": [
+                  {
+                    "content-type": "image/jpeg",
+                    "download": "@@images/image-1126-545c61a5535570877a1e03282b8bce32.jpeg",
+                    "filename": "bfs-image-2.jpg",
+                    "height": 1126,
+                    "scales": {
+                      "icon": {
+                        "download": "@@images/image-32-496efe613c0487bd303363ccd5c6a397.jpeg",
+                        "height": 32,
+                        "width": 32
+                      },
+                      "large": {
+                        "download": "@@images/image-800-bd648a1c4ada060eca335fbf5ca34ba2.jpeg",
+                        "height": 800,
+                        "width": 800
+                      },
+                      "larger": {
+                        "download": "@@images/image-1000-b906dcbce6a3e1474c4b2309be6881fe.jpeg",
+                        "height": 1000,
+                        "width": 1000
+                      },
+                      "mini": {
+                        "download": "@@images/image-200-2aef4a0c1086b93070ca5c49851617a9.jpeg",
+                        "height": 200,
+                        "width": 200
+                      },
+                      "preview": {
+                        "download": "@@images/image-400-91ed7252698a0bd68fd2e57e6dc9664b.jpeg",
+                        "height": 400,
+                        "width": 400
+                      },
+                      "teaser": {
+                        "download": "@@images/image-600-80fb05d18ab41e69a0869cc94f88594d.jpeg",
+                        "height": 600,
+                        "width": 600
+                      },
+                      "thumb": {
+                        "download": "@@images/image-128-8cc73f4998aac986726e69376800f56e.jpeg",
+                        "height": 128,
+                        "width": 128
+                      },
+                      "tile": {
+                        "download": "@@images/image-64-90d624129cf78c6e99acea0aa119bc3b.jpeg",
+                        "height": 64,
+                        "width": 64
+                      }
+                    },
+                    "size": 951578,
+                    "width": 1126
+                  }
+                ]
+              },
+              "in_response_to": null,
+              "is_folderish": false,
+              "last_comment_date": null,
+              "listCreators": ["admin"],
+              "location": null,
+              "mime_type": "image/jpeg",
+              "modified": "2023-07-27T19:50:13+00:00",
+              "nav_title": null,
+              "portal_type": "Image",
+              "review_state": null,
+              "start": null,
+              "sync_uid": null,
+              "title": "Inhaltstyp: Image-1",
+              "total_comments": 0,
+              "type_title": "Image"
+            }
+          ],
+          "title": "Slide Headline"
+        },
+        {
+          "@id": "e907ebbb-1383-405b-8a26-81eebda2f128",
+          "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+          "flagAlign": "left",
+          "head_title": "Head title ",
+          "hideButton": false,
+          "href": [
+            {
+              "@id": "/example/page",
+              "@type": "Document",
+              "Description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+              "Title": "Inhaltstyp: Seite (Page)",
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "image_scales": {
+                "preview_image": [
+                  {
+                    "content-type": "image/jpeg",
+                    "download": "@@images/preview_image-1182-d57bf7632cb8ee43d409f4940c8dbd8c.jpeg",
+                    "filename": "halfdome2022.jpg",
+                    "height": 665,
+                    "scales": {
+                      "icon": {
+                        "download": "@@images/preview_image-32-183d785da23f650a6124eaa7af7a0388.jpeg",
+                        "height": 18,
+                        "width": 32
+                      },
+                      "large": {
+                        "download": "@@images/preview_image-800-5be1897e10fa3fef0b476e3db758be82.jpeg",
+                        "height": 450,
+                        "width": 800
+                      },
+                      "larger": {
+                        "download": "@@images/preview_image-1000-31e8b8662bb7461f9297b63597941b45.jpeg",
+                        "height": 562,
+                        "width": 1000
+                      },
+                      "mini": {
+                        "download": "@@images/preview_image-200-ddd9dfa4dc903bf2823d33f99779ce52.jpeg",
+                        "height": 112,
+                        "width": 200
+                      },
+                      "preview": {
+                        "download": "@@images/preview_image-400-00bc5f09f56a645ba9287d1de84322b4.jpeg",
+                        "height": 225,
+                        "width": 400
+                      },
+                      "teaser": {
+                        "download": "@@images/preview_image-600-807bc5ac21f8277aab2291f582b3f0c7.jpeg",
+                        "height": 337,
+                        "width": 600
+                      },
+                      "thumb": {
+                        "download": "@@images/preview_image-128-c2e98f542d79cb0233f815f1a53d5cb1.jpeg",
+                        "height": 72,
+                        "width": 128
+                      },
+                      "tile": {
+                        "download": "@@images/preview_image-64-54ba11bc735be7b900f3808bfafd963d.jpeg",
+                        "height": 36,
+                        "width": 64
+                      }
+                    },
+                    "size": 319364,
+                    "width": 1182
+                  }
+                ]
+              },
+              "title": "Inhaltstyp: Seite (Page)"
+            }
+          ],
+          "title": "Slide Headline"
+        }
+      ],
+      "styles": {}
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "0143dde2-02cc-41c1-b435-3cac421d4fe1",
+      "dda3f78d-f703-4658-8f39-96baa334945a",
+      "7ef8a21f-879d-4e74-b79b-c04098869203",
+      "3a44975e-f63f-48ae-8445-2e3d3b00411a",
+      "3bde5073-fe48-474f-9169-706946764c93",
+      "156794ae-0fc1-4ef8-a18f-58d3baae8e41"
+    ]
+  },
+  "contributors": [],
+  "created": "2023-08-04T10:52:30+00:00",
+  "creators": ["admin"],
+  "description": "",
+  "effective": null,
+  "exclude_from_nav": false,
+  "expires": null,
+  "id": "test-slider",
+  "is_folderish": true,
+  "language": "en",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2023-08-04T11:18:46+00:00",
+  "parent": {
+    "@id": "/",
+    "@type": "Plone Site",
+    "UID": "71846cd61b404039a69de1298738c493",
+    "description": "A Plone Site",
+    "title": "Welcome to volto-light-theme",
+    "type_title": "Plone Site"
+  },
+  "preview_caption": null,
+  "preview_image": null,
+  "review_state": "private",
+  "rights": "",
+  "subjects": [],
+  "title": "Block: Slider",
+  "type_title": "Page",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2023-08-04T10:52:30+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
 }]
