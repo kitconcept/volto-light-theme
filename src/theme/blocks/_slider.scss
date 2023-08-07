@@ -90,7 +90,8 @@
 
     .title {
       .supertitle {
-        //    margin-bottom: 20px !important;
+        display: inline-block;
+        margin-bottom: 20px;
         font-size: 14px;
         font-weight: 700;
         letter-spacing: 1px;
@@ -98,11 +99,9 @@
         text-transform: uppercase;
       }
       h2 {
-        margin-top: $spacing-small;
+        @include text-heading-h2();
+        margin-top: 0px;
         margin-bottom: $spacing-medium;
-        font-size: 30px;
-        font-weight: 700;
-        line-height: 36px;
       }
     }
     p {
