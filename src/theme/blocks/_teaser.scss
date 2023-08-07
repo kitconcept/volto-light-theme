@@ -58,8 +58,8 @@
       flex-direction: row-reverse;
 
       .image-wrapper {
-        margin-left: 20px;
         margin-right: 0px;
+        margin-left: 20px;
 
         @media only screen and (max-width: $largest-mobile-screen) {
           margin-bottom: 26px;
