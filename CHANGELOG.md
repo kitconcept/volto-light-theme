@@ -8,6 +8,33 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-rc.13 (2023-08-03)
+
+### Bugfix
+
+- Add external link for slate block @iRohitSingh [#188](https://github.com/kitconcept/volto-light-theme/pull/188)
+- Fix responsive of listing block. @iFlameing [#189](https://github.com/kitconcept/volto-light-theme/pull/189)
+- Fix pagination styles for Listings. @danalvrz 
+
+  Change divider bar in News Item head title from string to pseudo-element. @danalvrz
+
+  Fix text decoration for links. @danalvrz
+
+  Fix background color for in-Grid Slate. @danalvrz 
+
+  Fix Image block margins. @danalvrz 
+
+  Fix Grid Listing variation CSS. @danalvrz
+
+  Fix Separator margin when preceded by Image block. @danalvrz 
+
+  Fix Teaser margin in mobile. @danalvrz [#191](https://github.com/kitconcept/volto-light-theme/pull/191)
+- Enable automatic hyphenation. @iFlameing [#193](https://github.com/kitconcept/volto-light-theme/pull/193)
+- Upgrade to Volto 17.0.0-alpha.23 @davisagli [#195](https://github.com/kitconcept/volto-light-theme/pull/195)
+- Fix image rights @iFlameing. [#197](https://github.com/kitconcept/volto-light-theme/pull/197)
+- Fix aspect-ratio and add rule to center object position for all images. @danalvrz [#199](https://github.com/kitconcept/volto-light-theme/pull/199)
+
+
 ## 1.0.0-rc.12 (2023-07-28)
 
 ### Feature

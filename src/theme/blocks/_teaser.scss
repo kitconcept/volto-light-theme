@@ -21,9 +21,6 @@
 
   .image-wrapper {
     width: 100%;
-    img {
-      object-position: center;
-    }
   }
 
   &.has--align--left,
@@ -61,6 +58,7 @@
       flex-direction: row-reverse;
 
       .image-wrapper {
+        margin-right: 0px;
         margin-left: 20px;
 
         @media only screen and (max-width: $largest-mobile-screen) {
