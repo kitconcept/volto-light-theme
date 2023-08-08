@@ -28,6 +28,10 @@
       border-bottom: none !important;
       margin-bottom: 0;
     }
+
+    img {
+      object-fit: cover;
+    }
   }
 
   // Default variation
@@ -151,7 +155,6 @@
         width: 100%;
         margin: 0;
         aspect-ratio: $aspect-ratio !important;
-        object-fit: cover;
       }
 
       .item {
@@ -249,12 +252,12 @@
       text-align: center;
     }
   }
-}
 
-// To overwrite semantic ui .grid negative margin rule
-.ui.grid {
-  margin-right: 0;
-  margin-left: 0;
+  // To overwrite semantic ui .grid negative margin rule
+  .ui.grid {
+    margin-right: 0;
+    margin-left: 0;
+  }
 }
 
 #page-add .block-editor-listing,
