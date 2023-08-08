@@ -24,14 +24,12 @@
         @include text-heading-h2();
       }
 
-      &:not(.grid) {
-        img {
-          width: 220px;
-          height: min-content;
-          aspect-ratio: $aspect-ratio;
-          @container (max-width: #{$largest-mobile-screen}) {
-            width: 100%;
-          }
+      img {
+        width: 220px;
+        height: min-content;
+        aspect-ratio: $aspect-ratio;
+        @media only screen and (max-width: $largest-mobile-screen) {
+          width: 100%;
         }
       }
     }
