@@ -18,13 +18,13 @@
   }
 
   .slick-arrow {
+    top: 0;
     width: 50px;
+    height: calc(100% - 80px);
     color: $white;
     opacity: 0;
-    height: calc(100% - 80px);
-    top: 0;
-    transition-property: opacity;
     transition-duration: 0.3s;
+    transition-property: opacity;
 
     svg {
       scale: 2.15;
@@ -46,7 +46,6 @@
       opacity: 1;
     }
   }
-  
 
   .slick-dots {
     bottom: 34px;
