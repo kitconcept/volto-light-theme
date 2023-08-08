@@ -8,6 +8,19 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-rc.14 (2023-08-08)
+
+### Feature
+
+- Hide change note field. @davisagli [#206](https://github.com/kitconcept/volto-light-theme/pull/206)
+
+### Bugfix
+
+- Remove external link icon from ICS download button event content type @iRohitSingh [#201](https://github.com/kitconcept/volto-light-theme/pull/201)
+- Fix teaser right align is not aligned to right side of page @iFlameing. [#202](https://github.com/kitconcept/volto-light-theme/pull/202)
+- Add missing german translations @steffenri [#205](https://github.com/kitconcept/volto-light-theme/pull/205)
+
+
 ## 1.0.0-rc.13 (2023-08-03)
 
 ### Bugfix
