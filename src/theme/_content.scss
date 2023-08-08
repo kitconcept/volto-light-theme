@@ -117,6 +117,9 @@
 
       .event-button {
         padding-top: 50px;
+        a:after {
+          display: none !important;
+        }
         .button.event-btn {
           padding: 8px 20px;
           border: 1px solid #000;
