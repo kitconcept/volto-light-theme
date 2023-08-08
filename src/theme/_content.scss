@@ -236,3 +236,8 @@
     white-space: nowrap;
   }
 }
+
+// hide some fields from edit & add forms
+.field-wrapper-changeNote {
+  display: none;
+}
