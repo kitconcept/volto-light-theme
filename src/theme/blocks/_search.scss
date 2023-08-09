@@ -6,6 +6,11 @@
       .card-container > img {
         width: 100% !important;
       }
+      
+      .listing-item:last-child {
+        padding-bottom: 0;
+        border-bottom: none;
+      }
     }
     .items {
       padding: 0 !important;
@@ -22,6 +27,10 @@
       h3 {
         color: $black;
         @include text-heading-h2();
+      }
+      &:last-child {
+        padding-bottom: 40px;
+        border-bottom: 1px solid $black;
       }
 
       &:not(.grid) {
