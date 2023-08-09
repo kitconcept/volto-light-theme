@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2023-08-08T18:05:10.206Z\n"
+"POT-Creation-Date: 2023-08-09T18:43:06.867Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -233,6 +233,7 @@ msgid "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation
 msgstr ""
 
 #: components/Blocks/Image/schema
+#: components/Blocks/Toc/schema
 # defaultMessage: Title
 msgid "Title"
 msgstr ""
@@ -270,4 +271,9 @@ msgstr ""
 #: components/Blocks/Listing/ListingBody
 # defaultMessage: of
 msgid "of"
+msgstr ""
+
+#: components/Blocks/Toc/schema
+# defaultMessage: Table of Contents
+msgid "toc"
 msgstr ""

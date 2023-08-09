@@ -237,6 +237,7 @@ msgid "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation
 msgstr ""
 
 #: components/Blocks/Image/schema
+#: components/Blocks/Toc/schema
 # defaultMessage: Title
 msgid "Title"
 msgstr "Titel"
@@ -275,3 +276,8 @@ msgstr "laden"
 # defaultMessage: of
 msgid "of"
 msgstr "von"
+
+#: components/Blocks/Toc/schema
+# defaultMessage: Table of Contents
+msgid "toc"
+msgstr "Inhaltsverzeichnis"
