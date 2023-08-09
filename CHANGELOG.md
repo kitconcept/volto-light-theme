@@ -8,6 +8,17 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-rc.15 (2023-08-09)
+
+### Bugfix
+
+- Update the recommended version of volto-separator-block to 4.0.0. @davisagli [#211](https://github.com/kitconcept/volto-light-theme/pull/211)
+- ToC block fixes (remove most fields from the block, add default styling
+  schema, fix width in edit mode). @davisagli [#212](https://github.com/kitconcept/volto-light-theme/pull/212)
+- Hide unnecessary Search block fields. @danalvrz [#213](https://github.com/kitconcept/volto-light-theme/pull/213)
+- Upgrade to Volto 17-0.0-alpha.24. @davisagli [#214](https://github.com/kitconcept/volto-light-theme/pull/214)
+
+
 ## 1.0.0-rc.14 (2023-08-08)
 
 ### Feature
