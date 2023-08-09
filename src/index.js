@@ -296,7 +296,9 @@ const applyConfig = (config) => {
   // TOC Block
   config.blocks.blocksConfig.toc = {
     ...config.blocks.blocksConfig.toc,
-    schemaEnhancer: tocBlockSchemaEnhancer,
+    schemaEnhancer: composeSchema(tocBlockSchemaEnhancer, defaultStylingSchema),
+    // remove horizontal variation
+    variations: [config.blocks.blocksConfig.toc.variations[0]],
   };
 
   return config;
