@@ -271,7 +271,7 @@ footer {
   .block.teaser.has--align--center,
   .block-editor-teaser .teaser-item.default,
   .block-editor-slateTable .block.table,
-  .block-editor-toc {
+  .block-editor-toc .table-of-contents {
     @include default-container-width();
     @include adjustMarginsToEditContainer($default-container-width);
   }
