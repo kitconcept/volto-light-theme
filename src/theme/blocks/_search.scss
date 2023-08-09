@@ -2,11 +2,6 @@
 #page-add,
 #page-edit {
   .block.search {
-    &.grid {
-      .card-container > img {
-        width: 100% !important;
-      }
-    }
     .items {
       padding: 0 !important;
     }
@@ -22,15 +17,6 @@
       h3 {
         color: $black;
         @include text-heading-h2();
-      }
-
-      img {
-        width: 220px;
-        height: min-content;
-        aspect-ratio: $aspect-ratio;
-        @media only screen and (max-width: $largest-mobile-screen) {
-          width: 100%;
-        }
       }
     }
 
