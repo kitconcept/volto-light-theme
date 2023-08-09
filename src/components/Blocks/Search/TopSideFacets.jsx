@@ -81,7 +81,7 @@ const TopSideFacets = (props) => {
                     total={totalItems}
                     as="h5"
                   />
-                  {data.sortOnOptions.length > 0 && (
+                  {data.sortOnOptions && data.sortOnOptions.length > 0 && (
                     <div className="sort-on-wrapper">
                       <span className="sort-label">
                         {intl.formatMessage(messages.sort)}
