@@ -267,12 +267,14 @@ footer {
   .block.heading .heading-wrapper,
   .block-editor-listing .items,
   .block-editor-listing .listing.message,
+  .block-editor-search .listing-item,
+  .block-editor-search .search-input-resultscount-sort,
   .block-editor-separator.has--align--full .block.separator,
   .block-editor-separator .block.separator.has--align--full,
   .block.teaser.has--align--center,
   .block-editor-teaser .teaser-item.default,
   .block-editor-slateTable .block.table,
-  .block-editor-toc {
+  .block-editor-toc .table-of-contents {
     @include default-container-width();
     @include adjustMarginsToEditContainer($default-container-width);
   }

@@ -20,6 +20,8 @@ import { ImageBlockDataAdapter } from './components/Blocks/Image/adapter';
 
 import { AccordionSchemaEnhancer } from './components/Blocks/Accordion/schema';
 
+import { searchBlockSchemaEnhancer } from './components/Blocks/Search/schema';
+
 import gridSVG from './icons/block_icn_grid.svg';
 import accordionSVG from './icons/block_icn_accordion.svg';
 import EventView from './components/Theme/EventView';
@@ -264,14 +266,18 @@ const applyConfig = (config) => {
     schemaEnhancer: defaultStylingSchema,
   };
 
-  config.blocks.blocksConfig.search.variations = [
-    {
-      id: 'facetsTopSide',
-      title: 'Facets on top',
-      view: TopSideFacets,
-      isDefault: true,
-    },
-  ];
+  config.blocks.blocksConfig.search = {
+    ...config.blocks.blocksConfig.search,
+    schemaEnhancer: searchBlockSchemaEnhancer,
+    variations: [
+      {
+        id: 'facetsTopSide',
+        title: 'Facets on top',
+        view: TopSideFacets,
+        isDefault: true,
+      },
+    ],
+  };
 
   config.blocks.blocksConfig.__button = {
     ...config.blocks.blocksConfig.__button,
@@ -296,7 +302,9 @@ const applyConfig = (config) => {
   // TOC Block
   config.blocks.blocksConfig.toc = {
     ...config.blocks.blocksConfig.toc,
-    schemaEnhancer: tocBlockSchemaEnhancer,
+    schemaEnhancer: composeSchema(tocBlockSchemaEnhancer, defaultStylingSchema),
+    // remove horizontal variation
+    variations: [config.blocks.blocksConfig.toc.variations[0]],
   };
 
   return config;
