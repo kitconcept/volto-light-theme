@@ -28,9 +28,15 @@
         color: $black;
         @include text-heading-h2();
       }
-      &:last-child {
+      &:last-child:not(.facets) {
         padding-bottom: 40px;
         border-bottom: 1px solid $black;
+      }
+    }
+
+    .facets {
+      .column {
+        margin-bottom: 40px;
       }
     }
 
