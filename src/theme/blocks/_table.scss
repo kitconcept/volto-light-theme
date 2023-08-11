@@ -5,6 +5,7 @@
     color: $white;
     p {
       font-weight: bold;
+      text-transform: none;
     }
   }
 }
@@ -25,4 +26,9 @@
   .slateTable {
     background-color: $lightgrey;
   }
+}
+
+.field-wrapper-hideHeaders-0-table,.field-wrapper-sortable-1-table,.field-wrapper-compact-5-table,
+.field-wrapper-basic-6-table,.field-wrapper-inverted-7-table,.field-wrapper-fixed-2-table,.field-wrapper-celled-3-table{
+  display: none;
 }
