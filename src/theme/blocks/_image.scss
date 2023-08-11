@@ -330,3 +330,13 @@ figcaption {
     }
   }
 }
+
+.ui.form {
+  p.help {
+    @include marginal-description();
+    a {
+      @include marginal-description();
+      text-decoration: underline;
+    }
+  }
+}
