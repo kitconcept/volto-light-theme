@@ -75,8 +75,8 @@
         }
       }
       h3 {
-        margin-bottom: 40px !important;
         margin-top: 0 !important;
+        margin-bottom: 40px !important;
         color: $black;
         @include text-heading-h2();
         @container (max-width: #{$largest-mobile-screen}) {
