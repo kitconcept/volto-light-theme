@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import Container from '@kitconcept/volto-light-theme/components/Atoms/Container/Container';
 import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
+import config from '@plone/volto/registry';
 
 import {
   Anontools,
@@ -15,6 +16,7 @@ import {
 
 const Header = (props) => {
   const { pathname } = props;
+  const { settings } = config;
   const token = useSelector((state) => state.userSession.token);
 
   return (
@@ -38,9 +40,9 @@ const Header = (props) => {
             <div className="tools">
               {!token && <Anontools />}
 
-              <Link aria-label="register" to="/register">
+               { settings.showSelfRegistration && ( <Link aria-label="register" to="/register">
                 <FormattedMessage id="Register" defaultMessage="Registration" />
-              </Link>
+              </Link> )}
               <Link aria-label="sitemap" to="/sitemap">
                 <FormattedMessage id="Sitemap" defaultMessage="Sitemap" />
               </Link>
