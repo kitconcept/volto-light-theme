@@ -40,9 +40,14 @@ const Header = (props) => {
             <div className="tools">
               {!token && <Anontools />}
 
-               { settings.showSelfRegistration && ( <Link aria-label="register" to="/register">
-                <FormattedMessage id="Register" defaultMessage="Registration" />
-              </Link> )}
+              {settings.showSelfRegistration && (
+                <Link aria-label="register" to="/register">
+                  <FormattedMessage
+                    id="Register"
+                    defaultMessage="Registration"
+                  />
+                </Link>
+              )}
               <Link aria-label="sitemap" to="/sitemap">
                 <FormattedMessage id="Sitemap" defaultMessage="Sitemap" />
               </Link>
