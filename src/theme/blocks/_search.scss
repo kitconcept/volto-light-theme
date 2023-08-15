@@ -20,8 +20,6 @@
       padding: 0 !important;
     }
 
-    .facets,
-    .listing.message,
     .listing-item {
       h2,
       h3 {
@@ -29,20 +27,33 @@
         @include text-heading-h2();
       }
       &:last-child {
-        padding-bottom: 40px;
-        border-bottom: 1px solid $black;
+        padding-bottom: 40px !important;
+        border-bottom: 1px solid $black !important;
       }
+    }
 
-      &:not(.grid) {
-        img {
-          width: 220px;
-          height: min-content;
-          aspect-ratio: $aspect-ratio;
-          @container (max-width: #{$largest-mobile-screen}) {
-            width: 100%;
-          }
-        }
+    h2.headline {
+      @container (max-width: #{$default-container-width + 2 * 20px}) {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
       }
+    }
+
+    .facets,
+    .listing.message {
+      h2,
+      h3 {
+        color: $black;
+        @include text-heading-h2();
+      }
+      .column {
+        padding-left: 0;
+        margin-bottom: 40px;
+      }
+    }
+
+    .facets {
+      margin-top: -20px;
     }
 
     .search-wrapper {
