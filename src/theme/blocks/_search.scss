@@ -20,7 +20,6 @@
       padding: 0 !important;
     }
 
-    .facets,
     .listing.message,
     .listing-item {
       h2,
@@ -28,14 +27,20 @@
         color: $black;
         @include text-heading-h2();
       }
-      &:last-child:not(.facets) {
+      &:last-child {
         padding-bottom: 40px;
         border-bottom: 1px solid $black !important;
       }
     }
 
     .facets {
+      h2,
+      h3 {
+        color: $black;
+        @include text-heading-h2();
+      }
       .column {
+        padding-left: 0;
         margin-bottom: 40px;
       }
     }
