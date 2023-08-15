@@ -8,6 +8,15 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-rc.16 (2023-08-15)
+
+### Bugfix
+
+- Add icons and default image customizations, fix other small image sizing issues for Listings, fix spacing issues for Search block. @danalvrz [#207](https://github.com/kitconcept/volto-light-theme/pull/207)
+- Fix font-size of alt text description. @iFlameing [#217](https://github.com/kitconcept/volto-light-theme/pull/217)
+- Fix unconditional Register link in header. @fredvd [#219](https://github.com/kitconcept/volto-light-theme/pull/219)
+
+
 ## 1.0.0-rc.15 (2023-08-09)
 
 ### Bugfix
