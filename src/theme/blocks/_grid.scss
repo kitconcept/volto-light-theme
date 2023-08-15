@@ -180,10 +180,14 @@
     }
 
     &.grid {
-      .listing-item,
-      .listing-item:last-child {
-        padding-bottom: 0 !important;
+      .listing-item {
+        padding-bottom: 10px !important;
         border-bottom: none !important;
+
+        &:last-child {
+          padding-bottom: 0 !important;
+          border-bottom: none !important;
+        }
       }
     }
   }

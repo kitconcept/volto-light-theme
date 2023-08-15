@@ -28,6 +28,17 @@
       border-bottom: none !important;
       margin-bottom: 0;
     }
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  h2.headline {
+    @container (max-width: #{$default-container-width + 2 * 20px}) {
+      margin-right: 20px !important;
+      margin-left: 20px !important;
+    }
   }
 
   // Default variation
@@ -66,15 +77,18 @@
         aspect-ratio: $aspect-ratio !important;
         @container (max-width: #{$largest-mobile-screen}) {
           width: 100%;
+          min-width: 335px;
+          margin-bottom: 20px;
         }
       }
       h3 {
+        margin-top: 0 !important;
         margin-bottom: 40px !important;
         color: $black;
         @include text-heading-h2();
         @container (max-width: #{$largest-mobile-screen}) {
           @include text-heading-h3();
-          margin-bottom: 20px;
+          margin-bottom: 20px !important;
         }
       }
     }
@@ -247,6 +261,12 @@
       caption-side: bottom;
       text-align: center;
     }
+  }
+
+  // To overwrite semantic ui .grid negative margin rule
+  .ui.grid {
+    margin-right: 0;
+    margin-left: 0;
   }
 }
 
