@@ -45,6 +45,10 @@
       }
     }
 
+    .facets {
+      margin-top: -20px;
+    }
+
     .search-wrapper {
       margin-bottom: 0;
       @container (max-width: #{$largest-mobile-screen}) {

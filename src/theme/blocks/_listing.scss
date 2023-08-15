@@ -34,6 +34,13 @@
     }
   }
 
+  h2.headline {
+    @container (max-width: #{$default-container-width + 2 * 20px}) {
+      margin-right: 20px !important;
+      margin-left: 20px !important;
+    }
+  }
+
   // Default variation
   &.default {
     .headline {
