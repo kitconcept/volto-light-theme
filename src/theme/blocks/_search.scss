@@ -32,6 +32,13 @@
       }
     }
 
+    h2.headline {
+      @container (max-width: #{$default-container-width + 2 * 20px}) {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+      }
+    }
+
     .facets,
     .listing.message {
       h2,
