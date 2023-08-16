@@ -31,6 +31,7 @@
     }
 
     @container (max-width: #{$largest-mobile-screen} ) {
+      margin-bottom: $spacing-small;
       .day {
         display: none;
       }
@@ -198,14 +199,6 @@
       margin-bottom: $spacing-large;
     }
   }
-}
-
-/* maps */
-.block.maps iframe,
-.block.align.right.maps iframe,
-.block.align.left.maps iframe {
-  height: unset;
-  aspect-ratio: $aspect-ratio;
 }
 
 // Slate Style External Links
