@@ -279,10 +279,10 @@
       margin-left: auto;
     }
 
-    h2 {
+    h2.headline {
       @include default-container-width();
-      margin-right: auto;
-      margin-left: auto;
+      margin-right: auto !important;
+      margin-left: auto !important;
     }
   }
 }

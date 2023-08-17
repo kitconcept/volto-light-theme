@@ -13,10 +13,6 @@
   @include vertical-space-separator();
 }
 
-.block.image + .block.separator {
-  margin-top: 60px !important;
-}
-
 #page-edit .block-editor-separator {
   &.has--backgroundColor--grey {
     background-color: $lightgrey;
