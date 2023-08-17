@@ -91,12 +91,20 @@ h1.documentFirstHeading {
   @include block-title();
   @include vertical-space-heading();
 }
+
 .heading-wrapper h3 {
   padding-top: 3rem;
   padding-bottom: 1rem;
   font-size: 42px;
   font-weight: $light;
   line-height: 48px;
+}
+
+.block-editor-heading {
+  .block .heading-wrapper {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
 }
 
 // Slate headings

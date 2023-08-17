@@ -198,6 +198,13 @@
   }
 }
 
+#page-edit .block-editor-gridBlock,
+#page-add .block-editor-gridBlock {
+  h2.headline {
+    margin-left: 10px !important;
+  }
+}
+
 // Dynamic font sizes depending on number of columns for in-grid blocks
 #page-document .block.gridBlock,
 #page-edit .block-editor-gridBlock,
