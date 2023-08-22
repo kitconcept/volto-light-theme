@@ -64,8 +64,12 @@
 
   .blocks-group-wrapper {
     padding-top: 0px;
-    padding-bottom: 60px;
+    padding-bottom: 80px;
+    @container (max-width: #{$largest-mobile-screen} ) {
+      padding-bottom: 60px;
+    }
   }
+
   #page-document {
     .dates,
     .details-container {
@@ -76,6 +80,9 @@
   .dates {
     margin-top: $spacing-medium;
     margin-bottom: $spacing-medium;
+    @container (max-width: #{$largest-mobile-screen} ) {
+      margin-bottom: $spacing-small;
+    }
 
     .day {
       @include body-text-bold();
@@ -85,8 +92,19 @@
   }
 
   .details-container {
-    margin-bottom: 50px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    border-top: 1px solid $black;
+    border-bottom: 1px solid $black;
+    margin-top: 0px;
+    margin-bottom: 80px;
+    @container (max-width: #{$largest-mobile-screen} ) {
+      padding-top: 60px;
+      padding-bottom: 60px;
+      margin-bottom: 60px;
+    }
     .two.column.row {
+      padding-top: 0px;
       .event-title {
         margin-bottom: 25px;
         .event-heading {
