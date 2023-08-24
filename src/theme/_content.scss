@@ -64,9 +64,9 @@
 
   .blocks-group-wrapper {
     padding-top: 0px;
-    padding-bottom: 80px;
+    padding-bottom: $spacing-xlarge;
     @container (max-width: #{$largest-mobile-screen} ) {
-      padding-bottom: 60px;
+      padding-bottom: $spacing-large;
     }
   }
 
@@ -92,16 +92,16 @@
   }
 
   .details-container {
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: $spacing-xlarge;
+    padding-bottom: $spacing-xlarge;
     border-top: 1px solid $black;
     border-bottom: 1px solid $black;
     margin-top: 0px;
-    margin-bottom: 80px;
+    margin-bottom: $spacing-xlarge;
     @container (max-width: #{$largest-mobile-screen} ) {
-      padding-top: 60px;
-      padding-bottom: 60px;
-      margin-bottom: 60px;
+      padding-top: $spacing-large;
+      padding-bottom: $spacing-large;
+      margin-bottom: $spacing-large;
     }
     .two.column.row {
       padding-top: 0px;
