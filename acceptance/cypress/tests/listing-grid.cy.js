@@ -35,7 +35,6 @@ context('Listing Grid Acceptance Tests', () => {
       path: '/document',
     });
 
-    // Add Listing-Block variation Standard
     cy.visit('/document/edit');
     cy.get('.block .slate-editor [contenteditable=true]').click();
     cy.get('.button .block-add-button').click({ force: true });
