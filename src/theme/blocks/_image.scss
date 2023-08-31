@@ -24,8 +24,8 @@ figure {
     // This is to equal the heading margin in case of the
     // floating image + heading use case
     // It matches the mocks for standalone images anyways
-    margin-top: $heading-text-top-spacing;
-    margin-bottom: 0;
+    margin-top: $spacing-large;
+    margin-bottom: 0 !important;
   }
 
   &.align.left.has--backgroundColor--grey,
@@ -50,6 +50,10 @@ figure {
       margin-left: 20px;
       float: right;
 
+      @container (max-width: #{$largest-mobile-screen}) {
+        margin-bottom: $spacing-large;
+      }
+
       img {
         margin-right: 0 !important;
         margin-bottom: 0px;
@@ -62,6 +66,10 @@ figure {
       margin-right: 20px;
       margin-bottom: 20px;
       float: left;
+
+      @container (max-width: #{$largest-mobile-screen}) {
+        margin-bottom: $spacing-large;
+      }
 
       img {
         margin-right: 0 !important;
@@ -98,9 +106,17 @@ figure {
       }
     }
 
+    &.wide,
+    &.full {
+      margin-top: $spacing-large;
+      margin-bottom: $spacing-large;
+    }
+
     &.center {
       width: 100% !important;
+      margin-top: $spacing-large;
       margin-right: auto !important;
+      margin-bottom: $spacing-large;
       margin-left: auto !important;
       object-fit: cover;
 
@@ -195,6 +211,13 @@ figcaption {
     padding-left: 25px;
   }
 
+  &.wide,
+  &.full,
+  &.center {
+    margin-top: $spacing-large;
+    margin-bottom: $spacing-large;
+  }
+
   &.align.left.has--backgroundColor--grey figure,
   &.align.right.has--backgroundColor--grey figure {
     padding-top: 25px;
@@ -208,17 +231,30 @@ figcaption {
 
   &.align.left,
   &.align.right {
-    margin-top: 50px;
+    margin-top: $spacing-large;
+    margin-bottom: 0 !important;
 
-    figure.video-inner {
+    .video-inner {
+      margin-bottom: 20px !important;
       @media only screen and (max-width: $tablet-breakpoint) {
         width: 100%;
+      }
+      @container (max-width: #{$largest-mobile-screen}) {
+        margin-bottom: $spacing-large !important;
       }
     }
 
     img {
       margin: 0 !important;
     }
+  }
+
+  &.align.left .video-inner {
+    margin-right: 20px !important;
+  }
+
+  &.align.right .video-inner {
+    margin-left: 20px !important;
   }
 }
 
@@ -327,6 +363,16 @@ figcaption {
 
     a {
       margin-left: 5px;
+    }
+  }
+}
+
+.ui.form {
+  p.help {
+    @include marginal-description();
+    a {
+      @include marginal-description();
+      text-decoration: underline;
     }
   }
 }

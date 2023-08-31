@@ -31,6 +31,7 @@
     }
 
     @container (max-width: #{$largest-mobile-screen} ) {
+      margin-bottom: $spacing-small;
       .day {
         display: none;
       }
@@ -63,8 +64,12 @@
 
   .blocks-group-wrapper {
     padding-top: 0px;
-    padding-bottom: 60px;
+    padding-bottom: $spacing-xlarge;
+    @container (max-width: #{$largest-mobile-screen} ) {
+      padding-bottom: $spacing-large;
+    }
   }
+
   #page-document {
     .dates,
     .details-container {
@@ -75,6 +80,9 @@
   .dates {
     margin-top: $spacing-medium;
     margin-bottom: $spacing-medium;
+    @container (max-width: #{$largest-mobile-screen} ) {
+      margin-bottom: $spacing-small;
+    }
 
     .day {
       @include body-text-bold();
@@ -84,8 +92,19 @@
   }
 
   .details-container {
-    margin-bottom: 50px;
+    padding-top: $spacing-xlarge;
+    padding-bottom: $spacing-xlarge;
+    border-top: 1px solid $black;
+    border-bottom: 1px solid $black;
+    margin-top: 0px;
+    margin-bottom: $spacing-xlarge;
+    @container (max-width: #{$largest-mobile-screen} ) {
+      padding-top: $spacing-large;
+      padding-bottom: $spacing-large;
+      margin-bottom: $spacing-large;
+    }
     .two.column.row {
+      padding-top: 0px;
       .event-title {
         margin-bottom: 25px;
         .event-heading {
@@ -198,14 +217,6 @@
       margin-bottom: $spacing-large;
     }
   }
-}
-
-/* maps */
-.block.maps iframe,
-.block.align.right.maps iframe,
-.block.align.left.maps iframe {
-  height: unset;
-  aspect-ratio: $aspect-ratio;
 }
 
 // Slate Style External Links

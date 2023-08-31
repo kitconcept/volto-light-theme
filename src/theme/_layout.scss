@@ -171,8 +171,8 @@ footer {
   & > .block.listing .emptyListing,
   & > .block.listing .image-gallery,
   & > .block.listing.grid,
-  & > .block.search .listing-item,
-  & > .block.search .search-input-resultscount-sort,
+  & > .block.search.grid,
+  & > .block.search .searchBlock-container,
   & > .block h2.headline,
   & > .block.heading .heading-wrapper,
   & > .block.separator.has--align--full .line,
@@ -242,8 +242,16 @@ footer {
   .block-editor-video.align.right,
   .block-editor-video.center .video-inner,
   .block.maps.align.center .maps-inner,
-  .block-editor-separator.has--align--left .block.separator,
-  .block-editor-separator.has--align--center .block.separator,
+  .block-editor-separator.has--align--left
+    .block.separator.inner
+    .block.separator
+    .block.separator
+    .line,
+  .block-editor-separator.has--align--center
+    .block.separator.inner
+    .block.separator
+    .block.separator
+    .line,
   .block-editor-codeBlock,
   .block-editor-mermaidBlock {
     @include narrow-container-width();
@@ -266,10 +274,8 @@ footer {
   .block.heading .heading-wrapper,
   .block-editor-listing .items,
   .block-editor-listing .listing.message,
-  .block-editor-search .listing-item,
-  .block-editor-search .search-input-resultscount-sort,
-  .block-editor-separator.has--align--full .block.separator,
-  .block-editor-separator .block.separator.has--align--full,
+  .block-editor-search .searchBlock-container,
+  .block-editor-separator.has--align--full .block.separator .line,
   .block.teaser.has--align--center,
   .block-editor-teaser .teaser-item.default,
   .block-editor-slateTable .block.table,

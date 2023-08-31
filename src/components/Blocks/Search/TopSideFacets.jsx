@@ -55,7 +55,7 @@ const TopSideFacets = (props) => {
   };
 
   return (
-    <>
+    <div className="searchBlock-container">
       {data.headline && <h2 className="headline">{data.headline}</h2>}
 
       <Grid className="searchBlock-facets" stackable>
@@ -154,7 +154,7 @@ const TopSideFacets = (props) => {
           <Grid.Column>{children}</Grid.Column>
         </Grid.Row>
       </Grid>
-    </>
+    </div>
   );
 };
 
