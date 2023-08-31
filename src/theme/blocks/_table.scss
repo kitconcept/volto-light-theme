@@ -1,15 +1,29 @@
-.ui.table.slate-table-block {
+.block.table {
+  &.selected::before {
+    display: none;
+  }
+
+  &::before {
+    display: none;
+  }
+}
+.ui.celled.table.slate-table-block {
+  border: 1px solid #c1c1c1;
+
   th {
     padding: $spacing-small;
+    border-color: #c1c1c1;
     background: $darkGrey;
     color: $white;
     p {
+      color: $lightgrey;
       font-weight: bold;
       text-transform: none;
     }
   }
 
   tr td {
+    padding: $spacing-small;
     border-top: 1px solid #c1c1c1;
     border-left: 1px solid #c1c1c1;
   }
