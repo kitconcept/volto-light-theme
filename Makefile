@@ -22,7 +22,7 @@ RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
 
 PLONE_VERSION=6
-VOLTO_VERSION=17.0.0-alpha.24
+VOLTO_VERSION=17.0.0-alpha.26
 
 ADDON_NAME='@kitconcept/volto-light-theme'
 ADDON_PATH='volto-light-theme'
