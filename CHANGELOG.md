@@ -8,6 +8,31 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-rc.17 (2023-09-18)
+
+### Feature
+
+- Upgrade to Volto 17a26 - Fix i18n - Upgrade Cypress 13 @sneridagh [#229](https://github.com/kitconcept/volto-light-theme/pull/229)
+- Upgrade volto-heading-block version @sneridagh [#230](https://github.com/kitconcept/volto-light-theme/pull/230)
+
+### Bugfix
+
+- Fix css for showing external link icon. @iFlameing [#19](https://github.com/kitconcept/volto-light-theme/pull/19)
+- Remove extra config from table block @iFlameing. [#91](https://github.com/kitconcept/volto-light-theme/pull/91)
+- Fix `dates` bottom margin for News Item in mobile. @danalvrz
+  Fix margins for Image block. @danalvrz
+  Fix margins for Video block. @danalvrz
+  Fix block title margin for Listing in Edit. @danalvrz
+  Fix block title margin for Grid in Edit. @danalvrz
+  Fix margin for Heading block in Edit. @danalvrz
+  Fix margins for Separator in Edit. @danalvrz
+  Fix margins for Maps block. @danalvrz [#220](https://github.com/kitconcept/volto-light-theme/pull/220)
+- Write cypress test for the listing Grid variation. @iFlameing [#221](https://github.com/kitconcept/volto-light-theme/pull/221)
+- Add acceptance test for maps block @iFlameing. [#223](https://github.com/kitconcept/volto-light-theme/pull/223)
+- Fix mismatch of event view with Figma. @iFlameing [#226](https://github.com/kitconcept/volto-light-theme/pull/226)
+- Fix a11y violation in File view. @iFlameing [#227](https://github.com/kitconcept/volto-light-theme/pull/227)
+
+
 ## 1.0.0-rc.16 (2023-08-15)
 
 ### Bugfix
