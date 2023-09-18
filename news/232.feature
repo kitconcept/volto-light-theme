@@ -1,1 +1,1 @@
-Upgrade to Volto 17a17 @sneridagh
+Upgrade to Volto 17a27 @sneridagh
