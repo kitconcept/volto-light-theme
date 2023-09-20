@@ -1,4 +1,8 @@
 // Slider Block
+:root {
+  --slider-block-edit-adjustment: 40px;
+}
+
 .block.slider {
   // Reset original
   &:not(.inner):not([role='presentation']) {
