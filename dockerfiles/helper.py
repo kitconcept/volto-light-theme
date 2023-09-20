@@ -11,9 +11,21 @@ import os
 logger = logging.getLogger("Volto Helper")
 
 
+def get_jsconfig_path():
+    primary_path = (APP_FOLDER / "tsconfig.json").resolve()
+    fallback_path = (APP_FOLDER / "jsconfig.json").resolve()
+
+    if primary_path.exists():
+        return primary_path
+    elif fallback_path.exists():
+        return fallback_path
+    else:
+        return None
+
+
 APP_FOLDER = Path("/app").resolve()
 PACKAGE_JSON_PATH = (APP_FOLDER / "package.json").resolve()
-JSCONFIG_PATH = (APP_FOLDER / "jsconfig.json").resolve()
+JSCONFIG_PATH = get_jsconfig_path()
 VOLTOCONFIGPATH = (APP_FOLDER / "volto.config.js").resolve()
 
 
