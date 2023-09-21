@@ -1,12 +1,12 @@
 import React from 'react';
 import { useIntl, defineMessages } from 'react-intl';
-import { getTeaserImageURL } from '@kitconcept/volto-slider-block/helpers/Image/Image';
-import { flattenToAppURL } from '@plone/volto/helpers';
 import { Icon, MaybeWrap, UniversalLink } from '@plone/volto/components';
 import { Input, Button, Message } from 'semantic-ui-react';
+import { isInternalURL } from '@plone/volto/helpers';
 import cx from 'classnames';
 import navTreeSVG from '@plone/volto/icons/nav.svg';
 import imageBlockSVG from '@plone/volto/components/manage/Blocks/Image/block-image.svg';
+import config from '@plone/volto/registry';
 
 const messages = defineMessages({
   PleaseChooseContent: {
@@ -28,6 +28,8 @@ const messages = defineMessages({
   },
 });
 
+const DefaultImage = (props) => <img {...props} alt={props.alt || ''} />;
+
 const SliderBody = ({
   index,
   onChangeBlock,
@@ -38,15 +40,11 @@ const SliderBody = ({
   openObjectBrowser,
 }) => {
   const intl = useIntl();
-  // START CUSTOMIZATION
   const href = data.href?.[0];
-  const imageOverride = data.preview_image?.[0];
+  const image = data.preview_image?.[0];
 
-  // default img expects string src
-  const src =
-    href && flattenToAppURL(getTeaserImageURL({ href, image: imageOverride }));
-  const renderedImage = <img src={src} alt="" loading="lazy" />;
-  // END CUSTOMIZATION
+  const Image = config.getComponent('Image').component || DefaultImage;
+  const { openExternalLinkInNewTab } = config.settings;
 
   const handleClick = () => {
     openObjectBrowser({
@@ -101,13 +99,26 @@ const SliderBody = ({
             condition={!isEditMode}
             as={UniversalLink}
             href={href['@id']}
-            target={data.openLinkInNewTab ? '_blank' : null}
+            target={
+              data.openLinkInNewTab ||
+              (openExternalLinkInNewTab && !isInternalURL(href['@id']))
+                ? '_blank'
+                : null
+            }
             tabIndex="-1"
           >
+            {(href?.hasPreviewImage || href.image_field || image) && (
+              <div className="highlight-image-wrapper gradient">
+                <Image
+                  item={image || href}
+                  imageField={image ? image.image_field : href.image_field}
+                  alt=""
+                  loading="lazy"
+                  responsive={true}
+                />
+              </div>
+            )}
             {/* START CUSTOMIZATION */}
-            <div className="highlight-image-wrapper gradient">
-              {renderedImage}
-            </div>
             <div
               className={cx(
                 'teaser-item-title fix-width-issue',
