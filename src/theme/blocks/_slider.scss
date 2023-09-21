@@ -1,8 +1,19 @@
 // Slider Block
+:root {
+  --slider-block-edit-width-adjustment: 40px;
+}
+
+$sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
+
 .block.slider {
   // Reset original
   &:not(.inner):not([role='presentation']) {
     padding-bottom: 0;
+  }
+
+  .highlight-image-wrapper img {
+    // Override Volto's Image Component inline style aspect ratio.
+    aspect-ratio: $sliderImagesAspectRatio !important;
   }
 
   .teaser-item,

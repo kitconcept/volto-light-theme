@@ -1,11 +1,31 @@
-.ui.table.slate-table-block {
+.block.table {
+  &.selected::before {
+    display: none;
+  }
+
+  &::before {
+    display: none;
+  }
+}
+.ui.celled.table.slate-table-block {
+  border: 1px solid #c1c1c1;
+
   th {
     padding: $spacing-small;
+    border-color: #c1c1c1;
     background: $darkGrey;
     color: $white;
     p {
+      color: $lightgrey;
       font-weight: bold;
+      text-transform: none;
     }
+  }
+
+  tr td {
+    padding: $spacing-small;
+    border-top: 1px solid #c1c1c1;
+    border-left: 1px solid #c1c1c1;
   }
 }
 
@@ -25,4 +45,14 @@
   .slateTable {
     background-color: $lightgrey;
   }
+}
+
+.field-wrapper-hideHeaders-0-table,
+.field-wrapper-sortable-1-table,
+.field-wrapper-compact-5-table,
+.field-wrapper-basic-6-table,
+.field-wrapper-inverted-7-table,
+.field-wrapper-fixed-2-table,
+.field-wrapper-celled-3-table {
+  display: none;
 }

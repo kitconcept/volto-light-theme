@@ -22,7 +22,7 @@ RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
 
 PLONE_VERSION=6
-VOLTO_VERSION=17.0.0-alpha.23
+VOLTO_VERSION=17.0.0-alpha.27
 
 ADDON_NAME='@kitconcept/volto-light-theme'
 ADDON_PATH='volto-light-theme'
@@ -76,26 +76,33 @@ dev: ## Develop the addon
 help:		## Show this help.
 	@echo -e "$$(grep -hE '^\S+:.*##' $(MAKEFILE_LIST) | sed -e 's/:.*##\s*/:/' -e 's/^\(.\+\):\(.*\)/\\x1b[36m\1\\x1b[m:\2/' | column -c2 -t -s :)"
 
+## Setup the local environment
+.PHONY: install
+install: ## Install the local environment, Cypress, build acceptance containers
+	yarn
+	make install-acceptance
+
 # Dev Helpers
 .PHONY: i18n
 i18n: ## Sync i18n
-	${DEV_COMPOSE} run addon-dev i18n
+	@echo "$(YELLOW)==> Do not forget to setup the local environment (make install) $(RESET)"
+	yarn i18n
 
 .PHONY: format
 format: ## Format codebase
-	${DEV_COMPOSE} run addon-dev lint:fix
-	${DEV_COMPOSE} run addon-dev prettier:fix
-	${DEV_COMPOSE} run addon-dev stylelint:fix
+	${DEV_COMPOSE} run --rm addon-dev lint:fix
+	${DEV_COMPOSE} run --rm addon-dev prettier:fix
+	${DEV_COMPOSE} run --rm addon-dev stylelint:fix
 
 .PHONY: lint
 lint: ## Lint Codebase
-	${DEV_COMPOSE} run addon-dev lint
-	${DEV_COMPOSE} run addon-dev prettier
-	${DEV_COMPOSE} run addon-dev stylelint --allow-empty-input
+	${DEV_COMPOSE} run --rm addon-dev lint
+	${DEV_COMPOSE} run --rm addon-dev prettier
+	${DEV_COMPOSE} run --rm addon-dev stylelint --allow-empty-input
 
 .PHONY: test
 test: ## Run unit tests
-	${DEV_COMPOSE} run addon-dev test --watchAll
+	${DEV_COMPOSE} run --rm addon-dev test --watchAll
 
 .PHONY: test-ci
 test-ci: ## Run unit tests in CI

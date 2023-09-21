@@ -31,6 +31,7 @@
     }
 
     @container (max-width: #{$largest-mobile-screen} ) {
+      margin-bottom: $spacing-small;
       .day {
         display: none;
       }
@@ -63,8 +64,12 @@
 
   .blocks-group-wrapper {
     padding-top: 0px;
-    padding-bottom: 60px;
+    padding-bottom: $spacing-xlarge;
+    @container (max-width: #{$largest-mobile-screen} ) {
+      padding-bottom: $spacing-large;
+    }
   }
+
   #page-document {
     .dates,
     .details-container {
@@ -75,6 +80,9 @@
   .dates {
     margin-top: $spacing-medium;
     margin-bottom: $spacing-medium;
+    @container (max-width: #{$largest-mobile-screen} ) {
+      margin-bottom: $spacing-small;
+    }
 
     .day {
       @include body-text-bold();
@@ -84,8 +92,19 @@
   }
 
   .details-container {
-    margin-bottom: 50px;
+    padding-top: $spacing-xlarge;
+    padding-bottom: $spacing-xlarge;
+    border-top: 1px solid $black;
+    border-bottom: 1px solid $black;
+    margin-top: 0px;
+    margin-bottom: $spacing-xlarge;
+    @container (max-width: #{$largest-mobile-screen} ) {
+      padding-top: $spacing-large;
+      padding-bottom: $spacing-large;
+      margin-bottom: $spacing-large;
+    }
     .two.column.row {
+      padding-top: 0px;
       .event-title {
         margin-bottom: 25px;
         .event-heading {
@@ -117,6 +136,9 @@
 
       .event-button {
         padding-top: 50px;
+        a:after {
+          display: none !important;
+        }
         .button.event-btn {
           padding: 8px 20px;
           border: 1px solid #000;
@@ -143,7 +165,7 @@
       text-decoration: underline;
     }
     span {
-      color: #808080;
+      color: $darkGrey;
     }
   }
 }
@@ -197,39 +219,7 @@
   }
 }
 
-/* maps */
-.block.maps iframe,
-.block.align.right.maps iframe,
-.block.align.left.maps iframe {
-  height: unset;
-  aspect-ratio: $aspect-ratio;
-}
-
-// Slate Style External Links
-.content-area .ui.container,
-.content-area .a.container {
-  a[href^="http://"]:not([href^="http://light-theme"]):not([href^="http://light-theme.de"]):not([href^="http://www.light-theme.de"]):after,
-  a[href^="https://"]:not([href^="https://light-theme"]):not([href^="https://light-theme.de"]):not([href^="https://www.light-theme.de"]):after
-  {
-    display: inline;
-    width: 11px;
-    height: 11px;
-    margin-top: -25px;
-    margin-left: 3px;
-    content: '\a0'url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='external-link-alt' class='svg-inline--fa fa-external-link-alt fa-w-16' role='img' xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 512 512'%3E%3Cpath fill='%23007EB1' d='M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z'%3E%3C/path%3E%3C/svg%3E");
-    white-space: nowrap;
-  }
-}
-.content-area #page-edit .ui.container {
-  a[href^="http://"]:not([href^="http://light-theme"]):not([href^="http://light-theme.de"]):not([href^="http://www.light-theme.de"]):after,
-  a[href^="https://"]:not([href^="https://light-theme"]):not([href^="https://light-theme.de"]):not([href^="https://www.light-theme.de"]):after
-  {
-    display: inline;
-    width: 11px;
-    height: 11px;
-    margin-top: -25px;
-    margin-left: 3px;
-    content: '\a0'url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='external-link-alt' class='svg-inline--fa fa-external-link-alt fa-w-16' role='img' xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 512 512'%3E%3Cpath fill='%23007EB1' d='M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z'%3E%3C/path%3E%3C/svg%3E");
-    white-space: nowrap;
-  }
+// hide some fields from edit & add forms
+.field-wrapper-changeNote {
+  display: none;
 }

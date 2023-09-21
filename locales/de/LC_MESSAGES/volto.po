@@ -37,35 +37,25 @@ msgstr ""
 msgid "Browse the site, drop an image, or type an URL"
 msgstr "Bild auswählen, hochladen oder URL angeben"
 
-#: components/Blocks/Slider/schema
-# defaultMessage: Button text
-msgid "Button text"
-msgstr ""
-
 #: components/Widgets/AlignWidget
 # defaultMessage: Center
 msgid "Center"
-msgstr ""
+msgstr "Mittig"
 
 #: components/Navigation/Navigation
 # defaultMessage: Close menu
 msgid "Close menu"
-msgstr ""
+msgstr "Menü schließen"
 
 #: components/Theme/EventView
 # defaultMessage: Contact
 msgid "Contact"
-msgstr ""
-
-#: components/Blocks/Slider/DefaultBody
-# defaultMessage: Continue reading
-msgid "Continue reading"
-msgstr "mehr erfahren"
+msgstr "Kontakt"
 
 #: components/Footer/Footer
 # defaultMessage: Copyright
 msgid "Copyright"
-msgstr ""
+msgstr "Urheberrechte"
 
 #: components/Blocks/Image/schema
 # defaultMessage: Description
@@ -82,15 +72,10 @@ msgstr ""
 msgid "End"
 msgstr "ende"
 
-#: components/Blocks/Slider/schema
-# defaultMessage: Flag align
-msgid "Flag align"
-msgstr "Flagge Ausrichtung"
-
 #: components/Widgets/AlignWidget
 # defaultMessage: Full
 msgid "Full"
-msgstr ""
+msgstr "Volle Breite"
 
 #: components/Footer/Footer
 # defaultMessage: GNU GPL license
@@ -120,7 +105,7 @@ msgstr "Bild"
 #: components/Widgets/AlignWidget
 # defaultMessage: Left
 msgid "Left"
-msgstr ""
+msgstr "Links"
 
 #: components/Theme/EventView
 # defaultMessage: Location
@@ -130,7 +115,7 @@ msgstr "Veranstaltungsort"
 #: components/Anontools/Anontools
 # defaultMessage: Log in
 msgid "Log in"
-msgstr ""
+msgstr "Anmelden"
 
 #: components/Blocks/Listing/ListingBody
 # defaultMessage: Next Page
@@ -140,7 +125,7 @@ msgstr "Nächste Seite"
 #: components/Theme/EventView
 # defaultMessage: No date
 msgid "No date"
-msgstr ""
+msgstr "Kein Datum"
 
 #: components/Blocks/Image/ImageSidebar
 # defaultMessage: No image selected
@@ -155,17 +140,12 @@ msgstr "Keine Elemente im Ordner gefunden."
 #: components/Navigation/Navigation
 # defaultMessage: Open menu
 msgid "Open menu"
-msgstr ""
+msgstr "Menü öffnen"
 
 #: components/Theme/EventView
 # defaultMessage: Phone
 msgid "Phone"
-msgstr ""
-
-#: components/Blocks/Slider/DefaultBody
-# defaultMessage: Please choose an existing content as source for this element
-msgid "Please choose an existing content as source for this element"
-msgstr "Bitte wählen Sie einen bestehenden Inhalt als Quelle für dieses Element"
+msgstr "Telefon"
 
 #: components/Footer/Footer
 # defaultMessage: Plone Foundation
@@ -198,10 +178,9 @@ msgid "Previous Page"
 msgstr "Vorherige Seite"
 
 #: components/Anontools/Anontools
-#: components/Header/Header
 # defaultMessage: Register
 msgid "Register"
-msgstr ""
+msgstr "Registrieren"
 
 #: components/Blocks/Listing/ListingBody
 # defaultMessage: Result
@@ -211,19 +190,19 @@ msgstr "Ergebnis"
 #: components/Widgets/AlignWidget
 # defaultMessage: Right
 msgid "Right"
-msgstr ""
+msgstr "Rechts"
 
 #: components/Blocks/Search/components/SearchInput
 #: components/Blocks/Search/TopSideFacets
 #: components/SearchWidget/SearchWidget
 # defaultMessage: Search
 msgid "Search"
-msgstr ""
+msgstr "Suche"
 
 #: components/SearchWidget/SearchWidget
 # defaultMessage: Search Site
 msgid "Search Site"
-msgstr ""
+msgstr "Seite durchsuchen"
 
 #: components/Blocks/Search/components/SearchDetails
 # defaultMessage: Search results
@@ -233,12 +212,12 @@ msgstr "Ergebnisse"
 #: components/Blocks/Search/components/SearchDetails
 # defaultMessage: Searched for
 msgid "Searched for"
-msgstr ""
+msgstr "Gesucht für"
 
 #: components/Logo/Logo
 # defaultMessage: Site
 msgid "Site"
-msgstr ""
+msgstr "Seite"
 
 #: components/Header/Header
 #: index
@@ -249,12 +228,7 @@ msgstr "Übersicht"
 #: components/Blocks/Search/TopSideFacets
 # defaultMessage: Sorting
 msgid "Sorting"
-msgstr ""
-
-#: components/Blocks/Slider/DefaultBody
-# defaultMessage: Source
-msgid "Source"
-msgstr "Quelle"
+msgstr "Sortierung"
 
 #: components/Theme/EventView
 # defaultMessage: Start
@@ -279,12 +253,12 @@ msgstr "Bild hochladen"
 #: components/Theme/EventView
 # defaultMessage: Website
 msgid "Website"
-msgstr ""
+msgstr "Webseite"
 
 #: components/Widgets/AlignWidget
 # defaultMessage: Wide
 msgid "Wide"
-msgstr ""
+msgstr "Breit"
 
 #: components/Blocks/Image/ImageSidebar
 # defaultMessage: Clear image
@@ -300,11 +274,6 @@ msgstr ""
 # defaultMessage: Loading
 msgid "loading"
 msgstr "laden"
-
-#: components/Blocks/Slider/DefaultBody
-# defaultMessage: More info
-msgid "moreInfo"
-msgstr "mehr Information"
 
 #: components/Blocks/Listing/ListingBody
 # defaultMessage: of

@@ -8,6 +8,64 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-rc.17 (2023-09-18)
+
+### Feature
+
+- Upgrade to Volto 17a26 - Fix i18n - Upgrade Cypress 13 @sneridagh [#229](https://github.com/kitconcept/volto-light-theme/pull/229)
+- Upgrade volto-heading-block version @sneridagh [#230](https://github.com/kitconcept/volto-light-theme/pull/230)
+
+### Bugfix
+
+- Fix css for showing external link icon. @iFlameing [#19](https://github.com/kitconcept/volto-light-theme/pull/19)
+- Remove extra config from table block @iFlameing. [#91](https://github.com/kitconcept/volto-light-theme/pull/91)
+- Fix `dates` bottom margin for News Item in mobile. @danalvrz
+  Fix margins for Image block. @danalvrz
+  Fix margins for Video block. @danalvrz
+  Fix block title margin for Listing in Edit. @danalvrz
+  Fix block title margin for Grid in Edit. @danalvrz
+  Fix margin for Heading block in Edit. @danalvrz
+  Fix margins for Separator in Edit. @danalvrz
+  Fix margins for Maps block. @danalvrz [#220](https://github.com/kitconcept/volto-light-theme/pull/220)
+- Write cypress test for the listing Grid variation. @iFlameing [#221](https://github.com/kitconcept/volto-light-theme/pull/221)
+- Add acceptance test for maps block @iFlameing. [#223](https://github.com/kitconcept/volto-light-theme/pull/223)
+- Fix mismatch of event view with Figma. @iFlameing [#226](https://github.com/kitconcept/volto-light-theme/pull/226)
+- Fix a11y violation in File view. @iFlameing [#227](https://github.com/kitconcept/volto-light-theme/pull/227)
+
+
+## 1.0.0-rc.16 (2023-08-15)
+
+### Bugfix
+
+- Add icons and default image customizations, fix other small image sizing issues for Listings, fix spacing issues for Search block. @danalvrz [#207](https://github.com/kitconcept/volto-light-theme/pull/207)
+- Fix font-size of alt text description. @iFlameing [#217](https://github.com/kitconcept/volto-light-theme/pull/217)
+- Fix unconditional Register link in header. @fredvd [#219](https://github.com/kitconcept/volto-light-theme/pull/219)
+
+
+## 1.0.0-rc.15 (2023-08-09)
+
+### Bugfix
+
+- Update the recommended version of volto-separator-block to 4.0.0. @davisagli [#211](https://github.com/kitconcept/volto-light-theme/pull/211)
+- ToC block fixes (remove most fields from the block, add default styling
+  schema, fix width in edit mode). @davisagli [#212](https://github.com/kitconcept/volto-light-theme/pull/212)
+- Hide unnecessary Search block fields. @danalvrz [#213](https://github.com/kitconcept/volto-light-theme/pull/213)
+- Upgrade to Volto 17-0.0-alpha.24. @davisagli [#214](https://github.com/kitconcept/volto-light-theme/pull/214)
+
+
+## 1.0.0-rc.14 (2023-08-08)
+
+### Feature
+
+- Hide change note field. @davisagli [#206](https://github.com/kitconcept/volto-light-theme/pull/206)
+
+### Bugfix
+
+- Remove external link icon from ICS download button event content type @iRohitSingh [#201](https://github.com/kitconcept/volto-light-theme/pull/201)
+- Fix teaser right align is not aligned to right side of page @iFlameing. [#202](https://github.com/kitconcept/volto-light-theme/pull/202)
+- Add missing german translations @steffenri [#205](https://github.com/kitconcept/volto-light-theme/pull/205)
+
+
 ## 1.0.0-rc.13 (2023-08-03)
 
 ### Bugfix

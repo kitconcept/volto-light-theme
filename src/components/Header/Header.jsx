@@ -38,12 +38,12 @@ const Header = (props) => {
             <div className="tools">
               {!token && <Anontools />}
 
-              <Link aria-label="register" to="/register">
-                <FormattedMessage id="Register" defaultMessage="Registration" />
-              </Link>
               <Link aria-label="sitemap" to="/sitemap">
                 <FormattedMessage id="Sitemap" defaultMessage="Sitemap" />
               </Link>
+              <a href="https://github.com/kitconcept/volto-light-theme">
+                GitHub
+              </a>
             </div>
           </div>
         </div>

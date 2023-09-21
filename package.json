@@ -1,6 +1,6 @@
 {
   "name": "@kitconcept/volto-light-theme",
-  "version": "1.0.0-rc.13",
+  "version": "1.0.0-rc.17",
   "description": "Volto Light Theme by kitconcept",
   "main": "src/index.js",
   "repository": {
@@ -25,6 +25,7 @@
     "access": "public"
   },
   "scripts": {
+    "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
     "dry-release": "release-it --dry-run",
     "release": "release-it",
     "release-major-alpha": "release-it major --preRelease=alpha",
@@ -32,8 +33,8 @@
     "release-rc": "release-it --preRelease=rc"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "7.22.15",
     "@plone/scripts": "^3.0.0",
-    "babel-eslint": "10.1.0",
     "eslint": "6.8.0",
     "eslint-config-prettier": "6.11.0",
     "eslint-config-react-app": "5.2.1",
@@ -64,10 +65,10 @@
     "@eeacms/volto-accordion-block": "^9.2.0",
     "@kitconcept/volto-button-block": "^2.3.1",
     "@kitconcept/volto-dsgvo-banner": "^1.3.0",
-    "@kitconcept/volto-heading-block": "^2.2.0",
+    "@kitconcept/volto-heading-block": "^2.4.0",
     "@kitconcept/volto-introduction-block": "^1.0.0",
-    "@kitconcept/volto-separator-block": "^3.2.2",
-    "@kitconcept/volto-slider-block": "^4.2.0",
-    "@plone/volto": "^17.0.0-alpha.23"
+    "@kitconcept/volto-separator-block": "^4.0.0",
+    "@kitconcept/volto-slider-block": "^5.1.1",
+    "@plone/volto": "^17.0.0-alpha.27"
   }
 }

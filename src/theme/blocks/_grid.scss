@@ -180,10 +180,14 @@
     }
 
     &.grid {
-      .listing-item,
-      .listing-item:last-child {
-        padding-bottom: 0 !important;
+      .listing-item {
+        padding-bottom: 10px !important;
         border-bottom: none !important;
+
+        &:last-child {
+          padding-bottom: 0 !important;
+          border-bottom: none !important;
+        }
       }
     }
   }
@@ -191,6 +195,13 @@
   .block-editor-empty {
     padding: 0;
     margin: 0.5rem 0.5rem 0.5rem 0.5rem !important;
+  }
+}
+
+#page-edit .block-editor-gridBlock,
+#page-add .block-editor-gridBlock {
+  h2.headline {
+    margin-left: 10px !important;
   }
 }
 
