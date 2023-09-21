@@ -32,19 +32,21 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
     width: 50px;
     // Equal to the space we give at the bottom to place the buttons
     height: calc(100% - $spacing-xlarge);
+    background-color: rgba(0, 0, 0, 0.15);
     color: $white;
     // border: 2px solid red;
     opacity: 0;
     transition: opacity 0.2s ease-in;
-    background-color: rgba(0, 0, 0, 0.15);
     &:hover {
       opacity: 1;
     }
   }
+
   .slick-next,
   .slick-prev {
     top: initial;
   }
+
   .slick-next {
     right: 0;
     // Equal to the space we give at the bottom to place the buttons
@@ -53,6 +55,7 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
       display: none !important;
     }
   }
+
   .slick-prev {
     z-index: 9;
     left: 0;
