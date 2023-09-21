@@ -20,34 +20,48 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
   .grid-teaser-item {
     flex-direction: column;
   }
+  .teaser-item {
+    padding-bottom: $spacing-xlarge;
+  }
 
   .slide-wrapper:not(.empty-slide) {
-    padding-bottom: 80px;
-  }
-
-  h2 {
-    margin-top: 15px;
-    color: #fff;
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 56px;
-
-    @media only screen and (max-width: $largest-mobile-screen) {
-      @include word-break;
-    }
-  }
-
-  .supertitle {
-    color: #ffffff;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 36px;
+    padding-bottom: $spacing-xlarge;
   }
 
   .slick-arrow {
-    display: none !important;
+    width: 50px;
+    // Equal to the space we give at the bottom to place the buttons
+    height: calc(100% - $spacing-xlarge);
+    background-color: rgba(0, 0, 0, 0.15);
+    color: $white;
+    // border: 2px solid red;
+    opacity: 0;
+    transition: opacity 0.2s ease-in;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .slick-next,
+  .slick-prev {
+    top: initial;
+  }
+
+  .slick-next {
+    right: 0;
+    // Equal to the space we give at the bottom to place the buttons
+    bottom: $spacing-xlarge;
+    @media only screen and (max-width: $computer-width) {
+      display: none !important;
+    }
+  }
+
+  .slick-prev {
+    z-index: 9;
+    left: 0;
+    @media only screen and (max-width: $computer-width) {
+      display: none !important;
+    }
   }
 
   .slick-dots {
@@ -59,15 +73,16 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
       width: 46px;
       height: 6px;
       padding: 0;
-      background-color: $grey;
+      background-color: $secondary-grey;
     }
 
     li.slick-active button {
-      background-color: $white;
+      background-color: $black;
     }
 
     li {
-      margin: 0 3px;
+      margin-right: 13px;
+      margin-left: 0;
     }
 
     button:before {
@@ -85,62 +100,66 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
     top: 50%;
     width: 570px;
     min-height: 321px;
-    padding: 50px;
-    background: rgba(0, 0, 0, 0.4);
+    padding: 60px 50px 60px 100px;
+    background: rgba(0, 0, 0, 0.75);
     color: #fff;
     transform: translateY(-50%);
 
-    @media only screen and (max-width: 1200px) {
+    @container (max-width: 1024px) {
+      padding: 30px 30px 30px 80px;
+    }
+
+    @media only screen and (max-width: $computer-width) {
       position: static;
       width: 100%;
+      padding: 60px 20px;
+      background: $black;
       transform: none;
+    }
+    &.has--slider--flagAlign--right {
+      right: 0;
     }
 
     .title {
-      margin-bottom: 30px;
+      .supertitle {
+        display: inline-block;
+        margin-bottom: 20px;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        line-height: 18px;
+        text-transform: uppercase;
+      }
+      h2 {
+        @include text-heading-h2();
+        margin-top: 0px;
+        margin-bottom: $spacing-medium;
+      }
     }
-
-    h2 {
-      color: $white;
-      font-family: 'Inter';
-      font-size: 36px;
-      font-weight: 700;
-      line-height: 42px;
-    }
-
-    .supertitle {
-      color: $white;
-      font-family: 'Inter';
-      font-size: 20px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      line-height: 24px;
-    }
-
     p {
-      // OPTIONAL
+      @include introduction();
       display: -webkit-box;
       overflow: hidden;
+      margin-bottom: 50px;
       -webkit-box-orient: vertical;
-      color: $white;
-      font-family: 'Inter';
-      font-size: 18px;
-      font-weight: 300;
       -webkit-line-clamp: 5;
-      line-height: 30px;
       text-overflow: ellipsis;
+      @media only screen and (max-width: $computer-width) {
+        margin-bottom: $spacing-large;
+      }
     }
   }
 
   .ui.button {
     display: initial;
-    padding: 11px 29px;
+    padding: 8px 20px;
     border: 1px solid currentColor;
+    background-color: transparent;
     border-radius: 0;
     color: inherit;
     font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
+    font-weight: 900;
+    line-height: 20px;
     text-align: center;
   }
 }
