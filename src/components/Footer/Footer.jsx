@@ -115,7 +115,7 @@ const Footer = ({ intl }) => {
         <br />
         <div className="footer-branding">
           Made with{' '}
-          <span role="img" aria-label="love">
+          <span role="img" aria-label="love" style={{ color: 'red' }}>
             ❤️
           </span>{' '}
           by kitconcept
