@@ -41,6 +41,9 @@ const Header = (props) => {
               <Link aria-label="sitemap" to="/sitemap">
                 <FormattedMessage id="Sitemap" defaultMessage="Sitemap" />
               </Link>
+              <a href="https://github.com/kitconcept/volto-light-theme">
+                GitHub
+              </a>
             </div>
           </div>
         </div>
