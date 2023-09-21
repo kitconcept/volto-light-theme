@@ -113,7 +113,13 @@ const Footer = ({ intl }) => {
           />
         </a>
         <br />
-        <div className="footer-branding">Made with ❤️ by kitconcept</div>
+        <div className="footer-branding">
+          Made with{' '}
+          <span role="img" aria-label="love">
+            ❤️
+          </span>{' '}
+          by kitconcept
+        </div>
       </Container>
     </footer>
   );
