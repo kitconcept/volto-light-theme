@@ -15,7 +15,7 @@ It should contain all the feedback and success stories in UI/UX side that the co
 
 It should also be future proof, so it has to be aligned with the upcoming Volto vision in terms of theming strategy decided by the Plone community.
 
-![Volto-Light-Theme](https://github.com/kitconcept/volto-light-theme/raw/master/volto-light-theme.png)
+![Volto-Light-Theme](https://github.com/kitconcept/volto-light-theme/raw/main/volto-light-theme.png)
 
 ## Requirements
 
