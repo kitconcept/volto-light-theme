@@ -112,6 +112,8 @@ const Footer = ({ intl }) => {
             defaultMessage="Powered by Plone & Python"
           />
         </a>
+        <br />
+        <div className="footer-branding">Made with ❤️ by kitconcept</div>
       </Container>
     </footer>
   );
