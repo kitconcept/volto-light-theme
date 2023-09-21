@@ -77,113 +77,6 @@
                             "title": "Inhaltstyp: Seite (Page)"
                         }
                     ],
-                    "preview_image": [
-                        {
-                            "@id": "/example/image-1",
-                            "@type": "Image",
-                            "CreationDate": "2023-07-07T03:05:08+05:30",
-                            "Creator": "admin",
-                            "Date": "2023-07-28T01:20:13+05:30",
-                            "Description": "Der Inhaltstyp Bild kann verwendet werden um ein Bild in verschiedenen Formate (JPG, GIF, PNG, SVG) hochzuladen. Das hochgeladene Bild sollte dabei immer eine hohe Aufl\u00f6sung haben, damit es flexibel, z.B. auch als Banner-Bild eingesetzt werden kann. Plone liefert die Bilder automatisch in der besten Skalierung aus, so dass es nicht n\u00f6tig ist Bilder manuell herunter zu skalieren.",
-                            "EffectiveDate": "None",
-                            "ExpirationDate": "None",
-                            "ModificationDate": "2023-07-28T01:20:13+05:30",
-                            "Subject": [],
-                            "Title": "Inhaltstyp: Image-1",
-                            "Type": "Image",
-                            "UID": "970ec24c76784c66a06d8c8d8b6522b2",
-                            "author_name": null,
-                            "cmf_uid": null,
-                            "commentators": [],
-                            "created": "2023-07-06T21:35:08+00:00",
-                            "description": "Der Inhaltstyp Bild kann verwendet werden um ein Bild in verschiedenen Formate (JPG, GIF, PNG, SVG) hochzuladen. Das hochgeladene Bild sollte dabei immer eine hohe Aufl\u00f6sung haben, damit es flexibel, z.B. auch als Banner-Bild eingesetzt werden kann. Plone liefert die Bilder automatisch in der besten Skalierung aus, so dass es nicht n\u00f6tig ist Bilder manuell herunter zu skalieren.",
-                            "effective": "1969-12-30T18:30:00+00:00",
-                            "end": null,
-                            "exclude_from_nav": false,
-                            "expires": "2499-12-30T18:30:00+00:00",
-                            "getIcon": true,
-                            "getId": "image-1",
-                            "getObjSize": "929.3 KB",
-                            "getPath": "/Plone/example/image-1",
-                            "getRemoteUrl": null,
-                            "getURL": "http://127.0.0.1:8080/Plone/example/image-1",
-                            "hasPreviewImage": null,
-                            "head_title": null,
-                            "id": "image-1",
-                            "image_field": "image",
-                            "image_scales": {
-                                "image": [
-                                    {
-                                        "content-type": "image/jpeg",
-                                        "download": "@@images/image-1126-d9a09cc7f3ef12be8e8f0b0c653a6572.jpeg",
-                                        "filename": "bfs-image-2.jpg",
-                                        "height": 1126,
-                                        "scales": {
-                                            "icon": {
-                                                "download": "@@images/image-32-15cabadbb92ef297d72b0d7f79c8298e.jpeg",
-                                                "height": 32,
-                                                "width": 32
-                                            },
-                                            "large": {
-                                                "download": "@@images/image-800-ccaf26da653545298fef81b4a2fc4591.jpeg",
-                                                "height": 800,
-                                                "width": 800
-                                            },
-                                            "larger": {
-                                                "download": "@@images/image-1000-74e4406217734b8980fa7ef6a6fdb85e.jpeg",
-                                                "height": 1000,
-                                                "width": 1000
-                                            },
-                                            "mini": {
-                                                "download": "@@images/image-200-b7a89c47c37bbe5006d505775bc64b4a.jpeg",
-                                                "height": 200,
-                                                "width": 200
-                                            },
-                                            "preview": {
-                                                "download": "@@images/image-400-ec66d5db66a60e14e689c6be3265aa16.jpeg",
-                                                "height": 400,
-                                                "width": 400
-                                            },
-                                            "teaser": {
-                                                "download": "@@images/image-600-7dbfb6663607be9f0fcbf879f742b732.jpeg",
-                                                "height": 600,
-                                                "width": 600
-                                            },
-                                            "thumb": {
-                                                "download": "@@images/image-128-af666d0df9c0cf27c48766e420fc2cef.jpeg",
-                                                "height": 128,
-                                                "width": 128
-                                            },
-                                            "tile": {
-                                                "download": "@@images/image-64-96872038b50c7f7d730f268c2b9232a7.jpeg",
-                                                "height": 64,
-                                                "width": 64
-                                            }
-                                        },
-                                        "size": 951578,
-                                        "width": 1126
-                                    }
-                                ]
-                            },
-                            "in_response_to": null,
-                            "is_folderish": false,
-                            "last_comment_date": null,
-                            "listCreators": [
-                                "admin"
-                            ],
-                            "location": null,
-                            "mime_type": "image/jpeg",
-                            "modified": "2023-07-27T19:50:13+00:00",
-                            "nav_title": null,
-                            "portal_type": "Image",
-                            "review_state": null,
-                            "start": null,
-                            "sync_uid": null,
-                            "title": "Inhaltstyp: Image-1",
-                            "total_comments": 0,
-                            "type_title": "Image"
-                        }
-                    ],
                     "title": "Slide Title"
                 },
                 {
@@ -989,9 +882,6 @@
             "styles": {},
             "variation": "default"
         },
-        "8836cd7f-35ca-49e7-96d9-39bdadd01fdf": {
-            "@type": "title"
-        },
         "9ec8a368-7228-448d-a131-706e135be5c2": {
             "@type": "__button",
             "inneralign": "left",
@@ -1503,7 +1393,6 @@
     },
     "blocks_layout": {
         "items": [
-            "8836cd7f-35ca-49e7-96d9-39bdadd01fdf",
             "10444da6-9565-407d-b79c-ab9726bd3a84",
             "ebeaa1f2-cd65-4310-9a26-75e75397553b",
             "ed6e59c1-4697-4762-9ad3-51d815eaa9a3",
