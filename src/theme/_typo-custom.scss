@@ -100,12 +100,15 @@ h1.documentFirstHeading {
   line-height: 48px;
 }
 
-.block-editor-heading {
-  .block .heading-wrapper {
-    margin-right: 0 !important;
-    margin-left: 0 !important;
-  }
-}
+// Sept2023 - @sneridagh: removing this, since it's breaking
+// the layout in edit view. Can't say why it was here in the
+// first place, we'll see if it breaks in another place after it.
+// .block-editor-heading {
+//   .block .heading-wrapper {
+//     margin-right: 0 !important;
+//     margin-left: 0 !important;
+//   }
+// }
 
 // Slate headings
 h2 {
