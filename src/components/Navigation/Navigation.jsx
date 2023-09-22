@@ -1,24 +1,27 @@
-// SemanticUI-free pre-@plone/components
+/**
+ * Navigation components.
+ * @module components/theme/Navigation/Navigation
+ */
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
+import { NavLink, withRouter } from 'react-router-dom';
+import { doesNodeContainClick } from 'semantic-ui-react/dist/commonjs/lib';
 import { defineMessages, injectIntl } from 'react-intl';
 import cx from 'classnames';
-import { BodyClass, getBaseUrl, hasApiExpander } from '@plone/volto/helpers';
+import { getBaseUrl, hasApiExpander } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
+
 import { getNavigation } from '@plone/volto/actions';
-import { CSSTransition } from 'react-transition-group';
-import NavItems from '@plone/volto/components/theme/Navigation/NavItems';
+import { Icon } from '@plone/volto/components';
+import clearSVG from '@plone/volto/icons/clear.svg';
 
 const messages = defineMessages({
-  closeMobileMenu: {
-    id: 'Close menu',
-    defaultMessage: 'Close menu',
-  },
-  openMobileMenu: {
-    id: 'Open menu',
-    defaultMessage: 'Open menu',
+  overview: {
+    id: 'Overview',
+    defaultMessage: 'Overview',
   },
 });
 
@@ -61,17 +64,33 @@ class Navigation extends Component {
     this.closeMobileMenu = this.closeMobileMenu.bind(this);
     this.state = {
       isMobileMenuOpen: false,
+      desktopMenuOpen: null,
+      currentOpenIndex: null,
     };
   }
 
+  /**
+   * Component will mount
+   * @method componentWillMount
+   * @returns {undefined}
+   */
+
   componentDidMount() {
     const { settings } = config;
+    const { lang, pathname } = this.props;
     if (!hasApiExpander('navigation', getBaseUrl(this.props.pathname))) {
-      this.props.getNavigation(
-        getBaseUrl(this.props.pathname),
-        settings.navDepth,
-      );
+      // For /profile paths, hack the call to the endpoint
+      let adjustedPathName = pathname;
+      if (pathname.startsWith('/profile')) {
+        adjustedPathName = `/${lang}`;
+      }
+      this.props.getNavigation(getBaseUrl(adjustedPathName), settings.navDepth);
     }
+    document.addEventListener('mousedown', this.handleClickOutside, false);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleClickOutside, false);
   }
 
   /**
@@ -82,13 +101,19 @@ class Navigation extends Component {
    */
   UNSAFE_componentWillReceiveProps(nextProps) {
     const { settings } = config;
+    const { lang, pathname } = nextProps;
     if (
       nextProps.pathname !== this.props.pathname ||
       nextProps.token !== this.props.token
     ) {
       if (!hasApiExpander('navigation', getBaseUrl(this.props.pathname))) {
+        // For /profile paths, hack the call to the endpoint
+        let adjustedPathName = pathname;
+        if (pathname.startsWith('/profile')) {
+          adjustedPathName = `/${lang}`;
+        }
         this.props.getNavigation(
-          getBaseUrl(nextProps.pathname),
+          getBaseUrl(adjustedPathName),
           settings.navDepth,
         );
       }
@@ -109,15 +134,52 @@ class Navigation extends Component {
    * @method closeMobileMenu
    * @returns {undefined}
    */
-  closeMobileMenu(e) {
+  closeMobileMenu() {
     if (!this.state.isMobileMenuOpen) {
-      return;
-    }
-    if (e.key && e.key !== 'Enter') {
       return;
     }
     this.setState({ isMobileMenuOpen: false });
   }
+
+  isActive(url) {
+    return (
+      (url === '' && this.props.pathname === '/') ||
+      (url !== '' && this.props.pathname === url)
+    );
+  }
+
+  handleClickOutside = (e) => {
+    if (
+      this.navigation.current &&
+      doesNodeContainClick(this.navigation.current, e)
+    )
+      return;
+    this.closeMenu();
+  };
+
+  openMenu = (index) => {
+    if (index === this.state.currentOpenIndex) {
+      this.setState({
+        desktopMenuOpen: null,
+        currentOpenIndex: null,
+      });
+    } else {
+      this.setState({
+        desktopMenuOpen: index,
+        currentOpenIndex: index,
+      });
+    }
+  };
+
+  closeMenu = (index) => {
+    this.setState({
+      desktopMenuOpen: null,
+      currentOpenIndex: null,
+    });
+  };
+
+  navigation = React.createRef();
+  navigationItems = React.createRef();
 
   /**
    * Render method.
@@ -126,61 +188,137 @@ class Navigation extends Component {
    */
   render() {
     return (
-      <nav className="navigation" id="navigation" aria-label="navigation">
-        <div className="hamburger-wrapper mobile tablet only">
-          <button
-            className={cx('hamburger hamburger--spin', {
-              'is-active': this.state.isMobileMenuOpen,
-            })}
-            aria-label={
-              this.state.isMobileMenuOpen
-                ? this.props.intl.formatMessage(messages.closeMobileMenu, {
-                    type: this.props.type,
-                  })
-                : this.props.intl.formatMessage(messages.openMobileMenu, {
-                    type: this.props.type,
-                  })
-            }
-            title={
-              this.state.isMobileMenuOpen
-                ? this.props.intl.formatMessage(messages.closeMobileMenu, {
-                    type: this.props.type,
-                  })
-                : this.props.intl.formatMessage(messages.openMobileMenu, {
-                    type: this.props.type,
-                  })
-            }
-            type="button"
-            onClick={this.toggleMobileMenu}
-          >
-            <span className="hamburger-box">
-              <span className="hamburger-inner" />
-            </span>
-          </button>
-        </div>
-        <div className="desktop menu computer large screen widescreen only">
-          <NavItems items={this.props.items} lang={this.props.lang} />
-        </div>
-        <CSSTransition
-          in={this.state.isMobileMenuOpen}
-          timeout={500}
-          classNames="mobile-menu"
-          unmountOnExit
+      <nav
+        id="navigation"
+        aria-label="navigation"
+        className="navigation"
+        ref={this.navigation}
+      >
+        <div
+          stackable
+          pointing
+          secondary
+          className={'computer large screen widescreen only'}
         >
-          <div key="mobile-menu-key" className="mobile-menu">
-            <BodyClass className="has-mobile-menu-open" />
-            <div className="mobile-menu-nav">
-              <div
-                role="button"
-                tabIndex={0}
-                onClick={this.closeMobileMenu}
-                onKeyUp={this.closeMobileMenu}
-              >
-                <NavItems items={this.props.items} lang={this.props.lang} />
-              </div>
-            </div>
-          </div>
-        </CSSTransition>
+          <ul className="desktop-menu">
+            {this.props.items.map((item, index) => (
+              <li key={item.url}>
+                <button
+                  onClick={() =>
+                    !this.state.isMobileMenuOpen
+                      ? this.openMenu(index)
+                      : window.open(item.url, '_self')
+                  }
+                  className={cx('item', {
+                    active:
+                      this.state.desktopMenuOpen === index ||
+                      (!this.state.desktopMenuOpen &&
+                        this.props.location.pathname === item.url),
+                  })}
+                >
+                  {item.title}
+                </button>
+                <div className="submenu-wrapper">
+                  <div
+                    className={cx('submenu', {
+                      active: this.state.desktopMenuOpen === index,
+                    })}
+                  >
+                    <div
+                      role="presentation"
+                      className="close"
+                      onClick={this.closeMenu}
+                    >
+                      <Icon name={clearSVG} size="48px" />
+                    </div>
+                    <div className="submenu-inner">
+                      <NavLink
+                        to={item.url === '' ? '/' : item.url}
+                        onClick={() => this.closeMenu()}
+                        className="submenu-header"
+                      >
+                        <h2>
+                          {item.nav_title ?? item.title} (
+                          {this.props.intl.formatMessage(messages.overview)})
+                        </h2>
+                      </NavLink>
+                      <ul>
+                        {item.items &&
+                          item.items.length > 0 &&
+                          item.items.map((subitem) => (
+                            <div className="subitem-wrapper" key={subitem.url}>
+                              <li key={subitem.url}>
+                                <NavLink
+                                  to={subitem.url}
+                                  onClick={() => this.closeMenu()}
+                                  className={cx({
+                                    current: this.isActive(subitem.url),
+                                  })}
+                                >
+                                  <span className="left-arrow">&#8212;</span>
+                                  <span>
+                                    {subitem.nav_title || subitem.title}
+                                  </span>
+                                </NavLink>
+                              </li>
+                              <div className="sub-submenu">
+                                <ul>
+                                  {subitem.items &&
+                                    subitem.items.length > 0 &&
+                                    subitem.items.map((subsubitem) => (
+                                      <div
+                                        className="subsubitem-wrapper"
+                                        key={subsubitem.url}
+                                      >
+                                        <li key={subsubitem.url}>
+                                          <NavLink
+                                            to={subsubitem.url}
+                                            onClick={() => this.closeMenu()}
+                                            className={cx({
+                                              current: this.isActive(
+                                                subsubitem.url,
+                                              ),
+                                            })}
+                                          >
+                                            <span className="left-arrow">
+                                              &#8212;
+                                            </span>
+
+                                            <span>
+                                              {subsubitem.nav_title ||
+                                                subsubitem.title}
+                                            </span>
+                                          </NavLink>
+                                        </li>
+                                      </div>
+                                    ))}
+                                </ul>
+                              </div>
+                            </div>
+                          ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
+          {/* {this.props.items.map((item) => (
+             <NavLink
+               to={item.url === '' ? '/' : item.url}
+               key={item.url}
+               className="item"
+               activeClassName="active"
+               exact={
+                 settings.isMultilingual
+                   ? item.url === `/${lang}`
+                   : item.url === ''
+               }
+             >
+               {item.nav_title || item.title}
+             </NavLink>
+           ))} */}
+        </div>
       </nav>
     );
   }
@@ -188,6 +326,7 @@ class Navigation extends Component {
 
 export default compose(
   injectIntl,
+  withRouter,
   connect(
     (state) => ({
       token: state.userSession.token,
