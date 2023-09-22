@@ -10,10 +10,11 @@
                 {
                     "@id": "925d8233-a87b-4939-bedb-3f20b9499384",
                     "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. ",
+                    "flagAlign": "left",
                     "head_title": "Head title ",
                     "href": [
                         {
-                            "@id": "/example/page",
+                            "@id": "/content-types/page",
                             "@type": "Document",
                             "Description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
                             "Title": "Inhaltstyp: Seite (Page)",
@@ -24,53 +25,63 @@
                                 "preview_image": [
                                     {
                                         "content-type": "image/jpeg",
-                                        "download": "@@images/preview_image-1182-653b95f4209f84fc40932b1e398bee30.jpeg",
-                                        "filename": "halfdome2022.jpg",
-                                        "height": 665,
+                                        "download": "@@images/preview_image-2400-3354c391caa34dcbe929c0d00dcef7ec.jpeg",
+                                        "filename": "black-starry-night.jpg",
+                                        "height": 1708,
                                         "scales": {
+                                            "great": {
+                                                "download": "@@images/preview_image-1200-ce139516c86f46592ff3c9ae19f66334.jpeg",
+                                                "height": 854,
+                                                "width": 1200
+                                            },
+                                            "huge": {
+                                                "download": "@@images/preview_image-1600-c8ac655446be88a135588c982f9913a6.jpeg",
+                                                "height": 1138,
+                                                "width": 1600
+                                            },
                                             "icon": {
-                                                "download": "@@images/preview_image-32-9313878439c784a89976e40aeaf34fc1.jpeg",
-                                                "height": 18,
+                                                "download": "@@images/preview_image-32-ff5cdaf76d5312f840a51b21e2e023a2.jpeg",
+                                                "height": 22,
                                                 "width": 32
                                             },
                                             "large": {
-                                                "download": "@@images/preview_image-800-4afe0af46fa385fc8427c8fd27f4c55f.jpeg",
-                                                "height": 450,
+                                                "download": "@@images/preview_image-800-f99814a0653500d04aa220b48f9f099d.jpeg",
+                                                "height": 569,
                                                 "width": 800
                                             },
                                             "larger": {
-                                                "download": "@@images/preview_image-1000-9f02d721046d2938efe07dd39c39cbc1.jpeg",
-                                                "height": 562,
+                                                "download": "@@images/preview_image-1000-9018d9cbb48c3bb4d16b1a9f3821c780.jpeg",
+                                                "height": 711,
                                                 "width": 1000
                                             },
                                             "mini": {
-                                                "download": "@@images/preview_image-200-07530933ba7fbacfa38877b2f3bfd218.jpeg",
-                                                "height": 112,
+                                                "download": "@@images/preview_image-200-974d0ca10cac9afd46320bbf34e4acf8.jpeg",
+                                                "height": 142,
                                                 "width": 200
                                             },
                                             "preview": {
-                                                "download": "@@images/preview_image-400-9c0dc8f84f7362fae204e6b9cb0c8fe3.jpeg",
-                                                "height": 225,
+                                                "download": "@@images/preview_image-400-0a9a87ea1ffe2a9b478df438fec58801.jpeg",
+                                                "height": 284,
                                                 "width": 400
                                             },
                                             "teaser": {
-                                                "download": "@@images/preview_image-600-c7a7c80745efaa157fac34caa680d9eb.jpeg",
-                                                "height": 337,
+                                                "download": "@@images/preview_image-600-cc7b231e831fff8e9574da07da38e9f6.jpeg",
+                                                "height": 427,
                                                 "width": 600
                                             },
                                             "thumb": {
-                                                "download": "@@images/preview_image-128-91e7b8d158011046019d59ac490dca24.jpeg",
-                                                "height": 72,
+                                                "download": "@@images/preview_image-128-1580a2358e091015552a53d245b71b63.jpeg",
+                                                "height": 91,
                                                 "width": 128
                                             },
                                             "tile": {
-                                                "download": "@@images/preview_image-64-e59ff992b673a4f38292f4c5e61d9eae.jpeg",
-                                                "height": 36,
+                                                "download": "@@images/preview_image-64-2c95c49fe4265eccbd6b576240b9bc7d.jpeg",
+                                                "height": 45,
                                                 "width": 64
                                             }
                                         },
-                                        "size": 319364,
-                                        "width": 1182
+                                        "size": 693013,
+                                        "width": 2400
                                     }
                                 ]
                             },
@@ -82,10 +93,11 @@
                 {
                     "@id": "5061dc92-7a34-4468-8c3b-dcdde94e1df8",
                     "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. ",
+                    "flagAlign": "left",
                     "head_title": "Head title ",
                     "href": [
                         {
-                            "@id": "/example/grid-block",
+                            "@id": "/block/grid-block",
                             "@type": "Document",
                             "Description": "Der Grid-Block erlaubt das Hinzuf\u00fcgen mehrspaltiger Bl\u00f6cke. Ein Grid-Block kann zwischen ein und vier Spalten mit unterschiedlichen Bl\u00f6cken enthalten.Teaser und Bilder k\u00f6nnen in einem Grid-Block hinzugef\u00fcgt werden.",
                             "Title": "Block: Grid",
@@ -96,175 +108,80 @@
                                 "preview_image": [
                                     {
                                         "content-type": "image/jpeg",
-                                        "download": "@@images/preview_image-1126-502bd161208d3b139e901fc3dd949543.jpeg",
-                                        "filename": "bfs-image-2.jpg",
-                                        "height": 1126,
+                                        "download": "@@images/preview_image-2400-3354c391caa34dcbe929c0d00dcef7ec.jpeg",
+                                        "filename": "black-starry-night.jpg",
+                                        "height": 1708,
                                         "scales": {
+                                            "great": {
+                                                "download": "@@images/preview_image-1200-ce139516c86f46592ff3c9ae19f66334.jpeg",
+                                                "height": 854,
+                                                "width": 1200
+                                            },
+                                            "huge": {
+                                                "download": "@@images/preview_image-1600-c8ac655446be88a135588c982f9913a6.jpeg",
+                                                "height": 1138,
+                                                "width": 1600
+                                            },
                                             "icon": {
-                                                "download": "@@images/preview_image-32-6ec223be1c5f0caefb8948e3cbd4af12.jpeg",
-                                                "height": 32,
+                                                "download": "@@images/preview_image-32-ff5cdaf76d5312f840a51b21e2e023a2.jpeg",
+                                                "height": 22,
                                                 "width": 32
                                             },
                                             "large": {
-                                                "download": "@@images/preview_image-800-87fc8d3e81087346ba0fda4fd61f2184.jpeg",
-                                                "height": 800,
+                                                "download": "@@images/preview_image-800-f99814a0653500d04aa220b48f9f099d.jpeg",
+                                                "height": 569,
                                                 "width": 800
                                             },
                                             "larger": {
-                                                "download": "@@images/preview_image-1000-bd6b486ec293ef1f187b836e9cf7d057.jpeg",
-                                                "height": 1000,
+                                                "download": "@@images/preview_image-1000-9018d9cbb48c3bb4d16b1a9f3821c780.jpeg",
+                                                "height": 711,
                                                 "width": 1000
                                             },
                                             "mini": {
-                                                "download": "@@images/preview_image-200-56f5e56183b5ecf085796b44ba1da002.jpeg",
-                                                "height": 200,
+                                                "download": "@@images/preview_image-200-974d0ca10cac9afd46320bbf34e4acf8.jpeg",
+                                                "height": 142,
                                                 "width": 200
                                             },
                                             "preview": {
-                                                "download": "@@images/preview_image-400-aac63158e238b27e6875c04180c838cb.jpeg",
-                                                "height": 400,
+                                                "download": "@@images/preview_image-400-0a9a87ea1ffe2a9b478df438fec58801.jpeg",
+                                                "height": 284,
                                                 "width": 400
                                             },
                                             "teaser": {
-                                                "download": "@@images/preview_image-600-528f99c9143b62ab8f5c1fa5d83d0119.jpeg",
-                                                "height": 600,
+                                                "download": "@@images/preview_image-600-cc7b231e831fff8e9574da07da38e9f6.jpeg",
+                                                "height": 427,
                                                 "width": 600
                                             },
                                             "thumb": {
-                                                "download": "@@images/preview_image-128-ca7aa43a7cc6e4d878e58713a7c67f8a.jpeg",
-                                                "height": 128,
+                                                "download": "@@images/preview_image-128-1580a2358e091015552a53d245b71b63.jpeg",
+                                                "height": 91,
                                                 "width": 128
                                             },
                                             "tile": {
-                                                "download": "@@images/preview_image-64-00b17d92943927c702c94a03bdb3c3b2.jpeg",
-                                                "height": 64,
+                                                "download": "@@images/preview_image-64-2c95c49fe4265eccbd6b576240b9bc7d.jpeg",
+                                                "height": 45,
                                                 "width": 64
                                             }
                                         },
-                                        "size": 951578,
-                                        "width": 1126
+                                        "size": 693013,
+                                        "width": 2400
                                     }
                                 ]
                             },
                             "title": "Block: Grid"
                         }
                     ],
-                    "preview_image": [
-                        {
-                            "@id": "/example/image-1",
-                            "@type": "Image",
-                            "CreationDate": "2023-07-07T03:05:08+05:30",
-                            "Creator": "admin",
-                            "Date": "2023-07-28T01:20:13+05:30",
-                            "Description": "Der Inhaltstyp Bild kann verwendet werden um ein Bild in verschiedenen Formate (JPG, GIF, PNG, SVG) hochzuladen. Das hochgeladene Bild sollte dabei immer eine hohe Aufl\u00f6sung haben, damit es flexibel, z.B. auch als Banner-Bild eingesetzt werden kann. Plone liefert die Bilder automatisch in der besten Skalierung aus, so dass es nicht n\u00f6tig ist Bilder manuell herunter zu skalieren.",
-                            "EffectiveDate": "None",
-                            "ExpirationDate": "None",
-                            "ModificationDate": "2023-07-28T01:20:13+05:30",
-                            "Subject": [],
-                            "Title": "Inhaltstyp: Image-1",
-                            "Type": "Image",
-                            "UID": "970ec24c76784c66a06d8c8d8b6522b2",
-                            "author_name": null,
-                            "cmf_uid": null,
-                            "commentators": [],
-                            "created": "2023-07-06T21:35:08+00:00",
-                            "description": "Der Inhaltstyp Bild kann verwendet werden um ein Bild in verschiedenen Formate (JPG, GIF, PNG, SVG) hochzuladen. Das hochgeladene Bild sollte dabei immer eine hohe Aufl\u00f6sung haben, damit es flexibel, z.B. auch als Banner-Bild eingesetzt werden kann. Plone liefert die Bilder automatisch in der besten Skalierung aus, so dass es nicht n\u00f6tig ist Bilder manuell herunter zu skalieren.",
-                            "effective": "1969-12-30T18:30:00+00:00",
-                            "end": null,
-                            "exclude_from_nav": false,
-                            "expires": "2499-12-30T18:30:00+00:00",
-                            "getIcon": true,
-                            "getId": "image-1",
-                            "getObjSize": "929.3 KB",
-                            "getPath": "/Plone/example/image-1",
-                            "getRemoteUrl": null,
-                            "getURL": "http://127.0.0.1:8080/Plone/example/image-1",
-                            "hasPreviewImage": null,
-                            "head_title": null,
-                            "id": "image-1",
-                            "image_field": "image",
-                            "image_scales": {
-                                "image": [
-                                    {
-                                        "content-type": "image/jpeg",
-                                        "download": "@@images/image-1126-d9a09cc7f3ef12be8e8f0b0c653a6572.jpeg",
-                                        "filename": "bfs-image-2.jpg",
-                                        "height": 1126,
-                                        "scales": {
-                                            "icon": {
-                                                "download": "@@images/image-32-15cabadbb92ef297d72b0d7f79c8298e.jpeg",
-                                                "height": 32,
-                                                "width": 32
-                                            },
-                                            "large": {
-                                                "download": "@@images/image-800-ccaf26da653545298fef81b4a2fc4591.jpeg",
-                                                "height": 800,
-                                                "width": 800
-                                            },
-                                            "larger": {
-                                                "download": "@@images/image-1000-74e4406217734b8980fa7ef6a6fdb85e.jpeg",
-                                                "height": 1000,
-                                                "width": 1000
-                                            },
-                                            "mini": {
-                                                "download": "@@images/image-200-b7a89c47c37bbe5006d505775bc64b4a.jpeg",
-                                                "height": 200,
-                                                "width": 200
-                                            },
-                                            "preview": {
-                                                "download": "@@images/image-400-ec66d5db66a60e14e689c6be3265aa16.jpeg",
-                                                "height": 400,
-                                                "width": 400
-                                            },
-                                            "teaser": {
-                                                "download": "@@images/image-600-7dbfb6663607be9f0fcbf879f742b732.jpeg",
-                                                "height": 600,
-                                                "width": 600
-                                            },
-                                            "thumb": {
-                                                "download": "@@images/image-128-af666d0df9c0cf27c48766e420fc2cef.jpeg",
-                                                "height": 128,
-                                                "width": 128
-                                            },
-                                            "tile": {
-                                                "download": "@@images/image-64-96872038b50c7f7d730f268c2b9232a7.jpeg",
-                                                "height": 64,
-                                                "width": 64
-                                            }
-                                        },
-                                        "size": 951578,
-                                        "width": 1126
-                                    }
-                                ]
-                            },
-                            "in_response_to": null,
-                            "is_folderish": false,
-                            "last_comment_date": null,
-                            "listCreators": [
-                                "admin"
-                            ],
-                            "location": null,
-                            "mime_type": "image/jpeg",
-                            "modified": "2023-07-27T19:50:13+00:00",
-                            "nav_title": null,
-                            "portal_type": "Image",
-                            "review_state": null,
-                            "start": null,
-                            "sync_uid": null,
-                            "title": "Inhaltstyp: Image-1",
-                            "total_comments": 0,
-                            "type_title": "Image"
-                        }
-                    ],
+                    "preview_image": [],
                     "title": "Slide Title"
                 },
                 {
                     "@id": "52884dd0-0c9b-49fe-be99-3cf88c10b2df",
                     "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. ",
+                    "flagAlign": "left",
                     "head_title": "Head title ",
                     "href": [
                         {
-                            "@id": "/example/teaser-block",
+                            "@id": "/block/teaser-block",
                             "@type": "Document",
                             "Description": "Der Teaser-Block erlaubt das Hinzuf\u00fcgen eines Elements welches einen bestehenden Inhalte der Webseite mit einem Bild, einem Titel und einer Beschreibung anteasert.",
                             "Title": "Block: Teaser",
@@ -275,169 +192,74 @@
                                 "preview_image": [
                                     {
                                         "content-type": "image/jpeg",
-                                        "download": "@@images/preview_image-1126-2aa16d6f93ecf7d6cc858349fbaa273b.jpeg",
-                                        "filename": "bfs-image-2.jpg",
-                                        "height": 1126,
+                                        "download": "@@images/preview_image-2400-3354c391caa34dcbe929c0d00dcef7ec.jpeg",
+                                        "filename": "black-starry-night.jpg",
+                                        "height": 1708,
                                         "scales": {
+                                            "great": {
+                                                "download": "@@images/preview_image-1200-ce139516c86f46592ff3c9ae19f66334.jpeg",
+                                                "height": 854,
+                                                "width": 1200
+                                            },
+                                            "huge": {
+                                                "download": "@@images/preview_image-1600-c8ac655446be88a135588c982f9913a6.jpeg",
+                                                "height": 1138,
+                                                "width": 1600
+                                            },
                                             "icon": {
-                                                "download": "@@images/preview_image-32-b027975284548470d910cc981a9b71f0.jpeg",
-                                                "height": 32,
+                                                "download": "@@images/preview_image-32-ff5cdaf76d5312f840a51b21e2e023a2.jpeg",
+                                                "height": 22,
                                                 "width": 32
                                             },
                                             "large": {
-                                                "download": "@@images/preview_image-800-13676e71b5a81c1d7db10f63ce3607cd.jpeg",
-                                                "height": 800,
+                                                "download": "@@images/preview_image-800-f99814a0653500d04aa220b48f9f099d.jpeg",
+                                                "height": 569,
                                                 "width": 800
                                             },
                                             "larger": {
-                                                "download": "@@images/preview_image-1000-f446b8478b4d83d7e9557c06c6b8907e.jpeg",
-                                                "height": 1000,
+                                                "download": "@@images/preview_image-1000-9018d9cbb48c3bb4d16b1a9f3821c780.jpeg",
+                                                "height": 711,
                                                 "width": 1000
                                             },
                                             "mini": {
-                                                "download": "@@images/preview_image-200-09ca44c6ddc9673438f4a70a5a9ee292.jpeg",
-                                                "height": 200,
+                                                "download": "@@images/preview_image-200-974d0ca10cac9afd46320bbf34e4acf8.jpeg",
+                                                "height": 142,
                                                 "width": 200
                                             },
                                             "preview": {
-                                                "download": "@@images/preview_image-400-842429118bd711ed2439f16e18e77a11.jpeg",
-                                                "height": 400,
+                                                "download": "@@images/preview_image-400-0a9a87ea1ffe2a9b478df438fec58801.jpeg",
+                                                "height": 284,
                                                 "width": 400
                                             },
                                             "teaser": {
-                                                "download": "@@images/preview_image-600-06c8a88fdbfa4dba74a56b46a7a76850.jpeg",
-                                                "height": 600,
+                                                "download": "@@images/preview_image-600-cc7b231e831fff8e9574da07da38e9f6.jpeg",
+                                                "height": 427,
                                                 "width": 600
                                             },
                                             "thumb": {
-                                                "download": "@@images/preview_image-128-1cbdbac22030fd5d38950cec4e9a090c.jpeg",
-                                                "height": 128,
+                                                "download": "@@images/preview_image-128-1580a2358e091015552a53d245b71b63.jpeg",
+                                                "height": 91,
                                                 "width": 128
                                             },
                                             "tile": {
-                                                "download": "@@images/preview_image-64-1587f36cbf138c59d9b586d090afc34b.jpeg",
-                                                "height": 64,
+                                                "download": "@@images/preview_image-64-2c95c49fe4265eccbd6b576240b9bc7d.jpeg",
+                                                "height": 45,
                                                 "width": 64
                                             }
                                         },
-                                        "size": 951578,
-                                        "width": 1126
+                                        "size": 693013,
+                                        "width": 2400
                                     }
                                 ]
                             },
                             "title": "Block: Teaser"
                         }
                     ],
-                    "preview_image": [
-                        {
-                            "@id": "/example/image-1",
-                            "@type": "Image",
-                            "CreationDate": "2023-07-07T03:05:08+05:30",
-                            "Creator": "admin",
-                            "Date": "2023-07-28T01:20:13+05:30",
-                            "Description": "Der Inhaltstyp Bild kann verwendet werden um ein Bild in verschiedenen Formate (JPG, GIF, PNG, SVG) hochzuladen. Das hochgeladene Bild sollte dabei immer eine hohe Aufl\u00f6sung haben, damit es flexibel, z.B. auch als Banner-Bild eingesetzt werden kann. Plone liefert die Bilder automatisch in der besten Skalierung aus, so dass es nicht n\u00f6tig ist Bilder manuell herunter zu skalieren.",
-                            "EffectiveDate": "None",
-                            "ExpirationDate": "None",
-                            "ModificationDate": "2023-07-28T01:20:13+05:30",
-                            "Subject": [],
-                            "Title": "Inhaltstyp: Image-1",
-                            "Type": "Image",
-                            "UID": "970ec24c76784c66a06d8c8d8b6522b2",
-                            "author_name": null,
-                            "cmf_uid": null,
-                            "commentators": [],
-                            "created": "2023-07-06T21:35:08+00:00",
-                            "description": "Der Inhaltstyp Bild kann verwendet werden um ein Bild in verschiedenen Formate (JPG, GIF, PNG, SVG) hochzuladen. Das hochgeladene Bild sollte dabei immer eine hohe Aufl\u00f6sung haben, damit es flexibel, z.B. auch als Banner-Bild eingesetzt werden kann. Plone liefert die Bilder automatisch in der besten Skalierung aus, so dass es nicht n\u00f6tig ist Bilder manuell herunter zu skalieren.",
-                            "effective": "1969-12-30T18:30:00+00:00",
-                            "end": null,
-                            "exclude_from_nav": false,
-                            "expires": "2499-12-30T18:30:00+00:00",
-                            "getIcon": true,
-                            "getId": "image-1",
-                            "getObjSize": "929.3 KB",
-                            "getPath": "/Plone/example/image-1",
-                            "getRemoteUrl": null,
-                            "getURL": "http://127.0.0.1:8080/Plone/example/image-1",
-                            "hasPreviewImage": null,
-                            "head_title": null,
-                            "id": "image-1",
-                            "image_field": "image",
-                            "image_scales": {
-                                "image": [
-                                    {
-                                        "content-type": "image/jpeg",
-                                        "download": "@@images/image-1126-d9a09cc7f3ef12be8e8f0b0c653a6572.jpeg",
-                                        "filename": "bfs-image-2.jpg",
-                                        "height": 1126,
-                                        "scales": {
-                                            "icon": {
-                                                "download": "@@images/image-32-15cabadbb92ef297d72b0d7f79c8298e.jpeg",
-                                                "height": 32,
-                                                "width": 32
-                                            },
-                                            "large": {
-                                                "download": "@@images/image-800-ccaf26da653545298fef81b4a2fc4591.jpeg",
-                                                "height": 800,
-                                                "width": 800
-                                            },
-                                            "larger": {
-                                                "download": "@@images/image-1000-74e4406217734b8980fa7ef6a6fdb85e.jpeg",
-                                                "height": 1000,
-                                                "width": 1000
-                                            },
-                                            "mini": {
-                                                "download": "@@images/image-200-b7a89c47c37bbe5006d505775bc64b4a.jpeg",
-                                                "height": 200,
-                                                "width": 200
-                                            },
-                                            "preview": {
-                                                "download": "@@images/image-400-ec66d5db66a60e14e689c6be3265aa16.jpeg",
-                                                "height": 400,
-                                                "width": 400
-                                            },
-                                            "teaser": {
-                                                "download": "@@images/image-600-7dbfb6663607be9f0fcbf879f742b732.jpeg",
-                                                "height": 600,
-                                                "width": 600
-                                            },
-                                            "thumb": {
-                                                "download": "@@images/image-128-af666d0df9c0cf27c48766e420fc2cef.jpeg",
-                                                "height": 128,
-                                                "width": 128
-                                            },
-                                            "tile": {
-                                                "download": "@@images/image-64-96872038b50c7f7d730f268c2b9232a7.jpeg",
-                                                "height": 64,
-                                                "width": 64
-                                            }
-                                        },
-                                        "size": 951578,
-                                        "width": 1126
-                                    }
-                                ]
-                            },
-                            "in_response_to": null,
-                            "is_folderish": false,
-                            "last_comment_date": null,
-                            "listCreators": [
-                                "admin"
-                            ],
-                            "location": null,
-                            "mime_type": "image/jpeg",
-                            "modified": "2023-07-27T19:50:13+00:00",
-                            "nav_title": null,
-                            "portal_type": "Image",
-                            "review_state": null,
-                            "start": null,
-                            "sync_uid": null,
-                            "title": "Inhaltstyp: Image-1",
-                            "total_comments": 0,
-                            "type_title": "Image"
-                        }
-                    ],
+                    "preview_image": [],
                     "title": "Slide Title"
                 }
-            ]
+            ],
+            "styles": {}
         },
         "1e730622-4982-4c61-a779-e06d70581c42": {
             "@type": "heading",
@@ -457,7 +279,7 @@
                     "head_title": "Head title ",
                     "href": [
                         {
-                            "@id": "/example/teaser-block",
+                            "@id": "/block/teaser-block",
                             "@type": "Document",
                             "Description": "Der Teaser-Block erlaubt das Hinzuf\u00fcgen eines Elements welches einen bestehenden Inhalte der Webseite mit einem Bild, einem Titel und einer Beschreibung anteasert.",
                             "Title": "Block: Teaser",
@@ -469,53 +291,63 @@
                                 "preview_image": [
                                     {
                                         "content-type": "image/jpeg",
-                                        "download": "@@images/preview_image-1126-2aa16d6f93ecf7d6cc858349fbaa273b.jpeg",
-                                        "filename": "bfs-image-2.jpg",
-                                        "height": 1126,
+                                        "download": "@@images/preview_image-2400-3354c391caa34dcbe929c0d00dcef7ec.jpeg",
+                                        "filename": "black-starry-night.jpg",
+                                        "height": 1708,
                                         "scales": {
+                                            "great": {
+                                                "download": "@@images/preview_image-1200-ce139516c86f46592ff3c9ae19f66334.jpeg",
+                                                "height": 854,
+                                                "width": 1200
+                                            },
+                                            "huge": {
+                                                "download": "@@images/preview_image-1600-c8ac655446be88a135588c982f9913a6.jpeg",
+                                                "height": 1138,
+                                                "width": 1600
+                                            },
                                             "icon": {
-                                                "download": "@@images/preview_image-32-b027975284548470d910cc981a9b71f0.jpeg",
-                                                "height": 32,
+                                                "download": "@@images/preview_image-32-ff5cdaf76d5312f840a51b21e2e023a2.jpeg",
+                                                "height": 22,
                                                 "width": 32
                                             },
                                             "large": {
-                                                "download": "@@images/preview_image-800-13676e71b5a81c1d7db10f63ce3607cd.jpeg",
-                                                "height": 800,
+                                                "download": "@@images/preview_image-800-f99814a0653500d04aa220b48f9f099d.jpeg",
+                                                "height": 569,
                                                 "width": 800
                                             },
                                             "larger": {
-                                                "download": "@@images/preview_image-1000-f446b8478b4d83d7e9557c06c6b8907e.jpeg",
-                                                "height": 1000,
+                                                "download": "@@images/preview_image-1000-9018d9cbb48c3bb4d16b1a9f3821c780.jpeg",
+                                                "height": 711,
                                                 "width": 1000
                                             },
                                             "mini": {
-                                                "download": "@@images/preview_image-200-09ca44c6ddc9673438f4a70a5a9ee292.jpeg",
-                                                "height": 200,
+                                                "download": "@@images/preview_image-200-974d0ca10cac9afd46320bbf34e4acf8.jpeg",
+                                                "height": 142,
                                                 "width": 200
                                             },
                                             "preview": {
-                                                "download": "@@images/preview_image-400-842429118bd711ed2439f16e18e77a11.jpeg",
-                                                "height": 400,
+                                                "download": "@@images/preview_image-400-0a9a87ea1ffe2a9b478df438fec58801.jpeg",
+                                                "height": 284,
                                                 "width": 400
                                             },
                                             "teaser": {
-                                                "download": "@@images/preview_image-600-06c8a88fdbfa4dba74a56b46a7a76850.jpeg",
-                                                "height": 600,
+                                                "download": "@@images/preview_image-600-cc7b231e831fff8e9574da07da38e9f6.jpeg",
+                                                "height": 427,
                                                 "width": 600
                                             },
                                             "thumb": {
-                                                "download": "@@images/preview_image-128-1cbdbac22030fd5d38950cec4e9a090c.jpeg",
-                                                "height": 128,
+                                                "download": "@@images/preview_image-128-1580a2358e091015552a53d245b71b63.jpeg",
+                                                "height": 91,
                                                 "width": 128
                                             },
                                             "tile": {
-                                                "download": "@@images/preview_image-64-1587f36cbf138c59d9b586d090afc34b.jpeg",
-                                                "height": 64,
+                                                "download": "@@images/preview_image-64-2c95c49fe4265eccbd6b576240b9bc7d.jpeg",
+                                                "height": 45,
                                                 "width": 64
                                             }
                                         },
-                                        "size": 951578,
-                                        "width": 1126
+                                        "size": 693013,
+                                        "width": 2400
                                     }
                                 ]
                             },
@@ -533,7 +365,7 @@
                     "head_title": "Head title ",
                     "href": [
                         {
-                            "@id": "/example/grid-block",
+                            "@id": "/block/grid-block",
                             "@type": "Document",
                             "Description": "Der Grid-Block erlaubt das Hinzuf\u00fcgen mehrspaltiger Bl\u00f6cke. Ein Grid-Block kann zwischen ein und vier Spalten mit unterschiedlichen Bl\u00f6cken enthalten.Teaser und Bilder k\u00f6nnen in einem Grid-Block hinzugef\u00fcgt werden.",
                             "Title": "Block: Grid",
@@ -545,57 +377,128 @@
                                 "preview_image": [
                                     {
                                         "content-type": "image/jpeg",
-                                        "download": "@@images/preview_image-1126-502bd161208d3b139e901fc3dd949543.jpeg",
-                                        "filename": "bfs-image-2.jpg",
-                                        "height": 1126,
+                                        "download": "@@images/preview_image-2400-3354c391caa34dcbe929c0d00dcef7ec.jpeg",
+                                        "filename": "black-starry-night.jpg",
+                                        "height": 1708,
                                         "scales": {
+                                            "great": {
+                                                "download": "@@images/preview_image-1200-ce139516c86f46592ff3c9ae19f66334.jpeg",
+                                                "height": 854,
+                                                "width": 1200
+                                            },
+                                            "huge": {
+                                                "download": "@@images/preview_image-1600-c8ac655446be88a135588c982f9913a6.jpeg",
+                                                "height": 1138,
+                                                "width": 1600
+                                            },
                                             "icon": {
-                                                "download": "@@images/preview_image-32-6ec223be1c5f0caefb8948e3cbd4af12.jpeg",
-                                                "height": 32,
+                                                "download": "@@images/preview_image-32-ff5cdaf76d5312f840a51b21e2e023a2.jpeg",
+                                                "height": 22,
                                                 "width": 32
                                             },
                                             "large": {
-                                                "download": "@@images/preview_image-800-87fc8d3e81087346ba0fda4fd61f2184.jpeg",
-                                                "height": 800,
+                                                "download": "@@images/preview_image-800-f99814a0653500d04aa220b48f9f099d.jpeg",
+                                                "height": 569,
                                                 "width": 800
                                             },
                                             "larger": {
-                                                "download": "@@images/preview_image-1000-bd6b486ec293ef1f187b836e9cf7d057.jpeg",
-                                                "height": 1000,
+                                                "download": "@@images/preview_image-1000-9018d9cbb48c3bb4d16b1a9f3821c780.jpeg",
+                                                "height": 711,
                                                 "width": 1000
                                             },
                                             "mini": {
-                                                "download": "@@images/preview_image-200-56f5e56183b5ecf085796b44ba1da002.jpeg",
-                                                "height": 200,
+                                                "download": "@@images/preview_image-200-974d0ca10cac9afd46320bbf34e4acf8.jpeg",
+                                                "height": 142,
                                                 "width": 200
                                             },
                                             "preview": {
-                                                "download": "@@images/preview_image-400-aac63158e238b27e6875c04180c838cb.jpeg",
-                                                "height": 400,
+                                                "download": "@@images/preview_image-400-0a9a87ea1ffe2a9b478df438fec58801.jpeg",
+                                                "height": 284,
                                                 "width": 400
                                             },
                                             "teaser": {
-                                                "download": "@@images/preview_image-600-528f99c9143b62ab8f5c1fa5d83d0119.jpeg",
-                                                "height": 600,
+                                                "download": "@@images/preview_image-600-cc7b231e831fff8e9574da07da38e9f6.jpeg",
+                                                "height": 427,
                                                 "width": 600
                                             },
                                             "thumb": {
-                                                "download": "@@images/preview_image-128-ca7aa43a7cc6e4d878e58713a7c67f8a.jpeg",
-                                                "height": 128,
+                                                "download": "@@images/preview_image-128-1580a2358e091015552a53d245b71b63.jpeg",
+                                                "height": 91,
                                                 "width": 128
                                             },
                                             "tile": {
-                                                "download": "@@images/preview_image-64-00b17d92943927c702c94a03bdb3c3b2.jpeg",
-                                                "height": 64,
+                                                "download": "@@images/preview_image-64-2c95c49fe4265eccbd6b576240b9bc7d.jpeg",
+                                                "height": 45,
                                                 "width": 64
                                             }
                                         },
-                                        "size": 951578,
-                                        "width": 1126
+                                        "size": 693013,
+                                        "width": 2400
                                     }
                                 ]
                             },
                             "title": "Block: Grid"
+                        }
+                    ],
+                    "preview_image": [
+                        {
+                            "@id": "/content-types/image-light",
+                            "image_field": "image",
+                            "image_scales": {
+                                "image": [
+                                    {
+                                        "content-type": "image/jpeg",
+                                        "download": "@@images/image-1126-a348a1ae0de2cb9dc686acb32f133466.jpeg",
+                                        "filename": "image-light.jpg",
+                                        "height": 633,
+                                        "scales": {
+                                            "icon": {
+                                                "download": "@@images/image-32-1a0da455b99762ccdcbf2043dc28658d.jpeg",
+                                                "height": 17,
+                                                "width": 32
+                                            },
+                                            "large": {
+                                                "download": "@@images/image-800-943d2ca6ff5c46e6bbdac155a4055c4e.jpeg",
+                                                "height": 449,
+                                                "width": 800
+                                            },
+                                            "larger": {
+                                                "download": "@@images/image-1000-6352f6366e45696f603845f00da4583c.jpeg",
+                                                "height": 562,
+                                                "width": 1000
+                                            },
+                                            "mini": {
+                                                "download": "@@images/image-200-ab964a7e0c7c6e517067c39833f48c5c.jpeg",
+                                                "height": 112,
+                                                "width": 200
+                                            },
+                                            "preview": {
+                                                "download": "@@images/image-400-11cf2552952d331b1b63baa50fca90b9.jpeg",
+                                                "height": 224,
+                                                "width": 400
+                                            },
+                                            "teaser": {
+                                                "download": "@@images/image-600-3a7ae7498f048157ed9db70ad115f4f1.jpeg",
+                                                "height": 337,
+                                                "width": 600
+                                            },
+                                            "thumb": {
+                                                "download": "@@images/image-128-bd7976697ccf8eb657bc8ec185d60f91.jpeg",
+                                                "height": 71,
+                                                "width": 128
+                                            },
+                                            "tile": {
+                                                "download": "@@images/image-64-f68b0f9e140cb7766d99aec267ee1c57.jpeg",
+                                                "height": 35,
+                                                "width": 64
+                                            }
+                                        },
+                                        "size": 475285,
+                                        "width": 1126
+                                    }
+                                ]
+                            },
+                            "title": "Image - Light"
                         }
                     ],
                     "styles": {
@@ -620,7 +523,7 @@
             "head_title": "Head title",
             "href": [
                 {
-                    "@id": "/example/grid-block",
+                    "@id": "/block/grid-block",
                     "@type": "Document",
                     "Description": "Der Grid-Block erlaubt das Hinzuf\u00fcgen mehrspaltiger Bl\u00f6cke. Ein Grid-Block kann zwischen ein und vier Spalten mit unterschiedlichen Bl\u00f6cken enthalten.Teaser und Bilder k\u00f6nnen in einem Grid-Block hinzugef\u00fcgt werden.",
                     "Title": "Block: Grid",
@@ -632,53 +535,63 @@
                         "preview_image": [
                             {
                                 "content-type": "image/jpeg",
-                                "download": "@@images/preview_image-1126-502bd161208d3b139e901fc3dd949543.jpeg",
-                                "filename": "bfs-image-2.jpg",
-                                "height": 1126,
+                                "download": "@@images/preview_image-2400-3354c391caa34dcbe929c0d00dcef7ec.jpeg",
+                                "filename": "black-starry-night.jpg",
+                                "height": 1708,
                                 "scales": {
+                                    "great": {
+                                        "download": "@@images/preview_image-1200-ce139516c86f46592ff3c9ae19f66334.jpeg",
+                                        "height": 854,
+                                        "width": 1200
+                                    },
+                                    "huge": {
+                                        "download": "@@images/preview_image-1600-c8ac655446be88a135588c982f9913a6.jpeg",
+                                        "height": 1138,
+                                        "width": 1600
+                                    },
                                     "icon": {
-                                        "download": "@@images/preview_image-32-6ec223be1c5f0caefb8948e3cbd4af12.jpeg",
-                                        "height": 32,
+                                        "download": "@@images/preview_image-32-ff5cdaf76d5312f840a51b21e2e023a2.jpeg",
+                                        "height": 22,
                                         "width": 32
                                     },
                                     "large": {
-                                        "download": "@@images/preview_image-800-87fc8d3e81087346ba0fda4fd61f2184.jpeg",
-                                        "height": 800,
+                                        "download": "@@images/preview_image-800-f99814a0653500d04aa220b48f9f099d.jpeg",
+                                        "height": 569,
                                         "width": 800
                                     },
                                     "larger": {
-                                        "download": "@@images/preview_image-1000-bd6b486ec293ef1f187b836e9cf7d057.jpeg",
-                                        "height": 1000,
+                                        "download": "@@images/preview_image-1000-9018d9cbb48c3bb4d16b1a9f3821c780.jpeg",
+                                        "height": 711,
                                         "width": 1000
                                     },
                                     "mini": {
-                                        "download": "@@images/preview_image-200-56f5e56183b5ecf085796b44ba1da002.jpeg",
-                                        "height": 200,
+                                        "download": "@@images/preview_image-200-974d0ca10cac9afd46320bbf34e4acf8.jpeg",
+                                        "height": 142,
                                         "width": 200
                                     },
                                     "preview": {
-                                        "download": "@@images/preview_image-400-aac63158e238b27e6875c04180c838cb.jpeg",
-                                        "height": 400,
+                                        "download": "@@images/preview_image-400-0a9a87ea1ffe2a9b478df438fec58801.jpeg",
+                                        "height": 284,
                                         "width": 400
                                     },
                                     "teaser": {
-                                        "download": "@@images/preview_image-600-528f99c9143b62ab8f5c1fa5d83d0119.jpeg",
-                                        "height": 600,
+                                        "download": "@@images/preview_image-600-cc7b231e831fff8e9574da07da38e9f6.jpeg",
+                                        "height": 427,
                                         "width": 600
                                     },
                                     "thumb": {
-                                        "download": "@@images/preview_image-128-ca7aa43a7cc6e4d878e58713a7c67f8a.jpeg",
-                                        "height": 128,
+                                        "download": "@@images/preview_image-128-1580a2358e091015552a53d245b71b63.jpeg",
+                                        "height": 91,
                                         "width": 128
                                     },
                                     "tile": {
-                                        "download": "@@images/preview_image-64-00b17d92943927c702c94a03bdb3c3b2.jpeg",
-                                        "height": 64,
+                                        "download": "@@images/preview_image-64-2c95c49fe4265eccbd6b576240b9bc7d.jpeg",
+                                        "height": 45,
                                         "width": 64
                                     }
                                 },
-                                "size": 951578,
-                                "width": 1126
+                                "size": 693013,
+                                "width": 2400
                             }
                         ]
                     },
@@ -696,7 +609,7 @@
             "head_title": "Head title",
             "href": [
                 {
-                    "@id": "/example/grid-block",
+                    "@id": "/block/grid-block",
                     "@type": "Document",
                     "Description": "Der Grid-Block erlaubt das Hinzuf\u00fcgen mehrspaltiger Bl\u00f6cke. Ein Grid-Block kann zwischen ein und vier Spalten mit unterschiedlichen Bl\u00f6cken enthalten.Teaser und Bilder k\u00f6nnen in einem Grid-Block hinzugef\u00fcgt werden.",
                     "Title": "Block: Grid",
@@ -708,57 +621,128 @@
                         "preview_image": [
                             {
                                 "content-type": "image/jpeg",
-                                "download": "@@images/preview_image-1126-502bd161208d3b139e901fc3dd949543.jpeg",
-                                "filename": "bfs-image-2.jpg",
-                                "height": 1126,
+                                "download": "@@images/preview_image-2400-3354c391caa34dcbe929c0d00dcef7ec.jpeg",
+                                "filename": "black-starry-night.jpg",
+                                "height": 1708,
                                 "scales": {
+                                    "great": {
+                                        "download": "@@images/preview_image-1200-ce139516c86f46592ff3c9ae19f66334.jpeg",
+                                        "height": 854,
+                                        "width": 1200
+                                    },
+                                    "huge": {
+                                        "download": "@@images/preview_image-1600-c8ac655446be88a135588c982f9913a6.jpeg",
+                                        "height": 1138,
+                                        "width": 1600
+                                    },
                                     "icon": {
-                                        "download": "@@images/preview_image-32-6ec223be1c5f0caefb8948e3cbd4af12.jpeg",
-                                        "height": 32,
+                                        "download": "@@images/preview_image-32-ff5cdaf76d5312f840a51b21e2e023a2.jpeg",
+                                        "height": 22,
                                         "width": 32
                                     },
                                     "large": {
-                                        "download": "@@images/preview_image-800-87fc8d3e81087346ba0fda4fd61f2184.jpeg",
-                                        "height": 800,
+                                        "download": "@@images/preview_image-800-f99814a0653500d04aa220b48f9f099d.jpeg",
+                                        "height": 569,
                                         "width": 800
                                     },
                                     "larger": {
-                                        "download": "@@images/preview_image-1000-bd6b486ec293ef1f187b836e9cf7d057.jpeg",
-                                        "height": 1000,
+                                        "download": "@@images/preview_image-1000-9018d9cbb48c3bb4d16b1a9f3821c780.jpeg",
+                                        "height": 711,
                                         "width": 1000
                                     },
                                     "mini": {
-                                        "download": "@@images/preview_image-200-56f5e56183b5ecf085796b44ba1da002.jpeg",
-                                        "height": 200,
+                                        "download": "@@images/preview_image-200-974d0ca10cac9afd46320bbf34e4acf8.jpeg",
+                                        "height": 142,
                                         "width": 200
                                     },
                                     "preview": {
-                                        "download": "@@images/preview_image-400-aac63158e238b27e6875c04180c838cb.jpeg",
-                                        "height": 400,
+                                        "download": "@@images/preview_image-400-0a9a87ea1ffe2a9b478df438fec58801.jpeg",
+                                        "height": 284,
                                         "width": 400
                                     },
                                     "teaser": {
-                                        "download": "@@images/preview_image-600-528f99c9143b62ab8f5c1fa5d83d0119.jpeg",
-                                        "height": 600,
+                                        "download": "@@images/preview_image-600-cc7b231e831fff8e9574da07da38e9f6.jpeg",
+                                        "height": 427,
                                         "width": 600
                                     },
                                     "thumb": {
-                                        "download": "@@images/preview_image-128-ca7aa43a7cc6e4d878e58713a7c67f8a.jpeg",
-                                        "height": 128,
+                                        "download": "@@images/preview_image-128-1580a2358e091015552a53d245b71b63.jpeg",
+                                        "height": 91,
                                         "width": 128
                                     },
                                     "tile": {
-                                        "download": "@@images/preview_image-64-00b17d92943927c702c94a03bdb3c3b2.jpeg",
-                                        "height": 64,
+                                        "download": "@@images/preview_image-64-2c95c49fe4265eccbd6b576240b9bc7d.jpeg",
+                                        "height": 45,
                                         "width": 64
                                     }
                                 },
-                                "size": 951578,
-                                "width": 1126
+                                "size": 693013,
+                                "width": 2400
                             }
                         ]
                     },
                     "title": "Block: Grid"
+                }
+            ],
+            "preview_image": [
+                {
+                    "@id": "/content-types/image-light",
+                    "image_field": "image",
+                    "image_scales": {
+                        "image": [
+                            {
+                                "content-type": "image/jpeg",
+                                "download": "@@images/image-1126-a348a1ae0de2cb9dc686acb32f133466.jpeg",
+                                "filename": "image-light.jpg",
+                                "height": 633,
+                                "scales": {
+                                    "icon": {
+                                        "download": "@@images/image-32-1a0da455b99762ccdcbf2043dc28658d.jpeg",
+                                        "height": 17,
+                                        "width": 32
+                                    },
+                                    "large": {
+                                        "download": "@@images/image-800-943d2ca6ff5c46e6bbdac155a4055c4e.jpeg",
+                                        "height": 449,
+                                        "width": 800
+                                    },
+                                    "larger": {
+                                        "download": "@@images/image-1000-6352f6366e45696f603845f00da4583c.jpeg",
+                                        "height": 562,
+                                        "width": 1000
+                                    },
+                                    "mini": {
+                                        "download": "@@images/image-200-ab964a7e0c7c6e517067c39833f48c5c.jpeg",
+                                        "height": 112,
+                                        "width": 200
+                                    },
+                                    "preview": {
+                                        "download": "@@images/image-400-11cf2552952d331b1b63baa50fca90b9.jpeg",
+                                        "height": 224,
+                                        "width": 400
+                                    },
+                                    "teaser": {
+                                        "download": "@@images/image-600-3a7ae7498f048157ed9db70ad115f4f1.jpeg",
+                                        "height": 337,
+                                        "width": 600
+                                    },
+                                    "thumb": {
+                                        "download": "@@images/image-128-bd7976697ccf8eb657bc8ec185d60f91.jpeg",
+                                        "height": 71,
+                                        "width": 128
+                                    },
+                                    "tile": {
+                                        "download": "@@images/image-64-f68b0f9e140cb7766d99aec267ee1c57.jpeg",
+                                        "height": 35,
+                                        "width": 64
+                                    }
+                                },
+                                "size": 475285,
+                                "width": 1126
+                            }
+                        ]
+                    },
+                    "title": "Image - Light"
                 }
             ],
             "styles": {
@@ -776,7 +760,7 @@
                     "head_title": "Head title ",
                     "href": [
                         {
-                            "@id": "/example/teaser-block",
+                            "@id": "/block/teaser-block",
                             "@type": "Document",
                             "Description": "Der Teaser-Block erlaubt das Hinzuf\u00fcgen eines Elements welches einen bestehenden Inhalte der Webseite mit einem Bild, einem Titel und einer Beschreibung anteasert.",
                             "Title": "Block: Teaser",
@@ -788,53 +772,63 @@
                                 "preview_image": [
                                     {
                                         "content-type": "image/jpeg",
-                                        "download": "@@images/preview_image-1126-2aa16d6f93ecf7d6cc858349fbaa273b.jpeg",
-                                        "filename": "bfs-image-2.jpg",
-                                        "height": 1126,
+                                        "download": "@@images/preview_image-2400-3354c391caa34dcbe929c0d00dcef7ec.jpeg",
+                                        "filename": "black-starry-night.jpg",
+                                        "height": 1708,
                                         "scales": {
+                                            "great": {
+                                                "download": "@@images/preview_image-1200-ce139516c86f46592ff3c9ae19f66334.jpeg",
+                                                "height": 854,
+                                                "width": 1200
+                                            },
+                                            "huge": {
+                                                "download": "@@images/preview_image-1600-c8ac655446be88a135588c982f9913a6.jpeg",
+                                                "height": 1138,
+                                                "width": 1600
+                                            },
                                             "icon": {
-                                                "download": "@@images/preview_image-32-b027975284548470d910cc981a9b71f0.jpeg",
-                                                "height": 32,
+                                                "download": "@@images/preview_image-32-ff5cdaf76d5312f840a51b21e2e023a2.jpeg",
+                                                "height": 22,
                                                 "width": 32
                                             },
                                             "large": {
-                                                "download": "@@images/preview_image-800-13676e71b5a81c1d7db10f63ce3607cd.jpeg",
-                                                "height": 800,
+                                                "download": "@@images/preview_image-800-f99814a0653500d04aa220b48f9f099d.jpeg",
+                                                "height": 569,
                                                 "width": 800
                                             },
                                             "larger": {
-                                                "download": "@@images/preview_image-1000-f446b8478b4d83d7e9557c06c6b8907e.jpeg",
-                                                "height": 1000,
+                                                "download": "@@images/preview_image-1000-9018d9cbb48c3bb4d16b1a9f3821c780.jpeg",
+                                                "height": 711,
                                                 "width": 1000
                                             },
                                             "mini": {
-                                                "download": "@@images/preview_image-200-09ca44c6ddc9673438f4a70a5a9ee292.jpeg",
-                                                "height": 200,
+                                                "download": "@@images/preview_image-200-974d0ca10cac9afd46320bbf34e4acf8.jpeg",
+                                                "height": 142,
                                                 "width": 200
                                             },
                                             "preview": {
-                                                "download": "@@images/preview_image-400-842429118bd711ed2439f16e18e77a11.jpeg",
-                                                "height": 400,
+                                                "download": "@@images/preview_image-400-0a9a87ea1ffe2a9b478df438fec58801.jpeg",
+                                                "height": 284,
                                                 "width": 400
                                             },
                                             "teaser": {
-                                                "download": "@@images/preview_image-600-06c8a88fdbfa4dba74a56b46a7a76850.jpeg",
-                                                "height": 600,
+                                                "download": "@@images/preview_image-600-cc7b231e831fff8e9574da07da38e9f6.jpeg",
+                                                "height": 427,
                                                 "width": 600
                                             },
                                             "thumb": {
-                                                "download": "@@images/preview_image-128-1cbdbac22030fd5d38950cec4e9a090c.jpeg",
-                                                "height": 128,
+                                                "download": "@@images/preview_image-128-1580a2358e091015552a53d245b71b63.jpeg",
+                                                "height": 91,
                                                 "width": 128
                                             },
                                             "tile": {
-                                                "download": "@@images/preview_image-64-1587f36cbf138c59d9b586d090afc34b.jpeg",
-                                                "height": 64,
+                                                "download": "@@images/preview_image-64-2c95c49fe4265eccbd6b576240b9bc7d.jpeg",
+                                                "height": 45,
                                                 "width": 64
                                             }
                                         },
-                                        "size": 951578,
-                                        "width": 1126
+                                        "size": 693013,
+                                        "width": 2400
                                     }
                                 ]
                             },
@@ -857,13 +851,6 @@
                 "backgroundColor": "grey"
             }
         },
-        "6028b24e-15ee-4c4f-8ff3-1d693c3546bb": {
-            "@type": "heading",
-            "alignment": "left",
-            "heading": "Listing",
-            "styles": {},
-            "tag": "h2"
-        },
         "85655a82-c662-4626-a1dd-cded660ee494": {
             "@type": "listing",
             "headline": "Listing",
@@ -872,9 +859,18 @@
                 "limit": "3",
                 "query": [
                     {
-                        "i": "Title",
-                        "o": "plone.app.querystring.operation.string.contains",
-                        "v": "Block:"
+                        "i": "portal_type",
+                        "o": "plone.app.querystring.operation.selection.any",
+                        "v": [
+                            "Document"
+                        ]
+                    },
+                    {
+                        "i": "Subject",
+                        "o": "plone.app.querystring.operation.selection.none",
+                        "v": [
+                            "main folder"
+                        ]
                     }
                 ],
                 "sort_order": "ascending"
@@ -908,17 +904,13 @@
             },
             "title": "Button"
         },
-        "df11761d-5c33-41ca-aa23-3e20924b2d5d": {
-            "@type": "slate",
-            "styles": {}
-        },
         "e5e851c5-d634-4c70-b720-024c98d38c6d": {
             "@type": "teaser",
             "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper ",
             "head_title": "Head title",
             "href": [
                 {
-                    "@id": "/example/teaser-block",
+                    "@id": "/block/teaser-block",
                     "@type": "Document",
                     "Description": "Der Teaser-Block erlaubt das Hinzuf\u00fcgen eines Elements welches einen bestehenden Inhalte der Webseite mit einem Bild, einem Titel und einer Beschreibung anteasert.",
                     "Title": "Block: Teaser",
@@ -930,57 +922,128 @@
                         "preview_image": [
                             {
                                 "content-type": "image/jpeg",
-                                "download": "@@images/preview_image-1126-2aa16d6f93ecf7d6cc858349fbaa273b.jpeg",
-                                "filename": "bfs-image-2.jpg",
-                                "height": 1126,
+                                "download": "@@images/preview_image-2400-3354c391caa34dcbe929c0d00dcef7ec.jpeg",
+                                "filename": "black-starry-night.jpg",
+                                "height": 1708,
                                 "scales": {
+                                    "great": {
+                                        "download": "@@images/preview_image-1200-ce139516c86f46592ff3c9ae19f66334.jpeg",
+                                        "height": 854,
+                                        "width": 1200
+                                    },
+                                    "huge": {
+                                        "download": "@@images/preview_image-1600-c8ac655446be88a135588c982f9913a6.jpeg",
+                                        "height": 1138,
+                                        "width": 1600
+                                    },
                                     "icon": {
-                                        "download": "@@images/preview_image-32-b027975284548470d910cc981a9b71f0.jpeg",
-                                        "height": 32,
+                                        "download": "@@images/preview_image-32-ff5cdaf76d5312f840a51b21e2e023a2.jpeg",
+                                        "height": 22,
                                         "width": 32
                                     },
                                     "large": {
-                                        "download": "@@images/preview_image-800-13676e71b5a81c1d7db10f63ce3607cd.jpeg",
-                                        "height": 800,
+                                        "download": "@@images/preview_image-800-f99814a0653500d04aa220b48f9f099d.jpeg",
+                                        "height": 569,
                                         "width": 800
                                     },
                                     "larger": {
-                                        "download": "@@images/preview_image-1000-f446b8478b4d83d7e9557c06c6b8907e.jpeg",
-                                        "height": 1000,
+                                        "download": "@@images/preview_image-1000-9018d9cbb48c3bb4d16b1a9f3821c780.jpeg",
+                                        "height": 711,
                                         "width": 1000
                                     },
                                     "mini": {
-                                        "download": "@@images/preview_image-200-09ca44c6ddc9673438f4a70a5a9ee292.jpeg",
-                                        "height": 200,
+                                        "download": "@@images/preview_image-200-974d0ca10cac9afd46320bbf34e4acf8.jpeg",
+                                        "height": 142,
                                         "width": 200
                                     },
                                     "preview": {
-                                        "download": "@@images/preview_image-400-842429118bd711ed2439f16e18e77a11.jpeg",
-                                        "height": 400,
+                                        "download": "@@images/preview_image-400-0a9a87ea1ffe2a9b478df438fec58801.jpeg",
+                                        "height": 284,
                                         "width": 400
                                     },
                                     "teaser": {
-                                        "download": "@@images/preview_image-600-06c8a88fdbfa4dba74a56b46a7a76850.jpeg",
-                                        "height": 600,
+                                        "download": "@@images/preview_image-600-cc7b231e831fff8e9574da07da38e9f6.jpeg",
+                                        "height": 427,
                                         "width": 600
                                     },
                                     "thumb": {
-                                        "download": "@@images/preview_image-128-1cbdbac22030fd5d38950cec4e9a090c.jpeg",
-                                        "height": 128,
+                                        "download": "@@images/preview_image-128-1580a2358e091015552a53d245b71b63.jpeg",
+                                        "height": 91,
                                         "width": 128
                                     },
                                     "tile": {
-                                        "download": "@@images/preview_image-64-1587f36cbf138c59d9b586d090afc34b.jpeg",
-                                        "height": 64,
+                                        "download": "@@images/preview_image-64-2c95c49fe4265eccbd6b576240b9bc7d.jpeg",
+                                        "height": 45,
                                         "width": 64
                                     }
                                 },
-                                "size": 951578,
-                                "width": 1126
+                                "size": 693013,
+                                "width": 2400
                             }
                         ]
                     },
                     "title": "Block: Teaser"
+                }
+            ],
+            "preview_image": [
+                {
+                    "@id": "/content-types/image-light",
+                    "image_field": "image",
+                    "image_scales": {
+                        "image": [
+                            {
+                                "content-type": "image/jpeg",
+                                "download": "@@images/image-1126-a348a1ae0de2cb9dc686acb32f133466.jpeg",
+                                "filename": "image-light.jpg",
+                                "height": 633,
+                                "scales": {
+                                    "icon": {
+                                        "download": "@@images/image-32-1a0da455b99762ccdcbf2043dc28658d.jpeg",
+                                        "height": 17,
+                                        "width": 32
+                                    },
+                                    "large": {
+                                        "download": "@@images/image-800-943d2ca6ff5c46e6bbdac155a4055c4e.jpeg",
+                                        "height": 449,
+                                        "width": 800
+                                    },
+                                    "larger": {
+                                        "download": "@@images/image-1000-6352f6366e45696f603845f00da4583c.jpeg",
+                                        "height": 562,
+                                        "width": 1000
+                                    },
+                                    "mini": {
+                                        "download": "@@images/image-200-ab964a7e0c7c6e517067c39833f48c5c.jpeg",
+                                        "height": 112,
+                                        "width": 200
+                                    },
+                                    "preview": {
+                                        "download": "@@images/image-400-11cf2552952d331b1b63baa50fca90b9.jpeg",
+                                        "height": 224,
+                                        "width": 400
+                                    },
+                                    "teaser": {
+                                        "download": "@@images/image-600-3a7ae7498f048157ed9db70ad115f4f1.jpeg",
+                                        "height": 337,
+                                        "width": 600
+                                    },
+                                    "thumb": {
+                                        "download": "@@images/image-128-bd7976697ccf8eb657bc8ec185d60f91.jpeg",
+                                        "height": 71,
+                                        "width": 128
+                                    },
+                                    "tile": {
+                                        "download": "@@images/image-64-f68b0f9e140cb7766d99aec267ee1c57.jpeg",
+                                        "height": 35,
+                                        "width": 64
+                                    }
+                                },
+                                "size": 475285,
+                                "width": 1126
+                            }
+                        ]
+                    },
+                    "title": "Image - Light"
                 }
             ],
             "styles": {
@@ -994,7 +1057,7 @@
             "head_title": "Head title",
             "href": [
                 {
-                    "@id": "/example/teaser-block",
+                    "@id": "/block/teaser-block",
                     "@type": "Document",
                     "Description": "Der Teaser-Block erlaubt das Hinzuf\u00fcgen eines Elements welches einen bestehenden Inhalte der Webseite mit einem Bild, einem Titel und einer Beschreibung anteasert.",
                     "Title": "Block: Teaser",
@@ -1006,53 +1069,63 @@
                         "preview_image": [
                             {
                                 "content-type": "image/jpeg",
-                                "download": "@@images/preview_image-1126-2aa16d6f93ecf7d6cc858349fbaa273b.jpeg",
-                                "filename": "bfs-image-2.jpg",
-                                "height": 1126,
+                                "download": "@@images/preview_image-2400-3354c391caa34dcbe929c0d00dcef7ec.jpeg",
+                                "filename": "black-starry-night.jpg",
+                                "height": 1708,
                                 "scales": {
+                                    "great": {
+                                        "download": "@@images/preview_image-1200-ce139516c86f46592ff3c9ae19f66334.jpeg",
+                                        "height": 854,
+                                        "width": 1200
+                                    },
+                                    "huge": {
+                                        "download": "@@images/preview_image-1600-c8ac655446be88a135588c982f9913a6.jpeg",
+                                        "height": 1138,
+                                        "width": 1600
+                                    },
                                     "icon": {
-                                        "download": "@@images/preview_image-32-b027975284548470d910cc981a9b71f0.jpeg",
-                                        "height": 32,
+                                        "download": "@@images/preview_image-32-ff5cdaf76d5312f840a51b21e2e023a2.jpeg",
+                                        "height": 22,
                                         "width": 32
                                     },
                                     "large": {
-                                        "download": "@@images/preview_image-800-13676e71b5a81c1d7db10f63ce3607cd.jpeg",
-                                        "height": 800,
+                                        "download": "@@images/preview_image-800-f99814a0653500d04aa220b48f9f099d.jpeg",
+                                        "height": 569,
                                         "width": 800
                                     },
                                     "larger": {
-                                        "download": "@@images/preview_image-1000-f446b8478b4d83d7e9557c06c6b8907e.jpeg",
-                                        "height": 1000,
+                                        "download": "@@images/preview_image-1000-9018d9cbb48c3bb4d16b1a9f3821c780.jpeg",
+                                        "height": 711,
                                         "width": 1000
                                     },
                                     "mini": {
-                                        "download": "@@images/preview_image-200-09ca44c6ddc9673438f4a70a5a9ee292.jpeg",
-                                        "height": 200,
+                                        "download": "@@images/preview_image-200-974d0ca10cac9afd46320bbf34e4acf8.jpeg",
+                                        "height": 142,
                                         "width": 200
                                     },
                                     "preview": {
-                                        "download": "@@images/preview_image-400-842429118bd711ed2439f16e18e77a11.jpeg",
-                                        "height": 400,
+                                        "download": "@@images/preview_image-400-0a9a87ea1ffe2a9b478df438fec58801.jpeg",
+                                        "height": 284,
                                         "width": 400
                                     },
                                     "teaser": {
-                                        "download": "@@images/preview_image-600-06c8a88fdbfa4dba74a56b46a7a76850.jpeg",
-                                        "height": 600,
+                                        "download": "@@images/preview_image-600-cc7b231e831fff8e9574da07da38e9f6.jpeg",
+                                        "height": 427,
                                         "width": 600
                                     },
                                     "thumb": {
-                                        "download": "@@images/preview_image-128-1cbdbac22030fd5d38950cec4e9a090c.jpeg",
-                                        "height": 128,
+                                        "download": "@@images/preview_image-128-1580a2358e091015552a53d245b71b63.jpeg",
+                                        "height": 91,
                                         "width": 128
                                     },
                                     "tile": {
-                                        "download": "@@images/preview_image-64-1587f36cbf138c59d9b586d090afc34b.jpeg",
-                                        "height": 64,
+                                        "download": "@@images/preview_image-64-2c95c49fe4265eccbd6b576240b9bc7d.jpeg",
+                                        "height": 45,
                                         "width": 64
                                     }
                                 },
-                                "size": 951578,
-                                "width": 1126
+                                "size": 693013,
+                                "width": 2400
                             }
                         ]
                     },
@@ -1074,7 +1147,7 @@
                     "head_title": "Head title",
                     "href": [
                         {
-                            "@id": "/example/page",
+                            "@id": "/content-types/page",
                             "@type": "Document",
                             "Description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
                             "Title": "Inhaltstyp: Seite (Page)",
@@ -1086,53 +1159,63 @@
                                 "preview_image": [
                                     {
                                         "content-type": "image/jpeg",
-                                        "download": "@@images/preview_image-1182-653b95f4209f84fc40932b1e398bee30.jpeg",
-                                        "filename": "halfdome2022.jpg",
-                                        "height": 665,
+                                        "download": "@@images/preview_image-2400-3354c391caa34dcbe929c0d00dcef7ec.jpeg",
+                                        "filename": "black-starry-night.jpg",
+                                        "height": 1708,
                                         "scales": {
+                                            "great": {
+                                                "download": "@@images/preview_image-1200-ce139516c86f46592ff3c9ae19f66334.jpeg",
+                                                "height": 854,
+                                                "width": 1200
+                                            },
+                                            "huge": {
+                                                "download": "@@images/preview_image-1600-c8ac655446be88a135588c982f9913a6.jpeg",
+                                                "height": 1138,
+                                                "width": 1600
+                                            },
                                             "icon": {
-                                                "download": "@@images/preview_image-32-9313878439c784a89976e40aeaf34fc1.jpeg",
-                                                "height": 18,
+                                                "download": "@@images/preview_image-32-ff5cdaf76d5312f840a51b21e2e023a2.jpeg",
+                                                "height": 22,
                                                 "width": 32
                                             },
                                             "large": {
-                                                "download": "@@images/preview_image-800-4afe0af46fa385fc8427c8fd27f4c55f.jpeg",
-                                                "height": 450,
+                                                "download": "@@images/preview_image-800-f99814a0653500d04aa220b48f9f099d.jpeg",
+                                                "height": 569,
                                                 "width": 800
                                             },
                                             "larger": {
-                                                "download": "@@images/preview_image-1000-9f02d721046d2938efe07dd39c39cbc1.jpeg",
-                                                "height": 562,
+                                                "download": "@@images/preview_image-1000-9018d9cbb48c3bb4d16b1a9f3821c780.jpeg",
+                                                "height": 711,
                                                 "width": 1000
                                             },
                                             "mini": {
-                                                "download": "@@images/preview_image-200-07530933ba7fbacfa38877b2f3bfd218.jpeg",
-                                                "height": 112,
+                                                "download": "@@images/preview_image-200-974d0ca10cac9afd46320bbf34e4acf8.jpeg",
+                                                "height": 142,
                                                 "width": 200
                                             },
                                             "preview": {
-                                                "download": "@@images/preview_image-400-9c0dc8f84f7362fae204e6b9cb0c8fe3.jpeg",
-                                                "height": 225,
+                                                "download": "@@images/preview_image-400-0a9a87ea1ffe2a9b478df438fec58801.jpeg",
+                                                "height": 284,
                                                 "width": 400
                                             },
                                             "teaser": {
-                                                "download": "@@images/preview_image-600-c7a7c80745efaa157fac34caa680d9eb.jpeg",
-                                                "height": 337,
+                                                "download": "@@images/preview_image-600-cc7b231e831fff8e9574da07da38e9f6.jpeg",
+                                                "height": 427,
                                                 "width": 600
                                             },
                                             "thumb": {
-                                                "download": "@@images/preview_image-128-91e7b8d158011046019d59ac490dca24.jpeg",
-                                                "height": 72,
+                                                "download": "@@images/preview_image-128-1580a2358e091015552a53d245b71b63.jpeg",
+                                                "height": 91,
                                                 "width": 128
                                             },
                                             "tile": {
-                                                "download": "@@images/preview_image-64-e59ff992b673a4f38292f4c5e61d9eae.jpeg",
-                                                "height": 36,
+                                                "download": "@@images/preview_image-64-2c95c49fe4265eccbd6b576240b9bc7d.jpeg",
+                                                "height": 45,
                                                 "width": 64
                                             }
                                         },
-                                        "size": 319364,
-                                        "width": 1182
+                                        "size": 693013,
+                                        "width": 2400
                                     }
                                 ]
                             },
@@ -1141,63 +1224,63 @@
                     ],
                     "preview_image": [
                         {
-                            "@id": "/example/image-1",
+                            "@id": "/content-types/image-light",
                             "image_field": "image",
                             "image_scales": {
                                 "image": [
                                     {
                                         "content-type": "image/jpeg",
-                                        "download": "@@images/image-1126-d9a09cc7f3ef12be8e8f0b0c653a6572.jpeg",
-                                        "filename": "bfs-image-2.jpg",
-                                        "height": 1126,
+                                        "download": "@@images/image-1126-a348a1ae0de2cb9dc686acb32f133466.jpeg",
+                                        "filename": "image-light.jpg",
+                                        "height": 633,
                                         "scales": {
                                             "icon": {
-                                                "download": "@@images/image-32-15cabadbb92ef297d72b0d7f79c8298e.jpeg",
-                                                "height": 32,
+                                                "download": "@@images/image-32-1a0da455b99762ccdcbf2043dc28658d.jpeg",
+                                                "height": 17,
                                                 "width": 32
                                             },
                                             "large": {
-                                                "download": "@@images/image-800-ccaf26da653545298fef81b4a2fc4591.jpeg",
-                                                "height": 800,
+                                                "download": "@@images/image-800-943d2ca6ff5c46e6bbdac155a4055c4e.jpeg",
+                                                "height": 449,
                                                 "width": 800
                                             },
                                             "larger": {
-                                                "download": "@@images/image-1000-74e4406217734b8980fa7ef6a6fdb85e.jpeg",
-                                                "height": 1000,
+                                                "download": "@@images/image-1000-6352f6366e45696f603845f00da4583c.jpeg",
+                                                "height": 562,
                                                 "width": 1000
                                             },
                                             "mini": {
-                                                "download": "@@images/image-200-b7a89c47c37bbe5006d505775bc64b4a.jpeg",
-                                                "height": 200,
+                                                "download": "@@images/image-200-ab964a7e0c7c6e517067c39833f48c5c.jpeg",
+                                                "height": 112,
                                                 "width": 200
                                             },
                                             "preview": {
-                                                "download": "@@images/image-400-ec66d5db66a60e14e689c6be3265aa16.jpeg",
-                                                "height": 400,
+                                                "download": "@@images/image-400-11cf2552952d331b1b63baa50fca90b9.jpeg",
+                                                "height": 224,
                                                 "width": 400
                                             },
                                             "teaser": {
-                                                "download": "@@images/image-600-7dbfb6663607be9f0fcbf879f742b732.jpeg",
-                                                "height": 600,
+                                                "download": "@@images/image-600-3a7ae7498f048157ed9db70ad115f4f1.jpeg",
+                                                "height": 337,
                                                 "width": 600
                                             },
                                             "thumb": {
-                                                "download": "@@images/image-128-af666d0df9c0cf27c48766e420fc2cef.jpeg",
-                                                "height": 128,
+                                                "download": "@@images/image-128-bd7976697ccf8eb657bc8ec185d60f91.jpeg",
+                                                "height": 71,
                                                 "width": 128
                                             },
                                             "tile": {
-                                                "download": "@@images/image-64-96872038b50c7f7d730f268c2b9232a7.jpeg",
-                                                "height": 64,
+                                                "download": "@@images/image-64-f68b0f9e140cb7766d99aec267ee1c57.jpeg",
+                                                "height": 35,
                                                 "width": 64
                                             }
                                         },
-                                        "size": 951578,
+                                        "size": 475285,
                                         "width": 1126
                                     }
                                 ]
                             },
-                            "title": "Inhaltstyp: Image-1"
+                            "title": "Image - Light"
                         }
                     ],
                     "styles": {
@@ -1211,7 +1294,7 @@
                     "head_title": "Head title",
                     "href": [
                         {
-                            "@id": "/example/grid-block",
+                            "@id": "/block/grid-block",
                             "@type": "Document",
                             "Description": "Der Grid-Block erlaubt das Hinzuf\u00fcgen mehrspaltiger Bl\u00f6cke. Ein Grid-Block kann zwischen ein und vier Spalten mit unterschiedlichen Bl\u00f6cken enthalten.Teaser und Bilder k\u00f6nnen in einem Grid-Block hinzugef\u00fcgt werden.",
                             "Title": "Block: Grid",
@@ -1223,53 +1306,63 @@
                                 "preview_image": [
                                     {
                                         "content-type": "image/jpeg",
-                                        "download": "@@images/preview_image-1126-502bd161208d3b139e901fc3dd949543.jpeg",
-                                        "filename": "bfs-image-2.jpg",
-                                        "height": 1126,
+                                        "download": "@@images/preview_image-2400-3354c391caa34dcbe929c0d00dcef7ec.jpeg",
+                                        "filename": "black-starry-night.jpg",
+                                        "height": 1708,
                                         "scales": {
+                                            "great": {
+                                                "download": "@@images/preview_image-1200-ce139516c86f46592ff3c9ae19f66334.jpeg",
+                                                "height": 854,
+                                                "width": 1200
+                                            },
+                                            "huge": {
+                                                "download": "@@images/preview_image-1600-c8ac655446be88a135588c982f9913a6.jpeg",
+                                                "height": 1138,
+                                                "width": 1600
+                                            },
                                             "icon": {
-                                                "download": "@@images/preview_image-32-6ec223be1c5f0caefb8948e3cbd4af12.jpeg",
-                                                "height": 32,
+                                                "download": "@@images/preview_image-32-ff5cdaf76d5312f840a51b21e2e023a2.jpeg",
+                                                "height": 22,
                                                 "width": 32
                                             },
                                             "large": {
-                                                "download": "@@images/preview_image-800-87fc8d3e81087346ba0fda4fd61f2184.jpeg",
-                                                "height": 800,
+                                                "download": "@@images/preview_image-800-f99814a0653500d04aa220b48f9f099d.jpeg",
+                                                "height": 569,
                                                 "width": 800
                                             },
                                             "larger": {
-                                                "download": "@@images/preview_image-1000-bd6b486ec293ef1f187b836e9cf7d057.jpeg",
-                                                "height": 1000,
+                                                "download": "@@images/preview_image-1000-9018d9cbb48c3bb4d16b1a9f3821c780.jpeg",
+                                                "height": 711,
                                                 "width": 1000
                                             },
                                             "mini": {
-                                                "download": "@@images/preview_image-200-56f5e56183b5ecf085796b44ba1da002.jpeg",
-                                                "height": 200,
+                                                "download": "@@images/preview_image-200-974d0ca10cac9afd46320bbf34e4acf8.jpeg",
+                                                "height": 142,
                                                 "width": 200
                                             },
                                             "preview": {
-                                                "download": "@@images/preview_image-400-aac63158e238b27e6875c04180c838cb.jpeg",
-                                                "height": 400,
+                                                "download": "@@images/preview_image-400-0a9a87ea1ffe2a9b478df438fec58801.jpeg",
+                                                "height": 284,
                                                 "width": 400
                                             },
                                             "teaser": {
-                                                "download": "@@images/preview_image-600-528f99c9143b62ab8f5c1fa5d83d0119.jpeg",
-                                                "height": 600,
+                                                "download": "@@images/preview_image-600-cc7b231e831fff8e9574da07da38e9f6.jpeg",
+                                                "height": 427,
                                                 "width": 600
                                             },
                                             "thumb": {
-                                                "download": "@@images/preview_image-128-ca7aa43a7cc6e4d878e58713a7c67f8a.jpeg",
-                                                "height": 128,
+                                                "download": "@@images/preview_image-128-1580a2358e091015552a53d245b71b63.jpeg",
+                                                "height": 91,
                                                 "width": 128
                                             },
                                             "tile": {
-                                                "download": "@@images/preview_image-64-00b17d92943927c702c94a03bdb3c3b2.jpeg",
-                                                "height": 64,
+                                                "download": "@@images/preview_image-64-2c95c49fe4265eccbd6b576240b9bc7d.jpeg",
+                                                "height": 45,
                                                 "width": 64
                                             }
                                         },
-                                        "size": 951578,
-                                        "width": 1126
+                                        "size": 693013,
+                                        "width": 2400
                                     }
                                 ]
                             },
@@ -1287,7 +1380,7 @@
                     "head_title": "Head title",
                     "href": [
                         {
-                            "@id": "/example/teaser-block",
+                            "@id": "/block/teaser-block",
                             "@type": "Document",
                             "Description": "Der Teaser-Block erlaubt das Hinzuf\u00fcgen eines Elements welches einen bestehenden Inhalte der Webseite mit einem Bild, einem Titel und einer Beschreibung anteasert.",
                             "Title": "Block: Teaser",
@@ -1299,53 +1392,63 @@
                                 "preview_image": [
                                     {
                                         "content-type": "image/jpeg",
-                                        "download": "@@images/preview_image-1126-2aa16d6f93ecf7d6cc858349fbaa273b.jpeg",
-                                        "filename": "bfs-image-2.jpg",
-                                        "height": 1126,
+                                        "download": "@@images/preview_image-2400-3354c391caa34dcbe929c0d00dcef7ec.jpeg",
+                                        "filename": "black-starry-night.jpg",
+                                        "height": 1708,
                                         "scales": {
+                                            "great": {
+                                                "download": "@@images/preview_image-1200-ce139516c86f46592ff3c9ae19f66334.jpeg",
+                                                "height": 854,
+                                                "width": 1200
+                                            },
+                                            "huge": {
+                                                "download": "@@images/preview_image-1600-c8ac655446be88a135588c982f9913a6.jpeg",
+                                                "height": 1138,
+                                                "width": 1600
+                                            },
                                             "icon": {
-                                                "download": "@@images/preview_image-32-b027975284548470d910cc981a9b71f0.jpeg",
-                                                "height": 32,
+                                                "download": "@@images/preview_image-32-ff5cdaf76d5312f840a51b21e2e023a2.jpeg",
+                                                "height": 22,
                                                 "width": 32
                                             },
                                             "large": {
-                                                "download": "@@images/preview_image-800-13676e71b5a81c1d7db10f63ce3607cd.jpeg",
-                                                "height": 800,
+                                                "download": "@@images/preview_image-800-f99814a0653500d04aa220b48f9f099d.jpeg",
+                                                "height": 569,
                                                 "width": 800
                                             },
                                             "larger": {
-                                                "download": "@@images/preview_image-1000-f446b8478b4d83d7e9557c06c6b8907e.jpeg",
-                                                "height": 1000,
+                                                "download": "@@images/preview_image-1000-9018d9cbb48c3bb4d16b1a9f3821c780.jpeg",
+                                                "height": 711,
                                                 "width": 1000
                                             },
                                             "mini": {
-                                                "download": "@@images/preview_image-200-09ca44c6ddc9673438f4a70a5a9ee292.jpeg",
-                                                "height": 200,
+                                                "download": "@@images/preview_image-200-974d0ca10cac9afd46320bbf34e4acf8.jpeg",
+                                                "height": 142,
                                                 "width": 200
                                             },
                                             "preview": {
-                                                "download": "@@images/preview_image-400-842429118bd711ed2439f16e18e77a11.jpeg",
-                                                "height": 400,
+                                                "download": "@@images/preview_image-400-0a9a87ea1ffe2a9b478df438fec58801.jpeg",
+                                                "height": 284,
                                                 "width": 400
                                             },
                                             "teaser": {
-                                                "download": "@@images/preview_image-600-06c8a88fdbfa4dba74a56b46a7a76850.jpeg",
-                                                "height": 600,
+                                                "download": "@@images/preview_image-600-cc7b231e831fff8e9574da07da38e9f6.jpeg",
+                                                "height": 427,
                                                 "width": 600
                                             },
                                             "thumb": {
-                                                "download": "@@images/preview_image-128-1cbdbac22030fd5d38950cec4e9a090c.jpeg",
-                                                "height": 128,
+                                                "download": "@@images/preview_image-128-1580a2358e091015552a53d245b71b63.jpeg",
+                                                "height": 91,
                                                 "width": 128
                                             },
                                             "tile": {
-                                                "download": "@@images/preview_image-64-1587f36cbf138c59d9b586d090afc34b.jpeg",
-                                                "height": 64,
+                                                "download": "@@images/preview_image-64-2c95c49fe4265eccbd6b576240b9bc7d.jpeg",
+                                                "height": 45,
                                                 "width": 64
                                             }
                                         },
-                                        "size": 951578,
-                                        "width": 1126
+                                        "size": 693013,
+                                        "width": 2400
                                     }
                                 ]
                             },
@@ -1407,10 +1510,8 @@
             "383c512f-e7a4-4426-b721-9ebaf7248f8f",
             "eb4928c3-4cfd-4876-bedd-28ff45b3fe60",
             "9ec8a368-7228-448d-a131-706e135be5c2",
-            "6028b24e-15ee-4c4f-8ff3-1d693c3546bb",
             "85655a82-c662-4626-a1dd-cded660ee494",
-            "d792eaa5-73c2-45f1-9662-756dedf86cd1",
-            "df11761d-5c33-41ca-aa23-3e20924b2d5d"
+            "d792eaa5-73c2-45f1-9662-756dedf86cd1"
         ]
     },
     "contributors": [],
@@ -1423,8 +1524,8 @@
     "expires": null,
     "id": "Plone",
     "is_folderish": true,
-    "items_total": 1,
-    "language": "en-us",
+    "items_total": 3,
+    "language": "en",
     "lock": {
         "locked": false,
         "stealable": true
