@@ -209,6 +209,9 @@
     .language-selector a {
       text-transform: uppercase;
     }
+    .tools {
+      display: flex;
+    }
 
     .tools a {
       margin-right: 10px;
@@ -224,26 +227,18 @@
       font-size: 14px;
     }
 
-    // .tools a:last-child:after {
-    //   padding-right: 5px;
-    //   padding-left: 5px;
-    //   content: '';
-    // }
-
     .tools .anontools {
       display: flex;
       margin-right: 10px;
 
       a {
-        margin-right: 0;
+        margin-right: 10px;
         color: $black;
       }
 
-      > div {
-        &:first-of-type::after {
-          content: '|';
-          font-size: 1rem;
-        }
+      &:after {
+        content: '|';
+        font-size: 14px;
       }
     }
   }
