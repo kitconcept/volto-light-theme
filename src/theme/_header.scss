@@ -63,7 +63,7 @@
     display: flex;
     flex-direction: row-reverse;
 
-    @media only screen and (max-width:768px) {
+    @media only screen and (max-width: 768px) {
       &.navigation-desktop {
         display: none;
       }
@@ -258,35 +258,33 @@
   }
 }
 
-
 .navigation {
   height: 70px;
 
-  @media only screen and (max-width:768px) {
+  @media only screen and (max-width: 768px) {
     display: none !important;
   }
 
-    .item {
-      padding-top: 25px;
-      padding-bottom: 15px;
-      color: $black;
-      font-size: 24px;
-      text-transform: initial;
-      position: relative;
+  .item {
+    position: relative;
+    padding-top: 25px;
+    padding-bottom: 15px;
+    color: $black;
+    font-size: 24px;
+    text-transform: initial;
 
-      &.active {
-
-      }
-
-      &.active::before, &:hover::before {
-        border-bottom: 9px solid $black;
-        content: "";
-        width: 100%;
-        position: absolute;
-        bottom: -35px;
-      }
+    &.active {
     }
 
+    &.active::before,
+    &:hover::before {
+      position: absolute;
+      bottom: -35px;
+      width: 100%;
+      border-bottom: 9px solid $black;
+      content: '';
+    }
+  }
 
   .ui.container {
     display: flex;
@@ -329,14 +327,14 @@
       padding: 0;
       padding-top: 24px;
       padding-bottom: 12px;
+      border: none;
       border-bottom: 11px solid transparent;
       margin: 0;
       margin-left: 28px;
-      cursor: pointer;
-      text-transform: none;
       background: none;
-      border: none;
+      cursor: pointer;
       font-weight: 700;
+      text-transform: none;
 
       @media only screen and (min-width: 1011px) and (max-width: 768px) {
         margin-left: 20px;
@@ -350,11 +348,11 @@
     .submenu-wrapper {
       position: absolute;
       z-index: 11;
-      margin-top: 35px;
       right: 50%;
       left: 50%;
-      width: 100vw ;
+      width: 100vw;
       max-width: initial;
+      margin-top: 35px;
       margin-right: -50vw;
       margin-left: -50vw;
     }
@@ -364,7 +362,7 @@
       height: auto;
       padding: 50px 102px 70px;
       background: $lightgrey;
-      box-shadow:  0px 15px 20px 0px rgba(0, 0, 0, 0.25);
+      box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.25);
 
       @media only screen and (min-width: 1011px) and (max-width: 768px) {
         padding: 40px 40px;
@@ -419,8 +417,8 @@
           position: relative;
           display: inline-block;
           margin-left: 25px;
-          color:$black;
-@include introduction();
+          color: $black;
+          @include introduction();
           text-align: left;
         }
 
@@ -525,8 +523,6 @@
     margin-left: 28px;
   }
 }
-
-
 
 // Mobile Navigation
 
@@ -637,8 +633,8 @@
   }
 
   &.subsection {
-    flex-direction: column;
     z-index: 9;
+    flex-direction: column;
   }
 
   .search-hero {
@@ -742,6 +738,7 @@
     list-style: none;
 
     li {
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -750,7 +747,6 @@
       margin-left: 20px;
       color: $black;
       line-height: 24px;
-      position: relative;
 
       .icon:hover {
         cursor: pointer;
