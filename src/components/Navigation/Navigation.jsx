@@ -77,14 +77,9 @@ class Navigation extends Component {
 
   componentDidMount() {
     const { settings } = config;
-    const { lang, pathname } = this.props;
+    const { pathname } = this.props;
     if (!hasApiExpander('navigation', getBaseUrl(this.props.pathname))) {
-      // For /profile paths, hack the call to the endpoint
-      let adjustedPathName = pathname;
-      if (pathname.startsWith('/profile')) {
-        adjustedPathName = `/${lang}`;
-      }
-      this.props.getNavigation(getBaseUrl(adjustedPathName), settings.navDepth);
+      this.props.getNavigation(getBaseUrl(pathname), settings.navDepth);
     }
     document.addEventListener('mousedown', this.handleClickOutside, false);
   }
@@ -101,21 +96,13 @@ class Navigation extends Component {
    */
   UNSAFE_componentWillReceiveProps(nextProps) {
     const { settings } = config;
-    const { lang, pathname } = nextProps;
+    const { pathname } = nextProps;
     if (
       nextProps.pathname !== this.props.pathname ||
       nextProps.token !== this.props.token
     ) {
       if (!hasApiExpander('navigation', getBaseUrl(this.props.pathname))) {
-        // For /profile paths, hack the call to the endpoint
-        let adjustedPathName = pathname;
-        if (pathname.startsWith('/profile')) {
-          adjustedPathName = `/${lang}`;
-        }
-        this.props.getNavigation(
-          getBaseUrl(adjustedPathName),
-          settings.navDepth,
-        );
+        this.props.getNavigation(getBaseUrl(pathname), settings.navDepth);
       }
     }
   }
@@ -134,8 +121,11 @@ class Navigation extends Component {
    * @method closeMobileMenu
    * @returns {undefined}
    */
-  closeMobileMenu() {
+  closeMobileMenu(e) {
     if (!this.state.isMobileMenuOpen) {
+      return;
+    }
+    if (e.key && e.key !== 'Enter') {
       return;
     }
     this.setState({ isMobileMenuOpen: false });

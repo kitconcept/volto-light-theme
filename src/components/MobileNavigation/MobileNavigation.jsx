@@ -52,35 +52,6 @@ const MobileNavigation = (props) => {
       <li>
         <LanguageSelector fullLabel={true} />
       </li>
-      <li>
-        <Link
-          className="accessibity-button"
-          onClick={closeMenus}
-          to={
-            currentLang === 'de'
-              ? '/de/service/barrierefreiheit'
-              : '/en/service/accessibility'
-          }
-        >
-          <FormattedMessage
-            id="HeaderAccessibility"
-            defaultMessage="Accessibility"
-          />
-        </Link>
-      </li>
-      <li>
-        <Link
-          className="presse-button"
-          onClick={closeMenus}
-          to={
-            currentLang === 'de'
-              ? '/de/aktuelles/presse'
-              : '/en/latest/media-relations'
-          }
-        >
-          <FormattedMessage id="Press" defaultMessage="Press" />
-        </Link>
-      </li>
     </ul>
   );
 
