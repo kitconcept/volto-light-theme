@@ -1,1 +1,0 @@
-Add button and flagAlign in slider block @iRohitSingh
