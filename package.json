@@ -1,6 +1,6 @@
 {
   "name": "@kitconcept/volto-light-theme",
-  "version": "1.0.0-rc.17",
+  "version": "1.0.0-rc.18",
   "description": "Volto Light Theme by kitconcept",
   "main": "src/index.js",
   "repository": {
@@ -33,8 +33,8 @@
     "release-rc": "release-it --preRelease=rc"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "7.22.15",
     "@plone/scripts": "^3.0.0",
-    "babel-eslint": "10.1.0",
     "eslint": "6.8.0",
     "eslint-config-prettier": "6.11.0",
     "eslint-config-react-app": "5.2.1",
@@ -48,6 +48,7 @@
     "prettier": "2.0.5",
     "razzle-plugin-scss": "4.2.18",
     "release-it": "^16.1.0",
+    "stylelint": "14.0.1",
     "stylelint-config-idiomatic-order": "8.1.0",
     "stylelint-config-prettier": "9.0.4",
     "stylelint-config-sass-guidelines": "9.0.1",
@@ -68,7 +69,7 @@
     "@kitconcept/volto-heading-block": "^2.4.0",
     "@kitconcept/volto-introduction-block": "^1.0.0",
     "@kitconcept/volto-separator-block": "^4.0.0",
-    "@kitconcept/volto-slider-block": "^4.2.0",
-    "@plone/volto": "^17.0.0-alpha.26"
+    "@kitconcept/volto-slider-block": "^5.1.1",
+    "@plone/volto": "^17.0.0-alpha.27"
   }
 }

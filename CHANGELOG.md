@@ -8,6 +8,22 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-rc.18 (2023-09-25)
+
+### Feature
+
+- Add button and flagAlign in slider block @iRohitSingh [#37](https://github.com/kitconcept/volto-light-theme/pull/37)
+- Upgrade to Volto 17a27 @sneridagh [#232](https://github.com/kitconcept/volto-light-theme/pull/232)
+- Add kitconcept branding @sneridagh
+  Add link to GitHub repo @sneridagh [#233](https://github.com/kitconcept/volto-light-theme/pull/233)
+
+### Bugfix
+
+- Fix aspect ratio in slider @sneridagh [#233](https://github.com/kitconcept/volto-light-theme/pull/233)
+- Fix form inputs height, transfer the height property to the parent .ui.input instead of the input itself, which behaves wrong. @sneridagh [#234](https://github.com/kitconcept/volto-light-theme/pull/234)
+- Fix anontools in header, convert it to functional @sneridagh [#236](https://github.com/kitconcept/volto-light-theme/pull/236)
+
+
 ## 1.0.0-rc.17 (2023-09-18)
 
 ### Feature

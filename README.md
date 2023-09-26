@@ -15,11 +15,9 @@ It should contain all the feedback and success stories in UI/UX side that the co
 
 It should also be future proof, so it has to be aligned with the upcoming Volto vision in terms of theming strategy decided by the Plone community.
 
+![Volto-Light-Theme](https://github.com/kitconcept/volto-light-theme/raw/main/volto-light-theme.png)
+
 ## Requirements
-
-### Figma mockup
-
-https://www.figma.com/file/eYUCbivnNrnjXjBDUizSVX/Plone-6?t=kSfnRbG3X8LmHfge-7
 
 ### It should not use any SemanticUI component or styling
 

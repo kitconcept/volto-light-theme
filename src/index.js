@@ -27,6 +27,7 @@ import accordionSVG from './icons/block_icn_accordion.svg';
 import EventView from './components/Theme/EventView';
 import { tocBlockSchemaEnhancer } from './components/Blocks/Toc/schema';
 import { mapsBlockSchemaEnhancer } from './components/Blocks/Maps/schema';
+import { sliderBlockSchemaEnhancer } from './components/Blocks/Slider/schema';
 
 const BG_COLORS = [
   { name: 'transparent', label: 'Transparent' },
@@ -306,6 +307,12 @@ const applyConfig = (config) => {
     schemaEnhancer: composeSchema(tocBlockSchemaEnhancer, defaultStylingSchema),
     // remove horizontal variation
     variations: [config.blocks.blocksConfig.toc.variations[0]],
+  };
+
+  // Slider Block
+  config.blocks.blocksConfig.slider = {
+    ...config.blocks.blocksConfig.slider,
+    schemaEnhancer: sliderBlockSchemaEnhancer,
   };
 
   return config;

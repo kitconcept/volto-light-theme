@@ -1,12 +1,15 @@
 @import 'typo-custom';
 
-// Accents are cut off on top,
-// see https://gitlab.dlr.de/internet-cms/cms-plone/dlr-internet/-/issues/860
-
-#sidebar input,
-#toolbar input {
+#sidebar .inline.field.text input,
+#toolbar .inline.field.text input {
+  // Accents are cut off on top,
+  // see https://gitlab.dlr.de/internet-cms/cms-plone/dlr-internet/-/issues/860
   // needed with Metropolis font
-  line-height: 4;
+  // Update Sept-2023 (@sneridagh)
+  // line-height: 4; <- This fix was addressing it in a wrong way. Nothing wrong with the font.
+  // More info: https://github.com/kitconcept/volto-light-theme/pull/234
+  font-size: 16px;
+  line-height: 22px;
 }
 
 // Backport to Volto - nov 2020
