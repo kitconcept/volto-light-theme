@@ -208,10 +208,6 @@
     }
   }
 
-  &:not(.has--headline) {
-    margin-top: 200px;
-  }
-
   .documentFirstHeading
     + &.previous--has--same--backgroundColor:not(.has--headline) {
     margin-top: 0;
