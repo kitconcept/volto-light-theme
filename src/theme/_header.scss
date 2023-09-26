@@ -249,9 +249,7 @@
   }
 }
 
-
 // Fat Navigation fix in edit view
-
 
 /* Fat menu implementation */
 .navigation {
@@ -756,10 +754,11 @@
   }
 }
 
-.has-toolbar .menu-drawer,.has-toolbar-collapsed .menu-drawer {
+.has-toolbar .menu-drawer,
+.has-toolbar-collapsed .menu-drawer {
   top: 160px;
-  height: calc(100vh - 160px);
   width: 100%;
+  height: calc(100vh - 160px);
 }
 
 #toolbar .toolbar-content {
