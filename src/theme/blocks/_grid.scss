@@ -210,19 +210,21 @@
 #page-edit .block-editor-gridBlock,
 #page-add .block-editor-gridBlock {
   @media only screen and (min-width: $largest-mobile-screen) {
-    .one {
+    .block.gridBlock .one .slate {
+      h2 {
+        margin-bottom: 40px !important;
+        @include text-heading-h2();
+      }
+    }
+
+    .block.gridBlock .one .block.teaser {
       .teaser-item .content h2 {
         margin-bottom: 40px !important;
         @include text-heading-h2();
       }
+    }
 
-      .slate {
-        h2 {
-          margin-bottom: 40px !important;
-          @include text-heading-h2();
-        }
-      }
-
+    .one {
       .image {
         figcaption {
           .title {
