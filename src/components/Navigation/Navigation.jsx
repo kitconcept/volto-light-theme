@@ -1,7 +1,4 @@
-/**
- * Navigation components.
- * @module components/theme/Navigation/Navigation
- */
+// SemanticUI-free pre-@plone/components
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';

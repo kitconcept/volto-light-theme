@@ -8,8 +8,8 @@
     flex-grow: 2;
     align-items: baseline;
     justify-content: space-between;
-    padding-top: 2rem;
-    padding-bottom: 1rem;
+    padding-top: 25px;
+    padding-bottom: 35px;
 
     .logo {
       align-self: center;
@@ -20,8 +20,8 @@
       flex-grow: 2;
       align-self: center;
       justify-content: center;
-      @media only screen and (max-width: $computer-width) {
-        justify-content: flex-end;
+      @media only screen and (max-width: 1021px) {
+        display: none;
       }
 
       .desktop.menu {
@@ -63,7 +63,7 @@
     display: flex;
     flex-direction: row-reverse;
 
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 1021px) {
       &.navigation-desktop {
         display: none;
       }
@@ -101,7 +101,7 @@
 
         &:hover {
           background-color: $darkGrey;
-          color: #fff;
+          color: $white;
           cursor: pointer;
 
           svg {
@@ -189,7 +189,7 @@
                   background-color: $darkGrey;
                   border-radius: 50%;
                   svg {
-                    fill: #fff !important;
+                    fill: $white !important;
                   }
                 }
 
@@ -258,28 +258,30 @@
   }
 }
 
-.navigation {
-  height: 70px;
 
-  @media only screen and (max-width: 768px) {
+// Fat Navigation fix in edit view
+
+
+/* Fat menu implementation */
+.navigation {
+  height: 64px;
+
+  @media only screen and (max-width: $tablet-breakpoint) {
     display: none !important;
   }
 
   .item {
     position: relative;
-    padding-top: 25px;
-    padding-bottom: 15px;
     color: $black;
-    font-size: 24px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
     text-transform: initial;
-
-    &.active {
-    }
 
     &.active::before,
     &:hover::before {
       position: absolute;
-      bottom: -35px;
+      bottom: -46px;
       width: 100%;
       border-bottom: 9px solid $black;
       content: '';
@@ -297,23 +299,6 @@
     justify-content: flex-end;
   }
 
-  &.sticky {
-    position: fixed;
-    z-index: 11;
-    top: 0;
-    left: 0;
-    background: #fff;
-
-    .ui.container {
-      justify-content: space-between;
-    }
-
-    @media only screen and (max-width: 768px) {
-      left: 0;
-      padding-right: 50px;
-    }
-  }
-
   ul.desktop-menu {
     display: flex;
     min-height: initial;
@@ -325,20 +310,16 @@
 
     & > li > button {
       padding: 0;
-      padding-top: 24px;
-      padding-bottom: 12px;
+      padding-top: 20px;
+      padding-bottom: 6px;
       border: none;
-      border-bottom: 11px solid transparent;
+      border-bottom: 9px solid transparent;
       margin: 0;
-      margin-left: 28px;
+      margin-left: 20px;
       background: none;
       cursor: pointer;
       font-weight: 700;
       text-transform: none;
-
-      @media only screen and (min-width: 1011px) and (max-width: 768px) {
-        margin-left: 20px;
-      }
     }
 
     & > li:first-child > button {
@@ -364,7 +345,7 @@
       background: $lightgrey;
       box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.25);
 
-      @media only screen and (min-width: 1011px) and (max-width: 768px) {
+      @media only screen and (min-width: $tablet-breakpoint) and (max-width: $computer-breakpoint) {
         padding: 40px 40px;
       }
 
@@ -375,7 +356,7 @@
         flex-wrap: wrap;
         justify-content: flex-start;
         padding: 0;
-        padding-top: 30px;
+        padding-top: 50px;
         list-style: none;
 
         .sub-submenu ul {
@@ -387,7 +368,7 @@
           li {
             padding: 0;
             padding-bottom: 10px;
-            color: #fff;
+            color: $white;
 
             a {
               font-size: 14px;
@@ -425,15 +406,17 @@
         .subitem-wrapper {
           width: 20%;
           padding: 0 20px 0 10px;
-          padding-left: 30px;
+          padding-left: 25px;
           border-left: 1px solid #000;
+
+          /* This is for tablet landscape mode */
           @media only screen and (min-width: 1011px) and (max-width: 1280px) {
             width: 33.33%;
           }
 
           .left-arrow {
             position: absolute;
-            left: -50px;
+            left: -45px;
             border-bottom: none;
             font-family: 'Arial';
             font-size: 35px;
@@ -449,12 +432,13 @@
             margin-top: 70px;
             // padding: 0 80px 0 10px;
           }
-
+          /* This is for tablet landscape mode */
           @media only screen and (min-width: 1011px) and (max-width: 1280px) {
             &:nth-of-type(n + 4) {
               margin-top: 70px;
             }
           }
+          /* This is for tablet landscape mode */
           @media only screen and (min-width: 1011px) and (max-width: 1280px) {
             &:nth-of-type(3n) {
               padding-right: 0;
@@ -480,11 +464,6 @@
         }
       }
 
-      .homepage-title {
-        border-color: #fff;
-        color: #fff;
-      }
-
       &.active {
         display: flex;
       }
@@ -501,20 +480,12 @@
 
         span {
           border-bottom: 1px solid transparent;
-          line-height: 30px;
           word-break: break-word;
         }
 
         span:hover {
           border-bottom: 1px solid #000;
         }
-
-        img {
-          height: 26px;
-          margin-right: 10px;
-        }
-
-        // .roboto-slab-light();
       }
     }
   }
@@ -525,15 +496,6 @@
 }
 
 // Mobile Navigation
-
-.view-addview,
-.view-editview {
-  @media only screen and (max-width: 1520px) {
-    .mobile-nav {
-      display: none;
-    }
-  }
-}
 
 .mobile-nav {
   .ui.basic.button.search {
@@ -621,10 +583,10 @@
   overflow-y: auto;
   text-align: left;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: $computer-breakpoint) {
     top: calc(157px + 1rem); // Adjusting the margin top of the logo
   }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: $computer-breakpoint) {
     top: calc(135px + 1rem); // Adjusting the margin top of the logo
   }
 
@@ -640,7 +602,7 @@
   .search-hero {
     position: static;
 
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: $computer-breakpoint) {
       position: relative;
     }
 
@@ -651,7 +613,7 @@
     .ui.form.inline-search {
       padding: 1rem;
 
-      @media only screen and (min-width: 1011px) and (max-width: 768px) {
+      @media only screen and (min-width: $tablet-breakpoint) and (max-width: $computer-breakpoint) {
         padding: 0 150px;
       }
     }
@@ -733,7 +695,7 @@
     width: 100%;
     padding: 0 30px;
     margin-top: 0;
-    color: #fff;
+    color: $white;
     font-size: 20px;
     list-style: none;
 
@@ -803,15 +765,10 @@
   }
 }
 
-.has-toolbar .menu-drawer {
-  top: 210px;
-  height: calc(100vh - 210px);
-
-  // This is to play well with loggedin/loggedout toolbar
-  @media only screen and (min-width: 768px) {
-    top: 120px;
-    height: calc(100vh - 120px);
-  }
+.has-toolbar .menu-drawer,.has-toolbar-collapsed .menu-drawer {
+  top: 160px;
+  height: calc(100vh - 160px);
+  width: 100%;
 }
 
 .toolbar-content {
@@ -822,27 +779,10 @@
   z-index: 10;
 }
 
-.has-toolbar-collapsed .menu-drawer {
-  top: 120px;
-  height: calc(100vh - 120px);
-  @media only screen and (max-width: 768px) {
-    top: 130px;
-    height: calc(100vh - 130px);
-  }
-  @media only screen and (max-width: 768px) {
-    top: 140px;
-    height: calc(100vh - 140px);
-  }
-}
-
 .menu-drawer-enter {
   opacity: 0;
   /* transform: translate(-100%, 0%); */
   transition: opacity 500ms;
-
-  @media only screen and (max-width: 768px) {
-    /* transform: translate(0%, -100%); */
-  }
 }
 
 .menu-drawer-enter.menu-drawer-enter-active {
@@ -861,8 +801,4 @@
   opacity: 0;
   /* transform: translate(-100%, 0%); */
   transition: transform 0.5s cubic-bezier(0.09, 0.11, 0.24, 0.91), opacity 500ms;
-
-  @media only screen and (max-width: 768px) {
-    /* transform: translate(0%, -100%); */
-  }
 }
