@@ -32,6 +32,8 @@ LABEL maintainer="kitconcept GmbH <contact@kitconcept.com>" \
 ENV zope_i18n_compile_mo_files=
 # Show only our distributions
 ENV ALLOWED_DISTRIBUTIONS=voltolighttheme
+# Increase Upload limit to 6MB
+ENV ZOPE_FORM_MEMORY_LIMIT=6MB
 
 COPY --from=builder /app /app
 
