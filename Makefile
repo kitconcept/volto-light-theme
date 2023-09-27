@@ -22,8 +22,9 @@ DISTRIBUTIONS="voltolighttheme"
 IMAGE_NAME=ghcr.io/kitconcept/voltolighttheme
 IMAGE_TAG=latest
 
-PLONE6=6.0.6
+PLONE6=6.0.7
 PLONE_VERSION=6
+SEED=$$(date +'%Y%m%d-%H%M%S')
 
 # Python checks
 PYTHON?=python3
@@ -134,7 +135,7 @@ test-coverage: bin/tox ## run tests with coverage
 # Docker image
 .PHONY: build-image
 build-image:  ## Build Docker Image
-	@DOCKER_BUILDKIT=1 docker build . -t $(IMAGE_NAME):$(IMAGE_TAG) -f Dockerfile --build-arg PLONE_VERSION=$(PLONE_VERSION)
+	@DOCKER_BUILDKIT=1 docker build . -t $(IMAGE_NAME):$(IMAGE_TAG) -f Dockerfile --build-arg PLONE_VERSION=$(PLONE_VERSION) --build-arg SEED=$(SEED)
 
 .PHONY: run-image
 run-image:  build-image  ## Build Docker Image
