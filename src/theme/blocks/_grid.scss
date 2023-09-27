@@ -207,11 +207,11 @@
 
 // Dynamic font sizes depending on number of columns for in-grid blocks
 #page-document .block.gridBlock,
-#page-edit .block-editor-gridBlock,
-#page-add .block-editor-gridBlock {
+#page-edit .block-editor-gridBlock .block.gridBlock,
+#page-add .block-editor-gridBlock .block.gridBlock {
   @media only screen and (min-width: $largest-mobile-screen) {
     .one {
-      .teaser-item .content h2 {
+      .block.teaser .teaser-item .content h2 {
         margin-bottom: 40px !important;
         @include text-heading-h2();
       }
