@@ -8,6 +8,15 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-rc.19 (2023-09-28)
+
+### Bugfix
+
+- Remove too large margins on listing blocks @steffenri [#239](https://github.com/kitconcept/volto-light-theme/pull/239)
+- Fix font sizes of one element in grids for edit mode @sneridagh [#241](https://github.com/kitconcept/volto-light-theme/pull/241)
+- Update to latest accordion-block, some fixes @sneridagh [#242](https://github.com/kitconcept/volto-light-theme/pull/242)
+
+
 ## 1.0.0-rc.18 (2023-09-25)
 
 ### Feature
