@@ -150,14 +150,6 @@ const applyConfig = (config) => {
     colors: BG_COLORS,
   };
 
-  config.blocks.blocksConfig.accordion.blocksConfig = {
-    ...config.blocks.blocksConfig,
-    teaser: {
-      ...config.blocks.blocksConfig.teaser,
-      schemaEnhancer: composeSchema(teaserSchemaEnhancer, disableBgColorSchema),
-    },
-  };
-
   config.blocks.blocksConfig.listing = {
     ...config.blocks.blocksConfig.listing,
     colors: BG_COLORS,
@@ -177,6 +169,14 @@ const applyConfig = (config) => {
     ...config.blocks.blocksConfig.image,
     schemaEnhancer: imageBlockSchemaEnhancer,
     dataAdapter: ImageBlockDataAdapter,
+  };
+
+  config.blocks.blocksConfig.accordion.blocksConfig = {
+    ...config.blocks.blocksConfig,
+    teaser: {
+      ...config.blocks.blocksConfig.teaser,
+      schemaEnhancer: composeSchema(teaserSchemaEnhancer, disableBgColorSchema),
+    },
   };
 
   config.blocks.blocksConfig.gridBlock = {
