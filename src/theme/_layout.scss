@@ -223,6 +223,7 @@ External link removal for all the blocks.
   & > .block.separator.has--align--full .line,
   & > .block.introduction .block-container,
   & > .block.teaser .teaser-item.default,
+  & > .block.highlight .teaser-description-title,
   & > table,
   & > .table-of-contents,
   & > .accordion-block,
@@ -324,6 +325,7 @@ External link removal for all the blocks.
   .block.teaser.has--align--center,
   .block-editor-teaser .teaser-item.default,
   .block-editor-slateTable .block.table,
+  .block-editor-highlight .teaser-description-title,
   .block-editor-toc .table-of-contents {
     @include default-container-width();
     @include adjustMarginsToEditContainer($default-container-width);
