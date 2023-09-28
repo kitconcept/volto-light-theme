@@ -8,6 +8,13 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0-rc.20 (2023-09-28)
+
+### Feature
+
+- Add volto-highlight-block @sneridagh [#243](https://github.com/kitconcept/volto-light-theme/pull/243)
+
+
 ## 1.0.0-rc.19 (2023-09-28)
 
 ### Bugfix
