@@ -29,6 +29,11 @@
     "react-hooks/exhaustive-deps": "warn",
     "react/react-in-jsx-scope": "off"
   },
+  "settings": {
+    "react": {
+      "version": "17.0.2"
+    }
+  },
   "globals": {
     "root": true,
     "__DEVELOPMENT__": true,
