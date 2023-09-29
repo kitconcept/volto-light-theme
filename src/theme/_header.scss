@@ -85,7 +85,9 @@
         border: none;
         background-color: transparent;
         border-radius: 50%;
-        transition: background-color 200ms ease-in-out, color 300ms ease-in-out;
+        transition:
+          background-color 200ms ease-in-out,
+          color 300ms ease-in-out;
 
         svg {
           transition: transform 300ms ease-in-out;
@@ -117,7 +119,9 @@
         height: 90px;
         padding-top: 2rem;
         background-color: $lightgrey;
-        transition: top 500ms ease-in-out, height 600ms ease-in-out;
+        transition:
+          top 500ms ease-in-out,
+          height 600ms ease-in-out;
         transition-property: top height;
 
         &.active {

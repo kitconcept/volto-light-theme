@@ -168,7 +168,9 @@
     h2 {
       margin-bottom: 40px !important;
     }
-    &.previous--is--same--block-type.previous--has--same--backgroundColor:not(.has--headline) {
+    &.previous--is--same--block-type.previous--has--same--backgroundColor:not(
+        .has--headline
+      ) {
       margin-top: unset;
     }
     &:not(.grid) {
