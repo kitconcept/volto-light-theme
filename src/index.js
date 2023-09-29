@@ -44,7 +44,7 @@ defineMessages({
     defaultMessage: 'Sitemap',
   },
 });
-// delete me
+
 const applyConfig = (config) => {
   config.settings.enableAutoBlockGroupingByBackgroundColor = true;
   config.settings.navDepth = 3;
