@@ -8,6 +8,17 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.0 (2023-09-29)
+
+### Feature
+
+- Update to use the proper linter versions and correct violations @sneridagh [#245](https://github.com/kitconcept/volto-light-theme/pull/245)
+
+### Bugfix
+
+- Upgrade highlight to 3.0.0 and downgrade Plone to 6.0.6 @sneridagh [#244](https://github.com/kitconcept/volto-light-theme/pull/244)
+
+
 ## 1.0.0-rc.20 (2023-09-28)
 
 ### Feature
