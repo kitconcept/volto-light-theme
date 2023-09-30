@@ -8409,7 +8409,83 @@
                     "@type": "teaser",
                     "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
                     "head_title": null,
-                    "href": [],
+                    "href": [
+                        {
+                            "@id": "/content-types/page",
+                            "@type": "Document",
+                            "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+                            "Title": "Page",
+                            "getRemoteUrl": null,
+                            "hasPreviewImage": true,
+                            "head_title": null,
+                            "image_field": "preview_image",
+                            "image_scales": {
+                                "preview_image": [
+                                    {
+                                        "content-type": "image/jpeg",
+                                        "download": "@@images/preview_image-2400-68e7afba8e418a4fc75b5d841ea53bc0.jpeg",
+                                        "filename": "black-starry-night.jpg",
+                                        "height": 1708,
+                                        "scales": {
+                                            "great": {
+                                                "download": "@@images/preview_image-1200-a5028c76de272c78e891b8e197670fdb.jpeg",
+                                                "height": 854,
+                                                "width": 1200
+                                            },
+                                            "huge": {
+                                                "download": "@@images/preview_image-1600-7c2d5fb91e526c87d7063acf280fec3d.jpeg",
+                                                "height": 1138,
+                                                "width": 1600
+                                            },
+                                            "icon": {
+                                                "download": "@@images/preview_image-32-4a6cadca16bcd2525ceb57fc9d64d7c0.jpeg",
+                                                "height": 22,
+                                                "width": 32
+                                            },
+                                            "large": {
+                                                "download": "@@images/preview_image-800-4bc18ac8873ae5ecf4ff1099f12e1e7f.jpeg",
+                                                "height": 569,
+                                                "width": 800
+                                            },
+                                            "larger": {
+                                                "download": "@@images/preview_image-1000-c085c05f7dcdf7e04de0ec76094b66f5.jpeg",
+                                                "height": 711,
+                                                "width": 1000
+                                            },
+                                            "mini": {
+                                                "download": "@@images/preview_image-200-d53da25ba46cb5f5b72acab306fa549c.jpeg",
+                                                "height": 142,
+                                                "width": 200
+                                            },
+                                            "preview": {
+                                                "download": "@@images/preview_image-400-cada28f757dbe3020e782e44225c726b.jpeg",
+                                                "height": 284,
+                                                "width": 400
+                                            },
+                                            "teaser": {
+                                                "download": "@@images/preview_image-600-3e58ea286a29c9c7d44d52d75158f0d1.jpeg",
+                                                "height": 427,
+                                                "width": 600
+                                            },
+                                            "thumb": {
+                                                "download": "@@images/preview_image-128-7d2e6632d8afc558050635cc3cab3c7c.jpeg",
+                                                "height": 91,
+                                                "width": 128
+                                            },
+                                            "tile": {
+                                                "download": "@@images/preview_image-64-f9a893a375a7faab00b76e26547a694f.jpeg",
+                                                "height": 45,
+                                                "width": 64
+                                            }
+                                        },
+                                        "size": 693013,
+                                        "width": 2400
+                                    }
+                                ]
+                            },
+                            "title": "Page"
+                        }
+                    ],
                     "styles": {
                         "align": "left"
                     },
@@ -8559,7 +8635,7 @@
         "locked": false,
         "stealable": true
     },
-    "modified": "2023-09-22T14:30:07+00:00",
+    "modified": "2023-09-30T07:05:29+00:00",
     "nav_title": null,
     "parent": {
         "@id": "/block",
