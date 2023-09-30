@@ -8611,40 +8611,102 @@
             "button": true,
             "buttonLink": [
                 {
-                    "@id": "/example/page",
+                    "@id": "/content-types/page",
                     "@type": "Document",
-                    "CreationDate": "2022-12-22T19:59:06+05:30",
+                    "CreationDate": "2023-07-06T23:35:20+02:00",
                     "Creator": "admin",
-                    "Date": "2022-12-22T19:59:06+05:30",
-                    "Description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
-                    "EffectiveDate": "2022-12-22T19:59:06+05:30",
+                    "Date": "2023-07-06T18:35:00+02:00",
+                    "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+                    "EffectiveDate": "2023-07-06T18:35:00+02:00",
                     "ExpirationDate": "None",
-                    "Language": "",
-                    "ModificationDate": "2022-12-22T19:59:06+05:30",
+                    "ModificationDate": "2023-09-22T16:25:49+02:00",
                     "Subject": [],
-                    "Title": "Inhaltstyp: Seite (Page)",
-                    "TranslationGroup": null,
-                    "Type": "Seite",
-                    "UID": "06aeee572e634d2f86ea16e094306588",
+                    "Title": "Page",
+                    "Type": "Page",
+                    "UID": "7ab9c48ede33415fa2a66a99549c8f70",
                     "author_name": null,
                     "cmf_uid": null,
                     "commentators": [],
-                    "created": "2022-12-22T14:29:06+00:00",
-                    "description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
-                    "effective": "2022-12-22T14:29:06+00:00",
+                    "created": "2023-07-06T21:35:20+00:00",
+                    "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+                    "effective": "2023-07-06T16:35:00+00:00",
                     "end": null,
                     "exclude_from_nav": false,
-                    "expires": "2499-12-30T18:30:00+00:00",
+                    "expires": "2499-12-30T22:00:00+00:00",
                     "getIcon": null,
                     "getId": "page",
-                    "getObjSize": "1 KB",
-                    "getPath": "/Plone/example/page",
+                    "getObjSize": "676.8 KB",
+                    "getPath": "/Plone/content-types/page",
                     "getRemoteUrl": null,
-                    "getURL": "/example/page",
+                    "getURL": "http://localhost:8080/Plone/content-types/page",
                     "hasPreviewImage": true,
                     "head_title": null,
                     "id": "page",
                     "image_field": "preview_image",
+                    "image_scales": {
+                        "preview_image": [
+                            {
+                                "content-type": "image/jpeg",
+                                "download": "@@images/preview_image-2400-68e7afba8e418a4fc75b5d841ea53bc0.jpeg",
+                                "filename": "black-starry-night.jpg",
+                                "height": 1708,
+                                "scales": {
+                                    "great": {
+                                        "download": "@@images/preview_image-1200-a5028c76de272c78e891b8e197670fdb.jpeg",
+                                        "height": 854,
+                                        "width": 1200
+                                    },
+                                    "huge": {
+                                        "download": "@@images/preview_image-1600-7c2d5fb91e526c87d7063acf280fec3d.jpeg",
+                                        "height": 1138,
+                                        "width": 1600
+                                    },
+                                    "icon": {
+                                        "download": "@@images/preview_image-32-4a6cadca16bcd2525ceb57fc9d64d7c0.jpeg",
+                                        "height": 22,
+                                        "width": 32
+                                    },
+                                    "large": {
+                                        "download": "@@images/preview_image-800-4bc18ac8873ae5ecf4ff1099f12e1e7f.jpeg",
+                                        "height": 569,
+                                        "width": 800
+                                    },
+                                    "larger": {
+                                        "download": "@@images/preview_image-1000-c085c05f7dcdf7e04de0ec76094b66f5.jpeg",
+                                        "height": 711,
+                                        "width": 1000
+                                    },
+                                    "mini": {
+                                        "download": "@@images/preview_image-200-d53da25ba46cb5f5b72acab306fa549c.jpeg",
+                                        "height": 142,
+                                        "width": 200
+                                    },
+                                    "preview": {
+                                        "download": "@@images/preview_image-400-cada28f757dbe3020e782e44225c726b.jpeg",
+                                        "height": 284,
+                                        "width": 400
+                                    },
+                                    "teaser": {
+                                        "download": "@@images/preview_image-600-3e58ea286a29c9c7d44d52d75158f0d1.jpeg",
+                                        "height": 427,
+                                        "width": 600
+                                    },
+                                    "thumb": {
+                                        "download": "@@images/preview_image-128-7d2e6632d8afc558050635cc3cab3c7c.jpeg",
+                                        "height": 91,
+                                        "width": 128
+                                    },
+                                    "tile": {
+                                        "download": "@@images/preview_image-64-f9a893a375a7faab00b76e26547a694f.jpeg",
+                                        "height": 45,
+                                        "width": 64
+                                    }
+                                },
+                                "size": 693013,
+                                "width": 2400
+                            }
+                        ]
+                    },
                     "in_response_to": null,
                     "is_folderish": true,
                     "last_comment_date": null,
@@ -8653,14 +8715,15 @@
                     ],
                     "location": null,
                     "mime_type": "text/plain",
-                    "modified": "2022-12-22T14:29:06+00:00",
+                    "modified": "2023-09-22T14:25:49+00:00",
                     "nav_title": null,
                     "portal_type": "Document",
                     "review_state": "published",
                     "start": null,
                     "sync_uid": null,
-                    "title": "Inhaltstyp: Seite (Page)",
-                    "total_comments": 0
+                    "title": "Page",
+                    "total_comments": 0,
+                    "type_title": "Page"
                 }
             ],
             "buttonText": "Button ",
@@ -8733,7 +8796,7 @@
             "styles": {
                 "descriptionColor": "highlight-custom-color-4"
             },
-            "title": "Highlight-Block BFS",
+            "title": "Highlight-Block",
             "url": "/content-types/image",
             "value": [
                 {
@@ -8765,40 +8828,102 @@
             "button": true,
             "buttonLink": [
                 {
-                    "@id": "/example/page",
+                    "@id": "/content-types/page",
                     "@type": "Document",
-                    "CreationDate": "2022-12-22T19:59:06+05:30",
+                    "CreationDate": "2023-07-06T23:35:20+02:00",
                     "Creator": "admin",
-                    "Date": "2022-12-22T19:59:06+05:30",
-                    "Description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
-                    "EffectiveDate": "2022-12-22T19:59:06+05:30",
+                    "Date": "2023-07-06T18:35:00+02:00",
+                    "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+                    "EffectiveDate": "2023-07-06T18:35:00+02:00",
                     "ExpirationDate": "None",
-                    "Language": "",
-                    "ModificationDate": "2022-12-22T19:59:06+05:30",
+                    "ModificationDate": "2023-09-22T16:25:49+02:00",
                     "Subject": [],
-                    "Title": "Inhaltstyp: Seite (Page)",
-                    "TranslationGroup": null,
-                    "Type": "Seite",
-                    "UID": "06aeee572e634d2f86ea16e094306588",
+                    "Title": "Page",
+                    "Type": "Page",
+                    "UID": "7ab9c48ede33415fa2a66a99549c8f70",
                     "author_name": null,
                     "cmf_uid": null,
                     "commentators": [],
-                    "created": "2022-12-22T14:29:06+00:00",
-                    "description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
-                    "effective": "2022-12-22T14:29:06+00:00",
+                    "created": "2023-07-06T21:35:20+00:00",
+                    "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+                    "effective": "2023-07-06T16:35:00+00:00",
                     "end": null,
                     "exclude_from_nav": false,
-                    "expires": "2499-12-30T18:30:00+00:00",
+                    "expires": "2499-12-30T22:00:00+00:00",
                     "getIcon": null,
                     "getId": "page",
-                    "getObjSize": "1 KB",
-                    "getPath": "/Plone/example/page",
+                    "getObjSize": "676.8 KB",
+                    "getPath": "/Plone/content-types/page",
                     "getRemoteUrl": null,
-                    "getURL": "/example/page",
+                    "getURL": "http://localhost:8080/Plone/content-types/page",
                     "hasPreviewImage": true,
                     "head_title": null,
                     "id": "page",
                     "image_field": "preview_image",
+                    "image_scales": {
+                        "preview_image": [
+                            {
+                                "content-type": "image/jpeg",
+                                "download": "@@images/preview_image-2400-68e7afba8e418a4fc75b5d841ea53bc0.jpeg",
+                                "filename": "black-starry-night.jpg",
+                                "height": 1708,
+                                "scales": {
+                                    "great": {
+                                        "download": "@@images/preview_image-1200-a5028c76de272c78e891b8e197670fdb.jpeg",
+                                        "height": 854,
+                                        "width": 1200
+                                    },
+                                    "huge": {
+                                        "download": "@@images/preview_image-1600-7c2d5fb91e526c87d7063acf280fec3d.jpeg",
+                                        "height": 1138,
+                                        "width": 1600
+                                    },
+                                    "icon": {
+                                        "download": "@@images/preview_image-32-4a6cadca16bcd2525ceb57fc9d64d7c0.jpeg",
+                                        "height": 22,
+                                        "width": 32
+                                    },
+                                    "large": {
+                                        "download": "@@images/preview_image-800-4bc18ac8873ae5ecf4ff1099f12e1e7f.jpeg",
+                                        "height": 569,
+                                        "width": 800
+                                    },
+                                    "larger": {
+                                        "download": "@@images/preview_image-1000-c085c05f7dcdf7e04de0ec76094b66f5.jpeg",
+                                        "height": 711,
+                                        "width": 1000
+                                    },
+                                    "mini": {
+                                        "download": "@@images/preview_image-200-d53da25ba46cb5f5b72acab306fa549c.jpeg",
+                                        "height": 142,
+                                        "width": 200
+                                    },
+                                    "preview": {
+                                        "download": "@@images/preview_image-400-cada28f757dbe3020e782e44225c726b.jpeg",
+                                        "height": 284,
+                                        "width": 400
+                                    },
+                                    "teaser": {
+                                        "download": "@@images/preview_image-600-3e58ea286a29c9c7d44d52d75158f0d1.jpeg",
+                                        "height": 427,
+                                        "width": 600
+                                    },
+                                    "thumb": {
+                                        "download": "@@images/preview_image-128-7d2e6632d8afc558050635cc3cab3c7c.jpeg",
+                                        "height": 91,
+                                        "width": 128
+                                    },
+                                    "tile": {
+                                        "download": "@@images/preview_image-64-f9a893a375a7faab00b76e26547a694f.jpeg",
+                                        "height": 45,
+                                        "width": 64
+                                    }
+                                },
+                                "size": 693013,
+                                "width": 2400
+                            }
+                        ]
+                    },
                     "in_response_to": null,
                     "is_folderish": true,
                     "last_comment_date": null,
@@ -8807,14 +8932,15 @@
                     ],
                     "location": null,
                     "mime_type": "text/plain",
-                    "modified": "2022-12-22T14:29:06+00:00",
+                    "modified": "2023-09-22T14:25:49+00:00",
                     "nav_title": null,
                     "portal_type": "Document",
                     "review_state": "published",
                     "start": null,
                     "sync_uid": null,
-                    "title": "Inhaltstyp: Seite (Page)",
-                    "total_comments": 0
+                    "title": "Page",
+                    "total_comments": 0,
+                    "type_title": "Page"
                 }
             ],
             "buttonText": "Button ",
@@ -8887,7 +9013,7 @@
             "styles": {
                 "descriptionColor": "highlight-custom-color-2"
             },
-            "title": "Highlight-Block BFS",
+            "title": "Highlight-Block",
             "url": "/content-types/image",
             "value": [
                 {
@@ -8919,40 +9045,102 @@
             "button": true,
             "buttonLink": [
                 {
-                    "@id": "/example/page",
+                    "@id": "/content-types/page",
                     "@type": "Document",
-                    "CreationDate": "2022-12-22T19:59:06+05:30",
+                    "CreationDate": "2023-07-06T23:35:20+02:00",
                     "Creator": "admin",
-                    "Date": "2022-12-22T19:59:06+05:30",
-                    "Description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
-                    "EffectiveDate": "2022-12-22T19:59:06+05:30",
+                    "Date": "2023-07-06T18:35:00+02:00",
+                    "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+                    "EffectiveDate": "2023-07-06T18:35:00+02:00",
                     "ExpirationDate": "None",
-                    "Language": "",
-                    "ModificationDate": "2022-12-22T19:59:06+05:30",
+                    "ModificationDate": "2023-09-22T16:25:49+02:00",
                     "Subject": [],
-                    "Title": "Inhaltstyp: Seite (Page)",
-                    "TranslationGroup": null,
-                    "Type": "Seite",
-                    "UID": "06aeee572e634d2f86ea16e094306588",
+                    "Title": "Page",
+                    "Type": "Page",
+                    "UID": "7ab9c48ede33415fa2a66a99549c8f70",
                     "author_name": null,
                     "cmf_uid": null,
                     "commentators": [],
-                    "created": "2022-12-22T14:29:06+00:00",
-                    "description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
-                    "effective": "2022-12-22T14:29:06+00:00",
+                    "created": "2023-07-06T21:35:20+00:00",
+                    "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+                    "effective": "2023-07-06T16:35:00+00:00",
                     "end": null,
                     "exclude_from_nav": false,
-                    "expires": "2499-12-30T18:30:00+00:00",
+                    "expires": "2499-12-30T22:00:00+00:00",
                     "getIcon": null,
                     "getId": "page",
-                    "getObjSize": "1 KB",
-                    "getPath": "/Plone/example/page",
+                    "getObjSize": "676.8 KB",
+                    "getPath": "/Plone/content-types/page",
                     "getRemoteUrl": null,
-                    "getURL": "/example/page",
+                    "getURL": "http://localhost:8080/Plone/content-types/page",
                     "hasPreviewImage": true,
                     "head_title": null,
                     "id": "page",
                     "image_field": "preview_image",
+                    "image_scales": {
+                        "preview_image": [
+                            {
+                                "content-type": "image/jpeg",
+                                "download": "@@images/preview_image-2400-68e7afba8e418a4fc75b5d841ea53bc0.jpeg",
+                                "filename": "black-starry-night.jpg",
+                                "height": 1708,
+                                "scales": {
+                                    "great": {
+                                        "download": "@@images/preview_image-1200-a5028c76de272c78e891b8e197670fdb.jpeg",
+                                        "height": 854,
+                                        "width": 1200
+                                    },
+                                    "huge": {
+                                        "download": "@@images/preview_image-1600-7c2d5fb91e526c87d7063acf280fec3d.jpeg",
+                                        "height": 1138,
+                                        "width": 1600
+                                    },
+                                    "icon": {
+                                        "download": "@@images/preview_image-32-4a6cadca16bcd2525ceb57fc9d64d7c0.jpeg",
+                                        "height": 22,
+                                        "width": 32
+                                    },
+                                    "large": {
+                                        "download": "@@images/preview_image-800-4bc18ac8873ae5ecf4ff1099f12e1e7f.jpeg",
+                                        "height": 569,
+                                        "width": 800
+                                    },
+                                    "larger": {
+                                        "download": "@@images/preview_image-1000-c085c05f7dcdf7e04de0ec76094b66f5.jpeg",
+                                        "height": 711,
+                                        "width": 1000
+                                    },
+                                    "mini": {
+                                        "download": "@@images/preview_image-200-d53da25ba46cb5f5b72acab306fa549c.jpeg",
+                                        "height": 142,
+                                        "width": 200
+                                    },
+                                    "preview": {
+                                        "download": "@@images/preview_image-400-cada28f757dbe3020e782e44225c726b.jpeg",
+                                        "height": 284,
+                                        "width": 400
+                                    },
+                                    "teaser": {
+                                        "download": "@@images/preview_image-600-3e58ea286a29c9c7d44d52d75158f0d1.jpeg",
+                                        "height": 427,
+                                        "width": 600
+                                    },
+                                    "thumb": {
+                                        "download": "@@images/preview_image-128-7d2e6632d8afc558050635cc3cab3c7c.jpeg",
+                                        "height": 91,
+                                        "width": 128
+                                    },
+                                    "tile": {
+                                        "download": "@@images/preview_image-64-f9a893a375a7faab00b76e26547a694f.jpeg",
+                                        "height": 45,
+                                        "width": 64
+                                    }
+                                },
+                                "size": 693013,
+                                "width": 2400
+                            }
+                        ]
+                    },
                     "in_response_to": null,
                     "is_folderish": true,
                     "last_comment_date": null,
@@ -8961,14 +9149,15 @@
                     ],
                     "location": null,
                     "mime_type": "text/plain",
-                    "modified": "2022-12-22T14:29:06+00:00",
+                    "modified": "2023-09-22T14:25:49+00:00",
                     "nav_title": null,
                     "portal_type": "Document",
                     "review_state": "published",
                     "start": null,
                     "sync_uid": null,
-                    "title": "Inhaltstyp: Seite (Page)",
-                    "total_comments": 0
+                    "title": "Page",
+                    "total_comments": 0,
+                    "type_title": "Page"
                 }
             ],
             "buttonText": "Button ",
@@ -9041,7 +9230,7 @@
             "styles": {
                 "descriptionColor": "highlight-custom-color-3"
             },
-            "title": "Highlight-Block BFS",
+            "title": "Highlight-Block",
             "url": "/content-types/image",
             "value": [
                 {
@@ -9073,40 +9262,102 @@
             "button": true,
             "buttonLink": [
                 {
-                    "@id": "/example/page",
+                    "@id": "/content-types/page",
                     "@type": "Document",
-                    "CreationDate": "2022-12-22T19:59:06+05:30",
+                    "CreationDate": "2023-07-06T23:35:20+02:00",
                     "Creator": "admin",
-                    "Date": "2022-12-22T19:59:06+05:30",
-                    "Description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
-                    "EffectiveDate": "2022-12-22T19:59:06+05:30",
+                    "Date": "2023-07-06T18:35:00+02:00",
+                    "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+                    "EffectiveDate": "2023-07-06T18:35:00+02:00",
                     "ExpirationDate": "None",
-                    "Language": "",
-                    "ModificationDate": "2022-12-22T19:59:06+05:30",
+                    "ModificationDate": "2023-09-22T16:25:49+02:00",
                     "Subject": [],
-                    "Title": "Inhaltstyp: Seite (Page)",
-                    "TranslationGroup": null,
-                    "Type": "Seite",
-                    "UID": "06aeee572e634d2f86ea16e094306588",
+                    "Title": "Page",
+                    "Type": "Page",
+                    "UID": "7ab9c48ede33415fa2a66a99549c8f70",
                     "author_name": null,
                     "cmf_uid": null,
                     "commentators": [],
-                    "created": "2022-12-22T14:29:06+00:00",
-                    "description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
-                    "effective": "2022-12-22T14:29:06+00:00",
+                    "created": "2023-07-06T21:35:20+00:00",
+                    "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+                    "effective": "2023-07-06T16:35:00+00:00",
                     "end": null,
                     "exclude_from_nav": false,
-                    "expires": "2499-12-30T18:30:00+00:00",
+                    "expires": "2499-12-30T22:00:00+00:00",
                     "getIcon": null,
                     "getId": "page",
-                    "getObjSize": "1 KB",
-                    "getPath": "/Plone/example/page",
+                    "getObjSize": "676.8 KB",
+                    "getPath": "/Plone/content-types/page",
                     "getRemoteUrl": null,
-                    "getURL": "/example/page",
+                    "getURL": "http://localhost:8080/Plone/content-types/page",
                     "hasPreviewImage": true,
                     "head_title": null,
                     "id": "page",
                     "image_field": "preview_image",
+                    "image_scales": {
+                        "preview_image": [
+                            {
+                                "content-type": "image/jpeg",
+                                "download": "@@images/preview_image-2400-68e7afba8e418a4fc75b5d841ea53bc0.jpeg",
+                                "filename": "black-starry-night.jpg",
+                                "height": 1708,
+                                "scales": {
+                                    "great": {
+                                        "download": "@@images/preview_image-1200-a5028c76de272c78e891b8e197670fdb.jpeg",
+                                        "height": 854,
+                                        "width": 1200
+                                    },
+                                    "huge": {
+                                        "download": "@@images/preview_image-1600-7c2d5fb91e526c87d7063acf280fec3d.jpeg",
+                                        "height": 1138,
+                                        "width": 1600
+                                    },
+                                    "icon": {
+                                        "download": "@@images/preview_image-32-4a6cadca16bcd2525ceb57fc9d64d7c0.jpeg",
+                                        "height": 22,
+                                        "width": 32
+                                    },
+                                    "large": {
+                                        "download": "@@images/preview_image-800-4bc18ac8873ae5ecf4ff1099f12e1e7f.jpeg",
+                                        "height": 569,
+                                        "width": 800
+                                    },
+                                    "larger": {
+                                        "download": "@@images/preview_image-1000-c085c05f7dcdf7e04de0ec76094b66f5.jpeg",
+                                        "height": 711,
+                                        "width": 1000
+                                    },
+                                    "mini": {
+                                        "download": "@@images/preview_image-200-d53da25ba46cb5f5b72acab306fa549c.jpeg",
+                                        "height": 142,
+                                        "width": 200
+                                    },
+                                    "preview": {
+                                        "download": "@@images/preview_image-400-cada28f757dbe3020e782e44225c726b.jpeg",
+                                        "height": 284,
+                                        "width": 400
+                                    },
+                                    "teaser": {
+                                        "download": "@@images/preview_image-600-3e58ea286a29c9c7d44d52d75158f0d1.jpeg",
+                                        "height": 427,
+                                        "width": 600
+                                    },
+                                    "thumb": {
+                                        "download": "@@images/preview_image-128-7d2e6632d8afc558050635cc3cab3c7c.jpeg",
+                                        "height": 91,
+                                        "width": 128
+                                    },
+                                    "tile": {
+                                        "download": "@@images/preview_image-64-f9a893a375a7faab00b76e26547a694f.jpeg",
+                                        "height": 45,
+                                        "width": 64
+                                    }
+                                },
+                                "size": 693013,
+                                "width": 2400
+                            }
+                        ]
+                    },
                     "in_response_to": null,
                     "is_folderish": true,
                     "last_comment_date": null,
@@ -9115,14 +9366,15 @@
                     ],
                     "location": null,
                     "mime_type": "text/plain",
-                    "modified": "2022-12-22T14:29:06+00:00",
+                    "modified": "2023-09-22T14:25:49+00:00",
                     "nav_title": null,
                     "portal_type": "Document",
                     "review_state": "published",
                     "start": null,
                     "sync_uid": null,
-                    "title": "Inhaltstyp: Seite (Page)",
-                    "total_comments": 0
+                    "title": "Page",
+                    "total_comments": 0,
+                    "type_title": "Page"
                 }
             ],
             "buttonText": "Button ",
@@ -9195,7 +9447,7 @@
             "styles": {
                 "descriptionColor": "highlight-custom-color-1"
             },
-            "title": "Highlight-Block BFS",
+            "title": "Highlight-Block",
             "url": "/content-types/image",
             "value": [
                 {
@@ -9227,40 +9479,102 @@
             "button": true,
             "buttonLink": [
                 {
-                    "@id": "/example/page",
+                    "@id": "/content-types/page",
                     "@type": "Document",
-                    "CreationDate": "2022-12-22T19:59:06+05:30",
+                    "CreationDate": "2023-07-06T23:35:20+02:00",
                     "Creator": "admin",
-                    "Date": "2022-12-22T19:59:06+05:30",
-                    "Description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
-                    "EffectiveDate": "2022-12-22T19:59:06+05:30",
+                    "Date": "2023-07-06T18:35:00+02:00",
+                    "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+                    "EffectiveDate": "2023-07-06T18:35:00+02:00",
                     "ExpirationDate": "None",
-                    "Language": "",
-                    "ModificationDate": "2022-12-22T19:59:06+05:30",
+                    "ModificationDate": "2023-09-22T16:25:49+02:00",
                     "Subject": [],
-                    "Title": "Inhaltstyp: Seite (Page)",
-                    "TranslationGroup": null,
-                    "Type": "Seite",
-                    "UID": "06aeee572e634d2f86ea16e094306588",
+                    "Title": "Page",
+                    "Type": "Page",
+                    "UID": "7ab9c48ede33415fa2a66a99549c8f70",
                     "author_name": null,
                     "cmf_uid": null,
                     "commentators": [],
-                    "created": "2022-12-22T14:29:06+00:00",
-                    "description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
-                    "effective": "2022-12-22T14:29:06+00:00",
+                    "created": "2023-07-06T21:35:20+00:00",
+                    "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+                    "effective": "2023-07-06T16:35:00+00:00",
                     "end": null,
                     "exclude_from_nav": false,
-                    "expires": "2499-12-30T18:30:00+00:00",
+                    "expires": "2499-12-30T22:00:00+00:00",
                     "getIcon": null,
                     "getId": "page",
-                    "getObjSize": "1 KB",
-                    "getPath": "/Plone/example/page",
+                    "getObjSize": "676.8 KB",
+                    "getPath": "/Plone/content-types/page",
                     "getRemoteUrl": null,
-                    "getURL": "/example/page",
+                    "getURL": "http://localhost:8080/Plone/content-types/page",
                     "hasPreviewImage": true,
                     "head_title": null,
                     "id": "page",
                     "image_field": "preview_image",
+                    "image_scales": {
+                        "preview_image": [
+                            {
+                                "content-type": "image/jpeg",
+                                "download": "@@images/preview_image-2400-68e7afba8e418a4fc75b5d841ea53bc0.jpeg",
+                                "filename": "black-starry-night.jpg",
+                                "height": 1708,
+                                "scales": {
+                                    "great": {
+                                        "download": "@@images/preview_image-1200-a5028c76de272c78e891b8e197670fdb.jpeg",
+                                        "height": 854,
+                                        "width": 1200
+                                    },
+                                    "huge": {
+                                        "download": "@@images/preview_image-1600-7c2d5fb91e526c87d7063acf280fec3d.jpeg",
+                                        "height": 1138,
+                                        "width": 1600
+                                    },
+                                    "icon": {
+                                        "download": "@@images/preview_image-32-4a6cadca16bcd2525ceb57fc9d64d7c0.jpeg",
+                                        "height": 22,
+                                        "width": 32
+                                    },
+                                    "large": {
+                                        "download": "@@images/preview_image-800-4bc18ac8873ae5ecf4ff1099f12e1e7f.jpeg",
+                                        "height": 569,
+                                        "width": 800
+                                    },
+                                    "larger": {
+                                        "download": "@@images/preview_image-1000-c085c05f7dcdf7e04de0ec76094b66f5.jpeg",
+                                        "height": 711,
+                                        "width": 1000
+                                    },
+                                    "mini": {
+                                        "download": "@@images/preview_image-200-d53da25ba46cb5f5b72acab306fa549c.jpeg",
+                                        "height": 142,
+                                        "width": 200
+                                    },
+                                    "preview": {
+                                        "download": "@@images/preview_image-400-cada28f757dbe3020e782e44225c726b.jpeg",
+                                        "height": 284,
+                                        "width": 400
+                                    },
+                                    "teaser": {
+                                        "download": "@@images/preview_image-600-3e58ea286a29c9c7d44d52d75158f0d1.jpeg",
+                                        "height": 427,
+                                        "width": 600
+                                    },
+                                    "thumb": {
+                                        "download": "@@images/preview_image-128-7d2e6632d8afc558050635cc3cab3c7c.jpeg",
+                                        "height": 91,
+                                        "width": 128
+                                    },
+                                    "tile": {
+                                        "download": "@@images/preview_image-64-f9a893a375a7faab00b76e26547a694f.jpeg",
+                                        "height": 45,
+                                        "width": 64
+                                    }
+                                },
+                                "size": 693013,
+                                "width": 2400
+                            }
+                        ]
+                    },
                     "in_response_to": null,
                     "is_folderish": true,
                     "last_comment_date": null,
@@ -9269,14 +9583,15 @@
                     ],
                     "location": null,
                     "mime_type": "text/plain",
-                    "modified": "2022-12-22T14:29:06+00:00",
+                    "modified": "2023-09-22T14:25:49+00:00",
                     "nav_title": null,
                     "portal_type": "Document",
                     "review_state": "published",
                     "start": null,
                     "sync_uid": null,
-                    "title": "Inhaltstyp: Seite (Page)",
-                    "total_comments": 0
+                    "title": "Page",
+                    "total_comments": 0,
+                    "type_title": "Page"
                 }
             ],
             "buttonText": "Button ",
@@ -9349,7 +9664,7 @@
             "styles": {
                 "descriptionColor": "highlight-custom-color-5"
             },
-            "title": "Highlight-Block BFS",
+            "title": "Highlight-Block",
             "url": "/content-types/image",
             "value": [
                 {
@@ -9407,7 +9722,7 @@
         "locked": false,
         "stealable": true
     },
-    "modified": "2023-09-29T16:40:00+00:00",
+    "modified": "2023-09-30T07:01:03+00:00",
     "nav_title": null,
     "parent": {
         "@id": "/block",
@@ -26954,114 +27269,197 @@
             "button": true,
             "buttonLink": [
                 {
-                    "@id": "/de/das-dlr",
+                    "@id": "/content-types/page",
                     "@type": "Document",
-                    "CreationDate": "2022-05-31T17:16:44+02:00",
+                    "CreationDate": "2023-07-06T23:35:20+02:00",
                     "Creator": "admin",
-                    "Date": "2022-05-31T17:16:45+02:00",
-                    "Description": "Das DLR ist das Forschungszentrum der Bundesrepublik Deutschland f\u00fcr Luft- und Raumfahrt. Wir betreiben Forschung und Entwicklung in Luftfahrt, Raumfahrt, Energie und Verkehr, Sicherheit und Digitalisierung. Die Deutsche Raumfahrtagentur im DLR ist im Auftrag der Bundesregierung f\u00fcr die Planung und Umsetzung der deutschen Raumfahrtaktivit\u00e4ten zust\u00e4ndig. Zwei DLR Projekttr\u00e4ger betreuen F\u00f6rderprogramme und unterst\u00fctzen den Wissenstransfer.",
-                    "EffectiveDate": "2022-05-31T17:16:45+02:00",
+                    "Date": "2023-07-06T18:35:00+02:00",
+                    "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+                    "EffectiveDate": "2023-07-06T18:35:00+02:00",
                     "ExpirationDate": "None",
-                    "Language": "de",
-                    "ModificationDate": "2022-05-31T17:20:31+02:00",
+                    "ModificationDate": "2023-09-22T16:25:49+02:00",
                     "Subject": [],
-                    "Title": "Das DLR",
-                    "TranslationGroup": "0feca0b2e07945ee8c61c60ad49005cc",
-                    "Type": "Seite",
-                    "UID": "0835c0b72abf4c7aaf509b3b65b88ab5",
-                    "academic": null,
-                    "administrational_units": [],
+                    "Title": "Page",
+                    "Type": "Page",
+                    "UID": "7ab9c48ede33415fa2a66a99549c8f70",
                     "author_name": null,
-                    "award_date_month": null,
-                    "award_date_year": null,
-                    "award_type": null,
-                    "building": null,
-                    "cmf_uid": 3,
+                    "cmf_uid": null,
                     "commentators": [],
-                    "created": "2022-05-31T15:16:44+00:00",
-                    "description": "Das DLR ist das Forschungszentrum der Bundesrepublik Deutschland f\u00fcr Luft- und Raumfahrt. Wir betreiben Forschung und Entwicklung in Luftfahrt, Raumfahrt, Energie und Verkehr, Sicherheit und Digitalisierung. Die Deutsche Raumfahrtagentur im DLR ist im Auftrag der Bundesregierung f\u00fcr die Planung und Umsetzung der deutschen Raumfahrtaktivit\u00e4ten zust\u00e4ndig. Zwei DLR Projekttr\u00e4ger betreuen F\u00f6rderprogramme und unterst\u00fctzen den Wissenstransfer.",
-                    "detailed_description": null,
-                    "effective": "2022-05-31T15:16:45+00:00",
-                    "email": null,
+                    "created": "2023-07-06T21:35:20+00:00",
+                    "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+                    "effective": "2023-07-06T16:35:00+00:00",
                     "end": null,
-                    "event_type": null,
                     "exclude_from_nav": false,
                     "expires": "2499-12-30T22:00:00+00:00",
-                    "external_funding_provider_1": null,
-                    "external_funding_provider_1_link": null,
-                    "external_funding_provider_2": null,
-                    "external_funding_provider_2_link": null,
-                    "external_funding_provider_3": null,
-                    "external_funding_provider_3_link": null,
-                    "firstname": null,
-                    "getIcon": true,
-                    "getId": "das-dlr",
-                    "getObjSize": "0 KB",
-                    "getPath": "/Plone/de/das-dlr",
+                    "getIcon": null,
+                    "getId": "page",
+                    "getObjSize": "676.8 KB",
+                    "getPath": "/Plone/content-types/page",
                     "getRemoteUrl": null,
-                    "getURL": "http://localhost:3000/de/das-dlr",
-                    "hasPreviewImage": false,
+                    "getURL": "http://localhost:8080/Plone/content-types/page",
+                    "hasPreviewImage": true,
                     "head_title": null,
-                    "id": "das-dlr",
-                    "image_field": "image",
+                    "id": "page",
+                    "image_field": "preview_image",
+                    "image_scales": {
+                        "preview_image": [
+                            {
+                                "content-type": "image/jpeg",
+                                "download": "@@images/preview_image-2400-68e7afba8e418a4fc75b5d841ea53bc0.jpeg",
+                                "filename": "black-starry-night.jpg",
+                                "height": 1708,
+                                "scales": {
+                                    "great": {
+                                        "download": "@@images/preview_image-1200-a5028c76de272c78e891b8e197670fdb.jpeg",
+                                        "height": 854,
+                                        "width": 1200
+                                    },
+                                    "huge": {
+                                        "download": "@@images/preview_image-1600-7c2d5fb91e526c87d7063acf280fec3d.jpeg",
+                                        "height": 1138,
+                                        "width": 1600
+                                    },
+                                    "icon": {
+                                        "download": "@@images/preview_image-32-4a6cadca16bcd2525ceb57fc9d64d7c0.jpeg",
+                                        "height": 22,
+                                        "width": 32
+                                    },
+                                    "large": {
+                                        "download": "@@images/preview_image-800-4bc18ac8873ae5ecf4ff1099f12e1e7f.jpeg",
+                                        "height": 569,
+                                        "width": 800
+                                    },
+                                    "larger": {
+                                        "download": "@@images/preview_image-1000-c085c05f7dcdf7e04de0ec76094b66f5.jpeg",
+                                        "height": 711,
+                                        "width": 1000
+                                    },
+                                    "mini": {
+                                        "download": "@@images/preview_image-200-d53da25ba46cb5f5b72acab306fa549c.jpeg",
+                                        "height": 142,
+                                        "width": 200
+                                    },
+                                    "preview": {
+                                        "download": "@@images/preview_image-400-cada28f757dbe3020e782e44225c726b.jpeg",
+                                        "height": 284,
+                                        "width": 400
+                                    },
+                                    "teaser": {
+                                        "download": "@@images/preview_image-600-3e58ea286a29c9c7d44d52d75158f0d1.jpeg",
+                                        "height": 427,
+                                        "width": 600
+                                    },
+                                    "thumb": {
+                                        "download": "@@images/preview_image-128-7d2e6632d8afc558050635cc3cab3c7c.jpeg",
+                                        "height": 91,
+                                        "width": 128
+                                    },
+                                    "tile": {
+                                        "download": "@@images/preview_image-64-f9a893a375a7faab00b76e26547a694f.jpeg",
+                                        "height": 45,
+                                        "width": 64
+                                    }
+                                },
+                                "size": 693013,
+                                "width": 2400
+                            }
+                        ]
+                    },
                     "in_response_to": null,
-                    "institute": [],
-                    "institutes": [],
                     "is_folderish": true,
-                    "is_geschaeftsbereich_or_stabstelle": null,
-                    "is_young_research_group": null,
-                    "job_offer_category": null,
-                    "job_offer_fingerprint": null,
-                    "job_offer_institute": null,
-                    "job_offer_location": null,
-                    "job_offer_target_group": null,
                     "last_comment_date": null,
                     "listCreators": [
                         "admin"
                     ],
                     "location": null,
-                    "member_fullnames": null,
-                    "member_source": null,
-                    "members": [],
                     "mime_type": "text/plain",
-                    "modified": "2022-05-31T15:20:31+00:00",
-                    "name": null,
+                    "modified": "2023-09-22T14:25:49+00:00",
                     "nav_title": null,
-                    "phone": null,
                     "portal_type": "Document",
-                    "positions": null,
-                    "project_end_month": null,
-                    "project_end_year": null,
-                    "project_start_month": null,
-                    "project_start_year": null,
-                    "project_type": null,
-                    "research_group": [],
-                    "research_topics": [],
                     "review_state": "published",
-                    "rights": "",
-                    "room": null,
-                    "show_navigation_portlet": false,
-                    "sort_id": 1,
                     "start": null,
                     "sync_uid": null,
-                    "title": "Das DLR",
-                    "topic": [],
+                    "title": "Page",
                     "total_comments": 0,
-                    "website_link": null,
-                    "year": "2022"
+                    "type_title": "Page"
                 }
             ],
-            "buttonText": "Mehr Infos",
+            "buttonText": "Other button text",
             "credit": {
                 "data": "<a href=\"/de/service/impressum\">DLR (CC BY-NC-ND 3.0)</a>"
             },
             "description_color": "blue3",
+            "image_field": "image",
+            "image_scales": {
+                "image": [
+                    {
+                        "content-type": "image/jpeg",
+                        "download": "@@images/image-2400-d6697a8292dfa64ce8ea3cce2f0f45b4.jpeg",
+                        "filename": "black-starry-night.jpg",
+                        "height": 1708,
+                        "scales": {
+                            "great": {
+                                "download": "@@images/image-1200-c5dac9680315c72a6cd936771711e03f.jpeg",
+                                "height": 854,
+                                "width": 1200
+                            },
+                            "huge": {
+                                "download": "@@images/image-1600-2e03f9000eeed94b2695e2dcd4c7e8c6.jpeg",
+                                "height": 1138,
+                                "width": 1600
+                            },
+                            "icon": {
+                                "download": "@@images/image-32-a202aeaaf34bc7cf0808b58be962ca20.jpeg",
+                                "height": 22,
+                                "width": 32
+                            },
+                            "large": {
+                                "download": "@@images/image-800-8f536cec9d3342d7d5ba8a65b3db0511.jpeg",
+                                "height": 569,
+                                "width": 800
+                            },
+                            "larger": {
+                                "download": "@@images/image-1000-d46adab6de1db1cf06a70762801e01d3.jpeg",
+                                "height": 711,
+                                "width": 1000
+                            },
+                            "mini": {
+                                "download": "@@images/image-200-1e9026c9ced403f3daa125dfb3ccacdd.jpeg",
+                                "height": 142,
+                                "width": 200
+                            },
+                            "preview": {
+                                "download": "@@images/image-400-0b2a7d4dc90d26d75efb1c574954126b.jpeg",
+                                "height": 284,
+                                "width": 400
+                            },
+                            "teaser": {
+                                "download": "@@images/image-600-05904b2a2ff8e2c40de417595166d4d8.jpeg",
+                                "height": 427,
+                                "width": 600
+                            },
+                            "thumb": {
+                                "download": "@@images/image-128-9617bbc2183cd8d4d8478643df936e25.jpeg",
+                                "height": 91,
+                                "width": 128
+                            },
+                            "tile": {
+                                "download": "@@images/image-64-557e59a30a2311d71a038050cf8159ce.jpeg",
+                                "height": 45,
+                                "width": 64
+                            }
+                        },
+                        "size": 693013,
+                        "width": 2400
+                    }
+                ]
+            },
             "plaintext": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.",
             "styles": {
-                "descriptionColor": "blue3"
+                "descriptionColor": "highlight-custom-color-4"
             },
-            "title": "Highlight-Block Das DLR",
-            "url": null,
+            "title": "Highlight-Block",
+            "url": "/content-types/image",
             "value": [
                 {
                     "children": [
@@ -27095,101 +27493,119 @@
             "button": true,
             "buttonLink": [
                 {
-                    "@id": "/de/das-dlr",
+                    "@id": "/content-types/page",
                     "@type": "Document",
-                    "CreationDate": "2022-05-31T17:16:44+02:00",
+                    "CreationDate": "2023-07-06T23:35:20+02:00",
                     "Creator": "admin",
-                    "Date": "2022-05-31T17:16:45+02:00",
-                    "Description": "Das DLR ist das Forschungszentrum der Bundesrepublik Deutschland f\u00fcr Luft- und Raumfahrt. Wir betreiben Forschung und Entwicklung in Luftfahrt, Raumfahrt, Energie und Verkehr, Sicherheit und Digitalisierung. Die Deutsche Raumfahrtagentur im DLR ist im Auftrag der Bundesregierung f\u00fcr die Planung und Umsetzung der deutschen Raumfahrtaktivit\u00e4ten zust\u00e4ndig. Zwei DLR Projekttr\u00e4ger betreuen F\u00f6rderprogramme und unterst\u00fctzen den Wissenstransfer.",
-                    "EffectiveDate": "2022-05-31T17:16:45+02:00",
+                    "Date": "2023-07-06T18:35:00+02:00",
+                    "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+                    "EffectiveDate": "2023-07-06T18:35:00+02:00",
                     "ExpirationDate": "None",
-                    "Language": "de",
-                    "ModificationDate": "2022-05-31T17:20:31+02:00",
+                    "ModificationDate": "2023-09-22T16:25:49+02:00",
                     "Subject": [],
-                    "Title": "Das DLR",
-                    "TranslationGroup": "0feca0b2e07945ee8c61c60ad49005cc",
-                    "Type": "Seite",
-                    "UID": "0835c0b72abf4c7aaf509b3b65b88ab5",
-                    "academic": null,
-                    "administrational_units": [],
+                    "Title": "Page",
+                    "Type": "Page",
+                    "UID": "7ab9c48ede33415fa2a66a99549c8f70",
                     "author_name": null,
-                    "award_date_month": null,
-                    "award_date_year": null,
-                    "award_type": null,
-                    "building": null,
-                    "cmf_uid": 3,
+                    "cmf_uid": null,
                     "commentators": [],
-                    "created": "2022-05-31T15:16:44+00:00",
-                    "description": "Das DLR ist das Forschungszentrum der Bundesrepublik Deutschland f\u00fcr Luft- und Raumfahrt. Wir betreiben Forschung und Entwicklung in Luftfahrt, Raumfahrt, Energie und Verkehr, Sicherheit und Digitalisierung. Die Deutsche Raumfahrtagentur im DLR ist im Auftrag der Bundesregierung f\u00fcr die Planung und Umsetzung der deutschen Raumfahrtaktivit\u00e4ten zust\u00e4ndig. Zwei DLR Projekttr\u00e4ger betreuen F\u00f6rderprogramme und unterst\u00fctzen den Wissenstransfer.",
-                    "detailed_description": null,
-                    "effective": "2022-05-31T15:16:45+00:00",
-                    "email": null,
+                    "created": "2023-07-06T21:35:20+00:00",
+                    "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+                    "effective": "2023-07-06T16:35:00+00:00",
                     "end": null,
-                    "event_type": null,
                     "exclude_from_nav": false,
                     "expires": "2499-12-30T22:00:00+00:00",
-                    "external_funding_provider_1": null,
-                    "external_funding_provider_1_link": null,
-                    "external_funding_provider_2": null,
-                    "external_funding_provider_2_link": null,
-                    "external_funding_provider_3": null,
-                    "external_funding_provider_3_link": null,
-                    "firstname": null,
-                    "getIcon": true,
-                    "getId": "das-dlr",
-                    "getObjSize": "0 KB",
-                    "getPath": "/Plone/de/das-dlr",
+                    "getIcon": null,
+                    "getId": "page",
+                    "getObjSize": "676.8 KB",
+                    "getPath": "/Plone/content-types/page",
                     "getRemoteUrl": null,
-                    "getURL": "http://localhost:3000/de/das-dlr",
-                    "hasPreviewImage": false,
+                    "getURL": "http://localhost:8080/Plone/content-types/page",
+                    "hasPreviewImage": true,
                     "head_title": null,
-                    "id": "das-dlr",
-                    "image_field": "image",
+                    "id": "page",
+                    "image_field": "preview_image",
+                    "image_scales": {
+                        "preview_image": [
+                            {
+                                "content-type": "image/jpeg",
+                                "download": "@@images/preview_image-2400-68e7afba8e418a4fc75b5d841ea53bc0.jpeg",
+                                "filename": "black-starry-night.jpg",
+                                "height": 1708,
+                                "scales": {
+                                    "great": {
+                                        "download": "@@images/preview_image-1200-a5028c76de272c78e891b8e197670fdb.jpeg",
+                                        "height": 854,
+                                        "width": 1200
+                                    },
+                                    "huge": {
+                                        "download": "@@images/preview_image-1600-7c2d5fb91e526c87d7063acf280fec3d.jpeg",
+                                        "height": 1138,
+                                        "width": 1600
+                                    },
+                                    "icon": {
+                                        "download": "@@images/preview_image-32-4a6cadca16bcd2525ceb57fc9d64d7c0.jpeg",
+                                        "height": 22,
+                                        "width": 32
+                                    },
+                                    "large": {
+                                        "download": "@@images/preview_image-800-4bc18ac8873ae5ecf4ff1099f12e1e7f.jpeg",
+                                        "height": 569,
+                                        "width": 800
+                                    },
+                                    "larger": {
+                                        "download": "@@images/preview_image-1000-c085c05f7dcdf7e04de0ec76094b66f5.jpeg",
+                                        "height": 711,
+                                        "width": 1000
+                                    },
+                                    "mini": {
+                                        "download": "@@images/preview_image-200-d53da25ba46cb5f5b72acab306fa549c.jpeg",
+                                        "height": 142,
+                                        "width": 200
+                                    },
+                                    "preview": {
+                                        "download": "@@images/preview_image-400-cada28f757dbe3020e782e44225c726b.jpeg",
+                                        "height": 284,
+                                        "width": 400
+                                    },
+                                    "teaser": {
+                                        "download": "@@images/preview_image-600-3e58ea286a29c9c7d44d52d75158f0d1.jpeg",
+                                        "height": 427,
+                                        "width": 600
+                                    },
+                                    "thumb": {
+                                        "download": "@@images/preview_image-128-7d2e6632d8afc558050635cc3cab3c7c.jpeg",
+                                        "height": 91,
+                                        "width": 128
+                                    },
+                                    "tile": {
+                                        "download": "@@images/preview_image-64-f9a893a375a7faab00b76e26547a694f.jpeg",
+                                        "height": 45,
+                                        "width": 64
+                                    }
+                                },
+                                "size": 693013,
+                                "width": 2400
+                            }
+                        ]
+                    },
                     "in_response_to": null,
-                    "institute": [],
-                    "institutes": [],
                     "is_folderish": true,
-                    "is_geschaeftsbereich_or_stabstelle": null,
-                    "is_young_research_group": null,
-                    "job_offer_category": null,
-                    "job_offer_fingerprint": null,
-                    "job_offer_institute": null,
-                    "job_offer_location": null,
-                    "job_offer_target_group": null,
                     "last_comment_date": null,
                     "listCreators": [
                         "admin"
                     ],
                     "location": null,
-                    "member_fullnames": null,
-                    "member_source": null,
-                    "members": [],
                     "mime_type": "text/plain",
-                    "modified": "2022-05-31T15:20:31+00:00",
-                    "name": null,
+                    "modified": "2023-09-22T14:25:49+00:00",
                     "nav_title": null,
-                    "phone": null,
                     "portal_type": "Document",
-                    "positions": null,
-                    "project_end_month": null,
-                    "project_end_year": null,
-                    "project_start_month": null,
-                    "project_start_year": null,
-                    "project_type": null,
-                    "research_group": [],
-                    "research_topics": [],
                     "review_state": "published",
-                    "rights": "",
-                    "room": null,
-                    "show_navigation_portlet": false,
-                    "sort_id": 1,
                     "start": null,
                     "sync_uid": null,
-                    "title": "Das DLR",
-                    "topic": [],
+                    "title": "Page",
                     "total_comments": 0,
-                    "website_link": null,
-                    "year": "2022"
+                    "type_title": "Page"
                 }
             ],
             "buttonText": "Mehr Infos",
@@ -27197,12 +27613,67 @@
                 "data": "<a href=\"/de/service/impressum\">DLR (CC BY-NC-ND 3.0)</a>"
             },
             "description_color": "blue3",
+            "image_field": "image",
+            "image_scales": {
+                "image": [
+                    {
+                        "content-type": "image/jpeg",
+                        "download": "@@images/image-1126-7d56965f4f80ea368d96e094246b9edf.jpeg",
+                        "filename": "image-light.jpg",
+                        "height": 633,
+                        "scales": {
+                            "icon": {
+                                "download": "@@images/image-32-9acea9e2d05446dd4a03d7f83005ff49.jpeg",
+                                "height": 17,
+                                "width": 32
+                            },
+                            "large": {
+                                "download": "@@images/image-800-3f3a4fe9a1f4dbb58d3d5c1f1e02c0ed.jpeg",
+                                "height": 449,
+                                "width": 800
+                            },
+                            "larger": {
+                                "download": "@@images/image-1000-431e5fae3db1328e94db408fe33f4a1e.jpeg",
+                                "height": 562,
+                                "width": 1000
+                            },
+                            "mini": {
+                                "download": "@@images/image-200-73ebb3954909993acab67145daf42b70.jpeg",
+                                "height": 112,
+                                "width": 200
+                            },
+                            "preview": {
+                                "download": "@@images/image-400-d9b49669b0b54acb4e61439ce26eb44a.jpeg",
+                                "height": 224,
+                                "width": 400
+                            },
+                            "teaser": {
+                                "download": "@@images/image-600-0d32496da4ead208902831b053ff9373.jpeg",
+                                "height": 337,
+                                "width": 600
+                            },
+                            "thumb": {
+                                "download": "@@images/image-128-c22ac044a36aeeab808f92113ebaddae.jpeg",
+                                "height": 71,
+                                "width": 128
+                            },
+                            "tile": {
+                                "download": "@@images/image-64-24a580243d5386b10be31d995836bc41.jpeg",
+                                "height": 35,
+                                "width": 64
+                            }
+                        },
+                        "size": 475285,
+                        "width": 1126
+                    }
+                ]
+            },
             "plaintext": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.",
             "styles": {
-                "descriptionColor": "blue3"
+                "descriptionColor": "highlight-custom-color-1"
             },
-            "title": "Highlight-Block Das DLR",
-            "url": null,
+            "title": "Highlight-Block",
+            "url": "/content-types/image-light",
             "value": [
                 {
                     "children": [
@@ -27444,7 +27915,7 @@
         "locked": false,
         "stealable": true
     },
-    "modified": "2023-09-22T14:07:46+00:00",
+    "modified": "2023-09-30T06:55:06+00:00",
     "nav_title": null,
     "parent": {
         "@id": "/vertical-spacing",
@@ -27499,101 +27970,119 @@
             "button": true,
             "buttonLink": [
                 {
-                    "@id": "/de/das-dlr",
+                    "@id": "/content-types/page",
                     "@type": "Document",
-                    "CreationDate": "2022-05-31T17:16:44+02:00",
+                    "CreationDate": "2023-07-06T23:35:20+02:00",
                     "Creator": "admin",
-                    "Date": "2022-05-31T17:16:45+02:00",
-                    "Description": "Das DLR ist das Forschungszentrum der Bundesrepublik Deutschland f\u00fcr Luft- und Raumfahrt. Wir betreiben Forschung und Entwicklung in Luftfahrt, Raumfahrt, Energie und Verkehr, Sicherheit und Digitalisierung. Die Deutsche Raumfahrtagentur im DLR ist im Auftrag der Bundesregierung f\u00fcr die Planung und Umsetzung der deutschen Raumfahrtaktivit\u00e4ten zust\u00e4ndig. Zwei DLR Projekttr\u00e4ger betreuen F\u00f6rderprogramme und unterst\u00fctzen den Wissenstransfer.",
-                    "EffectiveDate": "2022-05-31T17:16:45+02:00",
+                    "Date": "2023-07-06T18:35:00+02:00",
+                    "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+                    "EffectiveDate": "2023-07-06T18:35:00+02:00",
                     "ExpirationDate": "None",
-                    "Language": "de",
-                    "ModificationDate": "2022-05-31T17:20:31+02:00",
+                    "ModificationDate": "2023-09-22T16:25:49+02:00",
                     "Subject": [],
-                    "Title": "Das DLR",
-                    "TranslationGroup": "0feca0b2e07945ee8c61c60ad49005cc",
-                    "Type": "Seite",
-                    "UID": "0835c0b72abf4c7aaf509b3b65b88ab5",
-                    "academic": null,
-                    "administrational_units": [],
+                    "Title": "Page",
+                    "Type": "Page",
+                    "UID": "7ab9c48ede33415fa2a66a99549c8f70",
                     "author_name": null,
-                    "award_date_month": null,
-                    "award_date_year": null,
-                    "award_type": null,
-                    "building": null,
-                    "cmf_uid": 3,
+                    "cmf_uid": null,
                     "commentators": [],
-                    "created": "2022-05-31T15:16:44+00:00",
-                    "description": "Das DLR ist das Forschungszentrum der Bundesrepublik Deutschland f\u00fcr Luft- und Raumfahrt. Wir betreiben Forschung und Entwicklung in Luftfahrt, Raumfahrt, Energie und Verkehr, Sicherheit und Digitalisierung. Die Deutsche Raumfahrtagentur im DLR ist im Auftrag der Bundesregierung f\u00fcr die Planung und Umsetzung der deutschen Raumfahrtaktivit\u00e4ten zust\u00e4ndig. Zwei DLR Projekttr\u00e4ger betreuen F\u00f6rderprogramme und unterst\u00fctzen den Wissenstransfer.",
-                    "detailed_description": null,
-                    "effective": "2022-05-31T15:16:45+00:00",
-                    "email": null,
+                    "created": "2023-07-06T21:35:20+00:00",
+                    "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+                    "effective": "2023-07-06T16:35:00+00:00",
                     "end": null,
-                    "event_type": null,
                     "exclude_from_nav": false,
                     "expires": "2499-12-30T22:00:00+00:00",
-                    "external_funding_provider_1": null,
-                    "external_funding_provider_1_link": null,
-                    "external_funding_provider_2": null,
-                    "external_funding_provider_2_link": null,
-                    "external_funding_provider_3": null,
-                    "external_funding_provider_3_link": null,
-                    "firstname": null,
-                    "getIcon": true,
-                    "getId": "das-dlr",
-                    "getObjSize": "0 KB",
-                    "getPath": "/Plone/de/das-dlr",
+                    "getIcon": null,
+                    "getId": "page",
+                    "getObjSize": "676.8 KB",
+                    "getPath": "/Plone/content-types/page",
                     "getRemoteUrl": null,
-                    "getURL": "http://localhost:3000/de/das-dlr",
-                    "hasPreviewImage": false,
+                    "getURL": "http://localhost:8080/Plone/content-types/page",
+                    "hasPreviewImage": true,
                     "head_title": null,
-                    "id": "das-dlr",
-                    "image_field": "image",
+                    "id": "page",
+                    "image_field": "preview_image",
+                    "image_scales": {
+                        "preview_image": [
+                            {
+                                "content-type": "image/jpeg",
+                                "download": "@@images/preview_image-2400-68e7afba8e418a4fc75b5d841ea53bc0.jpeg",
+                                "filename": "black-starry-night.jpg",
+                                "height": 1708,
+                                "scales": {
+                                    "great": {
+                                        "download": "@@images/preview_image-1200-a5028c76de272c78e891b8e197670fdb.jpeg",
+                                        "height": 854,
+                                        "width": 1200
+                                    },
+                                    "huge": {
+                                        "download": "@@images/preview_image-1600-7c2d5fb91e526c87d7063acf280fec3d.jpeg",
+                                        "height": 1138,
+                                        "width": 1600
+                                    },
+                                    "icon": {
+                                        "download": "@@images/preview_image-32-4a6cadca16bcd2525ceb57fc9d64d7c0.jpeg",
+                                        "height": 22,
+                                        "width": 32
+                                    },
+                                    "large": {
+                                        "download": "@@images/preview_image-800-4bc18ac8873ae5ecf4ff1099f12e1e7f.jpeg",
+                                        "height": 569,
+                                        "width": 800
+                                    },
+                                    "larger": {
+                                        "download": "@@images/preview_image-1000-c085c05f7dcdf7e04de0ec76094b66f5.jpeg",
+                                        "height": 711,
+                                        "width": 1000
+                                    },
+                                    "mini": {
+                                        "download": "@@images/preview_image-200-d53da25ba46cb5f5b72acab306fa549c.jpeg",
+                                        "height": 142,
+                                        "width": 200
+                                    },
+                                    "preview": {
+                                        "download": "@@images/preview_image-400-cada28f757dbe3020e782e44225c726b.jpeg",
+                                        "height": 284,
+                                        "width": 400
+                                    },
+                                    "teaser": {
+                                        "download": "@@images/preview_image-600-3e58ea286a29c9c7d44d52d75158f0d1.jpeg",
+                                        "height": 427,
+                                        "width": 600
+                                    },
+                                    "thumb": {
+                                        "download": "@@images/preview_image-128-7d2e6632d8afc558050635cc3cab3c7c.jpeg",
+                                        "height": 91,
+                                        "width": 128
+                                    },
+                                    "tile": {
+                                        "download": "@@images/preview_image-64-f9a893a375a7faab00b76e26547a694f.jpeg",
+                                        "height": 45,
+                                        "width": 64
+                                    }
+                                },
+                                "size": 693013,
+                                "width": 2400
+                            }
+                        ]
+                    },
                     "in_response_to": null,
-                    "institute": [],
-                    "institutes": [],
                     "is_folderish": true,
-                    "is_geschaeftsbereich_or_stabstelle": null,
-                    "is_young_research_group": null,
-                    "job_offer_category": null,
-                    "job_offer_fingerprint": null,
-                    "job_offer_institute": null,
-                    "job_offer_location": null,
-                    "job_offer_target_group": null,
                     "last_comment_date": null,
                     "listCreators": [
                         "admin"
                     ],
                     "location": null,
-                    "member_fullnames": null,
-                    "member_source": null,
-                    "members": [],
                     "mime_type": "text/plain",
-                    "modified": "2022-05-31T15:20:31+00:00",
-                    "name": null,
+                    "modified": "2023-09-22T14:25:49+00:00",
                     "nav_title": null,
-                    "phone": null,
                     "portal_type": "Document",
-                    "positions": null,
-                    "project_end_month": null,
-                    "project_end_year": null,
-                    "project_start_month": null,
-                    "project_start_year": null,
-                    "project_type": null,
-                    "research_group": [],
-                    "research_topics": [],
                     "review_state": "published",
-                    "rights": "",
-                    "room": null,
-                    "show_navigation_portlet": false,
-                    "sort_id": 1,
                     "start": null,
                     "sync_uid": null,
-                    "title": "Das DLR",
-                    "topic": [],
+                    "title": "Page",
                     "total_comments": 0,
-                    "website_link": null,
-                    "year": "2022"
+                    "type_title": "Page"
                 }
             ],
             "buttonText": "Mehr Infos",
@@ -27601,12 +28090,67 @@
                 "data": "<a href=\"/de/service/impressum\">DLR (CC BY-NC-ND 3.0)</a>"
             },
             "description_color": "blue3",
+            "image_field": "image",
+            "image_scales": {
+                "image": [
+                    {
+                        "content-type": "image/jpeg",
+                        "download": "@@images/image-1126-7d56965f4f80ea368d96e094246b9edf.jpeg",
+                        "filename": "image-light.jpg",
+                        "height": 633,
+                        "scales": {
+                            "icon": {
+                                "download": "@@images/image-32-9acea9e2d05446dd4a03d7f83005ff49.jpeg",
+                                "height": 17,
+                                "width": 32
+                            },
+                            "large": {
+                                "download": "@@images/image-800-3f3a4fe9a1f4dbb58d3d5c1f1e02c0ed.jpeg",
+                                "height": 449,
+                                "width": 800
+                            },
+                            "larger": {
+                                "download": "@@images/image-1000-431e5fae3db1328e94db408fe33f4a1e.jpeg",
+                                "height": 562,
+                                "width": 1000
+                            },
+                            "mini": {
+                                "download": "@@images/image-200-73ebb3954909993acab67145daf42b70.jpeg",
+                                "height": 112,
+                                "width": 200
+                            },
+                            "preview": {
+                                "download": "@@images/image-400-d9b49669b0b54acb4e61439ce26eb44a.jpeg",
+                                "height": 224,
+                                "width": 400
+                            },
+                            "teaser": {
+                                "download": "@@images/image-600-0d32496da4ead208902831b053ff9373.jpeg",
+                                "height": 337,
+                                "width": 600
+                            },
+                            "thumb": {
+                                "download": "@@images/image-128-c22ac044a36aeeab808f92113ebaddae.jpeg",
+                                "height": 71,
+                                "width": 128
+                            },
+                            "tile": {
+                                "download": "@@images/image-64-24a580243d5386b10be31d995836bc41.jpeg",
+                                "height": 35,
+                                "width": 64
+                            }
+                        },
+                        "size": 475285,
+                        "width": 1126
+                    }
+                ]
+            },
             "plaintext": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.",
             "styles": {
-                "descriptionColor": "blue3"
+                "descriptionColor": "highlight-custom-color-3"
             },
-            "title": "Highlight-Block Das DLR",
-            "url": null,
+            "title": "Highlight-Block",
+            "url": "/content-types/image-light",
             "value": [
                 {
                     "children": [
@@ -27751,12 +28295,77 @@
                 "data": "<a href=\"/de/service/impressum\">DLR (CC BY-NC-ND 3.0)</a>"
             },
             "description_color": "blue3",
+            "image_field": "image",
+            "image_scales": {
+                "image": [
+                    {
+                        "content-type": "image/jpeg",
+                        "download": "@@images/image-2400-d6697a8292dfa64ce8ea3cce2f0f45b4.jpeg",
+                        "filename": "black-starry-night.jpg",
+                        "height": 1708,
+                        "scales": {
+                            "great": {
+                                "download": "@@images/image-1200-c5dac9680315c72a6cd936771711e03f.jpeg",
+                                "height": 854,
+                                "width": 1200
+                            },
+                            "huge": {
+                                "download": "@@images/image-1600-2e03f9000eeed94b2695e2dcd4c7e8c6.jpeg",
+                                "height": 1138,
+                                "width": 1600
+                            },
+                            "icon": {
+                                "download": "@@images/image-32-a202aeaaf34bc7cf0808b58be962ca20.jpeg",
+                                "height": 22,
+                                "width": 32
+                            },
+                            "large": {
+                                "download": "@@images/image-800-8f536cec9d3342d7d5ba8a65b3db0511.jpeg",
+                                "height": 569,
+                                "width": 800
+                            },
+                            "larger": {
+                                "download": "@@images/image-1000-d46adab6de1db1cf06a70762801e01d3.jpeg",
+                                "height": 711,
+                                "width": 1000
+                            },
+                            "mini": {
+                                "download": "@@images/image-200-1e9026c9ced403f3daa125dfb3ccacdd.jpeg",
+                                "height": 142,
+                                "width": 200
+                            },
+                            "preview": {
+                                "download": "@@images/image-400-0b2a7d4dc90d26d75efb1c574954126b.jpeg",
+                                "height": 284,
+                                "width": 400
+                            },
+                            "teaser": {
+                                "download": "@@images/image-600-05904b2a2ff8e2c40de417595166d4d8.jpeg",
+                                "height": 427,
+                                "width": 600
+                            },
+                            "thumb": {
+                                "download": "@@images/image-128-9617bbc2183cd8d4d8478643df936e25.jpeg",
+                                "height": 91,
+                                "width": 128
+                            },
+                            "tile": {
+                                "download": "@@images/image-64-557e59a30a2311d71a038050cf8159ce.jpeg",
+                                "height": 45,
+                                "width": 64
+                            }
+                        },
+                        "size": 693013,
+                        "width": 2400
+                    }
+                ]
+            },
             "plaintext": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.",
             "styles": {
-                "descriptionColor": "blue3"
+                "descriptionColor": "highlight-custom-color-2"
             },
-            "title": "Highlight-Block Das DLR",
-            "url": null,
+            "title": "Highlight-Block",
+            "url": "/content-types/image",
             "value": [
                 {
                     "children": [
@@ -27771,6 +28380,7 @@
         "c006d4d9-ccbc-43f2-938c-af4d091defed": {
             "@type": "slate",
             "plaintext": "",
+            "styles": {},
             "value": [
                 {
                     "children": [
@@ -27846,7 +28456,7 @@
         "locked": false,
         "stealable": true
     },
-    "modified": "2023-09-22T14:07:46+00:00",
+    "modified": "2023-09-30T06:56:05+00:00",
     "nav_title": null,
     "parent": {
         "@id": "/vertical-spacing",
@@ -27905,11 +28515,13 @@
                         "i": "portal_type",
                         "o": "plone.app.querystring.operation.selection.any",
                         "v": [
-                            "Research Topic"
+                            "Document"
                         ]
                     }
                 ],
-                "sort_order": "ascending"
+                "sort_on": "getObjPositionInParent",
+                "sort_order": "descending",
+                "sort_order_boolean": true
             },
             "styles": {
                 "backgroundColor": "grey"
@@ -27928,7 +28540,7 @@
                         "i": "portal_type",
                         "o": "plone.app.querystring.operation.selection.any",
                         "v": [
-                            "Research Topic"
+                            "Document"
                         ]
                     }
                 ],
@@ -27973,11 +28585,9 @@
                 "limit": "3",
                 "query": [
                     {
-                        "i": "portal_type",
-                        "o": "plone.app.querystring.operation.selection.any",
-                        "v": [
-                            "Research Topic"
-                        ]
+                        "i": "path",
+                        "o": "plone.app.querystring.operation.string.absolutePath",
+                        "v": "/content-types/"
                     }
                 ],
                 "sort_order": "ascending"
@@ -28020,11 +28630,9 @@
                 "limit": "3",
                 "query": [
                     {
-                        "i": "portal_type",
-                        "o": "plone.app.querystring.operation.selection.any",
-                        "v": [
-                            "Research Topic"
-                        ]
+                        "i": "path",
+                        "o": "plone.app.querystring.operation.string.absolutePath",
+                        "v": ""
                     }
                 ],
                 "sort_order": "ascending"
@@ -28066,7 +28674,7 @@
         "locked": false,
         "stealable": true
     },
-    "modified": "2023-09-22T14:07:46+00:00",
+    "modified": "2023-09-30T06:58:05+00:00",
     "nav_title": null,
     "parent": {
         "@id": "/vertical-spacing",
@@ -28167,7 +28775,7 @@
                         "i": "portal_type",
                         "o": "plone.app.querystring.operation.selection.any",
                         "v": [
-                            "Research Topic"
+                            "Document"
                         ]
                     }
                 ],
@@ -28204,11 +28812,9 @@
                 "limit": "3",
                 "query": [
                     {
-                        "i": "portal_type",
-                        "o": "plone.app.querystring.operation.selection.any",
-                        "v": [
-                            "Research Topic"
-                        ]
+                        "i": "path",
+                        "o": "plone.app.querystring.operation.string.absolutePath",
+                        "v": ""
                     }
                 ],
                 "sort_order": "ascending"
@@ -28252,11 +28858,9 @@
                 "limit": "3",
                 "query": [
                     {
-                        "i": "portal_type",
-                        "o": "plone.app.querystring.operation.selection.any",
-                        "v": [
-                            "Research Topic"
-                        ]
+                        "i": "path",
+                        "o": "plone.app.querystring.operation.string.absolutePath",
+                        "v": "/block"
                     }
                 ],
                 "sort_order": "ascending"
@@ -28302,7 +28906,7 @@
                         "i": "portal_type",
                         "o": "plone.app.querystring.operation.selection.any",
                         "v": [
-                            "Research Topic"
+                            "Document"
                         ]
                     }
                 ],
@@ -28382,7 +28986,7 @@
         "locked": false,
         "stealable": true
     },
-    "modified": "2023-09-22T14:07:46+00:00",
+    "modified": "2023-09-30T06:59:18+00:00",
     "nav_title": null,
     "parent": {
         "@id": "/vertical-spacing",
