@@ -125,6 +125,7 @@ It is recommended that your project or policy add-on `package.json` include the 
     "@kitconcept/volto-introduction-block": "1.0.0",
     "@kitconcept/volto-light-theme": "1.0.0",
     "@kitconcept/volto-separator-block": "4.0.0",
+    "@kitconcept/volto-highlight-block": "3.0.0",
   }
 ```
 
