@@ -1,7 +1,10 @@
 import { defineMessages } from 'react-intl';
 
 import { composeSchema, getPreviousNextBlock } from '@plone/volto/helpers';
-import { defaultStylingSchema } from './components/Blocks/schema';
+import {
+  defaultStylingSchema,
+  removeStylingSchema,
+} from './components/Blocks/schema';
 import { teaserSchemaEnhancer } from './components/Blocks/Teaser/schema';
 import { videoBlockSchemaEnhancer } from './components/Blocks/Video/schema';
 import { gridTeaserDisableStylingSchema } from '@plone/volto/components/manage/Blocks/Teaser/schema';
@@ -184,42 +187,42 @@ const applyConfig = (config) => {
     colors: BG_COLORS,
     schemaEnhancer: defaultStylingSchema,
     icon: gridSVG,
-    gridAllowedBlocks: ['teaser', 'image', 'slate'],
-    // One could customize the blocks inside the grid like this:
-    blocksConfig: {
-      ...config.blocks.blocksConfig,
-      slate: {
-        ...config.blocks.blocksConfig.slate,
-        // Slate in grids must have an extra wrapper with the `slate` className
-        view: (props) => {
-          const EnhancedSlateViewComponent =
-            config.blocks.blocksConfig.slate.view;
-          return (
-            <div className="slate">
-              <EnhancedSlateViewComponent {...props} />
-            </div>
-          );
-        },
+  };
+
+  config.blocks.blocksConfig.gridBlock.blocksConfig = {
+    ...config.blocks.blocksConfig,
+    slate: {
+      ...config.blocks.blocksConfig.slate,
+      // Slate in grids must have an extra wrapper with the `slate` className
+      view: (props) => {
+        const EnhancedSlateViewComponent =
+          config.blocks.blocksConfig.slate.view;
+        return (
+          <div className="slate">
+            <EnhancedSlateViewComponent {...props} />
+          </div>
+        );
       },
-      image: {
-        ...config.blocks.blocksConfig.image,
-        schemaEnhancer: composeSchema(
-          imageBlockSchemaEnhancer,
-          gridImageDisableSizeAndPositionHandlersSchema,
-        ),
-      },
-      teaser: {
-        ...config.blocks.blocksConfig.teaser,
-        schemaEnhancer: composeSchema(
-          gridTeaserDisableStylingSchema,
-          teaserSchemaEnhancer,
-        ),
-      },
-      listing: {
-        ...config.blocks.blocksConfig.listing,
-        allowed_headline_tags: [['h2', 'h2']],
-        variations: config.blocks.blocksConfig.listing.variations,
-      },
+    },
+    image: {
+      ...config.blocks.blocksConfig.image,
+      schemaEnhancer: composeSchema(
+        imageBlockSchemaEnhancer,
+        gridImageDisableSizeAndPositionHandlersSchema,
+      ),
+    },
+    teaser: {
+      ...config.blocks.blocksConfig.teaser,
+      schemaEnhancer: composeSchema(
+        gridTeaserDisableStylingSchema,
+        teaserSchemaEnhancer,
+      ),
+    },
+    listing: {
+      ...config.blocks.blocksConfig.listing,
+      allowed_headline_tags: [['h2', 'h2']],
+      schemaEnhancer: removeStylingSchema,
+      variations: [],
     },
   };
 
