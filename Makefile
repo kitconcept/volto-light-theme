@@ -22,8 +22,8 @@ DISTRIBUTIONS="voltolighttheme"
 IMAGE_NAME=ghcr.io/kitconcept/voltolighttheme
 IMAGE_TAG=latest
 
-PLONE6=6.0.6
-PLONE_VERSION=6.0.6
+PLONE6=6.0.7
+PLONE_VERSION=6.0.7
 SEED=$$(date +'%Y%m%d-%H%M%S')
 
 # Python checks
