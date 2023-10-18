@@ -8,6 +8,18 @@
 
 <!-- towncrier release notes start -->
 
+## 1.0.1 (2023-10-18)
+
+### Bugfix
+
+- Small CSS adjustments @sneridagh [#249](https://github.com/kitconcept/volto-light-theme/pull/249)
+
+### Internal
+
+- Update to Volto 17 final @sneridagh [#246](https://github.com/kitconcept/volto-light-theme/pull/246)
+- Bump Volto version @sneridagh [#249](https://github.com/kitconcept/volto-light-theme/pull/249)
+
+
 ## 1.0.0 (2023-09-29)
 
 ### Feature
