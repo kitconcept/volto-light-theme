@@ -36,3 +36,8 @@ export const defaultStylingSchema = ({ schema, formData, intl }) => {
 
   return schema;
 };
+
+export const removeStylingSchema = ({ schema, formData, intl }) => {
+  schema.fieldsets = schema.fieldsets.filter((item) => item.id !== 'styling');
+  return schema;
+};
