@@ -38,6 +38,7 @@ const SliderBody = ({
   dataBlock,
   isEditMode,
   openObjectBrowser,
+  isActive,
 }) => {
   const intl = useIntl();
   const href = data.href?.[0];
@@ -71,6 +72,7 @@ const SliderBody = ({
     <div
       className={cx('grid-teaser-item top', {
         'empty-slide': !href && isEditMode,
+        'slide-visible': isActive,
       })}
     >
       {!href && isEditMode && (
@@ -105,7 +107,7 @@ const SliderBody = ({
                 ? '_blank'
                 : null
             }
-            tabIndex="-1"
+            tabIndex={!isActive ? '-1' : null}
           >
             {(href?.hasPreviewImage || href.image_field || image) && (
               <div className="highlight-image-wrapper gradient">
@@ -135,7 +137,7 @@ const SliderBody = ({
               <p>{data?.description}</p>
               {/* START CUSTOMIZATION */}
               {!data.hideButton && (
-                <Button tabIndex={'-1'}>
+                <Button tabIndex={!isActive ? '-1' : null}>
                   {data.buttonText || intl.formatMessage(messages.ButtonText)}
                 </Button>
               )}
