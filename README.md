@@ -53,7 +53,7 @@ Since the new container queries spec is out, we will be introducing it to the cu
 
 ### Organization of the files
 
-We will start organising de files in the root of `theme` folder, to differentiate from a normal "SemanticUI" theme. Take a look at the current state. We will follow this convention:
+We will start organising the files in the root of `theme` folder, to differentiate from a normal "SemanticUI" theme. Take a look at the current state. We will follow this convention:
 
 - One less file per component/block
 - All less files loading are centralized in one main less file `custom.less` in this project, could be different in the future.
