@@ -168,7 +168,9 @@
     h2 {
       margin-bottom: 40px !important;
     }
-    &.previous--is--same--block-type.previous--has--same--backgroundColor:not(.has--headline) {
+    &.previous--is--same--block-type.previous--has--same--backgroundColor:not(
+        .has--headline
+      ) {
       margin-top: unset;
     }
     &:not(.grid) {
@@ -207,24 +209,22 @@
 
 // Dynamic font sizes depending on number of columns for in-grid blocks
 #page-document .block.gridBlock,
-#page-edit .block-editor-gridBlock,
-#page-add .block-editor-gridBlock {
+#page-edit .block-editor-gridBlock .block.gridBlock,
+#page-add .block-editor-gridBlock .block.gridBlock {
   @media only screen and (min-width: $largest-mobile-screen) {
-    .block.gridBlock .one .slate {
-      h2 {
-        margin-bottom: 40px !important;
-        @include text-heading-h2();
-      }
-    }
-
-    .block.gridBlock .one .block.teaser {
-      .teaser-item .content h2 {
-        margin-bottom: 40px !important;
-        @include text-heading-h2();
-      }
-    }
-
     .one {
+      .block.teaser .teaser-item .content h2 {
+        margin-bottom: 40px !important;
+        @include text-heading-h2();
+      }
+
+      .slate {
+        h2 {
+          margin-bottom: 40px !important;
+          @include text-heading-h2();
+        }
+      }
+
       .image {
         figcaption {
           .title {

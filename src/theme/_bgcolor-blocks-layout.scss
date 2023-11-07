@@ -50,3 +50,8 @@
     margin-bottom: 0;
   }
 }
+
+// Edit mode adjustments
+.block-editor-gridBlock.has--backgroundColor--grey .block h2.headline {
+  padding-top: $spacing-xlarge;
+}

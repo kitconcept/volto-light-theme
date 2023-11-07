@@ -1,4 +1,7 @@
-.highlight {
+$white: #fff !default;
+$black: #000 !default;
+
+.block.highlight {
   .title h2 {
     @include highlight-title();
   }
@@ -7,5 +10,43 @@
   }
   .button a {
     @include body-text();
+  }
+
+  .highlight-description {
+    a {
+      @include introduction();
+    }
+  }
+
+  &[class*='has--descriptionColor--highlight-custom-color-'] {
+    .highlight-description {
+      a {
+        color: $black !important;
+      }
+    }
+  }
+  &.has--descriptionColor--highlight-custom-color-2 {
+    .highlight-description {
+      a {
+        color: $white !important;
+      }
+    }
+  }
+}
+
+.block-editor-highlight {
+  &[class*='has--descriptionColor--highlight-custom-color-'] {
+    .highlight-description {
+      a {
+        color: $black !important;
+      }
+    }
+  }
+  &.has--descriptionColor--highlight-custom-color-2 {
+    .highlight-description {
+      a {
+        color: $white !important;
+      }
+    }
   }
 }

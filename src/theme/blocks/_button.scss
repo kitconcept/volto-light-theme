@@ -34,8 +34,8 @@
 .block.__button .ui.button {
   padding: 8px 20px;
   border: 1px solid $black;
-  background: none;
   border-radius: unset;
+  background: none;
   color: $black;
 
   @include body-text-bold();

@@ -281,9 +281,11 @@ figcaption {
     width: min(100%, 450px);
     height: 40px;
     padding: 4px;
-    background-color: rgba(255, 255, 255, 0.975);
     border-radius: 2px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.05);
+    background-color: rgba(255, 255, 255, 0.975);
+    box-shadow:
+      0 0 8px rgba(0, 0, 0, 0.1),
+      0 2px 4px rgba(0, 0, 0, 0.05);
 
     .ui.form & .ui.input input[type='text'] {
       height: initial;
@@ -309,8 +311,8 @@ figcaption {
 
     .ui.icon.button {
       padding: 4px;
-      margin-left: -3px;
       border-radius: 1px;
+      margin-left: -3px;
       color: $brown !important;
 
       &:hover {
