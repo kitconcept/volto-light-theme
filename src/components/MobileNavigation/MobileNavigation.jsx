@@ -32,15 +32,11 @@ const messages = defineMessages({
 const MobileNavigation = (props) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const [secondaryMenuOpened, setSecondaryMenuOpened] = React.useState(null);
-  const [
-    isSecondaryMobileMenuOpen,
-    setIsSecondaryMobileMenuOpen,
-  ] = React.useState(false);
+  const [isSecondaryMobileMenuOpen, setIsSecondaryMobileMenuOpen] =
+    React.useState(false);
   const [tertiaryMenuOpened, setTertiaryMenuOpened] = React.useState(null);
-  const [
-    isTertiaryMobileMenuOpen,
-    setIsTertiaryMobileMenuOpen,
-  ] = React.useState(false);
+  const [isTertiaryMobileMenuOpen, setIsTertiaryMobileMenuOpen] =
+    React.useState(false);
   const intl = useIntl();
   const menus = React.useRef(null);
   const currentLang = useSelector((state) => state.intl.locale);
