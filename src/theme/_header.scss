@@ -18,6 +18,7 @@
     .navigation {
       display: flex;
       align-self: center;
+
       @media only screen and (max-width: 1021px) {
         display: none;
       }
@@ -57,6 +58,7 @@
       }
     }
   }
+
   .search-wrapper {
     display: flex;
     flex-direction: row-reverse;
@@ -106,6 +108,7 @@
             transform: scale(0.75);
           }
         }
+
         &:active {
           transform: scale(0.85);
           transition-duration: 100ms;
@@ -155,6 +158,7 @@
                 padding-top: 2rem;
                 margin-left: 0.5rem;
               }
+
               @media only screen and (max-width: $large-monitor-breakpoint) {
                 padding-top: 0;
               }
@@ -167,6 +171,7 @@
                 background-color: $lightgrey;
                 color: $black;
                 font-size: 1.5rem;
+
                 @media only screen and (min-width: $tablet-breakpoint) and (max-width: 788px) {
                   margin-left: 1.5rem;
                 }
@@ -186,6 +191,7 @@
                 &:hover {
                   background-color: $darkGrey;
                   border-radius: 50%;
+
                   svg {
                     fill: $white !important;
                   }
@@ -214,6 +220,7 @@
     .language-selector a {
       text-transform: uppercase;
     }
+
     .tools {
       display: flex;
     }
@@ -421,12 +428,14 @@
             margin-top: 70px;
             // padding: 0 80px 0 10px;
           }
+
           /* This is for tablet landscape mode */
           @media only screen and (min-width: 1011px) and (max-width: 1280px) {
             &:nth-of-type(n + 4) {
               margin-top: 70px;
             }
           }
+
           /* This is for tablet landscape mode */
           @media only screen and (min-width: 1011px) and (max-width: 1280px) {
             &:nth-of-type(3n) {
@@ -481,6 +490,21 @@
 
   .icon {
     margin-left: 28px;
+  }
+}
+
+/* Fat menu in Edit mode */
+.view-editview,
+.view-addview {
+  .navigation {
+    ul.desktop-menu .submenu-wrapper {
+      display: none;
+    }
+
+    .item:hover::before,
+    .item.active::before {
+      display: none;
+    }
   }
 }
 
@@ -575,6 +599,7 @@
   @media only screen and (max-width: $computer-breakpoint) {
     top: calc(157px + 1rem); // Adjusting the margin top of the logo
   }
+
   @media only screen and (max-width: $computer-breakpoint) {
     top: calc(135px + 1rem); // Adjusting the margin top of the logo
   }
