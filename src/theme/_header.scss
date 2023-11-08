@@ -280,7 +280,7 @@
     &.active::before,
     &:hover::before {
       position: absolute;
-      bottom: -55px;
+      bottom: -49px;
       width: 100%;
       border-bottom: 9px solid $black;
       content: '';
@@ -332,7 +332,7 @@
       left: 50%;
       width: 100vw;
       max-width: initial;
-      margin-top: 45px;
+      margin-top: 40px;
       margin-right: -50vw;
       margin-left: -50vw;
     }
