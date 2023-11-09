@@ -1,0 +1,26 @@
+.section-sitemap {
+  #page-sitemap {
+    h1 {
+      font-size: $heading1;
+      font-weight: $medium;
+      line-height: 77px;
+    }
+
+    ul {
+      li.with-children {
+        a {
+          font-weight: $bold;
+          text-decoration: none;
+          line-height: 45px;
+        }
+        ul {
+          li {
+            a {
+              font-weight: $regular;
+            }
+          }
+        }
+      }
+    }
+  }
+}
