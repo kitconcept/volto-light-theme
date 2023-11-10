@@ -41,6 +41,12 @@
   @include body-text-bold();
 }
 
+.block.__button .ui.button:focus,
+.block.__button .ui.button:hover {
+  background-color: $black;
+  color: $white;
+}
+
 .block-editor-__button.has--backgroundColor--grey {
   background-color: $lightgrey;
 }
