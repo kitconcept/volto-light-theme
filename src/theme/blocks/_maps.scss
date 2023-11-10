@@ -37,6 +37,10 @@
     margin-bottom: $spacing-large;
   }
 
+  &.align.full iframe {
+    max-height: 600px;
+  }
+
   &.align.right iframe,
   &.align.left iframe {
     @container (max-width: #{$largest-mobile-screen}) {
