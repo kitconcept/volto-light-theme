@@ -3,7 +3,6 @@ import { defineMessages, useIntl } from 'react-intl';
 import { useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import cx from 'classnames';
-import { Button } from 'semantic-ui-react';
 
 import { CSSTransition } from 'react-transition-group';
 import { FormattedMessage } from 'react-intl';
@@ -144,13 +143,13 @@ const MobileNavigation = (props) => {
               title={intl.formatMessage(messages.search)}
               onClick={(e) => closeMenus(e)}
             >
-              <Button
+              <button
                 basic
                 icon
                 aria-label={intl.formatMessage(messages.search)}
               >
                 <Icon name={zoomSVG} size="36px" />
-              </Button>
+              </button>
             </Link>
           </div>
           <ul className="sections">
@@ -191,13 +190,13 @@ const MobileNavigation = (props) => {
                           title={intl.formatMessage(messages.search)}
                           onClick={(e) => closeMenus(e)}
                         >
-                          <Button
+                          <button
                             basic
                             icon
                             aria-label={intl.formatMessage(messages.search)}
                           >
                             <Icon name={zoomSVG} size="36px" />
-                          </Button>
+                          </button>
                         </Link>
                         <button onClick={(e) => closeSecondaryMenu(e)}>
                           <Icon name={arrowLeftSVG} size="60px" />
@@ -266,7 +265,7 @@ const MobileNavigation = (props) => {
                                       )}
                                       onClick={(e) => closeMenus(e)}
                                     >
-                                      <Button
+                                      <button
                                         basic
                                         icon
                                         aria-label={intl.formatMessage(
@@ -274,7 +273,7 @@ const MobileNavigation = (props) => {
                                         )}
                                       >
                                         <Icon name={zoomSVG} size="36px" />
-                                      </Button>
+                                      </button>
                                     </Link>
                                     <button
                                       onClick={(e) => closeTertiaryMenu(e)}
