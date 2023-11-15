@@ -28,7 +28,7 @@ const Navigation = ({ getNavigation, pathname, items, lang }) => {
   const [currentOpenIndex, setCurrentOpenIndex] = useState(null);
   const navigation = useRef(null);
   const intl = useIntl();
-  const fatMenuEnable = config.settings.fatMenu;
+  const enableFatMenu = config.settings.enableFatMenu;
 
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -81,7 +81,7 @@ const Navigation = ({ getNavigation, pathname, items, lang }) => {
         <ul className="desktop-menu">
           {items.map((item, index) => (
             <li key={item.url}>
-              {fatMenuEnable ? (
+              {enableFatMenu ? (
                 <>
                   <button
                     onClick={() => openMenu(index)}
