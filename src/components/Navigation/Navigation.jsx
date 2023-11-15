@@ -75,12 +75,7 @@ const Navigation = ({ getNavigation, pathname, items, lang }) => {
       className="navigation"
       ref={navigation}
     >
-      <div
-        stackable
-        pointing
-        secondary
-        className={'computer large screen widescreen only'}
-      >
+      <div className={'computer large screen widescreen only'}>
         <ul className="desktop-menu">
           {items.map((item, index) => (
             <li key={item.url}>
