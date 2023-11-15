@@ -307,7 +307,8 @@
     font-size: 20px;
     list-style: none;
 
-    & > li > button {
+    & > li > button,
+    & > li > a {
       padding: 0;
       padding-top: 20px;
       padding-bottom: 6px;
@@ -319,6 +320,16 @@
       cursor: pointer;
       font-weight: 700;
       text-transform: none;
+    }
+    & > li > a {
+      display: block;
+
+      &.item {
+        &.active::before,
+        &:hover::before {
+          display: none;
+        }
+      }
     }
 
     & > li:first-child > button {
