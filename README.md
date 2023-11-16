@@ -169,6 +169,17 @@ module.exports = {
 
 You can specify your project add-ons in `volto.config.js`, but sometimes is better to have them all in one place (in your policy add-on) for portability.
 
+## Feature flags
+
+### Enable fat menu
+
+Since 2.0.0, the light theme has a fat menu (below the main site sections) triggered clickin on one of them.
+It's behind a feature flag, as opt-out:
+
+```js
+config.settings.enableFatMenu = true;
+```
+
 ## Development Setup
 
 This theme works under Volto 17 alpha 16 onwards.

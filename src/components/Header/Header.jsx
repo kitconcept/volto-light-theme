@@ -2,6 +2,7 @@
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import Container from '@kitconcept/volto-light-theme/components/Atoms/Container/Container';
+import MobileNavigation from '../MobileNavigation/MobileNavigation';
 import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 
@@ -26,7 +27,8 @@ const Header = (props) => {
               <Logo />
             </div>
             <Navigation pathname={pathname} />
-            <div className="search-wrapper">
+            <MobileNavigation pathname={pathname} />
+            <div className="search-wrapper navigation-desktop">
               <div className="search">
                 <SearchWidget />
               </div>
