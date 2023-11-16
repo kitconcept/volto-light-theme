@@ -1,7 +1,0 @@
-Added fat menu and mobile menu. @iFlameing
-Since 2.0.0, the light theme has a fat menu (below the main site sections) triggered clickin on one of them.
-It's behind a feature flag, as opt-out:
-
-```js
-config.settings.enableFatMenu = true;
-```
