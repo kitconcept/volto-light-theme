@@ -17,6 +17,11 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "X-Is-Fallback-For: de-at de-li de-lu de-ch de-de\n"
 
+#: components/MobileNavigation/MobileNavigation
+# defaultMessage: Back
+msgid "Back"
+msgstr ""
+
 #: components/Blocks/schema
 # defaultMessage: Background color
 msgid "Background color"
@@ -37,12 +42,17 @@ msgstr ""
 msgid "Browse the site, drop an image, or type an URL"
 msgstr "Bild auswählen, hochladen oder URL angeben"
 
+#: components/Blocks/Slider/schema
+# defaultMessage: Button text
+msgid "Button text"
+msgstr ""
+
 #: components/Widgets/AlignWidget
 # defaultMessage: Center
 msgid "Center"
 msgstr "Mittig"
 
-#: components/Navigation/Navigation
+#: components/MobileNavigation/MobileNavigation
 # defaultMessage: Close menu
 msgid "Close menu"
 msgstr "Menü schließen"
@@ -51,6 +61,11 @@ msgstr "Menü schließen"
 # defaultMessage: Contact
 msgid "Contact"
 msgstr "Kontakt"
+
+#: components/Blocks/Slider/DefaultBody
+# defaultMessage: Continue reading
+msgid "Continue reading"
+msgstr ""
 
 #: components/Footer/Footer
 # defaultMessage: Copyright
@@ -72,6 +87,11 @@ msgstr ""
 msgid "End"
 msgstr "ende"
 
+#: components/Blocks/Slider/schema
+# defaultMessage: Flag align
+msgid "Flag align"
+msgstr ""
+
 #: components/Widgets/AlignWidget
 # defaultMessage: Full
 msgid "Full"
@@ -88,6 +108,7 @@ msgid "Hide Button"
 msgstr "kein Button anzeigen"
 
 #: components/Breadcrumbs/Breadcrumbs
+#: components/MobileNavigation/MobileNavigation
 # defaultMessage: Home
 msgid "Home"
 msgstr ""
@@ -137,15 +158,26 @@ msgstr "Kein Bild ausgewählt"
 msgid "No items found in this container."
 msgstr "Keine Elemente im Ordner gefunden."
 
-#: components/Navigation/Navigation
+#: components/MobileNavigation/MobileNavigation
 # defaultMessage: Open menu
 msgid "Open menu"
 msgstr "Menü öffnen"
+
+#: components/MobileNavigation/MobileNavigation
+#: components/Navigation/Navigation
+# defaultMessage: Overview
+msgid "Overview"
+msgstr ""
 
 #: components/Theme/EventView
 # defaultMessage: Phone
 msgid "Phone"
 msgstr "Telefon"
+
+#: components/Blocks/Slider/DefaultBody
+# defaultMessage: Please choose an existing content as source for this element
+msgid "Please choose an existing content as source for this element"
+msgstr ""
 
 #: components/Footer/Footer
 # defaultMessage: Plone Foundation
@@ -230,6 +262,11 @@ msgstr "Übersicht"
 msgid "Sorting"
 msgstr "Sortierung"
 
+#: components/Blocks/Slider/DefaultBody
+# defaultMessage: Source
+msgid "Source"
+msgstr ""
+
 #: components/Theme/EventView
 # defaultMessage: Start
 msgid "Start"
@@ -274,6 +311,11 @@ msgstr ""
 # defaultMessage: Loading
 msgid "loading"
 msgstr "laden"
+
+#: components/Blocks/Slider/DefaultBody
+# defaultMessage: More info
+msgid "moreInfo"
+msgstr ""
 
 #: components/Blocks/Listing/ListingBody
 # defaultMessage: of
