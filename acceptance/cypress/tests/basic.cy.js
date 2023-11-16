@@ -23,7 +23,7 @@ context('Basic Acceptance Tests', () => {
     it('As editor I can add a page with a text block', function () {
       // when I add a page with a text block
       cy.get('#toolbar-add').click();
-      cy.get('#toolbar-add-document').click();
+      cy.get('#toolbar-add-document').click({ force: true });
       cy.get('.documentFirstHeading')
         .type('My Page')
         .get('.documentFirstHeading')
