@@ -5,19 +5,21 @@
   .logo-nav-wrapper {
     display: flex;
     flex-direction: row;
-    flex-grow: 2;
     align-items: baseline;
     justify-content: space-between;
     padding-top: 25px;
     padding-bottom: 35px;
 
     .logo {
+      flex: 1 1 0;
       align-self: center;
     }
 
     .navigation {
       display: flex;
+      flex: 3.5 1 0;
       align-self: center;
+      justify-content: center;
 
       @media only screen and (max-width: 1021px) {
         display: none;
@@ -34,6 +36,7 @@
           font-size: 18px;
           font-weight: 600;
           line-height: 24px;
+          text-align: center;
         }
       }
 
@@ -61,6 +64,7 @@
 
   .search-wrapper {
     display: flex;
+    flex: 1 1 0;
     flex-direction: row-reverse;
 
     @media only screen and (max-width: 1021px) {
