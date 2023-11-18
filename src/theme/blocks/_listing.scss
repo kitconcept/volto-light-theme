@@ -228,8 +228,8 @@
 
       &.image-gallery-fullscreen-button,
       &.image-gallery-play-button {
-        border: solid 1px black;
         bottom: -94px;
+        border: solid 1px black;
         border-radius: 0;
 
         svg {
@@ -254,9 +254,9 @@
       display: block;
       padding: 25px 0 0 0;
       color: #666;
-      text-align: left;
       font-size: 14px;
       font-weight: 300;
+      text-align: left;
       line-height: 18px;
       white-space: initial;
 
@@ -268,11 +268,11 @@
       .credits,
       .download,
       .download a {
-        font-size: 14px;
         min-height: 18px;
+        font-size: 14px;
         margin-top: 5px;
-        line-height: 18px;
         color: #0070a2;
+        line-height: 18px;
       }
 
       .description {
@@ -289,8 +289,8 @@
 
       .image-gallery-thumbnail {
         border: 0;
-        opacity: 50%;
         margin-left: 20px;
+        opacity: 50%;
 
         &.active,
         &:hover,
