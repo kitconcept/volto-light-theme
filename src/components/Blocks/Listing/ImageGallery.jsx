@@ -10,9 +10,9 @@ import config from '@plone/volto/registry';
 import galleryLeftSVG from '../../../icons/left-key.svg';
 import galleryRightSVG from '../../../icons/right-key.svg';
 import galleryPlaySVG from '../../../icons/play.svg';
-import galleryPauseSVG from '@plone/volto/icons/pause.svg';
+import galleryPauseSVG from '../../../icons/pause.svg';
 import galleryFullScreenSVG from '../../../icons/fullscreen.svg';
-import galleryBackDownSVG from '@plone/volto/icons/back-down.svg';
+import galleryBackDownSVG from '../../../icons/back-down.svg';
 
 const ImageGallery = loadable(() => import('react-image-gallery'));
 

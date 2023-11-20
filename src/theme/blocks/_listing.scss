@@ -218,12 +218,12 @@
 
       &.image-gallery-left-nav {
         top: calc(50% - 47px);
-        left: -60px;
+        left: -68px;
       }
 
       &.image-gallery-right-nav {
         top: calc(50% - 47px);
-        right: -60px;
+        right: -68px;
       }
 
       &.image-gallery-fullscreen-button,
@@ -295,6 +295,10 @@
       .download {
         float: right;
       }
+    }
+
+    .fullscreen .image-gallery-description {
+      color: white;
     }
 
     .image-gallery-thumbnails {
