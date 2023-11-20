@@ -1,6 +1,6 @@
 {
   "name": "@kitconcept/volto-light-theme",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Volto Light Theme by kitconcept",
   "main": "src/index.js",
   "repository": {
@@ -71,7 +71,7 @@
     "@kitconcept/volto-highlight-block": "^3.0.0",
     "@kitconcept/volto-introduction-block": "^1.0.0",
     "@kitconcept/volto-separator-block": "^4.0.0",
-    "@kitconcept/volto-slider-block": "^5.1.1",
-    "@plone/volto": "^17.2.0"
+    "@kitconcept/volto-slider-block": "5.1.1",
+    "@plone/volto": "^17.5.0"
   }
 }

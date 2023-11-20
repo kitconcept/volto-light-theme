@@ -51,6 +51,7 @@ defineMessages({
 const applyConfig = (config) => {
   config.settings.enableAutoBlockGroupingByBackgroundColor = true;
   config.settings.navDepth = 3;
+  config.settings.enableFatMenu = true;
   config.settings.slate.useLinkedHeadings = false;
 
   // No required blocks (eg. Title)
