@@ -14,6 +14,7 @@ import { disableBgColorSchema } from './components/Blocks/disableBgColorSchema';
 import ContainerQueriesPolyfill from './components/CQPolyfill';
 import Container from './components/Atoms/Container/Container';
 import TopSideFacets from './components/Blocks/Search/TopSideFacets';
+import AboveTitle from './components/Blocks/Title/AboveTitle';
 
 import GridListingBlockTemplate from './components/Blocks/Listing/GridTemplate';
 import { ButtonStylingSchema } from './components/Blocks/Button/schema';
@@ -61,6 +62,12 @@ const applyConfig = (config) => {
   config.registerComponent({
     name: 'Container',
     component: Container,
+  });
+  // Register custom AboveTitle component for News Item
+  config.registerComponent({
+    name: 'AboveTitle',
+    component: AboveTitle,
+    dependencies: 'News Item',
   });
 
   // Register custom StyleWrapper ClassNames
