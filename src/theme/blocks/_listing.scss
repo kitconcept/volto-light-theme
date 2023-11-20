@@ -213,7 +213,7 @@
     .ui.button {
       margin: 0;
       box-shadow: none !important;
-      color: transparent !important;
+      color: black !important;
       filter: none;
 
       &.image-gallery-left-nav {
@@ -247,12 +247,25 @@
       }
     }
 
+    & .fullscreen .ui.button {
+      color: white !important;
+
+      &.image-gallery-left-nav {
+        left: 20px;
+      }
+
+      &.image-gallery-right-nav {
+        right: 20px;
+      }
+    }
+
     .image-gallery-description {
       position: relative;
       bottom: auto;
       left: auto;
       display: block;
       padding: 25px 0 0 0;
+      background: none;
       color: #666;
       font-size: 14px;
       font-weight: 300;
