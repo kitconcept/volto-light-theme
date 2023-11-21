@@ -8,6 +8,32 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.0 (2023-11-16)
+
+### Breaking
+
+- Added fat menu and mobile menu. @iFlameing
+  Since 2.0.0, the light theme has a fat menu (below the main site sections) triggered clickin on one of them.
+  It's behind a feature flag, as opt-out:
+
+  ```js
+  config.settings.enableFatMenu = true;
+  ``` [#86](https://github.com/kitconcept/volto-light-theme/pull/86)
+
+### Feature
+
+- Added Focus and Hover Attributes to UI Buttons @Molochem [#260](https://github.com/kitconcept/volto-light-theme/pull/260)
+
+### Bugfix
+
+- Fix max height for full width map iframe @danalvrz [#257](https://github.com/kitconcept/volto-light-theme/pull/257)
+- Fix header alignment of the sections @sneridagh [#261](https://github.com/kitconcept/volto-light-theme/pull/261)
+
+### Internal
+
+- Update to latest Plone and Volto @sneridagh
+  Pin `volto-slider-block` to 5.1.1 [#262](https://github.com/kitconcept/volto-light-theme/pull/262)
+
 ## 1.0.1 (2023-10-18)
 
 ### Bugfix

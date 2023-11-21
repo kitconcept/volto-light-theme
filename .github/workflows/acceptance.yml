@@ -1,14 +1,15 @@
 name: Acceptance tests
-on: [push]
+on: [push, pull_request]
 
 env:
   ADDON_NAME: "@kitconcept/volto-light-theme"
   ADDON_PATH: "volto-light-theme"
-  VOLTO_VERSION: "17.2.0"
+  VOLTO_VERSION: "17.5.0"
 
 jobs:
 
   acceptance:
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.event.pull_request.base.repo.full_name
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

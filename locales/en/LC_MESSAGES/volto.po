@@ -11,6 +11,11 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+#: components/MobileNavigation/MobileNavigation
+# defaultMessage: Back
+msgid "Back"
+msgstr ""
+
 #: components/Blocks/schema
 # defaultMessage: Background color
 msgid "Background color"
@@ -31,12 +36,17 @@ msgstr ""
 msgid "Browse the site, drop an image, or type an URL"
 msgstr ""
 
+#: components/Blocks/Slider/schema
+# defaultMessage: Button text
+msgid "Button text"
+msgstr ""
+
 #: components/Widgets/AlignWidget
 # defaultMessage: Center
 msgid "Center"
 msgstr ""
 
-#: components/Navigation/Navigation
+#: components/MobileNavigation/MobileNavigation
 # defaultMessage: Close menu
 msgid "Close menu"
 msgstr ""
@@ -44,6 +54,11 @@ msgstr ""
 #: components/Theme/EventView
 # defaultMessage: Contact
 msgid "Contact"
+msgstr ""
+
+#: components/Blocks/Slider/DefaultBody
+# defaultMessage: Continue reading
+msgid "Continue reading"
 msgstr ""
 
 #: components/Footer/Footer
@@ -66,6 +81,11 @@ msgstr ""
 msgid "End"
 msgstr ""
 
+#: components/Blocks/Slider/schema
+# defaultMessage: Flag align
+msgid "Flag align"
+msgstr ""
+
 #: components/Widgets/AlignWidget
 # defaultMessage: Full
 msgid "Full"
@@ -76,7 +96,13 @@ msgstr ""
 msgid "GNU GPL license"
 msgstr ""
 
+#: components/Blocks/Slider/schema
+# defaultMessage: Hide Button
+msgid "Hide Button"
+msgstr ""
+
 #: components/Breadcrumbs/Breadcrumbs
+#: components/MobileNavigation/MobileNavigation
 # defaultMessage: Home
 msgid "Home"
 msgstr ""
@@ -126,14 +152,25 @@ msgstr ""
 msgid "No items found in this container."
 msgstr ""
 
-#: components/Navigation/Navigation
+#: components/MobileNavigation/MobileNavigation
 # defaultMessage: Open menu
 msgid "Open menu"
+msgstr ""
+
+#: components/MobileNavigation/MobileNavigation
+#: components/Navigation/Navigation
+# defaultMessage: Overview
+msgid "Overview"
 msgstr ""
 
 #: components/Theme/EventView
 # defaultMessage: Phone
 msgid "Phone"
+msgstr ""
+
+#: components/Blocks/Slider/DefaultBody
+# defaultMessage: Please choose an existing content as source for this element
+msgid "Please choose an existing content as source for this element"
 msgstr ""
 
 #: components/Footer/Footer
@@ -219,6 +256,11 @@ msgstr ""
 msgid "Sorting"
 msgstr ""
 
+#: components/Blocks/Slider/DefaultBody
+# defaultMessage: Source
+msgid "Source"
+msgstr ""
+
 #: components/Theme/EventView
 # defaultMessage: Start
 msgid "Start"
@@ -262,6 +304,11 @@ msgstr ""
 #: components/Blocks/Listing/ListingBody
 # defaultMessage: Loading
 msgid "loading"
+msgstr ""
+
+#: components/Blocks/Slider/DefaultBody
+# defaultMessage: More info
+msgid "moreInfo"
 msgstr ""
 
 #: components/Blocks/Listing/ListingBody
