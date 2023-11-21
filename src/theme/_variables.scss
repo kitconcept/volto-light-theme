@@ -37,6 +37,11 @@ $computer-breakpoint: 941px !default;
 $large-monitor-width: 1440px !default;
 $large-monitor-breakpoint: 1441px !default;
 
+// Container widths
+$layout-container-width: 1440px !default;
+$default-container-width: 940px !default;
+$narrow-container-width: 620px !default;
+
 // Rest of theme variables
 
 :root {

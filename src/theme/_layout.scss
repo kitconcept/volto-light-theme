@@ -1,15 +1,8 @@
 :root {
-  --layout-container-width: 1440px;
-  --default-container-width: 940px;
-  --narrow-container-width: 620px;
+  --layout-container-width: #{$layout-container-width};
+  --default-container-width: #{$default-container-width};
+  --narrow-container-width: #{$narrow-container-width};
 }
-
-// Container queries still do not work with CSS custom properties
-// They should be exact numbers
-// For now, maintain in sync with the above
-$layout-container-width: 1440px !default;
-$default-container-width: 940px !default;
-$narrow-container-width: 620px !default;
 
 @mixin narrow-container-width() {
   max-width: var(--narrow-container-width);
@@ -22,7 +15,7 @@ $narrow-container-width: 620px !default;
   margin-right: auto;
   margin-left: auto;
 
-  // This is mostly aesthetical if you don't want to "see" the jump
+  // This is mostly cosmetics if you don't want to "see" the jump
   // but a nice animation instead - PoC (WIP)
   // @media only screen and (max-width: #{$default-container-width + 5px}) {
   //   margin-right: 5px;
@@ -51,7 +44,7 @@ $narrow-container-width: 620px !default;
   }
 }
 
-// Container adjustments for dealing correctly with absoluted elements
+// Container adjustments for dealing correctly with absolute positioned elements
 @mixin container-preference-order($zindex) {
   position: relative;
   z-index: $zindex;
