@@ -1,5 +1,5 @@
 name: Acceptance tests
-on: [push]
+on: [push, pull_request]
 
 env:
   ADDON_NAME: "@kitconcept/volto-light-theme"
@@ -9,6 +9,7 @@ env:
 jobs:
 
   acceptance:
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.event.pull_request.base.repo.full_name
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
