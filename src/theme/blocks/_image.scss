@@ -180,7 +180,7 @@ figcaption {
   .credits {
     margin-top: 5px;
     color: $blue-for-grey-contrast;
-    -webkit-font-smoothing: anitaliased;
+    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     @include marginal-description();
