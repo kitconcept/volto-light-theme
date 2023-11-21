@@ -1,9 +1,7 @@
 .section-sitemap {
   #page-sitemap {
     h1 {
-      font-size: $heading1;
-      font-weight: $medium;
-      line-height: 77px;
+      @include page-title();
     }
 
     ul {
