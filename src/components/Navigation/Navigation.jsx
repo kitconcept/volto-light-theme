@@ -2,9 +2,8 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { compose } from 'redux';
-import { NavLink, withRouter } from 'react-router-dom';
+import { useDispatch, useSelector, shallowEqual } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { doesNodeContainClick } from 'semantic-ui-react/dist/commonjs/lib';
 import { useIntl, defineMessages, injectIntl } from 'react-intl';
 import cx from 'classnames';
@@ -23,12 +22,17 @@ const messages = defineMessages({
   },
 });
 
-const Navigation = ({ getNavigation, pathname, items, lang }) => {
+const Navigation = ({ pathname }) => {
   const [desktopMenuOpen, setDesktopMenuOpen] = useState(null);
   const [currentOpenIndex, setCurrentOpenIndex] = useState(null);
   const navigation = useRef(null);
+  const dispatch = useDispatch();
   const intl = useIntl();
   const enableFatMenu = config.settings.enableFatMenu;
+
+  const lang = useSelector((state) => state.intl.locale);
+  const token = useSelector((state) => state.userSession.token, shallowEqual);
+  const items = useSelector((state) => state.navigation.items, shallowEqual);
 
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -45,11 +49,10 @@ const Navigation = ({ getNavigation, pathname, items, lang }) => {
   }, []);
 
   useEffect(() => {
-    const { settings } = config;
     if (!hasApiExpander('navigation', getBaseUrl(pathname))) {
-      getNavigation(getBaseUrl(pathname), settings.navDepth);
+      dispatch(getNavigation(getBaseUrl(pathname), config.settings.navDepth));
     }
-  }, [getNavigation, pathname]);
+  }, [pathname, token, dispatch]);
 
   const isActive = (url) => {
     return (url === '' && pathname === '/') || (url !== '' && pathname === url);
@@ -207,15 +210,4 @@ Navigation.defaultProps = {
   token: null,
 };
 
-export default compose(
-  injectIntl,
-  withRouter,
-  connect(
-    (state) => ({
-      token: state.userSession.token,
-      items: state.navigation.items,
-      lang: state.intl.locale,
-    }),
-    { getNavigation },
-  ),
-)(Navigation);
+export default injectIntl(Navigation);
