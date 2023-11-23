@@ -23,13 +23,21 @@ const messages = defineMessages({
 });
 
 const MobileNavigation = (props) => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
-  const [secondaryMenuOpened, setSecondaryMenuOpened] = React.useState(null);
-  const [isSecondaryMobileMenuOpen, setIsSecondaryMobileMenuOpen] =
-    React.useState(false);
-  const [tertiaryMenuOpened, setTertiaryMenuOpened] = React.useState(null);
-  const [isTertiaryMobileMenuOpen, setIsTertiaryMobileMenuOpen] =
-    React.useState(false);
+  const [menuState, setMenuState] = React.useState({
+    isMobileMenuOpen: false,
+    secondaryMenuOpened: null,
+    isSecondaryMobileMenuOpen: false,
+    tertiaryMenuOpened: null,
+    isTertiaryMobileMenuOpen: false,
+  });
+
+  const {
+    isMobileMenuOpen,
+    secondaryMenuOpened,
+    isSecondaryMobileMenuOpen,
+    tertiaryMenuOpened,
+    isTertiaryMobileMenuOpen,
+  } = menuState;
   const intl = useIntl();
   const menus = React.useRef(null);
   const currentLang = useSelector((state) => state.intl.locale);
@@ -38,55 +46,72 @@ const MobileNavigation = (props) => {
 
   const Footer = props.Footer || FooterComponent;
 
-  function toggleMobileMenu() {
+  const toggleMobileMenu = useCallback(() => {
     const body = document.getElementsByTagName('body')[0];
     body.classList.toggle('has-menu-open');
-    setIsMobileMenuOpen(!isMobileMenuOpen);
 
-    if (isMobileMenuOpen) {
-      setIsSecondaryMobileMenuOpen(false);
-      setSecondaryMenuOpened(null);
-      setIsTertiaryMobileMenuOpen(false);
-      setTertiaryMenuOpened(null);
-    }
-  }
+    setMenuState((prevState) => ({
+      ...prevState,
+      isMobileMenuOpen: !prevState.isMobileMenuOpen,
+    }));
+  }, []);
 
-  function openSecondaryMenu(index) {
-    setSecondaryMenuOpened(index);
-    setIsSecondaryMobileMenuOpen(true);
-  }
-
-  function closeSecondaryMenu(e) {
+  const openSecondaryMenu = useCallback((e, index) => {
     e.stopPropagation();
-    setIsSecondaryMobileMenuOpen(false);
-    setSecondaryMenuOpened(null);
-  }
 
-  function openTertiaryMenu(index) {
-    setTertiaryMenuOpened(index);
-    setIsTertiaryMobileMenuOpen(true);
-  }
+    setMenuState((prevState) => ({
+      ...prevState,
+      secondaryMenuOpened: index,
+      isSecondaryMobileMenuOpen: true,
+    }));
+  }, []);
 
-  function closeTertiaryMenu(e) {
+  const closeSecondaryMenu = useCallback((e) => {
     e.stopPropagation();
-    setIsTertiaryMobileMenuOpen(false);
-    setTertiaryMenuOpened(null);
-  }
+    setMenuState((prevState) => ({
+      ...prevState,
+      isSecondaryMobileMenuOpen: false,
+      secondaryMenuOpened: null,
+    }));
+  }, []);
+
+  const openTertiaryMenu = useCallback((e, index) => {
+    e.stopPropagation();
+
+    setMenuState((prevState) => ({
+      ...prevState,
+      tertiaryMenuOpened: index,
+      isTertiaryMobileMenuOpen: true,
+    }));
+  }, []);
+
+  const closeTertiaryMenu = useCallback((e) => {
+    e.stopPropagation();
+
+    setMenuState((prevState) => ({
+      ...prevState,
+      isTertiaryMobileMenuOpen: false,
+      tertiaryMenuOpened: null,
+    }));
+  }, []);
 
   const closeMenus = useCallback((e) => {
-    if (e) {
+    if (e && e.stopPropagation) {
       e.stopPropagation();
     }
-    setIsSecondaryMobileMenuOpen(false);
-    setIsTertiaryMobileMenuOpen(false);
-    setSecondaryMenuOpened(null);
-    setTertiaryMenuOpened(null);
-    setIsMobileMenuOpen(false);
+
+    setMenuState(() => ({
+      isSecondaryMobileMenuOpen: false,
+      isTertiaryMobileMenuOpen: false,
+      secondaryMenuOpened: null,
+      tertiaryMenuOpened: null,
+      isMobileMenuOpen: false,
+    }));
   }, []);
 
   // call closeMenus when history changes
   React.useEffect(() => {
-    const closeMenuOnHistoryChange = history.listen(() => closeMenus());
+    const closeMenuOnHistoryChange = history.listen(() => closeMenus({}));
     return () => {
       closeMenuOnHistoryChange();
     };
@@ -137,7 +162,7 @@ const MobileNavigation = (props) => {
                   className={section.url === props.pathname ? 'current' : ''}
                   onClick={(e) => {
                     if (section.items.length > 0) {
-                      openSecondaryMenu(index);
+                      openSecondaryMenu(e, index);
                     } else {
                       history.push(section.url);
                       return closeMenus(e);
@@ -171,7 +196,7 @@ const MobileNavigation = (props) => {
                         <li>
                           <Link
                             to={section.url === '' ? '/' : section.url}
-                            onClick={(e) => closeMenus(e)}
+                            onClick={closeMenus}
                           >
                             <FormattedMessage
                               id="Overview"
@@ -191,7 +216,7 @@ const MobileNavigation = (props) => {
                               }
                               onClick={(e) => {
                                 if (subsection.items.length > 0) {
-                                  openTertiaryMenu(index);
+                                  openTertiaryMenu(e, index);
                                 } else {
                                   history.push(subsection.url);
                                   return closeMenus(e);
@@ -237,7 +262,7 @@ const MobileNavigation = (props) => {
                                             ? '/'
                                             : subsection.url
                                         }
-                                        onClick={(e) => closeMenus(e)}
+                                        onClick={closeMenus}
                                       >
                                         <FormattedMessage
                                           id="Overview"
@@ -261,7 +286,7 @@ const MobileNavigation = (props) => {
                                           >
                                             <Link
                                               to={subsubsection.url}
-                                              onClick={(e) => closeMenus(e)}
+                                              onClick={closeMenus}
                                             >
                                               {subsubsection.nav_title ||
                                                 subsubsection.title}
