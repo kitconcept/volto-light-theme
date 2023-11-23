@@ -813,6 +813,7 @@
 
 .menu-drawer {
   opacity: 0;
+  visibility: hidden;
 }
 
 .menu-drawer-enter.menu-drawer-enter-active {
@@ -821,10 +822,12 @@
   transition:
     transform 0.5s cubic-bezier(0.09, 0.11, 0.24, 0.91),
     opacity 500ms;
+  visibility: visible;
 }
 
 .menu-drawer-enter-done {
   opacity: 1;
+  visibility: visible;
 }
 
 .menu-drawer-exit {
@@ -833,6 +836,7 @@
   transition:
     transform 0.5s cubic-bezier(0.09, 0.11, 0.24, 0.91),
     opacity 500ms;
+  visibility: visible;
 }
 
 .menu-drawer-exit.menu-drawer-exit-active {
