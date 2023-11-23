@@ -40,15 +40,6 @@ const MobileNavigation = (props) => {
   const Footer = props.Footer || FooterComponent;
 
   function toggleMobileMenu() {
-    const body = document.getElementsByTagName('body')[0];
-    if (!isMobileMenuOpen) {
-      body.style.position = 'fixed';
-      body.style.width = '100%';
-      body.style.top = '0px';
-      body.style.left = '0px';
-    } else {
-      body.style = '';
-    }
     setIsMobileMenuOpen(!isMobileMenuOpen);
 
     if (isMobileMenuOpen) {
@@ -88,8 +79,6 @@ const MobileNavigation = (props) => {
     setSecondaryMenuOpened(null);
     setTertiaryMenuOpened(null);
     setIsMobileMenuOpen(false);
-    const body = document.getElementsByTagName('body')[0];
-    body.style = '';
   }
 
   return (
