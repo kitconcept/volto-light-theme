@@ -109,6 +109,19 @@ const MobileNavigation = (props) => {
     }));
   }, []);
 
+  const handleLinkClicked = useCallback(
+    (e, section, index) => {
+      e.preventDefault();
+      if (section.items.length > 0) {
+        openSecondaryMenu(e, index);
+      } else {
+        history.push(section.url);
+        return closeMenus(e);
+      }
+    },
+    [history, openSecondaryMenu, closeMenus],
+  );
+
   // call closeMenus when history changes
   React.useEffect(() => {
     const closeMenuOnHistoryChange = history.listen(() => closeMenus({}));
@@ -160,18 +173,15 @@ const MobileNavigation = (props) => {
                 <li
                   key={section.url}
                   className={section.url === props.pathname ? 'current' : ''}
-                  onClick={(e) => {
-                    if (section.items.length > 0) {
-                      openSecondaryMenu(e, index);
-                    } else {
-                      history.push(section.url);
-                      return closeMenus(e);
-                    }
-                  }}
                   role="presentation"
                 >
-                  {section.nav_title || section.title}
-                  {section.items.length > 0 && <Icon name={arrowRightSVG} />}
+                  <Link
+                    to={section.url === '' ? '/' : section.url}
+                    onClick={(e) => handleLinkClicked(e, section, index)}
+                  >
+                    {section.nav_title || section.title}
+                    {section.items.length > 0 && <Icon name={arrowRightSVG} />}
+                  </Link>
                   <CSSTransition
                     in={
                       isSecondaryMobileMenuOpen && secondaryMenuOpened === index
