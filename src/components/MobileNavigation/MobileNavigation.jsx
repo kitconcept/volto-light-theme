@@ -6,7 +6,6 @@ import cx from 'classnames';
 
 import { CSSTransition } from 'react-transition-group';
 
-import { BodyClass } from '@plone/volto/helpers';
 import { Icon } from '@plone/volto/components';
 import arrowRightSVG from '@plone/volto/icons/right-key.svg';
 import arrowLeftSVG from '@plone/volto/icons/left-key.svg';
@@ -40,6 +39,8 @@ const MobileNavigation = (props) => {
   const Footer = props.Footer || FooterComponent;
 
   function toggleMobileMenu() {
+    const body = document.getElementsByTagName('body')[0];
+    body.classList.toggle('has-menu-open');
     setIsMobileMenuOpen(!isMobileMenuOpen);
 
     if (isMobileMenuOpen) {
@@ -113,7 +114,6 @@ const MobileNavigation = (props) => {
         classNames="menu-drawer"
       >
         <div className="menu-drawer">
-          <BodyClass className="has-menu-open" />
           <ul className="sections">
             <li className="header">
               <Link to={`/${currentLang}`} onClick={closeMenus}>
