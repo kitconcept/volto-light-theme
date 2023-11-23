@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
 import { useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
@@ -73,14 +73,24 @@ const MobileNavigation = (props) => {
     setTertiaryMenuOpened(null);
   }
 
-  function closeMenus(e) {
-    e.stopPropagation();
+  const closeMenus = useCallback((e) => {
+    if (e) {
+      e.stopPropagation();
+    }
     setIsSecondaryMobileMenuOpen(false);
     setIsTertiaryMobileMenuOpen(false);
     setSecondaryMenuOpened(null);
     setTertiaryMenuOpened(null);
     setIsMobileMenuOpen(false);
-  }
+  }, []);
+
+  // call closeMenus when history changes
+  React.useEffect(() => {
+    const closeMenuOnHistoryChange = history.listen(() => closeMenus());
+    return () => {
+      closeMenuOnHistoryChange();
+    };
+  }, [history, closeMenus]);
 
   return (
     <div className="mobile-nav mobile only tablet only" ref={menus}>
