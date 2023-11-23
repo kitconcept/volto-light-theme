@@ -110,16 +110,16 @@ const MobileNavigation = (props) => {
   }, []);
 
   const handleLinkClicked = useCallback(
-    (e, section, index) => {
+    (e, section, callback, index) => {
       e.preventDefault();
       if (section.items.length > 0) {
-        openSecondaryMenu(e, index);
+        callback(e, index);
       } else {
         history.push(section.url);
         return closeMenus(e);
       }
     },
-    [history, openSecondaryMenu, closeMenus],
+    [history, closeMenus],
   );
 
   // call closeMenus when history changes
@@ -177,7 +177,9 @@ const MobileNavigation = (props) => {
                 >
                   <Link
                     to={section.url === '' ? '/' : section.url}
-                    onClick={(e) => handleLinkClicked(e, section, index)}
+                    onClick={(e) =>
+                      handleLinkClicked(e, section, openSecondaryMenu, index)
+                    }
                   >
                     {section.nav_title || section.title}
                     {section.items.length > 0 && <Icon name={arrowRightSVG} />}
@@ -224,20 +226,26 @@ const MobileNavigation = (props) => {
                                   ? 'current'
                                   : ''
                               }
-                              onClick={(e) => {
-                                if (subsection.items.length > 0) {
-                                  openTertiaryMenu(e, index);
-                                } else {
-                                  history.push(subsection.url);
-                                  return closeMenus(e);
-                                }
-                              }}
                               role="presentation"
                             >
-                              {subsection.nav_title || subsection.title}
-                              {subsection.items.length > 0 && (
-                                <Icon name={arrowRightSVG} />
-                              )}
+                              <Link
+                                to={
+                                  subsection.url === '' ? '/' : subsection.url
+                                }
+                                onClick={(e) =>
+                                  handleLinkClicked(
+                                    e,
+                                    subsection,
+                                    openTertiaryMenu,
+                                    index,
+                                  )
+                                }
+                              >
+                                {subsection.nav_title || subsection.title}
+                                {subsection.items.length > 0 && (
+                                  <Icon name={arrowRightSVG} />
+                                )}
+                              </Link>
                               <CSSTransition
                                 in={
                                   isTertiaryMobileMenuOpen &&
