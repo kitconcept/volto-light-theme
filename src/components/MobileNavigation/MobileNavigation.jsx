@@ -1,16 +1,16 @@
 import React from 'react';
-import { defineMessages, useIntl } from 'react-intl';
+import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
 import { useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import cx from 'classnames';
 
 import { CSSTransition } from 'react-transition-group';
-import { FormattedMessage } from 'react-intl';
 
 import { BodyClass } from '@plone/volto/helpers';
-import { Icon, LanguageSelector } from '@plone/volto/components';
+import { Icon } from '@plone/volto/components';
 import arrowRightSVG from '@plone/volto/icons/right-key.svg';
 import arrowLeftSVG from '@plone/volto/icons/left-key.svg';
+import { FooterComponent } from './FooterComponent';
 
 const messages = defineMessages({
   closeMobileMenu: {
@@ -37,13 +37,7 @@ const MobileNavigation = (props) => {
   const items = useSelector((state) => state.navigation.items || []);
   const history = useHistory();
 
-  const Footer = () => (
-    <ul className="mobile-tools">
-      <li>
-        <LanguageSelector fullLabel={true} />
-      </li>
-    </ul>
-  );
+  const Footer = props.Footer || FooterComponent;
 
   function toggleMobileMenu() {
     const body = document.getElementsByTagName('body')[0];
