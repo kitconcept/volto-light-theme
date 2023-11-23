@@ -111,7 +111,6 @@ const MobileNavigation = (props) => {
         in={isMobileMenuOpen}
         timeout={500}
         classNames="menu-drawer"
-        unmountOnExit
       >
         <div className="menu-drawer">
           <BodyClass className="has-menu-open" />
