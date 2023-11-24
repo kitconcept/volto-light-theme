@@ -400,8 +400,13 @@
         position: absolute;
         top: 27px;
         right: 75px;
+        border: 0;
+        margin-left: 28px;
         color: $black;
         cursor: pointer;
+        &:focus {
+          outline: 1px solid $black;
+        }
       }
 
       &-inner {
@@ -503,10 +508,6 @@
         }
       }
     }
-  }
-
-  .icon {
-    margin-left: 28px;
   }
 }
 
