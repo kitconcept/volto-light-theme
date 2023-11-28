@@ -1,3 +1,4 @@
+/* No CSS above next line */
 @import 'addonsThemeCustomizationsVariables';
 @import 'variables';
 @import 'typography';
@@ -11,6 +12,8 @@
 @import 'breadcrumbs';
 @import 'content';
 @import 'footer';
+
+@import 'sitemap';
 
 @import 'blocks/accordion';
 @import 'blocks/image';
@@ -30,6 +33,6 @@
 
 @import 'temp';
 
+/* No CSS beyond this point except next line */
 @import 'addonsThemeCustomizationsMain';
-
 /* No CSS beyond this point */
