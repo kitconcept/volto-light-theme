@@ -1,5 +1,5 @@
 // Listing Block
-.block.listing,
+#main .block.listing,
 .column > .block.listing,
 .block.search,
 .block-editor-search {
@@ -204,6 +204,115 @@
         }
         p:empty {
           display: none;
+        }
+      }
+    }
+  }
+
+  .image-gallery {
+    .ui.button {
+      margin: 0;
+      box-shadow: none !important;
+      color: black !important;
+      filter: none;
+
+      &.image-gallery-left-nav {
+        top: calc(50% - 47px);
+        left: -68px;
+      }
+
+      &.image-gallery-right-nav {
+        top: calc(50% - 47px);
+        right: -68px;
+      }
+
+      &.image-gallery-fullscreen-button,
+      &.image-gallery-play-button {
+        bottom: -94px;
+        border: solid 1px black;
+        border-radius: 0;
+
+        svg {
+          vertical-align: top;
+        }
+      }
+
+      &.image-gallery-play-button {
+        right: 49px;
+        left: auto;
+      }
+
+      .icon {
+        margin: 0;
+      }
+    }
+
+    & .fullscreen .ui.button {
+      color: white !important;
+
+      &.image-gallery-left-nav {
+        left: 20px;
+      }
+
+      &.image-gallery-right-nav {
+        right: 20px;
+      }
+    }
+
+    .image-gallery-description {
+      position: relative;
+      bottom: auto;
+      left: auto;
+      display: block;
+      padding: 25px 0 0 0;
+      background: none;
+      color: #666;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 18px;
+      text-align: left;
+      white-space: initial;
+
+      .title {
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+
+      .credits,
+      .download,
+      .download a {
+        min-height: 18px;
+        margin-top: 5px;
+        color: #0070a2;
+        font-size: 14px;
+        line-height: 18px;
+      }
+
+      .description {
+        min-height: 18px;
+      }
+
+      .download {
+        float: right;
+      }
+    }
+
+    .fullscreen .image-gallery-description {
+      color: white;
+    }
+
+    .image-gallery-thumbnails {
+      padding: 40px 0;
+
+      .image-gallery-thumbnail {
+        border: 0;
+        margin-left: 20px;
+        opacity: 50%;
+
+        &.active,
+        &:hover,
+        &:focus {
+          opacity: 1;
         }
       }
     }
