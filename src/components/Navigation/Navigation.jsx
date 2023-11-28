@@ -74,6 +74,20 @@ const Navigation = ({ getNavigation, pathname, items, lang }) => {
     setCurrentOpenIndex(null);
   };
 
+  // closeMenu when hitting ESC
+  useEffect(() => {
+    const handleEsc = (event) => {
+      if (event.keyCode === 27) {
+        closeMenu();
+      }
+    };
+    window.addEventListener('keydown', handleEsc);
+
+    return () => {
+      window.removeEventListener('keydown', handleEsc);
+    };
+  }, []);
+
   return (
     <nav
       id="navigation"
