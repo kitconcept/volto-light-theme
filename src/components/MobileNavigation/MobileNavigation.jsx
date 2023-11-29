@@ -9,7 +9,7 @@ import { CSSTransition } from 'react-transition-group';
 import { Icon } from '@plone/volto/components';
 import arrowRightSVG from '@plone/volto/icons/right-key.svg';
 import arrowLeftSVG from '@plone/volto/icons/left-key.svg';
-import { FooterComponent } from './FooterComponent';
+import { MobileToolsFooter } from './MobileToolsFooter';
 
 const messages = defineMessages({
   closeMobileMenu: {
@@ -44,7 +44,7 @@ const MobileNavigation = (props) => {
   const items = useSelector((state) => state.navigation.items || []);
   const history = useHistory();
 
-  const Footer = props.Footer || FooterComponent;
+  const Footer = props.MobileToolsFooter || MobileToolsFooter;
 
   const toggleMobileMenu = useCallback(() => {
     const body = document.getElementsByTagName('body')[0];
