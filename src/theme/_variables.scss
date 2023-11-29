@@ -24,8 +24,10 @@ $heading-text-bottom-spacing: 25px !default;
 
 // Fonts
 $custom-fontname: 'Inter' !default;
+$cms-fontname: 'Metropolis' !default;
 $page-font-template: $custom-fontname, sans-serif !default;
 $page-font: var(--custom-main-font, $page-font-template) !default;
+$cms-font: var(--custom-cms-font, $cms-fontname, $page-font) !default;
 $header-font: var(--custom-headers-font, $page-font) !default;
 
 // Breakpoints
