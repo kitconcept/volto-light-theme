@@ -7,7 +7,7 @@
   &.next--is--__button {
     .listing-item:last-child {
       padding-bottom: 40px !important;
-      border-bottom: 1px solid $black !important;
+      border-bottom: $border-default !important;
     }
   }
 
@@ -20,7 +20,7 @@
 
   .listing-item {
     padding-bottom: 40px !important;
-    border-bottom: 1px solid $black;
+    border-bottom: $border-default;
     margin-bottom: 40px;
 
     a.external {
@@ -229,7 +229,7 @@
       &.image-gallery-fullscreen-button,
       &.image-gallery-play-button {
         bottom: -94px;
-        border: solid 1px black;
+        border: $border-default;
         border-radius: 0;
 
         svg {
@@ -338,7 +338,7 @@
         display: table-cell;
         min-width: 32px;
         padding: 6.5px 10px;
-        border: solid 1px $black;
+        border: $border-default;
         border-radius: 0;
         border-collapse: collapse;
         color: $black;

@@ -25,7 +25,7 @@
   .teaser-item.default {
     align-items: start;
     padding-bottom: 40px; // same as vertical spacing in margin-bottom
-    border-bottom: 1px solid $black;
+    border-bottom: $border-default;
   }
 
   .image-wrapper {
@@ -125,7 +125,7 @@
     &.next--is--__button {
       .teaser-item.default {
         padding-bottom: 40px;
-        border-bottom: 1px solid $black;
+        border-bottom: $border-default;
       }
     }
   }

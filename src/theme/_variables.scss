@@ -191,7 +191,22 @@ $grid-block-vertical-spacing-bottom: 80px !default;
 // Footer
 $footer-vertical-spacing-top: 80px !default;
 
+// Components
+$border-width:                1px !default;
+$border-style:                solid !default;
+$border-color:                $black !default;
+$border-default: $border-width $border-style $border-color !default;
+
 // Maps
+
+$border-widths: (
+  1: 1px,
+  2: 2px,
+  3: 3px,
+  4: 4px,
+  5: 9px
+) !default;
+
 $font-weights: (
   thin: 100,
   extra-light: 200,

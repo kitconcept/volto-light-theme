@@ -177,7 +177,7 @@
       .listing-item,
       .listing-item:last-child {
         padding-bottom: 40px !important;
-        border-bottom: 1px solid $black !important;
+        border-bottom: $border-default !important;
       }
     }
 

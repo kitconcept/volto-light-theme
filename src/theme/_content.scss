@@ -94,8 +94,8 @@
   .details-container {
     padding-top: $spacing-xlarge;
     padding-bottom: $spacing-xlarge;
-    border-top: 1px solid $black;
-    border-bottom: 1px solid $black;
+    border-top: $border-default;
+    border-bottom: $border-default;
     margin-top: 0px;
     margin-bottom: $spacing-xlarge;
     @container (max-width: #{$largest-mobile-screen} ) {
@@ -130,7 +130,7 @@
           width: 170px;
           height: 30px;
           border-right: none;
-          border-bottom: 1px solid #000;
+          border-bottom: $border-default;
         }
       }
 
@@ -141,7 +141,7 @@
         }
         .button.event-btn {
           padding: 8px 20px;
-          border: 1px solid #000;
+          border: $border-default;
           background-color: transparent;
           color: #000;
           font-size: 16px;

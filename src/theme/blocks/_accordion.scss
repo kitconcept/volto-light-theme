@@ -6,10 +6,10 @@
 .accordion-block,
 .block-editor-accordion {
   .ui.styled.accordion {
-    border-top: 1px solid $black;
+    border-top: $border-default;
 
     &:last-child {
-      border-bottom: 1px solid $black;
+      border-bottom: $border-default;
     }
     .title.accordion-title {
       padding: 20px 0 20px 0;

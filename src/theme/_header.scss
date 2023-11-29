@@ -420,7 +420,7 @@
           width: 20%;
           padding: 0 20px 0 10px;
           padding-left: 25px;
-          border-left: 1px solid #000;
+          border-left: $border-default;
 
           /* This is for tablet landscape mode */
           @media only screen and (min-width: 1011px) and (max-width: 1280px) {
@@ -494,12 +494,12 @@
         @include body-text-bold();
 
         span {
-          border-bottom: 1px solid transparent;
+          border-bottom: $border-width solid transparent;
           word-break: break-word;
         }
 
         span:hover {
-          border-bottom: 1px solid #000;
+          border-bottom: $border-default;
         }
       }
     }
@@ -736,7 +736,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 20px 0;
-      border-bottom: 1px solid;
+      border-bottom: $border-default;
       margin-left: 20px;
       color: $black;
       line-height: 24px;
@@ -758,7 +758,7 @@
         border-bottom: 0;
 
         &.last-child {
-          border-bottom: 1px solid;
+          border-bottom: $border-default;
         }
       }
     }
