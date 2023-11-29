@@ -122,7 +122,6 @@ const MobileNavigation = (props) => {
     [history, closeMenus],
   );
 
-  // call closeMenus when history changes
   React.useEffect(() => {
     const closeMenuOnHistoryChange = history.listen(() => closeMenus({}));
     return () => {
