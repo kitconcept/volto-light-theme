@@ -107,9 +107,7 @@ const Navigation = ({ getNavigation, pathname, items, lang }) => {
                           onClick={() => closeMenu()}
                           className="submenu-header"
                         >
-                          <h2>
-                            {item.nav_title ?? item.title}
-                          </h2>
+                          <h2>{item.nav_title ?? item.title}</h2>
                         </NavLink>
                         <ul>
                           {item.items &&
