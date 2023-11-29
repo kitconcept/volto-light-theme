@@ -8,11 +8,11 @@
   }
 }
 .ui.celled.table.slate-table-block {
-  border: 1px solid #c1c1c1;
+  border: $border-table;
 
   th {
     padding: $spacing-small;
-    border-color: #c1c1c1;
+    border-color: $border-color-table;
     background: $darkGrey;
     color: $white;
     p {
@@ -24,8 +24,8 @@
 
   tr td {
     padding: $spacing-small;
-    border-top: 1px solid #c1c1c1;
-    border-left: 1px solid #c1c1c1;
+    border-top: $border-table;
+    border-left: $border-table;
   }
 }
 
