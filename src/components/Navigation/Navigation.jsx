@@ -16,12 +16,6 @@ import { Icon } from '@plone/volto/components';
 import clearSVG from '@plone/volto/icons/clear.svg';
 import NavItem from '@plone/volto/components/theme/Navigation/NavItem';
 
-const messages = defineMessages({
-  overview: {
-    id: 'Overview',
-    defaultMessage: 'Overview',
-  },
-});
 
 const Navigation = ({ getNavigation, pathname, items, lang }) => {
   const [desktopMenuOpen, setDesktopMenuOpen] = useState(null);
@@ -114,8 +108,7 @@ const Navigation = ({ getNavigation, pathname, items, lang }) => {
                           className="submenu-header"
                         >
                           <h2>
-                            {item.nav_title ?? item.title} (
-                            {intl.formatMessage(messages.overview)})
+                            {item.nav_title ?? item.title}
                           </h2>
                         </NavLink>
                         <ul>
