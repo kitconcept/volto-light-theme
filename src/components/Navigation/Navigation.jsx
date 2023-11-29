@@ -6,22 +6,19 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { NavLink, withRouter } from 'react-router-dom';
 import { doesNodeContainClick } from 'semantic-ui-react/dist/commonjs/lib';
-import { useIntl, defineMessages, injectIntl } from 'react-intl';
+import { injectIntl } from 'react-intl';
 import cx from 'classnames';
 import { getBaseUrl, hasApiExpander } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
-
 import { getNavigation } from '@plone/volto/actions';
 import { Icon } from '@plone/volto/components';
 import clearSVG from '@plone/volto/icons/clear.svg';
 import NavItem from '@plone/volto/components/theme/Navigation/NavItem';
 
-
 const Navigation = ({ getNavigation, pathname, items, lang }) => {
   const [desktopMenuOpen, setDesktopMenuOpen] = useState(null);
   const [currentOpenIndex, setCurrentOpenIndex] = useState(null);
   const navigation = useRef(null);
-  const intl = useIntl();
   const enableFatMenu = config.settings.enableFatMenu;
 
   useEffect(() => {
