@@ -248,7 +248,8 @@ $border-light: $border-width $border-style $border-color-light !default;
 $border-default-small: map.get($border-widths, s) $border-style $border-color !default;
 $border-default-medium: map.get($border-widths, m) $border-style $border-color !default;
 $border-default-x-large: map.get($border-widths, xl) $border-style $border-color !default;
-$border-transparent-x-large: map.get($border-widths, xl) $border-style transparent !default;
+$border-transparent-x-large: map.get($border-widths, xl) $border-style
+  transparent !default;
 $border-table: $border-width $border-style $border-color-table !default;
 
 @mixin add($property, $value) {
