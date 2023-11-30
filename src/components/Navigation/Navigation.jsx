@@ -21,6 +21,10 @@ const messages = defineMessages({
     id: 'Overview',
     defaultMessage: 'Overview',
   },
+  closeMenu: {
+    id: 'Close menu',
+    defaultMessage: 'Close menu',
+  },
 });
 
 const Navigation = ({ getNavigation, pathname, items, lang }) => {
@@ -70,6 +74,19 @@ const Navigation = ({ getNavigation, pathname, items, lang }) => {
     setCurrentOpenIndex(null);
   };
 
+  useEffect(() => {
+    const handleEsc = (event) => {
+      if (event.keyCode === 27) {
+        closeMenu();
+      }
+    };
+    window.addEventListener('keydown', handleEsc);
+
+    return () => {
+      window.removeEventListener('keydown', handleEsc);
+    };
+  }, []);
+
   return (
     <nav
       id="navigation"
@@ -100,13 +117,6 @@ const Navigation = ({ getNavigation, pathname, items, lang }) => {
                         active: desktopMenuOpen === index,
                       })}
                     >
-                      <div
-                        role="presentation"
-                        className="close"
-                        onClick={closeMenu}
-                      >
-                        <Icon name={clearSVG} size="48px" />
-                      </div>
                       <div className="submenu-inner">
                         <NavLink
                           to={item.url === '' ? '/' : item.url}
@@ -118,6 +128,13 @@ const Navigation = ({ getNavigation, pathname, items, lang }) => {
                             {intl.formatMessage(messages.overview)})
                           </h2>
                         </NavLink>
+                        <button
+                          className="close"
+                          onClick={closeMenu}
+                          aria-label={intl.formatMessage(messages.closeMenu)}
+                        >
+                          <Icon name={clearSVG} size="48px" />
+                        </button>
                         <ul>
                           {item.items &&
                             item.items.length > 0 &&
