@@ -127,6 +127,7 @@ const applyConfig = (config) => {
   ];
 
   config.settings.slidingSearchAnimation = true;
+  config.settings.openExternalLinkInNewTab = true;
 
   config.blocks.blocksConfig.accordion = {
     ...config.blocks.blocksConfig.accordion,
