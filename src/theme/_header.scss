@@ -134,7 +134,7 @@
         transition:
           top 500ms ease-in-out,
           height 600ms ease-in-out;
-        transition-property: top height;
+        transition-property: top, height;
 
         &.active {
           top: 0;
@@ -306,7 +306,6 @@
     display: flex;
     min-height: initial;
     padding: 0;
-    padding: 0;
     margin: 0;
     font-size: 20px;
     list-style: none;
@@ -401,8 +400,13 @@
         position: absolute;
         top: 27px;
         right: 75px;
+        border: 0;
+        margin-left: 28px;
         color: $black;
         cursor: pointer;
+        &:focus {
+          outline: 1px solid $black;
+        }
       }
 
       &-inner {
@@ -505,10 +509,6 @@
       }
     }
   }
-
-  .icon {
-    margin-left: 28px;
-  }
 }
 
 /* Fat menu in Edit mode */
@@ -527,6 +527,14 @@
 }
 
 // Mobile Navigation
+
+// applies on body when menu is open
+.has-menu-open {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
 
 .mobile-nav {
   .ui.basic.button.search {
@@ -600,7 +608,6 @@
   top: 135px;
   right: 0;
   display: flex;
-  display: flex;
   width: 100vw;
   height: calc(100vh - 110px);
   flex-direction: column;
@@ -614,9 +621,10 @@
   overflow-y: auto;
   text-align: left;
 
-  @media only screen and (max-width: $computer-breakpoint) {
-    top: calc(157px + 1rem); // Adjusting the margin top of the logo
-  }
+  // commented since it is overriden by next media query
+  //@media only screen and (max-width: $computer-breakpoint) {
+  //  top: calc(157px + 1rem); // Adjusting the margin top of the logo
+  //}
 
   @media only screen and (max-width: $computer-breakpoint) {
     top: calc(135px + 1rem); // Adjusting the margin top of the logo
@@ -804,10 +812,9 @@
   height: calc(100vh - 158px);
 }
 
-.menu-drawer-enter {
+.menu-drawer {
   opacity: 0;
-  /* transform: translate(-100%, 0%); */
-  transition: opacity 500ms;
+  visibility: hidden;
 }
 
 .menu-drawer-enter.menu-drawer-enter-active {
@@ -816,6 +823,12 @@
   transition:
     transform 0.5s cubic-bezier(0.09, 0.11, 0.24, 0.91),
     opacity 500ms;
+  visibility: visible;
+}
+
+.menu-drawer-enter-done {
+  opacity: 1;
+  visibility: visible;
 }
 
 .menu-drawer-exit {
@@ -824,6 +837,7 @@
   transition:
     transform 0.5s cubic-bezier(0.09, 0.11, 0.24, 0.91),
     opacity 500ms;
+  visibility: visible;
 }
 
 .menu-drawer-exit.menu-drawer-exit-active {
