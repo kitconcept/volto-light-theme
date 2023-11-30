@@ -35,6 +35,14 @@
   .block.teaser {
     margin-bottom: 0;
     background-color: $lightgrey;
+
+    // External link icon
+    a.external {
+      .content h2:after {
+        @include external-link-icon();
+      }
+    }
+
     .teaser-item {
       height: 100%;
 

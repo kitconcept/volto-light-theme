@@ -17,9 +17,9 @@ import clearSVG from '@plone/volto/icons/clear.svg';
 import NavItem from '@plone/volto/components/theme/Navigation/NavItem';
 
 const messages = defineMessages({
-  overview: {
-    id: 'Overview',
-    defaultMessage: 'Overview',
+  closeMenu: {
+    id: 'Close menu',
+    defaultMessage: 'Close menu',
   },
 });
 
@@ -70,6 +70,19 @@ const Navigation = ({ getNavigation, pathname, items, lang }) => {
     setCurrentOpenIndex(null);
   };
 
+  useEffect(() => {
+    const handleEsc = (event) => {
+      if (event.keyCode === 27) {
+        closeMenu();
+      }
+    };
+    window.addEventListener('keydown', handleEsc);
+
+    return () => {
+      window.removeEventListener('keydown', handleEsc);
+    };
+  }, []);
+
   return (
     <nav
       id="navigation"
@@ -100,24 +113,21 @@ const Navigation = ({ getNavigation, pathname, items, lang }) => {
                         active: desktopMenuOpen === index,
                       })}
                     >
-                      <div
-                        role="presentation"
-                        className="close"
-                        onClick={closeMenu}
-                      >
-                        <Icon name={clearSVG} size="48px" />
-                      </div>
                       <div className="submenu-inner">
                         <NavLink
                           to={item.url === '' ? '/' : item.url}
                           onClick={() => closeMenu()}
                           className="submenu-header"
                         >
-                          <h2>
-                            {item.nav_title ?? item.title} (
-                            {intl.formatMessage(messages.overview)})
-                          </h2>
+                          <h2>{item.nav_title ?? item.title}</h2>
                         </NavLink>
+                        <button
+                          className="close"
+                          onClick={closeMenu}
+                          aria-label={intl.formatMessage(messages.closeMenu)}
+                        >
+                          <Icon name={clearSVG} size="48px" />
+                        </button>
                         <ul>
                           {item.items &&
                             item.items.length > 0 &&

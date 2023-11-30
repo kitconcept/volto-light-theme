@@ -400,8 +400,13 @@
         position: absolute;
         top: 27px;
         right: 75px;
+        border: 0;
+        margin-left: 28px;
         color: $black;
         cursor: pointer;
+        &:focus {
+          outline: 1px solid $black;
+        }
       }
 
       &-inner {
@@ -504,10 +509,6 @@
       }
     }
   }
-
-  .icon {
-    margin-left: 28px;
-  }
 }
 
 /* Fat menu in Edit mode */
@@ -526,6 +527,14 @@
 }
 
 // Mobile Navigation
+
+// applies on body when menu is open
+.has-menu-open {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
 
 .mobile-nav {
   .ui.basic.button.search {
@@ -803,10 +812,9 @@
   height: calc(100vh - 158px);
 }
 
-.menu-drawer-enter {
+.menu-drawer {
   opacity: 0;
-  /* transform: translate(-100%, 0%); */
-  transition: opacity 500ms;
+  visibility: hidden;
 }
 
 .menu-drawer-enter.menu-drawer-enter-active {
@@ -815,6 +823,12 @@
   transition:
     transform 0.5s cubic-bezier(0.09, 0.11, 0.24, 0.91),
     opacity 500ms;
+  visibility: visible;
+}
+
+.menu-drawer-enter-done {
+  opacity: 1;
+  visibility: visible;
 }
 
 .menu-drawer-exit {
@@ -823,6 +837,7 @@
   transition:
     transform 0.5s cubic-bezier(0.09, 0.11, 0.24, 0.91),
     opacity 500ms;
+  visibility: visible;
 }
 
 .menu-drawer-exit.menu-drawer-exit-active {
