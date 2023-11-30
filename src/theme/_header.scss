@@ -54,7 +54,7 @@
             font-size: 18px;
 
             &.active {
-              border-bottom: $border-default-4xl;
+              border-bottom: $border-default-medium;
             }
           }
         }
@@ -158,7 +158,7 @@
               justify-content: space-between;
               padding-top: 0;
               padding-bottom: 0.5rem;
-              border-bottom: $border-default-2xl;
+              border-bottom: $border-default-small;
               border-left: none;
               margin-left: 12.6rem;
 
@@ -286,7 +286,7 @@
       position: absolute;
       bottom: -49px;
       width: 100%;
-      border-bottom: $border-default-5xl;
+      border-bottom: $border-default-x-large;
       content: '';
     }
   }
@@ -563,7 +563,7 @@
     left: -50px;
     width: 0;
     height: 100%;
-    border-left: $border-default-5xl;
+    border-left: $border-default-x-large;
     content: '';
   }
 
