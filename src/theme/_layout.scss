@@ -118,28 +118,18 @@ footer {
 .content-area .a.container {
   a.external:after,
   a.external:after {
-    display: inline;
-    width: 11px;
-    height: 11px;
+    @include external-link-icon();
     margin-top: -25px;
     margin-left: 3px;
-    content: '\a0'
-      url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='external-link-alt' class='svg-inline--fa fa-external-link-alt fa-w-16' role='img' xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 512 512'%3E%3Cpath fill='%23007EB1' d='M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z'%3E%3C/path%3E%3C/svg%3E");
-    white-space: nowrap;
   }
 }
 .content-area #page-edit .ui.container,
 .content-area .a.container {
   a.external:after,
   a.external:after {
-    display: inline;
-    width: 11px;
-    height: 11px;
+    @include external-link-icon();
     margin-top: -25px;
     margin-left: 3px;
-    content: '\a0'
-      url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='external-link-alt' class='svg-inline--fa fa-external-link-alt fa-w-16' role='img' xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 512 512'%3E%3Cpath fill='%23007EB1' d='M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z'%3E%3C/path%3E%3C/svg%3E");
-    white-space: nowrap;
   }
 }
 
