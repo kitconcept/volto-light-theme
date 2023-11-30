@@ -17,10 +17,6 @@ import clearSVG from '@plone/volto/icons/clear.svg';
 import NavItem from '@plone/volto/components/theme/Navigation/NavItem';
 
 const messages = defineMessages({
-  overview: {
-    id: 'Overview',
-    defaultMessage: 'Overview',
-  },
   closeMenu: {
     id: 'Close menu',
     defaultMessage: 'Close menu',
@@ -123,10 +119,7 @@ const Navigation = ({ getNavigation, pathname, items, lang }) => {
                           onClick={() => closeMenu()}
                           className="submenu-header"
                         >
-                          <h2>
-                            {item.nav_title ?? item.title} (
-                            {intl.formatMessage(messages.overview)})
-                          </h2>
+                          <h2>{item.nav_title ?? item.title}</h2>
                         </NavLink>
                         <button
                           className="close"
