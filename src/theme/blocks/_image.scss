@@ -344,7 +344,7 @@ figcaption {
 
     .circled {
       padding: 8px;
-      border: 1px solid $greySmoke;
+      border: $border-light;
       background: $greySnow;
 
       &:hover {
