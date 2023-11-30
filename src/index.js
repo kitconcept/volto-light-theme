@@ -54,6 +54,9 @@ const applyConfig = (config) => {
   config.settings.enableFatMenu = true;
   config.settings.slate.useLinkedHeadings = false;
 
+  // Remove Hero Block
+  config.blocks.blocksConfig.hero.restricted = true;
+
   // No required blocks (eg. Title)
   config.blocks.requiredBlocks = [];
 
@@ -127,6 +130,7 @@ const applyConfig = (config) => {
   ];
 
   config.settings.slidingSearchAnimation = true;
+  config.settings.openExternalLinkInNewTab = true;
 
   config.blocks.blocksConfig.accordion = {
     ...config.blocks.blocksConfig.accordion,
