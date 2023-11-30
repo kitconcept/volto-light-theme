@@ -54,6 +54,9 @@ const applyConfig = (config) => {
   config.settings.enableFatMenu = true;
   config.settings.slate.useLinkedHeadings = false;
 
+  // Remove Hero Block
+  config.blocks.blocksConfig.hero.restricted = true;
+
   // No required blocks (eg. Title)
   config.blocks.requiredBlocks = [];
 
