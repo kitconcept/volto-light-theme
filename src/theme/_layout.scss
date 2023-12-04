@@ -119,7 +119,7 @@ footer {
   a.external:after,
   a.external:after {
     @include external-link-icon();
-    margin-top: -25px;
+    margin-top: -$block-vertical-space;
     margin-left: 3px;
   }
 }
@@ -128,7 +128,7 @@ footer {
   a.external:after,
   a.external:after {
     @include external-link-icon();
-    margin-top: -25px;
+    margin-top: -$block-vertical-space;
     margin-left: 3px;
   }
 }

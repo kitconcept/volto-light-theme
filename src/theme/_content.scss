@@ -106,7 +106,7 @@
     .two.column.row {
       padding-top: 0px;
       .event-title {
-        margin-bottom: 25px;
+        margin-bottom: $block-vertical-space;
         .event-heading {
           @include headtitle2();
           letter-spacing: 1px;
