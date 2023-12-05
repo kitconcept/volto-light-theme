@@ -1,8 +1,4 @@
 // Slider Block
-:root {
-  --slider-block-edit-width-adjustment: 40px;
-}
-
 $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
 
 .block.slider {
@@ -21,74 +17,11 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
     flex-direction: column;
   }
   .teaser-item {
-    padding-bottom: $spacing-xlarge;
+    padding-bottom: $spacing-medium;
   }
 
   .slide-wrapper:not(.empty-slide) {
     padding-bottom: $spacing-xlarge;
-  }
-
-  .slick-arrow {
-    width: 50px;
-    // Equal to the space we give at the bottom to place the buttons
-    height: calc(100% - $spacing-xlarge);
-    background-color: rgba(0, 0, 0, 0.15);
-    color: $white;
-    // border: 2px solid red;
-    opacity: 0;
-    transition: opacity 0.2s ease-in;
-    &:hover {
-      opacity: 1;
-    }
-  }
-
-  .slick-next,
-  .slick-prev {
-    top: initial;
-  }
-
-  .slick-next {
-    right: 0;
-    // Equal to the space we give at the bottom to place the buttons
-    bottom: $spacing-xlarge;
-    @media only screen and (max-width: $computer-width) {
-      display: none !important;
-    }
-  }
-
-  .slick-prev {
-    z-index: 9;
-    left: 0;
-    @media only screen and (max-width: $computer-width) {
-      display: none !important;
-    }
-  }
-
-  .slick-dots {
-    bottom: 34px;
-    line-height: 0;
-
-    li,
-    button {
-      width: 46px;
-      height: 6px;
-      padding: 0;
-      background-color: $secondary-grey;
-    }
-
-    li.slick-active button {
-      background-color: $black;
-    }
-
-    li {
-      margin-right: 13px;
-      margin-left: 0;
-    }
-
-    button:before {
-      display: none;
-      content: '';
-    }
   }
 
   .teaser-item.top {
