@@ -205,15 +205,7 @@ const Navigation = ({ pathname }) => {
 };
 
 Navigation.propTypes = {
-  getNavigation: PropTypes.func.isRequired,
   pathname: PropTypes.string.isRequired,
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string,
-      url: PropTypes.string,
-    }),
-  ).isRequired,
-  lang: PropTypes.string.isRequired,
 };
 
 Navigation.defaultProps = {
