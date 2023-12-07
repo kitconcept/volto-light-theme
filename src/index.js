@@ -10,6 +10,7 @@ import { videoBlockSchemaEnhancer } from './components/Blocks/Video/schema';
 import { gridTeaserDisableStylingSchema } from '@plone/volto/components/manage/Blocks/Teaser/schema';
 import { gridImageDisableSizeAndPositionHandlersSchema } from '@plone/volto/components/manage/Blocks/Image/schema';
 import { disableBgColorSchema } from './components/Blocks/disableBgColorSchema';
+import BlockSettingsSchema from '@plone/volto/components/manage/Blocks/Block/Schema';
 
 import ContainerQueriesPolyfill from './components/CQPolyfill';
 import Container from './components/Atoms/Container/Container';
@@ -27,10 +28,12 @@ import { searchBlockSchemaEnhancer } from './components/Blocks/Search/schema';
 
 import gridSVG from './icons/block_icn_grid.svg';
 import accordionSVG from './icons/block_icn_accordion.svg';
+import descriptionSVG from '@plone/volto/icons/description.svg';
 import EventView from './components/Theme/EventView';
 import { tocBlockSchemaEnhancer } from './components/Blocks/Toc/schema';
 import { mapsBlockSchemaEnhancer } from './components/Blocks/Maps/schema';
 import { sliderBlockSchemaEnhancer } from './components/Blocks/Slider/schema';
+import EventMetadataView from './components/Blocks/EventMetadata/View';
 
 const BG_COLORS = [
   { name: 'transparent', label: 'Transparent' },
@@ -293,6 +296,20 @@ const applyConfig = (config) => {
     ...config.blocks.blocksConfig.__button,
     schemaEnhancer: ButtonStylingSchema,
     colors: BG_COLORS,
+  };
+
+  config.blocks.blocksConfig.eventMetadata = {
+    id: 'eventMetadata',
+    title: 'EventMetadata',
+    icon: descriptionSVG,
+    group: 'common',
+    view: EventMetadataView,
+    edit: EventMetadataView,
+    schema: BlockSettingsSchema,
+    restricted: ({ properties, block }) =>
+      properties['@type'] === 'Event' ? false : true,
+    mostUsed: false,
+    sidebarTab: 0,
   };
 
   // Check if the separator is present before enhancing it
