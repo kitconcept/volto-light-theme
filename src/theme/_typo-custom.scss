@@ -60,6 +60,7 @@ em span span {
 #page-document {
   blockquote {
     padding: 18px 40px;
+    @include blockquote();
   }
 }
 
