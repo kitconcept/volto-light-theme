@@ -173,7 +173,7 @@
   .content-area {
     figure {
       img {
-        aspect-ratio: $aspect-ratio;
+        object-fit: contain;
       }
       figcaption {
         margin-top: $spacing-small;
