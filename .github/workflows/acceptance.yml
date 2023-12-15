@@ -72,6 +72,7 @@ jobs:
         env:
           BABEL_ENV: production
           CYPRESS_RETRIES: 2
+          CYPRESS_a11y: 1
         with:
           parallel: false
           browser: chrome
@@ -80,7 +81,7 @@ jobs:
           install: false
           start: |
             docker compose -f ci-a11y.yml --profile prod up
-          wait-on: 'npx wait-on --httpTimeout 20000 http-get://localhost:55001/plone http://localhost:3000'
+          wait-on: 'npx wait-on --httpTimeout 20000 http-get://localhost:8080/Plone http://localhost:3000'
 
       # Upload Cypress screenshots
       - uses: actions/upload-artifact@v3
