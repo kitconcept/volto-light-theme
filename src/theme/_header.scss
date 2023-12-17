@@ -54,7 +54,7 @@
             font-size: 18px;
 
             &.active {
-              border-bottom: $border-default-medium;
+              border-bottom: $border-medium;
             }
           }
         }
@@ -158,7 +158,7 @@
               justify-content: space-between;
               padding-top: 0;
               padding-bottom: 0.5rem;
-              border-bottom: $border-default-small;
+              border-bottom: $border-small;
               border-left: none;
               margin-left: 12.6rem;
 
@@ -286,7 +286,7 @@
       position: absolute;
       bottom: -49px;
       width: 100%;
-      border-bottom: $border-default-x-large;
+      border-bottom: $border-x-large;
       content: '';
     }
   }
@@ -425,7 +425,7 @@
           width: 20%;
           padding: 0 20px 0 10px;
           padding-left: 25px;
-          border-left: $border-default;
+          border-left: $border;
 
           /* This is for tablet landscape mode */
           @media only screen and (min-width: 1011px) and (max-width: 1280px) {
@@ -504,7 +504,7 @@
         }
 
         span:hover {
-          border-bottom: $border-default;
+          border-bottom: $border;
         }
       }
     }
@@ -574,7 +574,7 @@
     left: -50px;
     width: 0;
     height: 100%;
-    border-left: $border-default-x-large;
+    border-left: $border-x-large;
     content: '';
   }
 
@@ -747,7 +747,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 20px 0;
-      border-bottom: $border-default;
+      border-bottom: $border;
       margin-left: 20px;
       color: $black;
       line-height: 24px;
@@ -769,7 +769,7 @@
         border-bottom: 0;
 
         &.last-child {
-          border-bottom: $border-default;
+          border-bottom: $border;
         }
       }
     }

@@ -28,7 +28,7 @@
       }
       &:last-child {
         padding-bottom: 40px !important;
-        border-bottom: $border-default !important;
+        border-bottom: $border !important;
       }
     }
 
@@ -182,7 +182,7 @@
 
       .search-sort-wrapper > * {
         height: 50px;
-        border: $border-default;
+        border: $border;
         border-radius: 0;
         border-left: 0;
         margin: 0;
@@ -202,7 +202,7 @@
         }
 
         .react-select__menu {
-          border: $border-default;
+          border: $border;
           margin-top: 5px;
         }
 
