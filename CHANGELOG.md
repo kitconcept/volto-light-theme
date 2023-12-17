@@ -8,6 +8,36 @@
 
 <!-- towncrier release notes start -->
 
+## 2.1.0 (2023-12-13)
+
+### Feature
+
+- Added Image Gallery Listing Metadata @robgietema [#127](https://github.com/kitconcept/volto-light-theme/pull/127)
+- Add Brazilian Portuguese translation [@ericof] [#294](https://github.com/kitconcept/volto-light-theme/pull/294)
+
+### Bugfix
+
+- Also clean up Navigation PropTypes @fredvd [#272b](https://github.com/kitconcept/volto-light-theme/pull/272b)
+- Fix css of External link icon indicator @iRohitSingh [#91](https://github.com/kitconcept/volto-light-theme/pull/91)
+- Fix css of Sitemap @iRohitSingh [#209](https://github.com/kitconcept/volto-light-theme/pull/209)
+- Fixed css errors in the header and image scss files @ichim-david
+  All the mobile menu items are now links @ichim-david
+  Close buttons are now tabbable @ichim-david
+  Close menu when hitting the escape key @ichim-david [#264](https://github.com/kitconcept/volto-light-theme/pull/264)
+- Use only one set of values for container widths which can be modified from variables @ichim-david [#265](https://github.com/kitconcept/volto-light-theme/pull/265)
+- Update contentMetadataTagsImageField settings to use preview_image field.  @iRohitSingh [#274](https://github.com/kitconcept/volto-light-theme/pull/274)
+- Removed the "overview" React Message from Fat Menu @Molochem [#276](https://github.com/kitconcept/volto-light-theme/pull/276)
+- Moved custom font loading to a separate fonts.scss @ichim-david
+  Added variable definitions for loading the cms font instead of hard-coding to Metropolis @ichim-david [#279](https://github.com/kitconcept/volto-light-theme/pull/279)
+- Minor style fixes for hamburger menu icon @danalvrz [#281](https://github.com/kitconcept/volto-light-theme/pull/281)
+- Don't force aspect ratio for the Image content type view @iRohitSingh [#293](https://github.com/kitconcept/volto-light-theme/pull/293)
+
+### Internal
+
+- Run CI workflows for external PRs. @davisagli [#271](https://github.com/kitconcept/volto-light-theme/pull/271)
+- Remove old code from navigation component @steffenri [#272](https://github.com/kitconcept/volto-light-theme/pull/272)
+- Remove Hero Block @iRohitSingh [#278](https://github.com/kitconcept/volto-light-theme/pull/278)
+
 ## 2.0.0 (2023-11-16)
 
 ### Breaking
