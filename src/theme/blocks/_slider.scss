@@ -11,9 +11,17 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
     margin-bottom: 0;
   }
 
-  .highlight-image-wrapper img {
-    // Override Volto's Image Component inline style aspect ratio.
-    aspect-ratio: $sliderImagesAspectRatio !important;
+  .slider-dots {
+    padding-bottom: 40px;
+  }
+
+  .highlight-image-wrapper {
+    display: flex; // Small gap was appearing between the wrapper and the image (??)
+
+    img {
+      // Override Volto's Image Component inline style aspect ratio.
+      aspect-ratio: $sliderImagesAspectRatio !important;
+    }
   }
 
   .teaser-item,

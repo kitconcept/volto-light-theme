@@ -54,10 +54,11 @@
 // Slider
 #page-document .blocks-group-wrapper.grey:has(.block.slider:first-child) {
   padding-top: 0;
-  padding-bottom: 44px; // Adjust for the padding from the slider itself
+  padding-bottom: 0px; // Adjust for the padding from the slider itself
 }
 
-#page-document .blocks-group-wrapper.grey .block.slider {
+#page-document .blocks-group-wrapper.grey .block.slider,
+.block-editor-slider.has--backgroundColor--grey {
   .slider-dot:not(.slider-dot--selected)::after {
     background: #fff;
   }
