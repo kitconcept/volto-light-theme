@@ -12,7 +12,7 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
   }
 
   .slider-dots {
-    padding-bottom: 40px;
+    padding-bottom: $spacing-medium;
   }
 
   .highlight-image-wrapper {
