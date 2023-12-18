@@ -584,12 +584,13 @@
       width: auto;
       align-items: center;
       justify-content: space-between;
-      margin-top: 32px;
+      margin-top: 25px;
       margin-right: 30px;
       float: right;
       line-height: 30px;
 
       button {
+        background-color: transparent;
         padding: 0;
         border: 0;
         margin-right: 0;

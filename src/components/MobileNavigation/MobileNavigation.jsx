@@ -3,7 +3,7 @@ import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
 import { useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import cx from 'classnames';
-
+import zoomSVG from '@plone/volto/icons/zoom.svg';
 import { CSSTransition } from 'react-transition-group';
 
 import { Icon } from '@plone/volto/components';
@@ -19,6 +19,10 @@ const messages = defineMessages({
   openMobileMenu: {
     id: 'Open menu',
     defaultMessage: 'Open menu',
+  },
+  search: {
+    id: 'Search',
+    defaultMessage: 'Search',
   },
 });
 
@@ -161,6 +165,21 @@ const MobileNavigation = (props) => {
         classNames="menu-drawer"
       >
         <div className="menu-drawer">
+          <div className="search-header">
+            <Link
+              to={props.pathname.replace(/\/$/, '') + '/search'}
+              title={intl.formatMessage(messages.search)}
+              onClick={(e) => closeMenus(e)}
+            >
+              <button
+                basic
+                icon
+                aria-label={intl.formatMessage(messages.search)}
+              >
+                <Icon name={zoomSVG} size="48px" />
+              </button>
+            </Link>
+          </div>
           <ul className="sections">
             <li className="header">
               <Link to={`/${currentLang}`} onClick={closeMenus}>
@@ -193,6 +212,19 @@ const MobileNavigation = (props) => {
                   >
                     <div className="menu-drawer subsection">
                       <div className="search-header">
+                        <Link
+                          to={props.pathname.replace(/\/$/, '') + '/search'}
+                          title={intl.formatMessage(messages.search)}
+                          onClick={(e) => closeMenus(e)}
+                        >
+                          <button
+                            basic
+                            icon
+                            aria-label={intl.formatMessage(messages.search)}
+                          >
+                            <Icon name={zoomSVG} size="48px" />
+                          </button>
+                        </Link>
                         <button onClick={(e) => closeSecondaryMenu(e)}>
                           <Icon name={arrowLeftSVG} size="60px" />
                           <span>
@@ -256,6 +288,26 @@ const MobileNavigation = (props) => {
                               >
                                 <div className="menu-drawer subsection">
                                   <div className="search-header">
+                                    <Link
+                                      to={
+                                        props.pathname.replace(/\/$/, '') +
+                                        '/search'
+                                      }
+                                      title={intl.formatMessage(
+                                        messages.search,
+                                      )}
+                                      onClick={(e) => closeMenus(e)}
+                                    >
+                                      <button
+                                        basic
+                                        icon
+                                        aria-label={intl.formatMessage(
+                                          messages.search,
+                                        )}
+                                      >
+                                        <Icon name={zoomSVG} size="48px" />
+                                      </button>
+                                    </Link>
                                     <button
                                       onClick={(e) => closeTertiaryMenu(e)}
                                     >
