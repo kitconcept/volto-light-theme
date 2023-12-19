@@ -249,8 +249,8 @@ $border: $border-width $border-style $border-color !default;
 $border-light: $border-width $border-style $border-color-light !default;
 $border-small: map.get($border-widths, s) $border-style $border-color !default;
 $border-medium: map.get($border-widths, m) $border-style $border-color !default;
-$border-x-large: map.get($border-widths, xl) $border-style $border-color !default;
-$border-transparent-x-large: map.get($border-widths, xl) $border-style
+$border-xlarge: map.get($border-widths, xl) $border-style $border-color !default;
+$border-transparent-xlarge: map.get($border-widths, xl) $border-style
   transparent !default;
 $border-table: $border-width $border-style $border-color-table !default;
 
