@@ -1,5 +1,4 @@
 // SemanticUI-free pre-@plone/components
-import { useEffect } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import { useSelector } from 'react-redux';
 import config from '@plone/volto/registry';
