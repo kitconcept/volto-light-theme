@@ -18,9 +18,9 @@
     .footer-message {
       font-weight: $bold;
       a {
+        color: $blue-for-grey-contrast;
         font-weight: inherit;
         text-decoration: underline;
-        color: $blue-for-grey-contrast;
       }
     }
 
