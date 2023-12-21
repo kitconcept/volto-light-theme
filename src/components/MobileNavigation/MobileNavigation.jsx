@@ -166,7 +166,14 @@ const MobileNavigation = (props) => {
         <div className="menu-drawer">
           <ul className="sections">
             <li className="header">
-              <Link to={settings.isMultilingual ? `/${toBackendLang(currentLang)}` : '/'} onClick={closeMenus}>
+              <Link
+                to={
+                  settings.isMultilingual
+                    ? `/${toBackendLang(currentLang)}`
+                    : '/'
+                }
+                onClick={closeMenus}
+              >
                 <FormattedMessage id="Home" defaultMessage="Home" />
               </Link>
             </li>
