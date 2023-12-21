@@ -6,7 +6,9 @@ import cx from 'classnames';
 
 import { CSSTransition } from 'react-transition-group';
 
+import config from '@plone/volto/registry';
 import { Icon } from '@plone/volto/components';
+import { toBackendLang } from '@plone/volto/helpers';
 import arrowRightSVG from '@plone/volto/icons/right-key.svg';
 import arrowLeftSVG from '@plone/volto/icons/left-key.svg';
 import { MobileToolsFooter } from './MobileToolsFooter';
@@ -38,6 +40,7 @@ const MobileNavigation = (props) => {
     tertiaryMenuOpened,
     isTertiaryMobileMenuOpen,
   } = menuState;
+  const { settings } = config;
   const intl = useIntl();
   const menus = React.useRef(null);
   const currentLang = useSelector((state) => state.intl.locale);
@@ -163,7 +166,14 @@ const MobileNavigation = (props) => {
         <div className="menu-drawer">
           <ul className="sections">
             <li className="header">
-              <Link to={`/${currentLang}`} onClick={closeMenus}>
+              <Link
+                to={
+                  settings.isMultilingual
+                    ? `/${toBackendLang(currentLang)}`
+                    : '/'
+                }
+                onClick={closeMenus}
+              >
                 <FormattedMessage id="Home" defaultMessage="Home" />
               </Link>
             </li>
