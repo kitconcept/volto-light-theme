@@ -232,7 +232,7 @@ make dev
 which will build and launch the backend and frontend containers.
 There's no need to build them again after doing it the first time unless something has changed from the container setup.
 
-To make the local IDE play well with this setup, is it required to run once `yarn` to install locally the required packages (ESlint, Prettier, Stylelint).
+To make the local IDE play well with this setup, it is required to run `yarn` once to install the required packages (ESlint, Prettier, Stylelint).
 
 Run
 
