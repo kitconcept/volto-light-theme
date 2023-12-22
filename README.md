@@ -118,14 +118,15 @@ It is recommended that your project or policy add-on `package.json` include the 
 
 ```json
   "dependencies": {
-    "@eeacms/volto-accordion-block": "9.0.0",
-    "@kitconcept/volto-button-block": "2.1.0",
-    "@kitconcept/volto-dsgvo-banner": "1.3.0",
-    "@kitconcept/volto-heading-block": "2.2.0",
-    "@kitconcept/volto-introduction-block": "1.0.0",
-    "@kitconcept/volto-light-theme": "1.0.0",
-    "@kitconcept/volto-separator-block": "4.0.0",
-    "@kitconcept/volto-highlight-block": "3.0.0",
+    "@eeacms/volto-accordion-block": "^10.4.0",
+    "@kitconcept/volto-button-block": "^2.3.1",
+    "@kitconcept/volto-dsgvo-banner": "^1.3.0",
+    "@kitconcept/volto-heading-block": "^2.4.0",
+    "@kitconcept/volto-highlight-block": "^3.0.0",
+    "@kitconcept/volto-introduction-block": "^1.0.0",
+    "@kitconcept/volto-separator-block": "^4.0.0",
+    "@kitconcept/volto-slider-block": "^6.0.0",
+    "@kitconcept/volto-light-theme": "^2.0.0",
   }
 ```
 
