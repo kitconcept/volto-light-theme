@@ -3,6 +3,8 @@
   #page-sitemap {
     h1 {
       @include page-title();
+      @include vertical-space-h1();
+      @include word-break();
     }
 
     ul {
