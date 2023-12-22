@@ -4,11 +4,11 @@
 
 .block.introduction {
   .block-container p,
-  .block-container ul,
-  .block-container ol,
+  .block-container ul li,
+  .block-container ol li,
   .slate-editor p,
-  .slate-editor ul,
-  .slate-editor ol {
+  .slate-editor ul li,
+  .slate-editor ol li {
     margin: 0;
     @include introduction();
     strong,
