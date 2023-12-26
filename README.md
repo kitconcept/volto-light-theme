@@ -181,6 +181,14 @@ It's behind a feature flag, as opt-out:
 config.settings.enableFatMenu = true;
 ```
 
+### Show Intranet Lable
+
+If your website is a intranet and you want to show a lable use intanetName options:
+
+```js
+config.settings.intranetName = 'Plone Intranet';
+```
+
 ## Development Setup
 
 This theme works under Volto 17 alpha 16 onwards.

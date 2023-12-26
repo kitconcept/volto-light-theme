@@ -5,6 +5,7 @@ import Container from '@kitconcept/volto-light-theme/components/Atoms/Container/
 import MobileNavigation from '../MobileNavigation/MobileNavigation';
 import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
+import config from '@plone/volto/registry';
 
 import {
   Anontools,
@@ -16,6 +17,7 @@ import {
 
 const Header = (props) => {
   const { pathname } = props;
+  const intranetName = config.settings.intranetName;
   const token = useSelector((state) => state.userSession.token);
 
   return (
@@ -47,6 +49,11 @@ const Header = (props) => {
                 GitHub
               </a>
             </div>
+            {intranetName && (
+              <div className="intranet">
+                <p>{intranetName}</p>
+              </div>
+            )}
           </div>
         </div>
       </Container>

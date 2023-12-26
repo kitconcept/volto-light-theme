@@ -218,7 +218,21 @@
   .tools-wrapper {
     display: flex;
     flex-direction: row-reverse;
+    justify-content: space-between;
     padding-top: 16px;
+
+    .intranet {
+      padding: 10px $spacing-small;
+      margin-top: -16px;
+      margin-left: 250px;
+      background-color: $secondary-grey;
+
+      p {
+        @include marginal-title();
+        font-weight: 400;
+        text-transform: capitalize;
+      }
+    }
 
     .language-selector {
       padding-left: 40px;
