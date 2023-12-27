@@ -1,27 +1,25 @@
-// Once this pr https://github.com/kitconcept/volto-light-theme/pull/288 merged then
-// home page A11y is also fixed
 
-//   describe('a11y tests', () => {
-//   beforeEach(() => {
-//     // Cypress starts out with a blank slate for each test
-//     // so we must tell it to visit our website with the `cy.visit()` command.
-//     // Since we want to visit the same URL at the start of all our tests,
-//     // we include it in our beforeEach function so that it runs before each test
-//     cy.visit('/');
-//   });
+describe('a11y tests', () => {
+  beforeEach(() => {
+    // Cypress starts out with a blank slate for each test
+    // so we must tell it to visit our website with the `cy.visit()` command.
+    // Since we want to visit the same URL at the start of all our tests,
+    // we include it in our beforeEach function so that it runs before each test
+    cy.visit('/');
+  });
 
-//   it('Home page (/)', () => {
-//     cy.navigate('/');
-//     cy.injectAxe();
-//     cy.configureAxe({
-//       rules: [
-//         // the example home page intentionally omits the h1
-//         {
-//           id: 'page-has-heading-one',
-//           enabled: false,
-//         },
-//       ],
-//     });
-//     cy.checkAccessibility();
-//   });
-// });
+  it('Home page (/)', () => {
+    cy.navigate('/');
+    cy.injectAxe();
+    cy.configureAxe({
+      rules: [
+        // the example home page intentionally omits the h1
+        {
+          id: 'page-has-heading-one',
+          enabled: false,
+        },
+      ],
+    });
+    cy.checkAccessibility();
+  });
+});
