@@ -47,9 +47,10 @@ const Header = (props) => {
               <Link aria-label="sitemap" to="/sitemap">
                 <FormattedMessage id="Sitemap" defaultMessage="Sitemap" />
               </Link>
-              {siteAction.map((item) => (
-                <UniversalLink href={item.url}>{item.title}</UniversalLink>
-              ))}
+              {siteAction &&
+                siteAction.map((item) => (
+                  <UniversalLink href={item.url}>{item.title}</UniversalLink>
+                ))}
             </div>
           </div>
         </div>
