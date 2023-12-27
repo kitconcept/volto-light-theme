@@ -156,7 +156,7 @@ Then, declare the theme in your project `package.json`:
   "theme": "@kitconcept/volto-light-theme",
 ```
 
-Alternativelly, you can also declare it in your project's `volto.config.js`:
+Alternatively, you can also declare it in your project's `volto.config.js`:
 
 ```js
 const addons = [];
@@ -170,9 +170,9 @@ module.exports = {
 
 You can specify your project add-ons in `volto.config.js`, but sometimes is better to have them all in one place (in your policy add-on) for portability.
 
-## Feature flags
+## Feature Flags
 
-### Enable fat menu
+### Enable Fat Menu
 
 Since 2.0.0, the light theme has a fat menu (below the main site sections) triggered clickin on one of them.
 It's behind a feature flag, as opt-out:
@@ -221,7 +221,7 @@ Run `make help` to list the available commands.
 - Docker
 - Node 18 (e.g. via nvm)
 
-### Development environment Setup
+### Development Environment Setup
 
 Run once
 
@@ -232,7 +232,7 @@ make dev
 which will build and launch the backend and frontend containers.
 There's no need to build them again after doing it the first time unless something has changed from the container setup.
 
-In order to make the local IDE play well with this setup, is it required to run once `yarn` to install locally the required packages (ESlint, Prettier, Stylelint).
+To make the local IDE play well with this setup, it is required to run `yarn` once to install the required packages (ESlint, Prettier, Stylelint).
 
 Run
 
@@ -261,7 +261,7 @@ This will start both the frontend and backend containers.
 
 ### Stop Backend (Docker)
 
-After developing, in order to stop the running backend, don't forget to run:
+After developing, to stop the running backend, don't forget to run:
 
 Run
 
@@ -325,7 +325,7 @@ Run
 make test-acceptance
 ```
 
-To run Cypress tests afterwards.
+To run Cypress tests afterward.
 
 When finished, don't forget to shutdown the backend server.
 
