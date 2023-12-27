@@ -10,6 +10,7 @@ describe('a11y tests', () => {
   // Maps block
   it('Maps Block (/block/maps-block)', () => {
     cy.navigate('/block/maps-block');
+    cy.wait(2000);
     cy.injectAxe();
     cy.configureAxe({
       rules: [

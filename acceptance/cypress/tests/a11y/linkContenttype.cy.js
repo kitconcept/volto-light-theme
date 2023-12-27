@@ -10,6 +10,7 @@ describe('a11y tests', () => {
   //Link
   it('link (/content-types/internal-link)', () => {
     cy.navigate('/content-types/internal-link');
+    cy.wait(2000);
     cy.injectAxe();
     cy.configureAxe();
     cy.checkAccessibility();

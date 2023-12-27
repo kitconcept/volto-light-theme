@@ -10,6 +10,7 @@ describe('a11y tests', () => {
   //news-item
   it('news-item (/content-types/news-item)', () => {
     cy.navigate('/content-types/news-item');
+    cy.wait(2000);
     cy.injectAxe();
     cy.configureAxe({
       rules: [

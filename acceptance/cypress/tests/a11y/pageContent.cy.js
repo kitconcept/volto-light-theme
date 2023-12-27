@@ -10,6 +10,7 @@ describe('a11y tests', () => {
   //Page
   it('Page (/content-types/page)', () => {
     cy.navigate('/content-types/page');
+    cy.wait(2000);
     cy.injectAxe();
     cy.configureAxe({
       rules: [

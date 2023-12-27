@@ -10,6 +10,7 @@ describe('a11y tests', () => {
   // Image-Block
   it('Image-Block (/block/image-block)', () => {
     cy.navigate('/block/image-block');
+    cy.wait(2000);
     cy.injectAxe();
     cy.configureAxe();
     cy.checkAccessibility();

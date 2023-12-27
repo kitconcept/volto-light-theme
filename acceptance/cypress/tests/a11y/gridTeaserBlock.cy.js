@@ -10,6 +10,7 @@ describe('a11y tests', () => {
   // grid Teaser block
   it('Grid-Block Teaser (/block/grid-block/teaser)', () => {
     cy.navigate('/block/grid-block/teaser');
+    cy.wait(2000);
     cy.injectAxe();
     cy.configureAxe();
     cy.checkAccessibility();

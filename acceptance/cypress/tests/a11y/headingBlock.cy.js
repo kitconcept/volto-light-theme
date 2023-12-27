@@ -10,6 +10,7 @@ describe('a11y tests', () => {
   // Heading
   it('Heading-Block (/block/heading-block)', () => {
     cy.navigate('/block/heading-block');
+    cy.wait(2000);
     cy.injectAxe();
     cy.configureAxe();
     cy.checkAccessibility();

@@ -10,6 +10,7 @@ describe('a11y tests', () => {
   // Table-block
   it('Table-block (/block/table-block)', () => {
     cy.navigate('/block/table-block');
+    cy.wait(2000);
     cy.injectAxe();
     cy.configureAxe({
       rules: [

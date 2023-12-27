@@ -10,6 +10,7 @@ describe('a11y tests', () => {
   //File
   it('File (/content-types/file)', () => {
     cy.navigate('/content-types/file');
+    cy.wait(2000);
     cy.injectAxe();
     cy.configureAxe();
     cy.checkAccessibility();

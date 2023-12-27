@@ -10,6 +10,7 @@ describe('a11y tests', () => {
   // Text-block
   it('Text-block (/block/text-block)', () => {
     cy.navigate('/block/text-block');
+    cy.wait(2000);
     cy.injectAxe();
     cy.configureAxe();
     cy.checkAccessibility();

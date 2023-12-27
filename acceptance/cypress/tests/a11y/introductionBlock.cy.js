@@ -10,6 +10,7 @@ describe('a11y tests', () => {
   // Introduction-Block
   it('Introduction-Block (/block/introduction-block)', () => {
     cy.navigate('/block/introduction-block');
+    cy.wait(2000);
     cy.injectAxe();
     cy.configureAxe();
     cy.checkAccessibility();

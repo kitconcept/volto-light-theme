@@ -10,6 +10,7 @@ describe('a11y tests', () => {
   // Search-block
   it('Search-block (/block/search-block)', () => {
     cy.navigate('/block/search-block');
+    cy.wait(2000);
     cy.injectAxe();
     cy.configureAxe();
     cy.checkAccessibility();

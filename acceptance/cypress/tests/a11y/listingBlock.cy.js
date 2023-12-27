@@ -10,6 +10,7 @@ describe('a11y tests', () => {
   // Listing-block
   it('Listing-block (/block/listing-block)', () => {
     cy.navigate('/block/listing-block');
+    cy.wait(2000);
     cy.injectAxe();
     cy.configureAxe();
     cy.checkAccessibility();

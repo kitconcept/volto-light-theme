@@ -10,6 +10,7 @@ describe('a11y tests', () => {
   // separator-block
   it('Separator-block (/block/separator-block)', () => {
     cy.navigate('/block/separator-block');
+    cy.wait(2000);
     cy.injectAxe();
     cy.configureAxe({
       rules: [

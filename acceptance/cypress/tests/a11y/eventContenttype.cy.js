@@ -10,6 +10,7 @@ describe('a11y tests', () => {
   //Event
   it('Event (/content-types/event)', () => {
     cy.navigate('/content-types/event');
+    cy.wait(2000);
     cy.injectAxe();
     cy.configureAxe();
     cy.checkAccessibility();
