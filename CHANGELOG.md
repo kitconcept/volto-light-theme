@@ -8,6 +8,46 @@
 
 <!-- towncrier release notes start -->
 
+## 3.0.0-alpha.0 (2023-12-27)
+
+### Breaking
+
+- Upgraded the dependency on `@kitconcept/volto-slider-block` to use `6.0.0`.
+
+  This is a drop-in replacement, so no action is required for the existing slider blocks you may have already in your sites.
+  However, the CSS classes of the structural slider block elements changed in this version.
+  The inner (visible objects) CSS classes remain unchanged.
+  If you have customized them in your project, you may have to update them, although the structural class names are rarely customized aside from vertical spacing properties.
+  They are mapped 1:1 with the previous ones, following this table correspondence:
+
+  | Old className   | New className    |
+  | --------------- | ---------------- |
+  | slick-slider    | slider-wrapper   |
+  | slick-list      | slider-viewport  |
+  | slick-track     | slider-container |
+  | slick-slide     | slider-slide     |
+  | slick-arrow     | slider-button    |
+  | slick-prev      | slider-button-prev |
+  | slick-next      | slider-slide-next  |
+  | slick-next      | slider-slide-next  |
+  | slick-dots      | slider-dots      |
+  | slick-dot       | slider-dot       |
+
+  For more information, please check the https://github.com/kitconcept/volto-slider-block/blob/main/README.md [#288](https://github.com/kitconcept/volto-light-theme/pull/288)
+
+### Bugfix
+
+- Fix showing up uploaded logo from site controlpanel. @iFlameing [#291](https://github.com/kitconcept/volto-light-theme/pull/291)
+- Un-pin `eslint-plugin-jsx-a11y` version @sneridagh [#299](https://github.com/kitconcept/volto-light-theme/pull/299)
+- Fix Blocks chooser styling @iRohitSingh [#307](https://github.com/kitconcept/volto-light-theme/pull/307)
+- Remove id selector from listings because of css specificity @steffenri [#309](https://github.com/kitconcept/volto-light-theme/pull/309)
+- Fix margins of h1 in sitemap view @steffenri [#312](https://github.com/kitconcept/volto-light-theme/pull/312)
+- Fix homepage link for all language codes (#298) @steffenri [#313](https://github.com/kitconcept/volto-light-theme/pull/313)
+
+### Internal
+
+- Upgrade slider to 6.1.0 @sneridagh [#316](https://github.com/kitconcept/volto-light-theme/pull/316)
+
 ## 2.1.0 (2023-12-13)
 
 ### Feature
