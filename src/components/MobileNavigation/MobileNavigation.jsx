@@ -7,7 +7,7 @@ import zoomSVG from '@plone/volto/icons/zoom.svg';
 import { CSSTransition } from 'react-transition-group';
 
 import config from '@plone/volto/registry';
-import { Icon } from '@plone/volto/components';
+import { Icon, SearchWidget } from '@plone/volto/components';
 import { toBackendLang } from '@plone/volto/helpers';
 import arrowRightSVG from '@plone/volto/icons/right-key.svg';
 import arrowLeftSVG from '@plone/volto/icons/left-key.svg';
@@ -169,19 +169,11 @@ const MobileNavigation = (props) => {
       >
         <div className="menu-drawer">
           <div className="search-header">
-            <Link
-              to={props.pathname.replace(/\/$/, '') + '/search'}
-              title={intl.formatMessage(messages.search)}
-              onClick={(e) => closeMenus(e)}
-            >
-              <button
-                basic
-                icon
-                aria-label={intl.formatMessage(messages.search)}
-              >
-                <Icon name={zoomSVG} size="48px" />
-              </button>
-            </Link>
+            <div className=" search-wrapper ">
+              <div className="search">
+                <SearchWidget />
+              </div>
+            </div>
           </div>
           <ul className="sections">
             <li className="header">
@@ -222,19 +214,12 @@ const MobileNavigation = (props) => {
                   >
                     <div className="menu-drawer subsection">
                       <div className="search-header">
-                        <Link
-                          to={props.pathname.replace(/\/$/, '') + '/search'}
-                          title={intl.formatMessage(messages.search)}
-                          onClick={(e) => closeMenus(e)}
-                        >
-                          <button
-                            basic
-                            icon
-                            aria-label={intl.formatMessage(messages.search)}
-                          >
-                            <Icon name={zoomSVG} size="48px" />
-                          </button>
-                        </Link>
+                        <div className=" search-wrapper ">
+                          <div className="search">
+                            <SearchWidget />
+                          </div>
+                        </div>
+
                         <button onClick={(e) => closeSecondaryMenu(e)}>
                           <Icon name={arrowLeftSVG} size="60px" />
                           <span>
@@ -298,26 +283,12 @@ const MobileNavigation = (props) => {
                               >
                                 <div className="menu-drawer subsection">
                                   <div className="search-header">
-                                    <Link
-                                      to={
-                                        props.pathname.replace(/\/$/, '') +
-                                        '/search'
-                                      }
-                                      title={intl.formatMessage(
-                                        messages.search,
-                                      )}
-                                      onClick={(e) => closeMenus(e)}
-                                    >
-                                      <button
-                                        basic
-                                        icon
-                                        aria-label={intl.formatMessage(
-                                          messages.search,
-                                        )}
-                                      >
-                                        <Icon name={zoomSVG} size="48px" />
-                                      </button>
-                                    </Link>
+                                    <div className=" search-wrapper ">
+                                      <div className="search">
+                                        <SearchWidget />
+                                      </div>
+                                    </div>
+
                                     <button
                                       onClick={(e) => closeTertiaryMenu(e)}
                                     >
