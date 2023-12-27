@@ -3,7 +3,6 @@ import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
 import { useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import cx from 'classnames';
-import zoomSVG from '@plone/volto/icons/zoom.svg';
 import { CSSTransition } from 'react-transition-group';
 
 import config from '@plone/volto/registry';
