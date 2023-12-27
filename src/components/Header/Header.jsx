@@ -12,11 +12,15 @@ import {
   Logo,
   Navigation,
   SearchWidget,
+  UniversalLink,
 } from '@plone/volto/components';
 
 const Header = (props) => {
   const { pathname } = props;
   const token = useSelector((state) => state.userSession.token);
+  const siteAction = useSelector(
+    (state) => state.content.data?.['@components'].actions.site_actions,
+  );
 
   return (
     <header className="header-wrapper">
@@ -43,9 +47,9 @@ const Header = (props) => {
               <Link aria-label="sitemap" to="/sitemap">
                 <FormattedMessage id="Sitemap" defaultMessage="Sitemap" />
               </Link>
-              <a href="https://github.com/kitconcept/volto-light-theme">
-                GitHub
-              </a>
+              {siteAction.map((item) => (
+                <UniversalLink href={item.url}>{item.title}</UniversalLink>
+              ))}
             </div>
           </div>
         </div>
