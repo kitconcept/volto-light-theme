@@ -10375,6 +10375,7 @@
         "listingBodyTemplate": "summary",
         "query": {
           "b_size": "4",
+          "limit": "4",
           "query": [],
           "sort_order": "ascending"
         },
@@ -10398,9 +10399,10 @@
       },
       "undefined": {
         "@type": "search",
-        "listingBodyTemplate": "default",
+        "listingBodyTemplate": "summary",
         "query": {
           "b_size": "4",
+          "limit": "4",
           "query": [],
           "sort_order": "ascending"
         },
@@ -10427,7 +10429,7 @@
       "locked": false,
       "stealable": true
     },
-    "modified": "2023-09-22T14:57:01+00:00",
+    "modified": "2023-12-28T09:36:10+00:00",
     "nav_title": null,
     "parent": {
       "@id": "/block",
