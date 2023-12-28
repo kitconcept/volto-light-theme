@@ -5,10 +5,10 @@ import Container from '@kitconcept/volto-light-theme/components/Atoms/Container/
 import MobileNavigation from '../MobileNavigation/MobileNavigation';
 import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
-import LanguageSelector from '../LanguageSelector/LanguageSelector';
 
 import {
   Anontools,
+  LanguageSelector,
   Logo,
   Navigation,
   SearchWidget,
