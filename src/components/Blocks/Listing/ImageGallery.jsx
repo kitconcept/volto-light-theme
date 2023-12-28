@@ -22,6 +22,7 @@ const renderLeftNav = (onClick, disabled) => {
       className="image-gallery-icon image-gallery-left-nav primary basic"
       disabled={disabled}
       onClick={onClick}
+      aria-label="Go to previous slide"
     >
       <Icon name={galleryLeftSVG} size="48px" fill="black" />
     </Button>
@@ -33,6 +34,7 @@ const renderRightNav = (onClick, disabled) => {
       className="image-gallery-icon image-gallery-right-nav primary basic"
       disabled={disabled}
       onClick={onClick}
+      aria-label="Go to next slide"
     >
       <Icon name={galleryRightSVG} size="48px" />
     </Button>
