@@ -554,7 +554,7 @@ export function applyBlockDefaults(
 export const styleToClassName = (key, value, prefix = '') => {
   const converters = config.settings.styleClassNameConverters;
   const [name, ...convIds] = key.split(':');
-  console.log(convIds);
+
   return (convIds.length ? convIds : ['default'])
     .map((id) => converters[id])
     .reduce((acc, conv) => conv(acc, value, prefix), name);
