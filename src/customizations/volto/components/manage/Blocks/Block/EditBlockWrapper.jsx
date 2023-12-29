@@ -6,7 +6,6 @@ import { Icon } from '@plone/volto/components';
 import {
   blockHasValue,
   buildStyleClassNamesFromData,
-  buildStyleObjectFromData,
 } from '@plone/volto/helpers';
 import dragSVG from '@plone/volto/icons/drag.svg';
 import { Button } from 'semantic-ui-react';
@@ -16,6 +15,7 @@ import { defineMessages, injectIntl } from 'react-intl';
 import cx from 'classnames';
 import config from '@plone/volto/registry';
 import { BlockChooserButton } from '@plone/volto/components';
+import { buildStyleObjectFromData } from '@plone/volto/helpers/Blocks/Blocks';
 
 import trashSVG from '@plone/volto/icons/delete.svg';
 
