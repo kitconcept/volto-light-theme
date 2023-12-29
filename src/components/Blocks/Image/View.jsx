@@ -20,7 +20,7 @@ import config from '@plone/volto/registry';
  * @class View
  * @extends Component
  */
-export const ImageView = ({ className, data, detached, properties }) => {
+export const ImageView = ({ className, data, detached, properties, style }) => {
   let href;
   if (data.href?.length > 0) {
     if (typeof data.href === 'object') {
@@ -44,6 +44,7 @@ export const ImageView = ({ className, data, detached, properties }) => {
         data.align,
         className,
       )}
+      style={style}
     >
       {data.url && (
         <>
