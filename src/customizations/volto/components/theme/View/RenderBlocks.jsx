@@ -25,6 +25,8 @@ import cx from 'classnames';
 import MaybeWrap from '@plone/volto/components/manage/MaybeWrap/MaybeWrap';
 import RenderEmptyBlock from '@plone/volto/components/theme/View/RenderEmptyBlock';
 
+import { buildStyleObjectFromData } from '@plone/volto/helpers/Blocks/Blocks';
+
 const messages = defineMessages({
   unknownBlock: {
     id: 'Unknown Block',
@@ -43,7 +45,7 @@ export function groupByBGColor(blocks, blocks_layout) {
 
   blocks_layout.items.forEach((blockId) => {
     let currentBlockColor =
-      blocks[blockId]?.styles?.backgroundColor ?? 'transparent';
+      blocks[blockId]?.styles?.theme?.name ?? 'transparent';
 
     if (currentBlockColor !== currentBGColor) {
       currentBGColor = currentBlockColor;
@@ -84,9 +86,12 @@ const RenderBlocks = (props) => {
           }
           className={cx(
             'blocks-group-wrapper',
-            content[blocksFieldname][group[0]]?.styles?.backgroundColor ??
+            content[blocksFieldname][group[0]]?.styles?.theme?.name ??
               'transparent',
           )}
+          style={buildStyleObjectFromData({
+            theme: content[blocksFieldname][group[0]]?.styles?.theme,
+          })}
         >
           {map(group, (block) => {
             const Block =
