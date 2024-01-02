@@ -1,7 +1,7 @@
 import {
   getSlateEditorAndType,
   getSelectedSlateEditor,
-} from '../support/slate';
+} from '../../support/slate';
 
 context('Basic Acceptance Tests', () => {
   describe('Text Block Tests', () => {
