@@ -1,6 +1,7 @@
 import 'cypress-axe';
 import 'cypress-file-upload';
 import './commands';
+import 'cypress-axe';
 import { setup, teardown } from './reset-fixture';
 
 beforeEach(function () {
@@ -9,10 +10,14 @@ beforeEach(function () {
   cy.setCookie('confirm_facebook', '1');
   cy.setCookie('confirm_youtube', '1');
   cy.log('Setting up API fixture');
-  setup();
+  if (!Cypress.env('a11y')) {
+    setup();
+  }
 });
 
 afterEach(function () {
   cy.log('Tearing down API fixture');
-  teardown();
+  if (!Cypress.env('a11y')) {
+    teardown();
+  }
 });

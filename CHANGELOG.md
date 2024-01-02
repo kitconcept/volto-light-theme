@@ -8,6 +8,22 @@
 
 <!-- towncrier release notes start -->
 
+## 3.0.0-alpha.1 (2024-01-02)
+
+### Breaking
+
+- Change the Language Selector to only display the first 2 Characters of each Language @Molochem [#321](https://github.com/kitconcept/volto-light-theme/pull/321)
+
+### Feature
+
+- Added a11y tests infrastructure @sneridagh [#300](https://github.com/kitconcept/volto-light-theme/pull/300)
+
+### Bugfix
+
+- Fix wrong styling for all the groups by background in view mode @sneridagh
+  Added style support for Image block @sneridagh
+  Added style support for Listing block @sneridagh [#322](https://github.com/kitconcept/volto-light-theme/pull/322)
+
 ## 3.0.0-alpha.0 (2023-12-27)
 
 ### Breaking

@@ -333,6 +333,38 @@ When finished, don't forget to shutdown the backend server.
 make stop-test-acceptance-server
 ```
 
+### Accessibility Acceptance tests
+
+Run once
+
+```shell
+make install-acceptance
+```
+
+For starting the servers
+
+Run
+
+```shell
+make start-test-acceptance-server-a11y
+```
+
+The frontend is run in dev mode, so development while writing tests is possible.
+
+Run
+
+```shell
+make test-acceptance-a11y
+```
+
+To run Cypress tests afterwards.
+
+When finished, don't forget to shutdown the backend server.
+
+```shell
+make stop-test-acceptance-server-a11y
+```
+
 ### Release
 
 Run
