@@ -7,7 +7,14 @@ import { renderLinkElement } from '@plone/volto-slate/editor/render';
 import config from '@plone/volto/registry';
 import withQuerystringResults from '@plone/volto/components/manage/Blocks/Listing/withQuerystringResults';
 
-const Headline = ({ headlineTag, id, data = {}, listingItems, isEditMode }) => {
+const Headline = ({
+  headlineTag,
+  id,
+  data = {},
+  listingItems,
+  isEditMode,
+  style,
+}) => {
   let attr = { id };
   const slug = Slugger.slug(data.headline);
   attr.id = slug || id;
@@ -23,6 +30,7 @@ const Headline = ({ headlineTag, id, data = {}, listingItems, isEditMode }) => {
       className={cx('headline', {
         emptyListing: !listingItems?.length > 0,
       })}
+      style={style}
     />
   );
 };
