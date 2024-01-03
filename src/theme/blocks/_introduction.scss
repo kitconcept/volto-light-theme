@@ -21,6 +21,10 @@
     }
   }
 
+  .block-container p:empty {
+    margin-bottom: $block-vertical-space;
+  }
+
   h2 {
     @include highlight-title();
     margin-bottom: $spacing-large;
