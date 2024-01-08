@@ -54,7 +54,7 @@ const applyConfig = (config) => {
   config.settings.enableFatMenu = true;
   config.settings.slate.useLinkedHeadings = false;
   config.settings.contentMetadataTagsImageField = 'preview_image';
-  config.settings.intranetName = '';
+  config.settings.intranetName = 'intranetName';
 
   // Remove Hero Block
   config.blocks.blocksConfig.hero.restricted = true;
