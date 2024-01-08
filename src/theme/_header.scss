@@ -141,7 +141,7 @@
           height: 190px;
 
           @media only screen and (max-width: $largest-mobile-screen) {
-            height: 100vh;
+            height: calc(100vh - 130px);
           }
         }
 
@@ -150,7 +150,9 @@
           height: 100%;
           align-items: center;
           justify-content: center;
-
+          @media only screen and (max-width: $largest-mobile-screen) {
+            height: unset;
+          }
           form {
             width: 100%;
 
