@@ -181,7 +181,7 @@ It's behind a feature flag, as opt-out:
 config.settings.enableFatMenu = true;
 ```
 
-### Show Intranet Label
+### Show Intranet Label and Header
 
 If your website is a intranet and you want to show a label use intanetName options:
 
