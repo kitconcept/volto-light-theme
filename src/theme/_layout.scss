@@ -90,7 +90,7 @@ footer {
 }
 
 // Container definitions for elements
-#page-document > * {
+#page-document .blocks-group-wrapper > * {
   @include layout-container-width();
 }
 
