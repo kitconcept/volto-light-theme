@@ -181,13 +181,15 @@ It's behind a feature flag, as opt-out:
 config.settings.enableFatMenu = true;
 ```
 
-### Show Intranet Lable
+### Show Intranet Label
 
-If your website is a intranet and you want to show a lable use intanetName options:
+If your website is a intranet and you want to show a label use intanetName options:
 
 ```js
 config.settings.intranetName = 'Plone Intranet';
 ```
+
+Once you set this label, you will get totally new header which we have implemented for Intranet sites.
 
 ## Development Setup
 
