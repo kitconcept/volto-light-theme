@@ -1,6 +1,6 @@
 /**
- * Search widget component.
- * @module components/theme/SearchWidget/SearchWidget
+ * Intranet Search Widget component.
+ * @module components/SearchWidget
  */
 
 import React, { Component } from 'react';
@@ -22,14 +22,18 @@ const messages = defineMessages({
     id: 'Search Site',
     defaultMessage: 'Search Site',
   },
+  placeholder: {
+    id: 'Search for People, E-Mail Address, Phone Number, ...',
+    defaultMessage: 'Search for People, E-Mail Address, Phone Number, ...',
+  },
 });
 
 /**
- * SearchWidget component class.
- * @class SearchWidget
+ * IntranetSearchWidget component class.
+ * @class IntranetSearchWidget
  * @extends Component
  */
-class SearchWidget extends Component {
+class IntranetSearchWidget extends Component {
   /**
    * Property types.
    * @property {Object} propTypes Property types.
@@ -94,20 +98,21 @@ class SearchWidget extends Component {
    * @returns {string} Markup for the component.
    */
   render() {
+    const { intl } = this.props;
     return (
       <Form action="/search" onSubmit={this.onSubmit}>
         <Form.Field className="searchbox">
           <Input
-            aria-label={this.props.intl.formatMessage(messages.search)}
+            aria-label={intl.formatMessage(messages.search)}
             onChange={this.onChangeText}
             name="SearchableText"
             value={this.state.text}
             transparent
             autoComplete="off"
-            placeholder="Suche nach Personen, E-Mail-Adresse, Telefonnummer, …"
-            title={this.props.intl.formatMessage(messages.search)}
+            placeholder={intl.formatMessage(messages.placeholder)}
+            title={intl.formatMessage(messages.search)}
           />
-          <button aria-label={this.props.intl.formatMessage(messages.search)}>
+          <button aria-label={intl.formatMessage(messages.search)}>
             <Icon name={zoomSVG} size="37px" />
           </button>
         </Form.Field>
@@ -116,4 +121,4 @@ class SearchWidget extends Component {
   }
 }
 
-export default compose(withRouter, injectIntl)(SearchWidget);
+export default compose(withRouter, injectIntl)(IntranetSearchWidget);

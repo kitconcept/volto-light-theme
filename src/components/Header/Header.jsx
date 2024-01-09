@@ -15,13 +15,9 @@ import {
   Logo,
   Navigation,
   SearchWidget,
-  UniversalLink,
 } from '@plone/volto/components';
 
-const InternetHeader = (props) => {
-  const { pathname } = props;
-  const intranetName = config.settings.intranetName;
-  const token = useSelector((state) => state.userSession.token);
+const InternetHeader = ({ pathname, token }) => {
   return (
     <>
       <div className="header">
@@ -48,21 +44,13 @@ const InternetHeader = (props) => {
             </Link>
             <a href="https://github.com/kitconcept/volto-light-theme">GitHub</a>
           </div>
-          {intranetName && (
-            <div className="intranet">
-              <p>{intranetName}</p>
-            </div>
-          )}
         </div>
       </div>
     </>
   );
 };
 
-const IntranetHeader = (props) => {
-  const { pathname } = props;
-  const intranetName = config.settings.intranetName;
-  const token = useSelector((state) => state.userSession.token);
+const IntranetHeader = ({ pathname, intranetName, token }) => {
   return (
     <>
       <div className="header">
@@ -70,38 +58,15 @@ const IntranetHeader = (props) => {
           <LanguageSelector />
 
           <div className="tools">
-            <UniversalLink
-              aria-label="BfS Homepage"
-              href="https://www.bfs.de/DE/home/home_node.html"
-            >
-              <FormattedMessage
-                id="Plone Homepage"
-                defaultMessage="Plone Homepage"
-              />
-            </UniversalLink>
-            {!token && (
-              <>
-                <Anontools />
-                {/* <Link aria-label="register" to="/register">
-                    <FormattedMessage
-                      id="Register"
-                      defaultMessage="Registration"
-                    />
-                  </Link> */}
-              </>
-            )}
-            {token && (
-              <>
-                <UniversalLink aria-label="Logout" href="/logout">
-                  <FormattedMessage id="Logout" defaultMessage="Logout" />
-                </UniversalLink>
-              </>
-            )}
+            {!token && <Anontools />}
+
+            <Link aria-label="sitemap" to="/sitemap">
+              <FormattedMessage id="Sitemap" defaultMessage="Sitemap" />
+            </Link>
+            <a href="https://github.com/kitconcept/volto-light-theme">GitHub</a>
           </div>
           <div className="intranet">
-            <p>
-              <b>Plone</b> Intranet
-            </p>
+            <p>{intranetName}</p>
           </div>
         </div>
         <div className="logo-nav-wrapper">
@@ -132,9 +97,13 @@ const Header = (props) => {
     >
       <Container layout>
         {intranetName ? (
-          <IntranetHeader {...props} />
+          <IntranetHeader
+            pathname={pathname}
+            intranetName={intranetName}
+            token={token}
+          />
         ) : (
-          <InternetHeader {...props} />
+          <InternetHeader pathname={pathname} token={token} />
         )}
       </Container>
     </header>

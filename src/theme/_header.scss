@@ -96,6 +96,7 @@
         border: none;
         border-radius: 50%;
         background-color: transparent;
+        color: $black;
         transition:
           background-color 200ms ease-in-out,
           color 300ms ease-in-out;
@@ -221,19 +222,6 @@
     justify-content: space-between;
     padding-top: 16px;
 
-    .intranet {
-      padding: 10px $spacing-small;
-      margin-top: -16px;
-      margin-left: 250px;
-      background-color: $secondary-grey;
-
-      p {
-        @include marginal-title();
-        font-weight: 400;
-        text-transform: capitalize;
-      }
-    }
-
     .language-selector {
       padding-left: 40px;
     }
@@ -282,13 +270,7 @@
 .header-wrapper.intranet-header {
   .header {
     flex-direction: column;
-    padding: 0 28px;
 
-    @media only screen and (max-width: $narrow-container-width) {
-      padding: 0px;
-      margin-right: 1rem;
-      margin-left: 1rem;
-    }
     .logo-nav-wrapper {
       flex-wrap: wrap;
       justify-content: flex-start;
@@ -296,56 +278,33 @@
       .logo {
         flex: 0 1 auto;
       }
-      .search-wrapper {
-        flex: 0 1 auto;
-        align-self: center;
-      }
 
       @media only screen and (max-width: $narrow-container-width) {
         position: relative;
       }
 
       .mobile-nav.mobile.only {
-        width: 70px;
-        height: 59px;
-        margin-left: auto;
-
         @media only screen and (max-width: $narrow-container-width) {
           position: absolute;
-          top: 41px;
+          top: 19px;
           right: 0;
         }
 
         .menu-drawer {
           @media only screen and (max-width: $computer-breakpoint) {
-            top: calc(186px + 1rem); // Adjusting the margin top of the logo
+            top: 210px;
           }
         }
       }
       .navigation {
         flex-basis: 100%;
         margin: 29px auto 0 auto;
-
-        a.item {
-          font-size: 16px !important;
-        }
-
-        .submenu.active .icon {
-          margin-right: 28px;
-          margin-left: 0;
-        }
-
-        ul.desktop-menu .submenu-inner h2 {
-          font-size: 28px;
-          font-weight: 600;
-          &:hover {
-            text-decoration: underline;
-          }
-        }
       }
     }
 
     .search-wrapper {
+      flex: 0 1 auto;
+      align-self: center;
       margin-left: 209px;
       @media only screen and (max-width: $narrow-container-width) {
         width: 100%;
@@ -354,7 +313,7 @@
 
       .search {
         width: 100%;
-        border-bottom: 1px solid #e9f0f4;
+        border-bottom: 2px solid $secondary-grey;
         .field.searchbox {
           border: none;
 
@@ -362,7 +321,7 @@
             width: 500px;
 
             &::placeholder {
-              color: #787878;
+              color: #808080;
               @include body-text();
             }
             @media only screen and (max-width: $narrow-container-width) {
@@ -386,42 +345,29 @@
 
     .tools-wrapper {
       justify-content: space-between;
-
       @media only screen and (max-width: $narrow-container-width) {
-        display: none;
+        flex-direction: row;
       }
 
       .intranet {
-        padding: 10px 20px;
+        padding: 10px $spacing-small;
         margin-top: -16px;
         margin-left: 213px;
-        background-color: #e9f0f4;
+        background-color: $secondary-grey;
+        @media only screen and (max-width: $narrow-container-width) {
+          margin-left: 0px;
+        }
 
         p {
-          font-size: 18px;
-          font-style: normal;
-          line-height: 30px;
-
-          b {
-            font-weight: 700;
-          }
+          @include marginal-title();
+          font-weight: 400;
+          text-transform: capitalize;
         }
       }
 
-      .tools .anontools > div:first-of-type::after {
-        display: none;
-      }
-
-      .hello {
-        margin-right: 10px;
-        font-size: 14px;
-        text-align: center;
-
-        &::after {
-          padding-right: 0;
-          padding-left: 10px;
-          content: '|';
-          font-size: 1rem;
+      .tools {
+        @media only screen and (max-width: $narrow-container-width) {
+          display: none;
         }
       }
     }
