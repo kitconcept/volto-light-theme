@@ -14,6 +14,30 @@
       <property name="visible">False</property>
     </object>
   </object>
+
+  <object meta_type="CMF Action Category"
+          name="site_actions"
+  >
+    <object meta_type="CMF Action"
+            name="github"
+            i18n:domain="plone"
+    >
+      <property name="title"
+                i18n:translate=""
+      >GitHub</property>
+      <property name="description"
+                i18n:translate=""
+      />
+      <property name="url_expr">string:https://github.com/kitconcept/volto-light-theme</property>
+      <property name="icon_expr">string:github-link</property>
+      <property name="available_expr" />
+      <property name="permissions">
+        <element value="View" />
+      </property>
+      <property name="visible">True</property>
+    </object>
+  </object>
+
   <object meta_type="CMF Action Category"
           name="user"
   >
