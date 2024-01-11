@@ -3,11 +3,10 @@ import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
 import { useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import cx from 'classnames';
-
 import { CSSTransition } from 'react-transition-group';
 
 import config from '@plone/volto/registry';
-import { Icon } from '@plone/volto/components';
+import { Icon, SearchWidget } from '@plone/volto/components';
 import { toBackendLang } from '@plone/volto/helpers';
 import arrowRightSVG from '@plone/volto/icons/right-key.svg';
 import arrowLeftSVG from '@plone/volto/icons/left-key.svg';
@@ -21,6 +20,10 @@ const messages = defineMessages({
   openMobileMenu: {
     id: 'Open menu',
     defaultMessage: 'Open menu',
+  },
+  search: {
+    id: 'Search',
+    defaultMessage: 'Search',
   },
 });
 
@@ -164,6 +167,13 @@ const MobileNavigation = (props) => {
         classNames="menu-drawer"
       >
         <div className="menu-drawer">
+          <div className="search-header">
+            <div className=" search-wrapper ">
+              <div className="search">
+                <SearchWidget />
+              </div>
+            </div>
+          </div>
           <ul className="sections">
             <li className="header">
               <Link
@@ -203,6 +213,12 @@ const MobileNavigation = (props) => {
                   >
                     <div className="menu-drawer subsection">
                       <div className="search-header">
+                        <div className=" search-wrapper ">
+                          <div className="search">
+                            <SearchWidget />
+                          </div>
+                        </div>
+
                         <button onClick={(e) => closeSecondaryMenu(e)}>
                           <Icon name={arrowLeftSVG} size="60px" />
                           <span>
@@ -266,6 +282,12 @@ const MobileNavigation = (props) => {
                               >
                                 <div className="menu-drawer subsection">
                                   <div className="search-header">
+                                    <div className=" search-wrapper ">
+                                      <div className="search">
+                                        <SearchWidget />
+                                      </div>
+                                    </div>
+
                                     <button
                                       onClick={(e) => closeTertiaryMenu(e)}
                                     >
