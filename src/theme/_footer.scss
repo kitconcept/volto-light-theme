@@ -7,7 +7,10 @@
     background-color: $lightgrey;
     font-size: 18px;
 
-    a.powered-by,
+    a.powered-by {
+      color: $blue-for-grey-contrast;
+      font-size: 14px;
+    }
     .footer-branding {
       font-size: 14px;
     }
@@ -15,6 +18,7 @@
     .footer-message {
       font-weight: $bold;
       a {
+        color: $blue-for-grey-contrast;
         font-weight: inherit;
         text-decoration: underline;
       }
@@ -34,6 +38,9 @@
 
         &:last-of-type {
           border: none;
+        }
+        a {
+          color: $blue-for-grey-contrast;
         }
       }
     }
