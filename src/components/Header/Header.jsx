@@ -19,7 +19,7 @@ const Header = (props) => {
   const { pathname } = props;
   const token = useSelector((state) => state.userSession.token);
   const siteAction = useSelector(
-    (state) => state.content.data?.['@components'].actions.site_actions,
+    (state) => state.content.data?.['@components']?.actions?.site_actions,
   );
 
   return (
