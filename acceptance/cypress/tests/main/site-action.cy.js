@@ -3,7 +3,6 @@ context('Site Action Acceptance Tests', () => {
     cy.intercept('GET', `/**/*?expand*`).as('content');
     cy.intercept('GET', '/**/Document').as('schema');
 
-    // given a logged in editor and a page in edit mode
     cy.autologin();
     cy.visit('/');
     cy.viewport('macbook-16');
