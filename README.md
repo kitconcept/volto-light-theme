@@ -181,6 +181,10 @@ It's behind a feature flag, as opt-out:
 config.settings.enableFatMenu = true;
 ```
 
+## Upgrade Guide
+
+See a detailed upgrade guide in: https://github.com/kitconcept/volto-light-theme/blob/main/UPGRADE-GUIDE.md
+
 ## Development Setup
 
 This theme works under Volto 17 alpha 16 onwards.
