@@ -67,7 +67,7 @@
     flex: 1 1 0;
     flex-direction: row-reverse;
 
-    @media only screen and (max-width: 1021px) {
+    @media only screen and (max-width: 991px) {
       &.navigation-desktop {
         display: none;
       }
@@ -141,7 +141,7 @@
           height: 190px;
 
           @media only screen and (max-width: $largest-mobile-screen) {
-            height: 232px;
+            height: calc(100vh - 130px);
           }
         }
 
@@ -150,7 +150,9 @@
           height: 100%;
           align-items: center;
           justify-content: center;
-
+          @media only screen and (max-width: $largest-mobile-screen) {
+            height: unset;
+          }
           form {
             width: 100%;
 
@@ -258,6 +260,29 @@
       &:after {
         content: '|';
         font-size: 14px;
+      }
+    }
+  }
+}
+
+/* we have to align the search hide with desktop naviation hide.
+And destktop navigation uses different breakpoint for different mode and it is coming
+from volto core */
+body.has-toolbar:not(.has-sidebar):not(.has-sidebar-collapsed) {
+  .search-wrapper {
+    @media only screen and (max-width: 1071px) {
+      &.navigation-desktop {
+        display: none;
+      }
+    }
+  }
+}
+
+body.has-toolbar.has-sidebar {
+  .search-wrapper {
+    @media only screen and (max-width: 1447px) {
+      &.navigation-desktop {
+        display: none;
       }
     }
   }
@@ -579,21 +604,14 @@
   }
 
   .search-header {
-    a {
-      display: flex;
-      width: auto;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 32px;
-      margin-right: 30px;
-      float: right;
-      line-height: 30px;
-
+    display: flex;
+    flex-flow: row-reverse;
+    align-items: center;
+    .search-wrapper .search {
+      padding-top: 20px;
       button {
-        padding: 0;
-        border: 0;
-        margin-right: 0;
-        margin-bottom: 23px;
+        padding-top: 0px;
+        margin-right: 20px;
       }
     }
   }

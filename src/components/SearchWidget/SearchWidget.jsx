@@ -132,7 +132,6 @@ class SearchWidget extends Component {
             <form action="/search" onSubmit={this.onSubmit}>
               <div className="searchbox">
                 <input
-                  id="searchInput"
                   aria-label={this.props.intl.formatMessage(messages.search)}
                   onChange={(e) => this.onChangeText(e)}
                   onKeyDown={(e) => this.handleEscapeKeyDown(e)}
