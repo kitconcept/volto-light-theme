@@ -8,6 +8,25 @@
 
 <!-- towncrier release notes start -->
 
+## 3.0.0-alpha.2 (2024-01-17)
+
+### Breaking
+
+- Color background go to full-width now instead of snapping to 1440. @sneridagh
+  See decision in https://github.com/kitconcept/volto-light-theme/issues/323 [#323](https://github.com/kitconcept/volto-light-theme/pull/323)
+
+### Bugfix
+
+- Fix Responsive breakpoints have gaps for navigation @iRohitSingh [#265](https://github.com/kitconcept/volto-light-theme/pull/265)
+- Replaced static values of spacing mixins with variables @ichim-david [#286](https://github.com/kitconcept/volto-light-theme/pull/286)
+- Fix paragraph in edit mode is not reflected in view mode of Introduction
+  Block @iRohitSingh [#324](https://github.com/kitconcept/volto-light-theme/pull/324)
+- Increase BlocksChooser index higher than the sidebar one. @sneridagh [#327](https://github.com/kitconcept/volto-light-theme/pull/327)
+
+### Internal
+
+- Add Search icon is missing on tablet & mobile screen sizes @iRohitSingh [#266](https://github.com/kitconcept/volto-light-theme/pull/266)
+
 ## 3.0.0-alpha.1 (2024-01-02)
 
 ### Breaking
