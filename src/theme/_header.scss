@@ -67,7 +67,7 @@
     flex: 1 1 0;
     flex-direction: row-reverse;
 
-    @media only screen and (max-width: 1021px) {
+    @media only screen and (max-width: 991px) {
       &.navigation-desktop {
         display: none;
       }
@@ -260,6 +260,29 @@
       &:after {
         content: '|';
         font-size: 14px;
+      }
+    }
+  }
+}
+
+/* we have to align the search hide with desktop naviation hide.
+And destktop navigation uses different breakpoint for different mode and it is coming
+from volto core */
+body.has-toolbar:not(.has-sidebar):not(.has-sidebar-collapsed) {
+  .search-wrapper {
+    @media only screen and (max-width: 1071px) {
+      &.navigation-desktop {
+        display: none;
+      }
+    }
+  }
+}
+
+body.has-toolbar.has-sidebar {
+  .search-wrapper {
+    @media only screen and (max-width: 1447px) {
+      &.navigation-desktop {
+        display: none;
       }
     }
   }
