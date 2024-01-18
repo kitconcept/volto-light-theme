@@ -4,7 +4,7 @@ on: [push, pull_request]
 env:
   ADDON_NAME: "@kitconcept/volto-light-theme"
   ADDON_PATH: "volto-light-theme"
-  VOLTO_VERSION: "17.5.0"
+  VOLTO_VERSION: "17.11.2"
 
 jobs:
 
