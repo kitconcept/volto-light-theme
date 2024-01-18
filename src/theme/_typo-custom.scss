@@ -41,6 +41,7 @@ p,
 ul,
 ol {
   margin-bottom: $block-vertical-space;
+  margin-top: $block-vertical-space;
   @include word-break();
 
   &:last-child {

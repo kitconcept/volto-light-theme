@@ -1,7 +1,11 @@
-.block.gridBlock,
+#page-document .block.gridBlock,
 #page-edit .block-editor-gridBlock .block.gridBlock {
   margin-top: 0;
   margin-bottom: 0;
+
+  .column:not(.grid) {
+    padding: 10px;
+  }
 
   &.is--first--of--block-type,
   &.previous--is--same--block-type.previous--has--different--backgroundColor {
@@ -33,7 +37,7 @@
   }
 
   .block.teaser {
-    margin-bottom: 0;
+    padding-bottom: 0 !important;
     background-color: $lightgrey;
 
     // External link icon

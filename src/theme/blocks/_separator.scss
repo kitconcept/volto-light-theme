@@ -1,8 +1,6 @@
 #page-document .block.separator {
   // cancel the original padding from the add-on
-  &:not(.inner):not([role='presentation']) {
-    padding: 0 !important;
-  }
+  margin-top: 0;
 
   &.has--align--center,
   &.inner {
