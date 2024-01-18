@@ -41,9 +41,21 @@
   }
 
   h2.headline {
+    margin-bottom: 40px;
     @container (max-width: #{$default-container-width + 2 * 20px}) {
       margin-right: 20px !important;
       margin-left: 20px !important;
+    }
+  }
+
+  &:not(.previous--has--same--backgroundColor.previous--is--same--block-type) {
+    h2.headline {
+      padding-top: 0 !important;
+    }
+    &:has(:not(.headline)) {
+      .listing-item:first-child {
+        padding-top: 40px !important;
+      }
     }
   }
 
@@ -57,7 +69,7 @@
       a {
         .listing-body {
           h2 {
-            color: $black;
+            color: $black !important;
             @include text-heading-h2();
           }
           p {
@@ -75,7 +87,7 @@
   // Summary variation
   &.summary {
     .listing-item {
-      padding-top: 0 !important;
+      padding-top: 0;
 
       img {
         width: 220px;
@@ -87,14 +99,16 @@
           margin-bottom: 20px;
         }
       }
-      h3 {
-        margin-top: 0 !important;
-        margin-bottom: 40px !important;
-        color: $black;
-        @include text-heading-h2();
-        @container (max-width: #{$largest-mobile-screen}) {
-          @include text-heading-h3();
-          margin-bottom: 20px !important;
+      .listing-body {
+        & > h3 {
+          margin-top: 0 !important;
+          margin-bottom: 40px !important;
+          color: $black !important;
+          @include text-heading-h2();
+          @container (max-width: #{$largest-mobile-screen}) {
+            @include text-heading-h3();
+            margin-bottom: 20px !important;
+          }
         }
       }
     }

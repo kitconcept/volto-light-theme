@@ -196,7 +196,6 @@ External link removal for all the blocks.
   & > .block.maps.align.right,
   & > .block.video.align.wide .video-inner,
   & > .block.maps.align.wide .maps-inner,
-  & > .block.__button,
   & > .block.listing .listing-item,
   & > .block.listing .emptyListing,
   & > .block.listing .image-gallery,
@@ -240,12 +239,9 @@ External link removal for all the blocks.
 
   & > .block {
     // This is the default, same color spacing for all blocks
-    margin-bottom: $block-vertical-space;
+    margin-bottom: 0;
   }
 
-  &:last-child {
-    margin-bottom: -1rem !important;
-  }
 }
 
 // Setting a default, for all blocks

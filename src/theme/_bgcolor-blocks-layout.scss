@@ -1,9 +1,11 @@
 .blocks-group-wrapper {
-  @include color-block-change-vertical-spacing();
-}
+  &:not(:first-child) > :first-child {
+    padding-top: $color-block-change-vertical-spacing !important;
+  }
 
-.blocks-group-wrapper.grey {
-  background-color: #ecebeb;
+  & > :last-child {
+    padding-bottom: $color-block-change-vertical-spacing !important;
+  }
 }
 
 .has--backgroundColor--grey {
@@ -31,7 +33,8 @@
     @include grid-block-vertical-spacing-top();
   }
   &.is--last--of--block-type.next--has--same--backgroundColor {
-    margin-bottom: $grid-block-vertical-spacing-bottom;
+    padding-bottom: $grid-block-vertical-spacing-bottom;
+
   }
   &.next--is--same--block-type.next--has--same--backgroundColor {
     // We rely on the grid gutter to keep the vertical spacing in case grid + grid
