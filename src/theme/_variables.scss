@@ -1,8 +1,8 @@
 // All variables has to be `!default`'ed in order to be able to
-// be overrided by add-ons
+// be overriden by add-ons
 @use 'sass:map';
 
-// // Semantic UI related - Sync'd
+// // Semantic UI related - Synced
 // Colors
 $text-color: #000 !default;
 $font-size: 18px !default;
@@ -24,8 +24,10 @@ $heading-text-bottom-spacing: 25px !default;
 
 // Fonts
 $custom-fontname: 'Inter' !default;
+$cmsui-fontname: 'Metropolis' !default;
 $page-font-template: $custom-fontname, sans-serif !default;
 $page-font: var(--custom-main-font, $page-font-template) !default;
+$cmsui-font: var(--custom-cms-font, $cmsui-fontname, $page-font) !default;
 $header-font: var(--custom-headers-font, $page-font) !default;
 
 // Breakpoints
@@ -43,7 +45,6 @@ $default-container-width: 940px !default;
 $narrow-container-width: 620px !default;
 
 // Rest of theme variables
-
 :root {
   --text-color: #666;
   --text-size: 18px;
@@ -91,84 +92,84 @@ $horizontal-space-small-screens: $spacing-small !default;
 $block-vertical-space: 25px !default;
 
 // Change of color
-$color-block-change-vertical-spacing: 80px !default;
+$color-block-change-vertical-spacing: $spacing-xlarge !default;
 
 // Grids
-$grid-block-vertical-spacing-top: 80px !default;
-$grid-block-vertical-spacing-bottom: 80px !default;
+$grid-block-vertical-spacing-top: $spacing-xlarge !default;
+$grid-block-vertical-spacing-bottom: $spacing-xlarge !default;
 
 @mixin vertical-space-h1() {
-  margin-top: 40px;
-  margin-bottom: 80px;
+  margin-top: $spacing-medium;
+  margin-bottom: $spacing-xlarge;
   @media only screen and (max-width: $largest-mobile-screen) {
-    margin-bottom: 60px;
+    margin-bottom: $spacing-large;
   }
 }
 
 @mixin vertical-space-h2() {
-  margin-top: 80px;
-  margin-bottom: 40px;
+  margin-top: $spacing-xlarge;
+  margin-bottom: $spacing-medium;
   @media only screen and (max-width: $largest-mobile-screen) {
-    margin-top: 60px;
+    margin-top: $spacing-large;
   }
 }
 
 @mixin vertical-space-h3() {
-  margin-top: 60px;
-  margin-bottom: 20px;
+  margin-top: $spacing-large;
+  margin-bottom: $spacing-small;
 }
 
 @mixin vertical-space-h4() {
-  margin-top: 60px;
-  margin-bottom: 20px;
+  margin-top: $spacing-large;
+  margin-bottom: $spacing-small;
 }
 
 @mixin vertical-space-heading() {
-  margin-top: 80px;
-  margin-bottom: 80px;
+  margin-top: $spacing-xlarge;
+  margin-bottom: $spacing-xlarge;
   @media only screen and (max-width: $largest-mobile-screen) {
-    margin-top: 60px;
-    margin-bottom: 60px;
+    margin-top: $spacing-large;
+    margin-bottom: $spacing-large;
   }
 }
 
 @mixin vertical-space-introduction() {
-  margin-top: 80px;
-  margin-bottom: 80px;
+  margin-top: $spacing-xlarge;
+  margin-bottom: $spacing-xlarge;
   @media only screen and (max-width: $largest-mobile-screen) {
-    margin-top: 60px;
-    margin-bottom: 60px;
+    margin-top: $spacing-large;
+    margin-bottom: $spacing-large;
   }
 }
 
 @mixin vertical-space-button() {
-  margin-top: 80px;
-  margin-bottom: 80px;
+  margin-top: $spacing-xlarge;
+  margin-bottom: $spacing-xlarge;
   @media only screen and (max-width: $largest-mobile-screen) {
-    margin-top: 60px;
-    margin-bottom: 60px;
+    margin-top: $spacing-large;
+    margin-bottom: $spacing-large;
   }
 }
 
 @mixin vertical-space-teaser() {
-  margin-bottom: 40px;
+  margin-bottom: $spacing-medium;
 }
 
 @mixin vertical-space-separator() {
-  margin-top: 80px;
-  margin-bottom: 80px;
+  margin-top: $spacing-xlarge;
+  margin-bottom: $spacing-xlarge;
   @media only screen and (max-width: $largest-mobile-screen) {
-    margin-top: 60px;
-    margin-bottom: 60px;
+    margin-top: $spacing-large;
+    margin-bottom: $spacing-large;
   }
 }
 
 @mixin vertical-space-block-title() {
-  margin-top: 80px;
-  margin-bottom: 80px;
+  margin-top: $spacing-xlarge;
+  margin-bottom: $spacing-xlarge;
   @media only screen and (max-width: $largest-mobile-screen) {
-    margin-top: 60px;
-    margin-bottom: 60px;
+    margin-top: $spacing-large;
+    margin-bottom: $spacing-large;
   }
 }
 
@@ -189,7 +190,7 @@ $grid-block-vertical-spacing-bottom: 80px !default;
 }
 
 // Footer
-$footer-vertical-spacing-top: 80px !default;
+$footer-vertical-spacing-top: $spacing-xlarge !default;
 
 // Maps
 $font-weights: (

@@ -56,6 +56,7 @@ const applyConfig = (config) => {
   config.settings.navDepth = 3;
   config.settings.enableFatMenu = true;
   config.settings.slate.useLinkedHeadings = false;
+  config.settings.contentMetadataTagsImageField = 'preview_image';
 
   // Remove Hero Block
   config.blocks.blocksConfig.hero.restricted = true;

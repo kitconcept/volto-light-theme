@@ -8,6 +8,111 @@
 
 <!-- towncrier release notes start -->
 
+## 3.0.0-alpha.2 (2024-01-17)
+
+### Breaking
+
+- Color background go to full-width now instead of snapping to 1440. @sneridagh
+  See decision in https://github.com/kitconcept/volto-light-theme/issues/323 [#323](https://github.com/kitconcept/volto-light-theme/pull/323)
+
+### Bugfix
+
+- Fix Responsive breakpoints have gaps for navigation @iRohitSingh [#265](https://github.com/kitconcept/volto-light-theme/pull/265)
+- Replaced static values of spacing mixins with variables @ichim-david [#286](https://github.com/kitconcept/volto-light-theme/pull/286)
+- Fix paragraph in edit mode is not reflected in view mode of Introduction
+  Block @iRohitSingh [#324](https://github.com/kitconcept/volto-light-theme/pull/324)
+- Increase BlocksChooser index higher than the sidebar one. @sneridagh [#327](https://github.com/kitconcept/volto-light-theme/pull/327)
+
+### Internal
+
+- Add Search icon is missing on tablet & mobile screen sizes @iRohitSingh [#266](https://github.com/kitconcept/volto-light-theme/pull/266)
+
+## 3.0.0-alpha.1 (2024-01-02)
+
+### Breaking
+
+- Change the Language Selector to only display the first 2 Characters of each Language @Molochem [#321](https://github.com/kitconcept/volto-light-theme/pull/321)
+
+### Feature
+
+- Added a11y tests infrastructure @sneridagh [#300](https://github.com/kitconcept/volto-light-theme/pull/300)
+
+### Bugfix
+
+- Fix wrong styling for all the groups by background in view mode @sneridagh
+  Added style support for Image block @sneridagh
+  Added style support for Listing block @sneridagh [#322](https://github.com/kitconcept/volto-light-theme/pull/322)
+
+## 3.0.0-alpha.0 (2023-12-27)
+
+### Breaking
+
+- Upgraded the dependency on `@kitconcept/volto-slider-block` to use `6.0.0`.
+
+  This is a drop-in replacement, so no action is required for the existing slider blocks you may have already in your sites.
+  However, the CSS classes of the structural slider block elements changed in this version.
+  The inner (visible objects) CSS classes remain unchanged.
+  If you have customized them in your project, you may have to update them, although the structural class names are rarely customized aside from vertical spacing properties.
+  They are mapped 1:1 with the previous ones, following this table correspondence:
+
+  | Old className   | New className    |
+  | --------------- | ---------------- |
+  | slick-slider    | slider-wrapper   |
+  | slick-list      | slider-viewport  |
+  | slick-track     | slider-container |
+  | slick-slide     | slider-slide     |
+  | slick-arrow     | slider-button    |
+  | slick-prev      | slider-button-prev |
+  | slick-next      | slider-slide-next  |
+  | slick-next      | slider-slide-next  |
+  | slick-dots      | slider-dots      |
+  | slick-dot       | slider-dot       |
+
+  For more information, please check the https://github.com/kitconcept/volto-slider-block/blob/main/README.md [#288](https://github.com/kitconcept/volto-light-theme/pull/288)
+
+### Bugfix
+
+- Fix showing up uploaded logo from site controlpanel. @iFlameing [#291](https://github.com/kitconcept/volto-light-theme/pull/291)
+- Un-pin `eslint-plugin-jsx-a11y` version @sneridagh [#299](https://github.com/kitconcept/volto-light-theme/pull/299)
+- Fix Blocks chooser styling @iRohitSingh [#307](https://github.com/kitconcept/volto-light-theme/pull/307)
+- Remove id selector from listings because of css specificity @steffenri [#309](https://github.com/kitconcept/volto-light-theme/pull/309)
+- Fix margins of h1 in sitemap view @steffenri [#312](https://github.com/kitconcept/volto-light-theme/pull/312)
+- Fix homepage link for all language codes (#298) @steffenri [#313](https://github.com/kitconcept/volto-light-theme/pull/313)
+
+### Internal
+
+- Upgrade slider to 6.1.0 @sneridagh [#316](https://github.com/kitconcept/volto-light-theme/pull/316)
+
+## 2.1.0 (2023-12-13)
+
+### Feature
+
+- Added Image Gallery Listing Metadata @robgietema [#127](https://github.com/kitconcept/volto-light-theme/pull/127)
+- Add Brazilian Portuguese translation [@ericof] [#294](https://github.com/kitconcept/volto-light-theme/pull/294)
+
+### Bugfix
+
+- Also clean up Navigation PropTypes @fredvd [#272b](https://github.com/kitconcept/volto-light-theme/pull/272b)
+- Fix css of External link icon indicator @iRohitSingh [#91](https://github.com/kitconcept/volto-light-theme/pull/91)
+- Fix css of Sitemap @iRohitSingh [#209](https://github.com/kitconcept/volto-light-theme/pull/209)
+- Fixed css errors in the header and image scss files @ichim-david
+  All the mobile menu items are now links @ichim-david
+  Close buttons are now tabbable @ichim-david
+  Close menu when hitting the escape key @ichim-david [#264](https://github.com/kitconcept/volto-light-theme/pull/264)
+- Use only one set of values for container widths which can be modified from variables @ichim-david [#265](https://github.com/kitconcept/volto-light-theme/pull/265)
+- Update contentMetadataTagsImageField settings to use preview_image field.  @iRohitSingh [#274](https://github.com/kitconcept/volto-light-theme/pull/274)
+- Removed the "overview" React Message from Fat Menu @Molochem [#276](https://github.com/kitconcept/volto-light-theme/pull/276)
+- Moved custom font loading to a separate fonts.scss @ichim-david
+  Added variable definitions for loading the cms font instead of hard-coding to Metropolis @ichim-david [#279](https://github.com/kitconcept/volto-light-theme/pull/279)
+- Minor style fixes for hamburger menu icon @danalvrz [#281](https://github.com/kitconcept/volto-light-theme/pull/281)
+- Don't force aspect ratio for the Image content type view @iRohitSingh [#293](https://github.com/kitconcept/volto-light-theme/pull/293)
+
+### Internal
+
+- Run CI workflows for external PRs. @davisagli [#271](https://github.com/kitconcept/volto-light-theme/pull/271)
+- Remove old code from navigation component @steffenri [#272](https://github.com/kitconcept/volto-light-theme/pull/272)
+- Remove Hero Block @iRohitSingh [#278](https://github.com/kitconcept/volto-light-theme/pull/278)
+
 ## 2.0.0 (2023-11-16)
 
 ### Breaking

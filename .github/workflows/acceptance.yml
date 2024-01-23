@@ -4,7 +4,7 @@ on: [push, pull_request]
 env:
   ADDON_NAME: "@kitconcept/volto-light-theme"
   ADDON_PATH: "volto-light-theme"
-  VOLTO_VERSION: "17.5.0"
+  VOLTO_VERSION: "17.11.2"
 
 jobs:
 
@@ -32,11 +32,56 @@ jobs:
           parallel: false
           browser: chrome
           working-directory: acceptance
-          spec: cypress/tests/*.js
+          spec: cypress/tests/main/**/*.js
           install: false
           start: |
             docker compose -f ci.yml --profile prod up
           wait-on: 'npx wait-on --httpTimeout 20000 http-get://localhost:55001/plone http://localhost:3000'
+
+      # Upload Cypress screenshots
+      - uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: cypress-screenshots-acceptance
+          path: acceptance/cypress/screenshots
+
+      # Upload Cypress videos
+      - uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: cypress-videos-acceptance
+          path: acceptance/cypress/videos
+
+  acceptance-a11y:
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.event.pull_request.base.repo.full_name
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Install Cypress
+        run: |
+          cd acceptance
+          yarn
+
+      - name: "Cypress: Acceptance tests"
+        uses: cypress-io/github-action@v6
+        env:
+          BABEL_ENV: production
+          CYPRESS_RETRIES: 2
+          CYPRESS_a11y: 1
+        with:
+          parallel: false
+          browser: chrome
+          working-directory: acceptance
+          spec: cypress/tests/a11y/**/*.js
+          install: false
+          start: |
+            docker compose -f ci-a11y.yml --profile prod up
+          wait-on: 'npx wait-on --httpTimeout 20000 http-get://localhost:8080/Plone http://localhost:3000'
 
       # Upload Cypress screenshots
       - uses: actions/upload-artifact@v3

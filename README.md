@@ -118,14 +118,15 @@ It is recommended that your project or policy add-on `package.json` include the 
 
 ```json
   "dependencies": {
-    "@eeacms/volto-accordion-block": "9.0.0",
-    "@kitconcept/volto-button-block": "2.1.0",
-    "@kitconcept/volto-dsgvo-banner": "1.3.0",
-    "@kitconcept/volto-heading-block": "2.2.0",
-    "@kitconcept/volto-introduction-block": "1.0.0",
-    "@kitconcept/volto-light-theme": "1.0.0",
-    "@kitconcept/volto-separator-block": "4.0.0",
-    "@kitconcept/volto-highlight-block": "3.0.0",
+    "@eeacms/volto-accordion-block": "^10.4.0",
+    "@kitconcept/volto-button-block": "^2.3.1",
+    "@kitconcept/volto-dsgvo-banner": "^1.3.0",
+    "@kitconcept/volto-heading-block": "^2.4.0",
+    "@kitconcept/volto-highlight-block": "^3.0.0",
+    "@kitconcept/volto-introduction-block": "^1.0.0",
+    "@kitconcept/volto-separator-block": "^4.0.0",
+    "@kitconcept/volto-slider-block": "^6.0.0",
+    "@kitconcept/volto-light-theme": "^2.0.0",
   }
 ```
 
@@ -155,7 +156,7 @@ Then, declare the theme in your project `package.json`:
   "theme": "@kitconcept/volto-light-theme",
 ```
 
-Alternativelly, you can also declare it in your project's `volto.config.js`:
+Alternatively, you can also declare it in your project's `volto.config.js`:
 
 ```js
 const addons = [];
@@ -169,9 +170,9 @@ module.exports = {
 
 You can specify your project add-ons in `volto.config.js`, but sometimes is better to have them all in one place (in your policy add-on) for portability.
 
-## Feature flags
+## Feature Flags
 
-### Enable fat menu
+### Enable Fat Menu
 
 Since 2.0.0, the light theme has a fat menu (below the main site sections) triggered clickin on one of them.
 It's behind a feature flag, as opt-out:
@@ -179,6 +180,10 @@ It's behind a feature flag, as opt-out:
 ```js
 config.settings.enableFatMenu = true;
 ```
+
+## Upgrade Guide
+
+See a detailed upgrade guide in: https://github.com/kitconcept/volto-light-theme/blob/main/UPGRADE-GUIDE.md
 
 ## Development Setup
 
@@ -220,7 +225,7 @@ Run `make help` to list the available commands.
 - Docker
 - Node 18 (e.g. via nvm)
 
-### Development environment Setup
+### Development Environment Setup
 
 Run once
 
@@ -231,7 +236,7 @@ make dev
 which will build and launch the backend and frontend containers.
 There's no need to build them again after doing it the first time unless something has changed from the container setup.
 
-In order to make the local IDE play well with this setup, is it required to run once `yarn` to install locally the required packages (ESlint, Prettier, Stylelint).
+To make the local IDE play well with this setup, it is required to run `yarn` once to install the required packages (ESlint, Prettier, Stylelint).
 
 Run
 
@@ -260,7 +265,7 @@ This will start both the frontend and backend containers.
 
 ### Stop Backend (Docker)
 
-After developing, in order to stop the running backend, don't forget to run:
+After developing, to stop the running backend, don't forget to run:
 
 Run
 
@@ -324,12 +329,44 @@ Run
 make test-acceptance
 ```
 
-To run Cypress tests afterwards.
+To run Cypress tests afterward.
 
 When finished, don't forget to shutdown the backend server.
 
 ```shell
 make stop-test-acceptance-server
+```
+
+### Accessibility Acceptance tests
+
+Run once
+
+```shell
+make install-acceptance
+```
+
+For starting the servers
+
+Run
+
+```shell
+make start-test-acceptance-server-a11y
+```
+
+The frontend is run in dev mode, so development while writing tests is possible.
+
+Run
+
+```shell
+make test-acceptance-a11y
+```
+
+To run Cypress tests afterwards.
+
+When finished, don't forget to shutdown the backend server.
+
+```shell
+make stop-test-acceptance-server-a11y
 ```
 
 ### Release
