@@ -8,12 +8,20 @@
 
     @include vertical-space-button();
   }
-
+  // Exceptions after certain blocks
   p + & {
     .button.container {
       padding-top: 35px;
       @container (max-width: #{$largest-mobile-screen}) {
-        padding-top: 40px;
+        padding-top: 15px;
+      }
+    }
+  }
+  .block.gridBlock + & {
+    .button.container {
+      padding-top: 0;
+      @container (max-width: #{$largest-mobile-screen}) {
+        margin-top: 0;
       }
     }
   }
