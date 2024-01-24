@@ -1,6 +1,11 @@
-#page-document .block.introduction {
+.block.introduction {
   @include vertical-space-introduction();
+  p + & {
+    padding-bottom: $spacing-xlarge !important;
+    border: 2px solid red !important;
+  }
 }
+
 
 #page-document .block.separator + .block.introduction {
   padding: 0;

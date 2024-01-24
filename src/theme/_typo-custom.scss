@@ -37,7 +37,10 @@ li::marker {
   }
 }
 
-p,
+p {
+  @include vertical-space-p();
+}
+
 ul,
 ol {
   margin-bottom: $block-vertical-space;

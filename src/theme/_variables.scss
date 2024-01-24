@@ -89,20 +89,25 @@ $spacing-xlarge: 80px !default;
 $horizontal-space-small-screens: $spacing-small !default;
 
 // Vertical Spacing
-$block-vertical-space: 25px !default;
+$block-vertical-space: 20px !default;
 
 // Change of color
 $color-block-change-vertical-spacing: $spacing-xlarge !default;
 
 // Grids
-$grid-block-vertical-spacing-top: $spacing-xlarge !default;
+$grid-block-vertical-spacing-top: $spacing-large !default;
 $grid-block-vertical-spacing-bottom: $spacing-xlarge !default;
+
+@mixin vertical-space-p() {
+  margin-bottom: $block-vertical-space;
+}
 
 @mixin vertical-space-h1() {
   margin-top: $spacing-medium;
-  margin-bottom: $spacing-xlarge;
+  padding-bottom: $spacing-xlarge;
+  margin-bottom: 0;
   @media only screen and (max-width: $largest-mobile-screen) {
-    margin-bottom: $spacing-large;
+    padding-bottom: $spacing-large;
   }
 }
 
@@ -125,8 +130,8 @@ $grid-block-vertical-spacing-bottom: $spacing-xlarge !default;
 }
 
 @mixin vertical-space-heading() {
-  margin-top: $spacing-xlarge;
-  padding-bottom: $spacing-xlarge;
+  margin-top: 0;
+  padding-bottom: $spacing-medium;
   margin-bottom: 0;
   @media only screen and (max-width: $largest-mobile-screen) {
     margin-top: $spacing-large;
@@ -135,8 +140,9 @@ $grid-block-vertical-spacing-bottom: $spacing-xlarge !default;
 }
 
 @mixin vertical-space-introduction() {
-  padding-top: $spacing-xlarge;
-  padding-bottom: $spacing-xlarge;
+  padding-top: $spacing-medium;
+  padding-bottom: $spacing-medium;
+
   @media only screen and (max-width: $largest-mobile-screen) {
     padding-top: $spacing-large;
     padding-bottom: $spacing-large;
@@ -147,8 +153,8 @@ $grid-block-vertical-spacing-bottom: $spacing-xlarge !default;
   padding-top: $spacing-medium;
   padding-bottom: $spacing-xlarge;
   @media only screen and (max-width: $largest-mobile-screen) {
-    margin-top: $spacing-large;
-    margin-bottom: $spacing-large;
+    padding-top: $spacing-small;
+    padding-bottom: $spacing-large;
   }
 }
 
@@ -189,7 +195,8 @@ $grid-block-vertical-spacing-bottom: $spacing-xlarge !default;
 }
 
 @mixin grid-block-vertical-spacing-top() {
-  margin-top: $grid-block-vertical-spacing-top;
+  padding-top: $grid-block-vertical-spacing-top;
+  margin-top: 0;
   @media only screen and (max-width: $largest-mobile-screen) {
     margin-top: $spacing-large;
   }

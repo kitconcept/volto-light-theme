@@ -1,10 +1,14 @@
-#page-document .block.gridBlock,
+.block.gridBlock,
 #page-edit .block-editor-gridBlock .block.gridBlock {
   margin-top: 0;
   margin-bottom: 0;
 
-  .column:not(.grid) {
-    padding: 10px;
+  .column.grid > .column:not(.grid) {
+    padding: 10px !important;
+  }
+
+  h1.documentFirstHeading + & {
+    padding-top: 0 !important;
   }
 
   &.is--first--of--block-type,

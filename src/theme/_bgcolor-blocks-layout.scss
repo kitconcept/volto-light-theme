@@ -1,10 +1,16 @@
 .blocks-group-wrapper {
   &:not(:first-child) > :first-child {
     padding-top: $color-block-change-vertical-spacing !important;
+    @container (max-width: #{$largest-mobile-screen}) {
+      padding-top: 60px !important;
+    }
   }
 
   & > :last-child {
     padding-bottom: $color-block-change-vertical-spacing !important;
+    @container (max-width: #{$largest-mobile-screen}) {
+      padding-bottom: 60px !important;
+    }
   }
 }
 
@@ -40,6 +46,11 @@
     // We rely on the grid gutter to keep the vertical spacing in case grid + grid
     // So here we cancel the default block margin-bottom
     margin-bottom: 0;
+  }
+
+  // If the Grid is the first block after Page title
+  h1.documentFirstHeading + & {
+    padding-top: 0;
   }
 }
 
