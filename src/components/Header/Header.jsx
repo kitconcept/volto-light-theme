@@ -102,12 +102,14 @@ const IntranetHeader = ({ pathname, siteLabel, token }) => {
 
 const Header = (props) => {
   const { pathname } = props;
-  const siteLabel = config.settings.siteLabel;
+  let siteLabel = config.settings.siteLabel;
   const intranetHeader = config.settings.intranetHeader;
   const token = useSelector((state) => state.userSession.token);
   const intl = useIntl();
   const translatedSiteLabel = intl.formatMessage(messages.siteLabel);
-  console.log(translatedSiteLabel, 'this is translatedSiteLabel');
+  siteLabel =
+    translatedSiteLabel !== 'siteLabel' ? translatedSiteLabel : siteLabel;
+  console.log(siteLabel, 'this is translatedSiteLabel');
 
   return (
     <header
