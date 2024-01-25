@@ -220,14 +220,21 @@ msgstr ""
 
 #: components/Blocks/Search/components/SearchInput
 #: components/Blocks/Search/TopSideFacets
+#: components/SearchWidget/IntranetSearchWidget
 #: components/SearchWidget/SearchWidget
 # defaultMessage: Search
 msgid "Search"
 msgstr ""
 
+#: components/SearchWidget/IntranetSearchWidget
 #: components/SearchWidget/SearchWidget
 # defaultMessage: Search Site
 msgid "Search Site"
+msgstr ""
+
+#: components/SearchWidget/IntranetSearchWidget
+# defaultMessage: Search for People, E-Mail Address, Phone Number, ...
+msgid "Search for People, E-Mail Address, Phone Number, ..."
 msgstr ""
 
 #: components/Blocks/Search/components/SearchDetails
@@ -314,4 +321,9 @@ msgstr ""
 #: components/Blocks/Listing/ListingBody
 # defaultMessage: of
 msgid "of"
+msgstr ""
+
+#: components/Header/Header
+# defaultMessage: undefined
+msgid "siteLabel"
 msgstr ""

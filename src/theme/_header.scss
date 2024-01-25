@@ -222,6 +222,22 @@
     justify-content: space-between;
     padding-top: 16px;
 
+    .intranet {
+      padding: 10px $spacing-small;
+      margin-top: -16px;
+      margin-left: 213px;
+      background-color: $secondary-grey;
+      @media only screen and (max-width: $narrow-container-width) {
+        margin-left: 0px;
+      }
+
+      p {
+        @include marginal-title();
+        font-weight: 400;
+        text-transform: capitalize;
+      }
+    }
+
     .language-selector {
       padding-left: 40px;
     }
@@ -347,22 +363,6 @@
       justify-content: space-between;
       @media only screen and (max-width: $narrow-container-width) {
         flex-direction: row;
-      }
-
-      .intranet {
-        padding: 10px $spacing-small;
-        margin-top: -16px;
-        margin-left: 213px;
-        background-color: $secondary-grey;
-        @media only screen and (max-width: $narrow-container-width) {
-          margin-left: 0px;
-        }
-
-        p {
-          @include marginal-title();
-          font-weight: 400;
-          text-transform: capitalize;
-        }
       }
 
       .tools {

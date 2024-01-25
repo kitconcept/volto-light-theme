@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import Container from '@kitconcept/volto-light-theme/components/Atoms/Container/Container';
 import MobileNavigation from '../MobileNavigation/MobileNavigation';
 import { Link } from 'react-router-dom';
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, useIntl, defineMessages } from 'react-intl';
 import config from '@plone/volto/registry';
 import cx from 'classnames';
 import IntranetSearchWidget from '../SearchWidget/IntranetSearchWidget';
@@ -17,7 +17,14 @@ import {
   SearchWidget,
 } from '@plone/volto/components';
 
-const InternetHeader = ({ pathname, token }) => {
+const messages = defineMessages({
+  siteLabel: {
+    id: 'siteLabel',
+    defaultMessage: '',
+  },
+});
+
+const InternetHeader = ({ pathname, siteLabel, token }) => {
   return (
     <>
       <div className="header">
@@ -44,13 +51,18 @@ const InternetHeader = ({ pathname, token }) => {
             </Link>
             <a href="https://github.com/kitconcept/volto-light-theme">GitHub</a>
           </div>
+          {siteLabel && (
+            <div className="intranet">
+              <p>{siteLabel}</p>
+            </div>
+          )}
         </div>
       </div>
     </>
   );
 };
 
-const IntranetHeader = ({ pathname, intranetName, token }) => {
+const IntranetHeader = ({ pathname, siteLabel, token }) => {
   return (
     <>
       <div className="header">
@@ -65,9 +77,11 @@ const IntranetHeader = ({ pathname, intranetName, token }) => {
             </Link>
             <a href="https://github.com/kitconcept/volto-light-theme">GitHub</a>
           </div>
-          <div className="intranet">
-            <p>{intranetName}</p>
-          </div>
+          {siteLabel && (
+            <div className="intranet">
+              <p>{siteLabel}</p>
+            </div>
+          )}
         </div>
         <div className="logo-nav-wrapper">
           <div className="logo">
@@ -88,22 +102,30 @@ const IntranetHeader = ({ pathname, intranetName, token }) => {
 
 const Header = (props) => {
   const { pathname } = props;
-  const intranetName = config.settings.intranetName;
+  const siteLabel = config.settings.siteLabel;
+  const intranetHeader = config.settings.intranetHeader;
   const token = useSelector((state) => state.userSession.token);
+  const intl = useIntl();
+  const translatedSiteLabel = intl.formatMessage(messages.siteLabel);
+  console.log(translatedSiteLabel, 'this is translatedSiteLabel');
 
   return (
     <header
-      className={cx('header-wrapper', { 'intranet-header': intranetName })}
+      className={cx('header-wrapper', { 'intranet-header': intranetHeader })}
     >
       <Container layout>
-        {intranetName ? (
+        {intranetHeader ? (
           <IntranetHeader
             pathname={pathname}
-            intranetName={intranetName}
+            siteLabel={siteLabel}
             token={token}
           />
         ) : (
-          <InternetHeader pathname={pathname} token={token} />
+          <InternetHeader
+            pathname={pathname}
+            siteLabel={siteLabel}
+            token={token}
+          />
         )}
       </Container>
     </header>

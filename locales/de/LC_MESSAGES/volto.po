@@ -226,15 +226,22 @@ msgstr "Rechts"
 
 #: components/Blocks/Search/components/SearchInput
 #: components/Blocks/Search/TopSideFacets
+#: components/SearchWidget/IntranetSearchWidget
 #: components/SearchWidget/SearchWidget
 # defaultMessage: Search
 msgid "Search"
 msgstr "Suche"
 
+#: components/SearchWidget/IntranetSearchWidget
 #: components/SearchWidget/SearchWidget
 # defaultMessage: Search Site
 msgid "Search Site"
 msgstr "Seite durchsuchen"
+
+#: components/SearchWidget/IntranetSearchWidget
+# defaultMessage: Search for People, E-Mail Address, Phone Number, ...
+msgid "Search for People, E-Mail Address, Phone Number, ..."
+msgstr ""
 
 #: components/Blocks/Search/components/SearchDetails
 # defaultMessage: Search results
@@ -321,3 +328,8 @@ msgstr ""
 # defaultMessage: of
 msgid "of"
 msgstr "von"
+
+#: components/Header/Header
+# defaultMessage: undefined
+msgid "siteLabel"
+msgstr ""

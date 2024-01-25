@@ -220,15 +220,22 @@ msgstr "Direita"
 
 #: components/Blocks/Search/components/SearchInput
 #: components/Blocks/Search/TopSideFacets
+#: components/SearchWidget/IntranetSearchWidget
 #: components/SearchWidget/SearchWidget
 # defaultMessage: Search
 msgid "Search"
 msgstr "Buscar"
 
+#: components/SearchWidget/IntranetSearchWidget
 #: components/SearchWidget/SearchWidget
 # defaultMessage: Search Site
 msgid "Search Site"
 msgstr "Buscar no site"
+
+#: components/SearchWidget/IntranetSearchWidget
+# defaultMessage: Search for People, E-Mail Address, Phone Number, ...
+msgid "Search for People, E-Mail Address, Phone Number, ..."
+msgstr ""
 
 #: components/Blocks/Search/components/SearchDetails
 # defaultMessage: Search results
@@ -315,3 +322,8 @@ msgstr "Mais informações"
 # defaultMessage: of
 msgid "of"
 msgstr "de"
+
+#: components/Header/Header
+# defaultMessage: undefined
+msgid "siteLabel"
+msgstr ""
