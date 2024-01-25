@@ -109,7 +109,6 @@ const Header = (props) => {
   const translatedSiteLabel = intl.formatMessage(messages.siteLabel);
   siteLabel =
     translatedSiteLabel !== 'siteLabel' ? translatedSiteLabel : siteLabel;
-  console.log(siteLabel, 'this is translatedSiteLabel');
 
   return (
     <header
