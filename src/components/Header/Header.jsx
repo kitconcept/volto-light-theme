@@ -15,6 +15,7 @@ import {
   Logo,
   Navigation,
   SearchWidget,
+  UniversalLink,
 } from '@plone/volto/components';
 
 const messages = defineMessages({
@@ -24,7 +25,7 @@ const messages = defineMessages({
   },
 });
 
-const InternetHeader = ({ pathname, siteLabel, token }) => {
+const InternetHeader = ({ pathname, siteLabel, token, siteAction }) => {
   return (
     <>
       <div className="header">
@@ -49,7 +50,10 @@ const InternetHeader = ({ pathname, siteLabel, token }) => {
             <Link aria-label="sitemap" to="/sitemap">
               <FormattedMessage id="Sitemap" defaultMessage="Sitemap" />
             </Link>
-            <a href="https://github.com/kitconcept/volto-light-theme">GitHub</a>
+            {siteAction &&
+              siteAction.map((item) => (
+                <UniversalLink href={item.url}>{item.title}</UniversalLink>
+              ))}
           </div>
           {siteLabel && (
             <div className="intranet">
@@ -62,7 +66,7 @@ const InternetHeader = ({ pathname, siteLabel, token }) => {
   );
 };
 
-const IntranetHeader = ({ pathname, siteLabel, token }) => {
+const IntranetHeader = ({ pathname, siteLabel, token, siteAction }) => {
   return (
     <>
       <div className="header">
@@ -75,7 +79,10 @@ const IntranetHeader = ({ pathname, siteLabel, token }) => {
             <Link aria-label="sitemap" to="/sitemap">
               <FormattedMessage id="Sitemap" defaultMessage="Sitemap" />
             </Link>
-            <a href="https://github.com/kitconcept/volto-light-theme">GitHub</a>
+            {siteAction &&
+              siteAction.map((item) => (
+                <UniversalLink href={item.url}>{item.title}</UniversalLink>
+              ))}
           </div>
           {siteLabel && (
             <div className="intranet">
@@ -105,10 +112,14 @@ const Header = (props) => {
   let siteLabel = config.settings.siteLabel;
   const intranetHeader = config.settings.intranetHeader;
   const token = useSelector((state) => state.userSession.token);
+  const siteAction = useSelector(
+    (state) => state.content.data?.['@components']?.actions?.site_actions,
+  );
   const intl = useIntl();
   const translatedSiteLabel = intl.formatMessage(messages.siteLabel);
   siteLabel =
-    translatedSiteLabel !== 'siteLabel' ? translatedSiteLabel : siteLabel;
+    siteLabel &&
+    (translatedSiteLabel !== 'siteLabel' ? translatedSiteLabel : siteLabel);
 
   return (
     <header
@@ -120,12 +131,14 @@ const Header = (props) => {
             pathname={pathname}
             siteLabel={siteLabel}
             token={token}
+            siteAction={siteAction}
           />
         ) : (
           <InternetHeader
             pathname={pathname}
             siteLabel={siteLabel}
             token={token}
+            siteAction={siteAction}
           />
         )}
       </Container>

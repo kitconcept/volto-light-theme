@@ -21,18 +21,20 @@ GREEN=`tput setaf 2`
 RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
 
-PLONE_VERSION=6.0.8
-VOLTO_VERSION=17.7.0
+PLONE_VERSION=6.0.9
+VOLTO_VERSION=17.11.2
 
 ADDON_NAME='@kitconcept/volto-light-theme'
 ADDON_PATH='volto-light-theme'
 COMPOSE_FILE=dockerfiles/docker-compose.yml
 ACCEPTANCE_COMPOSE=acceptance/docker-compose.yml
+ACCEPTANCE_COMPOSE_A11Y=acceptance/docker-compose-a11y.yml
 CMD=CURRENT_DIR=${CURRENT_DIR} ADDON_NAME=${ADDON_NAME} ADDON_PATH=${ADDON_PATH} VOLTO_VERSION=${VOLTO_VERSION} PLONE_VERSION=${PLONE_VERSION} docker compose
 DOCKER_COMPOSE=${CMD} -p ${ADDON_PATH} -f ${COMPOSE_FILE}
 DEV_COMPOSE=COMPOSE_PROFILES=dev ${DOCKER_COMPOSE}
 LIVE_COMPOSE=COMPOSE_PROFILES=dev ${DOCKER_COMPOSE}
 ACCEPTANCE=${CMD} -p ${ADDON_PATH}-acceptance -f ${ACCEPTANCE_COMPOSE}
+ACCEPTANCE_A11Y=${CMD} -p ${ADDON_PATH}-acceptance -f ${ACCEPTANCE_COMPOSE_A11Y}
 
 .PHONY: build-backend
 build-backend: ## Build
@@ -124,7 +126,7 @@ start-test-acceptance-server-prod: ## Start acceptance server in prod (used by C
 
 .PHONY: test-acceptance
 test-acceptance: ## Start Cypress (for use it while developing)
-	(cd acceptance && ./node_modules/.bin/cypress open)
+	(cd acceptance && ./node_modules/.bin/cypress open --config specPattern='cypress/tests/main/**/*.{js,jsx,ts,tsx}')
 
 .PHONY: test-acceptance-headless
 test-acceptance-headless: ## Run cypress tests in CI
@@ -137,6 +139,18 @@ stop-test-acceptance-server: ## Stop acceptance server (for use it while finishe
 .PHONY: status-test-acceptance-server
 status-test-acceptance-server: ## Status of Acceptance Server (for use it while developing)
 	${ACCEPTANCE} ps
+
+.PHONY: start-test-acceptance-server-a11y
+start-test-acceptance-server-a11y: ## Start a11y acceptance server (for use it in while developing)
+	${ACCEPTANCE_A11Y} --profile dev up
+
+.PHONY: stop-test-acceptance-server-a11y
+stop-test-acceptance-server-a11y: ## Stop a11y acceptance server (for use it while finished developing)
+	${ACCEPTANCE_A11Y} --profile dev down
+
+.PHONY: test-acceptance-a11y
+test-acceptance-a11y: ## Start Cypress (for use it while developing)
+	(cd acceptance && CYPRESS_a11y=1 ./node_modules/.bin/cypress open --config specPattern='cypress/tests/a11y/**/*.{js,jsx,ts,tsx}')
 
 .PHONY: debug-frontend
 debug-frontend:  ## Run bash in the Frontend container (for debug infrastructure purposes)

@@ -181,6 +181,7 @@ It's behind a feature flag, as opt-out:
 config.settings.enableFatMenu = true;
 ```
 
+<<<<<<< HEAD
 ### Show Site Label
 
 If you want to show a label on top of site you can pass label name to `siteLabel` property.
@@ -214,6 +215,11 @@ We have totally different header for intranet sites. If you want that, you can e
 ```js
 config.settings.intranetHeader = true;
 ```
+=======
+## Upgrade Guide
+
+See a detailed upgrade guide in: https://github.com/kitconcept/volto-light-theme/blob/main/UPGRADE-GUIDE.md
+>>>>>>> main
 
 ## Development Setup
 
@@ -365,6 +371,38 @@ When finished, don't forget to shutdown the backend server.
 
 ```shell
 make stop-test-acceptance-server
+```
+
+### Accessibility Acceptance tests
+
+Run once
+
+```shell
+make install-acceptance
+```
+
+For starting the servers
+
+Run
+
+```shell
+make start-test-acceptance-server-a11y
+```
+
+The frontend is run in dev mode, so development while writing tests is possible.
+
+Run
+
+```shell
+make test-acceptance-a11y
+```
+
+To run Cypress tests afterwards.
+
+When finished, don't forget to shutdown the backend server.
+
+```shell
+make stop-test-acceptance-server-a11y
 ```
 
 ### Release

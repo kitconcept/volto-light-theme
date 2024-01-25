@@ -67,7 +67,7 @@
     flex: 1 1 0;
     flex-direction: row-reverse;
 
-    @media only screen and (max-width: 1021px) {
+    @media only screen and (max-width: 991px) {
       &.navigation-desktop {
         display: none;
       }
@@ -94,12 +94,10 @@
         width: 64px;
         height: 64px;
         border: none;
-        border-radius: 50%;
         background-color: transparent;
+        border-radius: 50%;
         color: $black;
-        transition:
-          background-color 200ms ease-in-out,
-          color 300ms ease-in-out;
+        transition: background-color 200ms ease-in-out, color 300ms ease-in-out;
 
         svg {
           transition: transform 300ms ease-in-out;
@@ -132,9 +130,7 @@
         height: 90px;
         padding-top: 2rem;
         background-color: $lightgrey;
-        transition:
-          top 500ms ease-in-out,
-          height 600ms ease-in-out;
+        transition: top 500ms ease-in-out, height 600ms ease-in-out;
         transition-property: top, height;
 
         &.active {
@@ -142,7 +138,7 @@
           height: 190px;
 
           @media only screen and (max-width: $largest-mobile-screen) {
-            height: 232px;
+            height: calc(100vh - 130px);
           }
         }
 
@@ -151,7 +147,9 @@
           height: 100%;
           align-items: center;
           justify-content: center;
-
+          @media only screen and (max-width: $largest-mobile-screen) {
+            height: unset;
+          }
           form {
             width: 100%;
 
@@ -198,8 +196,8 @@
                 margin-right: 7px;
 
                 &:hover {
-                  border-radius: 50%;
                   background-color: $darkGrey;
+                  border-radius: 50%;
                   svg {
                     fill: $white !important;
                   }
@@ -369,6 +367,29 @@
         @media only screen and (max-width: $narrow-container-width) {
           display: none;
         }
+      }
+    }
+  }
+}
+
+/* we have to align the search hide with desktop naviation hide.
+And destktop navigation uses different breakpoint for different mode and it is coming
+from volto core */
+body.has-toolbar:not(.has-sidebar):not(.has-sidebar-collapsed) {
+  .search-wrapper {
+    @media only screen and (max-width: 1071px) {
+      &.navigation-desktop {
+        display: none;
+      }
+    }
+  }
+}
+
+body.has-toolbar.has-sidebar {
+  .search-wrapper {
+    @media only screen and (max-width: 1447px) {
+      &.navigation-desktop {
+        display: none;
       }
     }
   }
@@ -690,21 +711,14 @@
   }
 
   .search-header {
-    a {
-      display: flex;
-      width: auto;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 32px;
-      margin-right: 30px;
-      float: right;
-      line-height: 30px;
-
+    display: flex;
+    flex-flow: row-reverse;
+    align-items: center;
+    .search-wrapper .search {
+      padding-top: 20px;
       button {
-        padding: 0;
-        border: 0;
-        margin-right: 0;
-        margin-bottom: 23px;
+        padding-top: 0px;
+        margin-right: 20px;
       }
     }
   }
@@ -933,9 +947,7 @@
 .menu-drawer-enter.menu-drawer-enter-active {
   opacity: 1;
   /* transform: translate(0%, 0%); */
-  transition:
-    transform 0.5s cubic-bezier(0.09, 0.11, 0.24, 0.91),
-    opacity 500ms;
+  transition: transform 0.5s cubic-bezier(0.09, 0.11, 0.24, 0.91), opacity 500ms;
   visibility: visible;
 }
 
@@ -947,16 +959,12 @@
 .menu-drawer-exit {
   opacity: 1;
   /* transform: translate(0%, 0%); */
-  transition:
-    transform 0.5s cubic-bezier(0.09, 0.11, 0.24, 0.91),
-    opacity 500ms;
+  transition: transform 0.5s cubic-bezier(0.09, 0.11, 0.24, 0.91), opacity 500ms;
   visibility: visible;
 }
 
 .menu-drawer-exit.menu-drawer-exit-active {
   opacity: 0;
   /* transform: translate(-100%, 0%); */
-  transition:
-    transform 0.5s cubic-bezier(0.09, 0.11, 0.24, 0.91),
-    opacity 500ms;
+  transition: transform 0.5s cubic-bezier(0.09, 0.11, 0.24, 0.91), opacity 500ms;
 }
