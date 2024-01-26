@@ -1,0 +1,1 @@
+Allow customizing the secondary navigation entries via Portal action. @iFlameing
