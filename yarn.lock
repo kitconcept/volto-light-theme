@@ -1824,7 +1824,7 @@ __metadata:
   resolution: "@kitconcept/volto-light-theme@workspace:."
   dependencies:
     "@babel/eslint-parser": 7.22.15
-    "@plone/scripts": ^3.0.0
+    "@plone/scripts": ^3.3.2
     eslint: 8.49.0
     eslint-config-prettier: 9.0.0
     eslint-config-react-app: 7.0.1
@@ -1852,7 +1852,7 @@ __metadata:
     "@kitconcept/volto-introduction-block": ^1.0.0
     "@kitconcept/volto-separator-block": ^4.0.0
     "@kitconcept/volto-slider-block": ^6.1.0
-    "@plone/volto": ^17.11.2
+    "@plone/volto": ^17.11.5
   languageName: unknown
   linkType: soft
 
@@ -2105,9 +2105,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@plone/scripts@npm:^3.0.0":
-  version: 3.1.0
-  resolution: "@plone/scripts@npm:3.1.0"
+"@plone/scripts@npm:^3.3.2":
+  version: 3.3.2
+  resolution: "@plone/scripts@npm:3.3.2"
   dependencies:
     "@babel/core": ^7.0.0
     babel-plugin-react-intl: 5.1.17
@@ -2119,13 +2119,13 @@ __metadata:
     git-url-parse: ^13.1.0
     glob: 7.1.6
     lodash: 4.17.21
-    mrs-developer: "*"
+    mrs-developer: ^2.1.1
     pofile: 1.0.10
   bin:
     addon: addon/index.js
     changelogupdater: changelogupdater.cjs
     i18n: i18n.cjs
-  checksum: 5c12da74fad98f65526685f5cb7818392b97007345e9225d33db1663be4c680d54a705be355309922f8a7485d7f0f15ffd7aa2c2cc202031ce4a6c1320be6feb
+  checksum: 7dc67a582e4a9b48fd51564ceccc3ce7f57c6b9355c56ebf915e32add6ac3b216e796f2ae4dc5f0c2dca53a815e05c79e2b7dabc02f6e0b9df7ea03e347b9763
   languageName: node
   linkType: hard
 
@@ -6615,7 +6615,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mrs-developer@npm:*":
+"mrs-developer@npm:^2.1.1":
   version: 2.1.1
   resolution: "mrs-developer@npm:2.1.1"
   dependencies:
