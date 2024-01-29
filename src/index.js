@@ -62,7 +62,10 @@ const applyConfig = (config) => {
   config.blocks.blocksConfig.hero.restricted = true;
 
   // No required blocks (eg. Title)
-  config.blocks.requiredBlocks = [];
+  config.blocks.requiredBlocks = [
+    ...config.blocks.requiredBlocks,
+    'eventMetadata',
+  ];
 
   // Register custom Container component
   config.registerComponent({

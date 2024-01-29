@@ -1,15 +1,9 @@
 import React from 'react';
-import {
-  Image,
-  Grid,
-  Button,
-  Container as SemanticContainer,
-} from 'semantic-ui-react';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import { FormattedDate } from '@plone/volto/components';
 import { UniversalLink } from '@plone/volto/components';
 import { expandToBackendURL } from '@plone/volto/helpers';
-
+import Container from '../../../components/Atoms/Container/Container';
 const EventMetadataView = (props) => {
   const content = props.properties;
   const dateOptions = {
@@ -21,10 +15,10 @@ const EventMetadataView = (props) => {
   };
 
   return (
-    <Grid stackable className="details-container">
-      <Grid.Row columns={2}>
-        <Grid.Column>
-          <div>
+    <div className="block eventMetadata ">
+      <Container className="details-container">
+        <div className="content-container">
+          <div className="event-details">
             <div className="event-title">
               <span className="event-heading">
                 <FormattedMessage id="Start" defaultMessage="Start" />
@@ -61,9 +55,8 @@ const EventMetadataView = (props) => {
               </div>
             )}
           </div>
-        </Grid.Column>
-        <Grid.Column>
-          <div>
+
+          <div className="event-details">
             {content?.event_url && (
               <div className="event-title">
                 <span className="event-heading">
@@ -108,7 +101,7 @@ const EventMetadataView = (props) => {
               </div>
             )}
           </div>
-        </Grid.Column>
+        </div>
         <div className="event-button">
           <a
             className="ics-download"
@@ -118,16 +111,16 @@ const EventMetadataView = (props) => {
               content ? `${expandToBackendURL(content['@id'])}/ics_view ` : ''
             }
           >
-            <Button className="event-btn">
+            <button className="event-btn">
               <FormattedMessage
                 id="ICS-Download"
                 defaultMessage="ICS Download"
               />
-            </Button>
+            </button>
           </a>
         </div>
-      </Grid.Row>
-    </Grid>
+      </Container>
+    </div>
   );
 };
 
