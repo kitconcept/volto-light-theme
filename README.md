@@ -254,16 +254,6 @@ make build-backend
 make build-addon
 ```
 
-### Build the live environment
-
-Run
-
-```shell
-make build-live
-```
-
-This will build the frontend for the live environment container.
-
 ## Run the containers
 
 Run
@@ -273,12 +263,6 @@ make start-dev
 ```
 
 This will start both the frontend and backend for the dev environment containers.
-
-```shell
-make start-live
-```
-
-This will start both the frontend and backend for the live environment containers.
 
 
 ### Stop Backend (Docker)
@@ -386,6 +370,24 @@ When finished, don't forget to shutdown the backend server.
 ```shell
 make stop-test-acceptance-server-a11y
 ```
+
+### Live mode
+
+There is an alternate Docker Compose configuration for running volto in live mode.
+This is not usually needed during development, but can be useful for debugging.
+
+To build the frontend for the live environment, run
+
+```shell
+make build-live
+```
+
+To start both the frontend and backend for the live environment, run
+
+```shell
+make start-live
+```
+
 
 ### Release
 
