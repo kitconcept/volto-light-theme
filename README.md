@@ -201,7 +201,8 @@ Run `make help` to list the available commands.
     stop-backend                        Stop Docker backend
     build-live                          Build Addon live
     build-addon                         Build Addon dev
-    start-dev                           Starts Dev container
+    start-dev                           Starts Dev environent container
+    start-live                          Starts Live environment container
     dev                                 Develop the addon
     help                                Show this help.
     i18n                                Sync i18n
@@ -253,6 +254,16 @@ make build-backend
 make build-addon
 ```
 
+### Build the live environment
+
+Run
+
+```shell
+make build-live
+```
+
+This will build the frontend for the live environment container.
+
 ## Run the containers
 
 Run
@@ -261,11 +272,18 @@ Run
 make start-dev
 ```
 
-This will start both the frontend and backend containers.
+This will start both the frontend and backend for the dev environment containers.
+
+```shell
+make start-live
+```
+
+This will start both the frontend and backend for the live environment containers.
+
 
 ### Stop Backend (Docker)
 
-After developing, to stop the running backend, don't forget to run:
+After developing, the backend stops automatically. However, it can be stopped by running:
 
 Run
 
