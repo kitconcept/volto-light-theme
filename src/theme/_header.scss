@@ -94,8 +94,8 @@
         width: 64px;
         height: 64px;
         border: none;
-        background-color: transparent;
         border-radius: 50%;
+        background-color: transparent;
         color: $black;
         transition:
           background-color 200ms ease-in-out,
@@ -200,8 +200,8 @@
                 margin-right: 7px;
 
                 &:hover {
-                  background-color: $darkGrey;
                   border-radius: 50%;
+                  background-color: $darkGrey;
                   svg {
                     fill: $white !important;
                   }
