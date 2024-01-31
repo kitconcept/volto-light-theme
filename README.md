@@ -237,7 +237,8 @@ Run `make help` to list the available commands.
     stop-backend                        Stop Docker backend
     build-live                          Build Addon live
     build-addon                         Build Addon dev
-    start-dev                           Starts Dev container
+    start-dev                           Starts Dev environent container
+    start-live                          Starts Live environment container
     dev                                 Develop the addon
     help                                Show this help.
     i18n                                Sync i18n
@@ -297,11 +298,12 @@ Run
 make start-dev
 ```
 
-This will start both the frontend and backend containers.
+This will start both the frontend and backend for the dev environment containers.
+
 
 ### Stop Backend (Docker)
 
-After developing, to stop the running backend, don't forget to run:
+After developing, the backend stops automatically. However, it can be stopped by running:
 
 Run
 
@@ -404,6 +406,24 @@ When finished, don't forget to shutdown the backend server.
 ```shell
 make stop-test-acceptance-server-a11y
 ```
+
+### Live mode
+
+There is an alternate Docker Compose configuration for running volto in live mode.
+This is not usually needed during development, but can be useful for debugging.
+
+To build the frontend for the live environment, run
+
+```shell
+make build-live
+```
+
+To start both the frontend and backend for the live environment, run
+
+```shell
+make start-live
+```
+
 
 ### Release
 
