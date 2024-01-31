@@ -97,7 +97,9 @@
         background-color: transparent;
         border-radius: 50%;
         color: $black;
-        transition: background-color 200ms ease-in-out, color 300ms ease-in-out;
+        transition:
+          background-color 200ms ease-in-out,
+          color 300ms ease-in-out;
 
         svg {
           transition: transform 300ms ease-in-out;
@@ -130,7 +132,9 @@
         height: 90px;
         padding-top: 2rem;
         background-color: $lightgrey;
-        transition: top 500ms ease-in-out, height 600ms ease-in-out;
+        transition:
+          top 500ms ease-in-out,
+          height 600ms ease-in-out;
         transition-property: top, height;
 
         &.active {
@@ -947,7 +951,9 @@ body.has-toolbar.has-sidebar {
 .menu-drawer-enter.menu-drawer-enter-active {
   opacity: 1;
   /* transform: translate(0%, 0%); */
-  transition: transform 0.5s cubic-bezier(0.09, 0.11, 0.24, 0.91), opacity 500ms;
+  transition:
+    transform 0.5s cubic-bezier(0.09, 0.11, 0.24, 0.91),
+    opacity 500ms;
   visibility: visible;
 }
 
@@ -959,12 +965,16 @@ body.has-toolbar.has-sidebar {
 .menu-drawer-exit {
   opacity: 1;
   /* transform: translate(0%, 0%); */
-  transition: transform 0.5s cubic-bezier(0.09, 0.11, 0.24, 0.91), opacity 500ms;
+  transition:
+    transform 0.5s cubic-bezier(0.09, 0.11, 0.24, 0.91),
+    opacity 500ms;
   visibility: visible;
 }
 
 .menu-drawer-exit.menu-drawer-exit-active {
   opacity: 0;
   /* transform: translate(-100%, 0%); */
-  transition: transform 0.5s cubic-bezier(0.09, 0.11, 0.24, 0.91), opacity 500ms;
+  transition:
+    transform 0.5s cubic-bezier(0.09, 0.11, 0.24, 0.91),
+    opacity 500ms;
 }
