@@ -66,6 +66,11 @@ start-dev: ## Starts Dev container
 	@echo "$(GREEN)==> Start Addon Development container $(RESET)"
 	${DEV_COMPOSE} up addon-dev backend
 
+.PHONY: start-live
+start-live: ## Starts Dev container
+	@echo "$(GREEN)==> Start Addon Development container $(RESET)"
+	${DEV_COMPOSE} up addon-live backend
+
 .PHONY: dev
 dev: ## Develop the addon
 	@echo "$(GREEN)==> Start Development Environment $(RESET)"
