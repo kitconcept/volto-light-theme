@@ -21,8 +21,8 @@ const messages = defineMessages({
     defaultMessage: 'Close menu',
   },
   openFatMenu: {
-    id: 'Open fat menu',
-    defaultMessage: 'Open fat menu',
+    id: 'Open menu',
+    defaultMessage: 'Open menu',
   },
 });
 
