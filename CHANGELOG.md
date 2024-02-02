@@ -8,6 +8,23 @@
 
 <!-- towncrier release notes start -->
 
+## 3.0.0-alpha.3 (2024-02-02)
+
+### Feature
+
+- Allow customizing the secondary navigation entries via Portal action. @iFlameing [#302](https://github.com/kitconcept/volto-light-theme/pull/302)
+
+### Bugfix
+
+- Fix Fat menu A11y issues @iRohitSingh [#264](https://github.com/kitconcept/volto-light-theme/pull/264)
+- Fix Introduction-Block inline-styles have wrong typography. @iFlameing [#314](https://github.com/kitconcept/volto-light-theme/pull/314)
+- Remove extra site-map from header @iRohitSingh [#339](https://github.com/kitconcept/volto-light-theme/pull/339)
+
+### Internal
+
+- Upgrade to Volto 17.11.2 and Plone 6.0.9 @sneridagh [#328](https://github.com/kitconcept/volto-light-theme/pull/328)
+- Upgrade to Votlo 17.11.5 and Plone 6.0.9 @sneridagh [#331](https://github.com/kitconcept/volto-light-theme/pull/331)
+
 ## 3.0.0-alpha.2 (2024-01-17)
 
 ### Breaking
