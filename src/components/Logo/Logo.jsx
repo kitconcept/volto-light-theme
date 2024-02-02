@@ -12,9 +12,9 @@ const messages = defineMessages({
     id: 'Site',
     defaultMessage: 'Site',
   },
-  plonesite: {
-    id: 'Plone Site',
-    defaultMessage: 'Plone Site',
+  homepage: {
+    id: 'Back to homepage',
+    defaultMessage: 'Back to homepage',
   },
 });
 
@@ -35,8 +35,8 @@ const Logo = () => {
             ? flattenToAppURL(site['plone.site_logo'])
             : LogoImage
         }
-        alt={intl.formatMessage(messages.plonesite)}
-        title={intl.formatMessage(messages.plonesite)}
+        alt={intl.formatMessage(messages.homepage)}
+        title={intl.formatMessage(messages.homepage)}
       />
     </UniversalLink>
   );
