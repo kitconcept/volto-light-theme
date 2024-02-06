@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import Container from '@kitconcept/volto-light-theme/components/Atoms/Container/Container';
 import MobileNavigation from '../MobileNavigation/MobileNavigation';
-import { Link } from 'react-router-dom';
-import { FormattedMessage } from 'react-intl';
 
 import {
   Anontools,
@@ -44,9 +42,6 @@ const Header = (props) => {
             <div className="tools">
               {!token && <Anontools />}
 
-              <Link aria-label="sitemap" to="/sitemap">
-                <FormattedMessage id="Sitemap" defaultMessage="Sitemap" />
-              </Link>
               {siteAction &&
                 siteAction.map((item) => (
                   <UniversalLink href={item.url}>{item.title}</UniversalLink>
