@@ -142,6 +142,7 @@ const MobileNavigation = (props) => {
           className={cx('hamburger hamburger--collapse', {
             'is-active': isMobileMenuOpen,
           })}
+          aria-expanded={isMobileMenuOpen ? true : false}
           aria-label={
             isMobileMenuOpen
               ? intl.formatMessage(messages.closeMobileMenu)
@@ -192,7 +193,6 @@ const MobileNavigation = (props) => {
                 <li
                   key={section.url}
                   className={section.url === props.pathname ? 'current' : ''}
-                  role="presentation"
                 >
                   <Link
                     to={section.url === '' ? '/' : section.url}
@@ -251,7 +251,6 @@ const MobileNavigation = (props) => {
                                   ? 'current'
                                   : ''
                               }
-                              role="presentation"
                             >
                               <Link
                                 to={
