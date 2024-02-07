@@ -20,6 +20,10 @@ const messages = defineMessages({
     id: 'Close menu',
     defaultMessage: 'Close menu',
   },
+  openFatMenu: {
+    id: 'Open menu',
+    defaultMessage: 'Open menu',
+  },
 });
 
 const Navigation = ({ pathname }) => {
@@ -106,6 +110,8 @@ const Navigation = ({ pathname }) => {
                         desktopMenuOpen === index ||
                         (!desktopMenuOpen && pathname === item.url),
                     })}
+                    aria-label={intl.formatMessage(messages.openFatMenu)}
+                    aria-expanded={desktopMenuOpen === index ? true : false}
                   >
                     {item.title}
                   </button>
