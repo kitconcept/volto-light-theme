@@ -239,9 +239,11 @@ const applyConfig = (config) => {
 
   config.blocks.blocksConfig.slate = {
     ...config.blocks.blocksConfig.slate,
+    category: 'inline',
     colors: BG_COLORS,
     schemaEnhancer: defaultStylingSchema,
     sidebarTab: 1,
+    v3: true,
   };
 
   config.blocks.blocksConfig.teaser = {

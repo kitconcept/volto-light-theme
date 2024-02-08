@@ -1,4 +1,4 @@
-.blocks-group-wrapper {
+#page-document {
   &:not(:first-child) > :first-child {
     padding-top: $color-block-change-vertical-spacing !important;
     @container (max-width: #{$largest-mobile-screen}) {
@@ -18,7 +18,7 @@
   background: $lightgrey;
 }
 
-#page-document .blocks-group-wrapper {
+#page-document {
   &.transparent:first-child {
     padding-top: 0;
   }
@@ -34,13 +34,12 @@
 }
 
 // For grids
-#page-document .blocks-group-wrapper .block.gridBlock {
+#page-document .block.gridBlock {
   &.is--first--of--block-type.previous--has--same--backgroundColor {
     @include grid-block-vertical-spacing-top();
   }
   &.is--last--of--block-type.next--has--same--backgroundColor {
     padding-bottom: $grid-block-vertical-spacing-bottom;
-
   }
   &.next--is--same--block-type.next--has--same--backgroundColor {
     // We rely on the grid gutter to keep the vertical spacing in case grid + grid
@@ -55,9 +54,7 @@
 }
 
 // Buttons
-#page-document
-  .blocks-group-wrapper
-  .block.__button.next--has--different--backgroundColor {
+#page-document .block.__button.next--has--different--backgroundColor {
   margin-bottom: 0;
 
   .button.container {
