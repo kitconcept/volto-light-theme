@@ -67,6 +67,8 @@ const EditBlockWrapper = (props) => {
     style: { ...style, ...draginfo.draggableProps.style },
   };
 
+  const isBlockModelv3 = blocksConfig?.[type]?.v3;
+
   return (
     <div
       ref={draginfo.innerRef}
@@ -89,7 +91,7 @@ const EditBlockWrapper = (props) => {
         >
           <Icon name={dragSVG} size="18px" />
         </div>
-        <div className={`ui drag block inner ${type}`}>
+        <div className={cx('ui drag block inner', { [type]: !isBlockModelv3 })}>
           {children}
           {selected && !required && editable && (
             <Button

@@ -90,7 +90,7 @@ footer {
 }
 
 // Container definitions for elements
-#page-document .blocks-group-wrapper > * {
+#page-document > * {
   @include layout-container-width();
 }
 
@@ -149,19 +149,26 @@ External link removal for all the blocks.
   }
 }
 
+.category-inline {
+  .block-inner-container {
+    @include narrow-container-width();
+    @include adjustMarginsToContainer($narrow-container-width);
+  }
+}
+
 // Content Layout Styling
-#page-document .blocks-group-wrapper {
-  & > h2,
-  & > h3,
-  & > h4,
-  & > h5,
-  & > h6,
-  & > ul,
-  & > ol,
-  & > li,
-  & > p,
-  & > span,
-  & > blockquote,
+#page-document {
+  // & > h2,
+  // & > h3,
+  // & > h4,
+  // & > h5,
+  // & > h6,
+  // & > ul,
+  // & > ol,
+  // & > li,
+  // & > p,
+  // & > span,
+  // & > blockquote,
   & > .block.image.align.left.medium,
   & > .block.image.align.left.small,
   & > .block.image.align.right.medium,
@@ -242,7 +249,6 @@ External link removal for all the blocks.
     // This is the default, same color spacing for all blocks
     margin-bottom: 0;
   }
-
 }
 
 // Setting a default, for all blocks
@@ -260,7 +266,7 @@ External link removal for all the blocks.
 // Add/Edit views
 #page-add,
 #page-edit {
-  .block.slate .slate-editor,
+  // .block.slate .slate-editor,
   .block-editor-image.left.medium,
   .block-editor-image.left.small,
   .block-editor-image.right.medium,
@@ -357,7 +363,7 @@ External link removal for all the blocks.
 
 // We have to adjust the inner headings also because of the extra margin added in the
 // above rule
-#page-document .blocks-group-wrapper > .block h2.headline {
+#page-document > .block h2.headline {
   @container (max-width: #{$default-container-width + 2 * 20px}) {
     margin-right: 10px;
     margin-left: 10px;
