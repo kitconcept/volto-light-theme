@@ -58,6 +58,15 @@ const applyConfig = (config) => {
   config.settings.slate.useLinkedHeadings = false;
   config.settings.contentMetadataTagsImageField = 'preview_image';
 
+  // Initial block for event content type
+  config.blocks.initialBlocks = {
+    Event: [
+      { '@type': 'title' },
+      { '@type': 'eventMetadata', fixed: true, required: true },
+      { '@type': 'slate' },
+    ],
+  };
+
   // Remove Hero Block
   config.blocks.blocksConfig.hero.restricted = true;
 

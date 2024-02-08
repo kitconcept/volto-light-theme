@@ -108,7 +108,9 @@ const EventMetadataView = (props) => {
             target="_blank"
             rel="noreferrer"
             href={
-              content ? `${expandToBackendURL(content['@id'])}/ics_view ` : ''
+              content && content['@id']
+                ? `${expandToBackendURL(content['@id'])}/ics_view `
+                : ''
             }
           >
             <button className="event-btn">

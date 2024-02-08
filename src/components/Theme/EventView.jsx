@@ -5,22 +5,12 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  hasBlocksData,
-  flattenHTMLToAppURL,
-  expandToBackendURL,
-} from '@plone/volto/helpers';
-import {
-  Image,
-  Grid,
-  Button,
-  Container as SemanticContainer,
-} from 'semantic-ui-react';
+import { hasBlocksData, flattenHTMLToAppURL } from '@plone/volto/helpers';
+import { Image, Container as SemanticContainer } from 'semantic-ui-react';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 
 import { FormattedDate } from '@plone/volto/components';
 import config from '@plone/volto/registry';
-import { UniversalLink } from '@plone/volto/components';
 import { FormattedMessage, injectIntl } from 'react-intl';
 
 const EventTextfieldView = ({ content }) => (
@@ -91,148 +81,7 @@ const EventView = (props) => {
       </div>
       {hasBlocksData(content) ? (
         <>
-          <RenderBlocks
-            {...props}
-            content={{
-              ...content,
-              blocks_layout: {
-                items: props.content.blocks_layout.items.slice(0, 1),
-              },
-            }}
-          />
-          <Grid stackable className="details-container">
-            <Grid.Row columns={2}>
-              <Grid.Column>
-                <div>
-                  <div className="event-title">
-                    <span className="event-heading">
-                      <FormattedMessage id="Start" defaultMessage="Start" />
-                    </span>
-                    <div className="event-detail">
-                      {' '}
-                      <FormattedDate
-                        date={content?.start}
-                        format={dateOptions}
-                      />{' '}
-                      {props.intl.locale === 'de' ? ' Uhr' : ''}
-                    </div>
-                    <div className="separator"></div>
-                  </div>
-                  <div className="event-title">
-                    <span className="event-heading">
-                      {' '}
-                      <FormattedMessage id="End" defaultMessage="End" />
-                    </span>
-                    <div className="event-detail">
-                      {' '}
-                      <FormattedDate
-                        date={content?.end}
-                        format={dateOptions}
-                      />{' '}
-                      {props.intl.locale === 'de' ? ' Uhr' : ''}
-                    </div>
-                    <div className="separator"></div>
-                  </div>
-                  {content?.location && (
-                    <div className="event-title">
-                      <span className="event-heading">
-                        <FormattedMessage
-                          id="Location"
-                          defaultMessage="Location"
-                        />
-                      </span>
-                      <div className="event-detail">{content?.location}</div>
-                    </div>
-                  )}
-                </div>
-              </Grid.Column>
-              <Grid.Column>
-                <div>
-                  {content?.event_url && (
-                    <div className="event-title">
-                      <span className="event-heading">
-                        <FormattedMessage
-                          id="Website"
-                          defaultMessage="Website"
-                        />
-                      </span>
-                      <div className="event-detail">
-                        <UniversalLink
-                          className="event-url"
-                          href={content.event_url}
-                        >
-                          {content.event_url}
-                        </UniversalLink>
-                      </div>
-                      <div className="separator"></div>
-                    </div>
-                  )}
-
-                  {(content?.contact_name ||
-                    content?.contact_email ||
-                    content?.contact_email) && (
-                    <div className="event-title">
-                      <span className="event-heading">
-                        <FormattedMessage
-                          id="Contact"
-                          defaultMessage="Contact"
-                        />
-                      </span>
-                      <div className="event-detail">
-                        <div>
-                          {content?.contact_name && (
-                            <p>{content.contact_name}</p>
-                          )}
-                          {content?.contact_email && (
-                            <p>
-                              <a href={`mailto:${content.contact_email}`}>
-                                {content.contact_email}
-                              </a>
-                            </p>
-                          )}
-                          {content?.contact_phone && (
-                            <p>
-                              <FormattedMessage
-                                id="Phone"
-                                defaultMessage="Phone"
-                              />{' '}
-                              <a href={`tel:${content.contact_phone}`}>
-                                {content.contact_phone}
-                              </a>
-                            </p>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </Grid.Column>
-              <div className="event-button">
-                <a
-                  className="ics-download"
-                  target="_blank"
-                  rel="noreferrer"
-                  href={`${expandToBackendURL(content['@id'])}/ics_view`}
-                >
-                  <Button className="event-btn">
-                    <FormattedMessage
-                      id="ICS-Download"
-                      defaultMessage="ICS Download"
-                    />
-                  </Button>
-                </a>
-              </div>
-            </Grid.Row>
-          </Grid>
-          <RenderBlocks
-            {...props}
-            content={{
-              ...content,
-              blocks_layout: {
-                items: props.content.blocks_layout.items.slice(1),
-              },
-            }}
-          />
+          <RenderBlocks {...props} />
         </>
       ) : (
         <EventTextfieldView {...props} />
