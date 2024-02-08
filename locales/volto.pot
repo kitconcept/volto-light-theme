@@ -1,331 +1,337 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-01-25T13:33:41.720Z\n"
+"POT-Creation-Date: 2024-02-08T13:36:14.317Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
-"MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
 "Language-Code: en\n"
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8\n"
 "Domain: volto\n"
 
+#. Default: "Back"
 #: components/MobileNavigation/MobileNavigation
-# defaultMessage: Back
 msgid "Back"
 msgstr ""
 
+#. Default: "Background color"
 #: components/Blocks/schema
-# defaultMessage: Background color
 msgid "Background color"
 msgstr ""
 
+#. Default: "Block Width"
 #: components/Blocks/Button/schema
-# defaultMessage: Block Width
 msgid "Block Width"
 msgstr ""
 
+#. Default: "Breadcrumbs"
 #: components/Breadcrumbs/Breadcrumbs
-# defaultMessage: Breadcrumbs
 msgid "Breadcrumbs"
 msgstr ""
 
+#. Default: "Browse the site, drop an image, or type an URL"
 #: components/Blocks/Image/Edit
-# defaultMessage: Browse the site, drop an image, or type an URL
 msgid "Browse the site, drop an image, or type an URL"
 msgstr ""
 
+#. Default: "Button text"
 #: components/Blocks/Slider/schema
-# defaultMessage: Button text
 msgid "Button text"
 msgstr ""
 
+#. Default: "Center"
 #: components/Widgets/AlignWidget
-# defaultMessage: Center
 msgid "Center"
 msgstr ""
 
+#. Default: "Close menu"
 #: components/MobileNavigation/MobileNavigation
 #: components/Navigation/Navigation
-# defaultMessage: Close menu
 msgid "Close menu"
 msgstr ""
 
+#. Default: "Contact"
 #: components/Theme/EventView
-# defaultMessage: Contact
 msgid "Contact"
 msgstr ""
 
+#. Default: "Continue reading"
 #: components/Blocks/Slider/DefaultBody
-# defaultMessage: Continue reading
 msgid "Continue reading"
 msgstr ""
 
+#. Default: "Copyright"
 #: components/Footer/Footer
-# defaultMessage: Copyright
 msgid "Copyright"
 msgstr ""
 
+#. Default: "Description"
 #: components/Blocks/Image/schema
-# defaultMessage: Description
 msgid "Description"
 msgstr ""
 
+#. Default: "Distributed under the {license}."
 #: components/Footer/Footer
-# defaultMessage: Distributed under the {license}.
 msgid "Distributed under the {license}."
 msgstr ""
 
+#. Default: "End"
 #: components/Theme/EventView
-# defaultMessage: End
 msgid "End"
 msgstr ""
 
+#. Default: "Flag align"
 #: components/Blocks/Slider/schema
-# defaultMessage: Flag align
 msgid "Flag align"
 msgstr ""
 
+#. Default: "Full"
 #: components/Widgets/AlignWidget
-# defaultMessage: Full
 msgid "Full"
 msgstr ""
 
+#. Default: "GNU GPL license"
 #: components/Footer/Footer
-# defaultMessage: GNU GPL license
 msgid "GNU GPL license"
 msgstr ""
 
+#. Default: "Hide Button"
 #: components/Blocks/Slider/schema
-# defaultMessage: Hide Button
 msgid "Hide Button"
 msgstr ""
 
+#. Default: "Home"
 #: components/Breadcrumbs/Breadcrumbs
 #: components/MobileNavigation/MobileNavigation
-# defaultMessage: Home
 msgid "Home"
 msgstr ""
 
+#. Default: "ICS Download"
 #: components/Theme/EventView
-# defaultMessage: ICS Download
 msgid "ICS-Download"
 msgstr ""
 
+#. Default: "Image"
 #: components/Blocks/Image/ImageSidebar
-# defaultMessage: Image
 msgid "Image"
 msgstr ""
 
+#. Default: "Left"
 #: components/Widgets/AlignWidget
-# defaultMessage: Left
 msgid "Left"
 msgstr ""
 
+#. Default: "Location"
 #: components/Theme/EventView
-# defaultMessage: Location
 msgid "Location"
 msgstr ""
 
+#. Default: "Log in"
 #: components/Anontools/Anontools
-# defaultMessage: Log in
 msgid "Log in"
 msgstr ""
 
+#. Default: "Next Page"
 #: components/Blocks/Listing/ListingBody
-# defaultMessage: Next Page
 msgid "Next Page"
 msgstr ""
 
+#. Default: "No date"
 #: components/Theme/EventView
-# defaultMessage: No date
 msgid "No date"
 msgstr ""
 
+#. Default: "No image selected"
 #: components/Blocks/Image/ImageSidebar
-# defaultMessage: No image selected
 msgid "No image selected"
 msgstr ""
 
+#. Default: "No items found in this container."
 #: components/Blocks/Listing/ListingBody
-# defaultMessage: No items found in this container.
 msgid "No items found in this container."
 msgstr ""
 
+#. Default: "Open menu"
 #: components/MobileNavigation/MobileNavigation
-# defaultMessage: Open menu
+#: components/Navigation/Navigation
 msgid "Open menu"
 msgstr ""
 
+#. Default: "Overview"
 #: components/MobileNavigation/MobileNavigation
-# defaultMessage: Overview
 msgid "Overview"
 msgstr ""
 
+#. Default: "Phone"
 #: components/Theme/EventView
-# defaultMessage: Phone
 msgid "Phone"
 msgstr ""
 
+#. Default: "Please choose an existing content as source for this element"
 #: components/Blocks/Slider/DefaultBody
-# defaultMessage: Please choose an existing content as source for this element
 msgid "Please choose an existing content as source for this element"
 msgstr ""
 
+#. Default: "Plone Foundation"
 #: components/Footer/Footer
-# defaultMessage: Plone Foundation
 msgid "Plone Foundation"
 msgstr ""
 
+#. Default: "Plone Site"
 #: components/Logo/Logo
-# defaultMessage: Plone Site
 msgid "Plone Site"
 msgstr ""
 
+#. Default: "Plone{reg} Open Source CMS/WCM"
 #: components/Footer/Footer
-# defaultMessage: Plone{reg} Open Source CMS/WCM
 msgid "Plone{reg} Open Source CMS/WCM"
 msgstr ""
 
+#. Default: "Powered by Plone & Python"
 #: components/Footer/Footer
-# defaultMessage: Powered by Plone & Python
 msgid "Powered by Plone & Python"
 msgstr ""
 
+#. Default: "Press"
 #: index
-# defaultMessage: Press
 msgid "Press"
 msgstr ""
 
+#. Default: "Previous Page"
 #: components/Blocks/Listing/ListingBody
-# defaultMessage: Previous Page
 msgid "Previous Page"
 msgstr ""
 
+#. Default: "Register"
 #: components/Anontools/Anontools
-# defaultMessage: Register
 msgid "Register"
 msgstr ""
 
+#. Default: "Result"
 #: components/Blocks/Listing/ListingBody
-# defaultMessage: Result
 msgid "Result"
 msgstr ""
 
+#. Default: "Right"
 #: components/Widgets/AlignWidget
-# defaultMessage: Right
 msgid "Right"
 msgstr ""
 
+#. Default: "Search"
 #: components/Blocks/Search/components/SearchInput
 #: components/Blocks/Search/TopSideFacets
+#: components/MobileNavigation/MobileNavigation
 #: components/SearchWidget/IntranetSearchWidget
 #: components/SearchWidget/SearchWidget
-# defaultMessage: Search
 msgid "Search"
 msgstr ""
 
+#. Default: "Search Site"
 #: components/SearchWidget/IntranetSearchWidget
 #: components/SearchWidget/SearchWidget
-# defaultMessage: Search Site
 msgid "Search Site"
 msgstr ""
 
+#. Default: "Search for People, E-Mail Address, Phone Number, ..."
 #: components/SearchWidget/IntranetSearchWidget
-# defaultMessage: Search for People, E-Mail Address, Phone Number, ...
 msgid "Search for People, E-Mail Address, Phone Number, ..."
 msgstr ""
 
+#. Default: "Search results"
 #: components/Blocks/Search/components/SearchDetails
-# defaultMessage: Search results
 msgid "Search results"
 msgstr ""
 
+#. Default: "Searched for"
 #: components/Blocks/Search/components/SearchDetails
-# defaultMessage: Searched for
 msgid "Searched for"
 msgstr ""
 
+#. Default: "Site"
 #: components/Logo/Logo
-# defaultMessage: Site
 msgid "Site"
 msgstr ""
 
-#: components/Header/Header
+#. Default: "Sitemap"
 #: index
-# defaultMessage: Sitemap
 msgid "Sitemap"
 msgstr ""
 
+#. Default: "Sorting"
 #: components/Blocks/Search/TopSideFacets
-# defaultMessage: Sorting
 msgid "Sorting"
 msgstr ""
 
+#. Default: "Source"
 #: components/Blocks/Slider/DefaultBody
-# defaultMessage: Source
 msgid "Source"
 msgstr ""
 
+#. Default: "Start"
 #: components/Theme/EventView
-# defaultMessage: Start
 msgid "Start"
 msgstr ""
 
+#. Default: "Switch to"
+#: components/LanguageSelector/LanguageSelector
+msgid "Switch to"
+msgstr ""
+
+#. Default: "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
 #: components/Footer/Footer
-# defaultMessage: The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends.
 msgid "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
 msgstr ""
 
+#. Default: "Title"
 #: components/Blocks/Image/schema
-# defaultMessage: Title
 msgid "Title"
 msgstr ""
 
+#. Default: "Uploading image"
 #: components/Blocks/Image/Edit
-# defaultMessage: Uploading image
 msgid "Uploading image"
 msgstr ""
 
+#. Default: "Website"
 #: components/Theme/EventView
-# defaultMessage: Website
 msgid "Website"
 msgstr ""
 
+#. Default: "Wide"
 #: components/Widgets/AlignWidget
-# defaultMessage: Wide
 msgid "Wide"
 msgstr ""
 
+#. Default: "Clear image"
 #: components/Blocks/Image/ImageSidebar
-# defaultMessage: Clear image
 msgid "image_block_clear"
 msgstr ""
 
+#. Default: "Image preview"
 #: components/Blocks/Image/ImageSidebar
-# defaultMessage: Image preview
 msgid "image_block_preview"
 msgstr ""
 
+#. Default: "Loading"
 #: components/Blocks/Listing/ListingBody
-# defaultMessage: Loading
 msgid "loading"
 msgstr ""
 
+#. Default: "More info"
 #: components/Blocks/Slider/DefaultBody
-# defaultMessage: More info
 msgid "moreInfo"
 msgstr ""
 
+#. Default: "of"
 #: components/Blocks/Listing/ListingBody
-# defaultMessage: of
 msgid "of"
 msgstr ""
 
+#. Default: ""
 #: components/Header/Header
-# defaultMessage: undefined
 msgid "siteLabel"
 msgstr ""

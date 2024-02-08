@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import Container from '@kitconcept/volto-light-theme/components/Atoms/Container/Container';
 import MobileNavigation from '../MobileNavigation/MobileNavigation';
-import { Link } from 'react-router-dom';
-import { FormattedMessage, useIntl, defineMessages } from 'react-intl';
+import { useIntl, defineMessages } from 'react-intl';
 import config from '@plone/volto/registry';
 import cx from 'classnames';
 import IntranetSearchWidget from '../SearchWidget/IntranetSearchWidget';
@@ -21,7 +20,7 @@ import {
 const messages = defineMessages({
   siteLabel: {
     id: 'siteLabel',
-    defaultMessage: '',
+    defaultMessage: ' ',
   },
 });
 
@@ -46,10 +45,6 @@ const InternetHeader = ({ pathname, siteLabel, token, siteAction }) => {
 
           <div className="tools">
             {!token && <Anontools />}
-
-            <Link aria-label="sitemap" to="/sitemap">
-              <FormattedMessage id="Sitemap" defaultMessage="Sitemap" />
-            </Link>
             {siteAction &&
               siteAction.map((item) => (
                 <UniversalLink href={item.url}>{item.title}</UniversalLink>
@@ -75,10 +70,6 @@ const IntranetHeader = ({ pathname, siteLabel, token, siteAction }) => {
 
           <div className="tools">
             {!token && <Anontools />}
-
-            <Link aria-label="sitemap" to="/sitemap">
-              <FormattedMessage id="Sitemap" defaultMessage="Sitemap" />
-            </Link>
             {siteAction &&
               siteAction.map((item) => (
                 <UniversalLink href={item.url}>{item.title}</UniversalLink>
@@ -117,9 +108,12 @@ const Header = (props) => {
   );
   const intl = useIntl();
   const translatedSiteLabel = intl.formatMessage(messages.siteLabel);
+
   siteLabel =
     siteLabel &&
-    (translatedSiteLabel !== 'siteLabel' ? translatedSiteLabel : siteLabel);
+    (translatedSiteLabel !== 'siteLabel' && translatedSiteLabel !== 'undefined'
+      ? translatedSiteLabel
+      : siteLabel);
 
   return (
     <header

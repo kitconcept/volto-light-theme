@@ -181,7 +181,6 @@ It's behind a feature flag, as opt-out:
 config.settings.enableFatMenu = true;
 ```
 
-<<<<<<< HEAD
 ### Show Site Label
 
 If you want to show a label on top of site you can pass label name to `siteLabel` property.
@@ -201,7 +200,7 @@ import { defineMessages } from 'react-intl';
 defineMessages({
   siteLabel: {
     id: 'siteLabel',
-    defaultMessage: '',
+    defaultMessage: ' ',
   },
 });
 
@@ -215,11 +214,10 @@ We have totally different header for intranet sites. If you want that, you can e
 ```js
 config.settings.intranetHeader = true;
 ```
-=======
+
 ## Upgrade Guide
 
 See a detailed upgrade guide in: https://github.com/kitconcept/volto-light-theme/blob/main/UPGRADE-GUIDE.md
->>>>>>> main
 
 ## Development Setup
 
