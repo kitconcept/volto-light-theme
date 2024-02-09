@@ -3,3 +3,10 @@
 #page-edit .block-editor-slate.has--backgroundColor--grey {
   background-color: $lightgrey;
 }
+
+.block.slate {
+  padding: 1rem 0;
+  p {
+    margin: 0;
+  }
+}
