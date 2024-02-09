@@ -111,7 +111,7 @@ const Header = (props) => {
 
   siteLabel =
     siteLabel &&
-    (translatedSiteLabel !== 'siteLabel' && translatedSiteLabel !== 'undefined'
+    (translatedSiteLabel !== 'siteLabel' && translatedSiteLabel !== ' '
       ? translatedSiteLabel
       : siteLabel);
 
