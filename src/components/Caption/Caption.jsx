@@ -19,15 +19,15 @@ const Caption = ({ as = 'figcaption', title, description, credit }) => {
 
   return (
     <As>
-      {title && <div className="title">{title}</div>}
+      {title && <h2 className="title">{title}</h2>}
       {description && (
-        <div className="description">
+        <p className="description">
           {description.split('\n').map((line, index) => (
-            <div key={index}>{line || '\u00A0'}</div>
+            <p key={index}>{line || '\u00A0'}</p>
           ))}
-        </div>
+        </p>
       )}
-      {credit && <div className="credits">{credit}</div>}
+      {credit && <p className="credits">{credit}</p>}
     </As>
   );
 };
