@@ -1,12 +1,12 @@
 #page-document {
-  &:not(:first-child) > :first-child {
+  .previous--has--different--backgroundColor {
     padding-top: $color-block-change-vertical-spacing !important;
     @container (max-width: #{$largest-mobile-screen}) {
       padding-top: 60px !important;
     }
   }
 
-  & > :last-child {
+  .next--has--different--backgroundColor {
     padding-bottom: $color-block-change-vertical-spacing !important;
     @container (max-width: #{$largest-mobile-screen}) {
       padding-bottom: 60px !important;
