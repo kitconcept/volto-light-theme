@@ -13,21 +13,22 @@ This proved to simplify CSS dramatically, with the drawback that the wrapper and
 
 ## Block Model version 3
 
-### View/Edit wrappers (or containers?)
+### View/Edit containers
 
-The block should have the same wrappers in both View/Edit components, so we can write CSS once that applies to both.
+The block should have the same containers in both View/Edit components, so we can write CSS once that applies to both.
 
-This wrappers will conform this two level wrapper:
+These containers will conform this two level wrappers definitions:
 
-#### Main/Outter wrapper
+#### Main/Outter container
 
-This is the wrapper that receives the block injected classNames and styles from the StyleWrapper.
+This is the container that receives the block injected classNames and styles from the StyleWrapper.
+It's the (familiar) `div` that has the `block ${type}` className.
 In View mode it should be provided by the block developer.
 In Edit mode it's part of the edit wrappers: `block-editor-${type}` wrapper, and automatically receives the StyleWrapper injected properties.
 
-#### Secondary/Inner wrapper
+#### Secondary/Inner container
 
-This is the wrapper that decides the inner properties, being the most important one, the width.
+This is the container that decides the inner properties, being the most important one, the width.
 
 
 ### Block category
@@ -88,4 +89,3 @@ CSS
 
 https://github.com/kitconcept/volto-light-theme#vertical-spacing-rules
 https://github.com/kitconcept/dlr-internet/blob/main/docs/development/layout-rules.md
-
