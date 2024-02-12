@@ -78,6 +78,9 @@ const applyConfig = (config) => {
   // No required blocks (eg. Title)
   config.blocks.requiredBlocks = [];
 
+  // VLT uses the new button
+  config.experimental.addBlockButton.enabled = true;
+
   // Register custom Container component
   config.registerComponent({
     name: 'Container',
@@ -156,6 +159,12 @@ const applyConfig = (config) => {
 
   config.settings.slidingSearchAnimation = true;
   config.settings.openExternalLinkInNewTab = true;
+
+  config.blocks.blocksConfig.title = {
+    ...config.blocks.blocksConfig.title,
+    category: 'heading',
+    v3: true,
+  };
 
   config.blocks.blocksConfig.accordion = {
     ...config.blocks.blocksConfig.accordion,
