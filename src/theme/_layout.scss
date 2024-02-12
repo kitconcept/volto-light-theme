@@ -89,8 +89,9 @@ footer {
   @include layout-container-width();
 }
 
-// Container definitions for elements
-#page-document > * {
+// Container defaults definitions for elements
+// BMv3 compliant, we target the block inner container only
+.block-inner-container {
   @include layout-container-width();
 }
 

@@ -125,9 +125,16 @@ const applyConfig = (config) => {
 
       // Given a StyleWrapper defined `backgroundColor` style
       const previousColor =
-        previousBlock?.styles?.backgroundColor ?? 'transparent';
-      const currentColor = data?.styles?.backgroundColor ?? 'transparent';
-      const nextColor = nextBlock?.styles?.backgroundColor ?? 'transparent';
+        previousBlock?.styles?.['backgroundColor:noprefix']?.[
+          '--background-color'
+        ] ?? 'transparent';
+      const currentColor =
+        data?.styles?.['backgroundColor:noprefix']?.['--background-color'] ??
+        'transparent';
+      const nextColor =
+        nextBlock?.styles?.['backgroundColor:noprefix']?.[
+          '--background-color'
+        ] ?? 'transparent';
 
       // Inject a class depending if the previous block has the same `backgroundColor`
       if (currentColor === previousColor) {

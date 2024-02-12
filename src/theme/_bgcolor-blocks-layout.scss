@@ -18,6 +18,10 @@
   background: $lightgrey;
 }
 
+.block {
+  background: var(--background-color);
+}
+
 #page-document {
   &.transparent:first-child {
     padding-top: 0;
