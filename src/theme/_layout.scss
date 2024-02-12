@@ -150,6 +150,14 @@ External link removal for all the blocks.
   }
 }
 
+// Categories inner container width
+.category-heading {
+  .block-inner-container {
+    @include default-container-width();
+    @include adjustMarginsToContainer($default-container-width);
+  }
+}
+
 .category-inline {
   .block-inner-container {
     @include narrow-container-width();
