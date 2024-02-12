@@ -1,0 +1,12 @@
+.block.title {
+    padding-bottom: 0 !important;
+    
+  .block-inner-container {
+    @include vertical-space-h1();
+
+    h1.documentFirstHeading {
+        padding: 0;
+        margin: 0;
+    }
+  }
+}

@@ -1,9 +1,5 @@
 .block.introduction {
   @include vertical-space-introduction();
-  p + & {
-    padding-bottom: $spacing-xlarge !important;
-    border: 2px solid red !important;
-  }
 }
 
 

@@ -103,25 +103,23 @@ $grid-block-vertical-spacing-bottom: $spacing-xlarge !default;
 }
 
 @mixin vertical-space-h1() {
-  margin-top: $spacing-medium;
+  padding-top: $spacing-medium;
   padding-bottom: $spacing-xlarge;
-  margin-bottom: 0;
   @media only screen and (max-width: $largest-mobile-screen) {
     padding-bottom: $spacing-large;
   }
 }
 
 @mixin vertical-space-h2() {
-  margin-top: $spacing-xlarge;
-  margin-bottom: $spacing-medium;
+  padding-bottom: $spacing-small !important;
+
   @media only screen and (max-width: $largest-mobile-screen) {
-    margin-top: $spacing-large;
+    padding-bottom: $spacing-small !important;
   }
 }
 
 @mixin vertical-space-h3() {
-  margin-top: $spacing-large;
-  margin-bottom: $spacing-small;
+  margin-bottom: 0 !important;
 }
 
 @mixin vertical-space-h4() {

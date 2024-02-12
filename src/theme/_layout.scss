@@ -156,12 +156,26 @@ External link removal for all the blocks.
     @include default-container-width();
     @include adjustMarginsToContainer($default-container-width);
   }
+
+  // Adjust spacing depending on next block's category
+  &:has(+ .category-separator) {
+    .block-inner-container {
+      padding-bottom: 0 !important;
+      }
+  }
 }
 
 .category-inline {
   .block-inner-container {
     @include narrow-container-width();
     @include adjustMarginsToContainer($narrow-container-width);
+  }
+
+  // Adjust spacing depending on next block's category
+  &:has(+ .category-separator) {
+    .block-inner-container {
+      padding-bottom: 0 !important;
+      }
   }
 }
 

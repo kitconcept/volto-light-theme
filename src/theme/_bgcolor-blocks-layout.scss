@@ -1,13 +1,13 @@
-#page-document {
-  .previous--has--different--backgroundColor {
-    padding-top: $color-block-change-vertical-spacing !important;
+.block {
+  &.previous--has--different--backgroundColor {
+    padding-top: $color-block-change-vertical-spacing;
     @container (max-width: #{$largest-mobile-screen}) {
       padding-top: 60px !important;
     }
   }
 
-  .next--has--different--backgroundColor {
-    padding-bottom: $color-block-change-vertical-spacing !important;
+  &.next--has--different--backgroundColor {
+    padding-bottom: $color-block-change-vertical-spacing;
     @container (max-width: #{$largest-mobile-screen}) {
       padding-bottom: 60px !important;
     }
