@@ -340,6 +340,8 @@ const applyConfig = (config) => {
         defaultStylingSchema,
       ),
       colors: BG_COLORS,
+      v3: true,
+      category: 'separator',
     };
   }
 

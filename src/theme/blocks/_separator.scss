@@ -1,14 +1,26 @@
 #page-document .block.separator {
-  // cancel the original padding from the add-on
+  // To be removed when Separator addon is fully transformed into v3:
+  .block:hover::before {
+    display: none;
+  }
+  // cancel the original spacings from the add-on
   margin-top: 0;
+  margin-bottom: 0;
+  padding: 0 !important;
 
-  &.has--align--center,
-  &.inner {
+  &.has--align--center {
+    max-width: unset !important;
+
+  }
+
+  .block-inner-container {
     margin-right: auto;
     margin-left: auto;
   }
 
-  @include vertical-space-separator();
+  .block.separator {
+    @include vertical-space-separator();
+  }
 }
 
 #page-edit .block-editor-separator {
