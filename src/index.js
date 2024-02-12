@@ -55,6 +55,23 @@ const applyConfig = (config) => {
   config.settings.slate.useLinkedHeadings = false;
   config.settings.contentMetadataTagsImageField = 'preview_image';
 
+  config.settings.backgroundColors = [
+    {
+      style: {
+        '--background-color': 'transparent',
+      },
+      name: 'transparent',
+      label: 'Transparent',
+    },
+    {
+      style: {
+        '--background-color': '#ecebeb',
+      },
+      name: 'grey',
+      label: 'Grey',
+    },
+  ];
+
   // Remove Hero Block
   config.blocks.blocksConfig.hero.restricted = true;
 
@@ -240,7 +257,7 @@ const applyConfig = (config) => {
   config.blocks.blocksConfig.slate = {
     ...config.blocks.blocksConfig.slate,
     category: 'inline',
-    colors: BG_COLORS,
+    colors: config.settings.backgroundColors,
     schemaEnhancer: defaultStylingSchema,
     sidebarTab: 1,
     v3: true,
