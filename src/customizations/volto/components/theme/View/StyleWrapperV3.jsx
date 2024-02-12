@@ -8,7 +8,7 @@ import {
 
 const StyleWrapperV3 = (props) => {
   let classNames,
-    styles = [];
+    style = [];
 
   const { blocksConfig, data, children, content, block } = props;
   const category = blocksConfig?.[data['@type']]?.category;
@@ -22,7 +22,7 @@ const StyleWrapperV3 = (props) => {
     classNames,
   });
 
-  styles = buildStyleObjectFromData(data.styles);
+  style = buildStyleObjectFromData(data.styles);
 
   return (
     <div
@@ -31,8 +31,8 @@ const StyleWrapperV3 = (props) => {
         data['@type'],
         { [`category-${category}`]: category },
         classNames,
-        styles,
       )}
+      style={style}
     >
       <div className="block-inner-container">{children}</div>
     </div>
