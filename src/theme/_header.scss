@@ -520,6 +520,7 @@ body.has-toolbar.has-sidebar {
             color: $white;
 
             a {
+              padding-bottom: 0;
               font-size: 14px;
               font-weight: 400;
               line-height: 18px;
@@ -601,12 +602,7 @@ body.has-toolbar.has-sidebar {
             }
           }
 
-          li {
-            position: relative;
-            padding-top: 0;
-          }
-
-          li a.current {
+          a.current {
             .left-arrow {
               visibility: visible;
             }
@@ -624,14 +620,13 @@ body.has-toolbar.has-sidebar {
         display: flex;
       }
 
-      li {
-        padding: 8px 0;
-      }
-
-      li a {
+      a {
+        position: relative;
         display: inline-flex;
         align-items: flex-start;
+        padding-bottom: 8px;
         color: $black;
+
         @include body-text-bold();
 
         span {
