@@ -47,7 +47,9 @@ const InternetHeader = ({ pathname, siteLabel, token, siteAction }) => {
             {!token && <Anontools />}
             {siteAction &&
               siteAction.map((item) => (
-                <UniversalLink href={item.url}>{item.title}</UniversalLink>
+                <UniversalLink key={item.url} href={item.url}>
+                  {item.title}
+                </UniversalLink>
               ))}
           </div>
           {siteLabel && (
