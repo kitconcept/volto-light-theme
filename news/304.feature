@@ -1,1 +1,0 @@
-Add options to show intranet label and implement intranet header for intranet sites. @iFlameing
