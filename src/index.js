@@ -67,6 +67,9 @@ const applyConfig = (config) => {
     ],
   };
 
+  config.settings.siteLabel = '';
+  config.settings.intranetHeader = false;
+
   // Remove Hero Block
   config.blocks.blocksConfig.hero.restricted = true;
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-02-01T15:37:22.956Z\n"
+"POT-Creation-Date: 2024-02-08T13:36:14.317Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -225,13 +225,20 @@ msgstr ""
 #: components/Blocks/Search/components/SearchInput
 #: components/Blocks/Search/TopSideFacets
 #: components/MobileNavigation/MobileNavigation
+#: components/SearchWidget/IntranetSearchWidget
 #: components/SearchWidget/SearchWidget
 msgid "Search"
 msgstr ""
 
 #. Default: "Search Site"
+#: components/SearchWidget/IntranetSearchWidget
 #: components/SearchWidget/SearchWidget
 msgid "Search Site"
+msgstr ""
+
+#. Default: "Search for People, E-Mail Address, Phone Number, ..."
+#: components/SearchWidget/IntranetSearchWidget
+msgid "Search for People, E-Mail Address, Phone Number, ..."
 msgstr ""
 
 #. Default: "Search results"
@@ -250,7 +257,6 @@ msgid "Site"
 msgstr ""
 
 #. Default: "Sitemap"
-#: components/Header/Header
 #: index
 msgid "Sitemap"
 msgstr ""
@@ -323,4 +329,9 @@ msgstr ""
 #. Default: "of"
 #: components/Blocks/Listing/ListingBody
 msgid "of"
+msgstr ""
+
+#. Default: ""
+#: components/Header/Header
+msgid "siteLabel"
 msgstr ""

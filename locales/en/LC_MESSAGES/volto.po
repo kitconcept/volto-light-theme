@@ -223,13 +223,20 @@ msgstr ""
 #: components/Blocks/Search/components/SearchInput
 #: components/Blocks/Search/TopSideFacets
 #: components/MobileNavigation/MobileNavigation
+#: components/SearchWidget/IntranetSearchWidget
 #: components/SearchWidget/SearchWidget
 msgid "Search"
 msgstr ""
 
 #. Default: "Search Site"
+#: components/SearchWidget/IntranetSearchWidget
 #: components/SearchWidget/SearchWidget
 msgid "Search Site"
+msgstr ""
+
+#. Default: "Search for People, E-Mail Address, Phone Number, ..."
+#: components/SearchWidget/IntranetSearchWidget
+msgid "Search for People, E-Mail Address, Phone Number, ..."
 msgstr ""
 
 #. Default: "Search results"
@@ -248,7 +255,6 @@ msgid "Site"
 msgstr ""
 
 #. Default: "Sitemap"
-#: components/Header/Header
 #: index
 msgid "Sitemap"
 msgstr ""
@@ -321,4 +327,9 @@ msgstr ""
 #. Default: "of"
 #: components/Blocks/Listing/ListingBody
 msgid "of"
+msgstr ""
+
+#. Default: ""
+#: components/Header/Header
+msgid "siteLabel"
 msgstr ""
