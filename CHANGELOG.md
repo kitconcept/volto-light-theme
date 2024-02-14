@@ -8,6 +8,23 @@
 
 <!-- towncrier release notes start -->
 
+## 3.0.0 (2024-02-14)
+
+### Feature
+
+- Add options to show intranet label and implement intranet header for intranet sites. @iFlameing [#304](https://github.com/kitconcept/volto-light-theme/pull/304)
+- Add Event Metadata block @iRohitSingh [#334](https://github.com/kitconcept/volto-light-theme/pull/334)
+
+### Bugfix
+
+- Fix Navigation fails html validator due to use of divs inside ul tag @iRohitSingh [#289](https://github.com/kitconcept/volto-light-theme/pull/289)
+- Fixed the Caption for Images, Video Blocks etc. to use semantically correct HTML Structure @Molochem [#341](https://github.com/kitconcept/volto-light-theme/pull/341)
+- Fix missing key in `Header` component @sneridagh [#345](https://github.com/kitconcept/volto-light-theme/pull/345)
+
+### Internal
+
+- Support for enhanced initial blocks in config - Update to Volto 17.12.1 @sneridagh [#342](https://github.com/kitconcept/volto-light-theme/pull/342)
+
 ## 3.0.0-alpha.3 (2024-02-02)
 
 ### Feature
