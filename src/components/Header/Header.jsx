@@ -28,18 +28,6 @@ const InternetHeader = ({ pathname, siteLabel, token, siteAction }) => {
   return (
     <>
       <div className="header">
-        <div className="logo-nav-wrapper">
-          <div className="logo">
-            <Logo />
-          </div>
-          <Navigation pathname={pathname} />
-          <MobileNavigation pathname={pathname} />
-          <div className="search-wrapper navigation-desktop">
-            <div className="search">
-              <SearchWidget />
-            </div>
-          </div>
-        </div>
         <div className="tools-wrapper">
           <LanguageSelector />
 
@@ -57,6 +45,18 @@ const InternetHeader = ({ pathname, siteLabel, token, siteAction }) => {
               <p>{siteLabel}</p>
             </div>
           )}
+        </div>
+        <div className="logo-nav-wrapper">
+          <div className="logo">
+            <Logo />
+          </div>
+          <Navigation pathname={pathname} />
+          <MobileNavigation pathname={pathname} />
+          <div className="search-wrapper navigation-desktop">
+            <div className="search">
+              <SearchWidget />
+            </div>
+          </div>
         </div>
       </div>
     </>
