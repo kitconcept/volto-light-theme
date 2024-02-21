@@ -142,12 +142,14 @@ class SearchWidget extends Component {
                     messages.searchSite,
                   )}
                   title={this.props.intl.formatMessage(messages.search)}
+                  tabIndex={this.state.active ? '0' : '-1'} // Conditional tabIndex
                   ref={(input) => {
                     this.refInput = input;
                   }}
                 />
                 <button
                   aria-label={this.props.intl.formatMessage(messages.search)}
+                  tabIndex={this.state.active ? '0' : '-1'}
                 >
                   <Icon name={zoomSVG} size="48px" />
                 </button>
