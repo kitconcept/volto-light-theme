@@ -8,6 +8,17 @@
 
 <!-- towncrier release notes start -->
 
+## 3.0.1 (2024-03-04)
+
+### Bugfix
+
+- Fix image gallery opacity. @robgietema [#347](https://github.com/kitconcept/volto-light-theme/pull/347)
+- Fix teaser styles on add view. @davisagli [#354](https://github.com/kitconcept/volto-light-theme/pull/354)
+
+### Internal
+
+- Update to Volto 17.15.1 @sneridagh [#348](https://github.com/kitconcept/volto-light-theme/pull/348)
+
 ## 3.0.0 (2024-02-14)
 
 ### Feature
