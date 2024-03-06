@@ -52,18 +52,21 @@
 
 // We expect initially three main containers
 .header-wrapper {
+  .q.container,
   .a.container {
     @include container-preference-order(12);
   }
 }
 
 .content-area {
+  .q.container,
   .a.container {
     @include container-preference-order(10);
   }
 }
 
 footer {
+  .q.container,
   .a.container {
     @include container-preference-order(8);
   }
@@ -115,6 +118,7 @@ footer {
 
 // Slate Style External Links
 .content-area .ui.container,
+.content-area .q.container,
 .content-area .a.container {
   a.external:after,
   a.external:after {
@@ -124,6 +128,7 @@ footer {
   }
 }
 .content-area #page-edit .ui.container,
+.content-area .q.container,
 .content-area .a.container {
   a.external:after,
   a.external:after {
@@ -137,6 +142,7 @@ footer {
 External link removal for all the blocks.
 */
 .content-area #page-edit .ui.container,
+.content-area .q.container,
 .content-area .a.container {
   .block.button,
   .block.listing,
