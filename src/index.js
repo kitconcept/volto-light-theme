@@ -13,7 +13,7 @@ import { disableBgColorSchema } from './components/Blocks/disableBgColorSchema';
 import BlockSettingsSchema from '@plone/volto/components/manage/Blocks/Block/Schema';
 
 import ContainerQueriesPolyfill from './components/CQPolyfill';
-import Container from './components/Atoms/Container/Container';
+import { Container } from '@plone/components';
 import TopSideFacets from './components/Blocks/Search/TopSideFacets';
 
 import GridListingBlockTemplate from './components/Blocks/Listing/GridTemplate';
@@ -79,7 +79,7 @@ const applyConfig = (config) => {
     'eventMetadata',
   ];
 
-  // Register custom Container component
+  // Register our custom Container component
   config.registerComponent({
     name: 'Container',
     component: Container,
