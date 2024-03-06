@@ -7,6 +7,9 @@ const Container = (props) => {
   const classes = cx('a', 'container', className, { layout, narrow });
 
   const Component = getElementType(Container, props);
+  console.log(
+    'The Container component in: @kitconcept/volto-light-theme/src/components/Atoms/Container/Container.jsx is deprecated, and it will be removed in the next major release of this package. Please use the one in @plone/components instead.',
+  );
   return (
     <Component {...rest} className={classes}>
       {children}

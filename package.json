@@ -63,6 +63,9 @@
     "@kitconcept/volto-separator-block",
     "@kitconcept/volto-slider-block"
   ],
+  "dependencies": {
+    "@plone/components": "2.0.0-alpha.6"
+  },
   "peerDependencies": {
     "@eeacms/volto-accordion-block": "^10.4.0",
     "@kitconcept/volto-button-block": "^2.3.1",

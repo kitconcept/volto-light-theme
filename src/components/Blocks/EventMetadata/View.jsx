@@ -3,7 +3,8 @@ import { FormattedMessage, injectIntl } from 'react-intl';
 import { FormattedDate } from '@plone/volto/components';
 import { UniversalLink } from '@plone/volto/components';
 import { expandToBackendURL } from '@plone/volto/helpers';
-import Container from '../../../components/Atoms/Container/Container';
+import { Container } from '@plone/components';
+
 const EventMetadataView = (props) => {
   const content = props.properties;
   const dateOptions = {
