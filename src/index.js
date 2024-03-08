@@ -1,4 +1,5 @@
 import { defineMessages } from 'react-intl';
+import { cloneDeep } from 'lodash';
 
 import { composeSchema, getPreviousNextBlock } from '@plone/volto/helpers';
 import {
@@ -71,7 +72,9 @@ const applyConfig = (config) => {
   config.settings.intranetHeader = false;
 
   // Remove Hero Block
-  config.blocks.blocksConfig.hero.restricted = true;
+  if (config.blocks.blocksConfig?.hero) {
+    config.blocks.blocksConfig.hero.restricted = true;
+  }
 
   // No required blocks (eg. Title)
   config.blocks.requiredBlocks = [
@@ -198,57 +201,45 @@ const applyConfig = (config) => {
     dataAdapter: ImageBlockDataAdapter,
   };
 
-  config.blocks.blocksConfig.accordion.blocksConfig = {
-    ...config.blocks.blocksConfig,
-    teaser: {
-      ...config.blocks.blocksConfig.teaser,
-      schemaEnhancer: composeSchema(teaserSchemaEnhancer, disableBgColorSchema),
-    },
+  // Accordion internal `blocksConfig` amendments
+  // We cloneDeep the blocksConfig to avoid modifying the original object
+  // in subsequent modifications of the accordion block config
+  config.blocks.blocksConfig.accordion.blocksConfig = cloneDeep(
+    config.blocks.blocksConfig,
+  );
+
+  config.blocks.blocksConfig.accordion.blocksConfig.teaser.schemaEnhancer =
+    composeSchema(teaserSchemaEnhancer, disableBgColorSchema);
+
+  config.blocks.blocksConfig.gridBlock.colors = BG_COLORS;
+  config.blocks.blocksConfig.gridBlock.schemaEnhancer = defaultStylingSchema;
+  config.blocks.blocksConfig.gridBlock.icon = gridSVG;
+
+  // Grids internal `blocksConfig` amendments
+  // Slate in grids must have an extra wrapper with the `slate` className
+  const OriginalSlateBlockView = config.blocks.blocksConfig.slate.view;
+  config.blocks.blocksConfig.gridBlock.blocksConfig.slate.view = (props) => {
+    return (
+      <div className="slate">
+        <OriginalSlateBlockView {...props} />
+      </div>
+    );
   };
 
-  config.blocks.blocksConfig.gridBlock = {
-    ...config.blocks.blocksConfig.gridBlock,
-    colors: BG_COLORS,
-    schemaEnhancer: defaultStylingSchema,
-    icon: gridSVG,
-  };
+  config.blocks.blocksConfig.gridBlock.blocksConfig.image.schemaEnhancer =
+    composeSchema(
+      imageBlockSchemaEnhancer,
+      gridImageDisableSizeAndPositionHandlersSchema,
+    );
 
-  config.blocks.blocksConfig.gridBlock.blocksConfig = {
-    ...config.blocks.blocksConfig,
-    slate: {
-      ...config.blocks.blocksConfig.slate,
-      // Slate in grids must have an extra wrapper with the `slate` className
-      view: (props) => {
-        const EnhancedSlateViewComponent =
-          config.blocks.blocksConfig.slate.view;
-        return (
-          <div className="slate">
-            <EnhancedSlateViewComponent {...props} />
-          </div>
-        );
-      },
-    },
-    image: {
-      ...config.blocks.blocksConfig.image,
-      schemaEnhancer: composeSchema(
-        imageBlockSchemaEnhancer,
-        gridImageDisableSizeAndPositionHandlersSchema,
-      ),
-    },
-    teaser: {
-      ...config.blocks.blocksConfig.teaser,
-      schemaEnhancer: composeSchema(
-        gridTeaserDisableStylingSchema,
-        teaserSchemaEnhancer,
-      ),
-    },
-    listing: {
-      ...config.blocks.blocksConfig.listing,
-      allowed_headline_tags: [['h2', 'h2']],
-      schemaEnhancer: removeStylingSchema,
-      variations: [],
-    },
-  };
+  config.blocks.blocksConfig.gridBlock.blocksConfig.teaser.schemaEnhancer =
+    composeSchema(gridTeaserDisableStylingSchema, teaserSchemaEnhancer);
+
+  config.blocks.blocksConfig.gridBlock.blocksConfig.listing.allowed_headline_tags =
+    [['h2', 'h2']];
+  config.blocks.blocksConfig.gridBlock.blocksConfig.listingschemaEnhancer =
+    removeStylingSchema;
+  config.blocks.blocksConfig.gridBlock.blocksConfig.listingvariations = [];
 
   config.blocks.blocksConfig.introduction = {
     ...config.blocks.blocksConfig.introduction,
