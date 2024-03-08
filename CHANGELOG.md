@@ -8,6 +8,25 @@
 
 <!-- towncrier release notes start -->
 
+## 3.1.0 (2024-03-08)
+
+### Feature
+
+- [Vertical Spacing] Reduce spacing between title and description in teaser block @iFlameing [#353](https://github.com/kitconcept/volto-light-theme/pull/353)
+- Add eu and es translations @erral [#358](https://github.com/kitconcept/volto-light-theme/pull/358)
+
+### Bugfix
+
+- Fix header tabbing order @iRohitSingh [#251](https://github.com/kitconcept/volto-light-theme/pull/251)
+- Fix show figcaption tag if ther is no caption @iRohitSingh [#350](https://github.com/kitconcept/volto-light-theme/pull/350)
+- Safer pass by value instead of by reference when modifying internal `blockConfig` data @sneridagh [#361](https://github.com/kitconcept/volto-light-theme/pull/361)
+
+### Internal
+
+- @plone/components as dependency
+  Use the `Container` component from @plone/components instead of the local one.
+  The one in `src/components/Atoms/Container/Container.jsx` is deprecated and will be removed in the next major release. @sneridagh [#360](https://github.com/kitconcept/volto-light-theme/pull/360)
+
 ## 3.0.1 (2024-03-04)
 
 ### Bugfix
