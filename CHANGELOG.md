@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 3.1.1 (2024-03-08)
+
+### Bugfix
+
+- Fix typo in container deprecation notice @sneridagh [#362](https://github.com/kitconcept/volto-light-theme/pull/362)
+
 ## 3.1.0 (2024-03-08)
 
 ### Feature
