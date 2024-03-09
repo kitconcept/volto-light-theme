@@ -6,8 +6,6 @@
 
 .block.slate {
   .block-inner-container {
-    padding: 0 0 $spacing-small 0;
-
     :first-child {
       margin-top: 0 !important;
 
@@ -18,12 +16,6 @@
 
     p {
       margin: 0;
-    }
-  }
-
-  &.next--has--different--backgroundColor {
-    .block-inner-container {
-      padding-bottom: 0;
     }
   }
 
