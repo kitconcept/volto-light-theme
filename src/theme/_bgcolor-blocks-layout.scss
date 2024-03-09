@@ -1,6 +1,6 @@
 .block {
   &.previous--has--different--backgroundColor {
-    padding-top: $color-block-change-vertical-spacing;
+    padding-top: calc($color-block-change-vertical-spacing + 20px);
     @container (max-width: #{$largest-mobile-screen}) {
       padding-top: 60px !important;
     }

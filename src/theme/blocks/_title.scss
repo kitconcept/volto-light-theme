@@ -1,5 +1,10 @@
 .block.title {
-    padding-bottom: 0 !important;
+    &.next--has--different--backgroundColor {
+      .block-inner-container {
+        padding-bottom: $block-vertical-space;
+      }
+      
+    }
     
   .block-inner-container {
     @include vertical-space-h1();

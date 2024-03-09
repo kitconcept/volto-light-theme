@@ -93,6 +93,9 @@ footer {
 // BMv3 compliant, we target the block inner container only
 .block-inner-container {
   @include layout-container-width();
+
+  // Default spacing between sibling blocks
+  padding-bottom: $block-vertical-space;
 }
 
 #page-history > * {
@@ -150,7 +153,7 @@ External link removal for all the blocks.
   }
 }
 
-// Categories inner container width
+// Blocks spacial relationships by category
 .category-heading {
   .block-inner-container {
     @include default-container-width();
@@ -177,6 +180,13 @@ External link removal for all the blocks.
       padding-bottom: 0 !important;
       }
   }
+}
+
+.category-separator {
+  .block-inner-container {
+    padding-bottom: 0 !important;
+  }
+
 }
 
 // Content Layout Styling

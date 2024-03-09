@@ -19,21 +19,27 @@ The block should have the same containers in both View/Edit components, so we ca
 
 These containers will conform this two level wrappers definitions:
 
-#### Main/Outter container
+#### Main/Outer container
 
 This is the container that receives the block injected classNames and styles from the StyleWrapper.
 It's the (familiar) `div` that has the `block ${type}` className.
 In View mode it should be provided by the block developer.
 In Edit mode it's part of the edit wrappers: `block-editor-${type}` wrapper, and automatically receives the StyleWrapper injected properties.
 
+The principal responsibility of the Main/Outer container, other than giving the block its background color, is to fit the block into the layout of the page by stacking itself above/below its siblings. It MUST be full width, and go from the left edge to the right edge of the page. It MUST NOT have any margin or padding. The only exception to this is the extra padding that is added for visual coherence when the block's background color is different than the previous or next sibling's background color. 
+
 #### Secondary/Inner container
 
-This is the container that decides the inner properties, being the most important one, the width.
+The Secondary/Inner container takes care of horiztonal (block's content width) and vertical (vertical spacing between siblings) offset. For example, for a block like the Slider, you might want to have a horizontal offset of zero and have the content fill the width of the page. On the other hand, for a Slate with a paragraph of text you might want space offsetting both sides to facilitate readibility and create a cleaner look.
+
+The vertical spatial relationships between contiguous blocks will be defined by the blocks' categories. For example, if a Slate (which has category inline) comes after a Silder (which has category full-width), the latter should add an extra bottom padding to improve the readibility of the following paragraph.
+
+To avoid background color inconsistencies, the vertical offset given by the Secondary/Inner container must be implemented using the padding property. As a general rule—and to establish a convention—the vertical space between two blocks should be provided by the upper block. This means that for most cases, the top of the block's content must be flush with the top of the container.
 
 
 ### Block category
 
-A block should be able to be categorized given its nature. This nature determines how they relate with the other siblings.
+A block should be able to be categorized given its nature and visual characteristics. This nature determines how they relate with the other siblings.
 
 This category will help to determine the default behavior of the block by injecting it as a className.
 
@@ -61,7 +67,7 @@ Edit
   div.[style="position: relative"] (the relative container)
     div.drag.handle.wrapper (the one of the drag icon)
     div.ui.drag.block.inner.$type (this is superfluous, but the block classname can't be removed)
-      div.[role="presentation"].block.$type.selected category-inline
+      div.[role="presentation"].block.$type.selected category-action
         <div classname="block-inner-container">
           {Edit component}
         </div>
@@ -70,7 +76,7 @@ Edit
 
 View
 ```
-<div classname="block button category-inline $StyleWrapperClassNames $StyleWrapperStyles">
+<div classname="block button category-action $StyleWrapperClassNames $StyleWrapperStyles">
   <div classname="block-inner-container">
     {View component}
   </div>
