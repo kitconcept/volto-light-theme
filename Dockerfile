@@ -16,6 +16,7 @@ RUN <<EOT
     set -e
     mv src/kitconcept.voltolighttheme/requirements-docker.txt ./requirements.txt
     mv src/kitconcept.voltolighttheme/scripts/create_site.py ./scripts/create_site.py
+    mv src/kitconcept.voltolighttheme/scripts/default.json ./scripts/default.json
     bin/pip install -r requirements.txt
     bin/python /compile_mo.py
     rm -Rf src/ /compile_mo.py compile_mo.log
