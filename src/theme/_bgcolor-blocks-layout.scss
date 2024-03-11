@@ -1,13 +1,25 @@
 .block {
+  // Add padding-top to Outer container & remove padding-top from Inner container if previous block has different BG color
   &.previous--has--different--backgroundColor {
-    padding-top: calc($color-block-change-vertical-spacing + 20px);
+    padding-top: $color-block-change-vertical-spacing;
+
+    .block-inner-container {
+      padding-top: 0 !important;
+    }
+
     @container (max-width: #{$largest-mobile-screen}) {
       padding-top: 60px !important;
     }
   }
 
+  // Add padding-bottom to Outer container & remove padding-bottom from Inner container if next block has different BG color
   &.next--has--different--backgroundColor {
     padding-bottom: $color-block-change-vertical-spacing;
+
+    .block-inner-container {
+      padding-bottom: 0 !important;
+    }
+    
     @container (max-width: #{$largest-mobile-screen}) {
       padding-bottom: 60px !important;
     }
