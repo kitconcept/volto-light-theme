@@ -228,14 +228,21 @@ msgstr "Rechts"
 #: components/Blocks/Search/components/SearchInput
 #: components/Blocks/Search/TopSideFacets
 #: components/MobileNavigation/MobileNavigation
+#: components/SearchWidget/IntranetSearchWidget
 #: components/SearchWidget/SearchWidget
 msgid "Search"
 msgstr "Suche"
 
 #. Default: "Search Site"
+#: components/SearchWidget/IntranetSearchWidget
 #: components/SearchWidget/SearchWidget
 msgid "Search Site"
 msgstr "Seite durchsuchen"
+
+#. Default: "Search for People, E-Mail Address, Phone Number, ..."
+#: components/SearchWidget/IntranetSearchWidget
+msgid "Search for People, E-Mail Address, Phone Number, ..."
+msgstr ""
 
 #. Default: "Search results"
 #: components/Blocks/Search/components/SearchDetails
@@ -253,7 +260,6 @@ msgid "Site"
 msgstr "Seite"
 
 #. Default: "Sitemap"
-#: components/Header/Header
 #: index
 msgid "Sitemap"
 msgstr "Übersicht"
@@ -327,3 +333,8 @@ msgstr ""
 #: components/Blocks/Listing/ListingBody
 msgid "of"
 msgstr "von"
+
+#. Default: ""
+#: components/Header/Header
+msgid "siteLabel"
+msgstr ""
