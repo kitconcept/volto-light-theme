@@ -1,6 +1,6 @@
 .header-wrapper .header {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
 
   .logo-nav-wrapper {
     display: flex;
@@ -96,6 +96,7 @@
         border: none;
         border-radius: 50%;
         background-color: transparent;
+        color: $black;
         transition:
           background-color 200ms ease-in-out,
           color 300ms ease-in-out;
@@ -220,7 +221,24 @@
   .tools-wrapper {
     display: flex;
     flex-direction: row-reverse;
+    justify-content: space-between;
     padding-top: 16px;
+
+    .intranet {
+      padding: 10px $spacing-small;
+      margin-top: -16px;
+      margin-left: 213px;
+      background-color: $secondary-grey;
+      @media only screen and (max-width: $narrow-container-width) {
+        margin-left: 0px;
+      }
+
+      p {
+        @include marginal-title();
+        font-weight: 400;
+        text-transform: capitalize;
+      }
+    }
 
     .language-selector {
       padding-left: 40px;
@@ -260,6 +278,99 @@
       &:after {
         content: '|';
         font-size: 14px;
+      }
+    }
+  }
+}
+
+// Intranet Header
+
+.header-wrapper.intranet-header {
+  .header {
+    flex-direction: column;
+
+    .logo-nav-wrapper {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+
+      .logo {
+        flex: 0 1 auto;
+      }
+
+      @media only screen and (max-width: $narrow-container-width) {
+        position: relative;
+      }
+
+      .mobile-nav.mobile.only {
+        @media only screen and (max-width: $narrow-container-width) {
+          position: absolute;
+          top: 19px;
+          right: 0;
+        }
+
+        .menu-drawer {
+          @media only screen and (max-width: $computer-breakpoint) {
+            top: 210px;
+          }
+        }
+      }
+      .navigation {
+        flex-basis: 100%;
+        margin: 29px auto 0 auto;
+      }
+    }
+
+    .search-wrapper {
+      flex: 0 1 auto;
+      align-self: center;
+      margin-left: 209px;
+      @media only screen and (max-width: $narrow-container-width) {
+        width: 100%;
+        margin-left: 0%;
+      }
+
+      .search {
+        width: 100%;
+        border-bottom: 2px solid $secondary-grey;
+        .field.searchbox {
+          border: none;
+
+          .ui.input input {
+            width: 500px;
+
+            &::placeholder {
+              color: #808080;
+              @include body-text();
+            }
+            @media only screen and (max-width: $narrow-container-width) {
+              width: 100%;
+            }
+          }
+
+          button {
+            @media only screen and (max-width: $narrow-container-width) {
+              padding-left: 9px;
+            }
+            &:hover {
+              background-color: transparent;
+              color: $black;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+
+    .tools-wrapper {
+      justify-content: space-between;
+      @media only screen and (max-width: $narrow-container-width) {
+        flex-direction: row;
+      }
+
+      .tools {
+        @media only screen and (max-width: $narrow-container-width) {
+          display: none;
+        }
       }
     }
   }
@@ -409,6 +520,7 @@ body.has-toolbar.has-sidebar {
             color: $white;
 
             a {
+              padding-bottom: 0;
               font-size: 14px;
               font-weight: 400;
               line-height: 18px;
@@ -490,12 +602,7 @@ body.has-toolbar.has-sidebar {
             }
           }
 
-          li {
-            position: relative;
-            padding-top: 0;
-          }
-
-          li a.current {
+          a.current {
             .left-arrow {
               visibility: visible;
             }
@@ -513,14 +620,13 @@ body.has-toolbar.has-sidebar {
         display: flex;
       }
 
-      li {
-        padding: 8px 0;
-      }
-
-      li a {
+      a {
+        position: relative;
         display: inline-flex;
         align-items: flex-start;
+        padding-bottom: 8px;
         color: $black;
+
         @include body-text-bold();
 
         span {

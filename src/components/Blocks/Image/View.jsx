@@ -32,6 +32,10 @@ export const ImageView = ({ className, data, detached, properties, style }) => {
   }
 
   const Image = config.getComponent({ name: 'Image' }).component;
+  const shouldRenderCaption =
+    data.title ||
+    data.description ||
+    (data?.copyright_and_sources ?? data.credit?.data);
 
   return (
     <div
@@ -112,11 +116,13 @@ export const ImageView = ({ className, data, detached, properties, style }) => {
                   loading="lazy"
                   responsive={true}
                 />
-                <Caption
-                  title={data.title}
-                  description={data.description}
-                  credit={data?.copyright_and_sources ?? data.credit?.data}
-                />
+                {shouldRenderCaption && (
+                  <Caption
+                    title={data.title}
+                    description={data.description}
+                    credit={data?.copyright_and_sources ?? data.credit?.data}
+                  />
+                )}
               </figure>
             );
             if (href) {
