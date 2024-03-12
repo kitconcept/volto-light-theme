@@ -43,8 +43,8 @@ p {
 
 ul,
 ol {
-  margin-bottom: $block-vertical-space;
   margin-top: $block-vertical-space;
+  margin-bottom: $block-vertical-space;
   @include word-break();
 
   &:last-child {
@@ -115,7 +115,7 @@ h1.documentFirstHeading {
 // }
 
 // Slate headings
-h2 {
+h2:not(.headline) {
   @include text-heading-h2();
   @include vertical-space-h2();
   @include word-break();

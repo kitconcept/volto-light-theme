@@ -1,5 +1,5 @@
 import { defineMessages } from 'react-intl';
-import { cloneDeep } from 'lodash';
+import { cloneDeep, find } from 'lodash';
 
 import { composeSchema, getPreviousNextBlock } from '@plone/volto/helpers';
 import {
@@ -51,6 +51,19 @@ defineMessages({
     defaultMessage: 'Sitemap',
   },
 });
+
+function getCurrentStyleName(colorDefinitions, block) {
+  let currentBlockColor;
+  let currentBlockStyle = block?.styles?.['backgroundColor:noprefix'];
+  // Find in color definitions the current style value
+  if (currentBlockStyle) {
+    currentBlockColor = find(colorDefinitions, {
+      style: currentBlockStyle,
+    }).name;
+  }
+
+  return currentBlockColor;
+}
 
 const applyConfig = (config) => {
   config.settings.enableAutoBlockGroupingByBackgroundColor = true;
@@ -172,6 +185,17 @@ const applyConfig = (config) => {
         styles.push('next--has--same--backgroundColor');
       } else if (currentColor !== nextColor) {
         styles.push('next--has--different--backgroundColor');
+      }
+
+      // Convenience class for the current block's background color for not having to
+      // rely on a style color selector
+      if (getCurrentStyleName(config.settings.backgroundColors, data)) {
+        styles.push(
+          `has--backgroundColor--${getCurrentStyleName(
+            config.settings.backgroundColors,
+            data,
+          )}`,
+        );
       }
 
       return [...classNames, ...styles];
