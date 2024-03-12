@@ -9,32 +9,34 @@
 
 ## Vision
 
-The Volto Light Theme main vision is to provide kitconcept a theme to build upon the projects to come after the release of Plone 6.
+The main vision of the Volto Light Theme is to serve as a foundation for kitconcept's future projects, following the release of Plone 6.
 
-It should contain all the feedback and success stories in UI/UX side that the company had during the last years projects.
+It contains the feedback from the company's last years projects and the success stories in the UI/UX side.
 
-It should also be future proof, so it has to be aligned with the upcoming Volto vision in terms of theming strategy decided by the Plone community.
+It aims to be future proof, so it has to be aligned with the upcoming Volto vision in terms of theming strategy decided by the Plone community.
 
 ![Volto-Light-Theme](https://github.com/kitconcept/volto-light-theme/raw/main/volto-light-theme.png)
 
-## Requirements
+## Requirements and specs
 
 ### It should not use any SemanticUI component or styling
 
 Volto will abandon SemanticUI as default design component system in the mid term, and we should be prepared for it.
 
-We will achieve that not using any SemanticUI component, nor any related styling (`.ui.XXX`) in our upcoming themes.
+We will achieve that by not using any SemanticUI component, nor any related styling (`.ui.XXX`) in our upcoming themes.
 
 The Volto strategy is:
 
-- To provide a very basic and structural Vanilla components to build upon theming and CMSUI as well.
-- These components will be based in a headless component system. The best positioned right now is [react-aria](https://react-spectrum.adobe.com/react-aria/).
-- The theming could be done using these basic components or dropping in the component system of the developer/integrator choice. The presence of Volto's component registry system could help for adapting, if required.
-- The CMSUI will be isolated from the theming because it will be extremely CSS specific, so leaks from theming-CMSUI won't happen.
+- Provide a very basic and structural Vanilla components to build upon theming and CMSUI as well (`@plone/components`)
+- These components will be based in a headless component system [React Aria Components](https://react-spectrum.adobe.com/react-aria/components.html)
+- Volto projects can be themed using `@plone/components` as baseline or use a complete different design or component system of the developer/integrator choice. The presence of Volto's component registry system could help for adapting, if required.
 
 #### Volto components `customizations` use case
 
-If possible, we will switch to SemanticUI-less components in case of they exist. Specially if the elements that we are customizing are clearly "theme" (eg. header/footer, etc). In the case of other Volto customizations that are not clear part of the theme (eg. Search block), it's fine to stick using what the original is using (SemanticUI). When Volto will make the switch in the future, we should then adapt all the customizations to match the one in the Volto core.
+If possible, we will switch to SemanticUI-less components when `@plone/components` is ready.
+Specially if the elements that we are customizing are clearly "theme" (eg. header/footer, etc).
+In the case of other Volto customizations that are not clear part of the theme (eg. Search block), it's fine to stick using what the original is using (SemanticUI).
+When Volto will make the switch in the future, we should then adapt all the customizations to match the one in the Volto core.
 The approach used is to use a proxy to a component of the `components` folder. This way it's easier to keep track of changes, and another add-on can customize again the light theme component, not the original Volto customization.
 
 ### It should use kitconcept's layout used in FZJ/DLR projects
@@ -55,9 +57,9 @@ Since the new container queries spec is out, we will be introducing it to the cu
 
 We will start organising the files in the root of `theme` folder, to differentiate from a normal "SemanticUI" theme. Take a look at the current state. We will follow this convention:
 
-- One less file per component/block
-- All less files loading are centralized in one main less file `custom.less` in this project, could be different in the future.
-- Vanilla headless components are named under `atoms` folder.
+- One file per component/block
+- Use the Volto theme facility using the SCSS scape hatch provided so other add-ons can hook to it.
+- The styling is centralized in `main.scss`, the rest of the files are loaded from there.
 
 ## Why a headless component system?
 
@@ -68,6 +70,8 @@ https://medium.com/@nirbenyair/headless-components-in-react-and-why-i-stopped-us
 This theme has the concept of block "grouping" given two consecutive blocks with the same styling block wrapper property `backgroundColor`. You have to add this property to your blocks in your blocks code. This add-on customizes `RenderBlocks.jsx` component in order to do so.
 
 The wrappers have the classnames `blocks-group-wrapper` and the name of the background color, eg. `grey`, defaulting to `transparent` if no `backgroundColor` property is set in the styling block wrapper in the block.
+
+**Disclaimer**: This might change in the near future, since we are developing a new integral Block Model for VLT and Volto.
 
 ### Vertical spacing rules
 
@@ -93,7 +97,7 @@ We use container queries when do care explicitly about how the styling is being 
 
 Reason: The container queries allow us to abstract the width from the sidebar and toolbar in edit mode, showing the content area as it will be in that size, in view mode.
 
-Remember: The margins in responsive are being taken care with container queries in `layout.scss`. So everything related to that, goes like it works in there, with container queries. See implementations for details in case you need it.
+**Remember**: The margins in responsive are being taken care with container queries in `layout.scss`. So everything related to that, goes like it works in there, with container queries. See implementations for details in case you need it.
 
 ## Specification
 
@@ -181,6 +185,49 @@ It's behind a feature flag, as opt-out:
 config.settings.enableFatMenu = true;
 ```
 
+### Show Site Label
+
+If you want to show a label on top of site you can pass label name to `siteLabel` property.
+
+```js
+config.settings.siteLabel = 'Plone Intranet';
+```
+
+If you wanted a translated label then you have to define a translation object in `defineMessages` function provided by react-intl.
+
+Here is the code snippets you have to add in your addon index.js file.
+If you don't have addon, you can also add in your config.js file in root of your frontend folder.
+
+```js
+import { defineMessages } from 'react-intl';
+
+defineMessages({
+  siteLabel: {
+    id: 'siteLabel',
+    defaultMessage: ' ',
+  },
+});
+
+```
+Then add the translation you want in your `locale` file.
+
+### Show intranetHeader
+
+We have totally different header for intranet sites. If you want that, you can enable it by passing `intranetHeader` property.
+
+```js
+config.settings.intranetHeader = true;
+```
+## Releases
+
+The releases follow a semantic versioning model.
+
+### Definition of breaking change
+
+In general, the same rules as Volto releases applies.
+However, in VLT we add an extra exception: The vertical spacing is carefully curated and considered an important feature of the theme and because of that, changes and improvements in the vertical spacing are **NOT** considered breaking changes.
+They will be noted properly in the changelog.
+
 ## Upgrade Guide
 
 See a detailed upgrade guide in: https://github.com/kitconcept/volto-light-theme/blob/main/UPGRADE-GUIDE.md
@@ -201,7 +248,8 @@ Run `make help` to list the available commands.
     stop-backend                        Stop Docker backend
     build-live                          Build Addon live
     build-addon                         Build Addon dev
-    start-dev                           Starts Dev container
+    start-dev                           Starts Dev environent container
+    start-live                          Starts Live environment container
     dev                                 Develop the addon
     help                                Show this help.
     i18n                                Sync i18n
@@ -261,11 +309,12 @@ Run
 make start-dev
 ```
 
-This will start both the frontend and backend containers.
+This will start both the frontend and backend for the dev environment containers.
+
 
 ### Stop Backend (Docker)
 
-After developing, to stop the running backend, don't forget to run:
+After developing, the backend stops automatically. However, it can be stopped by running:
 
 Run
 
@@ -368,6 +417,24 @@ When finished, don't forget to shutdown the backend server.
 ```shell
 make stop-test-acceptance-server-a11y
 ```
+
+### Live mode
+
+There is an alternate Docker Compose configuration for running volto in live mode.
+This is not usually needed during development, but can be useful for debugging.
+
+To build the frontend for the live environment, run
+
+```shell
+make build-live
+```
+
+To start both the frontend and backend for the live environment, run
+
+```shell
+make start-live
+```
+
 
 ### Release
 

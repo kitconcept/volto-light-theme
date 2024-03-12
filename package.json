@@ -1,6 +1,6 @@
 {
   "name": "@kitconcept/volto-light-theme",
-  "version": "3.0.0-alpha.2",
+  "version": "3.1.1",
   "description": "Volto Light Theme by kitconcept",
   "main": "src/index.js",
   "repository": {
@@ -63,6 +63,9 @@
     "@kitconcept/volto-separator-block",
     "@kitconcept/volto-slider-block"
   ],
+  "dependencies": {
+    "@plone/components": "2.0.0-alpha.6"
+  },
   "peerDependencies": {
     "@eeacms/volto-accordion-block": "^10.4.0",
     "@kitconcept/volto-button-block": "^2.3.1",
@@ -71,7 +74,6 @@
     "@kitconcept/volto-highlight-block": "^3.0.0",
     "@kitconcept/volto-introduction-block": "^1.0.0",
     "@kitconcept/volto-separator-block": "^4.0.0",
-    "@kitconcept/volto-slider-block": "^6.1.0",
-    "@plone/volto": "^17.11.5"
+    "@kitconcept/volto-slider-block": "^6.1.0"
   }
 }

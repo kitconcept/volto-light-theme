@@ -1,4 +1,5 @@
 import { defineMessages } from 'react-intl';
+import { cloneDeep } from 'lodash';
 
 import { composeSchema, getPreviousNextBlock } from '@plone/volto/helpers';
 import {
@@ -10,9 +11,10 @@ import { videoBlockSchemaEnhancer } from './components/Blocks/Video/schema';
 import { gridTeaserDisableStylingSchema } from '@plone/volto/components/manage/Blocks/Teaser/schema';
 import { gridImageDisableSizeAndPositionHandlersSchema } from '@plone/volto/components/manage/Blocks/Image/schema';
 import { disableBgColorSchema } from './components/Blocks/disableBgColorSchema';
+import BlockSettingsSchema from '@plone/volto/components/manage/Blocks/Block/Schema';
 
 import ContainerQueriesPolyfill from './components/CQPolyfill';
-import Container from './components/Atoms/Container/Container';
+import { Container } from '@plone/components';
 import TopSideFacets from './components/Blocks/Search/TopSideFacets';
 
 import GridListingBlockTemplate from './components/Blocks/Listing/GridTemplate';
@@ -27,10 +29,12 @@ import { searchBlockSchemaEnhancer } from './components/Blocks/Search/schema';
 
 import gridSVG from './icons/block_icn_grid.svg';
 import accordionSVG from './icons/block_icn_accordion.svg';
+import descriptionSVG from '@plone/volto/icons/description.svg';
 import EventView from './components/Theme/EventView';
 import { tocBlockSchemaEnhancer } from './components/Blocks/Toc/schema';
 import { mapsBlockSchemaEnhancer } from './components/Blocks/Maps/schema';
 import { sliderBlockSchemaEnhancer } from './components/Blocks/Slider/schema';
+import EventMetadataView from './components/Blocks/EventMetadata/View';
 
 const BG_COLORS = [
   { name: 'transparent', label: 'Transparent' },
@@ -55,13 +59,30 @@ const applyConfig = (config) => {
   config.settings.slate.useLinkedHeadings = false;
   config.settings.contentMetadataTagsImageField = 'preview_image';
 
+  // Initial block for event content type
+  config.blocks.initialBlocks = {
+    Event: [
+      { '@type': 'title' },
+      { '@type': 'eventMetadata', fixed: true, required: true },
+      { '@type': 'slate' },
+    ],
+  };
+
+  config.settings.siteLabel = '';
+  config.settings.intranetHeader = false;
+
   // Remove Hero Block
-  config.blocks.blocksConfig.hero.restricted = true;
+  if (config.blocks.blocksConfig?.hero) {
+    config.blocks.blocksConfig.hero.restricted = true;
+  }
 
   // No required blocks (eg. Title)
-  config.blocks.requiredBlocks = [];
+  config.blocks.requiredBlocks = [
+    ...config.blocks.requiredBlocks,
+    'eventMetadata',
+  ];
 
-  // Register custom Container component
+  // Register our custom Container component
   config.registerComponent({
     name: 'Container',
     component: Container,
@@ -180,57 +201,45 @@ const applyConfig = (config) => {
     dataAdapter: ImageBlockDataAdapter,
   };
 
-  config.blocks.blocksConfig.accordion.blocksConfig = {
-    ...config.blocks.blocksConfig,
-    teaser: {
-      ...config.blocks.blocksConfig.teaser,
-      schemaEnhancer: composeSchema(teaserSchemaEnhancer, disableBgColorSchema),
-    },
+  // Accordion internal `blocksConfig` amendments
+  // We cloneDeep the blocksConfig to avoid modifying the original object
+  // in subsequent modifications of the accordion block config
+  config.blocks.blocksConfig.accordion.blocksConfig = cloneDeep(
+    config.blocks.blocksConfig,
+  );
+
+  config.blocks.blocksConfig.accordion.blocksConfig.teaser.schemaEnhancer =
+    composeSchema(teaserSchemaEnhancer, disableBgColorSchema);
+
+  config.blocks.blocksConfig.gridBlock.colors = BG_COLORS;
+  config.blocks.blocksConfig.gridBlock.schemaEnhancer = defaultStylingSchema;
+  config.blocks.blocksConfig.gridBlock.icon = gridSVG;
+
+  // Grids internal `blocksConfig` amendments
+  // Slate in grids must have an extra wrapper with the `slate` className
+  const OriginalSlateBlockView = config.blocks.blocksConfig.slate.view;
+  config.blocks.blocksConfig.gridBlock.blocksConfig.slate.view = (props) => {
+    return (
+      <div className="slate">
+        <OriginalSlateBlockView {...props} />
+      </div>
+    );
   };
 
-  config.blocks.blocksConfig.gridBlock = {
-    ...config.blocks.blocksConfig.gridBlock,
-    colors: BG_COLORS,
-    schemaEnhancer: defaultStylingSchema,
-    icon: gridSVG,
-  };
+  config.blocks.blocksConfig.gridBlock.blocksConfig.image.schemaEnhancer =
+    composeSchema(
+      imageBlockSchemaEnhancer,
+      gridImageDisableSizeAndPositionHandlersSchema,
+    );
 
-  config.blocks.blocksConfig.gridBlock.blocksConfig = {
-    ...config.blocks.blocksConfig,
-    slate: {
-      ...config.blocks.blocksConfig.slate,
-      // Slate in grids must have an extra wrapper with the `slate` className
-      view: (props) => {
-        const EnhancedSlateViewComponent =
-          config.blocks.blocksConfig.slate.view;
-        return (
-          <div className="slate">
-            <EnhancedSlateViewComponent {...props} />
-          </div>
-        );
-      },
-    },
-    image: {
-      ...config.blocks.blocksConfig.image,
-      schemaEnhancer: composeSchema(
-        imageBlockSchemaEnhancer,
-        gridImageDisableSizeAndPositionHandlersSchema,
-      ),
-    },
-    teaser: {
-      ...config.blocks.blocksConfig.teaser,
-      schemaEnhancer: composeSchema(
-        gridTeaserDisableStylingSchema,
-        teaserSchemaEnhancer,
-      ),
-    },
-    listing: {
-      ...config.blocks.blocksConfig.listing,
-      allowed_headline_tags: [['h2', 'h2']],
-      schemaEnhancer: removeStylingSchema,
-      variations: [],
-    },
-  };
+  config.blocks.blocksConfig.gridBlock.blocksConfig.teaser.schemaEnhancer =
+    composeSchema(gridTeaserDisableStylingSchema, teaserSchemaEnhancer);
+
+  config.blocks.blocksConfig.gridBlock.blocksConfig.listing.allowed_headline_tags =
+    [['h2', 'h2']];
+  config.blocks.blocksConfig.gridBlock.blocksConfig.listingschemaEnhancer =
+    removeStylingSchema;
+  config.blocks.blocksConfig.gridBlock.blocksConfig.listingvariations = [];
 
   config.blocks.blocksConfig.introduction = {
     ...config.blocks.blocksConfig.introduction,
@@ -294,6 +303,20 @@ const applyConfig = (config) => {
     ...config.blocks.blocksConfig.__button,
     schemaEnhancer: ButtonStylingSchema,
     colors: BG_COLORS,
+  };
+
+  config.blocks.blocksConfig.eventMetadata = {
+    id: 'eventMetadata',
+    title: 'EventMetadata',
+    icon: descriptionSVG,
+    group: 'common',
+    view: EventMetadataView,
+    edit: EventMetadataView,
+    schema: BlockSettingsSchema,
+    restricted: ({ properties, block }) =>
+      properties['@type'] === 'Event' ? false : true,
+    mostUsed: false,
+    sidebarTab: 0,
   };
 
   // Check if the separator is present before enhancing it

@@ -21,8 +21,8 @@ GREEN=`tput setaf 2`
 RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
 
-PLONE_VERSION=6.0.9
-VOLTO_VERSION=17.11.5
+PLONE_VERSION=6
+VOLTO_VERSION=17.15.5
 
 ADDON_NAME='@kitconcept/volto-light-theme'
 ADDON_PATH='volto-light-theme'
@@ -65,6 +65,11 @@ build-addon: ## Build Addon dev
 start-dev: ## Starts Dev container
 	@echo "$(GREEN)==> Start Addon Development container $(RESET)"
 	${DEV_COMPOSE} up addon-dev backend
+
+.PHONY: start-live
+start-live: ## Starts Dev container
+	@echo "$(GREEN)==> Start Addon Development container $(RESET)"
+	${DEV_COMPOSE} up addon-live backend
 
 .PHONY: dev
 dev: ## Develop the addon

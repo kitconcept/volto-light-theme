@@ -4,7 +4,7 @@ import React from 'react';
 import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
 import { useSelector, shallowEqual } from 'react-redux';
 import { UniversalLink, Logo } from '@plone/volto/components';
-import Container from '@kitconcept/volto-light-theme/components/Atoms/Container/Container';
+import { Container } from '@plone/components';
 import { flattenToAppURL, addAppURL } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
 

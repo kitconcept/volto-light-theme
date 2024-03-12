@@ -8,6 +8,76 @@
 
 <!-- towncrier release notes start -->
 
+## 3.1.1 (2024-03-08)
+
+### Bugfix
+
+- Fix typo in container deprecation notice @sneridagh [#362](https://github.com/kitconcept/volto-light-theme/pull/362)
+
+## 3.1.0 (2024-03-08)
+
+### Feature
+
+- [Vertical Spacing] Reduce spacing between title and description in teaser block @iFlameing [#353](https://github.com/kitconcept/volto-light-theme/pull/353)
+- Add eu and es translations @erral [#358](https://github.com/kitconcept/volto-light-theme/pull/358)
+
+### Bugfix
+
+- Fix header tabbing order @iRohitSingh [#251](https://github.com/kitconcept/volto-light-theme/pull/251)
+- Fix show figcaption tag if ther is no caption @iRohitSingh [#350](https://github.com/kitconcept/volto-light-theme/pull/350)
+- Safer pass by value instead of by reference when modifying internal `blockConfig` data @sneridagh [#361](https://github.com/kitconcept/volto-light-theme/pull/361)
+
+### Internal
+
+- @plone/components as dependency
+  Use the `Container` component from @plone/components instead of the local one.
+  The one in `src/components/Atoms/Container/Container.jsx` is deprecated and will be removed in the next major release. @sneridagh [#360](https://github.com/kitconcept/volto-light-theme/pull/360)
+
+## 3.0.1 (2024-03-04)
+
+### Bugfix
+
+- Fix image gallery opacity. @robgietema [#347](https://github.com/kitconcept/volto-light-theme/pull/347)
+- Fix teaser styles on add view. @davisagli [#354](https://github.com/kitconcept/volto-light-theme/pull/354)
+
+### Internal
+
+- Update to Volto 17.15.1 @sneridagh [#348](https://github.com/kitconcept/volto-light-theme/pull/348)
+
+## 3.0.0 (2024-02-14)
+
+### Feature
+
+- Add options to show intranet label and implement intranet header for intranet sites. @iFlameing [#304](https://github.com/kitconcept/volto-light-theme/pull/304)
+- Add Event Metadata block @iRohitSingh [#334](https://github.com/kitconcept/volto-light-theme/pull/334)
+
+### Bugfix
+
+- Fix Navigation fails html validator due to use of divs inside ul tag @iRohitSingh [#289](https://github.com/kitconcept/volto-light-theme/pull/289)
+- Fixed the Caption for Images, Video Blocks etc. to use semantically correct HTML Structure @Molochem [#341](https://github.com/kitconcept/volto-light-theme/pull/341)
+- Fix missing key in `Header` component @sneridagh [#345](https://github.com/kitconcept/volto-light-theme/pull/345)
+
+### Internal
+
+- Support for enhanced initial blocks in config - Update to Volto 17.12.1 @sneridagh [#342](https://github.com/kitconcept/volto-light-theme/pull/342)
+
+## 3.0.0-alpha.3 (2024-02-02)
+
+### Feature
+
+- Allow customizing the secondary navigation entries via Portal action. @iFlameing [#302](https://github.com/kitconcept/volto-light-theme/pull/302)
+
+### Bugfix
+
+- Fix Fat menu A11y issues @iRohitSingh [#264](https://github.com/kitconcept/volto-light-theme/pull/264)
+- Fix Introduction-Block inline-styles have wrong typography. @iFlameing [#314](https://github.com/kitconcept/volto-light-theme/pull/314)
+- Remove extra site-map from header @iRohitSingh [#339](https://github.com/kitconcept/volto-light-theme/pull/339)
+
+### Internal
+
+- Upgrade to Volto 17.11.2 and Plone 6.0.9 @sneridagh [#328](https://github.com/kitconcept/volto-light-theme/pull/328)
+- Upgrade to Votlo 17.11.5 and Plone 6.0.9 @sneridagh [#331](https://github.com/kitconcept/volto-light-theme/pull/331)
+
 ## 3.0.0-alpha.2 (2024-01-17)
 
 ### Breaking

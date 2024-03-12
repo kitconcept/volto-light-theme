@@ -27,7 +27,6 @@ context('Navigation Acceptance Tests', () => {
       path: '/level-1/level-2',
     });
 
-
     cy.visit('/');
     cy.viewport('macbook-16');
   });
@@ -44,17 +43,12 @@ context('Navigation Acceptance Tests', () => {
     cy.get('ul.desktop-menu button').contains('Level 1').click();
     cy.get('.subitem-wrapper').findByText('Level 2').click();
     cy.get('.documentFirstHeading').should('have.text', 'Level 2');
-
   });
 
   it('Open 3rd level', function () {
     cy.wait('@content');
     cy.get('ul.desktop-menu button').contains('Level 1').click();
-    cy.get('.subsubitem-wrapper li').findByText('Level 3').click();
+    cy.get('.subsubitem-wrapper').findByText('Level 3').click();
     cy.get('.documentFirstHeading').should('have.text', 'Level 3');
-
   });
 });
-
-
-
