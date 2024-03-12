@@ -18,6 +18,7 @@
   <include package=".serializers" />
   <include package=".indexers" />
   <include package=".vocabularies" />
+  <include package=".browser" />
 
   <include package="plone.volto.cors" />
 
