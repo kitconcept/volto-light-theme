@@ -29,6 +29,12 @@
   margin-left: auto;
 }
 
+@mixin variable-container-width() {
+  max-width: var(--block-width, --layout-container-width);
+  margin-right: auto;
+  margin-left: auto;
+}
+
 // One still cannot use CSS custom properties directly on @container queries
 @mixin adjustMarginsToContainer($width) {
   @container (max-width: #{$width + 2 * $horizontal-space-small-screens}) {
@@ -80,6 +86,16 @@ footer {
 
 // Container widths for configurable via block styling wrapper
 // TODO: consider renaming "align" property to something more meaningful
+[style*='--block-width: var(--narrow-container-width)'] {
+  @include adjustMarginsToContainer($narrow-container-width);
+}
+[style*='--block-width: var(--default-container-width)'] {
+  @include adjustMarginsToContainer($default-container-width);
+}
+[style*='--block-width: var(--layout-container-width)'] {
+  @include adjustMarginsToContainer($layout-container-width);
+}
+
 .has--align--center {
   @include narrow-container-width();
 }
@@ -188,6 +204,12 @@ External link removal for all the blocks.
   }
 }
 
+.category-action {
+  .block-inner-container {
+    @include variable-container-width();
+  }
+}
+
 .category-separator {
   .block-inner-container {
     padding-bottom: 0 !important;
@@ -241,7 +263,7 @@ External link removal for all the blocks.
   & > .block.maps.align.right,
   & > .block.video.align.wide .video-inner,
   & > .block.maps.align.wide .maps-inner,
-  & > .block.__button,
+  // & > .block.__button,
   & > .block.eventMetadata .details-container,
   & > .block.listing .listing-item,
   & > .block.listing .emptyListing,
@@ -253,7 +275,7 @@ External link removal for all the blocks.
   & > .block.heading .heading-wrapper,
   & > .block.separator.has--align--full .line,
   & > .block.introduction .block-container,
-  & > .block.__button.has--buttonAlign--wide .button.container,
+  // & > .block.__button.has--buttonAlign--wide .button.container,
   & > .block.teaser .teaser-item.default,
   & > .block.highlight .teaser-description-title,
   & > table,

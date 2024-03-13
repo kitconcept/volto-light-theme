@@ -1,8 +1,9 @@
 .block.__button {
   &:last-child {
     .button.container {
-    padding-bottom: 0;
-  }}
+      padding-bottom: 0;
+    }
+  }
   .button.container {
     @include narrow-container-width();
 
@@ -31,17 +32,9 @@
   }
 }
 
-.block-editor-__button.has--buttonAlign--wide {
-  .button.container {
-    @include default-container-width();
-  }
-}
-
-.block.__button.has--buttonAlign--wide {
-  .button.container {
-    @include default-container-width();
-  }
-}
+// .block-inner-container {
+//   width: var(--block-width);
+// }
 
 .block.__button .ui.button {
   padding: 8px 20px;

@@ -35,6 +35,7 @@ import { tocBlockSchemaEnhancer } from './components/Blocks/Toc/schema';
 import { mapsBlockSchemaEnhancer } from './components/Blocks/Maps/schema';
 import { sliderBlockSchemaEnhancer } from './components/Blocks/Slider/schema';
 import EventMetadataView from './components/Blocks/EventMetadata/View';
+import BlockWidthWidget from './components/Widgets/BlockWidthWidget';
 
 const BG_COLORS = [
   { name: 'transparent', label: 'Transparent' },
@@ -88,6 +89,8 @@ const applyConfig = (config) => {
       label: 'Grey',
     },
   ];
+
+  config.widgets.widget.blockWidth = BlockWidthWidget;
 
   // Initial block for event content type
   config.blocks.initialBlocks = {
@@ -362,6 +365,7 @@ const applyConfig = (config) => {
     ...config.blocks.blocksConfig.__button,
     schemaEnhancer: ButtonStylingSchema,
     colors: BG_COLORS,
+    v3: true,
   };
 
   config.blocks.blocksConfig.eventMetadata = {
