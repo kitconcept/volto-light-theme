@@ -1,3 +1,10 @@
+/**
+ * OVERRIDE: EditBlockWrapper.jsx
+ * REASON: Removing duplicated className in wrapper only in v3 blocks
+ * FILE: https://github.com/kitconcept/volto-slider-block/blob/master/src/components/DefaultBody.jsx
+ * DATE: 2024-02-01
+ * DEVELOPER: @sneridagh
+ */
 import React from 'react';
 import { Icon } from '@plone/volto/components';
 import {
@@ -67,7 +74,9 @@ const EditBlockWrapper = (props) => {
     style: { ...style, ...draginfo.draggableProps.style },
   };
 
+  // START CUSTOMIZATION
   const isBlockModelv3 = blocksConfig?.[type]?.v3;
+  // END CUSTOMIZATION
 
   return (
     <div
@@ -91,7 +100,9 @@ const EditBlockWrapper = (props) => {
         >
           <Icon name={dragSVG} size="18px" />
         </div>
+        {/* START CUSTOMIZATION */}
         <div className={cx('ui drag block inner', { [type]: !isBlockModelv3 })}>
+          {/* END CUSTOMIZATION */}
           {children}
           {selected && !required && editable && (
             <Button

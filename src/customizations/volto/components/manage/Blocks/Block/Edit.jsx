@@ -1,8 +1,10 @@
 /**
- * Edit block.
- * @module components/manage/Blocks/Block/Edit
+ * OVERRIDE: Edit.jsx
+ * REASON: Adding BlockModelv3 wrappers and category className
+ * FILE: https://github.com/kitconcept/volto-slider-block/blob/master/src/components/DefaultBody.jsx
+ * DATE: 2024-02-01
+ * DEVELOPER: @sneridagh
  */
-
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { compose } from 'redux';
@@ -134,8 +136,10 @@ export class Edit extends Component {
     const blockHasOwnFocusManagement =
       blocksConfig?.[type]?.['blockHasOwnFocusManagement'] || null;
 
+    // START CUSTOMIZATION
     const isBlockModelv3 = blocksConfig?.[type]?.v3;
     const category = blocksConfig?.[type]?.category;
+    // END CUSTOMIZATION
 
     return (
       <>
@@ -178,11 +182,13 @@ export class Edit extends Component {
             /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
             tabIndex={!blockHasOwnFocusManagement ? -1 : null}
           >
+            {/* START CUSTOMIZATION */}
             <MaybeWrap
               condition={isBlockModelv3}
               as="div"
               className="block-inner-container"
             >
+              {/* END CUSTOMIZATION */}
               <Block
                 {...this.props}
                 blockNode={this.blockNode}
