@@ -48,7 +48,11 @@ showcontent = true
 ##
 
 [tool.isort]
-profile = "plone"
+profile = "black"
+force_alphabetical_sort = true
+force_single_line = true
+lines_after_imports = 2
+line_length = 88
 
 ##
 # Add extra configuration options in .meta.toml:
@@ -59,7 +63,25 @@ profile = "plone"
 ##
 
 [tool.black]
-target-version = ["py38"]
+line-length = 88
+target-version = ['py311']
+include = '\.pyi?$'
+exclude = '''
+(
+  /(
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+  )/
+)
+'''
 
 ##
 # Add extra configuration options in .meta.toml:

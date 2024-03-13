@@ -1,7 +1,6 @@
-from plone.protect.interfaces import IDisableCSRFProtection
+from plone import api
 from plone.restapi.blocks import visit_blocks
-from Products.Five.browser import BrowserView
-from zope.interface import alsoProvides
+from zope.component.hooks import setSite
 from zope.lifecycleevent import modified
 
 import logging
@@ -100,10 +99,7 @@ def migrate_button_block_width(portal):
     return output
 
 
-class MigrateToV3(BrowserView):
-    def __call__(self):
-        alsoProvides(self.request, IDisableCSRFProtection)
-        output = ""
-        output += migrate_backgroundColor(self.context) + "\n"
-        output += migrate_button_block_width(self.context) + "\n"
-        return output
+setSite(app.Plone)  # noQA
+with api.env.adopt_user("admin"):
+    migrate_button_block_width(app.Plone)  # noQA
+    migrate_backgroundColor(app.Plone)  # noQA
