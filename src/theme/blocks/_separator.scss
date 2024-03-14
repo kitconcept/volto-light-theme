@@ -1,8 +1,4 @@
 #page-document .block.separator {
-  // To be removed when Separator addon is fully transformed into v3:
-  .block:hover::before {
-    display: none;
-  }
   // cancel the original spacings from the add-on
   margin-top: 0;
   margin-bottom: 0;
@@ -13,12 +9,13 @@
 
   }
 
-  .block-inner-container {
+  &.has--align--center,
+  &.inner {
     margin-right: auto;
     margin-left: auto;
   }
 
-  .block.separator {
+  &:not(:has(.block-inner-container)){
     @include vertical-space-separator();
   }
 }
