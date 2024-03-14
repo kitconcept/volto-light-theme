@@ -202,17 +202,31 @@ External link removal for all the blocks.
       padding-bottom: 0 !important;
     }
   }
+
+  &:has(+ .category-action) {
+    .block-inner-container {
+      padding-bottom: $spacing-large !important;
+    }
+  }
 }
 
 .category-action {
   .block-inner-container {
     @include variable-container-width();
   }
+
+  // Adjust spacing depending on next block's category
+  &:has(+ .category-separator) {
+    .block-inner-container {
+      padding-bottom: 0 !important;
+    }
+  }
 }
 
 .category-separator {
   .block-inner-container {
-    padding-bottom: 0 !important;
+    padding-top: $spacing-xlarge;
+    padding-bottom: $spacing-xlarge;
   }
 }
 
@@ -242,6 +256,8 @@ External link removal for all the blocks.
   .block.image.align.center figure,
   .event-details,
   .download-event,
+  .block.separator.has--align--left .block-inner-container,
+  .block.separator.has--align--center .block-inner-container,
   .block.separator.has--align--left .line,
   .block.separator.has--align--center .line,
   & > pre,
@@ -273,6 +289,7 @@ External link removal for all the blocks.
   & > .block.search .searchBlock-container,
   & > .block h2.headline,
   & > .block.heading .heading-wrapper,
+  & > .block.separator.has--align--full .block-inner-container,
   & > .block.separator.has--align--full .line,
   & > .block.introduction .block-container,
   // & > .block.__button.has--buttonAlign--wide .button.container,
@@ -339,11 +356,19 @@ External link removal for all the blocks.
   .block-editor-video.center .video-inner,
   .block.maps.align.center .maps-inner,
   .block-editor-separator.has--align--left
+    .block.inner
+    .block.separator
+    .block-inner-container,
+    .block-editor-separator.has--align--left
     .block.separator.inner
     .block.separator
     .block.separator
     .line,
   .block-editor-separator.has--align--center
+    .block.inner
+    .block.separator
+    .block-inner-container,
+    .block-editor-separator.has--align--center
     .block.separator.inner
     .block.separator
     .block.separator
