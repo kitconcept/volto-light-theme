@@ -21,7 +21,7 @@ jobs:
       STACK_NAME: ${{ steps.vars.outputs.STACK_NAME }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set Env Vars
         id: vars
@@ -37,7 +37,7 @@ jobs:
     steps:
 
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Docker meta
         id: meta
@@ -86,7 +86,7 @@ jobs:
     environment: ${{ needs.meta.outputs.ENVIRONMENT }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Deploy to cluster
         uses: kitconcept/docker-stack-deploy@v1.2.0
