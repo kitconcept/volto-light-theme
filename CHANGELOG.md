@@ -8,6 +8,13 @@
 
 <!-- towncrier release notes start -->
 
+## 3.1.2 (2024-03-18)
+
+### Internal
+
+- Remove @plone/volto peerDepencency @sneridagh [#364](https://github.com/kitconcept/volto-light-theme/pull/364)
+- Add types declarations to make TS happy @sneridagh [#367](https://github.com/kitconcept/volto-light-theme/pull/367)
+
 ## 3.1.1 (2024-03-08)
 
 ### Bugfix
