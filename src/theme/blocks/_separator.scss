@@ -1,7 +1,12 @@
 #page-document .block.separator {
-  // cancel the original padding from the add-on
-  &:not(.inner):not([role='presentation']) {
-    padding: 0 !important;
+  // cancel the original spacings from the add-on
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0 !important;
+
+  &.has--align--center {
+    max-width: unset !important;
+
   }
 
   &.has--align--center,
@@ -10,7 +15,9 @@
     margin-left: auto;
   }
 
-  @include vertical-space-separator();
+  &:not(:has(.block-inner-container)){
+    @include vertical-space-separator();
+  }
 }
 
 #page-edit .block-editor-separator {

@@ -10,6 +10,7 @@ const messages = defineMessages({
 });
 
 export const defaultStylingSchema = ({ schema, formData, intl }) => {
+  // TODO: remove and use the config.settings.backgroundColors as default below too
   const BG_COLORS = [
     { name: 'transparent', label: 'Transparent' },
     { name: 'grey', label: 'Grey' },
@@ -25,9 +26,9 @@ export const defaultStylingSchema = ({ schema, formData, intl }) => {
 
   schema.properties.styles.schema.fieldsets[0].fields = [
     ...schema.properties.styles.schema.fieldsets[0].fields,
-    'backgroundColor',
+    'backgroundColor:noprefix',
   ];
-  schema.properties.styles.schema.properties.backgroundColor = {
+  schema.properties.styles.schema.properties['backgroundColor:noprefix'] = {
     widget: 'color_picker',
     title: intl.formatMessage(messages.backgroundColor),
     colors,

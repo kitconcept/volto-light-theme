@@ -1,16 +1,42 @@
-.blocks-group-wrapper {
-  @include color-block-change-vertical-spacing();
-}
+.block {
+  // Add padding-top to Outer container & remove padding-top from Inner container if previous block has different BG color
+  &.previous--has--different--backgroundColor {
+    padding-top: $color-block-change-vertical-spacing;
 
-.blocks-group-wrapper.grey {
-  background-color: #ecebeb;
+    .block-inner-container {
+      padding-top: 0 !important;
+    }
+
+    @container (max-width: #{$largest-mobile-screen}) {
+      padding-top: 60px !important;
+    }
+  }
+
+  // Add padding-bottom to Outer container & remove padding-bottom from Inner container if next block has different BG color
+  &.next--has--different--backgroundColor {
+    padding-bottom: $color-block-change-vertical-spacing;
+
+    .block-inner-container {
+      padding-bottom: 0 !important;
+    }
+
+    @container (max-width: #{$largest-mobile-screen}) {
+      padding-bottom: 60px !important;
+    }
+  }
 }
 
 .has--backgroundColor--grey {
   background: $lightgrey;
 }
 
-#page-document .blocks-group-wrapper {
+.block {
+  // For testing purposes, mark boundaries of the block
+  // border: 1px inset purple;
+  background: var(--background-color);
+}
+
+#page-document {
   &.transparent:first-child {
     padding-top: 0;
   }
@@ -26,24 +52,27 @@
 }
 
 // For grids
-#page-document .blocks-group-wrapper .block.gridBlock {
+#page-document .block.gridBlock {
   &.is--first--of--block-type.previous--has--same--backgroundColor {
     @include grid-block-vertical-spacing-top();
   }
   &.is--last--of--block-type.next--has--same--backgroundColor {
-    margin-bottom: $grid-block-vertical-spacing-bottom;
+    padding-bottom: $grid-block-vertical-spacing-bottom;
   }
   &.next--is--same--block-type.next--has--same--backgroundColor {
     // We rely on the grid gutter to keep the vertical spacing in case grid + grid
     // So here we cancel the default block margin-bottom
     margin-bottom: 0;
   }
+
+  // If the Grid is the first block after Page title
+  h1.documentFirstHeading + & {
+    padding-top: 0;
+  }
 }
 
 // Buttons
-#page-document
-  .blocks-group-wrapper
-  .block.__button.next--has--different--backgroundColor {
+#page-document .block.__button.next--has--different--backgroundColor {
   margin-bottom: 0;
 
   .button.container {
