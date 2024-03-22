@@ -1,4 +1,4 @@
-import '@plone/volto-testing/cypress/support/commands';
+import '@plone/volto/cypress/support/commands';
 
 // Print cypress-axe violations to the terminal
 function printAccessibilityViolations(violations) {
