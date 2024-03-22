@@ -149,8 +149,8 @@ jobs:
         name: Start Servers
         with:
           run: |
-            make start-backend-docker &
-            pnpm start &
+            make start-test-acceptance-server-a11y-ci &
+            make start-test-acceptance-frontend-a11y &
           # your step-level and job-level environment variables are available to your commands as-is
           # npm install will count towards the wait-for timeout
           # whenever possible, move unrelated scripts to a different step

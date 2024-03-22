@@ -73,6 +73,10 @@ start-test-acceptance-frontend-dev: ## Start acceptance frontend in dev mode
 start-test-acceptance-frontend: ## Start acceptance frontend in prod mode
 	RAZZLE_API_PATH=http://127.0.0.1:55001/plone pnpm build && pnpm start:prod
 
+.PHONY: start-test-acceptance-frontend-a11y
+start-test-acceptance-frontend-a11y: ## Start a11y acceptance frontend in prod mode
+	pnpm build && pnpm start:prod
+
 .PHONY: start-test-acceptance-server
 start-test-acceptance-server: ## Start acceptance server
 	docker run -it --rm -p 55001:55001 $(DOCKER_IMAGE_ACCEPTANCE)
@@ -80,6 +84,10 @@ start-test-acceptance-server: ## Start acceptance server
 .PHONY: start-test-acceptance-server-ci
 start-test-acceptance-server-ci: ## Start acceptance server in CI mode (no terminal attached)
 	docker run -i --rm -p 55001:55001 $(DOCKER_IMAGE_ACCEPTANCE)
+
+.PHONY: start-test-acceptance-server-a11y-ci
+start-test-acceptance-server-a11y-ci: ## Start acceptance a11y server in CI mode (no terminal attached)
+	docker run -i --rm --name=backend -p 8080:8080 -e SITE=Plone -e ADDONS='$(KGS)' $(DOCKER_IMAGE)
 
 .PHONY: test-acceptance
 test-acceptance: ## Start Cypress in interactive mode
