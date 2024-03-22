@@ -40,9 +40,9 @@
     "stylelint": "stylelint 'packages/**/src/**/*.{css,scss,less}' --allow-empty-input",
     "stylelint:fix": "stylelint 'packages/**/src/**/*.{css,scss,less}' --fix",
     "dry-release": "release-it --dry-run",
-    "release": "pnpm --filter @kitconcept/volto-button-block release-it",
-    "release-major-alpha": "pnpm --filter @kitconcept/volto-button-block release-it major --preRelease=alpha",
-    "release-alpha": "pnpm --filter @kitconcept/volto-button-block release-it --preRelease=alpha"
+    "release": "pnpm --filter @kitconcept/volto-light-theme release-it",
+    "release-major-alpha": "pnpm --filter @kitconcept/volto-light-theme release-it major --preRelease=alpha",
+    "release-alpha": "pnpm --filter @kitconcept/volto-light-theme release-it --preRelease=alpha"
   },
   "devDependencies": {
     "mrs-developer": "^2.2.0"
