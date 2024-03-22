@@ -83,8 +83,16 @@ start-test-acceptance-server-ci: ## Start acceptance server in CI mode (no termi
 
 .PHONY: test-acceptance
 test-acceptance: ## Start Cypress in interactive mode
-	pnpm --filter @plone/volto exec cypress open --config-file $(CURRENT_DIR)/cypress.config.js --config specPattern=$(CURRENT_DIR)'/cypress/tests/**/*.{js,jsx,ts,tsx}'
+	pnpm --filter @plone/volto exec cypress open --config-file $(CURRENT_DIR)/cypress.config.js --config specPattern=$(CURRENT_DIR)'/cypress/tests/main/**/*.{js,jsx,ts,tsx}'
+
+.PHONY: test-acceptance-a11y
+test-acceptance-a11y: ## Start a11y Cypress in interactive mode
+	pnpm --filter @plone/volto exec cypress open --config-file $(CURRENT_DIR)/cypress.config.js --config specPattern=$(CURRENT_DIR)'/cypress/tests/a11y/**/*.{js,jsx,ts,tsx}'
 
 .PHONY: test-acceptance-headless
 test-acceptance-headless: ## Run cypress tests in headless mode for CI
-	pnpm --filter @plone/volto exec cypress run --config-file $(CURRENT_DIR)/cypress.config.js --config specPattern=$(CURRENT_DIR)'/cypress/tests/**/*.{js,jsx,ts,tsx}'
+	pnpm --filter @plone/volto exec cypress run --config-file $(CURRENT_DIR)/cypress.config.js --config specPattern=$(CURRENT_DIR)'/cypress/tests/main/**/*.{js,jsx,ts,tsx}'
+
+.PHONY: test-acceptance-headless-a11y
+test-acceptance-headless-a11y: ## Run a11y cypress tests in headless mode for CI
+	pnpm --filter @plone/volto exec cypress run --config-file $(CURRENT_DIR)/cypress.config.js --config specPattern=$(CURRENT_DIR)'/cypress/tests/a11y/**/*.{js,jsx,ts,tsx}'
