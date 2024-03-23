@@ -1,7 +1,7 @@
 import {
   getSlateEditorAndType,
   getSelectedSlateEditor,
-} from '../../support/slate';
+} from '@plone/volto/cypress/support/helpers';
 
 context('Basic Acceptance Tests', () => {
   describe('Text Block Tests', () => {
