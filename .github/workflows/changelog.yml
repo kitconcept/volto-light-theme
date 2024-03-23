@@ -7,6 +7,7 @@ on:
 
 env:
   node-version: 20.x
+  ADDON_NAME: volto-light-theme
 
 jobs:
   build:
@@ -20,24 +21,42 @@ jobs:
       - name: Install pipx
         run: pip install towncrier
 
-      # node setup
       - name: Use Node.js ${{ env.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ env.node-version }}
-          cache: 'yarn'
 
-      # node install
+      - uses: pnpm/action-setup@v3
+        name: Install pnpm
+        with:
+          version: 8
+          # We don't want to install until later,
+          # when the cache and Cypress are in place
+          run_install: false
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - uses: actions/cache@v4
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
       - name: Install dependencies
-        run: yarn
+        run: make install
 
       - name: Check for presence of a Change Log fragment (only pull requests)
         run: |
           # Fetch the pull request' base branch so towncrier will be able to
           # compare the current branch with the base branch.
           # Source: https://github.com/actions/checkout/#fetch-all-branches.
-          git fetch --no-tags origin main
-          towncrier check --compare-with origin/main
+          git fetch --no-tags origin ${BASE_BRANCH}
+          towncrier check --dir packages/${ADDON_NAME}
         env:
           BASE_BRANCH: ${{ github.base_ref }}
         if: github.event_name == 'pull_request'
