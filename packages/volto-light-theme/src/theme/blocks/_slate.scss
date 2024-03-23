@@ -3,3 +3,28 @@
 #page-edit .block-editor-slate.has--backgroundColor--grey {
   background-color: $lightgrey;
 }
+
+.block.slate {
+  .block-inner-container {
+    :first-child {
+      margin-top: 0 !important;
+
+      &:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &.next--is--same--block-type:not(.is--first--of--block-type):not(.previous--has--different--backgroundColor) {
+    .block-inner-container {
+      &:has(h2:first-child),
+      &:has(h3:first-child) {
+        padding-top: $spacing-medium;
+      }
+    }
+  }
+}

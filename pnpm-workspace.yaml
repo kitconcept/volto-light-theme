@@ -1,6 +1,6 @@
 packages:
   - 'core/packages/*'
-  - 'packages/*'
+  - 'packages/volto-light-theme'
   # This is for the packages in nested subdirs of packages/
   # (already moved to the new project-less setup)
   - 'packages/**/packages/*'

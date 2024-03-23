@@ -1,5 +1,5 @@
 import { defineMessages } from 'react-intl';
-import { cloneDeep } from 'lodash';
+import { cloneDeep, find } from 'lodash';
 
 import { composeSchema, getPreviousNextBlock } from '@plone/volto/helpers';
 import {
@@ -35,6 +35,7 @@ import { tocBlockSchemaEnhancer } from './components/Blocks/Toc/schema';
 import { mapsBlockSchemaEnhancer } from './components/Blocks/Maps/schema';
 import { sliderBlockSchemaEnhancer } from './components/Blocks/Slider/schema';
 import EventMetadataView from './components/Blocks/EventMetadata/View';
+import BlockWidthWidget from './components/Widgets/BlockWidthWidget';
 
 const BG_COLORS = [
   { name: 'transparent', label: 'Transparent' },
@@ -52,12 +53,44 @@ defineMessages({
   },
 });
 
+function getCurrentStyleName(colorDefinitions, block) {
+  let currentBlockColor;
+  let currentBlockStyle = block?.styles?.['backgroundColor:noprefix'];
+  // Find in color definitions the current style value
+  if (currentBlockStyle) {
+    currentBlockColor = find(colorDefinitions, {
+      style: currentBlockStyle,
+    }).name;
+  }
+
+  return currentBlockColor;
+}
+
 const applyConfig = (config) => {
   config.settings.enableAutoBlockGroupingByBackgroundColor = true;
   config.settings.navDepth = 3;
   config.settings.enableFatMenu = true;
   config.settings.slate.useLinkedHeadings = false;
   config.settings.contentMetadataTagsImageField = 'preview_image';
+
+  config.settings.backgroundColors = [
+    {
+      style: {
+        '--background-color': 'transparent',
+      },
+      name: 'transparent',
+      label: 'Transparent',
+    },
+    {
+      style: {
+        '--background-color': '#ecebeb',
+      },
+      name: 'grey',
+      label: 'Grey',
+    },
+  ];
+
+  config.widgets.widget.blockWidth = BlockWidthWidget;
 
   // Initial block for event content type
   config.blocks.initialBlocks = {
@@ -81,6 +114,9 @@ const applyConfig = (config) => {
     ...config.blocks.requiredBlocks,
     'eventMetadata',
   ];
+
+  // VLT uses the new button
+  config.experimental.addBlockButton.enabled = true;
 
   // Register our custom Container component
   config.registerComponent({
@@ -129,9 +165,16 @@ const applyConfig = (config) => {
 
       // Given a StyleWrapper defined `backgroundColor` style
       const previousColor =
-        previousBlock?.styles?.backgroundColor ?? 'transparent';
-      const currentColor = data?.styles?.backgroundColor ?? 'transparent';
-      const nextColor = nextBlock?.styles?.backgroundColor ?? 'transparent';
+        previousBlock?.styles?.['backgroundColor:noprefix']?.[
+          '--background-color'
+        ] ?? 'transparent';
+      const currentColor =
+        data?.styles?.['backgroundColor:noprefix']?.['--background-color'] ??
+        'transparent';
+      const nextColor =
+        nextBlock?.styles?.['backgroundColor:noprefix']?.[
+          '--background-color'
+        ] ?? 'transparent';
 
       // Inject a class depending if the previous block has the same `backgroundColor`
       if (currentColor === previousColor) {
@@ -147,12 +190,29 @@ const applyConfig = (config) => {
         styles.push('next--has--different--backgroundColor');
       }
 
+      // Convenience class for the current block's background color for not having to
+      // rely on a style color selector
+      if (getCurrentStyleName(config.settings.backgroundColors, data)) {
+        styles.push(
+          `has--backgroundColor--${getCurrentStyleName(
+            config.settings.backgroundColors,
+            data,
+          )}`,
+        );
+      }
+
       return [...classNames, ...styles];
     },
   ];
 
   config.settings.slidingSearchAnimation = true;
   config.settings.openExternalLinkInNewTab = true;
+
+  config.blocks.blocksConfig.title = {
+    ...config.blocks.blocksConfig.title,
+    category: 'heading',
+    v3: true,
+  };
 
   config.blocks.blocksConfig.accordion = {
     ...config.blocks.blocksConfig.accordion,
@@ -248,9 +308,11 @@ const applyConfig = (config) => {
 
   config.blocks.blocksConfig.slate = {
     ...config.blocks.blocksConfig.slate,
-    colors: BG_COLORS,
+    category: 'inline',
+    colors: config.settings.backgroundColors,
     schemaEnhancer: defaultStylingSchema,
     sidebarTab: 1,
+    v3: true,
   };
 
   config.blocks.blocksConfig.teaser = {
@@ -303,6 +365,7 @@ const applyConfig = (config) => {
     ...config.blocks.blocksConfig.__button,
     schemaEnhancer: ButtonStylingSchema,
     colors: BG_COLORS,
+    v3: true,
   };
 
   config.blocks.blocksConfig.eventMetadata = {
@@ -328,6 +391,8 @@ const applyConfig = (config) => {
         defaultStylingSchema,
       ),
       colors: BG_COLORS,
+      v3: true,
+      category: 'separator',
     };
   }
 
