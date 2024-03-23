@@ -7,11 +7,12 @@
     "tag": "18.0.0-alpha.24"
   },
   "volto-button-block": {
-    "develop": false,
+    "develop": true,
     "output": "packages",
     "package": "@kitconcept/volto-button-block",
     "url": "git@github.com:kitconcept/volto-button-block.git",
-    "https": "https://github.com/kitconcept/volto-button-block.git"
+    "https": "https://github.com/kitconcept/volto-button-block.git",
+    "branch": "blockModelV3"
   },
   "volto-dsgvo-banner": {
     "develop": false,
