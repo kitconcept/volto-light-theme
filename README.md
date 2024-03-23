@@ -232,99 +232,70 @@ They will be noted properly in the changelog.
 
 See a detailed upgrade guide in: https://github.com/kitconcept/volto-light-theme/blob/main/UPGRADE-GUIDE.md
 
-## Development Setup
+## Development
 
 This theme works under Volto 17 alpha 16 onwards.
 Compatibility with Volto 16 might be achieved, but it has to be at customization level in the
 specific project add-on.
 This is mainly due to the `RenderBlocks` customization that is based in the one in 17 because of the Grid block in core and the autogrouping feature.
 See more information about the other dependencies in `peerDependencies` in `package.json`.
-It is possible to develop this add-on using docker containers and the provided convenience Makefile commands.
+The development of this add-on is done in isolation using a new approach using pnpm workspaces and latest `mrs-developer` and other Volto core improvements.
+For this reason, it only works with pnpm and Volto 18 (currently in alpha) but it does not mean that the add-on will only work in 18.
+
+### Requisites
+
+- Volto 18 (2024-03-21: currently in alpha)
+- pnpm as package manager
+
+### Make convenience commands
+
 Run `make help` to list the available commands.
 
-````text
-    build-backend                       Build
-    start-backend                       Starts Docker backend
-    stop-backend                        Stop Docker backend
-    build-live                          Build Addon live
-    build-addon                         Build Addon dev
-    start-dev                           Starts Dev environent container
-    start-live                          Starts Live environment container
-    dev                                 Develop the addon
-    help                                Show this help.
-    i18n                                Sync i18n
-    format                              Format codebase
-    lint                                Lint Codebase
-    test                                Run unit tests
-    test-ci                             Run unit tests in CI
-    install-acceptance                  Install Cypress, build acceptance containers
-    start-test-acceptance-server        Start acceptance server (for use it in while developing)
-    start-test-acceptance-server-prod   Start acceptance server in prod (used by CI)
-    test-acceptance                     Start Cypress (for use it while developing)
-    test-acceptance-headless            Run cypress tests in CI
-    stop-test-acceptance-server         Stop acceptance server (for use it while finished developing)
-    status-test-acceptance-server       Status of Acceptance Server (for use it while developing)
-    debug-frontend                      Run bash in the Frontend container (for debug infrastructure purposes)
-    pull-backend-image                  Pulls and updates the backend image (for use it while developing)
-````
-
-### Prerequisites
-
-- Docker
-- Node 18 (e.g. via nvm)
+```text
+help                                 Show this help
+install                              Installs the dev environment using mrs-developer
+i18n                                 Sync i18n
+format                               Format codebase
+lint                                 Lint Codebase
+test                                 Run unit tests
+test-ci                              Run unit tests in CI
+start-backend-docker                 Starts a Docker-based backend for developing
+start-test-acceptance-frontend-dev   Start acceptance frontend in dev mode
+start-test-acceptance-frontend       Start acceptance frontend in prod mode
+start-test-acceptance-server         Start acceptance server
+test-acceptance                      Start Cypress in interactive mode
+test-acceptance-headless             Run cypress tests in headless mode for CI
+```
 
 ### Development Environment Setup
 
-Run once
+Install package requirements
 
 ```shell
-make dev
+pnpm i
+make install
+pnpm i
 ```
 
-which will build and launch the backend and frontend containers.
-There's no need to build them again after doing it the first time unless something has changed from the container setup.
+### Start developing
 
-To make the local IDE play well with this setup, it is required to run `yarn` once to install the required packages (ESlint, Prettier, Stylelint).
+Run (in separate terminal sessions)
 
-Run
+Start backend server
 
 ```shell
-yarn
+make start-backend-docker
 ```
 
-### Build the containers manually
-
-Run
+Start frontend
 
 ```shell
-make build-backend
-make build-addon
-```
-
-## Run the containers
-
-Run
-
-```shell
-make start-dev
-```
-
-This will start both the frontend and backend for the dev environment containers.
-
-
-### Stop Backend (Docker)
-
-After developing, the backend stops automatically. However, it can be stopped by running:
-
-Run
-
-```shell
-make stop-backend
+pnpm start
 ```
 
 ### Linting
 
-Run
+Run ESlint, Prettier and Stylelint
 
 ```shell
 make lint
@@ -332,7 +303,7 @@ make lint
 
 ### Formatting
 
-Run
+Run ESlint, Prettier and Stylelint in fix mode
 
 ```shell
 make format
@@ -340,7 +311,7 @@ make format
 
 ### i18n
 
-Run
+Extract the i18n messages to locales
 
 ```shell
 make i18n
@@ -348,93 +319,33 @@ make i18n
 
 ### Unit tests
 
-Run
+Run unit tests
 
 ```shell
 make test
 ```
 
-### Acceptance tests
+### Run Cypress tests
 
-Run once
+Run (in separate terminal sessions)
+
+Start the frontend in dev mode
 
 ```shell
-make install-acceptance
+make start-test-acceptance-frontend-dev
 ```
 
-For starting the servers
-
-Run
+Start the backend acceptance server
 
 ```shell
 make start-test-acceptance-server
 ```
 
-The frontend is run in dev mode, so development while writing tests is possible.
-
-Run
+Start the Cypress interactive test runner
 
 ```shell
 make test-acceptance
 ```
-
-To run Cypress tests afterward.
-
-When finished, don't forget to shutdown the backend server.
-
-```shell
-make stop-test-acceptance-server
-```
-
-### Accessibility Acceptance tests
-
-Run once
-
-```shell
-make install-acceptance
-```
-
-For starting the servers
-
-Run
-
-```shell
-make start-test-acceptance-server-a11y
-```
-
-The frontend is run in dev mode, so development while writing tests is possible.
-
-Run
-
-```shell
-make test-acceptance-a11y
-```
-
-To run Cypress tests afterwards.
-
-When finished, don't forget to shutdown the backend server.
-
-```shell
-make stop-test-acceptance-server-a11y
-```
-
-### Live mode
-
-There is an alternate Docker Compose configuration for running volto in live mode.
-This is not usually needed during development, but can be useful for debugging.
-
-To build the frontend for the live environment, run
-
-```shell
-make build-live
-```
-
-To start both the frontend and backend for the live environment, run
-
-```shell
-make start-live
-```
-
 
 ### Release
 
