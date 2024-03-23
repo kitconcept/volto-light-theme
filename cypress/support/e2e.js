@@ -2,7 +2,7 @@ import 'cypress-axe';
 import 'cypress-file-upload';
 import './commands';
 import 'cypress-axe';
-import { setup, teardown } from './reset-fixture';
+import { setup, teardown } from '@plone/volto/cypress/support/reset-fixture';
 
 beforeEach(function () {
   cy.setCookie('confirm_cookies', '1');
