@@ -95,7 +95,7 @@ test-acceptance: ## Start Cypress in interactive mode
 
 .PHONY: test-acceptance-a11y
 test-acceptance-a11y: ## Start a11y Cypress in interactive mode
-	CYPRESS_a11y=1 pnpm exec cypress open specPattern=$(CURRENT_DIR)'/cypress/tests/a11y/**/*.{js,jsx,ts,tsx}'
+	CYPRESS_a11y=1 CYPRESS_API_PATH=http://localhost:8080/Plone pnpm exec cypress open specPattern=$(CURRENT_DIR)'/cypress/tests/a11y/**/*.{js,jsx,ts,tsx}'
 
 .PHONY: test-acceptance-headless
 test-acceptance-headless: ## Run cypress tests in headless mode for CI
@@ -103,4 +103,4 @@ test-acceptance-headless: ## Run cypress tests in headless mode for CI
 
 .PHONY: test-acceptance-headless-a11y
 test-acceptance-headless-a11y: ## Run a11y cypress tests in headless mode for CI
-	CYPRESS_a11y=1 pnpm exec cypress run --config specPattern=$(CURRENT_DIR)'/cypress/tests/a11y/**/*.{js,jsx,ts,tsx}'
+	CYPRESS_a11y=1 CYPRESS_API_PATH=http://localhost:8080/Plone pnpm exec cypress run --config specPattern=$(CURRENT_DIR)'/cypress/tests/a11y/**/*.{js,jsx,ts,tsx}'

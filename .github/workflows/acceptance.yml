@@ -177,7 +177,7 @@ jobs:
 
           # working-directory: backend
 
-      - run: CYPRESS_a11y=1 make test-acceptance-headless-a11y
+      - run: make test-acceptance-headless-a11y
 
       # Upload Cypress screenshots
       - uses: actions/upload-artifact@v3
