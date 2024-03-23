@@ -62,7 +62,7 @@ test-ci: ## Run unit tests in CI
 .PHONY: start-backend-docker
 start-backend-docker:		## Starts a Docker-based backend for developing
 	@echo "$(GREEN)==> Start Docker-based Plone Backend$(RESET)"
-	docker run -it --rm --name=backend -p 8080:8080 -e SITE=Plone -e ADDONS='$(KGS)' $(DOCKER_IMAGE)
+	docker run -it --rm --name=backend -p 8080:8080 -e SITE=Plone $(DOCKER_IMAGE)
 
 ## Acceptance
 .PHONY: start-test-acceptance-frontend-dev
