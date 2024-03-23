@@ -3,8 +3,7 @@
     "output": "./",
     "package": "@plone/volto",
     "url": "git@github.com:plone/volto.git",
-    "https": "https://github.com/plone/volto.git",
-    "tag": "18.0.0-alpha.23"
+    "https": "https://github.com/plone/volto.git"
   },
   "volto-button-block": {
     "develop": false,
@@ -49,6 +48,7 @@
     "https": "https://github.com/kitconcept/volto-separator-block.git"
   },
   "volto-slider-block": {
+    "develop": false,
     "output": "packages",
     "package": "@kitconcept/volto-slider-block",
     "url": "git@github.com:kitconcept/volto-slider-block.git",
