@@ -79,6 +79,29 @@ $bold: 700 !default;
 $extra-bold: 800 !default;
 $bolder: 900 !default;
 
+// Sizes
+$xs2: 12px !default;
+$xs: 14px !default;
+$s: 18px !default;
+$m: 21px !default;
+$l: 24px !default;
+$xl: 30px !default;
+$xl2: 33px !default;
+$xl3: 36px !default;
+$xl4: 42px !default;
+$xl5: 48px !default;
+
+// Line heights
+$xs: 16px !default;
+$s: 18px !default;
+$m: 24px !default;
+$l: 30px !default;
+$xl: 33px !default;
+$xl2: 36px !default;
+$xl3: 42px !default;
+$xl4: 48px !default;
+$xl5: 56px !default;
+
 // Spacing
 $spacing-small: 20px !default;
 $spacing-medium: 40px !default;
@@ -194,40 +217,40 @@ $footer-vertical-spacing-top: $spacing-xlarge !default;
 
 // Maps
 $font-weights: (
-  thin: 100,
-  extra-light: 200,
-  light: 300,
-  regular: 400,
-  medium: 500,
-  semi-bold: 600,
-  bold: 700,
-  extra-bold: 800,
-  bolder: 900,
+  thin: $thin,
+  extra-light: $extra-light,
+  light: $light,
+  regular: $regular,
+  medium: $mediaum,
+  semi-bold: $semi-bold,
+  bold: $bold,
+  extra-bold: $extra-bold,
+  bolder: $bolder,
 );
 
 $font-sizes: (
-  2xs: 12px,
-  xs: 14px,
-  s: 18px,
-  m: 21px,
-  l: 24px,
-  xl: 30px,
-  2xl: 33px,
-  3xl: 36px,
-  4xl: 42px,
-  5xl: 48px,
+  2xs: $xs2,
+  xs: $xs,
+  s: $s,
+  m: $m,
+  l: $l,
+  xl: $xl,
+  2xl: $xl2,
+  3xl: $xl3,
+  4xl: $xl4,
+  5xl: $xl5,
 );
 
 $line-heights: (
-  xs: 16px,
-  s: 18px,
-  m: 24px,
-  l: 30px,
-  xl: 33px,
-  2xl: 36px,
-  3xl: 42px,
-  4xl: 48px,
-  5xl: 56px,
+  xs: $xs,
+  s: $s,
+  m: $m,
+  l: $l,
+  xl: $xl,
+  2xl: $xl2,
+  3xl: $xl3,
+  4xl: $xl4,
+  5xl: $xl5,
 );
 
 @mixin add($property, $value) {
