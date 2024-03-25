@@ -1289,34 +1289,6 @@ importers:
         specifier: ^17.1.1
         version: 17.1.1(typescript@5.4.3)
 
-  packages/volto-button-block/packages/volto-button-block:
-    dependencies:
-      '@plone/components':
-        specifier: 1.7.0
-        version: 1.7.0(react-dom@18.2.0)(react@18.2.0)
-      classnames:
-        specifier: 2.2.6
-        version: 2.2.6
-      react:
-        specifier: 18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: 18.2.0
-        version: 18.2.0(react@18.2.0)
-      react-intl:
-        specifier: 3.8.0
-        version: 3.8.0(react@18.2.0)
-    devDependencies:
-      '@plone/scripts':
-        specifier: ^3.6.1
-        version: link:../../../../core/packages/scripts
-      eslint:
-        specifier: 8.57.0
-        version: 8.57.0
-      release-it:
-        specifier: ^17.1.1
-        version: 17.1.1(typescript@5.4.3)
-
   packages/volto-light-theme:
     dependencies:
       '@eeacms/volto-accordion-block':
@@ -1324,7 +1296,7 @@ importers:
         version: 10.4.6
       '@kitconcept/volto-button-block':
         specifier: ^2.3.1
-        version: link:../volto-button-block/packages/volto-button-block
+        version: 2.3.1
       '@kitconcept/volto-dsgvo-banner':
         specifier: ^2.3.2
         version: 2.3.2
@@ -4148,6 +4120,10 @@ packages:
     resolution: {integrity: sha512-dfLbk+PwWvFzSxwk3n5ySL0hfBog779o8h68wK/7/APo/7cgyWp5jcXockbxdk5kFRkbeXWm4Fbi9FrdN381sA==}
     dev: false
 
+  /@kitconcept/volto-button-block@2.3.1:
+    resolution: {integrity: sha512-bYBwxk3CQVLlIiL2uaHk9NVcVqKHqkCOUu0lao2pi+bQ4jPOgScZihgy5rdMtwsopzvawCzShcFGQP1S6VuiLQ==}
+    dev: false
+
   /@kitconcept/volto-dsgvo-banner@2.3.2:
     resolution: {integrity: sha512-iguCyuy4a7dYi1glWorVY7/0co66Su3+acp2O24GEGyDHvrZJgNkKvIOc9nnmAvR6g9zluMWH5ilLaT1rZuT6w==}
     dependencies:
@@ -5840,25 +5816,6 @@ packages:
     resolution: {integrity: sha512-cq8o4cWH0ibXh9VGi5P20Tu9XF/0fFXl9EUinr9QfTM7a7p0oTA4iJRCQWppXR1Pg8dSM0UCItCkPwsk9qWWYA==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
     dev: true
-
-  /@plone/components@1.7.0(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-T/GOFwKEhxrjp2S0sqRgTz7ZN8TcxvvPKKq7af2vARpEGWW8HszCX9CTDo0t3decSal0NqWqHiFbY2q6xbvrNA==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-    peerDependenciesMeta:
-      react-dom:
-        optional: true
-    dependencies:
-      '@react-aria/utils': 3.23.2(react@18.2.0)
-      '@react-spectrum/utils': 3.11.5(react@18.2.0)
-      classnames: 2.5.1
-      clsx: 2.1.0
-      lodash: 4.17.21
-      react: 18.2.0
-      react-aria-components: 1.1.1(react-dom@18.2.0)(react@18.2.0)
-      react-dom: 18.2.0(react@18.2.0)
-    dev: false
 
   /@plone/components@2.0.0-alpha.6(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-0z4lCUA0o59xe68nw8NVDvQ7sxJxDOTO+djZBsPfRkddAq+5kW93XVqrlNr+av2FAzAkWG1uR/yFL7dtcWnyPQ==}
@@ -12005,10 +11962,6 @@ packages:
 
   /classnames@2.2.6:
     resolution: {integrity: sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==}
-    dev: false
-
-  /classnames@2.5.1:
-    resolution: {integrity: sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==}
     dev: false
 
   /clean-css@5.3.3:
