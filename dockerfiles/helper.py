@@ -1,10 +1,12 @@
 #!/usr/bin/python3
 """Addon support for Volto."""
+from pathlib import Path
+from typing import Tuple
+
 import json
 import logging
 import os
-from pathlib import Path
-from typing import Tuple
+
 
 logger = logging.getLogger("Volto Helper")
 
