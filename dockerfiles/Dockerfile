@@ -8,7 +8,7 @@ ARG ADDON_PATH
 ENV THEME='@kitconcept/volto-light-theme'
 
 # Copy helper.py as /setupAddon
-COPY helper.py /setupAddon
+COPY dockerfiles/helper.py /setupAddon
 
 # Copy addon code
 COPY --chown=node:node ./packages/${ADDON_PATH} /app/src/addons/${ADDON_PATH}/

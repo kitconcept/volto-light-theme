@@ -72,7 +72,7 @@ jobs:
         with:
           platforms: linux/amd64
           context: ./
-          file: Dockerfile
+          file: dockerfiles/Dockerfile
           build-args: |
             ADDON_NAME=@kitconcept/volto-light-theme
             ADDON_PATH=volto-light-theme
