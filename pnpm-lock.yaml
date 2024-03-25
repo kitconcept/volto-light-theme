@@ -1289,22 +1289,6 @@ importers:
         specifier: ^17.1.1
         version: 17.1.1(typescript@5.4.3)
 
-  packages/volto-button-block:
-    dependencies:
-      '@kitconcept/volto-button-block':
-        specifier: workspace:*
-        version: link:packages/volto-button-block
-      '@plone/registry':
-        specifier: workspace:*
-        version: link:../../core/packages/registry
-      '@plone/volto':
-        specifier: workspace:*
-        version: link:../../core/packages/volto
-    devDependencies:
-      mrs-developer:
-        specifier: ^2.2.0
-        version: 2.2.0
-
   packages/volto-button-block/packages/volto-button-block:
     dependencies:
       '@plone/components':
