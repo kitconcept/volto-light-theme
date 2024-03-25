@@ -31,6 +31,8 @@ jobs:
           echo "STACK_NAME=${ENVIRONMENT//./-}" >> $GITHUB_OUTPUT
           python3 -c 'import json; data = json.load(open("mrs.developer.json")); print("VOLTO_VERSION=" + data["core"]["tag"] or 'latest')' >> $GITHUB_OUTPUT
 
+      - run: echo "${{ steps.vars.outputs.VOLTO_VERSION }}"
+
   release:
     runs-on: ubuntu-latest
     needs:
@@ -74,7 +76,7 @@ jobs:
           build-args: |
             ADDON_NAME=@kitconcept/volto-light-theme
             ADDON_PATH=volto-light-theme
-            VOLTO_VERSION=${{ env.VOLTO_VERSION }}
+            VOLTO_VERSION=${{ needs.meta.outputs.VOLTO_VERSION }}
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: $${{ steps.meta.outputs.labels }}
