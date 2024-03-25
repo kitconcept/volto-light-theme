@@ -1,6 +1,5 @@
 {
   "name": "@kitconcept/volto-light-theme-dev",
-  "version": "3.1.2",
   "description": "Volto Light Theme by kitconcept",
   "main": "src/index.js",
   "types": "src/types/index.d.ts",
@@ -40,9 +39,9 @@
     "stylelint": "stylelint 'packages/**/src/**/*.{css,scss,less}' --allow-empty-input",
     "stylelint:fix": "stylelint 'packages/**/src/**/*.{css,scss,less}' --fix",
     "dry-release": "release-it --dry-run",
-    "release": "pnpm --filter @kitconcept/volto-light-theme release-it",
-    "release-major-alpha": "pnpm --filter @kitconcept/volto-light-theme release-it major --preRelease=alpha",
-    "release-alpha": "pnpm --filter @kitconcept/volto-light-theme release-it --preRelease=alpha"
+    "release": "pnpm --filter @kitconcept/volto-light-theme run release",
+    "release-major-alpha": "pnpm --filter @kitconcept/volto-light-theme run release-major-alpha",
+    "release-alpha": "pnpm --filter @kitconcept/volto-light-theme run release-alpha"
   },
   "devDependencies": {
     "mrs-developer": "^2.2.0"
