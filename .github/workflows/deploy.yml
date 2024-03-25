@@ -11,7 +11,6 @@ on:
 env:
   ENVIRONMENT: "light-theme.kitconcept.io"
   IMAGE_NAME: "ghcr.io/kitconcept/voltolighttheme-frontend"
-  VOLTO_VERSION: "17.15.5"
 
 jobs:
   meta:
@@ -19,6 +18,7 @@ jobs:
     outputs:
       ENVIRONMENT: ${{ steps.vars.outputs.ENVIRONMENT }}
       STACK_NAME: ${{ steps.vars.outputs.STACK_NAME }}
+      VOLTO_VERSION: ${{ steps.vars.outputs.VOLTO_VERSION }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -29,6 +29,7 @@ jobs:
           ENVIRONMENT=${{ env.ENVIRONMENT }}
           echo "ENVIRONMENT=${ENVIRONMENT}" >> $GITHUB_OUTPUT
           echo "STACK_NAME=${ENVIRONMENT//./-}" >> $GITHUB_OUTPUT
+          python3 -c 'import json; data = json.load(open("frontend/package.json")); print("VOLTO_VERSION=" + data["dependencies"]["@plone/volto"])' >> $GITHUB_OUTPUT
 
   release:
     runs-on: ubuntu-latest
