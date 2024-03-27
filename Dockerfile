@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 ARG PLONE_VERSION
 ARG SEED=1000
-FROM plone/server-builder:${PLONE_VERSION} as builder
+FROM plone/server-builder:${PLONE_VERSION:-6} as builder
 
 # https://github.com/pypa/pip/issues/12079
 ENV _PIP_USE_IMPORTLIB_METADATA=0
@@ -22,7 +22,7 @@ RUN <<EOT
     rm -Rf src/ /compile_mo.py compile_mo.log
 EOT
 
-FROM plone/server-prod-config:${PLONE_VERSION}
+FROM plone/server-prod-config:${PLONE_VERSION:-6}
 
 LABEL maintainer="kitconcept GmbH <contact@kitconcept.com>" \
       org.label-schema.name="ghcr.io/kitconcept/voltolighttheme" \
