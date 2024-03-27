@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-ARG PLONE_VERSION=6.0.9
+ARG PLONE_VERSION
 ARG SEED=1000
 FROM plone/server-builder:${PLONE_VERSION} as builder
 
@@ -15,8 +15,8 @@ COPY . src/kitconcept.voltolighttheme
 RUN <<EOT
     set -e
     mv src/kitconcept.voltolighttheme/requirements-docker.txt ./requirements.txt
-    mv src/kitconcept.voltolighttheme/scripts/create_site.py ./scripts/create_site.py
-    mv src/kitconcept.voltolighttheme/scripts/default.json ./scripts/default.json
+    mv src/kitconcept.voltolighttheme/scripts/* ./scripts/.
+    # mv src/kitconcept.voltolighttheme/docker-entrypoint.sh ./docker-entrypoint.sh
     bin/pip install -r requirements.txt
     bin/python /compile_mo.py
     rm -Rf src/ /compile_mo.py compile_mo.log

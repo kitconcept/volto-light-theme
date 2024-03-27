@@ -40,6 +40,7 @@ def migrate_backgroundColor(portal):
         obj = brain.getObject()
         blocks = obj.blocks
         logger.info(f"Processing {obj.absolute_url()}")
+        output += f"Processing {obj.absolute_url()}\n"
         for block in visit_blocks(obj, blocks):
             if block.get("styles", False) and block["styles"].get(
                 "backgroundColor", False
@@ -53,6 +54,7 @@ def migrate_backgroundColor(portal):
                 logger.info(
                     f'{obj.absolute_url()} - Updated "backgroundColor" to "backgroundColor:noprefix"'
                 )
+                output += f'{obj.absolute_url()} - Updated "backgroundColor" to "backgroundColor:noprefix"\n'
 
         obj.blocks = blocks
         modified(obj)
@@ -73,6 +75,7 @@ def migrate_button_block_width(portal):
         obj = brain.getObject()
         blocks = obj.blocks
         logger.info(f"Processing {obj.absolute_url()}")
+        output += f"Processing {obj.absolute_url()}\n"
         for block in visit_blocks(obj, blocks):
             if (
                 block.get("@type", False)
@@ -89,6 +92,7 @@ def migrate_button_block_width(portal):
                 block.clear()
                 block.update(new_block)
                 logger.info(f'{obj.absolute_url()} - Updated "width"')
+                output += f'{obj.absolute_url()} - Updated "width"\n'
 
         obj.blocks = blocks
         modified(obj)
@@ -106,4 +110,5 @@ class MigrateToV3(BrowserView):
         output = ""
         output += migrate_backgroundColor(self.context) + "\n"
         output += migrate_button_block_width(self.context) + "\n"
+        self.request.response.setHeader("Content-Type", "text/plain")
         return output
