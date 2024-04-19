@@ -75,7 +75,7 @@ const EditBlockWrapper = (props) => {
   };
 
   // START CUSTOMIZATION
-  const isBlockModelv3 = blocksConfig?.[type]?.v3;
+  const isBlockModelv3 = blocksConfig?.[type]?.blockModel === 3;
   // END CUSTOMIZATION
 
   return (

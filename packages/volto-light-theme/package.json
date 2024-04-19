@@ -35,6 +35,7 @@
   },
   "devDependencies": {
     "@plone/scripts": "^3.6.1",
+    "@plone/types": "workspace:1.0.0-alpha.10",
     "release-it": "^17.1.1"
   },
   "peerAddons": [
@@ -47,7 +48,7 @@
     "@kitconcept/volto-slider-block"
   ],
   "dependencies": {
-    "@plone/components": "2.0.0-alpha.6",
+    "@plone/components": "2.0.0-alpha.7",
     "classnames": "2.5.1"
   },
   "peerDependencies": {

@@ -22,6 +22,7 @@ import MaybeWrap from '@plone/volto/components/manage/MaybeWrap/MaybeWrap';
 import RenderEmptyBlock from '@plone/volto/components/theme/View/RenderEmptyBlock';
 
 import StyleWrapperV3 from './StyleWrapperV3';
+import RenderBlocksV2 from './RenderBlocksV2';
 
 const messages = defineMessages({
   unknownBlock: {
@@ -42,11 +43,14 @@ const RenderBlocks = (props) => {
   const blocksConfig = props.blocksConfig || config.blocks.blocksConfig;
   const CustomTag = props.as || React.Fragment;
 
+  if (config.settings.blockModel !== 3) return <RenderBlocksV2 {...props} />;
+
   return hasBlocksData(content) ? (
     <CustomTag>
       {map(content[blocksLayoutFieldname].items, (block) => {
-        const isBlockModelv3 =
-          blocksConfig[content[blocksFieldname]?.[block]?.['@type']]?.v3;
+        const currentBlockModel =
+          blocksConfig[content[blocksFieldname]?.[block]?.['@type']]
+            ?.blockModel;
         const Block =
           blocksConfig[content[blocksFieldname]?.[block]?.['@type']]?.view ||
           ViewDefaultBlock;
@@ -77,7 +81,7 @@ const RenderBlocks = (props) => {
               condition={blockWrapperTag}
               as={blockWrapperTag}
             >
-              {isBlockModelv3 ? (
+              {currentBlockModel === 3 ? (
                 <StyleWrapperV3
                   block={block}
                   content={content}

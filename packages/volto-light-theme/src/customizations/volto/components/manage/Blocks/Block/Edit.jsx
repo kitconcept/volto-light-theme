@@ -137,7 +137,7 @@ export class Edit extends Component {
       blocksConfig?.[type]?.['blockHasOwnFocusManagement'] || null;
 
     // START CUSTOMIZATION
-    const isBlockModelv3 = blocksConfig?.[type]?.v3;
+    const isBlockModelv3 = blocksConfig?.[type]?.blockModel === 3;
     const category = blocksConfig?.[type]?.category;
     // END CUSTOMIZATION
 
