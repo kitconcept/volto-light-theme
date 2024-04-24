@@ -1,6 +1,6 @@
 /**
  * OVERRIDE: Edit.jsx
- * REASON: Adding BlockModelv3 wrappers and category className
+ * REASON: Adding BlockModelv3 wrappers
  * FILE: https://github.com/kitconcept/volto-slider-block/blob/master/src/components/DefaultBody.jsx
  * DATE: 2024-02-01
  * DEVELOPER: @sneridagh
@@ -166,16 +166,7 @@ export class Edit extends Component {
                     )
                 : null
             }
-            className={cx(
-              'block',
-              type,
-              { [`category-${category}`]: category },
-              this.props.data.variation,
-              {
-                selected: this.props.selected || this.props.multiSelected,
-                multiSelected: this.props.multiSelected,
-              },
-            )}
+            className={cx('block', type, this.props.data.variation)}
             style={{ outline: 'none' }}
             ref={this.blockNode}
             // The tabIndex is required for the keyboard navigation

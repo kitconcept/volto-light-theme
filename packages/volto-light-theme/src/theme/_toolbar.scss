@@ -1,3 +1,59 @@
 #toolbar .toolbar-content {
   z-index: 100;
 }
+
+#page-edit {
+  .ui.basic.button:hover {
+    background: none !important;
+  }
+  .blocks-toolbar {
+    display: contents;
+    padding: 0 !important;
+    position: relative;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+  
+    .toolbar-container {
+      background-color: #ebebeb;
+      padding: 5px;
+      margin-left: 20px;
+      z-index: 999;
+      border-radius: 6px;
+      min-width: fit-content;
+      box-shadow:
+        0px 6px 12px 0px rgba(2, 19, 34, 0.18),
+        0px 4px 8px 0px rgba(2, 19, 34, 0.06);
+      position: absolute;
+      top: -52px;
+      display: flex;
+  
+      .react-aria-Menu {
+        .react-aria-MenuItem {
+          & > button.ui.basic.button:hover {
+            background: red !important;
+          }
+        }
+      }
+  
+      .delete-block-button {
+        all: unset;
+  
+        &:hover {
+          background: none !important;
+          color: white;
+        }
+      }
+    }
+  
+    .drag-handle-wrapper {
+      background: #ebebeb;
+      display: flex;
+      align-items: center;
+      border-radius: 4px;
+      border: 1px solid var(--border-color);
+    }
+  }
+}
+
+

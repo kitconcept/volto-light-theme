@@ -345,6 +345,11 @@ External link removal for all the blocks.
 // Add/Edit views
 #page-add,
 #page-edit {
+    // Remove default space between blocks
+    [data-rbd-draggable-context-id] {
+      margin-bottom: 0;
+    }
+    
   // .block.slate .slate-editor,
   .block-editor-image.left.medium,
   .block-editor-image.left.small,
@@ -379,7 +384,7 @@ External link removal for all the blocks.
     @include adjustMarginsToEditContainer($narrow-container-width);
   }
 
-  .block-editor-title h1,
+  // .block-editor-title h1,
   .block-editor-image.left.large,
   .block-editor-image.right.large,
   .block-editor-image.wide figure, // Wide images are always large
