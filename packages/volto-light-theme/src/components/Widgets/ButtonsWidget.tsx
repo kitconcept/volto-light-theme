@@ -50,6 +50,7 @@ const ButtonsWidget = (props: ButtonsWidgetProps) => {
               onClick={() => onChange(id, action.style || action.name)}
               active={isEqual(value, action.style)}
             >
+              {/* @ts-ignore */}
               <Icon
                 name={actionsInfoMap[action.name][0]}
                 title={actionsInfoMap[action.name][1] || action.name}

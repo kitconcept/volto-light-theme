@@ -7,3 +7,5 @@ export function isEqual(x: any, y: any): boolean {
         ok(x).every((key) => isEqual(x[key], y[key]))
     : x === y;
 }
+
+export * from './grouping';

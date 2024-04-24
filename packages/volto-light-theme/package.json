@@ -35,6 +35,10 @@
   },
   "devDependencies": {
     "@plone/scripts": "^3.6.1",
+    "@plone/types": "workspace:*",
+    "@types/lodash": "^4.14.201",
+    "@types/react": "^18.2.79",
+    "@types/react-dom": "^18.2.25",
     "release-it": "^17.1.1"
   },
   "peerAddons": [
@@ -47,7 +51,7 @@
     "@kitconcept/volto-slider-block"
   ],
   "dependencies": {
-    "@plone/components": "2.0.0-alpha.6",
+    "@plone/components": "2.0.0-alpha.7",
     "classnames": "2.5.1"
   },
   "peerDependencies": {

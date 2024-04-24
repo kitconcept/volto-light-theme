@@ -27,10 +27,11 @@
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
+    "postinstall": "pnpm build:deps",
     "start": "pnpm build:deps && VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto start",
     "start:prod": "pnpm --filter @plone/volto start:prod",
     "build": "pnpm build:deps && VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto build",
-    "build:deps": "pnpm --filter @plone/registry --filter @plone/components build",
+    "build:deps": "pnpm --parallel --filter @plone/registry --filter @plone/components build",
     "i18n": "pnpm --filter @kitconcept/volto-light-theme i18n",
     "test": "RAZZLE_JEST_CONFIG=$(pwd)/jest-addon.config.js pnpm --filter @plone/volto test",
     "lint": "eslint --max-warnings=0 'packages/**/src/**/*.{js,jsx,ts,tsx}'",
