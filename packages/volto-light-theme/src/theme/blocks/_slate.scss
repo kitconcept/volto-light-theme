@@ -19,7 +19,9 @@
     }
   }
 
-  &.next--is--same--block-type:not(.is--first--of--block-type):not(.previous--has--different--backgroundColor) {
+  &.next--is--same--block-type:not(.is--first--of--block-type):not(
+      .previous--has--different--backgroundColor
+    ) {
     .block-inner-container {
       &:has(h2:first-child),
       &:has(h3:first-child) {

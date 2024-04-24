@@ -128,8 +128,8 @@ $grid-block-vertical-spacing-bottom: $spacing-xlarge !default;
 }
 
 @mixin vertical-space-heading() {
-  margin-top: 0;
   padding-bottom: $spacing-medium;
+  margin-top: 0;
   margin-bottom: 0;
   @media only screen and (max-width: $largest-mobile-screen) {
     margin-top: $spacing-large;
@@ -170,8 +170,8 @@ $grid-block-vertical-spacing-bottom: $spacing-xlarge !default;
 }
 
 @mixin vertical-space-block-title() {
-  margin-top: 0;
   padding-top: $spacing-xlarge;
+  margin-top: 0;
   margin-bottom: $spacing-xlarge;
 
   &:not(.previous--has--same--backgroundColor.previous--is--same--block-type) {

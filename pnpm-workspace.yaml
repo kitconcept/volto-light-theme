@@ -3,4 +3,5 @@ packages:
   - 'packages/volto-light-theme'
   # This is for the packages in nested subdirs of packages/
   # (already moved to the new project-less setup)
+  - 'packages/volto-banner-block'
   - 'packages/**/packages/*'

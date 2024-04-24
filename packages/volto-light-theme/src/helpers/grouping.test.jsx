@@ -1,4 +1,4 @@
-import { groupByBGColor } from './RenderBlocks';
+import { groupByBGColor } from './grouping';
 describe('groupByBGColor', () => {
   it('grid + grid + slate grey', () => {
     const content = {

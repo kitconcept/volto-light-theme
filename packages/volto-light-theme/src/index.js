@@ -67,6 +67,7 @@ function getCurrentStyleName(colorDefinitions, block) {
 }
 
 const applyConfig = (config) => {
+  config.settings.blockModel = 3;
   config.settings.enableAutoBlockGroupingByBackgroundColor = true;
   config.settings.navDepth = 3;
   config.settings.enableFatMenu = true;
@@ -211,7 +212,7 @@ const applyConfig = (config) => {
   config.blocks.blocksConfig.title = {
     ...config.blocks.blocksConfig.title,
     category: 'heading',
-    v3: true,
+    blockModel: 3,
   };
 
   config.blocks.blocksConfig.accordion = {
@@ -312,7 +313,7 @@ const applyConfig = (config) => {
     colors: config.settings.backgroundColors,
     schemaEnhancer: defaultStylingSchema,
     sidebarTab: 1,
-    v3: true,
+    blockModel: 3,
   };
 
   config.blocks.blocksConfig.teaser = {
@@ -365,7 +366,7 @@ const applyConfig = (config) => {
     ...config.blocks.blocksConfig.__button,
     schemaEnhancer: ButtonStylingSchema,
     colors: BG_COLORS,
-    v3: true,
+    blockModel: config.settings.blockModel,
   };
 
   config.blocks.blocksConfig.eventMetadata = {
@@ -391,7 +392,7 @@ const applyConfig = (config) => {
         defaultStylingSchema,
       ),
       colors: BG_COLORS,
-      v3: true,
+      blockModel: 3,
       category: 'separator',
     };
   }
