@@ -104,7 +104,9 @@ $grid-block-vertical-spacing-bottom: $spacing-xlarge !default;
 
 @mixin vertical-space-h1() {
   padding-top: $spacing-medium;
-  padding-bottom: $spacing-xlarge;
+  padding-bottom: $spacing-large;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
   @media only screen and (max-width: $largest-mobile-screen) {
     padding-bottom: $spacing-large;
   }

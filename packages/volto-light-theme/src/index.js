@@ -38,7 +38,7 @@ import EventMetadataView from './components/Blocks/EventMetadata/View';
 import BlockWidthWidget from './components/Widgets/BlockWidthWidget';
 
 const BG_COLORS = [
-  { name: 'transparent', label: 'Transparent' },
+  { name: 'white', label: 'White' },
   { name: 'grey', label: 'Grey' },
 ];
 
@@ -77,9 +77,9 @@ const applyConfig = (config) => {
   config.settings.backgroundColors = [
     {
       style: {
-        '--background-color': 'transparent',
+        '--background-color': 'white',
       },
-      name: 'transparent',
+      name: 'white',
       label: 'Transparent',
     },
     {
@@ -168,14 +168,14 @@ const applyConfig = (config) => {
       const previousColor =
         previousBlock?.styles?.['backgroundColor:noprefix']?.[
           '--background-color'
-        ] ?? 'transparent';
+        ] ?? 'white';
       const currentColor =
         data?.styles?.['backgroundColor:noprefix']?.['--background-color'] ??
-        'transparent';
+        'white';
       const nextColor =
         nextBlock?.styles?.['backgroundColor:noprefix']?.[
           '--background-color'
-        ] ?? 'transparent';
+        ] ?? 'white';
 
       // Inject a class depending if the previous block has the same `backgroundColor`
       if (currentColor === previousColor) {
