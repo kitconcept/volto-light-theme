@@ -36,6 +36,9 @@
   "devDependencies": {
     "@plone/scripts": "^3.6.1",
     "@plone/types": "workspace:1.0.0-alpha.10",
+    "@types/lodash": "^4.14.201",
+    "@types/react": "^18.2.79",
+    "@types/react-dom": "^18.2.25",
     "release-it": "^17.1.1"
   },
   "peerAddons": [

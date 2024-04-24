@@ -49,7 +49,7 @@ const RenderBlocks = (props) => {
     content[blocksFieldname],
     content[blocksLayoutFieldname],
   );
-  debugger;
+
   return hasBlocksData(content) ? (
     <CustomTag>
       {map(grouped, (group) => (
