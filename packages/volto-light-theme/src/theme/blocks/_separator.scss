@@ -1,8 +1,8 @@
 #page-document .block.separator {
+  padding: 0 !important;
   // cancel the original spacings from the add-on
   margin-top: 0;
   margin-bottom: 0;
-  padding: 0 !important;
 
   &.has--align--center {
     max-width: unset !important;
