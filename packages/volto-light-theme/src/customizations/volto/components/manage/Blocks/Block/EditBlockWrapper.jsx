@@ -69,6 +69,7 @@ const EditBlockWrapper = (props) => {
     showBlockChooser,
     navRoot,
     contentType,
+    index,
   } = blockProps;
 
   const visible = selected && !hideHandler(data);
@@ -145,18 +146,34 @@ const EditBlockWrapper = (props) => {
               <Text slot="label">Settings</Text>
             </MenuItem>
             <MenuItem>
-              <RowbeforeIcon />
-              <Text slot="label">Insert block before</Text>
+              <Button
+                icon
+                basic
+                onClick={() =>
+                  props.blockProps.onSelectBlock(
+                    props.blockProps.onAddBlock(
+                      config.settings.defaultBlockType,
+                      index,
+                    ),
+                  )
+                }
+                className="add-block-button"
+                aria-label={intl.formatMessage(messages.delete)}
+                style={{ all: 'unset' }}
+              >
+                <RowbeforeIcon />
+                <Text slot="label">Insert block before</Text>
+              </Button>
             </MenuItem>
             <MenuItem>
               <Button
                 icon
                 basic
-                onClick={(e) =>
+                onClick={() =>
                   props.blockProps.onSelectBlock(
                     props.blockProps.onAddBlock(
                       config.settings.defaultBlockType,
-                      e.index + 1,
+                      index + 1,
                     ),
                   )
                 }
