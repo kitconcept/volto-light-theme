@@ -8,6 +8,17 @@
 
 <!-- towncrier release notes start -->
 
+## 3.3.0 (2024-04-26)
+
+### Feature
+
+- Make font-weights, font-sizes and font-heights overrideable adding the `!default` thingy @erral [#371](https://github.com/kitconcept/volto-light-theme/pull/371)
+
+### Bugfix
+
+- Fix event title margin bottom. @iFlameing [#357](https://github.com/kitconcept/volto-light-theme/pull/357)
+- Fix Image block in grid is not working @iRohitSingh [#376](https://github.com/kitconcept/volto-light-theme/pull/376)
+
 ## 3.2.0 (2024-03-25)
 
 ### Feature
