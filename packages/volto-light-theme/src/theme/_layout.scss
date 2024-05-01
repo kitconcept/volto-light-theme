@@ -45,8 +45,8 @@
 
 @mixin adjustMarginsToEditContainer($width) {
   @container (max-width: #{$width + 2 * $spacing-medium}) {
-    margin-right: $spacing-medium;
-    margin-left: $spacing-medium;
+    margin-right: 10px;
+    margin-left: 10px;
   }
 }
 
@@ -336,8 +336,10 @@ External link removal for all the blocks.
 // Excluding the contained (blocks in block) ones
 #page-add,
 #page-edit {
-  [class*='block-editor-']:not(.contained) {
-    @include layout-container-width();
+  .block {
+    max-width: calc(100vw - 7%);
+    margin-right: auto;
+    margin-left: auto;
     @include adjustMarginsToEditContainer($layout-container-width);
   }
 }
@@ -345,11 +347,11 @@ External link removal for all the blocks.
 // Add/Edit views
 #page-add,
 #page-edit {
-    // Remove default space between blocks
-    [data-rbd-draggable-context-id] {
-      margin-bottom: 0;
-    }
-    
+  // Remove default space between blocks
+  [data-rbd-draggable-context-id] {
+    margin-bottom: 0;
+  }
+
   // .block.slate .slate-editor,
   .block-editor-image.left.medium,
   .block-editor-image.left.small,

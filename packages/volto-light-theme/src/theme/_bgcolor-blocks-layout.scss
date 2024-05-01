@@ -27,13 +27,20 @@
 }
 
 #page-edit {
+  // Animation PoC
+  .block {
+    transition: padding 400ms ease-in-out;
+    .block-inner-container {
+      transition: padding 400ms ease-in-out;
+    }
+  }
+
   .block .block:not(.inner)::before {
     display: none;
   }
 
   .block .inner .block {
     box-shadow: none;
-
   }
 
   .block {
@@ -52,15 +59,19 @@
     &.selected {
       z-index: 50;
       top: 0;
-      box-shadow: 0 0 0 3px rgb(98, 163, 184);
-      border-radius: 1px;
+      box-shadow: 0 0 0 3px rgb(0, 112, 162);
+      border-radius: 2px !important;
+
+      .inner .block {
+        border-radius: 2px !important;
+      }
     }
     &:hover {
       z-index: 10;
     }
     &:not(.selected):hover {
-      box-shadow: 0 0 0 3px rgb(98, 163, 184, 0.5);
-      border-radius: 1px;
+      box-shadow: 0 0 0 3px rgb(0, 112, 162, 0.5);
+      border-radius: 2px;
     }
 
     .block.inner .block,
