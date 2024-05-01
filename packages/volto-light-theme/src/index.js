@@ -37,6 +37,16 @@ import { sliderBlockSchemaEnhancer } from './components/Blocks/Slider/schema';
 import EventMetadataView from './components/Blocks/EventMetadata/View';
 import BlockWidthWidget from './components/Widgets/BlockWidthWidget';
 
+import {
+  ImagefullIcon,
+  ImagerightIcon,
+  ImagefitIcon,
+  BoldIcon,
+  LinkIcon,
+  ItalicIcon,
+  ImageleftIcon,
+} from '@plone/components';
+
 const BG_COLORS = [
   { name: 'white', label: 'White' },
   { name: 'grey', label: 'Grey' },
@@ -239,6 +249,7 @@ const applyConfig = (config) => {
     ...config.blocks.blocksConfig.slateTable,
     schemaEnhancer: defaultStylingSchema,
     colors: BG_COLORS,
+    sidebarTab: 1,
   };
 
   config.blocks.blocksConfig.listing = {
@@ -314,6 +325,30 @@ const applyConfig = (config) => {
     schemaEnhancer: defaultStylingSchema,
     sidebarTab: 1,
     blockModel: 3,
+    toolbar: {
+      buttons: {
+        textFormatting: [
+          {
+            name: 'bold',
+            icon: <BoldIcon />,
+            label: 'Bold',
+            isMenuShape: false,
+          },
+          {
+            name: 'italic',
+            icon: <ItalicIcon />,
+            label: 'Italic',
+            isMenuShape: false,
+          },
+          {
+            name: 'link',
+            icon: <LinkIcon />,
+            label: 'Link',
+            isMenuShape: false,
+          },
+        ],
+      },
+    },
   };
 
   config.blocks.blocksConfig.teaser = {
@@ -367,6 +402,34 @@ const applyConfig = (config) => {
     schemaEnhancer: ButtonStylingSchema,
     colors: BG_COLORS,
     blockModel: config.settings.blockModel,
+    sidebarTab: 1,
+    toolbar: {
+      buttons: {
+        styling: [
+          {
+            name: 'block-width',
+            icon: <ImagefullIcon />,
+            label: 'Block Width',
+            isMenuShape: true,
+            options: [
+              { name: 'narrow', icon: <ImagefitIcon />, label: 'Narrow' },
+              { name: 'default', icon: <ImagefullIcon />, label: 'Default' },
+            ],
+          },
+          {
+            name: 'alignment',
+            icon: <ImagerightIcon />,
+            label: 'Alignment',
+            isMenuShape: true,
+            options: [
+              { name: 'left', icon: <ImageleftIcon />, label: 'Left' },
+              { name: 'center', icon: <ImagefitIcon />, label: 'Center' },
+              { name: 'right', icon: <ImagerightIcon />, label: 'Right' },
+            ],
+          },
+        ],
+      },
+    },
   };
 
   config.blocks.blocksConfig.eventMetadata = {
