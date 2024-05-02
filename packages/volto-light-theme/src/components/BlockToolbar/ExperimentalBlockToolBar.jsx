@@ -51,7 +51,7 @@ const ExperimentalToolbar = (props) => {
       styling: [
         {
           name: 'backgroundColor',
-          icon: <BackgroundIcon />,
+          icon: BackgroundIcon,
           label: 'Background Color',
           isMenuShape: true,
           options: config.settings.backgroundColors,
