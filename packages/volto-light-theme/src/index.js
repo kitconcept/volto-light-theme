@@ -330,19 +330,19 @@ const applyConfig = (config) => {
         textFormatting: [
           {
             name: 'bold',
-            icon: <BoldIcon />,
+            icon: BoldIcon,
             label: 'Bold',
             isMenuShape: false,
           },
           {
             name: 'italic',
-            icon: <ItalicIcon />,
+            icon: ItalicIcon,
             label: 'Italic',
             isMenuShape: false,
           },
           {
             name: 'link',
-            icon: <LinkIcon />,
+            icon: LinkIcon,
             label: 'Link',
             isMenuShape: false,
           },
@@ -408,23 +408,23 @@ const applyConfig = (config) => {
         styling: [
           {
             name: 'block-width',
-            icon: <ImagefullIcon />,
+            icon: ImagefullIcon,
             label: 'Block Width',
             isMenuShape: true,
             options: [
-              { name: 'narrow', icon: <ImagefitIcon />, label: 'Narrow' },
-              { name: 'default', icon: <ImagefullIcon />, label: 'Default' },
+              { name: 'narrow', icon: ImagefitIcon, label: 'Narrow' },
+              { name: 'default', icon: ImagefullIcon, label: 'Default' },
             ],
           },
           {
             name: 'alignment',
-            icon: <ImagerightIcon />,
+            icon: ImagerightIcon,
             label: 'Alignment',
             isMenuShape: true,
             options: [
-              { name: 'left', icon: <ImageleftIcon />, label: 'Left' },
-              { name: 'center', icon: <ImagefitIcon />, label: 'Center' },
-              { name: 'right', icon: <ImagerightIcon />, label: 'Right' },
+              { name: 'left', icon: ImageleftIcon, label: 'Left' },
+              { name: 'center', icon: ImagefitIcon, label: 'Center' },
+              { name: 'right', icon: ImagerightIcon, label: 'Right' },
             ],
           },
         ],
