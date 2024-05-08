@@ -11,7 +11,6 @@ import {
   BlockToolbar,
   Menu,
   MenuItem,
-  BackgroundIcon,
   MoreoptionsIcon,
   SettingsIcon,
   RowbeforeIcon,
@@ -45,18 +44,37 @@ const ExperimentalToolbar = (props) => {
     index,
   } = blockProps;
 
+  const required = isBoolean(data.required)
+    ? data.required
+    : includes(config.blocks.requiredBlocks, type);
+
+  const sidebar = document.querySelector('#sidebar');
+  const sidebarContainer =
+    sidebar.getElementsByClassName('sidebar-container')[0];
+
+  const body = document.body;
+
+  const sidebarPusher = document.querySelector('#sidebar > .pusher');
+
+  const onToggleExpanded = () => {
+    if (expanded) {
+      sidebarContainer.classList.remove('collapsed');
+      body.classList.remove('has-sidebar-collapsed');
+      body.classList.add('has-sidebar');
+      sidebarPusher.classList.add('expanded');
+    } else {
+      sidebarContainer.classList.add('collapsed');
+      body.classList.add('has-sidebar-collapsed');
+      body.classList.remove('has-sidebar');
+      sidebarPusher.classList.remove('expanded');
+    }
+    setCookie('sidebar_expanded', expanded, getCookieOptions());
+    setExpanded(!expanded);
+    resetFullSizeSidebar();
+  };
   const defaultToolbar = {
     buttons: {
       drag: [{ name: 'drag', icon: dragSVG, label: 'Drag', isMenuShape: true }],
-      styling: [
-        {
-          name: 'backgroundColor',
-          icon: BackgroundIcon,
-          label: 'Background Color',
-          isMenuShape: true,
-          options: config.settings.backgroundColors,
-        },
-      ],
     },
   };
 
@@ -115,9 +133,6 @@ const ExperimentalToolbar = (props) => {
     );
   };
   const visible = selected && !hideHandler(data);
-  const required = isBoolean(data.required)
-    ? data.required
-    : includes(config.blocks.requiredBlocks, type);
 
   const resetFullSizeSidebar = useCallback(() => {
     if (!expanded) {
@@ -128,27 +143,6 @@ const ExperimentalToolbar = (props) => {
       sidebarContainer.classList.remove('no-toolbar');
     }
   }, [expanded]);
-
-  const sidebar = document.querySelector('#sidebar');
-  const sidebarContainer =
-    sidebar.getElementsByClassName('sidebar-container')[0];
-
-  const body = document.body;
-
-  const onToggleExpanded = () => {
-    if (!expanded) {
-      sidebarContainer.classList.remove('collapsed');
-      body.classList.remove('has-sidebar-collapsed');
-      body.classList.add('has-sidebar');
-    } else {
-      sidebarContainer.classList.add('collapsed');
-      body.classList.add('has-sidebar-collapsed');
-      body.classList.remove('has-sidebar');
-    }
-    setCookie('sidebar_expanded', !expanded, getCookieOptions());
-    setExpanded(!expanded);
-    resetFullSizeSidebar();
-  };
 
   return (
     <BlockToolbar
@@ -171,7 +165,7 @@ const ExperimentalToolbar = (props) => {
             <Separator orientation="vertical" />
             <Group aria-label="Text Formatting">
               {toolbar?.buttons?.textFormatting.map((button) => {
-                return <BlockToolbarItem item={button} />;
+                return <BlockToolbarItem item={button} {...props} />;
               })}
             </Group>
           </>
@@ -182,12 +176,11 @@ const ExperimentalToolbar = (props) => {
             <Separator orientation="vertical" />
             <Group aria-label="Style">
               {toolbar?.buttons?.styling.map((item) => {
-                return <BlockToolbarItem item={item} />;
+                return <BlockToolbarItem item={item} {...props} />;
               })}
             </Group>
           </>
         )}
-        {/* TODO: change More Options Group to use BlockToolbarItem component  */}
         <Separator orientation="vertical" />
         <Group aria-label="More Options">
           <Menu button={<MoreoptionsIcon />}>
@@ -212,7 +205,7 @@ const ExperimentalToolbar = (props) => {
                     onAddBlock(config.settings.defaultBlockType, index),
                   )
                 }
-                className="add-block-button"
+                className="add-block-button-before"
                 aria-label={intl.formatMessage(messages.delete)}
               >
                 <RowbeforeIcon />
