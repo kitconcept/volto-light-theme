@@ -45,6 +45,7 @@ import {
   LinkIcon,
   ItalicIcon,
   ImageleftIcon,
+  BackgroundIcon,
 } from '@plone/components';
 
 const BG_COLORS = [
@@ -330,21 +331,30 @@ const applyConfig = (config) => {
         textFormatting: [
           {
             name: 'bold',
-            icon: BoldIcon,
+            icon: <BoldIcon />,
             label: 'Bold',
             isMenuShape: false,
           },
           {
             name: 'italic',
-            icon: ItalicIcon,
+            icon: <ItalicIcon />,
             label: 'Italic',
             isMenuShape: false,
           },
           {
             name: 'link',
-            icon: LinkIcon,
+            icon: <LinkIcon />,
             label: 'Link',
             isMenuShape: false,
+          },
+        ],
+        styling: [
+          {
+            name: 'backgroundColor',
+            icon: <BackgroundIcon />,
+            label: 'Background Color',
+            isMenuShape: true,
+            options: config.settings.backgroundColors,
           },
         ],
       },
@@ -408,24 +418,66 @@ const applyConfig = (config) => {
         styling: [
           {
             name: 'block-width',
-            icon: ImagefullIcon,
+            icon: <ImagefullIcon />,
             label: 'Block Width',
             isMenuShape: true,
             options: [
-              { name: 'narrow', icon: ImagefitIcon, label: 'Narrow' },
-              { name: 'default', icon: ImagefullIcon, label: 'Default' },
+              {
+                style: {
+                  '--block-width': 'var(--narrow-container-width)',
+                },
+                name: 'narrow',
+                label: 'Narrow',
+                icon: <ImagefitIcon />,
+              },
+              {
+                style: {
+                  '--block-width': 'var(--default-container-width)',
+                },
+                name: 'default',
+                label: 'Default',
+                icon: <ImagefullIcon />,
+              },
             ],
           },
           {
             name: 'alignment',
-            icon: ImagerightIcon,
+            icon: <ImagerightIcon />,
             label: 'Alignment',
             isMenuShape: true,
             options: [
-              { name: 'left', icon: ImageleftIcon, label: 'Left' },
-              { name: 'center', icon: ImagefitIcon, label: 'Center' },
-              { name: 'right', icon: ImagerightIcon, label: 'Right' },
+              {
+                style: {
+                  '--block-align': 'left',
+                },
+                name: 'left',
+                label: 'Left',
+                icon: <ImageleftIcon />,
+              },
+              {
+                style: {
+                  '--block-align': 'center',
+                },
+                name: 'center',
+                label: 'Center',
+                icon: <ImagefitIcon />,
+              },
+              {
+                style: {
+                  '--block-align': 'right',
+                },
+                name: 'right',
+                label: 'Right',
+                icon: <ImagerightIcon />,
+              },
             ],
+          },
+          {
+            name: 'backgroundColor',
+            icon: <BackgroundIcon />,
+            label: 'Background Color',
+            isMenuShape: true,
+            options: config.settings.backgroundColors,
           },
         ],
       },

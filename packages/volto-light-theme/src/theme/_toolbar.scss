@@ -22,6 +22,7 @@
   top: 0;
   z-index: 999;
   width: 100%;
+  transition: top 500ms ease-in-out;
 
   .toolbar-container {
     background-color: #ebebeb;
@@ -36,15 +37,6 @@
     position: absolute;
     top: -52px;
     display: flex;
-
-    .delete-block-button {
-      all: unset;
-
-      &:hover {
-        background: none !important;
-        color: white;
-      }
-    }
 
     .react-aria-Group {
       button:not(:last-child) {
@@ -62,7 +54,38 @@
   }
 }
 .react-aria-Popover {
+  min-width: fit-content !important;
+
   .react-aria-Menu {
+    min-width: fit-content !important;
+
+    .button-wrapper > .delete-block-button {
+      color: red !important;
+    }
+
+    .backgroundColor-toolbar-widget {
+      padding: 0;
+  
+      .buttons {
+        margin: 5px 1px 5px 6px !important;
+
+        button {
+          width: 24px !important;
+          height: 24px !important;
+          aspect-ratio: 1 !important;
+          border-radius: 25px;
+          border: 1px solid var(--border-color) !important;
+          background-color: var(--background-color) !important;
+          padding: 10px;
+          margin: 0 !important;
+          
+          &:first-child {
+            margin-bottom: 5px !important;
+          }
+        }
+      }
+    }
+
     .button-wrapper {
       padding-right: 5px !important;
       width: 100% !important;
@@ -113,23 +136,6 @@
       }
     }
   }
-
-  .color-picker-button {
-    width: 100%;
-    .color-circle {
-      background: white;
-      height: 25px;
-      width: 25px;
-      border: 1px solid var(--border-color);
-      content: '';
-      border-radius: 100%;
-    }
-    &:nth-child(2) {
-      .color-circle {
-        background: #ebebeb;
-      }
-    }
-  }
 }
 
 // Animation PoC when dragging blocks
@@ -163,8 +169,18 @@ body > .block {
 #sidebar {
   .sidebar-container {
     background: #f3f5f7;
+    transition: all 500ms ease-in-out;
+
     box-shadow:
       0px 5px 15px 0px rgba(0, 0, 0, 0.15),
       0px 3px 3px 0px rgba(0, 0, 0, 0.2);
+
+    &.collapsed {
+      right: -375px;
+    }
+  }
+  .pusher {
+    margin-left: 0;
+    transition: all 500ms ease-in-out;
   }
 }
