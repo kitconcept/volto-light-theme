@@ -10,6 +10,7 @@
   }
 }
 
+// Exerimental block toolbar
 #page-edit {
   .ui.basic.button:hover {
     background: none !important;
@@ -59,8 +60,12 @@
   .react-aria-Menu {
     min-width: fit-content !important;
 
-    .button-wrapper > .delete-block-button {
-      color: red !important;
+    .button-wrapper > button.delete-block-button {
+      color: #e40166 !important;
+
+      &:hover {
+        background: #e40166 !important;
+      }
     }
 
     .backgroundColor-toolbar-widget {
