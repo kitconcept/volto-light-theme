@@ -8,6 +8,27 @@
 
 <!-- towncrier release notes start -->
 
+## 3.3.0 (2024-04-26)
+
+### Feature
+
+- Make font-weights, font-sizes and font-heights overrideable adding the `!default` thingy @erral [#371](https://github.com/kitconcept/volto-light-theme/pull/371)
+
+### Bugfix
+
+- Fix event title margin bottom. @iFlameing [#357](https://github.com/kitconcept/volto-light-theme/pull/357)
+- Fix Image block in grid is not working @iRohitSingh [#376](https://github.com/kitconcept/volto-light-theme/pull/376)
+
+## 3.2.0 (2024-03-25)
+
+### Feature
+
+- Use project-less approach for developing @sneridagh [#369](https://github.com/kitconcept/volto-light-theme/pull/369)
+
+### Bugfix
+
+- Revert breaking change introduced in #346 @sneridagh [#373](https://github.com/kitconcept/volto-light-theme/pull/373)
+
 ## 3.1.2 (2024-03-18)
 
 ### Internal
@@ -335,19 +356,19 @@
 
 - Add external link for slate block @iRohitSingh [#188](https://github.com/kitconcept/volto-light-theme/pull/188)
 - Fix responsive of listing block. @iFlameing [#189](https://github.com/kitconcept/volto-light-theme/pull/189)
-- Fix pagination styles for Listings. @danalvrz 
+- Fix pagination styles for Listings. @danalvrz
 
   Change divider bar in News Item head title from string to pseudo-element. @danalvrz
 
   Fix text decoration for links. @danalvrz
 
-  Fix background color for in-Grid Slate. @danalvrz 
+  Fix background color for in-Grid Slate. @danalvrz
 
-  Fix Image block margins. @danalvrz 
+  Fix Image block margins. @danalvrz
 
   Fix Grid Listing variation CSS. @danalvrz
 
-  Fix Separator margin when preceded by Image block. @danalvrz 
+  Fix Separator margin when preceded by Image block. @danalvrz
 
   Fix Teaser margin in mobile. @danalvrz [#191](https://github.com/kitconcept/volto-light-theme/pull/191)
 - Enable automatic hyphenation. @iFlameing [#193](https://github.com/kitconcept/volto-light-theme/pull/193)
