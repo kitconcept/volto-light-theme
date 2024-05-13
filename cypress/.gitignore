@@ -1,0 +1,9 @@
+# Only store the #0.png images, ignore #1.png, #2.png etc...
+# Also ignore *.actual.png, *.diff.png
+!/__*_snapshots__/**
+/__*_snapshots__/*.png
+!/__*_snapshots__/*#0.png
+
+# Cumulative report outputs must be in the cypress
+# filesystem, but we want to avoid checking them in
+/config/cumulative*.report

@@ -44,6 +44,8 @@
     "release-alpha": "pnpm --filter @kitconcept/volto-light-theme run release-alpha"
   },
   "devDependencies": {
+    "@cypress/skip-test": "2.6.1",
+    "@frsource/cypress-plugin-visual-regression-diff": "3.2.8",
     "mrs-developer": "^2.2.0"
   },
   "dependencies": {
