@@ -166,7 +166,7 @@ export class Edit extends Component {
                     )
                 : null
             }
-            className={cx('block', type, this.props.data.variation)}
+            className={cx(type, this.props.data.variation)}
             style={{ outline: 'none' }}
             ref={this.blockNode}
             // The tabIndex is required for the keyboard navigation
@@ -212,7 +212,7 @@ export class Edit extends Component {
                     )
                 : null
             }
-            className={cx(`block ${type}`, { selected: this.props.selected })}
+            className={cx(`${type}`, { selected: this.props.selected })}
             style={{ outline: 'none' }}
             ref={this.blockNode}
             // The tabIndex is required for the keyboard navigation

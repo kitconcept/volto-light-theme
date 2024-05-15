@@ -45,8 +45,8 @@
 
 @mixin adjustMarginsToEditContainer($width) {
   @container (max-width: #{$width + 2 * $spacing-medium}) {
-    margin-right: 10px;
-    margin-left: 10px;
+    margin-right: 0;
+    margin-left: 0;
   }
 }
 
@@ -337,7 +337,7 @@ External link removal for all the blocks.
 #page-add,
 #page-edit {
   .block {
-    max-width: calc(100vw - 7%);
+    // max-width: calc(100vw - 7%);
     margin-right: auto;
     margin-left: auto;
     @include adjustMarginsToEditContainer($layout-container-width);
