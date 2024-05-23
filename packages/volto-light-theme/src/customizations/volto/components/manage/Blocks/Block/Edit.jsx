@@ -212,7 +212,10 @@ export class Edit extends Component {
                     )
                 : null
             }
-            className={cx(`${type}`, { selected: this.props.selected })}
+            className={cx(`${type} hola`, {
+              selected: this.props.selected,
+              multiSelected: this.props.multiSelected,
+            })}
             style={{ outline: 'none' }}
             ref={this.blockNode}
             // The tabIndex is required for the keyboard navigation

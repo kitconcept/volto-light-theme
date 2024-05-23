@@ -326,39 +326,6 @@ const applyConfig = (config) => {
     schemaEnhancer: defaultStylingSchema,
     sidebarTab: 1,
     blockModel: 3,
-    toolbar: {
-      buttons: {
-        textFormatting: [
-          {
-            name: 'bold',
-            icon: <BoldIcon />,
-            label: 'Bold',
-            isMenuShape: false,
-          },
-          {
-            name: 'italic',
-            icon: <ItalicIcon />,
-            label: 'Italic',
-            isMenuShape: false,
-          },
-          {
-            name: 'link',
-            icon: <LinkIcon />,
-            label: 'Link',
-            isMenuShape: false,
-          },
-        ],
-        styling: [
-          {
-            name: 'backgroundColor',
-            icon: <BackgroundIcon />,
-            label: 'Background Color',
-            isMenuShape: true,
-            options: config.settings.backgroundColors,
-          },
-        ],
-      },
-    },
   };
 
   config.blocks.blocksConfig.teaser = {
@@ -413,75 +380,6 @@ const applyConfig = (config) => {
     colors: BG_COLORS,
     blockModel: config.settings.blockModel,
     sidebarTab: 1,
-    toolbar: {
-      buttons: {
-        styling: [
-          {
-            name: 'block-width',
-            icon: <ImagefullIcon />,
-            label: 'Block Width',
-            isMenuShape: true,
-            options: [
-              {
-                style: {
-                  '--block-width': 'var(--narrow-container-width)',
-                },
-                name: 'narrow',
-                label: 'Narrow',
-                icon: <ImagefitIcon />,
-              },
-              {
-                style: {
-                  '--block-width': 'var(--default-container-width)',
-                },
-                name: 'default',
-                label: 'Default',
-                icon: <ImagefullIcon />,
-              },
-            ],
-          },
-          {
-            name: 'alignment',
-            icon: <ImagerightIcon />,
-            label: 'Alignment',
-            isMenuShape: true,
-            options: [
-              {
-                style: {
-                  '--block-align': 'left',
-                },
-                name: 'left',
-                label: 'Left',
-                icon: <ImageleftIcon />,
-              },
-              {
-                style: {
-                  '--block-align': 'center',
-                },
-                name: 'center',
-                label: 'Center',
-                icon: <ImagefitIcon />,
-              },
-              {
-                style: {
-                  '--block-align': 'right',
-                },
-                name: 'right',
-                label: 'Right',
-                icon: <ImagerightIcon />,
-              },
-            ],
-          },
-          {
-            name: 'backgroundColor',
-            icon: <BackgroundIcon />,
-            label: 'Background Color',
-            isMenuShape: true,
-            options: config.settings.backgroundColors,
-          },
-        ],
-      },
-    },
   };
 
   config.blocks.blocksConfig.eventMetadata = {

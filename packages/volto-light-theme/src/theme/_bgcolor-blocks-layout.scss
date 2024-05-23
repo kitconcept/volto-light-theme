@@ -56,40 +56,92 @@
         top: calc(-1 * $color-block-change-vertical-spacing);
       }
     }
-    &.selected {
-      z-index: 50;
-      top: 0;
-      box-shadow: inset 0 0 0 3px rgb(0, 112, 162);
-      border-radius: 2px !important;
+    // &.selected,
+    // &.multiSelected {
+    //   z-index: 50;
+    //   top: 0;
+    //   box-shadow: inset 0 0 0 2px rgb(0, 112, 162);
+    //   border-radius: 2px !important;
+    // }
+    // &.multiSelected:not(:has(+ .multiSelected)) {
+    //   z-index: 50;
+    //   top: 0;
+    //   box-shadow: none;
+    //   border: 2px rgb(0, 112, 162) solid;
+    //   border-style: inset;
+    //   border-radius: 2px !important;
+    // }
 
-      .inner .block {
-        border-radius: 2px !important;
-      }
-    }
-    &:hover {
-      z-index: 10;
-    }
-    &:not(.selected):hover {
-      box-shadow: inset 0 0 0 3px rgb(0, 112, 162, 0.5);
-      border-radius: 2px;
-    }
+    // &.multiSelected + .multiSelected {
+    //   border: 2px gb(0, 112, 162) solid;
+    //   box-shadow: none;
+    //   border-top: none;
+    // }
+
+    // &:hover {
+    //   z-index: 10;
+    // }
+    // &:not(.selected):not(.multiSelected):hover {
+    //   box-shadow: inset 0 0 0 2px rgb(0, 112, 162, 0.5);
+    //   border-radius: 2px;
+    // }
 
     .block.inner .block,
     .block.inner {
       margin-bottom: 0;
     }
 
-    &:not(.selected):hover {
-      box-shadow: lightblue;
-    }
+    // &:not(.selected):hover {
+    //   box-shadow: lightblue;
+    // }
 
     &.previous--has--different--backgroundColor .drag.handle.wrapper {
       margin-top: -$color-block-change-vertical-spacing;
     }
 
-    .block-add-button.new-add-block {
-      z-index: 99;
-      bottom: 30px;
+    
+  }
+}
+
+// .block.multiSelected{
+//   // box-shadow: none !important;
+
+//   &::after {
+//   content: '';
+//   position: absolute;
+//   height: 100%;
+//   width: 100%;
+//   background-color: red;
+//   opacity: 0.3;
+//   top: 0;
+// }
+
+
+
+// // .block.multiSelected:has(+ .block.multiSelected) {
+//   .block.multiSelected:has(+ .multiSelected){ 
+//   border: 2px gb(0, 112, 162) solid;
+//   border-bottom: none !important;
+//   border-style: inset;
+//   z-index: 50;
+//   box-shadow: none !important;
+//   // background-color: red !important;
+
+// }
+
+#page-edit button.block-add-button.new-add-block.ui.basic {
+  z-index: 99;
+  bottom: -11px;
+  &:hover {
+    background: white !important;
+  }
+
+
+  svg {
+    fill:rgb(0, 112, 162) !important;
+
+    &:hover {
+      opacity: 1 !important;
     }
   }
 }
