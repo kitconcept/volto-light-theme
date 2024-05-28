@@ -413,4 +413,15 @@ body.has-toolbar.has-sidebar .block .ui.basic.button.delete-button {
   }
 }
 
+// Create content page form
+#page-add,
+#page-edit {
+  > .container {
+    > .ui.form {
+      margin-top: $spacing-small;
+      @include default-container-width();
+    }
+  }
+}
+
 @import 'bgcolor-blocks-layout';
