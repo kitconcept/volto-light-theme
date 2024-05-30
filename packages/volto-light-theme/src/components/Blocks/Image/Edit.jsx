@@ -240,6 +240,23 @@ class Edit extends Component {
 
   node = React.createRef();
 
+  // START CUSTOMIZATION - Add custom dataAdapter
+  // It has to be a class method because if used directly we have closure issues while
+  // passing arguments to the dataAdapter function
+  onSelectItem = (url, item) => {
+    const dataAdapter =
+      this.props.blocksConfig[this.props.data['@type']].dataAdapter;
+    dataAdapter({
+      block: this.props.block,
+      data: this.props.data,
+      onChangeBlock: this.props.onChangeBlock,
+      id: 'url',
+      value: url,
+      item,
+    });
+  };
+  // END CUSTOMIZATION - Add custom dataAdapter
+
   /**
    * Render method.
    * @method render
@@ -247,11 +264,10 @@ class Edit extends Component {
    */
   render() {
     const Image = config.getComponent({ name: 'Image' }).component;
-    const { block, data, onChangeBlock } = this.props;
+    const { data } = this.props;
     const placeholder =
       this.props.data.placeholder ||
       this.props.intl.formatMessage(messages.ImageBlockInputPlaceholder);
-    const dataAdapter = this.props.blocksConfig[data['@type']].dataAdapter;
 
     return (
       <div
@@ -365,16 +381,7 @@ class Edit extends Component {
                                 e.stopPropagation();
                                 e.preventDefault();
                                 this.props.openObjectBrowser({
-                                  onSelectItem: (url, item) => {
-                                    dataAdapter({
-                                      block,
-                                      data,
-                                      onChangeBlock,
-                                      id: 'url',
-                                      value: url,
-                                      item,
-                                    });
-                                  },
+                                  onSelectItem: this.onSelectItem,
                                 });
                               }}
                             >
