@@ -4,9 +4,11 @@
 
 .block.introduction {
   .block-container p,
+  .block-container a,
   .block-container ul li,
   .block-container ol li,
   .slate-editor p,
+  .slate-editor a,
   .slate-editor ul li,
   .slate-editor ol li {
     margin: 0;
@@ -18,10 +20,6 @@
     em,
     em span {
       font-style: italic;
-    }
-    > a {
-      font-size: 24px;
-      line-height: 33px;
     }
   }
 
