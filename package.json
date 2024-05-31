@@ -1,8 +1,8 @@
 {
-  "name": "@kitconcept/volto-light-theme",
-  "version": "3.1.1",
+  "name": "@kitconcept/volto-light-theme-dev",
   "description": "Volto Light Theme by kitconcept",
   "main": "src/index.js",
+  "types": "src/types/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/kitconcept/volto-light-theme.git"
@@ -25,55 +25,31 @@
     "access": "public"
   },
   "scripts": {
-    "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
+    "preinstall": "npx only-allow pnpm",
+    "start": "pnpm build:deps && VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto start",
+    "start:prod": "pnpm --filter @plone/volto start:prod",
+    "build": "pnpm build:deps && VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto build",
+    "build:deps": "pnpm --filter @plone/registry --filter @plone/components build",
+    "i18n": "pnpm --filter addons i18n",
+    "test": "RAZZLE_JEST_CONFIG=$(pwd)/jest-addon.config.js pnpm --filter @plone/volto test",
+    "lint": "eslint --max-warnings=0 'packages/**/src/**/*.{js,jsx,ts,tsx}'",
+    "lint:fix": "eslint --fix 'packages/**/src/**/*.{js,jsx,ts,tsx}'",
+    "prettier": "prettier --check 'packages/**/src/**/*.{js,jsx,ts,tsx}'",
+    "prettier:fix": "prettier --write 'packages/**/src/**/*.{js,jsx,ts,tsx}' ",
+    "stylelint": "stylelint 'packages/**/src/**/*.{css,scss,less}' --allow-empty-input",
+    "stylelint:fix": "stylelint 'packages/**/src/**/*.{css,scss,less}' --fix",
     "dry-release": "release-it --dry-run",
-    "release": "release-it",
-    "release-major-alpha": "release-it major --preRelease=alpha",
-    "release-alpha": "release-it --preRelease=alpha",
-    "release-rc": "release-it --preRelease=rc"
+    "release": "pnpm --filter @kitconcept/volto-light-theme run release",
+    "release-major-alpha": "pnpm --filter @kitconcept/volto-light-theme run release-major-alpha",
+    "release-alpha": "pnpm --filter @kitconcept/volto-light-theme run release-alpha"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "7.22.15",
-    "@plone/scripts": "^3.3.2",
-    "eslint": "8.49.0",
-    "eslint-config-prettier": "9.0.0",
-    "eslint-config-react-app": "7.0.1",
-    "eslint-import-resolver-alias": "1.1.2",
-    "eslint-import-resolver-babel-plugin-root-import": "1.1.1",
-    "eslint-plugin-import": "2.28.1",
-    "eslint-plugin-jsx-a11y": "^6.7.1",
-    "eslint-plugin-prettier": "5.0.0",
-    "eslint-plugin-react": "7.33.2",
-    "eslint-plugin-react-hooks": "4.6.0",
-    "postcss-scss": "4.0.6",
-    "prettier": "3.0.3",
-    "razzle-plugin-scss": "4.2.18",
-    "release-it": "^16.2.1",
-    "stylelint": "15.10.3",
-    "stylelint-config-idiomatic-order": "9.0.0",
-    "stylelint-config-sass-guidelines": "10.0.0",
-    "stylelint-prettier": "4.0.2"
+    "mrs-developer": "^2.2.0"
   },
-  "peerAddons": [
-    "@eeacms/volto-accordion-block",
-    "@kitconcept/volto-button-block",
-    "@kitconcept/volto-heading-block",
-    "@kitconcept/volto-highlight-block",
-    "@kitconcept/volto-introduction-block",
-    "@kitconcept/volto-separator-block",
-    "@kitconcept/volto-slider-block"
-  ],
   "dependencies": {
-    "@plone/components": "2.0.0-alpha.6"
+    "@plone/volto": "workspace:*",
+    "@plone/registry": "workspace:*",
+    "@kitconcept/volto-light-theme": "workspace:*"
   },
-  "peerDependencies": {
-    "@eeacms/volto-accordion-block": "^10.4.0",
-    "@kitconcept/volto-button-block": "^2.3.1",
-    "@kitconcept/volto-dsgvo-banner": "^1.3.0",
-    "@kitconcept/volto-heading-block": "^2.4.0",
-    "@kitconcept/volto-highlight-block": "^3.0.0",
-    "@kitconcept/volto-introduction-block": "^1.0.0",
-    "@kitconcept/volto-separator-block": "^4.0.0",
-    "@kitconcept/volto-slider-block": "^6.1.0"
-  }
+  "packageManager": "pnpm@8.15.4"
 }
