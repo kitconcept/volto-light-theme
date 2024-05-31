@@ -8,6 +8,13 @@
 
 <!-- towncrier release notes start -->
 
+## 3.3.2 (2024-05-31)
+
+### Bugfix
+
+- Add top padding to login page @danalvrz [#387](https://github.com/kitconcept/volto-light-theme/pull/387)
+- Add default width mixin to content creation Forms @danalvrz [#388](https://github.com/kitconcept/volto-light-theme/pull/388)
+
 ## 3.3.1 (2024-05-30)
 
 ### Bugfix
