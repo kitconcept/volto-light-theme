@@ -11,7 +11,6 @@ on:
 env:
   ENVIRONMENT: "light-theme.kitconcept.io"
   IMAGE_NAME: "ghcr.io/kitconcept/voltolighttheme-frontend"
-  VOLTO_VERSION: "17.11.5"
 
 jobs:
   meta:
@@ -19,9 +18,10 @@ jobs:
     outputs:
       ENVIRONMENT: ${{ steps.vars.outputs.ENVIRONMENT }}
       STACK_NAME: ${{ steps.vars.outputs.STACK_NAME }}
+      VOLTO_VERSION: ${{ steps.vars.outputs.VOLTO_VERSION }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set Env Vars
         id: vars
@@ -29,6 +29,9 @@ jobs:
           ENVIRONMENT=${{ env.ENVIRONMENT }}
           echo "ENVIRONMENT=${ENVIRONMENT}" >> $GITHUB_OUTPUT
           echo "STACK_NAME=${ENVIRONMENT//./-}" >> $GITHUB_OUTPUT
+          python3 -c 'import json; data = json.load(open("mrs.developer.json")); print("VOLTO_VERSION=" + data["core"]["tag"] or 'latest')' >> $GITHUB_OUTPUT
+
+      - run: echo "${{ steps.vars.outputs.VOLTO_VERSION }}"
 
   release:
     runs-on: ubuntu-latest
@@ -37,7 +40,7 @@ jobs:
     steps:
 
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Docker meta
         id: meta
@@ -73,7 +76,7 @@ jobs:
           build-args: |
             ADDON_NAME=@kitconcept/volto-light-theme
             ADDON_PATH=volto-light-theme
-            VOLTO_VERSION=${{ env.VOLTO_VERSION }}
+            VOLTO_VERSION=${{ needs.meta.outputs.VOLTO_VERSION }}
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: $${{ steps.meta.outputs.labels }}
@@ -86,7 +89,7 @@ jobs:
     environment: ${{ needs.meta.outputs.ENVIRONMENT }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Deploy to cluster
         uses: kitconcept/docker-stack-deploy@v1.2.0

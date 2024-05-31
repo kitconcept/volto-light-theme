@@ -1,0 +1,340 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Plone\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-04-27T19:30:59.079Z\n"
+"PO-Revision-Date: 2016-10-22 16:41-0500\n"
+"Last-Translator: German <plone-i18n@lists.sf.net>\n"
+"Language: de\n"
+"Language-Team: German <plone-i18n@lists.sf.net>\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Language-Code: de\n"
+"Language-Name: Deutsch\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"X-Is-Fallback-For: de-at de-li de-lu de-ch de-de\n"
+
+#. Default: "Back"
+#: components/MobileNavigation/MobileNavigation
+msgid "Back"
+msgstr "Zurück"
+
+#. Default: "Back to homepage"
+#: components/Logo/Logo
+msgid "Back to homepage"
+msgstr "Zurück zur Startseite"
+
+#. Default: "Background color"
+#: components/Blocks/schema
+msgid "Background color"
+msgstr "Hintergrundfarbe"
+
+#. Default: "Block Width"
+#: components/Blocks/Button/schema
+msgid "Block Width"
+msgstr "Block Breite"
+
+#. Default: "Breadcrumbs"
+#: components/Breadcrumbs/Breadcrumbs
+msgid "Breadcrumbs"
+msgstr "Brotkrumen"
+
+#. Default: "Browse the site, drop an image, or type an URL"
+#: components/Blocks/Image/Edit
+msgid "Browse the site, drop an image, or type an URL"
+msgstr "Bild auswählen, hochladen oder URL angeben"
+
+#. Default: "Button text"
+#: components/Blocks/Slider/schema
+msgid "Button text"
+msgstr "Button Text"
+
+#. Default: "Center"
+#: components/Widgets/AlignWidget
+msgid "Center"
+msgstr "Mittig"
+
+#. Default: "Close menu"
+#: components/MobileNavigation/MobileNavigation
+#: components/Navigation/Navigation
+msgid "Close menu"
+msgstr "Menü schließen"
+
+#. Default: "Contact"
+#: components/Blocks/EventMetadata/View
+msgid "Contact"
+msgstr "Kontakt"
+
+#. Default: "Continue reading"
+#: components/Blocks/Slider/DefaultBody
+msgid "Continue reading"
+msgstr "Weiterlesen"
+
+#. Default: "Copyright"
+#: components/Footer/Footer
+msgid "Copyright"
+msgstr "Urheberrechte"
+
+#. Default: "Description"
+#: components/Blocks/Image/schema
+msgid "Description"
+msgstr "Beschreibung"
+
+#. Default: "Distributed under the {license}."
+#: components/Footer/Footer
+msgid "Distributed under the {license}."
+msgstr "Vertrieben unter {license}"
+
+#. Default: "End"
+#: components/Blocks/EventMetadata/View
+msgid "End"
+msgstr "ende"
+
+#. Default: "Flag align"
+#: components/Blocks/Slider/schema
+msgid "Flag align"
+msgstr ""
+
+#. Default: "Full"
+#: components/Widgets/AlignWidget
+msgid "Full"
+msgstr "Volle Breite"
+
+#. Default: "GNU GPL license"
+#: components/Footer/Footer
+msgid "GNU GPL license"
+msgstr "GNU GPL Lizenz"
+
+#. Default: "Hide Button"
+#: components/Blocks/Slider/schema
+msgid "Hide Button"
+msgstr "keinen Button anzeigen"
+
+#. Default: "Home"
+#: components/Breadcrumbs/Breadcrumbs
+#: components/MobileNavigation/MobileNavigation
+msgid "Home"
+msgstr "Startseite"
+
+#. Default: "ICS Download"
+#: components/Blocks/EventMetadata/View
+msgid "ICS-Download"
+msgstr "ICS-Download"
+
+#. Default: "Image"
+#: components/Blocks/Image/ImageSidebar
+msgid "Image"
+msgstr "Bild"
+
+#. Default: "Left"
+#: components/Widgets/AlignWidget
+msgid "Left"
+msgstr "Links"
+
+#. Default: "Location"
+#: components/Blocks/EventMetadata/View
+msgid "Location"
+msgstr "Veranstaltungsort"
+
+#. Default: "Log in"
+#: components/Anontools/Anontools
+msgid "Log in"
+msgstr "Anmelden"
+
+#. Default: "Next Page"
+#: components/Blocks/Listing/ListingBody
+msgid "Next Page"
+msgstr "Nächste Seite"
+
+#. Default: "No date"
+#: components/Theme/EventView
+msgid "No date"
+msgstr "Kein Datum"
+
+#. Default: "No image selected"
+#: components/Blocks/Image/ImageSidebar
+msgid "No image selected"
+msgstr "Kein Bild ausgewählt"
+
+#. Default: "No items found in this container."
+#: components/Blocks/Listing/ListingBody
+msgid "No items found in this container."
+msgstr "Keine Elemente im Ordner gefunden."
+
+#. Default: "Open menu"
+#: components/MobileNavigation/MobileNavigation
+#: components/Navigation/Navigation
+msgid "Open menu"
+msgstr "Menü öffnen"
+
+#. Default: "Overview"
+#: components/MobileNavigation/MobileNavigation
+msgid "Overview"
+msgstr "Übersicht"
+
+#. Default: "Phone"
+#: components/Blocks/EventMetadata/View
+msgid "Phone"
+msgstr "Telefon"
+
+#. Default: "Please choose an existing content as source for this element"
+#: components/Blocks/Slider/DefaultBody
+msgid "Please choose an existing content as source for this element"
+msgstr "Bitte wählen sie einen bestehenden Inhalt als Quelle für dieses Element"
+
+#. Default: "Plone Foundation"
+#: components/Footer/Footer
+msgid "Plone Foundation"
+msgstr ""
+
+#. Default: "Plone{reg} Open Source CMS/WCM"
+#: components/Footer/Footer
+msgid "Plone{reg} Open Source CMS/WCM"
+msgstr ""
+
+#. Default: "Powered by Plone & Python"
+#: components/Footer/Footer
+msgid "Powered by Plone & Python"
+msgstr ""
+
+#. Default: "Press"
+#: index
+msgid "Press"
+msgstr "Presse"
+
+#. Default: "Previous Page"
+#: components/Blocks/Listing/ListingBody
+msgid "Previous Page"
+msgstr "Vorherige Seite"
+
+#. Default: "Register"
+#: components/Anontools/Anontools
+msgid "Register"
+msgstr "Registrieren"
+
+#. Default: "Result"
+#: components/Blocks/Listing/ListingBody
+msgid "Result"
+msgstr "Ergebnis"
+
+#. Default: "Right"
+#: components/Widgets/AlignWidget
+msgid "Right"
+msgstr "Rechts"
+
+#. Default: "Search"
+#: components/Blocks/Search/components/SearchInput
+#: components/Blocks/Search/TopSideFacets
+#: components/MobileNavigation/MobileNavigation
+#: components/SearchWidget/IntranetSearchWidget
+#: components/SearchWidget/SearchWidget
+msgid "Search"
+msgstr "Suche"
+
+#. Default: "Search Site"
+#: components/SearchWidget/IntranetSearchWidget
+#: components/SearchWidget/SearchWidget
+msgid "Search Site"
+msgstr "Seite durchsuchen"
+
+#. Default: "Search for People, E-Mail Address, Phone Number, ..."
+#: components/SearchWidget/IntranetSearchWidget
+msgid "Search for People, E-Mail Address, Phone Number, ..."
+msgstr ""
+
+#. Default: "Search results"
+#: components/Blocks/Search/components/SearchDetails
+msgid "Search results"
+msgstr "Ergebnisse"
+
+#. Default: "Searched for"
+#: components/Blocks/Search/components/SearchDetails
+msgid "Searched for"
+msgstr "Gesucht für"
+
+#. Default: "Site"
+#: components/Logo/Logo
+msgid "Site"
+msgstr "Seite"
+
+#. Default: "Sitemap"
+#: index
+msgid "Sitemap"
+msgstr "Übersicht"
+
+#. Default: "Sorting"
+#: components/Blocks/Search/TopSideFacets
+msgid "Sorting"
+msgstr "Sortierung"
+
+#. Default: "Source"
+#: components/Blocks/Slider/DefaultBody
+msgid "Source"
+msgstr "Quelle"
+
+#. Default: "Start"
+#: components/Blocks/EventMetadata/View
+msgid "Start"
+msgstr "Anfang"
+
+#. Default: "Switch to"
+#: components/LanguageSelector/LanguageSelector
+msgid "Switch to"
+msgstr ""
+
+#. Default: "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
+#: components/Footer/Footer
+msgid "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
+msgstr ""
+
+#. Default: "Title"
+#: components/Blocks/Image/schema
+msgid "Title"
+msgstr "Titel"
+
+#. Default: "Uploading image"
+#: components/Blocks/Image/Edit
+msgid "Uploading image"
+msgstr "Bild hochladen"
+
+#. Default: "Website"
+#: components/Blocks/EventMetadata/View
+msgid "Website"
+msgstr "Webseite"
+
+#. Default: "Wide"
+#: components/Widgets/AlignWidget
+msgid "Wide"
+msgstr "Breit"
+
+#. Default: "Clear image"
+#: components/Blocks/Image/ImageSidebar
+msgid "image_block_clear"
+msgstr "Bild löschen"
+
+#. Default: "Image preview"
+#: components/Blocks/Image/ImageSidebar
+msgid "image_block_preview"
+msgstr "Bild Vorschau"
+
+#. Default: "Loading"
+#: components/Blocks/Listing/ListingBody
+msgid "loading"
+msgstr "laden"
+
+#. Default: "More info"
+#: components/Blocks/Slider/DefaultBody
+msgid "moreInfo"
+msgstr "Mehr Informationen"
+
+#. Default: "of"
+#: components/Blocks/Listing/ListingBody
+msgid "of"
+msgstr "von"
+
+#. Default: ""
+#: components/Header/Header
+msgid "siteLabel"
+msgstr ""

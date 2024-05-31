@@ -11,7 +11,7 @@ ENV THEME='@kitconcept/volto-light-theme'
 COPY dockerfiles/helper.py /setupAddon
 
 # Copy addon code
-COPY --chown=node:node ./ /app/src/addons/${ADDON_PATH}/
+COPY --chown=node:node ./packages/${ADDON_PATH} /app/src/addons/${ADDON_PATH}/
 
 # Install
 RUN <<EOT

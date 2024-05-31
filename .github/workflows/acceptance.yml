@@ -2,9 +2,7 @@ name: Acceptance tests
 on: [push, pull_request]
 
 env:
-  ADDON_NAME: "@kitconcept/volto-light-theme"
-  ADDON_PATH: "volto-light-theme"
-  VOLTO_VERSION: "17.11.5"
+  node-version: 20.x
 
 jobs:
 
@@ -12,31 +10,82 @@ jobs:
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.event.pull_request.base.repo.full_name
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
-
-      - name: Install Cypress
-        run: |
-          cd acceptance
-          yarn
-
-      - name: "Cypress: Acceptance tests"
-        uses: cypress-io/github-action@v6
-        env:
-          BABEL_ENV: production
-          CYPRESS_RETRIES: 2
+      - name: Use Node.js ${{ env.node-version }}
+        uses: actions/setup-node@v4
         with:
-          parallel: false
-          browser: chrome
-          working-directory: acceptance
-          spec: cypress/tests/main/**/*.js
-          install: false
-          start: |
-            docker compose -f ci.yml --profile prod up
-          wait-on: 'npx wait-on --httpTimeout 20000 http-get://localhost:55001/plone http://localhost:3000'
+          node-version: ${{ env.node-version }}
+
+      - uses: pnpm/action-setup@v3
+        name: Install pnpm
+        with:
+          version: 8
+          # We don't want to install until later,
+          # when the cache and Cypress are in place
+          run_install: false
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - uses: actions/cache@v4
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Cache Cypress Binary
+        id: cache-cypress-binary
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/Cypress
+          key: binary-${{ env.node-version }}-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: Install dependencies
+        run: make install
+
+      - name: Install Cypress if not in cache
+        if: steps.cache-cypress-binary.outputs.cache-hit != 'true'
+        working-directory: core/packages/volto
+        run: make cypress-install
+
+      - uses: JarvusInnovations/background-action@v1
+        name: Start Servers
+        with:
+          run: |
+            make start-test-acceptance-server-ci &
+            make start-test-acceptance-frontend &
+          # your step-level and job-level environment variables are available to your commands as-is
+          # npm install will count towards the wait-for timeout
+          # whenever possible, move unrelated scripts to a different step
+          # to background multiple processes: add & to the end of the command
+
+          wait-on: |
+            http-get://localhost:55001/plone
+            http://localhost:3000
+          # IMPORTANT: to use environment variables in wait-on, you must use this form: ${{ env.VAR }}
+          # See wait-on section below for all resource types and prefixes
+
+          tail: true # true = stderr,stdout
+          # This will allow you to monitor the progress live
+
+          log-output-resume: stderr
+          # Eliminates previosuly output stderr log entries from post-run output
+
+          wait-for: 10m
+
+          log-output: stderr,stdout # same as true
+
+          log-output-if: failure
+          # failure = exit-early or timeout
+
+          # working-directory: backend
+
+      - run: make test-acceptance-headless
 
       # Upload Cypress screenshots
       - uses: actions/upload-artifact@v3
@@ -56,32 +105,82 @@ jobs:
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.event.pull_request.base.repo.full_name
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
-
-      - name: Install Cypress
-        run: |
-          cd acceptance
-          yarn
-
-      - name: "Cypress: Acceptance tests"
-        uses: cypress-io/github-action@v6
-        env:
-          BABEL_ENV: production
-          CYPRESS_RETRIES: 2
-          CYPRESS_a11y: 1
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v4
         with:
-          parallel: false
-          browser: chrome
-          working-directory: acceptance
-          spec: cypress/tests/a11y/**/*.js
-          install: false
-          start: |
-            docker compose -f ci-a11y.yml --profile prod up
-          wait-on: 'npx wait-on --httpTimeout 20000 http-get://localhost:8080/Plone http://localhost:3000'
+          node-version: 20.x
+
+      - uses: pnpm/action-setup@v3
+        name: Install pnpm
+        with:
+          version: 8
+          # We don't want to install until later,
+          # when the cache and Cypress are in place
+          run_install: false
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - uses: actions/cache@v4
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Cache Cypress Binary
+        id: cache-cypress-binary
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/Cypress
+          key: binary-20.x-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: Install dependencies
+        run: make install
+
+      - name: Install Cypress if not in cache
+        if: steps.cache-cypress-binary.outputs.cache-hit != 'true'
+        working-directory: core/packages/volto
+        run: make cypress-install
+
+      - uses: JarvusInnovations/background-action@v1
+        name: Start Servers
+        with:
+          run: |
+            make start-test-acceptance-server-a11y-ci &
+            make start-test-acceptance-frontend-a11y &
+          # your step-level and job-level environment variables are available to your commands as-is
+          # npm install will count towards the wait-for timeout
+          # whenever possible, move unrelated scripts to a different step
+          # to background multiple processes: add & to the end of the command
+
+          wait-on: |
+            http-get://localhost:8080/Plone
+            http://localhost:3000
+          # IMPORTANT: to use environment variables in wait-on, you must use this form: ${{ env.VAR }}
+          # See wait-on section below for all resource types and prefixes
+
+          tail: true # true = stderr,stdout
+          # This will allow you to monitor the progress live
+
+          log-output-resume: stderr
+          # Eliminates previosuly output stderr log entries from post-run output
+
+          wait-for: 10m
+
+          log-output: stderr,stdout # same as true
+
+          log-output-if: failure
+          # failure = exit-early or timeout
+
+          # working-directory: backend
+
+      - run: make test-acceptance-headless-a11y
 
       # Upload Cypress screenshots
       - uses: actions/upload-artifact@v3

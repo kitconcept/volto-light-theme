@@ -1,0 +1,45 @@
+name: i18n
+on: [push]
+
+env:
+  node-version: 20.x
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Main checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node.js ${{ env.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.node-version }}
+
+      - uses: pnpm/action-setup@v3
+        name: Install pnpm
+        with:
+          version: 8
+          # We don't want to install until later,
+          # when the cache and Cypress are in place
+          run_install: false
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - uses: actions/cache@v4
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: make install
+
+      - name: test i18n command
+        run: make i18n

@@ -1,0 +1,420 @@
+// Listing Block
+.block.listing,
+.column > .block.listing,
+.block.search,
+.block-editor-search {
+  &.next--has--same--backgroundColor.next--is--same--block-type,
+  &.next--is--__button {
+    .listing-item:last-child {
+      padding-bottom: 40px !important;
+      border-bottom: 1px solid $black !important;
+    }
+  }
+
+  .items + .pagination-wrapper {
+    margin-top: 80px;
+    @container (max-width: #{$largest-mobile-screen}) {
+      margin-top: 60px;
+    }
+  }
+
+  .listing-item {
+    padding-bottom: 40px !important;
+    border-bottom: 1px solid $black;
+    margin-bottom: 40px;
+
+    a.external {
+      .listing-body h2:after {
+        @include external-link-icon();
+      }
+    }
+
+    &:last-child {
+      padding-bottom: 0 !important;
+      border-bottom: none !important;
+      margin-bottom: 0;
+    }
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  h2.headline {
+    @container (max-width: #{$default-container-width + 2 * 20px}) {
+      margin-right: 20px !important;
+      margin-left: 20px !important;
+    }
+  }
+
+  // Default variation
+  &.default {
+    .headline {
+      @include block-title();
+    }
+
+    .listing-item {
+      a {
+        .listing-body {
+          h2 {
+            color: $black;
+            @include text-heading-h2();
+          }
+          p {
+            margin-bottom: 0;
+            @include body-text();
+          }
+          p:empty {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  // Summary variation
+  &.summary {
+    .listing-item {
+      padding-top: 0 !important;
+
+      img {
+        width: 220px;
+        height: min-content;
+        aspect-ratio: $aspect-ratio !important;
+        @container (max-width: #{$largest-mobile-screen}) {
+          width: 100%;
+          min-width: 335px;
+          margin-bottom: 20px;
+        }
+      }
+      h3 {
+        margin-top: 0 !important;
+        margin-bottom: 40px !important;
+        color: $black;
+        @include text-heading-h2();
+        @container (max-width: #{$largest-mobile-screen}) {
+          @include text-heading-h3();
+          margin-bottom: 20px !important;
+        }
+      }
+    }
+  }
+
+  // Grid variation
+  &.grid {
+    &.next--has--same--backgroundColor.next--is--same--block-type,
+    &.next--is--__button {
+      .listing-item:last-child {
+        padding-bottom: 0 !important;
+        border-bottom: none !important;
+      }
+    }
+
+    .items {
+      display: flex;
+      flex-wrap: wrap;
+      @media only screen and (max-width: $largest-mobile-screen) {
+        flex-direction: column;
+
+        .listing-item {
+          padding-bottom: 20px !important;
+        }
+      }
+    }
+    .headline {
+      @include block-title();
+      margin-right: 0 !important;
+      margin-left: 0 !important;
+    }
+    .listing-item {
+      align-items: normal;
+      border-bottom: none;
+      margin: 0 !important;
+
+      @media only screen and (min-width: $tablet-breakpoint) {
+        width: 50%;
+        padding-top: 10px;
+        padding-bottom: 10px !important;
+
+        &:nth-child(2n) {
+          padding-left: 10px !important;
+        }
+
+        &:nth-child(2n + 1) {
+          padding-right: 10px !important;
+        }
+
+        &:last-child,
+        &:nth-last-child(2):not(:nth-child(2n)) {
+          padding-bottom: 0 !important;
+        }
+
+        &:first-child,
+        &:nth-child(2) {
+          padding-top: 0 !important;
+        }
+      }
+
+      &:last-child:nth-child(2n + 1) {
+        @media only screen and (min-width: $largest-mobile-screen) {
+          margin-left: 0 !important;
+        }
+      }
+
+      .card-container {
+        width: 100%;
+        height: 100% !important;
+        background-color: $lightgrey;
+      }
+
+      img.item-image {
+        width: 100%;
+        margin: 0;
+        aspect-ratio: $aspect-ratio !important;
+      }
+
+      .item {
+        margin-top: 40px;
+      }
+
+      .content {
+        padding: 0 20px 40px 20px;
+
+        .headline {
+          padding: 0 !important;
+          margin-bottom: 20px;
+          color: $black;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          @include headtitle1();
+          @include word-break();
+        }
+
+        h2 {
+          margin: 0 0 20px 0;
+          color: $black;
+          @include text-heading-h3();
+        }
+        p {
+          margin-bottom: 0;
+          @include body-text();
+        }
+        p:empty {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .image-gallery {
+    .ui.button {
+      margin: 0;
+      box-shadow: none !important;
+      color: black !important;
+      filter: none;
+
+      &.image-gallery-left-nav {
+        top: calc(50% - 47px);
+        left: -68px;
+      }
+
+      &.image-gallery-right-nav {
+        top: calc(50% - 47px);
+        right: -68px;
+      }
+
+      &.image-gallery-fullscreen-button,
+      &.image-gallery-play-button {
+        bottom: -94px;
+        border: solid 1px black;
+        border-radius: 0;
+
+        svg {
+          vertical-align: top;
+        }
+      }
+
+      &.image-gallery-play-button {
+        right: 49px;
+        left: auto;
+      }
+
+      .icon {
+        margin: 0;
+      }
+    }
+
+    & .fullscreen .ui.button {
+      color: white !important;
+
+      &.image-gallery-left-nav {
+        left: 20px;
+      }
+
+      &.image-gallery-right-nav {
+        right: 20px;
+      }
+    }
+
+    .image-gallery-description {
+      position: relative;
+      bottom: auto;
+      left: auto;
+      display: block;
+      padding: 25px 0 0 0;
+      background: none;
+      color: #666;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 18px;
+      text-align: left;
+      white-space: initial;
+
+      .title {
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+
+      .credits,
+      .download,
+      .download a {
+        min-height: 18px;
+        margin-top: 5px;
+        color: #0070a2;
+        font-size: 14px;
+        line-height: 18px;
+      }
+
+      .description {
+        min-height: 18px;
+      }
+
+      .download {
+        float: right;
+      }
+    }
+
+    .fullscreen .image-gallery-description {
+      color: white;
+    }
+
+    .image-gallery-thumbnails {
+      padding: 40px 0;
+
+      .image-gallery-thumbnail {
+        border: 0;
+        margin-left: 20px;
+        opacity: 0.5;
+
+        &.active,
+        &:hover,
+        &:focus {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .documentFirstHeading
+    + &.previous--has--same--backgroundColor:not(.has--headline) {
+    margin-top: 0;
+  }
+
+  // Pagination
+  .pagination-wrapper {
+    display: table;
+    margin: auto;
+    border-collapse: collapse;
+    @include body-text();
+
+    .ui.pagination.menu {
+      display: table-row;
+      margin-bottom: 30px;
+
+      .item {
+        display: table-cell;
+        min-width: 32px;
+        padding: 6.5px 10px;
+        border: solid 1px $black;
+        border-radius: 0;
+        border-collapse: collapse;
+        color: $black;
+
+        &:first-child,
+        &:last-child {
+          padding: 6.5px 15px 6.5px 15px;
+        }
+
+        &.active {
+          background-color: $black;
+          color: $white;
+        }
+      }
+
+      &.mobile-pagination {
+        display: none;
+      }
+
+      @container (max-width: #{$largest-mobile-screen}) {
+        &.mobile-pagination {
+          display: unset;
+        }
+
+        &.desktop-pagination {
+          display: none;
+        }
+      }
+    }
+
+    .total {
+      display: table-caption;
+      margin-top: 30px;
+      caption-side: bottom;
+      text-align: center;
+    }
+  }
+
+  // To overwrite semantic ui .grid negative margin rule
+  .ui.grid {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+#page-add .block-editor-listing,
+#page-edit .block-editor-listing {
+  .block.listing {
+    margin-top: 0;
+    .items {
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    h2.headline {
+      @include default-container-width();
+      margin-right: auto !important;
+      margin-left: auto !important;
+    }
+  }
+}
+
+#page-add .block-editor-listing.has--backgroundColor--grey,
+#page-edit .block-editor-listing.has--backgroundColor--grey,
+.block.listing.has--backgroundColor--grey {
+  background-color: $lightgrey;
+
+  &.grid {
+    .listing-item {
+      .card-container {
+        background-color: $white;
+      }
+    }
+  }
+  .block.listing.grid {
+    .listing-item {
+      .card-container {
+        background-color: $white;
+      }
+    }
+  }
+}

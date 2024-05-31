@@ -1,0 +1,133 @@
+// Override the Image component `aspect-ratio`
+.teaser-item .image-wrapper img {
+  aspect-ratio: $aspect-ratio !important;
+}
+
+// Block Teaser Standalone
+#page-document .block.teaser {
+  @include vertical-space-teaser();
+}
+
+.blocks-group-wrapper > .block.teaser,
+.block-editor-teaser .block.teaser {
+  // We want the image to extend in all its container width
+  height: 100%;
+
+  a.external {
+    .content h2:after {
+      @include external-link-icon();
+    }
+  }
+
+  .teaser-item.default {
+    align-items: start;
+    padding-bottom: 40px; // same as vertical spacing in margin-bottom
+    border-bottom: 1px solid $black;
+  }
+
+  .image-wrapper {
+    width: 100%;
+  }
+
+  &.has--align--left,
+  &.has--align--right {
+    .teaser-item.default {
+      display: flex;
+
+      .image-wrapper {
+        align-self: flex-start;
+      }
+
+      @media only screen and (max-width: $largest-mobile-screen) {
+        flex-direction: column !important;
+      }
+    }
+  }
+
+  &.has--align--left {
+    .teaser-item.default {
+      flex-direction: row;
+
+      .image-wrapper {
+        margin-right: 20px;
+
+        @media only screen and (max-width: $largest-mobile-screen) {
+          margin-right: 0;
+          margin-bottom: 26px;
+        }
+      }
+    }
+  }
+
+  &.has--align--right {
+    .teaser-item.default {
+      flex-direction: row-reverse;
+
+      .image-wrapper {
+        margin-right: 0px;
+        margin-left: 20px;
+
+        @media only screen and (max-width: $largest-mobile-screen) {
+          margin-bottom: 26px;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  &.has--align--center {
+    .teaser-item.default {
+      display: block;
+      a {
+        display: block;
+      }
+
+      .image-wrapper {
+        margin-bottom: 26px;
+        @container (max-width: #{$largest-mobile-screen}) {
+          margin: 0 0 20px 0 !important;
+        }
+      }
+    }
+  }
+
+  .content {
+    .headline {
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      @include headtitle1();
+    }
+    h2 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      @include text-heading-h2();
+      @container (max-width: #{$largest-mobile-screen}) {
+        @include text-heading-h3();
+        margin-bottom: 20px;
+      }
+    }
+    p {
+      margin: 0;
+      @include body-text();
+    }
+  }
+
+  &.is--last--of--block-type,
+  &.next--has--different--backgroundColor {
+    .teaser-item.default {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    &.next--is--__button {
+      .teaser-item.default {
+        padding-bottom: 40px;
+        border-bottom: 1px solid $black;
+      }
+    }
+  }
+}
+
+#page-edit .block-editor-teaser.has--backgroundColor--grey {
+  background-color: $lightgrey;
+}

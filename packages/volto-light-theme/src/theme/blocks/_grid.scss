@@ -1,0 +1,356 @@
+.block.gridBlock,
+#page-edit .block-editor-gridBlock .block.gridBlock,
+#page-add .block-editor-gridBlock .block.gridBlock {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  &.is--first--of--block-type,
+  &.previous--is--same--block-type.previous--has--different--backgroundColor {
+    @media only screen and (min-width: $largest-mobile-screen) {
+      .ui.stackable.grid > .column {
+        padding-top: 0 !important;
+      }
+    }
+    .ui.stackable.grid > .column:first-child {
+      padding-top: 0 !important;
+    }
+  }
+
+  &.is--last--of--block-type,
+  &.next--is--same--block-type.next--has--different--backgroundColor {
+    @media only screen and (min-width: $largest-mobile-screen) {
+      .ui.stackable.grid > .column {
+        padding-bottom: 0 !important;
+      }
+    }
+    .ui.stackable.grid > .column:last-child {
+      padding-bottom: 0 !important;
+    }
+  }
+
+  // Override the Image component `aspect-ratio`
+  .block.image img {
+    aspect-ratio: $aspect-ratio !important;
+  }
+
+  .block.teaser {
+    margin-bottom: 0;
+    background-color: $lightgrey;
+
+    // External link icon
+    a.external {
+      .content h2:after {
+        @include external-link-icon();
+      }
+    }
+
+    .teaser-item {
+      height: 100%;
+
+      .image-wrapper {
+        margin-bottom: 40px;
+
+        img {
+          position: relative;
+        }
+      }
+      .content {
+        padding: 0 20px 20px 20px;
+        @include body-text();
+
+        .headline {
+          margin-bottom: 20px;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          @include headtitle1();
+        }
+
+        h2 {
+          padding: 0;
+          margin-bottom: 20px !important;
+          @include text-heading-h3();
+        }
+
+        p {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
+  .block-editor-teaser {
+    padding: 0;
+    margin: 10px;
+
+    .ui.block.inner.teaser {
+      .block.teaser > .block.teaser > .teaser-item.default {
+        padding-bottom: 0;
+        border: none;
+        margin-right: auto;
+        margin-left: auto;
+      }
+    }
+  }
+
+  .slate:not(.inner) {
+    padding: 40px 20px 20px 20px;
+    margin: 0;
+    background-color: $lightgrey;
+
+    p {
+      padding: 0;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      margin-bottom: 20px !important;
+      @include text-heading-h3();
+    }
+  }
+
+  .block-editor-slate {
+    padding: 0;
+    margin: 0.5rem !important;
+    .text-slate-editor-inner > .slate-editor {
+      max-width: inherit !important;
+      margin-right: auto !important;
+      margin-left: auto !important;
+    }
+  }
+
+  .block.image {
+    figcaption {
+      position: absolute;
+      z-index: 100;
+      bottom: 0;
+      padding: 0 1rem 0 1rem;
+      margin: 0;
+
+      .title {
+        margin: 0 0 20px 0;
+        color: $white !important;
+        letter-spacing: 1px;
+        @include text-heading-h3();
+      }
+
+      .description {
+        display: none;
+      }
+
+      .credits {
+        margin-bottom: 0;
+        color: $white !important;
+        font-size: 10px;
+      }
+    }
+    img {
+      z-index: revert !important;
+    }
+    figure {
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      margin: 0 !important;
+    }
+
+    figure:after {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 76px;
+      background: $black;
+
+      content: '';
+      opacity: 0.75;
+    }
+  }
+
+  .block-editor-image {
+    padding: 0;
+    margin: 0.5rem !important;
+  }
+
+  .block.listing {
+    &.previous--has--same--backgroundColor:not(.has--headline) {
+      margin-top: 0;
+    }
+    h2 {
+      margin-bottom: 40px !important;
+    }
+    &.previous--is--same--block-type.previous--has--same--backgroundColor:not(
+        .has--headline
+      ) {
+      margin-top: unset;
+    }
+    &:not(.grid) {
+      .listing-item,
+      .listing-item:last-child {
+        padding-bottom: 40px !important;
+        border-bottom: 1px solid $black !important;
+      }
+    }
+
+    &.grid {
+      .listing-item {
+        padding-bottom: 10px !important;
+        border-bottom: none !important;
+
+        &:last-child {
+          padding-bottom: 0 !important;
+          border-bottom: none !important;
+        }
+      }
+    }
+  }
+
+  .block-editor-empty {
+    padding: 0;
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem !important;
+  }
+}
+
+#page-edit .block-editor-gridBlock,
+#page-add .block-editor-gridBlock {
+  h2.headline {
+    margin-left: 10px !important;
+  }
+}
+
+// Dynamic font sizes depending on number of columns for in-grid blocks
+#page-document .block.gridBlock,
+#page-edit .block-editor-gridBlock .block.gridBlock,
+#page-add .block-editor-gridBlock .block.gridBlock {
+  @media only screen and (min-width: $largest-mobile-screen) {
+    .one {
+      .block.teaser .teaser-item .content h2 {
+        margin-bottom: 40px !important;
+        @include text-heading-h2();
+      }
+
+      .slate {
+        h2 {
+          margin-bottom: 40px !important;
+          @include text-heading-h2();
+        }
+      }
+
+      .image {
+        figcaption {
+          .title {
+            @include text-heading-h2();
+          }
+        }
+      }
+    }
+
+    .two,
+    .three {
+      .teaser {
+        .teaser-item .content {
+          h2 {
+            margin-bottom: 20px !important;
+            @include text-heading-h3();
+          }
+        }
+      }
+      .image {
+        figcaption {
+          .title {
+            @include text-heading-h3();
+            @include word-break();
+            margin: 0 0 20px 0;
+          }
+        }
+        figure:after {
+          height: 70px;
+        }
+      }
+      .slate {
+        h2 {
+          margin-bottom: 20px !important;
+          @include text-heading-h3();
+        }
+      }
+    }
+
+    .four {
+      .teaser {
+        .teaser-item {
+          .image-wrapper {
+            margin-bottom: 20px !important;
+          }
+          .content {
+            .headline {
+              @include headtitle2();
+            }
+            h2 {
+              margin-bottom: 20px !important;
+              @include text-heading-h4();
+            }
+            p {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+
+      .image {
+        figcaption {
+          .title {
+            margin: 0 0 15px 0;
+            color: $white !important;
+            letter-spacing: 1px;
+            @include text-heading-h4();
+          }
+        }
+        figure:after {
+          height: 59px;
+        }
+      }
+
+      .slate {
+        h2 {
+          margin-bottom: 20px !important;
+          @include text-heading-h4();
+        }
+
+        p {
+          margin-bottom: 0;
+        }
+
+        padding-top: 20px !important;
+      }
+    }
+  }
+}
+
+.block.gridBlock.has--backgroundColor--grey,
+#page-add .block-editor-gridBlock.has--backgroundColor--grey,
+#page-edit .block-editor-gridBlock.has--backgroundColor--grey {
+  background-color: $lightgrey;
+  .teaser-item {
+    background: white;
+  }
+  .slate {
+    background-color: $white;
+  }
+
+  .slate-editor {
+    background-color: $white !important;
+  }
+
+  .slate:not(.inner) {
+    background-color: $white !important;
+  }
+
+  .grid-block-image {
+    .block.image {
+      background: white;
+    }
+  }
+}
+
+// Teasers in grids specific
+#page-document .block.gridBlock .block.teaser {
+  margin-bottom: 0;
+}
