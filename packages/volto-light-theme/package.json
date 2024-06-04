@@ -47,7 +47,7 @@
     "@kitconcept/volto-slider-block"
   ],
   "dependencies": {
-    "@plone/components": "2.0.0-alpha.6"
+    "@plone/components": "workspace:*"
   },
   "peerDependencies": {
     "@eeacms/volto-accordion-block": "^10.4.6",
