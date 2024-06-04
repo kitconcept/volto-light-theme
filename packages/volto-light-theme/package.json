@@ -37,15 +37,6 @@
     "@plone/scripts": "^3.6.1",
     "release-it": "^17.1.1"
   },
-  "peerAddons": [
-    "@eeacms/volto-accordion-block",
-    "@kitconcept/volto-button-block",
-    "@kitconcept/volto-heading-block",
-    "@kitconcept/volto-highlight-block",
-    "@kitconcept/volto-introduction-block",
-    "@kitconcept/volto-separator-block",
-    "@kitconcept/volto-slider-block"
-  ],
   "dependencies": {
     "@plone/components": "workspace:*"
   },
