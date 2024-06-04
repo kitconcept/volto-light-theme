@@ -29,7 +29,7 @@ jobs:
           ENVIRONMENT=${{ env.ENVIRONMENT }}
           echo "ENVIRONMENT=${ENVIRONMENT}" >> $GITHUB_OUTPUT
           echo "STACK_NAME=${ENVIRONMENT//./-}" >> $GITHUB_OUTPUT
-          python3 -c 'import json; data = json.load(open("./mrs.developer.json")); print("VOLTO_VERSION=" + data["core"].get('tag') or 'latest')' >> $GITHUB_OUTPUT
+          python3 -c 'import json; data = json.load(open("./mrs.developer.json")); print("VOLTO_VERSION=" + data["core"].get("tag") or "latest")' >> $GITHUB_OUTPUT
 
       - run: echo "${{ steps.vars.outputs.VOLTO_VERSION }}"
 
