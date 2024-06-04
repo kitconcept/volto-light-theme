@@ -1420,8 +1420,8 @@ importers:
         specifier: ^6.3.1
         version: 6.3.1(@plone/volto@core+packages+volto)(embla-carousel@8.0.0)(react@18.2.0)
       '@plone/components':
-        specifier: 2.0.0-alpha.6
-        version: 2.0.0-alpha.6(react-dom@18.2.0)(react@18.2.0)
+        specifier: workspace:*
+        version: link:../../core/packages/components
     devDependencies:
       '@plone/scripts':
         specifier: ^3.6.1
@@ -6193,23 +6193,6 @@ packages:
     resolution: {integrity: sha512-cq8o4cWH0ibXh9VGi5P20Tu9XF/0fFXl9EUinr9QfTM7a7p0oTA4iJRCQWppXR1Pg8dSM0UCItCkPwsk9qWWYA==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
     dev: true
-
-  /@plone/components@2.0.0-alpha.6(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-0z4lCUA0o59xe68nw8NVDvQ7sxJxDOTO+djZBsPfRkddAq+5kW93XVqrlNr+av2FAzAkWG1uR/yFL7dtcWnyPQ==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-    peerDependenciesMeta:
-      react-dom:
-        optional: true
-    dependencies:
-      '@react-aria/utils': 3.23.2(react@18.2.0)
-      '@react-spectrum/utils': 3.11.5(react@18.2.0)
-      clsx: 2.1.0
-      react: 18.2.0
-      react-aria-components: 1.2.1(react-dom@18.2.0)(react@18.2.0)
-      react-dom: 18.2.0(react@18.2.0)
-    dev: false
 
   /@pmmmwh/react-refresh-webpack-plugin@0.4.3(react-refresh@0.9.0)(webpack-dev-server@4.11.1)(webpack@5.90.1):
     resolution: {integrity: sha512-br5Qwvh8D2OQqSXpd1g/xqXKnK0r+Jz6qVKBbWmpUcrbGOxUrf39V5oZ1876084CGn18uMdR5uvPqBv9UqtBjQ==}

@@ -2,7 +2,8 @@ name: Acceptance tests
 on: [push, pull_request]
 
 env:
-  node-version: 20.x
+  NODE_VERSION: 20.x
+  CYPRESS_RETRIES: 2
 
 jobs:
 
@@ -12,18 +13,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Use Node.js ${{ env.node-version }}
+      - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ env.node-version }}
+          node-version: ${{ env.NODE_VERSION }}
 
-      - uses: pnpm/action-setup@v3
-        name: Install pnpm
-        with:
-          version: 8
-          # We don't want to install until later,
-          # when the cache and Cypress are in place
-          run_install: false
+      - name: Enable corepack
+        run: corepack enable
 
       - name: Get pnpm store directory
         shell: bash
@@ -43,7 +39,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.cache/Cypress
-          key: binary-${{ env.node-version }}-${{ hashFiles('pnpm-lock.yaml') }}
+          key: binary-${{ env.NODE_VERSION }}-${{ hashFiles('pnpm-lock.yaml') }}
 
       - name: Install dependencies
         run: make install
@@ -57,8 +53,8 @@ jobs:
         name: Start Servers
         with:
           run: |
-            make start-test-acceptance-server-ci &
-            make start-test-acceptance-frontend &
+            make ci-acceptance-backend-start &
+            make acceptance-frontend-prod-start &
           # your step-level and job-level environment variables are available to your commands as-is
           # npm install will count towards the wait-for timeout
           # whenever possible, move unrelated scripts to a different step
@@ -85,7 +81,7 @@ jobs:
 
           # working-directory: backend
 
-      - run: make test-acceptance-headless
+      - run: make ci-acceptance-test
 
       # Upload Cypress screenshots
       - uses: actions/upload-artifact@v3
@@ -107,18 +103,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Use Node.js 20.x
+      - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v4
         with:
-          node-version: 20.x
+          node-version: ${{ env.NODE_VERSION }}
 
-      - uses: pnpm/action-setup@v3
-        name: Install pnpm
-        with:
-          version: 8
-          # We don't want to install until later,
-          # when the cache and Cypress are in place
-          run_install: false
+      - name: Enable corepack
+        run: corepack enable
 
       - name: Get pnpm store directory
         shell: bash
@@ -152,8 +143,8 @@ jobs:
         name: Start Servers
         with:
           run: |
-            make start-test-acceptance-server-a11y-ci &
-            make start-test-acceptance-frontend-a11y &
+            make ci-acceptance-a11y-backend-start &
+            make acceptance-a11y-frontend-prod-start &
           # your step-level and job-level environment variables are available to your commands as-is
           # npm install will count towards the wait-for timeout
           # whenever possible, move unrelated scripts to a different step
@@ -180,7 +171,7 @@ jobs:
 
           # working-directory: backend
 
-      - run: make test-acceptance-headless-a11y
+      - run: make ci-acceptance-a11y-test
 
       # Upload Cypress screenshots
       - uses: actions/upload-artifact@v3
