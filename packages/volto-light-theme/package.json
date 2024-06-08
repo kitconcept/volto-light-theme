@@ -52,7 +52,8 @@
   ],
   "dependencies": {
     "@plone/components": "2.0.0-alpha.7",
-    "classnames": "2.5.1"
+    "classnames": "2.5.1",
+    "react-aria-components": "^1.1.1"
   },
   "peerDependencies": {
     "@eeacms/volto-accordion-block": "^10.4.6",

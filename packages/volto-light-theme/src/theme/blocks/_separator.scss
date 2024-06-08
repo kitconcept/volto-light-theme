@@ -1,37 +1,22 @@
-#page-document .block.separator {
-  padding: 0 !important;
-  // cancel the original spacings from the add-on
-  margin-top: 0;
-  margin-bottom: 0;
-
-  &.has--align--center {
-    max-width: unset !important;
+.block.separator.category-separator {
+  .line {
+    width: 100%;
   }
-
-  &.has--align--center,
-  &.inner {
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  &:not(:has(.block-inner-container)) {
-    @include vertical-space-separator();
-  }
-}
-
-#page-edit .block-editor-separator {
-  &.has--backgroundColor--grey {
-    background-color: $lightgrey;
-  }
-  .block.separator {
-    &.inner {
-      margin-right: auto;
-      margin-left: auto;
-
-      .block.separator {
-        margin-right: auto;
-        margin-left: auto;
-      }
+  &.has--shortLine--true {
+    .line {
+      width: 165px;
     }
+  }
+
+  & > .block-inner-container {
+    min-width: var(--narrow-container-width) !important;
+  }
+
+  @include variable-block-alignment();
+
+  // Cancel the original spacings from the add-on
+  margin: 0;
+  &:not(.inner):not([role='presentation']) {
+    padding: unset !important;
   }
 }

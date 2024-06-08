@@ -2,6 +2,9 @@
   --layout-container-width: #{$layout-container-width};
   --default-container-width: #{$default-container-width};
   --narrow-container-width: #{$narrow-container-width};
+  --align-left: start;
+  --align-center: center;
+  --align-right: end;
 }
 
 @mixin narrow-container-width() {
@@ -35,6 +38,26 @@
   margin-left: auto;
 }
 
+@mixin variable-block-alignment() {
+  &.left {
+    & > .block-inner-container {
+      justify-content: start;
+    }
+  }
+
+  &.center {
+    & > .block-inner-container {
+      justify-content: center;
+    }
+  }
+
+  &.right {
+    & > .block-inner-container {
+      justify-content: end;
+    }
+  }
+}
+
 // One still cannot use CSS custom properties directly on @container queries
 @mixin adjustMarginsToContainer($width) {
   @container (max-width: #{$width + 2 * $horizontal-space-small-screens}) {
@@ -45,8 +68,8 @@
 
 @mixin adjustMarginsToEditContainer($width) {
   @container (max-width: #{$width + 2 * $spacing-medium}) {
-    margin-right: $spacing-medium;
-    margin-left: $spacing-medium;
+    margin-right: 0;
+    margin-left: 0;
   }
 }
 
@@ -96,22 +119,12 @@ footer {
   @include adjustMarginsToContainer($layout-container-width);
 }
 
-.has--align--center {
-  @include narrow-container-width();
-}
-
-.has--align--wide {
-  @include default-container-width();
-}
-
-.has--align--full {
-  @include layout-container-width();
-}
-
 // Container defaults definitions for elements
 // BMv3 compliant, we target the block inner container only
 .block-inner-container {
   @include layout-container-width();
+  display: flex;
+  justify-content: var(--block-alignment, start);
 
   // Default spacing between sibling blocks
   padding-bottom: $block-vertical-space;
@@ -175,7 +188,7 @@ External link removal for all the blocks.
   }
 }
 
-// Blocks spacial relationships by category
+// Blocks spatial relationships by category
 .category-heading {
   .block-inner-container {
     @include default-container-width();
@@ -208,6 +221,12 @@ External link removal for all the blocks.
       padding-bottom: $spacing-large !important;
     }
   }
+
+  &:has(+ .category-heading) {
+    .block-inner-container {
+      padding-bottom: $spacing-large !important;
+    }
+  }
 }
 
 .category-action {
@@ -225,6 +244,7 @@ External link removal for all the blocks.
 
 .category-separator {
   .block-inner-container {
+    @include variable-container-width();
     padding-top: $spacing-xlarge;
     padding-bottom: $spacing-xlarge;
   }
@@ -232,17 +252,6 @@ External link removal for all the blocks.
 
 // Content Layout Styling
 #page-document {
-  // & > h2,
-  // & > h3,
-  // & > h4,
-  // & > h5,
-  // & > h6,
-  // & > ul,
-  // & > ol,
-  // & > li,
-  // & > p,
-  // & > span,
-  // & > blockquote,
   & > .block.image.align.left.medium,
   & > .block.image.align.left.small,
   & > .block.image.align.right.medium,
@@ -256,10 +265,6 @@ External link removal for all the blocks.
   .block.image.align.center figure,
   .event-details,
   .download-event,
-  .block.separator.has--align--left .block-inner-container,
-  .block.separator.has--align--center .block-inner-container,
-  .block.separator.has--align--left .line,
-  .block.separator.has--align--center .line,
   & > pre,
   & > .block.code {
     @include narrow-container-width();
@@ -268,7 +273,6 @@ External link removal for all the blocks.
     @include adjustMarginsToContainer($narrow-container-width);
   }
 
-  & > h1.documentFirstHeading,
   & > .block.image.align.left,
   & > .block.image.align.right,
   & > .block.image.align.center,
@@ -287,18 +291,12 @@ External link removal for all the blocks.
   & > .block.listing.grid,
   & > .block.search.grid,
   & > .block.search .searchBlock-container,
-  & > .block h2.headline,
-  & > .block.heading .heading-wrapper,
-  & > .block.separator.has--align--full .block-inner-container,
-  & > .block.separator.has--align--full .line,
   & > .block.introduction .block-container,
-  // & > .block.__button.has--buttonAlign--wide .button.container,
   & > .block.teaser .teaser-item.default,
   & > .block.highlight .teaser-description-title,
   & > table,
   & > .table-of-contents,
-  & > .accordion-block,
-  & > .slate blockquote {
+  & > .accordion-block {
     @include default-container-width();
     @include adjustMarginsToContainer($default-container-width);
   }
@@ -319,109 +317,28 @@ External link removal for all the blocks.
       width: 100%;
     }
   }
-
-  & > h1.documentFirstHeading {
-    @include adjustMarginsToContainer($default-container-width);
-  }
-
-  & > .block {
-    // This is the default, same color spacing for all blocks
-    margin-bottom: 0;
-  }
 }
 
 // Setting a default, for all blocks
 // We want all blocks in edit go layout by default
 // But block's inner containers can go less (eg. grid)
 // Excluding the contained (blocks in block) ones
-#page-add,
-#page-edit {
-  [class*='block-editor-']:not(.contained) {
-    @include layout-container-width();
-    @include adjustMarginsToEditContainer($layout-container-width);
-  }
-}
+// #page-add,
+// #page-edit {
+//   .block {
+//     // max-width: calc(100vw - 7%);
+//     margin-right: auto;
+//     margin-left: auto;
+//     @include adjustMarginsToEditContainer($layout-container-width);
+//   }
+// }
 
 // Add/Edit views
 #page-add,
 #page-edit {
-  // .block.slate .slate-editor,
-  .block-editor-image.left.medium,
-  .block-editor-image.left.small,
-  .block-editor-image.right.medium,
-  .block-editor-image.right.small,
-  .block-editor-image.center figure,
-  .block-editor-video.align.left,
-  .block-editor-video.align.right,
-  .block-editor-video.center .video-inner,
-  .block.maps.align.center .maps-inner,
-  .block-editor-separator.has--align--left
-    .block.inner
-    .block.separator
-    .block-inner-container,
-  .block-editor-separator.has--align--left
-    .block.separator.inner
-    .block.separator
-    .block.separator
-    .line,
-  .block-editor-separator.has--align--center
-    .block.inner
-    .block.separator
-    .block-inner-container,
-  .block-editor-separator.has--align--center
-    .block.separator.inner
-    .block.separator
-    .block.separator
-    .line,
-  .block-editor-codeBlock,
-  .block-editor-mermaidBlock {
-    @include narrow-container-width();
-    @include adjustMarginsToEditContainer($narrow-container-width);
-  }
-
-  .block-editor-title h1,
-  .block-editor-image.left.large,
-  .block-editor-image.right.large,
-  .block-editor-image.wide figure, // Wide images are always large
-  .block-editor-image.wide.large figure,
-  .block-editor-video.align.left,
-  .block-editor-video.align.right,
-  .block.maps.align.left,
-  .block.maps.align.right,
-  .block.video.align.wide .video-inner,
-  .block.maps.align.wide .maps-inner,
-
-  .block.introduction .slate-editor,
-  .block.heading .heading-wrapper,
-  .block-editor-listing .items,
-  .block-editor-listing .listing.message,
-  .block-editor-search .searchBlock-container,
-  .block-editor-separator.has--align--full .block.separator .line,
-  .block.teaser.has--align--center,
-  .block.eventMetadata .details-container,
-  .block-editor-teaser .teaser-item.default,
-  .block-editor-slateTable .block.table,
-  .block-editor-highlight .teaser-description-title,
-  .block-editor-toc .table-of-contents {
-    @include default-container-width();
-    @include adjustMarginsToEditContainer($default-container-width);
-  }
-
-  .block-editor-slate,
-  .block-editor-image,
-  .block-editor-slider,
-  .block-editor-teaser,
-  .block-editor-separator.has--align--left {
-    @include layout-container-width();
-    @include adjustMarginsToEditContainer($layout-container-width);
-  }
-
-  /* Styling align left and right in mobile view */
-  .block.video.align.right .video-inner,
-  .block.video.align.left .video-inner {
-    @container (max-width: #{$largest-mobile-screen}) {
-      width: 100%;
-    }
+  // Remove default space between blocks
+  [data-rbd-draggable-context-id] {
+    margin-bottom: 0;
   }
 }
 
@@ -464,13 +381,125 @@ External link removal for all the blocks.
   max-width: unset;
 }
 
-// handlers adjustments
-body.has-toolbar.has-sidebar .drag.handle.wrapper {
-  margin-left: -30px !important;
-}
+// Block controls and selection in Edit mode
+.block {
+  // Add Block button
+  button.ui.basic.icon.button.block-add-button.new-add-block {
+    bottom: -11px;
+    z-index: 99;
+    color: rgb(0, 112, 162) !important;
+    background: $white !important;
+  }
+  // Block controls
+  .block-controls {
+    z-index: 99;
+    top: 0;
+    position: absolute;
+    display: flex;
+    justify-content: end;
+    flex-direction: row-reverse;
+    width: 100%;
 
-body.has-toolbar.has-sidebar .block .ui.basic.button.delete-button {
-  margin-right: -30px !important;
+    .ui.basic.button.delete-button {
+      background: $white !important;
+      border-radius: 50% !important;
+      margin-right: 8px !important;
+      margin-top: 6px !important;
+      padding: 3px;
+      position: relative;
+
+      &:hover {
+        background: $white !important;
+        opacity: 1 !important;
+      }
+    }
+
+    .ui.basic.button.move-down-button {
+      background: $white !important;
+      border-radius: 50% !important;
+      margin-right: 8px;
+      margin-top: 6px !important;
+      padding: 3px;
+      border: none;
+      &:hover {
+        background: $white !important;
+        opacity: 1 !important;
+      }
+    }
+
+    .ui.basic.button.move-up-button {
+      background: $white !important;
+      border-radius: 50% !important;
+      margin-right: 8px !important;
+      margin-top: 6px !important;
+      padding: 3px;
+      border: none;
+      &:hover {
+        background: $white !important;
+        opacity: 1 !important;
+      }
+    }
+  }
+
+  &:hover {
+    .border-line {
+      background-color: rgb(0, 112, 162, 0.5);
+    }
+  }
+
+  &.selected .border-line,
+  &.multiSelected .border-line {
+    background-color: rgb(0, 112, 162);
+  }
+
+  &.multiSelected:has(+ .block.multiSelected) {
+    .border-bottom {
+      background-color: transparent;
+      background-image: linear-gradient(
+        to right,
+        rgb(0, 112, 162),
+        rgb(0, 112, 162) 5px,
+        transparent 5px,
+        transparent
+      );
+      background-size: 10px 100%;
+    }
+  }
+
+  &.multiSelected + .block.multiSelected {
+    .border-top {
+      display: none;
+    }
+  }
+
+  .border-line {
+    position: absolute;
+    content: '';
+    background-color: transparent;
+    z-index: 98;
+    &.border-top {
+      width: 100%;
+      height: 2px;
+      top: -1px;
+    }
+    &.border-bottom {
+      width: 100%;
+      height: 2px;
+      bottom: -1px;
+    }
+    &.border-left {
+      width: 2px;
+      height: 100%;
+      left: 0;
+      top: 0;
+    }
+    &.border-right {
+      width: 2px;
+      height: 100%;
+      right: 0;
+      top: 0;
+    }
+  }
 }
 
 // Listings edge case, conflicting with Pastanaga CSS
@@ -488,11 +517,12 @@ body.has-toolbar.has-sidebar .block .ui.basic.button.delete-button {
 
 #page-add,
 #page-edit {
-  .block-editor-accordion {
-    [class*='block-editor-'] {
-      margin-right: 0;
-      margin-left: 0;
-    }
+  // To fix Slate placeholder flex direction
+  .block
+    .block-inner-container:has(
+      .text-slate-editor-inner span[data-slate-placeholder='true']
+    ) {
+    flex-direction: column;
   }
 }
 

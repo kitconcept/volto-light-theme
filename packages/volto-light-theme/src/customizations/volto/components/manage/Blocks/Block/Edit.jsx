@@ -1,6 +1,6 @@
 /**
  * OVERRIDE: Edit.jsx
- * REASON: Adding BlockModelv3 wrappers and category className
+ * REASON: Adding BlockModelv3 wrappers
  * FILE: https://github.com/kitconcept/volto-slider-block/blob/master/src/components/DefaultBody.jsx
  * DATE: 2024-02-01
  * DEVELOPER: @sneridagh
@@ -16,7 +16,6 @@ import config from '@plone/volto/registry';
 import withObjectBrowser from '@plone/volto/components/manage/Sidebar/ObjectBrowser';
 import { applyBlockDefaults } from '@plone/volto/helpers';
 import { ViewDefaultBlock, EditDefaultBlock } from '@plone/volto/components';
-import MaybeWrap from '@plone/volto/components/manage/MaybeWrap/MaybeWrap';
 
 import {
   SidebarPortal,
@@ -136,11 +135,6 @@ export class Edit extends Component {
     const blockHasOwnFocusManagement =
       blocksConfig?.[type]?.['blockHasOwnFocusManagement'] || null;
 
-    // START CUSTOMIZATION
-    const isBlockModelv3 = blocksConfig?.[type]?.blockModel === 3;
-    const category = blocksConfig?.[type]?.category;
-    // END CUSTOMIZATION
-
     return (
       <>
         {Block !== null ? (
@@ -166,35 +160,17 @@ export class Edit extends Component {
                     )
                 : null
             }
-            className={cx(
-              'block',
-              type,
-              { [`category-${category}`]: category },
-              this.props.data.variation,
-              {
-                selected: this.props.selected || this.props.multiSelected,
-                multiSelected: this.props.multiSelected,
-              },
-            )}
-            style={{ outline: 'none' }}
+            className={`${blocksConfig?.[type]?.blockModel === 3 && 'block-inner-container'} ${this.props.data.variation ? this.props.data.variation : ''}`}
             ref={this.blockNode}
             // The tabIndex is required for the keyboard navigation
             /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
             tabIndex={!blockHasOwnFocusManagement ? -1 : null}
           >
-            {/* START CUSTOMIZATION */}
-            <MaybeWrap
-              condition={isBlockModelv3}
-              as="div"
-              className="block-inner-container"
-            >
-              {/* END CUSTOMIZATION */}
-              <Block
-                {...this.props}
-                blockNode={this.blockNode}
-                data={applyBlockDefaults(this.props)}
-              />
-            </MaybeWrap>
+            <Block
+              {...this.props}
+              blockNode={this.blockNode}
+              data={applyBlockDefaults(this.props)}
+            />
             {this.props.manage && (
               <SidebarPortal
                 selected={this.props.selected}
@@ -221,7 +197,11 @@ export class Edit extends Component {
                     )
                 : null
             }
-            className={cx(`block ${type}`, { selected: this.props.selected })}
+            className={cx({
+              type: type,
+              selected: this.props.selected,
+              multiSelected: this.props.multiSelected,
+            })}
             style={{ outline: 'none' }}
             ref={this.blockNode}
             // The tabIndex is required for the keyboard navigation
