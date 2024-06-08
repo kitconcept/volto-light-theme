@@ -1,10 +1,6 @@
-.block.slate.has--backgroundColor--grey,
-#page-add .block-editor-slate.has--backgroundColor--grey,
-#page-edit .block-editor-slate.has--backgroundColor--grey {
-  background-color: $lightgrey;
-}
-
 .block.slate {
+  min-height: 40px;
+
   .block-inner-container {
     :first-child {
       margin-top: 0 !important;
@@ -28,5 +24,11 @@
         padding-top: $spacing-medium;
       }
     }
+  }
+  
+  // Slash Menu
+  .slate-editor.selected .power-user-menu {
+    left: unset !important;
+    z-index: 100;
   }
 }

@@ -12,7 +12,7 @@ const messages = defineMessages({
 export const defaultStylingSchema = ({ schema, formData, intl }) => {
   // TODO: remove and use the config.settings.backgroundColors as default below too
   const BG_COLORS = [
-    { name: 'transparent', label: 'Transparent' },
+    { name: 'white', label: 'White' },
     { name: 'grey', label: 'Grey' },
   ];
 

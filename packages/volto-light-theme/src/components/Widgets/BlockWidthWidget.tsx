@@ -8,25 +8,17 @@ import imageFullSVG from '@plone/volto/icons/image-full.svg';
 import type { IntlShape } from 'react-intl';
 
 const messages = defineMessages({
-  left: {
-    id: 'Left',
-    defaultMessage: 'Left',
-  },
-  right: {
-    id: 'Right',
-    defaultMessage: 'Right',
-  },
-  center: {
-    id: 'Center',
-    defaultMessage: 'Center',
-  },
   narrow: {
     id: 'Narrow',
     defaultMessage: 'Narrow',
   },
   default: {
-    id: 'Wide',
-    defaultMessage: 'Wide',
+    id: 'Default',
+    defaultMessage: 'Default',
+  },
+  layout: {
+    id: 'Layout',
+    defaultMessage: 'Layout',
   },
   full: {
     id: 'Full',
@@ -35,9 +27,9 @@ const messages = defineMessages({
 });
 
 export const defaultActionsInfo = ({ intl }: { intl: IntlShape }) => ({
-  center: [imageFitSVG, intl.formatMessage(messages.center)],
   narrow: [imageNarrowSVG, intl.formatMessage(messages.narrow)],
-  default: [imageWideSVG, intl.formatMessage(messages.default)],
+  default: [imageFitSVG, intl.formatMessage(messages.default)],
+  layout: [imageWideSVG, intl.formatMessage(messages.layout)],
   full: [imageFullSVG, intl.formatMessage(messages.full)],
 });
 
@@ -60,8 +52,15 @@ const DEFAULT_ACTIONS = [
     style: {
       '--block-width': 'var(--layout-container-width)',
     },
-    name: 'full',
+    name: 'layout',
     label: 'Layout',
+  },
+  {
+    style: {
+      '--block-width': 'unset',
+    },
+    name: 'full',
+    label: 'Full',
   },
 ];
 
