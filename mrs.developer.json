@@ -22,11 +22,12 @@
     "https": "https://github.com/kitconcept/volto-dsgvo-banner.git"
   },
   "volto-heading-block": {
-    "develop": false,
+    "develop": true,
     "output": "packages",
     "package": "@kitconcept/volto-heading-block",
     "url": "git@github.com:kitconcept/volto-heading-block.git",
-    "https": "https://github.com/kitconcept/volto-heading-block.git"
+    "https": "https://github.com/kitconcept/volto-heading-block.git",
+    "branch": "blockModelV3"
   },
   "volto-highlight-block": {
     "develop": false,
@@ -43,7 +44,7 @@
     "https": "https://github.com/kitconcept/volto-introduction-block.git"
   },
   "volto-separator-block": {
-    "develop": false,
+    "develop": true,
     "output": "packages",
     "package": "@kitconcept/volto-separator-block",
     "url": "git@github.com:kitconcept/volto-separator-block.git",

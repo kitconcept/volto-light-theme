@@ -19,6 +19,7 @@ import TopSideFacets from './components/Blocks/Search/TopSideFacets';
 
 import GridListingBlockTemplate from './components/Blocks/Listing/GridTemplate';
 import { ButtonStylingSchema } from './components/Blocks/Button/schema';
+import { SeparatorStylingSchema } from './components/Blocks/Separator/schema';
 
 import { imageBlockSchemaEnhancer } from './components/Blocks/Image/schema';
 import { ImageBlockDataAdapter } from './components/Blocks/Image/adapter';
@@ -36,17 +37,7 @@ import { mapsBlockSchemaEnhancer } from './components/Blocks/Maps/schema';
 import { sliderBlockSchemaEnhancer } from './components/Blocks/Slider/schema';
 import EventMetadataView from './components/Blocks/EventMetadata/View';
 import BlockWidthWidget from './components/Widgets/BlockWidthWidget';
-
-import {
-  ImagefullIcon,
-  ImagerightIcon,
-  ImagefitIcon,
-  BoldIcon,
-  LinkIcon,
-  ItalicIcon,
-  ImageleftIcon,
-  BackgroundIcon,
-} from '@plone/components';
+import BlockAlignmentWidget from './components/Widgets/BlockAlignmentWidget';
 
 const BG_COLORS = [
   { name: 'white', label: 'White' },
@@ -103,6 +94,7 @@ const applyConfig = (config) => {
   ];
 
   config.widgets.widget.blockWidth = BlockWidthWidget;
+  config.widgets.widget.blockAlignment = BlockAlignmentWidget;
 
   // Initial block for event content type
   config.blocks.initialBlocks = {
@@ -359,6 +351,8 @@ const applyConfig = (config) => {
     allowed_headings: [['h2', 'h2']],
     colors: BG_COLORS,
     schemaEnhancer: defaultStylingSchema,
+    blockModel: config.settings.blockModel,
+    category: 'heading',
   };
 
   config.blocks.blocksConfig.search = {
@@ -402,10 +396,10 @@ const applyConfig = (config) => {
       ...config.blocks.blocksConfig.separator,
       schemaEnhancer: composeSchema(
         config.blocks.blocksConfig.separator.schemaEnhancer,
-        defaultStylingSchema,
+        SeparatorStylingSchema,
       ),
       colors: BG_COLORS,
-      blockModel: 3,
+      blockModel: config.settings.blockModel,
       category: 'separator',
     };
   }

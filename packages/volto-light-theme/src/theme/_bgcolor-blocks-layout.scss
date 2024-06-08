@@ -1,219 +1,46 @@
 .block {
-  // Add padding-top to Outer container & remove padding-top from Inner container if previous block has different BG color
-  &.previous--has--different--backgroundColor {
-    padding-top: $color-block-change-vertical-spacing;
-
-    .block-inner-container {
-      padding-top: 0 !important;
-    }
-
-    @container (max-width: #{$largest-mobile-screen}) {
-      padding-top: 60px !important;
-    }
-  }
-
-  // Add padding-bottom to Outer container & remove padding-bottom from Inner container if next block has different BG color
-  &.next--has--different--backgroundColor {
-    padding-bottom: $color-block-change-vertical-spacing;
-
-    .block-inner-container {
-      padding-bottom: 0 !important;
-    }
-
-    @container (max-width: #{$largest-mobile-screen}) {
-      padding-bottom: 60px !important;
-    }
-  }
-}
-
-#page-edit {
-  // Animation PoC
-  .block {
-    transition: padding 500ms ease-in-out;
-    .block-inner-container {
-      transition: padding 500ms ease-in-out;
-    }
-  }
-
-  .block .block:not(.inner)::before {
-    display: none;
-  }
-
-  .block .inner .block {
-    box-shadow: none;
-  }
-
-  .block {
-    position: relative;
-
-    & .inner > .block {
-      box-shadow: none !important;
-      margin-bottom: 0 !important;
-    }
-
-    &.previous--has--different--backgroundColor {
-      .blocks-toolbar {
-        top: calc(-1 * $color-block-change-vertical-spacing);
-      }
-    }
-    // &.selected,
-    // &.multiSelected {
-    //   z-index: 50;
-    //   top: 0;
-    //   box-shadow: inset 0 0 0 2px rgb(0, 112, 162);
-    //   border-radius: 2px !important;
-    // }
-    // &.multiSelected:not(:has(+ .multiSelected)) {
-    //   z-index: 50;
-    //   top: 0;
-    //   box-shadow: none;
-    //   border: 2px rgb(0, 112, 162) solid;
-    //   border-style: inset;
-    //   border-radius: 2px !important;
-    // }
-
-    // &.multiSelected + .multiSelected {
-    //   border: 2px gb(0, 112, 162) solid;
-    //   box-shadow: none;
-    //   border-top: none;
-    // }
-
-    // &:hover {
-    //   z-index: 10;
-    // }
-    // &:not(.selected):not(.multiSelected):hover {
-    //   box-shadow: inset 0 0 0 2px rgb(0, 112, 162, 0.5);
-    //   border-radius: 2px;
-    // }
-
-    .block.inner .block,
-    .block.inner {
-      margin-bottom: 0;
-    }
-
-    // &:not(.selected):hover {
-    //   box-shadow: lightblue;
-    // }
-
-    &.previous--has--different--backgroundColor .drag.handle.wrapper {
-      margin-top: -$color-block-change-vertical-spacing;
-    }
-
-    
-  }
-}
-
-// .block.multiSelected{
-//   // box-shadow: none !important;
-
-//   &::after {
-//   content: '';
-//   position: absolute;
-//   height: 100%;
-//   width: 100%;
-//   background-color: red;
-//   opacity: 0.3;
-//   top: 0;
-// }
-
-
-
-// // .block.multiSelected:has(+ .block.multiSelected) {
-//   .block.multiSelected:has(+ .multiSelected){ 
-//   border: 2px gb(0, 112, 162) solid;
-//   border-bottom: none !important;
-//   border-style: inset;
-//   z-index: 50;
-//   box-shadow: none !important;
-//   // background-color: red !important;
-
-// }
-
-#page-edit button.block-add-button.new-add-block.ui.basic {
-  z-index: 99;
-  bottom: -11px;
-  &:hover {
-    background: white !important;
-  }
-
-
-  svg {
-    fill:rgb(0, 112, 162) !important;
-
-    &:hover {
-      opacity: 1 !important;
-    }
-  }
-}
-
-.has--backgroundColor--grey {
-  background: $lightgrey;
-}
-
-.block {
   // For testing purposes, mark boundaries of the block
   // border: 1px inset purple;
   background: var(--background-color);
-}
 
-#page-document {
-  &.white:first-child {
-    padding-top: 0;
-  }
-  .block:first-child h2,
-  .block:first-child h2.headline {
-    margin-top: 0;
-  }
-}
-
-// If next block has different bgcolor, cancel all margin-bottom
-#page-document .block.next--has--different--backgroundColor {
-  margin-bottom: 0 !important;
-}
-
-// For grids
-#page-document .block.gridBlock {
-  &.is--first--of--block-type.previous--has--same--backgroundColor {
-    @include grid-block-vertical-spacing-top();
-  }
-  &.is--last--of--block-type.next--has--same--backgroundColor {
-    padding-bottom: $grid-block-vertical-spacing-bottom;
-  }
-  &.next--is--same--block-type.next--has--same--backgroundColor {
-    // We rely on the grid gutter to keep the vertical spacing in case grid + grid
-    // So here we cancel the default block margin-bottom
-    margin-bottom: 0;
-  }
-
-  // If the Grid is the first block after Page title
-  h1.documentFirstHeading + & {
-    padding-top: 0;
-  }
-}
-
-// Buttons
-#page-document .block.__button.next--has--different--backgroundColor {
+  // Cancel bottom margin from core
   margin-bottom: 0;
 
-  .button.container {
-    margin-bottom: 0;
+  &:not(.category-separator) {
+    // Add padding-top to Outer container & remove padding-top from Inner container if previous block has different BG color
+    &.previous--has--different--backgroundColor {
+      padding-top: $color-block-change-vertical-spacing;
+  
+      .block-inner-container {
+        padding-top: 0 !important;
+      }
+  
+      @container (max-width: #{$largest-mobile-screen}) {
+        padding-top: 60px !important;
+      }
+    }
+  
+    // Add padding-bottom to Outer container & remove padding-bottom from Inner container if next block has different BG color
+    &.next--has--different--backgroundColor {
+      padding-bottom: $color-block-change-vertical-spacing;
+  
+      .block-inner-container {
+        padding-bottom: 0 !important;
+      }
+  
+      @container (max-width: #{$largest-mobile-screen}) {
+        padding-bottom: 60px !important;
+      }
+    }
   }
 }
 
-// Slider
-#page-document .blocks-group-wrapper.grey:has(.block.slider:first-child) {
-  padding-top: 0;
-  padding-bottom: 0px; // Adjust for the padding from the slider itself
-}
-
-#page-document .blocks-group-wrapper.grey .block.slider,
-.block-editor-slider.has--backgroundColor--grey {
-  .slider-dot:not(.slider-dot--selected)::after {
-    background: #fff;
+// Animations
+#page-edit {
+  .block {
+    transition: padding 500ms ease-in-out;
+    .block-inner-container {
+      transition: all 500ms ease-in-out;
+    }
   }
-}
-
-// Edit mode adjustments
-.block-editor-gridBlock.has--backgroundColor--grey .block h2.headline {
-  padding-top: $spacing-xlarge;
 }

@@ -12,7 +12,19 @@ const messages = defineMessages({
   },
 });
 
-export const ButtonStylingSchema = ({ schema, formData, intl }) => {
+export const SeparatorStylingSchema = ({ schema, formData, intl }) => {
+  if (formData.styles.shortLine) {
+    schema.properties.styles.schema.fieldsets[0].fields = [
+      'align:noprefix',
+      ...schema.properties.styles.schema.fieldsets[0].fields,
+    ];
+
+    schema.properties.styles.schema.properties['align:noprefix'] = {
+      widget: 'blockAlignment',
+      title: intl.formatMessage(messages.Alignment),
+    };
+  }
+
   defaultStylingSchema({ schema, formData, intl });
 
   schema.properties.styles.schema.fieldsets[0].fields = [
@@ -25,16 +37,6 @@ export const ButtonStylingSchema = ({ schema, formData, intl }) => {
     title: intl.formatMessage(messages.BlockWidth),
     default: 'default',
     filterActions: ['narrow', 'default'],
-  };
-
-  schema.properties.styles.schema.fieldsets[0].fields = [
-    'align:noprefix',
-    ...schema.properties.styles.schema.fieldsets[0].fields,
-  ];
-
-  schema.properties.styles.schema.properties['align:noprefix'] = {
-    widget: 'blockAlignment',
-    title: intl.formatMessage(messages.Alignment),
   };
 
   return schema;

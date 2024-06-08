@@ -75,22 +75,16 @@ const EditBlockWrapper = (props) => {
     contentType,
     index,
     onChangeFormData,
-    id
+    id,
   } = blockProps;
-  // console.log(props);
 
   let blockNode = useRef({});
 
   const visible = selected && !hideHandler(blockProps.data);
 
-  const blockHasOwnFocusManagement = blocksConfig?.[type]?.['blockHasOwnFocusManagement'] || null;
-  if (
-    !blockHasOwnFocusManagement &&
-    selected &&
-    blockNode.current
-  ) {
-    // console.log(blockNode.current)
-    // blockNode.current.focus();
+  const blockHasOwnFocusManagement =
+    blocksConfig?.[type]?.['blockHasOwnFocusManagement'] || null;
+  if (!blockHasOwnFocusManagement && selected && blockNode.current) {
   }
 
   let classNames = buildStyleClassNamesFromData(data.styles);
@@ -108,7 +102,6 @@ const EditBlockWrapper = (props) => {
   };
 
   // START CUSTOMIZATION
-  const isBlockModelv3 = blocksConfig?.[type]?.blockModel === 3;
   const category = blocksConfig?.[type]?.category;
   const required = isBoolean(data.required)
     ? data.required
@@ -143,21 +136,11 @@ const EditBlockWrapper = (props) => {
       onClick={(e) => {
         const isMultipleSelection = e.shiftKey || e.ctrlKey || e.metaKey;
         !selected &&
-          onSelectBlock(
-            id,
-            selected ? false : isMultipleSelection,
-            e,
-          );
+          onSelectBlock(id, selected ? false : isMultipleSelection, e);
       }}
       onKeyDown={
-        !(blockHasOwnFocusManagement)
-          ? (e) =>
-              handleKeyDown(
-                e,
-                index,
-                id,
-                blockNode.current,
-              )
+        !blockHasOwnFocusManagement
+          ? (e) => handleKeyDown(e, index, id, blockNode.current)
           : null
       }
       aria-hidden="true"
@@ -168,13 +151,12 @@ const EditBlockWrapper = (props) => {
       // Block Edit wrapper
       className={cx(
         `block ${data['@type']}`,
-        //START CUSTOMIZATION
-        { [`category-${category}`]: category, selected: selected, multiSelected: multiSelected, },
-        // END CUSTOMIZATION
-        classNames,
         {
-          [data.align]: data.align,
+          [`category-${category}`]: category,
+          selected: selected,
+          multiSelected: multiSelected,
         },
+        classNames,
       )}
     >
       <div className="block-controls">
@@ -216,10 +198,10 @@ const EditBlockWrapper = (props) => {
           </Button>
         )}
       </div>
-      <div className='border-top border-line'></div>
-      <div className='border-bottom border-line'></div>
-      <div className='border-left border-line'></div>
-      <div className='border-right border-line'></div>
+      <div className="border-top border-line"></div>
+      <div className="border-bottom border-line"></div>
+      <div className="border-left border-line"></div>
+      <div className="border-right border-line"></div>
 
       {config.experimental.addBlockButton.enabled && showBlockChooser && (
         <BlockChooserButton
@@ -241,15 +223,8 @@ const EditBlockWrapper = (props) => {
           contentType={contentType}
         />
       )}
-      {/* <ExperimentalToolbar aria-label="Toolbar" {...props} visible={visible} /> */}
 
-      <div style={{ position: 'relative' }}>
-        {/* START CUSTOMIZATION */}
-        <div className={cx('ui drag inner', { [type]: !isBlockModelv3 })}>
-          {/* END CUSTOMIZATION */}
-          {children}
-        </div>
-      </div>
+      {children}
     </div>
   );
 };

@@ -10,182 +10,22 @@
   }
 }
 
-// Exerimental block toolbar
-#page-edit {
-  .ui.basic.button:hover {
-    background: none !important;
-  }
-}
-.blocks-toolbar {
-  display: contents;
-  padding: 0 !important;
-  position: relative;
-  top: 0;
-  z-index: 999;
-  width: 100%;
-  transition: top 500ms ease-in-out;
-
-  .toolbar-container {
-    background-color: #ebebeb;
-    padding: 5px;
-    margin-left: 20px;
-    z-index: 999;
-    border-radius: 6px;
-    min-width: fit-content;
-    box-shadow:
-      0px 6px 12px 0px rgba(2, 19, 34, 0.18),
-      0px 4px 8px 0px rgba(2, 19, 34, 0.06);
-    position: absolute;
-    top: -52px;
-    display: flex;
-
-    .react-aria-Group {
-      button:not(:last-child) {
-        margin-right: 2px;
-      }
-    }
-  }
-
-  .drag-handle-wrapper {
-    background: #ebebeb;
-    display: flex;
-    align-items: center;
-    border-radius: 4px;
-    border: 1px solid var(--border-color);
-  }
-}
-.react-aria-Popover {
-  min-width: fit-content !important;
-
-  .react-aria-Menu {
-    min-width: fit-content !important;
-
-    .button-wrapper > button.delete-block-button {
-      color: #e40166 !important;
-
-      &:hover {
-        background: #e40166 !important;
-      }
-    }
-
-    .backgroundColor-toolbar-widget {
-      padding: 0;
-  
-      .buttons {
-        margin: 5px 1px 5px 6px !important;
-
-        button {
-          width: 24px !important;
-          height: 24px !important;
-          aspect-ratio: 1 !important;
-          border-radius: 25px;
-          border: 1px solid var(--border-color) !important;
-          background-color: var(--background-color) !important;
-          padding: 10px;
-          margin: 0 !important;
-          
-          &:first-child {
-            margin-bottom: 5px !important;
-          }
-        }
-      }
-    }
-
-    .button-wrapper {
-      padding-right: 5px !important;
-      width: 100% !important;
+#sidebar-properties {
+  .field.widget {
+    .buttons {
+      display: flex;
+      align-items: center;
 
       button {
-        width: 100% !important;
-        color: #020617 !important;
-        cursor: default;
-        forced-color-adjust: none;
-        border-radius: 6px;
-        outline: none;
-        grid-template-areas:
-          'icon label kbd'
-          'icon desc  kbd';
-        justify-content: start;
-        align-items: center;
-        -moz-column-gap: 20px;
-        column-gap: 20px;
-        margin: 2px !important;
-        padding: 0.286rem 0.571rem;
-        font-size: 1.072rem;
-        display: grid;
-        position: relative;
-        font-weight: 300;
-        background: none !important;
-        box-shadow: none !important;
-        border: none !important;
-
-        span {
-          font-weight: 300;
-          text-align: initial;
+        aspect-ratio: 1/1;
+        padding: 5px;
+        &[data-hovered='true'] {
+          box-shadow: inset 0 0 0 2px rgba(0, 112, 162, 0.5);
         }
-
-        svg {
-          height: unset !important;
-        }
-        &:hover {
-          background: #475569 !important;
-
-          * {
-            color: white !important;
-          }
+        &.active {
+          box-shadow: inset 0 0 0 2px rgb(0, 112, 162);
         }
       }
-
-      &:not(:last-child) {
-        margin-right: 5px;
-      }
     }
-  }
-}
-
-// Animation PoC when dragging blocks
-.block {
-  transition: height 1s ease-in-out;
-}
-body > .block {
-  height: 20px !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  background: rgb(0, 112, 162) !important;
-  box-shadow: 0 0 0 3px rgb(0, 112, 162);
-  border-radius: 1px;
-
-  & > :nth-child(2) {
-    height: 20px !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    overflow: hidden;
-    & * {
-      display: none;
-    }
-  }
-
-  .block-inner-container * {
-    display: none;
-  }
-}
-
-#sidebar {
-  min-width: 20px;
-  // .sidebar-container {
-  //   background: #f3f5f7;
-  //   transition: all 500ms ease-in-out;
-
-  //   box-shadow:
-  //     0px 5px 15px 0px rgba(0, 0, 0, 0.15),
-  //     0px 3px 3px 0px rgba(0, 0, 0, 0.2);
-
-  //   &.collapsed {
-  //     right: -355px;
-  //   }
-  // }
-  .pusher {
-    margin-left: 0;
-    transition: all 500ms ease-in-out;
   }
 }

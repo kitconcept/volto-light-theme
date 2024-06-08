@@ -1,61 +1,19 @@
 .block.__button {
-  &:last-child {
-    .button.container {
-      padding-bottom: 0;
+  @include variable-block-alignment();
+
+  & .ui.button {
+    padding: 8px 20px;
+    border: 1px solid $black;
+    border-radius: unset;
+    background: none;
+    color: $black;
+
+    @include body-text-bold();
+
+    &:focus,
+    &:hover {
+      background-color: $black;
+      color: $white;
     }
   }
-  .button.container {
-    @include narrow-container-width();
-
-    @include vertical-space-button();
-  }
-  // Exceptions after certain blocks
-  p + & {
-    .button.container {
-      padding-top: 35px;
-      @container (max-width: #{$largest-mobile-screen}) {
-        padding-top: 15px;
-      }
-    }
-  }
-  .block.gridBlock + & {
-    .button.container {
-      padding-top: 0;
-      @container (max-width: #{$largest-mobile-screen}) {
-        margin-top: 0;
-      }
-    }
-  }
-
-  button {
-    margin: 0;
-  }
-}
-
-// .block-inner-container {
-//   width: var(--block-width);
-// }
-
-.block.__button .ui.button {
-  padding: 8px 20px;
-  border: 1px solid $black;
-  border-radius: unset;
-  background: none;
-  color: $black;
-
-  @include body-text-bold();
-}
-
-.block.__button .ui.button:focus,
-.block.__button .ui.button:hover {
-  background-color: $black;
-  color: $white;
-}
-
-.block-editor-__button.has--backgroundColor--grey {
-  background-color: $lightgrey;
-}
-
-.block.__button.has--backgroundColor--grey {
-  background-color: $lightgrey;
 }
