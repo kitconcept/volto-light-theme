@@ -13,7 +13,7 @@ const messages = defineMessages({
 });
 
 export const SeparatorStylingSchema = ({ schema, formData, intl }) => {
-  if (formData.styles.shortLine) {
+  if (formData?.styles?.shortLine) {
     schema.properties.styles.schema.fieldsets[0].fields = [
       'align:noprefix',
       ...schema.properties.styles.schema.fieldsets[0].fields,
