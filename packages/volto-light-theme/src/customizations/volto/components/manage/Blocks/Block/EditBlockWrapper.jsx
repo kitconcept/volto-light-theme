@@ -15,7 +15,6 @@ import {
 import { injectIntl, defineMessages } from 'react-intl';
 import cx from 'classnames';
 import config from '@plone/volto/registry';
-import ExperimentalToolbar from '../../../../../../components/BlockToolbar/ExperimentalBlockToolBar';
 import { BlockChooserButton } from '@plone/volto/components';
 import { Button } from 'semantic-ui-react';
 
@@ -25,7 +24,7 @@ import upSVG from '@plone/volto/icons/up-key.svg';
 import { Icon } from '@plone/volto/components';
 import includes from 'lodash/includes';
 import isBoolean from 'lodash/isBoolean';
-import { omit, without, endsWith, find, isObject, keys, merge } from 'lodash';
+import { endsWith, find, keys } from 'lodash';
 import move from 'lodash-move';
 import { useRef } from 'react';
 
