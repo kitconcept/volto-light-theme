@@ -1,0 +1,57 @@
+{
+  "name": "@kitconcept/volto-vlt-futures",
+  "version": "1.0.0",
+  "description": "VLT Future features - Extended Colors and Widths",
+  "main": "src/index.ts",
+  "types": "src/types/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kitconcept/volto-light-theme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kitconcept/volto-light-theme/issues"
+  },
+  "homepage": "https://github.com/kitconcept/volto-light-theme#readme",
+  "author": "kitconcept, GmbH",
+  "license": "MIT",
+  "keywords": [
+    "volto-addon",
+    "volto",
+    "plone",
+    "react",
+    "light-theme",
+    "theme",
+    "futures"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
+    "dry-release": "release-it --dry-run",
+    "release": "release-it",
+    "release-major-alpha": "release-it major --preRelease=alpha",
+    "release-alpha": "release-it --preRelease=alpha",
+    "release-rc": "release-it --preRelease=rc"
+  },
+  "dependencies": {
+    "classnames": "2.5.1",
+    "lodash": "4.17.21",
+    "semantic-ui-react": "2.1.5"
+  },
+  "devDependencies": {
+    "@plone/scripts": "^3.6.1",
+    "@plone/types": "1.0.0-alpha.13",
+    "@types/jest": "^29.5.8",
+    "@types/lodash": "^4.14.201",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "release-it": "^17.1.1"
+  },
+  "peerDependencies": {
+    "@kitconcept/volto-light-theme": "^3.3.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-intl": "3.8.0"
+  }
+}

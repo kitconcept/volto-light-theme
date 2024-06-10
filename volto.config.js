@@ -7,6 +7,7 @@ const addons = [
   '@kitconcept/volto-separator-block',
   '@kitconcept/volto-slider-block',
   '@kitconcept/volto-light-theme',
+  '@kitconcept/volto-vlt-futures',
 ];
 const theme = '@kitconcept/volto-light-theme';
 

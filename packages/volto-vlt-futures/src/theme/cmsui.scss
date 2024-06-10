@@ -1,0 +1,8 @@
+// Temporary, needs to be fixed in light-theme and in core altogether
+.blocks-chooser .ui.form .ui.input {
+  height: unset;
+
+  input {
+    padding-left: 5px;
+  }
+}
