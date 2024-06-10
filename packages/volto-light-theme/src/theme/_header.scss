@@ -672,8 +672,13 @@ body.has-toolbar.has-sidebar {
     padding: 15px;
   }
 
-  .hamburger {
-    padding-bottom: 0;
+  .hamburger-toggler {
+    width: 40px;
+    height: 24px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
   }
 
   .hamburger-wrapper {
