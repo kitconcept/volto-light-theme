@@ -59,7 +59,6 @@
 
   .documentFirstHeading {
     margin-top: 0px;
-    margin-bottom: 0px;
   }
 
   .blocks-group-wrapper {
@@ -222,4 +221,9 @@
 // hide some fields from edit & add forms
 .field-wrapper-changeNote {
   display: none;
+}
+
+// Login page
+.content-area #page-login {
+  padding-top: $spacing-large;
 }

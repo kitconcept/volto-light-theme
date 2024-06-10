@@ -1,6 +1,6 @@
 {
   "name": "@kitconcept/volto-light-theme",
-  "version": "3.1.2",
+  "version": "3.3.2",
   "description": "Volto Light Theme by kitconcept",
   "main": "src/index.js",
   "types": "src/types/index.d.ts",
@@ -41,17 +41,8 @@
     "@types/react-dom": "^18.2.25",
     "release-it": "^17.1.1"
   },
-  "peerAddons": [
-    "@eeacms/volto-accordion-block",
-    "@kitconcept/volto-button-block",
-    "@kitconcept/volto-heading-block",
-    "@kitconcept/volto-highlight-block",
-    "@kitconcept/volto-introduction-block",
-    "@kitconcept/volto-separator-block",
-    "@kitconcept/volto-slider-block"
-  ],
   "dependencies": {
-    "@plone/components": "2.0.0-alpha.7",
+    "@plone/components": "workspace:*",
     "classnames": "2.5.1",
     "react-aria-components": "^1.1.1"
   },

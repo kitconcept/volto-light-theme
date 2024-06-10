@@ -216,7 +216,7 @@ $font-weights: (
   bold: 700,
   extra-bold: 800,
   bolder: 900,
-);
+) !default;
 
 $font-sizes: (
   2xs: 12px,
@@ -229,7 +229,7 @@ $font-sizes: (
   3xl: 36px,
   4xl: 42px,
   5xl: 48px,
-);
+) !default;
 
 $line-heights: (
   xs: 16px,
@@ -241,7 +241,7 @@ $line-heights: (
   3xl: 42px,
   4xl: 48px,
   5xl: 56px,
-);
+) !default;
 
 @mixin add($property, $value) {
   @if $property == size {

@@ -1,5 +1,9 @@
 name: i18n
 on: [push]
+
+env:
+  NODE_VERSION: 20.x
+
 jobs:
   unit:
     runs-on: ubuntu-latest
@@ -8,18 +12,13 @@ jobs:
       - name: Main checkout
         uses: actions/checkout@v4
 
-      - name: Use Node.js 20.x
+      - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v4
         with:
-          node-version: 20.x
+          node-version: ${{ env.NODE_VERSION }}
 
-      - uses: pnpm/action-setup@v3
-        name: Install pnpm
-        with:
-          version: 8
-          # We don't want to install until later,
-          # when the cache and Cypress are in place
-          run_install: false
+      - name: Enable corepack
+        run: corepack enable
 
       - name: Get pnpm store directory
         shell: bash

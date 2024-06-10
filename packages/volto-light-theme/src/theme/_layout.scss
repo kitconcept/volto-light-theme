@@ -526,4 +526,15 @@ External link removal for all the blocks.
   }
 }
 
+// Create content page form
+#page-add,
+#page-edit {
+  > .container {
+    > .ui.form {
+      margin-top: $spacing-small;
+      @include default-container-width();
+    }
+  }
+}
+
 @import 'bgcolor-blocks-layout';
