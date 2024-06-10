@@ -296,6 +296,8 @@ const applyConfig = (config) => {
       imageBlockSchemaEnhancer,
       gridImageDisableSizeAndPositionHandlersSchema,
     );
+  config.blocks.blocksConfig.gridBlock.blocksConfig.image.dataAdapter =
+    ImageBlockDataAdapter;
 
   config.blocks.blocksConfig.gridBlock.blocksConfig.teaser.schemaEnhancer =
     composeSchema(gridTeaserDisableStylingSchema, teaserSchemaEnhancer);

@@ -16,6 +16,11 @@ msgstr ""
 msgid "Back"
 msgstr "Voltar"
 
+#. Default: "Back to homepage"
+#: components/Logo/Logo
+msgid "Back to homepage"
+msgstr "Voltar à página inicial"
+
 #. Default: "Background color"
 #: components/Blocks/schema
 msgid "Background color"
@@ -178,11 +183,6 @@ msgstr "Por favor, escolha um conteúdo existente como fonte para esse elemento"
 #: components/Footer/Footer
 msgid "Plone Foundation"
 msgstr "Plone Foundation"
-
-#. Default: "Plone Site"
-#: components/Logo/Logo
-msgid "Plone Site"
-msgstr "Site Plone"
 
 #. Default: "Plone{reg} Open Source CMS/WCM"
 #: components/Footer/Footer
