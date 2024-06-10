@@ -1,0 +1,14 @@
+#page-add,
+#page-edit,
+#page-document {
+  .block.image.has--block-width--full img {
+    max-height: 600px;
+    aspect-ratio: var(--image-aspect-ratio);
+    object-fit: cover;
+  }
+}
+
+.block.image img {
+  aspect-ratio: var(--image-aspect-ratio);
+  object-fit: cover;
+}

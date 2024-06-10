@@ -1,0 +1,8 @@
+.color-picker-widget {
+  .ui.button,
+  .ui.button:active,
+  .ui.button.active:active,
+  .ui.button.active:hover {
+    background-color: var(--background-color);
+  }
+}
