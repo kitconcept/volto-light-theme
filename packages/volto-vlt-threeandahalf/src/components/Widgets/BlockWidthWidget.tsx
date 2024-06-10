@@ -57,10 +57,10 @@ const DEFAULT_ACTIONS = [
   },
   {
     style: {
-      '--block-width': '100%',
+      '--block-width': 'unset',
     },
     name: 'full',
-    label: 'Full Width',
+    label: 'Full',
   },
 ];
 

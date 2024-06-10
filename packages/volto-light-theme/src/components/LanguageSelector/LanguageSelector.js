@@ -1,6 +1,12 @@
+/**
+ * Language selector component.
+ * @module components/LanguageSelector/LanguageSelector
+ */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+
 import { useSelector } from 'react-redux';
 import cx from 'classnames';
 import { find, map } from 'lodash';
@@ -49,7 +55,7 @@ const LanguageSelector = (props) => {
             }}
             key={`language-selector-${lang}`}
           >
-            {langmap[lang].nativeName.slice(0, 2)}
+            {langmap[lang].nativeName}
           </Link>
         );
       })}

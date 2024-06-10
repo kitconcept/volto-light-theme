@@ -1,9 +1,10 @@
 import React from 'react';
 import { FormFieldWrapper } from '@plone/volto/components';
 import { Icon } from '@plone/volto/components';
-import { Button } from 'semantic-ui-react';
+import { Button } from '@plone/components';
 import { isEqual, find } from 'lodash';
 
+// Move to an unified `StyleDefinition` type
 type Actions =
   | {
       name: string;
@@ -39,24 +40,23 @@ const ButtonsWidget = (props: ButtonsWidgetProps) => {
   });
 
   return (
-    <FormFieldWrapper {...props} className="align-widget">
-      <div className="align-buttons">
+    <FormFieldWrapper {...props} className="widget">
+      <div className="buttons">
         {actions.map((action) => (
-          <Button.Group key={action.name}>
+          <div key={action.name}>
             <Button
-              icon
-              basic
               aria-label={actionsInfoMap[action.name][1]}
-              onClick={() => onChange(id, action.style || action.name)}
-              active={isEqual(value, action.style)}
+              onPress={() => onChange(id, action.style || action.name)}
+              className={isEqual(value, action.style) ? 'active' : ''}
             >
+              {/* @ts-ignore */}
               <Icon
                 name={actionsInfoMap[action.name][0]}
                 title={actionsInfoMap[action.name][1] || action.name}
                 size="24px"
               />
             </Button>
-          </Button.Group>
+          </div>
         ))}
       </div>
     </FormFieldWrapper>
