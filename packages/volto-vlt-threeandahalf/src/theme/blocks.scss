@@ -49,11 +49,8 @@
   }
 }
 
-.block.gridBlock,
-.block-editor-gridBlock {
-  &[style*='--background-color'] .block.teaser .teaser-item .content {
-    padding: 0 !important;
-  }
+.blocks-group-wrapper.grey .block.gridBlock .block.teaser .teaser-item {
+  background-color: var(--background-color-inverse);
 }
 
 .block.gridBlock .block.image img,

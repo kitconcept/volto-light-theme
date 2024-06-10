@@ -3,11 +3,13 @@ import { composeSchema, getPreviousNextBlock } from '@plone/volto/helpers';
 import { defaultStylingSchema } from '@kitconcept/volto-light-theme/components/Blocks/schema';
 import BackgroundColorWidget from './components/Widgets/BackgroundColorWidget';
 import BlockWidthWidget from './components/Widgets/BlockWidthWidget';
+import BlockAlignmentWidget from './components/Widgets/BlockAlignmentWidget';
 import { imageBlockSchemaEnhancer } from './components/Blocks/Image/schema';
 import { getCurrentStyleByName } from './helpers';
 import type { AvailableBlocks } from '@plone/types';
+import '@plone/components/dist/basic.css';
 
-type Color =
+export type StyleDefinition =
   | {
       name: string;
       label: string;
@@ -19,26 +21,21 @@ type Color =
       style: undefined;
     };
 
-type StyleDefinition = {
-  style: Record<string, string>;
-  name: string;
-  label: string;
-};
-
 // We extend the block types with the custom ones
 declare module '@plone/types' {
   export interface SettingsConfig {
-    backgroundColors: Color[];
+    backgroundColors: StyleDefinition[];
     blockWidths: Array<StyleDefinition>;
   }
 
   export interface BlockConfigBase {
-    colors?: Color[];
+    colors?: StyleDefinition[];
   }
 
   export interface WidgetsConfigByWidget {
     BackgroundColorWidget: React.ComponentType<any>;
     blockWidth: React.ComponentType<any>;
+    blockAlignment: React.ComponentType<any>;
   }
 }
 
@@ -54,6 +51,7 @@ const applyConfig = (config: ConfigType) => {
     {
       style: {
         '--background-color': '#ecebeb',
+        '--background-color-inverse': '#fff',
       },
       name: 'grey',
       label: 'Grey',
@@ -93,6 +91,7 @@ const applyConfig = (config: ConfigType) => {
 
   config.widgets.widget.BackgroundColorWidget = BackgroundColorWidget;
   config.widgets.widget.blockWidth = BlockWidthWidget;
+  config.widgets.widget.blockAlignment = BlockAlignmentWidget;
 
   config.settings.styleClassNameExtenders.push(
     ({
@@ -165,6 +164,22 @@ const applyConfig = (config: ConfigType) => {
         ) || 'default';
       if (currentBlockWidth) {
         return [...classNames, `has--block-width--${currentBlockWidth}`];
+      }
+      return classNames;
+    },
+  );
+
+  config.settings.styleClassNameExtenders.push(
+    ({ data, classNames }: { data: any; classNames: Array<string> }) => {
+      const currentBlockWidth =
+        getCurrentStyleByName(
+          config.settings.blockWidths,
+          'backgroundColor:noprefix',
+          data,
+        ) || 'transparent';
+      if (currentBlockWidth) {
+        // This has intentionally a different class name than in `vlt3`
+        return [...classNames, `has--background-color--${currentBlockWidth}`];
       }
       return classNames;
     },
