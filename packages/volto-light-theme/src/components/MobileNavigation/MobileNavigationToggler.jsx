@@ -5,7 +5,7 @@ export const MobileNavigationToggler = ({ isMobileMenuOpen }) => {
   return (
     <div
       className={cx('hamburger hamburger--collapse', {
-        'is-active': isMobileMenuOpen
+        'is-active': isMobileMenuOpen,
       })}
     >
       <span className="hamburger-box">

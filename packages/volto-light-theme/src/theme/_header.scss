@@ -721,7 +721,7 @@ body.has-toolbar.has-sidebar {
     .search-wrapper .search {
       padding-top: 20px;
       button {
-        padding-top: 0px;
+        padding: 0px;
         margin-right: 20px;
       }
     }
@@ -883,6 +883,10 @@ body.has-toolbar.has-sidebar {
 
       .icon:hover {
         cursor: pointer;
+      }
+
+      &.header {
+        line-height: 36px;
       }
 
       &.current {

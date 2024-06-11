@@ -10,9 +10,8 @@ import { Icon, SearchWidget } from '@plone/volto/components';
 import { toBackendLang } from '@plone/volto/helpers';
 import arrowRightSVG from '@plone/volto/icons/right-key.svg';
 import arrowLeftSVG from '@plone/volto/icons/left-key.svg';
-// import { MobileToolsFooter } from '@kitconcept/volto-light-theme/components/MobileNavigation/MobileToolsFooter';
-import { MobileToolsFooter } from './MobileToolsFooter';
 import { MobileNavigationToggler } from './MobileNavigationToggler';
+import { MobileToolsFooter } from './MobileToolsFooter';
 
 const messages = defineMessages({
   closeMobileMenu: {
@@ -33,7 +32,14 @@ const messages = defineMessages({
   },
 });
 
-const MenuItem = ({ section, level, closeMenus, handleLinkClicked, resetToRoot }) => {
+const MenuItem = ({
+  section,
+  level,
+  closeMenus,
+  handleLinkClicked,
+  resetToRoot,
+  pathname
+}) => {
   const [isSubMenuOpen, setSubMenuOpen] = useState(null);
 
   const openSubMenu = useCallback((e, index) => {
@@ -54,7 +60,7 @@ const MenuItem = ({ section, level, closeMenus, handleLinkClicked, resetToRoot }
   }, [resetToRoot]);
 
   return (
-    <li className={section.url === window.location.pathname ? 'current' : ''}>
+    <li className={section.url === pathname ? 'current' : ''}>
       <Link
         to={section.url === '' ? '/' : section.url}
         onClick={(e) =>
@@ -87,9 +93,11 @@ const MenuItem = ({ section, level, closeMenus, handleLinkClicked, resetToRoot }
           <ul className="sections">
             <li className="header">{section.nav_title || section.title}</li>
             <li>
-              <Link to={section.url === '' ? '/' : section.url} onClick={closeMenus}>
+              <Link
+                to={section.url === '' ? '/' : section.url}
+                onClick={closeMenus}
+              >
                 <FormattedMessage id="Overview" defaultMessage="Overview" />
-                <span>BARRRRR</span>
               </Link>
             </li>
             {section.items &&
@@ -101,6 +109,7 @@ const MenuItem = ({ section, level, closeMenus, handleLinkClicked, resetToRoot }
                   closeMenus={closeMenus}
                   handleLinkClicked={handleLinkClicked}
                   resetToRoot={resetToRoot}
+                  pathname={pathname}
                 />
               ))}
           </ul>
@@ -140,7 +149,6 @@ const MobileNavigation = (props) => {
 
   const handleLinkClicked = useCallback(
     (e, section, openSubMenu, closeSubMenu, level) => {
-      console.log(section)
       e.preventDefault();
       if (section.items.length > 0) {
         openSubMenu(e, level);
@@ -149,7 +157,7 @@ const MobileNavigation = (props) => {
         closeMenus(e);
       }
     },
-    [history, closeMenus]
+    [history, closeMenus],
   );
 
   useEffect(() => {
@@ -180,11 +188,15 @@ const MobileNavigation = (props) => {
           type="button"
           onClick={toggleMobileMenu}
         >
-            <MobileNavigationToggler isMobileMenuOpen={isMobileMenuOpen} />
+          <MobileNavigationToggler isMobileMenuOpen={isMobileMenuOpen} />
         </button>
       </div>
 
-      <CSSTransition in={isMobileMenuOpen} timeout={500} classNames="menu-drawer">
+      <CSSTransition
+        in={isMobileMenuOpen}
+        timeout={500}
+        classNames="menu-drawer"
+      >
         <div className="menu-drawer">
           <div className="search-header">
             <div className="search-wrapper">
@@ -196,7 +208,11 @@ const MobileNavigation = (props) => {
           <ul className="sections">
             <li className="header">
               <Link
-                to={settings.isMultilingual ? `/${toBackendLang(currentLang)}` : '/'}
+                to={
+                  settings.isMultilingual
+                    ? `/${toBackendLang(currentLang)}`
+                    : '/'
+                }
                 onClick={closeMenus}
               >
                 <FormattedMessage id="Home" defaultMessage="Home" />
@@ -211,6 +227,7 @@ const MobileNavigation = (props) => {
                   closeMenus={closeMenus}
                   handleLinkClicked={handleLinkClicked}
                   resetToRoot={resetToRoot}
+                  pathname={props.pathname}
                 />
               ))}
           </ul>
