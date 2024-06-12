@@ -291,7 +291,8 @@ External link removal for all the blocks.
     .block.separator
     .line,
   .block-editor-codeBlock,
-  .block-editor-mermaidBlock {
+  .block-editor-mermaidBlock,
+  .block-editor-description .documentDescription {
     @include narrow-container-width();
     @include adjustMarginsToEditContainer($narrow-container-width);
   }
