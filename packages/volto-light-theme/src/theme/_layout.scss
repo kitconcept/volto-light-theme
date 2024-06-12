@@ -292,8 +292,7 @@ External link removal for all the blocks.
     .line,
   .block-editor-codeBlock,
   .block-editor-mermaidBlock,
-  .block-editor-description .documentDescription
-   {
+  .block-editor-description .documentDescription {
     @include narrow-container-width();
     @include adjustMarginsToEditContainer($narrow-container-width);
   }
