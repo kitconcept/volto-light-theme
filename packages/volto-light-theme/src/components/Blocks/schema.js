@@ -10,30 +10,28 @@ const messages = defineMessages({
 });
 
 export const defaultStylingSchema = ({ schema, formData, intl }) => {
-  // TODO: remove and use the config.settings.backgroundColors as default below too
-  const BG_COLORS = [
-    { name: 'white', label: 'White' },
-    { name: 'grey', label: 'Grey' },
-  ];
-
-  const colors =
-    config.blocks?.blocksConfig?.[formData['@type']]?.colors || BG_COLORS;
-
-  const defaultBGColor =
-    config.blocks?.blocksConfig?.[formData['@type']]?.defaultBGColor;
-
   addStyling({ schema, intl });
 
-  schema.properties.styles.schema.fieldsets[0].fields = [
-    ...schema.properties.styles.schema.fieldsets[0].fields,
-    'backgroundColor:noprefix',
-  ];
-  schema.properties.styles.schema.properties['backgroundColor:noprefix'] = {
-    widget: 'color_picker',
-    title: intl.formatMessage(messages.backgroundColor),
-    colors,
-    default: defaultBGColor,
-  };
+  if (config.settings.backgroundColors) {
+    const colors =
+      config.blocks?.blocksConfig?.[formData['@type']]?.colors ||
+      config.settings.backgroundColors;
+
+    const defaultBGColor =
+      config.blocks?.blocksConfig?.[formData['@type']]?.defaultBGColor ||
+      config.settings.backgroundColors[0];
+
+    schema.properties.styles.schema.fieldsets[0].fields = [
+      'backgroundColor:noprefix',
+      ...schema.properties.styles.schema.fieldsets[0].fields,
+    ];
+    schema.properties.styles.schema.properties['backgroundColor:noprefix'] = {
+      widget: 'color_picker',
+      title: intl.formatMessage(messages.backgroundColor),
+      colors,
+      default: defaultBGColor,
+    };
+  }
 
   return schema;
 };
