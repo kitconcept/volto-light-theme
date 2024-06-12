@@ -1,5 +1,52 @@
 # Upgrade Guide
 
+## volto-light-theme 4.0.0
+
+### Block Model v3
+
+Read more details in: https://github.com/kitconcept/volto-light-theme/blob/main/BLOCK-MODEL-V3.md
+
+### Color definitions
+
+The VLT has migrated to use the standardized color definitions in Volto.
+Read more abot them in: https://6.docs.plone.org/volto/development/color-picker-widget.html?highlight=color#color-definitions
+
+Example:
+
+```ts
+config.settings.backgroundColors = [
+  {
+    style: {
+      '--background-color': 'transparent',
+    },
+    name: 'transparent',
+    label: 'Transparent',
+  },
+  {
+    style: {
+      '--background-color': '#ecebeb',
+    },
+    name: 'grey',
+    label: 'Grey',
+  },
+];
+```
+
+using them simplifies a lot internal the CSS used, so VLT moved to use it.
+Tecnically you can still use them, but you'll have to bring back the related CSS classes, specially if you extended the initial color names.
+
+If you want to upgrade, it needs a migration of your blocks.
+This migration is provided in the `migratev3` BrowserView in the backend.
+
+### Block widths
+
+VLT has started to use the standard block width definition as well.
+For now it uses a new widget component that would be ported to Volto core as soon as it's ready.
+This component saves the value of the custom CSS property `--block-width` ias a StyleWrapper value, so it can be used later when the StyleWrapper injects it in the markup.
+
+This is a breaking change, and needs a migration of your blocks.
+This migration is provided in the `migratev3` BrowserView in the backend.
+
 ## volto-light-theme 3.0.0
 
 ### Blocks background colors go full width
