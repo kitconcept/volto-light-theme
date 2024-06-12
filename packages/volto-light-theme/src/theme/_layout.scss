@@ -400,6 +400,10 @@ External link removal for all the blocks.
     flex-direction: row-reverse;
     width: 100%;
 
+    .ui.basic.button {
+      line-height: 1rem;
+    }
+
     .ui.basic.button.delete-button {
       background: $white !important;
       border-radius: 50% !important;

@@ -7,11 +7,15 @@ h5,
 h6,
 p,
 a,
-li {
+li { 
+  @include body-text();
   font-family: $page-font;
   font-style: normal;
-  @include body-text();
+  color: var(--font-color, #000)
+
 }
+
+
 
 @mixin word-break {
   -ms-hyphens: auto;

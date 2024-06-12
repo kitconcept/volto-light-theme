@@ -31,4 +31,10 @@
     left: unset !important;
     z-index: 100;
   }
+
+  &.previous--has--different--backgroundColor {
+    .slate-editor.selected .power-user-menu {
+      margin-top: $spacing-xlarge;
+    }
+  }
 }
