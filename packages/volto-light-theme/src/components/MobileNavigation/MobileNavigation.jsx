@@ -38,7 +38,7 @@ const MenuItem = ({
   closeMenus,
   handleLinkClicked,
   resetToRoot,
-  pathname
+  pathname,
 }) => {
   const [isSubMenuOpen, setSubMenuOpen] = useState(null);
 
@@ -54,7 +54,7 @@ const MenuItem = ({
 
   // Reset submenues when the mobile menu is closed or when a leaf is clicked
   useEffect(() => {
-    if (!resetToRoot) {
+    if (resetToRoot) {
       setSubMenuOpen(null);
     }
   }, [resetToRoot]);
@@ -136,7 +136,9 @@ const MobileNavigation = (props) => {
     const body = document.getElementsByTagName('body')[0];
     body.classList.toggle('has-menu-open');
     setMobileMenuOpen((prev) => !prev);
-    setResetToRoot(!isMobileMenuOpen);
+    if (!isMobileMenuOpen) {
+      setResetToRoot(false); // Disable reset to root when opening menu
+    }
   }, [isMobileMenuOpen]);
 
   const closeMenus = useCallback((e) => {
@@ -144,7 +146,6 @@ const MobileNavigation = (props) => {
       e.stopPropagation();
     }
     setMobileMenuOpen(false);
-    setResetToRoot(false); // reset Navigation to root level
   }, []);
 
   const handleLinkClicked = useCallback(
@@ -155,13 +156,17 @@ const MobileNavigation = (props) => {
       } else {
         history.push(section.url);
         closeMenus(e);
+        setResetToRoot(true);
       }
     },
     [history, closeMenus],
   );
 
   useEffect(() => {
-    const closeMenuOnHistoryChange = history.listen(() => closeMenus({}));
+    const closeMenuOnHistoryChange = history.listen(() => {
+      closeMenus({});
+      setResetToRoot(true);
+    });
     return () => {
       closeMenuOnHistoryChange();
     };
