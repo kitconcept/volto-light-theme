@@ -1,9 +1,10 @@
-import React, { useCallback, useState, useEffect, useRef } from 'react';
+import { useCallback, useState, useEffect, useRef } from 'react';
 import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
 import { useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import cx from 'classnames';
 import { CSSTransition } from 'react-transition-group';
+import { doesNodeContainClick } from 'semantic-ui-react/dist/commonjs/lib';
 
 import config from '@plone/volto/registry';
 import { Icon, SearchWidget } from '@plone/volto/components';
@@ -40,22 +41,22 @@ const MenuItem = ({
   resetToRoot,
   pathname,
 }) => {
-  const [isSubMenuOpen, setSubMenuOpen] = useState(null);
+  const [isSubMenuOpen, setSubMenuOpen] = useState(false);
 
-  const openSubMenu = useCallback((e, index) => {
+  const openSubMenu = useCallback((e) => {
     e.stopPropagation();
-    setSubMenuOpen(index);
+    setSubMenuOpen(true);
   }, []);
 
   const closeSubMenu = useCallback((e) => {
     e.stopPropagation();
-    setSubMenuOpen(null);
+    setSubMenuOpen(false);
   }, []);
 
-  // Reset submenues when the mobile menu is closed or when a leaf is clicked
+  // Reset submenus when history changes
   useEffect(() => {
     if (resetToRoot) {
-      setSubMenuOpen(null);
+      setSubMenuOpen(false);
     }
   }, [resetToRoot]);
 
@@ -71,7 +72,7 @@ const MenuItem = ({
         {section.items.length > 0 && <Icon name={arrowRightSVG} />}
       </Link>
       <CSSTransition
-        in={isSubMenuOpen !== null}
+        in={isSubMenuOpen}
         timeout={500}
         classNames="menu-drawer"
         unmountOnExit
@@ -152,7 +153,7 @@ const MobileNavigation = (props) => {
     (e, section, openSubMenu, closeSubMenu, level) => {
       e.preventDefault();
       if (section.items.length > 0) {
-        openSubMenu(e, level);
+        openSubMenu(e);
       } else {
         history.push(section.url);
         closeMenus(e);
@@ -171,6 +172,19 @@ const MobileNavigation = (props) => {
       closeMenuOnHistoryChange();
     };
   }, [history, closeMenus]);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (menus.current && !doesNodeContainClick(menus.current, e)) {
+        closeMenus(e);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside, false);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside, false);
+    };
+  }, [closeMenus]);
 
   return (
     <div className="mobile-nav mobile only tablet only" ref={menus}>
