@@ -1,5 +1,9 @@
 :root {
-  --image-aspect-ratio: 1;
+  --image-aspect-ratio: 16 / 9;
+}
+
+.block {
+  background: var(--background-color);
 }
 
 .blocks-group-wrapper {
@@ -44,13 +48,9 @@
   }
 
   .teaser-item {
-    background-color: var(--background-color);
+    background-color: var(--background-color-inverse);
     color: var(--font-color, $black);
   }
-}
-
-.blocks-group-wrapper.grey .block.gridBlock .block.teaser .teaser-item {
-  background-color: var(--background-color-inverse);
 }
 
 .block.gridBlock .block.image img,

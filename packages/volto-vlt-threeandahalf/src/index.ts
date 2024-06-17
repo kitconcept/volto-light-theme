@@ -24,7 +24,7 @@ export type StyleDefinition =
 // We extend the block types with the custom ones
 declare module '@plone/types' {
   export interface SettingsConfig {
-    backgroundColors: StyleDefinition[];
+    backgroundColors: Array<StyleDefinition>;
     blockWidths: Array<StyleDefinition>;
   }
 
@@ -43,10 +43,10 @@ const applyConfig = (config: ConfigType) => {
   config.settings.backgroundColors = [
     {
       style: {
-        '--background-color': 'transparent',
+        '--background-color': '#fff',
       },
-      name: 'transparent',
-      label: 'Transparent',
+      name: 'white',
+      label: 'White',
     },
     {
       style: {
@@ -93,26 +93,22 @@ const applyConfig = (config: ConfigType) => {
   config.widgets.widget.blockWidth = BlockWidthWidget;
   config.widgets.widget.blockAlignment = BlockAlignmentWidget;
 
+  // This removes the `CLASSNAMES_RESET` classes coming from vlr that are now wrong
+  // and calculates them again
   config.settings.styleClassNameExtenders.push(
-    ({
-      block,
-      content,
-      data,
-      classNames,
-    }: {
-      data: any;
-      classNames: Array<string>;
-    }) => {
+    ({ block, content, data, classNames }) => {
       const [previousBlock, nextBlock] = getPreviousNextBlock({
         content,
         block,
       });
       const CLASSNAMES_RESET = [
         'previous--has--same--backgroundColor',
+        'previous--has--different--backgroundColor',
+        'next--has--same--backgroundColor',
         'next--has--different--backgroundColor',
       ];
-      classNames = classNames.filter((className) =>
-        CLASSNAMES_RESET.includes(className),
+      classNames = classNames.filter(
+        (className) => !CLASSNAMES_RESET.includes(className),
       );
 
       // Given a StyleWrapper defined `backgroundColor` style
@@ -185,20 +181,13 @@ const applyConfig = (config: ConfigType) => {
     },
   );
 
+  // @ts-ignore
   Object.keys(config.blocks.blocksConfig).forEach((block: AvailableBlocks) => {
-    config.blocks.blocksConfig[block].colors = config.settings.backgroundColors;
+    if (config.blocks.blocksConfig[block].colors) {
+      config.blocks.blocksConfig[block].colors =
+        config.settings.backgroundColors;
+    }
   });
-  // config.blocks.blocksConfig.accordion.colors = config.settings.backgroundColors;
-  // config.blocks.blocksConfig.slateTable
-  // config.blocks.blocksConfig.listing
-  // config.blocks.blocksConfig.gridBlock.colors
-  // config.blocks.blocksConfig.slate
-  // config.blocks.blocksConfig.teaser
-  // config.blocks.blocksConfig.video
-  // config.blocks.blocksConfig.maps
-  // config.blocks.blocksConfig.heading
-  // config.blocks.blocksConfig.__button
-  // config.blocks.blocksConfig.separator
 
   config.blocks.blocksConfig.image = {
     ...config.blocks.blocksConfig.image,

@@ -15,6 +15,10 @@ const messages = defineMessages({
 export const ButtonStylingSchema = ({ schema, formData, intl }) => {
   defaultStylingSchema({ schema, formData, intl });
 
+  schema.fieldsets[0].fields = schema.fieldsets[0].fields.filter(
+    (field) => field !== 'inneralign',
+  );
+
   schema.properties.styles.schema.fieldsets[0].fields = [
     'blockWidth:noprefix',
     ...schema.properties.styles.schema.fieldsets[0].fields,

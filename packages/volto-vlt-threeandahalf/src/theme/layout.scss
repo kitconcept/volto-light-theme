@@ -1,4 +1,10 @@
 // Pre-BlockModelv3 - Layout
+:root {
+  --align-left: start;
+  --align-center: center;
+  --align-right: end;
+}
+
 @mixin variable-container-width() {
   max-width: var(--block-width, --layout-container-width);
   margin-right: auto;
