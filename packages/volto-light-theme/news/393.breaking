@@ -1,9 +1,0 @@
-Updated the MobileNavigation component to be more easily customizable.
-The component can now handle infinite navigation depth instead of only three levels, if configured to do so.
-The Burger Menu can now be easily customized by overriding the new MobileNavigationToggler.jsx file.
-@lenadax
-
-Breaking:
-- The "hamburger" icon in the mobile navigation now has an additional wrapper that allows for better customization.
-
-If you have overriden the hamburger icon, you should make sure that your customizations still work and adjust otherwise.
