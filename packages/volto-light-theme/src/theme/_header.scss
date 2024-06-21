@@ -672,8 +672,13 @@ body.has-toolbar.has-sidebar {
     padding: 15px;
   }
 
-  .hamburger {
-    padding-bottom: 0;
+  .hamburger-toggler {
+    width: 40px;
+    height: 24px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
   }
 
   .hamburger-wrapper {
@@ -716,7 +721,7 @@ body.has-toolbar.has-sidebar {
     .search-wrapper .search {
       padding-top: 20px;
       button {
-        padding-top: 0px;
+        padding: 0px;
         margin-right: 20px;
       }
     }
@@ -878,6 +883,11 @@ body.has-toolbar.has-sidebar {
 
       .icon:hover {
         cursor: pointer;
+      }
+
+      &.header {
+        align-items: flex-start;
+        line-height: 36px;
       }
 
       &.current {

@@ -8,6 +8,19 @@
 
 <!-- towncrier release notes start -->
 
+## 3.3.2 (2024-05-31)
+
+### Bugfix
+
+- Add top padding to login page @danalvrz [#387](https://github.com/kitconcept/volto-light-theme/pull/387)
+- Add default width mixin to content creation Forms @danalvrz [#388](https://github.com/kitconcept/volto-light-theme/pull/388)
+
+## 3.3.1 (2024-05-30)
+
+### Bugfix
+
+- Fix image grid clossure issues in inlined JSX method when selecting an image after uploading another image in another grid element @sneridagh [#389](https://github.com/kitconcept/volto-light-theme/pull/389)
+
 ## 3.3.0 (2024-04-26)
 
 ### Feature
