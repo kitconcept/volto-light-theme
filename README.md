@@ -185,11 +185,14 @@ config.settings.enableFatMenu = true;
 
 See a detailed upgrade guide in: https://github.com/kitconcept/volto-light-theme/blob/main/UPGRADE-GUIDE.md
 
-## Development Setup
 
-This theme works under Volto 17 alpha 16 onwards.
-Compatibility with Volto 16 might be achieved, but it has to be at customization level in the
-specific project add-on.
+## Compatibility and Development Setup
+
+Volto Light Theme 3.x works under Volto 17 alpha 16 onwards.
+
+Volto Light Theme 4.X requires Volto 18. 
+
+Compatibility with Volto 16 might be achieved, but it has to be at customization level in the specific project add-on.
 This is mainly due to the `RenderBlocks` customization that is based in the one in 17 because of the Grid block in core and the autogrouping feature.
 See more information about the other dependencies in `peerDependencies` in `package.json`.
 It is possible to develop this add-on using docker containers and the provided convenience Makefile commands.
@@ -223,7 +226,10 @@ Run `make help` to list the available commands.
 ### Prerequisites
 
 - Docker
-- Node 18 (e.g. via nvm)
+- Node 18 or 20 (e.g. via nvm)
+
+- Volto 17 (For Volto Light Theme 3.x and lower)
+- Volto 18 (For Volto Light Theme 4.x)
 
 ### Development Environment Setup
 
