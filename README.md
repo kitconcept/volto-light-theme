@@ -232,11 +232,12 @@ They will be noted properly in the changelog.
 
 See a detailed upgrade guide in: https://github.com/kitconcept/volto-light-theme/blob/main/UPGRADE-GUIDE.md
 
-## Development
+## Compatibility and Development Setup
 
-This theme works under Volto 17 alpha 16 onwards.
-Compatibility with Volto 16 might be achieved, but it has to be at customization level in the
-specific project add-on.
+Volto Light Theme 3.x works under Volto 17 alpha 16 onwards with Volto 17.
+Volto Light Theme 4.X requires Volto 18. 
+
+Compatibility with Vol
 This is mainly due to the `RenderBlocks` customization that is based in the one in 17 because of the Grid block in core and the autogrouping feature.
 See more information about the other dependencies in `peerDependencies` in `package.json`.
 The development of this add-on is done in isolation using a new approach using pnpm workspaces and latest `mrs-developer` and other Volto core improvements.
@@ -244,7 +245,9 @@ For this reason, it only works with pnpm and Volto 18 (currently in alpha) but i
 
 ### Requisites
 
-- Volto 18 (2024-03-21: currently in alpha)
+- Volto 17 (For Volto Light Theme 3.x and lower)
+
+- Volto 18, currently in Alpha (For Volto Light Theme 4.x)
 - pnpm as package manager
 
 ### Make convenience commands
