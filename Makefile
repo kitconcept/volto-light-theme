@@ -46,6 +46,15 @@ start: ## Starts Volto, allowing reloading of the add-on during development
 build: ## Build a production bundle for distribution of the project with the add-on
 	pnpm build
 
+packages/registry/dist: packages/registry/src
+	pnpm build:registry
+
+packages/components/dist: packages/components/src
+	pnpm build:components
+
+.PHONY: build-deps
+build-deps: packages/registry/dist packages/components/dist ## Build dependencies
+
 .PHONY: i18n
 i18n: ## Sync i18n
 	pnpm --filter $(ADDON_NAME) i18n
