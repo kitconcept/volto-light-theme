@@ -1,4 +1,7 @@
 {
+  "plugins": {
+    "../../core/packages/scripts/prepublish.js": {}
+  },
   "hooks": {
     "after:bump": [
       "pipx run towncrier build --draft --yes --version ${version} > .changelog.draft",
@@ -8,6 +11,9 @@
       "git add ../../CHANGELOG.md ../../package.json"
     ],
     "after:release": "rm .changelog.draft"
+  },
+  "npm": {
+    "publish": false
   },
   "git": {
     "changelog": "pipx run towncrier build --draft --yes --version 0.0.0",
