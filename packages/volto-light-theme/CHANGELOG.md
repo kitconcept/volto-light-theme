@@ -8,6 +8,17 @@
 
 <!-- towncrier release notes start -->
 
+## 4.0.1 (2024-06-28)
+
+### Bugfix
+
+- Fix Invalid html structure in caption component @iRohitSingh [#398](https://github.com/kitconcept/volto-light-theme/pull/398)
+- Fix install in Volto 17 @sneridagh [#400](https://github.com/kitconcept/volto-light-theme/pull/400)
+
+### Internal
+
+- Upgrade to Volto 18a37 @sneridagh [#403](https://github.com/kitconcept/volto-light-theme/pull/403)
+
 ## 4.0.0 (2024-06-21)
 
 ### Breaking
