@@ -19,7 +19,12 @@ msgstr ""
 #. Default: "Back"
 #: components/MobileNavigation/MobileNavigation
 msgid "Back"
-msgstr ""
+msgstr "Zurück"
+
+#. Default: "Back to homepage"
+#: components/Logo/Logo
+msgid "Back to homepage"
+msgstr "Zurück zur Startseite"
 
 #. Default: "Background color"
 #: components/Blocks/schema
@@ -34,7 +39,7 @@ msgstr "Block Breite"
 #. Default: "Breadcrumbs"
 #: components/Breadcrumbs/Breadcrumbs
 msgid "Breadcrumbs"
-msgstr ""
+msgstr "Brotkrumen"
 
 #. Default: "Browse the site, drop an image, or type an URL"
 #: components/Blocks/Image/Edit
@@ -44,7 +49,7 @@ msgstr "Bild auswählen, hochladen oder URL angeben"
 #. Default: "Button text"
 #: components/Blocks/Slider/schema
 msgid "Button text"
-msgstr ""
+msgstr "Button Text"
 
 #. Default: "Center"
 #: components/Widgets/AlignWidget
@@ -65,7 +70,7 @@ msgstr "Kontakt"
 #. Default: "Continue reading"
 #: components/Blocks/Slider/DefaultBody
 msgid "Continue reading"
-msgstr ""
+msgstr "Weiterlesen"
 
 #. Default: "Copyright"
 #: components/Footer/Footer
@@ -80,7 +85,7 @@ msgstr "Beschreibung"
 #. Default: "Distributed under the {license}."
 #: components/Footer/Footer
 msgid "Distributed under the {license}."
-msgstr ""
+msgstr "Vertrieben unter {license}"
 
 #. Default: "End"
 #: components/Blocks/EventMetadata/View
@@ -100,18 +105,18 @@ msgstr "Volle Breite"
 #. Default: "GNU GPL license"
 #: components/Footer/Footer
 msgid "GNU GPL license"
-msgstr ""
+msgstr "GNU GPL Lizenz"
 
 #. Default: "Hide Button"
 #: components/Blocks/Slider/schema
 msgid "Hide Button"
-msgstr "kein Button anzeigen"
+msgstr "keinen Button anzeigen"
 
 #. Default: "Home"
 #: components/Breadcrumbs/Breadcrumbs
 #: components/MobileNavigation/MobileNavigation
 msgid "Home"
-msgstr ""
+msgstr "Startseite"
 
 #. Default: "ICS Download"
 #: components/Blocks/EventMetadata/View
@@ -177,16 +182,11 @@ msgstr "Telefon"
 #. Default: "Please choose an existing content as source for this element"
 #: components/Blocks/Slider/DefaultBody
 msgid "Please choose an existing content as source for this element"
-msgstr ""
+msgstr "Bitte wählen sie einen bestehenden Inhalt als Quelle für dieses Element"
 
 #. Default: "Plone Foundation"
 #: components/Footer/Footer
 msgid "Plone Foundation"
-msgstr ""
-
-#. Default: "Plone Site"
-#: components/Logo/Logo
-msgid "Plone Site"
 msgstr ""
 
 #. Default: "Plone{reg} Open Source CMS/WCM"
@@ -272,7 +272,7 @@ msgstr "Sortierung"
 #. Default: "Source"
 #: components/Blocks/Slider/DefaultBody
 msgid "Source"
-msgstr ""
+msgstr "Quelle"
 
 #. Default: "Start"
 #: components/Blocks/EventMetadata/View
@@ -317,7 +317,7 @@ msgstr "Bild löschen"
 #. Default: "Image preview"
 #: components/Blocks/Image/ImageSidebar
 msgid "image_block_preview"
-msgstr ""
+msgstr "Bild Vorschau"
 
 #. Default: "Loading"
 #: components/Blocks/Listing/ListingBody
@@ -327,7 +327,7 @@ msgstr "laden"
 #. Default: "More info"
 #: components/Blocks/Slider/DefaultBody
 msgid "moreInfo"
-msgstr ""
+msgstr "Mehr Informationen"
 
 #. Default: "of"
 #: components/Blocks/Listing/ListingBody

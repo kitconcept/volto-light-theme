@@ -291,7 +291,8 @@ External link removal for all the blocks.
     .block.separator
     .line,
   .block-editor-codeBlock,
-  .block-editor-mermaidBlock {
+  .block-editor-mermaidBlock,
+  .block-editor-description .documentDescription {
     @include narrow-container-width();
     @include adjustMarginsToEditContainer($narrow-container-width);
   }
@@ -409,6 +410,17 @@ body.has-toolbar.has-sidebar .block .ui.basic.button.delete-button {
     [class*='block-editor-'] {
       margin-right: 0;
       margin-left: 0;
+    }
+  }
+}
+
+// Create content page form
+#page-add,
+#page-edit {
+  > .container {
+    > .ui.form {
+      margin-top: $spacing-small;
+      @include default-container-width();
     }
   }
 }

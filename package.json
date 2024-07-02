@@ -1,5 +1,6 @@
 {
   "name": "@kitconcept/volto-light-theme-dev",
+  "version": "4.0.1",
   "description": "Volto Light Theme by kitconcept",
   "main": "src/index.js",
   "types": "src/types/index.d.ts",
@@ -26,14 +27,14 @@
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "start": "pnpm build:deps && VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto start",
+    "start": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto start",
     "start:prod": "pnpm --filter @plone/volto start:prod",
-    "build": "pnpm build:deps && VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto build",
+    "build": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto build",
     "build:deps": "pnpm --filter @plone/registry --filter @plone/components build",
     "i18n": "pnpm --filter addons i18n",
     "test": "RAZZLE_JEST_CONFIG=$(pwd)/jest-addon.config.js pnpm --filter @plone/volto test",
-    "lint": "eslint --max-warnings=0 'packages/**/src/**/*.{js,jsx,ts,tsx}'",
-    "lint:fix": "eslint --fix 'packages/**/src/**/*.{js,jsx,ts,tsx}'",
+    "lint": "VOLTOCONFIG=$(pwd)/volto.config.js eslint --max-warnings=0 'packages/**/src/**/*.{js,jsx,ts,tsx}'",
+    "lint:fix": "VOLTOCONFIG=$(pwd)/volto.config.js eslint --fix 'packages/**/src/**/*.{js,jsx,ts,tsx}'",
     "prettier": "prettier --check 'packages/**/src/**/*.{js,jsx,ts,tsx}'",
     "prettier:fix": "prettier --write 'packages/**/src/**/*.{js,jsx,ts,tsx}' ",
     "stylelint": "stylelint 'packages/**/src/**/*.{css,scss,less}' --allow-empty-input",
@@ -49,9 +50,9 @@
     "mrs-developer": "^2.2.0"
   },
   "dependencies": {
-    "@plone/volto": "workspace:*",
     "@plone/registry": "workspace:*",
+    "@plone/volto": "workspace:*",
     "@kitconcept/volto-light-theme": "workspace:*"
   },
-  "packageManager": "pnpm@8.15.4"
+  "packageManager": "pnpm@9.4.0"
 }

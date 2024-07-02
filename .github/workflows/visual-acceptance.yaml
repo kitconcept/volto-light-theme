@@ -23,13 +23,8 @@ jobs:
         with:
           node-version: ${{ env.node-version }}
 
-      - uses: pnpm/action-setup@v3
-        name: Install pnpm
-        with:
-          version: 8
-          # We don't want to install until later,
-          # when the cache and Cypress are in place
-          run_install: false
+      - name: Enable corepack
+        run: corepack enable
 
       - name: Get pnpm store directory
         shell: bash
@@ -91,7 +86,7 @@ jobs:
 
           # working-directory: backend
 
-      - run: make test-acceptance-visual-headless
+      - run: make ci-acceptance-test-visual
 
       # Upload Cypress screenshots
       - uses: actions/upload-artifact@v3
