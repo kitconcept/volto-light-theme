@@ -1432,8 +1432,8 @@ importers:
         specifier: ^10.4.6
         version: 10.4.6
       '@kitconcept/volto-button-block':
-        specifier: ^2.3.1
-        version: 2.3.1
+        specifier: ^3.0.1
+        version: 3.0.1(classnames@2.2.6)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)
       '@kitconcept/volto-dsgvo-banner':
         specifier: ^2.3.2
         version: 2.3.2
@@ -1441,8 +1441,8 @@ importers:
         specifier: ^2.4.0
         version: 2.4.0(react@18.2.0)
       '@kitconcept/volto-highlight-block':
-        specifier: ^3.0.1
-        version: 3.0.1(@plone/volto@18.0.0-alpha.39(@babel/runtime@7.24.1)(@popperjs/core@2.11.8)(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))
+        specifier: ^4.0.0
+        version: 4.0.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@kitconcept/volto-introduction-block':
         specifier: ^1.0.0
         version: 1.0.0
@@ -2956,8 +2956,13 @@ packages:
   '@juggle/resize-observer@3.4.0':
     resolution: {integrity: sha512-dfLbk+PwWvFzSxwk3n5ySL0hfBog779o8h68wK/7/APo/7cgyWp5jcXockbxdk5kFRkbeXWm4Fbi9FrdN381sA==}
 
-  '@kitconcept/volto-button-block@2.3.1':
-    resolution: {integrity: sha512-bYBwxk3CQVLlIiL2uaHk9NVcVqKHqkCOUu0lao2pi+bQ4jPOgScZihgy5rdMtwsopzvawCzShcFGQP1S6VuiLQ==}
+  '@kitconcept/volto-button-block@3.0.1':
+    resolution: {integrity: sha512-9gJUmMNJwWvATd9eoAVPWOOFl0ViLIu2iLm7ew4tlnhmGGxbE1tQOD6nk8RcDf7PU8lUUimb8558u7Ce2+CFwg==}
+    peerDependencies:
+      classnames: 2.2.6
+      react: 18.2.0
+      react-dom: 18.2.0
+      react-intl: 3.8.0
 
   '@kitconcept/volto-dsgvo-banner@2.3.2':
     resolution: {integrity: sha512-iguCyuy4a7dYi1glWorVY7/0co66Su3+acp2O24GEGyDHvrZJgNkKvIOc9nnmAvR6g9zluMWH5ilLaT1rZuT6w==}
@@ -2965,10 +2970,11 @@ packages:
   '@kitconcept/volto-heading-block@2.4.0':
     resolution: {integrity: sha512-NbXsksnfEtaaHHln7SdZ8/BA0jTLilCH6uQ/CeL6auc+zzssqRyFRTr+PArGRUSCWP/e10esewYaN9M+H7oxgQ==}
 
-  '@kitconcept/volto-highlight-block@3.0.1':
-    resolution: {integrity: sha512-hSH2qTwnNs+iW3OrNENGiBLQazjxPufaHigZOWzn0w/JBbuaRv654Ua/lxAuzMCVwD4Xzw5xJyYz2K9aJb8cBQ==}
+  '@kitconcept/volto-highlight-block@4.0.0':
+    resolution: {integrity: sha512-5xkgXjVU1mwujcO2jjsxGNNouS2zyHGhKPxAbj0nyz8GsVoYqhnoQKm7IG05Lp/Zh39PNCXHzFpHxhtlJLxK1g==}
     peerDependencies:
-      '@plone/volto': ^17.0.0 || ^18.0.0-alpha.0
+      react: 18.2.0
+      react-dom: 18.2.0
 
   '@kitconcept/volto-introduction-block@1.0.0':
     resolution: {integrity: sha512-17wbBx89zcSQzXbdWvKBDlw0aJfTzjaX3cJUBorHjrJgOcTx7WBahIhBPjnC2z4EYmZ5w9YdHolqdD9HUlpozw==}
@@ -16888,7 +16894,12 @@ snapshots:
 
   '@juggle/resize-observer@3.4.0': {}
 
-  '@kitconcept/volto-button-block@2.3.1': {}
+  '@kitconcept/volto-button-block@3.0.1(classnames@2.2.6)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)':
+    dependencies:
+      classnames: 2.2.6
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-intl: 3.12.1(react@18.2.0)
 
   '@kitconcept/volto-dsgvo-banner@2.3.2':
     dependencies:
@@ -16901,9 +16912,10 @@ snapshots:
     transitivePeerDependencies:
       - react
 
-  '@kitconcept/volto-highlight-block@3.0.1(@plone/volto@18.0.0-alpha.39(@babel/runtime@7.24.1)(@popperjs/core@2.11.8)(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))':
+  '@kitconcept/volto-highlight-block@4.0.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
-      '@plone/volto': 18.0.0-alpha.39(@babel/runtime@7.24.1)(@popperjs/core@2.11.8)(@types/react-dom@18.2.12)(@types/react@18.2.27)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
 
   '@kitconcept/volto-introduction-block@1.0.0': {}
 
