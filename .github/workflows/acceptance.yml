@@ -6,7 +6,6 @@ env:
   CYPRESS_RETRIES: 2
 
 jobs:
-
   acceptance:
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.event.pull_request.base.repo.full_name
     runs-on: ubuntu-latest
@@ -178,11 +177,11 @@ jobs:
         if: failure()
         with:
           name: cypress-screenshots-acceptance
-          path: acceptance/cypress/screenshots
+          path: cypress/screenshots
 
       # Upload Cypress videos
       - uses: actions/upload-artifact@v3
         if: failure()
         with:
           name: cypress-videos-acceptance
-          path: acceptance/cypress/videos
+          path: cypress/videos
