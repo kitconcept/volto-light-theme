@@ -15,9 +15,11 @@ logger.setLevel(logging.INFO)
 COLOR_MAP = {
     "grey": {
         "--background-color": "#ecebeb",
+        "--font-color": "#000",
     },
     "transparent": {
-        "--background-color": "transparent",
+        "--background-color": "#fff",
+        "--font-color": "#000",
     },
 }
 
