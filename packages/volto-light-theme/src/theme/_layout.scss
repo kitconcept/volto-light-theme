@@ -250,6 +250,13 @@ External link removal for all the blocks.
   }
 }
 
+.category-image-card {
+  .block-inner-container {
+    padding-top: $spacing-large;
+    padding-bottom: $spacing-large;
+  }
+}
+
 // Content Layout Styling
 #page-document {
   & > .block.image.align.left.medium,
@@ -293,7 +300,7 @@ External link removal for all the blocks.
   & > .block.search .searchBlock-container,
   & > .block.introduction .block-container,
   & > .block.teaser .teaser-item.default,
-  & > .block.highlight .teaser-description-title,
+  // & > .block.highlight .teaser-description-title,
   & > table,
   & > .table-of-contents,
   & > .accordion-block {
