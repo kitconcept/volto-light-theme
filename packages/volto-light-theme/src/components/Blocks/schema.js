@@ -19,7 +19,7 @@ export const defaultStylingSchema = ({ schema, formData, intl }) => {
 
     const defaultBGColor =
       config.blocks?.blocksConfig?.[formData['@type']]?.defaultBGColor ||
-      config.settings.backgroundColors[0];
+      config.settings?.backgroundColors?.[0].style;
 
     schema.properties.styles.schema.fieldsets[0].fields = [
       'backgroundColor:noprefix',
@@ -29,7 +29,7 @@ export const defaultStylingSchema = ({ schema, formData, intl }) => {
       widget: 'color_picker',
       title: intl.formatMessage(messages.backgroundColor),
       colors,
-      default: defaultBGColor,
+      default: formData?.styles?.['backgroundColor:noprefix'] ?? defaultBGColor,
     };
   }
 

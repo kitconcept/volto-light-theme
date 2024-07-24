@@ -158,14 +158,14 @@ const applyConfig = (config) => {
       const previousColor =
         previousBlock?.styles?.['backgroundColor:noprefix']?.[
           '--background-color'
-        ] ?? defaultColor?.['--background-color'];
+        ] ?? defaultColor?.style['--background-color'];
       const currentColor =
         data?.styles?.['backgroundColor:noprefix']?.['--background-color'] ??
-        defaultColor?.['--background-color'];
+        defaultColor?.style['--background-color'];
       const nextColor =
         nextBlock?.styles?.['backgroundColor:noprefix']?.[
           '--background-color'
-        ] ?? defaultColor?.['--background-color'];
+        ] ?? defaultColor?.style['--background-color'];
 
       // Inject a class depending if the previous block has the same `backgroundColor`
       if (currentColor === previousColor) {
@@ -201,7 +201,7 @@ const applyConfig = (config) => {
   config.blocks.blocksConfig.title = {
     ...config.blocks.blocksConfig.title,
     category: 'heading',
-    blockModel: 3,
+    blockModel: config.settings.blockModel,
   };
 
   config.blocks.blocksConfig.accordion = {
@@ -302,7 +302,7 @@ const applyConfig = (config) => {
     category: 'inline',
     schemaEnhancer: defaultStylingSchema,
     sidebarTab: 1,
-    blockModel: 3,
+    blockModel: config.settings.blockModel,
   };
 
   config.blocks.blocksConfig.teaser = {
@@ -397,6 +397,14 @@ const applyConfig = (config) => {
   config.blocks.blocksConfig.slider = {
     ...config.blocks.blocksConfig.slider,
     schemaEnhancer: sliderBlockSchemaEnhancer,
+  };
+
+  // Highlight Block
+  config.blocks.blocksConfig.highlight = {
+    ...config.blocks.blocksConfig.highlight,
+    schemaEnhancer: defaultStylingSchema,
+    blockModel: config.settings.blockModel,
+    category: 'image-card',
   };
 
   return config;
