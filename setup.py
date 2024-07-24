@@ -1,4 +1,5 @@
 """Installer for the kitconcept.voltolighttheme package."""
+
 from pathlib import Path
 from setuptools import find_namespace_packages
 from setuptools import setup
@@ -44,7 +45,11 @@ setup(
     include_package_data=True,
     zip_safe=False,
     python_requires=">=3.11",
-    install_requires=["setuptools", "Plone", "plone.distribution"],
+    install_requires=[
+        "setuptools",
+        "Plone",
+        "plone.distribution==1.0.0b4",
+    ],
     extras_require={
         "test": [
             "zest.releaser[recommended]",
