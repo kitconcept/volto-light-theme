@@ -9,6 +9,7 @@
 @import 'container';
 
 @import 'toolbar';
+@import 'widgets';
 @import 'header';
 @import 'breadcrumbs';
 @import 'content';
@@ -28,9 +29,11 @@
 @import 'blocks/highlight';
 @import 'blocks/separator';
 @import 'blocks/slate';
+@import 'blocks/title';
 @import 'blocks/toc';
 @import 'blocks/table';
 @import 'blocks/maps';
+@import 'blocks/heading';
 @import 'blocks-chooser';
 @import 'blocks/eventMetadata';
 

@@ -1,52 +1,19 @@
 .block.__button {
-  .button.container {
-    @include narrow-container-width();
+  @include variable-block-alignment();
 
-    @include vertical-space-button();
-  }
+  & .ui.button {
+    padding: 8px 20px;
+    border: 1px solid $black;
+    border-radius: unset;
+    background: none;
+    color: $black;
 
-  p + & {
-    .button.container {
-      margin-top: 60px;
-      @container (max-width: #{$largest-mobile-screen}) {
-        margin-top: 40px;
-      }
+    @include body-text-bold();
+
+    &:focus,
+    &:hover {
+      background-color: $black;
+      color: $white;
     }
   }
-
-  button {
-    margin: 0;
-  }
-}
-
-.block-editor-__button.has--buttonAlign--wide {
-  .button.container {
-    @include default-container-width();
-  }
-}
-
-.block.__button.has--buttonAlign--wide {
-  .button.container {
-    @include default-container-width();
-  }
-}
-
-.block.__button .ui.button {
-  padding: 8px 20px;
-  border: 1px solid $black;
-  border-radius: unset;
-  background: none;
-  color: $black;
-
-  @include body-text-bold();
-}
-
-.block.__button .ui.button:focus,
-.block.__button .ui.button:hover {
-  background-color: $black;
-  color: $white;
-}
-
-.block-editor-__button.has--backgroundColor--grey {
-  background-color: $lightgrey;
 }

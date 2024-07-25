@@ -35,10 +35,16 @@
   },
   "devDependencies": {
     "@plone/scripts": "^3.6.1",
+    "@plone/types": "workspace:*",
+    "@types/lodash": "^4.14.201",
+    "@types/react": "^18.2.79",
+    "@types/react-dom": "^18.2.25",
     "release-it": "^17.1.1"
   },
   "dependencies": {
-    "@plone/components": "workspace:*"
+    "@plone/components": "workspace:*",
+    "classnames": "2.5.1",
+    "react-aria-components": "^1.1.1"
   },
   "peerDependencies": {
     "@eeacms/volto-accordion-block": "^10.4.6",
@@ -48,6 +54,12 @@
     "@kitconcept/volto-highlight-block": "^4.0.0",
     "@kitconcept/volto-introduction-block": "^1.0.0",
     "@kitconcept/volto-separator-block": "^4.1.1",
-    "@kitconcept/volto-slider-block": "^6.3.1"
+    "@kitconcept/volto-slider-block": "^6.3.1",
+    "lodash": "4.17.21",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-intl": "3.8.0",
+    "react-redux": "8.1.2",
+    "semantic-ui-react": "2.1.5"
   }
 }

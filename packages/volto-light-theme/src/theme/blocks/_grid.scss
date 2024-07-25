@@ -4,6 +4,14 @@
   margin-top: 0;
   margin-bottom: 0;
 
+  .column.grid > .column:not(.grid) {
+    padding: 10px !important;
+  }
+
+  h1.documentFirstHeading + & {
+    padding-top: 0 !important;
+  }
+
   &.is--first--of--block-type,
   &.previous--is--same--block-type.previous--has--different--backgroundColor {
     @media only screen and (min-width: $largest-mobile-screen) {
@@ -34,7 +42,7 @@
   }
 
   .block.teaser {
-    margin-bottom: 0;
+    padding-bottom: 0 !important;
     background-color: $lightgrey;
 
     // External link icon

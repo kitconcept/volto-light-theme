@@ -3,4 +3,5 @@ core
 .changelog.draft
 build
 .DS_Store
-public
+packages/*
+!packages/volto-light-theme

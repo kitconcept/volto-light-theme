@@ -7,11 +7,15 @@ h5,
 h6,
 p,
 a,
-li {
+li { 
+  @include body-text();
   font-family: $page-font;
   font-style: normal;
-  @include body-text();
+  color: var(--font-color, #000)
+
 }
+
+
 
 @mixin word-break {
   -ms-hyphens: auto;
@@ -37,9 +41,13 @@ li::marker {
   }
 }
 
-p,
+p {
+  @include vertical-space-p();
+}
+
 ul,
 ol {
+  margin-top: $block-vertical-space;
   margin-bottom: $block-vertical-space;
   @include word-break();
 
@@ -111,7 +119,7 @@ h1.documentFirstHeading {
 // }
 
 // Slate headings
-h2 {
+h2:not(.headline) {
   @include text-heading-h2();
   @include vertical-space-h2();
   @include word-break();

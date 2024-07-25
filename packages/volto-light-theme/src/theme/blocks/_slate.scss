@@ -1,5 +1,40 @@
-.block.slate.has--backgroundColor--grey,
-#page-add .block-editor-slate.has--backgroundColor--grey,
-#page-edit .block-editor-slate.has--backgroundColor--grey {
-  background-color: $lightgrey;
+.block.slate {
+  min-height: 40px;
+
+  .block-inner-container {
+    :first-child {
+      margin-top: 0 !important;
+
+      &:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &.next--is--same--block-type:not(.is--first--of--block-type):not(
+      .previous--has--different--backgroundColor
+    ) {
+    .block-inner-container {
+      &:has(h2:first-child),
+      &:has(h3:first-child) {
+        padding-top: $spacing-medium;
+      }
+    }
+  }
+  
+  // Slash Menu
+  .slate-editor.selected .power-user-menu {
+    left: unset !important;
+    z-index: 100;
+  }
+
+  &.previous--has--different--backgroundColor {
+    .slate-editor.selected .power-user-menu {
+      margin-top: $spacing-xlarge;
+    }
+  }
 }
