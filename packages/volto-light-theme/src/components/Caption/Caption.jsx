@@ -16,16 +16,15 @@ import PropTypes from 'prop-types';
  */
 const Caption = ({ as = 'figcaption', title, description, credit }) => {
   const As = as;
-
   return (
     <As>
       {title && <h2 className="title">{title}</h2>}
       {description && (
-        <p className="description">
+        <div className="description">
           {description.split('\n').map((line, index) => (
             <p key={index}>{line || '\u00A0'}</p>
           ))}
-        </p>
+        </div>
       )}
       {credit && <p className="credits">{credit}</p>}
     </As>
