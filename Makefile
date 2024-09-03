@@ -42,6 +42,9 @@ ifeq ($(PYTHON_VERSION_OK),0)
 endif
 
 BACKEND_FOLDER=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
+EXAMPLE_CONTENT_FOLDER=${BACKEND_FOLDER}/src/kitconcept/voltolighttheme/setuphandlers/examplecontent
+PLONE_SITE_ID=Plone
+
 
 GIT_FOLDER=$(BACKEND_FOLDER)/.git
 
@@ -122,6 +125,14 @@ bin/i18ndude: bin/pip
 i18n: bin/i18ndude ## Update locales
 	@echo "$(GREEN)==> Updating locales$(RESET)"
 	bin/update_dist_locale
+
+
+# Example Content
+.PHONY: update-example-content
+update-example-content: bin/tox ## Export example content inside package
+	@echo "$(GREEN)==> Export example content into $(EXAMPLE_CONTENT_FOLDER) $(RESET)"
+	if [ -d $(EXAMPLE_CONTENT_FOLDER)/content ]; then rm -r $(EXAMPLE_CONTENT_FOLDER)/* ;fi
+	bin/plone-exporter instance/etc/zope.conf $(PLONE_SITE_ID) $(EXAMPLE_CONTENT_FOLDER)
 
 # Tests
 .PHONY: test
