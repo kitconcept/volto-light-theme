@@ -50,11 +50,12 @@ Or, create a site from the command line (first stop the instance):
 ```shell
 make create-site
 ```
+
 ### Exporting the content
 
 After editing the content on the running instance, point your browser to [http://localhost:8080/Plone/@@dist_export_all](http://localhost:8080/Plone/@@dist_export_all), select this distribution and export everything.
 
-After that, you will have the content available (in the `collective.exportimport` format) at `src/kitconcept/voltolighttheme/distributions/voltolighttheme/content`.
+After that, you will have the content available (in the `plone.exportimport` format) at `src/kitconcept/voltolighttheme/distributions/voltolighttheme/content`.
 
 ### Resources
 
