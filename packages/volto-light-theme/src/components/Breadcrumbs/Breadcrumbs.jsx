@@ -7,9 +7,10 @@ import { Link } from 'react-router-dom';
 import { defineMessages, injectIntl } from 'react-intl';
 import { Container } from '@plone/components';
 
-import { Icon } from '@plone/volto/components';
-import { getBreadcrumbs } from '@plone/volto/actions';
-import { getBaseUrl, hasApiExpander } from '@plone/volto/helpers';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
+import getBreadcrumbs from '@plone/volto/actions/breadcrumbs/breadcrumbs';
+import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
+import { hasApiExpander } from '@plone/volto/helpers/Utils/Utils';
 
 import homeSVG from '@plone/volto/icons/home.svg';
 

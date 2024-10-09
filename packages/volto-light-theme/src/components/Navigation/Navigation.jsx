@@ -7,11 +7,12 @@ import { NavLink } from 'react-router-dom';
 import { doesNodeContainClick } from 'semantic-ui-react/dist/commonjs/lib';
 import { useIntl, defineMessages, injectIntl } from 'react-intl';
 import cx from 'classnames';
-import { getBaseUrl, hasApiExpander } from '@plone/volto/helpers';
+import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
+import { hasApiExpander } from '@plone/volto/helpers/Utils/Utils';
 import config from '@plone/volto/registry';
 
-import { getNavigation } from '@plone/volto/actions';
-import { Icon } from '@plone/volto/components';
+import getNavigation from '@plone/volto/actions/navigation/navigation';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
 import clearSVG from '@plone/volto/icons/clear.svg';
 import NavItem from '@plone/volto/components/theme/Navigation/NavItem';
 

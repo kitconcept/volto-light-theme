@@ -5,7 +5,7 @@
 import React from 'react';
 import { Button, Input } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
-import { Icon } from '@plone/volto/components';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
 import loupeSVG from '@plone/volto/icons/zoom.svg';
 
 const messages = defineMessages({
