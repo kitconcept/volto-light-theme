@@ -22,7 +22,8 @@ module.exports = {
   extends: `${coreLocation}/packages/volto/.eslintrc`,
   rules: {
     'import/no-unresolved': 1,
-    'import/named': 2,
+    'import/named': 'error',
+    'react/jsx-filename-extension': 'error',
     'no-restricted-imports': [
       'error',
       {
