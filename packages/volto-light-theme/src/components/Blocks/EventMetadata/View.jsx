@@ -1,8 +1,8 @@
 import React from 'react';
 import { FormattedMessage, injectIntl } from 'react-intl';
-import { FormattedDate } from '@plone/volto/components';
-import { UniversalLink } from '@plone/volto/components';
-import { expandToBackendURL } from '@plone/volto/helpers';
+import FormattedDate from '@plone/volto/components/theme/FormattedDate/FormattedDate';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
+import { expandToBackendURL } from '@plone/volto/helpers/Url/Url';
 import { Container } from '@plone/components';
 
 const EventMetadataView = (props) => {

@@ -232,17 +232,24 @@ They will be noted properly in the changelog.
 
 See a detailed upgrade guide in: https://github.com/kitconcept/volto-light-theme/blob/main/UPGRADE-GUIDE.md
 
-## Development
+## Compatibility
 
-This theme works under Volto 17 alpha 16 onwards.
-Compatibility with Volto 16 might be achieved, but it has to be at customization level in the
-specific project add-on.
+| VLT version | Volto version |
+|-------------|---------------|
+|   3.x.x  |   >= Volto 17.0.0-alpha.16  |
+|   4.x.x  |   < Volto 17.18.0  |
+|   5.x.x  |   >= Volto 17.18.0 or >=Volto 18.0.0-alpha.36  |
+
+Compatibility with Volto 16 might be achieved, but it has to be at customization level in the specific project add-on.
 This is mainly due to the `RenderBlocks` customization that is based in the one in 17 because of the Grid block in core and the autogrouping feature.
 See more information about the other dependencies in `peerDependencies` in `package.json`.
+
+## Development
+
 The development of this add-on is done in isolation using a new approach using pnpm workspaces and latest `mrs-developer` and other Volto core improvements.
 For this reason, it only works with pnpm and Volto 18 (currently in alpha) but it does not mean that the add-on will only work in 18.
 
-### Requisites
+### Development requisites
 
 - Volto 18 (2024-03-21: currently in alpha)
 - pnpm as package manager
@@ -252,19 +259,32 @@ For this reason, it only works with pnpm and Volto 18 (currently in alpha) but i
 Run `make help` to list the available commands.
 
 ```text
-help                                 Show this help
-install                              Installs the dev environment using mrs-developer
-i18n                                 Sync i18n
-format                               Format codebase
-lint                                 Lint Codebase
-test                                 Run unit tests
-test-ci                              Run unit tests in CI
-start-backend-docker                 Starts a Docker-based backend for developing
-start-test-acceptance-frontend-dev   Start acceptance frontend in dev mode
-start-test-acceptance-frontend       Start acceptance frontend in prod mode
-start-test-acceptance-server         Start acceptance server
-test-acceptance                      Start Cypress in interactive mode
-test-acceptance-headless             Run cypress tests in headless mode for CI
+help                                  Show this help
+install                               Installs the add-on in a development environment
+start                                 Starts Volto, allowing reloading of the add-on during development
+build                                 Build a production bundle for distribution of the project with the add-on
+build-deps                            Build dependencies
+i18n                                  Sync i18n
+ci-i18n                               Check if i18n is not synced
+format                                Format codebase
+lint                                  Lint, or catch and remove problems, in code base
+release                               Release the add-on on npmjs.org
+release-dry-run                       Dry-run the release of the add-on on npmjs.org
+test                                  Run unit tests
+ci-test                               Run unit tests in CI
+backend-docker-start                  Starts a Docker-based backend for development
+storybook-start                       Start Storybook server on port 6006
+storybook-build                       Build Storybook
+acceptance-frontend-dev-start         Start acceptance frontend in development mode
+acceptance-frontend-prod-start        Start acceptance frontend in production mode
+acceptance-backend-start              Start backend acceptance server
+ci-acceptance-backend-start           Start backend acceptance server in headless mode for CI
+acceptance-test                       Start Cypress in interactive mode
+ci-acceptance-test                    Run cypress tests in headless mode for CI
+acceptance-a11y-frontend-prod-start   Start a11y acceptance frontend in prod mode
+ci-acceptance-a11y-backend-start      Start acceptance a11y server in CI mode (no terminal attached)
+acceptance-a11y-test                  Start a11y Cypress in interactive mode
+ci-acceptance-a11y-test               Run a11y cypress tests in headless mode for CI
 ```
 
 ### Development Environment Setup

@@ -7,14 +7,16 @@
  * DEVELOPER: @sneridagh
  */
 import React from 'react';
-import { getBaseUrl, applyBlockDefaults } from '@plone/volto/helpers';
-import { defineMessages, useIntl } from 'react-intl';
-import { map } from 'lodash';
+import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
 import {
+  applyBlockDefaults,
   getBlocksFieldname,
   getBlocksLayoutFieldname,
   hasBlocksData,
-} from '@plone/volto/helpers';
+} from '@plone/volto/helpers/Blocks/Blocks';
+import { defineMessages, useIntl } from 'react-intl';
+import { map } from 'lodash';
+
 import StyleWrapper from '@plone/volto/components/manage/Blocks/Block/StyleWrapper';
 import config from '@plone/volto/registry';
 import { ViewDefaultBlock } from '@plone/volto/components';

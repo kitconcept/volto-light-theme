@@ -1,8 +1,10 @@
 import { defineMessages } from 'react-intl';
 import { cloneDeep } from 'lodash';
 
-import { composeSchema, getPreviousNextBlock } from '@plone/volto/helpers';
+import { composeSchema } from '@plone/volto/helpers/Extensions';
+import { getPreviousNextBlock } from '@plone/volto/helpers/Blocks/Blocks';
 import { getCurrentStyleByName } from '../src/helpers/index';
+
 import {
   defaultStylingSchema,
   removeStylingSchema,
@@ -20,7 +22,6 @@ import TopSideFacets from './components/Blocks/Search/TopSideFacets';
 
 import GridListingBlockTemplate from './components/Blocks/Listing/GridTemplate';
 import { ButtonStylingSchema } from './components/Blocks/Button/schema';
-import { SeparatorStylingSchema } from './components/Blocks/Separator/schema';
 
 import { imageBlockSchemaEnhancer } from './components/Blocks/Image/schema';
 import { ImageBlockDataAdapter } from './components/Blocks/Image/adapter';
@@ -52,12 +53,12 @@ defineMessages({
 });
 
 const applyConfig = (config) => {
-  config.settings.blockModel = 3;
   config.settings.enableAutoBlockGroupingByBackgroundColor = true;
   config.settings.navDepth = 3;
   config.settings.enableFatMenu = true;
   config.settings.slate.useLinkedHeadings = false;
   config.settings.contentMetadataTagsImageField = 'preview_image';
+  config.settings.blockModel = 3;
 
   config.settings.backgroundColors = [
     {
@@ -198,12 +199,6 @@ const applyConfig = (config) => {
   config.settings.slidingSearchAnimation = true;
   config.settings.openExternalLinkInNewTab = true;
 
-  config.blocks.blocksConfig.title = {
-    ...config.blocks.blocksConfig.title,
-    category: 'heading',
-    blockModel: config.settings.blockModel,
-  };
-
   config.blocks.blocksConfig.accordion = {
     ...config.blocks.blocksConfig.accordion,
     mostUsed: true,
@@ -226,8 +221,14 @@ const applyConfig = (config) => {
   config.blocks.blocksConfig.slateTable = {
     ...config.blocks.blocksConfig.slateTable,
     schemaEnhancer: defaultStylingSchema,
-    sidebarTab: 1,
+    blockModel: config.settings.blockModel,
   };
+
+  config.blocks.blocksConfig.title = {
+    ...config.blocks.blocksConfig.title,
+    category: 'heading',
+    blockModel: config.settings.blockModel,
+  }
 
   config.blocks.blocksConfig.listing = {
     ...config.blocks.blocksConfig.listing,
@@ -259,8 +260,6 @@ const applyConfig = (config) => {
   config.blocks.blocksConfig.accordion.blocksConfig.teaser.schemaEnhancer =
     composeSchema(teaserSchemaEnhancer, disableBgColorSchema);
 
-  config.blocks.blocksConfig.gridBlock.colors =
-    config.settings.backgroundColors;
   config.blocks.blocksConfig.gridBlock.schemaEnhancer = defaultStylingSchema;
   config.blocks.blocksConfig.gridBlock.icon = gridSVG;
 
@@ -331,9 +330,9 @@ const applyConfig = (config) => {
     ...config.blocks.blocksConfig.heading,
     sidebarTab: 0,
     allowed_headings: [['h2', 'h2']],
-    schemaEnhancer: defaultStylingSchema,
     blockModel: config.settings.blockModel,
     category: 'heading',
+    schemaEnhancer: defaultStylingSchema,
   };
 
   config.blocks.blocksConfig.search = {
@@ -376,7 +375,7 @@ const applyConfig = (config) => {
       ...config.blocks.blocksConfig.separator,
       schemaEnhancer: composeSchema(
         config.blocks.blocksConfig.separator.schemaEnhancer,
-        SeparatorStylingSchema,
+        defaultStylingSchema,
       ),
       blockModel: config.settings.blockModel,
       category: 'separator',
@@ -397,14 +396,6 @@ const applyConfig = (config) => {
   config.blocks.blocksConfig.slider = {
     ...config.blocks.blocksConfig.slider,
     schemaEnhancer: sliderBlockSchemaEnhancer,
-  };
-
-  // Highlight Block
-  config.blocks.blocksConfig.highlight = {
-    ...config.blocks.blocksConfig.highlight,
-    schemaEnhancer: defaultStylingSchema,
-    blockModel: config.settings.blockModel,
-    category: 'image-card',
   };
 
   return config;

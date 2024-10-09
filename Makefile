@@ -36,7 +36,7 @@ help: ## Show this help
 install: ## Installs the add-on in a development environment
 	pnpm dlx mrs-developer missdev --no-config --fetch-https
 	pnpm i
-	pnpm pnpm build:deps
+	make build-deps
 
 .PHONY: start
 start: ## Starts Volto, allowing reloading of the add-on during development
@@ -45,6 +45,15 @@ start: ## Starts Volto, allowing reloading of the add-on during development
 .PHONY: build
 build: ## Build a production bundle for distribution of the project with the add-on
 	pnpm build
+
+core/packages/registry/dist: $(shell find core/packages/registry/src -type f)
+	pnpm --filter @plone/registry build
+
+core/packages/components/dist: $(shell find core/packages/components/src -type f)
+	pnpm --filter @plone/components build
+
+.PHONY: build-deps
+build-deps: core/packages/registry/dist core/packages/components/dist ## Build dependencies
 
 .PHONY: i18n
 i18n: ## Sync i18n
