@@ -8,14 +8,12 @@ import config from '@plone/volto/registry';
 import cx from 'classnames';
 import IntranetSearchWidget from '../SearchWidget/IntranetSearchWidget';
 
-import {
-  Anontools,
-  LanguageSelector,
-  Logo,
-  Navigation,
-  SearchWidget,
-  UniversalLink,
-} from '@plone/volto/components';
+import Anontools from '@plone/volto/components/theme/Anontools/Anontools';
+import LanguageSelector from '@plone/volto/components/theme/LanguageSelector/LanguageSelector';
+import Logo from '@plone/volto/components/theme/Logo/Logo';
+import Navigation from '@plone/volto/components/theme/Navigation/Navigation';
+import SearchWidget from '@plone/volto/components/theme/SearchWidget/SearchWidget';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 
 const messages = defineMessages({
   siteLabel: {
