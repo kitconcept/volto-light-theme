@@ -7,8 +7,9 @@ import { CSSTransition } from 'react-transition-group';
 import { doesNodeContainClick } from 'semantic-ui-react/dist/commonjs/lib';
 
 import config from '@plone/volto/registry';
-import { Icon, SearchWidget } from '@plone/volto/components';
-import { toBackendLang } from '@plone/volto/helpers';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
+import SearchWidget from '@plone/volto/components/theme/SearchWidget/SearchWidget';
+import { toBackendLang } from '@plone/volto/helpers/Utils/Utils';
 import arrowRightSVG from '@plone/volto/icons/right-key.svg';
 import arrowLeftSVG from '@plone/volto/icons/left-key.svg';
 import { MobileNavigationToggler } from './MobileNavigationToggler';

@@ -1,7 +1,9 @@
 import { defineMessages } from 'react-intl';
 import { cloneDeep } from 'lodash';
 
-import { composeSchema, getPreviousNextBlock } from '@plone/volto/helpers';
+import { composeSchema } from '@plone/volto/helpers/Extensions';
+import { getPreviousNextBlock } from '@plone/volto/helpers/Blocks/Blocks';
+
 import {
   defaultStylingSchema,
   removeStylingSchema,

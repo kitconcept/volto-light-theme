@@ -2,7 +2,7 @@
   "name": "@kitconcept/volto-light-theme",
   "version": "5.0.1",
   "description": "Volto Light Theme by kitconcept",
-  "main": "src/index.js",
+  "main": "src/index.jsx",
   "types": "src/types/index.d.ts",
   "repository": {
     "type": "git",
@@ -35,6 +35,8 @@
   },
   "devDependencies": {
     "@plone/scripts": "^3.6.2",
+    "react-redux": "8.1.2",
+    "react-router-dom": "5.2.0",
     "release-it": "^17.7.0"
   },
   "dependencies": {
@@ -48,6 +50,12 @@
     "@kitconcept/volto-highlight-block": "^4.0.0",
     "@kitconcept/volto-introduction-block": "^1.0.0",
     "@kitconcept/volto-separator-block": "^4.1.2",
-    "@kitconcept/volto-slider-block": "^6.3.1"
+    "@kitconcept/volto-slider-block": "^6.3.1",
+    "classnames": "^2.2.6",
+    "lodash": "4.17.21",
+    "react": "18.2.0",
+    "react-intl": "^3.12.1",
+    "react-redux": "8.1.2",
+    "react-router-dom": "5.2.0"
   }
 }

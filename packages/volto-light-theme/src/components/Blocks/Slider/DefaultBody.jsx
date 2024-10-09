@@ -1,8 +1,10 @@
 import React from 'react';
 import { useIntl, defineMessages } from 'react-intl';
-import { Icon, MaybeWrap, UniversalLink } from '@plone/volto/components';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
+import MaybeWrap from '@plone/volto/components/manage/MaybeWrap/MaybeWrap';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { Input, Button, Message } from 'semantic-ui-react';
-import { isInternalURL } from '@plone/volto/helpers';
+import { isInternalURL } from '@plone/volto/helpers/Url/Url';
 import cx from 'classnames';
 import navTreeSVG from '@plone/volto/icons/nav.svg';
 import imageBlockSVG from '@plone/volto/components/manage/Blocks/Image/block-image.svg';
