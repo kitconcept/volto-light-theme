@@ -1,5 +1,9 @@
-#page-document .block.introduction {
+.block.introduction {
   @include vertical-space-introduction();
+}
+
+#page-document .block.separator + .block.introduction {
+  padding: 0;
 }
 
 .block.introduction {

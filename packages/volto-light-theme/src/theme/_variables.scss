@@ -89,34 +89,39 @@ $spacing-xlarge: 80px !default;
 $horizontal-space-small-screens: $spacing-small !default;
 
 // Vertical Spacing
-$block-vertical-space: 25px !default;
+$block-vertical-space: 20px !default;
 
 // Change of color
 $color-block-change-vertical-spacing: $spacing-xlarge !default;
 
 // Grids
-$grid-block-vertical-spacing-top: $spacing-xlarge !default;
+$grid-block-vertical-spacing-top: $spacing-large !default;
 $grid-block-vertical-spacing-bottom: $spacing-xlarge !default;
 
+@mixin vertical-space-p() {
+  margin-bottom: $block-vertical-space;
+}
+
 @mixin vertical-space-h1() {
-  margin-top: $spacing-medium;
-  margin-bottom: $spacing-xlarge;
+  padding-top: $spacing-medium;
+  padding-bottom: $spacing-large;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
   @media only screen and (max-width: $largest-mobile-screen) {
-    margin-bottom: $spacing-large;
+    padding-bottom: $spacing-large;
   }
 }
 
 @mixin vertical-space-h2() {
-  margin-top: $spacing-xlarge;
-  margin-bottom: $spacing-medium;
+  padding-bottom: $spacing-small !important;
+
   @media only screen and (max-width: $largest-mobile-screen) {
-    margin-top: $spacing-large;
+    padding-bottom: $spacing-small !important;
   }
 }
 
 @mixin vertical-space-h3() {
-  margin-top: $spacing-large;
-  margin-bottom: $spacing-small;
+  margin-bottom: 0 !important;
 }
 
 @mixin vertical-space-h4() {
@@ -125,8 +130,9 @@ $grid-block-vertical-spacing-bottom: $spacing-xlarge !default;
 }
 
 @mixin vertical-space-heading() {
-  margin-top: $spacing-xlarge;
-  margin-bottom: $spacing-xlarge;
+  padding-bottom: $spacing-medium;
+  margin-top: 0;
+  margin-bottom: 0;
   @media only screen and (max-width: $largest-mobile-screen) {
     margin-top: $spacing-large;
     margin-bottom: $spacing-large;
@@ -134,39 +140,45 @@ $grid-block-vertical-spacing-bottom: $spacing-xlarge !default;
 }
 
 @mixin vertical-space-introduction() {
-  margin-top: $spacing-xlarge;
-  margin-bottom: $spacing-xlarge;
+  padding-top: $spacing-medium;
+  padding-bottom: $spacing-medium;
+
   @media only screen and (max-width: $largest-mobile-screen) {
-    margin-top: $spacing-large;
-    margin-bottom: $spacing-large;
+    padding-top: $spacing-large;
+    padding-bottom: $spacing-large;
   }
 }
 
 @mixin vertical-space-button() {
-  margin-top: $spacing-xlarge;
-  margin-bottom: $spacing-xlarge;
+  padding-top: $spacing-medium;
+  padding-bottom: $spacing-xlarge;
   @media only screen and (max-width: $largest-mobile-screen) {
-    margin-top: $spacing-large;
-    margin-bottom: $spacing-large;
+    padding-top: $spacing-small;
+    padding-bottom: $spacing-large;
   }
 }
 
 @mixin vertical-space-teaser() {
-  margin-bottom: $spacing-medium;
+  padding-bottom: $spacing-medium;
 }
 
 @mixin vertical-space-separator() {
-  margin-top: $spacing-xlarge;
-  margin-bottom: $spacing-xlarge;
+  padding-top: $spacing-xlarge !important;
+  padding-bottom: $spacing-xlarge !important;
   @media only screen and (max-width: $largest-mobile-screen) {
-    margin-top: $spacing-large;
-    margin-bottom: $spacing-large;
+    padding-top: $spacing-large !important;
+    padding-bottom: $spacing-large !important;
   }
 }
 
 @mixin vertical-space-block-title() {
-  margin-top: $spacing-xlarge;
+  padding-top: $spacing-xlarge;
+  margin-top: 0;
   margin-bottom: $spacing-xlarge;
+
+  &:not(.previous--has--same--backgroundColor.previous--is--same--block-type) {
+    padding-top: 0;
+  }
   @media only screen and (max-width: $largest-mobile-screen) {
     margin-top: $spacing-large;
     margin-bottom: $spacing-large;
@@ -183,7 +195,8 @@ $grid-block-vertical-spacing-bottom: $spacing-xlarge !default;
 }
 
 @mixin grid-block-vertical-spacing-top() {
-  margin-top: $grid-block-vertical-spacing-top;
+  padding-top: $grid-block-vertical-spacing-top;
+  margin-top: 0;
   @media only screen and (max-width: $largest-mobile-screen) {
     margin-top: $spacing-large;
   }

@@ -3,6 +3,7 @@ import { cloneDeep } from 'lodash';
 
 import { composeSchema } from '@plone/volto/helpers/Extensions';
 import { getPreviousNextBlock } from '@plone/volto/helpers/Blocks/Blocks';
+import { getCurrentStyleByName } from '../src/helpers/index';
 
 import {
   defaultStylingSchema,
@@ -37,11 +38,8 @@ import { tocBlockSchemaEnhancer } from './components/Blocks/Toc/schema';
 import { mapsBlockSchemaEnhancer } from './components/Blocks/Maps/schema';
 import { sliderBlockSchemaEnhancer } from './components/Blocks/Slider/schema';
 import EventMetadataView from './components/Blocks/EventMetadata/View';
-
-const BG_COLORS = [
-  { name: 'transparent', label: 'Transparent' },
-  { name: 'grey', label: 'Grey' },
-];
+import BlockWidthWidget from './components/Widgets/BlockWidthWidget';
+import BlockAlignmentWidget from './components/Widgets/BlockAlignmentWidget';
 
 defineMessages({
   Press: {
@@ -60,6 +58,31 @@ const applyConfig = (config) => {
   config.settings.enableFatMenu = true;
   config.settings.slate.useLinkedHeadings = false;
   config.settings.contentMetadataTagsImageField = 'preview_image';
+  config.settings.blockModel = 3;
+
+  config.settings.backgroundColors = [
+    {
+      style: {
+        '--background-color': '#fff',
+        '--font-color': '#000',
+      },
+      name: 'white',
+      label: 'White',
+    },
+    {
+      style: {
+        '--background-color': '#ecebeb',
+        '--font-color': '#000',
+      },
+      name: 'grey',
+      label: 'Grey',
+    },
+  ];
+  // TODO: The first item is considered the default option, it could be some other way
+  const defaultColor = config.settings.backgroundColors[0];
+
+  config.widgets.widget.blockWidth = BlockWidthWidget;
+  config.widgets.widget.blockAlignment = BlockAlignmentWidget;
 
   // Initial block for event content type
   config.blocks.initialBlocks = {
@@ -83,6 +106,9 @@ const applyConfig = (config) => {
     ...config.blocks.requiredBlocks,
     'eventMetadata',
   ];
+
+  // VLT uses the new button
+  config.experimental.addBlockButton.enabled = true;
 
   // Register our custom Container component
   config.registerComponent({
@@ -131,9 +157,16 @@ const applyConfig = (config) => {
 
       // Given a StyleWrapper defined `backgroundColor` style
       const previousColor =
-        previousBlock?.styles?.backgroundColor ?? 'transparent';
-      const currentColor = data?.styles?.backgroundColor ?? 'transparent';
-      const nextColor = nextBlock?.styles?.backgroundColor ?? 'transparent';
+        previousBlock?.styles?.['backgroundColor:noprefix']?.[
+          '--background-color'
+        ] ?? defaultColor?.style['--background-color'];
+      const currentColor =
+        data?.styles?.['backgroundColor:noprefix']?.['--background-color'] ??
+        defaultColor?.style['--background-color'];
+      const nextColor =
+        nextBlock?.styles?.['backgroundColor:noprefix']?.[
+          '--background-color'
+        ] ?? defaultColor?.style['--background-color'];
 
       // Inject a class depending if the previous block has the same `backgroundColor`
       if (currentColor === previousColor) {
@@ -148,6 +181,16 @@ const applyConfig = (config) => {
       } else if (currentColor !== nextColor) {
         styles.push('next--has--different--backgroundColor');
       }
+
+      // Convenience class for the current block's background color for not having to
+      // rely on a style color selector
+      const currentColorName =
+        getCurrentStyleByName(
+          config.settings.backgroundColors,
+          'backgroundColor:noprefix',
+          data,
+        ) || defaultColor?.name;
+      styles.push(`has--backgroundColor--${currentColorName}`);
 
       return [...classNames, ...styles];
     },
@@ -168,7 +211,6 @@ const applyConfig = (config) => {
       'slateTable',
       'separator',
     ],
-    colors: BG_COLORS,
     schemaEnhancer: composeSchema(
       AccordionSchemaEnhancer,
       defaultStylingSchema,
@@ -179,12 +221,17 @@ const applyConfig = (config) => {
   config.blocks.blocksConfig.slateTable = {
     ...config.blocks.blocksConfig.slateTable,
     schemaEnhancer: defaultStylingSchema,
-    colors: BG_COLORS,
+    blockModel: config.settings.blockModel,
   };
+
+  config.blocks.blocksConfig.title = {
+    ...config.blocks.blocksConfig.title,
+    category: 'heading',
+    blockModel: config.settings.blockModel,
+  }
 
   config.blocks.blocksConfig.listing = {
     ...config.blocks.blocksConfig.listing,
-    colors: BG_COLORS,
     schemaEnhancer: defaultStylingSchema,
     allowed_headline_tags: [['h2', 'h2']],
     variations: [
@@ -213,7 +260,6 @@ const applyConfig = (config) => {
   config.blocks.blocksConfig.accordion.blocksConfig.teaser.schemaEnhancer =
     composeSchema(teaserSchemaEnhancer, disableBgColorSchema);
 
-  config.blocks.blocksConfig.gridBlock.colors = BG_COLORS;
   config.blocks.blocksConfig.gridBlock.schemaEnhancer = defaultStylingSchema;
   config.blocks.blocksConfig.gridBlock.icon = gridSVG;
 
@@ -252,22 +298,21 @@ const applyConfig = (config) => {
 
   config.blocks.blocksConfig.slate = {
     ...config.blocks.blocksConfig.slate,
-    colors: BG_COLORS,
+    category: 'inline',
     schemaEnhancer: defaultStylingSchema,
     sidebarTab: 1,
+    blockModel: config.settings.blockModel,
   };
 
   config.blocks.blocksConfig.teaser = {
     ...config.blocks.blocksConfig.teaser,
     group: 'teasers',
     imageScale: 'larger',
-    colors: BG_COLORS,
     schemaEnhancer: composeSchema(defaultStylingSchema, teaserSchemaEnhancer),
   };
 
   config.blocks.blocksConfig.video = {
     ...config.blocks.blocksConfig.video,
-    colors: BG_COLORS,
     schemaEnhancer: composeSchema(
       defaultStylingSchema,
       videoBlockSchemaEnhancer,
@@ -275,7 +320,6 @@ const applyConfig = (config) => {
   };
   config.blocks.blocksConfig.maps = {
     ...config.blocks.blocksConfig.maps,
-    colors: BG_COLORS,
     schemaEnhancer: composeSchema(
       defaultStylingSchema,
       mapsBlockSchemaEnhancer,
@@ -286,7 +330,8 @@ const applyConfig = (config) => {
     ...config.blocks.blocksConfig.heading,
     sidebarTab: 0,
     allowed_headings: [['h2', 'h2']],
-    colors: BG_COLORS,
+    blockModel: config.settings.blockModel,
+    category: 'heading',
     schemaEnhancer: defaultStylingSchema,
   };
 
@@ -306,7 +351,8 @@ const applyConfig = (config) => {
   config.blocks.blocksConfig.__button = {
     ...config.blocks.blocksConfig.__button,
     schemaEnhancer: ButtonStylingSchema,
-    colors: BG_COLORS,
+    blockModel: config.settings.blockModel,
+    sidebarTab: 1,
   };
 
   config.blocks.blocksConfig.eventMetadata = {
@@ -331,7 +377,8 @@ const applyConfig = (config) => {
         config.blocks.blocksConfig.separator.schemaEnhancer,
         defaultStylingSchema,
       ),
-      colors: BG_COLORS,
+      blockModel: config.settings.blockModel,
+      category: 'separator',
     };
   }
 

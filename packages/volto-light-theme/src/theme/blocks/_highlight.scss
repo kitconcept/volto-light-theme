@@ -2,6 +2,12 @@ $white: #fff !default;
 $black: #000 !default;
 
 .block.highlight {
+  max-width: unset !important;
+
+  .teaser-description-title {
+    @include default-container-width();
+  }
+
   .title h2 {
     @include highlight-title();
   }

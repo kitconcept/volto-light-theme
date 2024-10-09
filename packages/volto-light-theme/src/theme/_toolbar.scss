@@ -1,3 +1,11 @@
-#toolbar .toolbar-content {
-  z-index: 100;
+#toolbar {
+  .toolbar-content {
+    z-index: 100;
+  }
+  .toolbar {
+    background: #f3f5f7;
+    box-shadow:
+      0px 5px 20px 0px rgba(0, 0, 0, 0.19),
+      0px 3px 3px 0px rgba(0, 0, 0, 0.23);
+  }
 }
