@@ -4,7 +4,7 @@ import { Segment, Button } from 'semantic-ui-react';
 import { useIntl, FormattedMessage, defineMessages } from 'react-intl';
 import { flattenToAppURL, isInternalURL } from '@plone/volto/helpers/Url/Url';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
-import BlockDataForm from '@plone/volto/components/manage/Form';
+import { BlockDataForm } from '@plone/volto/components/manage/Form';
 import Image from '@plone/volto/components/theme/Image/Image';
 import { ImageSchema } from '@plone/volto/components/manage/Blocks/Image/schema';
 import imageSVG from '@plone/volto/icons/image.svg';

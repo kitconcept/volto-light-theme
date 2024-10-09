@@ -8,7 +8,7 @@ import { defineMessages, injectIntl } from 'react-intl';
 import { Container } from '@plone/components';
 
 import Icon from '@plone/volto/components/theme/Icon/Icon';
-import getBreadcrumbs from '@plone/volto/actions/breadcrumbs/breadcrumbs';
+import { getBreadcrumbs } from '@plone/volto/actions/breadcrumbs/breadcrumbs';
 import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
 import { hasApiExpander } from '@plone/volto/helpers/Utils/Utils';
 

@@ -11,7 +11,7 @@ import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
 import { hasApiExpander } from '@plone/volto/helpers/Utils/Utils';
 import config from '@plone/volto/registry';
 
-import getNavigation from '@plone/volto/actions/navigation/navigation';
+import { getNavigation } from '@plone/volto/actions/navigation/navigation';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import clearSVG from '@plone/volto/icons/clear.svg';
 import NavItem from '@plone/volto/components/theme/Navigation/NavItem';
