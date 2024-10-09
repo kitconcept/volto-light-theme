@@ -22,6 +22,7 @@ module.exports = {
   extends: `${coreLocation}/packages/volto/.eslintrc`,
   rules: {
     'import/no-unresolved': 1,
+    'react/jsx-key': [2, { checkFragmentShorthand: true }],
   },
   settings: {
     'import/resolver': {
