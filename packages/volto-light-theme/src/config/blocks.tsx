@@ -1,6 +1,8 @@
 import type { ConfigType } from '@plone/registry';
 import type { StyleDefinition } from '../index';
 
+import cloneDeep from 'lodash/cloneDeep';
+
 import { composeSchema } from '@plone/volto/helpers/Extensions';
 import {
   defaultStylingSchema,
@@ -24,8 +26,8 @@ import { AccordionSchemaEnhancer } from '../components/Blocks/Accordion/schema';
 
 import { searchBlockSchemaEnhancer } from '../components/Blocks/Search/schema';
 
-import gridSVG from './icons/block_icn_grid.svg';
-import accordionSVG from './icons/block_icn_accordion.svg';
+import gridSVG from '../icons/block_icn_grid.svg';
+import accordionSVG from '../icons/block_icn_accordion.svg';
 import descriptionSVG from '@plone/volto/icons/description.svg';
 
 import { tocBlockSchemaEnhancer } from '../components/Blocks/Toc/schema';
@@ -137,7 +139,7 @@ export default function install(config: ConfigType) {
   // Accordion internal `blocksConfig` amendments
   // We cloneDeep the blocksConfig to avoid modifying the original object
   // in subsequent modifications of the accordion block config
-  config.blocks.blocksConfig.accordion.blocksConfig = structuredClone(
+  config.blocks.blocksConfig.accordion.blocksConfig = cloneDeep(
     config.blocks.blocksConfig,
   );
 

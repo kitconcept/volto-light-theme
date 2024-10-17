@@ -1,6 +1,7 @@
+import type { StyleDefinition } from '../index';
 import { v4 as uuid } from 'uuid';
 import find from 'lodash/find';
-import { StyleDefinition } from './index';
+
 /**
  * Generate empty blocks blocks/blocks_layout pair given the type
  * (could be empty, if not type given) and the number of blocks

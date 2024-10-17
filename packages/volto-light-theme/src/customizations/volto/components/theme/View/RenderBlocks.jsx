@@ -27,7 +27,7 @@ import { ViewDefaultBlock } from '@plone/volto/components';
 import cx from 'classnames';
 import MaybeWrap from '@plone/volto/components/manage/MaybeWrap/MaybeWrap';
 import RenderEmptyBlock from '@plone/volto/components/theme/View/RenderEmptyBlock';
-import { getCurrentStyleByName } from '../../../../../helpers';
+import { getCurrentStyleByName } from '../../../../../helpers/helpers';
 
 const messages = defineMessages({
   unknownBlock: {
