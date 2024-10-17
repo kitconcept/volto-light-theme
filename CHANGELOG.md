@@ -8,6 +8,70 @@
 
 <!-- towncrier release notes start -->
 
+## 5.0.1 (2024-10-09)
+
+### Bugfix
+
+- Fixed missing key in header @sneridagh [#417](https://github.com/kitconcept/volto-light-theme/pull/417)
+
+### Internal
+
+- Update versions to latest volto-highlight-block, volto-button-block @sneridagh [#408](https://github.com/kitconcept/volto-light-theme/pull/408)
+- Bump `volto-button-block` version @sneridagh
+  Bump to Volto 18.0.0-alpha.45 [#417](https://github.com/kitconcept/volto-light-theme/pull/417)
+
+## 5.0.0 (2024-07-02)
+
+### Breaking
+
+- Upgrade to a39, enable new image widget @sneridagh
+
+  Breaking:
+    The new Image widget component is used in the VLT shadowed image component.
+    The minimum Volto version requirements have changed for this reason.
+    The new image widget is present in core from these versions on:
+      - Volto 17.18.0
+      - Volto 18.0.0-alpha.36
+
+    For more information, please take a look at the upgrade guide:
+    https://github.com/kitconcept/volto-light-theme/blob/main/UPGRADE-GUIDE.md [#405](https://github.com/kitconcept/volto-light-theme/pull/405)
+
+## 4.0.1 (2024-06-28)
+
+### Bugfix
+
+- Fix Invalid html structure in caption component @iRohitSingh [#398](https://github.com/kitconcept/volto-light-theme/pull/398)
+- Fix install in Volto 17 @sneridagh [#400](https://github.com/kitconcept/volto-light-theme/pull/400)
+
+### Internal
+
+- Upgrade to Volto 18a37 @sneridagh [#403](https://github.com/kitconcept/volto-light-theme/pull/403)
+
+## 4.0.0 (2024-06-21)
+
+### Breaking
+
+- Fix tabbing order in the top header. It modifies the underlying HTML to move the top header to the bottom, and modifies CSS to adjust. @iRohitSingh @sneridagh [#374](https://github.com/kitconcept/volto-light-theme/pull/374)
+- Updated the MobileNavigation component to be more easily customizable.
+  The component can now handle infinite navigation depth instead of only three levels, if configured to do so.
+  The Burger Menu can now be easily customized by overriding the new MobileNavigationToggler.jsx file.
+  @lenadax
+
+  Breaking:
+  - The "hamburger" icon in the mobile navigation now has an additional wrapper that allows for better customization.
+
+  If you have overriden the hamburger icon, you should make sure that your customizations still work and adjust otherwise. [#393](https://github.com/kitconcept/volto-light-theme/pull/393)
+
+### Bugfix
+
+- Fix Logo alt-Title @jonaspiterek [#337](https://github.com/kitconcept/volto-light-theme/pull/337)
+- fix link in introduction block being smaller than normal text @jonaspiterek [#365](https://github.com/kitconcept/volto-light-theme/pull/365)
+- Fix Description block width in Edit and Add mode. @danalvrz [#394](https://github.com/kitconcept/volto-light-theme/pull/394)
+
+### Internal
+
+- Update the setup. Use new images. @sneridagh [#390](https://github.com/kitconcept/volto-light-theme/pull/390)
+
 ## 3.3.2 (2024-05-31)
 
 ### Bugfix

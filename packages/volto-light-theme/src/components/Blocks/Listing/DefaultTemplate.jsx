@@ -1,8 +1,9 @@
 // See Customization for more info
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ConditionalLink, UniversalLink } from '@plone/volto/components';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 
 import { isInternalURL } from '@plone/volto/helpers/Url/Url';
 
