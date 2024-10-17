@@ -1,66 +1,66 @@
-import { defineMessages } from 'react-intl';
-import { cloneDeep } from 'lodash';
+import type { ConfigType } from '@plone/registry';
+import type { StyleDefinition } from '../index';
 
 import { composeSchema } from '@plone/volto/helpers/Extensions';
-import { getPreviousNextBlock } from '@plone/volto/helpers/Blocks/Blocks';
-
 import {
   defaultStylingSchema,
   removeStylingSchema,
-} from './components/Blocks/schema';
-import { teaserSchemaEnhancer } from './components/Blocks/Teaser/schema';
-import { videoBlockSchemaEnhancer } from './components/Blocks/Video/schema';
+} from '../components/Blocks/schema';
+import { teaserSchemaEnhancer } from '../components/Blocks/Teaser/schema';
+import { videoBlockSchemaEnhancer } from '../components/Blocks/Video/schema';
 import { gridTeaserDisableStylingSchema } from '@plone/volto/components/manage/Blocks/Teaser/schema';
 import { gridImageDisableSizeAndPositionHandlersSchema } from '@plone/volto/components/manage/Blocks/Image/schema';
-import { disableBgColorSchema } from './components/Blocks/disableBgColorSchema';
-import BlockSettingsSchema from '@plone/volto/components/manage/Blocks/Block/Schema';
+import { disableBgColorSchema } from '../components/Blocks/disableBgColorSchema';
 
-import ContainerQueriesPolyfill from './components/CQPolyfill';
-import { Container } from '@plone/components';
-import TopSideFacets from './components/Blocks/Search/TopSideFacets';
+import TopSideFacets from '../components/Blocks/Search/TopSideFacets';
 
-import GridListingBlockTemplate from './components/Blocks/Listing/GridTemplate';
-import { ButtonStylingSchema } from './components/Blocks/Button/schema';
+import GridListingBlockTemplate from '../components/Blocks/Listing/GridTemplate';
+import { ButtonStylingSchema } from '../components/Blocks/Button/schema';
 
-import { imageBlockSchemaEnhancer } from './components/Blocks/Image/schema';
-import { ImageBlockDataAdapter } from './components/Blocks/Image/adapter';
+import { imageBlockSchemaEnhancer } from '../components/Blocks/Image/schema';
+import { ImageBlockDataAdapter } from '../components/Blocks/Image/adapter';
 
-import { AccordionSchemaEnhancer } from './components/Blocks/Accordion/schema';
+import { AccordionSchemaEnhancer } from '../components/Blocks/Accordion/schema';
 
-import { searchBlockSchemaEnhancer } from './components/Blocks/Search/schema';
+import { searchBlockSchemaEnhancer } from '../components/Blocks/Search/schema';
 
 import gridSVG from './icons/block_icn_grid.svg';
 import accordionSVG from './icons/block_icn_accordion.svg';
 import descriptionSVG from '@plone/volto/icons/description.svg';
-import EventView from './components/Theme/EventView';
-import { tocBlockSchemaEnhancer } from './components/Blocks/Toc/schema';
-import { mapsBlockSchemaEnhancer } from './components/Blocks/Maps/schema';
-import { sliderBlockSchemaEnhancer } from './components/Blocks/Slider/schema';
-import EventMetadataView from './components/Blocks/EventMetadata/View';
 
-const BG_COLORS = [
-  { name: 'transparent', label: 'Transparent' },
-  { name: 'grey', label: 'Grey' },
-];
+import { tocBlockSchemaEnhancer } from '../components/Blocks/Toc/schema';
+import { mapsBlockSchemaEnhancer } from '../components/Blocks/Maps/schema';
+import { sliderBlockSchemaEnhancer } from '../components/Blocks/Slider/schema';
+import EventMetadataView from '../components/Blocks/EventMetadata/View';
 
-defineMessages({
-  Press: {
-    id: 'Press',
-    defaultMessage: 'Press',
-  },
-  Sitemap: {
-    id: 'Sitemap',
-    defaultMessage: 'Sitemap',
-  },
-});
+declare module '@plone/types' {
+  export interface BlocksConfigData {
+    introduction: BlockConfigBase;
+    heading: BlockConfigBase;
+    __button: BlockConfigBase;
+    separator: BlockConfigBase;
+    slider: BlockConfigBase;
+    eventMetadata: BlockConfigBase;
+    accordion: BlockConfigBase;
+    hero: BlockConfigBase;
+    slateTable: BlockConfigBase;
+  }
+  export interface BlockConfigBase {
+    colors?: StyleDefinition[];
+    allowedBlocks?: string[];
+    allowed_headline_tags?: string[][];
+    dataAdapter?: any;
+    unwantedButtons?: string[];
+    imageScale?: string;
+    allowed_headings?: string[][];
+  }
+  export interface BlocksFormData {
+    headline: string;
+    styles: string;
+  }
+}
 
-const applyConfig = (config) => {
-  config.settings.enableAutoBlockGroupingByBackgroundColor = true;
-  config.settings.navDepth = 3;
-  config.settings.enableFatMenu = true;
-  config.settings.slate.useLinkedHeadings = false;
-  config.settings.contentMetadataTagsImageField = 'preview_image';
-
+export default function install(config: ConfigType) {
   // Initial block for event content type
   config.blocks.initialBlocks = {
     Event: [
@@ -70,91 +70,19 @@ const applyConfig = (config) => {
     ],
   };
 
-  config.settings.siteLabel = '';
-  config.settings.intranetHeader = false;
-
-  // Remove Hero Block
-  if (config.blocks.blocksConfig?.hero) {
-    config.blocks.blocksConfig.hero.restricted = true;
-  }
-
   // No required blocks (eg. Title)
   config.blocks.requiredBlocks = [
     ...config.blocks.requiredBlocks,
     'eventMetadata',
   ];
 
-  // Register our custom Container component
-  config.registerComponent({
-    name: 'Container',
-    component: Container,
-  });
+  // Remove Hero Block (No longer in Volto 18)
+  // TODO: Remove already?
+  if (config.blocks.blocksConfig?.hero) {
+    config.blocks.blocksConfig.hero.restricted = true;
+  }
 
-  // Register custom StyleWrapper ClassNames
-  config.settings.styleClassNameExtenders = [
-    ({ block, content, data, classNames }) => {
-      let styles = [];
-      const [previousBlock, nextBlock] = getPreviousNextBlock({
-        content,
-        block,
-      });
-
-      // Inject a class depending of which type is the next block
-      if (nextBlock?.['@type']) {
-        styles.push(`next--is--${nextBlock['@type']}`);
-      }
-
-      // Inject a class depending if previous is the same type of block
-      if (data?.['@type'] === previousBlock?.['@type']) {
-        styles.push('previous--is--same--block-type');
-      }
-
-      // Inject a class depending if next is the same type of block
-      if (data?.['@type'] === nextBlock?.['@type']) {
-        styles.push('next--is--same--block-type');
-      }
-
-      // Inject a class depending if it's the first of block type
-      if (data?.['@type'] !== previousBlock?.['@type']) {
-        styles.push('is--first--of--block-type');
-      }
-
-      // Inject a class depending if it's the last of block type
-      if (data?.['@type'] !== nextBlock?.['@type']) {
-        styles.push('is--last--of--block-type');
-      }
-
-      // Inject a class depending if it has a headline
-      if (data?.headline || previousBlock?.['@type'] === 'heading') {
-        styles.push('has--headline');
-      }
-
-      // Given a StyleWrapper defined `backgroundColor` style
-      const previousColor =
-        previousBlock?.styles?.backgroundColor ?? 'transparent';
-      const currentColor = data?.styles?.backgroundColor ?? 'transparent';
-      const nextColor = nextBlock?.styles?.backgroundColor ?? 'transparent';
-
-      // Inject a class depending if the previous block has the same `backgroundColor`
-      if (currentColor === previousColor) {
-        styles.push('previous--has--same--backgroundColor');
-      } else if (currentColor !== previousColor) {
-        styles.push('previous--has--different--backgroundColor');
-      }
-
-      // Inject a class depending if the next block has the same `backgroundColor`
-      if (currentColor === nextColor) {
-        styles.push('next--has--same--backgroundColor');
-      } else if (currentColor !== nextColor) {
-        styles.push('next--has--different--backgroundColor');
-      }
-
-      return [...classNames, ...styles];
-    },
-  ];
-
-  config.settings.slidingSearchAnimation = true;
-  config.settings.openExternalLinkInNewTab = true;
+  // Default Blocks configuration
 
   config.blocks.blocksConfig.accordion = {
     ...config.blocks.blocksConfig.accordion,
@@ -168,7 +96,7 @@ const applyConfig = (config) => {
       'slateTable',
       'separator',
     ],
-    colors: BG_COLORS,
+    colors: config.settings.backgroundColors,
     schemaEnhancer: composeSchema(
       AccordionSchemaEnhancer,
       defaultStylingSchema,
@@ -179,12 +107,12 @@ const applyConfig = (config) => {
   config.blocks.blocksConfig.slateTable = {
     ...config.blocks.blocksConfig.slateTable,
     schemaEnhancer: defaultStylingSchema,
-    colors: BG_COLORS,
+    colors: config.settings.backgroundColors,
   };
 
   config.blocks.blocksConfig.listing = {
     ...config.blocks.blocksConfig.listing,
-    colors: BG_COLORS,
+    colors: config.settings.backgroundColors,
     schemaEnhancer: defaultStylingSchema,
     allowed_headline_tags: [['h2', 'h2']],
     variations: [
@@ -199,21 +127,25 @@ const applyConfig = (config) => {
 
   config.blocks.blocksConfig.image = {
     ...config.blocks.blocksConfig.image,
-    schemaEnhancer: imageBlockSchemaEnhancer,
+    schemaEnhancer: composeSchema(
+      defaultStylingSchema,
+      imageBlockSchemaEnhancer,
+    ),
     dataAdapter: ImageBlockDataAdapter,
   };
 
   // Accordion internal `blocksConfig` amendments
   // We cloneDeep the blocksConfig to avoid modifying the original object
   // in subsequent modifications of the accordion block config
-  config.blocks.blocksConfig.accordion.blocksConfig = cloneDeep(
+  config.blocks.blocksConfig.accordion.blocksConfig = structuredClone(
     config.blocks.blocksConfig,
   );
 
   config.blocks.blocksConfig.accordion.blocksConfig.teaser.schemaEnhancer =
     composeSchema(teaserSchemaEnhancer, disableBgColorSchema);
 
-  config.blocks.blocksConfig.gridBlock.colors = BG_COLORS;
+  config.blocks.blocksConfig.gridBlock.colors =
+    config.settings.backgroundColors;
   config.blocks.blocksConfig.gridBlock.schemaEnhancer = defaultStylingSchema;
   config.blocks.blocksConfig.gridBlock.icon = gridSVG;
 
@@ -241,8 +173,15 @@ const applyConfig = (config) => {
 
   config.blocks.blocksConfig.gridBlock.blocksConfig.listing.allowed_headline_tags =
     [['h2', 'h2']];
+
+  console.log(
+    config.blocks.blocksConfig.gridBlock.blocksConfig.listingschemaEnhancer,
+  );
   config.blocks.blocksConfig.gridBlock.blocksConfig.listingschemaEnhancer =
     removeStylingSchema;
+  console.log(
+    config.blocks.blocksConfig.gridBlock.blocksConfig.listingvariations,
+  );
   config.blocks.blocksConfig.gridBlock.blocksConfig.listingvariations = [];
 
   config.blocks.blocksConfig.introduction = {
@@ -252,7 +191,7 @@ const applyConfig = (config) => {
 
   config.blocks.blocksConfig.slate = {
     ...config.blocks.blocksConfig.slate,
-    colors: BG_COLORS,
+    colors: config.settings.backgroundColors,
     schemaEnhancer: defaultStylingSchema,
     sidebarTab: 1,
   };
@@ -261,13 +200,13 @@ const applyConfig = (config) => {
     ...config.blocks.blocksConfig.teaser,
     group: 'teasers',
     imageScale: 'larger',
-    colors: BG_COLORS,
+    colors: config.settings.backgroundColors,
     schemaEnhancer: composeSchema(defaultStylingSchema, teaserSchemaEnhancer),
   };
 
   config.blocks.blocksConfig.video = {
     ...config.blocks.blocksConfig.video,
-    colors: BG_COLORS,
+    colors: config.settings.backgroundColors,
     schemaEnhancer: composeSchema(
       defaultStylingSchema,
       videoBlockSchemaEnhancer,
@@ -275,7 +214,7 @@ const applyConfig = (config) => {
   };
   config.blocks.blocksConfig.maps = {
     ...config.blocks.blocksConfig.maps,
-    colors: BG_COLORS,
+    colors: config.settings.backgroundColors,
     schemaEnhancer: composeSchema(
       defaultStylingSchema,
       mapsBlockSchemaEnhancer,
@@ -286,7 +225,7 @@ const applyConfig = (config) => {
     ...config.blocks.blocksConfig.heading,
     sidebarTab: 0,
     allowed_headings: [['h2', 'h2']],
-    colors: BG_COLORS,
+    colors: config.settings.backgroundColors,
     schemaEnhancer: defaultStylingSchema,
   };
 
@@ -306,7 +245,7 @@ const applyConfig = (config) => {
   config.blocks.blocksConfig.__button = {
     ...config.blocks.blocksConfig.__button,
     schemaEnhancer: ButtonStylingSchema,
-    colors: BG_COLORS,
+    colors: config.settings.backgroundColors,
   };
 
   config.blocks.blocksConfig.eventMetadata = {
@@ -316,7 +255,6 @@ const applyConfig = (config) => {
     group: 'common',
     view: EventMetadataView,
     edit: EventMetadataView,
-    schema: BlockSettingsSchema,
     restricted: ({ properties, block }) =>
       properties['@type'] === 'Event' ? false : true,
     mostUsed: false,
@@ -331,11 +269,9 @@ const applyConfig = (config) => {
         config.blocks.blocksConfig.separator.schemaEnhancer,
         defaultStylingSchema,
       ),
-      colors: BG_COLORS,
+      colors: config.settings.backgroundColors,
     };
   }
-
-  config.views.contentTypesViews.Event = EventView;
 
   // TOC Block
   config.blocks.blocksConfig.toc = {
@@ -352,18 +288,4 @@ const applyConfig = (config) => {
   };
 
   return config;
-};
-
-export const withContainerQueryPolyfill = (config) => {
-  config.settings.appExtras = [
-    ...config.settings.appExtras,
-    {
-      match: '',
-      component: ContainerQueriesPolyfill,
-    },
-  ];
-
-  return config;
-};
-
-export default applyConfig;
+}

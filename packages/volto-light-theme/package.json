@@ -2,7 +2,7 @@
   "name": "@kitconcept/volto-light-theme",
   "version": "5.0.1",
   "description": "Volto Light Theme by kitconcept",
-  "main": "src/index.jsx",
+  "main": "src/index.ts",
   "types": "src/types/index.d.ts",
   "repository": {
     "type": "git",
@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "@plone/scripts": "^3.6.2",
+    "@plone/types": "workspace:*",
     "react-redux": "8.1.2",
     "react-router-dom": "5.2.0",
     "release-it": "^17.7.0"
