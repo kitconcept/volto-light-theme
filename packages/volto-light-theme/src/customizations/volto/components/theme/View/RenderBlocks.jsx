@@ -3,29 +3,31 @@
  * REASON: This version enables auto-grouping of blocks that share the same style property
  * in the StylingWrapper. In the future one could improve it by enabling a way to choose the
  * grouping property, eg. using a property other than `backgroundColor`.
- * FILE: https://github.com/plone/volto/blob/9882c66da42e5440ca1c949d829b78f2b1328683/src/components/theme/View/RenderBlocks.jsx#L25
- * FILE VERSION: Volto 17.0.0-alpha.16
- * DATE: 2023-06-28
+ * UPDATE 2024-01-11: This allows now the grouping using injected style custom CSS properties from
+ * the StyleWrapper.
+ * FILE: https://github.com/kitconcept/volto-light-theme/blob/dcd5d46f683c42ac9465098272714359d8f1fb92/src/customizations/volto/components/theme/View/RenderBlocks.jsx
+ * FILE VERSION: volto-light-theme 3.0.0-alpha.1
+ * DATE: 2024-01-11
  * DEVELOPER: @sneridagh
  */
 
 import React from 'react';
-import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
+import { getBaseUrl, applyBlockDefaults } from '@plone/volto/helpers';
+import { defineMessages, useIntl } from 'react-intl';
+import { map } from 'lodash';
 import {
-  applyBlockDefaults,
   getBlocksFieldname,
   getBlocksLayoutFieldname,
   hasBlocksData,
-} from '@plone/volto/helpers/Blocks/Blocks';
-import { defineMessages, useIntl } from 'react-intl';
-import { map } from 'lodash';
-
+  buildStyleObjectFromData,
+} from '@plone/volto/helpers';
 import StyleWrapper from '@plone/volto/components/manage/Blocks/Block/StyleWrapper';
 import config from '@plone/volto/registry';
-import ViewDefaultBlock from '@plone/volto/components/manage/Blocks/Block/DefaultView';
+import { ViewDefaultBlock } from '@plone/volto/components';
 import cx from 'classnames';
 import MaybeWrap from '@plone/volto/components/manage/MaybeWrap/MaybeWrap';
 import RenderEmptyBlock from '@plone/volto/components/theme/View/RenderEmptyBlock';
+import { getCurrentStyleByName } from '../../../../../helpers';
 
 const messages = defineMessages({
   unknownBlock: {
@@ -38,15 +40,18 @@ const messages = defineMessages({
   },
 });
 
-export function groupByBGColor(blocks, blocks_layout) {
+export function groupByBGColor(blocks, blocks_layout, colorDefinitions) {
   const result = [];
   let currentArr = [];
   let currentBGColor;
 
   blocks_layout.items.forEach((blockId) => {
     let currentBlockColor =
-      blocks[blockId]?.styles?.backgroundColor ?? 'transparent';
-
+      getCurrentStyleByName(
+        colorDefinitions,
+        'backgroundColor:noprefix',
+        blocks[blockId],
+      ) || 'transparent';
     if (currentBlockColor !== currentBGColor) {
       currentBGColor = currentBlockColor;
       // write it only if the array has some block inside
@@ -73,6 +78,7 @@ const RenderBlocks = (props) => {
   const grouped = groupByBGColor(
     content[blocksFieldname],
     content[blocksLayoutFieldname],
+    config.settings.backgroundColors,
   );
 
   return hasBlocksData(content) ? (
@@ -86,8 +92,14 @@ const RenderBlocks = (props) => {
           }
           className={cx(
             'blocks-group-wrapper',
-            content[blocksFieldname][group[0]]?.styles?.backgroundColor ??
-              'transparent',
+            getCurrentStyleByName(
+              config.settings.backgroundColors,
+              'backgroundColor:noprefix',
+              content[blocksFieldname][group[0]],
+            ) || 'transparent',
+          )}
+          style={buildStyleObjectFromData(
+            content[blocksFieldname][group[0]]?.styles,
           )}
         >
           {map(group, (block) => {
