@@ -1,7 +1,7 @@
 {
-  "name": "@kitconcept/volto-light-theme",
-  "version": "5.0.1",
-  "description": "Volto Light Theme by kitconcept",
+  "name": "@kitconcept/volto-vlt-threeandahalf",
+  "version": "1.0.0",
+  "description": "VLT Future features - Extended Colors and Widths",
   "main": "src/index.ts",
   "types": "src/types/index.d.ts",
   "repository": {
@@ -21,7 +21,9 @@
     "react",
     "light-theme",
     "theme",
-    "vlt"
+    "vlt",
+    "futures",
+    "threeandahalf"
   ],
   "publishConfig": {
     "access": "public"
@@ -34,30 +36,28 @@
     "release-alpha": "release-it --preRelease=alpha",
     "release-rc": "release-it --preRelease=rc"
   },
-  "devDependencies": {
-    "@plone/scripts": "^3.6.2",
-    "@plone/types": "workspace:*",
-    "react-redux": "8.1.2",
-    "react-router-dom": "5.2.0",
-    "release-it": "^17.7.0"
-  },
   "dependencies": {
-    "@plone/components": "workspace:*"
+    "@plone/components": "workspace:*",
+    "classnames": "2.5.1",
+    "lodash": "4.17.21",
+    "semantic-ui-react": "2.1.5",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@plone/scripts": "^3.6.1",
+    "@plone/types": "1.0.0-alpha.14",
+    "@types/jest": "^29.5.8",
+    "@types/lodash": "^4.14.201",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@types/uuid": "^9.0.2",
+    "release-it": "^17.1.1"
   },
   "peerDependencies": {
-    "@eeacms/volto-accordion-block": "^10.4.6",
-    "@kitconcept/volto-button-block": "^2.3.1 || ^3.0.1",
-    "@kitconcept/volto-dsgvo-banner": "^2.3.2",
-    "@kitconcept/volto-heading-block": "^2.4.0",
-    "@kitconcept/volto-highlight-block": "^4.0.0",
-    "@kitconcept/volto-introduction-block": "^1.0.0",
-    "@kitconcept/volto-separator-block": "^4.1.2",
-    "@kitconcept/volto-slider-block": "^6.3.1",
-    "classnames": "^2.2.6",
-    "lodash": "4.17.21",
+    "@kitconcept/volto-button-block": "^3.0.1",
+    "@kitconcept/volto-light-theme": "^3.3.2",
     "react": "18.2.0",
-    "react-intl": "^3.12.1",
-    "react-redux": "8.1.2",
-    "react-router-dom": "5.2.0"
+    "react-dom": "18.2.0",
+    "react-intl": "3.8.0"
   }
 }

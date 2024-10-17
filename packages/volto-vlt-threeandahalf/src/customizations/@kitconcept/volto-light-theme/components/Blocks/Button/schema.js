@@ -24,17 +24,17 @@ export const ButtonStylingSchema = ({ schema, formData, intl }) => {
     ...schema.properties.styles.schema.fieldsets[0].fields,
   ];
 
-  schema.properties.styles.schema.fieldsets[0].fields = [
-    'align:noprefix',
-    ...schema.properties.styles.schema.fieldsets[0].fields,
-  ];
-
   schema.properties.styles.schema.properties['blockWidth:noprefix'] = {
     widget: 'blockWidth',
     title: intl.formatMessage(messages.BlockWidth),
     default: 'default',
     filterActions: ['narrow', 'default'],
   };
+
+  schema.properties.styles.schema.fieldsets[0].fields = [
+    'align:noprefix',
+    ...schema.properties.styles.schema.fieldsets[0].fields,
+  ];
 
   schema.properties.styles.schema.properties['align:noprefix'] = {
     widget: 'blockAlignment',
