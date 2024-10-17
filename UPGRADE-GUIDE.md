@@ -1,5 +1,24 @@
 # Upgrade Guide
 
+## volto-light-theme 5.0.0
+
+The requirements for VLT have changed:
+
+| VLT version | Volto version |
+|-------------|---------------|
+|   3.x.x  |   >= Volto 17.0.0-alpha.16  |
+|   4.x.x  |   < Volto 17.18.0  |
+|   5.x.x  |   >= Volto 17.18.0 or >=Volto 18.0.0-alpha.36  |
+
+## volto-light-theme 4.0.0
+
+The tabbing order in the top header was fixed for accessibility concerns.
+It modifies the underlying HTML to move the top header to the bottom, and modifies CSS to adjust.
+
+The MobileNavigation component was updated to be more easily customizable.
+The component can now handle infinite navigation depth instead of only three levels, if configured to do so.
+The Burger Menu can now be easily customized by overriding the new MobileNavigationToggler.jsx file.
+
 ## volto-light-theme 3.0.0
 
 ### Blocks background colors go full width

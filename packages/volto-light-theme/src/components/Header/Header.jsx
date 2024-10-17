@@ -8,14 +8,12 @@ import config from '@plone/volto/registry';
 import cx from 'classnames';
 import IntranetSearchWidget from '../SearchWidget/IntranetSearchWidget';
 
-import {
-  Anontools,
-  LanguageSelector,
-  Logo,
-  Navigation,
-  SearchWidget,
-  UniversalLink,
-} from '@plone/volto/components';
+import Anontools from '@plone/volto/components/theme/Anontools/Anontools';
+import LanguageSelector from '@plone/volto/components/theme/LanguageSelector/LanguageSelector';
+import Logo from '@plone/volto/components/theme/Logo/Logo';
+import Navigation from '@plone/volto/components/theme/Navigation/Navigation';
+import SearchWidget from '@plone/volto/components/theme/SearchWidget/SearchWidget';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 
 const messages = defineMessages({
   siteLabel: {
@@ -28,18 +26,6 @@ const InternetHeader = ({ pathname, siteLabel, token, siteAction }) => {
   return (
     <>
       <div className="header">
-        <div className="logo-nav-wrapper">
-          <div className="logo">
-            <Logo />
-          </div>
-          <Navigation pathname={pathname} />
-          <MobileNavigation pathname={pathname} />
-          <div className="search-wrapper navigation-desktop">
-            <div className="search">
-              <SearchWidget />
-            </div>
-          </div>
-        </div>
         <div className="tools-wrapper">
           <LanguageSelector />
 
@@ -58,6 +44,18 @@ const InternetHeader = ({ pathname, siteLabel, token, siteAction }) => {
             </div>
           )}
         </div>
+        <div className="logo-nav-wrapper">
+          <div className="logo">
+            <Logo />
+          </div>
+          <Navigation pathname={pathname} />
+          <MobileNavigation pathname={pathname} />
+          <div className="search-wrapper navigation-desktop">
+            <div className="search">
+              <SearchWidget />
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
@@ -74,7 +72,9 @@ const IntranetHeader = ({ pathname, siteLabel, token, siteAction }) => {
             {!token && <Anontools />}
             {siteAction &&
               siteAction.map((item) => (
-                <UniversalLink href={item.url}>{item.title}</UniversalLink>
+                <UniversalLink key={item.url} href={item.url}>
+                  {item.title}
+                </UniversalLink>
               ))}
           </div>
           {siteLabel && (
