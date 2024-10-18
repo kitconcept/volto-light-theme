@@ -14,6 +14,7 @@ const messages = defineMessages({
 
 export const imageBlockSchemaEnhancer = ({ formData, schema, intl }) => {
   if (formData.url) {
+    schema.fieldsets = reorderArray(schema.fieldsets, 2, 1);
     schema.fieldsets[0].fields = insertInArray(
       schema.fieldsets[0].fields,
       'description',
@@ -24,6 +25,30 @@ export const imageBlockSchemaEnhancer = ({ formData, schema, intl }) => {
       'title',
       1,
     );
+
+    schema.properties.styles.schema.fieldsets[0].fields = [
+      'blockWidth:noprefix',
+      '--image-aspect-ratio',
+      ...schema.properties.styles.schema.fieldsets[0].fields,
+    ];
+
+    schema.properties.styles.schema.properties['blockWidth:noprefix'] = {
+      widget: 'blockWidth',
+      title: intl.formatMessage(messages.BlockWidth),
+      default: 'default',
+      filterActions: ['narrow', 'default', 'layout', 'full'],
+    };
+
+    schema.properties.styles.schema.properties['--image-aspect-ratio'] = {
+      widget: 'select',
+      title: 'Aspect Ratio',
+      choices: [
+        ['1', '1:1'],
+        ['16 / 9', '16/9'],
+      ],
+      default: '1',
+    };
+
     schema.properties.description = {
       title: intl.formatMessage(messages.Description),
       widget: 'textarea',
@@ -33,7 +58,8 @@ export const imageBlockSchemaEnhancer = ({ formData, schema, intl }) => {
     };
   }
   schema.properties.align.default = 'center';
-  schema.properties.align.actions = ['left', 'right', 'center', 'wide', 'full'];
+  schema.properties.align.actions = ['left', 'right', 'center'];
+
   schema.properties.size.default = 'l';
   schema.properties.size.disabled =
     formData.align === 'full' ||

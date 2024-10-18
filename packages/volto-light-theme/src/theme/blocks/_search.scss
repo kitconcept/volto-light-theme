@@ -23,12 +23,7 @@
     .listing-item {
       h2,
       h3 {
-        color: $black;
         @include text-heading-h2();
-      }
-      &:last-child {
-        padding-bottom: 40px !important;
-        border-bottom: 1px solid $black !important;
       }
     }
 
@@ -102,7 +97,6 @@
         top: 19px;
         right: 24px;
         padding-left: 14px;
-        background-color: $veryLightGrey !important;
 
         svg {
           width: 36px !important;
@@ -215,7 +209,7 @@
 
         .react-select__option--is-selected {
           svg {
-            fill: $black !important;
+            fill: $black;
           }
         }
       }
@@ -233,19 +227,6 @@
         display: none;
       }
 
-      svg path {
-        fill: $black;
-        stroke: $black;
-      }
-
-      .active {
-        background-color: $black !important;
-
-        svg path {
-          fill: $white;
-          stroke: $white;
-        }
-      }
     }
   }
 }
