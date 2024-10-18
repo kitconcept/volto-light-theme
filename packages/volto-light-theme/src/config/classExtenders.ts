@@ -48,20 +48,20 @@ export default function install(config: ConfigType) {
           config.settings.backgroundColors,
           'backgroundColor:noprefix',
           previousBlock,
-        ) || 'transparent';
+        ) || 'default';
 
       const currentColor =
         getCurrentStyleByName(
           config.settings.backgroundColors,
           'backgroundColor:noprefix',
           data,
-        ) || 'transparent';
+        ) || 'default';
       const nextColor =
         getCurrentStyleByName(
           config.settings.backgroundColors,
           'backgroundColor:noprefix',
           nextBlock,
-        ) || 'transparent';
+        ) || 'default';
 
       // Inject a class depending if the previous block has the same `backgroundColor`
       if (currentColor === previousColor) {
@@ -104,7 +104,7 @@ export default function install(config: ConfigType) {
           config.settings.blockWidths,
           'backgroundColor:noprefix',
           data,
-        ) || 'transparent';
+        ) || 'default';
       if (currentBlockBackgroundColor) {
         // This has intentionally a different class name than in `VLT3`
         return [

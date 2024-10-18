@@ -1,4 +1,5 @@
 .block.__button {
+  margin-bottom: 0 !important;
   .button.container {
     @include narrow-container-width();
 

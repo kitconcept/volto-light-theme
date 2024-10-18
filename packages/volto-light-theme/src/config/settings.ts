@@ -28,15 +28,20 @@ export default function install(config: ConfigType) {
   config.settings.backgroundColors = [
     {
       style: {
-        '--background-color': '#fff',
+        '--theme-color': '#fff',
+        '--theme-high-contrast-color': '#ecebeb',
+        '--theme-font-color': '#000',
+        '--theme-low-contrast-font-color': '#bebebe',
       },
-      name: 'white',
-      label: 'White',
+      name: 'default',
+      label: 'Default',
     },
     {
       style: {
-        '--background-color': '#ecebeb',
-        '--background-color-inverse': '#fff',
+        '--theme-color': '#ecebeb',
+        '--theme-high-contrast-color': '#fff',
+        '--theme-font-color': '#000',
+        '--theme-low-contrast-font-color': '#bebebe',
       },
       name: 'grey',
       label: 'Grey',

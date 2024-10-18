@@ -35,13 +35,17 @@
 
   .block.teaser {
     margin-bottom: 0;
-    background-color: $lightgrey;
+    padding-top: 0;
 
     // External link icon
     a.external {
       .content h2:after {
         @include external-link-icon();
       }
+    }
+
+    a {
+      text-decoration: none;
     }
 
     .teaser-item {
@@ -95,8 +99,6 @@
   .slate:not(.inner) {
     padding: 40px 20px 20px 20px;
     margin: 0;
-    background-color: $lightgrey;
-
     p {
       padding: 0;
       margin-bottom: 20px;
@@ -181,13 +183,6 @@
         .has--headline
       ) {
       margin-top: unset;
-    }
-    &:not(.grid) {
-      .listing-item,
-      .listing-item:last-child {
-        padding-bottom: 40px !important;
-        border-bottom: 1px solid $black !important;
-      }
     }
 
     &.grid {
@@ -324,31 +319,6 @@
   }
 }
 
-.block.gridBlock.has--backgroundColor--grey,
-#page-add .block-editor-gridBlock.has--backgroundColor--grey,
-#page-edit .block-editor-gridBlock.has--backgroundColor--grey {
-  background-color: $lightgrey;
-  .teaser-item {
-    background: white;
-  }
-  .slate {
-    background-color: $white;
-  }
-
-  .slate-editor {
-    background-color: $white !important;
-  }
-
-  .slate:not(.inner) {
-    background-color: $white !important;
-  }
-
-  .grid-block-image {
-    .block.image {
-      background: white;
-    }
-  }
-}
 
 // Teasers in grids specific
 #page-document .block.gridBlock .block.teaser {
