@@ -51,7 +51,7 @@ export function groupByBGColor(blocks, blocks_layout, colorDefinitions) {
         colorDefinitions,
         'backgroundColor:noprefix',
         blocks[blockId],
-      ) || 'transparent';
+      ) || 'default';
     if (currentBlockColor !== currentBGColor) {
       currentBGColor = currentBlockColor;
       // write it only if the array has some block inside
@@ -96,7 +96,7 @@ const RenderBlocks = (props) => {
               config.settings.backgroundColors,
               'backgroundColor:noprefix',
               content[blocksFieldname][group[0]],
-            ) || 'transparent',
+            ) || 'default',
           )}
           style={buildStyleObjectFromData(
             content[blocksFieldname][group[0]]?.styles,

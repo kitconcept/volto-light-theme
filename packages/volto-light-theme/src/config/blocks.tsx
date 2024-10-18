@@ -189,6 +189,8 @@ export default function install(config: ConfigType) {
   config.blocks.blocksConfig.introduction = {
     ...config.blocks.blocksConfig.introduction,
     unwantedButtons: ['heading-three', 'blockquote'],
+    colors: config.settings.backgroundColors,
+    schemaEnhancer: defaultStylingSchema,
   };
 
   config.blocks.blocksConfig.slate = {
@@ -233,7 +235,11 @@ export default function install(config: ConfigType) {
 
   config.blocks.blocksConfig.search = {
     ...config.blocks.blocksConfig.search,
-    schemaEnhancer: searchBlockSchemaEnhancer,
+    schemaEnhancer: composeSchema(
+      defaultStylingSchema,
+      searchBlockSchemaEnhancer,
+    ),
+    colors: config.settings.backgroundColors,
     variations: [
       {
         id: 'facetsTopSide',

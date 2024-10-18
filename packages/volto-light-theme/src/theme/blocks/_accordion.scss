@@ -13,11 +13,10 @@
     }
     .title.accordion-title {
       padding: 20px 0 20px 0;
-      background-color: unset;
 
       & > svg {
         height: 50px !important;
-        fill: $grey !important;
+        fill: $grey;
         transform: rotate(-90deg);
       }
 
@@ -32,7 +31,7 @@
       }
 
       &.active > svg {
-        fill: $black !important;
+        fill: $black;
         transform: rotate(180deg);
       }
     }
@@ -83,7 +82,6 @@
             padding: 0;
             margin-bottom: 10px;
             background-color: transparent;
-            color: $grey;
             text-transform: none;
             @include marginal-title();
           }
