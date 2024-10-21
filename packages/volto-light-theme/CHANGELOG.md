@@ -8,6 +8,34 @@
 
 <!-- towncrier release notes start -->
 
+## 5.0.1 (2024-10-09)
+
+### Bugfix
+
+- Fixed missing key in header @sneridagh [#417](https://github.com/kitconcept/volto-light-theme/pull/417)
+
+### Internal
+
+- Update versions to latest volto-highlight-block, volto-button-block @sneridagh [#408](https://github.com/kitconcept/volto-light-theme/pull/408)
+- Bump `volto-button-block` version @sneridagh
+  Bump to Volto 18.0.0-alpha.45 [#417](https://github.com/kitconcept/volto-light-theme/pull/417)
+
+## 5.0.0 (2024-07-02)
+
+### Breaking
+
+- Upgrade to a39, enable new image widget @sneridagh
+
+  Breaking:
+    The new Image widget component is used in the VLT shadowed image component.
+    The minimum Volto version requirements have changed for this reason.
+    The new image widget is present in core from these versions on:
+      - Volto 17.18.0
+      - Volto 18.0.0-alpha.36
+
+    For more information, please take a look at the upgrade guide:
+    https://github.com/kitconcept/volto-light-theme/blob/main/UPGRADE-GUIDE.md [#405](https://github.com/kitconcept/volto-light-theme/pull/405)
+
 ## 4.0.1 (2024-06-28)
 
 ### Bugfix

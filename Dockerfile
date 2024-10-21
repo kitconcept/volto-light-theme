@@ -1,9 +1,6 @@
 # syntax=docker/dockerfile:1
 ARG VOLTO_VERSION
-# TODO: Replace with
-# FROM plone/frontend-builder:${VOLTO_VERSION}
-# when the main image is ready
-FROM ghcr.io/kitconcept/frontend-builder:${VOLTO_VERSION} as builder
+FROM plone/frontend-builder:${VOLTO_VERSION} as builder
 
 COPY --chown=node packages/volto-light-theme /app/packages/volto-light-theme
 COPY --chown=node volto.config.js /app/
@@ -17,10 +14,7 @@ RUN --mount=type=cache,id=pnpm,target=/app/.pnpm-store,uid=1000 <<EOT
      pnpm install --prod
 EOT
 
-# TODO: Replace with
-# FROM plone/frontend-prod-config:${VOLTO_VERSION}
-# when the main image is ready
-FROM ghcr.io/kitconcept/frontend-prod-config:${VOLTO_VERSION}
+FROM plone/frontend-prod-config:${VOLTO_VERSION}
 
 LABEL maintainer="Plone Foundation <collective@plone.org>" \
       org.label-schema.name="adfsdf-frontend" \
