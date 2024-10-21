@@ -66,7 +66,7 @@ jobs:
           # to background multiple processes: add & to the end of the command
 
           wait-on: |
-            http-get://localhost:55001/plone
+            http-get://localhost:8080/Plone
             http://localhost:3000
           # IMPORTANT: to use environment variables in wait-on, you must use this form: ${{ env.VAR }}
           # See wait-on section below for all resource types and prefixes
