@@ -11,7 +11,7 @@ beforeEach(function () {
 
 describe('Visual base', () =>
   describeWithResolutions(undefined, (setViewport, title) => {
-    describe.only(`unauthenticated`, () => {
+    describe(`unauthenticated`, () => {
       beforeEach(() => {
         cy.intercept('GET', `/**/*?expand*`).as('content');
         cy.visit('/');
@@ -19,9 +19,9 @@ describe('Visual base', () =>
         setViewport(cy);
       });
 
-      // it('home page', function () {
-      //   cy.matchImage();
-      // });
+      it('home page', function () {
+        cy.matchImage();
+      });
 
       /* demonstrate testing a link list */
       const linkOptions = Cypress.env('linkOptions');
@@ -45,7 +45,7 @@ describe('Visual base', () =>
       describeWithPaths(
         'basic link list',
         {
-          urls: ['/', '/content-types/page'],
+          urls: ['/content-types/page'],
           filter: (index, url, path) => filter(index),
         },
         (path) => {
@@ -60,7 +60,7 @@ describe('Visual base', () =>
         cy.visit('/login');
         cy.get('#login-form-submit');
         cy.get('#login').type('admin');
-        cy.get('#password').type('secret');
+        cy.get('#password').type('admin');
         cy.intercept('GET', '/**/?expand*').as('content');
         cy.get('#login-form-submit').click();
         cy.wait('@content');
@@ -95,12 +95,13 @@ describe('Visual base', () =>
       describeWithPaths(
         'basic link list',
         {
-          urls: ['/', '/content-types/page'],
+          urls: ['/content-types/page'],
           filter: (index, url, path) => filter(index),
         },
         (path) => {
           it('visit', testPath(path));
         },
+        setViewport,
       );
     });
   }));
