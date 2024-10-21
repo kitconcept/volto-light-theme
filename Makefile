@@ -19,6 +19,8 @@ GREEN=`tput setaf 2`
 RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
 
+NODEBIN = ./node_modules/.bin
+
 PLONE_VERSION=6
 DOCKER_IMAGE=ghcr.io/kitconcept/voltolighttheme:latest
 DOCKER_IMAGE_ACCEPTANCE=plone/server-acceptance:${PLONE_VERSION}
@@ -149,3 +151,67 @@ acceptance-a11y-test: ## Start a11y Cypress in interactive mode
 .PHONY: ci-acceptance-a11y-test
 ci-acceptance-a11y-test: ## Run a11y cypress tests in headless mode for CI
 	CYPRESS_a11y=1 CYPRESS_API_PATH=http://localhost:8080/Plone pnpm exec cypress run --config specPattern=$(CURRENT_DIR)'/cypress/tests/a11y/**/*.{js,jsx,ts,tsx}'
+
+### Visual acceptance tests ###
+#
+# Useful env vars:
+#
+# cypress_cumulativeReport: cumulative report file, by default `cumulative.report`
+# cypress_cumulativeSummaryReport: cumulative summary report file, by default adding `-summary.report`
+#                                  to the end of the cumulative file
+#                                  They are placed into `frontend/cypress/config` and
+#                                  cannot be outside
+#                                  of Cypress due to its virtual filesystem.
+#
+# Env vars in support of CI runs:
+#
+# cypress_baseUrl: url of server to run the test against
+#                  e.g. cypress_baseUrl=https://plone-redaktion.de
+#
+#
+
+.PHONY: acceptance-test-visual
+acceptance-test-visual: ## Start visual Cypress Acceptance Tests
+	NODE_ENV=production CYPRESS_a11y=1 $(NODEBIN)/cypress open --config-file cypress/config/cypress.visual.config.js
+
+# Running the visual tests in headless, cumulative mode will SKIP tests that have run previously, and
+# only run the still failing tests HOWEVER the results are not collected in interactive mode due to
+# inherent limitations of Cypress. But if you run the tests in cumulative headless mode first,
+# then this command can be used to run ONLY the failing tests in interactive mode.
+.PHONY: acceptance-test-visual-cumulative
+acceptance-test-visual-cumulative: ## Start visual Cypress Acceptance Tests with cumulative filtering
+	@echo WARNING: cumulative results are NOT collected in interactive mode, use headless mode for collection
+	NODE_ENV=production CYPRESS_a11y=1 cypress_enableCumulative=true $(NODEBIN)/cypress open --config-file cypress/config/cypress.visual.config.js
+
+.PHONY: ci-acceptance-test-visual
+ci-acceptance-test-visual: ## Start visual Cypress Acceptance Tests in headless mode
+	NODE_ENV=production CYPRESS_a11y=1 $(NODEBIN)/cypress run --browser firefox --config-file cypress/config/cypress.visual.config.js
+
+# Running the visual tests in headless, cumulative mode will SKIP tests that have run previously, and
+# only run the still failing tests.
+.PHONY: ci-acceptance-test-visual-cumulative
+ci-acceptance-test-visual-cumulative: ## Start visual Cypress Acceptance Tests in headless mode
+	NODE_ENV=production CYPRESS_a11y=1 cypress_enableCumulative=true $(NODEBIN)/cypress run --browser firefox --config-file cypress/config/cypress.visual.config.js
+
+# Automatically update all changed visual snapshots
+.PHONY: ci-acceptance-test-visual-update
+ci-acceptance-test-visual-update: ## Start visual Cypress Acceptance Tests in headless mode, always pass and update images
+	NODE_ENV=production CYPRESS_a11y=1 cypress_pluginVisualRegressionUpdateImages=true $(NODEBIN)/cypress run --browser firefox --config-file cypress/config/cypress.visual.config.js
+
+# Automatically update all changed visual snapshots, and
+# running the visual tests in headless, cumulative mode will SKIP tests that have run previously, and
+# only run the still failing tests
+.PHONY: ci-acceptance-test-visual-update-cumulative
+ci-acceptance-test-visual-update-cumulative: ## Start visual Cypress Acceptance Tests in headless mode, always pass and update images, with cumulative results
+	NODE_ENV=production CYPRESS_a11y=1 cypress_enableCumulative=true cypress_pluginVisualRegressionUpdateImages=true $(NODEBIN)/cypress run --browser firefox --config-file cypress/config/cypress.visual.config.js
+
+.PHONY: summarize-cumulative-state
+summarize-cumulative-state: ## Summarize cumulative state into ...-summary.report
+	pnpm summarize-cumulative-state
+
+
+.PHONY: ci-acceptance-server-visual-start
+ci-acceptance-server-visual-start: ci-acceptance-a11y-backend-start
+
+.PHONY: ci-acceptance-frontend-visual-start
+ci-acceptance-frontend-visual-start: acceptance-a11y-frontend-prod-start
