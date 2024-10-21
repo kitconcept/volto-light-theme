@@ -58,8 +58,8 @@ jobs:
         name: Start Servers
         with:
           run: |
-            make start-test-acceptance-server-visual-ci &
-            make start-test-acceptance-frontend-visual &
+            make ci-acceptance-server-visual-start &
+            make ci-acceptance-frontend-visual-start &
           # your step-level and job-level environment variables are available to your commands as-is
           # npm install will count towards the wait-for timeout
           # whenever possible, move unrelated scripts to a different step

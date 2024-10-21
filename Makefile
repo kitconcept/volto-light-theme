@@ -208,3 +208,10 @@ ci-acceptance-test-visual-update-cumulative: ## Start visual Cypress Acceptance 
 .PHONY: summarize-cumulative-state
 summarize-cumulative-state: ## Summarize cumulative state into ...-summary.report
 	pnpm summarize-cumulative-state
+
+
+.PHONY: ci-acceptance-server-visual-start
+ci-acceptance-server-visual-start: ci-acceptance-a11y-backend-start
+
+.PHONY: ci-acceptance-frontend-visual-start
+ci-acceptance-frontend-visual-start: acceptance-a11y-frontend-prod-start
