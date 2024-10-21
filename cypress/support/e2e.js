@@ -1,6 +1,7 @@
 import 'cypress-axe';
 import 'cypress-file-upload';
 import './commands';
+import './visual/commands';
 import 'cypress-axe';
 import { setup, teardown } from '@plone/volto/cypress/support/reset-fixture';
 
