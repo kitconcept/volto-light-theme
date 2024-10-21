@@ -185,7 +185,7 @@ acceptance-test-visual-cumulative: ## Start visual Cypress Acceptance Tests with
 
 .PHONY: ci-acceptance-test-visual
 ci-acceptance-test-visual: ## Start visual Cypress Acceptance Tests in headless mode
-	NODE_ENV=production $(NODEBIN)/cypress run --browser firefox --config-file cypress/config/cypress.visual.config.js
+	NODE_ENV=production CYPRESS_a11y=1 $(NODEBIN)/cypress run --browser firefox --config-file cypress/config/cypress.visual.config.js
 
 # Running the visual tests in headless, cumulative mode will SKIP tests that have run previously, and
 # only run the still failing tests.
