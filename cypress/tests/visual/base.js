@@ -1,9 +1,10 @@
+import path from 'path';
 import describeWithResolutions from '../../support/describe-with-resolutions';
 import describeWithPaths from '../../support/visual/describe-with-paths';
 import rangeFilter from '../../support/visual/range-filter';
 import hasItPassed from '../../support/visual/has-it-passed';
 import { skipOn } from '@cypress/skip-test';
-import path from 'path';
+import { PUBLIC_PAGES, PRIVATE_PAGES } from './pagesUnderTest';
 
 beforeEach(function () {
   skipOn(hasItPassed('cypress' + path.resolve(__filename), this.currentTest));
@@ -45,7 +46,7 @@ describe('Visual base', () =>
       describeWithPaths(
         'basic link list',
         {
-          urls: ['/content-types/page'],
+          urls: PUBLIC_PAGES,
           filter: (index, url, path) => filter(index),
         },
         (path) => {
@@ -95,7 +96,7 @@ describe('Visual base', () =>
       describeWithPaths(
         'basic link list',
         {
-          urls: ['/content-types/page'],
+          urls: PRIVATE_PAGES,
           filter: (index, url, path) => filter(index),
         },
         (path) => {
