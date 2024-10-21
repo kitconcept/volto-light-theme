@@ -5,6 +5,8 @@ import { Container } from '@plone/components';
 
 import EventView from './components/Theme/EventView';
 
+import { migrateToVLT6ColorAndWidthModel } from './transforms/to6';
+
 import installSettings from './config/settings';
 import installBlocks from './config/blocks';
 import installClassExtenders from './config/classExtenders';
@@ -45,6 +47,13 @@ const applyConfig = (config: ConfigType) => {
   config.registerComponent({
     name: 'Container',
     component: Container,
+  });
+
+  config.registerUtility({
+    name: 'migrateToVLT6ColorAndWidthModel',
+    type: 'transform',
+    dependencies: { reducer: 'content' },
+    method: migrateToVLT6ColorAndWidthModel,
   });
 
   config.views.contentTypesViews.Event = EventView;
