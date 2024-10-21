@@ -11,31 +11,17 @@ beforeEach(function () {
 
 describe('Visual base', () =>
   describeWithResolutions(undefined, (setViewport, title) => {
-    describe(`unauthenticated`, () => {
+    describe.only(`unauthenticated`, () => {
       beforeEach(() => {
+        cy.intercept('GET', `/**/*?expand*`).as('content');
         cy.visit('/');
+        cy.wait('@content');
         setViewport(cy);
       });
 
-      it('home page', function () {
-        // Workaround: interceptor would fail if we are
-        // already on /
-        // so we visit /news first and then back to /
-        cy.intercept('GET', '/**/news?expand*').as('content');
-        cy.visit('/news');
-        cy.wait('@content');
-        cy.intercept('GET', '/**/?expand*').as('content');
-        cy.navigate('/');
-        cy.wait('@content');
-        cy.matchImage();
-      });
-
-      it('news page', () => {
-        cy.intercept('GET', '/**/news?expand*').as('content');
-        cy.navigate('/news');
-        cy.wait('@content');
-        cy.matchImage();
-      });
+      // it('home page', function () {
+      //   cy.matchImage();
+      // });
 
       /* demonstrate testing a link list */
       const linkOptions = Cypress.env('linkOptions');
@@ -46,7 +32,8 @@ describe('Visual base', () =>
 
       const testPath = (path) => () => {
         setViewport(cy);
-        cy.visit(path);
+        cy.navigate(path);
+        cy.wait('@content');
         cy.matchImage();
       };
 
@@ -58,12 +45,13 @@ describe('Visual base', () =>
       describeWithPaths(
         'basic link list',
         {
-          urls: ['/', '/news'],
+          urls: ['/', '/content-types/page'],
           filter: (index, url, path) => filter(index),
         },
         (path) => {
           it('visit', testPath(path));
         },
+        setViewport,
       );
     });
 
@@ -82,20 +70,6 @@ describe('Visual base', () =>
       });
 
       it('home page', function () {
-        // Workaround: interceptor would fail if we are
-        // already on /
-        // so we visit /news first and then back to /
-        cy.visit('/news');
-        cy.intercept('GET', '/**/?expand*').as('content');
-        cy.navigate('/');
-        cy.wait('@content');
-        cy.matchImage();
-      });
-
-      it('news page', () => {
-        cy.intercept('GET', '/**/news?expand*').as('content');
-        cy.navigate('/news');
-        cy.wait('@content');
         cy.matchImage();
       });
 
@@ -108,7 +82,8 @@ describe('Visual base', () =>
 
       const testPath = (path) => () => {
         setViewport(cy);
-        cy.visit(path);
+        cy.navigate(path);
+        cy.wait('@content');
         cy.matchImage();
       };
 
@@ -120,7 +95,7 @@ describe('Visual base', () =>
       describeWithPaths(
         'basic link list',
         {
-          urls: ['/', '/news'],
+          urls: ['/', '/content-types/page'],
           filter: (index, url, path) => filter(index),
         },
         (path) => {

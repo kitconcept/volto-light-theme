@@ -48,6 +48,7 @@ const describeWithPaths = (
     }),
   } = {},
   fDescribe,
+  setViewport,
 ) => {
   for (const index in urls) {
     const url = urls[index];
@@ -62,6 +63,10 @@ const describeWithPaths = (
     }`, () => {
       beforeEach(function () {
         skipOn(!filter(index, url, path));
+        cy.intercept('GET', `/**/*?expand*`).as('content');
+        cy.visit('/');
+        cy.wait('@content');
+        setViewport(cy);
       });
       fDescribe(path);
     });

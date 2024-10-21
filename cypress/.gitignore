@@ -7,3 +7,5 @@
 # Cumulative report outputs must be in the cypress
 # filesystem, but we want to avoid checking them in
 /config/cumulative*.report
+
+/screenshots
