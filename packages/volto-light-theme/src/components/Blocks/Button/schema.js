@@ -19,6 +19,8 @@ export const ButtonStylingSchema = ({ schema, formData, intl }) => {
     (field) => field !== 'inneralign',
   );
 
+  delete schema.properties?.inneralign;
+
   schema.properties.styles.schema.fieldsets[0].fields = [
     'blockWidth:noprefix',
     ...schema.properties.styles.schema.fieldsets[0].fields,

@@ -83,92 +83,105 @@ const RenderBlocks = (props) => {
 
   return hasBlocksData(content) ? (
     <CustomTag>
-      {map(grouped, (group) => (
-        <MaybeWrap
-          key={`block-group-${group[0]}`}
-          condition={
-            config.settings.enableAutoBlockGroupingByBackgroundColor &&
-            !isContainer
-          }
-          className={cx(
-            'blocks-group-wrapper',
-            getCurrentStyleByName(
-              config.settings.backgroundColors,
-              'backgroundColor:noprefix',
-              content[blocksFieldname][group[0]],
-            ) || 'default',
-          )}
-          style={buildStyleObjectFromData(
-            content[blocksFieldname][group[0]]?.styles,
-          )}
-        >
-          {map(group, (block) => {
-            const Block =
-              blocksConfig[content[blocksFieldname]?.[block]?.['@type']]
-                ?.view || ViewDefaultBlock;
-
-            const blockData = applyBlockDefaults({
-              data: content[blocksFieldname][block],
-              intl,
-              metadata,
-              properties: content,
-            });
-
-            if (content[blocksFieldname]?.[block]?.['@type'] === 'empty') {
-              return (
-                <MaybeWrap
-                  key={block}
-                  condition={blockWrapperTag}
-                  as={blockWrapperTag}
-                >
-                  <RenderEmptyBlock />
-                </MaybeWrap>
-              );
+      {map(grouped, (group) => {
+        if (
+          content[blocksFieldname][group[0]] &&
+          !content[blocksFieldname][group[0]]?.styles
+        ) {
+          content[blocksFieldname][group[0]].styles = {};
+          content[blocksFieldname][group[0]].styles[
+            'backgroundColor:noprefix'
+          ] = config.settings.backgroundColors[0].style;
+        }
+        return (
+          <MaybeWrap
+            key={`block-group-${group[0]}`}
+            condition={
+              config.settings.enableAutoBlockGroupingByBackgroundColor &&
+              !isContainer
             }
+            className={cx(
+              'blocks-group-wrapper',
+              getCurrentStyleByName(
+                config.settings.backgroundColors,
+                'backgroundColor:noprefix',
+                content[blocksFieldname][group[0]],
+              ) || 'default',
+            )}
+            style={buildStyleObjectFromData(
+              content[blocksFieldname][group[0]]?.styles,
+            )}
+          >
+            {map(group, (block) => {
+              const Block =
+                blocksConfig[content[blocksFieldname]?.[block]?.['@type']]
+                  ?.view || ViewDefaultBlock;
 
-            if (Block) {
-              return (
-                <MaybeWrap
-                  key={block}
-                  condition={blockWrapperTag}
-                  as={blockWrapperTag}
-                >
-                  <StyleWrapper
+              const blockData = applyBlockDefaults({
+                data: content[blocksFieldname][block],
+                intl,
+                metadata,
+                properties: content,
+              });
+
+              if (content[blocksFieldname]?.[block]?.['@type'] === 'empty') {
+                return (
+                  <MaybeWrap
                     key={block}
-                    {...props}
-                    id={block}
-                    block={block}
-                    data={blockData}
+                    condition={blockWrapperTag}
+                    as={blockWrapperTag}
                   >
-                    <Block
-                      id={block}
-                      metadata={metadata}
-                      properties={content}
-                      data={blockData}
-                      path={getBaseUrl(location?.pathname || '')}
-                      blocksConfig={blocksConfig}
-                    />
-                  </StyleWrapper>
-                </MaybeWrap>
-              );
-            }
+                    <RenderEmptyBlock />
+                  </MaybeWrap>
+                );
+              }
 
-            if (blockData) {
+              if (Block) {
+                return (
+                  <MaybeWrap
+                    key={block}
+                    condition={blockWrapperTag}
+                    as={blockWrapperTag}
+                  >
+                    <StyleWrapper
+                      key={block}
+                      {...props}
+                      id={block}
+                      block={block}
+                      data={blockData}
+                    >
+                      <Block
+                        id={block}
+                        metadata={metadata}
+                        properties={content}
+                        data={blockData}
+                        path={getBaseUrl(location?.pathname || '')}
+                        blocksConfig={blocksConfig}
+                      />
+                    </StyleWrapper>
+                  </MaybeWrap>
+                );
+              }
+
+              if (blockData) {
+                return (
+                  <div key={block}>
+                    {intl.formatMessage(messages.unknownBlock, {
+                      block: content[blocksFieldname]?.[block]?.['@type'],
+                    })}
+                  </div>
+                );
+              }
+
               return (
                 <div key={block}>
-                  {intl.formatMessage(messages.unknownBlock, {
-                    block: content[blocksFieldname]?.[block]?.['@type'],
-                  })}
+                  {intl.formatMessage(messages.invalidBlock)}
                 </div>
               );
-            }
-
-            return (
-              <div key={block}>{intl.formatMessage(messages.invalidBlock)}</div>
-            );
-          })}
-        </MaybeWrap>
-      ))}
+            })}
+          </MaybeWrap>
+        );
+      })}
     </CustomTag>
   ) : (
     ''
