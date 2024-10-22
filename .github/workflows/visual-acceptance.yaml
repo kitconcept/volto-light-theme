@@ -212,7 +212,7 @@ jobs:
           name: cypress-image-snapshots-visual-acceptance
           path: cypress/__image_snapshots__
 
-  visualblocks:
+  visualblocksA:
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.event.pull_request.base.repo.full_name
     runs-on: ubuntu-latest
     name: Blocks
@@ -289,7 +289,107 @@ jobs:
 
           # working-directory: backend
 
-      - run: make ci-acceptance-test-visual SPEC='cypress/tests/visual/blocks.cy.js'
+      - run: make ci-acceptance-test-visual SPEC='cypress/tests/visual/blocks-A.cy.js'
+
+      # Upload Cypress screenshots
+      - uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: cypress-screenshots-visual-acceptance
+          path: cypress/screenshots
+
+      # Upload Cypress videos
+      - uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: cypress-videos-visual-acceptance
+          path: cypress/videos
+
+      # Upload Cypress visual testing screenshots
+      - uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: cypress-image-snapshots-visual-acceptance
+          path: cypress/__image_snapshots__
+
+  visualblocksB:
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.event.pull_request.base.repo.full_name
+    runs-on: ubuntu-latest
+    name: Blocks
+    env:
+      CYPRESS_A11Y: true
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js ${{ env.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.node-version }}
+
+      - name: Enable corepack
+        run: corepack enable
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - uses: actions/cache@v4
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Cache Cypress Binary
+        id: cache-cypress-binary
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/Cypress
+          key: binary-${{ env.node-version }}-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: Install dependencies
+        run: make install
+
+      - name: Install Cypress if not in cache
+        if: steps.cache-cypress-binary.outputs.cache-hit != 'true'
+        working-directory: core/packages/volto
+        run: make cypress-install
+
+      - uses: JarvusInnovations/background-action@v1
+        name: Start Servers
+        with:
+          run: |
+            make ci-acceptance-server-visual-start &
+            make ci-acceptance-frontend-visual-start &
+          # your step-level and job-level environment variables are available to your commands as-is
+          # npm install will count towards the wait-for timeout
+          # whenever possible, move unrelated scripts to a different step
+          # to background multiple processes: add & to the end of the command
+
+          wait-on: |
+            http-get://localhost:8080/Plone
+            http://localhost:3000
+          # IMPORTANT: to use environment variables in wait-on, you must use this form: ${{ env.VAR }}
+          # See wait-on section below for all resource types and prefixes
+
+          tail: true # true = stderr,stdout
+          # This will allow you to monitor the progress live
+
+          log-output-resume: stderr
+          # Eliminates previosuly output stderr log entries from post-run output
+
+          wait-for: 10m
+
+          log-output: stderr,stdout # same as true
+
+          log-output-if: failure
+          # failure = exit-early or timeout
+
+          # working-directory: backend
+
+      - run: make ci-acceptance-test-visual SPEC='cypress/tests/visual/blocks-B.cy.js'
 
       # Upload Cypress screenshots
       - uses: actions/upload-artifact@v3
