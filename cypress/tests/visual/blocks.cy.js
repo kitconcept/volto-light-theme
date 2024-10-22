@@ -5,7 +5,6 @@ const PUBLIC_PAGES = [
   '/block/button-block',
   '/block/highlight-block',
   '/block/image-block',
-  '/block/search-block',
   '/block/introduction-block',
   '/block/separator-block',
   '/block/teaser-block',
