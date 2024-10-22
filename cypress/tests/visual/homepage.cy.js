@@ -33,12 +33,15 @@ describe('Homepage', () =>
       beforeEach(() => {
         cy.autologin('admin', 'admin');
         cy.intercept('GET', `/**/*?expand*`).as('content');
+        cy.intercept('GET', '/**/Document').as('schema');
         cy.visit('/');
         cy.wait('@content');
         setViewport(cy);
       });
 
       it('home page', function () {
+        cy.navigate('/edit');
+        cy.wait('@schema');
         cy.matchImage();
       });
     });

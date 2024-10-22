@@ -7,8 +7,6 @@ const PUBLIC_PAGES = [
   '/vertical-spacing/heading-and-introduction',
   '/vertical-spacing/highlight-and-grid',
   '/vertical-spacing/highlight-and-text',
-  // '/vertical-spacing/listing-and-listing',
-  // '/vertical-spacing/listing-and-text',
   '/vertical-spacing/teasers-and-text',
   '/vertical-spacing/text',
 ];

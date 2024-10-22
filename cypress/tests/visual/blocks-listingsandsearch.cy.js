@@ -50,6 +50,38 @@ describe('Blocks-Listings-Search', () =>
         cy.wait(['@querystring-search', '@querystring-search']);
         cy.matchImage();
       });
+
+      it('Vertical Spacing - Listing and Listing', function () {
+        cy.intercept('GET', `/**/@querystring-search*`).as(
+          'querystring-search',
+        );
+        cy.navigate('/vertical-spacing/listing-and-listing');
+        cy.wait([
+          '@querystring-search',
+          '@querystring-search',
+          '@querystring-search',
+          '@querystring-search',
+          '@querystring-search',
+          '@querystring-search',
+        ]);
+        cy.matchImage();
+      });
+
+      it('Vertical Spacing - Listing and text', function () {
+        cy.intercept('GET', `/**/@querystring-search*`).as(
+          'querystring-search',
+        );
+        cy.navigate('/vertical-spacing/listing-and-text');
+        cy.wait([
+          '@querystring-search',
+          '@querystring-search',
+          '@querystring-search',
+          '@querystring-search',
+          '@querystring-search',
+          '@querystring-search',
+        ]);
+        cy.matchImage();
+      });
     });
 
     describe(`authenticated`, () => {
