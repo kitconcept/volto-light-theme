@@ -43,7 +43,8 @@ const describeWithResolutions = (
       typeof resolution === 'string'
         ? resolution
         : `${resolution[0]}x${resolution[1]}`;
-    describe(`resolution=${title}`, () => fDescribe(setViewport, title));
+    describe(`resolution=${title}`, () =>
+      fDescribe(setViewport, title, resolution));
   }
 };
 

@@ -23,7 +23,7 @@ module.exports = {
   rules: {
     'import/no-unresolved': 1,
     'import/named': 'error',
-    'react/jsx-filename-extension': 'error',
+    'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.jsx'] }],
     'no-restricted-imports': [
       'error',
       {
