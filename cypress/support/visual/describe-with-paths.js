@@ -56,7 +56,7 @@ const describeWithPaths = (
       /^[^/]*\/\/[^/]*(.*)$/,
     )[1];
     const fullPath = path.replace(/\//g, '+');
-    describe(`${name} Path#${String(index).padStart(4, '0')}=${
+    describe(`${name}${String(index).padStart(4, '0')}=${
       fullPath.length <= 150
         ? fullPath
         : fullPath.substring(0, 110) + '...' + md5(path)

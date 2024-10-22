@@ -4,24 +4,19 @@ import describeWithPaths from '../../support/visual/describe-with-paths';
 import rangeFilter from '../../support/visual/range-filter';
 import hasItPassed from '../../support/visual/has-it-passed';
 import { skipOn } from '@cypress/skip-test';
-import { PUBLIC_PAGES, PRIVATE_PAGES } from './pagesUnderTest';
 
 beforeEach(function () {
   skipOn(hasItPassed('cypress' + path.resolve(__filename), this.currentTest));
 });
 
-describe('Visual base', () =>
+export function visualTestBase(public_pages, private_pages) {
   describeWithResolutions(undefined, (setViewport, title) => {
-    describe(`unauthenticated`, () => {
+    describe(`anonymous`, () => {
       beforeEach(() => {
         cy.intercept('GET', `/**/*?expand*`).as('content');
         cy.visit('/');
         cy.wait('@content');
         setViewport(cy);
-      });
-
-      it('home page', function () {
-        cy.matchImage();
       });
 
       /* demonstrate testing a link list */
@@ -44,9 +39,9 @@ describe('Visual base', () =>
       });
 
       describeWithPaths(
-        'basic link list',
+        'Path->',
         {
-          urls: PUBLIC_PAGES,
+          urls: public_pages,
           filter: (index, url, path) => filter(index),
         },
         (path) => {
@@ -58,20 +53,11 @@ describe('Visual base', () =>
 
     describe(`authenticated`, () => {
       beforeEach(() => {
-        cy.visit('/login');
-        cy.get('#login-form-submit');
-        cy.get('#login').type('admin');
-        cy.get('#password').type('admin');
-        cy.intercept('GET', '/**/?expand*').as('content');
-        cy.get('#login-form-submit').click();
+        cy.autologin('admin', 'admin');
+        cy.intercept('GET', `/**/*?expand*`).as('content');
+        cy.visit('/');
         cy.wait('@content');
-        cy.get('body.has-toolbar');
-
         setViewport(cy);
-      });
-
-      it('home page', function () {
-        cy.matchImage();
       });
 
       /* demonstrate testing a link list */
@@ -94,9 +80,9 @@ describe('Visual base', () =>
       });
 
       describeWithPaths(
-        'basic link list',
+        'Path->',
         {
-          urls: PRIVATE_PAGES,
+          urls: private_pages,
           filter: (index, url, path) => filter(index),
         },
         (path) => {
@@ -105,4 +91,5 @@ describe('Visual base', () =>
         setViewport,
       );
     });
-  }));
+  });
+}
