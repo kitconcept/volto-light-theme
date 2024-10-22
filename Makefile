@@ -172,7 +172,7 @@ ci-acceptance-a11y-test: ## Run a11y cypress tests in headless mode for CI
 
 .PHONY: acceptance-test-visual
 acceptance-test-visual: ## Start visual Cypress Acceptance Tests
-	NODE_ENV=production CYPRESS_a11y=1 $(NODEBIN)/cypress open --config-file cypress/config/cypress.visual.config.js
+	NODE_ENV=production $(NODEBIN)/cypress open --config-file cypress/config/cypress.visual.config.js --config specPattern='$(SPEC)'
 
 # Running the visual tests in headless, cumulative mode will SKIP tests that have run previously, and
 # only run the still failing tests HOWEVER the results are not collected in interactive mode due to
@@ -181,29 +181,29 @@ acceptance-test-visual: ## Start visual Cypress Acceptance Tests
 .PHONY: acceptance-test-visual-cumulative
 acceptance-test-visual-cumulative: ## Start visual Cypress Acceptance Tests with cumulative filtering
 	@echo WARNING: cumulative results are NOT collected in interactive mode, use headless mode for collection
-	NODE_ENV=production CYPRESS_a11y=1 cypress_enableCumulative=true $(NODEBIN)/cypress open --config-file cypress/config/cypress.visual.config.js
+	NODE_ENV=production cypress_enableCumulative=true $(NODEBIN)/cypress open --config-file cypress/config/cypress.visual.config.js
 
 .PHONY: ci-acceptance-test-visual
 ci-acceptance-test-visual: ## Start visual Cypress Acceptance Tests in headless mode
-	NODE_ENV=production CYPRESS_a11y=1 $(NODEBIN)/cypress run --browser firefox --config-file cypress/config/cypress.visual.config.js
+	NODE_ENV=production $(NODEBIN)/cypress run --browser firefox --config-file cypress/config/cypress.visual.config.js --config specPattern='$(SPEC)'
 
 # Running the visual tests in headless, cumulative mode will SKIP tests that have run previously, and
 # only run the still failing tests.
 .PHONY: ci-acceptance-test-visual-cumulative
 ci-acceptance-test-visual-cumulative: ## Start visual Cypress Acceptance Tests in headless mode
-	NODE_ENV=production CYPRESS_a11y=1 cypress_enableCumulative=true $(NODEBIN)/cypress run --browser firefox --config-file cypress/config/cypress.visual.config.js
+	NODE_ENV=production cypress_enableCumulative=true $(NODEBIN)/cypress run --browser firefox --config-file cypress/config/cypress.visual.config.js
 
 # Automatically update all changed visual snapshots
 .PHONY: ci-acceptance-test-visual-update
 ci-acceptance-test-visual-update: ## Start visual Cypress Acceptance Tests in headless mode, always pass and update images
-	NODE_ENV=production CYPRESS_a11y=1 cypress_pluginVisualRegressionUpdateImages=true $(NODEBIN)/cypress run --browser firefox --config-file cypress/config/cypress.visual.config.js
+	NODE_ENV=production cypress_pluginVisualRegressionUpdateImages=true $(NODEBIN)/cypress run --browser firefox --config-file cypress/config/cypress.visual.config.js
 
 # Automatically update all changed visual snapshots, and
 # running the visual tests in headless, cumulative mode will SKIP tests that have run previously, and
 # only run the still failing tests
 .PHONY: ci-acceptance-test-visual-update-cumulative
 ci-acceptance-test-visual-update-cumulative: ## Start visual Cypress Acceptance Tests in headless mode, always pass and update images, with cumulative results
-	NODE_ENV=production CYPRESS_a11y=1 cypress_enableCumulative=true cypress_pluginVisualRegressionUpdateImages=true $(NODEBIN)/cypress run --browser firefox --config-file cypress/config/cypress.visual.config.js
+	NODE_ENV=production cypress_enableCumulative=true cypress_pluginVisualRegressionUpdateImages=true $(NODEBIN)/cypress run --browser firefox --config-file cypress/config/cypress.visual.config.js
 
 .PHONY: summarize-cumulative-state
 summarize-cumulative-state: ## Summarize cumulative state into ...-summary.report

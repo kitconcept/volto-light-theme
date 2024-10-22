@@ -60,6 +60,7 @@ const applyConfig = (config) => {
   config.settings.enableFatMenu = true;
   config.settings.slate.useLinkedHeadings = false;
   config.settings.contentMetadataTagsImageField = 'preview_image';
+  config.settings.querystringSearchGet = true;
 
   // Initial block for event content type
   config.blocks.initialBlocks = {
