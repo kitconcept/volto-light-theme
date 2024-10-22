@@ -33,7 +33,7 @@ describe('Homepage', () =>
       beforeEach(() => {
         cy.autologin('admin', 'admin');
         cy.intercept('GET', `/**/*?expand*`).as('content');
-        cy.intercept('GET', '/**/Document').as('schema');
+        cy.intercept('GET', '/**/Plone%20Site').as('schema');
         cy.visit('/');
         cy.wait('@content');
         setViewport(cy);

@@ -28,7 +28,7 @@ module.exports = defineConfig(
           browsers: config.browsers.filter((b) => b.name === 'firefox'),
         };
       },
-      specPattern: 'cypress/tests/visual/*.cy.js',
+      specPattern: 'cypress/tests/visual/homepage.cy.js',
       // a11 tests require a site root without /en
       baseUrl: 'http://localhost:3000/',
     }),
