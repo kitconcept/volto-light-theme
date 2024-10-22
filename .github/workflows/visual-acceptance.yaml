@@ -412,7 +412,7 @@ jobs:
           name: cypress-image-snapshots-visual-acceptance
           path: cypress/__image_snapshots__
 
-  visualblockslisting:
+  visualblockslistingandsearch:
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.event.pull_request.base.repo.full_name
     runs-on: ubuntu-latest
     name: Blocks Listing
@@ -489,7 +489,7 @@ jobs:
 
           # working-directory: backend
 
-      - run: make ci-acceptance-test-visual SPEC='cypress/tests/visual/blocks-listing.cy.js'
+      - run: make ci-acceptance-test-visual SPEC='cypress/tests/visual/blocks-listingsandsearch.cy.js'
 
       # Upload Cypress screenshots
       - uses: actions/upload-artifact@v3
