@@ -18,6 +18,7 @@ import TopSideFacets from '../components/Blocks/Search/TopSideFacets';
 
 import GridListingBlockTemplate from '../components/Blocks/Listing/GridTemplate';
 import { ButtonStylingSchema } from '../components/Blocks/Button/schema';
+import { SeparatorStylingSchema } from '../components/Blocks/Separator/schema';
 
 import { imageBlockSchemaEnhancer } from '../components/Blocks/Image/schema';
 import { ImageBlockDataAdapter } from '../components/Blocks/Image/adapter';
@@ -273,10 +274,7 @@ export default function install(config: ConfigType) {
   if (config.blocks.blocksConfig?.separator?.id) {
     config.blocks.blocksConfig.separator = {
       ...config.blocks.blocksConfig.separator,
-      schemaEnhancer: composeSchema(
-        config.blocks.blocksConfig.separator.schemaEnhancer,
-        defaultStylingSchema,
-      ),
+      schemaEnhancer: SeparatorStylingSchema,
       colors: config.settings.backgroundColors,
     };
   }

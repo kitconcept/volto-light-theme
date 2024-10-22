@@ -695,7 +695,8 @@
         }
       }
 
-      .column > .slate {
+      .column > .slate,
+      .grid-items .slate:not(.inner) {
         background-color: var(--theme-high-contrast-color);
         & > * {
           color: var(--theme-font-color);
