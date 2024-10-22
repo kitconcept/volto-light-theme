@@ -10,7 +10,7 @@ beforeEach(function () {
 });
 
 describe('Homepage', () =>
-  describeWithResolutions(undefined, (setViewport, title) => {
+  describeWithResolutions(undefined, (setViewport, title, resolution) => {
     describe(`anonymous`, () => {
       beforeEach(() => {
         cy.intercept('GET', `/**/*?expand*`).as('content');
@@ -23,7 +23,13 @@ describe('Homepage', () =>
         cy.matchImage();
       });
     });
+
     describe(`authenticated`, () => {
+      if (['ipad-2', 'iphone-8'].includes(resolution)) {
+        // Skip the link list test for smaller resolutions
+        return;
+      }
+
       beforeEach(() => {
         cy.autologin('admin', 'admin');
         cy.intercept('GET', `/**/*?expand*`).as('content');

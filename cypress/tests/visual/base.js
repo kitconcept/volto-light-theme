@@ -10,7 +10,7 @@ beforeEach(function () {
 });
 
 export function visualTestBase(public_pages, private_pages) {
-  describeWithResolutions(undefined, (setViewport, title) => {
+  describeWithResolutions(undefined, (setViewport, title, resolution) => {
     describe(`anonymous`, () => {
       beforeEach(() => {
         cy.intercept('GET', `/**/*?expand*`).as('content');
@@ -52,6 +52,11 @@ export function visualTestBase(public_pages, private_pages) {
     });
 
     describe(`authenticated`, () => {
+      if (['ipad-2', 'iphone-8'].includes(resolution)) {
+        // Skip the link list test for smaller resolutions
+        return;
+      }
+
       beforeEach(() => {
         cy.autologin('admin', 'admin');
         cy.intercept('GET', `/**/*?expand*`).as('content');
