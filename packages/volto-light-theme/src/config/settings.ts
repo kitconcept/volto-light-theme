@@ -17,6 +17,7 @@ export default function install(config: ConfigType) {
   config.settings.enableFatMenu = true;
   config.settings.slate.useLinkedHeadings = false;
   config.settings.contentMetadataTagsImageField = 'preview_image';
+  config.settings.querystringSearchGet = true;
 
   config.settings.siteLabel = '';
   config.settings.intranetHeader = false;
