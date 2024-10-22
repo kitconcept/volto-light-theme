@@ -172,7 +172,7 @@ ci-acceptance-a11y-test: ## Run a11y cypress tests in headless mode for CI
 
 .PHONY: acceptance-test-visual
 acceptance-test-visual: ## Start visual Cypress Acceptance Tests
-	NODE_ENV=production $(NODEBIN)/cypress open --config-file cypress/config/cypress.visual.config.js
+	NODE_ENV=production $(NODEBIN)/cypress open --config-file cypress/config/cypress.visual.config.js --config specPattern='$(SPEC)'
 
 # Running the visual tests in headless, cumulative mode will SKIP tests that have run previously, and
 # only run the still failing tests HOWEVER the results are not collected in interactive mode due to
@@ -185,7 +185,7 @@ acceptance-test-visual-cumulative: ## Start visual Cypress Acceptance Tests with
 
 .PHONY: ci-acceptance-test-visual
 ci-acceptance-test-visual: ## Start visual Cypress Acceptance Tests in headless mode
-	NODE_ENV=production $(NODEBIN)/cypress run --browser firefox --config-file cypress/config/cypress.visual.config.js
+	NODE_ENV=production $(NODEBIN)/cypress run --browser firefox --config-file cypress/config/cypress.visual.config.js --config specPattern='$(SPEC)'
 
 # Running the visual tests in headless, cumulative mode will SKIP tests that have run previously, and
 # only run the still failing tests.
