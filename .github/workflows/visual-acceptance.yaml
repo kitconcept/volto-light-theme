@@ -215,7 +215,7 @@ jobs:
   visualblocksA:
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.event.pull_request.base.repo.full_name
     runs-on: ubuntu-latest
-    name: Blocks
+    name: Blocks A
     env:
       CYPRESS_A11Y: true
     steps:
@@ -315,7 +315,7 @@ jobs:
   visualblocksB:
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.event.pull_request.base.repo.full_name
     runs-on: ubuntu-latest
-    name: Blocks
+    name: Blocks B
     env:
       CYPRESS_A11Y: true
     steps:

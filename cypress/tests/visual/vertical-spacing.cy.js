@@ -11,10 +11,7 @@ const PUBLIC_PAGES = [
   '/vertical-spacing/text',
 ];
 
-const PRIVATE_PAGES = [
-  '/vertical-spacing/grid-and-button',
-  '/vertical-spacing/highlight-and-grid',
-];
+const PRIVATE_PAGES = [];
 
 describe('Vertical Spacing', () => {
   visualTestBase(PUBLIC_PAGES, PRIVATE_PAGES);

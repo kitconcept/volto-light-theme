@@ -9,7 +9,7 @@ const PUBLIC_PAGES = [
   '/block/maps-block',
 ];
 
-const PRIVATE_PAGES = ['/block/block-accordion'];
+const PRIVATE_PAGES = [];
 
 describe('Blocks', () => {
   visualTestBase(PUBLIC_PAGES, PRIVATE_PAGES);

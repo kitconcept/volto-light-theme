@@ -30,6 +30,7 @@ export function visualTestBase(public_pages, private_pages) {
         setViewport(cy);
         cy.navigate(path);
         cy.wait('@content');
+        cy.wait(1000);
         cy.matchImage();
       };
 

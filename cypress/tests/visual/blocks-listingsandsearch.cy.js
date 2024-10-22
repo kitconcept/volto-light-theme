@@ -97,9 +97,5 @@ describe('Blocks-Listings-Search', () =>
         cy.wait('@content');
         setViewport(cy);
       });
-
-      // it('home page', function () {
-      //   cy.matchImage();
-      // });
     });
   }));

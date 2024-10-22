@@ -10,7 +10,7 @@ const PUBLIC_PAGES = [
   '/block/teaser-block',
 ];
 
-const PRIVATE_PAGES = ['/block/button-block'];
+const PRIVATE_PAGES = [];
 
 describe('Blocks', () => {
   visualTestBase(PUBLIC_PAGES, PRIVATE_PAGES);
