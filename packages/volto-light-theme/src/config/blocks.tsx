@@ -4,10 +4,7 @@ import type { StyleDefinition } from '../index';
 import cloneDeep from 'lodash/cloneDeep';
 
 import { composeSchema } from '@plone/volto/helpers/Extensions';
-import {
-  defaultStylingSchema,
-  removeStylingSchema,
-} from '../components/Blocks/schema';
+import { defaultStylingSchema } from '../components/Blocks/schema';
 import { teaserSchemaEnhancer } from '../components/Blocks/Teaser/schema';
 import { videoBlockSchemaEnhancer } from '../components/Blocks/Video/schema';
 import { gridTeaserDisableStylingSchema } from '@plone/volto/components/manage/Blocks/Teaser/schema';
@@ -176,16 +173,6 @@ export default function install(config: ConfigType) {
 
   config.blocks.blocksConfig.gridBlock.blocksConfig.listing.allowed_headline_tags =
     [['h2', 'h2']];
-
-  console.log(
-    config.blocks.blocksConfig.gridBlock.blocksConfig.listingschemaEnhancer,
-  );
-  config.blocks.blocksConfig.gridBlock.blocksConfig.listingschemaEnhancer =
-    removeStylingSchema;
-  console.log(
-    config.blocks.blocksConfig.gridBlock.blocksConfig.listingvariations,
-  );
-  config.blocks.blocksConfig.gridBlock.blocksConfig.listingvariations = [];
 
   config.blocks.blocksConfig.introduction = {
     ...config.blocks.blocksConfig.introduction,
