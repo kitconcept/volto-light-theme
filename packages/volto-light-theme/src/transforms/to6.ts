@@ -32,7 +32,6 @@ export function migrateToVLT6ColorAndWidthModel(data: BlocksFormData) {
           (color) => color.name === block.styles.backgroundColor,
         )?.style;
       delete block.styles.backgroundColor;
-      console.log(block);
     }
 
     if (block?.styles?.buttonAlign) {
@@ -40,7 +39,6 @@ export function migrateToVLT6ColorAndWidthModel(data: BlocksFormData) {
         (width) => width.name === block.styles.buttonAlign,
       )?.style;
       delete block.styles.buttonAlign;
-      console.log(block);
     }
   }
 }
