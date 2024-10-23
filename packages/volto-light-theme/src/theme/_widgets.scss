@@ -24,6 +24,11 @@
 
 // TODO: Remove when layers are in place
 .color-picker-widget .button.grey,
-.color-picker-widget .button.grey.active {
+.color-picker-widget .button.grey.active,
+.color-picker-widget .ui.grey.button:hover {
+  background-color: var(--theme-color);
+}
+.color-picker-widget .button.active,
+.color-picker-widget .button.active:hover {
   background-color: var(--theme-color);
 }
