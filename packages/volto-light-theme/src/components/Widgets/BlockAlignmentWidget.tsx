@@ -1,6 +1,6 @@
 import React from 'react';
 import { defineMessages, useIntl } from 'react-intl';
-import ButtonsWidget, { ButtonsWidgetProps } from './ButtonsWidget';
+import ButtonsWidget, { type ButtonsWidgetProps } from './ButtonsWidget';
 import imageFitSVG from '@plone/volto/icons/image-fit.svg';
 import imageLeftSVG from '@plone/volto/icons/image-left.svg';
 import imageRightSVG from '@plone/volto/icons/image-right.svg';
@@ -51,7 +51,7 @@ const DEFAULT_ACTIONS = [
   },
 ];
 
-const BlockAlignmentWidget: React.FC<ButtonsWidgetProps> = (props) => {
+const BlockAlignmentWidget = (props: ButtonsWidgetProps) => {
   const intl = useIntl();
 
   const { actions = DEFAULT_ACTIONS, actionsInfoMap, filterActions } = props;
