@@ -19,11 +19,11 @@ It aims to be future proof, so it has to be aligned with the upcoming Volto visi
 
 ## Documentation
 
-You can find the documentation of this package in:
+You can find the documentation of this package in: https://volto-light-theme.readthedocs.io
 
 ## Upgrade Guide
 
-See a detailed upgrade guide in:
+See a detailed upgrade guide in: https://volto-light-theme.readthedocs.io/en/latest/upgrade-guide.html
 
 ## Requirements and specs
 

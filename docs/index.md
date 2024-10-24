@@ -235,10 +235,6 @@ In general, the same rules as Volto releases applies.
 However, in VLT we add an extra exception: The vertical spacing is carefully curated and considered an important feature of the theme and because of that, changes and improvements in the vertical spacing are **NOT** considered breaking changes.
 They will be noted properly in the changelog.
 
-## Upgrade Guide
-
-See a detailed upgrade guide in: https://github.com/kitconcept/volto-light-theme/blob/main/UPGRADE-GUIDE.md
-
 ## Compatibility
 
 | VLT version | Volto version |
@@ -394,5 +390,5 @@ make release-rc
 ```{toctree}
 :maxdepth: 1
 upgrade-guide
-howto/how-to-register-and-retrieving-utilities
+block-model-v3
 ```
