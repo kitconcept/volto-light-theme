@@ -1,0 +1,44 @@
+#sidebar-properties {
+  .field.widget {
+    .buttons {
+      display: flex;
+      align-items: center;
+
+      button {
+        padding: 5px;
+        border-radius: 3px;
+        margin-right: 3px;
+        aspect-ratio: 1/1;
+        font-size: 1em;
+        line-height: initial;
+        &[data-hovered='true'] {
+          box-shadow: inset 0 0 0 1px var(--border-color-pressed, #2996da);
+        }
+        &.active {
+          box-shadow: inset 0 0 0 1px var(--border-color-pressed, #2996da);
+        }
+
+        svg.icon {
+          margin: 0 !important;
+          opacity: 0.9;
+          vertical-align: top;
+        }
+      }
+    }
+  }
+}
+
+.color-picker-widget .button {
+  background-color: var(--theme-color);
+}
+
+// TODO: Remove when layers are in place
+.color-picker-widget .button.grey,
+.color-picker-widget .button.grey.active,
+.color-picker-widget .ui.grey.button:hover {
+  background-color: var(--theme-color);
+}
+.color-picker-widget .button.active,
+.color-picker-widget .button.active:hover {
+  background-color: var(--theme-color);
+}

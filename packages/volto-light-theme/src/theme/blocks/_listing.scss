@@ -7,7 +7,7 @@
   &.next--is--__button {
     .listing-item:last-child {
       padding-bottom: 40px !important;
-      border-bottom: 1px solid $black !important;
+      border-bottom: 1px solid vas(--theme-font-color, black);
     }
   }
 
@@ -57,7 +57,6 @@
       a {
         .listing-body {
           h2 {
-            color: $black;
             @include text-heading-h2();
           }
           p {
@@ -164,7 +163,6 @@
       .card-container {
         width: 100%;
         height: 100% !important;
-        background-color: $lightgrey;
       }
 
       img.item-image {
@@ -183,7 +181,6 @@
         .headline {
           padding: 0 !important;
           margin-bottom: 20px;
-          color: $black;
           letter-spacing: 1px;
           text-transform: uppercase;
           @include headtitle1();
@@ -192,7 +189,6 @@
 
         h2 {
           margin: 0 0 20px 0;
-          color: $black;
           @include text-heading-h3();
         }
         p {
@@ -263,7 +259,6 @@
       display: block;
       padding: 25px 0 0 0;
       background: none;
-      color: #666;
       font-size: 14px;
       font-weight: 300;
       line-height: 18px;

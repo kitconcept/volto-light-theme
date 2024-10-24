@@ -2,6 +2,10 @@
   --layout-container-width: #{$layout-container-width};
   --default-container-width: #{$default-container-width};
   --narrow-container-width: #{$narrow-container-width};
+
+  --align-right: end;
+  --align-left: start;
+  --align-center: center;
 }
 
 @mixin narrow-container-width() {
@@ -25,6 +29,12 @@
 
 @mixin layout-container-width() {
   max-width: var(--layout-container-width);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin variable-container-width() {
+  max-width: var(--block-width, --layout-container-width);
   margin-right: auto;
   margin-left: auto;
 }
@@ -212,7 +222,6 @@ External link removal for all the blocks.
   & > .block.search .searchBlock-container,
   & > .block h2.headline,
   & > .block.heading .heading-wrapper,
-  & > .block.separator.has--align--full .line,
   & > .block.introduction .block-container,
   & > .block.teaser .teaser-item.default,
   & > .block.highlight .teaser-description-title,
@@ -314,7 +323,6 @@ External link removal for all the blocks.
   .block-editor-listing .items,
   .block-editor-listing .listing.message,
   .block-editor-search .searchBlock-container,
-  .block-editor-separator.has--align--full .block.separator .line,
   .block.teaser.has--align--center,
   .block.eventMetadata .details-container,
   .block-editor-teaser .teaser-item.default,

@@ -111,6 +111,7 @@ jobs:
         with:
           name: cypress-image-snapshots-visual-acceptance
           path: cypress/__image_snapshots__
+          retention-days: 2
 
   visualcontent:
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.event.pull_request.base.repo.full_name
@@ -211,6 +212,7 @@ jobs:
         with:
           name: cypress-image-snapshots-visual-acceptance
           path: cypress/__image_snapshots__
+          retention-days: 2
 
   visualblocksA:
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.event.pull_request.base.repo.full_name
@@ -311,6 +313,7 @@ jobs:
         with:
           name: cypress-image-snapshots-visual-acceptance
           path: cypress/__image_snapshots__
+          retention-days: 2
 
   visualblocksB:
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.event.pull_request.base.repo.full_name
@@ -411,6 +414,7 @@ jobs:
         with:
           name: cypress-image-snapshots-visual-acceptance
           path: cypress/__image_snapshots__
+          retention-days: 2
 
   visualblocksgrid:
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.event.pull_request.base.repo.full_name
@@ -511,6 +515,7 @@ jobs:
         with:
           name: cypress-image-snapshots-visual-acceptance
           path: cypress/__image_snapshots__
+          retention-days: 2
 
   visualblockslistingandsearch:
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.event.pull_request.base.repo.full_name
@@ -611,6 +616,7 @@ jobs:
         with:
           name: cypress-image-snapshots-visual-acceptance
           path: cypress/__image_snapshots__
+          retention-days: 2
 
   visualblocksverticalspacing:
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.event.pull_request.base.repo.full_name
@@ -711,6 +717,7 @@ jobs:
         with:
           name: cypress-image-snapshots-visual-acceptance
           path: cypress/__image_snapshots__
+          retention-days: 2
 
   visualtypography:
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.event.pull_request.base.repo.full_name
@@ -811,3 +818,4 @@ jobs:
         with:
           name: cypress-image-snapshots-visual-acceptance
           path: cypress/__image_snapshots__
+          retention-days: 2

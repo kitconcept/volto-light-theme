@@ -61,13 +61,6 @@ const describeWithPaths = (
         ? fullPath
         : fullPath.substring(0, 110) + '...' + md5(path)
     }`, () => {
-      // beforeEach(function () {
-      //   skipOn(!filter(index, url, path));
-      //   cy.intercept('GET', `/**/*?expand*`).as('content');
-      //   cy.visit('/');
-      //   cy.wait('@content');
-      //   setViewport(cy);
-      // });
       fDescribe(path);
     });
   }

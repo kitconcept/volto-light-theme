@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormattedMessage, injectIntl } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 import FormattedDate from '@plone/volto/components/theme/FormattedDate/FormattedDate';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { expandToBackendURL } from '@plone/volto/helpers/Url/Url';
@@ -14,6 +14,7 @@ const EventMetadataView = (props) => {
     hour: 'numeric',
     minute: 'numeric',
   };
+  const intl = useIntl();
 
   return (
     <div className="block eventMetadata ">
@@ -29,7 +30,7 @@ const EventMetadataView = (props) => {
                 {content?.start && (
                   <FormattedDate date={content?.start} format={dateOptions} />
                 )}{' '}
-                {props.intl.locale === 'de' ? ' Uhr' : ''}
+                {intl.locale === 'de' ? ' Uhr' : ''}
               </div>
               <div className="separator"></div>
             </div>
@@ -43,7 +44,7 @@ const EventMetadataView = (props) => {
                 {content?.end && (
                   <FormattedDate date={content?.end} format={dateOptions} />
                 )}{' '}
-                {props.intl.locale === 'de' ? ' Uhr' : ''}
+                {intl.locale === 'de' ? ' Uhr' : ''}
               </div>
               <div className="separator"></div>
             </div>
@@ -127,4 +128,4 @@ const EventMetadataView = (props) => {
   );
 };
 
-export default injectIntl(EventMetadataView);
+export default EventMetadataView;

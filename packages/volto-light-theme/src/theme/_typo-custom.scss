@@ -32,7 +32,7 @@ li::marker {
   p > a,
   li > a,
   .breadcrumb a {
-    color: $blue-for-grey-contrast !important;
+    color: $blue-for-grey-contrast;
     text-decoration: underline;
   }
 }
