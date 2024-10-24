@@ -1,9 +1,9 @@
 .block.__button {
   margin-bottom: 0 !important;
   .button.container {
-    text-align: unset !important;
     display: grid;
     justify-content: var(--block-alignment);
+    text-align: unset !important;
 
     @include variable-container-width();
     @include vertical-space-button();
@@ -42,9 +42,9 @@
 
   .ui.button {
     padding: 8px 20px;
-    margin: 0;
     border: 1px solid $black;
     border-radius: unset;
+    margin: 0;
     background: none;
     color: $black;
 
