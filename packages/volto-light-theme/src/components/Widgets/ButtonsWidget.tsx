@@ -1,6 +1,6 @@
 import React from 'react';
-import { FormFieldWrapper } from '@plone/volto/components';
-import { Icon } from '@plone/volto/components';
+import FormFieldWrapper from '@plone/volto/components/manage/Widgets/FormFieldWrapper';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
 import { Button } from '@plone/components';
 import { isEqual, find } from 'lodash';
 
@@ -43,20 +43,19 @@ const ButtonsWidget = (props: ButtonsWidgetProps) => {
     <FormFieldWrapper {...props} className="widget">
       <div className="buttons">
         {actions.map((action) => (
-          <div key={action.name}>
-            <Button
-              aria-label={actionsInfoMap[action.name][1]}
-              onPress={() => onChange(id, action.style || action.name)}
-              className={isEqual(value, action.style) ? 'active' : ''}
-            >
-              {/* @ts-ignore */}
-              <Icon
-                name={actionsInfoMap[action.name][0]}
-                title={actionsInfoMap[action.name][1] || action.name}
-                size="24px"
-              />
-            </Button>
-          </div>
+          <Button
+            key={action.name}
+            aria-label={actionsInfoMap[action.name][1]}
+            onPress={() => onChange(id, action.style || action.name)}
+            className={isEqual(value, action.style) ? 'active' : ''}
+          >
+            {/* @ts-ignore */}
+            <Icon
+              name={actionsInfoMap[action.name][0]}
+              title={actionsInfoMap[action.name][1] || action.name}
+              size="24px"
+            />
+          </Button>
         ))}
       </div>
     </FormFieldWrapper>
