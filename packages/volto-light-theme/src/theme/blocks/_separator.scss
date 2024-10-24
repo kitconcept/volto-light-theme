@@ -14,8 +14,8 @@
 
   .line {
     display: grid;
-    justify-content: var(--block-alignment);
     max-width: var(--block-width) !important;
+    justify-content: var(--block-alignment);
     @include variable-container-width();
 
     &::after {
