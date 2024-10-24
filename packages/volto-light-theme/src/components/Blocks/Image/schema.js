@@ -1,5 +1,5 @@
 import { defineMessages } from 'react-intl';
-import { insertInArray } from '@plone/volto/helpers/Utils/Utils';
+import { insertInArray, reorderArray } from '@plone/volto/helpers/Utils/Utils';
 
 const messages = defineMessages({
   Description: {
