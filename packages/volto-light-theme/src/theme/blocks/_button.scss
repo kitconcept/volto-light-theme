@@ -31,7 +31,6 @@
     margin-top: 0 !important;
     .headline {
       margin-top: 0 !important;
-
     }
   }
 
@@ -41,8 +40,6 @@
     }
   }
 
-
-
   .ui.button {
     padding: 8px 20px;
     margin: 0;
@@ -50,7 +47,7 @@
     border-radius: unset;
     background: none;
     color: $black;
-  
+
     @include body-text-bold();
   }
 }
