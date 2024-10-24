@@ -1,6 +1,6 @@
 import React from 'react';
 import { defineMessages, useIntl } from 'react-intl';
-import ButtonsWidget, { type ButtonsWidgetProps } from './ButtonsWidget';
+import ButtonsWidget, { ButtonsWidgetProps } from './ButtonsWidget';
 import imageFitSVG from '@plone/volto/icons/image-fit.svg';
 import imageNarrowSVG from '@plone/volto/icons/image-narrow.svg';
 import imageWideSVG from '@plone/volto/icons/image-wide.svg';
@@ -64,7 +64,7 @@ const DEFAULT_ACTIONS = [
   },
 ];
 
-const BlockWidthWidget = (props: ButtonsWidgetProps) => {
+const BlockWidthWidget: React.FC<ButtonsWidgetProps> = (props) => {
   const intl = useIntl();
 
   const { actions = DEFAULT_ACTIONS, actionsInfoMap, filterActions } = props;
