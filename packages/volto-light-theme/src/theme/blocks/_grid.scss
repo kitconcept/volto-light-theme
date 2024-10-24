@@ -202,6 +202,12 @@
     padding: 0;
     margin: 0.5rem 0.5rem 0.5rem 0.5rem !important;
   }
+
+  & + .block.__button {
+     .button.container {
+      padding-top: 0 !important;
+    }
+  }
 }
 
 #page-edit .block-editor-gridBlock,

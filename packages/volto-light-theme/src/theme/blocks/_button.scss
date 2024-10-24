@@ -27,6 +27,20 @@
     }
   }
 
+  & + .gridBlock {
+    margin-top: 0 !important;
+    .headline {
+      margin-top: 0 !important;
+
+    }
+  }
+
+  &:last-child {
+    .button.container {
+      padding-bottom: 0;
+    }
+  }
+
 
 
   .ui.button {
