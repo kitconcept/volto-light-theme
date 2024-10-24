@@ -2,6 +2,11 @@
   background: var(--theme-color);
   @include color-block-change-vertical-spacing();
 
+
+  &:first-child {
+    padding-top: 0;
+  }
+
   & > p,
   & > span,
   & > li,
