@@ -2,7 +2,6 @@
   background: var(--theme-color);
   @include color-block-change-vertical-spacing();
 
-
   &:first-child {
     padding-top: 0;
   }
@@ -27,7 +26,7 @@
     text-decoration: underline;
   }
 
-  &:first-child:has( > .documentFirstHeading) {
+  &:first-child:has(> .documentFirstHeading) {
     padding-top: 0;
   }
 }
@@ -140,11 +139,11 @@
 
     // Teaser
     &.teaser {
-      padding-top: 25px;
+      // Victor 2024-10-24: Commented out. Why is the reason of this padding?
+      // padding-top: 25px;
 
       .teaser-item {
         border-color: var(--theme-font-color);
-      
       }
 
       h2,
@@ -309,8 +308,8 @@
 
           a {
             max-height: 38px !important;
-            color: var(--theme-font-color);
             border-color: var(--theme-font-color);
+            color: var(--theme-font-color);
 
             &:nth-child(n):not(:last-child) {
               border-right: none;
@@ -339,8 +338,8 @@
 
           a {
             max-height: 38px !important;
-            color: var(--theme-font-color);
             border-color: var(--theme-font-color);
+            color: var(--theme-font-color);
 
             &.disabled {
               color: var(--theme-low-contrast-font-color) !important;
@@ -410,8 +409,8 @@
     // Search
     &.search {
       .search-input {
-        background: var(--theme-high-contrast-color) !important;
         border: none !important;
+        background: var(--theme-high-contrast-color) !important;
 
         .ui.input {
           background-color: transparent !important;
@@ -464,8 +463,8 @@
         }
 
         .ui.basic.compact.icon.button {
-          margin: 0 !important;
           border: none !important;
+          margin: 0 !important;
           background-color: var(--theme-color);
 
           &.active {
@@ -559,9 +558,9 @@
       .DateRangePickerInput,
       .DateInput input,
       .DateInput {
+        border-color: var(--theme-font-color);
         background: none !important;
         color: var(--theme-font-color);
-        border-color: var(--theme-font-color);
 
         &::placeholder {
           color: var(--theme-low-contrast-font-color) !important;
@@ -653,8 +652,8 @@
       }
 
       figcaption {
-        padding-left: 2em;
         padding-right: 2em;
+        padding-left: 2em;
       }
     }
 
@@ -665,8 +664,8 @@
       }
       .grid-block-slate .slate,
       .slate-editor {
-        color: var(--theme-font-color);
         background: var(--theme-high-contrast-color);
+        color: var(--theme-font-color);
 
         & > * {
           color: var(--theme-font-color);
@@ -678,7 +677,6 @@
 
         .teaser-item {
           background: var(--theme-high-contrast-color);
-
         }
         .grid-teaser-item {
           background: var(--theme-high-contrast-color);
@@ -824,7 +822,6 @@
 
     &.striped tbody tr:nth-child(2n) {
       background-color: var(--theme-high-contrast-color) !important;
-
     }
   }
 
@@ -860,7 +857,6 @@
     }
 
     [class^='block-editor-'] {
-
       a.slate-editor-link {
         color: var(--theme-font-color);
       }
