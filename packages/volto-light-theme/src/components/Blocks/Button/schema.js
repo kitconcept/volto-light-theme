@@ -41,6 +41,7 @@ export const ButtonStylingSchema = ({ schema, formData, intl }) => {
   schema.properties.styles.schema.properties['align:noprefix'] = {
     widget: 'blockAlignment',
     title: intl.formatMessage(messages.Alignment),
+    default: 'left',
   };
 
   return schema;
