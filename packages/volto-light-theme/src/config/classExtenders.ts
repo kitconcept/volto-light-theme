@@ -101,7 +101,7 @@ export default function install(config: ConfigType) {
     ({ data, classNames }: { data: any; classNames: Array<string> }) => {
       const currentBlockBackgroundColor =
         getCurrentStyleByName(
-          config.settings.blockWidths,
+          config.settings.backgroundColors,
           'backgroundColor:noprefix',
           data,
         ) || 'default';

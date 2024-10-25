@@ -19,7 +19,7 @@
   & > h2,
   & > h3,
   & > h1 {
-    color: var(--theme-font-color);
+    color: var(--theme-foreground-color);
   }
 
   :not(.teaser >) a:not(.item) {
@@ -96,22 +96,22 @@
   // Requires setting the following variables:
   // --theme-color: #fff;
   // --theme-high-contrast-color: #ecebeb;
-  // --theme-font-color: #000;
-  // --theme-low-contrast-font-color: #666;
+  // --theme-foreground-color: #000;
+  // --theme-low-contrast-foreground-color: #666;
 
   // Page title
   h1.documentFirstHeading {
-    color: var(--theme-font-color);
+    color: var(--theme-foreground-color);
   }
 
   header.head-title span {
-    color: var(--theme-font-color);
+    color: var(--theme-foreground-color);
   }
 
   // ToC
   .table-of-contents {
     h2 {
-      color: var(--theme-font-color);
+      color: var(--theme-foreground-color);
     }
   }
 
@@ -121,16 +121,16 @@
     &.__button {
       & > .button.container {
         & .ui.button {
-          border-color: var(--theme-font-color);
+          border-color: var(--theme-foreground-color);
           background-color: var(--theme-color);
 
-          color: var(--theme-font-color);
+          color: var(--theme-foreground-color);
 
           &:hover,
           &:active,
           &:focus {
-            border-color: var(--theme-font-color);
-            background-color: var(--theme-font-color);
+            border-color: var(--theme-foreground-color);
+            background-color: var(--theme-foreground-color);
             color: var(--theme-color);
           }
         }
@@ -143,20 +143,20 @@
       // padding-top: 25px;
 
       .teaser-item {
-        border-color: var(--theme-font-color);
+        border-color: var(--theme-foreground-color);
       }
 
       h2,
       p,
       .headline {
-        color: var(--theme-font-color);
+        color: var(--theme-foreground-color);
       }
     }
 
     // Separator
     &.separator {
       .line:not(.inner)::after {
-        border-color: var(--theme-font-color);
+        border-color: var(--theme-foreground-color);
       }
     }
 
@@ -170,7 +170,7 @@
       p,
       h2,
       h3 {
-        color: var(--theme-font-color);
+        color: var(--theme-foreground-color);
       }
     }
 
@@ -178,15 +178,15 @@
     &.listing,
     &.search {
       h2.headline {
-        color: var(--theme-font-color);
+        color: var(--theme-foreground-color);
       }
 
       .emptyListing {
-        color: var(--theme-font-color);
+        color: var(--theme-foreground-color);
       }
 
       .listing-item {
-        border-color: var(--theme-font-color);
+        border-color: var(--theme-foreground-color);
 
         a > .listing-body {
           h3,
@@ -194,13 +194,13 @@
           a,
           p,
           span {
-            color: var(--theme-font-color);
+            color: var(--theme-foreground-color);
           }
         }
 
         .head-title span,
         .head-title {
-          color: var(--theme-font-color);
+          color: var(--theme-foreground-color);
         }
 
         .card-container {
@@ -208,7 +208,7 @@
 
           .content,
           .content p {
-            color: var(--theme-font-color);
+            color: var(--theme-foreground-color);
           }
         }
       }
@@ -223,7 +223,7 @@
               background-color: black;
 
               a {
-                color: var(--theme-font-color);
+                color: var(--theme-foreground-color);
               }
             }
           }
@@ -232,7 +232,7 @@
         figcaption {
           .credits {
             p b {
-              color: var(--theme-font-color);
+              color: var(--theme-foreground-color);
             }
             a {
               text-decoration: underline;
@@ -244,17 +244,17 @@
           .image-gallery-thumbnail {
             &:hover,
             &.active {
-              border: 3px solid var(--theme-font-color);
+              border: 3px solid var(--theme-foreground-color);
             }
           }
         }
 
         .image-gallery-description {
-          color: var(--theme-low-contrast-font-color);
+          color: var(--theme-low-contrast-foreground-color);
 
           .download {
             a {
-              color: var(--theme-low-contrast-font-color);
+              color: var(--theme-low-contrast-foreground-color);
               text-decoration: underline;
             }
           }
@@ -269,7 +269,7 @@
           .description > div,
           .credits,
           .credits a {
-            color: var(--theme-font-color);
+            color: var(--theme-foreground-color);
           }
         }
       }
@@ -277,16 +277,16 @@
       .image-gallery .image-gallery-content .image-gallery-slide-wrapper {
         button.primary.image-gallery-icon.image-gallery-fullscreen-button,
         button.button.image-gallery-icon.image-gallery-play-button {
-          border-color: var(--theme-font-color);
+          border-color: var(--theme-foreground-color);
           svg path {
-            fill: var(--theme-font-color) !important;
+            fill: var(--theme-foreground-color) !important;
           }
 
           &:hover,
           &:active,
           &:focus {
             svg {
-              background: var(--theme-font-color) !important;
+              background: var(--theme-foreground-color) !important;
 
               & path {
                 fill: var(--theme-color) !important;
@@ -297,7 +297,7 @@
 
         button.ui.button.image-gallery-icon {
           path {
-            stroke: var(--theme-font-color);
+            stroke: var(--theme-foreground-color);
           }
         }
       }
@@ -308,26 +308,26 @@
 
           a {
             max-height: 38px !important;
-            border-color: var(--theme-font-color);
-            color: var(--theme-font-color);
+            border-color: var(--theme-foreground-color);
+            color: var(--theme-foreground-color);
 
             &:nth-child(n):not(:last-child) {
               border-right: none;
             }
 
             &.disabled {
-              color: var(--theme-low-contrast-font-color) !important;
+              color: var(--theme-low-contrast-foreground-color) !important;
             }
 
             &.active {
-              background: var(--theme-font-color);
+              background: var(--theme-foreground-color);
               color: var(--theme-color);
             }
           }
         }
 
         .total {
-          color: var(--theme-font-color);
+          color: var(--theme-foreground-color);
         }
       }
 
@@ -338,22 +338,22 @@
 
           a {
             max-height: 38px !important;
-            border-color: var(--theme-font-color);
-            color: var(--theme-font-color);
+            border-color: var(--theme-foreground-color);
+            color: var(--theme-foreground-color);
 
             &.disabled {
-              color: var(--theme-low-contrast-font-color) !important;
+              color: var(--theme-low-contrast-foreground-color) !important;
             }
 
             &.active {
-              background: var(--theme-font-color);
+              background: var(--theme-foreground-color);
               color: var(--theme-color);
             }
           }
         }
 
         .total {
-          color: var(--theme-font-color);
+          color: var(--theme-foreground-color);
         }
       }
     }
@@ -363,12 +363,12 @@
       .slider-dots {
         .slider-dot {
           &::after {
-            background: var(--theme-font-color);
+            background: var(--theme-foreground-color);
           }
         }
         .slider-dot--selected {
           &::after {
-            background-color: var(--theme-low-contrast-font-color);
+            background-color: var(--theme-low-contrast-foreground-color);
           }
         }
       }
@@ -377,11 +377,11 @@
     // Quote
     &.quote {
       .line {
-        border-color: var(--theme-font-color);
+        border-color: var(--theme-foreground-color);
       }
 
       footer {
-        color: var(--theme-font-color);
+        color: var(--theme-foreground-color);
       }
     }
 
@@ -396,7 +396,7 @@
         .description > div,
         .credits,
         .credits a {
-          color: var(--theme-font-color);
+          color: var(--theme-foreground-color);
         }
 
         .credits div > a,
@@ -416,10 +416,10 @@
           background-color: transparent !important;
 
           input {
-            color: var(--theme-font-color);
+            color: var(--theme-foreground-color);
 
             &::placeholder {
-              color: var(--theme-low-contrast-font-color) !important;
+              color: var(--theme-low-contrast-foreground-color) !important;
             }
           }
         }
@@ -429,31 +429,31 @@
           background-color: transparent !important;
 
           svg path {
-            fill: var(--theme-font-color) !important;
+            fill: var(--theme-foreground-color) !important;
           }
         }
       }
 
       .search-sort-wrapper {
-        border: 1px solid var(--theme-font-color);
+        border: 1px solid var(--theme-foreground-color);
 
         .react-select__control {
           background-color: transparent;
 
           .react-select__single-value {
-            color: var(--theme-font-color);
+            color: var(--theme-foreground-color);
           }
 
           .react-select__indicator svg {
             &,
             & path {
-              fill: var(--theme-font-color);
+              fill: var(--theme-foreground-color);
             }
           }
         }
 
         .ui.basic.compact.icon.button.active {
-          background: var(--theme-font-color);
+          background: var(--theme-foreground-color);
           svg > path {
             fill: var(--theme-color);
             &:first-child {
@@ -468,7 +468,7 @@
           background-color: var(--theme-color);
 
           &.active {
-            background: var(--theme-font-color) !important;
+            background: var(--theme-foreground-color) !important;
 
             svg > path {
               fill: var(--theme-color);
@@ -478,9 +478,9 @@
             }
           }
           svg > path {
-            fill: var(--theme-font-color);
+            fill: var(--theme-foreground-color);
             &:first-child {
-              stroke: var(--theme-font-color);
+              stroke: var(--theme-foreground-color);
             }
           }
 
@@ -493,7 +493,7 @@
       .facets {
         h4.header,
         label {
-          color: var(--theme-low-contrast-font-color);
+          color: var(--theme-low-contrast-foreground-color);
         }
 
         .react-select-container {
@@ -502,7 +502,7 @@
 
             .react-select__option {
               background-color: var(--theme-high-contrast-color);
-              color: var(--theme-font-color) !important;
+              color: var(--theme-foreground-color) !important;
 
               &:hover {
                 background: var(--theme-color);
@@ -512,11 +512,11 @@
         }
 
         .react-select__control {
-          border-bottom: 1px solid var(--theme-font-color);
+          border-bottom: 1px solid var(--theme-foreground-color);
           background-color: transparent;
 
           .react-select__indicator svg path {
-            fill: var(--theme-font-color) !important;
+            fill: var(--theme-foreground-color) !important;
           }
 
           .react-select__multi-value {
@@ -524,12 +524,12 @@
 
             &,
             .react-select__multi-value__label {
-              color: var(--theme-font-color);
+              color: var(--theme-foreground-color);
             }
           }
 
           .react-select__single-value {
-            color: var(--theme-font-color);
+            color: var(--theme-foreground-color);
           }
 
           .date-input {
@@ -541,11 +541,11 @@
         }
 
         .react-select__placeholder {
-          color: var(--theme-font-color);
+          color: var(--theme-foreground-color);
         }
 
         .DateRangePickerInput_arrow_svg {
-          fill: var(--theme-font-color);
+          fill: var(--theme-foreground-color);
         }
       }
 
@@ -558,43 +558,43 @@
       .DateRangePickerInput,
       .DateInput input,
       .DateInput {
-        border-color: var(--theme-font-color);
+        border-color: var(--theme-foreground-color);
         background: none !important;
-        color: var(--theme-font-color);
+        color: var(--theme-foreground-color);
 
         &::placeholder {
-          color: var(--theme-low-contrast-font-color) !important;
+          color: var(--theme-low-contrast-foreground-color) !important;
         }
       }
 
       .DateRangePickerInput_clearDates svg {
-        color: var(--theme-font-color);
+        color: var(--theme-foreground-color);
       }
 
       .ui.toggle.checkbox label::before {
-        border: 1px solid var(--theme-font-color);
+        border: 1px solid var(--theme-foreground-color);
       }
       .search-sort-on {
         border: none !important;
         .sorted-label {
-          color: var(--theme-font-color);
+          color: var(--theme-foreground-color);
 
           .sorted-label-value {
-            color: var(--theme-font-color);
+            color: var(--theme-foreground-color);
           }
         }
         .react-select__menu {
-          border-color: var(--theme-font-color) !important;
+          border-color: var(--theme-foreground-color) !important;
 
           .react-select__menu-list {
             background: var(--theme-color);
 
             .react-select__option {
               background-color: var(--theme-high-contrast-color);
-              color: var(--theme-font-color) !important;
+              color: var(--theme-foreground-color) !important;
 
               svg {
-                fill: var(--theme-font-color) !important;
+                fill: var(--theme-foreground-color) !important;
               }
 
               &:hover {
@@ -608,7 +608,7 @@
       .search-details {
         h2,
         span {
-          color: var(--theme-font-color);
+          color: var(--theme-foreground-color);
         }
       }
     }
@@ -616,7 +616,7 @@
     // Heading
     &.heading {
       h2.heading {
-        color: var(--theme-font-color);
+        color: var(--theme-foreground-color);
       }
     }
 
@@ -626,7 +626,7 @@
         .image-gallery-thumbnail {
           &:hover,
           &.active {
-            border-color: var(--theme-font-color) !important;
+            border-color: var(--theme-foreground-color) !important;
           }
         }
       }
@@ -634,14 +634,14 @@
         button.primary.image-gallery-icon.image-gallery-fullscreen-button,
         button.button.image-gallery-icon.image-gallery-play-button {
           svg path {
-            fill: var(--theme-font-color) !important;
+            fill: var(--theme-foreground-color) !important;
           }
 
           &:hover,
           &:active,
           &:focus {
             svg {
-              background: var(--theme-font-color) !important;
+              background: var(--theme-foreground-color) !important;
 
               & path {
                 fill: var(--theme-color) !important;
@@ -660,20 +660,21 @@
     // Grid
     &.gridBlock {
       .headline {
-        color: var(--theme-font-color);
+        color: var(--theme-foreground-color);
       }
       .grid-block-slate .slate,
       .slate-editor {
         background: var(--theme-high-contrast-color);
-        color: var(--theme-font-color);
+        color: var(--theme-foreground-color);
 
         & > * {
-          color: var(--theme-font-color);
+          color: var(--theme-foreground-color);
         }
       }
 
       .block.teaser {
         padding-top: 0;
+        background: var(--theme-high-contrast-color);
 
         .teaser-item {
           background: var(--theme-high-contrast-color);
@@ -682,7 +683,7 @@
           background: var(--theme-high-contrast-color);
 
           .download-file {
-            color: var(--theme-font-color);
+            color: var(--theme-foreground-color);
           }
           &.hideImage {
             justify-content: start;
@@ -702,12 +703,12 @@
       .grid-items .slate:not(.inner) {
         background-color: var(--theme-high-contrast-color);
         & > * {
-          color: var(--theme-font-color);
+          color: var(--theme-foreground-color);
         }
       }
 
       h2.headline {
-        color: var(--theme-font-color);
+        color: var(--theme-foreground-color);
       }
       .grid-teaser-item {
         &.hideImage {
@@ -719,7 +720,7 @@
         p,
         strong,
         .download-file {
-          color: var(--theme-font-color);
+          color: var(--theme-foreground-color);
         }
       }
 
@@ -739,7 +740,7 @@
         .slate {
           strong,
           em {
-            color: var(--theme-font-color);
+            color: var(--theme-foreground-color);
           }
         }
       }
@@ -759,25 +760,25 @@
   .accordion-block,
   .block-editor-accordion {
     .ui.styled.accordion {
-      border-color: var(--theme-font-color);
+      border-color: var(--theme-foreground-color);
 
       .title.accordion-title {
         background: var(--theme-color);
 
         & > span {
-          color: var(--theme-low-contrast-font-color);
+          color: var(--theme-low-contrast-foreground-color);
         }
 
         &.active > span {
-          color: var(--theme-font-color);
+          color: var(--theme-foreground-color);
         }
 
         & > svg {
-          fill: var(--theme-low-contrast-font-color) !important;
+          fill: var(--theme-low-contrast-foreground-color) !important;
         }
 
         &.active > svg {
-          fill: var(--theme-font-color) !important;
+          fill: var(--theme-foreground-color) !important;
         }
       }
 
@@ -786,34 +787,34 @@
       }
 
       &:last-child {
-        border-color: var(--theme-font-color);
+        border-color: var(--theme-foreground-color);
       }
 
       figcaption .title,
       figcaption .description {
-        color: var(--theme-font-color);
+        color: var(--theme-foreground-color);
       }
     }
   }
 
   table.ui.table.slate-table-block {
-    border-color: var(--theme-low-contrast-font-color);
+    border-color: var(--theme-low-contrast-foreground-color);
 
     tr td,
     th {
-      border-color: var(--theme-low-contrast-font-color);
+      border-color: var(--theme-low-contrast-foreground-color);
     }
 
     th {
       background-color: var(--theme-high-contrast-color) !important;
 
       p {
-        color: var(--theme-low-contrast-font-color) !important;
+        color: var(--theme-low-contrast-foreground-color) !important;
       }
     }
 
     td {
-      color: var(--theme-font-color);
+      color: var(--theme-foreground-color);
     }
 
     tr {
@@ -830,7 +831,7 @@
   #page-add {
     .block {
       & [data-slate-placeholder='true'] {
-        color: var(--theme-low-contrast-font-color) !important;
+        color: var(--theme-low-contrast-foreground-color) !important;
       }
 
       .ui.basic.button.delete-button {
@@ -858,19 +859,19 @@
 
     [class^='block-editor-'] {
       a.slate-editor-link {
-        color: var(--theme-font-color);
+        color: var(--theme-foreground-color);
       }
 
       .block {
         .text-slate-editor-inner {
           span {
-            color: var(--theme-font-color) !important;
+            color: var(--theme-foreground-color) !important;
           }
         }
 
         .heading {
           h2.editable {
-            color: var(--theme-font-color);
+            color: var(--theme-foreground-color);
           }
         }
 
@@ -878,7 +879,7 @@
           h2,
           p,
           .headline {
-            color: var(--theme-font-color);
+            color: var(--theme-foreground-color);
           }
         }
 
@@ -895,7 +896,7 @@
           p,
           h3,
           .react-select__placeholder {
-            color: var(--theme-font-color) !important;
+            color: var(--theme-foreground-color) !important;
           }
         }
 
@@ -910,13 +911,13 @@
             }
           }
         }
-        .__grid {
+        .gridBlock {
           .slate-editor {
             a,
             ul,
             ol,
             li {
-              color: var(--theme-font-color);
+              color: var(--theme-foreground-color);
             }
           }
 
@@ -933,4 +934,17 @@
 
 body {
   @include use-theme-colors();
+  @property --theme-color {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #FFF;
+  }
+  
+
+ :root {
+    --primary-color: #ecebeb; // Footer
+    --primary-foreground-color: #000;
+    --accent-color: #ecebeb; // Fat Menu
+    --accent-foreground-color: #000;
+  }
 }
