@@ -70,6 +70,62 @@ export default function install(config: ConfigType) {
     ],
   };
 
+  // Palettes
+  config.settings.backgroundColors = [
+    {
+      style: {
+        '--theme-color': '#fff', // Block Wrapper
+        '--theme-high-contrast-color': '#ecebeb', // Cards in Grid block
+        '--theme-foreground-color': '#000',
+        '--theme-low-contrast-foreground-color': '#bebebe',
+      },
+      name: 'default',
+      label: 'Default',
+    },
+    {
+      style: {
+        '--theme-color': '#ecebeb',
+        '--theme-high-contrast-color': '#fff',
+        '--theme-foreground-color': '#000',
+        '--theme-low-contrast-foreground-color': '#bebebe',
+      },
+      name: 'grey',
+      label: 'Grey',
+    },
+  ];
+
+  // Default block widths
+  config.settings.blockWidths = [
+    {
+      style: {
+        '--block-width': 'var(--narrow-container-width)',
+      },
+      name: 'narrow',
+      label: 'Narrow',
+    },
+    {
+      style: {
+        '--block-width': 'var(--default-container-width)',
+      },
+      name: 'default',
+      label: 'Default',
+    },
+    {
+      style: {
+        '--block-width': 'var(--layout-container-width)',
+      },
+      name: 'layout',
+      label: 'Layout',
+    },
+    {
+      style: {
+        '--block-width': '100%',
+      },
+      name: 'full',
+      label: 'Full Width',
+    },
+  ];
+
   // No required blocks (eg. Title)
   config.blocks.requiredBlocks = [
     ...config.blocks.requiredBlocks,
