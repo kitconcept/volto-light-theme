@@ -17,7 +17,7 @@ function* visitBlocks(blocks) {
 
 export function migrateToVLT6ColorAndWidthModel(data: BlocksFormData) {
   const NORMALIZED_WIDTHS = [
-    ...config.blocks.blocksWidths,
+    ...config.blocks.widths,
     {
       style: {
         '--block-width': 'var(--default-container-width)',
