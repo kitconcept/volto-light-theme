@@ -14,8 +14,8 @@ export const defaultStylingSchema = ({ schema, formData, intl }) => {
     config.blocks?.blocksConfig?.[formData['@type']]?.themes ||
     config.blocks.themes;
 
-  const defaultBGColor =
-    config.blocks?.blocksConfig?.[formData['@type']]?.defaultBGColor ||
+  const defaultTheme =
+    config.blocks?.blocksConfig?.[formData['@type']]?.defaultTheme ||
     // The default color is the first color in the themes list
     config.blocks.themes?.[0].name;
 
@@ -26,8 +26,8 @@ export const defaultStylingSchema = ({ schema, formData, intl }) => {
     widget: 'color_picker',
     title: intl.formatMessage(messages.backgroundColor),
     themes,
-    // default: formData?.styles?.['backgroundColor:noprefix'] ?? defaultBGColor,
-    default: defaultBGColor,
+    // default: formData?.styles?.['backgroundColor:noprefix'] ?? defaultTheme,
+    default: defaultTheme,
   };
 
   return schema;
