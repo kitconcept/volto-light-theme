@@ -128,6 +128,7 @@ export default function install(config: ConfigType) {
   ];
 
   function blockThemesEnhancer(data) {
+    if (!data['@type']) return {};
     const blockConfig = config.blocks.blocksConfig[data['@type']];
     const blockStyleDefinitions =
       // We look up for the blockThemes in the block's config, then in the global config
