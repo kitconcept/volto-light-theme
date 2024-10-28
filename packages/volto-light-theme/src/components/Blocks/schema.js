@@ -21,7 +21,13 @@ export const defaultStylingSchema = ({ schema, formData, intl }) => {
 
   addStyling({ schema, intl });
 
-  schema.fieldsets[0].fields = [...schema.fieldsets[0].fields, 'theme'];
+  const stylingIndex = schema.fieldsets.findIndex(
+    (item) => item.id === 'styling',
+  );
+  schema.fieldsets[stylingIndex].fields = [
+    ...schema.fieldsets[stylingIndex].fields,
+    'theme',
+  ];
   schema.properties.theme = {
     widget: 'color_picker',
     title: intl.formatMessage(messages.backgroundColor),
