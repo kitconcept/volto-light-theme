@@ -10,25 +10,24 @@ const messages = defineMessages({
 });
 
 export const defaultStylingSchema = ({ schema, formData, intl }) => {
-  const colors =
-    config.blocks?.blocksConfig?.[formData['@type']]?.colors ||
-    config.settings.backgroundColors;
+  const themes =
+    config.blocks?.blocksConfig?.[formData['@type']]?.themes ||
+    config.blocks.blocksThemes;
 
   const defaultBGColor =
     config.blocks?.blocksConfig?.[formData['@type']]?.defaultBGColor ||
-    config.settings?.backgroundColors?.[0].style;
+    // The default color is the first color in the themes list
+    config.blocks.blocksThemes?.[0].name;
 
   addStyling({ schema, intl });
 
-  schema.properties.styles.schema.fieldsets[0].fields = [
-    ...schema.properties.styles.schema.fieldsets[0].fields,
-    'backgroundColor:noprefix',
-  ];
-  schema.properties.styles.schema.properties['backgroundColor:noprefix'] = {
+  schema.fieldsets[0].fields = [...schema.fieldsets[0].fields, 'theme'];
+  schema.properties.theme = {
     widget: 'color_picker',
     title: intl.formatMessage(messages.backgroundColor),
-    colors,
-    default: formData?.styles?.['backgroundColor:noprefix'] ?? defaultBGColor,
+    themes,
+    // default: formData?.styles?.['backgroundColor:noprefix'] ?? defaultBGColor,
+    default: defaultBGColor,
   };
 
   return schema;

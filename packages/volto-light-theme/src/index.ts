@@ -25,18 +25,6 @@ defineMessages({
   },
 });
 
-export type StyleDefinition =
-  | {
-      name: string;
-      label: string;
-      style: Record<`--${string}`, string>;
-    }
-  | {
-      name: string;
-      label: string;
-      style: undefined;
-    };
-
 const applyConfig = (config: ConfigType) => {
   installSettings(config);
   installBlocks(config);

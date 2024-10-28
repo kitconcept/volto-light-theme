@@ -1,4 +1,6 @@
 import type { BlocksFormData } from '@plone/types';
+import { findStyleByName } from '@plone/volto/helpers/Blocks/Blocks';
+
 import config from '@plone/volto/registry';
 
 function* visitBlocks(blocks) {
@@ -15,7 +17,7 @@ function* visitBlocks(blocks) {
 
 export function migrateToVLT6ColorAndWidthModel(data: BlocksFormData) {
   const NORMALIZED_WIDTHS = [
-    ...config.settings.blockWidths,
+    ...config.blocks.blocksWidths,
     {
       style: {
         '--block-width': 'var(--default-container-width)',
@@ -27,17 +29,15 @@ export function migrateToVLT6ColorAndWidthModel(data: BlocksFormData) {
 
   for (const block of visitBlocks(data.blocks)) {
     if (block?.styles?.backgroundColor) {
-      block.styles['backgroundColor:noprefix'] =
-        config.settings.backgroundColors.find(
-          (color) => color.name === block.styles.backgroundColor,
-        )?.style;
+      block.theme = block.styles.backgroundColor;
       delete block.styles.backgroundColor;
     }
 
     if (block?.styles?.buttonAlign) {
-      block.styles['blockWidth:noprefix'] = NORMALIZED_WIDTHS.find(
-        (width) => width.name === block.styles.buttonAlign,
-      )?.style;
+      block.styles['blockWidth:noprefix'] = findStyleByName(
+        NORMALIZED_WIDTHS,
+        block.styles.buttonAlign,
+      );
       delete block.styles.buttonAlign;
     }
   }
