@@ -72,7 +72,7 @@ export default function install(config: ConfigType) {
   };
 
   // Palettes
-  config.blocks.blocksThemes = [
+  config.blocks.themes = [
     {
       style: {
         '--theme-color': '#fff', // Block Wrapper
@@ -96,7 +96,7 @@ export default function install(config: ConfigType) {
   ];
 
   // Default block widths
-  config.blocks.blocksWidths = [
+  config.blocks.widths = [
     {
       style: {
         '--block-width': 'var(--narrow-container-width)',
@@ -128,10 +128,11 @@ export default function install(config: ConfigType) {
   ];
 
   function blockThemesEnhancer(data) {
+    const blockConfig = config.blocks.blocksConfig[data['@type']];
     const blockStyleDefinitions =
-      // We look up for the blockThemes in the block's data, then in the global config
-      // We keep data.colors for BBB, but data.themes should be used
-      data.themes || data.colors || config.blocks.blocksThemes || [];
+      // We look up for the blockThemes in the block's config, then in the global config
+      // We keep `colors` for BBB, but `themes` should be used
+      blockConfig.themes || blockConfig.colors || config.blocks.themes || [];
     return data.theme ? findStyleByName(blockStyleDefinitions, data.theme) : {};
   }
 
@@ -168,7 +169,7 @@ export default function install(config: ConfigType) {
       'separator',
     ],
     // Not needed anymore, as we have the the fallback in the StyleWrapperEnhancer
-    themes: config.blocks.blocksThemes,
+    themes: config.blocks.themes,
     schemaEnhancer: composeSchema(
       AccordionSchemaEnhancer,
       defaultStylingSchema,
@@ -179,12 +180,12 @@ export default function install(config: ConfigType) {
   config.blocks.blocksConfig.slateTable = {
     ...config.blocks.blocksConfig.slateTable,
     schemaEnhancer: defaultStylingSchema,
-    themes: config.blocks.blocksThemes,
+    themes: config.blocks.themes,
   };
 
   config.blocks.blocksConfig.listing = {
     ...config.blocks.blocksConfig.listing,
-    themes: config.blocks.blocksThemes,
+    themes: config.blocks.themes,
     schemaEnhancer: defaultStylingSchema,
     allowed_headline_tags: [['h2', 'h2']],
     variations: [
@@ -216,7 +217,7 @@ export default function install(config: ConfigType) {
   config.blocks.blocksConfig.accordion.blocksConfig.teaser.schemaEnhancer =
     composeSchema(teaserSchemaEnhancer, disableBgColorSchema);
 
-  config.blocks.blocksConfig.gridBlock.themes = config.blocks.blocksThemes;
+  config.blocks.blocksConfig.gridBlock.themes = config.blocks.themes;
   config.blocks.blocksConfig.gridBlock.schemaEnhancer = defaultStylingSchema;
   config.blocks.blocksConfig.gridBlock.icon = gridSVG;
 
@@ -248,13 +249,13 @@ export default function install(config: ConfigType) {
   config.blocks.blocksConfig.introduction = {
     ...config.blocks.blocksConfig.introduction,
     unwantedButtons: ['heading-three', 'blockquote'],
-    themes: config.blocks.blocksThemes,
+    themes: config.blocks.themes,
     schemaEnhancer: defaultStylingSchema,
   };
 
   config.blocks.blocksConfig.slate = {
     ...config.blocks.blocksConfig.slate,
-    themes: config.blocks.blocksThemes,
+    themes: config.blocks.themes,
     schemaEnhancer: defaultStylingSchema,
     sidebarTab: 1,
   };
@@ -263,13 +264,13 @@ export default function install(config: ConfigType) {
     ...config.blocks.blocksConfig.teaser,
     group: 'teasers',
     imageScale: 'larger',
-    themes: config.blocks.blocksThemes,
+    themes: config.blocks.themes,
     schemaEnhancer: composeSchema(defaultStylingSchema, teaserSchemaEnhancer),
   };
 
   config.blocks.blocksConfig.video = {
     ...config.blocks.blocksConfig.video,
-    themes: config.blocks.blocksThemes,
+    themes: config.blocks.themes,
     schemaEnhancer: composeSchema(
       defaultStylingSchema,
       videoBlockSchemaEnhancer,
@@ -277,7 +278,7 @@ export default function install(config: ConfigType) {
   };
   config.blocks.blocksConfig.maps = {
     ...config.blocks.blocksConfig.maps,
-    themes: config.blocks.blocksThemes,
+    themes: config.blocks.themes,
     schemaEnhancer: composeSchema(
       defaultStylingSchema,
       mapsBlockSchemaEnhancer,
@@ -288,7 +289,7 @@ export default function install(config: ConfigType) {
     ...config.blocks.blocksConfig.heading,
     sidebarTab: 0,
     allowed_headings: [['h2', 'h2']],
-    themes: config.blocks.blocksThemes,
+    themes: config.blocks.themes,
     schemaEnhancer: defaultStylingSchema,
   };
 
@@ -298,7 +299,7 @@ export default function install(config: ConfigType) {
       defaultStylingSchema,
       searchBlockSchemaEnhancer,
     ),
-    themes: config.blocks.blocksThemes,
+    themes: config.blocks.themes,
     variations: [
       {
         id: 'facetsTopSide',
@@ -312,7 +313,7 @@ export default function install(config: ConfigType) {
   config.blocks.blocksConfig.__button = {
     ...config.blocks.blocksConfig.__button,
     schemaEnhancer: ButtonStylingSchema,
-    themes: config.blocks.blocksThemes,
+    themes: config.blocks.themes,
   };
 
   config.blocks.blocksConfig.eventMetadata = {
@@ -333,7 +334,7 @@ export default function install(config: ConfigType) {
     config.blocks.blocksConfig.separator = {
       ...config.blocks.blocksConfig.separator,
       schemaEnhancer: SeparatorStylingSchema,
-      themes: config.blocks.blocksThemes,
+      themes: config.blocks.themes,
     };
   }
 
