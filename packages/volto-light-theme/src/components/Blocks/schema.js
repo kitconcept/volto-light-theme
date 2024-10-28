@@ -12,12 +12,12 @@ const messages = defineMessages({
 export const defaultStylingSchema = ({ schema, formData, intl }) => {
   const themes =
     config.blocks?.blocksConfig?.[formData['@type']]?.themes ||
-    config.blocks.blocksThemes;
+    config.blocks.themes;
 
   const defaultBGColor =
     config.blocks?.blocksConfig?.[formData['@type']]?.defaultBGColor ||
     // The default color is the first color in the themes list
-    config.blocks.blocksThemes?.[0].name;
+    config.blocks.themes?.[0].name;
 
   addStyling({ schema, intl });
 
