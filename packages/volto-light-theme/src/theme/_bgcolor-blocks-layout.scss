@@ -22,7 +22,7 @@
     color: var(--theme-foreground-color);
   }
 
-  :not(.teaser >) a:not(.item) {
+  a:not(.item):not(:has(> .teaser-item), :has(> .listing-body)) {
     text-decoration: underline;
   }
 
@@ -82,7 +82,7 @@
 #page-document .blocks-group-wrapper.grey .block.slider,
 .block-editor-slider.has--backgroundColor--grey {
   .slider-dot:not(.slider-dot--selected)::after {
-    background: #fff;
+    background: $white;
   }
 }
 
@@ -97,7 +97,7 @@
   // --theme-color: #fff;
   // --theme-high-contrast-color: #ecebeb;
   // --theme-foreground-color: #000;
-  // --theme-low-contrast-foreground-color: #666;
+  // --theme-low-contrast-foreground-color: #555555;
 
   // Page title
   h1.documentFirstHeading {
@@ -139,9 +139,6 @@
 
     // Teaser
     &.teaser {
-      // Victor 2024-10-24: Commented out. Why is the reason of this padding?
-      // padding-top: 25px;
-
       .teaser-item {
         border-color: var(--theme-foreground-color);
       }
@@ -672,6 +669,15 @@
         }
       }
 
+      // Use values assigned to the parent Grid block
+      .block {
+        --theme-high-contrast-color: inherit !important;
+        --theme-color: inherit !important;
+        --theme-high-contrast-color: inherit !important;
+        --theme-foreground-color: inherit !important;
+        --theme-low-contrast-foreground-color: inherit !important;
+      }
+
       .block.teaser {
         padding-top: 0;
         background: var(--theme-high-contrast-color);
@@ -752,7 +758,7 @@
       }
       a,
       p {
-        color: white !important;
+        color: $white !important;
       }
     }
   }
@@ -795,6 +801,14 @@
         color: var(--theme-foreground-color);
       }
     }
+    // Inherit colors from parent Accordion
+    .blocks-group-wrapper.default {
+      --theme-high-contrast-color: inherit !important;
+      --theme-color: inherit !important;
+      --theme-high-contrast-color: inherit !important;
+      --theme-foreground-color: inherit !important;
+      --theme-low-contrast-foreground-color: inherit !important;
+    }
   }
 
   table.ui.table.slate-table-block {
@@ -836,7 +850,7 @@
 
       .ui.basic.button.delete-button {
         &:hover {
-          background: white !important;
+          background: $white !important;
         }
       }
 
@@ -907,7 +921,7 @@
 
           .search-sort-wrapper {
             .ui.basic.compact.icon.button:not(.active) {
-              background: white !important;
+              background: $white !important;
             }
           }
         }
@@ -930,20 +944,79 @@
       }
     }
   }
+
+  // Navigation
+  nav.navigation {
+
+    button.item {
+      color: var(--primary-color, $black);
+    }
+    .submenu-wrapper {
+      .submenu.active {
+        background: var(--accent-color, $lightgrey);
+
+        .submenu-inner {
+          a,
+          h2 {
+            color: var(--accent-foreground-color, $black);
+          }
+
+          a span {
+            &:hover {
+              border-color: var(--accent-foreground-color, $black);
+            }
+          }
+
+          .subitem-wrapper {
+            border-color: var(--accent-foreground-color, $black);
+          }
+
+          button.close {
+            background: none;
+            outline: 1px solid var(--accent-color, $lightgrey);
+
+            &:hover,
+            &:focus {
+              outline-color: var(--accent-foreground-color, $black);
+            }
+
+            svg path {
+              fill: var(--accent-foreground-color, $black);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Footer
+  #footer .footer {
+    background: var(--primary-color, $lightgrey);
+
+    .footer-message {
+      color: var(--primary-foreground-color, $black);
+
+      a {
+        color: var(--primary-foreground-color, $black);
+      }
+    }
+
+    a.item,
+    .footer-branding {
+      color: var(--primary-foreground-color, $black);
+    }
+    li.item {
+      border-color: var(--primary-foreground-color, $black);
+
+    }
+  }
 }
 
 body {
   @include use-theme-colors();
   @property --theme-color {
     inherits: true;
-    initial-value: #fff;
+    initial-value: $white;
     syntax: '<color>';
-  }
-
-  :root {
-    --primary-color: #ecebeb; // Footer
-    --primary-foreground-color: #000;
-    --accent-color: #ecebeb; // Fat Menu
-    --accent-foreground-color: #000;
   }
 }

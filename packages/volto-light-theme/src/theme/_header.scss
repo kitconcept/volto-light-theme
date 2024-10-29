@@ -412,6 +412,7 @@ body.has-toolbar.has-sidebar {
   .item {
     position: relative;
     color: $black;
+    color: var(--primary-color, $black);
     font-size: 18px;
     font-weight: 600;
     line-height: 24px;
@@ -419,7 +420,7 @@ body.has-toolbar.has-sidebar {
 
     &.active,
     &:hover {
-      color: var(--theme-color, $black);
+      color: var(--accent-color, $black);
     }
 
     &.active::before,
@@ -427,7 +428,7 @@ body.has-toolbar.has-sidebar {
       position: absolute;
       bottom: -49px;
       width: 100%;
-      border-bottom: 9px solid var(--theme-color, $black);
+      border-bottom: 9px solid var(--accent-color, $black);
       content: '';
     }
   }
