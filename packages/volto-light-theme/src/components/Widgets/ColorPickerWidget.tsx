@@ -1,16 +1,6 @@
-import React from 'react';
 import FormFieldWrapper from '@plone/volto/components/manage/Widgets/FormFieldWrapper';
-import { isEmpty, isEqual } from 'lodash';
-import { defineMessages, useIntl } from 'react-intl';
 import { Button } from '@plone/components';
 import cx from 'classnames';
-
-const messages = defineMessages({
-  Color: {
-    id: 'Color',
-    defaultMessage: 'Color',
-  },
-});
 
 type Color =
   | {
@@ -40,7 +30,6 @@ export type ColorPickerWidgetProps = {
 const ColorPickerWidget = (props: ColorPickerWidgetProps) => {
   const { id, value, onChange } = props;
   const colors = props.themes || props.colors || [];
-  const intl = useIntl();
 
   return colors.length > 0 ? (
     <FormFieldWrapper {...props} className="theme-picker-widget">
