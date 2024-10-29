@@ -1,0 +1,15 @@
+.field.color {
+  .eight.wide.column {
+    flex-direction: row;
+    align-items: center;
+
+    input {
+      padding-left: 8px;
+      line-height: 1;
+    }
+  }
+}
+
+.react-aria-ColorSwatch {
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.3);
+}
