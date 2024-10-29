@@ -44,12 +44,6 @@ $layout-container-width: 1440px !default;
 $default-container-width: 940px !default;
 $narrow-container-width: 620px !default;
 
-// Rest of theme variables
-:root {
-  --text-color: #666;
-  --text-size: 18px;
-}
-
 // Colors
 $white: #fff !default;
 $veryLightGrey: #eee !default;
@@ -64,6 +58,18 @@ $greySnow: #f3f5f7 !default;
 $greySmoke: #e4e8ec !default;
 $darkBlue: #023d6b !default;
 $secondary-grey: #ececec !default;
+
+// Rest of theme variables
+:root {
+  --text-color: #666;
+  --text-size: 18px;
+  // --primary-color: $lightgrey; // Footer
+  // --primary-foreground-color: $black;
+  // --accent-color: $lightgrey; // Fat Menu
+  // --accent-foreground-color: $black;
+}
+
+
 
 // Image Aspect Ratio
 $aspect-ratio: var(--image-aspect-ratio, 16/9) !default;

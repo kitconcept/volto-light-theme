@@ -27,6 +27,8 @@ describe('a11y tests', () => {
         },
       ],
     });
+    // To prevent color contrast error during css transition
+    cy.wait(200);
     cy.checkAccessibility();
   });
 });

@@ -1,5 +1,17 @@
 #page-document .block.introduction {
   @include vertical-space-introduction();
+
+  & + .block.introduction {
+    margin-top: $spacing-medium;
+  }
+
+  &:has(+ .block.introduction) {
+    margin-bottom: 0;
+  }
+
+  &:has(+ .block.__button) {
+    margin-bottom: 0;
+  }
 }
 
 .block.introduction {

@@ -114,8 +114,6 @@ figure {
 
     &.center {
       width: 100% !important;
-      // Victor 2024-10-24: Commented out. Why is the reason of this padding?
-      // padding-top: $spacing-large;
       margin-right: auto !important;
       margin-bottom: $spacing-large;
       margin-left: auto !important;
