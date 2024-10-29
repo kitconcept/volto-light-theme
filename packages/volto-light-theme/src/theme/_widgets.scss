@@ -28,17 +28,50 @@
   }
 }
 
-.color-picker-widget .button {
+.theme-picker-widget {
+  .buttons {
+    flex: 1 1 100%;
+    margin: 1rem 0 0.5rem;
+    text-align: center;
+  }
+
+  button {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    padding: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 100%;
+    margin-right: 0.25rem;
+
+    &.active {
+      border: 2px solid red;
+
+      &:after {
+        position: absolute;
+        top: -0.25rem;
+        right: -0.25rem;
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 100%;
+        background-color: red;
+        content: '';
+      }
+    }
+  }
+}
+
+.theme-picker-widget button {
   background-color: var(--theme-color);
 }
 
 // TODO: Remove when layers are in place
-.color-picker-widget .button.grey,
-.color-picker-widget .button.grey.active,
-.color-picker-widget .ui.grey.button:hover {
+.theme-picker-widget .button.grey,
+.theme-picker-widget .button.grey.active,
+.theme-picker-widget .ui.grey.button:hover {
   background-color: var(--theme-color);
 }
-.color-picker-widget .button.active,
-.color-picker-widget .button.active:hover {
+.theme-picker-widget .button.active,
+.theme-picker-widget .button.active:hover {
   background-color: var(--theme-color);
 }

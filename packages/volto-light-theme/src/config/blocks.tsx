@@ -1,9 +1,10 @@
 import type { ConfigType } from '@plone/registry';
-import type { StyleDefinition } from '../index';
+import type { StyleDefinition } from '@plone/types';
 
 import cloneDeep from 'lodash/cloneDeep';
 
 import { composeSchema } from '@plone/volto/helpers/Extensions';
+import { findStyleByName } from '@plone/volto/helpers/Blocks/Blocks';
 import { defaultStylingSchema } from '../components/Blocks/schema';
 import { teaserSchemaEnhancer } from '../components/Blocks/Teaser/schema';
 import { videoBlockSchemaEnhancer } from '../components/Blocks/Video/schema';
@@ -46,7 +47,7 @@ declare module '@plone/types' {
     slateTable: BlockConfigBase;
   }
   export interface BlockConfigBase {
-    colors?: StyleDefinition[];
+    themes?: StyleDefinition[];
     allowedBlocks?: string[];
     allowed_headline_tags?: string[][];
     dataAdapter?: any;
@@ -71,7 +72,7 @@ export default function install(config: ConfigType) {
   };
 
   // Palettes
-  config.settings.backgroundColors = [
+  config.blocks.themes = [
     {
       style: {
         '--theme-color': '#fff', // Block Wrapper
@@ -95,7 +96,7 @@ export default function install(config: ConfigType) {
   ];
 
   // Default block widths
-  config.settings.blockWidths = [
+  config.blocks.widths = [
     {
       style: {
         '--block-width': 'var(--narrow-container-width)',
@@ -126,6 +127,22 @@ export default function install(config: ConfigType) {
     },
   ];
 
+  function blockThemesEnhancer(data) {
+    if (!data['@type']) return {};
+    const blockConfig = config.blocks.blocksConfig[data['@type']];
+    const blockStyleDefinitions =
+      // We look up for the blockThemes in the block's config, then in the global config
+      // We keep `colors` for BBB, but `themes` should be used
+      blockConfig.themes || blockConfig.colors || config.blocks.themes || [];
+    return data.theme ? findStyleByName(blockStyleDefinitions, data.theme) : {};
+  }
+
+  config.registerUtility({
+    name: 'blockThemesEnhancer',
+    type: 'styleWrapperStyleObjectEnhancer',
+    method: blockThemesEnhancer,
+  });
+
   // No required blocks (eg. Title)
   config.blocks.requiredBlocks = [
     ...config.blocks.requiredBlocks,
@@ -152,7 +169,8 @@ export default function install(config: ConfigType) {
       'slateTable',
       'separator',
     ],
-    colors: config.settings.backgroundColors,
+    // Not needed anymore, as we have the the fallback in the StyleWrapperEnhancer
+    themes: config.blocks.themes,
     schemaEnhancer: composeSchema(
       AccordionSchemaEnhancer,
       defaultStylingSchema,
@@ -163,12 +181,12 @@ export default function install(config: ConfigType) {
   config.blocks.blocksConfig.slateTable = {
     ...config.blocks.blocksConfig.slateTable,
     schemaEnhancer: defaultStylingSchema,
-    colors: config.settings.backgroundColors,
+    themes: config.blocks.themes,
   };
 
   config.blocks.blocksConfig.listing = {
     ...config.blocks.blocksConfig.listing,
-    colors: config.settings.backgroundColors,
+    themes: config.blocks.themes,
     schemaEnhancer: defaultStylingSchema,
     allowed_headline_tags: [['h2', 'h2']],
     variations: [
@@ -200,8 +218,7 @@ export default function install(config: ConfigType) {
   config.blocks.blocksConfig.accordion.blocksConfig.teaser.schemaEnhancer =
     composeSchema(teaserSchemaEnhancer, disableBgColorSchema);
 
-  config.blocks.blocksConfig.gridBlock.colors =
-    config.settings.backgroundColors;
+  config.blocks.blocksConfig.gridBlock.themes = config.blocks.themes;
   config.blocks.blocksConfig.gridBlock.schemaEnhancer = defaultStylingSchema;
   config.blocks.blocksConfig.gridBlock.icon = gridSVG;
 
@@ -233,13 +250,13 @@ export default function install(config: ConfigType) {
   config.blocks.blocksConfig.introduction = {
     ...config.blocks.blocksConfig.introduction,
     unwantedButtons: ['heading-three', 'blockquote'],
-    colors: config.settings.backgroundColors,
+    themes: config.blocks.themes,
     schemaEnhancer: defaultStylingSchema,
   };
 
   config.blocks.blocksConfig.slate = {
     ...config.blocks.blocksConfig.slate,
-    colors: config.settings.backgroundColors,
+    themes: config.blocks.themes,
     schemaEnhancer: defaultStylingSchema,
     sidebarTab: 1,
   };
@@ -248,13 +265,13 @@ export default function install(config: ConfigType) {
     ...config.blocks.blocksConfig.teaser,
     group: 'teasers',
     imageScale: 'larger',
-    colors: config.settings.backgroundColors,
+    themes: config.blocks.themes,
     schemaEnhancer: composeSchema(defaultStylingSchema, teaserSchemaEnhancer),
   };
 
   config.blocks.blocksConfig.video = {
     ...config.blocks.blocksConfig.video,
-    colors: config.settings.backgroundColors,
+    themes: config.blocks.themes,
     schemaEnhancer: composeSchema(
       defaultStylingSchema,
       videoBlockSchemaEnhancer,
@@ -262,7 +279,7 @@ export default function install(config: ConfigType) {
   };
   config.blocks.blocksConfig.maps = {
     ...config.blocks.blocksConfig.maps,
-    colors: config.settings.backgroundColors,
+    themes: config.blocks.themes,
     schemaEnhancer: composeSchema(
       defaultStylingSchema,
       mapsBlockSchemaEnhancer,
@@ -273,7 +290,7 @@ export default function install(config: ConfigType) {
     ...config.blocks.blocksConfig.heading,
     sidebarTab: 0,
     allowed_headings: [['h2', 'h2']],
-    colors: config.settings.backgroundColors,
+    themes: config.blocks.themes,
     schemaEnhancer: defaultStylingSchema,
   };
 
@@ -283,7 +300,7 @@ export default function install(config: ConfigType) {
       defaultStylingSchema,
       searchBlockSchemaEnhancer,
     ),
-    colors: config.settings.backgroundColors,
+    themes: config.blocks.themes,
     variations: [
       {
         id: 'facetsTopSide',
@@ -297,7 +314,7 @@ export default function install(config: ConfigType) {
   config.blocks.blocksConfig.__button = {
     ...config.blocks.blocksConfig.__button,
     schemaEnhancer: ButtonStylingSchema,
-    colors: config.settings.backgroundColors,
+    themes: config.blocks.themes,
   };
 
   config.blocks.blocksConfig.eventMetadata = {
@@ -318,7 +335,7 @@ export default function install(config: ConfigType) {
     config.blocks.blocksConfig.separator = {
       ...config.blocks.blocksConfig.separator,
       schemaEnhancer: SeparatorStylingSchema,
-      colors: config.settings.backgroundColors,
+      themes: config.blocks.themes,
     };
   }
 

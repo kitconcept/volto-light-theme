@@ -1,13 +1,10 @@
 import type { ConfigType } from '@plone/registry';
-import type { StyleDefinition } from '../index';
 
 declare module '@plone/types' {
   export interface SettingsConfig {
     slate: {
       useLinkedHeadings: boolean;
     };
-    backgroundColors: Array<StyleDefinition>;
-    blockWidths: Array<StyleDefinition>;
   }
 }
 
