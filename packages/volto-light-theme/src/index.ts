@@ -11,6 +11,7 @@ import installSettings from './config/settings';
 import installBlocks from './config/blocks';
 import installClassExtenders from './config/classExtenders';
 import installWidgets from './config/widgets';
+import installSlots from './config/slots';
 
 import '@plone/components/dist/basic.css';
 
@@ -30,6 +31,7 @@ const applyConfig = (config: ConfigType) => {
   installBlocks(config);
   installClassExtenders(config);
   installWidgets(config);
+  installSlots(config);
 
   // Register a custom Container component from @plone/components
   config.registerComponent({
