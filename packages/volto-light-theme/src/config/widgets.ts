@@ -1,5 +1,5 @@
 import type { ConfigType } from '@plone/registry';
-import ColorPicker from '../components/Widgets/ColorPickerWidget';
+import ThemingColorPicker from '../components/Widgets/ThemingColorPicker';
 import BackgroundColorWidget from '../components/Widgets/BackgroundColorWidget';
 import BlockWidthWidget from '../components/Widgets/BlockWidthWidget';
 import BlockAlignmentWidget from '../components/Widgets/BlockAlignmentWidget';
@@ -10,7 +10,7 @@ declare module '@plone/types' {
     BackgroundColorWidget: React.ComponentType<any>;
     blockWidth: React.ComponentType<any>;
     blockAlignment: React.ComponentType<any>;
-    themingColorpicker: typeof ColorPicker;
+    themingColorPicker: typeof ThemingColorPicker;
   }
 }
 
@@ -19,7 +19,7 @@ export default function install(config: ConfigType) {
   config.widgets.widget.blockWidth = BlockWidthWidget;
   config.widgets.widget.blockAlignment = BlockAlignmentWidget;
   config.widgets.widget.color_picker = ColorPickerWidget;
-  config.widgets.widget.themingColorpicker = ColorPicker;
+  config.widgets.widget.themingColorPicker = ThemingColorPicker;
 
   return config;
 }
