@@ -38,6 +38,7 @@ import { mapsBlockSchemaEnhancer } from './components/Blocks/Maps/schema';
 import { sliderBlockSchemaEnhancer } from './components/Blocks/Slider/schema';
 import EventMetadataView from './components/Blocks/EventMetadata/View';
 import installSlots from './config/slots';
+import installWidgets from './config/widgets';
 
 const BG_COLORS = [
   { name: 'transparent', label: 'Transparent' },
@@ -57,6 +58,7 @@ defineMessages({
 
 const applyConfig = (config) => {
   installSlots(config);
+  installWidgets(config);
 
   config.settings.enableAutoBlockGroupingByBackgroundColor = true;
   config.settings.navDepth = 3;
