@@ -417,12 +417,17 @@ body.has-toolbar.has-sidebar {
     line-height: 24px;
     text-transform: initial;
 
+    &.active,
+    &:hover {
+      color: var(--theme-color, $black);
+    }
+
     &.active::before,
     &:hover::before {
       position: absolute;
       bottom: -49px;
       width: 100%;
-      border-bottom: 9px solid $black;
+      border-bottom: 9px solid var(--theme-color, $black);
       content: '';
     }
   }
