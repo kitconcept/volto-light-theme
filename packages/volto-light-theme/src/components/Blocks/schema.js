@@ -32,7 +32,6 @@ export const defaultStylingSchema = ({ schema, formData, intl }) => {
     widget: 'color_picker',
     title: intl.formatMessage(messages.backgroundColor),
     themes,
-    // default: formData?.styles?.['backgroundColor:noprefix'] ?? defaultTheme,
     default: defaultTheme,
   };
 
