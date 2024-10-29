@@ -360,12 +360,12 @@
       .slider-dots {
         .slider-dot {
           &::after {
-            background: var(--theme-foreground-color);
+            background-color: var(--theme-high-contrast-color);
           }
         }
         .slider-dot--selected {
           &::after {
-            background-color: var(--theme-low-contrast-foreground-color);
+            background: var(--theme-foreground-color);
           }
         }
       }
