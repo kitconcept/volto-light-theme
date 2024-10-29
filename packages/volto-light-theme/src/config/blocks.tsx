@@ -78,7 +78,7 @@ export default function install(config: ConfigType) {
         '--theme-color': '#fff', // Block Wrapper
         '--theme-high-contrast-color': '#ecebeb', // Cards in Grid block
         '--theme-foreground-color': '#000',
-        '--theme-low-contrast-foreground-color': '#bebebe',
+        '--theme-low-contrast-foreground-color': '#555555',
       },
       name: 'default',
       label: 'Default',
@@ -88,7 +88,7 @@ export default function install(config: ConfigType) {
         '--theme-color': '#ecebeb',
         '--theme-high-contrast-color': '#fff',
         '--theme-foreground-color': '#000',
-        '--theme-low-contrast-foreground-color': '#bebebe',
+        '--theme-low-contrast-foreground-color': '#555555',
       },
       name: 'grey',
       label: 'Grey',
