@@ -935,13 +935,12 @@
 body {
   @include use-theme-colors();
   @property --theme-color {
-    syntax: "<color>";
     inherits: true;
-    initial-value: #FFF;
+    initial-value: #fff;
+    syntax: '<color>';
   }
-  
 
- :root {
+  :root {
     --primary-color: #ecebeb; // Footer
     --primary-foreground-color: #000;
     --accent-color: #ecebeb; // Fat Menu

@@ -43,25 +43,11 @@ export default function install(config: ConfigType) {
       }
 
       // Given a StyleWrapper defined `backgroundColor` style
-      const previousColor =
-        getCurrentStyleByName(
-          config.settings.backgroundColors,
-          'backgroundColor:noprefix',
-          previousBlock,
-        ) || 'default';
+      const previousColor = previousBlock?.theme || 'default';
 
-      const currentColor =
-        getCurrentStyleByName(
-          config.settings.backgroundColors,
-          'backgroundColor:noprefix',
-          data,
-        ) || 'default';
-      const nextColor =
-        getCurrentStyleByName(
-          config.settings.backgroundColors,
-          'backgroundColor:noprefix',
-          nextBlock,
-        ) || 'default';
+      const currentColor = data?.theme || 'default';
+
+      const nextColor = nextBlock?.theme || 'default';
 
       // Inject a class depending if the previous block has the same `backgroundColor`
       if (currentColor === previousColor) {
@@ -86,7 +72,7 @@ export default function install(config: ConfigType) {
     ({ data, classNames }: { data: any; classNames: Array<string> }) => {
       const currentBlockWidth =
         getCurrentStyleByName(
-          config.settings.blockWidths,
+          config.blocks.widths,
           'blockWidth:noprefix',
           data,
         ) || 'default';
@@ -99,12 +85,7 @@ export default function install(config: ConfigType) {
 
   config.settings.styleClassNameExtenders.push(
     ({ data, classNames }: { data: any; classNames: Array<string> }) => {
-      const currentBlockBackgroundColor =
-        getCurrentStyleByName(
-          config.settings.backgroundColors,
-          'backgroundColor:noprefix',
-          data,
-        ) || 'default';
+      const currentBlockBackgroundColor = data?.theme || 'default';
       if (currentBlockBackgroundColor) {
         // This has intentionally a different class name than in `VLT3`
         return [

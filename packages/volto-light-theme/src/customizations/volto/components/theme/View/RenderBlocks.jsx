@@ -15,10 +15,10 @@ import React from 'react';
 import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
 import {
   applyBlockDefaults,
-  buildStyleObjectFromData,
   getBlocksFieldname,
   getBlocksLayoutFieldname,
   hasBlocksData,
+  findStyleByName,
 } from '@plone/volto/helpers/Blocks/Blocks';
 import { defineMessages, useIntl } from 'react-intl';
 import { map } from 'lodash';
@@ -28,7 +28,6 @@ import ViewDefaultBlock from '@plone/volto/components/manage/Blocks/Block/Defaul
 import cx from 'classnames';
 import MaybeWrap from '@plone/volto/components/manage/MaybeWrap/MaybeWrap';
 import RenderEmptyBlock from '@plone/volto/components/theme/View/RenderEmptyBlock';
-import { getCurrentStyleByName } from '../../../../../helpers/helpers';
 
 const messages = defineMessages({
   unknownBlock: {
@@ -47,12 +46,7 @@ export function groupByBGColor(blocks, blocks_layout, colorDefinitions) {
   let currentBGColor;
 
   blocks_layout.items.forEach((blockId) => {
-    let currentBlockColor =
-      getCurrentStyleByName(
-        colorDefinitions,
-        'backgroundColor:noprefix',
-        blocks[blockId],
-      ) || 'default';
+    let currentBlockColor = blocks[blockId]?.theme || 'default';
     if (currentBlockColor !== currentBGColor) {
       currentBGColor = currentBlockColor;
       // write it only if the array has some block inside
@@ -79,21 +73,12 @@ const RenderBlocks = (props) => {
   const grouped = groupByBGColor(
     content[blocksFieldname],
     content[blocksLayoutFieldname],
-    config.settings.backgroundColors,
+    config.blocks.themes,
   );
 
   return hasBlocksData(content) ? (
     <CustomTag>
       {map(grouped, (group) => {
-        if (
-          content[blocksFieldname][group[0]] &&
-          !content[blocksFieldname][group[0]]?.styles
-        ) {
-          content[blocksFieldname][group[0]].styles = {};
-          content[blocksFieldname][group[0]].styles[
-            'backgroundColor:noprefix'
-          ] = config.settings.backgroundColors[0].style;
-        }
         return (
           <MaybeWrap
             key={`block-group-${group[0]}`}
@@ -103,15 +88,18 @@ const RenderBlocks = (props) => {
             }
             className={cx(
               'blocks-group-wrapper',
-              getCurrentStyleByName(
-                config.settings.backgroundColors,
-                'backgroundColor:noprefix',
-                content[blocksFieldname][group[0]],
-              ) || 'default',
+              content[blocksFieldname][group[0]]?.theme || 'default',
             )}
-            style={buildStyleObjectFromData(
-              content[blocksFieldname][group[0]]?.styles,
-            )}
+            style={
+              findStyleByName(
+                config.blocks.themes,
+                content[blocksFieldname][group[0]]?.theme,
+              ) ||
+              findStyleByName(
+                config.blocks.themes,
+                config.blocks.themes[0].name,
+              )
+            }
           >
             {map(group, (block) => {
               const Block =
