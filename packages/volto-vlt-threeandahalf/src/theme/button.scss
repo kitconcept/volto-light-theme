@@ -1,9 +1,0 @@
-.block.__button {
-  background: var(--background-color);
-}
-
-.block.__button .button.container {
-  @include variable-container-width();
-  display: flex;
-  justify-content: var(--block-alignment, start);
-}
