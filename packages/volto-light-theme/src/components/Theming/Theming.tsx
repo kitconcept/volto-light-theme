@@ -1,6 +1,17 @@
 import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
 import Helmet from '@plone/volto/helpers/Helmet/Helmet';
 import type { Content } from '@plone/types';
+import { useSelector } from 'react-redux';
+import { isEmpty } from 'lodash';
+
+type FormState = {
+  content: {
+    data: Content;
+  };
+  form: {
+    global: Content;
+  };
+};
 
 // TODO: Change when we have the final list of colors
 // and if they are nested in the serialization under a key
@@ -18,11 +29,19 @@ const Theming = ({ content }) => {
   const theme = true; // Do we want a named theme?
 
   const COLORNAMES = [
+    'accent_color',
+    'accent_foreground_color',
     'theme_color',
     'theme_high_contrast_color',
     'theme_foreground_color',
     'theme_low_contrast_foreground_color',
   ]; // Coming from config?
+
+  const formData = useSelector<FormState, Content>(
+    (state) => state.form.global,
+  );
+
+  const liveContent = !isEmpty(formData) ? formData : content;
 
   return (
     <>
@@ -35,7 +54,7 @@ const Theming = ({ content }) => {
               <style>
                 {`
 :root {
-  ${buildStyleTag(content, COLORNAMES)}
+  ${buildStyleTag(liveContent, COLORNAMES)}
 }
                 `}
               </style>
