@@ -10,7 +10,6 @@ const ColorPickerWidget = (props: {
   default: string;
   onChange: (id: string, value: any) => void;
 }) => {
-  // console.log(props.value);
   return (
     <FormFieldWrapper {...props} className="color">
       <ColorPicker
