@@ -30,6 +30,63 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
   }
   .teaser-item {
     padding-bottom: $spacing-medium;
+
+    .teaser-item-title {
+      position: absolute;
+      top: 50%;
+      width: 570px;
+      min-height: 321px;
+      padding: 60px 50px 60px 100px;
+      color: white;
+      background: rgba(0, 0, 0, 0.75);
+      transform: translateY(-50%);
+
+      @container (max-width: 1024px) {
+        padding: 30px 30px 30px 80px;
+      }
+
+      @media only screen and (max-width: $computer-width) {
+        position: static;
+        width: 100%;
+        padding: 60px 20px;
+        background: $black;
+        transform: none;
+      }
+      &.has--slider--flagAlign--right {
+        right: 0;
+      }
+
+      .title {
+        .supertitle {
+          display: inline-block;
+          margin-bottom: 20px;
+          font-size: 14px;
+          font-weight: 700;
+          letter-spacing: 1px;
+          line-height: 18px;
+          text-transform: uppercase;
+        }
+        h2 {
+          @include text-heading-h2();
+          margin-top: 0px;
+          margin-bottom: $spacing-medium;
+          color: $white;
+        }
+      }
+      p {
+        @include introduction();
+        display: -webkit-box;
+        overflow: hidden;
+        color: $white;
+        margin-bottom: 50px;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 5;
+        text-overflow: ellipsis;
+        @media only screen and (max-width: $computer-width) {
+          margin-bottom: $spacing-large;
+        }
+      }
+    }
   }
 
   .slide-wrapper:not(.empty-slide) {
@@ -40,68 +97,12 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
     position: relative;
   }
 
-  .teaser-item-title {
-    position: absolute;
-    top: 50%;
-    width: 570px;
-    min-height: 321px;
-    padding: 60px 50px 60px 100px;
-    background: var(--accent-color, rgba(0, 0, 0, 0.75));
-    color: #fff;
-    transform: translateY(-50%);
-
-    @container (max-width: 1024px) {
-      padding: 30px 30px 30px 80px;
-    }
-
-    @media only screen and (max-width: $computer-width) {
-      position: static;
-      width: 100%;
-      padding: 60px 20px;
-      background: $black;
-      transform: none;
-    }
-    &.has--slider--flagAlign--right {
-      right: 0;
-    }
-
-    .title {
-      .supertitle {
-        display: inline-block;
-        margin-bottom: 20px;
-        font-size: 14px;
-        font-weight: 700;
-        letter-spacing: 1px;
-        line-height: 18px;
-        text-transform: uppercase;
-      }
-      h2 {
-        @include text-heading-h2();
-        margin-top: 0px;
-        margin-bottom: $spacing-medium;
-      }
-    }
-    p {
-      @include introduction();
-      display: -webkit-box;
-      overflow: hidden;
-      margin-bottom: 50px;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 5;
-      text-overflow: ellipsis;
-      @media only screen and (max-width: $computer-width) {
-        margin-bottom: $spacing-large;
-      }
-    }
-  }
-
   .ui.button {
     display: initial;
     padding: 8px 20px;
     border: 1px solid currentColor;
     border-radius: 0;
     background-color: transparent;
-    color: inherit;
     font-size: 16px;
     font-weight: 900;
     line-height: 20px;

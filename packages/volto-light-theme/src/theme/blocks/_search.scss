@@ -82,11 +82,9 @@
           padding: 19px 0 19px 24px;
           border: none;
           background-color: transparent;
-          color: $black;
           font-size: 24px;
 
           &::placeholder {
-            color: $black;
             opacity: 1;
           }
         }

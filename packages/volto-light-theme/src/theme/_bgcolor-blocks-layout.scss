@@ -1,5 +1,6 @@
 .blocks-group-wrapper {
   background: var(--theme-color);
+  color: var(--theme-foreground-color);
   @include color-block-change-vertical-spacing();
 
   &:first-child {
@@ -22,8 +23,9 @@
     color: var(--theme-foreground-color);
   }
 
-  a:not(.item):not(:has(> .teaser-item), :has(> .listing-body)) {
+  a:not(.item):not(:has(> .teaser-item), :has(> .listing-body), :has(> .card-container)) {
     text-decoration: underline;
+    color: var(--link-foreground-color, --theme-foreground-color)
   }
 
   &:first-child:has(> .documentFirstHeading) {
@@ -73,32 +75,8 @@
   }
 }
 
-// Slider
-#page-document .blocks-group-wrapper.grey:has(.block.slider:first-child) {
-  padding-top: 0;
-  padding-bottom: 0px; // Adjust for the padding from the slider itself
-}
-
-#page-document .blocks-group-wrapper.grey .block.slider,
-.block-editor-slider.has--backgroundColor--grey {
-  .slider-dot:not(.slider-dot--selected)::after {
-    background: $white;
-  }
-}
-
-// Edit mode adjustments
-.block-editor-gridBlock.has--backgroundColor--grey .block h2.headline {
-  padding-top: $spacing-xlarge;
-}
-
 // Color map
 @mixin use-theme-colors() {
-  // Requires setting the following variables:
-  // --theme-color: #fff;
-  // --theme-high-contrast-color: #ecebeb;
-  // --theme-foreground-color: #000;
-  // --theme-low-contrast-foreground-color: #555555;
-
   // Page title
   h1.documentFirstHeading {
     color: var(--theme-foreground-color);
@@ -140,7 +118,7 @@
     // Teaser
     &.teaser {
       .teaser-item {
-        border-color: var(--theme-foreground-color);
+        border-bottom-color: var(--theme-foreground-color) !important;
       }
 
       h2,
@@ -183,7 +161,7 @@
       }
 
       .listing-item {
-        border-color: var(--theme-foreground-color);
+        border-bottom-color: var(--theme-foreground-color) !important;
 
         a > .listing-body {
           h3,
@@ -357,6 +335,18 @@
 
     // Slider
     &.slider {
+      // To use accent color for flag
+      // .teaser-item .teaser-item-title {
+      //   background: var(--accent-color, rgba(0, 0, 0, 0.75));
+
+      //   .title,
+      //   p,
+      //   button,
+      //   h2 {
+      //     color: var(--accent-foreground-color) !important;
+      //   }
+      // }
+
       .slider-dots {
         .slider-dot {
           &::after {
@@ -802,7 +792,8 @@
       }
     }
     // Inherit colors from parent Accordion
-    .blocks-group-wrapper.default {
+    .blocks-group-wrapper,
+    .block {
       --theme-high-contrast-color: inherit !important;
       --theme-color: inherit !important;
       --theme-high-contrast-color: inherit !important;
@@ -846,16 +837,6 @@
     .block {
       & [data-slate-placeholder='true'] {
         color: var(--theme-low-contrast-foreground-color) !important;
-      }
-
-      .ui.basic.button.delete-button {
-        &:hover {
-          background: $white !important;
-        }
-      }
-
-      .renderer-wrapper.empty p {
-        color: black !important;
       }
     }
 
@@ -945,76 +926,142 @@
     }
   }
 
-  // Navigation
-  nav.navigation {
-    button.item {
-      color: var(--primary-color, $black);
-    }
-    .submenu-wrapper {
-      .submenu.active {
-        background: var(--accent-color, $lightgrey);
-
-        .submenu-inner {
-          a,
-          h2 {
-            color: var(--accent-foreground-color, $black);
+  // Header
+  header.header-wrapper {
+    background: var(--primary-color);
+    .header {
+      .tools-wrapper {
+        .tools {
+          a {
+            color: var(--primary-foreground-color);
           }
+        }
+      }
 
-          a span {
-            &:hover {
-              border-color: var(--accent-foreground-color, $black);
+      // Navigation
+      nav.navigation {
+        button.item {
+          color: var(--primary-foreground-color);
+
+          // To use accent color nav items states
+          // &:hover,
+          // &:focus,
+          // &:active {
+          //   color: var(--accent-color);
+          // }
+        }
+        .submenu-wrapper {
+          .submenu.active {
+            background: var(--accent-color);
+
+            .submenu-inner {
+              a,
+              h2 {
+                color: var(--accent-foreground-color);
+              }
+
+              a span {
+                &:hover {
+                  border-color: var(--accent-foreground-color);
+                }
+              }
+
+              .subitem-wrapper {
+                border-color: var(--accent-foreground-color);
+              }
+
+              button.close {
+                background: none;
+                outline: 1px solid var(--accent-color);
+
+                &:hover,
+                &:focus {
+                  outline-color: var(--accent-foreground-color);
+                }
+
+                svg path {
+                  fill: var(--accent-foreground-color);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // Search
+      .search-bar {
+        background-color: var(--secondary-color);
+
+        .searchbox {
+          border-bottom-color: var(--secondary-foreground-color) !important;
+          input {
+            background-color: var(--secondary-color);
+            color: var(--secondary-foreground-color);
+            &::placeholder {
+              color: var(--secondary-foreground-color);
             }
           }
 
-          .subitem-wrapper {
-            border-color: var(--accent-foreground-color, $black);
-          }
-
-          button.close {
-            background: none;
-            outline: 1px solid var(--accent-color, $lightgrey);
-
-            &:hover,
-            &:focus {
-              outline-color: var(--accent-foreground-color, $black);
-            }
-
+          & > button {
             svg path {
-              fill: var(--accent-foreground-color, $black);
+              fill: var(--secondary-foreground-color);
             }
+          }
+        }
+      }
+
+      .search {
+        .search-button {
+          svg path {
+            fill: var(--primary-foreground-color);
           }
         }
       }
     }
   }
 
+  // Breadcrumbs
+  #main > .breadcrumbs {
+    background: var(--accent-color);
+
+    .section.active {
+      color: var(--accent-foreground-color);
+    }
+
+    a.section {
+      color: var(--link-foreground-color, --secondary-foreground-color);
+    }
+
+    a.home {
+      svg {
+        fill: var(--link-foreground-color, --secondary-foreground-color) !important;
+      }
+    }
+  }
+
   // Footer
   #footer .footer {
-    background: var(--primary-color, $lightgrey);
+    background: var(--secondary-color);
 
     .footer-message {
-      color: var(--primary-foreground-color, $black);
+      color: var(--secondary-foreground-color);
 
       a {
-        color: var(--primary-foreground-color, $black);
+        color: var(--link-foreground-color, --secondary-foreground-color) !important;
       }
     }
 
     a.item,
     .footer-branding {
-      color: var(--primary-foreground-color, $black);
+      color: var(--link-foreground-color, --secondary-foreground-color) !important;
     }
     li.item {
-      border-color: var(--primary-foreground-color, $black);
+      color: var(--link-foreground-color, --secondary-foreground-color) !important;
+      border-right-color: var(--link-foreground-color, --secondary-foreground-color) !important;
     }
   }
 }
 
 body {
   @include use-theme-colors();
-  @property --theme-color {
-    inherits: true;
-    initial-value: $white;
-    syntax: '<color>';
-  }
 }

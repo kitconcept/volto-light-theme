@@ -59,14 +59,73 @@ $greySmoke: #e4e8ec !default;
 $darkBlue: #023d6b !default;
 $secondary-grey: #ececec !default;
 
-// Rest of theme variables
+// Register custom properties
+@property --background {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #fff;
+}
+
+@property --text-color {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #666;
+}
+
+@property --text-size {
+  syntax: '<length> | <percentage>';
+  inherits: true;
+  initial-value: 18px;
+}
+
+@property --primary-color {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #fff;
+}
+
+@property --primary-foreground-color {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #000;
+}
+
+@property --secondary-color {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #ecebeb;
+}
+
+@property --secondary-foreground-color {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #000;
+}
+
+@property --accent-color {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #ecebeb;
+}
+
+@property --accent-foreground-color {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #000;
+}
+
 :root {
-  --text-color: #666;
-  --text-size: 18px;
-  // --primary-color: $lightgrey; // Footer
-  // --primary-foreground-color: $black;
-  // --accent-color: $lightgrey; // Fat Menu
-  // --accent-foreground-color: $black;
+  --background: initial;
+  --text-color: initial;
+  --link-color: #0070a2;
+  --primary-color: var(--background);
+  --primary-foreground-color: $black;
+  --secondary-color: $lightgrey;
+  --secondary-foreground-color: $black;
+  --accent-color: $lightgrey;
+  --accent-foreground-color: $black;
+  --link-foreground-color: var(--link-color);
+
 }
 
 // Image Aspect Ratio
