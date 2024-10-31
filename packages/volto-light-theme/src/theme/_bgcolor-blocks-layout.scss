@@ -28,8 +28,8 @@
       :has(> .listing-body),
       :has(> .card-container)
     ) {
-    text-decoration: underline;
     color: var(--link-foreground-color, --theme-foreground-color);
+    text-decoration: underline;
   }
 
   &:first-child:has(> .documentFirstHeading) {
@@ -339,18 +339,6 @@
 
     // Slider
     &.slider {
-      // To use accent color for flag
-      // .teaser-item .teaser-item-title {
-      //   background: var(--accent-color, rgba(0, 0, 0, 0.75));
-
-      //   .title,
-      //   p,
-      //   button,
-      //   h2 {
-      //     color: var(--accent-foreground-color) !important;
-      //   }
-      // }
-
       .slider-dots {
         .slider-dot {
           &::after {
@@ -932,12 +920,12 @@
 
   // Header
   header.header-wrapper {
-    background: var(--primary-color);
+    background: var(--header-background);
     .header {
       .tools-wrapper {
         .tools {
           a {
-            color: var(--primary-foreground-color);
+            color: var(--header-foreground);
           }
         }
       }
@@ -945,46 +933,38 @@
       // Navigation
       nav.navigation {
         button.item {
-          color: var(--primary-foreground-color);
-
-          // To use accent color nav items states
-          // &:hover,
-          // &:focus,
-          // &:active {
-          //   color: var(--accent-color);
-          // }
+          color: var(--header-foreground);
         }
         .submenu-wrapper {
           .submenu.active {
-            background: var(--accent-color);
+            background: var(--fatmenu-background);
 
             .submenu-inner {
               a,
               h2 {
-                color: var(--accent-foreground-color);
+                color: var(--fatmenu-foreground);
               }
 
               a span {
                 &:hover {
-                  border-color: var(--accent-foreground-color);
+                  border-color: var(--fatmenu-foreground);
                 }
               }
 
               .subitem-wrapper {
-                border-color: var(--accent-foreground-color);
+                border-color: var(--fatmenu-foreground);
               }
 
               button.close {
                 background: none;
-                outline: 1px solid var(--accent-color);
 
                 &:hover,
                 &:focus {
-                  outline-color: var(--accent-foreground-color);
+                  outline: 1px solid var(--fatmenu-foreground);
                 }
 
                 svg path {
-                  fill: var(--accent-foreground-color);
+                  fill: var(--fatmenu-foreground);
                 }
               }
             }
@@ -994,19 +974,19 @@
 
       // Search
       .search-bar {
-        background-color: var(--secondary-color);
+        background-color: var(--search-background);
 
         .searchbox {
-          border-bottom-color: var(--secondary-foreground-color) !important;
+          border-bottom-color: var(--search-foreground) !important;
           input {
-            background-color: var(--secondary-color);
-            color: var(--secondary-foreground-color);
+            background-color: var(--search-background);
+            color: var(--search-foreground);
             &::placeholder {
-              color: var(--secondary-foreground-color);
+              color: var(--search-foreground);
             }
           }
 
-          & > button {
+          & > button:not(:hover, :active, :focus) {
             svg path {
               fill: var(--secondary-foreground-color);
             }
@@ -1016,48 +996,62 @@
 
       .search {
         .search-button {
-          svg path {
-            fill: var(--primary-foreground-color);
+          button:not(:hover, :active, :focus) {
+            svg path {
+              fill: var(--header-foreground);
+            }
+          }
+        }
+      }
+    }
+
+    .logo {
+      a {
+        img {
+          fill: red !important;
+
+          * {
+            fill: red !important;
           }
         }
       }
     }
   }
 
+  // Content area {
+  #main > .segment.content-area {
+    background: var(--primary-color);
+  }
+
   // Breadcrumbs
   #main > .breadcrumbs {
-    background: var(--accent-color);
+    background: var(--breadcrumbs-background);
 
-    .section.active {
-      color: var(--accent-foreground-color);
+    .section.active,
+    .divider::before {
+      color: var(--breadcrumbs-foreground) !important;
     }
 
     a.section {
-      color: var(--link-foreground-color, --secondary-foreground-color);
+      color: var(--link-foreground-color, --breadcrumbs-foreground);
     }
 
     a.home {
       svg {
-        fill: var(
-          --link-foreground-color,
-          --secondary-foreground-color
-        ) !important;
+        fill: var(--link-foreground-color, --breadcrumbs-foreground) !important;
       }
     }
   }
 
   // Footer
   #footer .footer {
-    background: var(--secondary-color);
+    background: var(--footer-background);
 
     .footer-message {
-      color: var(--secondary-foreground-color);
+      color: var(--footer-foreground);
 
       a {
-        color: var(
-          --link-foreground-color,
-          --secondary-foreground-color
-        ) !important;
+        color: var(--link-foreground-color, --footer-foreground) !important;
       }
     }
 
@@ -1069,14 +1063,57 @@
       ) !important;
     }
     li.item {
-      color: var(
-        --link-foreground-color,
-        --secondary-foreground-color
-      ) !important;
       border-right-color: var(
         --link-foreground-color,
         --secondary-foreground-color
       ) !important;
+      color: var(
+        --link-foreground-color,
+        --secondary-foreground-color
+      ) !important;
+    }
+  }
+
+  // Search results page
+  &.section-search {
+    .ui.basic.segment.content-area {
+      margin-bottom: 0;
+      main {
+        padding-bottom: 1rem;
+        background: var(--primary-color);
+
+        h1.documentFirstHeading,
+        & > span,
+        & > div {
+          color: var(--primary-foreground-color);
+        }
+
+        #content-core {
+          article {
+            a {
+              color: var(--link-foreground-color, --primary-foreground-color);
+            }
+          }
+        }
+      }
+
+      .items_total {
+        color: var(--primary-foreground-color);
+
+        .header {
+          .header-content {
+            .sort-by,
+            button {
+              z-index: 1;
+              color: var(--primary-foreground-color);
+
+              &::before {
+                border-color: var(--primary-foreground-color);
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
