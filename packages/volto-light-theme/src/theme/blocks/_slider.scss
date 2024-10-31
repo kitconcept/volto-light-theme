@@ -37,8 +37,8 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
       width: 570px;
       min-height: 321px;
       padding: 60px 50px 60px 100px;
-      color: white;
       background: rgba(0, 0, 0, 0.75);
+      color: white;
       transform: translateY(-50%);
 
       @container (max-width: 1024px) {
@@ -77,9 +77,9 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         @include introduction();
         display: -webkit-box;
         overflow: hidden;
-        color: $white;
         margin-bottom: 50px;
         -webkit-box-orient: vertical;
+        color: $white;
         -webkit-line-clamp: 5;
         text-overflow: ellipsis;
         @media only screen and (max-width: $computer-width) {

@@ -23,9 +23,13 @@
     color: var(--theme-foreground-color);
   }
 
-  a:not(.item):not(:has(> .teaser-item), :has(> .listing-body), :has(> .card-container)) {
+  a:not(.item):not(
+      :has(> .teaser-item),
+      :has(> .listing-body),
+      :has(> .card-container)
+    ) {
     text-decoration: underline;
-    color: var(--link-foreground-color, --theme-foreground-color)
+    color: var(--link-foreground-color, --theme-foreground-color);
   }
 
   &:first-child:has(> .documentFirstHeading) {
@@ -1034,7 +1038,10 @@
 
     a.home {
       svg {
-        fill: var(--link-foreground-color, --secondary-foreground-color) !important;
+        fill: var(
+          --link-foreground-color,
+          --secondary-foreground-color
+        ) !important;
       }
     }
   }
@@ -1047,17 +1054,29 @@
       color: var(--secondary-foreground-color);
 
       a {
-        color: var(--link-foreground-color, --secondary-foreground-color) !important;
+        color: var(
+          --link-foreground-color,
+          --secondary-foreground-color
+        ) !important;
       }
     }
 
     a.item,
     .footer-branding {
-      color: var(--link-foreground-color, --secondary-foreground-color) !important;
+      color: var(
+        --link-foreground-color,
+        --secondary-foreground-color
+      ) !important;
     }
     li.item {
-      color: var(--link-foreground-color, --secondary-foreground-color) !important;
-      border-right-color: var(--link-foreground-color, --secondary-foreground-color) !important;
+      color: var(
+        --link-foreground-color,
+        --secondary-foreground-color
+      ) !important;
+      border-right-color: var(
+        --link-foreground-color,
+        --secondary-foreground-color
+      ) !important;
     }
   }
 }
