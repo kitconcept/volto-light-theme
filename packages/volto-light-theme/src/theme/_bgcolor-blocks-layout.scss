@@ -1,5 +1,6 @@
 .blocks-group-wrapper {
   background: var(--theme-color);
+  color: var(--theme-foreground-color);
   @include color-block-change-vertical-spacing();
 
   &:first-child {
@@ -22,7 +23,12 @@
     color: var(--theme-foreground-color);
   }
 
-  a:not(.item):not(:has(> .teaser-item), :has(> .listing-body)) {
+  a:not(.item):not(
+      :has(> .teaser-item),
+      :has(> .listing-body),
+      :has(> .card-container)
+    ) {
+    color: var(--link-foreground-color, --theme-foreground-color);
     text-decoration: underline;
   }
 
@@ -73,32 +79,8 @@
   }
 }
 
-// Slider
-#page-document .blocks-group-wrapper.grey:has(.block.slider:first-child) {
-  padding-top: 0;
-  padding-bottom: 0px; // Adjust for the padding from the slider itself
-}
-
-#page-document .blocks-group-wrapper.grey .block.slider,
-.block-editor-slider.has--backgroundColor--grey {
-  .slider-dot:not(.slider-dot--selected)::after {
-    background: $white;
-  }
-}
-
-// Edit mode adjustments
-.block-editor-gridBlock.has--backgroundColor--grey .block h2.headline {
-  padding-top: $spacing-xlarge;
-}
-
 // Color map
 @mixin use-theme-colors() {
-  // Requires setting the following variables:
-  // --theme-color: #fff;
-  // --theme-high-contrast-color: #ecebeb;
-  // --theme-foreground-color: #000;
-  // --theme-low-contrast-foreground-color: #555555;
-
   // Page title
   h1.documentFirstHeading {
     color: var(--theme-foreground-color);
@@ -140,7 +122,7 @@
     // Teaser
     &.teaser {
       .teaser-item {
-        border-color: var(--theme-foreground-color);
+        border-bottom-color: var(--theme-foreground-color) !important;
       }
 
       h2,
@@ -183,7 +165,7 @@
       }
 
       .listing-item {
-        border-color: var(--theme-foreground-color);
+        border-bottom-color: var(--theme-foreground-color) !important;
 
         a > .listing-body {
           h3,
@@ -802,7 +784,8 @@
       }
     }
     // Inherit colors from parent Accordion
-    .blocks-group-wrapper.default {
+    .blocks-group-wrapper,
+    .block {
       --theme-high-contrast-color: inherit !important;
       --theme-color: inherit !important;
       --theme-high-contrast-color: inherit !important;
@@ -846,16 +829,6 @@
     .block {
       & [data-slate-placeholder='true'] {
         color: var(--theme-low-contrast-foreground-color) !important;
-      }
-
-      .ui.basic.button.delete-button {
-        &:hover {
-          background: $white !important;
-        }
-      }
-
-      .renderer-wrapper.empty p {
-        color: black !important;
       }
     }
 
@@ -945,76 +918,206 @@
     }
   }
 
-  // Navigation
-  nav.navigation {
-    button.item {
-      color: var(--primary-color, $black);
-    }
-    .submenu-wrapper {
-      .submenu.active {
-        background: var(--accent-color, $lightgrey);
-
-        .submenu-inner {
-          a,
-          h2 {
-            color: var(--accent-foreground-color, $black);
+  // Header
+  header.header-wrapper {
+    background: var(--header-background);
+    .header {
+      .tools-wrapper {
+        .tools {
+          a {
+            color: var(--header-foreground);
           }
+        }
+      }
 
-          a span {
-            &:hover {
-              border-color: var(--accent-foreground-color, $black);
+      // Navigation
+      nav.navigation {
+        button.item {
+          color: var(--header-foreground);
+        }
+        .submenu-wrapper {
+          .submenu.active {
+            background: var(--fatmenu-background);
+
+            .submenu-inner {
+              a,
+              h2 {
+                color: var(--fatmenu-foreground);
+              }
+
+              a span {
+                &:hover {
+                  border-color: var(--fatmenu-foreground);
+                }
+              }
+
+              .subitem-wrapper {
+                border-color: var(--fatmenu-foreground);
+              }
+
+              button.close {
+                background: none;
+
+                &:hover,
+                &:focus {
+                  outline: 1px solid var(--fatmenu-foreground);
+                }
+
+                svg path {
+                  fill: var(--fatmenu-foreground);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // Search
+      .search-bar {
+        background-color: var(--search-background);
+
+        .searchbox {
+          border-bottom-color: var(--search-foreground) !important;
+          input {
+            background-color: var(--search-background);
+            color: var(--search-foreground);
+            &::placeholder {
+              color: var(--search-foreground);
             }
           }
 
-          .subitem-wrapper {
-            border-color: var(--accent-foreground-color, $black);
-          }
-
-          button.close {
-            background: none;
-            outline: 1px solid var(--accent-color, $lightgrey);
-
-            &:hover,
-            &:focus {
-              outline-color: var(--accent-foreground-color, $black);
-            }
-
+          & > button:not(:hover, :active, :focus) {
             svg path {
-              fill: var(--accent-foreground-color, $black);
+              fill: var(--secondary-foreground-color);
             }
+          }
+        }
+      }
+
+      .search {
+        .search-button {
+          button:not(:hover, :active, :focus) {
+            svg path {
+              fill: var(--header-foreground);
+            }
+          }
+        }
+      }
+    }
+
+    .logo {
+      a {
+        img {
+          fill: red !important;
+
+          * {
+            fill: red !important;
           }
         }
       }
     }
   }
 
+  // Content area {
+  #main > .segment.content-area {
+    background: var(--primary-color);
+  }
+
+  // Breadcrumbs
+  #main > .breadcrumbs {
+    background: var(--breadcrumbs-background);
+
+    .section.active,
+    .divider::before {
+      color: var(--breadcrumbs-foreground) !important;
+    }
+
+    a.section {
+      color: var(--link-foreground-color, --breadcrumbs-foreground);
+    }
+
+    a.home {
+      svg {
+        fill: var(--link-foreground-color, --breadcrumbs-foreground) !important;
+      }
+    }
+  }
+
   // Footer
   #footer .footer {
-    background: var(--primary-color, $lightgrey);
+    background: var(--footer-background);
 
     .footer-message {
-      color: var(--primary-foreground-color, $black);
+      color: var(--footer-foreground);
 
       a {
-        color: var(--primary-foreground-color, $black);
+        color: var(--link-foreground-color, --footer-foreground) !important;
       }
     }
 
     a.item,
     .footer-branding {
-      color: var(--primary-foreground-color, $black);
+      color: var(
+        --link-foreground-color,
+        --secondary-foreground-color
+      ) !important;
     }
     li.item {
-      border-color: var(--primary-foreground-color, $black);
+      border-right-color: var(
+        --link-foreground-color,
+        --secondary-foreground-color
+      ) !important;
+      color: var(
+        --link-foreground-color,
+        --secondary-foreground-color
+      ) !important;
+    }
+  }
+
+  // Search results page
+  &.section-search {
+    .ui.basic.segment.content-area {
+      margin-bottom: 0;
+      main {
+        padding-bottom: 1rem;
+        background: var(--primary-color);
+
+        h1.documentFirstHeading,
+        & > span,
+        & > div {
+          color: var(--primary-foreground-color);
+        }
+
+        #content-core {
+          article {
+            a {
+              color: var(--link-foreground-color, --primary-foreground-color);
+            }
+          }
+        }
+      }
+
+      .items_total {
+        color: var(--primary-foreground-color);
+
+        .header {
+          .header-content {
+            .sort-by,
+            button {
+              z-index: 1;
+              color: var(--primary-foreground-color);
+
+              &::before {
+                border-color: var(--primary-foreground-color);
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
 
 body {
   @include use-theme-colors();
-  @property --theme-color {
-    inherits: true;
-    initial-value: $white;
-    syntax: '<color>';
-  }
 }

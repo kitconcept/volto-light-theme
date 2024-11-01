@@ -59,14 +59,95 @@ $greySmoke: #e4e8ec !default;
 $darkBlue: #023d6b !default;
 $secondary-grey: #ececec !default;
 
-// Rest of theme variables
+// Register custom properties
+@property --background {
+  inherits: true;
+  initial-value: #fff;
+  syntax: '<color>';
+}
+
+@property --text-color {
+  inherits: true;
+  initial-value: #666;
+  syntax: '<color>';
+}
+
+@property --text-size {
+  inherits: true;
+  initial-value: 18px;
+  syntax: '<length> | <percentage>';
+}
+
+@property --primary-color {
+  inherits: true;
+  initial-value: #fff;
+  syntax: '<color>';
+}
+
+@property --primary-foreground-color {
+  inherits: true;
+  initial-value: #000;
+  syntax: '<color>';
+}
+
+@property --secondary-color {
+  inherits: true;
+  initial-value: #ecebeb;
+  syntax: '<color>';
+}
+
+@property --secondary-foreground-color {
+  inherits: true;
+  initial-value: #000;
+  syntax: '<color>';
+}
+
+@property --accent-color {
+  inherits: true;
+  initial-value: #ecebeb;
+  syntax: '<color>';
+}
+
+@property --accent-foreground-color {
+  inherits: true;
+  initial-value: #000;
+  syntax: '<color>';
+}
+
 :root {
-  --text-color: #666;
-  --text-size: 18px;
-  // --primary-color: $lightgrey; // Footer
-  // --primary-foreground-color: $black;
-  // --accent-color: $lightgrey; // Fat Menu
-  // --accent-foreground-color: $black;
+  --background: initial;
+  --text-color: initial;
+  --primary-color: var(--background);
+  --primary-foreground-color: $black;
+  --secondary-color: $lightgrey;
+  --secondary-foreground-color: $black;
+  --accent-color: $lightgrey;
+  --accent-foreground-color: $black;
+
+  // Header
+  --header-background: var(--primary-color);
+  --header-foreground: var(--primary-foreground-color);
+
+  //Footer
+  --footer-background: var(--secondary-color);
+  --footer-foreground: var(--secondary-foreground-color);
+
+  // Fat Menu
+  --fatmenu-background: var(--accent-color);
+  --fatmenu-foreground: var(--accent-foreground-color);
+
+  // Breadcrumbs
+  --breadcrumbs-background: var(--accent-color);
+  --breadcrumbs-foreground: var(--accent-foreground-color);
+
+  // Search bar
+  --search-background: var(--secondary-color);
+  --search-foreground: var(--secondary-foreground-color);
+
+  // Link color
+  --link-color: #0070a2;
+  // Comment out following line to turn <a> links the same color as the text
+  --link-foreground-color: var(--link-color);
 }
 
 // Image Aspect Ratio
