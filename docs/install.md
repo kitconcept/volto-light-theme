@@ -16,6 +16,10 @@ It is recommended that along `@kitconcept/volto-light-theme` package, you also i
   }
 ```
 
+```{note}
+This versions are orientative, and up to date as per 2024-11-04.
+```
+
 This theme won't install them for you, as they are declared as `peerDependencies`.
 This is because the theme won't have to force you to use any specific add-on version, and avoids package hoisting issues.
 
