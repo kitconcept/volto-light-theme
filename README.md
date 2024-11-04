@@ -118,7 +118,7 @@ and the following add-ons:
 
 ## Installation
 
-It is recommended that along `@kitconcept/volto-light-theme` package, you also install in your setup the aforementioned add-ons.
+It is recommended that you install the aforementioned add-ons along with the  `@kitconcept/volto-light-theme` package.
 The theme package has them declared as `peerDependencies`.
 
 ### Project-based setups (`yarn`)
