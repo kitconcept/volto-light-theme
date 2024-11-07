@@ -55,12 +55,7 @@ else:
 # or your custom ones.
 extensions = [
     "myst_parser",
-    "sphinx.ext.ifconfig",
-    "sphinx.ext.intersphinx",
-    "sphinx.ext.todo",
     "sphinx_copybutton",
-    "sphinx_examples",
-    "sphinxcontrib.video",
     "sphinxext.opengraph",
 ]
 
@@ -83,15 +78,10 @@ linkcheck_ignore = [
     r"http://127.0.0.1",
     r"http://localhost",
     # Ignore pages that require authentication
-    r"https://github.com/plone/volto/issues/new/choose",  # requires auth
+    r"https://github.com/kitconcept/volto-light-theme/issues/new",  # requires auth
     # Ignore github.com pages with anchors
     r"https://github.com/.*#.*",
     # Ignore other specific anchors
-    # r"https://chromewebstore.google.com/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi",  # TODO retest with latest Sphinx when upgrading theme. chromewebstore recently changed its URL and has "too many redirects".
-    # r"https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd",  # TODO retest with latest Sphinx when upgrading theme. chromewebstore recently changed its URL and has "too many redirects".
-    r"https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors#Identifying_the_issue",
-    r"https://docs.cypress.io/guides/references/migration-guide#Migrating-to-Cypress-version-10-0",
-    # r"https://stackoverflow.com",  # volto and documentation  # TODO retest with latest Sphinx.
 ]
 linkcheck_anchors = True
 linkcheck_timeout = 5
@@ -145,9 +135,9 @@ html_theme_options = {
             },
         },
         {
-            "name": "Twitter",
-            "url": "https://twitter.com/plone",
-            "icon": "fa-brands fa-square-twitter",
+            "name": "Mastodon",
+            "url": "https://plone.social/@plone",
+            "icon": "fa-brands fa-mastodon",
             "type": "fontawesome",
             "attributes": {
                 "target": "_blank",
@@ -156,9 +146,9 @@ html_theme_options = {
             },
         },
         {
-            "name": "Mastodon",
-            "url": "https://plone.social/@plone",
-            "icon": "fa-brands fa-mastodon",
+            "name": "Twitter",
+            "url": "https://twitter.com/plone",
+            "icon": "fa-brands fa-square-twitter",
             "type": "fontawesome",
             "attributes": {
                 "target": "_blank",
@@ -182,7 +172,7 @@ html_theme_options = {
 
 # Announce that we have an opensearch plugin
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_use_opensearch
-html_use_opensearch = "https://plone-registry.readthedocs.io/"  # TODO: Confirm usage of opensearch in theme
+html_use_opensearch = "https://volto-light-theme.readthedocs.io/"  # TODO: Confirm usage of opensearch in theme
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
@@ -192,10 +182,6 @@ html_css_files = ["custom.css", ("print.css", {"media": "print"})]
 
 # If false, no index is generated.
 html_use_index = True
-
-# The name for this set of Sphinx documents.  If None, it defaults to
-# "<project> v<release> documentation".
-html_title = "%(project)s v%(release)s" % {"project": project, "release": release}
 
 html_extra_path = [
     "robots.txt",
@@ -234,72 +220,18 @@ myst_enable_extensions = [
 #
 intersphinx_mapping = {
     "plone": ("https://6.docs.plone.org/", None),
-    "python": ("https://docs.python.org/3/", None),
-    "training": ("https://training.plone.org/", None),
 }
 
 
 # -- OpenGraph configuration ----------------------------------
 
-ogp_site_url = "https://plone-registry.readthedocs.io/"
+ogp_site_url = "https://volto-light-theme.readthedocs.io/"
 ogp_description_length = 200
 ogp_image = (
-    "https://plone-registry.readthedocs.io/en/latest/_static/Plone_logo_square.png"
+    "https://volto-light-theme.readthedocs.io/en/latest/_static/Plone_logo_square.png"
 )
 ogp_site_name = "@kitconcept/volto-light-theme Documentation"
 ogp_type = "website"
 ogp_custom_meta_tags = [
     '<meta property="og:locale" content="en_US" />',
 ]
-
-
-# -- Options for sphinx.ext.todo -----------------------
-# See http://sphinx-doc.org/ext/todo.html#confval-todo_include_todos
-todo_include_todos = True
-
-
-# -- Options for HTML help output -------------------------------------------------
-
-# Output file base name for HTML help builder.
-htmlhelp_basename = "VLTDocumentation"
-
-
-# -- Options for LaTeX output -------------------------------------------------
-
-# Grouping the document tree into LaTeX files. List of tuples
-# (source start file, target name, title, author, documentclass [howto/manual])
-latex_documents = [
-    (
-        "index",
-        "VLTDocumentation.tex",
-        "@kitconcept/volto-light-theme Documentation",
-        "Plone Community",
-        "manual",
-    ),
-]
-
-# The name of an image file (relative to this directory) to place at the top of
-# the title page.
-latex_logo = "_static/logo_2x.png"
-
-
-# An extension that allows replacements for code blocks that
-# are not supported in `rst_epilog` or other substitutions.
-# https://stackoverflow.com/a/56328457/2214933
-def source_replace(app, docname, source):
-    result = source[0]
-    for key in app.config.source_replacements:
-        result = result.replace(key, app.config.source_replacements[key])
-    source[0] = result
-
-
-# Dict of replacements.
-source_replacements = {
-    "{NVM_VERSION}": "0.39.5",
-}
-
-
-def setup(app):
-    app.add_config_value("source_replacements", {}, True)
-    app.connect("source-read", source_replace)
-    app.add_config_value("context", "volto", "env")
