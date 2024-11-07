@@ -56,6 +56,7 @@ else:
 extensions = [
     "myst_parser",
     "sphinx_copybutton",
+    "sphinx_design",
     "sphinxext.opengraph",
 ]
 

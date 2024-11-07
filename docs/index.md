@@ -22,7 +22,15 @@ The main vision of the Volto Light Theme (VLT) is to serve as a foundation for k
 It incorporates feedback from the company's clients and Plone community from the last few years of projects and the success stories in the UI/UX side.
 It aims to be future-proof, keeping it aligned with the upcoming Volto and Plone 7 vision in terms of theming strategy decided by the Plone community.
 
-![Volto-Light-Theme](./volto-light-theme.png)
+````{card}
+```{image} /_static/volto-light-theme.png
+:alt: Volto Light Theme screen shot
+:target: /_static/volto-light-theme.png
+```
++++
+_Volto Light Theme_
+````
+
 
 ## Requirements and specifications
 
