@@ -266,7 +266,7 @@ External link removal for all the blocks.
     &.has--block-width--default {
       @include adjustMarginsToContainer($default-container-width);
     }
-  
+
     &.has--block-width--layout {
       @include adjustMarginsToContainer($layout-container-width);
     }
