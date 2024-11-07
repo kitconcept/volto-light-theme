@@ -130,7 +130,7 @@ In a second terminal session, start the backend acceptance server.
 make start-test-acceptance-server
 ```
 
-Start the Cypress interactive test runner.
+In a third terminal session, start the Cypress interactive test runner.
 
 ```shell
 make test-acceptance

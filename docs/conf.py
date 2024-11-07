@@ -41,8 +41,8 @@ if version_from_package_json:
     # The full version, including alpha/beta/rc tags.
     release = version_from_package_json
 else:
-    version = "17.15.6"
-    release = "17.15.6"
+    version = "6.0.0"
+    release = "6.0.0"
 
 
 # -- General configuration ----------------------------------------------------
