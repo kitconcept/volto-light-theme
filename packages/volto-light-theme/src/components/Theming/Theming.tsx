@@ -1,8 +1,8 @@
-import BodyClass from '@plone/volto/helpers/BodyClass/BodyClass';
 import Helmet from '@plone/volto/helpers/Helmet/Helmet';
 import type { Content } from '@plone/types';
 import { useSelector } from 'react-redux';
-import { isEmpty } from 'lodash';
+import isEmpty from 'lodash/isEmpty';
+import config from '@plone/registry';
 
 type FormState = {
   content: {
@@ -26,16 +26,7 @@ function buildStyleTag(content: Content, colors) {
 }
 
 const Theming = ({ content }) => {
-  const theme = true; // Do we want a named theme?
-
-  const COLORNAMES = [
-    'accent_color',
-    'accent_foreground_color',
-    'theme_color',
-    'theme_high_contrast_color',
-    'theme_foreground_color',
-    'theme_low_contrast_foreground_color',
-  ]; // Coming from config?
+  const colorFields = config.settings.userDefinedControlPanelColors;
 
   const formData = useSelector<FormState, Content>(
     (state) => state.form.global,
@@ -45,23 +36,15 @@ const Theming = ({ content }) => {
 
   return (
     <>
-      {theme ? (
-        <>
-          <BodyClass className={theme ? `theme--${theme}` : null}></BodyClass>
-
-          {theme && (
-            <Helmet>
-              <style>
-                {`
+      <Helmet>
+        <style>
+          {`
 :root {
-  ${buildStyleTag(liveContent, COLORNAMES)}
+  ${buildStyleTag(liveContent, colorFields)}
 }
                 `}
-              </style>
-            </Helmet>
-          )}
-        </>
-      ) : null}
+        </style>
+      </Helmet>
     </>
   );
 };
