@@ -1,3 +1,12 @@
+---
+myst:
+  html_meta:
+    "description": "How to install Volto Light Theme"
+    "property=og:description": "How to install Volto Light Theme"
+    "property=og:title": "Install"
+    "keywords": "Volto Light Theme, install"
+---
+
 # Install
 
 Along with the `@kitconcept/volto-light-theme` package, you should also install in your setup the following add-ons.

@@ -1,3 +1,12 @@
+---
+myst:
+  html_meta:
+    "description": "Volto Light Theme by kitconcept"
+    "property=og:description": "Volto Light Theme by kitconcept"
+    "property=og:title": "Volto Light Theme by kitconcept"
+    "keywords": "Volto Light Theme, kitconcept, Volto, theme, React"
+---
+
 # Volto Light Theme by kitconcept
 
 [![NPM](https://img.shields.io/npm/v/@kitconcept/volto-light-theme.svg)](https://www.npmjs.com/package/@kitconcept/volto-light-theme)
