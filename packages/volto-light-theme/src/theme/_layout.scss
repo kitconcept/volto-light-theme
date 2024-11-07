@@ -255,8 +255,21 @@ External link removal for all the blocks.
   }
 
   & > .block {
-    // This is the default, same color spacing for all blocks
+    // This is the default spacing in between same-color blocks
     margin-bottom: $block-vertical-space;
+
+    // Default side margins on smaller screens
+    &.has--block-width--narrow {
+      @include adjustMarginsToContainer($narrow-container-width);
+    }
+
+    &.has--block-width--default {
+      @include adjustMarginsToContainer($default-container-width);
+    }
+  
+    &.has--block-width--layout {
+      @include adjustMarginsToContainer($layout-container-width);
+    }
   }
 
   &:last-child {

@@ -17,7 +17,6 @@ type FormState = {
 // and if they are nested in the serialization under a key
 function buildStyleTag(content: Content, colors) {
   if (Array.isArray(colors)) {
-    console.log(colors);
     return colors
       .filter((color) => content[color])
       .map((color) => {

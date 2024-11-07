@@ -18,9 +18,6 @@
     justify-content: var(--block-alignment);
     @include variable-container-width();
 
-    &::after {
-      width: var(--block-width);
-    }
   }
 
   @include vertical-space-separator();
