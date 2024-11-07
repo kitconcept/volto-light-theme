@@ -1,6 +1,6 @@
 # Install
 
-It is recommended that along `@kitconcept/volto-light-theme` package, you also install in your setup the aforementioned add-ons.
+Along with the `@kitconcept/volto-light-theme` package, you should also install in your setup the following add-ons.
 
 ```json
   "dependencies": {
@@ -17,36 +17,38 @@ It is recommended that along `@kitconcept/volto-light-theme` package, you also i
 ```
 
 ```{note}
-This versions are orientative, and up to date as per 2024-11-04.
+The version numbers of these add-ons are merely illustrative, but current as of 2024-11-04.
+You should update the versions to their latest.
 ```
 
-This theme won't install them for you, as they are declared as `peerDependencies`.
+This theme won't install the add-ons for you, as they are declared as `peerDependencies`.
 This is because the theme won't have to force you to use any specific add-on version, and avoids package hoisting issues.
 
-In your project or policy add-on `package.json` you should declare all of them as Volto add-ons
+In your project or policy add-on {file}`package.json` you should declare all of them as Volto add-ons
 
 ```json
-  "addons": [
-    "@eeacms/volto-accordion-block",
-    "@kitconcept/volto-button-block",
-    "@kitconcept/volto-heading-block",
-    "@kitconcept/volto-introduction-block",
-    "@kitconcept/volto-highlight-block",
-    "@kitconcept/volto-separator-block",
-    "@kitconcept/volto-light-theme",
-    "your_policy_addon_here"
-  ],
+"addons": [
+  "@eeacms/volto-accordion-block",
+  "@kitconcept/volto-button-block",
+  "@kitconcept/volto-heading-block",
+  "@kitconcept/volto-introduction-block",
+  "@kitconcept/volto-highlight-block",
+  "@kitconcept/volto-separator-block",
+  "@kitconcept/volto-light-theme",
+  "your_policy_addon_here"
+],
 ```
 
-Make sure your policy add-on is the last one, as you would want that its configuration has priority over all the others. Make sure also that `@kitconcept/volto-light-theme` is the one before your policy add-on.
+Your policy add-on should be the last one, so that it overrides any previous ones.
+`@kitconcept/volto-light-theme` should be the second-last, placed immediately before your policy add-on.
 
-Then, declare the theme in your project `package.json`:
+Then, declare the theme in your project {file}`package.json`.
 
 ```json
-  "theme": "@kitconcept/volto-light-theme",
+"theme": "@kitconcept/volto-light-theme",
 ```
 
-Alternatively, you can also declare it in your project's `volto.config.js`:
+Alternatively, you can declare it in your project's {file}`volto.config.js`.
 
 ```js
 const addons = [];
@@ -58,4 +60,4 @@ module.exports = {
 };
 ```
 
-You can specify your project add-ons in `volto.config.js`, but sometimes is better to have them all in one place (in your policy add-on) for portability.
+Although you can specify your project add-ons in {file}`volto.config.js`, sometimes it is better to have them all in one place in your policy add-on for portability.
