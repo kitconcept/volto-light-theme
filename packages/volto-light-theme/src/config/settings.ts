@@ -21,6 +21,14 @@ export default function install(config: ConfigType) {
 
   config.settings.slidingSearchAnimation = true;
   config.settings.openExternalLinkInNewTab = true;
+  config.settings.userDefinedControlPanelColors = [
+    'accent_color',
+    'accent_foreground_color',
+    'primary_color',
+    'primary_foreground_color',
+    'secondary_color',
+    'secondary_foreground_color',
+  ];
 
   return config;
 }
