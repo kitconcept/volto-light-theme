@@ -19,11 +19,11 @@ It aims to be future proof, so it has to be aligned with the upcoming Volto visi
 
 ## Requirements and specs
 
-### It should not use any Semantic UI component or styling
+### It should not use any SemanticUI component or styling
 
-Volto will abandon Semantic UI as default design component system in the mid term, and we should be prepared for it.
+Volto will abandon SemanticUI as default design component system in the mid term, and we should be prepared for it.
 
-We will achieve that by not using any Semantic UI component, nor any related styling (`.ui.XXX`) in our upcoming themes.
+We will achieve that by not using any SemanticUI component, nor any related styling (`.ui.XXX`) in our upcoming themes.
 
 The Volto strategy is:
 
@@ -33,9 +33,9 @@ The Volto strategy is:
 
 #### Volto components `customizations` use case
 
-If possible, we will switch to Semantic UI-less components when `@plone/components` is ready.
+If possible, we will switch to SemanticUI-less components when `@plone/components` is ready.
 Specially if the elements that we are customizing are clearly "theme" (eg. header/footer, etc).
-In the case of other Volto customizations that are not clear part of the theme (eg. Search block), it's fine to stick using what the original is using (Semantic UI).
+In the case of other Volto customizations that are not clear part of the theme (eg. Search block), it's fine to stick using what the original is using (SemanticUI).
 When Volto will make the switch in the future, we should then adapt all the customizations to match the one in the Volto core.
 The approach used is to use a proxy to a component of the `components` folder. This way it's easier to keep track of changes, and another add-on can customize again the light theme component, not the original Volto customization.
 
@@ -55,7 +55,7 @@ Since the new container queries spec is out, we will be introducing it to the cu
 
 ### Organization of the files
 
-We will start organising the files in the root of `theme` folder, to differentiate from a normal "Semantic UI" theme. Take a look at the current state. We will follow this convention:
+We will start organising the files in the root of `theme` folder, to differentiate from a normal "SemanticUI" theme. Take a look at the current state. We will follow this convention:
 
 - One file per component/block
 - Use the Volto theme facility using the SCSS scape hatch provided so other add-ons can hook to it.
