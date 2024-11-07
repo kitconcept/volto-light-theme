@@ -1,12 +1,23 @@
+---
+myst:
+  html_meta:
+    "description": "How to contribute to Volto Light Theme"
+    "property=og:description": "How to contribute to Volto Light Theme"
+    "property=og:title": "Contributing"
+    "keywords": "Volto Light Theme, Contributing, Makefile, make, lint, format, i18n, tests, unit, Cypress, acceptance"
+---
+
 # Contributing
 
-The development of this add-on is done in isolation using a new approach using pnpm workspaces and latest `mrs-developer` and other Volto core improvements.
-For this reason, it only works with pnpm and Volto 18 (currently in alpha) but it does not mean that the add-on will only work in 18.
+This add-on is developed in isolation, using a new approach with pnpm workspaces, the latest `mrs-developer`, and other Volto core improvements.
+For this reason, it only works with pnpm and Volto 18, but it does not mean that the add-on will only work in 18.
 
-## Development requisites
 
-- Volto 18
-- pnpm as package manager
+## Development requirements
+
+-   Volto 18
+-   pnpm as package manager
+
 
 ## Make convenience commands
 
@@ -41,9 +52,10 @@ acceptance-a11y-test                  Start a11y Cypress in interactive mode
 ci-acceptance-a11y-test               Run a11y cypress tests in headless mode for CI
 ```
 
-## Development Environment Setup
 
-Install package requirements
+## Development environment setup
+
+Install package requirements with the following commands.
 
 ```shell
 pnpm i
@@ -53,69 +65,72 @@ pnpm i
 
 ### Start developing
 
-Run (in separate terminal sessions)
-
-Start backend server
+In one terminal session, start the backend server.
 
 ```shell
 make start-backend-docker
 ```
 
-Start frontend
+In a second terminal session, start the frontend server.
 
 ```shell
 pnpm start
 ```
 
-## Linting
 
-Run ESlint, Prettier and Stylelint
+## Lint
+
+To lint the code—that is, to preview formatting suggestions of the code through ESlint, Prettier, and Stylelint—use the following command.
 
 ```shell
 make lint
 ```
 
-## Formatting
 
-Run ESlint, Prettier and Stylelint in fix mode
+## Format
+
+To format the code—that is, actually rewrite it through ESlint, Prettier, and Stylelint—use the following command.
 
 ```shell
 make format
 ```
 
+
 ## i18n
 
-Extract the i18n messages to locales
+Extract the i18n messages to locales.
 
 ```shell
 make i18n
 ```
 
+
 ## Unit tests
 
-Run unit tests
+Run unit tests.
 
 ```shell
 make test
 ```
 
+
 ## Run Cypress tests
 
-Run (in separate terminal sessions)
 
-Start the frontend in dev mode
+
+In one terminal session, start the frontend server in dev mode.
 
 ```shell
 make start-test-acceptance-frontend-dev
 ```
 
-Start the backend acceptance server
+In a second terminal session, start the backend acceptance server.
 
 ```shell
 make start-test-acceptance-server
 ```
 
-Start the Cypress interactive test runner
+Start the Cypress interactive test runner.
 
 ```shell
 make test-acceptance
