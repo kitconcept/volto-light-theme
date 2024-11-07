@@ -9,16 +9,16 @@
 
 ## Vision
 
-The main vision of the Volto Light Theme (a.k.a VLT) is to serve as a foundation for kitconcept's future projects, following the release of Plone 6.
-It contains the feedback from the company's last years projects and the success stories in the UI/UX side.
-It aims to be future proof, so it has to be aligned with the upcoming Volto and Plone 7 vision in terms of theming strategy decided by the Plone community.
+The main vision of the Volto Light Theme (VLT) is to serve as a foundation for kitconcept's future projects, following the release of Plone 6.
+It incorporates feedback from the company's clients and Plone community from the last few years of projects and the success stories in the UI/UX side.
+It aims to be future-proof, keeping it aligned with the upcoming Volto and Plone 7 vision in terms of theming strategy decided by the Plone community.
 
 ![Volto-Light-Theme](https://github.com/kitconcept/volto-light-theme/raw/main/volto-light-theme.png)
 
 ## Documentation
 
-You can find the documentation of this package in: https://volto-light-theme.readthedocs.io
+You can find the documentation of this package at https://volto-light-theme.readthedocs.io.
 
 ## Upgrade Guide
 
-See a detailed upgrade guide in: https://volto-light-theme.readthedocs.io/en/latest/upgrade-guide.html
+See a detailed upgrade guide at https://volto-light-theme.readthedocs.io/latest/upgrade-guide.html.
