@@ -1,3 +1,12 @@
+---
+myst:
+  html_meta:
+    "description": ""
+    "property=og:description": ""
+    "property=og:title": ""
+    "keywords": "Volto Light Theme, "
+---
+
 # Releases
 
 The releases follow a semantic versioning model.
