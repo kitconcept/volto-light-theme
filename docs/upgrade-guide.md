@@ -56,7 +56,7 @@ Make sure that you use the same `name` as before when you update your color defi
 VLT has started to use the standard block width definition as well.
 It's stored in `config.settings.blocksWidths`.
 It uses a new widget component that would be ported to Volto core as soon as it's ready.
-This component saves the value of the custom CSS property `--block-width` as a `StyleWrapper` value, so it can be used later when the `StyleWrapper` injects it in the block (or component) markup.
+This component saves the value of the custom CSS property `--block-width` as a StyleWrapper value, so it can be used later when the StyleWrapper injects it in the block (or component) markup.
 
 
 ## volto-light-theme 5.0.0
