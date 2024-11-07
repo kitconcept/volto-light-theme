@@ -75,9 +75,10 @@ pygments_style = "sphinx"
 # Options for the linkcheck builder
 # Ignore localhost
 linkcheck_ignore = [
-    # TODO: Before release, clean up any links to ignore
     r"http://127.0.0.1",
     r"http://localhost",
+    # Ignore links to static files
+    r"/_static",
     # Ignore pages that require authentication
     r"https://github.com/kitconcept/volto-light-theme/issues/new",  # requires auth
     # Ignore github.com pages with anchors

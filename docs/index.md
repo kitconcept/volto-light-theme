@@ -14,7 +14,7 @@ myst:
 [![Build Status](https://github.com/kitconcept/volto-light-theme/actions/workflows/unit.yml/badge.svg)](https://github.com/kitconcept/volto-light-theme/actions)
 [![Build Status](https://github.com/kitconcept/volto-light-theme/actions/workflows/acceptance.yml/badge.svg)](https://github.com/kitconcept/volto-light-theme/actions)
 
-![kitconcept GmbH](https://github.com/kitconcept/volto-blocks/raw/master/kitconcept.png)
+![kitconcept GmbH](https://raw.githubusercontent.com/kitconcept/volto-blocks/master/kitconcept.png)
 
 ## Vision
 
