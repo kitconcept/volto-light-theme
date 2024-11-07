@@ -3,7 +3,7 @@ myst:
   html_meta:
     "description": "Volto Light Theme releases"
     "property=og:description": "Volto Light Theme releases"
-    "property=og:title": "Releases
+    "property=og:title": "Releases"
     "keywords": "Volto Light Theme, Releases"
 ---
 
