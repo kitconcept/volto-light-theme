@@ -20,8 +20,9 @@ function buildStyleTag(content: Content, colors) {
     return colors
       .filter((color) => content[color])
       .map((color) => {
-        return `--${color.replace(/_/g, '-')}: ${content[color]};`;
-      });
+        return `--${color.replace(/_/g, '-')}: ${content[color]}; `;
+      })
+      .join('');
   }
 }
 
