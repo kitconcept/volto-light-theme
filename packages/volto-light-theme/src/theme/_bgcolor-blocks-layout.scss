@@ -994,6 +994,63 @@
         }
       }
 
+      // Hamburger Menu
+      .hamburger-wrapper {
+        .hamburger,
+        .hamburger-box,
+        .hamburger-inner {
+          &::before,
+          &::after {
+            background: var(--primary-foreground-color);
+          }
+
+          .hamburger-box {
+            &::after {
+              background: var(--primary-foreground-color);
+            }
+          }
+        }
+      }
+
+      // Mobile Nav
+      .mobile-nav {
+        .search {
+          .search-button {
+            button:not(:hover, :active, :focus) {
+              svg path {
+                fill: var(--fatmenu-foreground);
+              }
+            }
+          }
+        }
+
+        .menu-drawer {
+          background: var(--fatmenu-background);
+          ul {
+            li {
+              color: var(--fatmenu-foreground);
+              border-color: var(--fatmenu-foreground);
+
+              a {
+                color: var(--fatmenu-foreground);
+              }
+            }
+          }
+
+          .search-header {
+            button {
+              color: var(--fatmenu-foreground);
+            }
+          }
+
+          .searchbox > button:not(:hover, :active, :focus) {
+            svg path {
+              fill: var(--fatmenu-foreground);
+            }
+          }
+        }
+      }
+
       .search {
         .search-button {
           button:not(:hover, :active, :focus) {
@@ -1016,11 +1073,6 @@
         }
       }
     }
-  }
-
-  // Content area {
-  #main > .segment.content-area {
-    background: var(--primary-color);
   }
 
   // Breadcrumbs
