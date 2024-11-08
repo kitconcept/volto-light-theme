@@ -141,8 +141,8 @@ $secondary-grey: #ececec !default;
   --breadcrumbs-foreground: var(--accent-foreground-color);
 
   // Search bar
-  --search-background: var(--secondary-color);
-  --search-foreground: var(--secondary-foreground-color);
+  --search-background: var(--accent-color);
+  --search-foreground: var(--accent-foreground-color);
 
   // Link color
   --link-color: #0070a2;
