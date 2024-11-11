@@ -124,7 +124,6 @@ const Header = (props) => {
   return (
     <>
       <SlotRenderer name="aboveHeader" content={content} navRoot={navRoot} />
-
       <header
         className={cx('header-wrapper', { 'intranet-header': intranetHeader })}
       >
