@@ -10,6 +10,10 @@ const messages = defineMessages({
     id: 'Title',
     defaultMessage: 'Title',
   },
+  BlockWidth: {
+    id: 'Block Width',
+    defaultMessage: 'Block Width',
+  },
 });
 
 export const imageBlockSchemaEnhancer = ({ formData, schema, intl }) => {
