@@ -33,7 +33,7 @@ const Footer = ({ intl }) => {
   );
   return (
     <footer id="footer">
-      <Container layout className="footer">
+      <Container className="footer">
         <div className="footer-message">
           <FormattedMessage
             id="The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."

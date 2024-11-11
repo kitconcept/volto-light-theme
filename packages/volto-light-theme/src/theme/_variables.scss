@@ -118,12 +118,6 @@ $secondary-grey: #ececec !default;
   --background: initial;
   --text-color: initial;
   --primary-color: var(--background);
-  // Dante: This was not working, but you are already setting the defaults above, right?
-  // --primary-foreground-color: $black;
-  // --secondary-color: $lightgrey;
-  // --secondary-foreground-color: $black;
-  // --accent-color: $lightgrey;
-  // --accent-foreground-color: $black;
 
   // Header
   --header-background: var(--primary-color);
