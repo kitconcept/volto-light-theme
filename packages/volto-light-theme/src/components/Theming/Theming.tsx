@@ -15,7 +15,7 @@ type FormState = {
 
 // TODO: Change when we have the final list of colors
 // and if they are nested in the serialization under a key
-function buildStyleTag(content: Content, colors) {
+function buildStyleTag(content: Content, colors: string[]) {
   if (Array.isArray(colors)) {
     return colors
       .filter((color) => content[color])
@@ -26,14 +26,14 @@ function buildStyleTag(content: Content, colors) {
   }
 }
 
-const Theming = ({ content }) => {
+const Theming = ({ navRoot }) => {
   const colorFields = config.settings.userDefinedControlPanelColors;
 
   const formData = useSelector<FormState, Content>(
     (state) => state.form.global,
   );
 
-  const liveContent = !isEmpty(formData) ? formData : content;
+  const liveContent = !isEmpty(formData) ? formData : navRoot;
 
   return (
     <>

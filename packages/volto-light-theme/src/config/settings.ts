@@ -5,6 +5,7 @@ declare module '@plone/types' {
     slate: {
       useLinkedHeadings: boolean;
     };
+    userDefinedControlPanelColors: string[];
   }
 }
 
