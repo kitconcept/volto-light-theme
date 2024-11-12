@@ -1422,7 +1422,7 @@ importers:
         version: 4.1.2(@types/jest@29.5.12)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)
       '@kitconcept/volto-slider-block':
         specifier: ^6.3.1
-        version: 6.3.1(@plone/volto@18.0.1(@babel/runtime@7.24.1)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(embla-carousel@8.0.0)(react@18.2.0)
+        version: 6.3.1(@plone/volto@18.0.3(@babel/runtime@7.24.1)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(embla-carousel@8.0.0)(react@18.2.0)
       '@plone/components':
         specifier: workspace:*
         version: link:../../core/packages/components
@@ -1439,8 +1439,8 @@ importers:
         specifier: ^3.12.1
         version: 3.12.1(react@18.2.0)
       uuid:
-        specifier: ^10.0.0
-        version: 10.0.0
+        specifier: ^11.0.0
+        version: 11.0.3
     devDependencies:
       '@plone/scripts':
         specifier: ^3.6.2
@@ -1451,6 +1451,9 @@ importers:
       '@types/jest':
         specifier: ^29.5.8
         version: 29.5.12
+      '@types/lodash':
+        specifier: ^4.14.201
+        version: 4.17.0
       '@types/react':
         specifier: ^18.3.12
         version: 18.3.12
@@ -3460,8 +3463,8 @@ packages:
       react-dom:
         optional: true
 
-  '@plone/registry@2.1.0':
-    resolution: {integrity: sha512-D7sXxeuGJF+toM0hWtLqu7LZ6PoLEH118Z3XoQJud8CzLyINHYba00A4GYj/xJBIhiKycUeF3xsM+XzxoFvBHw==}
+  '@plone/registry@2.1.2':
+    resolution: {integrity: sha512-axmsDNF+p5q2P/9j3v0is1P967MTSkAF2yl2gaYWbwnpPB8rfNVnTzw3HQa6o09qyt20wR8b4aUVlvlWXpi2Zw==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
@@ -3473,15 +3476,15 @@ packages:
     resolution: {integrity: sha512-52S2Nb8sUDnHobzoYBstn6UkXxri+UGEh5DWZfy0xJ9h/ia6n9XI+mjtSEG3vKkr+hsbLH9sO8RlX4tpG3Kyhg==}
     hasBin: true
 
-  '@plone/scripts@3.8.0':
-    resolution: {integrity: sha512-K0JBr9CLarmUMEN7jS1Gp4iiumA1bP1QGanNKSVHbAm96h6G0KdWJPW/QjxitbeN3GzQDEdwxbNxT3LwW0Ss+g==}
+  '@plone/scripts@3.8.1':
+    resolution: {integrity: sha512-BfaxtwsfiquuVharjhGpj61VaUJ222/9V0V0vIrFPpjtU4i3fMkw9t8O8zoPp+b0zmEzkLbFdcPFuG1iz1a8IA==}
     hasBin: true
 
   '@plone/volto-slate@18.0.0':
     resolution: {integrity: sha512-UL0wbxOOEMXw9pD4Wu4pVKRkxWx/Koe2N+wz8zXfa3rVYK2iY4G5QZNczZce1TC32Wjv5YdFuOPZBkanx+JWIw==}
 
-  '@plone/volto@18.0.1':
-    resolution: {integrity: sha512-OQ/bYJAcxEXlPUreZHE801JfzYoewYZfbuhVsLyWAFTTB8io4R/pas1W3Qpi0JTaYHLtj8Ty/sSmWxFI5LvM/Q==}
+  '@plone/volto@18.0.3':
+    resolution: {integrity: sha512-1ExSZieLFT50XbDm5ejJNugg6E9fM5CjwgyMnKjt3Y9rZhYNxrv/EXu/Jezn2vhk2ThcXFBSCsYdiXEBJTS82Q==}
     engines: {node: ^20 || ^22}
 
   '@pmmmwh/react-refresh-webpack-plugin@0.5.15':
@@ -14064,8 +14067,8 @@ packages:
     resolution: {integrity: sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=}
     engines: {node: '>= 0.4.0'}
 
-  uuid@10.0.0:
-    resolution: {integrity: sha512-8XkAphELsDnEGrDxUOHB3RGvXz6TeuYSGEZBOjtTtPm2lwhGBjLgOzLHB63IUWfBpNucQjND6d3AOudO+H3RWQ==}
+  uuid@11.0.3:
+    resolution: {integrity: sha512-d0z310fCWv5dJwnX1Y/MncBAqGMKEzlBb1AOf7z9K8ALnd0utBX/msg/fA0+sbyN1ihbMsLhrBlnl1ak7Wa0rg==}
     hasBin: true
 
   uuid@3.4.0:
@@ -16470,9 +16473,9 @@ snapshots:
       - jest
       - vitest
 
-  '@kitconcept/volto-slider-block@6.3.1(@plone/volto@18.0.1(@babel/runtime@7.24.1)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(embla-carousel@8.0.0)(react@18.2.0)':
+  '@kitconcept/volto-slider-block@6.3.1(@plone/volto@18.0.3(@babel/runtime@7.24.1)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(embla-carousel@8.0.0)(react@18.2.0)':
     dependencies:
-      '@plone/volto': 18.0.1(@babel/runtime@7.24.1)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)
+      '@plone/volto': 18.0.3(@babel/runtime@7.24.1)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)
       deepmerge: 4.2.2
       embla-carousel-autoplay: 8.0.0(embla-carousel@8.0.0)
       embla-carousel-react: 8.0.0(react@18.2.0)
@@ -16999,7 +17002,7 @@ snapshots:
       - jest
       - vitest
 
-  '@plone/registry@2.1.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@plone/registry@2.1.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       auto-config-loader: 1.7.7
       crypto-random-string: 3.2.0
@@ -17034,7 +17037,7 @@ snapshots:
       - debug
       - supports-color
 
-  '@plone/scripts@3.8.0(debug@4.3.2)':
+  '@plone/scripts@3.8.1(debug@4.3.2)':
     dependencies:
       '@babel/core': 7.24.3
       babel-plugin-react-intl: 5.1.17
@@ -17089,12 +17092,12 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@plone/volto@18.0.1(@babel/runtime@7.24.1)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)':
+  '@plone/volto@18.0.3(@babel/runtime@7.24.1)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)':
     dependencies:
       '@loadable/component': 5.14.1(react@18.2.0)
       '@loadable/server': 5.14.0(@loadable/component@5.14.1(react@18.2.0))(react@18.2.0)
-      '@plone/registry': 2.1.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@plone/scripts': 3.8.0(debug@4.3.2)
+      '@plone/registry': 2.1.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@plone/scripts': 3.8.1(debug@4.3.2)
       '@plone/volto-slate': 18.0.0(@types/react-dom@18.3.1)(@types/react@18.3.12)(redux@4.2.1)
       '@redux-devtools/extension': 3.3.0(redux@4.2.1)
       classnames: 2.2.6
@@ -25306,11 +25309,7 @@ snapshots:
       pretty-format: 26.6.2
       throat: 5.0.0
     transitivePeerDependencies:
-      - bufferutil
-      - canvas
       - supports-color
-      - ts-node
-      - utf-8-validate
 
   jest-leak-detector@26.6.2:
     dependencies:
@@ -31466,7 +31465,7 @@ snapshots:
 
   utils-merge@1.0.1: {}
 
-  uuid@10.0.0: {}
+  uuid@11.0.3: {}
 
   uuid@3.4.0: {}
 

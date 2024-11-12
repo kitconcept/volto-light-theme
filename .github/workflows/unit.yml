@@ -37,4 +37,4 @@ jobs:
         run: make install
 
       - name: Unit tests
-        run: make test-ci
+        run: make ci-test

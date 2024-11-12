@@ -1,4 +1,4 @@
-import type { StyleDefinition } from '../index';
+import type { StyleDefinition } from '@plone/types';
 import { v4 as uuid } from 'uuid';
 import find from 'lodash/find';
 
