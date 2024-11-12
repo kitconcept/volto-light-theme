@@ -2,43 +2,53 @@
 import { defineMessages, useIntl } from 'react-intl';
 import { useSelector } from 'react-redux';
 import config from '@plone/volto/registry';
-import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
+import { Link } from 'react-router-dom';
 import { toBackendLang } from '@plone/volto/helpers/Utils/Utils';
 import LogoImage from '@plone/volto/components/theme/Logo/Logo.svg';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 
 const messages = defineMessages({
-  site: {
-    id: 'Site',
-    defaultMessage: 'Site',
+  home: {
+    id: 'Home',
+    defaultMessage: 'Home',
   },
-  homepage: {
-    id: 'Back to homepage',
-    defaultMessage: 'Back to homepage',
+  logoOf: {
+    id: 'Logo of',
+    defaultMessage: 'Logo of',
   },
 });
 
 const Logo = () => {
   const { settings } = config;
-  const lang = useSelector((state) => state.intl.locale);
   const intl = useIntl();
+  const lang = useSelector((state) => state.intl.locale);
   const site = useSelector((state) => state.site.data);
+  const navroot = useSelector((state) => state.navroot.data);
+  const navRootPath = flattenToAppURL(navroot?.navroot?.['@id']) || '/';
+  const navRootLogo = navroot?.navroot?.logo?.download || null;
+  const navRootLogoWidth = navroot?.navroot?.logo?.width || null;
+  const navRootLogoHeight = navroot?.navroot?.logo?.height || null;
 
   return (
-    <UniversalLink
-      href={settings.isMultilingual ? `/${toBackendLang(lang)}` : '/'}
-      title={intl.formatMessage(messages.site)}
-    >
+    <Link to={navRootPath} aria-label={intl.formatMessage(messages.home)}>
       <img
         src={
-          site['plone.site_logo']
-            ? flattenToAppURL(site['plone.site_logo'])
-            : LogoImage
+          navRootLogo
+            ? flattenToAppURL(navRootLogo)
+            : site['plone.site_logo']
+              ? flattenToAppURL(site['plone.site_logo'])
+              : LogoImage
         }
-        alt={intl.formatMessage(messages.homepage)}
-        title={intl.formatMessage(messages.homepage)}
+        width={navRootLogoWidth}
+        height={navRootLogoHeight}
+        alt={
+          intl.formatMessage(messages.logoOf) + ' ' + site['plone.site_title']
+        }
+        title={
+          intl.formatMessage(messages.logoOf) + ' ' + site['plone.site_title']
+        }
       />
-    </UniversalLink>
+    </Link>
   );
 };
 
