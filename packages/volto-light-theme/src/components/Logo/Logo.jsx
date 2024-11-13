@@ -1,9 +1,7 @@
 // SemanticUI-free pre-@plone/components
 import { defineMessages, useIntl } from 'react-intl';
 import { useSelector } from 'react-redux';
-import config from '@plone/volto/registry';
 import { Link } from 'react-router-dom';
-import { toBackendLang } from '@plone/volto/helpers/Utils/Utils';
 import LogoImage from '@plone/volto/components/theme/Logo/Logo.svg';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 
@@ -19,9 +17,7 @@ const messages = defineMessages({
 });
 
 const Logo = () => {
-  const { settings } = config;
   const intl = useIntl();
-  const lang = useSelector((state) => state.intl.locale);
   const site = useSelector((state) => state.site.data);
   const navroot = useSelector((state) => state.navroot.data);
   const navRootPath = flattenToAppURL(navroot?.navroot?.['@id']) || '/';
