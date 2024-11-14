@@ -33,15 +33,18 @@
 
       li {
         padding: 0 7px;
-        border-right: 1px solid #205c90;
         font-size: 18px;
 
-        &:last-of-type {
-          border: none;
-        }
         a {
           color: $blue-for-grey-contrast;
         }
+      }
+    }
+
+    ul.footer-links li {
+      border-right: 1px solid #205c90;
+      &:last-of-type {
+        border: none;
       }
     }
 

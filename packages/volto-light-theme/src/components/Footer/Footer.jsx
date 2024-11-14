@@ -31,6 +31,10 @@ const Footer = ({ intl }) => {
     }),
     shallowEqual,
   );
+  const navroot = useSelector((state) => state.navroot.data.navroot);
+  const footerLinks = navroot.footer_links?.items;
+  const footerLogos = navroot.footer_logos;
+
   return (
     <footer id="footer">
       <Container className="footer">
@@ -79,29 +83,64 @@ const Footer = ({ intl }) => {
             }}
           />
         </div>
-        <ul>
-          {/* wrap in div for a11y reasons: listitem role cannot be on the <a> element directly */}
-          {siteActions?.length
-            ? siteActions.map((item) => (
-                <li className="item" key={item.id}>
-                  <UniversalLink
-                    className="item"
-                    href={
-                      settings.isMultilingual
-                        ? `/${lang}/${
-                            item.url
-                              ? flattenToAppURL(item.url)
-                              : addAppURL(item.id)
-                          }`
-                        : item.url
-                          ? flattenToAppURL(item.url)
-                          : addAppURL(item.id)
-                    }
-                  >
-                    {item?.title}
-                  </UniversalLink>
-                </li>
-              ))
+        <ul className="footer-links">
+          {footerLinks
+            ? footerLinks.map((item) => {
+                const title = item.href[0]['title'];
+                const href = flattenToAppURL(item.href[0]['@id']);
+                return (
+                  <li className="item" key={href}>
+                    <UniversalLink className="item" href={href}>
+                      {title}
+                    </UniversalLink>
+                  </li>
+                );
+              })
+            : siteActions?.length
+              ? siteActions.map((item) => (
+                  <li className="item" key={item.id}>
+                    <UniversalLink
+                      className="item"
+                      href={
+                        settings.isMultilingual
+                          ? `/${lang}/${
+                              item.url
+                                ? flattenToAppURL(item.url)
+                                : addAppURL(item.id)
+                            }`
+                          : item.url
+                            ? flattenToAppURL(item.url)
+                            : addAppURL(item.id)
+                      }
+                    >
+                      {item?.title}
+                    </UniversalLink>
+                  </li>
+                ))
+              : null}
+        </ul>
+        <ul className="footer-logos">
+          {footerLogos
+            ? footerLogos.blocks_layout.items.map((itemId) => {
+                const logo = footerLogos.blocks[itemId];
+                const logoHref = logo.logo[0]['@id'];
+                const hrefTitle = logo.href[0]['title'];
+                const href = flattenToAppURL(logo.href[0]['@id']);
+                const srcTitle = logo.logo[0]['title'];
+                const src = `${flattenToAppURL(logoHref)}/${logo.logo[0].image_scales[logo.logo[0].image_field][0].download}`;
+
+                return (
+                  <li className="item" key={href}>
+                    <UniversalLink
+                      className="item"
+                      href={href}
+                      title={hrefTitle || srcTitle}
+                    >
+                      <img src={src} alt={srcTitle} />
+                    </UniversalLink>
+                  </li>
+                );
+              })
             : null}
         </ul>
         <div className="logo">
