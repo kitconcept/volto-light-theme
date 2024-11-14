@@ -924,7 +924,9 @@
     .header {
       .tools-wrapper {
         .tools {
-          a {
+          a,
+          .anontools a,
+          .anontools::after {
             color: var(--header-foreground);
           }
         }
