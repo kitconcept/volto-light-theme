@@ -15,6 +15,7 @@ import {
   getBlocksFieldname,
   blockHasValue,
   buildStyleClassNamesFromData,
+  findStyleByName,
   buildStyleClassNamesExtenders,
 } from '@plone/volto/helpers/Blocks/Blocks';
 import dragSVG from '@plone/volto/icons/drag.svg';
@@ -80,12 +81,11 @@ const EditBlockWrapper = (props) => {
     classNames,
   });
 
-  // // START CUSTOMIZATION
-  // const style = data.theme
-  //   ? findStyleByName(config.blocks.themes, data.theme)
-  //   : findStyleByName(config.blocks.themes, config.blocks.themes[0].name);
-  // // END CUSTOMIZATION
-  const style = {};
+  // START CUSTOMIZATION
+  const style = data.theme
+    ? findStyleByName(config.blocks.themes, data.theme)
+    : findStyleByName(config.blocks.themes, config.blocks.themes[0].name);
+  // END CUSTOMIZATION
 
   // We need to merge the StyleWrapper styles with the draggable props from b-D&D
   const styleMergedWithDragProps = {
