@@ -7,7 +7,8 @@
  * DEVELOPER: @danalvrz
  */
 import React from 'react';
-import { Icon, BlockChooserButton } from '@plone/components';
+import { Icon } from '@plone/volto/components/theme/Icon/Icon';
+import { BlockChooserButton } from '@plone/volto/components/manage/BlockChooser/BlockChooserButton';
 import {
   applyBlockDefaults,
   applyBlockInitialValue,
