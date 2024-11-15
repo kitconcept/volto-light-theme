@@ -32,9 +32,9 @@ const Footer = ({ intl }) => {
     shallowEqual,
   );
   const navroot = useSelector((state) => state.navroot.data.navroot);
-  const footerLinks = navroot.footer_links?.items;
+  const footerLinks = navroot.footer_links;
   const footerLogos = navroot.footer_logos;
-
+  console.log('footerLogos', footerLogos);
   return (
     <footer id="footer">
       <Container className="footer">
@@ -85,9 +85,10 @@ const Footer = ({ intl }) => {
         </div>
         <ul className="footer-links">
           {footerLinks
-            ? footerLinks.map((item) => {
-                const title = item.href[0]['title'];
-                const href = flattenToAppURL(item.href[0]['@id']);
+            ? footerLinks.blocks_layout.items.map((itemId) => {
+                const link = footerLinks.blocks[itemId];
+                const title = link.href[0]['title'];
+                const href = flattenToAppURL(link.href[0]['@id']);
                 return (
                   <li className="item" key={href}>
                     <UniversalLink className="item" href={href}>
@@ -126,7 +127,7 @@ const Footer = ({ intl }) => {
                 const logoHref = logo.logo[0]['@id'];
                 const hrefTitle = logo.href[0]['title'];
                 const href = flattenToAppURL(logo.href[0]['@id']);
-                const srcTitle = logo.logo[0]['title'];
+                const srcAlt = logo['alt'];
                 const src = `${flattenToAppURL(logoHref)}/${logo.logo[0].image_scales[logo.logo[0].image_field][0].download}`;
 
                 return (
@@ -134,9 +135,9 @@ const Footer = ({ intl }) => {
                     <UniversalLink
                       className="item"
                       href={href}
-                      title={hrefTitle || srcTitle}
+                      title={hrefTitle || srcAlt}
                     >
-                      <img src={src} alt={srcTitle} />
+                      <img src={src} alt={srcAlt} />
                     </UniversalLink>
                   </li>
                 );

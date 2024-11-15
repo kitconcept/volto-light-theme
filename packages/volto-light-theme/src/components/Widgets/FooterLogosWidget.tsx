@@ -11,6 +11,10 @@ const messages = defineMessages({
     id: 'Title',
     defaultMessage: 'Title',
   },
+  AltText: {
+    id: 'Alt text',
+    defaultMessage: 'Alt text',
+  },
   icon: {
     id: 'Icon',
     defaultMessage: 'Icon',
@@ -69,7 +73,7 @@ const FooterLogosWidget = (props) => {
         {
           id: 'default',
           title: 'Default',
-          fields: ['title', 'logo', 'href', 'openLinkInNewTab'],
+          fields: ['logo', 'alt', 'href', 'openLinkInNewTab'],
         },
       ],
 
@@ -83,6 +87,9 @@ const FooterLogosWidget = (props) => {
           selectedItemAttrs: ['Title', 'Description', 'image_field', '@type'],
           mode: 'image',
           allowExternals: true,
+        },
+        alt: {
+          title: intl.formatMessage(messages.AltText),
         },
         href: {
           title: intl.formatMessage(messages.Target),

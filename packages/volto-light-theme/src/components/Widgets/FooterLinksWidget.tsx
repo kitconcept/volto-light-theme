@@ -1,5 +1,5 @@
 import { defineMessages, useIntl } from 'react-intl';
-import ObjectListWidget from '@plone/volto/components/manage/Widgets/ObjectListWidget';
+import BlocksObjectWidget from './BlocksObjectWidget';
 import type { BlockEditProps } from '@plone/types';
 
 const messages = defineMessages({
@@ -58,12 +58,8 @@ const messages = defineMessages({
 });
 
 const FooterLinksWidget = (props) => {
-  const { value } = props;
+  const { value, onChange } = props;
   const intl = useIntl();
-
-  function onChange(id, value) {
-    props.onChange(id, { items: value });
-  }
 
   function schema(props: BlockEditProps) {
     return {
@@ -85,7 +81,7 @@ const FooterLinksWidget = (props) => {
           title: intl.formatMessage(messages.Target),
           widget: 'object_browser',
           mode: 'link',
-          selectedItemAttrs: ['Title', 'Description'],
+          selectedItemAttrs: ['Title', 'Description', '@type'],
           allowExternals: true,
         },
         openLinkInNewTab: {
@@ -98,9 +94,9 @@ const FooterLinksWidget = (props) => {
   }
 
   return (
-    <ObjectListWidget
+    <BlocksObjectWidget
       {...props}
-      value={value?.items}
+      value={value}
       schema={schema}
       onChange={onChange}
     />
