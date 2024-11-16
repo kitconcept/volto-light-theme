@@ -79,6 +79,11 @@ const RenderBlocks = (props) => {
   return hasBlocksData(content) ? (
     <CustomTag>
       {map(grouped, (group) => {
+        const themes =
+          config.blocks.blocksConfig[
+            content[blocksFieldname][group[0]]['@type']
+          ].themes ?? config.blocks.themes;
+
         return (
           <MaybeWrap
             key={`block-group-${group[0]}`}
@@ -92,13 +97,9 @@ const RenderBlocks = (props) => {
             )}
             style={
               findStyleByName(
-                config.blocks.themes,
+                themes,
                 content[blocksFieldname][group[0]]?.theme,
-              ) ||
-              findStyleByName(
-                config.blocks.themes,
-                config.blocks.themes[0].name,
-              )
+              ) || findStyleByName(themes, config.blocks.themes[0].name)
             }
           >
             {map(group, (block) => {
