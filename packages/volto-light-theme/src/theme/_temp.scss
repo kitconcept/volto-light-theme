@@ -1,2 +1,19 @@
 // Use for temporal fixes (eg. ones being in the pipeline in Volto itself or
 // other add-ons)
+.sidebar-container {
+  .menu {
+    a.item {
+      font-size: 15px;
+      line-height: 1;
+    }
+  }
+
+  .tab .header h2 {
+    font-size: 16px;
+  }
+}
+
+.block.slider .ui.button.delete-button {
+  padding: 0;
+  border: none;
+}
