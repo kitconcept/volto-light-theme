@@ -36,12 +36,39 @@ export function migrateToVLT6ColorAndWidthModel(data: BlocksFormData) {
       delete block.styles.backgroundColor;
     }
 
-    if (block?.styles?.buttonAlign) {
-      block.styles['blockWidth:noprefix'] = findStyleByName(
-        NORMALIZED_WIDTHS,
-        block.styles.buttonAlign,
-      );
+    if (block['@type'] === '__button') {
+      block.styles = {
+        ...block.styles,
+        'blockWidth:noprefix':
+          block.styles?.['blockWidth:noprefix'] ??
+          findStyleByName(
+            NORMALIZED_WIDTHS,
+            `${block.styles?.buttonAlign === 'wide' ? 'default' : 'narrow'}`,
+          ),
+      }
+
       delete block.styles.buttonAlign;
+    }
+
+    if (block['@type'] === 'separator') {
+      block.styles = {
+        ...block.styles,
+        shortLine:
+          block.styles?.['shortLine'] ?? block?.styles?.align === 'left'
+            ? true
+            : false,
+        'align:noprefix': block.styles?.['align:noprefix'] ?? {
+          '--block-alignment': 'var(--align-left)',
+        },
+        'blockWidth:noprefix':
+          block.styles?.['blockWidth:noprefix'] ??
+          findStyleByName(
+            NORMALIZED_WIDTHS,
+            `${block.styles?.align === 'full' ? 'default' : 'narrow'}`,
+          ),
+      };
+
+      delete block.styles.align;
     }
 
     if (
