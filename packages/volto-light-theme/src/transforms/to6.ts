@@ -29,6 +29,9 @@ export function migrateToVLT6ColorAndWidthModel(data: BlocksFormData) {
 
   for (const block of visitBlocks(data.blocks)) {
     if (block?.styles?.backgroundColor) {
+      if (block.styles.backgroundColor === 'transparent') {
+        block.styles.backgroundColor = 'default';
+      }
       block.theme = block.styles.backgroundColor;
       delete block.styles.backgroundColor;
     }
@@ -46,10 +49,10 @@ export function migrateToVLT6ColorAndWidthModel(data: BlocksFormData) {
       block?.align &&
       (block?.align === 'wide' || block?.align === 'full')
     ) {
-      block.styles['blockWidth:noprefix'] = findStyleByName(
-        NORMALIZED_WIDTHS,
-        block.align,
-      );
+      block.styles = {
+        ...block.styles,
+        'blockWidth:noprefix': findStyleByName(NORMALIZED_WIDTHS, block.align),
+      };
       block.align = 'center';
     }
 
