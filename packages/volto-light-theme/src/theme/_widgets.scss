@@ -91,3 +91,12 @@
 .theme-picker-widget .button.active:hover {
   background-color: var(--theme-color);
 }
+
+.buttons-widget {
+  button {
+    &[data-disabled] {
+      border-color: var(--border-color-disabled);
+      color: var(--text-color-disabled);
+    }
+  }
+}

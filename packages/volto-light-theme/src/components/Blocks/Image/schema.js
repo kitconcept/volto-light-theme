@@ -1,5 +1,6 @@
 import { defineMessages } from 'react-intl';
 import { insertInArray, reorderArray } from '@plone/volto/helpers/Utils/Utils';
+import config from '@plone/volto/registry';
 
 const messages = defineMessages({
   Description: {
@@ -41,6 +42,7 @@ export const imageBlockSchemaEnhancer = ({ formData, schema, intl }) => {
       title: intl.formatMessage(messages.BlockWidth),
       default: 'default',
       filterActions: ['narrow', 'default', 'layout', 'full'],
+      actions: config.blocks.widths,
     };
 
     schema.properties.styles.schema.properties['--image-aspect-ratio'] = {
@@ -65,10 +67,10 @@ export const imageBlockSchemaEnhancer = ({ formData, schema, intl }) => {
   schema.properties.align.actions = ['left', 'right', 'center'];
 
   schema.properties.size.default = 'l';
-  schema.properties.size.disabled =
-    formData.align === 'full' ||
-    formData.align === 'wide' ||
-    formData.align === 'center';
+  schema.properties.size.disabled = formData.align === 'center';
+
+  schema.properties.styles.schema.properties['blockWidth:noprefix'].disabled =
+    formData.align === 'left' || formData.align === 'right';
 
   return schema;
 };

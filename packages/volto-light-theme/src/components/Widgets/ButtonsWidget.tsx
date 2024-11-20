@@ -25,10 +25,13 @@ export type ButtonsWidgetProps = {
   filterActions: string[];
   value: string;
   default: string;
+  disabled: boolean;
+  isDisabled: boolean;
 };
 
 const ButtonsWidget = (props: ButtonsWidgetProps) => {
-  const { id, onChange, actions, actionsInfoMap, value } = props;
+  const { disabled, id, onChange, actions, actionsInfoMap, value, isDisabled } =
+    props;
 
   React.useEffect(() => {
     if (!props.value && props.default) {
@@ -41,15 +44,15 @@ const ButtonsWidget = (props: ButtonsWidgetProps) => {
 
   return (
     <FormFieldWrapper {...props} className="widget">
-      <div className="buttons">
+      <div className="buttons buttons-widget">
         {actions.map((action) => (
           <Button
             key={action.name}
             aria-label={actionsInfoMap[action.name][1]}
             onPress={() => onChange(id, action.style || action.name)}
-            className={isEqual(value, action.style) ? 'active' : ''}
+            className={isEqual(value, action.style) ? 'active' : null}
+            isDisabled={disabled || isDisabled}
           >
-            {/* @ts-ignore */}
             <Icon
               name={actionsInfoMap[action.name][0]}
               title={actionsInfoMap[action.name][1] || action.name}

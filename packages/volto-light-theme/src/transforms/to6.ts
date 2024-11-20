@@ -40,5 +40,24 @@ export function migrateToVLT6ColorAndWidthModel(data: BlocksFormData) {
       );
       delete block.styles.buttonAlign;
     }
+
+    if (
+      block['@type'] === 'image' &&
+      block?.align &&
+      (block?.align === 'wide' || block?.align === 'full')
+    ) {
+      block.styles['blockWidth:noprefix'] = findStyleByName(
+        NORMALIZED_WIDTHS,
+        block.align,
+      );
+      block.align = 'center';
+    }
+
+    if (block['@type'] === 'image' && !block?.styles?.['blockWidth:noprefix']) {
+      block.styles = {
+        ...block.styles,
+        'blockWidth:noprefix': findStyleByName(NORMALIZED_WIDTHS, 'default'),
+      };
+    }
   }
 }

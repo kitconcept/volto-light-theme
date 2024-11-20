@@ -377,3 +377,22 @@ figcaption {
     }
   }
 }
+
+// Image block overrides
+#page-edit,
+#page-add {
+  .block-editor-image figure.center {
+    @include variable-container-width();
+  }
+
+  .block-editor-image.default figure {
+    max-width: var(--default-container-width);
+  }
+}
+
+#page-document .blocks-group-wrapper > .block.image.align.center {
+  @include variable-container-width();
+}
+#page-document .blocks-group-wrapper > .block.image.align.center figure {
+  @include variable-container-width();
+}
