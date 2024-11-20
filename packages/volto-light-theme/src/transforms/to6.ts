@@ -45,7 +45,7 @@ export function migrateToVLT6ColorAndWidthModel(data: BlocksFormData) {
             NORMALIZED_WIDTHS,
             `${block.styles?.buttonAlign === 'wide' ? 'default' : 'narrow'}`,
           ),
-      }
+      };
 
       delete block.styles.buttonAlign;
     }

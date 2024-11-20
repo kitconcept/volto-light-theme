@@ -19,8 +19,8 @@
     @include variable-container-width();
 
     &::after {
-      max-width: inherit;
       width: var(--layout-container-width);
+      max-width: inherit;
     }
   }
 

@@ -30,33 +30,30 @@ export const SeparatorStylingSchema = ({ schema, formData, intl }) => {
     default: 'default',
     filterActions: ['narrow', 'default'],
   };
-  
-    schema.properties.styles.schema.fieldsets[0].fields = [
-      'align:noprefix',
-      ...schema.properties.styles.schema.fieldsets[0].fields,
-    ];
 
-    schema.properties.styles.schema.properties['align:noprefix'] = {
-      widget: 'blockAlignment',
-      title: intl.formatMessage(messages.Alignment),
-      default: 'left',
-    };
+  schema.properties.styles.schema.fieldsets[0].fields = [
+    'align:noprefix',
+    ...schema.properties.styles.schema.fieldsets[0].fields,
+  ];
 
-    schema.properties.styles.schema.fieldsets[0].fields = [
-      'shortLine',
-      ...schema.properties.styles.schema.fieldsets[0].fields,
-    ];
+  schema.properties.styles.schema.properties['align:noprefix'] = {
+    widget: 'blockAlignment',
+    title: intl.formatMessage(messages.Alignment),
+    default: 'left',
+  };
 
-    schema.properties.styles.schema.properties.shortLine = {
-      title: intl.formatMessage(messages.shortline),
-      type: 'boolean',
-    };
+  schema.properties.styles.schema.fieldsets[0].fields = [
+    'shortLine',
+    ...schema.properties.styles.schema.fieldsets[0].fields,
+  ];
 
-    // schema.properties.styles.schema.properties['align:noprefix'].disabled =
-    // !formData?.styles?.shortLine;
-  
+  schema.properties.styles.schema.properties.shortLine = {
+    title: intl.formatMessage(messages.shortline),
+    type: 'boolean',
+  };
 
-  
+  schema.properties.styles.schema.properties['align:noprefix'].disabled =
+    !formData?.styles?.shortLine;
 
   return schema;
 };
