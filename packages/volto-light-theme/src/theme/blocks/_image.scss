@@ -4,16 +4,9 @@ figure {
   margin: 0;
 }
 
-// Image  Block (FZJ https://github.com/kitconcept/fzj-internet/blob/7043ff8317dde8e5bfe5b0b1e76c5fdd8f331e7e/theme/extras/custom.less#L1814)
-.block-editor-image.full figcaption,
-.block.image.full figcaption {
+.block.image.has--block-width--full figcaption {
   padding-right: 25px;
   padding-left: 25px;
-
-  @media only screen and (min-width: 1470px) {
-    padding-right: 0px;
-    padding-left: 0px;
-  }
 }
 
 .block.image {
@@ -395,4 +388,15 @@ figcaption {
 }
 #page-document .blocks-group-wrapper > .block.image.align.center figure {
   @include variable-container-width();
+}
+
+#page-document .blocks-group-wrapper {
+  & > .block.image.align.center.has--block-width--default {
+    // Unfortunately needed to have more specificity than the top one
+    // TODO: Remove when using layers and the BMv3
+    @include adjustMarginsToContainer($default-container-width);
+  }
+  & > .block.image.align.center.has--block-width--layout {
+    @include adjustMarginsToContainer($layout-container-width);
+  }
 }
