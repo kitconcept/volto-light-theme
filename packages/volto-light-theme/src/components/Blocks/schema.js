@@ -10,28 +10,29 @@ const messages = defineMessages({
 });
 
 export const defaultStylingSchema = ({ schema, formData, intl }) => {
-  const BG_COLORS = [
-    { name: 'transparent', label: 'Transparent' },
-    { name: 'grey', label: 'Grey' },
-  ];
+  const themes =
+    config.blocks?.blocksConfig?.[formData['@type']]?.themes ||
+    config.blocks.themes;
 
-  const colors =
-    config.blocks?.blocksConfig?.[formData['@type']]?.colors || BG_COLORS;
-
-  const defaultBGColor =
-    config.blocks?.blocksConfig?.[formData['@type']]?.defaultBGColor;
+  const defaultTheme =
+    config.blocks?.blocksConfig?.[formData['@type']]?.defaultTheme ||
+    // The default color is the first color in the themes list
+    config.blocks.themes?.[0].name;
 
   addStyling({ schema, intl });
 
-  schema.properties.styles.schema.fieldsets[0].fields = [
-    ...schema.properties.styles.schema.fieldsets[0].fields,
-    'backgroundColor',
+  const stylingIndex = schema.fieldsets.findIndex(
+    (item) => item.id === 'styling',
+  );
+  schema.fieldsets[stylingIndex].fields = [
+    ...schema.fieldsets[stylingIndex].fields,
+    'theme',
   ];
-  schema.properties.styles.schema.properties.backgroundColor = {
+  schema.properties.theme = {
     widget: 'color_picker',
     title: intl.formatMessage(messages.backgroundColor),
-    colors,
-    default: defaultBGColor,
+    themes,
+    default: defaultTheme,
   };
 
   return schema;

@@ -15,6 +15,8 @@ import Navigation from '@plone/volto/components/theme/Navigation/Navigation';
 import SearchWidget from '@plone/volto/components/theme/SearchWidget/SearchWidget';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 
+import SlotRenderer from '@plone/volto/components/theme/SlotRenderer/SlotRenderer';
+
 const messages = defineMessages({
   siteLabel: {
     id: 'siteLabel',
@@ -105,9 +107,11 @@ const Header = (props) => {
   let siteLabel = config.settings.siteLabel;
   const intranetHeader = config.settings.intranetHeader;
   const token = useSelector((state) => state.userSession.token);
+  const content = useSelector((state) => state.content.data);
   const siteAction = useSelector(
     (state) => state.content.data?.['@components']?.actions?.site_actions,
   );
+  const navRoot = useSelector((state) => state.navroot?.data?.navroot);
   const intl = useIntl();
   const translatedSiteLabel = intl.formatMessage(messages.siteLabel);
 
@@ -118,27 +122,30 @@ const Header = (props) => {
       : siteLabel);
 
   return (
-    <header
-      className={cx('header-wrapper', { 'intranet-header': intranetHeader })}
-    >
-      <Container layout>
-        {intranetHeader ? (
-          <IntranetHeader
-            pathname={pathname}
-            siteLabel={siteLabel}
-            token={token}
-            siteAction={siteAction}
-          />
-        ) : (
-          <InternetHeader
-            pathname={pathname}
-            siteLabel={siteLabel}
-            token={token}
-            siteAction={siteAction}
-          />
-        )}
-      </Container>
-    </header>
+    <>
+      <SlotRenderer name="aboveHeader" content={content} navRoot={navRoot} />
+      <header
+        className={cx('header-wrapper', { 'intranet-header': intranetHeader })}
+      >
+        <Container layout>
+          {intranetHeader ? (
+            <IntranetHeader
+              pathname={pathname}
+              siteLabel={siteLabel}
+              token={token}
+              siteAction={siteAction}
+            />
+          ) : (
+            <InternetHeader
+              pathname={pathname}
+              siteLabel={siteLabel}
+              token={token}
+              siteAction={siteAction}
+            />
+          )}
+        </Container>
+      </header>
+    </>
   );
 };
 

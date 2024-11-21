@@ -1,31 +1,28 @@
-#page-document .block.separator {
+#page-document .block.separator,
+#page-edit .block-editor-separator,
+#page-add .block-editor-separator {
   // cancel the original padding from the add-on
   &:not(.inner):not([role='presentation']) {
     padding: 0 !important;
   }
 
-  &.has--align--center,
-  &.inner {
-    margin-right: auto;
-    margin-left: auto;
+  &.has--shortLine--true {
+    .line::after {
+      width: 165px;
+    }
+  }
+
+  .line {
+    display: grid;
+    max-width: var(--block-width) !important;
+    justify-content: var(--block-alignment);
+    @include variable-container-width();
+
+    &::after {
+      width: calc(100cqw - 2 * $horizontal-space-small-screens);
+      max-width: inherit;
+    }
   }
 
   @include vertical-space-separator();
-}
-
-#page-edit .block-editor-separator {
-  &.has--backgroundColor--grey {
-    background-color: $lightgrey;
-  }
-  .block.separator {
-    &.inner {
-      margin-right: auto;
-      margin-left: auto;
-
-      .block.separator {
-        margin-right: auto;
-        margin-left: auto;
-      }
-    }
-  }
 }

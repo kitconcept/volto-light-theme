@@ -6,23 +6,43 @@ const messages = defineMessages({
     id: 'Block Width',
     defaultMessage: 'Block Width',
   },
+  Alignment: {
+    id: 'Alignment',
+    defaultMessage: 'Alignment',
+  },
 });
 
 export const ButtonStylingSchema = ({ schema, formData, intl }) => {
   defaultStylingSchema({ schema, formData, intl });
 
+  schema.fieldsets[0].fields = schema.fieldsets[0].fields.filter(
+    (field) => field !== 'inneralign',
+  );
+
+  delete schema.properties?.inneralign;
+
   schema.properties.styles.schema.fieldsets[0].fields = [
-    'buttonAlign',
+    'blockWidth:noprefix',
     ...schema.properties.styles.schema.fieldsets[0].fields,
   ];
 
-  schema.properties.styles.schema.properties.buttonAlign = {
-    widget: 'align',
+  schema.properties.styles.schema.fieldsets[0].fields = [
+    'align:noprefix',
+    ...schema.properties.styles.schema.fieldsets[0].fields,
+  ];
+
+  schema.properties.styles.schema.properties['blockWidth:noprefix'] = {
+    widget: 'blockWidth',
     title: intl.formatMessage(messages.BlockWidth),
-    actions: ['center', 'wide'],
+    default: 'default',
+    filterActions: ['narrow', 'default'],
   };
 
-  schema.properties.inneralign.actions = ['left', 'center', 'right'];
+  schema.properties.styles.schema.properties['align:noprefix'] = {
+    widget: 'blockAlignment',
+    title: intl.formatMessage(messages.Alignment),
+    default: 'left',
+  };
 
   return schema;
 };

@@ -11,9 +11,7 @@ describe('groupByBGColor', () => {
         },
         3: {
           '@type': 'slate',
-          styles: {
-            backgroundColor: 'grey',
-          },
+          theme: 'grey',
         },
       },
       blocks_layout: {
@@ -32,15 +30,11 @@ describe('groupByBGColor', () => {
         },
         2: {
           '@type': 'slate',
-          styles: {
-            backgroundColor: 'grey',
-          },
+          theme: 'grey',
         },
         3: {
           '@type': 'slate',
-          styles: {
-            backgroundColor: 'grey',
-          },
+          theme: 'grey',
         },
       },
       blocks_layout: {
@@ -56,21 +50,15 @@ describe('groupByBGColor', () => {
       blocks: {
         1: {
           '@type': 'slate',
-          styles: {
-            backgroundColor: 'grey',
-          },
+          theme: 'grey',
         },
         2: {
           '@type': 'slate',
-          styles: {
-            backgroundColor: 'grey',
-          },
+          theme: 'grey',
         },
         3: {
           '@type': 'slate',
-          styles: {
-            backgroundColor: 'grey',
-          },
+          theme: 'grey',
         },
       },
       blocks_layout: {
@@ -86,18 +74,14 @@ describe('groupByBGColor', () => {
       blocks: {
         1: {
           '@type': 'slate',
-          styles: {
-            backgroundColor: 'grey',
-          },
+          theme: 'grey',
         },
         2: {
           '@type': 'slate',
         },
         3: {
           '@type': 'slate',
-          styles: {
-            backgroundColor: 'grey',
-          },
+          theme: 'grey',
         },
       },
       blocks_layout: {
@@ -123,15 +107,11 @@ describe('groupByBGColor', () => {
         },
         3: {
           '@type': 'slate',
-          styles: {
-            backgroundColor: 'grey',
-          },
+          theme: 'grey',
         },
         4: {
           '@type': 'slate',
-          styles: {
-            backgroundColor: 'grey',
-          },
+          theme: 'grey',
         },
         5: {
           '@type': 'slate',
@@ -169,15 +149,11 @@ describe('groupByBGColor', () => {
         },
         3: {
           '@type': 'slate',
-          styles: {
-            backgroundColor: 'grey',
-          },
+          theme: 'grey',
         },
         4: {
           '@type': 'slate',
-          styles: {
-            backgroundColor: 'grey',
-          },
+          theme: 'grey',
         },
         5: {
           '@type': 'slate',
@@ -221,15 +197,11 @@ describe('groupByBGColor', () => {
         },
         3: {
           '@type': 'slate',
-          styles: {
-            backgroundColor: 'grey',
-          },
+          theme: 'grey',
         },
         4: {
           '@type': 'slate',
-          styles: {
-            backgroundColor: 'grey',
-          },
+          theme: 'grey',
         },
         5: {
           '@type': 'slate',
@@ -270,15 +242,11 @@ describe('groupByBGColor', () => {
         },
         4: {
           '@type': 'slate',
-          styles: {
-            backgroundColor: 'grey',
-          },
+          theme: 'grey',
         },
         5: {
           '@type': 'slate',
-          styles: {
-            backgroundColor: 'grey',
-          },
+          theme: 'grey',
         },
         6: {
           '@type': 'slate',

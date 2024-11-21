@@ -1,5 +1,6 @@
 import { defineMessages } from 'react-intl';
-import { insertInArray } from '@plone/volto/helpers/Utils/Utils';
+import { insertInArray, reorderArray } from '@plone/volto/helpers/Utils/Utils';
+import config from '@plone/volto/registry';
 
 const messages = defineMessages({
   Description: {
@@ -10,10 +11,15 @@ const messages = defineMessages({
     id: 'Title',
     defaultMessage: 'Title',
   },
+  BlockWidth: {
+    id: 'Block Width',
+    defaultMessage: 'Block Width',
+  },
 });
 
 export const imageBlockSchemaEnhancer = ({ formData, schema, intl }) => {
   if (formData.url) {
+    schema.fieldsets = reorderArray(schema.fieldsets, 2, 1);
     schema.fieldsets[0].fields = insertInArray(
       schema.fieldsets[0].fields,
       'description',
@@ -24,6 +30,30 @@ export const imageBlockSchemaEnhancer = ({ formData, schema, intl }) => {
       'title',
       1,
     );
+
+    schema.properties.styles.schema.fieldsets[0].fields = [
+      'blockWidth:noprefix',
+      '--image-aspect-ratio',
+      ...schema.properties.styles.schema.fieldsets[0].fields,
+    ];
+
+    schema.properties.styles.schema.properties['blockWidth:noprefix'] = {
+      widget: 'blockWidth',
+      title: intl.formatMessage(messages.BlockWidth),
+      default: 'default',
+      filterActions: ['narrow', 'default', 'layout', 'full'],
+      actions: config.blocks.widths,
+    };
+
+    schema.properties.styles.schema.properties['--image-aspect-ratio'] = {
+      widget: 'select',
+      title: 'Aspect Ratio',
+      choices: [
+        ['1', '1:1'],
+        ['16 / 9', '16/9'],
+      ],
+    };
+
     schema.properties.description = {
       title: intl.formatMessage(messages.Description),
       widget: 'textarea',
@@ -33,12 +63,13 @@ export const imageBlockSchemaEnhancer = ({ formData, schema, intl }) => {
     };
   }
   schema.properties.align.default = 'center';
-  schema.properties.align.actions = ['left', 'right', 'center', 'wide', 'full'];
+  schema.properties.align.actions = ['left', 'right', 'center'];
+
   schema.properties.size.default = 'l';
-  schema.properties.size.disabled =
-    formData.align === 'full' ||
-    formData.align === 'wide' ||
-    formData.align === 'center';
+  schema.properties.size.disabled = formData.align === 'center';
+
+  schema.properties.styles.schema.properties['blockWidth:noprefix'].disabled =
+    formData.align === 'left' || formData.align === 'right';
 
   return schema;
 };

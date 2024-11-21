@@ -1,0 +1,7 @@
+New colors definitions
+New widths definitions
+Moved the Image block and the button block to use the new block width widget.
+The `full` image width now is really full width and spans from side to side of the viewport.
+Removed Container Query Polyfill configuration profile
+New Background widgets based in `@plone/components`
+@danalvrz @sneridagh
