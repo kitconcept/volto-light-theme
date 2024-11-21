@@ -1,1 +1,0 @@
-Add support for visual regression tests @reebalazs
