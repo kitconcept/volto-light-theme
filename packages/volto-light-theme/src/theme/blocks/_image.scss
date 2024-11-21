@@ -4,16 +4,9 @@ figure {
   margin: 0;
 }
 
-// Image  Block (FZJ https://github.com/kitconcept/fzj-internet/blob/7043ff8317dde8e5bfe5b0b1e76c5fdd8f331e7e/theme/extras/custom.less#L1814)
-.block-editor-image.full figcaption,
-.block.image.full figcaption {
+.block.image.has--block-width--full figcaption {
   padding-right: 25px;
   padding-left: 25px;
-
-  @media only screen and (min-width: 1470px) {
-    padding-right: 0px;
-    padding-left: 0px;
-  }
 }
 
 .block.image {
@@ -28,14 +21,12 @@ figure {
     margin-bottom: 0 !important;
   }
 
-  &.align.left.has--backgroundColor--grey,
-  &.align.right.has--backgroundColor--grey {
-    margin-top: 0;
-
-    figure {
-      // Paddings do not collapse, so we have to substract the ever
-      // present padding bottom for every block
-      padding-top: $heading-text-top-spacing - $block-vertical-space;
+  &.has--block-width--default,
+  &.has--block-width--narrow,
+  &.has--block-width--full {
+    figure:not(.left, .right) {
+      margin-top: $spacing-large;
+      margin-bottom: $spacing-large;
     }
   }
 
@@ -43,6 +34,7 @@ figure {
     img {
       width: 100% !important;
       height: auto;
+      aspect-ratio: var(--image-aspect-ratio, auto);
     }
 
     &.right {
@@ -114,7 +106,6 @@ figure {
 
     &.center {
       width: 100% !important;
-      margin-top: $spacing-large;
       margin-right: auto !important;
       margin-bottom: $spacing-large;
       margin-left: auto !important;
@@ -376,5 +367,35 @@ figcaption {
       @include marginal-description();
       text-decoration: underline;
     }
+  }
+}
+
+// Image block overrides
+#page-edit,
+#page-add {
+  .block-editor-image figure.center {
+    @include variable-container-width();
+  }
+
+  .block-editor-image.default figure {
+    max-width: var(--default-container-width);
+  }
+}
+
+#page-document .blocks-group-wrapper > .block.image.align.center {
+  @include variable-container-width();
+}
+#page-document .blocks-group-wrapper > .block.image.align.center figure {
+  @include variable-container-width();
+}
+
+#page-document .blocks-group-wrapper {
+  & > .block.image.align.center.has--block-width--default {
+    // Unfortunately needed to have more specificity than the top one
+    // TODO: Remove when using layers and the BMv3
+    @include adjustMarginsToContainer($default-container-width);
+  }
+  & > .block.image.align.center.has--block-width--layout {
+    @include adjustMarginsToContainer($layout-container-width);
   }
 }

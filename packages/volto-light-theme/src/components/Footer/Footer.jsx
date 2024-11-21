@@ -1,9 +1,10 @@
 // SemanticUI-free pre-@plone/components
 import React from 'react';
-
+import isEmpty from 'lodash/isEmpty';
 import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
 import { useSelector, shallowEqual } from 'react-redux';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
+import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
 import Logo from '@plone/volto/components/theme/Logo/Logo';
 import { Container } from '@plone/components';
 import { flattenToAppURL, addAppURL } from '@plone/volto/helpers/Url/Url';
@@ -31,9 +32,13 @@ const Footer = ({ intl }) => {
     }),
     shallowEqual,
   );
+  const navroot = useSelector((state) => state.navroot.data.navroot);
+  const footerLinks = navroot?.footer_links;
+  const footerLogos = navroot?.footer_logos;
+
   return (
     <footer id="footer">
-      <Container layout className="footer">
+      <Container className="footer">
         <div className="footer-message">
           <FormattedMessage
             id="The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
@@ -79,29 +84,73 @@ const Footer = ({ intl }) => {
             }}
           />
         </div>
-        <ul>
-          {/* wrap in div for a11y reasons: listitem role cannot be on the <a> element directly */}
-          {siteActions?.length
-            ? siteActions.map((item) => (
-                <li className="item" key={item.id}>
-                  <UniversalLink
-                    className="item"
-                    href={
-                      settings.isMultilingual
-                        ? `/${lang}/${
-                            item.url
-                              ? flattenToAppURL(item.url)
-                              : addAppURL(item.id)
-                          }`
-                        : item.url
-                          ? flattenToAppURL(item.url)
-                          : addAppURL(item.id)
-                    }
-                  >
-                    {item?.title}
-                  </UniversalLink>
-                </li>
-              ))
+        <ul className="footer-links">
+          {!isEmpty(footerLinks?.blocks)
+            ? footerLinks.blocks_layout.items.map((itemId) => {
+                const link = footerLinks.blocks[itemId];
+                const title = link.title || link.href[0]['title'];
+                const href = flattenToAppURL(link.href[0]['@id']);
+
+                if (!href) return null;
+
+                return (
+                  <li className="item" key={href}>
+                    <UniversalLink href={href}>{title}</UniversalLink>
+                  </li>
+                );
+              })
+            : siteActions?.length
+              ? siteActions.map((item) => (
+                  <li className="item" key={item.id}>
+                    <UniversalLink
+                      className="item"
+                      href={
+                        settings.isMultilingual
+                          ? `/${lang}/${
+                              item.url
+                                ? flattenToAppURL(item.url)
+                                : addAppURL(item.id)
+                            }`
+                          : item.url
+                            ? flattenToAppURL(item.url)
+                            : addAppURL(item.id)
+                      }
+                    >
+                      {item?.title}
+                    </UniversalLink>
+                  </li>
+                ))
+              : null}
+        </ul>
+        <ul className="footer-logos">
+          {!isEmpty(footerLogos?.blocks)
+            ? footerLogos.blocks_layout.items.map((itemId) => {
+                const logo = footerLogos.blocks[itemId];
+                let logoHref, hrefTitle, href, srcAlt, src;
+                if (logo?.href) {
+                  hrefTitle = logo.href[0]['title'];
+                  href = flattenToAppURL(logo.href[0]['@id']);
+                }
+                if (logo?.logo) {
+                  logoHref = logo.logo[0]['@id'];
+                  srcAlt = logo['alt'];
+                  src = `${flattenToAppURL(logoHref)}/${logo.logo[0].image_scales[logo.logo[0].image_field][0].download}`;
+                }
+
+                if (!src) return null;
+
+                return (
+                  <li className="item" key={href}>
+                    <ConditionalLink
+                      condition={href}
+                      to={href}
+                      title={hrefTitle || srcAlt}
+                    >
+                      <img src={src} alt={srcAlt} />
+                    </ConditionalLink>
+                  </li>
+                );
+              })
             : null}
         </ul>
         <div className="logo">

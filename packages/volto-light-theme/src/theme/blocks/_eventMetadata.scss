@@ -29,6 +29,9 @@
             font-size: 24px;
             font-weight: 300;
             line-height: 33px;
+            overflow-wrap: break-word;
+            word-break: break-word;
+            word-wrap: break-word;
             p,
             a {
               margin-top: 10px;
@@ -45,6 +48,10 @@
             border-bottom: 1px solid #000;
           }
         }
+      }
+
+      @container (max-width: #{$largest-mobile-screen} ) {
+        flex-direction: column;
       }
     }
     .event-button {

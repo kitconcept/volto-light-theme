@@ -15,6 +15,7 @@ $black: #000 !default;
   .highlight-description {
     a {
       @include introduction();
+      text-decoration: none;
     }
   }
 
