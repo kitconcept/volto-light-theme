@@ -21,14 +21,12 @@ figure {
     margin-bottom: 0 !important;
   }
 
-  &.align.left.has--backgroundColor--grey,
-  &.align.right.has--backgroundColor--grey {
-    margin-top: 0;
-
-    figure {
-      // Paddings do not collapse, so we have to substract the ever
-      // present padding bottom for every block
-      padding-top: $heading-text-top-spacing - $block-vertical-space;
+  &.has--block-width--default,
+  &.has--block-width--narrow,
+  &.has--block-width--full {
+    figure:not(.left, .right) {
+      margin-top: $spacing-large;
+      margin-bottom: $spacing-large;
     }
   }
 
@@ -36,7 +34,7 @@ figure {
     img {
       width: 100% !important;
       height: auto;
-      aspect-ratio: var(--image-aspect-ratio, $aspect-ratio);
+      aspect-ratio: var(--image-aspect-ratio, auto);
     }
 
     &.right {

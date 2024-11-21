@@ -19,7 +19,7 @@
     @include variable-container-width();
 
     &::after {
-      width: var(--layout-container-width);
+      width: calc(100cqw - 2 * $horizontal-space-small-screens);
       max-width: inherit;
     }
   }

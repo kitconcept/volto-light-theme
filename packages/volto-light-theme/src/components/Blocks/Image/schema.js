@@ -52,7 +52,6 @@ export const imageBlockSchemaEnhancer = ({ formData, schema, intl }) => {
         ['1', '1:1'],
         ['16 / 9', '16/9'],
       ],
-      default: '1',
     };
 
     schema.properties.description = {

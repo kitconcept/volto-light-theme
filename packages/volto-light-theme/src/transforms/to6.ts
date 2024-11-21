@@ -71,23 +71,15 @@ export function migrateToVLT6ColorAndWidthModel(data: BlocksFormData) {
       delete block.styles.align;
     }
 
-    if (
-      block['@type'] === 'image' &&
-      block?.align &&
-      (block?.align === 'wide' || block?.align === 'full')
-    ) {
+    if (block['@type'] === 'image' && !['left', 'right'].includes(block?.align)) {
       block.styles = {
         ...block.styles,
-        'blockWidth:noprefix': findStyleByName(NORMALIZED_WIDTHS, block.align),
+        'blockWidth:noprefix': block.styles?.['blockWidth:noprefix'] ?? findStyleByName(
+          NORMALIZED_WIDTHS,
+          block?.align === 'wide' ? 'default' : (block?.align === 'center' ? 'narrow' : block.align),
+        ),
       };
       block.align = 'center';
-    }
-
-    if (block['@type'] === 'image' && !block?.styles?.['blockWidth:noprefix']) {
-      block.styles = {
-        ...block.styles,
-        'blockWidth:noprefix': findStyleByName(NORMALIZED_WIDTHS, 'default'),
-      };
     }
   }
 }

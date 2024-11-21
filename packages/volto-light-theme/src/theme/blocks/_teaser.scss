@@ -1,6 +1,6 @@
 // Override the Image component `aspect-ratio`
 .teaser-item .image-wrapper img {
-  aspect-ratio: $aspect-ratio !important;
+  aspect-ratio: var( --image-aspect-ratio, $aspect-ratio) !important;
 }
 
 // Block Teaser Standalone

@@ -39,6 +39,10 @@
     margin-bottom: $block-vertical-space;
   }
 
+  .block-container {
+    @include default-container-width(); 
+  }
+
   h2 {
     @include highlight-title();
     margin-bottom: $spacing-large;

@@ -143,10 +143,14 @@ $secondary-grey: #ececec !default;
   --link-color: #0070a2;
   // Comment out following line to turn <a> links the same color as the text
   --link-foreground-color: var(--link-color);
+
+  // It is possible to set an aspect ratio for all images, using the folowing CSS custom property:
+  // --image-aspect-ratio: 16/9;
 }
 
 // Image Aspect Ratio
-$aspect-ratio: var(--image-aspect-ratio, 16/9) !default;
+$aspect-ratio: 16/9 !default;
+
 
 // Weights
 $thin: 100 !default;

@@ -13,7 +13,6 @@ export const teaserSchemaEnhancer = ({ schema, formData, intl }) => {
       ['1', '1:1'],
       ['16 / 9', '16/9'],
     ],
-    default: '16 / 9',
   };
 
   return schema;
