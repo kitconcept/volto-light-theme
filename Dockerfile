@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 ARG PLONE_VERSION
 ARG SEED=1000
-FROM plone/server-builder:${PLONE_VERSION:-6} as builder
+FROM plone/server-builder:${PLONE_VERSION:-6.1.0b1} as builder
 
 # https://github.com/pypa/pip/issues/12079
 ENV _PIP_USE_IMPORTLIB_METADATA=0

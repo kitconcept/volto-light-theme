@@ -23,7 +23,7 @@ IMAGE_NAME=ghcr.io/kitconcept/voltolighttheme
 IMAGE_TAG=latest
 
 PLONE6=6
-PLONE_VERSION=6
+PLONE_VERSION=6.1.0b1
 SEED=$$(date +'%Y%m%d-%H%M%S')
 
 # Python checks
