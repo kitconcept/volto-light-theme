@@ -44,7 +44,7 @@
     "release-it": "^17.7.0"
   },
   "dependencies": {
-    "@plone/components": "workspace:*",
+    "@plone/components": "workspace:^",
     "uuid": "^11.0.0"
   },
   "peerDependencies": {
