@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 6.0.0-alpha.1 (2024-11-21)
+
+### Bugfix
+
+- Change the pin type in `workspace` dependency declaration for `@plone/components`. @sneridagh 
+
 ## 6.0.0-alpha.0 (2024-11-21)
 
 ### Breaking
