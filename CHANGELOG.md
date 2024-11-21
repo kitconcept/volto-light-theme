@@ -8,6 +8,38 @@
 
 <!-- towncrier release notes start -->
 
+## 6.0.0-alpha.0 (2024-11-21)
+
+### Breaking
+
+- New colors definitions
+  New widths definitions
+  Moved the Image block and the button block to use the new block width widget.
+  The `full` image width now is really full width and spans from side to side of the viewport.
+  Removed Container Query Polyfill configuration profile
+  New Background widgets based in `@plone/components`
+  @danalvrz @sneridagh [#420](https://github.com/kitconcept/volto-light-theme/pull/420)
+- Remove deprecated Atoms (Container) components. @sneridagh [#433](https://github.com/kitconcept/volto-light-theme/pull/433)
+
+### Feature
+
+- Add support for visual regression tests @reebalazs [#383](https://github.com/kitconcept/volto-light-theme/pull/383)
+- Added `aspect-ratio` field to images.
+  Added a new block width widget.
+  Added optional footer links and footer logos (through custom content type behavior).
+  Added `aboveHeader` slot renderer (it holds the new `Theming` slot).
+  @danalvrz @sneridagh [#420](https://github.com/kitconcept/volto-light-theme/pull/420)
+
+### Internal
+
+- Get rid of all imports from Volto barrel files.
+  Added a rule to enforce not to import from `@plone/volto/components`, `@plone/volto/helpers` or `@plone/volto/actions`. @sneridagh [#418](https://github.com/kitconcept/volto-light-theme/pull/418)
+- Update to Volto 18a46 @sneridagh [#419](https://github.com/kitconcept/volto-light-theme/pull/419)
+
+### Documentation
+
+- Add standard documentation @sneridagh [#423](https://github.com/kitconcept/volto-light-theme/pull/423)
+
 ## 5.0.1 (2024-10-09)
 
 ### Bugfix
