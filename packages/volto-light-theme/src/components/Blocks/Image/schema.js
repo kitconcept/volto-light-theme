@@ -61,15 +61,16 @@ export const imageBlockSchemaEnhancer = ({ formData, schema, intl }) => {
     schema.properties.title = {
       title: intl.formatMessage(messages.Title),
     };
+
+    schema.properties.align.default = 'center';
+    schema.properties.align.actions = ['left', 'right', 'center'];
+
+    schema.properties.size.default = 'l';
+    schema.properties.size.disabled = formData.align === 'center';
+
+    schema.properties.styles.schema.properties['blockWidth:noprefix'].disabled =
+      formData.align === 'left' || formData.align === 'right';
   }
-  schema.properties.align.default = 'center';
-  schema.properties.align.actions = ['left', 'right', 'center'];
-
-  schema.properties.size.default = 'l';
-  schema.properties.size.disabled = formData.align === 'center';
-
-  schema.properties.styles.schema.properties['blockWidth:noprefix'].disabled =
-    formData.align === 'left' || formData.align === 'right';
 
   return schema;
 };
