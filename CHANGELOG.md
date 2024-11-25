@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 6.0.0-alpha.2 (2024-11-25)
+
+### Bugfix
+
+- Fix Image block schema bug on creation. @sneridagh [#434](https://github.com/kitconcept/volto-light-theme/pull/434)
+
 ## 6.0.0-alpha.1 (2024-11-21)
 
 ### Bugfix
