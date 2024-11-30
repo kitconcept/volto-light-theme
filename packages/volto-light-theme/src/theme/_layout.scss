@@ -109,15 +109,15 @@ footer {
 
 // Container widths for configurable via block styling wrapper
 // TODO: consider renaming "align" property to something more meaningful
-[style*='--block-width: var(--narrow-container-width)'] {
-  @include adjustMarginsToContainer($narrow-container-width);
-}
-[style*='--block-width: var(--default-container-width)'] {
-  @include adjustMarginsToContainer($default-container-width);
-}
-[style*='--block-width: var(--layout-container-width)'] {
-  @include adjustMarginsToContainer($layout-container-width);
-}
+// [style*='--block-width: var(--narrow-container-width)'] {
+//   @include adjustMarginsToContainer($narrow-container-width);
+// }
+// [style*='--block-width: var(--default-container-width)'] {
+//   @include adjustMarginsToContainer($default-container-width);
+// }
+// [style*='--block-width: var(--layout-container-width)'] {
+//   @include adjustMarginsToContainer($layout-container-width);
+// }
 
 // Container defaults definitions for elements
 // BMv3 compliant, we target the block inner container only

@@ -158,51 +158,52 @@ const EditBlockWrapper = (props) => {
         classNames,
       )}
     >
-      <div className="block-controls">
-        {selected && !required && editable && (
-          <Button
-            icon
-            basic
-            onClick={() => onDeleteBlock(block, true)}
-            className="delete-button"
-            aria-label={intl.formatMessage(messages.delete)}
-          >
-            <Icon name={trashSVG} size="18px" />
-          </Button>
-        )}
-        {index > 0 && selected && (
-          <Button
-            icon
-            basic
-            onClick={() =>
-              onChangeFormData(moveBlock(properties, index, index - 1))
-            }
-            className="move-up-button"
-            aria-label={intl.formatMessage(messages.moveUp)}
-          >
-            <Icon name={upSVG} size="18px" />
-          </Button>
-        )}
-        {index < blocks_layout.items.length - 1 && selected && (
-          <Button
-            icon
-            basic
-            onClick={() =>
-              onChangeFormData(moveBlock(properties, index, index + 1))
-            }
-            className="move-down-button"
-            aria-label={intl.formatMessage(messages.moveDown)}
-          >
-            <Icon name={downSVG} size="18px" />
-          </Button>
-        )}
-      </div>
-      <div className="border-top border-line"></div>
-      <div className="border-bottom border-line"></div>
-      <div className="border-left border-line"></div>
-      <div className="border-right border-line"></div>
+      <div className="block-edit-helpers">
+        <div className="block-controls">
+          {selected && !required && editable && (
+            <Button
+              icon
+              basic
+              onClick={() => onDeleteBlock(block, true)}
+              className="delete-button"
+              aria-label={intl.formatMessage(messages.delete)}
+            >
+              <Icon name={trashSVG} size="18px" />
+            </Button>
+          )}
+          {index > 0 && selected && (
+            <Button
+              icon
+              basic
+              onClick={() =>
+                onChangeFormData(moveBlock(properties, index, index - 1))
+              }
+              className="move-up-button"
+              aria-label={intl.formatMessage(messages.moveUp)}
+            >
+              <Icon name={upSVG} size="18px" />
+            </Button>
+          )}
+          {index < blocks_layout.items.length - 1 && selected && (
+            <Button
+              icon
+              basic
+              onClick={() =>
+                onChangeFormData(moveBlock(properties, index, index + 1))
+              }
+              className="move-down-button"
+              aria-label={intl.formatMessage(messages.moveDown)}
+            >
+              <Icon name={downSVG} size="18px" />
+            </Button>
+          )}
+        </div>
+        <div className="border-top border-line"></div>
+        <div className="border-bottom border-line"></div>
+        <div className="border-left border-line"></div>
+        <div className="border-right border-line"></div>
 
-      {config.experimental.addBlockButton.enabled && showBlockChooser && (
+        {config.experimental.addBlockButton.enabled && showBlockChooser && (
         <BlockChooserButton
           data={data}
           block={block}
@@ -222,6 +223,9 @@ const EditBlockWrapper = (props) => {
           contentType={contentType}
         />
       )}
+      </div>
+
+      
 
       {children}
     </div>
