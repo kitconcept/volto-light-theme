@@ -26,6 +26,7 @@
 
     ul {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       padding-left: 0;
       margin-top: 1.4rem;
@@ -45,6 +46,17 @@
       border-right: 1px solid #205c90;
       &:last-of-type {
         border: none;
+      }
+    }
+
+    ul.footer-logos {
+      img {
+        max-height: 150px;
+      }
+      li:not(:last-child) {
+        img {
+          margin-right: 2rem;
+        }
       }
     }
 

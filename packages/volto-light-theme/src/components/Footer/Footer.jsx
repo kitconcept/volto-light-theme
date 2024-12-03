@@ -9,6 +9,7 @@ import Logo from '@plone/volto/components/theme/Logo/Logo';
 import { Container } from '@plone/components';
 import { flattenToAppURL, addAppURL } from '@plone/volto/helpers/Url/Url';
 import config from '@plone/volto/registry';
+import FooterLogos from './FooterLogos';
 
 const messages = defineMessages({
   copyright: {
@@ -122,37 +123,7 @@ const Footer = ({ intl }) => {
                 ))
               : null}
         </ul>
-        <ul className="footer-logos">
-          {!isEmpty(footerLogos?.blocks)
-            ? footerLogos.blocks_layout.items.map((itemId) => {
-                const logo = footerLogos.blocks[itemId];
-                let logoHref, hrefTitle, href, srcAlt, src;
-                if (logo?.href) {
-                  hrefTitle = logo.href[0]['title'];
-                  href = flattenToAppURL(logo.href[0]['@id']);
-                }
-                if (logo?.logo) {
-                  logoHref = logo.logo[0]['@id'];
-                  srcAlt = logo['alt'];
-                  src = `${flattenToAppURL(logoHref)}/${logo.logo[0].image_scales[logo.logo[0].image_field][0].download}`;
-                }
-
-                if (!src) return null;
-
-                return (
-                  <li className="item" key={href}>
-                    <ConditionalLink
-                      condition={href}
-                      to={href}
-                      title={hrefTitle || srcAlt}
-                    >
-                      <img src={src} alt={srcAlt} />
-                    </ConditionalLink>
-                  </li>
-                );
-              })
-            : null}
-        </ul>
+        <FooterLogos logos={footerLogos} />
         <div className="logo">
           <Logo />
         </div>
