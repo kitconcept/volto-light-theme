@@ -14,6 +14,7 @@ import installWidgets from './config/widgets';
 import installSlots from './config/slots';
 
 import '@plone/components/dist/basic.css';
+import type { BlocksData } from '@plone/types';
 
 defineMessages({
   Press: {
@@ -25,6 +26,12 @@ defineMessages({
     defaultMessage: 'Sitemap',
   },
 });
+
+declare module '@plone/types' {
+  export interface Content {
+    footer_logos: BlocksData;
+  }
+}
 
 const applyConfig = (config: ConfigType) => {
   installSettings(config);
