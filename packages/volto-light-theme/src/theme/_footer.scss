@@ -3,22 +3,27 @@
   text-align: center;
 
   ul.footer-logos {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
     justify-content: center;
     padding: $pre-footer-vertical-spacing 0;
     padding-left: 0;
     margin-top: 0;
     margin-bottom: $spacing-medium;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
     list-style: none;
 
     img {
-      max-height: 150px;
+      max-width: 100%;
     }
-    li:not(:last-child) {
-      img {
-        margin-right: 2rem;
-      }
+
+    li.item:nth-child(3n + 1) {
+      /* Targets 1st, 4th, 7th, etc. */
+      justify-self: start;
+    }
+    li.item:nth-child(3n + 3) {
+      /* Targets 3rd, 6th, 9th, etc. */
+      justify-self: end;
     }
   }
 
