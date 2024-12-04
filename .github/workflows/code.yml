@@ -2,7 +2,7 @@ name: Code analysis checks
 on: [push]
 
 env:
-  NODE_VERSION: 20.x
+  NODE_VERSION: 22.x
 
 jobs:
   codeanalysis:

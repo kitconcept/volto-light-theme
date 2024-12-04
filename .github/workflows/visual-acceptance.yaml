@@ -9,7 +9,7 @@ on: [push, pull_request]
 #     - cron:  '0 */12 * * *'
 
 env:
-  node-version: 20.x
+  node-version: 22.x
 
 jobs:
   visualhomepage:
