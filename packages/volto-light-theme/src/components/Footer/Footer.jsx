@@ -1,18 +1,12 @@
 // SemanticUI-free pre-@plone/components
 import React from 'react';
-import isEmpty from 'lodash/isEmpty';
 import { FormattedMessage, defineMessages, useIntl } from 'react-intl';
 import { useSelector, shallowEqual } from 'react-redux';
-import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
-import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
+import { useLocation } from 'react-router-dom';
 import Logo from '@plone/volto/components/theme/Logo/Logo';
 import { Container } from '@plone/components';
-import { flattenToAppURL, addAppURL } from '@plone/volto/helpers/Url/Url';
-import config from '@plone/volto/registry';
-import FooterLogos from './FooterLogos';
-import FooterLinks from './FooterLinks';
 import SlotRenderer from '@plone/volto/components/theme/SlotRenderer/SlotRenderer';
-import { useLocation } from 'react-router-dom';
+import FooterLinks from './FooterLinks';
 
 const messages = defineMessages({
   copyright: {
@@ -22,7 +16,6 @@ const messages = defineMessages({
 });
 
 const Footer = () => {
-  const { settings } = config;
   const intl = useIntl();
   const {
     content,
