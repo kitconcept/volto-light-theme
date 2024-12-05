@@ -60,6 +60,10 @@
   z-index: $zindex;
 }
 
+body {
+  overflow-x: initial;
+}
+
 // We expect initially three main containers
 .header-wrapper {
   .q.container,
