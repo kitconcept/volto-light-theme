@@ -60,6 +60,18 @@
   z-index: $zindex;
 }
 
+// RAC Popovers have problems with SemanticUI CSS in the BODY tag
+// SemanticUI by default uses `overflow-x: hidden`.
+// TODO: Remove when https://github.com/plone/volto/pull/6513 is merged and released.
+body {
+  overflow-x: initial;
+}
+
+// This helps not to have a little layout shift when the RAC Popovers are shown.
+html[style*='padding-right'] .sidebar-container {
+  margin-right: 15px;
+}
+
 // We expect initially three main containers
 .header-wrapper {
   .q.container,
