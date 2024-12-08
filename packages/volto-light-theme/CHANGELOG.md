@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 6.0.0-alpha.4 (2024-12-08)
+
+### Bugfix
+
+- Fix initialBlocks config, do not override the whole thing. @sneridagh [#441](https://github.com/kitconcept/volto-light-theme/pull/441)
+
 ## 6.0.0-alpha.3 (2024-12-05)
 
 ### Feature
