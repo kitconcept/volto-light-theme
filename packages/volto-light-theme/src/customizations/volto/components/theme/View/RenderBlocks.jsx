@@ -21,7 +21,8 @@ import {
   findStyleByName,
 } from '@plone/volto/helpers/Blocks/Blocks';
 import { defineMessages, useIntl } from 'react-intl';
-import { map } from 'lodash';
+import map from 'lodash/map';
+import isEmpty from 'lodash/isEmpty';
 import StyleWrapper from '@plone/volto/components/manage/Blocks/Block/StyleWrapper';
 import config from '@plone/volto/registry';
 import ViewDefaultBlock from '@plone/volto/components/manage/Blocks/Block/DefaultView';
@@ -44,6 +45,11 @@ export function groupByBGColor(blocks, blocks_layout, colorDefinitions) {
   const result = [];
   let currentArr = [];
   let currentBGColor;
+
+  // Guard in case the block layout is empty or corrupted for some reason
+  if (blocks_layout.items.length === 0 || isEmpty(blocks)) {
+    return [];
+  }
 
   blocks_layout.items.forEach((blockId) => {
     let currentBlockColor = blocks[blockId]?.theme || 'default';
