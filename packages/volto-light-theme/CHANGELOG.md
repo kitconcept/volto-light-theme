@@ -8,6 +8,16 @@
 
 <!-- towncrier release notes start -->
 
+## 6.0.0-alpha.5 (2024-12-09)
+
+### Bugfix
+
+- Added guard in case blocks are corrupted or malformed. @sneridagh [#442](https://github.com/kitconcept/volto-light-theme/pull/442)
+
+### Internal
+
+- Updated to latest 18.2.2 @sneridagh [#443](https://github.com/kitconcept/volto-light-theme/pull/443)
+
 ## 6.0.0-alpha.4 (2024-12-08)
 
 ### Bugfix
