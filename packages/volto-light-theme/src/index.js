@@ -60,13 +60,11 @@ const applyConfig = (config) => {
   config.settings.contentMetadataTagsImageField = 'preview_image';
 
   // Initial block for event content type
-  config.blocks.initialBlocks = {
-    Event: [
-      { '@type': 'title' },
-      { '@type': 'eventMetadata', fixed: true, required: true },
-      { '@type': 'slate' },
-    ],
-  };
+  config.blocks.initialBlocks.Event = [
+    { '@type': 'title' },
+    { '@type': 'eventMetadata', fixed: true, required: true },
+    { '@type': 'slate' },
+  ];
 
   config.settings.siteLabel = '';
   config.settings.intranetHeader = false;
