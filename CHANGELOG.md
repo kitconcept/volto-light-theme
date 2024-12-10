@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 6.0.0-alpha.6 (2024-12-10)
+
+### Bugfix
+
+- Fixed footerlinks error if the link is created but not set. @sneridagh [#445](https://github.com/kitconcept/volto-light-theme/pull/445)
+
 ## 6.0.0-alpha.5 (2024-12-09)
 
 ### Bugfix
