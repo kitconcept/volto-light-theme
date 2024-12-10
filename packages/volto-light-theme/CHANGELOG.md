@@ -8,6 +8,34 @@
 
 <!-- towncrier release notes start -->
 
+## 6.0.0-alpha.5 (2024-12-09)
+
+### Bugfix
+
+- Added guard in case blocks are corrupted or malformed. @sneridagh [#442](https://github.com/kitconcept/volto-light-theme/pull/442)
+
+### Internal
+
+- Updated to latest 18.2.2 @sneridagh [#443](https://github.com/kitconcept/volto-light-theme/pull/443)
+
+## 6.0.0-alpha.4 (2024-12-08)
+
+### Bugfix
+
+- Fix initialBlocks config, do not override the whole thing. @sneridagh [#441](https://github.com/kitconcept/volto-light-theme/pull/441)
+
+## 6.0.0-alpha.3 (2024-12-05)
+
+### Feature
+
+- New look and feel specs for footer logos. @sneridagh
+  Added two slots: `preFooter` and `postFooter`. [#437](https://github.com/kitconcept/volto-light-theme/pull/437)
+
+### Bugfix
+
+- Fixed edge case when you delete the image content type from the site. @sneridagh [#437](https://github.com/kitconcept/volto-light-theme/pull/437)
+- Fixed layout shift jumps on RAC Popovers. @sneridagh [#440](https://github.com/kitconcept/volto-light-theme/pull/440)
+
 ## 6.0.0-alpha.2 (2024-11-25)
 
 ### Bugfix

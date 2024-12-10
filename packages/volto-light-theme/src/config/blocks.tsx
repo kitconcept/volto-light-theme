@@ -63,13 +63,11 @@ declare module '@plone/types' {
 
 export default function install(config: ConfigType) {
   // Initial block for event content type
-  config.blocks.initialBlocks = {
-    Event: [
-      { '@type': 'title' },
-      { '@type': 'eventMetadata', fixed: true, required: true },
-      { '@type': 'slate' },
-    ],
-  };
+  config.blocks.initialBlocks.Event = [
+    { '@type': 'title' },
+    { '@type': 'eventMetadata', fixed: true, required: true },
+    { '@type': 'slate' },
+  ];
 
   // Palettes
   config.blocks.themes = [
