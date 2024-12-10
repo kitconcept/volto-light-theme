@@ -18,7 +18,10 @@ import GridListingBlockTemplate from '../components/Blocks/Listing/GridTemplate'
 import { ButtonStylingSchema } from '../components/Blocks/Button/schema';
 import { SeparatorStylingSchema } from '../components/Blocks/Separator/schema';
 
-import { imageBlockSchemaEnhancer } from '../components/Blocks/Image/schema';
+import {
+  imageBlockSchemaEnhancer,
+  standAloneImageBlockSchemaEnhancer,
+} from '../components/Blocks/Image/schema';
 import { ImageBlockDataAdapter } from '../components/Blocks/Image/adapter';
 
 import { AccordionSchemaEnhancer } from '../components/Blocks/Accordion/schema';
@@ -206,6 +209,7 @@ export default function install(config: ConfigType) {
     schemaEnhancer: composeSchema(
       defaultStylingSchema,
       imageBlockSchemaEnhancer,
+      standAloneImageBlockSchemaEnhancer,
     ),
     dataAdapter: ImageBlockDataAdapter,
   };

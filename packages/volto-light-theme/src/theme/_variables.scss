@@ -145,11 +145,11 @@ $secondary-grey: #ececec !default;
   --link-foreground-color: var(--link-color);
 
   // It is possible to set an aspect ratio for all images, using the folowing CSS custom property:
-  // --image-aspect-ratio: 16/9;
+  // --image-aspect-ratio: calc(16 / 9);
 }
 
 // Image Aspect Ratio
-$aspect-ratio: 16/9 !default;
+$aspect-ratio: calc(16 / 9) !default;
 
 // Weights
 $thin: 100 !default;
