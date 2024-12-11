@@ -8,6 +8,20 @@
 
 <!-- towncrier release notes start -->
 
+## 6.0.0-alpha.7 (2024-12-11)
+
+### Feature
+
+- Image aspect-ratio handlers for Teaser/Image inside a grid. @sneridagh [#447](https://github.com/kitconcept/volto-light-theme/pull/447)
+
+### Bugfix
+
+- Don't show image size and alignment settings for image block inside a grid. @danalvrz [#435](https://github.com/kitconcept/volto-light-theme/pull/435)
+
+### Documentation
+
+- Update compatibility matrix. @sneridagh [#447](https://github.com/kitconcept/volto-light-theme/pull/447)
+
 ## 6.0.0-alpha.6 (2024-12-10)
 
 ### Bugfix
