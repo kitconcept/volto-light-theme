@@ -28,3 +28,15 @@ export const gridTeaserDisableStylingSchema = ({ schema, formData, intl }) => {
   schema.properties.styles.schema.fieldsets[0].fields = [];
   return schema;
 };
+
+export const gridTeaserDisableAlignHandlersSchema = ({
+  schema,
+  formData,
+  intl,
+}) => {
+  schema.properties.styles.schema.fieldsets[0].fields =
+    schema.properties.styles.schema.fieldsets[0].fields.filter(
+      (item) => !['align'].includes(item),
+    );
+  return schema;
+};

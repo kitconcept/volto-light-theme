@@ -6,9 +6,12 @@ import cloneDeep from 'lodash/cloneDeep';
 import { composeSchema } from '@plone/volto/helpers/Extensions';
 import { findStyleByName } from '@plone/volto/helpers/Blocks/Blocks';
 import { defaultStylingSchema } from '../components/Blocks/schema';
-import { teaserSchemaEnhancer } from '../components/Blocks/Teaser/schema';
+import {
+  gridTeaserDisableAlignHandlersSchema,
+  teaserSchemaEnhancer,
+} from '../components/Blocks/Teaser/schema';
 import { videoBlockSchemaEnhancer } from '../components/Blocks/Video/schema';
-import { gridTeaserDisableAlignHandlersSchema } from '@plone/volto/components/manage/Blocks/Teaser/schema';
+
 import { gridImageDisableSizeAndPositionHandlersSchema } from '@plone/volto/components/manage/Blocks/Image/schema';
 import { disableBgColorSchema } from '../components/Blocks/disableBgColorSchema';
 
