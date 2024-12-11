@@ -29,13 +29,45 @@
 }
 
 .field.color {
+
+  .wrapper {
+    margin-top: 10px;
+    flex-grow: 1 !important;
+    min-height: 40px;
+
+    &:has(+ .color-contrast-label) {
+      border-bottom: none;
+    }
+
+    &:not(:has([class^='fieldset-'])) {
+      margin-top: 10px;
+      align-items: start;
+    }
+  }
   .eight.wide.column {
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
 
     input {
       padding-left: 8px;
       line-height: 1;
+    }
+  }
+
+  label.color-contrast-label {
+    font-size: 0.7rem;
+    border-bottom: 1px solid #EDF1F2;
+
+    &.red {
+      color: red;
+    }
+
+    &.green {
+      color: darkgreen;
+    }
+
+    &.orange {
+      color: darkorange;
     }
   }
 }

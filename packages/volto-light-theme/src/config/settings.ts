@@ -30,6 +30,14 @@ export default function install(config: ConfigType) {
     'secondary_color',
     'secondary_foreground_color',
   ];
+  config.settings.colorPairMap = {
+    primary_color: 'primary_foreground_color',
+    primary_foreground_color: 'primary_color',
+    secondary_color: 'secondary_foreground_color',
+    secondary_foreground_color: 'secondary_color',
+    accent_color: 'accent_foreground_color',
+    accent_foreground_color: 'accent_color',
+  };
 
   return config;
 }
