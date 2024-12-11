@@ -6,9 +6,12 @@ import cloneDeep from 'lodash/cloneDeep';
 import { composeSchema } from '@plone/volto/helpers/Extensions';
 import { findStyleByName } from '@plone/volto/helpers/Blocks/Blocks';
 import { defaultStylingSchema } from '../components/Blocks/schema';
-import { teaserSchemaEnhancer } from '../components/Blocks/Teaser/schema';
+import {
+  gridTeaserDisableAlignHandlersSchema,
+  teaserSchemaEnhancer,
+} from '../components/Blocks/Teaser/schema';
 import { videoBlockSchemaEnhancer } from '../components/Blocks/Video/schema';
-import { gridTeaserDisableStylingSchema } from '@plone/volto/components/manage/Blocks/Teaser/schema';
+
 import { gridImageDisableSizeAndPositionHandlersSchema } from '@plone/volto/components/manage/Blocks/Image/schema';
 import { disableBgColorSchema } from '../components/Blocks/disableBgColorSchema';
 
@@ -21,6 +24,7 @@ import { SeparatorStylingSchema } from '../components/Blocks/Separator/schema';
 import {
   imageBlockSchemaEnhancer,
   standAloneImageBlockSchemaEnhancer,
+  aspectRatioSchemaEnhancer,
 } from '../components/Blocks/Image/schema';
 import { ImageBlockDataAdapter } from '../components/Blocks/Image/adapter';
 
@@ -242,13 +246,14 @@ export default function install(config: ConfigType) {
   config.blocks.blocksConfig.gridBlock.blocksConfig.image.schemaEnhancer =
     composeSchema(
       imageBlockSchemaEnhancer,
+      aspectRatioSchemaEnhancer,
       gridImageDisableSizeAndPositionHandlersSchema,
     );
   config.blocks.blocksConfig.gridBlock.blocksConfig.image.dataAdapter =
     ImageBlockDataAdapter;
 
   config.blocks.blocksConfig.gridBlock.blocksConfig.teaser.schemaEnhancer =
-    composeSchema(gridTeaserDisableStylingSchema, teaserSchemaEnhancer);
+    composeSchema(gridTeaserDisableAlignHandlersSchema, teaserSchemaEnhancer);
 
   config.blocks.blocksConfig.gridBlock.blocksConfig.listing.allowed_headline_tags =
     [['h2', 'h2']];
