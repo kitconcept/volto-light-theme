@@ -57,6 +57,16 @@
   label.color-contrast-label {
     font-size: 0.7rem;
     border-bottom: 1px solid #EDF1F2;
+    a {
+      font-size: 0.4rem;
+      padding: 0.1rem 0.25rem;
+      border: 1px solid var(--link-foreground-color);
+      border-radius: 100%;
+      margin: 0;
+      vertical-align: super;
+      margin-left: 4px;
+
+    }
 
     &.red {
       color: red;
