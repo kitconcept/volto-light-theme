@@ -91,7 +91,6 @@ const ColorPickerWidget = (props: {
 
   // Get WCAG compliance levels
   const getComplianceLevel = (ratio) => {
-    if (ratio >= 7) return 'AAA';
     if (ratio >= 4.5) return 'AA';
     if (ratio >= 3) return 'AA Large';
     return 'Fail';
@@ -115,16 +114,24 @@ const ColorPickerWidget = (props: {
           }}
         />
       </div>
-      {formData[props.id] && (
+      {formData[props.id] && contrastRatio < 7 && (
         <label
           className={cx('color-contrast-label', {
             red: contrastRatio < 4.5,
-            orange: contrastRatio >= 4.5 && contrastRatio < 7,
-            green: contrastRatio >= 7,
+            orange: contrastRatio >= 4.5,
           })}
         >
-          {contrastRatio.toFixed(2)}:1, WCAG Level:{' '}
-          {getComplianceLevel(contrastRatio)}.
+          The color contrast ratio ({contrastRatio.toFixed(2)}:1) might not be
+          accesible for all.
+          <br />
+          WCAG Level: {getComplianceLevel(contrastRatio)}
+          <a
+            target="_blank"
+            href="https://webaim.org/articles/contrast/"
+            rel="noreferrer"
+          >
+            &#x3F;
+          </a>
         </label>
       )}
     </FormFieldWrapper>
