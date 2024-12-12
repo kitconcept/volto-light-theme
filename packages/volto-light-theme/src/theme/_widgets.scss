@@ -30,17 +30,17 @@
 
 .field.color {
   .wrapper {
-    margin-top: 10px;
-    flex-grow: 1 !important;
     min-height: 40px;
+    flex-grow: 1 !important;
+    margin-top: 10px;
 
     &:has(+ .color-contrast-label) {
       border-bottom: none;
     }
 
     &:not(:has([class^='fieldset-'])) {
-      margin-top: 10px;
       align-items: start;
+      margin-top: 10px;
     }
   }
   .eight.wide.column {
@@ -54,16 +54,16 @@
   }
 
   label.color-contrast-label {
-    font-size: 0.7rem;
     border-bottom: 1px solid #edf1f2;
+    font-size: 0.7rem;
     a {
-      font-size: 0.4rem;
       padding: 0.1rem 0.25rem;
       border: 1px solid var(--link-foreground-color);
       border-radius: 100%;
       margin: 0;
-      vertical-align: super;
       margin-left: 4px;
+      font-size: 0.4rem;
+      vertical-align: super;
     }
 
     &.red {
