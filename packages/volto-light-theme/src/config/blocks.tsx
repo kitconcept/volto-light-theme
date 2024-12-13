@@ -7,7 +7,7 @@ import { composeSchema } from '@plone/volto/helpers/Extensions';
 import { findStyleByName } from '@plone/volto/helpers/Blocks/Blocks';
 import { defaultStylingSchema } from '../components/Blocks/schema';
 import {
-  gridTeaserDisableAlignHandlersSchema,
+  gridTeaserDisableStylingSchema,
   teaserSchemaEnhancer,
 } from '../components/Blocks/Teaser/schema';
 import { videoBlockSchemaEnhancer } from '../components/Blocks/Video/schema';
@@ -136,6 +136,7 @@ export default function install(config: ConfigType) {
     if (!data['@type']) return {};
     if (data.theme) {
       const blockConfig = config.blocks.blocksConfig[data['@type']];
+      if (!blockConfig) return {};
       const blockStyleDefinitions =
         // We look up for the blockThemes in the block's config, then in the global config
         // We keep `colors` for BBB, but `themes` should be used
@@ -253,7 +254,7 @@ export default function install(config: ConfigType) {
     ImageBlockDataAdapter;
 
   config.blocks.blocksConfig.gridBlock.blocksConfig.teaser.schemaEnhancer =
-    composeSchema(gridTeaserDisableAlignHandlersSchema, teaserSchemaEnhancer);
+    composeSchema(teaserSchemaEnhancer, gridTeaserDisableStylingSchema);
 
   config.blocks.blocksConfig.gridBlock.blocksConfig.listing.allowed_headline_tags =
     [['h2', 'h2']];

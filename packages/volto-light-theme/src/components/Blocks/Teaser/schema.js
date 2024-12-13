@@ -4,14 +4,8 @@ export const teaserSchemaEnhancer = ({ schema, formData, intl }) => {
   return schema;
 };
 
-// Not sure why, but it was in the new one, check with blockModel3
-// export const gridTeaserDisableStylingSchema = ({ schema, formData, intl }) => {
-//   schema.fieldsets = schema.fieldsets.filter((item) => item.id !== 'styling');
-//   return schema;
-// };
 export const gridTeaserDisableStylingSchema = ({ schema, formData, intl }) => {
-  // Remove all the existing fields from the default schema
-  schema.properties.styles.schema.fieldsets[0].fields = [];
+  schema.fieldsets = schema.fieldsets.filter((item) => item.id !== 'styling');
   return schema;
 };
 
