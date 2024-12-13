@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 6.0.0-alpha.8 (2024-12-13)
+
+### Bugfix
+
+- Remove the `aspect-ratio` handler by default in images and teasers. @sneridagh [#448](https://github.com/kitconcept/volto-light-theme/pull/448)
+
 ## 6.0.0-alpha.7 (2024-12-11)
 
 ### Feature
