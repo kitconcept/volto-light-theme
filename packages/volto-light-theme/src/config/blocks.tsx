@@ -24,7 +24,6 @@ import { SeparatorStylingSchema } from '../components/Blocks/Separator/schema';
 import {
   imageBlockSchemaEnhancer,
   standAloneImageBlockSchemaEnhancer,
-  aspectRatioSchemaEnhancer,
 } from '../components/Blocks/Image/schema';
 import { ImageBlockDataAdapter } from '../components/Blocks/Image/adapter';
 
@@ -247,7 +246,6 @@ export default function install(config: ConfigType) {
   config.blocks.blocksConfig.gridBlock.blocksConfig.image.schemaEnhancer =
     composeSchema(
       imageBlockSchemaEnhancer,
-      aspectRatioSchemaEnhancer,
       gridImageDisableSizeAndPositionHandlersSchema,
     );
   config.blocks.blocksConfig.gridBlock.blocksConfig.image.dataAdapter =
