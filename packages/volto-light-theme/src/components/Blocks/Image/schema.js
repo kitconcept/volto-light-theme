@@ -56,7 +56,6 @@ export const standAloneImageBlockSchemaEnhancer = ({
     schema.properties.size.disabled = formData.align === 'center';
     schema.properties.styles.schema.fieldsets[0].fields = [
       'blockWidth:noprefix',
-      '--image-aspect-ratio',
       ...schema.properties.styles.schema.fieldsets[0].fields,
     ];
 
@@ -66,15 +65,6 @@ export const standAloneImageBlockSchemaEnhancer = ({
       default: 'default',
       filterActions: ['narrow', 'default', 'layout', 'full'],
       actions: config.blocks.widths,
-    };
-
-    schema.properties.styles.schema.properties['--image-aspect-ratio'] = {
-      widget: 'select',
-      title: 'Aspect Ratio',
-      choices: [
-        ['16 / 9', '16/9'],
-        ['1', '1:1'],
-      ],
     };
 
     schema.properties.styles.schema.properties['blockWidth:noprefix'].disabled =
