@@ -6,9 +6,12 @@ import cloneDeep from 'lodash/cloneDeep';
 import { composeSchema } from '@plone/volto/helpers/Extensions';
 import { findStyleByName } from '@plone/volto/helpers/Blocks/Blocks';
 import { defaultStylingSchema } from '../components/Blocks/schema';
-import { teaserSchemaEnhancer } from '../components/Blocks/Teaser/schema';
+import {
+  gridTeaserDisableStylingSchema,
+  teaserSchemaEnhancer,
+} from '../components/Blocks/Teaser/schema';
 import { videoBlockSchemaEnhancer } from '../components/Blocks/Video/schema';
-import { gridTeaserDisableStylingSchema } from '@plone/volto/components/manage/Blocks/Teaser/schema';
+
 import { gridImageDisableSizeAndPositionHandlersSchema } from '@plone/volto/components/manage/Blocks/Image/schema';
 import { disableBgColorSchema } from '../components/Blocks/disableBgColorSchema';
 
@@ -18,7 +21,10 @@ import GridListingBlockTemplate from '../components/Blocks/Listing/GridTemplate'
 import { ButtonStylingSchema } from '../components/Blocks/Button/schema';
 import { SeparatorStylingSchema } from '../components/Blocks/Separator/schema';
 
-import { imageBlockSchemaEnhancer } from '../components/Blocks/Image/schema';
+import {
+  imageBlockSchemaEnhancer,
+  standAloneImageBlockSchemaEnhancer,
+} from '../components/Blocks/Image/schema';
 import { ImageBlockDataAdapter } from '../components/Blocks/Image/adapter';
 
 import { AccordionSchemaEnhancer } from '../components/Blocks/Accordion/schema';
@@ -129,6 +135,7 @@ export default function install(config: ConfigType) {
     if (!data['@type']) return {};
     if (data.theme) {
       const blockConfig = config.blocks.blocksConfig[data['@type']];
+      if (!blockConfig) return {};
       const blockStyleDefinitions =
         // We look up for the blockThemes in the block's config, then in the global config
         // We keep `colors` for BBB, but `themes` should be used
@@ -206,6 +213,7 @@ export default function install(config: ConfigType) {
     schemaEnhancer: composeSchema(
       defaultStylingSchema,
       imageBlockSchemaEnhancer,
+      standAloneImageBlockSchemaEnhancer,
     ),
     dataAdapter: ImageBlockDataAdapter,
   };
@@ -244,7 +252,7 @@ export default function install(config: ConfigType) {
     ImageBlockDataAdapter;
 
   config.blocks.blocksConfig.gridBlock.blocksConfig.teaser.schemaEnhancer =
-    composeSchema(gridTeaserDisableStylingSchema, teaserSchemaEnhancer);
+    composeSchema(teaserSchemaEnhancer, gridTeaserDisableStylingSchema);
 
   config.blocks.blocksConfig.gridBlock.blocksConfig.listing.allowed_headline_tags =
     [['h2', 'h2']];

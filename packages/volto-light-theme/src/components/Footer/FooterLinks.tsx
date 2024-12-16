@@ -14,8 +14,11 @@ const FooterLinks = (props: FooterLinksProps) => {
       {!isEmpty(links?.blocks)
         ? links.blocks_layout.items.map((itemId) => {
             const link = links.blocks[itemId];
+
+            if (isEmpty(link) || !link.href) return null;
+
             const title = link.title || link.href[0]['title'];
-            const href = flattenToAppURL(link.href[0]['@id']);
+            const href = flattenToAppURL(link.href[0]?.['@id']);
 
             if (!href) return null;
 
