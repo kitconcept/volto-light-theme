@@ -50,14 +50,22 @@ const ButtonsWidget = (props: ButtonsWidgetProps) => {
             key={action.name}
             aria-label={actionsInfoMap[action.name][1]}
             onPress={() => onChange(id, action.style || action.name)}
-            className={isEqual(value, action.style) ? 'active' : null}
+            className={
+              isEqual(value, action.style || action.name) ? 'active' : null
+            }
             isDisabled={disabled || isDisabled}
           >
-            <Icon
-              name={actionsInfoMap[action.name][0]}
-              title={actionsInfoMap[action.name][1] || action.name}
-              size="24px"
-            />
+            {typeof actionsInfoMap[action.name][0] === 'string' ? (
+              <div className="image-sizes-text">
+                {actionsInfoMap[action.name][0]}
+              </div>
+            ) : (
+              <Icon
+                name={actionsInfoMap[action.name][0]}
+                title={actionsInfoMap[action.name][1] || action.name}
+                size="24px"
+              />
+            )}
           </Button>
         ))}
       </div>

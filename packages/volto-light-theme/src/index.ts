@@ -30,6 +30,8 @@ defineMessages({
 declare module '@plone/types' {
   export interface Content {
     footer_logos: BlocksData;
+    footer_logos_container_width: string;
+    footer_logos_size: string;
   }
 }
 

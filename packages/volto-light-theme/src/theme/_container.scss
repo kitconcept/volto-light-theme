@@ -6,6 +6,10 @@
     @include layout-container-width;
   }
 
+  &.default {
+    @include default-container-width;
+  }
+
   &.narrow {
     @include narrow-container-width;
   }
