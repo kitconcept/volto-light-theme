@@ -6,6 +6,7 @@ import BlockAlignmentWidget from '../components/Widgets/BlockAlignmentWidget';
 import ColorPickerWidget from '../components/Widgets/ColorPickerWidget';
 import FooterLogosWidget from '../components/Widgets/FooterLogosWidget';
 import FooterLinksWidget from '../components/Widgets/FooterLinksWidget';
+import SizeWidget from '../components/Widgets/SizeWidget';
 
 declare module '@plone/types' {
   export interface WidgetsConfigByWidget {
@@ -15,6 +16,7 @@ declare module '@plone/types' {
     themingColorPicker: typeof ThemingColorPicker;
     footerLogos: typeof FooterLogosWidget;
     footerLinks: typeof FooterLinksWidget;
+    sizeWidget: React.ComponentType<any>;
   }
 }
 
@@ -26,6 +28,7 @@ export default function install(config: ConfigType) {
   config.widgets.widget.themingColorPicker = ThemingColorPicker;
   config.widgets.widget.footerLogos = FooterLogosWidget;
   config.widgets.widget.footerLinks = FooterLinksWidget;
+  config.widgets.widget.sizeWidget = SizeWidget;
 
   return config;
 }

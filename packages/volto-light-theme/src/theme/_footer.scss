@@ -4,26 +4,24 @@
 
   ul.footer-logos {
     display: grid;
+    align-items: center;
     justify-content: center;
     padding: $pre-footer-vertical-spacing 0;
     padding-left: 0;
     margin-top: 0;
     margin-bottom: $spacing-medium;
-    gap: 20px;
-    grid-template-columns: repeat(3, 1fr);
+    gap: 60px 20px;
+    grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
     list-style: none;
 
-    img {
-      max-width: 100%;
+    &.l img {
+      max-width: min(100%, 240px);
+      max-height: 165px;
     }
 
-    li.item:nth-child(3n + 1) {
-      /* Targets 1st, 4th, 7th, etc. */
-      justify-self: start;
-    }
-    li.item:nth-child(3n + 3) {
-      /* Targets 3rd, 6th, 9th, etc. */
-      justify-self: end;
+    &.s img {
+      max-width: min(100%, 175px);
+      max-height: 120px;
     }
   }
 
