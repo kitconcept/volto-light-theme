@@ -32,7 +32,7 @@ const FooterLogos = () => {
   const footer_logos_container_width =
     formState?.footer_logos_container_width ||
     navroot?.footer_logos_container_width;
-  console.log(logos);
+
   return (
     <Container className={cx({ [footer_logos_container_width]: 1 })}>
       <ul
