@@ -91,7 +91,6 @@ const ColorPickerWidget = (props: {
 
   // Get WCAG compliance levels
   const getComplianceLevel = (ratio) => {
-    if (ratio >= 4.5) return 'AA';
     if (ratio >= 3) return 'AA Large';
     return 'Fail';
   };
@@ -114,13 +113,8 @@ const ColorPickerWidget = (props: {
           }}
         />
       </div>
-      {formData[props.id] && contrastRatio < 7 && (
-        <label
-          className={cx('color-contrast-label', {
-            red: contrastRatio < 4.5,
-            orange: contrastRatio >= 4.5,
-          })}
-        >
+      {formData[props.id] && contrastRatio < 4.5 && (
+        <label className={cx('color-contrast-label')}>
           The color contrast ratio ({contrastRatio.toFixed(2)}:1) might not be
           accesible for all.
           <br />
