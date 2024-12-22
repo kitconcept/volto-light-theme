@@ -55,17 +55,17 @@
 
   label.color-contrast-label {
     border-bottom: 1px solid #edf1f2;
-    font-size: 0.7rem;
     color: darkorange;
+    font-size: 0.7rem;
     a {
       padding: 0.1rem 0.25rem;
       border: 1px solid var(--link-foreground-color);
       border-radius: 100%;
       margin: 0;
       margin-left: 4px;
+      margin-left: 4px;
       font-size: 0.4rem;
       vertical-align: super;
-      margin-left: 4px;
     }
   }
 }
