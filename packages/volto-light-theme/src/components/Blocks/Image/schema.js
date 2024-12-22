@@ -1,5 +1,6 @@
 import { defineMessages } from 'react-intl';
 import { insertInArray } from '@plone/volto/helpers/Utils/Utils';
+import { addStyling } from '@plone/volto/helpers/Extensions/withBlockSchemaEnhancer';
 import config from '@plone/volto/registry';
 
 const messages = defineMessages({
@@ -55,7 +56,6 @@ export const standAloneImageBlockSchemaEnhancer = ({
     schema.properties.size.disabled = formData.align === 'center';
     schema.properties.styles.schema.fieldsets[0].fields = [
       'blockWidth:noprefix',
-      '--image-aspect-ratio',
       ...schema.properties.styles.schema.fieldsets[0].fields,
     ];
 
@@ -67,18 +67,28 @@ export const standAloneImageBlockSchemaEnhancer = ({
       actions: config.blocks.widths,
     };
 
-    schema.properties.styles.schema.properties['--image-aspect-ratio'] = {
-      widget: 'select',
-      title: 'Aspect Ratio',
-      choices: [
-        ['1', '1:1'],
-        ['16 / 9', '16/9'],
-      ],
-    };
-
     schema.properties.styles.schema.properties['blockWidth:noprefix'].disabled =
       formData.align === 'left' || formData.align === 'right';
   }
 
   return schema;
 };
+
+export function aspectRatioSchemaEnhancer({ schema, intl }) {
+  addStyling({ schema, intl });
+
+  schema.properties.styles.schema.fieldsets[0].fields = [
+    ...schema.properties.styles.schema.fieldsets[0].fields,
+    '--image-aspect-ratio',
+  ];
+  schema.properties.styles.schema.properties['--image-aspect-ratio'] = {
+    widget: 'select',
+    title: 'Aspect Ratio',
+    choices: [
+      ['16 / 9', '16/9'],
+      ['1', '1:1'],
+    ],
+  };
+
+  return schema;
+}

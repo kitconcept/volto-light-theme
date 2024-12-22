@@ -8,6 +8,37 @@
 
 <!-- towncrier release notes start -->
 
+## 6.0.0-alpha.9 (2024-12-17)
+
+### Feature
+
+- Added logos footer handlers for logo size and logos container size. Overall improvements for look and feel. @sneridagh [#451](https://github.com/kitconcept/volto-light-theme/pull/451)
+
+### Bugfix
+
+- Remove teaser styling tab inside grids since it's empty. @sneridagh [#449](https://github.com/kitconcept/volto-light-theme/pull/449)
+- Remove the last dangling `aspect-ratio` handler from image block. @sneridagh [#450](https://github.com/kitconcept/volto-light-theme/pull/450)
+
+## 6.0.0-alpha.8 (2024-12-13)
+
+### Bugfix
+
+- Remove the `aspect-ratio` handler by default in images and teasers. @sneridagh [#448](https://github.com/kitconcept/volto-light-theme/pull/448)
+
+## 6.0.0-alpha.7 (2024-12-11)
+
+### Feature
+
+- Image aspect-ratio handlers for Teaser/Image inside a grid. @sneridagh [#447](https://github.com/kitconcept/volto-light-theme/pull/447)
+
+### Bugfix
+
+- Don't show image size and alignment settings for image block inside a grid. @danalvrz [#435](https://github.com/kitconcept/volto-light-theme/pull/435)
+
+### Documentation
+
+- Update compatibility matrix. @sneridagh [#447](https://github.com/kitconcept/volto-light-theme/pull/447)
+
 ## 6.0.0-alpha.6 (2024-12-10)
 
 ### Bugfix

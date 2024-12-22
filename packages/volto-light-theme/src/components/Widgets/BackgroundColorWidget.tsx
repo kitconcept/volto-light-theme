@@ -3,8 +3,7 @@ import config from '@plone/volto/registry';
 import type { ColorPickerWidgetProps } from '@plone/volto/components/manage/Widgets/ColorPickerWidget';
 
 const BackgroundColorWidget = (props: ColorPickerWidgetProps) => {
-  const colors: ColorPickerWidgetProps['colors'] =
-    config.settings.backgroundColors;
+  const colors: ColorPickerWidgetProps['colors'] = config.blocks.themes;
 
   const defaultValue = colors.find(
     (color) => color.name === config.settings.defaultBackgroundColor,

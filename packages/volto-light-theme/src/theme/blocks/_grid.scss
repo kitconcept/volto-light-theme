@@ -30,7 +30,7 @@
 
   // Override the Image component `aspect-ratio`
   .block.image img {
-    aspect-ratio: $aspect-ratio !important;
+    aspect-ratio: var(--image-aspect-ratio, $aspect-ratio) !important;
   }
 
   .block.teaser {
