@@ -1,0 +1,1 @@
+Add color contrast check to Theming widget. @danalvrz
