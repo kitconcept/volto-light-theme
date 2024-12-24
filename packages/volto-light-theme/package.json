@@ -45,7 +45,9 @@
   },
   "dependencies": {
     "@plone/components": "workspace:^",
-    "uuid": "^11.0.0"
+    "uuid": "^11.0.0",
+    "react-aria-components": "^1.5.0",
+    "react-colorful": "^5.6.1"
   },
   "peerDependencies": {
     "@eeacms/volto-accordion-block": "^10.4.6",
