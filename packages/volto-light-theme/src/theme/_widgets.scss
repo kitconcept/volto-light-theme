@@ -29,14 +29,33 @@
   }
 }
 
-.field.color {
+.field.theme-color-picker {
   .eight.wide.column {
     flex-direction: row;
     align-items: center;
 
     input {
+      height: 32px;
       padding-left: 8px;
+      border-bottom-left-radius: 0px;
+      border-top-left-radius: 0px;
       line-height: 1;
+    }
+
+    .theme-color-picker-button .react-aria-ColorSwatch {
+      border-bottom-right-radius: 0px;
+      border-top-right-radius: 0px;
+      cursor: pointer;
+    }
+
+    .theme-color-picker-reset {
+      position: absolute;
+      right: 15px;
+
+      &[data-hovered='true'] {
+        cursor: pointer;
+        opacity: 0.7;
+      }
     }
   }
 }

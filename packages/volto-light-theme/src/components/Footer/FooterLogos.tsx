@@ -64,7 +64,7 @@ const FooterLogos = () => {
                 logoInfo.logoHref = logo.logo[0]['@id'];
                 logoInfo.srcAlt = logo['alt'];
                 logoInfo.src = `${flattenToAppURL(logoInfo.logoHref)}/${logo.logo[0].image_scales[logo.logo[0].image_field][0].download}`;
-              } else if (logo?.logo) {
+              } else if (logo?.logo && logo.logo[0]) {
                 logoInfo.logoHref = logo.logo[0]['@id'];
                 logoInfo.srcAlt = logo['alt'];
                 logoInfo.src = `${flattenToAppURL(logoInfo.logoHref)}/@@images/image`;
