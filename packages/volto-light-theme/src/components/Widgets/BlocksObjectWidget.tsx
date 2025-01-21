@@ -105,8 +105,16 @@ function deleteBlock(formData, blockId: string) {
  * ```
  */
 const ObjectListWidget = (props: BlocksObjectWidgetProps) => {
-  const { block, fieldSet, id, schema, value, onChange, schemaExtender } =
-    props;
+  const {
+    block,
+    fieldSet,
+    id,
+    schema,
+    value,
+    onChange,
+    schemaExtender,
+    error,
+  } = props;
   const [localActiveObject, setLocalActiveObject] = useState(
     props.activeObject ?? value?.blocks_layout?.items?.length - 1,
   );
@@ -319,6 +327,7 @@ const ObjectListWidget = (props: BlocksObjectWidgetProps) => {
                           },
                         });
                       }}
+                      errors={error}
                     />
                   </Segment>
                 </Accordion.Content>

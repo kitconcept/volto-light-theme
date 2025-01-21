@@ -7,6 +7,7 @@ import FooterLogosWidget from '../components/Widgets/FooterLogosWidget';
 import FooterLinksWidget from '../components/Widgets/FooterLinksWidget';
 import SizeWidget from '../components/Widgets/SizeWidget';
 import ThemeColorPicker from '../components/Widgets/ThemeColorPicker';
+import { JSONSchemaField } from '../components/Widgets/FooterLinksWidget';
 
 declare module '@plone/types' {
   export interface WidgetsConfigByWidget {
@@ -29,6 +30,13 @@ export default function install(config: ConfigType) {
   config.widgets.widget.footerLogos = FooterLogosWidget;
   config.widgets.widget.footerLinks = FooterLinksWidget;
   config.widgets.widget.sizeWidget = SizeWidget;
+
+  config.registerUtility({
+    name: 'footer_links',
+    type: 'schema',
+    dependencies: { fieldName: 'footer_links' },
+    method: JSONSchemaField,
+  });
 
   return config;
 }
