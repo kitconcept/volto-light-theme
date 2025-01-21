@@ -57,47 +57,46 @@ const messages = defineMessages({
   },
 });
 
+export function JSONSchemaField({ intl }) {
+  return {
+    title: intl.formatMessage(messages.item),
+    addMessage: intl.formatMessage(messages.addLink),
+    fieldsets: [
+      {
+        id: 'default',
+        title: 'Default',
+        fields: ['title', 'href', 'openLinkInNewTab'],
+      },
+    ],
+
+    properties: {
+      title: {
+        title: intl.formatMessage(messages.title),
+      },
+      href: {
+        title: intl.formatMessage(messages.Target),
+        widget: 'object_browser',
+        mode: 'link',
+        selectedItemAttrs: ['Title', 'Description', '@type'],
+        allowExternals: true,
+      },
+      openLinkInNewTab: {
+        title: intl.formatMessage(messages.openLinkInNewTab),
+        type: 'boolean',
+      },
+    },
+    required: ['title'],
+  };
+}
+
 const FooterLinksWidget = (props) => {
   const { value, onChange } = props;
-  const intl = useIntl();
-
-  function schema(props: BlockEditProps) {
-    return {
-      title: intl.formatMessage(messages.item),
-      addMessage: intl.formatMessage(messages.addLink),
-      fieldsets: [
-        {
-          id: 'default',
-          title: 'Default',
-          fields: ['title', 'href', 'openLinkInNewTab'],
-        },
-      ],
-
-      properties: {
-        title: {
-          title: intl.formatMessage(messages.title),
-        },
-        href: {
-          title: intl.formatMessage(messages.Target),
-          widget: 'object_browser',
-          mode: 'link',
-          selectedItemAttrs: ['Title', 'Description', '@type'],
-          allowExternals: true,
-        },
-        openLinkInNewTab: {
-          title: intl.formatMessage(messages.openLinkInNewTab),
-          type: 'boolean',
-        },
-      },
-      required: [],
-    };
-  }
 
   return (
     <BlocksObjectWidget
       {...props}
       value={value}
-      schema={schema}
+      schema={JSONSchemaField}
       onChange={onChange}
     />
   );
