@@ -11,8 +11,12 @@
     margin-top: 0;
     margin-bottom: $spacing-medium;
     gap: 60px 20px;
-    grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     list-style: none;
+
+    &.s {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
 
     &.l img {
       max-width: min(100%, 240px);
