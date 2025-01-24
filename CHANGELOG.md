@@ -8,6 +8,21 @@
 
 <!-- towncrier release notes start -->
 
+## 6.0.0-alpha.10 (2025-01-07)
+
+### Breaking
+
+- Rename the name of the widget from `themingColorPicker` to `themeColorPicker`. @sneridagh [#455](https://github.com/kitconcept/volto-light-theme/pull/455)
+
+### Bugfix
+
+- Removed the non-breaking space from the external URL icon, removing the strange underline. @Tishasoumya-02 [#438](https://github.com/kitconcept/volto-light-theme/pull/438)
+- Improve usability of the theme color picker widget. Fix error when removing a logo. @sneridagh [#455](https://github.com/kitconcept/volto-light-theme/pull/455)
+
+### Internal
+
+- Update to latest Volto 18.4.0. @sneridagh [#455](https://github.com/kitconcept/volto-light-theme/pull/455)
+
 ## 6.0.0-alpha.9 (2024-12-17)
 
 ### Feature
