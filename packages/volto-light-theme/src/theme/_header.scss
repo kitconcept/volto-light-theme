@@ -11,8 +11,19 @@
     padding-bottom: 35px;
 
     .logo {
+      max-width: 200px;
+      max-height: 80px;
       flex: 1 1 0;
       align-self: center;
+
+      a {
+        display: block;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
     }
 
     .navigation {
