@@ -6,17 +6,17 @@ const NewsItemSummary = (props) => {
     day: 'numeric',
   });
 
-  let kicker = [
+  const kicker = [
     item.EffectiveDate !== 'None' && item.effective && (
       <span className="day" key="day" suppressHydrationWarning>
         {formatter.format(new Date(item.effective))}
       </span>
     ),
     item.head_title,
-  ].filter((x) => x);
-  if (kicker.length > 1) {
-    kicker = kicker.reduce((prev, curr) => [prev, ' | ', curr]);
-  }
+  ]
+    .filter((x) => x)
+    .flatMap((x) => [' | ', x])
+    .slice(1);
 
   return (
     <>

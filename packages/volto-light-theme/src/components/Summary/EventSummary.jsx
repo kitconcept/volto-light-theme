@@ -13,10 +13,10 @@ const EventSummary = (props) => {
       </span>
     ),
     item.head_title,
-  ].filter((x) => x);
-  if (kicker.length > 1) {
-    kicker = kicker.reduce((prev, curr) => [prev, ' | ', curr]);
-  }
+  ]
+    .filter((x) => x)
+    .flatMap((x) => [' | ', x])
+    .slice(1);
 
   return (
     <>
