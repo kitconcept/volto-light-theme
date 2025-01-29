@@ -15,6 +15,8 @@ import installSlots from './config/slots';
 
 import '@plone/components/dist/basic.css';
 import type { BlocksData } from '@plone/types';
+import NewsItemSummary from './components/Summary/NewsItemSummary';
+import EventSummary from './components/Summary/EventSummary';
 
 defineMessages({
   Press: {
@@ -46,6 +48,18 @@ const applyConfig = (config: ConfigType) => {
   config.registerComponent({
     name: 'Container',
     component: Container,
+  });
+
+  // Register content type Summary components
+  config.registerComponent({
+    name: 'Summary',
+    component: NewsItemSummary,
+    dependencies: ['News Item'],
+  });
+  config.registerComponent({
+    name: 'Summary',
+    component: EventSummary,
+    dependencies: ['Event'],
   });
 
   config.registerUtility({

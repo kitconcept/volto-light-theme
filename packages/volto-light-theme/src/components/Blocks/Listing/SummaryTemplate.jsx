@@ -2,10 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
 import Component from '@plone/volto/components/theme/Component/Component';
-import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
+import { flattenToAppURL, isInternalURL } from '@plone/volto/helpers/Url/Url';
 import config from '@plone/volto/registry';
-
-import { isInternalURL } from '@plone/volto/helpers/Url/Url';
+import DefaultSummary from '@kitconcept/volto-light-theme/components/Summary/DefaultSummary';
 
 const SummaryTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
   let link = null;
@@ -25,11 +24,15 @@ const SummaryTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
     <>
       <div className="items">
         {items.map((item) => {
-          const hasType = item['@type'];
           const CustomItemBodyTemplate = config.getComponent({
             name: 'SummaryListingItemTemplate',
-            dependencies: [hasType],
+            dependencies: [item['@type']],
           }).component;
+          const Summary =
+            config.getComponent({
+              name: 'Summary',
+              dependencies: [item['@type']],
+            }).component || DefaultSummary;
 
           const ItemBodyTemplate = () =>
             CustomItemBodyTemplate ? (
@@ -38,8 +41,7 @@ const SummaryTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
               <>
                 <Component componentName="PreviewImage" item={item} alt="" />
                 <div className="listing-body">
-                  <h3>{item.title ? item.title : item.id}</h3>
-                  <p>{item.description}</p>
+                  <Summary item={item} HeadingTag="h3" />
                 </div>
               </>
             );

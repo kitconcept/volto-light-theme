@@ -2,11 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
 import Component from '@plone/volto/components/theme/Component/Component';
-import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
-
+import { flattenToAppURL, isInternalURL } from '@plone/volto/helpers/Url/Url';
 import config from '@plone/volto/registry';
-
-import { isInternalURL } from '@plone/volto/helpers/Url/Url';
+import DefaultSummary from '@kitconcept/volto-light-theme/components/Summary/DefaultSummary';
 
 const GridTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
   let link = null;
@@ -27,11 +25,15 @@ const GridTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
       <div className="items">
         {items.map((item) => {
           const ItemBodyTemplate = () => {
-            const hasType = item['@type'];
             const CustomItemBodyTemplate = config.getComponent({
               name: 'GridListingItemTemplate',
-              dependencies: [hasType],
+              dependencies: [item['@type']],
             }).component;
+            const Summary =
+              config.getComponent({
+                name: 'Summary',
+                dependencies: [item['@type']],
+              }).component || DefaultSummary;
 
             return CustomItemBodyTemplate ? (
               <CustomItemBodyTemplate item={item} />
@@ -47,12 +49,7 @@ const GridTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
                 )}
                 <div className="item">
                   <div className="content">
-                    {item?.head_title && (
-                      <div className="headline">{item.head_title}</div>
-                    )}
-
-                    <h2>{item?.title}</h2>
-                    {!item.hide_description && <p>{item?.description}</p>}
+                    <Summary item={item} HeadingTag="h2" />
                   </div>
                 </div>
               </div>
