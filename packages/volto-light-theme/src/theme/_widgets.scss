@@ -61,11 +61,11 @@
 }
 
 span.color-contrast-label {
+  position: relative;
+  display: block;
+  padding-left: 20%;
   color: #ed6500;
   font-size: 13px;
-  display: block;
-  position: relative;
-  padding-left: 20%;
   a {
     padding: 0.1rem 0.25rem;
     border: 1px solid var(--link-foreground-color);
