@@ -8,6 +8,13 @@
 
 <!-- towncrier release notes start -->
 
+## 6.0.0-alpha.11 (2025-01-31)
+
+### Feature
+
+- Added inner and outter logo container width and constraints. @sneridagh [#458](https://github.com/kitconcept/volto-light-theme/pull/458)
+- Constrain logo proportions to 200x80. @sneridagh [#461](https://github.com/kitconcept/volto-light-theme/pull/461)
+
 ## 6.0.0-alpha.10 (2025-01-07)
 
 ### Breaking
