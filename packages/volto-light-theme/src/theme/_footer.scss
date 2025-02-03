@@ -77,7 +77,20 @@
     }
 
     .logo {
+      display: flex;
+      justify-content: center;
       margin: 5rem 0 1.8rem 0;
+
+      a {
+        display: block;
+        max-width: 200px;
+        max-height: 80px;
+
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
     }
   }
 }
