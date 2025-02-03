@@ -8,6 +8,7 @@ on:
 env:
   NODE_VERSION: 22.x
   ADDON_NAME: volto-light-theme
+  COREPACK_INTEGRITY_KEYS: 0
 
 jobs:
   build:

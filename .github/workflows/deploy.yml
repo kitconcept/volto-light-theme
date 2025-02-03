@@ -11,6 +11,7 @@ on:
 env:
   ENVIRONMENT: "light-theme.kitconcept.io"
   IMAGE_NAME: "ghcr.io/kitconcept/voltolighttheme-frontend"
+  COREPACK_INTEGRITY_KEYS: 0
 
 jobs:
   meta:

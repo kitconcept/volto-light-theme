@@ -10,6 +10,7 @@ on: [push, pull_request]
 
 env:
   node-version: 22.x
+  COREPACK_INTEGRITY_KEYS: 0
 
 jobs:
   visualhomepage:
