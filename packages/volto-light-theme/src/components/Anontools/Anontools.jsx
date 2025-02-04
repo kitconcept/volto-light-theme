@@ -5,7 +5,7 @@ import { FormattedMessage } from 'react-intl';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import config from '@plone/volto/registry';
 import { useSelector, shallowEqual } from 'react-redux';
-
+// asdas
 const Anontools = () => {
   const token = useSelector((state) => state.userSession.token, shallowEqual);
   const content = useSelector((state) => state.content.data, shallowEqual);
