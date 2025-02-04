@@ -8,6 +8,21 @@
 
 <!-- towncrier release notes start -->
 
+## 6.0.0-alpha.12 (2025-02-04)
+
+### Bugfix
+
+- Constrain logo proportions to 200x80. @kittauri [#467](https://github.com/kitconcept/volto-light-theme/pull/467)
+- Improve the CSS around the logo. @sneridagh [#469](https://github.com/kitconcept/volto-light-theme/pull/469)
+
+### Internal
+
+- Fix the `corepack`-armageddon of the last weekend. @sneridagh [#469](https://github.com/kitconcept/volto-light-theme/pull/469)
+
+### Documentation
+
+- Add missing addons to the addons list in install.md @kittauri [#465](https://github.com/kitconcept/volto-light-theme/pull/465)
+
 ## 6.0.0-alpha.11 (2025-01-31)
 
 ### Feature
