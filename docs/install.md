@@ -44,8 +44,8 @@ In your project or policy add-on {file}`package.json` you should declare all of 
   "@kitconcept/volto-introduction-block",
   "@kitconcept/volto-highlight-block",
   "@kitconcept/volto-separator-block",
-  "@kitconcept/volto-light-theme",
   "@kitconcept/volto-slider-block",
+  "@kitconcept/volto-light-theme",
   "your_policy_addon_here"
 ],
 ```
