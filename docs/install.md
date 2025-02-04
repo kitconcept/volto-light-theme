@@ -39,10 +39,12 @@ In your project or policy add-on {file}`package.json` you should declare all of 
 "addons": [
   "@eeacms/volto-accordion-block",
   "@kitconcept/volto-button-block",
+  "@kitconcept/volto-dsgvo-banner",
   "@kitconcept/volto-heading-block",
   "@kitconcept/volto-introduction-block",
   "@kitconcept/volto-highlight-block",
   "@kitconcept/volto-separator-block",
+  "@kitconcept/volto-slider-block",
   "@kitconcept/volto-light-theme",
   "your_policy_addon_here"
 ],
