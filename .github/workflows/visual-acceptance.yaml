@@ -27,7 +27,7 @@ jobs:
           node-version: ${{ env.node-version }}
 
       - name: Enable corepack
-        run: corepack enable
+        run: npm i -g corepack@latest && corepack enable
 
       - name: Get pnpm store directory
         shell: bash
@@ -92,21 +92,21 @@ jobs:
       - run: make ci-acceptance-test-visual SPEC='cypress/tests/visual/homepage.cy.js'
 
       # Upload Cypress screenshots
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: cypress-screenshots-visual-acceptance
           path: cypress/screenshots
 
       # Upload Cypress videos
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: cypress-videos-visual-acceptance
           path: cypress/videos
 
       # Upload Cypress visual testing screenshots
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: cypress-image-snapshots-visual-acceptance
@@ -128,7 +128,7 @@ jobs:
           node-version: ${{ env.node-version }}
 
       - name: Enable corepack
-        run: corepack enable
+        run: npm i -g corepack@latest && corepack enable
 
       - name: Get pnpm store directory
         shell: bash
@@ -193,21 +193,21 @@ jobs:
       - run: make ci-acceptance-test-visual SPEC='cypress/tests/visual/content.cy.js'
 
       # Upload Cypress screenshots
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: cypress-screenshots-visual-acceptance
           path: cypress/screenshots
 
       # Upload Cypress videos
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: cypress-videos-visual-acceptance
           path: cypress/videos
 
       # Upload Cypress visual testing screenshots
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: cypress-image-snapshots-visual-acceptance
@@ -229,7 +229,7 @@ jobs:
           node-version: ${{ env.node-version }}
 
       - name: Enable corepack
-        run: corepack enable
+        run: npm i -g corepack@latest && corepack enable
 
       - name: Get pnpm store directory
         shell: bash
@@ -294,21 +294,21 @@ jobs:
       - run: make ci-acceptance-test-visual SPEC='cypress/tests/visual/blocks-A.cy.js'
 
       # Upload Cypress screenshots
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: cypress-screenshots-visual-acceptance
           path: cypress/screenshots
 
       # Upload Cypress videos
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: cypress-videos-visual-acceptance
           path: cypress/videos
 
       # Upload Cypress visual testing screenshots
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: cypress-image-snapshots-visual-acceptance
@@ -330,7 +330,7 @@ jobs:
           node-version: ${{ env.node-version }}
 
       - name: Enable corepack
-        run: corepack enable
+        run: npm i -g corepack@latest && corepack enable
 
       - name: Get pnpm store directory
         shell: bash
@@ -395,21 +395,21 @@ jobs:
       - run: make ci-acceptance-test-visual SPEC='cypress/tests/visual/blocks-B.cy.js'
 
       # Upload Cypress screenshots
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: cypress-screenshots-visual-acceptance
           path: cypress/screenshots
 
       # Upload Cypress videos
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: cypress-videos-visual-acceptance
           path: cypress/videos
 
       # Upload Cypress visual testing screenshots
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: cypress-image-snapshots-visual-acceptance
@@ -431,7 +431,7 @@ jobs:
           node-version: ${{ env.node-version }}
 
       - name: Enable corepack
-        run: corepack enable
+        run: npm i -g corepack@latest && corepack enable
 
       - name: Get pnpm store directory
         shell: bash
@@ -496,21 +496,21 @@ jobs:
       - run: make ci-acceptance-test-visual SPEC='cypress/tests/visual/blocks-grid.cy.js'
 
       # Upload Cypress screenshots
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: cypress-screenshots-visual-acceptance
           path: cypress/screenshots
 
       # Upload Cypress videos
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: cypress-videos-visual-acceptance
           path: cypress/videos
 
       # Upload Cypress visual testing screenshots
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: cypress-image-snapshots-visual-acceptance
@@ -532,7 +532,7 @@ jobs:
           node-version: ${{ env.node-version }}
 
       - name: Enable corepack
-        run: corepack enable
+        run: npm i -g corepack@latest && corepack enable
 
       - name: Get pnpm store directory
         shell: bash
@@ -597,21 +597,21 @@ jobs:
       - run: make ci-acceptance-test-visual SPEC='cypress/tests/visual/blocks-listingsandsearch.cy.js'
 
       # Upload Cypress screenshots
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: cypress-screenshots-visual-acceptance
           path: cypress/screenshots
 
       # Upload Cypress videos
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: cypress-videos-visual-acceptance
           path: cypress/videos
 
       # Upload Cypress visual testing screenshots
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: cypress-image-snapshots-visual-acceptance
@@ -633,7 +633,7 @@ jobs:
           node-version: ${{ env.node-version }}
 
       - name: Enable corepack
-        run: corepack enable
+        run: npm i -g corepack@latest && corepack enable
 
       - name: Get pnpm store directory
         shell: bash
@@ -698,21 +698,21 @@ jobs:
       - run: make ci-acceptance-test-visual SPEC='cypress/tests/visual/vertical-spacing.cy.js'
 
       # Upload Cypress screenshots
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: cypress-screenshots-visual-acceptance
           path: cypress/screenshots
 
       # Upload Cypress videos
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: cypress-videos-visual-acceptance
           path: cypress/videos
 
       # Upload Cypress visual testing screenshots
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: cypress-image-snapshots-visual-acceptance
@@ -734,7 +734,7 @@ jobs:
           node-version: ${{ env.node-version }}
 
       - name: Enable corepack
-        run: corepack enable
+        run: npm i -g corepack@latest && corepack enable
 
       - name: Get pnpm store directory
         shell: bash
@@ -799,21 +799,21 @@ jobs:
       - run: make ci-acceptance-test-visual SPEC='cypress/tests/visual/typography.cy.js'
 
       # Upload Cypress screenshots
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: cypress-screenshots-visual-acceptance
           path: cypress/screenshots
 
       # Upload Cypress videos
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: cypress-videos-visual-acceptance
           path: cypress/videos
 
       # Upload Cypress visual testing screenshots
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: cypress-image-snapshots-visual-acceptance
