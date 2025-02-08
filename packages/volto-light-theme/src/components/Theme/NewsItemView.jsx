@@ -6,9 +6,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
-import FormattedDate from '@plone/volto/components/theme/FormattedDate/FormattedDate';
 import config from '@plone/volto/registry';
 import { Container as SemanticContainer } from 'semantic-ui-react';
+import { parseISO } from 'date-fns';
+import FormattedDate from '@plone/volto/components/theme/FormattedDate/FormattedDate';
 
 /**
  * NewsItemView view component class.
@@ -19,16 +20,22 @@ import { Container as SemanticContainer } from 'semantic-ui-react';
 const NewsItemView = ({ content }) => {
   const Container =
     config.getComponent({ name: 'Container' }).component || SemanticContainer;
+  const effective = content?.effective ? parseISO(content.effective) : null;
   return (
     <Container id="page-document" className="view-wrapper newsitem-view">
       <div className="dates">
-        {content?.effective ? (
-          <span className="day">
-            <FormattedDate date={content?.effective} />{' '}
-          </span>
-        ) : (
-          <span className="day">No date</span>
-        )}{' '}
+        {effective ? (
+          <FormattedDate
+            key="day"
+            date={effective}
+            format={{
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            }}
+            className="day"
+          />
+        ) : null}{' '}
         {content?.head_title && (
           <span className="head-title"> {content?.head_title}</span>
         )}

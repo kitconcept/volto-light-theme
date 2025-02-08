@@ -1,20 +1,30 @@
 import React from 'react';
-import { FormattedMessage, useIntl } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 import FormattedDate from '@plone/volto/components/theme/FormattedDate/FormattedDate';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { expandToBackendURL } from '@plone/volto/helpers/Url/Url';
 import { Container } from '@plone/components';
+import { parseISO } from 'date-fns';
 
 const EventMetadataView = (props) => {
   const content = props.properties;
-  const dateOptions = {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    hour: 'numeric',
-    minute: 'numeric',
-  };
-  const intl = useIntl();
+  const start = content.start ? parseISO(content.start) : null;
+  const end = content.end ? parseISO(content.end) : null;
+  const isWholeDay = !!content.whole_day;
+  const isOpenEnd = !end || !!content.open_end;
+  const dateOptions = isWholeDay
+    ? {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      }
+    : {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+      };
 
   return (
     <div className="block eventMetadata ">
@@ -28,26 +38,26 @@ const EventMetadataView = (props) => {
               <div className="event-detail">
                 {' '}
                 {content?.start && (
-                  <FormattedDate date={content?.start} format={dateOptions} />
-                )}{' '}
-                {intl.locale === 'de' ? ' Uhr' : ''}
+                  <FormattedDate date={start} format={dateOptions} />
+                )}
               </div>
               <div className="separator"></div>
             </div>
-            <div className="event-title">
-              <span className="event-heading">
-                {' '}
-                <FormattedMessage id="End" defaultMessage="End" />
-              </span>
-              <div className="event-detail">
-                {' '}
-                {content?.end && (
-                  <FormattedDate date={content?.end} format={dateOptions} />
-                )}{' '}
-                {intl.locale === 'de' ? ' Uhr' : ''}
+            {!isOpenEnd ? (
+              <div className="event-title">
+                <span className="event-heading">
+                  {' '}
+                  <FormattedMessage id="End" defaultMessage="End" />
+                </span>
+                <div className="event-detail">
+                  {' '}
+                  {content?.end && (
+                    <FormattedDate date={end} format={dateOptions} />
+                  )}
+                </div>
+                <div className="separator"></div>
               </div>
-              <div className="separator"></div>
-            </div>
+            ) : null}
             {content?.location && (
               <div className="event-title">
                 <span className="event-heading">

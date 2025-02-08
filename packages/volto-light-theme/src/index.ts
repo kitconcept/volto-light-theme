@@ -17,6 +17,7 @@ import '@plone/components/dist/basic.css';
 import type { BlocksData } from '@plone/types';
 import NewsItemSummary from './components/Summary/NewsItemSummary';
 import EventSummary from './components/Summary/EventSummary';
+import FileSummary from './components/Summary/FileSummary';
 
 defineMessages({
   Press: {
@@ -60,6 +61,11 @@ const applyConfig = (config: ConfigType) => {
     name: 'Summary',
     component: EventSummary,
     dependencies: ['Event'],
+  });
+  config.registerComponent({
+    name: 'Summary',
+    component: FileSummary,
+    dependencies: ['File'],
   });
 
   config.registerUtility({

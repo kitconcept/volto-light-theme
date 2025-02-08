@@ -1,17 +1,23 @@
+import { parseDateFromCatalog } from '@kitconcept/volto-light-theme/helpers/dates';
+import FormattedDate from '@plone/volto/components/theme/FormattedDate/FormattedDate';
+
 const NewsItemSummary = (props) => {
   const { item, HeadingTag = 'h3' } = props;
-  const formatter = new Intl.DateTimeFormat(item.Language || 'default', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
 
-  const kicker = [
-    item.EffectiveDate !== 'None' && item.effective && (
-      <span className="day" key="day" suppressHydrationWarning>
-        {formatter.format(new Date(item.effective))}
-      </span>
-    ),
+  const effective = parseDateFromCatalog(item.effective);
+  const headline = [
+    effective ? (
+      <FormattedDate
+        key="day"
+        date={effective}
+        format={{
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        }}
+        className="day"
+      />
+    ) : null,
     item.head_title,
   ]
     .filter((x) => x)
@@ -20,7 +26,7 @@ const NewsItemSummary = (props) => {
 
   return (
     <>
-      {kicker.length ? <div className="headline">{kicker}</div> : null}
+      {headline.length ? <div className="headline">{headline}</div> : null}
       <HeadingTag className="title">
         {item.title ? item.title : item.id}
       </HeadingTag>
