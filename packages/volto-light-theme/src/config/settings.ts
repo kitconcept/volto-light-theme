@@ -31,7 +31,5 @@ export default function install(config: ConfigType) {
     'secondary_foreground_color',
   ];
 
-  config.settings.defaultLanguage = 'de';
-  config.settings.availableLanguages = ['de'];
   return config;
 }
