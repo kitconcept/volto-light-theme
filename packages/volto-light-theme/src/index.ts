@@ -12,12 +12,10 @@ import installBlocks from './config/blocks';
 import installClassExtenders from './config/classExtenders';
 import installWidgets from './config/widgets';
 import installSlots from './config/slots';
+import installSummary from './config/summary';
 
 import '@plone/components/dist/basic.css';
 import type { BlocksData } from '@plone/types';
-import NewsItemSummary from './components/Summary/NewsItemSummary';
-import EventSummary from './components/Summary/EventSummary';
-import FileSummary from './components/Summary/FileSummary';
 
 defineMessages({
   Press: {
@@ -27,6 +25,14 @@ defineMessages({
   Sitemap: {
     id: 'Sitemap',
     defaultMessage: 'Sitemap',
+  },
+  List: {
+    id: 'List',
+    defaultMessage: 'List',
+  },
+  listWithImages: {
+    id: 'List with images',
+    defaultMessage: 'List with images',
   },
 });
 
@@ -44,28 +50,12 @@ const applyConfig = (config: ConfigType) => {
   installClassExtenders(config);
   installWidgets(config);
   installSlots(config);
+  installSummary(config);
 
   // Register a custom Container component from @plone/components
   config.registerComponent({
     name: 'Container',
     component: Container,
-  });
-
-  // Register content type Summary components
-  config.registerComponent({
-    name: 'Summary',
-    component: NewsItemSummary,
-    dependencies: ['News Item'],
-  });
-  config.registerComponent({
-    name: 'Summary',
-    component: EventSummary,
-    dependencies: ['Event'],
-  });
-  config.registerComponent({
-    name: 'Summary',
-    component: FileSummary,
-    dependencies: ['File'],
   });
 
   config.registerUtility({
