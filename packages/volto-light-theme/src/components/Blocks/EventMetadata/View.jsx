@@ -1,17 +1,13 @@
-import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import FormattedDate from '@plone/volto/components/theme/FormattedDate/FormattedDate';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { expandToBackendURL } from '@plone/volto/helpers/Url/Url';
 import { Container } from '@plone/components';
-import { parseISO } from 'date-fns';
 
 const EventMetadataView = (props) => {
   const content = props.properties;
-  const start = content.start ? parseISO(content.start) : null;
-  const end = content.end ? parseISO(content.end) : null;
   const isWholeDay = !!content.whole_day;
-  const isOpenEnd = !end || !!content.open_end;
+  const isOpenEnd = !content.end || !!content.open_end;
   const dateOptions = isWholeDay
     ? {
         year: 'numeric',
@@ -38,7 +34,7 @@ const EventMetadataView = (props) => {
               <div className="event-detail">
                 {' '}
                 {content?.start && (
-                  <FormattedDate date={start} format={dateOptions} />
+                  <FormattedDate date={content.start} format={dateOptions} />
                 )}
               </div>
               <div className="separator"></div>
@@ -52,7 +48,7 @@ const EventMetadataView = (props) => {
                 <div className="event-detail">
                   {' '}
                   {content?.end && (
-                    <FormattedDate date={end} format={dateOptions} />
+                    <FormattedDate date={content.end} format={dateOptions} />
                   )}
                 </div>
                 <div className="separator"></div>

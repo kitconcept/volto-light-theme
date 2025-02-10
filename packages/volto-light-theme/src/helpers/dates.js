@@ -1,5 +1,3 @@
-import { parseISO } from 'date-fns';
-
 const LONG_DATE_FORMAT = {
   year: 'numeric',
   month: 'long',
@@ -10,7 +8,7 @@ export const parseDateFromCatalog = (value) => {
   if (value.startsWith('1969')) {
     return null;
   }
-  return parseISO(value);
+  return new Date(value);
 };
 
 export const formatDateRange = ({

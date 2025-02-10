@@ -12,7 +12,6 @@ import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 
 import config from '@plone/volto/registry';
 import { injectIntl } from 'react-intl';
-import { parseISO } from 'date-fns';
 
 const EventTextfieldView = ({ content }) => {
   const Image = config.getComponent({ name: 'Image' }).component;
@@ -55,8 +54,8 @@ const EventView = (props) => {
     config.getComponent({ name: 'Container' }).component || SemanticContainer;
 
   const language = content.language?.token || 'default';
-  const start = content.start ? parseISO(content.start) : null;
-  const end = content.end ? parseISO(content.end) : null;
+  const start = content.start ? new Date(content.start) : null;
+  const end = content.end ? new Date(content.end) : null;
   const isOpenEnd = !!content.open_end;
 
   const formatter = new Intl.DateTimeFormat(language, {
