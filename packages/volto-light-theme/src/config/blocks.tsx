@@ -194,18 +194,29 @@ export default function install(config: ConfigType) {
     schemaEnhancer: defaultStylingSchema,
   };
 
+  const relabelVariation = (id, title) => {
+    const variation = config.blocks.blocksConfig.listing.variations.find(
+      (variation) => variation.id === id,
+    );
+    return variation ? { ...variation, title } : variation;
+  };
+  const listingBlockVariations = [
+    relabelVariation('default', 'List'),
+    relabelVariation('summary', 'List with images'),
+    {
+      id: 'grid',
+      title: 'Grid',
+      template: GridListingBlockTemplate,
+    },
+    ...config.blocks.blocksConfig.listing.variations.filter(
+      (variation) => !['default', 'summary'].includes(variation.id),
+    ),
+  ].filter((variation) => !!variation);
   config.blocks.blocksConfig.listing = {
     ...config.blocks.blocksConfig.listing,
     schemaEnhancer: defaultStylingSchema,
     allowed_headline_tags: [['h2', 'h2']],
-    variations: [
-      ...config.blocks.blocksConfig.listing.variations,
-      {
-        id: 'grid',
-        title: 'Grid',
-        template: GridListingBlockTemplate,
-      },
-    ],
+    variations: listingBlockVariations,
   };
 
   config.blocks.blocksConfig.image = {

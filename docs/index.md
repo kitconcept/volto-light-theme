@@ -160,6 +160,7 @@ We are working at the same time on a new spec for blocks: [The Block Model v3](.
 :maxdepth: 1
 install
 feature-flags
+summary
 contributing
 upgrade-guide
 block-model-v3

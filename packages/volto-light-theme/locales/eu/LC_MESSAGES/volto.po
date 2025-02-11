@@ -17,15 +17,36 @@ msgstr ""
 "Domain: volto\n"
 "X-Generator: Poedit 3.0.1\n"
 
+#. Default: "Add"
+#: components/Widgets/BlocksObjectWidget
+msgid "Add (object list)"
+msgstr ""
+
+#. Default: "Add link"
+#: components/Widgets/FooterLinksWidget
+msgid "Add link"
+msgstr ""
+
+#. Default: "Add logo"
+#: components/Widgets/FooterLogosWidget
+msgid "Add logo"
+msgstr ""
+
+#. Default: "Alignment"
+#: components/Blocks/Button/schema
+#: components/Blocks/Separator/schema
+msgid "Alignment"
+msgstr ""
+
+#. Default: "Alt text"
+#: components/Widgets/FooterLogosWidget
+msgid "Alt text"
+msgstr ""
+
 #. Default: "Back"
 #: components/MobileNavigation/MobileNavigation
 msgid "Back"
 msgstr "Atzera"
-
-#. Default: "Back to homepage"
-#: components/Logo/Logo
-msgid "Back to homepage"
-msgstr ""
 
 #. Default: "Background color"
 #: components/Blocks/schema
@@ -34,6 +55,8 @@ msgstr "Atzeko planoaren kolorea"
 
 #. Default: "Block Width"
 #: components/Blocks/Button/schema
+#: components/Blocks/Image/schema
+#: components/Blocks/Separator/schema
 msgid "Block Width"
 msgstr "Blokearen zabalera"
 
@@ -42,11 +65,6 @@ msgstr "Blokearen zabalera"
 msgid "Breadcrumbs"
 msgstr "Breadcrumbak"
 
-#. Default: "Browse the site, drop an image, or type an URL"
-#: components/Blocks/Image/Edit
-msgid "Browse the site, drop an image, or type an URL"
-msgstr "Bilatu atarian, arrastatu irudia edo idatzi URL bat"
-
 #. Default: "Button text"
 #: components/Blocks/Slider/schema
 msgid "Button text"
@@ -54,6 +72,7 @@ msgstr "Botoiaren testua"
 
 #. Default: "Center"
 #: components/Widgets/AlignWidget
+#: components/Widgets/BlockAlignmentWidget
 msgid "Center"
 msgstr "Erdiratu"
 
@@ -62,6 +81,11 @@ msgstr "Erdiratu"
 #: components/Navigation/Navigation
 msgid "Close menu"
 msgstr "Itxi menua"
+
+#. Default: "Collapse item"
+#: components/Widgets/BlocksObjectWidget
+msgid "Collapse item"
+msgstr ""
 
 #. Default: "Contact"
 #: components/Blocks/EventMetadata/View
@@ -78,8 +102,15 @@ msgstr "Jarraitu irakurtzen"
 msgid "Copyright"
 msgstr "Copyright"
 
+#. Default: "Default"
+#: components/Widgets/BlockWidthWidget
+msgid "Default"
+msgstr ""
+
 #. Default: "Description"
 #: components/Blocks/Image/schema
+#: components/Widgets/FooterLinksWidget
+#: components/Widgets/FooterLogosWidget
 msgid "Description"
 msgstr "Deskribapena"
 
@@ -87,6 +118,11 @@ msgstr "Deskribapena"
 #: components/Footer/Footer
 msgid "Distributed under the {license}."
 msgstr "{lizentzia} lizentziapean banatua."
+
+#. Default: "Empty object list"
+#: components/Widgets/BlocksObjectWidget
+msgid "Empty object list"
+msgstr ""
 
 #. Default: "End"
 #: components/Blocks/EventMetadata/View
@@ -100,6 +136,7 @@ msgstr "Alineazioa"
 
 #. Default: "Full"
 #: components/Widgets/AlignWidget
+#: components/Widgets/BlockWidthWidget
 msgid "Full"
 msgstr "Osoa"
 
@@ -108,13 +145,26 @@ msgstr "Osoa"
 msgid "GNU GPL license"
 msgstr "GNU GPL"
 
+#. Default: "Headline"
+#: components/Widgets/FooterLinksWidget
+#: components/Widgets/FooterLogosWidget
+msgid "Headline"
+msgstr ""
+
 #. Default: "Hide Button"
 #: components/Blocks/Slider/schema
 msgid "Hide Button"
 msgstr "Ezkutatu botoia"
 
+#. Default: "Hide description"
+#: components/Widgets/FooterLinksWidget
+#: components/Widgets/FooterLogosWidget
+msgid "Hide description"
+msgstr ""
+
 #. Default: "Home"
 #: components/Breadcrumbs/Breadcrumbs
+#: components/Logo/Logo
 #: components/MobileNavigation/MobileNavigation
 msgid "Home"
 msgstr "Hasiera"
@@ -124,15 +174,60 @@ msgstr "Hasiera"
 msgid "ICS-Download"
 msgstr "Deskargatu ICS fitxategia "
 
+#. Default: "Icon"
+#: components/Widgets/FooterLinksWidget
+#: components/Widgets/FooterLogosWidget
+msgid "Icon"
+msgstr ""
+
 #. Default: "Image"
 #: components/Blocks/Image/ImageSidebar
 msgid "Image"
 msgstr "Irudia"
 
+#. Default: "Item"
+#: components/Widgets/FooterLinksWidget
+#: components/Widgets/FooterLogosWidget
+msgid "Item"
+msgstr ""
+
+#. Default: "Items"
+#: components/Widgets/FooterLinksWidget
+#: components/Widgets/FooterLogosWidget
+msgid "Items"
+msgstr ""
+
+#. Default: "Items to show"
+#: components/Widgets/FooterLinksWidget
+#: components/Widgets/FooterLogosWidget
+msgid "Items to show"
+msgstr ""
+
+#. Default: "Large"
+#: components/Widgets/SizeWidget
+msgid "Large"
+msgstr ""
+
+#. Default: "Layout"
+#: components/Widgets/BlockWidthWidget
+msgid "Layout"
+msgstr ""
+
 #. Default: "Left"
 #: components/Widgets/AlignWidget
+#: components/Widgets/BlockAlignmentWidget
 msgid "Left"
 msgstr "Ezkerrean"
+
+#. Default: "List"
+#: index
+msgid "List"
+msgstr ""
+
+#. Default: "List with images"
+#: index
+msgid "List with images"
+msgstr ""
 
 #. Default: "Location"
 #: components/Blocks/EventMetadata/View
@@ -144,15 +239,31 @@ msgstr "Kokalekua"
 msgid "Log in"
 msgstr "Sartu"
 
+#. Default: "Logo image"
+#: components/Widgets/FooterLinksWidget
+#: components/Widgets/FooterLogosWidget
+msgid "Logo image"
+msgstr ""
+
+#. Default: "Logo of"
+#: components/Logo/Logo
+msgid "Logo of"
+msgstr ""
+
+#. Default: "Medium"
+#: components/Widgets/SizeWidget
+msgid "Medium"
+msgstr ""
+
+#. Default: "Narrow"
+#: components/Widgets/BlockWidthWidget
+msgid "Narrow"
+msgstr ""
+
 #. Default: "Next Page"
 #: components/Blocks/Listing/ListingBody
 msgid "Next Page"
 msgstr "Hurrengo orria"
-
-#. Default: "No date"
-#: components/Theme/EventView
-msgid "No date"
-msgstr "Datarik ez"
 
 #. Default: "No image selected"
 #: components/Blocks/Image/ImageSidebar
@@ -163,6 +274,12 @@ msgstr "Ez da irudirik aukeratu"
 #: components/Blocks/Listing/ListingBody
 msgid "No items found in this container."
 msgstr "Ez dago elementurik"
+
+#. Default: "Open in a new tab"
+#: components/Widgets/FooterLinksWidget
+#: components/Widgets/FooterLogosWidget
+msgid "Open in a new tab"
+msgstr ""
 
 #. Default: "Open menu"
 #: components/MobileNavigation/MobileNavigation
@@ -182,6 +299,7 @@ msgstr "Telefonoa"
 
 #. Default: "Please choose an existing content as source for this element"
 #: components/Blocks/Slider/DefaultBody
+#: components/Blocks/Teaser/DefaultBody
 msgid "Please choose an existing content as source for this element"
 msgstr "Aukeratu eduki bat elementu honen iturburu gisa"
 
@@ -215,6 +333,11 @@ msgstr "Aurreko orria"
 msgid "Register"
 msgstr "Eman izena"
 
+#. Default: "Remove item"
+#: components/Widgets/BlocksObjectWidget
+msgid "Remove item"
+msgstr ""
+
 #. Default: "Result"
 #: components/Blocks/Listing/ListingBody
 msgid "Result"
@@ -222,6 +345,7 @@ msgstr "Emaitza"
 
 #. Default: "Right"
 #: components/Widgets/AlignWidget
+#: components/Widgets/BlockAlignmentWidget
 msgid "Right"
 msgstr "Eskuman"
 
@@ -255,15 +379,31 @@ msgstr "Bilaketaren emaitzak"
 msgid "Searched for"
 msgstr "Hau bilatu duzu"
 
-#. Default: "Site"
-#: components/Logo/Logo
-msgid "Site"
-msgstr "Ataria"
+#. Default: "Settings"
+#: components/Widgets/FooterLinksWidget
+#: components/Widgets/FooterLogosWidget
+msgid "Settings"
+msgstr ""
+
+#. Default: "Short line"
+#: components/Blocks/Separator/schema
+msgid "Short line"
+msgstr ""
+
+#. Default: "Show item"
+#: components/Widgets/BlocksObjectWidget
+msgid "Show item"
+msgstr ""
 
 #. Default: "Sitemap"
 #: index
 msgid "Sitemap"
 msgstr "Webgunearen mapa"
+
+#. Default: "Small"
+#: components/Widgets/SizeWidget
+msgid "Small"
+msgstr ""
 
 #. Default: "Sorting"
 #: components/Blocks/Search/TopSideFacets
@@ -285,6 +425,12 @@ msgstr "Hasiera"
 msgid "Switch to"
 msgstr "Hona aldatu"
 
+#. Default: "Target"
+#: components/Widgets/FooterLinksWidget
+#: components/Widgets/FooterLogosWidget
+msgid "Target"
+msgstr ""
+
 #. Default: "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
 #: components/Footer/Footer
 msgid "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
@@ -292,13 +438,10 @@ msgstr "{plonecms} {copyright} 2000-{current_year} {plonefoundation} eta lagunek
 
 #. Default: "Title"
 #: components/Blocks/Image/schema
+#: components/Widgets/FooterLinksWidget
+#: components/Widgets/FooterLogosWidget
 msgid "Title"
 msgstr "Izenburua"
-
-#. Default: "Uploading image"
-#: components/Blocks/Image/Edit
-msgid "Uploading image"
-msgstr "Irudia kargatzen"
 
 #. Default: "Website"
 #: components/Blocks/EventMetadata/View

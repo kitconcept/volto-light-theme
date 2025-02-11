@@ -12,6 +12,7 @@ import installBlocks from './config/blocks';
 import installClassExtenders from './config/classExtenders';
 import installWidgets from './config/widgets';
 import installSlots from './config/slots';
+import installSummary from './config/summary';
 
 import '@plone/components/dist/basic.css';
 import type { BlocksData } from '@plone/types';
@@ -24,6 +25,14 @@ defineMessages({
   Sitemap: {
     id: 'Sitemap',
     defaultMessage: 'Sitemap',
+  },
+  List: {
+    id: 'List',
+    defaultMessage: 'List',
+  },
+  listWithImages: {
+    id: 'List with images',
+    defaultMessage: 'List with images',
   },
 });
 
@@ -41,6 +50,7 @@ const applyConfig = (config: ConfigType) => {
   installClassExtenders(config);
   installWidgets(config);
   installSlots(config);
+  installSummary(config);
 
   // Register a custom Container component from @plone/components
   config.registerComponent({

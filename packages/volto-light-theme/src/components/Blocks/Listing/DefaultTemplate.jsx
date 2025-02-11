@@ -1,11 +1,10 @@
 // See Customization for more info
-import React from 'react';
 import PropTypes from 'prop-types';
 import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
-import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
-
-import { isInternalURL } from '@plone/volto/helpers/Url/Url';
+import { flattenToAppURL, isInternalURL } from '@plone/volto/helpers/Url/Url';
+import config from '@plone/volto/registry';
+import DefaultSummary from '@kitconcept/volto-light-theme/components/Summary/DefaultSummary';
 
 const DefaultTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
   let link = null;
@@ -24,16 +23,22 @@ const DefaultTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
   return (
     <>
       <div className="items">
-        {items.map((item) => (
-          <div className="listing-item" key={item['@id']}>
-            <ConditionalLink item={item} condition={!isEditMode}>
-              <div className="listing-body">
-                <h2>{item.title ? item.title : item.id}</h2>
-                <p>{item.description}</p>
-              </div>
-            </ConditionalLink>
-          </div>
-        ))}
+        {items.map((item) => {
+          const Summary =
+            config.getComponent({
+              name: 'Summary',
+              dependencies: [item['@type']],
+            }).component || DefaultSummary;
+          return (
+            <div className="listing-item" key={item['@id']}>
+              <ConditionalLink item={item} condition={!isEditMode}>
+                <div className="listing-body">
+                  <Summary item={item} HeadingTag="h2" />
+                </div>
+              </ConditionalLink>
+            </div>
+          );
+        })}
       </div>
 
       {link && <div className="footer">{link}</div>}
