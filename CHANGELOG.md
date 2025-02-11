@@ -8,6 +8,27 @@
 
 <!-- towncrier release notes start -->
 
+## 6.0.0-alpha.13 (2025-02-11)
+
+### Feature
+
+- Add a `Summary` component used to render a content type for listings and teasers. @davisagli [#462](https://github.com/kitconcept/volto-light-theme/pull/462)
+- Re-label the "Default" listing variation to "List" and the "Summary" variation to "List with images".
+  (The internal names remain unchanged.) @davisagli [#462](https://github.com/kitconcept/volto-light-theme/pull/462)
+- Add summary components to render the date for news items and events and the file type and size for files. @davisagli [#462](https://github.com/kitconcept/volto-light-theme/pull/462)
+
+### Bugfix
+
+- Improve rendering of whole-day and open-ended event dates. @davisagli [#462](https://github.com/kitconcept/volto-light-theme/pull/462)
+
+### Internal
+
+- Update to use 18.8.1 @sneridagh [#473](https://github.com/kitconcept/volto-light-theme/pull/473)
+
+### Documentation
+
+- Update the order of the addon list so that the override order is correct. @kittauri [#470](https://github.com/kitconcept/volto-light-theme/pull/470)
+
 ## 6.0.0-alpha.12 (2025-02-04)
 
 ### Bugfix
