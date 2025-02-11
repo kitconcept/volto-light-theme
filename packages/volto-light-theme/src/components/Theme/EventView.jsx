@@ -10,9 +10,8 @@ import { flattenHTMLToAppURL } from '@plone/volto/helpers/Url/Url';
 import { Container as SemanticContainer } from 'semantic-ui-react';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 
-import FormattedDate from '@plone/volto/components/theme/FormattedDate/FormattedDate';
 import config from '@plone/volto/registry';
-import { FormattedMessage, injectIntl } from 'react-intl';
+import { injectIntl } from 'react-intl';
 
 const EventTextfieldView = ({ content }) => {
   const Image = config.getComponent({ name: 'Image' }).component;
@@ -53,37 +52,32 @@ const EventView = (props) => {
   const { content } = props;
   const Container =
     config.getComponent({ name: 'Container' }).component || SemanticContainer;
-  const dateOptions = {
+
+  const language = content.language?.token || 'default';
+  const start = content.start ? new Date(content.start) : null;
+  const end = content.end ? new Date(content.end) : null;
+  const isOpenEnd = !!content.open_end;
+
+  const formatter = new Intl.DateTimeFormat(language, {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
-    hour: 'numeric',
-    minute: 'numeric',
-  };
+  });
+  const formattedDate =
+    !end || isOpenEnd
+      ? formatter.format(start)
+      : formatter.formatRange(start, end);
 
   return (
     <Container id="page-document" className="view-wrapper event-view">
       <div className="dates">
-        {content?.start ? (
-          <span className="day">
-            <FormattedDate date={content?.start} format={dateOptions} />{' '}
-            {props.intl.locale === 'de' ? ' Uhr' : ''}
+        {formattedDate ? (
+          <span className="day" suppressHydrationWarning>
+            {formattedDate}
           </span>
-        ) : (
-          <span className="day">
-            <FormattedMessage id="No date" defaultMessage="No date" />
-          </span>
-        )}{' '}
-        &mdash;&nbsp;
-        {content?.end ? (
-          <span className="day">
-            <FormattedDate date={content?.end} format={dateOptions} />{' '}
-            {props.intl.locale === 'de' ? ' Uhr' : ''}
-          </span>
-        ) : (
-          <span className="day">
-            <FormattedMessage id="No date" defaultMessage="No date" />
-          </span>
+        ) : null}{' '}
+        {content?.head_title && (
+          <span className="head-title"> {content?.head_title}</span>
         )}
       </div>
       {hasBlocksData(content) ? (

@@ -53,20 +53,23 @@
       @include block-title();
     }
 
-    .listing-item {
-      a {
-        .listing-body {
-          h2 {
-            @include text-heading-h2();
-          }
-          p {
-            margin-bottom: 0;
-            @include body-text();
-          }
-          p:empty {
-            display: none;
-          }
-        }
+    .listing-body {
+      .headline {
+        margin-bottom: 20px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        @include headtitle1();
+      }
+      h2 {
+        margin-top: 0;
+        @include text-heading-h2();
+      }
+      p {
+        margin-bottom: 0;
+        @include body-text();
+      }
+      p:empty {
+        display: none;
       }
     }
   }
@@ -85,6 +88,12 @@
           min-width: 335px;
           margin-bottom: 20px;
         }
+      }
+      .headline {
+        margin-bottom: 20px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        @include headtitle1();
       }
       h3 {
         margin-top: 0 !important;

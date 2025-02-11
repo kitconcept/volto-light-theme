@@ -16,15 +16,36 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "X-Is-Fallback-For: de-at de-li de-lu de-ch de-de\n"
 
+#. Default: "Add"
+#: components/Widgets/BlocksObjectWidget
+msgid "Add (object list)"
+msgstr ""
+
+#. Default: "Add link"
+#: components/Widgets/FooterLinksWidget
+msgid "Add link"
+msgstr ""
+
+#. Default: "Add logo"
+#: components/Widgets/FooterLogosWidget
+msgid "Add logo"
+msgstr ""
+
+#. Default: "Alignment"
+#: components/Blocks/Button/schema
+#: components/Blocks/Separator/schema
+msgid "Alignment"
+msgstr ""
+
+#. Default: "Alt text"
+#: components/Widgets/FooterLogosWidget
+msgid "Alt text"
+msgstr ""
+
 #. Default: "Back"
 #: components/MobileNavigation/MobileNavigation
 msgid "Back"
 msgstr "Zurück"
-
-#. Default: "Back to homepage"
-#: components/Logo/Logo
-msgid "Back to homepage"
-msgstr "Zurück zur Startseite"
 
 #. Default: "Background color"
 #: components/Blocks/schema
@@ -33,6 +54,8 @@ msgstr "Hintergrundfarbe"
 
 #. Default: "Block Width"
 #: components/Blocks/Button/schema
+#: components/Blocks/Image/schema
+#: components/Blocks/Separator/schema
 msgid "Block Width"
 msgstr "Block Breite"
 
@@ -41,11 +64,6 @@ msgstr "Block Breite"
 msgid "Breadcrumbs"
 msgstr "Brotkrumen"
 
-#. Default: "Browse the site, drop an image, or type an URL"
-#: components/Blocks/Image/Edit
-msgid "Browse the site, drop an image, or type an URL"
-msgstr "Bild auswählen, hochladen oder URL angeben"
-
 #. Default: "Button text"
 #: components/Blocks/Slider/schema
 msgid "Button text"
@@ -53,6 +71,7 @@ msgstr "Button Text"
 
 #. Default: "Center"
 #: components/Widgets/AlignWidget
+#: components/Widgets/BlockAlignmentWidget
 msgid "Center"
 msgstr "Mittig"
 
@@ -61,6 +80,11 @@ msgstr "Mittig"
 #: components/Navigation/Navigation
 msgid "Close menu"
 msgstr "Menü schließen"
+
+#. Default: "Collapse item"
+#: components/Widgets/BlocksObjectWidget
+msgid "Collapse item"
+msgstr ""
 
 #. Default: "Contact"
 #: components/Blocks/EventMetadata/View
@@ -77,8 +101,15 @@ msgstr "Weiterlesen"
 msgid "Copyright"
 msgstr "Urheberrechte"
 
+#. Default: "Default"
+#: components/Widgets/BlockWidthWidget
+msgid "Default"
+msgstr ""
+
 #. Default: "Description"
 #: components/Blocks/Image/schema
+#: components/Widgets/FooterLinksWidget
+#: components/Widgets/FooterLogosWidget
 msgid "Description"
 msgstr "Beschreibung"
 
@@ -86,6 +117,11 @@ msgstr "Beschreibung"
 #: components/Footer/Footer
 msgid "Distributed under the {license}."
 msgstr "Vertrieben unter {license}"
+
+#. Default: "Empty object list"
+#: components/Widgets/BlocksObjectWidget
+msgid "Empty object list"
+msgstr ""
 
 #. Default: "End"
 #: components/Blocks/EventMetadata/View
@@ -99,6 +135,7 @@ msgstr ""
 
 #. Default: "Full"
 #: components/Widgets/AlignWidget
+#: components/Widgets/BlockWidthWidget
 msgid "Full"
 msgstr "Volle Breite"
 
@@ -107,13 +144,26 @@ msgstr "Volle Breite"
 msgid "GNU GPL license"
 msgstr "GNU GPL Lizenz"
 
+#. Default: "Headline"
+#: components/Widgets/FooterLinksWidget
+#: components/Widgets/FooterLogosWidget
+msgid "Headline"
+msgstr ""
+
 #. Default: "Hide Button"
 #: components/Blocks/Slider/schema
 msgid "Hide Button"
 msgstr "keinen Button anzeigen"
 
+#. Default: "Hide description"
+#: components/Widgets/FooterLinksWidget
+#: components/Widgets/FooterLogosWidget
+msgid "Hide description"
+msgstr ""
+
 #. Default: "Home"
 #: components/Breadcrumbs/Breadcrumbs
+#: components/Logo/Logo
 #: components/MobileNavigation/MobileNavigation
 msgid "Home"
 msgstr "Startseite"
@@ -123,15 +173,60 @@ msgstr "Startseite"
 msgid "ICS-Download"
 msgstr "ICS-Download"
 
+#. Default: "Icon"
+#: components/Widgets/FooterLinksWidget
+#: components/Widgets/FooterLogosWidget
+msgid "Icon"
+msgstr ""
+
 #. Default: "Image"
 #: components/Blocks/Image/ImageSidebar
 msgid "Image"
 msgstr "Bild"
 
+#. Default: "Item"
+#: components/Widgets/FooterLinksWidget
+#: components/Widgets/FooterLogosWidget
+msgid "Item"
+msgstr ""
+
+#. Default: "Items"
+#: components/Widgets/FooterLinksWidget
+#: components/Widgets/FooterLogosWidget
+msgid "Items"
+msgstr ""
+
+#. Default: "Items to show"
+#: components/Widgets/FooterLinksWidget
+#: components/Widgets/FooterLogosWidget
+msgid "Items to show"
+msgstr ""
+
+#. Default: "Large"
+#: components/Widgets/SizeWidget
+msgid "Large"
+msgstr ""
+
+#. Default: "Layout"
+#: components/Widgets/BlockWidthWidget
+msgid "Layout"
+msgstr ""
+
 #. Default: "Left"
 #: components/Widgets/AlignWidget
+#: components/Widgets/BlockAlignmentWidget
 msgid "Left"
 msgstr "Links"
+
+#. Default: "List"
+#: index
+msgid "List"
+msgstr "Liste"
+
+#. Default: "List with images"
+#: index
+msgid "List with images"
+msgstr "Liste mit Bildern"
 
 #. Default: "Location"
 #: components/Blocks/EventMetadata/View
@@ -143,15 +238,31 @@ msgstr "Veranstaltungsort"
 msgid "Log in"
 msgstr "Anmelden"
 
+#. Default: "Logo image"
+#: components/Widgets/FooterLinksWidget
+#: components/Widgets/FooterLogosWidget
+msgid "Logo image"
+msgstr ""
+
+#. Default: "Logo of"
+#: components/Logo/Logo
+msgid "Logo of"
+msgstr ""
+
+#. Default: "Medium"
+#: components/Widgets/SizeWidget
+msgid "Medium"
+msgstr ""
+
+#. Default: "Narrow"
+#: components/Widgets/BlockWidthWidget
+msgid "Narrow"
+msgstr ""
+
 #. Default: "Next Page"
 #: components/Blocks/Listing/ListingBody
 msgid "Next Page"
 msgstr "Nächste Seite"
-
-#. Default: "No date"
-#: components/Theme/EventView
-msgid "No date"
-msgstr "Kein Datum"
 
 #. Default: "No image selected"
 #: components/Blocks/Image/ImageSidebar
@@ -162,6 +273,12 @@ msgstr "Kein Bild ausgewählt"
 #: components/Blocks/Listing/ListingBody
 msgid "No items found in this container."
 msgstr "Keine Elemente im Ordner gefunden."
+
+#. Default: "Open in a new tab"
+#: components/Widgets/FooterLinksWidget
+#: components/Widgets/FooterLogosWidget
+msgid "Open in a new tab"
+msgstr ""
 
 #. Default: "Open menu"
 #: components/MobileNavigation/MobileNavigation
@@ -181,6 +298,7 @@ msgstr "Telefon"
 
 #. Default: "Please choose an existing content as source for this element"
 #: components/Blocks/Slider/DefaultBody
+#: components/Blocks/Teaser/DefaultBody
 msgid "Please choose an existing content as source for this element"
 msgstr "Bitte wählen sie einen bestehenden Inhalt als Quelle für dieses Element"
 
@@ -214,6 +332,11 @@ msgstr "Vorherige Seite"
 msgid "Register"
 msgstr "Registrieren"
 
+#. Default: "Remove item"
+#: components/Widgets/BlocksObjectWidget
+msgid "Remove item"
+msgstr ""
+
 #. Default: "Result"
 #: components/Blocks/Listing/ListingBody
 msgid "Result"
@@ -221,6 +344,7 @@ msgstr "Ergebnis"
 
 #. Default: "Right"
 #: components/Widgets/AlignWidget
+#: components/Widgets/BlockAlignmentWidget
 msgid "Right"
 msgstr "Rechts"
 
@@ -254,15 +378,31 @@ msgstr "Ergebnisse"
 msgid "Searched for"
 msgstr "Gesucht für"
 
-#. Default: "Site"
-#: components/Logo/Logo
-msgid "Site"
-msgstr "Seite"
+#. Default: "Settings"
+#: components/Widgets/FooterLinksWidget
+#: components/Widgets/FooterLogosWidget
+msgid "Settings"
+msgstr ""
+
+#. Default: "Short line"
+#: components/Blocks/Separator/schema
+msgid "Short line"
+msgstr ""
+
+#. Default: "Show item"
+#: components/Widgets/BlocksObjectWidget
+msgid "Show item"
+msgstr ""
 
 #. Default: "Sitemap"
 #: index
 msgid "Sitemap"
 msgstr "Übersicht"
+
+#. Default: "Small"
+#: components/Widgets/SizeWidget
+msgid "Small"
+msgstr ""
 
 #. Default: "Sorting"
 #: components/Blocks/Search/TopSideFacets
@@ -284,6 +424,12 @@ msgstr "Anfang"
 msgid "Switch to"
 msgstr ""
 
+#. Default: "Target"
+#: components/Widgets/FooterLinksWidget
+#: components/Widgets/FooterLogosWidget
+msgid "Target"
+msgstr ""
+
 #. Default: "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
 #: components/Footer/Footer
 msgid "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
@@ -291,13 +437,10 @@ msgstr ""
 
 #. Default: "Title"
 #: components/Blocks/Image/schema
+#: components/Widgets/FooterLinksWidget
+#: components/Widgets/FooterLogosWidget
 msgid "Title"
 msgstr "Titel"
-
-#. Default: "Uploading image"
-#: components/Blocks/Image/Edit
-msgid "Uploading image"
-msgstr "Bild hochladen"
 
 #. Default: "Website"
 #: components/Blocks/EventMetadata/View

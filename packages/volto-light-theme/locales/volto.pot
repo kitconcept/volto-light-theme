@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2024-05-31T09:46:26.312Z\n"
+"POT-Creation-Date: 2025-02-10T00:20:07.204Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -13,14 +13,35 @@ msgstr ""
 "Preferred-Encodings: utf-8\n"
 "Domain: volto\n"
 
+#. Default: "Add"
+#: components/Widgets/BlocksObjectWidget
+msgid "Add (object list)"
+msgstr ""
+
+#. Default: "Add link"
+#: components/Widgets/FooterLinksWidget
+msgid "Add link"
+msgstr ""
+
+#. Default: "Add logo"
+#: components/Widgets/FooterLogosWidget
+msgid "Add logo"
+msgstr ""
+
+#. Default: "Alignment"
+#: components/Blocks/Button/schema
+#: components/Blocks/Separator/schema
+msgid "Alignment"
+msgstr ""
+
+#. Default: "Alt text"
+#: components/Widgets/FooterLogosWidget
+msgid "Alt text"
+msgstr ""
+
 #. Default: "Back"
 #: components/MobileNavigation/MobileNavigation
 msgid "Back"
-msgstr ""
-
-#. Default: "Back to homepage"
-#: components/Logo/Logo
-msgid "Back to homepage"
 msgstr ""
 
 #. Default: "Background color"
@@ -30,17 +51,14 @@ msgstr ""
 
 #. Default: "Block Width"
 #: components/Blocks/Button/schema
+#: components/Blocks/Image/schema
+#: components/Blocks/Separator/schema
 msgid "Block Width"
 msgstr ""
 
 #. Default: "Breadcrumbs"
 #: components/Breadcrumbs/Breadcrumbs
 msgid "Breadcrumbs"
-msgstr ""
-
-#. Default: "Browse the site, drop an image, or type an URL"
-#: components/Blocks/Image/Edit
-msgid "Browse the site, drop an image, or type an URL"
 msgstr ""
 
 #. Default: "Button text"
@@ -50,6 +68,7 @@ msgstr ""
 
 #. Default: "Center"
 #: components/Widgets/AlignWidget
+#: components/Widgets/BlockAlignmentWidget
 msgid "Center"
 msgstr ""
 
@@ -57,6 +76,11 @@ msgstr ""
 #: components/MobileNavigation/MobileNavigation
 #: components/Navigation/Navigation
 msgid "Close menu"
+msgstr ""
+
+#. Default: "Collapse item"
+#: components/Widgets/BlocksObjectWidget
+msgid "Collapse item"
 msgstr ""
 
 #. Default: "Contact"
@@ -74,14 +98,26 @@ msgstr ""
 msgid "Copyright"
 msgstr ""
 
+#. Default: "Default"
+#: components/Widgets/BlockWidthWidget
+msgid "Default"
+msgstr ""
+
 #. Default: "Description"
 #: components/Blocks/Image/schema
+#: components/Widgets/FooterLinksWidget
+#: components/Widgets/FooterLogosWidget
 msgid "Description"
 msgstr ""
 
 #. Default: "Distributed under the {license}."
 #: components/Footer/Footer
 msgid "Distributed under the {license}."
+msgstr ""
+
+#. Default: "Empty object list"
+#: components/Widgets/BlocksObjectWidget
+msgid "Empty object list"
 msgstr ""
 
 #. Default: "End"
@@ -96,6 +132,7 @@ msgstr ""
 
 #. Default: "Full"
 #: components/Widgets/AlignWidget
+#: components/Widgets/BlockWidthWidget
 msgid "Full"
 msgstr ""
 
@@ -104,13 +141,26 @@ msgstr ""
 msgid "GNU GPL license"
 msgstr ""
 
+#. Default: "Headline"
+#: components/Widgets/FooterLinksWidget
+#: components/Widgets/FooterLogosWidget
+msgid "Headline"
+msgstr ""
+
 #. Default: "Hide Button"
 #: components/Blocks/Slider/schema
 msgid "Hide Button"
 msgstr ""
 
+#. Default: "Hide description"
+#: components/Widgets/FooterLinksWidget
+#: components/Widgets/FooterLogosWidget
+msgid "Hide description"
+msgstr ""
+
 #. Default: "Home"
 #: components/Breadcrumbs/Breadcrumbs
+#: components/Logo/Logo
 #: components/MobileNavigation/MobileNavigation
 msgid "Home"
 msgstr ""
@@ -120,14 +170,59 @@ msgstr ""
 msgid "ICS-Download"
 msgstr ""
 
+#. Default: "Icon"
+#: components/Widgets/FooterLinksWidget
+#: components/Widgets/FooterLogosWidget
+msgid "Icon"
+msgstr ""
+
 #. Default: "Image"
 #: components/Blocks/Image/ImageSidebar
 msgid "Image"
 msgstr ""
 
+#. Default: "Item"
+#: components/Widgets/FooterLinksWidget
+#: components/Widgets/FooterLogosWidget
+msgid "Item"
+msgstr ""
+
+#. Default: "Items"
+#: components/Widgets/FooterLinksWidget
+#: components/Widgets/FooterLogosWidget
+msgid "Items"
+msgstr ""
+
+#. Default: "Items to show"
+#: components/Widgets/FooterLinksWidget
+#: components/Widgets/FooterLogosWidget
+msgid "Items to show"
+msgstr ""
+
+#. Default: "Large"
+#: components/Widgets/SizeWidget
+msgid "Large"
+msgstr ""
+
+#. Default: "Layout"
+#: components/Widgets/BlockWidthWidget
+msgid "Layout"
+msgstr ""
+
 #. Default: "Left"
 #: components/Widgets/AlignWidget
+#: components/Widgets/BlockAlignmentWidget
 msgid "Left"
+msgstr ""
+
+#. Default: "List"
+#: index
+msgid "List"
+msgstr ""
+
+#. Default: "List with images"
+#: index
+msgid "List with images"
 msgstr ""
 
 #. Default: "Location"
@@ -140,14 +235,30 @@ msgstr ""
 msgid "Log in"
 msgstr ""
 
+#. Default: "Logo image"
+#: components/Widgets/FooterLinksWidget
+#: components/Widgets/FooterLogosWidget
+msgid "Logo image"
+msgstr ""
+
+#. Default: "Logo of"
+#: components/Logo/Logo
+msgid "Logo of"
+msgstr ""
+
+#. Default: "Medium"
+#: components/Widgets/SizeWidget
+msgid "Medium"
+msgstr ""
+
+#. Default: "Narrow"
+#: components/Widgets/BlockWidthWidget
+msgid "Narrow"
+msgstr ""
+
 #. Default: "Next Page"
 #: components/Blocks/Listing/ListingBody
 msgid "Next Page"
-msgstr ""
-
-#. Default: "No date"
-#: components/Theme/EventView
-msgid "No date"
 msgstr ""
 
 #. Default: "No image selected"
@@ -158,6 +269,12 @@ msgstr ""
 #. Default: "No items found in this container."
 #: components/Blocks/Listing/ListingBody
 msgid "No items found in this container."
+msgstr ""
+
+#. Default: "Open in a new tab"
+#: components/Widgets/FooterLinksWidget
+#: components/Widgets/FooterLogosWidget
+msgid "Open in a new tab"
 msgstr ""
 
 #. Default: "Open menu"
@@ -178,6 +295,7 @@ msgstr ""
 
 #. Default: "Please choose an existing content as source for this element"
 #: components/Blocks/Slider/DefaultBody
+#: components/Blocks/Teaser/DefaultBody
 msgid "Please choose an existing content as source for this element"
 msgstr ""
 
@@ -211,6 +329,11 @@ msgstr ""
 msgid "Register"
 msgstr ""
 
+#. Default: "Remove item"
+#: components/Widgets/BlocksObjectWidget
+msgid "Remove item"
+msgstr ""
+
 #. Default: "Result"
 #: components/Blocks/Listing/ListingBody
 msgid "Result"
@@ -218,6 +341,7 @@ msgstr ""
 
 #. Default: "Right"
 #: components/Widgets/AlignWidget
+#: components/Widgets/BlockAlignmentWidget
 msgid "Right"
 msgstr ""
 
@@ -251,14 +375,30 @@ msgstr ""
 msgid "Searched for"
 msgstr ""
 
-#. Default: "Site"
-#: components/Logo/Logo
-msgid "Site"
+#. Default: "Settings"
+#: components/Widgets/FooterLinksWidget
+#: components/Widgets/FooterLogosWidget
+msgid "Settings"
+msgstr ""
+
+#. Default: "Short line"
+#: components/Blocks/Separator/schema
+msgid "Short line"
+msgstr ""
+
+#. Default: "Show item"
+#: components/Widgets/BlocksObjectWidget
+msgid "Show item"
 msgstr ""
 
 #. Default: "Sitemap"
 #: index
 msgid "Sitemap"
+msgstr ""
+
+#. Default: "Small"
+#: components/Widgets/SizeWidget
+msgid "Small"
 msgstr ""
 
 #. Default: "Sorting"
@@ -281,6 +421,12 @@ msgstr ""
 msgid "Switch to"
 msgstr ""
 
+#. Default: "Target"
+#: components/Widgets/FooterLinksWidget
+#: components/Widgets/FooterLogosWidget
+msgid "Target"
+msgstr ""
+
 #. Default: "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
 #: components/Footer/Footer
 msgid "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
@@ -288,12 +434,9 @@ msgstr ""
 
 #. Default: "Title"
 #: components/Blocks/Image/schema
+#: components/Widgets/FooterLinksWidget
+#: components/Widgets/FooterLogosWidget
 msgid "Title"
-msgstr ""
-
-#. Default: "Uploading image"
-#: components/Blocks/Image/Edit
-msgid "Uploading image"
 msgstr ""
 
 #. Default: "Website"
