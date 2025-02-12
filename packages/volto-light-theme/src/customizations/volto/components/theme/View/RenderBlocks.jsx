@@ -88,7 +88,7 @@ const RenderBlocks = (props) => {
         const themes =
           config.blocks.blocksConfig[
             content[blocksFieldname][group[0]]['@type']
-          ].themes ?? config.blocks.themes;
+          ]?.themes ?? config.blocks.themes;
 
         return (
           <MaybeWrap
