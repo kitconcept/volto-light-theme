@@ -316,6 +316,10 @@
         .menu-drawer {
           @media only screen and (max-width: $computer-breakpoint) {
             top: 210px;
+
+            .search-button {
+              display: none;
+            }
           }
         }
       }
@@ -325,7 +329,6 @@
         }
       }
       .navigation {
-        // flex-basis: 100%;
         margin: 29px auto 0 auto;
       }
     }
