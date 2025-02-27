@@ -294,8 +294,6 @@
 
 .header-wrapper.intranet-header {
   .header {
-    flex-direction: column;
-
     .logo-nav-wrapper {
       display: flex;
       flex-direction: row;
@@ -304,6 +302,8 @@
 
       @media only screen and (max-width: $narrow-container-width) {
         position: relative;
+        flex-wrap: wrap;
+        justify-content: flex-start;
       }
 
       .mobile-nav.mobile.only {
@@ -317,6 +317,11 @@
           @media only screen and (max-width: $computer-breakpoint) {
             top: 210px;
           }
+        }
+      }
+      .logo {
+        @media only screen and (max-width: $largest-mobile-screen) {
+          flex: 0 1 auto;
         }
       }
       .navigation {
@@ -377,6 +382,10 @@
       max-width: 200px;
       flex: 1 1 auto;
       flex-direction: row-reverse;
+
+      @media only screen and (max-width: $largest-mobile-screen) {
+        display: none;
+      }
     }
 
     .search-wrapper {
@@ -389,6 +398,9 @@
       @media only screen and (max-width: $narrow-container-width) {
         width: 100%;
         margin-left: 0%;
+      }
+      @media only screen and (max-width: $largest-mobile-screen) {
+        flex: 0 1 auto;
       }
 
       .search {
