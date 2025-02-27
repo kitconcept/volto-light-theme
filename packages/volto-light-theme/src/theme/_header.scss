@@ -297,10 +297,12 @@
     flex-direction: column;
 
     .logo-nav-wrapper {
-      display: flex;
-      flex-direction: row;
-      align-items: baseline;
-      justify-content: space-between;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+
+      .logo {
+        flex: 0 1 auto;
+      }
 
       @media only screen and (max-width: $narrow-container-width) {
         position: relative;
@@ -320,72 +322,15 @@
         }
       }
       .navigation {
-        // flex-basis: 100%;
+        flex-basis: 100%;
         margin: 29px auto 0 auto;
       }
     }
 
-    .navigation {
-      display: flex;
-      flex: 3.5 1 0;
-      align-self: center;
-      justify-content: center;
-      margin-bottom: 40px;
-
-      @media only screen and (max-width: $largest-mobile-screen) {
-        display: none;
-      }
-
-      .desktop.menu {
-        display: flex;
-        justify-content: flex-end;
-
-        a.item {
-          padding: 0 5px;
-          margin: 0 5px;
-          color: $black;
-          font-size: 18px;
-          font-weight: 600;
-          line-height: 24px;
-          text-align: center;
-        }
-      }
-
-      .mobile-menu {
-        .mobile-menu-nav {
-          > div {
-            display: flex;
-            flex-direction: column;
-          }
-
-          a.item {
-            width: 100%;
-            padding: 2rem 1.2rem 1.5rem 1.2rem;
-            color: $black;
-            font-size: 18px;
-
-            &.active {
-              border-bottom: 4px solid $black;
-            }
-          }
-        }
-      }
-    }
-
-    .complimentary-logo {
-      display: flex;
-      max-width: 200px;
-      flex: 1 1 auto;
-      flex-direction: row-reverse;
-    }
-
     .search-wrapper {
-      display: flex;
-      max-width: 600px;
-      flex: 3.5 1 0;
+      flex: 0 1 auto;
       align-self: center;
-      justify-content: center;
-
+      margin-left: 209px;
       @media only screen and (max-width: $narrow-container-width) {
         width: 100%;
         margin-left: 0%;
