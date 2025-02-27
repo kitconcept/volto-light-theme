@@ -74,9 +74,6 @@ html[style*='padding-right'] .sidebar-container {
 
 // We expect initially three main containers
 .header-wrapper {
-  // This is the pusher for the header under 1440px so over that is tight to the border
-  padding: 0 1em;
-
   .q.container,
   .a.container {
     @include container-preference-order(12);
@@ -132,7 +129,7 @@ footer {
 
 .header-wrapper .header {
   @include layout-container-width();
-  // @include adjustMarginsToContainer($layout-container-width);
+  @include adjustMarginsToContainer($layout-container-width);
 }
 
 .breadcrumbs .breadcrumb {
