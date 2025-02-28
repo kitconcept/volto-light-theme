@@ -26,6 +26,16 @@
       }
     }
 
+    .complementary-logo {
+      max-width: 200px;
+      max-height: 80px;
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
     .navigation {
       display: flex;
       flex: 3.5 1 0;
@@ -382,7 +392,7 @@
       }
     }
 
-    .complimentary-logo {
+    .complementary-logo {
       display: flex;
       max-width: 200px;
       flex: 1 1 auto;
