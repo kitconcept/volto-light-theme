@@ -231,11 +231,13 @@
     justify-content: space-between;
     padding-top: 16px;
 
-    .intranet {
+    .intranet-flag {
       padding: 10px $spacing-small;
+      border: none;
       margin-top: -16px;
       margin-left: 213px;
       background-color: $secondary-grey;
+
       @media only screen and (max-width: $narrow-container-width) {
         margin-left: 0px;
       }

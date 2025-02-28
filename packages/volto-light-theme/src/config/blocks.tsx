@@ -155,11 +155,11 @@ export default function install(config: ConfigType) {
     method: blockThemesEnhancer,
   });
 
-  // No required blocks (eg. Title)
+  // No required blocks except eventMetadata
   config.blocks.requiredBlocks = [
     ...config.blocks.requiredBlocks,
     'eventMetadata',
-  ];
+  ].filter((block) => block !== 'title');
 
   // Remove Hero Block (No longer in Volto 18)
   // TODO: Remove already?
