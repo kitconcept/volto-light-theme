@@ -120,9 +120,10 @@ const IntranetHeader = ({ pathname, siteLabel, token, siteAction }) => {
               <IntranetSearchWidget />
             </div>
           </div>
-          <Navigation pathname={pathname} />
+          <div className="complimentary-logo"></div>
           <MobileNavigation pathname={pathname} />
         </div>
+        <Navigation pathname={pathname} />
       </div>
     </>
   );
