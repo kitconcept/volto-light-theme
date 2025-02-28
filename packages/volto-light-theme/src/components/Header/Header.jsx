@@ -9,6 +9,7 @@ import cx from 'classnames';
 import IntranetSearchWidget from '../SearchWidget/IntranetSearchWidget';
 import isEmpty from 'lodash/isEmpty';
 import { setSidebarTab, setMetadataFocus } from '@plone/volto/actions';
+import { flattenToAppURL } from '@plone/volto/helpers';
 
 import Anontools from '@plone/volto/components/theme/Anontools/Anontools';
 import LanguageSelector from '@plone/volto/components/theme/LanguageSelector/LanguageSelector';
@@ -75,6 +76,10 @@ const IntranetHeader = ({ pathname, siteLabel, token, siteAction }) => {
     ? formData.intranet_flag || siteLabel
     : navRoot.intranet_flag || siteLabel;
 
+  const complementary_logo = !isEmpty(formData)
+    ? formData.complementary_logo
+    : navRoot.complementary_logo;
+
   const pointToSidebar = (fieldSetName, fieldId) => {
     dispatch(setSidebarTab(0));
     dispatch(setMetadataFocus(fieldSetName, fieldId));
@@ -120,7 +125,14 @@ const IntranetHeader = ({ pathname, siteLabel, token, siteAction }) => {
               <IntranetSearchWidget />
             </div>
           </div>
-          <div className="complimentary-logo"></div>
+          <div className="complimentary-logo">
+            {complementary_logo && (
+              <img
+                src={flattenToAppURL(complementary_logo.download)}
+                alt="complementary logo"
+              />
+            )}
+          </div>
           <MobileNavigation pathname={pathname} />
         </div>
         <Navigation pathname={pathname} />
