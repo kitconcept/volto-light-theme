@@ -1,12 +1,18 @@
 // SemanticUI-free pre-@plone/components
 import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
-import { Container } from '@plone/components';
+import { useDispatch, useSelector } from 'react-redux';
+import { Button, Container } from '@plone/components';
 import MobileNavigation from '../MobileNavigation/MobileNavigation';
 import { useIntl, defineMessages } from 'react-intl';
 import config from '@plone/volto/registry';
 import cx from 'classnames';
 import IntranetSearchWidget from '../SearchWidget/IntranetSearchWidget';
+import isEmpty from 'lodash/isEmpty';
+import {
+  setSidebarTab,
+  setMetadataFocus,
+} from '@plone/volto/actions/sidebar/sidebar';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 
 import Anontools from '@plone/volto/components/theme/Anontools/Anontools';
 import LanguageSelector from '@plone/volto/components/theme/LanguageSelector/LanguageSelector';
@@ -64,6 +70,24 @@ const InternetHeader = ({ pathname, siteLabel, token, siteAction }) => {
 };
 
 const IntranetHeader = ({ pathname, siteLabel, token, siteAction }) => {
+  const dispatch = useDispatch();
+
+  const navRoot = useSelector((state) => state.navroot?.data?.navroot);
+  const formData = useSelector((state) => state.form.global);
+
+  const intranetFlag = !isEmpty(formData)
+    ? formData.intranet_flag || siteLabel
+    : navRoot.intranet_flag || siteLabel;
+
+  const complementary_logo = !isEmpty(formData)
+    ? formData.complementary_logo
+    : navRoot.complementary_logo;
+
+  const pointToSidebar = (fieldSetName, fieldId) => {
+    dispatch(setSidebarTab(0));
+    dispatch(setMetadataFocus(fieldSetName, fieldId));
+  };
+
   return (
     <>
       <div className="header">
@@ -79,11 +103,21 @@ const IntranetHeader = ({ pathname, siteLabel, token, siteAction }) => {
                 </UniversalLink>
               ))}
           </div>
-          {siteLabel && (
-            <div className="intranet">
-              <p>{siteLabel}</p>
-            </div>
-          )}
+          {siteLabel &&
+            (!isEmpty(formData) ? (
+              <Button
+                className="intranet-flag"
+                onPress={() =>
+                  pointToSidebar('header customizations', 'intranet_flag')
+                }
+              >
+                <p>{intranetFlag}</p>
+              </Button>
+            ) : (
+              <div className="intranet-flag">
+                <p>{intranetFlag}</p>
+              </div>
+            ))}
         </div>
         <div className="logo-nav-wrapper">
           <div className="logo">
@@ -94,7 +128,14 @@ const IntranetHeader = ({ pathname, siteLabel, token, siteAction }) => {
               <IntranetSearchWidget />
             </div>
           </div>
-          <div className="complimentary-logo"></div>
+          <div className="complimentary-logo">
+            {complementary_logo && (
+              <img
+                src={flattenToAppURL(complementary_logo.download)}
+                alt="complementary logo"
+              />
+            )}
+          </div>
           <MobileNavigation pathname={pathname} />
         </div>
         <Navigation pathname={pathname} />
