@@ -80,8 +80,8 @@ const IntranetHeader = ({ pathname, siteLabel, token, siteAction }) => {
     : navRoot.intranet_flag || siteLabel;
 
   const complementary_logo = !isEmpty(formData)
-    ? formData.complementary_logo
-    : navRoot.complementary_logo;
+    ? `data:${formData.complementary_logo['content-type']};base64,${formData.complementary_logo.data}`
+    : navRoot.complementary_logo.download;
 
   const pointToSidebar = (fieldSetName, fieldId) => {
     dispatch(setSidebarTab(0));
@@ -128,10 +128,10 @@ const IntranetHeader = ({ pathname, siteLabel, token, siteAction }) => {
               <IntranetSearchWidget />
             </div>
           </div>
-          <div className="complimentary-logo">
+          <div className="complementary-logo">
             {complementary_logo && (
               <img
-                src={flattenToAppURL(complementary_logo.download)}
+                src={flattenToAppURL(complementary_logo)}
                 alt="complementary logo"
               />
             )}
