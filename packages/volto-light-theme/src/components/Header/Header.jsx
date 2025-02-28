@@ -8,8 +8,11 @@ import config from '@plone/volto/registry';
 import cx from 'classnames';
 import IntranetSearchWidget from '../SearchWidget/IntranetSearchWidget';
 import isEmpty from 'lodash/isEmpty';
-import { setSidebarTab, setMetadataFocus } from '@plone/volto/actions';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import {
+  setSidebarTab,
+  setMetadataFocus,
+} from '@plone/volto/actions/sidebar/sidebar';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 
 import Anontools from '@plone/volto/components/theme/Anontools/Anontools';
 import LanguageSelector from '@plone/volto/components/theme/LanguageSelector/LanguageSelector';
