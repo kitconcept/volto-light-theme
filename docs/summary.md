@@ -41,7 +41,7 @@ You can create a custom summary implementation and register it for a content typ
 The summary component must accept `item` and `HeadingTag` as props.
 Here is an example which renders the publication date for a `Blog Post` content type:
 
-```js
+```jsx
 import { parseDateFromCatalog } from '@kitconcept/volto-light-theme/helpers/dates';
 import FormattedDate from '@plone/volto/components/theme/FormattedDate/FormattedDate';
 
@@ -87,7 +87,7 @@ export default BlogPostSummary;
 The custom summary component must be registered in the Volto registry in your add-on's `applyConfig` function.
 For example, this registers the `BlogPostSummary` component as the summary to be used for a custom content type named `Blog Post`:
 
-```js
+```jsx
 import BlogPostSummary from 'volto-my-add-on/components/Summary/BlogPostSummary';
 
 const applyConfig = (config) => {
@@ -105,7 +105,7 @@ You can use the `Summary` component to render a content type anywhere that the s
 
 Use it like this:
 
-```js
+```jsx
 import config from '@plone/volto/registry';
 import DefaultSummary from '@kitconcept/volto-light-theme/components/Summary/DefaultSummary';
 

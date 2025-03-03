@@ -158,6 +158,8 @@ We are working at the same time on a new spec for blocks: [The Block Model v3](.
 
 ```{toctree}
 :maxdepth: 1
+:hidden: true
+
 install
 feature-flags
 summary
