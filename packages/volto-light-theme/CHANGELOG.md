@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 6.0.0-alpha.15 (2025-03-03)
+
+### Bugfix
+
+- Added missing header guards for `intranet_flag` and `complementary_logo`. @sneridagh [#482](https://github.com/kitconcept/volto-light-theme/pull/482)
+
 ## 6.0.0-alpha.14 (2025-03-03)
 
 ### Breaking
