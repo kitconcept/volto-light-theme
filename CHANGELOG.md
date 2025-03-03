@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 6.0.0-alpha.16 (2025-03-03)
+
+### Bugfix
+
+- Fix last edge case in the intranet header in edit mode with the `complementary_logo`. @sneridagh [#483](https://github.com/kitconcept/volto-light-theme/pull/483)
+
 ## 6.0.0-alpha.15 (2025-03-03)
 
 ### Bugfix
