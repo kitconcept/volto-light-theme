@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import omit from 'lodash/omit';
+// TODO: Replace with a proper accordion component from @plone/components
 import { Accordion, Button, Segment } from 'semantic-ui-react';
 import DragDropList from '@plone/volto/components/manage/DragDropList/DragDropList';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
@@ -19,7 +20,13 @@ import deleteSVG from '@plone/volto/icons/delete.svg';
 import addSVG from '@plone/volto/icons/add.svg';
 import dragSVG from '@plone/volto/icons/drag.svg';
 import { v4 as uuid } from 'uuid';
-import type { BlocksData } from '@plone/types';
+import type {
+  BlockConfigBase,
+  BlocksData,
+  Content,
+  JSONSchema,
+} from '@plone/types';
+import type { IntlShape } from 'react-intl';
 
 const messages = defineMessages({
   labelRemoveItem: {
@@ -57,6 +64,16 @@ export type BlocksObjectWidgetProps = {
   onChange: (id: string, value: any) => void;
   activeObject: number;
   setActiveObject: (index: number) => void;
+  schema:
+    | (JSONSchema & { addMessage: string })
+    | ((props: BlocksObjectWidgetProps) => JSONSchema & { addMessage: string });
+  schemaEnhancer?: (args: {
+    schema: JSONSchema & { addMessage: string };
+    formData: BlockConfigBase;
+    intl: IntlShape;
+    navRoot: Content;
+    contentType: string;
+  }) => JSONSchema;
 };
 
 function deleteBlock(formData, blockId: string) {
@@ -80,7 +97,7 @@ function deleteBlock(formData, blockId: string) {
  * This is a DataGridField-equivalent widget for schema-based values.
  * The shape of the items in the array is defined using a schema.
  *
- * ObjectListWidget can receive an optional `schemaExtender` prop which is
+ * ObjectListWidget can receive an optional `schemaEnhancer` prop which is
  * a function that can mutate the schema for each individual item in the array.
  * An example schema definition of the a field that renders with the
  * ObjectListWidget:
@@ -91,7 +108,7 @@ function deleteBlock(formData, blockId: string) {
  *    description: 'Leave empty to show all columns',
  *    schema: SomeItemSchema,
  *    widget: 'object_list',
- *    schemaExtender: (schema, data) => {
+ *    schemaEnhancer: (schema, data) => {
  *      const mutated = lodash.cloneDeep(schema);
  *      mutated.properties.extraField = {
  *        title: 'Extra field',
@@ -105,7 +122,7 @@ function deleteBlock(formData, blockId: string) {
  * ```
  */
 const ObjectListWidget = (props: BlocksObjectWidgetProps) => {
-  const { block, fieldSet, id, schema, value, onChange, schemaExtender } =
+  const { block, fieldSet, id, schema, value, onChange, schemaEnhancer } =
     props;
   const [localActiveObject, setLocalActiveObject] = useState(
     props.activeObject ?? value?.blocks_layout?.items?.length - 1,
@@ -153,8 +170,9 @@ const ObjectListWidget = (props: BlocksObjectWidgetProps) => {
               const newId = uuid();
               const data = {};
 
-              const objSchema = schemaExtender
-                ? schemaExtender(schema, data, intl)
+              const objSchema = schemaEnhancer
+                ? // @ts-ignore - TODO Make sure this continues to have sense
+                  schemaEnhancer({ schema: objectSchema, formData: data, intl })
                 : objectSchema;
               const dataWithDefaults = applySchemaDefaults({
                 data,
@@ -194,30 +212,6 @@ const ObjectListWidget = (props: BlocksObjectWidgetProps) => {
           />
         )}
       </FormFieldWrapper>
-      {/* {value?.blocks_layout?.items.map((blockId, index) => {
-        const blockData = value?.blocks[blockId];
-        return (
-          <ObjectWidget
-            id={`${blockId}-${index}`}
-            key={`ow-${blockId}-${index}`}
-            block={block}
-            schema={
-              schemaExtender
-                ? schemaExtender(schema, blockData, intl)
-                : objectSchema
-            }
-            value={blockData}
-            onChange={(fi, fv) => {
-              const changedBlockId = fi.slice(0, -2);
-              const newvalue = { ...value.blocks[changedBlockId], ...fv };
-              onChange(id, {
-                ...value,
-                blocks: { ...value.blocks, [changedBlockId]: newvalue },
-              });
-            }}
-          />
-        );
-      })} */}
       <DragDropList
         style={{
           boxShadow: `${topLayerShadow}${value?.blocks_layout?.items?.length > 1 ? secondLayer : ''}${
@@ -300,8 +294,13 @@ const ObjectListWidget = (props: BlocksObjectWidgetProps) => {
                       key={`ow-${childId}-${index}`}
                       block={block}
                       schema={
-                        schemaExtender
-                          ? schemaExtender(schema, child, intl)
+                        schemaEnhancer
+                          ? // @ts-ignore - TODO Make sure this continues to have sense
+                            schemaEnhancer({
+                              schema: objectSchema,
+                              formData: child,
+                              intl,
+                            })
                           : objectSchema
                       }
                       value={child}

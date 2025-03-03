@@ -2,7 +2,8 @@ import React from 'react';
 import FormFieldWrapper from '@plone/volto/components/manage/Widgets/FormFieldWrapper';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import { Button } from '@plone/components';
-import { isEqual, find } from 'lodash';
+import isEqual from 'lodash/isEqual';
+import find from 'lodash/find';
 
 // Move to an unified `StyleDefinition` type
 type Actions =
