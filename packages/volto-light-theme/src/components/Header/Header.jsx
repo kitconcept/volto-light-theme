@@ -75,13 +75,15 @@ const IntranetHeader = ({ pathname, siteLabel, token, siteAction }) => {
   const navRoot = useSelector((state) => state.navroot?.data?.navroot);
   const formData = useSelector((state) => state.form.global);
 
-  const intranetFlag = !isEmpty(formData)
-    ? formData.intranet_flag || siteLabel
-    : navRoot.intranet_flag || siteLabel;
+  const intranetFlag =
+    !isEmpty(formData) && formData.intranet_flag
+      ? formData?.intranet_flag || siteLabel
+      : navRoot?.intranet_flag || siteLabel;
 
-  const complementary_logo = !isEmpty(formData)
-    ? `data:${formData.complementary_logo['content-type']};base64,${formData.complementary_logo.data}`
-    : navRoot.complementary_logo.download;
+  const complementary_logo =
+    !isEmpty(formData) && formData.complementary_logo
+      ? `data:${formData.complementary_logo['content-type']};base64,${formData.complementary_logo.data}`
+      : navRoot?.complementary_logo?.download;
 
   const pointToSidebar = (fieldSetName, fieldId) => {
     dispatch(setSidebarTab(0));
