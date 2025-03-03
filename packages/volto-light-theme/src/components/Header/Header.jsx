@@ -81,7 +81,7 @@ const IntranetHeader = ({ pathname, siteLabel, token, siteAction }) => {
       : navRoot?.intranet_flag || siteLabel;
 
   const complementary_logo =
-    !isEmpty(formData) && formData.complementary_logo
+    !isEmpty(formData) && formData?.complementary_logo?.data
       ? `data:${formData.complementary_logo['content-type']};base64,${formData.complementary_logo.data}`
       : navRoot?.complementary_logo?.download;
 
