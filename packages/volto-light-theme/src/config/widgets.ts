@@ -13,22 +13,24 @@ declare module '@plone/types' {
     BackgroundColorWidget: React.ComponentType<any>;
     blockWidth: React.ComponentType<any>;
     blockAlignment: React.ComponentType<any>;
-    themeColorPicker: typeof ThemeColorPicker;
     footerLogos: typeof FooterLogosWidget;
     footerLinks: typeof FooterLinksWidget;
     sizeWidget: React.ComponentType<any>;
+    themeColorPicker: typeof ThemeColorPicker;
   }
 }
 
 export default function install(config: ConfigType) {
+  // Color picker widget override
+  config.widgets.widget.color_picker = ColorPickerWidget;
+
   config.widgets.widget.BackgroundColorWidget = BackgroundColorWidget;
   config.widgets.widget.blockWidth = BlockWidthWidget;
   config.widgets.widget.blockAlignment = BlockAlignmentWidget;
-  config.widgets.widget.color_picker = ColorPickerWidget;
-  config.widgets.widget.themeColorPicker = ThemeColorPicker;
   config.widgets.widget.footerLogos = FooterLogosWidget;
   config.widgets.widget.footerLinks = FooterLinksWidget;
   config.widgets.widget.sizeWidget = SizeWidget;
+  config.widgets.widget.themeColorPicker = ThemeColorPicker;
 
   return config;
 }

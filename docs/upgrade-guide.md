@@ -58,6 +58,10 @@ It's stored in `config.settings.blocksWidths`.
 It uses a new widget component that would be ported to Volto core as soon as it's ready.
 This component saves the value of the custom CSS property `--block-width` as a StyleWrapper value, so it can be used later when the StyleWrapper injects it in the block (or component) markup.
 
+### Removed `AlignWidget` from {file}`src/components/Widgets`
+
+This component is removed because it was obsolete.
+Use the `blockAlignment` or `blockWidth` widgets instead.
 
 ## volto-light-theme 5.0.0
 
