@@ -87,6 +87,14 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         }
       }
     }
+
+    .button {
+      color: $white;
+    }
+
+    & > a {
+      text-decoration: none;
+    }
   }
 
   .slide-wrapper:not(.empty-slide) {

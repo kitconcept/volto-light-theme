@@ -1,53 +1,24 @@
-$white: #fff !default;
-$black: #000 !default;
-
 .block.highlight {
-  .title h2 {
-    @include highlight-title();
-  }
-  .description p {
-    @include introduction();
-  }
-  .button a {
-    @include body-text();
-  }
+  .teaser-item.top .highlight-description {
+    .title h2 {
+      @include highlight-title();
+    }
+    .description {
+      a,
+      p,
+      span {
+        @include introduction();
+        --link-foreground-color: var(--theme-foreground-color);
+      }
+    }
 
-  .highlight-description {
-    a {
-      @include introduction();
+    .button a {
+      @include body-text-bold();
       text-decoration: none;
     }
   }
-
-  &[class*='has--descriptionColor--highlight-custom-color-'] {
-    .highlight-description {
-      a {
-        color: $black !important;
-      }
-    }
-  }
-  &.has--descriptionColor--highlight-custom-color-2 {
-    .highlight-description {
-      a {
-        color: $white !important;
-      }
-    }
-  }
 }
-
-.block-editor-highlight {
-  &[class*='has--descriptionColor--highlight-custom-color-'] {
-    .highlight-description {
-      a {
-        color: $black !important;
-      }
-    }
-  }
-  &.has--descriptionColor--highlight-custom-color-2 {
-    .highlight-description {
-      a {
-        color: $white !important;
-      }
-    }
-  }
+.block.highlight.has--descriptionColor--highlight-custom-color-2,
+.block-editor-highlight.has--descriptionColor--highlight-custom-color-2 .block {
+  --theme-foreground-color: #fff;
 }
