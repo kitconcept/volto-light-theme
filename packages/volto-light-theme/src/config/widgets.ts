@@ -7,6 +7,8 @@ import FooterLogosWidget from '../components/Widgets/FooterLogosWidget';
 import FooterLinksWidget from '../components/Widgets/FooterLinksWidget';
 import SizeWidget from '../components/Widgets/SizeWidget';
 import ThemeColorPicker from '../components/Widgets/ThemeColorPicker';
+import RACBlocksObjectWidget from '../components/Widgets/RACBlocksObjectWidget';
+import { headerActionsSchema } from '../components/Widgets/schema/headerActionsSchema';
 
 declare module '@plone/types' {
   export interface WidgetsConfigByWidget {
@@ -17,6 +19,7 @@ declare module '@plone/types' {
     footerLinks: typeof FooterLinksWidget;
     sizeWidget: React.ComponentType<any>;
     themeColorPicker: typeof ThemeColorPicker;
+    blocksObjectWidget: typeof RACBlocksObjectWidget;
   }
 }
 
@@ -31,6 +34,13 @@ export default function install(config: ConfigType) {
   config.widgets.widget.footerLinks = FooterLinksWidget;
   config.widgets.widget.sizeWidget = SizeWidget;
   config.widgets.widget.themeColorPicker = ThemeColorPicker;
+  config.widgets.widget.blocksObjectWidget = RACBlocksObjectWidget;
+
+  config.registerUtility({
+    name: 'headerActions',
+    type: 'schema',
+    method: headerActionsSchema,
+  });
 
   return config;
 }
