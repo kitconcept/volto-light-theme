@@ -120,3 +120,33 @@
     }
   }
 }
+
+.blocks-object-widget {
+  .field.inline {
+    .add-item-button-wrapper {
+      display: flex;
+      justify-content: flex-end;
+      padding: 0;
+
+      button {
+        @include button-style;
+      }
+    }
+
+    .eight.wide.column:has(.add-item-button-wrapper) {
+      padding-right: 0;
+    }
+  }
+
+  .bow-items-wrapper {
+    padding: 0 10px;
+    border: 1px solid var(--quanta-smoke);
+    border-radius: 10px;
+  }
+
+  .bow-item-title {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+  }
+}
