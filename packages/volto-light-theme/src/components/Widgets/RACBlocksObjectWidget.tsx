@@ -14,6 +14,7 @@ import {
   getBlocksLayoutFieldname,
   moveBlock,
 } from '@plone/volto/helpers/Blocks/Blocks';
+import DndSortableList from './DndSortableList';
 
 import upSVG from '@plone/volto/icons/up-key.svg';
 import downSVG from '@plone/volto/icons/down-key.svg';
@@ -98,6 +99,19 @@ function deleteBlock(formData, blockId: string) {
   return newFormData;
 }
 
+const BlockObjectItem = (props) => {
+  const { attributes, listeners, setNodeRef, transform, transition } =
+    useSortable({ id: props.id });
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+  };
+  return (
+    <div ref={setNodeRef} style={style} {...attributes} {...listeners}></div>
+  );
+};
+
 const BlocksObjectWidget = (props: BlocksObjectWidgetProps) => {
   const { block, fieldSet, id, value, onChange, schemaEnhancer, schemaName } =
     props;
@@ -136,6 +150,18 @@ const BlocksObjectWidget = (props: BlocksObjectWidgetProps) => {
   const topLayerShadow = '0 1px 1px rgba(0,0,0,0.15)';
   const secondLayer = ', 0 10px 0 -5px #eee, 0 10px 1px -4px rgba(0,0,0,0.15)';
   const thirdLayer = ', 0 20px 0 -10px #eee, 0 20px 1px -9px rgba(0,0,0,0.15)';
+
+  function handleDragEnd(event) {
+    const { active, over } = event;
+
+    const source = value.blocks_layout.items.indexOf(active.id);
+    const destination = value.blocks_layout.items.indexOf(over.id);
+
+    if (active.id !== over.id) {
+      const newFormData = moveBlock(value, source, destination);
+      onChange(id, newFormData);
+    }
+  }
 
   return (
     <div className="blocks-object-widget">
@@ -193,39 +219,20 @@ const BlocksObjectWidget = (props: BlocksObjectWidgetProps) => {
           />
         )}
       </FormFieldWrapper>
-      <DragDropList
-        forwardedAriaLabelledBy={`fieldset-${
-          fieldSet || 'default'
-        }-field-label-${id}`}
-        childList={
-          value?.blocks_layout?.items?.map((blockId) => [
-            blockId,
-            value.blocks[blockId],
-          ]) || []
-        }
-        onMoveItem={(result) => {
-          const { source, destination } = result;
-          if (!destination) {
-            return;
-          }
-          const newFormData = moveBlock(value, source.index, destination.index);
-          onChange(id, newFormData);
-          return true;
-        }}
+      <DndSortableList
+        sortedItems={value?.blocks_layout?.items || []}
+        items={value?.blocks}
+        handleDragEnd={handleDragEnd}
       >
-        {({ child, childId, index, draginfo }) => {
+        {({ item, uid, index, attributes, listeners }) => {
           return (
-            <div
-              ref={draginfo.innerRef}
-              {...draginfo.draggableProps}
-              key={childId}
-            >
+            <div key={uid}>
               <div className="bow-items-wrapper" key={index}>
                 <div
                   className="bow-item-title"
                   active={activeObject === index}
                   index={index}
-                  onClick={handleChangeActiveObject}
+                  // onClick={handleChangeActiveObject}
                   aria-label={`${
                     activeObject === index
                       ? intl.formatMessage(messages.labelCollapseItem)
@@ -237,14 +244,15 @@ const BlocksObjectWidget = (props: BlocksObjectWidgetProps) => {
                       visibility: 'visible',
                       display: 'inline-block',
                     }}
-                    {...draginfo.dragHandleProps}
                     className="drag handle"
+                    {...listeners}
+                    {...attributes}
                   >
                     <Icon name={dragSVG} size="18px" />
                   </button>
 
                   <div className="accordion-title-wrapper">
-                    {child.title || `${objectSchema.title} #${index + 1}`}
+                    {item.title || `${objectSchema.title} #${index + 1}`}
                   </div>
                   <div className="accordion-tools">
                     <button
@@ -252,7 +260,7 @@ const BlocksObjectWidget = (props: BlocksObjectWidgetProps) => {
                         messages.labelRemoveItem,
                       )} #${index + 1}`}
                       onClick={() => {
-                        onChange(id, deleteBlock(value, childId));
+                        onChange(id, deleteBlock(value, uid));
                       }}
                     >
                       <Icon name={deleteSVG} size="20px" color="#e40166" />
@@ -270,20 +278,20 @@ const BlocksObjectWidget = (props: BlocksObjectWidgetProps) => {
                   active={activeObject === index}
                 >
                   <ObjectWidget
-                    id={`${childId}-${index}`}
-                    key={`ow-${childId}-${index}`}
+                    id={`${uid}-${index}`}
+                    key={`ow-${uid}-${index}`}
                     block={block}
                     schema={
                       schemaEnhancer
                         ? // @ts-ignore - TODO Make sure this continues to have sense
                           schemaEnhancer({
                             schema: objectSchema,
-                            formData: child,
+                            formData: item,
                             intl,
                           })
                         : objectSchema
                     }
-                    value={child}
+                    value={item}
                     onChange={(fi, fv) => {
                       const changedBlockId = fi.slice(0, -2);
                       const newvalue = {
@@ -306,7 +314,7 @@ const BlocksObjectWidget = (props: BlocksObjectWidgetProps) => {
             </div>
           );
         }}
-      </DragDropList>
+      </DndSortableList>
     </div>
   );
 };
