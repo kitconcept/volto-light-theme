@@ -3,8 +3,6 @@ import BackgroundColorWidget from '../components/Widgets/BackgroundColorWidget';
 import BlockWidthWidget from '../components/Widgets/BlockWidthWidget';
 import BlockAlignmentWidget from '../components/Widgets/BlockAlignmentWidget';
 import ColorPickerWidget from '../components/Widgets/ColorPickerWidget';
-import FooterLogosWidget from '../components/Widgets/FooterLogosWidget';
-import FooterLinksWidget from '../components/Widgets/FooterLinksWidget';
 import SizeWidget from '../components/Widgets/SizeWidget';
 import ThemeColorPicker from '../components/Widgets/ThemeColorPicker';
 import BlocksObjectWidget from '../components/Widgets/BlocksObjectWidget';

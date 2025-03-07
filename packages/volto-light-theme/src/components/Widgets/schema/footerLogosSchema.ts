@@ -15,10 +15,6 @@ const messages = defineMessages({
     id: 'Alt text',
     defaultMessage: 'Alt text',
   },
-  icon: {
-    id: 'Icon',
-    defaultMessage: 'Icon',
-  },
   description: {
     id: 'Description',
     defaultMessage: 'Description',
@@ -28,12 +24,8 @@ const messages = defineMessages({
     defaultMessage: 'Logo image',
   },
   item: {
-    id: 'Item',
-    defaultMessage: 'Item',
-  },
-  items: {
-    id: 'Items',
-    defaultMessage: 'Items',
+    id: 'Logo',
+    defaultMessage: 'Logo',
   },
   addLogo: {
     id: 'Add logo',
@@ -42,10 +34,6 @@ const messages = defineMessages({
   headline: {
     id: 'Headline',
     defaultMessage: 'Headline',
-  },
-  itemsToShow: {
-    id: 'Items to show',
-    defaultMessage: 'Items to show',
   },
   hideDescription: {
     id: 'Hide description',
