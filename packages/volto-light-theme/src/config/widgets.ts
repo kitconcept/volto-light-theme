@@ -1,36 +1,39 @@
 import type { ConfigType } from '@plone/registry';
-import BackgroundColorWidget from '../components/Widgets/BackgroundColorWidget';
-import BlockWidthWidget from '../components/Widgets/BlockWidthWidget';
-import BlockAlignmentWidget from '../components/Widgets/BlockAlignmentWidget';
-import ColorPickerWidget from '../components/Widgets/ColorPickerWidget';
-import SizeWidget from '../components/Widgets/SizeWidget';
-import ThemeColorPicker from '../components/Widgets/ThemeColorPicker';
-import BlocksObjectWidget from '../components/Widgets/BlocksObjectWidget';
+import BlockWidth from '../components/Widgets/BlockWidth';
+import BlockAlignment from '../components/Widgets/BlockAlignment';
+import ColorSwatch from '../components/Widgets/ColorSwatch';
+import Size from '../components/Widgets/Size';
+import ColorPicker from '../components/Widgets/ColorPicker';
+import ThemeColorSwatch from '../components/Widgets/ThemeColorSwatch';
+import BlocksObject from '../components/Widgets/BlocksObject';
 import { headerActionsSchema } from '../components/Widgets/schema/headerActionsSchema';
 import { footerLogosSchema } from '../components/Widgets/schema/footerLogosSchema';
 import { footerLinksSchema } from '../components/Widgets/schema/footerLinksSchema';
 
 declare module '@plone/types' {
   export interface WidgetsConfigByWidget {
-    BackgroundColorWidget: React.ComponentType<any>;
-    blockWidth: React.ComponentType<any>;
-    blockAlignment: React.ComponentType<any>;
-    sizeWidget: React.ComponentType<any>;
-    themeColorPicker: typeof ThemeColorPicker;
-    blocksObjectWidget: typeof BlocksObjectWidget;
+    themeColorSwatch: typeof ColorSwatch;
+    blockWidth: typeof BlockWidth;
+    blockAlignment: typeof BlockAlignment;
+    size: typeof Size;
+    colorPicker: typeof ColorPicker;
+    blocksObject: typeof BlocksObject;
   }
 }
 
 export default function install(config: ConfigType) {
-  // Color picker widget override
-  config.widgets.widget.color_picker = ColorPickerWidget;
+  // Color picker widget override - use our own non-semanticUI widget
+  // This is the widget that given an array of colors, you can choose one of them
+  // `color_picker` is a terrible name for this widget, it should be `colorSwatch`
+  // ToDo: Rename it in Volto 19
+  config.widgets.widget.color_picker = ColorSwatch;
 
-  config.widgets.widget.BackgroundColorWidget = BackgroundColorWidget;
-  config.widgets.widget.blockWidth = BlockWidthWidget;
-  config.widgets.widget.blockAlignment = BlockAlignmentWidget;
-  config.widgets.widget.sizeWidget = SizeWidget;
-  config.widgets.widget.themeColorPicker = ThemeColorPicker;
-  config.widgets.widget.blocksObjectWidget = BlocksObjectWidget;
+  config.widgets.widget.blockWidth = BlockWidth;
+  config.widgets.widget.blockAlignment = BlockAlignment;
+  config.widgets.widget.blocksObject = BlocksObject;
+  config.widgets.widget.colorPicker = ColorPicker;
+  config.widgets.widget.size = Size;
+  config.widgets.widget.themeColorSwatch = ThemeColorSwatch;
 
   config.registerUtility({
     name: 'headerActions',

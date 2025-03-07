@@ -64,7 +64,7 @@
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.3);
 }
 
-.theme-picker-widget {
+.color-swatch-widget {
   .buttons {
     flex: 1 1 100%;
     margin: 1rem 0 0.5rem;
@@ -97,18 +97,17 @@
   }
 }
 
-.theme-picker-widget button {
+.color-swatch-widget button {
   background-color: var(--theme-color);
 }
 
-// TODO: Remove when layers are in place
-.theme-picker-widget .button.grey,
-.theme-picker-widget .button.grey.active,
-.theme-picker-widget .ui.grey.button:hover {
+.color-swatch-widget .button.grey,
+.color-swatch-widget .button.grey.active,
+.color-swatch-widget .ui.grey.button:hover {
   background-color: var(--theme-color);
 }
-.theme-picker-widget .button.active,
-.theme-picker-widget .button.active:hover {
+.color-swatch-widget .button.active,
+.color-swatch-widget .button.active:hover {
   background-color: var(--theme-color);
 }
 

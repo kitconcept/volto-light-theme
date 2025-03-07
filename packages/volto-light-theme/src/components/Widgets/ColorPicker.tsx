@@ -3,11 +3,10 @@ import { HexColorPicker, HexColorInput } from 'react-colorful';
 import { Button, Dialog, DialogTrigger, Popover } from 'react-aria-components';
 import { ColorSwatch, CloseIcon } from '@plone/components';
 
-const ColorPickerWidget = (props: {
+const ColorPicker = (props: {
   id: string;
   title: string;
   value: string;
-  default: string;
   onChange: (id: string, value: any) => void;
 }) => {
   const { id, onChange, value } = props;
@@ -50,4 +49,4 @@ const ColorPickerWidget = (props: {
   );
 };
 
-export default ColorPickerWidget;
+export default ColorPicker;
