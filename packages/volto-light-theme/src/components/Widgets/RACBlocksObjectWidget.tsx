@@ -6,6 +6,7 @@ import { Text } from 'react-aria-components';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import FormFieldWrapper from '@plone/volto/components/manage/Widgets/FormFieldWrapper';
 import { applySchemaDefaults } from '@plone/volto/helpers/Blocks/Blocks';
+import AnimateHeight from 'react-animate-height';
 import ObjectWidget from '@plone/volto/components/manage/Widgets/ObjectWidget';
 import {
   getBlocksFieldname,
@@ -251,42 +252,48 @@ const BlocksObjectWidget = (props: BlocksObjectWidgetProps) => {
                   )}
                 </div>
               </div>
-              <div
-                className={cx('bow-item-content', {
-                  active: activeObject === index,
-                })}
+              <AnimateHeight
+                animateOpacity
+                duration={300}
+                height={activeObject === index ? 'auto' : 0}
               >
-                <ObjectWidget
-                  id={`${uid}`}
-                  key={`bow-${uid}`}
-                  block={block}
-                  schema={
-                    schemaEnhancer
-                      ? // @ts-ignore - TODO Make sure this continues to have sense
-                        schemaEnhancer({
-                          schema: objectSchema,
-                          formData: item,
-                          intl,
-                        })
-                      : objectSchema
-                  }
-                  value={item}
-                  onChange={(fieldId: string, fieldValue: any) => {
-                    const changedBlockId = fieldId.slice(0, -2);
-                    const newvalue = {
-                      ...value.blocks[changedBlockId],
-                      ...fieldValue,
-                    };
-                    onChange(id, {
-                      ...value,
-                      blocks: {
-                        ...value.blocks,
-                        [changedBlockId]: newvalue,
-                      },
-                    });
-                  }}
-                />
-              </div>
+                <div
+                  className={cx('bow-item-content', {
+                    active: activeObject === index,
+                  })}
+                >
+                  <ObjectWidget
+                    id={`${uid}`}
+                    key={`bow-${uid}`}
+                    block={block}
+                    schema={
+                      schemaEnhancer
+                        ? // @ts-ignore - TODO Make sure this continues to have sense
+                          schemaEnhancer({
+                            schema: objectSchema,
+                            formData: item,
+                            intl,
+                          })
+                        : objectSchema
+                    }
+                    value={item}
+                    onChange={(fieldId: string, fieldValue: any) => {
+                      const changedBlockId = fieldId.slice(0, -2);
+                      const newvalue = {
+                        ...value.blocks[changedBlockId],
+                        ...fieldValue,
+                      };
+                      onChange(id, {
+                        ...value,
+                        blocks: {
+                          ...value.blocks,
+                          [changedBlockId]: newvalue,
+                        },
+                      });
+                    }}
+                  />
+                </div>
+              </AnimateHeight>
             </div>
           );
         }}
