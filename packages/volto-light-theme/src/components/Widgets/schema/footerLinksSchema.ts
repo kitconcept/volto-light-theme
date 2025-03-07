@@ -8,8 +8,8 @@ const messages = defineMessages({
     defaultMessage: 'Title',
   },
   item: {
-    id: 'Action',
-    defaultMessage: 'Action',
+    id: 'Link',
+    defaultMessage: 'Link',
   },
   addLink: {
     id: 'Add link',
