@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   DndContext,
   closestCenter,
@@ -7,7 +8,6 @@ import {
   useSensors,
 } from '@dnd-kit/core';
 import {
-  arrayMove,
   SortableContext,
   sortableKeyboardCoordinates,
   verticalListSortingStrategy,
@@ -35,17 +35,30 @@ const SortableItem = (props) => {
 };
 
 const DndSortableList = (props) => {
-  const { items, sortedItems, setItems, children, handleDragEnd } = props;
+  const {
+    items,
+    sortedItems,
+    children,
+    handleDragEnd,
+    activeObject,
+    setActiveObject,
+  } = props;
   const sensors = useSensors(
     useSensor(PointerSensor),
     useSensor(KeyboardSensor, {
       coordinateGetter: sortableKeyboardCoordinates,
     }),
   );
+
+  function handleDragStart(event) {
+    setActiveObject(null);
+  }
+
   return (
     <DndContext
       sensors={sensors}
       collisionDetection={closestCenter}
+      onDragStart={handleDragStart}
       onDragEnd={handleDragEnd}
     >
       <SortableContext
