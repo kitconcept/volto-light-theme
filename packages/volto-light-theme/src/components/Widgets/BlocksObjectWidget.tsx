@@ -1,19 +1,20 @@
 import { useState } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import omit from 'lodash/omit';
-// TODO: Replace with a proper accordion component from @plone/components
-import { Accordion, Button, Segment } from 'semantic-ui-react';
-import DragDropList from '@plone/volto/components/manage/DragDropList/DragDropList';
+import { Button } from '@plone/components';
+import { Text } from 'react-aria-components';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import FormFieldWrapper from '@plone/volto/components/manage/Widgets/FormFieldWrapper';
 import { applySchemaDefaults } from '@plone/volto/helpers/Blocks/Blocks';
+import AnimateHeight from 'react-animate-height';
 import ObjectWidget from '@plone/volto/components/manage/Widgets/ObjectWidget';
 import {
   getBlocksFieldname,
   getBlocksLayoutFieldname,
   moveBlock,
 } from '@plone/volto/helpers/Blocks/Blocks';
-
+import DndSortableList from './DndSortableList';
+import cx from 'classnames';
 import upSVG from '@plone/volto/icons/up-key.svg';
 import downSVG from '@plone/volto/icons/down-key.svg';
 import deleteSVG from '@plone/volto/icons/delete.svg';
@@ -27,6 +28,7 @@ import type {
   JSONSchema,
 } from '@plone/types';
 import type { IntlShape } from 'react-intl';
+import config from '@plone/volto/registry';
 
 const messages = defineMessages({
   labelRemoveItem: {
@@ -51,6 +53,10 @@ const messages = defineMessages({
   },
 });
 
+export type BlocksObjectWidgetSchema =
+  | (JSONSchema & { addMessage: string })
+  | ((props: BlocksObjectWidgetProps) => JSONSchema & { addMessage: string });
+
 export type BlocksObjectWidgetProps = {
   id: string;
   block: string;
@@ -64,9 +70,8 @@ export type BlocksObjectWidgetProps = {
   onChange: (id: string, value: any) => void;
   activeObject: number;
   setActiveObject: (index: number) => void;
-  schema:
-    | (JSONSchema & { addMessage: string })
-    | ((props: BlocksObjectWidgetProps) => JSONSchema & { addMessage: string });
+  schema: BlocksObjectWidgetSchema;
+  schemaName: string;
   schemaEnhancer?: (args: {
     schema: JSONSchema & { addMessage: string };
     formData: BlockConfigBase;
@@ -93,37 +98,15 @@ function deleteBlock(formData, blockId: string) {
   return newFormData;
 }
 
-/**
- * This is a DataGridField-equivalent widget for schema-based values.
- * The shape of the items in the array is defined using a schema.
- *
- * ObjectListWidget can receive an optional `schemaEnhancer` prop which is
- * a function that can mutate the schema for each individual item in the array.
- * An example schema definition of the a field that renders with the
- * ObjectListWidget:
- *
- * ```jsx
- *  columns: {
- *    title: 'Columns',
- *    description: 'Leave empty to show all columns',
- *    schema: SomeItemSchema,
- *    widget: 'object_list',
- *    schemaEnhancer: (schema, data) => {
- *      const mutated = lodash.cloneDeep(schema);
- *      mutated.properties.extraField = {
- *        title: 'Extra field',
- *      }
- *      mutated.fieldsets[0].fields.push('extraField');
- *      return mutated;
- *    },
- *    activeObject: 0, // Current active object drilled down from the schema (if present)
- *    setActiveObject: () => {} // The current active object state updater function drilled down from the schema (if present)
- *  },
- * ```
- */
-const ObjectListWidget = (props: BlocksObjectWidgetProps) => {
-  const { block, fieldSet, id, schema, value, onChange, schemaEnhancer } =
+const BlocksObjectWidget = (props: BlocksObjectWidgetProps) => {
+  const { block, fieldSet, id, value, onChange, schemaEnhancer, schemaName } =
     props;
+
+  const schema = config.getUtility({
+    type: 'schema',
+    name: schemaName,
+  }).method;
+
   const [localActiveObject, setLocalActiveObject] = useState(
     props.activeObject ?? value?.blocks_layout?.items?.length - 1,
   );
@@ -142,31 +125,36 @@ const ObjectListWidget = (props: BlocksObjectWidgetProps) => {
 
   const intl = useIntl();
 
-  function handleChangeActiveObject(e, blockProps) {
-    const { index } = blockProps;
+  function handleChangeActiveObject(index) {
     const newIndex = activeObject === index ? -1 : index;
 
     setActiveObject(newIndex);
   }
+
   const objectSchema = typeof schema === 'function' ? schema(props) : schema;
 
-  const topLayerShadow = '0 1px 1px rgba(0,0,0,0.15)';
-  const secondLayer = ', 0 10px 0 -5px #eee, 0 10px 1px -4px rgba(0,0,0,0.15)';
-  const thirdLayer = ', 0 20px 0 -10px #eee, 0 20px 1px -9px rgba(0,0,0,0.15)';
+  function handleDragEnd(event) {
+    const { active, over } = event;
+
+    if (active.id !== over.id) {
+      const source = value.blocks_layout.items.indexOf(active.id);
+      const destination = value.blocks_layout.items.indexOf(over.id);
+
+      const newFormData = moveBlock(value, source, destination);
+      onChange(id, newFormData);
+    }
+  }
 
   return (
-    <div className="objectlist-widget">
+    <div className="blocks-object-widget">
       <FormFieldWrapper {...props} noForInFieldLabel className="objectlist">
         <div className="add-item-button-wrapper">
           <Button
-            compact
-            icon
             aria-label={
               objectSchema.addMessage ||
               `${intl.formatMessage(messages.add)} ${objectSchema.title}`
             }
-            onClick={(e) => {
-              e.preventDefault();
+            onPress={(e) => {
               const newId = uuid();
               const data = {};
 
@@ -196,10 +184,11 @@ const ObjectListWidget = (props: BlocksObjectWidgetProps) => {
             }}
           >
             <Icon name={addSVG} size="18px" />
-            &nbsp;
             {/* Custom addMessage in schema, else default to English */}
-            {objectSchema.addMessage ||
-              `${intl.formatMessage(messages.add)} ${objectSchema.title}`}
+            <Text>
+              {objectSchema.addMessage ||
+                `${intl.formatMessage(messages.add)} ${objectSchema.title}`}
+            </Text>
           </Button>
         </div>
         {value?.blocks_layout?.items?.length === 0 && (
@@ -212,121 +201,103 @@ const ObjectListWidget = (props: BlocksObjectWidgetProps) => {
           />
         )}
       </FormFieldWrapper>
-      <DragDropList
-        style={{
-          boxShadow: `${topLayerShadow}${value?.blocks_layout?.items?.length > 1 ? secondLayer : ''}${
-            value?.blocks_layout?.items?.length > 2 ? thirdLayer : ''
-          }`,
-        }}
-        forwardedAriaLabelledBy={`fieldset-${
-          fieldSet || 'default'
-        }-field-label-${id}`}
-        childList={
-          value?.blocks_layout?.items?.map((blockId) => [
-            blockId,
-            value.blocks[blockId],
-          ]) || []
-        }
-        onMoveItem={(result) => {
-          const { source, destination } = result;
-          if (!destination) {
-            return;
-          }
-          const newFormData = moveBlock(value, source.index, destination.index);
-          onChange(id, newFormData);
-          return true;
-        }}
+      <DndSortableList
+        sortedItems={value?.blocks_layout?.items || []}
+        items={value?.blocks}
+        handleDragEnd={handleDragEnd}
+        activeObject={activeObject}
+        setActiveObject={setActiveObject}
       >
-        {({ child, childId, index, draginfo }) => {
+        {({ item, uid, index, attributes, listeners }) => {
           return (
             <div
-              ref={draginfo.innerRef}
-              {...draginfo.draggableProps}
-              key={childId}
+              className={cx('bow-item-wrapper', {
+                active: activeObject === index,
+              })}
+              key={uid}
             >
-              <Accordion key={index} fluid styled>
-                <Accordion.Title
-                  active={activeObject === index}
-                  index={index}
-                  onClick={handleChangeActiveObject}
-                  aria-label={`${
-                    activeObject === index
-                      ? intl.formatMessage(messages.labelCollapseItem)
-                      : intl.formatMessage(messages.labelShowItem)
-                  } #${index + 1}`}
-                >
-                  <button
-                    style={{
-                      visibility: 'visible',
-                      display: 'inline-block',
-                    }}
-                    {...draginfo.dragHandleProps}
-                    className="drag handle"
-                  >
-                    <Icon name={dragSVG} size="18px" />
-                  </button>
+              <div
+                className="bow-item-title-bar"
+                onClick={() => handleChangeActiveObject(index)}
+                role="button"
+                aria-label={`${
+                  activeObject === index
+                    ? intl.formatMessage(messages.labelCollapseItem)
+                    : intl.formatMessage(messages.labelShowItem)
+                } #${index ? index + 1 : ''}`}
+              >
+                <div className="drag handle" {...listeners} {...attributes}>
+                  <Icon name={dragSVG} size="18px" />
+                </div>
 
-                  <div className="accordion-title-wrapper">
-                    {`${objectSchema.title} #${index + 1}`}
-                  </div>
-                  <div className="accordion-tools">
-                    <button
-                      aria-label={`${intl.formatMessage(
-                        messages.labelRemoveItem,
-                      )} #${index + 1}`}
-                      onClick={() => {
-                        onChange(id, deleteBlock(value, childId));
-                      }}
-                    >
-                      <Icon name={deleteSVG} size="20px" color="#e40166" />
-                    </button>
-                    {activeObject === index ? (
-                      <Icon name={upSVG} size="20px" />
-                    ) : (
-                      <Icon name={downSVG} size="20px" />
-                    )}
-                  </div>
-                </Accordion.Title>
-                <Accordion.Content active={activeObject === index}>
-                  <Segment>
-                    <ObjectWidget
-                      id={`${childId}-${index}`}
-                      key={`ow-${childId}-${index}`}
-                      block={block}
-                      schema={
-                        schemaEnhancer
-                          ? // @ts-ignore - TODO Make sure this continues to have sense
-                            schemaEnhancer({
-                              schema: objectSchema,
-                              formData: child,
-                              intl,
-                            })
-                          : objectSchema
-                      }
-                      value={child}
-                      onChange={(fi, fv) => {
-                        const changedBlockId = fi.slice(0, -2);
-                        const newvalue = {
-                          ...value.blocks[changedBlockId],
-                          ...fv,
-                        };
-                        onChange(id, {
-                          ...value,
-                          blocks: {
-                            ...value.blocks,
-                            [changedBlockId]: newvalue,
-                          },
-                        });
-                      }}
-                    />
-                  </Segment>
-                </Accordion.Content>
-              </Accordion>
+                <div className="bow-item-title">
+                  {item.title ||
+                    `${objectSchema.title} #${index !== undefined ? index + 1 : ''}`}
+                </div>
+                <div className="bow-tools">
+                  <button
+                    aria-label={`${intl.formatMessage(
+                      messages.labelRemoveItem,
+                    )} #${index + 1}`}
+                    onClick={() => {
+                      onChange(id, deleteBlock(value, uid));
+                    }}
+                  >
+                    <Icon name={deleteSVG} size="20px" color="#e40166" />
+                  </button>
+                  {activeObject === index ? (
+                    <Icon name={upSVG} size="20px" />
+                  ) : (
+                    <Icon name={downSVG} size="20px" />
+                  )}
+                </div>
+              </div>
+              <AnimateHeight
+                animateOpacity
+                duration={300}
+                height={activeObject === index ? 'auto' : 0}
+              >
+                <div
+                  className={cx('bow-item-content', {
+                    active: activeObject === index,
+                  })}
+                >
+                  <ObjectWidget
+                    id={`${uid}`}
+                    key={`bow-${uid}`}
+                    block={block}
+                    schema={
+                      schemaEnhancer
+                        ? // @ts-ignore - TODO Make sure this continues to have sense
+                          schemaEnhancer({
+                            schema: objectSchema,
+                            formData: item,
+                            intl,
+                          })
+                        : objectSchema
+                    }
+                    value={item}
+                    onChange={(fieldId: string, fieldValue: any) => {
+                      const newvalue = {
+                        ...value.blocks[fieldId],
+                        ...fieldValue,
+                      };
+                      onChange(id, {
+                        ...value,
+                        blocks: {
+                          ...value.blocks,
+                          [fieldId]: newvalue,
+                        },
+                      });
+                    }}
+                  />
+                </div>
+              </AnimateHeight>
             </div>
           );
         }}
-      </DragDropList>
+      </DndSortableList>
     </div>
   );
 };
-export default ObjectListWidget;
+export default BlocksObjectWidget;
