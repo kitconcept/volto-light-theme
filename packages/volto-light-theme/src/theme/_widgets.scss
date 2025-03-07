@@ -138,15 +138,36 @@
     }
   }
 
-  .bow-items-wrapper {
+  .bow-item-wrapper {
     padding: 0 10px;
     border: 1px solid var(--quanta-smoke);
     border-radius: 10px;
+    margin-bottom: 10px;
   }
 
-  .bow-item-title {
+  .bow-item-title-bar {
     display: flex;
     justify-content: space-between;
     padding: 10px 0;
+    cursor: pointer;
+
+    .drag.handle {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .bow-tools {
+    display: flex;
+    align-items: center;
+    button {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+  }
+
+  .bow-item-content:not(.active) {
+    display: none;
   }
 }
