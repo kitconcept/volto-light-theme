@@ -18,5 +18,12 @@
     "titleBar.inactiveBackground": "#8461a999",
     "titleBar.inactiveForeground": "#e7e7e799"
   },
+  "tailwindCSS.files.exclude": [
+    "**/.git/**",
+    "**/node_modules/**",
+    "**/.hg/**",
+    "**/.svn/**",
+    "**/*.md"
+  ],
   "peacock.color": "#8461a9"
 }

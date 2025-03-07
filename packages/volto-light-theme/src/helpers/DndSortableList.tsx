@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import {
   DndContext,
   closestCenter,
@@ -16,7 +15,7 @@ import {
 import { CSS } from '@dnd-kit/utilities';
 
 const SortableItem = (props) => {
-  const { uid, children, item, index } = props;
+  const { uid, children, item, index, activeObject } = props;
   const { attributes, listeners, setNodeRef, transform, transition } =
     useSortable({
       id: uid,
@@ -29,7 +28,7 @@ const SortableItem = (props) => {
 
   return (
     <div ref={setNodeRef} style={style}>
-      {children({ uid, item, index, attributes, listeners })}
+      {children({ uid, item, index, activeObject, attributes, listeners })}
     </div>
   );
 };
@@ -68,7 +67,13 @@ const DndSortableList = (props) => {
         {sortedItems.map((uid, index) => {
           const item = items[uid];
           return (
-            <SortableItem key={uid} uid={uid} index={index} item={item}>
+            <SortableItem
+              key={uid}
+              uid={uid}
+              index={index}
+              item={item}
+              activeObject={activeObject}
+            >
               {children}
             </SortableItem>
           );

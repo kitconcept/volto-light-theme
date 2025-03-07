@@ -13,7 +13,7 @@ import {
   getBlocksLayoutFieldname,
   moveBlock,
 } from '@plone/volto/helpers/Blocks/Blocks';
-import DndSortableList from './DndSortableList';
+import DndSortableList from '../../helpers/DndSortableList';
 import cx from 'classnames';
 import upSVG from '@plone/volto/icons/up-key.svg';
 import downSVG from '@plone/volto/icons/down-key.svg';
@@ -219,7 +219,7 @@ const BlocksObjectWidget = (props: BlocksObjectWidgetProps) => {
               <div
                 className="bow-item-title-bar"
                 onClick={() => handleChangeActiveObject(index)}
-                role="button"
+                role="presentation"
                 aria-label={`${
                   activeObject === index
                     ? intl.formatMessage(messages.labelCollapseItem)

@@ -9,7 +9,7 @@ myst:
 
 # Contributing
 
-This add-on is developed in isolation, using a new approach with pnpm workspaces, the latest `mrs-developer`, and other Volto core improvements.
+This add-on is developed in isolation, using a Cookieplone based setup, the latest `mrs-developer`, and other Volto core improvements.
 For this reason, it only works with pnpm and Volto 18, but it does not mean that the add-on will only work in 18.
 
 
@@ -58,9 +58,7 @@ ci-acceptance-a11y-test               Run a11y cypress tests in headless mode fo
 Install package requirements with the following commands.
 
 ```shell
-pnpm i
 make install
-pnpm i
 ```
 
 ### Start developing
@@ -74,7 +72,7 @@ make start-backend-docker
 In a second terminal session, start the frontend server.
 
 ```shell
-pnpm start
+make start
 ```
 
 
@@ -117,21 +115,20 @@ make test
 ## Run Cypress tests
 
 
-
 In one terminal session, start the frontend server in dev mode.
 
 ```shell
-make start-test-acceptance-frontend-dev
+make acceptance-frontend-dev-start
 ```
 
 In a second terminal session, start the backend acceptance server.
 
 ```shell
-make start-test-acceptance-server
+make acceptance-backend-start
 ```
 
 In a third terminal session, start the Cypress interactive test runner.
 
 ```shell
-make test-acceptance
+make acceptance-test
 ```

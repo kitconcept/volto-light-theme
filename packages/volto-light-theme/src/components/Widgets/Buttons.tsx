@@ -5,8 +5,7 @@ import { Button } from '@plone/components';
 import isEqual from 'lodash/isEqual';
 import find from 'lodash/find';
 
-// Move to an unified `StyleDefinition` type
-type Actions =
+export type Actions =
   | {
       name: string;
       label: string;
@@ -18,15 +17,56 @@ type Actions =
       style: undefined;
     };
 
+/**
+ * A tuple that has an icon in the first element and a i18n string in the second.
+ */
+export type ActionInfo = [React.ReactElement<any>, string] | [string, string];
+
 export type ButtonsWidgetProps = {
+  /**
+   * Unique identifier for the widget.
+   */
   id: string;
+
+  /**
+   * Callback function to handle changes.
+   */
   onChange: Function;
+
+  /**
+   * List of actions available for the widget.
+   */
   actions: Actions[];
-  actionsInfoMap: Record<string, string[]>;
+
+  /**
+   * Map containing additional the information (icon and i18n string) for each action.
+   */
+  actionsInfoMap: Record<string, ActionInfo>;
+
+  /**
+   * List of actions to be filtered out. In case that we don't want the default ones
+   * we can filter them out.
+   */
   filterActions: string[];
+
+  /**
+   * Current value of the widget.
+   */
   value: string;
+
+  /**
+   * Default value of the widget.
+   */
   default: string;
+
+  /**
+   * Indicates if the widget is disabled.
+   */
   disabled: boolean;
+
+  /**
+   * Indicates if the widget is disabled (alternative flag for compatibility reasons).
+   */
   isDisabled: boolean;
 };
 
