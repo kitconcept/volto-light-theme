@@ -41,3 +41,16 @@
   object-fit: cover;
   object-position: top left;
 }
+
+@mixin button-style {
+  padding: 7px 10px;
+  border: 2px solid var(--quanta-sapphire);
+  border-radius: 10px;
+  margin-bottom: 10px; // Covers long button texts
+  background-color: transparent;
+  color: var(--quanta-sapphire);
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 0;
+  opacity: 0.8;
+}
