@@ -20,9 +20,115 @@ Uses the {file}`/src/components/widgets/ColorPicker` component.
 
 ## `blocksObject`
 
-The successor of Volto's `ObjectListWidget` (`config.widgets.widget.object_list`). It's using `@plone/components` and it's SemanticUI free.
+A widget similar in functionality as Volto's `ObjectListWidget` (`config.widgets.widget.object_list`).
+It allows to introduce a list of ordered objects with the same shape.
+It allows to reorder them using drag and drop.
+It's using `@plone/components` and it's SemanticUI free.
+This widget saves it's contents in the Volto's standard blocks format (`blocks_layout`, `blocks` keys).
+This allows to the standard serializers/deserializers to work in the object schema fields.
+The shape of the objects it contains is defined by the `schema` or the `schemaName` props.
+
+If `schemaName` is provided, you should register a schema as a utility in this form:
+
+```ts
+  config.registerUtility({
+    name: 'footerLogos',
+    type: 'schema',
+    method: footerLogosSchema,
+  });
+```
+
+being `footerLogosSchema` a schema generation function or a plain `JSONSchema` object that has this signature:
+
+```ts
+export type BlocksObjectWidgetSchema =
+  | (JSONSchema & { addMessage: string })
+  | ((props: BlocksObjectWidgetProps) => JSONSchema & { addMessage: string });
+```
+
+Alternatively, you can provide the schema generation function or the plain `JSONSchema` using the `schema` prop and wrapping it around a custom widget.
+
 Internally it stores data using the `blocks`/`blocks_layout` keys, so it uses the standard blocks serializer machinery.
 Uses the {file}`/src/components/widgets/BlocksObject` component.
+
+This is the shape of the types of the component:
+
+```ts
+export type BlocksObjectWidgetProps = {
+  /**
+   * The ID of the widget.
+   */
+  id: string;
+  /**
+   * The ID of the block this widget belongs to.
+   */
+  block: string;
+  /**
+   * The fieldset this widget belongs to.
+   */
+  fieldSet: string;
+  /**
+   * The title of the widget.
+   */
+  title: string;
+  /**
+   * The current value of the widget, which is BlocksData.
+   */
+  value?: BlocksData;
+  /**
+   * The default value for the widget. Can be a string or an object.
+   */
+  default?: string | object;
+  /**
+   * Whether the widget is required.
+   */
+  required?: boolean;
+  /**
+   * The value to use when the widget is missing a value.
+   */
+  missing_value?: unknown;
+  /**
+   * The CSS class name for the widget.
+   */
+  className?: string;
+  /**
+   * A callback function that is called when the value of the widget changes.
+   * @param id The ID of the widget.
+   * @param value The new value of the widget.
+   */
+  onChange: (id: string, value: any) => void;
+  /**
+   * The index of the currently active object.
+   */
+  activeObject: number;
+  /**
+   * A callback function that is called to set the active object.
+   * @param index The index of the object to set as active.
+   */
+  setActiveObject: (index: number) => void;
+  /**
+   * The schema for the BlocksObjectWidget.
+   */
+  schema: BlocksObjectWidgetSchema;
+  /**
+   * The name of the schema.
+   */
+  schemaName: string;
+  /**
+   * An optional function to enhance the schema.
+   * @param args An object containing the schema, form data, intl, navRoot, and contentType.
+   */
+  schemaEnhancer?: (args: {
+    schema: JSONSchema & { addMessage: string };
+    formData: BlockConfigBase;
+    intl: IntlShape;
+    navRoot: Content;
+    contentType: string;
+  }) => JSONSchema;
+};
+```
+
+It's worth to mention that the `activeObject` and `setActiveObject` props allow you to set and sincronize the active object (uncollapsed) of the widget from the outside.
 
 ## Buttons component
 

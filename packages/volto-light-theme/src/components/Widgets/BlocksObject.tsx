@@ -58,20 +58,69 @@ export type BlocksObjectWidgetSchema =
   | ((props: BlocksObjectWidgetProps) => JSONSchema & { addMessage: string });
 
 export type BlocksObjectWidgetProps = {
+  /**
+   * The ID of the widget.
+   */
   id: string;
+  /**
+   * The ID of the block this widget belongs to.
+   */
   block: string;
+  /**
+   * The fieldset this widget belongs to.
+   */
   fieldSet: string;
+  /**
+   * The title of the widget.
+   */
   title: string;
+  /**
+   * The current value of the widget, which is BlocksData.
+   */
   value?: BlocksData;
+  /**
+   * The default value for the widget. Can be a string or an object.
+   */
   default?: string | object;
+  /**
+   * Whether the widget is required.
+   */
   required?: boolean;
+  /**
+   * The value to use when the widget is missing a value.
+   */
   missing_value?: unknown;
+  /**
+   * The CSS class name for the widget.
+   */
   className?: string;
+  /**
+   * A callback function that is called when the value of the widget changes.
+   * @param id The ID of the widget.
+   * @param value The new value of the widget.
+   */
   onChange: (id: string, value: any) => void;
+  /**
+   * The index of the currently active object.
+   */
   activeObject: number;
+  /**
+   * A callback function that is called to set the active object.
+   * @param index The index of the object to set as active.
+   */
   setActiveObject: (index: number) => void;
+  /**
+   * The schema for the BlocksObjectWidget.
+   */
   schema: BlocksObjectWidgetSchema;
+  /**
+   * The name of the schema.
+   */
   schemaName: string;
+  /**
+   * An optional function to enhance the schema.
+   * @param args An object containing the schema, form data, intl, navRoot, and contentType.
+   */
   schemaEnhancer?: (args: {
     schema: JSONSchema & { addMessage: string };
     formData: BlockConfigBase;
