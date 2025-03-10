@@ -2,7 +2,7 @@ import FormFieldWrapper from '@plone/volto/components/manage/Widgets/FormFieldWr
 import { Button } from '@plone/components';
 import cx from 'classnames';
 
-type Color =
+export type Color =
   | {
       name: string;
       label: string;
