@@ -2,7 +2,7 @@
 
 VLT supports site customization via the add-on ...
 This add-on has a behavior that can be applied to the Plone site root or to any object that implements the `INavigationRoot` interface, such as the language root folder.
-This add-on uses the `navroot` expander to get all the extra fields that these customizations.
+This add-on also enhances the `@navroot` endpoint to provide the customization fields to the frontend.
 Then VLT accesses this data to display the customizations in the right place.
 
 
@@ -23,8 +23,8 @@ If you use the intranet header (`config.settings.intranetHeader`), the intranet 
 
 ### Actions
 
-You can define the actions at the top of the header.
-These are links to other pages, defined by (title, target URL and if it opens in a new tab or not).
+You can define the actions located at the top right of the header.
+These are links to other pages, each of one defined by these fields: a title, a target URL and a boolean in case it should open in a new tab or not.
 
 
 ## Theming
@@ -57,10 +57,10 @@ You can customize the footer background color in this widget.
 ### Footer links
 
 The footer can contain additional links defined in this widget.
-These are links to other pages, defined by (title, target URL and if it opens in a new tab or not).
+These are links to other pages, each of one defined by these fields: a title, a target URL and a boolean in case it should open in a new tab or not.
 
 ### Footer logos
 
 The footer can contain a list of logos.
-These are images defined in the site with links to other pages, defined by (title, logo image, target URL and if it opens in a new tab or not).
+These are images defined in the site with links to other pages, each of one defined by these fields: a title, a logo image, a target URL and a boolean in case it should open in a new tab or not.
 Their appearance can be further customized by defining the size of the logos, as either `small` or `large`, and the width of the their container, either `default` or `layout`.
