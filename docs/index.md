@@ -52,7 +52,7 @@ how-to-guides/upgrade-guide
 conceptual-guides/requirements-and-specifications
 conceptual-guides/layout
 conceptual-guides/vertical-spacing
-conceptual-guides/reasoning-headless-component-system
+conceptual-guides/customization-behavior
 conceptual-guides/block-model-v3
 ```
 
