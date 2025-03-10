@@ -20,15 +20,15 @@ Uses the {file}`/src/components/widgets/ColorPicker` component.
 
 ## `blocksObject`
 
-A widget similar in functionality as Volto's `ObjectListWidget` (`config.widgets.widget.object_list`).
+The `blocksObject` widget is similar in functionality to Volto's `ObjectListWidget`, as configured in `config.widgets.widget.object_list`.
 It allows to introduce a list of ordered objects with the same shape.
 It allows to reorder them using drag and drop.
-It's using `@plone/components` and it's SemanticUI free.
-This widget saves it's contents in the Volto's standard blocks format (`blocks_layout`, `blocks` keys).
-This allows to the standard serializers/deserializers to work in the object schema fields.
-The shape of the objects it contains is defined by the `schema` or the `schemaName` props.
+It uses `@plone/components`.
+This widget saves its contents in Volto's standard blocks format, using the `blocks_layout` and `blocks` keys.
+This allows the standard serializers and deserializers to work with the object schema fields.
+The shape of the objects it contains is defined by either the `schema` or `schemaName` props.
 
-If `schemaName` is provided, you should register a schema as a utility in this form:
+If `schemaName` is provided, you should register a schema as a utility in the following form.
 
 ```ts
   config.registerUtility({
@@ -38,7 +38,7 @@ If `schemaName` is provided, you should register a schema as a utility in this f
   });
 ```
 
-being `footerLogosSchema` a schema generation function or a plain `JSONSchema` object that has this signature:
+`footerLogosSchema` is a schema generation function or a plain `JSONSchema` object that has the following signature.
 
 ```ts
 export type BlocksObjectWidgetSchema =
@@ -51,7 +51,7 @@ Alternatively, you can provide the schema generation function or the plain `JSON
 Internally it stores data using the `blocks`/`blocks_layout` keys, so it uses the standard blocks serializer machinery.
 Uses the {file}`/src/components/widgets/BlocksObject` component.
 
-This is the shape of the types of the component:
+The following snippet shows the shape of the types of the component.
 
 ```ts
 export type BlocksObjectWidgetProps = {
@@ -128,7 +128,7 @@ export type BlocksObjectWidgetProps = {
 };
 ```
 
-It's worth to mention that the `activeObject` and `setActiveObject` props allow you to set and sincronize the active object (uncollapsed) of the widget from the outside.
+It's worth mentioning that the `activeObject` and `setActiveObject` props allow you to set and synchronize the active and uncollapsed object of the widget from the outside.
 
 ## Buttons component
 
