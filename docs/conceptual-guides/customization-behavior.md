@@ -1,16 +1,16 @@
 # Customization behavior
 
 VLT supports site customization via the add-on ...
-This add-on has a behavior that can be applied to the Plone Site root or to any object that implement `INavigationRoot` interface (eg. language root folder.)
+This add-on has a behavior that can be applied to the Plone site root or to any object that implements the `INavigationRoot` interface, such as the language root folder.
 This add-on uses the `navroot` expander to get all the extra fields that these customizations.
-Then VLT access this data to display the customizations in the right place.
+Then VLT accesses this data to display the customizations in the right place.
 
 
 ## Header
 
 ### Site logo
 
-You can define the site logo not only for the main site, but also for the subsites provided by content types that implement `INavigationRoot` interface.
+You can define the site logo for the main site as well as the subsites provided by content types that implement the `INavigationRoot` interface.
 
 ### Complementary logo
 
@@ -19,7 +19,7 @@ This logo shows up on the right-most side of the header.
 
 ### Intranet Flag
 
-If you use the intranet header (`config.settings.intranetHeader`) the intranet flag is the text in the grey pill at the top of the header.
+If you use the intranet header (`config.settings.intranetHeader`), the intranet flag is the text in the grey pill at the top of the header.
 
 ### Actions
 
@@ -33,10 +33,11 @@ These are links to other pages, defined by (title, target URL and if it opens in
 
 You can customize the navigation text color in this widget.
 
-### Fat menu / Breadcrumbs text color
+### Fat menu and breadcrumbs text color
 
-You can customize the fat menu (the menu that unfolds if you click on any item of the site sections) text color in this widget.
-It applies also to the breadcrumbs text color.
+The fat menu is the menu that unfolds when you click on any item in the site section navigation.
+You can customize the fat menu text color in this widget.
+It also applies to the breadcrumbs text color.
 
 ### Fat menu background color
 
@@ -62,4 +63,4 @@ These are links to other pages, defined by (title, target URL and if it opens in
 
 The footer can contain a list of logos.
 These are images defined in the site with links to other pages, defined by (title, logo image, target URL and if it opens in a new tab or not).
-Their appearance can be further customized by defining the size of the logos (small or large), and the width of the their container (default or layout).
+Their appearance can be further customized by defining the size of the logos, as either `small` or `large`, and the width of the their container, either `default` or `layout`.
