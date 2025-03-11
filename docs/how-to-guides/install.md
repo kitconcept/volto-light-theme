@@ -9,9 +9,9 @@ myst:
 
 # Install
 `@kitconcept/volto-light-theme` is a Volto add-on.
-It should be installed as any other add-on using the `dependencies` key in your project add-on {file}`packages/<name_of_your_project_addon>/package.json`.
+It should be installed as any other add-on using the `dependencies` key in your project add-on file {file}`packages/<name_of_your_project_addon>/package.json`.
 
-You should also install `@kitconcept/volto-light-theme` as a Volto add-on using the `addons` key in your project add-on {file}`packages/<name_of_your_project_addon>/package.json`.
+You should also install `@kitconcept/volto-light-theme` as a Volto add-on using the `addons` key in your project add-on file {file}`packages/<name_of_your_project_addon>/package.json`.
 
 ```json
 "addons": [
@@ -56,10 +56,9 @@ Along with the `@kitconcept/volto-light-theme` package, you should also declare 
   ],
 ```
 
-Please find here the full list of the {doc}`../reference/recommended-addons`.
+Please find the full list of the {doc}`../reference/recommended-addons`.
 
 ```{note}
-In case that you don't want to use any of them, don't declare them as add-ons in your project leaving the ones you do want.
+In case that you don't want to use any of the recommended add-ons, don't declare them as add-ons in your project, leaving only those you do want.
 ```
-
 

@@ -1,15 +1,19 @@
 # Colors
 
+% TODO empty heading needs content
+
 ## Theme colors
+
+% TODO empty heading needs content
 
 ## Color definition syntax
 
 The VLT has migrated to use the standardized color definitions in Volto.
 These definitions use CSS properties that are injected at runtime in the right places, so your CSS can adapt to use them in a generic way.
 The resultant CSS is simpler, and there's no need to define class names for each color definition.
-Read more about them in: https://6.docs.plone.org/volto/development/color-picker-widget.html?highlight=color#custom-css-properties-as-color-definitions
+Read more about them in the official Plone documentation, [Custom CSS properties as color definitions](https://6.docs.plone.org/volto/development/color-picker-widget.html#custom-css-properties-as-color-definitions).
 
-The color definitions are stored in `config.blocks.themes` and you can extend them from your project or add-ons.
+The color definitions are stored in `config.blocks.themes`, and you can extend them from your project or add-ons.
 
 ```ts
   config.blocks.themes = [

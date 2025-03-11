@@ -9,7 +9,7 @@ Uses the {file}`/src/components/widgets/ThemeColorSwatch` component.
 
 ## `color_picker` (Volto widget override)
 
-SemanticUI-less version of the Volto widget `color_picker`.
+Semantic UI-free version of the Volto widget `color_picker`.
 Given an array of colors, allows you to choose one of them.
 Uses the {file}`/src/components/widgets/ColorSwatch` component.
 
@@ -48,8 +48,8 @@ export type BlocksObjectWidgetSchema =
 
 Alternatively, you can provide the schema generation function or the plain `JSONSchema` using the `schema` prop and wrapping it around a custom widget.
 
-Internally it stores data using the `blocks`/`blocks_layout` keys, so it uses the standard blocks serializer machinery.
-Uses the {file}`/src/components/widgets/BlocksObject` component.
+Internally it stores data using the `blocks` and `blocks_layout` keys, so it uses the standard blocks serializer machinery.
+It uses the {file}`/src/components/widgets/BlocksObject` component.
 
 The following snippet shows the shape of the types of the component.
 
@@ -133,7 +133,8 @@ It's worth mentioning that the `activeObject` and `setActiveObject` props allow 
 ## Buttons component
 
 A widget where other widgets build up its functionality.
-It shows a configurable list of buttons, with a configurable list of actions that each button has assigned. You can configure the icons and the i18n message used for each button.
+It shows a configurable list of buttons, with a configurable list of actions that each button has assigned.
+You can configure the icons and the i18n message used for each button.
 
 ```ts
 type Actions =
@@ -208,13 +209,15 @@ Uses the {file}`/src/components/widgets/BlockWidth` component.
 
 ## `blockAlignment`
 
-A widget to select the block alignment (`left`, `right`, `center`). Based on the {file}`/src/components/widgets/Buttons` component under the hood, so the actions and the styles to be applied are configurable.
-Uses the {file}`/src/components/widgets/BlockAlignment` component.
+A widget to select the block alignment, one of either `left`, `right`, or `center`.
+It's based on the {file}`/src/components/widgets/Buttons` component under the hood, so the actions and the styles to be applied are configurable.
+It uses the {file}`/src/components/widgets/BlockAlignment` component.
 
 ## `size`
 
-A widget to select the block size from a default list of values (`small`, `medium`, `large`). Based on the {file}`/src/components/widgets/Buttons` component under the hood, so the actions and the styles to be applied are configurable.
-Uses the {file}`/src/components/widgets/Size` component.
+A widget to select the block size from a default list of values, one of either `small`, `medium`, or `large`.
+It's based on the {file}`/src/components/widgets/Buttons` component under the hood, so the actions and the styles to be applied are configurable.
+It uses the {file}`/src/components/widgets/Size` component.
 
 ## `DndSortableList`
 
