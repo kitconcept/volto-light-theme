@@ -58,7 +58,7 @@ You can customize the footer background color in this widget.
 ### Footer links
 
 The footer can contain additional links defined in this widget.
-These are links to other pages, each of one defined by these fields: a title, a target URL and a boolean in case it should open in a new tab or not.
+These are links to other pages, each of which is defined by the fields for a title, a target URL, and a boolean for whether or not to open the link in a new tab.
 
 ### Footer logos
 
