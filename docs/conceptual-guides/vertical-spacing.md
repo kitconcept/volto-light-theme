@@ -1,5 +1,7 @@
 # Vertical spacing
 
+This chapter describes the vertical spacing of elements in the layout.
+
 ## Vertical spacing rules
 
 The following main rules specification applies to the theme.
