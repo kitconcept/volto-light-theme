@@ -6,7 +6,7 @@ Volto Light Theme sets the following requirements and specifications for its dev
 ## Must not use any Semantic UI component or styling
 
 Semantic UI as a design component system is deprecated in Volto 18 and will be removed in Plone 7.
-In preparation for this, VLT uses no Semantic UI component, nor any related styling (`.ui.XXX`).
+In preparation for this, VLT uses no Semantic UI component, nor any related styling (`.ui.XXX` CSS classes).
 
 The Plone 7 strategy includes the following principles.
 
