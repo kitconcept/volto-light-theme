@@ -652,15 +652,6 @@
         }
       }
 
-      // Use values assigned to the parent Grid block
-      .block {
-        --theme-high-contrast-color: inherit !important;
-        --theme-color: inherit !important;
-        --theme-high-contrast-color: inherit !important;
-        --theme-foreground-color: inherit !important;
-        --theme-low-contrast-foreground-color: inherit !important;
-      }
-
       .block.teaser {
         padding-top: 0;
         background: var(--theme-high-contrast-color);

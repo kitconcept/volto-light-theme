@@ -35,6 +35,12 @@ export const defaultStylingSchema = ({ schema, formData, intl }) => {
     default: defaultTheme,
   };
 
+  if (formData.blocks) {
+    Object.keys(formData.blocks).forEach((key) => {
+      formData.blocks[key].theme = formData.theme;
+    });
+  }
+
   return schema;
 };
 
