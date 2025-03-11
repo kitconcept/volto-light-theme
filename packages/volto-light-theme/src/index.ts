@@ -67,6 +67,18 @@ const applyConfig = (config: ConfigType) => {
 
   config.views.contentTypesViews.Event = EventView;
 
+  config.settings.apiExpanders = [
+    ...config.settings.apiExpanders,
+    {
+      match: '',
+      GET_CONTENT: ['inherit'],
+      querystring: {
+        'expand.inherit.behaviors':
+          'voltolighttheme.header,voltolighttheme.colors,voltolighttheme.footer',
+      },
+    },
+  ];
+
   return config;
 };
 

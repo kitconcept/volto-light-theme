@@ -26,13 +26,19 @@ function buildStyleTag(content: Content, colors: string[]) {
   }
 }
 
-const Theming = ({ navRoot }) => {
+const Theming = ({ content }) => {
+  const colorSettings =
+    content?.['@components']?.['voltolighttheme.colors']?.data;
   const colorFields = config.settings.userDefinedControlPanelColors;
   const formData = useSelector<FormState, Content>(
     (state) => state.form.global,
   );
 
-  const liveContent = navRoot ? (!isEmpty(formData) ? formData : navRoot) : {};
+  const liveContent = colorSettings
+    ? !isEmpty(formData)
+      ? formData
+      : colorSettings
+    : {};
 
   return (
     <>

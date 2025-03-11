@@ -6,32 +6,33 @@ import { useSelector } from 'react-redux';
 import { Container } from '@plone/components';
 import cx from 'classnames';
 
+type ContentWithFooterSettings = Content & {
+  '@components': { 'voltolighttheme.footer': { data: Content } };
+};
+
 type FormState = {
   content: {
-    data: Content;
+    data: ContentWithFooterSettings;
   };
   form: {
     global: Content;
   };
-  navroot: {
-    data: {
-      navroot: Content;
-    };
-  };
 };
 
 const FooterLogos = () => {
-  const navroot = useSelector<FormState, Content>(
-    (state) => state.navroot.data.navroot,
-  );
   const formState = useSelector<FormState, Content>(
     (state) => state.form.global,
   );
-  const logos = formState?.footer_logos || navroot?.footer_logos;
-  const logosSize = formState?.footer_logos_size || navroot?.footer_logos_size;
+  const footerSettings = useSelector<FormState, Content>(
+    (state) =>
+      state.content.data?.['@components']?.['voltolighttheme.footer']?.data,
+  );
+  const logos = formState?.footer_logos || footerSettings?.footer_logos;
+  const logosSize =
+    formState?.footer_logos_size || footerSettings?.footer_logos_size;
   const footer_logos_container_width =
     formState?.footer_logos_container_width ||
-    navroot?.footer_logos_container_width;
+    footerSettings?.footer_logos_container_width;
 
   return (
     <Container className={cx({ [footer_logos_container_width]: 1 })}>
