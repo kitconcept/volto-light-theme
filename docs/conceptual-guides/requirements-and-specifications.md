@@ -17,12 +17,12 @@ The Plone 7 strategy includes the following principles.
 
 ## Volto components shadowing (`customizations`) use case and best practice
 
-If possible, we will switch to Semantic UI-less components when `@plone/components` is ready, especially if the elements that we customize are clearly theme-related, such as the header, footer, and other theme elements.
+If possible, we will switch to Semantic UI-free components when `@plone/components` is ready, especially if the customized elements are clearly theme-related, such as the header, footer, and other theme elements.
 When other Volto customizations are not clearly part of the theme, such as the Search block, it's fine to stick with what the original uses, even Semantic UI.
 When Volto makes the switch in the future, we should adapt all the customizations to match the one in the Volto core.
 
 ```{important}
-VLT takes the approach of using a proxy to a component of the `components` folder.
+VLT takes the approach of using a proxy to a component of the {file}`components` folder.
 This way it's easier to keep track of changes, and another add-on can customize further the VLT component, not the original Volto customization.
 ```
 
@@ -35,17 +35,16 @@ This layout uses three widths for the content elements:
 -   Default (blocks)
 -   Layout (main screen elements such as Header, Footer)
 
-The Layout sized elements snap to 1440px.
-The breakpoints are also different from default Volto.
+The Layout sized elements snaps to 1440px.
+The breakpoints are also different from Volto's defaults.
 This layout uses mixins and CSS that can be found in {file}`layout.less` in the {file}`src/theme` folder.
 It leverages container queries for managing the layout styling.
 
 
 ## Organization of the files
 
-We will start organizing the files in the root of the {file}`theme` folder, to differentiate them from a normal "Semantic UI" theme.
-Take a look at the current state.
-We will follow this convention:
+We will start organizing the files in the root of the {file}`theme` folder, to differentiate them from a normal Semantic UI theme.
+Use the following organization conventions.
 
 -   One file per component or block.
 -   Use the Volto theme facility using the provided SCSS escape hatch, so other add-ons can hook into it.
