@@ -15,7 +15,10 @@ You should also configure `@kitconcept/volto-light-theme` as a Volto add-on usin
 
 ```json
 "addons": [
-  // other add-ons installed
+  // other add-ons installed above the declaration of VLT
+  // VLT _must_ be the last one declared
+  // Your project add-on will still be the last applied
+  // if it's defined in `volto.config.js`
   "@kitconcept/volto-light-theme",
 ],
 ```
