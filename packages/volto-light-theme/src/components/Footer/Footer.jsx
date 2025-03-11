@@ -30,8 +30,11 @@ const Footer = () => {
     shallowEqual,
   );
   const location = useLocation();
-  const navroot = useSelector((state) => state.navroot.data.navroot);
-  const footerLinks = navroot?.footer_links;
+  const footerSettings = useSelector(
+    (state) =>
+      state.content.data?.['@components']?.['voltolighttheme.footer']?.data,
+  );
+  const footerLinks = footerSettings?.footer_links;
 
   return (
     <footer id="footer">
