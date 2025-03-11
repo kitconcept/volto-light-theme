@@ -25,7 +25,7 @@ If you use the intranet header (`config.settings.intranetHeader`), the intranet 
 ### Actions
 
 You can define the actions located at the top right of the header.
-These are links to other pages, each of one defined by these fields: a title, a target URL and a boolean in case it should open in a new tab or not.
+These are links to other pages, each of which is defined by the fields for a title, a target URL, and a boolean for whether or not to open the link in a new tab.
 
 
 ## Theming
