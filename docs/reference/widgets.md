@@ -7,16 +7,22 @@ VLT provides a set of widgets that provide structural features.
 Used for choosing a configured theme color (stored in `config.blocks.themes`).
 Uses the {file}`/src/components/widgets/ThemeColorSwatch` component.
 
+![themeColorSwatch](../_static/themeColorSwatch.png)
+
 ## `color_picker` (Volto widget override)
 
 Semantic UI-free version of the Volto widget `color_picker`.
-Given an array of colors, allows you to choose one of them.
+Given an user defined array of color definitions, it allows you to choose one of them.
 Uses the {file}`/src/components/widgets/ColorSwatch` component.
+
+![color_picker](../_static/color_picker.png)
 
 ## `colorPicker`
 
 A color picker with an RGB visual color chooser, and a `hex` color field.
 Uses the {file}`/src/components/widgets/ColorPicker` component.
+
+![colorPicker](../_static/colorPicker.png)
 
 ## `blocksObject`
 
@@ -24,6 +30,9 @@ The `blocksObject` widget is similar in functionality to Volto's `ObjectListWidg
 It allows to introduce a list of ordered objects with the same shape.
 It allows to reorder them using drag and drop.
 It uses `@plone/components`.
+
+![colorPicker](../_static/blocksObject.png)
+
 This widget saves its contents in Volto's standard blocks format, using the `blocks_layout` and `blocks` keys.
 This allows the standard serializers and deserializers to work with the object schema fields.
 The shape of the objects it contains is defined by either the `schema` or `schemaName` props.
@@ -132,9 +141,10 @@ It's worth mentioning that the `activeObject` and `setActiveObject` props allow 
 
 ## Buttons component
 
-A widget where other widgets build up its functionality.
-It shows a configurable list of buttons, with a configurable list of actions that each button has assigned.
-You can configure the icons and the i18n message used for each button.
+This component is a helper for building widgets that have a list of buttons that can be toggled in order to select a single value.
+It is not a widget on itself, but it allows other widgets to build up using its base functionality.
+You can pass as props a configurable list of buttons, with a configurable list of actions that each button has assigned.
+You can configure the icons and the i18n message used for each button as well.
 
 ```ts
 type Actions =
@@ -207,14 +217,20 @@ export type ButtonsWidgetProps = {
 A widget to select a width from the defined `config.blocks.widths`.
 Uses the {file}`/src/components/widgets/BlockWidth` component.
 
+![blockWidth](../_static/blockWidth.png)
+
 ## `blockAlignment`
 
 A widget to select the block alignment, one of either `left`, `right`, or `center`.
 It's based on the {file}`/src/components/widgets/Buttons` component under the hood, so the actions and the styles to be applied are configurable.
 It uses the {file}`/src/components/widgets/BlockAlignment` component.
 
+![blockWidth](../_static/blockAlignment.png)
+
 ## `size`
 
 A widget to select the block size from a default list of values, one of either `small`, `medium`, or `large`.
 It's based on the {file}`/src/components/widgets/Buttons` component under the hood, so the actions and the styles to be applied are configurable.
 It uses the {file}`/src/components/widgets/Size` component.
+
+![size](../_static/size.png)
