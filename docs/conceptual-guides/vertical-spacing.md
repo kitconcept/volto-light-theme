@@ -24,10 +24,12 @@ The following main rules specification applies to the theme.
 
 This theme has the concept of block "grouping", given two consecutive blocks with the same styling block wrapper property `backgroundColor`.
 You have to add this property to your blocks in your blocks code.
-This add-on customizes the {file}`RenderBlocks.jsx` component to do so, so it differs from the vanilla Volto one (what we call the block model v1).
+This add-on customizes the {file}`RenderBlocks.jsx` component to do so, so it differs from the vanilla Volto one, what we call the "block model v1".
 
 The wrappers have the class names `blocks-group-wrapper`, and the name of the background color, such as `grey`, defaulting to `transparent` if no `backgroundColor` property is set in the styling block wrapper in the block.
 
 ```{important}
-A new block model is in the development planning. It will be a new integral Block Model for VLT and Volto. For more information see: {doc}`./block-model-v3`.
+A new block model is in the development planning.
+It will be a new integral Block Model for VLT and Volto.
+For more information see {doc}`block-model-v3`.
 ```
