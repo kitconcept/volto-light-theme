@@ -1,5 +1,6 @@
 # Customization behavior
 
+% TODO name the add-on
 VLT supports site customization via the add-on ...
 This add-on has a behavior that can be applied to the Plone site root or to any object that implements the `INavigationRoot` interface, such as the language root folder.
 This add-on also enhances the `@navroot` endpoint to provide the customization fields to the frontend.
