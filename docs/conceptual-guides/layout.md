@@ -39,7 +39,5 @@ This is because the container queries abstract the width from the sidebar and to
 
 ```{note}
 The margins in responsive layouts are handled with container queries in {file}`layout.scss`.
-So everything related to that, goes like it works in there, with container queries.
-See implementations for details in case you need it.
 ```
 
