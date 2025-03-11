@@ -10,7 +10,7 @@ myst:
 # Contributing
 
 This add-on is developed in isolation, using a Cookieplone based setup, the latest `mrs-developer`, and other Volto core improvements.
-For this reason, developing volto-light-theme requires pnpm and Volto 18, but it does not mean that the add-on will only work in 18.
+For this reason, developing `volto-light-theme` requires pnpm and Volto 18, but it does not mean that the add-on will only work in 18.
 
 
 ## Development requirements
