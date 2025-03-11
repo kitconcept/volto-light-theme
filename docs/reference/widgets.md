@@ -218,7 +218,3 @@ It uses the {file}`/src/components/widgets/BlockAlignment` component.
 A widget to select the block size from a default list of values, one of either `small`, `medium`, or `large`.
 It's based on the {file}`/src/components/widgets/Buttons` component under the hood, so the actions and the styles to be applied are configurable.
 It uses the {file}`/src/components/widgets/Size` component.
-
-## `DndSortableList`
-
-Not a widget, but an utility to build widgets upon.
