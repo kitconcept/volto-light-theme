@@ -1,7 +1,16 @@
+---
+myst:
+  html_meta:
+    "description": "Layout concepts in Volto Light Theme"
+    "property=og:description": "Layout concepts in Volto Light Theme"
+    "property=og:title": "Layout concepts in Volto Light Theme"
+    "keywords": "Plone, layout, concepts, Volto Light Theme, container, queries, media"
+---
 
 # Layout
 
-% TODO provide content so the heading is not empty.
+This chapter describes the layout concepts used in Volto Light Theme.
+It covers container widths and media queries.
 
 ## Containers
 
