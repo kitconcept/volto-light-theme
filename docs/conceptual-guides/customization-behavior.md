@@ -9,6 +9,8 @@ Then VLT accesses this data to display the customizations in the right place.
 
 ## Header
 
+% TODO provide content so the heading is not empty.
+
 ### Site logo
 
 You can define the site logo for the main site as well as the subsites provided by content types that implement the `INavigationRoot` interface.
@@ -18,7 +20,7 @@ You can define the site logo for the main site as well as the subsites provided 
 You can define a complementary logo in the header, for convenience purposes.
 This logo shows up on the right-most side of the header.
 
-### Intranet Flag
+### Intranet flag
 
 If you use the intranet header (`config.settings.intranetHeader`), the intranet flag is the text in the grey pill at the top of the header.
 
@@ -29,6 +31,8 @@ These are links to other pages, each of which is defined by the fields for a tit
 
 
 ## Theming
+
+% TODO provide content so the heading is not empty.
 
 ### Navigation text color
 
@@ -54,6 +58,8 @@ You can customize the footer background color in this widget.
 
 
 ## Footer
+
+% TODO provide content so the heading is not empty.
 
 ### Footer links
 

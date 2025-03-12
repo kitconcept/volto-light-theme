@@ -39,10 +39,11 @@ module.exports = {
 
 `@kitconcept/volto-light-theme` supports all core blocks and it also supports blocks from selected Volto add-ons.
 VLT declares them as `peerDependencies`.
-This is because the theme won't have to force you to use any specific add-on version, and avoids package hoisting issues.
-`pnpm` installs all `peerDependencies` by default, so this is done for you if you are using a Cookieplone based setup (recommended).
+As such, the theme won't force you to use any specific add-on version, and avoids package hoisting issues.
+`pnpm` installs all `peerDependencies` by default.
+Cookieplone does this for you.
 
-Along with the `@kitconcept/volto-light-theme` package, you should also declare them in your setup using the `addons` key in your project add-on {file}`packages/<name_of_your_project_addon>/package.json`.:
+Along with the `@kitconcept/volto-light-theme` package, you should also declare your `peerDependencies` in your setup using the `addons` key in your project add-on {file}`packages/<name_of_your_project_addon>/package.json`.:
 
 ```json
   "addons": [
@@ -59,9 +60,9 @@ Along with the `@kitconcept/volto-light-theme` package, you should also declare 
   ],
 ```
 
-Please find the full list of the {doc}`../reference/recommended-addons`.
+Find the full list of the {doc}`../reference/recommended-addons`.
 
 ```{note}
-In case that you don't want to use any of the recommended add-ons, don't declare them as add-ons in your project, leaving only those you do want.
+If you don't want to use any of the recommended add-ons, then remove them and don't declare them as add-ons in your project, leaving only those that you want.
 ```
 

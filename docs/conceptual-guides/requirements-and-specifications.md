@@ -33,7 +33,7 @@ This layout uses three widths for the content elements:
 
 -   Narrow (text)
 -   Default (blocks)
--   Layout (main screen elements such as Header, Footer)
+-   Layout (main screen elements, such as Header or Footer)
 
 The Layout sized elements snaps to 1440px.
 The breakpoints are also different from Volto's defaults.

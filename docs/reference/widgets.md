@@ -4,25 +4,31 @@ VLT provides a set of widgets that provide structural features.
 
 ## `themeColorSwatch`
 
-Used for choosing a configured theme color (stored in `config.blocks.themes`).
-Uses the {file}`/src/components/widgets/ThemeColorSwatch` component.
+The `themeColorSwatch` widget is used for choosing a configured theme color, which is stored in `config.blocks.themes`.
+It uses the {file}`/src/components/widgets/ThemeColorSwatch` component.
 
-![themeColorSwatch](../_static/themeColorSwatch.png)
+```{image} /_static/themeColorSwatch.png
+:alt: themeColorSwatch
+```
 
 ## `color_picker` (Volto widget override)
 
-Semantic UI-free version of the Volto widget `color_picker`.
-Given an user defined array of color definitions, it allows you to choose one of them.
-Uses the {file}`/src/components/widgets/ColorSwatch` component.
+The `color_picker` widget is a Semantic UI-free version that overrides the Volto `color_picker` widget.
+Given an array of color definitions, it displays colors that editors can choose.
+It uses the {file}`/src/components/widgets/ColorSwatch` component.
 
-![color_picker](../_static/color_picker.png)
+```{image} /_static/color_picker.png
+:alt: color_picker
+```
 
 ## `colorPicker`
 
-A color picker with an RGB visual color chooser, and a `hex` color field.
-Uses the {file}`/src/components/widgets/ColorPicker` component.
+The `colorPicker` widget is a color picker with an RGB visual color chooser, and a `hex` color field.
+It uses the {file}`/src/components/widgets/ColorPicker` component.
 
-![colorPicker](../_static/colorPicker.png)
+```{image} /_static/colorPicker.png
+:alt: colorPicker
+```
 
 ## `blocksObject`
 
@@ -31,7 +37,9 @@ It allows to introduce a list of ordered objects with the same shape.
 It allows to reorder them using drag and drop.
 It uses `@plone/components`.
 
-![colorPicker](../_static/blocksObject.png)
+```{image} /_static/blocksObject.png
+:alt: blocksObject
+```
 
 This widget saves its contents in Volto's standard blocks format, using the `blocks_layout` and `blocks` keys.
 This allows the standard serializers and deserializers to work with the object schema fields.
@@ -214,23 +222,29 @@ export type ButtonsWidgetProps = {
 ```
 ## `blockWidth`
 
-A widget to select a width from the defined `config.blocks.widths`.
-Uses the {file}`/src/components/widgets/BlockWidth` component.
+`blockWidth` is a widget to select a width from the defined `config.blocks.widths`.
+It uses the {file}`/src/components/widgets/BlockWidth` component.
 
-![blockWidth](../_static/blockWidth.png)
+```{image} /_static/blockWidth.png
+:alt: blockWidth
+```
 
 ## `blockAlignment`
 
-A widget to select the block alignment, one of either `left`, `right`, or `center`.
+`blockAlignment` is a widget to select the block alignment, one of either `left`, `right`, or `center`.
 It's based on the {file}`/src/components/widgets/Buttons` component under the hood, so the actions and the styles to be applied are configurable.
 It uses the {file}`/src/components/widgets/BlockAlignment` component.
 
-![blockWidth](../_static/blockAlignment.png)
+```{image} /_static/BlockAlignment.png
+:alt: BlockAlignment
+```
 
 ## `size`
 
-A widget to select the block size from a default list of values, one of either `small`, `medium`, or `large`.
+`size` is a widget to select the block size from a default list of values, one of either `small`, `medium`, or `large`.
 It's based on the {file}`/src/components/widgets/Buttons` component under the hood, so the actions and the styles to be applied are configurable.
 It uses the {file}`/src/components/widgets/Size` component.
 
-![size](../_static/size.png)
+```{image} /_static/size.png
+:alt: size
+```

@@ -1,15 +1,17 @@
 
 # Layout
 
+% TODO provide content so the heading is not empty.
+
 ## Containers
 
 VLT uses three types of container widths:
 
 -   Narrow (text)
 -   Default (blocks)
--   Layout (main screen elements such as Header, Footer)
+-   Layout (main screen elements, such as Header or Footer)
 
-The values of these containers are controlled by SCSS variables in {file}`_variables.scss` and have these default values:
+The values of these containers are controlled by SCSS variables in {file}`_variables.scss` and have the following default values.
 
 ```scss
 $layout-container-width: 1440px !default;
@@ -17,7 +19,7 @@ $default-container-width: 940px !default;
 $narrow-container-width: 620px !default;
 ```
 
-You can customize them by overriding them in your add-on {file}`_variables.scss`:
+You can customize them by overriding them in your add-on {file}`_variables.scss` as shown below.
 
 ```scss
 $narrow-container-width: 940px;
