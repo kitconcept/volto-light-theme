@@ -1,3 +1,12 @@
+---
+myst:
+  html_meta:
+    "description": "Requirements and specifications for Volto Light Theme"
+    "property=og:description": "Requirements and specifications for Volto Light Theme"
+    "property=og:title": "Requirements and specifications for Volto Light Theme"
+    "keywords": "Plone, Volto Light Theme, requirements, specifications"
+---
+
 # Requirements and specifications
 
 Volto Light Theme sets the following requirements and specifications for its development.
