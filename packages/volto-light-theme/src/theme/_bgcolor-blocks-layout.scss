@@ -79,6 +79,14 @@
   }
 }
 
+// Banner block, if next block has different bgcolor it snaps to the bottom
+#page-document
+  .blocks-group-wrapper:has(
+    :last-child.banner.next--has--different--backgroundColor
+  ) {
+  padding-bottom: 0;
+}
+
 // Color map
 @mixin use-theme-colors() {
   // Page title
