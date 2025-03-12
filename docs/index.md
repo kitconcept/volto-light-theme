@@ -118,6 +118,7 @@ The following main rules specification applies to the theme.
 -   [listing] After two consecutive listings, the vertical spacing should be `200px`.
 -   [text+button] If there's a text and a button, then the vertical spacing between them is `60px`.
 -   [image+separator-block] If after an image comes a separator block, the vertical spacing between them is `40px`.
+-   [banner] If a banner block is followed by a change of block theme color, then the vertical space between them is 0.
 
 
 ### Media queries vs. container queries
