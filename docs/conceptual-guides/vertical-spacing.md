@@ -1,3 +1,12 @@
+---
+myst:
+  html_meta:
+    "description": "Vertical spacing of elements in the layout"
+    "property=og:description": "Vertical spacing of elements in the layout"
+    "property=og:title": "Vertical spacing of elements in the layout"
+    "keywords": "Plone, Volto Light Theme, vertical, spacing, elements, layout"
+---
+
 # Vertical spacing
 
 This chapter describes the vertical spacing of elements in the layout.
