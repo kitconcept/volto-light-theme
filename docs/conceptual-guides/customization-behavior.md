@@ -1,3 +1,12 @@
+---
+myst:
+  html_meta:
+    "description": "Customization behavior in Volto Light Theme"
+    "property=og:description": "Customization behavior in Volto Light Theme"
+    "property=og:title": "Customization behavior in Volto Light Theme"
+    "keywords": "Plone, customization, behavior, Volto Light Theme"
+---
+
 # Customization behavior
 
 % TODO name the add-on
