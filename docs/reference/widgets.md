@@ -1,6 +1,15 @@
+---
+myst:
+  html_meta:
+    "description": "Volto Light Theme provides a set of widgets that provide structural features."
+    "property=og:description": "Volto Light Theme provides a set of widgets that provide structural features."
+    "property=og:title": "Volto Light Theme widgets"
+    "keywords": "Plone, Volto Light Theme, widgets"
+---
+
 # Widgets
 
-VLT provides a set of widgets that provide structural features.
+Volto Light Theme provides a set of widgets that provide structural features.
 
 ## `themeColorSwatch`
 
