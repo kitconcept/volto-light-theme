@@ -145,6 +145,7 @@ const RenderBlocks = (props) => {
                       id={block}
                       block={block}
                       data={blockData}
+                      isContainer={isContainer}
                     >
                       <Block
                         id={block}
