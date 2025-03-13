@@ -18,25 +18,31 @@ These new definitions use CSS properties that are injected at runtime in the rig
 The resultant CSS is simpler, and there's no need to define class names for each color definition.
 Read more about them in: https://6.docs.plone.org/volto/development/color-picker-widget.html?highlight=color#custom-css-properties-as-color-definitions
 
-The new color definitions are no longer hardcoded, and now they are stored in `config.settings.backgroundColors`.
+The new color definitions are no longer hardcoded, and now they are stored in `config.blocks.themes` for extensibility from your add-ons.
 
 ```ts
-config.settings.backgroundColors = [
-  {
-    style: {
-      '--background-color': 'transparent',
+  config.blocks.themes = [
+    {
+      style: {
+        '--theme-color': '#fff',
+        '--theme-high-contrast-color': '#ecebeb',
+        '--theme-foreground-color': '#000',
+        '--theme-low-contrast-foreground-color': '#555555',
+      },
+      name: 'default',
+      label: 'Default',
     },
-    name: 'transparent',
-    label: 'Transparent',
-  },
-  {
-    style: {
-      '--background-color': '#ecebeb',
+    {
+      style: {
+        '--theme-color': '#ecebeb',
+        '--theme-high-contrast-color': '#fff',
+        '--theme-foreground-color': '#000',
+        '--theme-low-contrast-foreground-color': '#555555',
+      },
+      name: 'grey',
+      label: 'Grey',
     },
-    name: 'grey',
-    label: 'Grey',
-  },
-];
+  ];
 ```
 
 ```css
@@ -44,12 +50,6 @@ config.settings.backgroundColors = [
   background-color: var(---background-color, #fff)
 }
 ```
-
-If you extended or modified the default background colors in VLT, you need to move the colors that you are using accordingly to the new definitions.
-Once the new definitions are in place, there is a content reducer transform in place that will convert the blocks on the fly.
-Whenever you save an object, the object will be saved using the new styling.
-Make sure that you use the same `name` as before when you update your color definitions.
-
 
 ### Block widths
 
