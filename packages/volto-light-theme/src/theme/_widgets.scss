@@ -120,7 +120,7 @@
   }
 }
 
-.blocks-object-widget {
+.object-list-widget {
   .field.inline {
     .add-item-button-wrapper {
       display: flex;
@@ -137,14 +137,14 @@
     }
   }
 
-  .bow-item-wrapper {
+  .olw-item-wrapper {
     padding: 0 10px;
     border: 1px solid var(--quanta-smoke);
     border-radius: 10px;
     margin-bottom: 10px;
   }
 
-  .bow-item-title-bar {
+  .olw-item-title-bar {
     display: flex;
     justify-content: space-between;
     padding: 10px 0;
@@ -156,7 +156,7 @@
     }
   }
 
-  .bow-tools {
+  .olw-tools {
     display: flex;
     align-items: center;
     button {

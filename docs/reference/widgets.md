@@ -39,9 +39,10 @@ It uses the {file}`/src/components/widgets/ColorPicker` component.
 :alt: colorPicker
 ```
 
-## `blocksObject`
+## `object_list` (Volto widget override)
 
-The `blocksObject` widget is similar in functionality to Volto's `ObjectListWidget`, as configured in `config.widgets.widget.object_list`.
+The `object_list` widget overrides the Volto `object_list` widget.
+The widget is a drop-in replacement in functionality to Volto's `ObjectListWidget`.
 It allows to introduce a list of ordered objects with the same shape.
 It allows to reorder them using drag and drop.
 It uses `@plone/components`.

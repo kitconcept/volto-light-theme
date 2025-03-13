@@ -37,14 +37,13 @@ const SortableItem = (props) => {
 
 interface DndSortableListProps {
   /**
-   * An object containing all items, where the key is the item's unique identifier (UID).
+   * An object containing all items, ideally with a `@id` key with the item's
+   * unique identifier (UID).
+   *
+   * If none provided, the item index in the array is used.
+   *
    */
-  items: { [uid: string]: any };
-
-  /**
-   * An array of UIDs representing the sorted order of the items.
-   */
-  sortedItems: string[];
+  items: Array<Record<string, any>>;
 
   /**
    * A function to handle the end of a drag operation.
@@ -84,15 +83,16 @@ interface DndSortableListProps {
   }) => React.ReactNode;
 }
 
+const arrayToObject = (arr: any[]) => {
+  return arr.reduce((acc, item) => {
+    acc[item['@id']] = item;
+    return acc;
+  }, {});
+};
+
 const DndSortableList = (props: DndSortableListProps) => {
-  const {
-    items,
-    sortedItems,
-    children,
-    handleDragEnd,
-    activeObject,
-    setActiveObject,
-  } = props;
+  const { items, children, handleDragEnd, activeObject, setActiveObject } =
+    props;
 
   const sensors = useSensors(
     useSensor(PointerSensor),
@@ -104,6 +104,11 @@ const DndSortableList = (props: DndSortableListProps) => {
   function handleDragStart(event: DragStartEvent) {
     setActiveObject(null);
   }
+
+  const sortedItems = items
+    ? items.map((item, index) => item['@id'] || index)
+    : [];
+  const list = items ? arrayToObject(items) : [];
 
   return (
     <DndContext
@@ -117,7 +122,7 @@ const DndSortableList = (props: DndSortableListProps) => {
         strategy={verticalListSortingStrategy}
       >
         {sortedItems.map((uid, index) => {
-          const item = items[uid];
+          const item = list[uid];
           return (
             <SortableItem
               key={uid}
