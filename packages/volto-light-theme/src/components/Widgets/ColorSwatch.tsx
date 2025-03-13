@@ -2,7 +2,7 @@ import FormFieldWrapper from '@plone/volto/components/manage/Widgets/FormFieldWr
 import { Button } from '@plone/components';
 import cx from 'classnames';
 
-type Color =
+export type Color =
   | {
       name: string;
       label: string;
@@ -14,7 +14,7 @@ type Color =
       style: undefined;
     };
 
-export type ColorPickerWidgetProps = {
+export type ColorSwatchProps = {
   id: string;
   title: string;
   value?: string;
@@ -27,12 +27,12 @@ export type ColorPickerWidgetProps = {
   themes: Color[];
 };
 
-const ColorPickerWidget = (props: ColorPickerWidgetProps) => {
+const ColorSwatch = (props: ColorSwatchProps) => {
   const { id, value, onChange } = props;
   const colors = props.themes || props.colors || [];
 
   return colors.length > 0 ? (
-    <FormFieldWrapper {...props} className="theme-picker-widget">
+    <FormFieldWrapper {...props} className="color-swatch-widget">
       <div className="buttons">
         {colors.map((color) => {
           const colorName = color.name;
@@ -57,4 +57,4 @@ const ColorPickerWidget = (props: ColorPickerWidgetProps) => {
   ) : null;
 };
 
-export default ColorPickerWidget;
+export default ColorSwatch;
