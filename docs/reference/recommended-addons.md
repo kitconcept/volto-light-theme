@@ -8,6 +8,7 @@
 -   [Heading Block](https://www.npmjs.com/package/@kitconcept/volto-heading-block)
 -   [Introduction Block](https://www.npmjs.com/package/@kitconcept/volto-introduction-block)
 -   [Highlight Block](https://www.npmjs.com/package/@kitconcept/volto-highlight-block)
+-   [Banner Block](https://www.npmjs.com/package/@kitconcept/volto-banner-block)
 -   [EEA Accordion Block](https://www.npmjs.com/package/@eeacms/volto-accordion-block)
 
 It also works well with the following add-ons:
