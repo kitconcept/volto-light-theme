@@ -13,11 +13,11 @@ This chapter lists the helper utilities in Volto Light Theme.
 
 ## `DndSortableList`
 
-The successor of Volto's `DragDropList`, using `dnd-kit` library.
+`DndSortableList is the successor of Volto's `DragDropList`, using the `dnd-kit` library.
 
-Given a `items` array of objects, and a children render prop function, it allows you to reorder them using drag and drop.
+Given an array of objects as `items`, and a `children` render prop function, you can drag and drop the items to reorder them.
 
-It has the following props:
+It has the following props.
 
 ```ts
 interface DndSortableListProps {
