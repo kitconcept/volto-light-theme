@@ -40,6 +40,9 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+demo = [
+    "plone.exportimport",
+]
 test = [
     "plone.app.testing",
     "plone.exportimport",
