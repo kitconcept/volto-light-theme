@@ -95,21 +95,21 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-screenshots-visual-acceptance
+          name: cypress-screenshots-visual-acceptance-homepage
           path: cypress/screenshots
 
       # Upload Cypress videos
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-videos-visual-acceptance
+          name: cypress-videos-visual-acceptance-homepage
           path: cypress/videos
 
       # Upload Cypress visual testing screenshots
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-image-snapshots-visual-acceptance
+          name: cypress-image-snapshots-visual-acceptance-homepage
           path: cypress/__image_snapshots__
           retention-days: 2
 
@@ -196,21 +196,21 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-screenshots-visual-acceptance
+          name: cypress-screenshots-visual-acceptance-content
           path: cypress/screenshots
 
       # Upload Cypress videos
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-videos-visual-acceptance
+          name: cypress-videos-visual-acceptance-content
           path: cypress/videos
 
       # Upload Cypress visual testing screenshots
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-image-snapshots-visual-acceptance
+          name: cypress-image-snapshots-visual-acceptance-content
           path: cypress/__image_snapshots__
           retention-days: 2
 
@@ -297,21 +297,21 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-screenshots-visual-acceptance
+          name: cypress-screenshots-visual-acceptance-blocks-A
           path: cypress/screenshots
 
       # Upload Cypress videos
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-videos-visual-acceptance
+          name: cypress-videos-visual-acceptance-blocks-A
           path: cypress/videos
 
       # Upload Cypress visual testing screenshots
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-image-snapshots-visual-acceptance
+          name: cypress-image-snapshots-visual-acceptance-blocks-A
           path: cypress/__image_snapshots__
           retention-days: 2
 
@@ -398,21 +398,21 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-screenshots-visual-acceptance
+          name: cypress-screenshots-visual-acceptance-blocks-B
           path: cypress/screenshots
 
       # Upload Cypress videos
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-videos-visual-acceptance
+          name: cypress-videos-visual-acceptance-blocks-B
           path: cypress/videos
 
       # Upload Cypress visual testing screenshots
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-image-snapshots-visual-acceptance
+          name: cypress-image-snapshots-visual-acceptance-blocks-B
           path: cypress/__image_snapshots__
           retention-days: 2
 
@@ -499,21 +499,21 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-screenshots-visual-acceptance
+          name: cypress-screenshots-visual-acceptance-blocks-grid
           path: cypress/screenshots
 
       # Upload Cypress videos
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-videos-visual-acceptance
+          name: cypress-videos-visual-acceptance-blocks-grid
           path: cypress/videos
 
       # Upload Cypress visual testing screenshots
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-image-snapshots-visual-acceptance
+          name: cypress-image-snapshots-visual-acceptance-blocks-grid
           path: cypress/__image_snapshots__
           retention-days: 2
 
@@ -600,21 +600,21 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-screenshots-visual-acceptance
+          name: cypress-screenshots-visual-acceptance-blocks-listingandsearch
           path: cypress/screenshots
 
       # Upload Cypress videos
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-videos-visual-acceptance
+          name: cypress-videos-visual-acceptance-blocks-listingandsearch
           path: cypress/videos
 
       # Upload Cypress visual testing screenshots
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-image-snapshots-visual-acceptance
+          name: cypress-image-snapshots-visual-acceptance-blocks-listingandsearch
           path: cypress/__image_snapshots__
           retention-days: 2
 
@@ -701,21 +701,21 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-screenshots-visual-acceptance
+          name: cypress-screenshots-visual-acceptance-vertical-spacing
           path: cypress/screenshots
 
       # Upload Cypress videos
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-videos-visual-acceptance
+          name: cypress-videos-visual-acceptance-vertical-spacing
           path: cypress/videos
 
       # Upload Cypress visual testing screenshots
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-image-snapshots-visual-acceptance
+          name: cypress-image-snapshots-visual-acceptance-vertical-spacing
           path: cypress/__image_snapshots__
           retention-days: 2
 
@@ -802,20 +802,20 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-screenshots-visual-acceptance
+          name: cypress-screenshots-visual-acceptance-typography
           path: cypress/screenshots
 
       # Upload Cypress videos
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-videos-visual-acceptance
+          name: cypress-videos-visual-acceptance-typography
           path: cypress/videos
 
       # Upload Cypress visual testing screenshots
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-image-snapshots-visual-acceptance
+          name: cypress-image-snapshots-visual-acceptance-typography
           path: cypress/__image_snapshots__
           retention-days: 2
