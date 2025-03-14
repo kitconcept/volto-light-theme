@@ -83,7 +83,7 @@ interface DndSortableListProps {
   }) => React.ReactNode;
 }
 
-const arrayToObject = (arr: any[]) => {
+const arrayToObject = (arr: Record<string, any>[]): Record<string, any> => {
   return arr.reduce((acc, item) => {
     acc[item['@id']] = item;
     return acc;
@@ -105,10 +105,8 @@ const DndSortableList = (props: DndSortableListProps) => {
     setActiveObject(null);
   }
 
-  const sortedItems = items
-    ? items.map((item, index) => item['@id'] || index)
-    : [];
-  const list = items ? arrayToObject(items) : [];
+  const itemIds = items ? items.map((item, index) => item['@id'] || index) : [];
+  const itemsByUid = items ? arrayToObject(items) : {};
 
   return (
     <DndContext
@@ -117,12 +115,9 @@ const DndSortableList = (props: DndSortableListProps) => {
       onDragStart={handleDragStart}
       onDragEnd={handleDragEnd}
     >
-      <SortableContext
-        items={sortedItems}
-        strategy={verticalListSortingStrategy}
-      >
-        {sortedItems.map((uid, index) => {
-          const item = list[uid];
+      <SortableContext items={itemIds} strategy={verticalListSortingStrategy}>
+        {itemIds.map((uid, index) => {
+          const item = itemsByUid[uid];
           return (
             <SortableItem
               key={uid}
