@@ -26,7 +26,7 @@ EOT
 FROM plone/server-prod-config:${PLONE_VERSION}
 
 LABEL maintainer="kitconcept GmbH <contact@kitconcept.com>" \
-      org.label-schema.name="ghcr.io/kitconcept/voltolighttheme" \
+      org.label-schema.name="ghcr.io/kitconcept/voltolighttheme-backend" \
       org.label-schema.description="Example content for @kitconcept/volto-light-theme" \
       org.label-schema.vendor="kitconcept GmbH"
 

@@ -22,7 +22,8 @@ YELLOW=`tput setaf 3`
 NODEBIN = ./node_modules/.bin
 
 PLONE_VERSION=6
-IMAGE_NAME=ghcr.io/kitconcept/voltolighttheme-frontend
+IMAGE_NAME=ghcr.io/kitconcept/voltolighttheme
+IMAGE_NAME_SUFFIX=frontend
 IMAGE_TAG=latest
 DOCKER_IMAGE_ACCEPTANCE=plone/server-acceptance:${PLONE_VERSION}
 
@@ -101,8 +102,7 @@ ci-test: ## Run unit tests in CI
 
 .PHONY: build-image
 build-image:  ## Build Docker Image
-	@DOCKER_BUILDKIT=1 docker build . -t $(IMAGE_NAME):$(IMAGE_TAG) -f Dockerfile --build-arg VOLTO_VERSION=$(VOLTO_VERSION)
-
+	@DOCKER_BUILDKIT=1 docker build . -t $(IMAGE_NAME)-$(IMAGE_NAME_SUFFIX):$(IMAGE_TAG) -f Dockerfile --build-arg VOLTO_VERSION=$(VOLTO_VERSION)
 
 .PHONY: backend-docker-start
 backend-docker-start:	## Starts a Docker-based backend for development
@@ -153,7 +153,7 @@ acceptance-a11y-frontend-prod-start: ## Start a11y acceptance frontend in prod m
 
 .PHONY: ci-acceptance-a11y-backend-start
 ci-acceptance-a11y-backend-start: ## Start acceptance a11y server in CI mode (no terminal attached)
-	docker run -i --rm --name=backend -p 8080:8080 -e SITE=Plone -e ADDONS='$(KGS)' $(IMAGE_NAME)
+	docker run -i --rm --name=backend -p 8080:8080 -e SITE=Plone -e ADDONS='$(KGS)' $(IMAGE_NAME)-backend
 
 .PHONY: acceptance-a11y-test
 acceptance-a11y-test: ## Start a11y Cypress in interactive mode
