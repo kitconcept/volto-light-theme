@@ -15,39 +15,35 @@ GREEN=`tput setaf 2`
 RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
 
-# Set distributions still in development
-DISTRIBUTIONS="voltolighttheme"
-
-# Docker Image name
-IMAGE_NAME=ghcr.io/kitconcept/voltolighttheme
+IMAGE_NAME_PREFIX=ghcr.io/kitconcept/voltolighttheme
 IMAGE_TAG=latest
 
-PLONE6=6
-PLONE_VERSION=6.1.0b1
-SEED=$$(date +'%Y%m%d-%H%M%S')
-
 # Python checks
-PYTHON?=python3
+UV?=uv
 
 # installed?
-ifeq (, $(shell which $(PYTHON) ))
-  $(error "PYTHON=$(PYTHON) not found in $(PATH)")
+ifeq (, $(shell which $(UV) ))
+  $(error "UV=$(UV) not found in $(PATH)")
 endif
 
-# version ok?
-PYTHON_VERSION_MIN=3.8
-PYTHON_VERSION_OK=$(shell $(PYTHON) -c "import sys; print((int(sys.version_info[0]), int(sys.version_info[1])) >= tuple(map(int, '$(PYTHON_VERSION_MIN)'.split('.'))))")
-ifeq ($(PYTHON_VERSION_OK),0)
-  $(error "Need python $(PYTHON_VERSION) >= $(PYTHON_VERSION_MIN)")
-endif
-
-BACKEND_FOLDER=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
-EXAMPLE_CONTENT_FOLDER=${BACKEND_FOLDER}/src/kitconcept/voltolighttheme/setuphandlers/examplecontent
 PLONE_SITE_ID=Plone
+BACKEND_FOLDER=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
+ifdef PLONE_VERSION
+PLONE_VERSION := $(PLONE_VERSION)
+else
+PLONE_VERSION := 6.1-dev
+endif
+
+EXAMPLE_CONTENT_FOLDER=${BACKEND_FOLDER}/src/kitconcept/voltolighttheme/setuphandlers/examplecontent
 
 GIT_FOLDER=$(BACKEND_FOLDER)/.git
+VENV_FOLDER=$(BACKEND_FOLDER)/.venv
+BIN_FOLDER=$(VENV_FOLDER)/bin
 
+# Environment variables to be exported
+export PYTHONWARNINGS := ignore
+export DOCKER_BUILDKIT := 1
 
 all: build
 
@@ -57,97 +53,96 @@ all: build
 help: ## This help message
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
-bin/pip bin/tox bin/mxdev:
-	@echo "$(GREEN)==> Setup Virtual Env$(RESET)"
-	$(PYTHON) -m venv .
-	bin/pip install -U "pip" "wheel" "cookiecutter" "mxdev" "tox" "pre-commit"
-	if [ -d $(GIT_FOLDER) ]; then bin/pre-commit install; else echo "$(RED) Not installing pre-commit$(RESET)";fi
+requirements-mxdev.txt: ## Generate constraints file
+	@echo "$(GREEN)==> Generate constraints file$(RESET)"
+	@echo '-c https://dist.plone.org/release/$(PLONE_VERSION)/constraints.txt' > requirements.txt
+	@uvx mxdev -c mx.ini
+
+$(VENV_FOLDER): requirements-mxdev.txt ## Install dependencies
+	@echo "$(GREEN)==> Install environment$(RESET)"
+	@uv venv $(VENV_FOLDER)
+	@uv pip install -r requirements-mxdev.txt
+
+.PHONY: sync
+sync: $(VENV_FOLDER) ## Sync project dependencies
+	@echo "$(GREEN)==> Sync project dependencies$(RESET)"
+	@uv pip install -r requirements-mxdev.txt
+
+instance/etc/zope.ini instance/etc/zope.conf: ## Create instance configuration
+	@echo "$(GREEN)==> Create instance configuration$(RESET)"
+	@uvx cookiecutter -f --no-input --config-file instance.yaml gh:plone/cookiecutter-zope-instance
 
 .PHONY: config
-config: bin/pip  ## Create instance configuration
-	@echo "$(GREEN)==> Create instance configuration$(RESET)"
-	bin/cookiecutter -f --no-input --config-file instance.yaml gh:plone/cookiecutter-zope-instance
-
-.PHONY: build-dev
-build-dev: config ## pip install Plone packages
-	@echo "$(GREEN)==> Setup Build$(RESET)"
-	bin/mxdev -c mx.ini
-	bin/pip install -r requirements-mxdev.txt
+config: instance/etc/zope.ini
 
 .PHONY: install
-install: build-dev ## Install Plone 6.0
-
-
-.PHONY: build
-build: build-dev ## Install Plone 6.0
-
+install: $(VENV_FOLDER) config ## Install Plone and dependencies
 
 .PHONY: clean
-clean: ## Remove old virtualenv and creates a new one
+clean: ## Clean installation and instance
 	@echo "$(RED)==> Cleaning environment and build$(RESET)"
-	rm -rf bin lib lib64 include share etc var inituser pyvenv.cfg .installed.cfg instance .tox .pytest_cache
+	@rm -rf $(VENV_FOLDER) pyvenv.cfg .installed.cfg instance .venv .pytest_cache .ruff_cache constraints* requirements*
 
 .PHONY: start
-start: ## Start a Plone instance on localhost:8080
-	ALLOWED_DISTRIBUTIONS=$(DISTRIBUTIONS) DEVELOP_DISTRIBUTIONS=$(DISTRIBUTIONS) PYTHONWARNINGS=ignore ./bin/runwsgi instance/etc/zope.ini
+start: $(VENV_FOLDER) instance/etc/zope.ini ## Start a Plone instance on localhost:8080
+	@uv run runwsgi instance/etc/zope.ini
 
 .PHONY: console
-console: ## Start a zope console
-	ALLOWED_DISTRIBUTIONS=$(DISTRIBUTIONS) DEVELOP_DISTRIBUTIONS=$(DISTRIBUTIONS) PYTHONWARNINGS=ignore ./bin/zconsole debug instance/etc/zope.conf
+console: $(VENV_FOLDER) instance/etc/zope.ini ## Start a console into a Plone instance
+	@uv run zconsole debug instance/etc/zope.conf
 
 .PHONY: create-site
-create-site: ## Create a new Plone site using this distribution
-	ALLOWED_DISTRIBUTIONS=$(DISTRIBUTIONS) DEVELOP_DISTRIBUTIONS=$(DISTRIBUTIONS) PYTHONWARNINGS=ignore ./bin/zconsole run instance/etc/zope.conf ./scripts/create_site.py
-
-.PHONY: format
-format: bin/tox ## Format the codebase according to our standards
-	@echo "$(GREEN)==> Format codebase$(RESET)"
-	bin/tox -e format
-
-.PHONY: lint
-lint: ## check code style
-	bin/tox -e lint
-
-.PHONY: dependencies
-dependencies: ## check dependencies
-	bin/tox -e dependencies
-
-.PHONY: release-check
-release-check: ## check if package is ready for release
-	bin/tox -e release-check
-
-# i18n
-bin/i18ndude: bin/pip
-	@echo "$(GREEN)==> Install translation tools$(RESET)"
-	bin/pip install i18ndude
-
-.PHONY: i18n
-i18n: bin/i18ndude ## Update locales
-	@echo "$(GREEN)==> Updating locales$(RESET)"
-	bin/update_dist_locale
-
+create-site: $(VENV_FOLDER) instance/etc/zope.ini ## Create a new site from scratch
+	@uv run zconsole run instance/etc/zope.conf ./scripts/create_site.py
 
 # Example Content
 .PHONY: update-example-content
-update-example-content: bin/tox ## Export example content inside package
+update-example-content: $(VENV_FOLDER) instance/etc/zope.conf ## Export example content inside package
 	@echo "$(GREEN)==> Export example content into $(EXAMPLE_CONTENT_FOLDER) $(RESET)"
 	if [ -d $(EXAMPLE_CONTENT_FOLDER)/content ]; then rm -r $(EXAMPLE_CONTENT_FOLDER)/* ;fi
-	bin/plone-exporter instance/etc/zope.conf $(PLONE_SITE_ID) $(EXAMPLE_CONTENT_FOLDER)
+	@uv run plone-exporter instance/etc/zope.conf $(PLONE_SITE_ID) $(EXAMPLE_CONTENT_FOLDER)
+
+# QA
+.PHONY: lint
+lint: ## Check and fix code base according to Plone standards
+	@echo "$(GREEN)==> Lint codebase$(RESET)"
+	@uvx ruff@latest check --fix --config $(BACKEND_FOLDER)/pyproject.toml
+	@uvx pyroma@latest -d .
+	@uvx check-python-versions@latest .
+	@uvx zpretty@latest --check src
+
+.PHONY: format
+format: ## Check and fix code base according to Plone standards
+	@echo "$(GREEN)==> Format codebase$(RESET)"
+	@uvx ruff@latest check --select I --fix --config $(BACKEND_FOLDER)/pyproject.toml
+	@uvx ruff@latest format --config $(BACKEND_FOLDER)/pyproject.toml
+	@uvx zpretty@latest -i src
+
+# i18n
+.PHONY: i18n
+i18n: $(VENV_FOLDER) ## Update locales
+	@echo "$(GREEN)==> Updating locales$(RESET)"
+	@uv run python -m kitconcept.voltolighttheme.locales
 
 # Tests
 .PHONY: test
-test: bin/tox ## run tests
-	ALLOWED_DISTRIBUTIONS=$(DISTRIBUTIONS) DEVELOP_DISTRIBUTIONS=$(DISTRIBUTIONS) bin/tox -e test
+test: $(VENV_FOLDER) ## run tests
+	@uv run pytest
 
 .PHONY: test-coverage
-test-coverage: bin/tox ## run tests with coverage
-	ALLOWED_DISTRIBUTIONS=$(DISTRIBUTIONS) DEVELOP_DISTRIBUTIONS=$(DISTRIBUTIONS) bin/tox -e coverage
+test-coverage: $(VENV_FOLDER) ## run tests with coverage
+	@uv run pytest --cov=kitconcept.voltolighttheme --cov-report term-missing
 
-# Docker image
+# Build Docker images
 .PHONY: build-image
-build-image:  ## Build Docker Image
-	@DOCKER_BUILDKIT=1 docker build . -t $(IMAGE_NAME):$(IMAGE_TAG) -f Dockerfile --build-arg PLONE_VERSION=$(PLONE_VERSION) --build-arg SEED=$(SEED)
+build-image:  ## Build Docker Images
+	@docker build . -t $(IMAGE_NAME_PREFIX)-backend:$(IMAGE_TAG) -f Dockerfile --build-arg PLONE_VERSION=$(PLONE_VERSION)
 
-.PHONY: run-image
-run-image:  build-image  ## Build Docker Image
-	docker run --rm -it -p 8080:8080 $(IMAGE_NAME):$(IMAGE_TAG)
+# Acceptance tests
+.PHONY: acceptance-backend-start
+acceptance-backend-start: ## Start backend acceptance server
+	ZSERVER_HOST=0.0.0.0 ZSERVER_PORT=55001 LISTEN_PORT=55001 APPLY_PROFILES="kitconcept.voltolighttheme:default" CONFIGURE_PACKAGES="plone.restapi,plone.volto,plone.volto.cors,kitconcept.voltolighttheme" uv run robot-server plone.app.robotframework.testing.VOLTO_ROBOT_TESTING
+
+.PHONY: acceptance-image-build
+acceptance-image-build:  ## Build Docker Images
+	@docker build . -t $(IMAGE_NAME_PREFIX)-backend-acceptance:$(IMAGE_TAG) -f Dockerfile.acceptance --build-arg PLONE_VERSION=$(PLONE_VERSION)

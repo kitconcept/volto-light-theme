@@ -1,9 +1,9 @@
 from plone.app.contenttypes.testing import PLONE_APP_CONTENTTYPES_FIXTURE
 from plone.app.robotframework.testing import REMOTE_LIBRARY_BUNDLE_FIXTURE
-from plone.app.testing import applyProfile
 from plone.app.testing import FunctionalTesting
 from plone.app.testing import IntegrationTesting
 from plone.app.testing import PloneSandboxLayer
+from plone.app.testing import applyProfile
 from plone.testing.zope import WSGI_SERVER_FIXTURE
 
 import kitconcept.voltolighttheme
@@ -27,16 +27,15 @@ class Layer(PloneSandboxLayer):
 
 FIXTURE = Layer()
 
-
 INTEGRATION_TESTING = IntegrationTesting(
     bases=(FIXTURE,),
-    name="VOLTOLIGHTTHEMELayer:IntegrationTesting",
+    name="kitconcept.voltolightthemeLayer:IntegrationTesting",
 )
 
 
 FUNCTIONAL_TESTING = FunctionalTesting(
     bases=(FIXTURE, WSGI_SERVER_FIXTURE),
-    name="VOLTOLIGHTTHEMELayer:FunctionalTesting",
+    name="kitconcept.voltolightthemeLayer:FunctionalTesting",
 )
 
 
@@ -46,5 +45,5 @@ ACCEPTANCE_TESTING = FunctionalTesting(
         REMOTE_LIBRARY_BUNDLE_FIXTURE,
         WSGI_SERVER_FIXTURE,
     ),
-    name="VOLTOLIGHTTHEMELayer:AcceptanceTesting",
+    name="kitconcept.voltolightthemeLayer:AcceptanceTesting",
 )
