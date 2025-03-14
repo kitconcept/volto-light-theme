@@ -1,4 +1,5 @@
 // SemanticUI-free pre-@plone/components
+import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, Container } from '@plone/components';
@@ -70,6 +71,11 @@ const InternetHeader = ({ pathname, siteLabel, token, siteAction }) => {
 };
 
 const IntranetHeader = ({ pathname, siteLabel, token, siteAction }) => {
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   const dispatch = useDispatch();
 
   const navRoot = useSelector((state) => state.navroot?.data?.navroot);
@@ -106,6 +112,7 @@ const IntranetHeader = ({ pathname, siteLabel, token, siteAction }) => {
               ))}
           </div>
           {siteLabel &&
+            isClient &&
             (!isEmpty(formData) ? (
               <Button
                 className="intranet-flag"
