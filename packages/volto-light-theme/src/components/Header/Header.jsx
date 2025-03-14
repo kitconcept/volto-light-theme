@@ -70,7 +70,7 @@ const InternetHeader = ({ pathname, siteLabel, token, siteAction }) => {
   );
 };
 
-const IntranetHeader = ({ pathname, siteLabel, token, siteAction }) => {
+const IntranetHeader = ({ pathname, siteLabel, token }) => {
   const [isClient, setIsClient] = useState(false);
   useEffect(() => {
     setIsClient(true);
@@ -91,6 +91,11 @@ const IntranetHeader = ({ pathname, siteLabel, token, siteAction }) => {
       ? `data:${formData.complementary_logo['content-type']};base64,${formData.complementary_logo.data}`
       : navRoot?.complementary_logo?.download;
 
+  const headerActions =
+    !isEmpty(formData) && formData?.header_actions
+      ? formData.header_actions
+      : navRoot?.header_actions;
+
   const pointToSidebar = (fieldSetName, fieldId) => {
     dispatch(setSidebarTab(0));
     dispatch(setMetadataFocus(fieldSetName, fieldId));
@@ -104,9 +109,9 @@ const IntranetHeader = ({ pathname, siteLabel, token, siteAction }) => {
 
           <div className="tools">
             {!token && <Anontools />}
-            {siteAction &&
-              siteAction.map((item) => (
-                <UniversalLink key={item.url} href={item.url}>
+            {headerActions &&
+              headerActions.map((item) => (
+                <UniversalLink key={item['@id']} href={item.href[0]['@id']}>
                   {item.title}
                 </UniversalLink>
               ))}
