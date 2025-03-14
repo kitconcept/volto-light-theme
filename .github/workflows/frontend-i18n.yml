@@ -1,8 +1,15 @@
 name: i18n
-on: [push]
 
-env:
-  NODE_VERSION: 22.x
+on:
+  workflow_call:
+    inputs:
+      node-version:
+        required: true
+        type: string
+
+defaults:
+  run:
+    working-directory: ./frontend
 
 jobs:
   unit:
@@ -12,10 +19,10 @@ jobs:
       - name: Main checkout
         uses: actions/checkout@v4
 
-      - name: Use Node.js ${{ env.NODE_VERSION }}
+      - name: Use Node.js ${{ inputs.node-version }}
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-version: ${{ inputs.node-version }}
 
       - name: Enable corepack
         run: npm i -g corepack@latest && corepack enable
