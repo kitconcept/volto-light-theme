@@ -10,7 +10,10 @@ import transaction
 logger = logging.getLogger("migrate_to_4")
 logger.setLevel(logging.INFO)
 
-# If you updated or extended the colors mappings, you should update this with the new values
+app = globals()["app"]
+
+# If you updated or extended the colors mappings,
+# you should update this with the new values
 COLOR_MAP = {
     "grey": {
         "--background-color": "#ecebeb",
@@ -50,12 +53,13 @@ def migrate_backgroundColor(portal):
                 block.clear()
                 block.update(new_block)
                 logger.info(
-                    f'{obj.absolute_url()} - Updated "backgroundColor" to "backgroundColor:noprefix"'
+                    f'{obj.absolute_url()} - Updated "backgroundColor" to '
+                    '"backgroundColor:noprefix"'
                 )
 
         obj.blocks = blocks
         modified(obj)
-        i += 1
+        i += 1  # noQA: SIM113
         if not i % 100:
             logger.info(i)
             transaction.commit()
@@ -91,7 +95,7 @@ def migrate_button_block_width(portal):
 
         obj.blocks = blocks
         modified(obj)
-        i += 1
+        i += 1  # noQA: SIM113
         if not i % 100:
             logger.info(i)
             transaction.commit()
@@ -99,7 +103,8 @@ def migrate_button_block_width(portal):
     return output
 
 
-setSite(app.Plone)  # noQA
+site = app.Plone
+setSite(site)
 with api.env.adopt_user("admin"):
-    migrate_button_block_width(app.Plone)  # noQA
-    migrate_backgroundColor(app.Plone)  # noQA
+    migrate_button_block_width(site)
+    migrate_backgroundColor(site)

@@ -12,13 +12,7 @@
       />
 
   <include file="dependencies.zcml" />
-  <include file="distributions.zcml" />
   <include file="profiles.zcml" />
-
-  <include package=".serializers" />
-  <include package=".indexers" />
-  <include package=".vocabularies" />
-  <include package=".browser" />
 
   <include package="plone.volto.cors" />
 
