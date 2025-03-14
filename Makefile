@@ -12,6 +12,7 @@ CURRENT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 GIT_FOLDER=$(CURRENT_DIR)/.git
 
 PROJECT_NAME=volto-light-theme
+IMAGE_NAME=ghcr.io/kitconcept/voltolighttheme
 
 VOLTO_VERSION=$(shell cat frontend/mrs.developer.json | python -c "import sys, json; print(json.load(sys.stdin)['core']['tag'])")
 
@@ -250,3 +251,12 @@ ci-acceptance-test:
 	pnpm dlx wait-on --httpTimeout 20000 http-get://localhost:55001/plone http://localhost:3000
 	$(MAKE) -C "./frontend/" ci-acceptance-test
 	$(MAKE) acceptance-containers-stop
+
+.PHONY: ci-acceptance-server-visual-start
+ci-acceptance-server-visual-start: backend-install
+	@echo "Starting backend server"
+	$(MAKE) backend-start
+
+.PHONY: ci-acceptance-frontend-visual-start
+ci-acceptance-frontend-visual-start:
+	$(MAKE) -C "./frontend/" acceptance-a11y-frontend-prod-start
