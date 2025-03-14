@@ -1,0 +1,108 @@
+{
+  "@id": "/content-types/internal-link",
+  "@type": "Link",
+  "UID": "195d96ca9952493cbffa69cda040b8b3",
+  "allow_discussion": false,
+  "changeActor": "admin",
+  "changeNote": null,
+  "contributors": [],
+  "created": "2023-07-06T21:35:19+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "The Link content type can be used to display links on the page. Users are automatically redirected to the external site when they click on the link.",
+  "effective": "2023-07-06T18:35:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "exportimport.versions": {
+    "0": {
+      "@id": "/content-types/internal-link",
+      "@type": "Link",
+      "UID": "94f1b060222a470384c548277d354d99",
+      "allow_discussion": false,
+      "changeNote": "",
+      "contributors": [],
+      "created": "2024-06-06T10:37:25+00:00",
+      "creators": [
+        "admin"
+      ],
+      "description": "",
+      "effective": null,
+      "exclude_from_nav": false,
+      "expires": null,
+      "id": "internal-link",
+      "is_folderish": false,
+      "language": "",
+      "layout": "link_redirect_view",
+      "lock": {},
+      "modified": "2024-06-06T10:37:25+00:00",
+      "parent": {
+        "@id": "/content-types",
+        "@type": "Document",
+        "description": "This section has a sample of content types available in this site.",
+        "image_field": null,
+        "image_scales": null,
+        "review_state": "published",
+        "title": "Content Types",
+        "type_title": "Page"
+      },
+      "remoteUrl": "http://nohost/Plone",
+      "review_state": "published",
+      "rights": "",
+      "subjects": [],
+      "title": "",
+      "type_title": "Link",
+      "version": 0,
+      "versioning_enabled": true,
+      "working_copy": null,
+      "working_copy_of": null
+    }
+  },
+  "id": "internal-link",
+  "is_folderish": false,
+  "language": "##DEFAULT##",
+  "layout": "link_redirect_view",
+  "lock": {},
+  "modified": "2023-09-22T14:27:30+00:00",
+  "parent": {
+    "@id": "/content-types",
+    "@type": "Document",
+    "UID": "e8178744e30a418b9a5768997bb29a19",
+    "description": "This section has a sample of content types available in this site.",
+    "image_field": null,
+    "image_scales": null,
+    "review_state": "published",
+    "title": "Content Types",
+    "type_title": "Page"
+  },
+  "remoteUrl": "http://localhost:8080/Plone/example",
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "Link (Internal)",
+  "type_title": "Link",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2023-07-06T21:35:19+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2023-07-06T21:35:19+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

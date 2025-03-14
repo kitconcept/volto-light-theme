@@ -1,0 +1,21 @@
+graft src/kitconcept
+graft scripts
+graft docs
+graft news
+graft tests
+include .coveragerc
+include .dockerignore
+include .editorconfig
+include *.txt
+include *.yml
+include *.md
+exclude *-mxdev.txt
+exclude Dockerfile
+exclude docker-entrypoint.sh
+recursive-exclude .vscode *
+exclude mx.ini
+exclude Makefile
+recursive-exclude frontend *
+exclude instance.yaml
+global-exclude *.pyc
+global-exclude .DS_Store

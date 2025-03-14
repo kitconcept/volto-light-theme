@@ -1,0 +1,125 @@
+# Generated from:
+# https://github.com/plone/meta/tree/master/config/default
+# See the inline comments on how to expand/tweak this configuration file
+name: Meta
+on:
+  push:
+    branches:
+      - master
+      - main
+  pull_request:
+    branches:
+      - master
+      - main
+  workflow_dispatch:
+
+##
+# To set environment variables for all jobs, add in .meta.toml:
+# [github]
+# env = """
+#     debug: 1
+#     image-name: 'org/image'
+#     image-tag: 'latest'
+# """
+##
+
+jobs:
+  qa:
+    uses: plone/meta/.github/workflows/qa.yml@1.0.0
+  test:
+    uses: plone/meta/.github/workflows/test.yml@1.0.0
+  coverage:
+    uses: plone/meta/.github/workflows/coverage.yml@1.0.0
+  dependencies:
+    uses: plone/meta/.github/workflows/dependencies.yml@1.0.0
+  release_ready:
+    uses: plone/meta/.github/workflows/release_ready.yml@1.0.0
+
+##
+# To modify the list of default jobs being created add in .meta.toml:
+# [github]
+# jobs = [
+#    "qa",
+#    "test",
+#    "coverage",
+#    "dependencies",
+#    "release_ready",
+#    "circular",
+#    ]
+##
+
+##
+# To request that some OS level dependencies get installed
+# when running tests/coverage jobs, add in .meta.toml:
+# [github]
+# os_dependencies = "git libxml2 libxslt"
+##
+
+  image:
+    runs-on: ubuntu-latest
+    needs:
+      - qa
+      - test
+      - coverage
+      - release_ready
+      - dependencies
+
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: "Metadata for Docker Image"
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: |
+            ghcr.io/kitconcept/voltolighttheme
+          labels: |
+            org.label-schema.docker.cmd=docker run -d -p 8080:8080 ghcr.io/kitconcept/voltolighttheme:latest
+          flavor:
+            latest=false
+          tags: |
+            type=ref,event=branch
+            type=sha
+            type=raw,value=latest,enable={{ is_default_branch }}
+
+      - name: "Set up QEMU"
+        uses: docker/setup-qemu-action@v2
+
+      - name: "Set up Docker Buildx"
+        uses: docker/setup-buildx-action@v2
+
+      - name: "Login to ghcr.io"
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: "Use mxdev to install dependencies"
+        run: |
+          pip install mxdev
+          mxdev -c mx.ini
+
+      - name: "Create image and publish it on ghcr.io"
+        uses: docker/build-push-action@v4
+        with:
+          context: ./
+          platforms: linux/amd64,linux/arm64
+          file: Dockerfile
+          build-args: SEED=${{ github.run_id }}
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+
+##
+# Specify additional jobs in .meta.toml:
+#  [github]
+#  extra_lines = """
+#  another:
+#    uses: org/repo/.github/workflows/file.yml@main
+#  """
+##

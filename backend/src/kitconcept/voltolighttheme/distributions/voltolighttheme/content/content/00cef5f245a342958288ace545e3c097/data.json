@@ -1,0 +1,152 @@
+{
+  "@id": "/block/introduction-block",
+  "@type": "Document",
+  "UID": "00cef5f245a342958288ace545e3c097",
+  "allow_discussion": false,
+  "blocks": {
+    "177de529-ce72-4721-a58c-15feadaf285e": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "26accd80-9715-43ea-9b7c-aa0b3be7d0da": {
+      "@type": "slate",
+      "plaintext": "Headline H2",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Headline H2"
+            }
+          ],
+          "type": "h2"
+        }
+      ]
+    },
+    "50727b9a-1f8a-4857-aab5-8acc6985bfc6": {
+      "@type": "title"
+    },
+    "cec08900-0334-4288-9ece-f5d15d4dd6f1": {
+      "@type": "separator",
+      "styles": {
+        "align": "full"
+      }
+    },
+    "d0438a28-aaaf-4db1-8887-c9b3351787d3": {
+      "@type": "separator",
+      "styles": {
+        "align": "full"
+      }
+    },
+    "d35f209e-12c1-4a30-ae36-52f84a4a0b7b": {
+      "@type": "introduction",
+      "plaintext": "Highlight Title H2\nLorem ipsum vitae elit libero, a pharetra augue. Nulla vitae elit libero, a pharetra augue. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper.",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Highlight Title H2 "
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum vitae elit libero, a pharetra augue. Nulla vitae elit libero, a pharetra augue. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "50727b9a-1f8a-4857-aab5-8acc6985bfc6",
+      "d0438a28-aaaf-4db1-8887-c9b3351787d3",
+      "d35f209e-12c1-4a30-ae36-52f84a4a0b7b",
+      "cec08900-0334-4288-9ece-f5d15d4dd6f1",
+      "26accd80-9715-43ea-9b7c-aa0b3be7d0da",
+      "177de529-ce72-4721-a58c-15feadaf285e"
+    ]
+  },
+  "contributors": [],
+  "created": "2023-07-06T21:35:19+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "\nThe introductory block allows the display of an introductory text, which is displayed larger than normal continuous text.",
+  "effective": "2023-07-06T18:35:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "exportimport.versions": {},
+  "id": "introduction-block",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2023-09-22T14:41:12+00:00",
+  "nav_title": null,
+  "parent": {
+    "@id": "/block",
+    "@type": "Document",
+    "UID": "425695d2b7cb47e69374d6f211f17e38",
+    "description": "",
+    "image_field": null,
+    "image_scales": null,
+    "review_state": "published",
+    "title": "Blocks",
+    "type_title": "Page"
+  },
+  "preview_caption": null,
+  "preview_image": {
+    "blob_path": "00cef5f245a342958288ace545e3c097/preview_image/black-starry-night.jpg",
+    "content-type": "image/jpeg",
+    "filename": "black-starry-night.jpg",
+    "height": 1708,
+    "size": 693013,
+    "width": 2400
+  },
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "Introduction",
+  "type_title": "Page",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2023-07-06T21:35:19+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2023-07-06T21:35:19+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

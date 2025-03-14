@@ -1,0 +1,123 @@
+{
+  "@id": "/block/search-block",
+  "@type": "Document",
+  "UID": "928010d84e5d4df2b2282f3e179d6b1a",
+  "allow_discussion": false,
+  "blocks": {
+    "42b7d589-4d35-4b81-9fe9-ea17437beb81": {
+      "@type": "search",
+      "listingBodyTemplate": "summary",
+      "query": {
+        "b_size": "4",
+        "limit": "4",
+        "query": [],
+        "sort_order": "ascending"
+      },
+      "showSearchInput": true,
+      "showSortOn": true,
+      "showTotalResults": true
+    },
+    "518c46e7-9823-4e03-aa3a-d2a9ec1746dd": {
+      "@type": "search",
+      "query": {
+        "b_size": "4",
+        "query": [],
+        "sort_order": "ascending"
+      },
+      "showSearchInput": true,
+      "showSortOn": true,
+      "showTotalResults": true
+    },
+    "f6d35d7e-6422-4496-8a65-f7cfd42fb519": {
+      "@type": "title"
+    },
+    "undefined": {
+      "@type": "search",
+      "listingBodyTemplate": "summary",
+      "query": {
+        "b_size": "4",
+        "limit": "4",
+        "query": [],
+        "sort_order": "ascending"
+      },
+      "showSearchInput": true,
+      "showSortOn": true,
+      "showTotalResults": true
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "f6d35d7e-6422-4496-8a65-f7cfd42fb519",
+      "518c46e7-9823-4e03-aa3a-d2a9ec1746dd",
+      "42b7d589-4d35-4b81-9fe9-ea17437beb81"
+    ]
+  },
+  "contributors": [],
+  "created": "2023-07-06T21:35:20+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "The search block allows the content of the website to be listed. Users can use so-called facets to select certain properties of the listed content in order to filter them (e.g. filtering the news of 2022).",
+  "effective": "2023-07-06T18:35:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "exportimport.versions": {},
+  "id": "search-block",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2023-12-28T09:36:10+00:00",
+  "nav_title": null,
+  "parent": {
+    "@id": "/block",
+    "@type": "Document",
+    "UID": "425695d2b7cb47e69374d6f211f17e38",
+    "description": "",
+    "image_field": null,
+    "image_scales": null,
+    "review_state": "published",
+    "title": "Blocks",
+    "type_title": "Page"
+  },
+  "preview_caption": null,
+  "preview_image": {
+    "blob_path": "928010d84e5d4df2b2282f3e179d6b1a/preview_image/black-starry-night.jpg",
+    "content-type": "image/jpeg",
+    "filename": "black-starry-night.jpg",
+    "height": 1708,
+    "size": 693013,
+    "width": 2400
+  },
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "Search",
+  "type_title": "Page",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2023-07-06T21:35:20+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2023-07-06T21:35:20+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}
