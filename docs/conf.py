@@ -5,6 +5,7 @@
 # -- Path setup --------------------------------------------------------------
 
 from datetime import datetime
+from pathlib import Path
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -14,32 +15,27 @@ from datetime import datetime
 # import sys
 # sys.path.insert(0, os.path.abspath("."))
 
-import os
-import json
-
 
 # -- Project information -----------------------------------------------------
 
-project = "@kitconcept/volto-light-theme documentation"
-copyright = "Plone Foundation"
+project = "Volto Light Theme documentation"
+copyright = "kitconcept"
 author = "kitconcept, GmbH"
-trademark_name = "Plone"
+trademark_name = "kitconcept"
 now = datetime.now()
 year = str(now.year)
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
 # built documents.
-with open(os.path.join(os.path.abspath("."), "../package.json"), "r") as package_json:
-    data = package_json.read()
+version_file = Path(__file__).parent.parent / "version.txt"
+version_data = version_file.read_text().strip()
 
-version_from_package_json = json.loads(data)["version"]
-
-if version_from_package_json:
+if version_data:
     # The short X.Y version.
-    version = version_from_package_json
+    version = version_data
     # The full version, including alpha/beta/rc tags.
-    release = version_from_package_json
+    release = version_data
 else:
     version = "6.0.0"
     release = "6.0.0"
@@ -160,7 +156,7 @@ html_theme_options = {
         },
     ],
     "logo": {
-        "text": "@kitconcept/volto-light-theme Documentation",
+        "text": "Volto Light Theme Documentation",
     },
     "navigation_with_keys": True,
     "path_to_docs": "docs",
