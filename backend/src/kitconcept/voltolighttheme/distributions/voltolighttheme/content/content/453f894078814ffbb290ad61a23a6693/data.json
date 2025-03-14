@@ -1,0 +1,60 @@
+{
+  "@id": "/content-types/file",
+  "@type": "File",
+  "UID": "453f894078814ffbb290ad61a23a6693",
+  "allow_discussion": false,
+  "contributors": [],
+  "created": "2023-07-06T21:35:07+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "The File content type can be used to upload any file and make it available for download on the site.",
+  "effective": null,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "exportimport.versions": {},
+  "file": {
+    "blob_path": "453f894078814ffbb290ad61a23a6693/file/file.pdf",
+    "content-type": "application/pdf",
+    "filename": "file.pdf",
+    "size": 74429
+  },
+  "id": "file",
+  "is_folderish": false,
+  "language": "##DEFAULT##",
+  "layout": "file_view",
+  "lock": {},
+  "modified": "2023-09-22T14:28:28+00:00",
+  "parent": {
+    "@id": "/content-types",
+    "@type": "Document",
+    "UID": "e8178744e30a418b9a5768997bb29a19",
+    "description": "This section has a sample of content types available in this site.",
+    "image_field": null,
+    "image_scales": null,
+    "review_state": "published",
+    "title": "Content Types",
+    "type_title": "Page"
+  },
+  "review_state": null,
+  "rights": "",
+  "subjects": [],
+  "title": "File",
+  "type_title": "File",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2023-07-06T21:35:07+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}
