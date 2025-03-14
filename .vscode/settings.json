@@ -1,4 +1,17 @@
 {
+  "eslint.workingDirectories": ["./frontend"],
+  "flake8.cwd": "${workspaceFolder}/backend",
+  "flake8.args": ["--config=pyproject.toml"],
+  "ruff.organizeImports": true,
+  "python.terminal.activateEnvironment": true,
+  "python.testing.pytestArgs": [
+    "backend/tests"
+  ],
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true,
+  "[markdown]": {
+    "editor.formatOnSave": false
+  },
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#9e82bb",
     "activityBar.background": "#9e82bb",

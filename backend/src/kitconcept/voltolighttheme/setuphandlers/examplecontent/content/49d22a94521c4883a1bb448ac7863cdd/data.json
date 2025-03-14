@@ -1,0 +1,619 @@
+{
+  "@id": "/typography",
+  "@type": "Document",
+  "UID": "49d22a94521c4883a1bb448ac7863cdd",
+  "allow_discussion": false,
+  "blocks": {
+    "0a8e2813-414f-42f7-9aee-7ae6df4c338e": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "11e4610d-dfac-493d-b9be-345949ca3276": {
+      "@type": "slate",
+      "plaintext": "Paragraph (p, 18px/24px)",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Paragraph (p, 18px/24px)"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "4092b07d-31df-4aaa-9cfd-5bbdf814bb04": {
+      "@type": "gridBlock",
+      "blocks": {
+        "92f80d54-c607-4360-8e2f-ca8dc6b792c5": {
+          "@type": "teaser",
+          "description": "Paragraph (p, 18px/24px). This section has a sample of content types available in this site.",
+          "head_title": "Teaser Headtitle (DIV, 14/18px)",
+          "href": [
+            {
+              "@id": "http://host.docker.internal:8080/Plone/content-types",
+              "@type": "Document",
+              "Description": "This section has a sample of content types available in this site.",
+              "Title": "Content Types",
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "image",
+              "title": "Content Types"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Teaser Title (H3, 24/30px)"
+        },
+        "c86e09b4-faaa-4f71-ba71-c3cf69f2d260": {
+          "@type": "teaser",
+          "head_title": "Teaser Headtitle (DIV, 14/18px)",
+          "href": [
+            {
+              "@id": "http://host.docker.internal:8080/Plone/content-types",
+              "@type": "Document",
+              "Description": "This section has a sample of content types available in this site.",
+              "Title": "Content Types",
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "image",
+              "title": "Content Types"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Teaser Title (H3, 24/30px)"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "c86e09b4-faaa-4f71-ba71-c3cf69f2d260",
+          "92f80d54-c607-4360-8e2f-ca8dc6b792c5"
+        ]
+      },
+      "styles": {}
+    },
+    "47cef702-7d66-4313-b3ec-585408735218": {
+      "@type": "toc",
+      "variation": "default"
+    },
+    "4a035155-91fc-4371-82e8-b6d56866647f": {
+      "@type": "slate",
+      "plaintext": " bold / italic / strikethrough ",
+      "value": [
+        {
+          "children": [
+            {
+              "text": ""
+            },
+            {
+              "children": [
+                {
+                  "text": "bold"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " / italic / "
+            },
+            {
+              "children": [
+                {
+                  "text": "strikethrough"
+                }
+              ],
+              "type": "del"
+            },
+            {
+              "text": ""
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "4be85eba-b165-4a87-8585-d8697616004d": {
+      "@type": "gridBlock",
+      "blocks": {
+        "e5a7baea-d795-4e31-9145-53accbbe7bc3": {
+          "@type": "teaser",
+          "description": "For grid blocks, the font of the headlines are variable, depending on the number of cells in the grid.",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "/content-types",
+              "@type": "Document",
+              "Description": "This section has a sample of content types available in this site.",
+              "Title": "Content Types",
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "image",
+              "image_scales": null,
+              "title": "Content Types"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Teaser Title (H2, 30/36px)"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "e5a7baea-d795-4e31-9145-53accbbe7bc3"
+        ]
+      },
+      "styles": {}
+    },
+    "55d58a5e-01a0-469e-b80b-3a5059593833": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "5991123b-bf50-4684-ba6e-6a4f582d4640": {
+      "@type": "slate",
+      "plaintext": "ordered list ordered list",
+      "value": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "ordered list"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "text": "ordered list"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ol"
+        }
+      ]
+    },
+    "875e2811-edb6-4842-8cc0-246fa1be6f58": {
+      "@type": "listing",
+      "block": "875e2811-edb6-4842-8cc0-246fa1be6f58",
+      "headline": "Heading (H2, 33/42px)",
+      "headlineTag": "h2",
+      "query": [],
+      "querystring": {
+        "limit": "5",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "File",
+              "Document"
+            ]
+          }
+        ],
+        "sort_on": "effective",
+        "sort_order": "descending",
+        "sort_order_boolean": "descending"
+      },
+      "styles": {},
+      "variation": "default"
+    },
+    "8fe8fc9b-221c-4c74-b66f-671d638222f3": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "Heading (H2, 33/42px)",
+      "styles": {},
+      "tag": "h2"
+    },
+    "96e308ec-74e6-4ddd-bf31-4a9e66e0584e": {
+      "@type": "introduction",
+      "plaintext": "Text Heading H2 (H2, 36/48px)\nParagraph text (p, 24/33px) -> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Text Heading H2 (H2, 36/48px)"
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Paragraph text (p, 24/33px) -> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "9f276d9d-f3c9-4529-9a69-9c93f2d6c5ea": {
+      "@type": "slate",
+      "plaintext": "Text Heading H3 (H3, 24/30px)",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Text Heading H3 (H3, 24/30px)"
+            }
+          ],
+          "type": "h3"
+        }
+      ]
+    },
+    "a6cad3f3-57e8-4bb7-8ac2-b12096e974d2": {
+      "@type": "title"
+    },
+    "af96daae-955d-42f8-a5e7-c7943fb2e321": {
+      "@type": "gridBlock",
+      "blocks": {
+        "a7ffd7f2-5dbf-4b5c-b24e-d10db0dff8df": {
+          "@type": "slate",
+          "plaintext": "Text Heading (H3, 24/30px)\nParagraph Text (p, 18/24px)",
+          "value": [
+            {
+              "children": [
+                {
+                  "text": "Text Heading (H3, 24/30px)"
+                }
+              ],
+              "type": "h2"
+            },
+            {
+              "children": [
+                {
+                  "text": "Paragraph Text (p, 18/24px)"
+                }
+              ],
+              "type": "p"
+            }
+          ]
+        },
+        "c1163fcc-e2a4-4e81-b6ab-af537c8b4d56": {
+          "@type": "slate",
+          "plaintext": "Text Heading (H3, 24/30px)\nParagraph Text (p, 18/24px)",
+          "value": [
+            {
+              "children": [
+                {
+                  "text": "Text Heading (H3, 24/30px)"
+                }
+              ],
+              "type": "h2"
+            },
+            {
+              "children": [
+                {
+                  "text": "Paragraph Text (p, 18/24px)"
+                }
+              ],
+              "type": "p"
+            }
+          ]
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "a7ffd7f2-5dbf-4b5c-b24e-d10db0dff8df",
+          "c1163fcc-e2a4-4e81-b6ab-af537c8b4d56"
+        ]
+      },
+      "styles": {}
+    },
+    "b8c4c6dc-47f1-493d-a2ba-d1ca958def4a": {
+      "@type": "slate",
+      "plaintext": "unordered list unordered list",
+      "value": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "unordered list"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "text": "unordered list"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        }
+      ]
+    },
+    "bde519a7-d6c0-4bf5-b84b-d832f7f4cdd6": {
+      "@type": "gridBlock",
+      "blocks": {
+        "38e1fde4-8886-4673-9316-5e1b96bcc222": {
+          "@type": "slate",
+          "plaintext": "Text Heading (H2, 30/36px)\nFor grid blocks, the font of the headlines are variable, depending on the number of cells in the grid.",
+          "value": [
+            {
+              "children": [
+                {
+                  "text": "Text Heading (H2, 30/36px)"
+                }
+              ],
+              "type": "h2"
+            },
+            {
+              "children": [
+                {
+                  "text": "For grid blocks, the font of the headlines are variable, depending on the number of cells in the grid."
+                }
+              ],
+              "type": "p"
+            }
+          ]
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "38e1fde4-8886-4673-9316-5e1b96bcc222"
+        ]
+      },
+      "styles": {}
+    },
+    "bdeb47df-9fb6-48ad-a633-2c7532c8694d": {
+      "@type": "slate",
+      "plaintext": "blockquote",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "blockquote"
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "caa483f6-bc0f-4a5a-94d2-925897969928": {
+      "@type": "slateTable",
+      "table": {
+        "basic": false,
+        "celled": true,
+        "compact": false,
+        "fixed": true,
+        "hideHeaders": false,
+        "inverted": false,
+        "rows": [
+          {
+            "cells": [
+              {
+                "key": "do0ad",
+                "type": "header",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Table Header (THEAD, 18/24)"
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              {
+                "key": "aav18",
+                "type": "header",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Table Header (THEAD, 18/24)"
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              }
+            ],
+            "key": "117r7"
+          },
+          {
+            "cells": [
+              {
+                "key": "arr02",
+                "type": "data",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Table cell (td p, 18/24px)"
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              {
+                "key": "81nda",
+                "type": "data",
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Table cell (td p, 18/24px)"
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              }
+            ],
+            "key": "5psue"
+          }
+        ],
+        "striped": false
+      }
+    },
+    "dc27e427-babe-4497-a6ae-fdefeaba2d13": {
+      "@type": "__button",
+      "inneralign": "left",
+      "styles": {},
+      "title": "Button text (button, 18/24px)"
+    },
+    "e770913c-fb7b-4cf1-94a8-7eb6e24ff66e": {
+      "@type": "slate",
+      "plaintext": "",
+      "value": [
+        {
+          "children": [
+            {
+              "text": ""
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "f4104455-1f80-4209-827d-416f2f07dec9": {
+      "@type": "image",
+      "align": "center",
+      "allow_image_download": false,
+      "credit": {},
+      "description": "Caption Description (14/18px). The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+      "image_field": "image",
+      "size": "l",
+      "title": "Caption Title (14/18px). Image",
+      "url": "http://host.docker.internal:8080/Plone/content-types/image"
+    },
+    "f5858bf7-5485-479c-b0b2-10eee0dc937c": {
+      "@type": "slate",
+      "plaintext": "Text Heading H2 (H2, 30/36px)",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Text Heading H2 (H2, 30/36px)"
+            }
+          ],
+          "type": "h2"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "a6cad3f3-57e8-4bb7-8ac2-b12096e974d2",
+      "8fe8fc9b-221c-4c74-b66f-671d638222f3",
+      "4be85eba-b165-4a87-8585-d8697616004d",
+      "4092b07d-31df-4aaa-9cfd-5bbdf814bb04",
+      "f5858bf7-5485-479c-b0b2-10eee0dc937c",
+      "11e4610d-dfac-493d-b9be-345949ca3276",
+      "b8c4c6dc-47f1-493d-a2ba-d1ca958def4a",
+      "5991123b-bf50-4684-ba6e-6a4f582d4640",
+      "bdeb47df-9fb6-48ad-a633-2c7532c8694d",
+      "4a035155-91fc-4371-82e8-b6d56866647f",
+      "0a8e2813-414f-42f7-9aee-7ae6df4c338e",
+      "9f276d9d-f3c9-4529-9a69-9c93f2d6c5ea",
+      "55d58a5e-01a0-469e-b80b-3a5059593833",
+      "96e308ec-74e6-4ddd-bf31-4a9e66e0584e",
+      "875e2811-edb6-4842-8cc0-246fa1be6f58",
+      "f4104455-1f80-4209-827d-416f2f07dec9",
+      "dc27e427-babe-4497-a6ae-fdefeaba2d13",
+      "bde519a7-d6c0-4bf5-b84b-d832f7f4cdd6",
+      "af96daae-955d-42f8-a5e7-c7943fb2e321",
+      "47cef702-7d66-4313-b3ec-585408735218",
+      "caa483f6-bc0f-4a5a-94d2-925897969928",
+      "e770913c-fb7b-4cf1-94a8-7eb6e24ff66e"
+    ]
+  },
+  "contributors": [],
+  "created": "2023-07-06T21:35:22+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "This page has a sample of the typography available in the theme.",
+  "effective": "2023-07-06T18:35:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "exportimport.versions": {},
+  "id": "typography",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2023-09-25T17:00:04+00:00",
+  "nav_title": "Typography",
+  "parent": {
+    "@id": "/",
+    "@type": "Plone Site",
+    "UID": "plone_site_root",
+    "description": "Site created with a new Plone Distribution",
+    "title": "Plone",
+    "type_title": "Plone Site"
+  },
+  "preview_caption": null,
+  "preview_image": null,
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "Typography - Page Title (H1, 48/56px)",
+  "type_title": "Page",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2023-07-06T21:35:22+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2023-07-06T21:35:22+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

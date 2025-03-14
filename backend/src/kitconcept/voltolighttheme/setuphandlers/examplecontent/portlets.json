@@ -1,0 +1,67 @@
+[
+  {
+    "@id": "http://nohost/Plone",
+    "UID": "plone_site_root",
+    "portlets": {
+      "plone.footerportlets": [
+        {
+          "assignment": {
+            "macro": "",
+            "template": "@@footer"
+          },
+          "type": "portlets.Classic",
+          "visible": true
+        },
+        {
+          "assignment": {
+            "category": "site_actions",
+            "default_icon": "action_icon.png",
+            "ptitle": "site_actions",
+            "show_icons": false,
+            "show_title": false
+          },
+          "type": "portlets.Actions",
+          "visible": true
+        },
+        {
+          "assignment": {
+            "macro": "",
+            "template": "colophon"
+          },
+          "type": "portlets.Classic",
+          "visible": true
+        }
+      ],
+      "plone.leftcolumn": [
+        {
+          "assignment": {
+            "bottomLevel": 0,
+            "currentFolderOnly": false,
+            "includeTop": false,
+            "name": "",
+            "no_icons": false,
+            "no_thumbs": false,
+            "root_uid": null,
+            "thumb_scale": null,
+            "topLevel": 1
+          },
+          "type": "portlets.Navigation",
+          "visible": true
+        }
+      ],
+      "plone.rightcolumn": [
+        {
+          "assignment": {
+            "count": 5,
+            "no_thumbs": false,
+            "search_base_uid": null,
+            "state": null,
+            "thumb_scale": null
+          },
+          "type": "portlets.Events",
+          "visible": true
+        }
+      ]
+    }
+  }
+]

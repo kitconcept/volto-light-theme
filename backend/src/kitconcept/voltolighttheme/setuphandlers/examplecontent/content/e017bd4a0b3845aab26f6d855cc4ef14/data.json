@@ -1,0 +1,316 @@
+{
+  "@id": "/vertical-spacing/listing-and-text",
+  "@type": "Document",
+  "UID": "e017bd4a0b3845aab26f6d855cc4ef14",
+  "allow_discussion": false,
+  "blocks": {
+    "02e2a3ef-7d51-43d4-a122-5171bd88617b": {
+      "@type": "slate",
+      "plaintext": "Cras ultricies ligula sed magna dictum porta. Cras ultricies ligula sed magna dictum porta. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec rutrum congue leo eget malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Cras ultricies ligula sed magna dictum porta. Cras ultricies ligula sed magna dictum porta. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec rutrum congue leo eget malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "095f04c7-99fd-4c0b-8628-3dc78e0d5971": {
+      "@type": "slate",
+      "plaintext": "Cras ultricies ligula sed magna dictum porta. Cras ultricies ligula sed magna dictum porta. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec rutrum congue leo eget malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Cras ultricies ligula sed magna dictum porta. Cras ultricies ligula sed magna dictum porta. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec rutrum congue leo eget malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "0f4ec27c-90e7-4c35-846f-3296d1049786": {
+      "@type": "slate",
+      "plaintext": "Cras ultricies ligula sed magna dictum porta. Cras ultricies ligula sed magna dictum porta. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec rutrum congue leo eget malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Cras ultricies ligula sed magna dictum porta. Cras ultricies ligula sed magna dictum porta. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec rutrum congue leo eget malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "34290989-9769-44b6-ad39-4505c20a7ee0": {
+      "@type": "listing",
+      "block": "a4359eb0-6416-477d-84a8-d06b3a9a3e89",
+      "headlineTag": "h2",
+      "query": [],
+      "querystring": {
+        "limit": "3",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Document"
+            ]
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {
+        "backgroundColor": "grey"
+      },
+      "variation": "summary"
+    },
+    "4a5e5f8e-3d7a-4860-8d0f-f7043df08e5d": {
+      "@type": "slate",
+      "plaintext": "Cras ultricies ligula sed magna dictum porta. Cras ultricies ligula sed magna dictum porta. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec rutrum congue leo eget malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.",
+      "styles": {
+        "backgroundColor": "grey"
+      },
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Cras ultricies ligula sed magna dictum porta. Cras ultricies ligula sed magna dictum porta. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec rutrum congue leo eget malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "601fc136-27f4-44b3-851b-ba5c0c76c2d7": {
+      "@type": "listing",
+      "block": "cf98535a-82bf-4553-8588-6fc679a7c1c0",
+      "headlineTag": "h2",
+      "query": [],
+      "querystring": {
+        "limit": "3",
+        "query": [
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": ""
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {
+        "backgroundColor": "grey"
+      },
+      "variation": "default"
+    },
+    "91762b77-6b5f-41f8-a230-b2d83de72e6e": {
+      "@type": "listing",
+      "block": "cc17562e-083b-4f11-af21-b0dd2d2b61e6",
+      "headline": "Listing: Nachrichten",
+      "headlineTag": "h2",
+      "query": [],
+      "querystring": {
+        "limit": "3",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "News Item"
+            ]
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {
+        "backgroundColor": "grey"
+      },
+      "variation": "newsListing"
+    },
+    "93acf721-12a7-4902-8942-260201401830": {
+      "@type": "listing",
+      "block": "cf98535a-82bf-4553-8588-6fc679a7c1c0",
+      "headline": "Listing: Standard",
+      "headlineTag": "h2",
+      "query": [],
+      "querystring": {
+        "limit": "3",
+        "query": [
+          {
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/block"
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {
+        "backgroundColor": "grey"
+      },
+      "variation": "default"
+    },
+    "9ab289c8-ddfb-4c3a-b622-12b153f11406": {
+      "@type": "listing",
+      "block": "cc17562e-083b-4f11-af21-b0dd2d2b61e6",
+      "headlineTag": "h2",
+      "query": [],
+      "querystring": {
+        "limit": "3",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "News Item"
+            ]
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {
+        "backgroundColor": "grey"
+      },
+      "variation": "newsListing"
+    },
+    "a8adf4ff-d857-4caa-82a2-1d91321a22d0": {
+      "@type": "listing",
+      "block": "a4359eb0-6416-477d-84a8-d06b3a9a3e89",
+      "headline": "Listing: Zusammenfassung",
+      "headlineTag": "h2",
+      "query": [],
+      "querystring": {
+        "limit": "3",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Document"
+            ]
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {
+        "backgroundColor": "grey"
+      },
+      "variation": "summary"
+    },
+    "dca03386-bb08-4981-9389-90fc4bcee334": {
+      "@type": "title"
+    },
+    "ed7ab4a5-cc35-4b6e-8081-eda78ae646df": {
+      "@type": "slate",
+      "plaintext": "Cras ultricies ligula sed magna dictum porta. Cras ultricies ligula sed magna dictum porta. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec rutrum congue leo eget malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.",
+      "styles": {
+        "backgroundColor": "grey"
+      },
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Cras ultricies ligula sed magna dictum porta. Cras ultricies ligula sed magna dictum porta. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec rutrum congue leo eget malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "f24d16e8-9ce6-4d91-aab5-ee0462281f2b": {
+      "@type": "slate",
+      "plaintext": "Cras ultricies ligula sed magna dictum porta. Cras ultricies ligula sed magna dictum porta. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec rutrum congue leo eget malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Cras ultricies ligula sed magna dictum porta. Cras ultricies ligula sed magna dictum porta. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec rutrum congue leo eget malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "dca03386-bb08-4981-9389-90fc4bcee334",
+      "f24d16e8-9ce6-4d91-aab5-ee0462281f2b",
+      "601fc136-27f4-44b3-851b-ba5c0c76c2d7",
+      "095f04c7-99fd-4c0b-8628-3dc78e0d5971",
+      "34290989-9769-44b6-ad39-4505c20a7ee0",
+      "ed7ab4a5-cc35-4b6e-8081-eda78ae646df",
+      "9ab289c8-ddfb-4c3a-b622-12b153f11406",
+      "02e2a3ef-7d51-43d4-a122-5171bd88617b",
+      "93acf721-12a7-4902-8942-260201401830",
+      "0f4ec27c-90e7-4c35-846f-3296d1049786",
+      "a8adf4ff-d857-4caa-82a2-1d91321a22d0",
+      "4a5e5f8e-3d7a-4860-8d0f-f7043df08e5d",
+      "91762b77-6b5f-41f8-a230-b2d83de72e6e"
+    ]
+  },
+  "contributors": [],
+  "created": "2023-07-06T21:35:23+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2023-07-06T18:35:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "exportimport.versions": {},
+  "id": "listing-and-text",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2023-09-30T06:59:18+00:00",
+  "nav_title": null,
+  "parent": {
+    "@id": "/vertical-spacing",
+    "@type": "Document",
+    "UID": "c40a2be214b645338a7ef2e711e2f5c6",
+    "description": "",
+    "image_field": null,
+    "image_scales": null,
+    "review_state": "published",
+    "title": "Vertical Spacing",
+    "type_title": "Page"
+  },
+  "preview_caption": null,
+  "preview_image": null,
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "Listing and Text",
+  "type_title": "Page",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2023-07-06T21:35:23+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2023-07-06T21:35:23+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

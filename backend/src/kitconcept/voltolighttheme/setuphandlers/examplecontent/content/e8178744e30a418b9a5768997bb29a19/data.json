@@ -1,0 +1,99 @@
+{
+  "@id": "/content-types",
+  "@type": "Document",
+  "UID": "e8178744e30a418b9a5768997bb29a19",
+  "allow_discussion": false,
+  "blocks": {
+    "7f1d39a2-a57c-4b2a-93bd-4dd30ee3f6cc": {
+      "@type": "title"
+    },
+    "e3bb641a-0252-4fff-a6a0-80ce155d4ee5": {
+      "@type": "listing",
+      "headlineTag": "h2",
+      "styles": {},
+      "variation": "default"
+    },
+    "fdb1dfd1-6073-4ad0-a147-c0709c39734d": {
+      "@type": "slate",
+      "plaintext": "",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": ""
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "7f1d39a2-a57c-4b2a-93bd-4dd30ee3f6cc",
+      "e3bb641a-0252-4fff-a6a0-80ce155d4ee5",
+      "fdb1dfd1-6073-4ad0-a147-c0709c39734d"
+    ]
+  },
+  "contributors": [],
+  "created": "2023-09-22T14:05:45+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "This section has a sample of content types available in this site.",
+  "effective": "2023-09-22T16:09:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "exportimport.versions": {},
+  "id": "content-types",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2024-06-06T10:37:26+00:00",
+  "nav_title": null,
+  "parent": {
+    "@id": "/",
+    "@type": "Plone Site",
+    "UID": "plone_site_root",
+    "description": "Site created with a new Plone Distribution",
+    "title": "Plone",
+    "type_title": "Plone Site"
+  },
+  "preview_caption": null,
+  "preview_image": null,
+  "review_state": "published",
+  "rights": "",
+  "subjects": [
+    "main folder"
+  ],
+  "title": "Content Types",
+  "type_title": "Page",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2023-09-22T14:05:45+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2023-09-22T14:09:06+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

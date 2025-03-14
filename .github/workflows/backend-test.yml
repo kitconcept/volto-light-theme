@@ -1,0 +1,48 @@
+name: Backend Tests
+
+on:
+  workflow_call:
+    inputs:
+      python-version:
+        required: true
+        type: string
+      plone-version:
+        required: true
+        type: string
+
+defaults:
+  run:
+    working-directory: backend
+
+jobs:
+
+  test:
+    runs-on: ubuntu-latest
+    env:
+      PYTHON_VERSION: ${{ inputs.python-version }}
+      PLONE_VERSION: ${{ inputs.plone-version }}
+    steps:
+
+        - name: Checkout
+          uses: actions/checkout@v4
+
+        - name: Install the latest version of uv
+          uses: astral-sh/setup-uv@v5
+          with:
+            python-version: ${{ inputs.python-version }}
+            enable-cache: false
+
+        - name: Restore uv cache
+          uses: actions/cache@v4
+          with:
+            path: ${{ env.UV_CACHE_DIR }}
+            key: uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.plone-version }}-${{ hashFiles('pyproject.toml') }}
+            restore-keys: |
+              uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.plone-version }}-${{ hashFiles('pyproject.toml') }}
+              uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.plone-version }}
+
+        - name: Install Plone and package
+          run: make install
+
+        - name: Run tests
+          run: make test

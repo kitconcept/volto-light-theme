@@ -1,0 +1,96 @@
+{
+  "@id": "/vertical-spacing",
+  "@type": "Document",
+  "UID": "c40a2be214b645338a7ef2e711e2f5c6",
+  "allow_discussion": false,
+  "blocks": {
+    "981e5308-f092-4bab-96aa-b162be613ebd": {
+      "@type": "slate",
+      "plaintext": "",
+      "value": [
+        {
+          "children": [
+            {
+              "text": ""
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "9cbef37f-c4c2-4fa8-b27e-2376c8261d5a": {
+      "@type": "title"
+    },
+    "f03d33a6-c4fe-4f6f-b0f5-ca2a483214ae": {
+      "@type": "listing",
+      "block": "f03d33a6-c4fe-4f6f-b0f5-ca2a483214ae",
+      "query": [],
+      "variation": "default"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "9cbef37f-c4c2-4fa8-b27e-2376c8261d5a",
+      "f03d33a6-c4fe-4f6f-b0f5-ca2a483214ae",
+      "981e5308-f092-4bab-96aa-b162be613ebd"
+    ]
+  },
+  "contributors": [],
+  "created": "2023-07-06T21:35:22+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2023-07-06T18:35:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "exportimport.versions": {},
+  "id": "vertical-spacing",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2024-06-06T10:37:26+00:00",
+  "nav_title": null,
+  "parent": {
+    "@id": "/",
+    "@type": "Plone Site",
+    "UID": "plone_site_root",
+    "description": "Site created with a new Plone Distribution",
+    "title": "Plone",
+    "type_title": "Plone Site"
+  },
+  "preview_caption": null,
+  "preview_image": null,
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "Vertical Spacing",
+  "type_title": "Page",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2023-07-06T21:35:22+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2023-07-06T21:35:22+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

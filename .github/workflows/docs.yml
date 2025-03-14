@@ -1,43 +1,43 @@
 name: Documentation
+
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'docs/**'
-  # Build pull requests
-  pull_request:
-    paths:
-      - 'docs/**'
-      - 'styles/**'
-      - '.github/workflows/docs.yml'
-      - 'requirements-docs.txt'
+  workflow_call:
+    inputs:
+      python-version:
+        required: true
+        type: string
+
+defaults:
+  run:
+    working-directory: docs
 
 jobs:
   docs:
     name: Documentation
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: ['3.12']
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v5
+      - name: Install the latest version of uv
+        uses: astral-sh/setup-uv@v5
         with:
-          python-version: ${{ matrix.python-version }}
-          cache: 'pip'
-          cache-dependency-path: 'requirements-docs.txt'
+          python-version: ${{ inputs.python-version }}
+          enable-cache: false
 
-      - name: Create Python virtual environment
-        run: pip install virtualenv
+      - name: Restore uv cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.UV_CACHE_DIR }}
+          key: uv-${{ runner.os }}-${{ inputs.python-version }}-${{ hashFiles('uv.lock') }}
+          restore-keys: |
+            uv-${{ runner.os }}-${{ inputs.python-version }}-${{ hashFiles('uv.lock') }}
+            uv-${{ runner.os }}-${{ inputs.python-version }}
 
-      - name: pip install requirements
-        run: pip install -r requirements-docs.txt
+      - name: Install Dependencies
+        run: make install
 
       - name: Check for broken links
-        run: make docs-linkcheckbroken
+        run: make linkcheckbroken
 
       - name: Build HTML documentation
-        run: make docs-html
+        run: make build

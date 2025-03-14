@@ -1,0 +1,62 @@
+{
+  "@id": "/content-types/image-light",
+  "@type": "Image",
+  "UID": "eec82559bf3242a6be4d43bc2096f399",
+  "allow_discussion": false,
+  "contributors": [],
+  "created": "2023-07-06T21:35:08+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "\nThe Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+  "effective": null,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "exportimport.versions": {},
+  "id": "image-light",
+  "image": {
+    "blob_path": "eec82559bf3242a6be4d43bc2096f399/image/image-light.jpg",
+    "content-type": "image/jpeg",
+    "filename": "image-light.jpg",
+    "height": 633,
+    "size": 475285,
+    "width": 1126
+  },
+  "is_folderish": false,
+  "language": "##DEFAULT##",
+  "layout": "image_view",
+  "lock": {},
+  "modified": "2023-09-22T14:27:57+00:00",
+  "parent": {
+    "@id": "/content-types",
+    "@type": "Document",
+    "UID": "e8178744e30a418b9a5768997bb29a19",
+    "description": "This section has a sample of content types available in this site.",
+    "image_field": null,
+    "image_scales": null,
+    "review_state": "published",
+    "title": "Content Types",
+    "type_title": "Page"
+  },
+  "review_state": null,
+  "rights": "",
+  "subjects": [],
+  "title": "Image - Light",
+  "type_title": "Image",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2023-07-06T21:35:08+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

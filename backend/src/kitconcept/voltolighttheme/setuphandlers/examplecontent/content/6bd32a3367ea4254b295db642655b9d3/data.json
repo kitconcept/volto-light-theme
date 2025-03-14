@@ -1,0 +1,199 @@
+{
+  "@id": "/block/listing-block",
+  "@type": "Document",
+  "UID": "6bd32a3367ea4254b295db642655b9d3",
+  "allow_discussion": false,
+  "blocks": {
+    "24280e07-e962-4414-8ee5-cdaf58ca5f35": {
+      "@type": "listing",
+      "block": "24280e07-e962-4414-8ee5-cdaf58ca5f35",
+      "headline": "Listing: Default",
+      "headlineTag": "h2",
+      "query": [],
+      "querystring": {
+        "b_size": "4",
+        "limit": "10",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Document"
+            ]
+          },
+          {
+            "i": "Subject",
+            "o": "plone.app.querystring.operation.selection.none",
+            "v": [
+              "main folder"
+            ]
+          }
+        ],
+        "sort_on": "getId",
+        "sort_order": "ascending"
+      },
+      "styles": {
+        "backgroundColor": "transparent"
+      },
+      "variation": "default"
+    },
+    "2a597dde-dd2b-4c66-816c-09e243a188f5": {
+      "@type": "listing",
+      "block": "24280e07-e962-4414-8ee5-cdaf58ca5f35",
+      "headline": "Listing: Grid",
+      "headlineTag": "h2",
+      "query": [],
+      "querystring": {
+        "limit": "5",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Document"
+            ]
+          },
+          {
+            "i": "Subject",
+            "o": "plone.app.querystring.operation.selection.none",
+            "v": [
+              "main folder"
+            ]
+          }
+        ],
+        "sort_on": "getId",
+        "sort_order": "ascending"
+      },
+      "styles": {
+        "backgroundColor": "transparent"
+      },
+      "variation": "grid"
+    },
+    "43068b6d-d8e9-4acc-912b-eabcdc650939": {
+      "@type": "title"
+    },
+    "53ececaa-4219-42a9-861d-862be364fd60": {
+      "@type": "listing",
+      "block": "24280e07-e962-4414-8ee5-cdaf58ca5f35",
+      "headline": "Listing: Summary",
+      "headlineTag": "h2",
+      "query": [],
+      "querystring": {
+        "limit": "5",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Document"
+            ]
+          },
+          {
+            "i": "Subject",
+            "o": "plone.app.querystring.operation.selection.none",
+            "v": [
+              "main folder"
+            ]
+          }
+        ],
+        "sort_on": "getId",
+        "sort_order": "ascending"
+      },
+      "styles": {
+        "backgroundColor": "grey"
+      },
+      "variation": "summary"
+    },
+    "c2eaacd0-4e96-4344-a0ac-26ed644fc503": {
+      "@type": "listing",
+      "block": "c2eaacd0-4e96-4344-a0ac-26ed644fc503",
+      "headline": "Listing: Bilder-Slider",
+      "headlineTag": "h2",
+      "query": [],
+      "querystring": {
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Image"
+            ]
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "variation": "imageGallery"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "43068b6d-d8e9-4acc-912b-eabcdc650939",
+      "24280e07-e962-4414-8ee5-cdaf58ca5f35",
+      "53ececaa-4219-42a9-861d-862be364fd60",
+      "2a597dde-dd2b-4c66-816c-09e243a188f5",
+      "c2eaacd0-4e96-4344-a0ac-26ed644fc503"
+    ]
+  },
+  "contributors": [],
+  "created": "2023-07-06T21:35:19+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "The listing block allows the display of various listings of content. Editors can configure a number of criteria for listing content (e.g. all news from 2022 with the keyword 'research').",
+  "effective": "2023-07-06T18:35:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "exportimport.versions": {},
+  "id": "listing-block",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2023-09-22T14:56:41+00:00",
+  "nav_title": null,
+  "parent": {
+    "@id": "/block",
+    "@type": "Document",
+    "UID": "425695d2b7cb47e69374d6f211f17e38",
+    "description": "",
+    "image_field": null,
+    "image_scales": null,
+    "review_state": "published",
+    "title": "Blocks",
+    "type_title": "Page"
+  },
+  "preview_caption": null,
+  "preview_image": null,
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "Listing",
+  "type_title": "Page",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2023-07-06T21:35:19+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2023-07-06T21:35:19+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

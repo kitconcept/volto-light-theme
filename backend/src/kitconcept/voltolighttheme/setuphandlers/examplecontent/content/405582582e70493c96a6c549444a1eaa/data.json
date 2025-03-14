@@ -1,0 +1,496 @@
+{
+  "@id": "/block/button-block",
+  "@type": "Document",
+  "UID": "405582582e70493c96a6c549444a1eaa",
+  "allow_discussion": false,
+  "blocks": {
+    "022174c5-3f65-44b7-99de-c8037ff61598": {
+      "@type": "separator",
+      "styles": {
+        "align": "full"
+      }
+    },
+    "0b8a95f2-1320-4f44-a21d-4cfada6bd222": {
+      "@type": "__button",
+      "href": [
+        {
+          "@id": "../../resolveuid/2647c16486eb4c42857e46c2988013e4",
+          "Description": "example",
+          "Title": "Example",
+          "hasPreviewImage": null,
+          "title": "Example"
+        }
+      ],
+      "inneralign": "center",
+      "styles": {
+        "backgroundColor": "grey",
+        "buttonAlign": "wide"
+      },
+      "title": "Button"
+    },
+    "0d3d0bd6-ee66-44a3-9da8-b5e84ba797e4": {
+      "@type": "__button",
+      "href": [
+        {
+          "@id": "../../resolveuid/2647c16486eb4c42857e46c2988013e4",
+          "Description": "example",
+          "Title": "Example",
+          "hasPreviewImage": null,
+          "title": "Example"
+        }
+      ],
+      "inneralign": "left",
+      "styles": {
+        "backgroundColor": "grey",
+        "buttonAlign": "wide"
+      },
+      "title": "Button"
+    },
+    "108ab524-ac76-4127-b0e6-7227f5ea1549": {
+      "@type": "separator",
+      "styles": {
+        "align": "full",
+        "backgroundColor": "grey"
+      }
+    },
+    "18db9de3-b9a3-4ada-a79a-39c7734c1291": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wis enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nib euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "1cfea1d8-13df-4bcd-9220-07252085dad7": {
+      "@type": "separator",
+      "styles": {
+        "align": "full"
+      }
+    },
+    "1e658fdd-1de8-4c00-80e7-5f91155a2a8a": {
+      "@type": "separator",
+      "styles": {
+        "align": "full"
+      }
+    },
+    "23608517-868c-47e7-b7ac-3dfb015acefe": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "2fa5b869-89cd-4d15-aee9-80b4e1bf11a2": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nib euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+      "styles": {
+        "backgroundColor": "grey"
+      },
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nib euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "31dcaf51-715a-4458-b11b-5d03a085b90d": {
+      "@type": "__button",
+      "href": [
+        {
+          "@id": "../../resolveuid/2647c16486eb4c42857e46c2988013e4",
+          "Description": "example",
+          "Title": "Example",
+          "hasPreviewImage": null,
+          "title": "Example"
+        }
+      ],
+      "inneralign": "center",
+      "styles": {},
+      "title": "Button"
+    },
+    "35741452-106a-428f-864d-678be9822d87": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nib euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+      "styles": {
+        "backgroundColor": "grey"
+      },
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nib euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "46d0b71e-b9ee-481f-a4bf-b98cd7d1a452": {
+      "@type": "separator",
+      "styles": {
+        "align": "full",
+        "backgroundColor": "grey"
+      }
+    },
+    "50e24e21-a7fc-478c-9c65-152b5f86352f": {
+      "@type": "separator",
+      "styles": {
+        "align": "full"
+      }
+    },
+    "561ce253-b5a1-4868-91ce-3f6024cf3a0d": {
+      "@type": "separator",
+      "styles": {
+        "align": "full",
+        "backgroundColor": "grey"
+      }
+    },
+    "5b8d1979-adec-479a-ad8d-466fd3012fe5": {
+      "@type": "separator",
+      "styles": {
+        "align": "full"
+      }
+    },
+    "634edc58-3600-4918-b6e5-0924dce67591": {
+      "@type": "separator",
+      "styles": {
+        "align": "full",
+        "backgroundColor": "grey"
+      }
+    },
+    "738b4894-1ed9-4556-8d5e-2d5f5a5e09ae": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nib euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+      "styles": {
+        "backgroundColor": "grey"
+      },
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nib euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "7760c976-1716-45d0-a22b-527bed9e8de9": {
+      "@type": "separator",
+      "styles": {
+        "align": "full",
+        "backgroundColor": "grey"
+      }
+    },
+    "9aa3c0c3-6565-4e9c-8e27-d07eeedf4314": {
+      "@type": "__button",
+      "href": [
+        {
+          "@id": "../../resolveuid/2647c16486eb4c42857e46c2988013e4",
+          "Description": "example",
+          "Title": "Example",
+          "hasPreviewImage": null,
+          "title": "Example"
+        }
+      ],
+      "inneralign": "right",
+      "styles": {
+        "align": "full",
+        "buttonAlign": "wide"
+      },
+      "title": "Button"
+    },
+    "a0e70eab-97f8-4221-9e1e-e4cfef9ab58d": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "Button Block",
+      "styles": {
+        "backgroundColor": "grey"
+      },
+      "tag": "h2"
+    },
+    "a8d191e1-5b3a-4ef6-b38f-6cb9af33ff85": {
+      "@type": "__button",
+      "href": [
+        {
+          "@id": "../../resolveuid/2647c16486eb4c42857e46c2988013e4",
+          "Description": "example",
+          "Title": "Example",
+          "hasPreviewImage": null,
+          "title": "Example"
+        }
+      ],
+      "inneralign": "center",
+      "styles": {
+        "buttonAlign": "wide"
+      },
+      "title": "Button"
+    },
+    "b03e7ce7-b7b5-4413-bd2e-d42bff4bba9a": {
+      "@type": "__button",
+      "href": [
+        {
+          "@id": "../../resolveuid/2647c16486eb4c42857e46c2988013e4",
+          "Description": "example",
+          "Title": "Example",
+          "hasPreviewImage": null,
+          "title": "Example"
+        }
+      ],
+      "inneralign": "left",
+      "styles": {
+        "buttonAlign": "wide"
+      },
+      "title": "Button"
+    },
+    "beef7c11-acca-4e40-8477-e6f2e42d0f06": {
+      "@type": "__button",
+      "href": [
+        {
+          "@id": "../../resolveuid/2647c16486eb4c42857e46c2988013e4",
+          "Description": "example",
+          "Title": "Example",
+          "hasPreviewImage": null,
+          "title": "Example"
+        }
+      ],
+      "inneralign": "left",
+      "styles": {},
+      "title": "Button"
+    },
+    "dd9dc0eb-821a-4581-97af-7e59afc249e1": {
+      "@type": "__button",
+      "href": [
+        {
+          "@id": "../../resolveuid/2647c16486eb4c42857e46c2988013e4",
+          "Description": "example",
+          "Title": "Example",
+          "hasPreviewImage": null,
+          "title": "Example"
+        }
+      ],
+      "inneralign": "right",
+      "styles": {
+        "backgroundColor": "grey",
+        "buttonAlign": "wide"
+      },
+      "title": "Button"
+    },
+    "e150d94a-7a54-451b-8019-31349d98d957": {
+      "@type": "__button",
+      "href": [
+        {
+          "@id": "../../resolveuid/2647c16486eb4c42857e46c2988013e4",
+          "Description": "example",
+          "Title": "Example",
+          "hasPreviewImage": null,
+          "title": "Example"
+        }
+      ],
+      "inneralign": "right",
+      "styles": {},
+      "title": "Button"
+    },
+    "e20c3c62-3c1d-4e45-a5c4-649b81b47a46": {
+      "@type": "__button",
+      "href": [
+        {
+          "@id": "../../resolveuid/2647c16486eb4c42857e46c2988013e4",
+          "Description": "example",
+          "Title": "Example",
+          "hasPreviewImage": null,
+          "title": "Example"
+        }
+      ],
+      "inneralign": "center",
+      "styles": {
+        "backgroundColor": "grey",
+        "buttonAlign": "center"
+      },
+      "title": "Button"
+    },
+    "e5e36303-3541-41d0-8eff-053f90a6d75f": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "eab7123b-6a41-4537-8979-09e4fbbf317b": {
+      "@type": "separator",
+      "styles": {
+        "align": "full"
+      }
+    },
+    "f3ee132b-6215-4e42-b26b-713f668eea61": {
+      "@type": "title"
+    },
+    "f62e21a3-b906-4c0c-bef8-f42cd9631967": {
+      "@type": "__button",
+      "href": [
+        {
+          "@id": "../../resolveuid/2647c16486eb4c42857e46c2988013e4",
+          "Description": "example",
+          "Title": "Example",
+          "hasPreviewImage": null,
+          "title": "Example"
+        }
+      ],
+      "inneralign": "left",
+      "styles": {
+        "backgroundColor": "grey",
+        "buttonAlign": "center"
+      },
+      "title": "Button"
+    },
+    "fa9321f8-ab68-4ca8-92de-23c5f0662c93": {
+      "@type": "separator",
+      "styles": {
+        "align": "full",
+        "backgroundColor": "grey"
+      }
+    },
+    "fc0ddcf5-4acc-4f9b-8c5c-992db47399ce": {
+      "@type": "__button",
+      "href": [
+        {
+          "@id": "../../resolveuid/2647c16486eb4c42857e46c2988013e4",
+          "Description": "example",
+          "Title": "Example",
+          "hasPreviewImage": null,
+          "title": "Example"
+        }
+      ],
+      "inneralign": "right",
+      "styles": {
+        "backgroundColor": "grey",
+        "buttonAlign": "center"
+      },
+      "title": "Button"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "f3ee132b-6215-4e42-b26b-713f668eea61",
+      "eab7123b-6a41-4537-8979-09e4fbbf317b",
+      "b03e7ce7-b7b5-4413-bd2e-d42bff4bba9a",
+      "1cfea1d8-13df-4bcd-9220-07252085dad7",
+      "a8d191e1-5b3a-4ef6-b38f-6cb9af33ff85",
+      "1e658fdd-1de8-4c00-80e7-5f91155a2a8a",
+      "9aa3c0c3-6565-4e9c-8e27-d07eeedf4314",
+      "5b8d1979-adec-479a-ad8d-466fd3012fe5",
+      "18db9de3-b9a3-4ada-a79a-39c7734c1291",
+      "beef7c11-acca-4e40-8477-e6f2e42d0f06",
+      "022174c5-3f65-44b7-99de-c8037ff61598",
+      "23608517-868c-47e7-b7ac-3dfb015acefe",
+      "31dcaf51-715a-4458-b11b-5d03a085b90d",
+      "50e24e21-a7fc-478c-9c65-152b5f86352f",
+      "e5e36303-3541-41d0-8eff-053f90a6d75f",
+      "e150d94a-7a54-451b-8019-31349d98d957",
+      "a0e70eab-97f8-4221-9e1e-e4cfef9ab58d",
+      "634edc58-3600-4918-b6e5-0924dce67591",
+      "0d3d0bd6-ee66-44a3-9da8-b5e84ba797e4",
+      "561ce253-b5a1-4868-91ce-3f6024cf3a0d",
+      "0b8a95f2-1320-4f44-a21d-4cfada6bd222",
+      "46d0b71e-b9ee-481f-a4bf-b98cd7d1a452",
+      "dd9dc0eb-821a-4581-97af-7e59afc249e1",
+      "fa9321f8-ab68-4ca8-92de-23c5f0662c93",
+      "35741452-106a-428f-864d-678be9822d87",
+      "f62e21a3-b906-4c0c-bef8-f42cd9631967",
+      "108ab524-ac76-4127-b0e6-7227f5ea1549",
+      "738b4894-1ed9-4556-8d5e-2d5f5a5e09ae",
+      "e20c3c62-3c1d-4e45-a5c4-649b81b47a46",
+      "7760c976-1716-45d0-a22b-527bed9e8de9",
+      "2fa5b869-89cd-4d15-aee9-80b4e1bf11a2",
+      "fc0ddcf5-4acc-4f9b-8c5c-992db47399ce"
+    ]
+  },
+  "contributors": [],
+  "created": "2023-07-06T21:35:07+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "\nThe button block shows a button for which a link (internal or external) can be stored. The button can be displayed left, right or center and have a background color.",
+  "effective": "2023-07-06T18:35:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "exportimport.versions": {},
+  "id": "button-block",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2023-09-22T14:30:34+00:00",
+  "nav_title": null,
+  "parent": {
+    "@id": "/block",
+    "@type": "Document",
+    "UID": "425695d2b7cb47e69374d6f211f17e38",
+    "description": "",
+    "image_field": null,
+    "image_scales": null,
+    "review_state": "published",
+    "title": "Blocks",
+    "type_title": "Page"
+  },
+  "preview_caption": null,
+  "preview_image": null,
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "Button",
+  "type_title": "Page",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2023-07-06T21:35:07+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2023-07-06T21:35:07+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}
