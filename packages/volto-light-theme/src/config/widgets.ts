@@ -6,6 +6,7 @@ import Size from '../components/Widgets/Size';
 import ColorPicker from '../components/Widgets/ColorPicker';
 import ThemeColorSwatch from '../components/Widgets/ThemeColorSwatch';
 import BlocksObject from '../components/Widgets/BlocksObject';
+import ObjectList from '../components/Widgets/ObjectList';
 import { headerActionsSchema } from '../components/Widgets/schema/headerActionsSchema';
 import { footerLogosSchema } from '../components/Widgets/schema/footerLogosSchema';
 import { footerLinksSchema } from '../components/Widgets/schema/footerLinksSchema';
@@ -28,9 +29,12 @@ export default function install(config: ConfigType) {
   // ToDo: Rename it in Volto 19
   config.widgets.widget.color_picker = ColorSwatch;
 
+  // ObjectList widget override - use our own non-semanticUI widget
+  // it uses also dnd-kit for drag and drop
+  config.widgets.widget.object_list = ObjectList;
+
   config.widgets.widget.blockWidth = BlockWidth;
   config.widgets.widget.blockAlignment = BlockAlignment;
-  config.widgets.widget.blocksObject = BlocksObject;
   config.widgets.widget.colorPicker = ColorPicker;
   config.widgets.widget.size = Size;
   config.widgets.widget.themeColorSwatch = ThemeColorSwatch;

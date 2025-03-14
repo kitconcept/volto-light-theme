@@ -6,12 +6,12 @@ import { Text } from 'react-aria-components';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import FormFieldWrapper from '@plone/volto/components/manage/Widgets/FormFieldWrapper';
 import { applySchemaDefaults } from '@plone/volto/helpers/Blocks/Blocks';
+import { reorderArray } from '@plone/volto/helpers/Utils/Utils';
 import AnimateHeight from 'react-animate-height';
 import ObjectWidget from '@plone/volto/components/manage/Widgets/ObjectWidget';
 import {
   getBlocksFieldname,
   getBlocksLayoutFieldname,
-  moveBlock,
 } from '@plone/volto/helpers/Blocks/Blocks';
 import DndSortableList from '../../helpers/DndSortableList';
 import cx from 'classnames';
@@ -21,14 +21,10 @@ import deleteSVG from '@plone/volto/icons/delete.svg';
 import addSVG from '@plone/volto/icons/add.svg';
 import dragSVG from '@plone/volto/icons/drag.svg';
 import { v4 as uuid } from 'uuid';
-import type {
-  BlockConfigBase,
-  BlocksData,
-  Content,
-  JSONSchema,
-} from '@plone/types';
+import type { BlockConfigBase, Content, JSONSchema } from '@plone/types';
 import type { IntlShape } from 'react-intl';
 import config from '@plone/volto/registry';
+import isEmpty from 'lodash/isEmpty';
 
 const messages = defineMessages({
   labelRemoveItem: {
@@ -53,11 +49,11 @@ const messages = defineMessages({
   },
 });
 
-export type BlocksObjectWidgetSchema =
+export type ObjectListWidgetSchema =
   | (JSONSchema & { addMessage: string })
-  | ((props: BlocksObjectWidgetProps) => JSONSchema & { addMessage: string });
+  | ((props: ObjectListWidgetProps) => JSONSchema & { addMessage: string });
 
-export type BlocksObjectWidgetProps = {
+export type ObjectListWidgetProps = {
   /**
    * The ID of the widget.
    */
@@ -77,7 +73,7 @@ export type BlocksObjectWidgetProps = {
   /**
    * The current value of the widget, which is BlocksData.
    */
-  value?: BlocksData;
+  value?: Array<Record<string, any>>;
   /**
    * The default value for the widget. Can be a string or an object.
    */
@@ -110,9 +106,9 @@ export type BlocksObjectWidgetProps = {
    */
   setActiveObject: (index: number) => void;
   /**
-   * The schema for the BlocksObjectWidget.
+   * The schema for the ObjectListWidget.
    */
-  schema: BlocksObjectWidgetSchema;
+  schema: ObjectListWidgetSchema;
   /**
    * The name of the schema.
    */
@@ -147,17 +143,18 @@ function deleteBlock(formData, blockId: string) {
   return newFormData;
 }
 
-const BlocksObjectWidget = (props: BlocksObjectWidgetProps) => {
+const ObjectListWidget = (props: ObjectListWidgetProps) => {
   const { block, fieldSet, id, value, onChange, schemaEnhancer, schemaName } =
     props;
 
-  const schema = config.getUtility({
-    type: 'schema',
-    name: schemaName,
-  }).method;
+  const schema =
+    config.getUtility({
+      type: 'schema',
+      name: schemaName,
+    }).method || props.schema;
 
   const [localActiveObject, setLocalActiveObject] = useState(
-    props.activeObject ?? value?.blocks_layout?.items?.length - 1,
+    props.activeObject ?? value.length - 1,
   );
 
   let activeObject: number, setActiveObject: (index: number) => void;
@@ -186,16 +183,16 @@ const BlocksObjectWidget = (props: BlocksObjectWidgetProps) => {
     const { active, over } = event;
 
     if (active.id !== over.id) {
-      const source = value.blocks_layout.items.indexOf(active.id);
-      const destination = value.blocks_layout.items.indexOf(over.id);
+      const source = value.findIndex((item) => item['@id'] === active.id);
+      const destination = value.findIndex((item) => item['@id'] === over.id);
 
-      const newFormData = moveBlock(value, source, destination);
-      onChange(id, newFormData);
+      const newValue = reorderArray(value, source, destination);
+      onChange(id, newValue);
     }
   }
 
   return (
-    <div className="blocks-object-widget">
+    <div className="object-list-widget">
       <FormFieldWrapper {...props} noForInFieldLabel className="objectlist">
         <div className="add-item-button-wrapper">
           <Button
@@ -203,9 +200,10 @@ const BlocksObjectWidget = (props: BlocksObjectWidgetProps) => {
               objectSchema.addMessage ||
               `${intl.formatMessage(messages.add)} ${objectSchema.title}`
             }
-            onPress={(e) => {
-              const newId = uuid();
-              const data = {};
+            onPress={() => {
+              const data = {
+                '@id': uuid(),
+              };
 
               const objSchema = schemaEnhancer
                 ? // @ts-ignore - TODO Make sure this continues to have sense
@@ -217,19 +215,8 @@ const BlocksObjectWidget = (props: BlocksObjectWidgetProps) => {
                 intl,
               });
 
-              onChange(id, {
-                ...(value || {}),
-                blocks: {
-                  ...value?.blocks,
-                  [newId]: dataWithDefaults,
-                },
-                blocks_layout: {
-                  ...value?.blocks_layout,
-                  items: [...(value?.blocks_layout?.items || []), newId],
-                },
-              });
-
-              setActiveObject(value?.blocks_layout?.items?.length || 0);
+              onChange(id, [...value, dataWithDefaults]);
+              setActiveObject(value.length);
             }}
           >
             <Icon name={addSVG} size="18px" />
@@ -240,7 +227,7 @@ const BlocksObjectWidget = (props: BlocksObjectWidgetProps) => {
             </Text>
           </Button>
         </div>
-        {value?.blocks_layout?.items?.length === 0 && (
+        {value?.length === 0 && (
           <input
             aria-labelledby={`fieldset-${
               fieldSet || 'default'
@@ -250,104 +237,97 @@ const BlocksObjectWidget = (props: BlocksObjectWidgetProps) => {
           />
         )}
       </FormFieldWrapper>
-      <DndSortableList
-        // TODO: adapt it to the new DndSortableList shape
-        sortedItems={value?.blocks_layout?.items || []}
-        items={value?.blocks}
-        handleDragEnd={handleDragEnd}
-        activeObject={activeObject}
-        setActiveObject={setActiveObject}
-      >
-        {({ item, uid, index, attributes, listeners }) => {
-          return (
-            <div
-              className={cx('bow-item-wrapper', {
-                active: activeObject === index,
-              })}
-              key={uid}
-            >
+      {!isEmpty(value) && (
+        <DndSortableList
+          items={value || []}
+          handleDragEnd={handleDragEnd}
+          activeObject={activeObject}
+          setActiveObject={setActiveObject}
+        >
+          {({ item, uid, index, attributes, listeners }) => {
+            return (
               <div
-                className="bow-item-title-bar"
-                onClick={() => handleChangeActiveObject(index)}
-                role="presentation"
-                aria-label={`${
-                  activeObject === index
-                    ? intl.formatMessage(messages.labelCollapseItem)
-                    : intl.formatMessage(messages.labelShowItem)
-                } #${index ? index + 1 : ''}`}
-              >
-                <div className="drag handle" {...listeners} {...attributes}>
-                  <Icon name={dragSVG} size="18px" />
-                </div>
-
-                <div className="bow-item-title">
-                  {item.title ||
-                    `${objectSchema.title} #${index !== undefined ? index + 1 : ''}`}
-                </div>
-                <div className="bow-tools">
-                  <button
-                    aria-label={`${intl.formatMessage(
-                      messages.labelRemoveItem,
-                    )} #${index + 1}`}
-                    onClick={() => {
-                      onChange(id, deleteBlock(value, uid));
-                    }}
-                  >
-                    <Icon name={deleteSVG} size="20px" color="#e40166" />
-                  </button>
-                  {activeObject === index ? (
-                    <Icon name={upSVG} size="20px" />
-                  ) : (
-                    <Icon name={downSVG} size="20px" />
-                  )}
-                </div>
-              </div>
-              <AnimateHeight
-                animateOpacity
-                duration={300}
-                height={activeObject === index ? 'auto' : 0}
+                className={cx('olw-item-wrapper', {
+                  active: activeObject === index,
+                })}
+                key={uid}
               >
                 <div
-                  className={cx('bow-item-content', {
-                    active: activeObject === index,
-                  })}
+                  className="olw-item-title-bar"
+                  onClick={() => handleChangeActiveObject(index)}
+                  role="presentation"
+                  aria-label={`${
+                    activeObject === index
+                      ? intl.formatMessage(messages.labelCollapseItem)
+                      : intl.formatMessage(messages.labelShowItem)
+                  } #${index ? index + 1 : ''}`}
                 >
-                  <ObjectWidget
-                    id={`${uid}`}
-                    key={`bow-${uid}`}
-                    block={block}
-                    schema={
-                      schemaEnhancer
-                        ? // @ts-ignore - TODO Make sure this continues to have sense
-                          schemaEnhancer({
-                            schema: objectSchema,
-                            formData: item,
-                            intl,
-                          })
-                        : objectSchema
-                    }
-                    value={item}
-                    onChange={(fieldId: string, fieldValue: any) => {
-                      const newvalue = {
-                        ...value.blocks[fieldId],
-                        ...fieldValue,
-                      };
-                      onChange(id, {
-                        ...value,
-                        blocks: {
-                          ...value.blocks,
-                          [fieldId]: newvalue,
-                        },
-                      });
-                    }}
-                  />
+                  <div className="drag handle" {...listeners} {...attributes}>
+                    <Icon name={dragSVG} size="18px" />
+                  </div>
+
+                  <div className="olw-item-title">
+                    {item.title ||
+                      `${objectSchema.title} #${index !== undefined ? index + 1 : ''}`}
+                  </div>
+                  <div className="olw-tools">
+                    <button
+                      aria-label={`${intl.formatMessage(
+                        messages.labelRemoveItem,
+                      )} #${index + 1}`}
+                      onClick={() => {
+                        onChange(id, deleteBlock(value, uid));
+                      }}
+                    >
+                      <Icon name={deleteSVG} size="20px" color="#e40166" />
+                    </button>
+                    {activeObject === index ? (
+                      <Icon name={upSVG} size="20px" />
+                    ) : (
+                      <Icon name={downSVG} size="20px" />
+                    )}
+                  </div>
                 </div>
-              </AnimateHeight>
-            </div>
-          );
-        }}
-      </DndSortableList>
+                <AnimateHeight
+                  animateOpacity
+                  duration={300}
+                  height={activeObject === index ? 'auto' : 0}
+                >
+                  <div
+                    className={cx('olw-item-content', {
+                      active: activeObject === index,
+                    })}
+                  >
+                    <ObjectWidget
+                      id={`${uid}`}
+                      key={`olw-${uid}`}
+                      block={block}
+                      schema={
+                        schemaEnhancer
+                          ? // @ts-ignore - TODO Make sure this continues to have sense
+                            schemaEnhancer({
+                              schema: objectSchema,
+                              formData: item,
+                              intl,
+                            })
+                          : objectSchema
+                      }
+                      value={item}
+                      onChange={(fieldId: string, fieldValue: any) => {
+                        const newvalue = value.map((v, i) =>
+                          i !== index ? v : fieldValue,
+                        );
+                        onChange(id, newvalue);
+                      }}
+                    />
+                  </div>
+                </AnimateHeight>
+              </div>
+            );
+          }}
+        </DndSortableList>
+      )}
     </div>
   );
 };
-export default BlocksObjectWidget;
+export default ObjectListWidget;
