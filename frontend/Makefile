@@ -10,18 +10,6 @@ MAKEFLAGS+=--no-builtin-rules
 
 CURRENT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 
-# Sphinx variables
-# You can set these variables from the command line.
-SPHINXOPTS      ?=
-VALEOPTS        ?=
-# Internal variables.
-SPHINXBUILD     = "$(realpath bin/sphinx-build)"
-SPHINXAUTOBUILD = "$(realpath bin/sphinx-autobuild)"
-DOCS_DIR        = ./docs/
-BUILDDIR        = ./_build/
-ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(SPHINXOPTS) .
-VALEFILES       := $(shell find $(DOCS_DIR) -type f -name "*.md" -print)
-
 # Recipe snippets for reuse
 
 # We like colors
@@ -34,9 +22,11 @@ YELLOW=`tput setaf 3`
 NODEBIN = ./node_modules/.bin
 
 PLONE_VERSION=6
-DOCKER_IMAGE=ghcr.io/kitconcept/voltolighttheme:latest
+IMAGE_NAME=ghcr.io/kitconcept/voltolighttheme-frontend
+IMAGE_TAG=latest
 DOCKER_IMAGE_ACCEPTANCE=plone/server-acceptance:${PLONE_VERSION}
 
+VOLTO_VERSION = $(shell cat ./mrs.developer.json | python -c "import sys, json; print(json.load(sys.stdin)['core']['tag'])")
 ADDON_NAME='@kitconcept/volto-light-theme'
 
 
@@ -44,61 +34,11 @@ ADDON_NAME='@kitconcept/volto-light-theme'
 help: ## Show this help
 	@echo -e "$$(grep -hE '^\S+:.*##' $(MAKEFILE_LIST) | sed -e 's/:.*##\s*/:/' -e 's/^\(.\+\):\(.*\)/\\x1b[36m\1\\x1b[m:\2/' | column -c2 -t -s :)"
 
-## Docs
-
-bin/python: ## Create a Python virtual environment with the latest pip, and install documentation requirements
-	python3 -m venv . || virtualenv --clear --python=python3 .
-	bin/python -m pip install --upgrade pip
-	@echo "Python environment created."
-	bin/pip install -r requirements-docs.txt
-	@echo "Requirements installed."
-
-.PHONY: docs-clean
-docs-clean:  ## Clean current and legacy docs build directories, and Python virtual environment
-	rm -rf bin include lib
-	rm -rf docs/_build
-	cd $(DOCS_DIR) && rm -rf $(BUILDDIR)/
-
-.PHONY: docs-html
-docs-html: bin/python  ## Build html
-	cd $(DOCS_DIR) && $(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
-	@echo
-	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
-
-.PHONY: docs-livehtml
-docs-livehtml: bin/python  ## Rebuild Sphinx documentation on changes, with live-reload in the browser
-	cd "$(DOCS_DIR)" && ${SPHINXAUTOBUILD} \
-		--ignore "*.swp" \
-		-b html . "$(BUILDDIR)/html" $(SPHINXOPTS)
-
-.PHONY: docs-linkcheck
-docs-linkcheck: bin/python  ## Run linkcheck
-	cd $(DOCS_DIR) && $(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) $(BUILDDIR)/linkcheck
-	@echo
-	@echo "Link check complete; look for any errors in the above output " \
-		"or in $(BUILDDIR)/linkcheck/ ."
-
-.PHONY: docs-linkcheckbroken
-docs-linkcheckbroken: bin/python  ## Run linkcheck and show only broken links
-	cd $(DOCS_DIR) && $(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) $(BUILDDIR)/linkcheck | GREP_COLORS='0;31' grep -wi "broken\|redirect" --color=always | GREP_COLORS='0;31' grep -vi "https://github.com/plone/volto/issues/" --color=always && if test $$? -eq 0; then exit 1; fi || test $$? -ne 0
-
-.PHONY: docs-vale
-docs-vale: bin/python  ## Install (once) and run Vale style, grammar, and spell checks
-	bin/vale sync
-	bin/vale --no-wrap $(VALEOPTS) $(VALEFILES)
-	@echo
-	@echo "Vale is finished; look for any errors in the above output."
-
-.PHONY: docs-rtd-pr-preview
-docs-rtd-pr-preview: ## Build previews of pull requests that have documentation changes on Read the Docs via CI
-	pip install -r requirements-docs.txt
-	cd $(DOCS_DIR) && sphinx-build -b html $(ALLSPHINXOPTS) ${READTHEDOCS_OUTPUT}/html/
-
-.PHONY: docs-rtd-registry
-docs-rtd-registry: ## Build Plone Registry docs on RTD
-	pip install -r ../../requirements-docs.txt && cd $(DOCS_DIR) && sphinx-build -b html $(ALLSPHINXOPTS) ${READTHEDOCS_OUTPUT}/html/
-
 # Dev Helpers
+.PHONY: clean
+clean: ## Clean environment
+	@echo "$(RED)==> Cleaning Volto core and node_modules$(RESET)"
+	rm -rf core node_modules public
 
 .PHONY: install
 install: ## Installs the add-on in a development environment
@@ -159,10 +99,15 @@ test: ## Run unit tests
 ci-test: ## Run unit tests in CI
 	CI=1 RAZZLE_JEST_CONFIG=$(CURRENT_DIR)/jest-addon.config.js pnpm --filter @plone/volto test -- --passWithNoTests
 
+.PHONY: build-image
+build-image:  ## Build Docker Image
+	@DOCKER_BUILDKIT=1 docker build . -t $(IMAGE_NAME):$(IMAGE_TAG) -f Dockerfile --build-arg VOLTO_VERSION=$(VOLTO_VERSION)
+
+
 .PHONY: backend-docker-start
 backend-docker-start:	## Starts a Docker-based backend for development
 	@echo "$(GREEN)==> Start Docker-based Plone Backend$(RESET)"
-	docker run -it --rm --name=backend -p 8080:8080 -e SITE=Plone $(DOCKER_IMAGE)
+	docker run -it --rm --name=backend -p 8080:8080 -e SITE=Plone $(IMAGE_NAME)-backend
 
 ## Storybook
 .PHONY: storybook-start
@@ -208,7 +153,7 @@ acceptance-a11y-frontend-prod-start: ## Start a11y acceptance frontend in prod m
 
 .PHONY: ci-acceptance-a11y-backend-start
 ci-acceptance-a11y-backend-start: ## Start acceptance a11y server in CI mode (no terminal attached)
-	docker run -i --rm --name=backend -p 8080:8080 -e SITE=Plone -e ADDONS='$(KGS)' $(DOCKER_IMAGE)
+	docker run -i --rm --name=backend -p 8080:8080 -e SITE=Plone -e ADDONS='$(KGS)' $(IMAGE_NAME)
 
 .PHONY: acceptance-a11y-test
 acceptance-a11y-test: ## Start a11y Cypress in interactive mode
