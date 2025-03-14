@@ -154,7 +154,7 @@ const ObjectListWidget = (props: ObjectListWidgetProps) => {
     }).method || props.schema;
 
   const [localActiveObject, setLocalActiveObject] = useState(
-    props.activeObject ?? value.length - 1,
+    props.activeObject ?? value?.length - 1,
   );
 
   let activeObject: number, setActiveObject: (index: number) => void;

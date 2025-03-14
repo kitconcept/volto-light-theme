@@ -1,6 +1,10 @@
 @use 'sass:map';
 .section-sitemap {
   #page-sitemap {
+    .q.container {
+      @include default-container-width();
+    }
+
     h1 {
       @include page-title();
       @include vertical-space-h1();
