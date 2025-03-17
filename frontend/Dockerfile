@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 ARG VOLTO_VERSION
-FROM plone/frontend-builder:${VOLTO_VERSION} as builder
+FROM plone/frontend-builder:${VOLTO_VERSION} AS builder
 
 COPY --chown=node packages/volto-light-theme /app/packages/volto-light-theme
 COPY --chown=node volto.config.js /app/
