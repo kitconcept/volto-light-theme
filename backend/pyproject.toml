@@ -35,7 +35,7 @@ classifiers = [
 dependencies = [
     "Products.CMFPlone>=6.0",
     "plone.api",
-    "plone.restapi",
+    "plone.restapi>=9.13.2",
     "plone.volto",
 ]
 

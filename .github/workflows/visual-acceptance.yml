@@ -114,26 +114,29 @@ jobs:
 
           # working-directory: backend
 
-      - run: make ci-acceptance-test-visual SPEC='cypress/tests/visual/${{ inputs.short-name }}.cy.js'
+      - name: Run tests
+        run: make ci-acceptance-test-visual SPEC='cypress/tests/visual/${{ inputs.short-name }}.cy.js'
 
       # Upload Cypress screenshots
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: cypress-screenshots-visual-acceptance-${{ inputs.short-name }}
-          path: cypress/screenshots
+          path: frontend/cypress/screenshots
+          retention-days: 2
 
       # Upload Cypress videos
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: cypress-videos-visual-acceptance-${{ inputs.short-name }}
-          path: cypress/videos
+          path: frontend/cypress/videos
+          retention-days: 2
 
       # Upload Cypress visual testing screenshots
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: cypress-image-snapshots-visual-acceptance-${{ inputs.short-name }}
-          path: cypress/__image_snapshots__
+          path: frontend/cypress/__image_snapshots__
           retention-days: 2

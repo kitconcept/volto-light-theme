@@ -14,6 +14,9 @@ defaults:
   run:
     working-directory: backend
 
+env:
+  PLONE_VERSION: ${{ inputs.plone-version }}
+
 jobs:
 
   coverage:

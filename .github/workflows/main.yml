@@ -15,7 +15,7 @@ env:
   IMAGE_NAME_PREFIX: ghcr.io/kitconcept/voltolighttheme
   NODE_VERSION: "22.x"
   PYTHON_VERSION: "3.12"
-  PLONE_VERSION: "6.1"
+  PLONE_VERSION: "6.1.0"
 
 jobs:
   config:
@@ -158,13 +158,58 @@ jobs:
       contents: read
       packages: write
 
-  visual-acceptance:
-    uses: ./.github/workflows/frontend-visual-acceptance.yml
+  acceptance:
+    uses: ./.github/workflows/frontend-acceptance.yml
     needs:
       - config
       - backend-build
       - frontend-build
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: "Main"
+            short-name: main
+          - name: "a11y"
+            short-name: a11y
+            a11y: true
+    name: ${{ matrix.name }}
     with:
+      short-name: ${{ matrix.short-name }}
+      node-version: ${{ needs.config.outputs.NODE_VERSION }}
+      image-name-prefix: ${{ needs.config.outputs.IMAGE_NAME_PREFIX }}
+      image-tag: ${{ needs.config.outputs.BASE_TAG }}
+      a11y: ${{ matrix.a11y || false }}
+
+  visual-acceptance:
+    uses: ./.github/workflows/visual-acceptance.yml
+    needs:
+      - config
+      - backend-build
+      - frontend-build
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: "Homepage"
+            short-name: homepage
+          - name: "Content"
+            short-name: content
+          - name: "Blocks A"
+            short-name: blocks-A
+          - name: "Blocks B"
+            short-name: blocks-B
+          - name: "Blocks Grid"
+            short-name: blocks-grid
+          - name: "Blocks Listing"
+            short-name: blocks-listingsandsearch
+          - name: "Vertical Spacing"
+            short-name: vertical-spacing
+          - name: "Typography"
+            short-name: typography
+    name: ${{ matrix.name }}
+    with:
+      short-name: ${{ matrix.short-name }}
       node-version: ${{ needs.config.outputs.NODE_VERSION }}
       image-name-prefix: ${{ needs.config.outputs.IMAGE_NAME_PREFIX }}
       image-tag: ${{ needs.config.outputs.BASE_TAG }}
@@ -176,6 +221,7 @@ jobs:
     needs:
       - config
       - backend-build
+      - acceptance
       - visual-acceptance
     with:
       base-tag: ${{ needs.config.outputs.BASE_TAG }}
@@ -189,6 +235,7 @@ jobs:
     needs:
       - config
       - frontend-build
+      - acceptance
       - visual-acceptance
     with:
       base-tag: ${{ needs.config.outputs.BASE_TAG }}
