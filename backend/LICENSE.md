@@ -1,4 +1,4 @@
-kitconcept.voltolighttheme Copyright 2022, Plone Foundatiuon
+kitconcept.voltolighttheme Copyright 2025, Plone Foundatiuon
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License version 2

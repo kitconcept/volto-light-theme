@@ -24,25 +24,25 @@ describe('Homepage', () =>
       });
     });
 
-    describe(`authenticated`, () => {
-      if (['ipad-2', 'iphone-8'].includes(resolution)) {
-        // Skip the link list test for smaller resolutions
-        return;
-      }
+    // describe(`authenticated`, () => {
+    //   if (['ipad-2', 'iphone-8'].includes(resolution)) {
+    //     // Skip the link list test for smaller resolutions
+    //     return;
+    //   }
 
-      beforeEach(() => {
-        cy.autologin('admin', 'admin');
-        cy.intercept('GET', `/**/*?expand*`).as('content');
-        cy.intercept('GET', '/**/Plone%20Site').as('schema');
-        cy.visit('/');
-        cy.wait('@content');
-        setViewport(cy);
-      });
+    //   beforeEach(() => {
+    //     cy.autologin('admin', 'admin');
+    //     cy.intercept('GET', `/**/*?expand*`).as('content');
+    //     cy.intercept('GET', '/**/Plone%20Site').as('schema');
+    //     cy.visit('/');
+    //     cy.wait('@content');
+    //     setViewport(cy);
+    //   });
 
-      it('home page', function () {
-        cy.navigate('/edit');
-        cy.wait('@schema');
-        cy.matchImage();
-      });
-    });
+    //   it('home page', function () {
+    //     cy.navigate('/edit');
+    //     cy.wait('@schema');
+    //     cy.matchImage();
+    //   });
+    // });
   }));

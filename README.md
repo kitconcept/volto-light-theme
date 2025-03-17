@@ -94,7 +94,7 @@ Contributions are welcome! If you find any issues or want to suggest improvement
 - [Source Code](https://github.com/kitconcept/volto-light-theme/) 💻
 - [Issue Tracker](https://github.com/kitconcept/volto-light-theme/issues) 🐛
 
-Every pull request requires a [Change log entruy](https://6.docs.plone.org/contributing/index.html#change-log-entry). The location of the `news` folder is the following:
+Every pull request requires a [Change log entry](https://6.docs.plone.org/contributing/index.html#change-log-entry). The location of the `news` folder is the following:
 
 - **backend**: `backend/news`
 - **frontend**: `frontend/packages/volto-light-theme/news`

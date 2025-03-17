@@ -32,7 +32,7 @@ BACKEND_FOLDER=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 ifdef PLONE_VERSION
 PLONE_VERSION := $(PLONE_VERSION)
 else
-PLONE_VERSION := 6.1-dev
+PLONE_VERSION := 6.1.0
 endif
 
 EXAMPLE_CONTENT_FOLDER=${BACKEND_FOLDER}/src/kitconcept/voltolighttheme/setuphandlers/examplecontent
@@ -135,8 +135,12 @@ test-coverage: $(VENV_FOLDER) ## run tests with coverage
 
 # Build Docker images
 .PHONY: build-image
-build-image:  ## Build Docker Images
+build-image:  ## Build Docker Image
 	@docker build . -t $(IMAGE_NAME_PREFIX)-backend:$(IMAGE_TAG) -f Dockerfile --build-arg PLONE_VERSION=$(PLONE_VERSION)
+
+.PHONY: build-image-acceptance
+build-image-acceptance:  ## Build acceptance Docker Image
+	@docker build . -t $(IMAGE_NAME_PREFIX)-backend-acceptance:$(IMAGE_TAG) -f Dockerfile.acceptance --build-arg PLONE_VERSION=$(PLONE_VERSION)
 
 # Acceptance tests
 .PHONY: acceptance-backend-start

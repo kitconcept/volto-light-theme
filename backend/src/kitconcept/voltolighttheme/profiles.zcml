@@ -17,7 +17,7 @@
     <genericsetup:registerProfile
         name="demo"
         title="Volto Light Theme: Demo"
-        description="Package to configure a new Volto Light Theme site"
+        description="Package to add example content to a new Volto Light Theme site"
         provides="Products.GenericSetup.interfaces.EXTENSION"
         directory="profiles/demo"
         post_handler=".setuphandlers.demo.create_example_content"

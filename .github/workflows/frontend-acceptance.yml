@@ -1,5 +1,26 @@
 name: Acceptance tests
-on: [push, pull_request]
+on:
+  workflow_call:
+    inputs:
+      short-name:
+        required: true
+        type: string
+      a11y:
+        required: true
+        type: boolean
+      node-version:
+        required: true
+        type: string
+      image-name-prefix:
+        required: true
+        type: string
+      image-tag:
+        required: true
+        type: string
+
+defaults:
+  run:
+    working-directory: ./frontend
 
 env:
   NODE_VERSION: 22.x
@@ -11,6 +32,31 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Download Backend Image
+        uses: actions/download-artifact@v4
+        with:
+          name: backend-image
+          path: ${{ runner.temp }}
+
+      - name: Download Backend Acceptance Image
+        uses: actions/download-artifact@v4
+        with:
+          name: backend-acceptance-image
+          path: ${{ runner.temp }}
+
+      - name: Download Frontend Image
+        uses: actions/download-artifact@v4
+        with:
+          name: frontend-image
+          path: ${{ runner.temp }}
+
+      - name: Load images
+        run: |
+          docker load --input ${{ runner.temp }}/backend-image.tar
+          docker load --input ${{ runner.temp }}/backend-acceptance-image.tar
+          docker load --input ${{ runner.temp }}/frontend-image.tar
+          docker image ls -a
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v4
@@ -50,10 +96,13 @@ jobs:
 
       - uses: JarvusInnovations/background-action@v1
         name: Start Servers
+        if: ${{ inputs.a11y == false || inputs.a11y == 'false' || inputs.a11y == null }}
         with:
           run: |
-            make ci-acceptance-backend-start &
-            make acceptance-frontend-prod-start &
+            docker run -i --net=host --rm --name=backend ${{ inputs.image-name-prefix }}-backend-acceptance:${{ inputs.image-tag }} &
+            docker run -i --net=host --rm --name=frontend -e RAZZLE_API_PATH=http://127.0.0.1:55001/plone ${{ inputs.image-name-prefix }}-frontend:${{ inputs.image-tag }} &
+          #  make ci-acceptance-backend-start &
+          #  make acceptance-frontend-prod-start &
           # your step-level and job-level environment variables are available to your commands as-is
           # npm install will count towards the wait-for timeout
           # whenever possible, move unrelated scripts to a different step
@@ -80,108 +129,37 @@ jobs:
 
           # working-directory: backend
 
-      - run: make ci-acceptance-test
+      - uses: JarvusInnovations/background-action@v1
+        name: Start Servers
+        if: ${{inputs.a11y == true || inputs.a11y == 'true' }}
+        with:
+          run: |
+            docker run -i --net=host --rm --name=backend ${{ inputs.image-name-prefix }}-backend:${{ inputs.image-tag }} &
+            docker run -i --net=host --rm --name=frontend ${{ inputs.image-name-prefix }}-frontend:${{ inputs.image-tag }} &
+          wait-on: |
+            http-get://localhost:8080/Plone
+            http://localhost:3000
+          tail: true
+          log-output-resume: stderr
+          wait-for: 10m
+          log-output: stderr,stdout
+          log-output-if: failure
+
+      - run: make ci-acceptance-test SPEC='${{ github.workspace }}/frontend/cypress/tests/${{ inputs.short-name }}/**/*.{js,jsx,ts,tsx}'
+        if: ${{ inputs.a11y == false || inputs.a11y == 'false' || inputs.a11y == null }}
+      - run: make ci-acceptance-a11y-test SPEC='${{ github.workspace }}/frontend/cypress/tests/${{ inputs.short-name }}/**/*.{js,jsx,ts,tsx}'
+        if: ${{ inputs.a11y == true || inputs.a11y == 'true' }}
 
       # Upload Cypress screenshots
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-screenshots-acceptance
+          name: cypress-screenshots-acceptance-${{ inputs.short-name }}
           path: acceptance/cypress/screenshots
 
       # Upload Cypress videos
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-videos-acceptance
-          path: cypress/videos
-
-  acceptance-a11y:
-    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.event.pull_request.base.repo.full_name
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-
-      - name: Enable corepack
-        run: npm i -g corepack@latest && corepack enable
-
-      - name: Get pnpm store directory
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-
-      - uses: actions/cache@v4
-        name: Setup pnpm cache
-        with:
-          path: ${{ env.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-
-      - name: Cache Cypress Binary
-        id: cache-cypress-binary
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/Cypress
-          key: binary-20.x-${{ hashFiles('pnpm-lock.yaml') }}
-
-      - name: Install dependencies
-        run: make install
-
-      - name: Install Cypress if not in cache
-        if: steps.cache-cypress-binary.outputs.cache-hit != 'true'
-        working-directory: core/packages/volto
-        run: make cypress-install
-
-      - uses: JarvusInnovations/background-action@v1
-        name: Start Servers
-        with:
-          run: |
-            make ci-acceptance-a11y-backend-start &
-            make acceptance-a11y-frontend-prod-start &
-          # your step-level and job-level environment variables are available to your commands as-is
-          # npm install will count towards the wait-for timeout
-          # whenever possible, move unrelated scripts to a different step
-          # to background multiple processes: add & to the end of the command
-
-          wait-on: |
-            http-get://localhost:8080/Plone
-            http://localhost:3000
-          # IMPORTANT: to use environment variables in wait-on, you must use this form: ${{ env.VAR }}
-          # See wait-on section below for all resource types and prefixes
-
-          tail: true # true = stderr,stdout
-          # This will allow you to monitor the progress live
-
-          log-output-resume: stderr
-          # Eliminates previosuly output stderr log entries from post-run output
-
-          wait-for: 10m
-
-          log-output: stderr,stdout # same as true
-
-          log-output-if: failure
-          # failure = exit-early or timeout
-
-          # working-directory: backend
-
-      - run: make ci-acceptance-a11y-test
-
-      # Upload Cypress screenshots
-      - uses: actions/upload-artifact@v4
-        if: failure()
-        with:
-          name: cypress-screenshots-acceptance
-          path: cypress/screenshots
-
-      # Upload Cypress videos
-      - uses: actions/upload-artifact@v4
-        if: failure()
-        with:
-          name: cypress-videos-acceptance-a11y
+          name: cypress-videos-acceptance-${{ inputs.short-name }}
           path: cypress/videos
