@@ -72,18 +72,23 @@ const InternetHeader = ({ pathname, siteLabel, token, siteAction }) => {
 const IntranetHeader = ({ pathname, siteLabel, token, siteAction }) => {
   const dispatch = useDispatch();
 
-  const navRoot = useSelector((state) => state.navroot?.data?.navroot);
+  const headerSettings = useSelector(
+    (state) =>
+      state.content.data?.['@components']?.inherit?.[
+        'kitconcept.sitecustomization.header'
+      ]?.data,
+  );
   const formData = useSelector((state) => state.form.global);
 
   const intranetFlag =
     !isEmpty(formData) && formData.intranet_flag
       ? formData?.intranet_flag || siteLabel
-      : navRoot?.intranet_flag || siteLabel;
+      : headerSettings?.intranet_flag || siteLabel;
 
   const complementary_logo =
     !isEmpty(formData) && formData?.complementary_logo?.data
       ? `data:${formData.complementary_logo['content-type']};base64,${formData.complementary_logo.data}`
-      : navRoot?.complementary_logo?.download;
+      : headerSettings?.complementary_logo?.download;
 
   const pointToSidebar = (fieldSetName, fieldId) => {
     dispatch(setSidebarTab(0));

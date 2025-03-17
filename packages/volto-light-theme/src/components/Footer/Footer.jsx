@@ -1,4 +1,3 @@
-// SemanticUI-free pre-@plone/components
 import React from 'react';
 import { FormattedMessage, defineMessages, useIntl } from 'react-intl';
 import { useSelector, shallowEqual } from 'react-redux';
@@ -17,21 +16,20 @@ const messages = defineMessages({
 
 const Footer = () => {
   const intl = useIntl();
-  const {
-    content,
-    lang,
-    siteActions = [],
-  } = useSelector(
+  const { content } = useSelector(
     (state) => ({
-      lang: state.intl.locale,
-      siteActions: state.actions?.actions?.site_actions,
       content: state.content.data,
     }),
     shallowEqual,
   );
   const location = useLocation();
-  const navroot = useSelector((state) => state.navroot.data.navroot);
-  const footerLinks = navroot?.footer_links;
+  const footerSettings = useSelector(
+    (state) =>
+      state.content.data?.['@components']?.inherit?.[
+        'kitconcept.sitecustomization.footer'
+      ]?.data,
+  );
+  const footerLinks = footerSettings?.footer_links;
 
   return (
     <footer id="footer">
@@ -83,11 +81,7 @@ const Footer = () => {
             }}
           />
         </div>
-        <FooterLinks
-          links={footerLinks}
-          siteActions={siteActions}
-          lang={lang}
-        />
+        <FooterLinks links={footerLinks} />
         <div className="logo">
           <Logo />
         </div>
