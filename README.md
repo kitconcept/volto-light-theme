@@ -1,14 +1,25 @@
 # Volto Light Theme by kitconcept 🚀
 
-[![NPM](https://img.shields.io/npm/v/@kitconcept/volto-light-theme.svg)](https://www.npmjs.com/package/@kitconcept/volto-light-theme)
-[![Build Status](https://github.com/kitconcept/volto-light-theme/actions/workflows/code.yml/badge.svg)](https://github.com/kitconcept/volto-light-theme/actions)
-[![Build Status](https://github.com/kitconcept/volto-light-theme/actions/workflows/unit.yml/badge.svg)](https://github.com/kitconcept/volto-light-theme/actions)
-[![Build Status](https://github.com/kitconcept/volto-light-theme/actions/workflows/acceptance.yml/badge.svg)](https://github.com/kitconcept/volto-light-theme/actions)
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://kitconcept.com/kitconcept-white.svg">
   <img width="300" alt="kitconcept, GmbH" src="https://kitconcept.com/kitconcept-black.svg">
 </picture>
+
+<div align="center">
+
+[![NPM](https://img.shields.io/npm/v/@kitconcept/volto-light-theme.svg)](https://www.npmjs.com/package/@kitconcept/volto-light-theme)
+
+[![PyPI](https://img.shields.io/pypi/v/kitconcept.voltolighttheme)](https://pypi.org/project/kitconcept.voltolighttheme/)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/kitconcept.voltolighttheme)](https://pypi.org/project/kitconcept.voltolighttheme/)
+[![PyPI - Plone Versions](https://img.shields.io/pypi/frameworkversions/plone/kitconcept.voltolighttheme)](https://pypi.org/project/kitconcept.voltolighttheme/)
+
+[![Build Status](https://github.com/kitconcept/volto-light-theme/actions/workflows/main.yml/badge.svg)](https://github.com/kitconcept/volto-light-theme/actions)
+
+[![GitHub contributors](https://img.shields.io/github/contributors/kitconcept/volto-light-theme)](https://github.com/kitconcept/volto-light-theme)
+[![GitHub Repo stars](https://img.shields.io/github/stars/collective/pas.plugins.authomatic?style=social)](https://github.com/collective/pas.plugins.authomatic)
+
+</div>
+
 
 ## Vision
 
@@ -16,7 +27,15 @@ The main vision of the Volto Light Theme (VLT) is to serve as a foundation for k
 It incorporates feedback from the company's clients and Plone community from the last few years of projects and the success stories in the UI/UX side.
 It aims to be future-proof, keeping it aligned with the upcoming Volto and Plone 7 vision in terms of theming strategy decided by the Plone community.
 
-## Quick Start 🏁
+## Documentation
+
+You can find the documentation of this package at https://volto-light-theme.readthedocs.io.
+
+## Upgrade Guide
+
+See a detailed upgrade guide at https://volto-light-theme.readthedocs.io/latest/upgrade-guide.html.
+
+## Developing 🏁
 
 ### Prerequisites ✅
 
@@ -31,34 +50,34 @@ Ensure you have the following installed:
 
 1. Clone the repository:
 
-````sh
+```sh
 git clone git@github.com:kitconcept/volto-light-theme.git
 cd volto-light-theme
-````
+```
 
 2. Install dependencies for both Backend and Frontend:
 
-````sh
+```sh
 make install
-````
+```
 
 ### Fire Up the Servers 🔥
 
 1. Start the **Backend** (Plone) at [http://localhost:8080/](http://localhost:8080/):
 
-````sh
+```sh
 make backend-start
-````
+```
 
 2. In a new terminal, start the **Frontend** (Volto) at [http://localhost:3000/](http://localhost:3000/):
 
-````sh
+```sh
 make frontend-start
-````
+```
 
 🎉 Your Plone development environment is now live!
 
-## Running with Docker 📦
+## Trying Volto Light Theme with Docker 📦
 
 This setup includes:
 
@@ -66,26 +85,32 @@ This setup includes:
 - **A complete stack** with a Traefik router and a Postgres database 🗃️
 - **Accessible at** [http://voltolighttheme.localhost](http://voltolighttheme.localhost) 🌐
 
-To start the Docker-based environment, simply run:
+To start the Docker-based environment, without cloning this repository, follow these steps:
 
-````sh
+### Download docker-compose.yml
+
+On your computer, create a new folder and download the current `docker-compose.yml`:
+
+```sh
+mkdir try-vlt
+cd try-vlt
+curl -L -o docker-compose.yml https://raw.githubusercontent.com/kitconcept/volto-light-theme/refs/heads/monorepo/docker-compose.yml
+```
+
+Then start the stack using:
+
+```sh
 docker compose up -d
-````
+```
 
 Once the backend image is running, create a Plone site with:
 
-````sh
+```sh
 docker compose exec backend './docker-entrypoint.sh create-site'
-````
+```
 
 🚀 Your Plone site is now up and running locally!
 
-## Project Structure 🏗️
-
-This monorepo hosts two packages:
-
-- **backend/**: Python package `kitconcept.voltolighttheme` providing Dexterity behaviors and example content.
-- **frontend/**: React package `@kitconcept/volto-light-theme` providing the theme.
 
 ## Contributing 🤝
 
@@ -99,21 +124,28 @@ Every pull request requires a [Change log entry](https://6.docs.plone.org/contri
 - **backend**: `backend/news`
 - **frontend**: `frontend/packages/volto-light-theme/news`
 
+### Project Structure 🏗️
+
+This monorepo hosts two packages:
+
+- **backend/**: Python package `kitconcept.voltolighttheme` providing Dexterity behaviors and example content.
+- **frontend/**: React package `@kitconcept/volto-light-theme` providing the theme.
+
 ### Code Quality Assurance 🧐
 
 Ensure your code follows best practices by running the following commands:
 
 - **Format the codebase**:
 
-````sh
+```sh
 make format
-````
+```
 
 - **Lint the code for errors and adherence to Plone standards**:
 
-````sh
+```sh
 make lint
-````
+```
 
 You can also run these commands separately in the `backend` or `frontend` folders.
 
@@ -121,9 +153,9 @@ You can also run these commands separately in the `backend` or `frontend` folder
 
 Easily generate translation files for both Plone and Volto:
 
-````sh
+```sh
 make i18n
-````
+```
 
 ## Credits & Acknowledgements 🙏
 
