@@ -107,12 +107,6 @@ install:  ## Install
 	$(MAKE) frontend-install
 	$(MAKE) docs-install
 
-.PHONY: start
-start:  ## Start
-	@echo "Starting application"
-	$(MAKE) backend-start
-	$(MAKE) frontend-start
-
 .PHONY: clean
 clean:  ## Clean installation
 	@echo "Clean installation"
