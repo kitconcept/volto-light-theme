@@ -23,9 +23,8 @@ const Logo = () => {
   const navRootPath = flattenToAppURL(navroot?.navroot?.['@id']) || '/';
   const headerSettings = useSelector(
     (state) =>
-      state.content.data?.['@components']?.inherit?.[
-        'kitconcept.sitecustomization.header'
-      ]?.data,
+      state.content.data?.['@components']?.inherit?.['voltolighttheme.header']
+        ?.data,
   );
   const logo = headerSettings?.logo;
   const logoUrl = logo?.download || null;

@@ -25,9 +25,8 @@ const Footer = () => {
   const location = useLocation();
   const footerSettings = useSelector(
     (state) =>
-      state.content.data?.['@components']?.inherit?.[
-        'kitconcept.sitecustomization.footer'
-      ]?.data,
+      state.content.data?.['@components']?.inherit?.['voltolighttheme.footer']
+        ?.data,
   );
   const footerLinks = footerSettings?.footer_links;
 

@@ -25,8 +25,7 @@ function buildStyleTag(content: Partial<Content>, colors: SiteThemeSettings) {
 
 const Theming = ({ content }: { content: Content }) => {
   const colorSettings =
-    content?.['@components']?.inherit?.['kitconcept.sitecustomization.theme']
-      ?.data;
+    content?.['@components']?.inherit?.['voltolighttheme.theme']?.data;
   const formData = useSelector<FormState, Content>(
     (state) => state.form.global,
   );
@@ -41,7 +40,8 @@ const Theming = ({ content }: { content: Content }) => {
     <>
       <Helmet>
         <style>
-          {`
+          {colorSettings &&
+            `
 :root {
   ${buildStyleTag(liveContent, colorSettings)}
 }

@@ -22,9 +22,8 @@ const FooterLogos = () => {
   );
   const footerSettings = useSelector<FormState, SiteFooterSettings>(
     (state) =>
-      state.content.data?.['@components']?.inherit?.[
-        'kitconcept.sitecustomization.footer'
-      ]?.data,
+      state.content.data?.['@components']?.inherit?.['voltolighttheme.footer']
+        ?.data,
   );
   const logos = formState?.footer_logos || footerSettings?.footer_logos;
   const logosSize =
@@ -72,7 +71,7 @@ const FooterLogos = () => {
               if (!logoInfo.src) return null;
 
               return (
-                <li className="item" key={logoInfo.href}>
+                <li className="item" key={logoInfo['@id']}>
                   {/* @ts-ignore */}
                   <ConditionalLink
                     condition={logoInfo.href}

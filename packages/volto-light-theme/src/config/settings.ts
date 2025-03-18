@@ -29,7 +29,7 @@ export default function install(config: ConfigType) {
       GET_CONTENT: ['inherit'],
       querystring: {
         'expand.inherit.behaviors':
-          'kitconcept.sitecustomization.header,kitconcept.sitecustomization.theme,kitconcept.sitecustomization.footer',
+          'voltolighttheme.header,voltolighttheme.theme,voltolighttheme.footer',
       },
     },
   ];

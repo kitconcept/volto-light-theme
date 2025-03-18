@@ -74,9 +74,8 @@ const IntranetHeader = ({ pathname, siteLabel, token, siteAction }) => {
 
   const headerSettings = useSelector(
     (state) =>
-      state.content.data?.['@components']?.inherit?.[
-        'kitconcept.sitecustomization.header'
-      ]?.data,
+      state.content.data?.['@components']?.inherit?.['voltolighttheme.header']
+        ?.data,
   );
   const formData = useSelector((state) => state.form.global);
 

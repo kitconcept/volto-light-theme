@@ -50,9 +50,9 @@ declare module '@plone/types' {
 
   export interface Expanders {
     inherit: {
-      'kitconcept.sitecustomization.header': CustomInheritBehavior<SiteHeaderSettings>;
-      'kitconcept.sitecustomization.theme': CustomInheritBehavior<SiteThemeSettings>;
-      'kitconcept.sitecustomization.footer': CustomInheritBehavior<SiteFooterSettings>;
+      'voltolighttheme.header': CustomInheritBehavior<SiteHeaderSettings>;
+      'voltolighttheme.theme': CustomInheritBehavior<SiteThemeSettings>;
+      'voltolighttheme.footer': CustomInheritBehavior<SiteFooterSettings>;
     };
   }
 }
