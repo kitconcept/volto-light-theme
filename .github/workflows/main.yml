@@ -12,6 +12,8 @@ on:
   workflow_dispatch:
 
 env:
+  HOSTNAME: "light-theme.kitconcept.io"
+  STACK_PREFIX: "lighttheme-stg"
   IMAGE_NAME_PREFIX: ghcr.io/kitconcept/voltolighttheme
   NODE_VERSION: "22.x"
   PYTHON_VERSION: "3.12"
@@ -30,6 +32,11 @@ jobs:
       PYTHON_VERSION: ${{ env.PYTHON_VERSION }}
       PLONE_VERSION: ${{ env.PLONE_VERSION }}
       VOLTO_VERSION: ${{ steps.vars.outputs.VOLTO_VERSION }}
+      HOSTNAME: ${{ env.HOSTNAME }}
+      ENVIRONMENT: ${{ steps.vars.outputs.ENVIRONMENT }}
+      STACK_NAME: ${{ steps.vars.outputs.STACK_NAME }}
+      STACK_PREFIX: ${{ env.STACK_PREFIX }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -39,11 +46,15 @@ jobs:
         run: |
           echo "BASE_TAG=sha-$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
           python3 -c 'import json; data = json.load(open("./frontend/mrs.developer.json")); print("VOLTO_VERSION=" + (data["core"].get("tag") or "latest"))' >> $GITHUB_OUTPUT
+          echo "ENVIRONMENT=${{ env.HOSTNAME }}" >> $GITHUB_OUTPUT
+          echo "STACK_NAME=${ENVIRONMENT//./-}" >> $GITHUB_OUTPUT
 
       - name: Test vars
         run: |
           echo "BASE_TAG=${{ steps.vars.outputs.BASE_TAG }}"
           echo 'VOLTO_VERSION=${{ steps.vars.outputs.VOLTO_VERSION }}'
+          echo 'ENVIRONMENT=${{ steps.vars.outputs.ENVIRONMENT }}'
+          echo 'STACK_NAME=${{ steps.vars.outputs.STACK_NAME }}'
 
       - uses: dorny/paths-filter@v3.0.2
         id: filter
@@ -243,6 +254,36 @@ jobs:
       image-name-suffix: frontend
       node-version: ${{ needs.config.outputs.NODE_VERSION }}
       volto-version: ${{ needs.config.outputs.VOLTO_VERSION }}
+    permissions:
+      contents: read
+      packages: write
+
+  deploy:
+    uses: kitconcept/meta/.github/workflows/deploy.yml@main
+    needs:
+      - config
+      - backend-release
+      - frontend-release
+    if: ${{ always() && github.ref == 'refs/heads/main' && !contains(needs.*.result, 'failure') }}
+    with:
+        tag: ${{ needs.config.outputs.BASE_TAG }}
+        environment: ${{ needs.config.outputs.ENVIRONMENT }}
+        stack-name: ${{ needs.config.outputs.STACK_NAME }}
+        stack-file: devops/stacks/${{ needs.config.outputs.ENVIRONMENT }}.yml
+        registry: "ghcr.io"
+        username: ${{ github.actor }}
+    secrets:
+      password: ${{ secrets.GITHUB_TOKEN }}
+      remote-host: ${{ secrets.DEPLOY_HOST }}
+      remote-port: ${{ secrets.DEPLOY_PORT }}
+      remote-user: ${{ secrets.DEPLOY_USER }}
+      remote-private-key: ${{ secrets.DEPLOY_SSH }}
+      env-file: |
+        IMAGE_NAME_PREFIX=${{ needs.config.outputs.IMAGE_NAME_PREFIX }}
+        IMAGE_TAG=${{ needs.config.outputs.BASE_TAG }}
+        STACK_NAME=${{ needs.config.outputs.STACK_NAME }}
+        STACK_PREFIX=${{ needs.config.outputs.STACK_PREFIX }}
+        HOSTNAME=${{ needs.config.outputs.HOSTNAME }}
     permissions:
       contents: read
       packages: write
