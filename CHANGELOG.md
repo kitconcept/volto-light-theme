@@ -8,6 +8,40 @@
 
 <!-- towncrier release notes start -->
 
+## 6.0.0-alpha.16 (2025-03-03)
+
+### Bugfix
+
+- Fix last edge case in the intranet header in edit mode with the `complementary_logo`. @sneridagh [#483](https://github.com/kitconcept/volto-light-theme/pull/483)
+
+## 6.0.0-alpha.15 (2025-03-03)
+
+### Bugfix
+
+- Added missing header guards for `intranet_flag` and `complementary_logo`. @sneridagh [#482](https://github.com/kitconcept/volto-light-theme/pull/482)
+
+## 6.0.0-alpha.14 (2025-03-03)
+
+### Breaking
+
+- Remove title from required blocks. @sneridagh [#478](https://github.com/kitconcept/volto-light-theme/pull/478)
+- Remove `AlignmentWidget`. @sneridagh [#481](https://github.com/kitconcept/volto-light-theme/pull/481)
+
+### Feature
+
+- Add complementary logo for Intranet (sitecustomization behavior needed). @sneridagh [#478](https://github.com/kitconcept/volto-light-theme/pull/478)
+- Wire the intranet flag with the site customization behavior. @sneridagh [#478](https://github.com/kitconcept/volto-light-theme/pull/478)
+
+### Bugfix
+
+- Fix RenderBlocks to handle empty blocks more robustly @teekuningas [#475](https://github.com/kitconcept/volto-light-theme/pull/475)
+- Header adjustments for intranet. @sneridagh [#477](https://github.com/kitconcept/volto-light-theme/pull/477)
+- Fix complementary logo sizes. @sneridagh [#479](https://github.com/kitconcept/volto-light-theme/pull/479)
+
+### Internal
+
+- import fixes and other cleanups. @sneridagh [#481](https://github.com/kitconcept/volto-light-theme/pull/481)
+
 ## 6.0.0-alpha.13 (2025-02-11)
 
 ### Feature

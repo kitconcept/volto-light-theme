@@ -40,9 +40,6 @@ const Logo = () => {
         alt={
           intl.formatMessage(messages.logoOf) + ' ' + site['plone.site_title']
         }
-        title={
-          intl.formatMessage(messages.logoOf) + ' ' + site['plone.site_title']
-        }
       />
     </Link>
   );

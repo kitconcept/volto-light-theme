@@ -1,3 +1,7 @@
+// Description: A color picker widget using react-aria-components
+// color picker component. Put in the fridge for now because
+// it had performance problems with Volto sidebar.
+// For now, using `ColorPicker` widget instead.
 import { ColorField, ColorPicker } from '@plone/components';
 import FormFieldWrapper from '@plone/volto/components/manage/Widgets/FormFieldWrapper';
 

@@ -18,25 +18,31 @@ These new definitions use CSS properties that are injected at runtime in the rig
 The resultant CSS is simpler, and there's no need to define class names for each color definition.
 Read more about them in: https://6.docs.plone.org/volto/development/color-picker-widget.html?highlight=color#custom-css-properties-as-color-definitions
 
-The new color definitions are no longer hardcoded, and now they are stored in `config.settings.backgroundColors`.
+The new color definitions are no longer hardcoded, and now they are stored in `config.blocks.themes` for extensibility from your add-ons.
 
 ```ts
-config.settings.backgroundColors = [
-  {
-    style: {
-      '--background-color': 'transparent',
+  config.blocks.themes = [
+    {
+      style: {
+        '--theme-color': '#fff',
+        '--theme-high-contrast-color': '#ecebeb',
+        '--theme-foreground-color': '#000',
+        '--theme-low-contrast-foreground-color': '#555555',
+      },
+      name: 'default',
+      label: 'Default',
     },
-    name: 'transparent',
-    label: 'Transparent',
-  },
-  {
-    style: {
-      '--background-color': '#ecebeb',
+    {
+      style: {
+        '--theme-color': '#ecebeb',
+        '--theme-high-contrast-color': '#fff',
+        '--theme-foreground-color': '#000',
+        '--theme-low-contrast-foreground-color': '#555555',
+      },
+      name: 'grey',
+      label: 'Grey',
     },
-    name: 'grey',
-    label: 'Grey',
-  },
-];
+  ];
 ```
 
 ```css
@@ -45,12 +51,6 @@ config.settings.backgroundColors = [
 }
 ```
 
-If you extended or modified the default background colors in VLT, you need to move the colors that you are using accordingly to the new definitions.
-Once the new definitions are in place, there is a content reducer transform in place that will convert the blocks on the fly.
-Whenever you save an object, the object will be saved using the new styling.
-Make sure that you use the same `name` as before when you update your color definitions.
-
-
 ### Block widths
 
 VLT has started to use the standard block width definition as well.
@@ -58,6 +58,10 @@ It's stored in `config.settings.blocksWidths`.
 It uses a new widget component that would be ported to Volto core as soon as it's ready.
 This component saves the value of the custom CSS property `--block-width` as a StyleWrapper value, so it can be used later when the StyleWrapper injects it in the block (or component) markup.
 
+### Removed `AlignWidget` from {file}`src/components/Widgets`
+
+This component is removed because it was obsolete.
+Use the `blockAlignment` or `blockWidth` widgets instead.
 
 ## volto-light-theme 5.0.0
 

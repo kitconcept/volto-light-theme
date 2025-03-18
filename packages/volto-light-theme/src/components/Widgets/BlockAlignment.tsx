@@ -1,6 +1,9 @@
 import React from 'react';
 import { defineMessages, useIntl } from 'react-intl';
-import ButtonsWidget, { type ButtonsWidgetProps } from './ButtonsWidget';
+import ButtonsWidget, {
+  type ActionInfo,
+  type ButtonsWidgetProps,
+} from './Buttons';
 import imageFitSVG from '@plone/volto/icons/image-fit.svg';
 import imageLeftSVG from '@plone/volto/icons/image-left.svg';
 import imageRightSVG from '@plone/volto/icons/image-right.svg';
@@ -21,7 +24,11 @@ const messages = defineMessages({
   },
 });
 
-export const defaultActionsInfo = ({ intl }: { intl: IntlShape }) => ({
+export const defaultActionsInfo = ({
+  intl,
+}: {
+  intl: IntlShape;
+}): Record<string, ActionInfo> => ({
   left: [imageLeftSVG, intl.formatMessage(messages.left)],
   right: [imageRightSVG, intl.formatMessage(messages.right)],
   center: [imageFitSVG, intl.formatMessage(messages.center)],

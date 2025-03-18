@@ -1,5 +1,8 @@
 import { defineMessages, useIntl } from 'react-intl';
-import ButtonsWidget, { type ButtonsWidgetProps } from './ButtonsWidget';
+import ButtonsWidget, {
+  type ActionInfo,
+  type ButtonsWidgetProps,
+} from './Buttons';
 import type { IntlShape } from 'react-intl';
 
 const messages = defineMessages({
@@ -17,7 +20,11 @@ const messages = defineMessages({
   },
 });
 
-export const defaultActionsInfo = ({ intl }: { intl: IntlShape }) => ({
+export const defaultActionsInfo = ({
+  intl,
+}: {
+  intl: IntlShape;
+}): Record<string, ActionInfo> => ({
   s: ['S', intl.formatMessage(messages.s)],
   m: ['M', intl.formatMessage(messages.m)],
   l: ['L', intl.formatMessage(messages.l)],

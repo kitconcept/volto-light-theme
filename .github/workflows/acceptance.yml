@@ -94,7 +94,7 @@ jobs:
         if: failure()
         with:
           name: cypress-videos-acceptance
-          path: acceptance/cypress/videos
+          path: cypress/videos
 
   acceptance-a11y:
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.event.pull_request.base.repo.full_name
@@ -183,5 +183,5 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-videos-acceptance
+          name: cypress-videos-acceptance-a11y
           path: cypress/videos
