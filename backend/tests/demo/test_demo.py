@@ -3,10 +3,10 @@ from plone import api
 import pytest
 
 
-class TestDemo:
+class TestDemoContent:
     @pytest.fixture(autouse=True)
-    def _setup(self, portal):
-        self.portal = portal
+    def _setup(self, portal_class):
+        self.portal = portal_class
 
     @pytest.mark.parametrize(
         "path,portal_type",
