@@ -23,3 +23,5 @@ You can find the documentation of this package at https://volto-light-theme.read
 ## Upgrade Guide
 
 See a detailed upgrade guide at https://volto-light-theme.readthedocs.io/latest/upgrade-guide.html.
+
+asdasd
