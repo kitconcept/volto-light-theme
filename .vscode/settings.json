@@ -4,9 +4,7 @@
   "flake8.args": ["--config=pyproject.toml"],
   "ruff.organizeImports": true,
   "python.terminal.activateEnvironment": true,
-  "python.testing.pytestArgs": [
-    "backend/tests"
-  ],
+  "python.testing.pytestArgs": ["backend/tests"],
   "python.testing.unittestEnabled": false,
   "python.testing.pytestEnabled": true,
   "[markdown]": {
@@ -30,6 +28,10 @@
     "titleBar.activeForeground": "#e7e7e7",
     "titleBar.inactiveBackground": "#8461a999",
     "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "charliermarsh.ruff"
   },
   "peacock.color": "#8461a9"
 }
