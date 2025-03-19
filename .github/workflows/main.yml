@@ -16,6 +16,7 @@ jobs:
   config:
     runs-on: ubuntu-latest
     outputs:
+      acceptance: ${{ steps.filter.outputs.acceptance }}
       backend: ${{ steps.filter.outputs.backend }}
       devops: ${{ steps.filter.outputs.devops }}
       docs: ${{ steps.filter.outputs.docs }}
@@ -54,6 +55,9 @@ jobs:
         id: filter
         with:
           filters: |
+            acceptance:
+              - 'backend/**'
+              - 'frontend/**'
             backend:
               - 'backend/**'
               - '.github/workflows/backend*'
@@ -107,7 +111,7 @@ jobs:
     if: ${{ needs.config.outputs.backend == 'true' }}
 
   backend-build:
-    if: ${{ (needs.config.outputs.frontend == 'true' || needs.config.outputs.backend == 'true') && (always() && !contains(needs.*.result, 'failure'))}}
+    if: ${{ needs.config.outputs.acceptance == 'true' && (always() && !contains(needs.*.result, 'failure'))}}
     uses: ./.github/workflows/backend-image-build.yml
     needs:
       - config
@@ -148,7 +152,7 @@ jobs:
     if: ${{ needs.config.outputs.frontend == 'true' }}
 
   frontend-build:
-    if: ${{ (needs.config.outputs.frontend == 'true' || needs.config.outputs.backend == 'true') && (always() && !contains(needs.*.result, 'failure'))}}
+    if: ${{ needs.config.outputs.acceptance == 'true' && (always() && !contains(needs.*.result, 'failure'))}}
     uses: ./.github/workflows/frontend-image-build.yml
     needs:
       - config
@@ -166,7 +170,7 @@ jobs:
       packages: write
 
   acceptance:
-    if: ${{ always() && !contains(needs.*.result, 'failure') }}
+    if: ${{ needs.config.outputs.acceptance == 'true' && (always() && !contains(needs.*.result, 'failure'))}}
     uses: ./.github/workflows/frontend-acceptance.yml
     needs:
       - config
@@ -190,7 +194,7 @@ jobs:
       a11y: ${{ matrix.a11y || false }}
 
   visual-acceptance:
-    if: ${{ always() && !contains(needs.*.result, 'failure') }}
+    if: ${{ needs.config.outputs.acceptance == 'true' && (always() && !contains(needs.*.result, 'failure'))}}
     uses: ./.github/workflows/visual-acceptance.yml
     needs:
       - config
