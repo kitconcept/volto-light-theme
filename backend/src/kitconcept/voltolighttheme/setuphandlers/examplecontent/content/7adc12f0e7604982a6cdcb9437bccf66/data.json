@@ -1,0 +1,1368 @@
+{
+  "@id": "/content-types/event",
+  "@type": "Event",
+  "UID": "7adc12f0e7604982a6cdcb9437bccf66",
+  "allow_discussion": false,
+  "attendees": [],
+  "blocks": {
+    "14b738a2-68fe-47e0-8423-6bd08729e518": {
+      "@type": "slate",
+      "plaintext": "Text Heading H2",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Text Heading H2"
+            }
+          ],
+          "type": "h2"
+        }
+      ]
+    },
+    "16d5dba0-36f9-4531-8d7b-5f4c80611a99": {
+      "@type": "introduction",
+      "plaintext": " Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+      "value": [
+        {
+          "children": [
+            {
+              "text": ""
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "215b838b-d867-41ae-9db6-cb02b558ef51": {
+      "@type": "slate",
+      "plaintext": " Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": " "
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem Ipsum"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": "\u00a0is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "26049a74-0ee3-4550-b48f-83bd20e0b943": {
+      "@type": "slate",
+      "plaintext": "Text can be bold or italic. ",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Text can be "
+            },
+            {
+              "children": [
+                {
+                  "text": "bold"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " or "
+            },
+            {
+              "children": [
+                {
+                  "text": "italic."
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": ""
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "3a7586f5-e7a5-4971-9f19-f462eacbadc9": {
+      "@type": "slate",
+      "plaintext": "Text Heading H2",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Text Heading H2"
+            }
+          ],
+          "type": "h2"
+        }
+      ]
+    },
+    "52f8afe0-6a07-4e31-8873-8a3cc71f0f82": {
+      "@type": "slate",
+      "plaintext": " Link external ",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": ""
+            },
+            {
+              "children": [
+                {
+                  "text": "Link external"
+                }
+              ],
+              "data": {
+                "url": "https://www.google.com"
+              },
+              "type": "link"
+            },
+            {
+              "text": ""
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "575ff5a5-4338-487d-8094-c79ec39fd89c": {
+      "@type": "slate",
+      "plaintext": "Ordered List Bullet Point One Ordered List Bullet Point Two Ordered List Bullet Point Three Ordered List Bullet Point Four",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Ordered List Bullet Point One"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "text": "Ordered List Bullet Point Two"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "text": "Ordered List Bullet Point Three"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "text": "Ordered List Bullet Point Four"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ol"
+        }
+      ]
+    },
+    "62e7e65d-1ec4-4bda-b165-70f4c1f3a06b": {
+      "@type": "slate",
+      "plaintext": "Text Heading H2",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Text Heading H2"
+            }
+          ],
+          "type": "h2"
+        }
+      ]
+    },
+    "64c03755-c963-4246-9d50-d4f3b1c4bef9": {
+      "@type": "separator",
+      "styles": {
+        "align": "left"
+      }
+    },
+    "6c792644-52e0-43d0-b79d-03741b7601bf": {
+      "@type": "slate",
+      "plaintext": " Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": ""
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "6e6979eb-af21-466f-b2de-3148144ac950": {
+      "@type": "slate",
+      "plaintext": "Text Heading H2",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Text Heading H2"
+            }
+          ],
+          "type": "h2"
+        }
+      ]
+    },
+    "72051116-5330-4811-b55e-1603f77f3454": {
+      "@type": "slate",
+      "plaintext": " Link internal ",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": ""
+            },
+            {
+              "children": [
+                {
+                  "text": "Link internal"
+                }
+              ],
+              "data": {
+                "url": "../../resolveuid/7ab9c48ede33415fa2a66a99549c8f70"
+              },
+              "type": "link"
+            },
+            {
+              "text": ""
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "83e284ca-0432-4366-a0cc-0a3ac6ff0a37": {
+      "@type": "slate",
+      "plaintext": " Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": ""
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "87cc43e9-9d7a-46a2-b9f6-cdca0799c0dc": {
+      "@type": "slate",
+      "plaintext": "Unordered List Bullet Point One Unordered List Bullet Point Two Unordered List Bullet Point Three Unordered List Bullet Point Four",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Unordered List Bullet Point One"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "text": "Unordered List Bullet Point Two"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "text": "Unordered List Bullet Point Three"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "text": "Unordered List Bullet Point Four"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        }
+      ]
+    },
+    "8b411f87-c956-42d7-aa1b-106014029d31": {
+      "@type": "slate",
+      "plaintext": "Text Heading H2",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Text Heading H2"
+            }
+          ],
+          "type": "h2"
+        }
+      ]
+    },
+    "8e182a56-eafe-4c44-8b5c-4b359906bc09": {
+      "@type": "slate",
+      "plaintext": "Text Heading H3",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Text Heading H3 "
+            }
+          ],
+          "type": "h3"
+        }
+      ]
+    },
+    "93d980ba-5fb5-4ee0-93e3-60a84efd9809": {
+      "@type": "image",
+      "align": "left",
+      "credit": {},
+      "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+      "image_field": "image",
+      "size": "m",
+      "styles": {
+        "size:noprefix": "medium"
+      },
+      "title": "Image",
+      "url": "../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+    },
+    "984ad5d1-eaf6-4de5-b86b-bbe089d11c58": {
+      "@type": "separator",
+      "styles": {
+        "align": "left"
+      }
+    },
+    "9c66f79a-8497-4d1b-9f99-9e960456f950": {
+      "@type": "image",
+      "align": "right",
+      "credit": {},
+      "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+      "image_field": "image",
+      "size": "s",
+      "styles": {
+        "size:noprefix": "small"
+      },
+      "title": "Image - Light",
+      "url": "../../resolveuid/eec82559bf3242a6be4d43bc2096f399"
+    },
+    "abd4a871-9d89-4644-bc03-b418f178b42b": {
+      "@type": "image",
+      "align": "right",
+      "credit": {},
+      "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+      "image_field": "image",
+      "size": "l",
+      "styles": {
+        "size:noprefix": "large"
+      },
+      "title": "Image - Light",
+      "url": "../../resolveuid/eec82559bf3242a6be4d43bc2096f399"
+    },
+    "b539ed36-442b-4c7d-8b9b-8af01963c206": {
+      "@type": "eventMetadata"
+    },
+    "b5daf12e-2f85-4dff-b391-b03940e07171": {
+      "@type": "slate",
+      "plaintext": " Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": ""
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. "
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print."
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "b8233616-cf48-4584-b84c-efdf9701c75a": {
+      "@type": "slate",
+      "plaintext": " Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print.",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": ""
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. "
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "c1bde480-6d62-4541-86a2-708653087da9": {
+      "@type": "image",
+      "align": "left",
+      "credit": {},
+      "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+      "image_field": "image",
+      "size": "l",
+      "title": "Image",
+      "url": "../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+    },
+    "c2349275-5079-482f-8a53-f0c8027677d0": {
+      "@type": "slate",
+      "plaintext": " Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": ""
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "cba86db9-97dd-41bc-971e-b06070680f5e": {
+      "@type": "slate",
+      "plaintext": " LISTS ",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": ""
+            },
+            {
+              "children": [
+                {
+                  "text": "LISTS"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ""
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "cdd183ce-06fd-4163-958a-dc805ec77cef": {
+      "@type": "slate",
+      "plaintext": " Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": ""
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "\u00a0is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "cec7bbf3-f15b-47ce-956d-a77a1cbed3e6": {
+      "@type": "slate",
+      "plaintext": "Text Heading H2",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Text Heading H2"
+            }
+          ],
+          "type": "h2"
+        }
+      ]
+    },
+    "d3f1c443-583f-4e8e-a682-3bf25752a300": {
+      "@type": "title"
+    },
+    "d8a81981-208b-4b52-9dc3-97e51fcf88a7": {
+      "@type": "separator",
+      "styles": {
+        "align": "left"
+      }
+    },
+    "e3e10827-d280-425b-8502-b5a2d995933a": {
+      "@type": "separator",
+      "styles": {
+        "align": "full"
+      }
+    },
+    "e55a4211-95d1-4731-8a94-f7f1aab6e273": {
+      "@type": "image",
+      "align": "center",
+      "credit": {},
+      "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+      "image_field": "image",
+      "size": "l",
+      "title": "Image - Light",
+      "url": "../../resolveuid/eec82559bf3242a6be4d43bc2096f399"
+    },
+    "e604a8eb-3b96-40b3-92e2-82c3c17c4e5d": {
+      "@type": "slate",
+      "plaintext": " Inline Styles ",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": ""
+            },
+            {
+              "children": [
+                {
+                  "text": "Inline Styles"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ""
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "e7921d81-0885-4db9-8f1d-86fd4136f177": {
+      "@type": "image",
+      "align": "right",
+      "credit": {},
+      "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+      "image_field": "image",
+      "size": "m",
+      "styles": {
+        "size:noprefix": "medium"
+      },
+      "title": "Image - Light",
+      "url": "../../resolveuid/eec82559bf3242a6be4d43bc2096f399"
+    },
+    "ea90cbc3-c7eb-4a41-bfad-07e25b9c7b89": {
+      "@type": "image",
+      "align": "left",
+      "credit": {},
+      "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+      "image_field": "image",
+      "size": "s",
+      "styles": {
+        "size:noprefix": "small"
+      },
+      "title": "Image",
+      "url": "../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+    },
+    "efe22e15-ed62-499c-974e-cb0ab7d48e83": {
+      "@type": "separator",
+      "styles": {
+        "align": "full"
+      }
+    },
+    "fd86d3dc-237b-485a-aa31-aba34a667be2": {
+      "@type": "slate",
+      "plaintext": " Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": ""
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem Ipsum"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": "\u00a0is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "d3f1c443-583f-4e8e-a682-3bf25752a300",
+      "b539ed36-442b-4c7d-8b9b-8af01963c206",
+      "6e6979eb-af21-466f-b2de-3148144ac950",
+      "fd86d3dc-237b-485a-aa31-aba34a667be2",
+      "8e182a56-eafe-4c44-8b5c-4b359906bc09",
+      "215b838b-d867-41ae-9db6-cb02b558ef51",
+      "cba86db9-97dd-41bc-971e-b06070680f5e",
+      "575ff5a5-4338-487d-8094-c79ec39fd89c",
+      "87cc43e9-9d7a-46a2-b9f6-cdca0799c0dc",
+      "e604a8eb-3b96-40b3-92e2-82c3c17c4e5d",
+      "26049a74-0ee3-4550-b48f-83bd20e0b943",
+      "72051116-5330-4811-b55e-1603f77f3454",
+      "52f8afe0-6a07-4e31-8873-8a3cc71f0f82",
+      "e3e10827-d280-425b-8502-b5a2d995933a",
+      "16d5dba0-36f9-4531-8d7b-5f4c80611a99",
+      "efe22e15-ed62-499c-974e-cb0ab7d48e83",
+      "e55a4211-95d1-4731-8a94-f7f1aab6e273",
+      "d8a81981-208b-4b52-9dc3-97e51fcf88a7",
+      "abd4a871-9d89-4644-bc03-b418f178b42b",
+      "3a7586f5-e7a5-4971-9f19-f462eacbadc9",
+      "c2349275-5079-482f-8a53-f0c8027677d0",
+      "c1bde480-6d62-4541-86a2-708653087da9",
+      "8b411f87-c956-42d7-aa1b-106014029d31",
+      "83e284ca-0432-4366-a0cc-0a3ac6ff0a37",
+      "984ad5d1-eaf6-4de5-b86b-bbe089d11c58",
+      "e7921d81-0885-4db9-8f1d-86fd4136f177",
+      "cec7bbf3-f15b-47ce-956d-a77a1cbed3e6",
+      "6c792644-52e0-43d0-b79d-03741b7601bf",
+      "93d980ba-5fb5-4ee0-93e3-60a84efd9809",
+      "14b738a2-68fe-47e0-8423-6bd08729e518",
+      "cdd183ce-06fd-4163-958a-dc805ec77cef",
+      "64c03755-c963-4246-9d50-d4f3b1c4bef9",
+      "9c66f79a-8497-4d1b-9f99-9e960456f950",
+      "62e7e65d-1ec4-4bda-b165-70f4c1f3a06b",
+      "b8233616-cf48-4584-b84c-efdf9701c75a",
+      "ea90cbc3-c7eb-4a41-bfad-07e25b9c7b89",
+      "b5daf12e-2f85-4dff-b391-b03940e07171"
+    ]
+  },
+  "changeActor": "admin",
+  "changeNote": null,
+  "contact_email": "m.mustermann@plone.com",
+  "contact_name": "Max Mustermann",
+  "contact_phone": "+49 1234 567-890",
+  "contributors": [],
+  "created": "2023-07-06T21:35:07+00:00",
+  "creators": ["admin"],
+  "description": "The event content type can be used to display an event on the website.",
+  "effective": "2023-07-06T18:35:00",
+  "end": "2023-12-31T12:00:00+00:00",
+  "event_url": "http://www.musterevents.com",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "exportimport.versions": {
+    "0": {
+      "@id": "/content-types/event",
+      "@type": "Event",
+      "UID": "f8373241865042f6adfb97d557b4963e",
+      "allow_discussion": false,
+      "attendees": [],
+      "blocks": {},
+      "blocks_layout": {
+        "items": []
+      },
+      "changeNote": "",
+      "contact_email": null,
+      "contact_name": null,
+      "contact_phone": null,
+      "contributors": [],
+      "created": "2024-06-06T10:37:25+00:00",
+      "creators": ["admin"],
+      "description": "",
+      "effective": null,
+      "end": "2024-06-12T13:00:00+00:00",
+      "event_url": null,
+      "exclude_from_nav": false,
+      "expires": null,
+      "id": "event",
+      "is_folderish": true,
+      "language": "",
+      "layout": "event_view",
+      "location": null,
+      "lock": {
+        "locked": false,
+        "stealable": true
+      },
+      "modified": "2024-06-06T10:37:25+00:00",
+      "open_end": false,
+      "parent": {
+        "@id": "/content-types",
+        "@type": "Document",
+        "description": "This section has a sample of content types available in this site.",
+        "image_field": null,
+        "image_scales": null,
+        "review_state": "published",
+        "title": "Content Types",
+        "type_title": "Page"
+      },
+      "preview_caption": null,
+      "preview_image": null,
+      "recurrence": null,
+      "relatedItems": [],
+      "review_state": "published",
+      "rights": "",
+      "start": "2024-06-12T12:00:00+00:00",
+      "subjects": [],
+      "sync_uid": null,
+      "title": "",
+      "type_title": "Event",
+      "version": 0,
+      "versioning_enabled": true,
+      "whole_day": false,
+      "working_copy": null,
+      "working_copy_of": null
+    },
+    "1": {
+      "@id": "/content-types/event",
+      "@type": "Event",
+      "UID": "f8373241865042f6adfb97d557b4963e",
+      "allow_discussion": false,
+      "attendees": [],
+      "blocks": {
+        "6e6979eb-af21-466f-b2de-3148144ac950": {
+          "@type": "slate",
+          "plaintext": "",
+          "styles": {},
+          "value": [
+            {
+              "children": [
+                {
+                  "text": ""
+                }
+              ],
+              "type": "p"
+            }
+          ]
+        },
+        "b539ed36-442b-4c7d-8b9b-8af01963c206": {
+          "@type": "eventMetadata"
+        },
+        "d3f1c443-583f-4e8e-a682-3bf25752a300": {
+          "@type": "title"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "d3f1c443-583f-4e8e-a682-3bf25752a300",
+          "b539ed36-442b-4c7d-8b9b-8af01963c206",
+          "6e6979eb-af21-466f-b2de-3148144ac950"
+        ]
+      },
+      "changeNote": "",
+      "contact_email": "m.mustermann@plone.com",
+      "contact_name": "Max Mustermann",
+      "contact_phone": "+49 1234 567-890",
+      "contributors": [],
+      "created": "2024-06-06T10:37:25+00:00",
+      "creators": ["admin"],
+      "description": "The event content type can be used to display an event on the website.",
+      "effective": "2023-07-06T18:35:00",
+      "end": "2023-12-31T12:00:00+00:00",
+      "event_url": "http://www.musterevents.com",
+      "exclude_from_nav": false,
+      "expires": null,
+      "id": "event",
+      "is_folderish": true,
+      "language": "en",
+      "layout": "event_view",
+      "location": "Musterhausener Landstrasse 134 Standort E123 67111 Musterhausen",
+      "lock": {
+        "locked": false,
+        "stealable": true
+      },
+      "modified": "2024-06-06T10:37:25+00:00",
+      "open_end": false,
+      "parent": {
+        "@id": "/content-types",
+        "@type": "Document",
+        "description": "This section has a sample of content types available in this site.",
+        "image_field": null,
+        "image_scales": null,
+        "review_state": "published",
+        "title": "Content Types",
+        "type_title": "Page"
+      },
+      "preview_caption": null,
+      "preview_image": null,
+      "recurrence": null,
+      "relatedItems": [],
+      "review_state": "published",
+      "rights": "",
+      "start": "2023-01-01T11:00:00+00:00",
+      "subjects": [],
+      "sync_uid": null,
+      "title": "Event",
+      "type_title": "Event",
+      "version": 1,
+      "versioning_enabled": true,
+      "whole_day": false,
+      "working_copy": null,
+      "working_copy_of": null
+    }
+  },
+  "id": "event",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "event_view",
+  "location": "Musterhausener Landstrasse 134 Standort E123 67111 Musterhausen",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2024-04-08T14:21:24+00:00",
+  "open_end": false,
+  "parent": {
+    "@id": "/content-types",
+    "@type": "Document",
+    "UID": "e8178744e30a418b9a5768997bb29a19",
+    "description": "This section has a sample of content types available in this site.",
+    "image_field": null,
+    "image_scales": null,
+    "review_state": "published",
+    "title": "Content Types",
+    "type_title": "Page"
+  },
+  "preview_caption": null,
+  "preview_image": {
+    "blob_path": "7adc12f0e7604982a6cdcb9437bccf66/preview_image/event.svg",
+    "content-type": "image/svg+xml",
+    "filename": "event.svg",
+    "height": 36,
+    "size": 703,
+    "width": 36
+  },
+  "recurrence": null,
+  "review_state": "published",
+  "rights": "",
+  "start": "2023-01-01T11:00:00+00:00",
+  "subjects": [],
+  "sync_uid": null,
+  "title": "Event",
+  "type_title": "Event",
+  "version": "current",
+  "versioning_enabled": true,
+  "whole_day": false,
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2023-07-06T21:35:07+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2023-07-06T21:35:07+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

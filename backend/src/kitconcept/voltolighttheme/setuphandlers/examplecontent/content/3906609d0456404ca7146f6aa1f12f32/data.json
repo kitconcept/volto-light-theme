@@ -1,0 +1,487 @@
+{
+  "@id": "/block/toc-block",
+  "@type": "Document",
+  "UID": "3906609d0456404ca7146f6aa1f12f32",
+  "allow_discussion": false,
+  "blocks": {
+    "09460f92-723d-402d-a0a5-76a15f2678ad": {
+      "@type": "slate",
+      "plaintext": " Link external ",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": ""
+            },
+            {
+              "children": [
+                {
+                  "text": "Link external"
+                }
+              ],
+              "data": {
+                "url": "https://www.google.com/"
+              },
+              "type": "link"
+            },
+            {
+              "text": ""
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "22f22002-2159-4e42-942a-8ebc6e930ed5": {
+      "@type": "toc",
+      "title": "Inhaltsverzeichnis",
+      "variation": "default"
+    },
+    "2b54caa5-1c1a-40f2-aacd-84abce141e79": {
+      "@type": "slate",
+      "plaintext": " Link internal ",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": ""
+            },
+            {
+              "children": [
+                {
+                  "text": "Link internal"
+                }
+              ],
+              "data": {
+                "url": "/block/heading-block"
+              },
+              "type": "link"
+            },
+            {
+              "text": ""
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "2e03fd8c-f334-400e-a3a9-d0446e3a1512": {
+      "@type": "slate",
+      "plaintext": "Ordered List Bullett Point One Ordered List Bullett Point Two Ordered List Bullett Point Three Ordered List Bullett Point Four",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Ordered List Bullett Point One "
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "text": "Ordered List Bullett Point Two "
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "text": "Ordered List Bullett Point Three"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "text": "Ordered List Bullett Point Four"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ol"
+        }
+      ]
+    },
+    "372b9489-5dc4-44a7-a7a9-649c2bc282db": {
+      "@type": "slate",
+      "plaintext": "Ordered List Bullett Point One Ordered List Bullett Point Two Ordered List Bullett Point Three Ordered List Bullett Point Four",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Ordered List Bullett Point One "
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "text": "Ordered List Bullett Point Two "
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "text": "Ordered List Bullett Point Three"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "text": "Ordered List Bullett Point Four"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        }
+      ]
+    },
+    "3e036171-0a20-47d0-a06a-a7f493b65186": {
+      "@type": "separator",
+      "styles": {
+        "align": "left"
+      }
+    },
+    "43dd5fcf-3f52-469b-8ccc-57b785cf65b1": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "537a9742-95f1-4930-9df3-d38766f54a71": {
+      "@type": "title"
+    },
+    "60a17689-6437-4a88-bf2c-76a62351ca5b": {
+      "@type": "separator",
+      "styles": {
+        "align": "full"
+      }
+    },
+    "741da11b-703b-43ab-a9df-a7c1087d059a": {
+      "@type": "slate",
+      "plaintext": "Lists",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lists"
+            }
+          ],
+          "type": "h2"
+        }
+      ]
+    },
+    "89137ab1-3973-437f-be95-7e91586a4685": {
+      "@type": "image",
+      "align": "wide",
+      "copyright_and_sources": "Copyright: unsplash.com",
+      "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt.",
+      "image_scales": {
+        "image": [
+          {
+            "content-type": "image/jpeg",
+            "download": "@@images/image-2400-59ba0e28b8fb813be7e18935e5f63a59.jpeg",
+            "filename": "black-starry-night.jpg",
+            "height": 1708,
+            "scales": {
+              "great": {
+                "download": "@@images/image-1200-7cca3b5b9ba61195f9190c32b3a54ec9.jpeg",
+                "height": 854,
+                "width": 1200
+              },
+              "huge": {
+                "download": "@@images/image-1600-6ff92f1800f77515dde1be81b0fdd72a.jpeg",
+                "height": 1138,
+                "width": 1600
+              },
+              "icon": {
+                "download": "@@images/image-32-2a46e7a6b76a8db3a7941215c4de8a01.jpeg",
+                "height": 22,
+                "width": 32
+              },
+              "large": {
+                "download": "@@images/image-800-3a7c82cae430c36e707b83909a496b32.jpeg",
+                "height": 569,
+                "width": 800
+              },
+              "larger": {
+                "download": "@@images/image-1000-f4a4c8b8e8e5ffebfbdbcff0115bfc09.jpeg",
+                "height": 711,
+                "width": 1000
+              },
+              "mini": {
+                "download": "@@images/image-200-3bdc6d1e0c48ce4430f75a4ac55b939e.jpeg",
+                "height": 142,
+                "width": 200
+              },
+              "preview": {
+                "download": "@@images/image-400-71bf22b0c5006001209fc8fadb40b10a.jpeg",
+                "height": 284,
+                "width": 400
+              },
+              "teaser": {
+                "download": "@@images/image-600-75bdd455dcec596851abe1b072dc76fe.jpeg",
+                "height": 427,
+                "width": 600
+              },
+              "thumb": {
+                "download": "@@images/image-128-fc31735ade965dca8ce6946f7746c583.jpeg",
+                "height": 91,
+                "width": 128
+              },
+              "tile": {
+                "download": "@@images/image-64-598079775de66e3ee3d5a51362938e1a.jpeg",
+                "height": 45,
+                "width": 64
+              }
+            },
+            "size": 693013,
+            "width": 2400
+          }
+        ]
+      },
+      "size": "l",
+      "styles": {
+        "size:noprefix": "large"
+      },
+      "title": "Title Image",
+      "url": "resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+    },
+    "9313e80c-65d1-4d72-863f-fc1c17aba444": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "b1cf3854-5836-4efc-897e-d003ceea19f0": {
+      "@type": "slate",
+      "plaintext": "Text Heading H2",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Text Heading H2 "
+            }
+          ],
+          "type": "h2"
+        }
+      ]
+    },
+    "c08671c1-ca6c-4a5a-85b8-5c856bc112df": {
+      "@type": "slate",
+      "plaintext": "Inline Styles",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Inline Styles"
+            }
+          ],
+          "type": "h3"
+        }
+      ]
+    },
+    "c95cd0fd-f914-4dca-9adb-f7438b0a3112": {
+      "@type": "slate",
+      "plaintext": "Text can be bold or italic .",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Text can be "
+            },
+            {
+              "children": [
+                {
+                  "text": "bold"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": " or "
+            },
+            {
+              "children": [
+                {
+                  "text": "italic"
+                }
+              ],
+              "type": "em"
+            },
+            {
+              "text": "."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "d91f58fa-4634-4aac-bd1d-5f2fc4b338ca": {
+      "@type": "separator",
+      "styles": {
+        "align": "full"
+      }
+    },
+    "e83fea00-1714-4de7-9d79-8d0e749639a9": {
+      "@type": "introduction",
+      "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. "
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "fde62278-7792-46be-ba68-0d4d19a3a677": {
+      "@type": "slate",
+      "plaintext": "Text Heading H3",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Text Heading H3"
+            }
+          ],
+          "type": "h3"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "537a9742-95f1-4930-9df3-d38766f54a71",
+      "22f22002-2159-4e42-942a-8ebc6e930ed5",
+      "60a17689-6437-4a88-bf2c-76a62351ca5b",
+      "89137ab1-3973-437f-be95-7e91586a4685",
+      "e83fea00-1714-4de7-9d79-8d0e749639a9",
+      "d91f58fa-4634-4aac-bd1d-5f2fc4b338ca",
+      "b1cf3854-5836-4efc-897e-d003ceea19f0",
+      "43dd5fcf-3f52-469b-8ccc-57b785cf65b1",
+      "fde62278-7792-46be-ba68-0d4d19a3a677",
+      "9313e80c-65d1-4d72-863f-fc1c17aba444",
+      "741da11b-703b-43ab-a9df-a7c1087d059a",
+      "2e03fd8c-f334-400e-a3a9-d0446e3a1512",
+      "372b9489-5dc4-44a7-a7a9-649c2bc282db",
+      "c08671c1-ca6c-4a5a-85b8-5c856bc112df",
+      "c95cd0fd-f914-4dca-9adb-f7438b0a3112",
+      "2b54caa5-1c1a-40f2-aacd-84abce141e79",
+      "09460f92-723d-402d-a0a5-76a15f2678ad",
+      "3e036171-0a20-47d0-a06a-a7f493b65186"
+    ]
+  },
+  "contributors": [],
+  "created": "2023-07-06T21:35:21+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "The table of contents block automatically generates a table of contents with links to the corresponding positions on the page from the headings used.",
+  "effective": "2023-07-06T18:35:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "exportimport.versions": {},
+  "id": "toc-block",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2023-09-22T15:12:56+00:00",
+  "nav_title": null,
+  "parent": {
+    "@id": "/block",
+    "@type": "Document",
+    "UID": "425695d2b7cb47e69374d6f211f17e38",
+    "description": "",
+    "image_field": null,
+    "image_scales": null,
+    "review_state": "published",
+    "title": "Blocks",
+    "type_title": "Page"
+  },
+  "preview_caption": null,
+  "preview_image": {
+    "blob_path": "3906609d0456404ca7146f6aa1f12f32/preview_image/black-starry-night.jpg",
+    "content-type": "image/jpeg",
+    "filename": "black-starry-night.jpg",
+    "height": 1708,
+    "size": 693013,
+    "width": 2400
+  },
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "Table of Contents",
+  "type_title": "Page",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2023-07-06T21:35:21+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2023-07-06T21:35:22+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

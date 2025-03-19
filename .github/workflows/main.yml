@@ -1,0 +1,250 @@
+name: Volto Light Theme CI
+
+on:
+  push:
+    paths:
+      - "backend/**"
+      - "docs/**"
+      - "frontend/**"
+      - ".github/workflows/backend*"
+      - ".github/workflows/frontend*"
+      - ".github/workflows/main.yml"
+  workflow_dispatch:
+
+env:
+  IMAGE_NAME_PREFIX: ghcr.io/kitconcept/voltolighttheme
+  NODE_VERSION: "22.x"
+  PYTHON_VERSION: "3.12"
+  PLONE_VERSION: "6.1.0"
+
+jobs:
+  config:
+    runs-on: ubuntu-latest
+    outputs:
+      backend: ${{ steps.filter.outputs.backend }}
+      docs: ${{ steps.filter.outputs.docs }}
+      frontend: ${{ steps.filter.outputs.frontend }}
+      BASE_TAG: ${{ steps.vars.outputs.BASE_TAG }}
+      IMAGE_NAME_PREFIX: ${{ env.IMAGE_NAME_PREFIX }}
+      NODE_VERSION: ${{ env.NODE_VERSION }}
+      PYTHON_VERSION: ${{ env.PYTHON_VERSION }}
+      PLONE_VERSION: ${{ env.PLONE_VERSION }}
+      VOLTO_VERSION: ${{ steps.vars.outputs.VOLTO_VERSION }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compute several vars needed for the CI
+        id: vars
+        run: |
+          echo "BASE_TAG=sha-$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+          python3 -c 'import json; data = json.load(open("./frontend/mrs.developer.json")); print("VOLTO_VERSION=" + (data["core"].get("tag") or "latest"))' >> $GITHUB_OUTPUT
+
+      - name: Test vars
+        run: |
+          echo "BASE_TAG=${{ steps.vars.outputs.BASE_TAG }}"
+          echo 'VOLTO_VERSION=${{ steps.vars.outputs.VOLTO_VERSION }}'
+
+      - uses: dorny/paths-filter@v3.0.2
+        id: filter
+        with:
+          filters: |
+            backend:
+              - 'backend/**'
+              - '.github/workflows/backend*'
+            docs:
+              - '.readthedocs.yaml'
+              - 'docs/**'
+              - '.github/workflows/docs.yaml'
+            frontend:
+              - 'frontend/**'
+              - '.github/workflows/frontend*'
+
+  docs:
+    uses: ./.github/workflows/docs.yml
+    needs:
+        - config
+    with:
+        python-version: ${{ needs.config.outputs.PYTHON_VERSION }}
+    if: ${{ needs.config.outputs.docs == 'true' }}
+
+  backend-lint:
+    uses: ./.github/workflows/backend-lint.yml
+    needs:
+        - config
+    with:
+        python-version: ${{ needs.config.outputs.PYTHON_VERSION }}
+        plone-version: ${{ needs.config.outputs.PLONE_VERSION }}
+    if: ${{ needs.config.outputs.backend == 'true' }}
+
+  backend-test:
+    uses: ./.github/workflows/backend-test.yml
+    needs:
+        - config
+    strategy:
+      matrix:
+        python-version: ["3.13", "3.12", "3.11", "3.10"]
+        plone-version: ["6.1-latest", "6.0-latest"]
+    with:
+        python-version: ${{ matrix.python-version }}
+        plone-version: ${{ matrix.plone-version }}
+    if: ${{ needs.config.outputs.backend == 'true' }}
+
+  backend-coverage:
+    uses: ./.github/workflows/backend-coverage.yml
+    needs:
+        - config
+    with:
+        python-version: ${{ needs.config.outputs.PYTHON_VERSION }}
+        plone-version: ${{ needs.config.outputs.PLONE_VERSION }}
+    if: ${{ needs.config.outputs.backend == 'true' }}
+
+  backend-build:
+    if: ${{ (needs.config.outputs.frontend == 'true' || needs.config.outputs.backend == 'true') && (always() && !contains(needs.*.result, 'failure'))}}
+    uses: ./.github/workflows/backend-image-build.yml
+    needs:
+      - config
+      - backend-lint
+      - backend-coverage
+      - backend-test
+    with:
+      base-tag: ${{ needs.config.outputs.BASE_TAG }}
+      image-name-prefix: ${{ needs.config.outputs.IMAGE_NAME_PREFIX }}
+      image-name-suffix: backend
+      plone-version: ${{ needs.config.outputs.PLONE_VERSION }}
+
+  frontend-lint:
+    uses: ./.github/workflows/frontend-lint.yml
+    needs:
+        - config
+    with:
+        node-version: ${{ needs.config.outputs.NODE_VERSION }}
+    if: ${{ needs.config.outputs.frontend == 'true' }}
+    permissions:
+      contents: read
+      packages: write
+
+  frontend-unit:
+    uses: ./.github/workflows/frontend-unit.yml
+    needs:
+        - config
+    with:
+        node-version: ${{ needs.config.outputs.NODE_VERSION }}
+    if: ${{ needs.config.outputs.frontend == 'true' }}
+
+  frontend-i18n:
+    uses: ./.github/workflows/frontend-i18n.yml
+    needs:
+        - config
+    with:
+        node-version: ${{ needs.config.outputs.NODE_VERSION }}
+    if: ${{ needs.config.outputs.frontend == 'true' }}
+
+  frontend-build:
+    if: ${{ (needs.config.outputs.frontend == 'true' || needs.config.outputs.backend == 'true') && (always() && !contains(needs.*.result, 'failure'))}}
+    uses: ./.github/workflows/frontend-image-build.yml
+    needs:
+      - config
+      - frontend-lint
+      - frontend-i18n
+      - frontend-unit
+    with:
+      base-tag: ${{ needs.config.outputs.BASE_TAG }}
+      image-name-prefix: ${{ needs.config.outputs.IMAGE_NAME_PREFIX }}
+      image-name-suffix: frontend
+      node-version: ${{ needs.config.outputs.NODE_VERSION }}
+      volto-version: ${{ needs.config.outputs.VOLTO_VERSION }}
+    permissions:
+      contents: read
+      packages: write
+
+  acceptance:
+    if: ${{ always() && !contains(needs.*.result, 'failure') }}
+    uses: ./.github/workflows/frontend-acceptance.yml
+    needs:
+      - config
+      - backend-build
+      - frontend-build
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: "Main"
+            short-name: main
+          - name: "a11y"
+            short-name: a11y
+            a11y: true
+    name: ${{ matrix.name }}
+    with:
+      short-name: ${{ matrix.short-name }}
+      node-version: ${{ needs.config.outputs.NODE_VERSION }}
+      image-name-prefix: ${{ needs.config.outputs.IMAGE_NAME_PREFIX }}
+      image-tag: ${{ needs.config.outputs.BASE_TAG }}
+      a11y: ${{ matrix.a11y || false }}
+
+  visual-acceptance:
+    if: ${{ always() && !contains(needs.*.result, 'failure') }}
+    uses: ./.github/workflows/visual-acceptance.yml
+    needs:
+      - config
+      - backend-build
+      - frontend-build
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: "Homepage"
+            short-name: homepage
+          - name: "Content"
+            short-name: content
+          - name: "Blocks A"
+            short-name: blocks-A
+          - name: "Blocks B"
+            short-name: blocks-B
+          - name: "Blocks Grid"
+            short-name: blocks-grid
+          - name: "Blocks Listing"
+            short-name: blocks-listingsandsearch
+          - name: "Vertical Spacing"
+            short-name: vertical-spacing
+          - name: "Typography"
+            short-name: typography
+    name: ${{ matrix.name }}
+    with:
+      short-name: ${{ matrix.short-name }}
+      node-version: ${{ needs.config.outputs.NODE_VERSION }}
+      image-name-prefix: ${{ needs.config.outputs.IMAGE_NAME_PREFIX }}
+      image-tag: ${{ needs.config.outputs.BASE_TAG }}
+
+
+  backend-release:
+    if: ${{ needs.config.outputs.backend == 'true' }}
+    uses: ./.github/workflows/backend-image-release.yml
+    needs:
+      - config
+      - backend-build
+      - acceptance
+      - visual-acceptance
+    with:
+      base-tag: ${{ needs.config.outputs.BASE_TAG }}
+      image-name-prefix: ${{ needs.config.outputs.IMAGE_NAME_PREFIX }}
+      image-name-suffix: backend
+      plone-version: ${{ needs.config.outputs.PLONE_VERSION }}
+
+  frontend-release:
+    if: ${{ needs.config.outputs.frontend == 'true' }}
+    uses: ./.github/workflows/frontend-image-release.yml
+    needs:
+      - config
+      - frontend-build
+      - acceptance
+      - visual-acceptance
+    with:
+      base-tag: ${{ needs.config.outputs.BASE_TAG }}
+      image-name-prefix: ${{ needs.config.outputs.IMAGE_NAME_PREFIX }}
+      image-name-suffix: frontend
+      node-version: ${{ needs.config.outputs.NODE_VERSION }}
+      volto-version: ${{ needs.config.outputs.VOLTO_VERSION }}
+    permissions:
+      contents: read
+      packages: write

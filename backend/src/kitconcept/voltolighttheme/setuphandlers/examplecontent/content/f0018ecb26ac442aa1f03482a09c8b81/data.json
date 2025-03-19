@@ -1,0 +1,897 @@
+{
+  "@id": "/vertical-spacing/grid-and-button",
+  "@type": "Document",
+  "UID": "f0018ecb26ac442aa1f03482a09c8b81",
+  "allow_discussion": false,
+  "blocks": {
+    "09e2b7da-59b3-4aca-84e0-d21e910f6700": {
+      "@type": "__button",
+      "inneralign": "left",
+      "styles": {
+        "backgroundColor": "grey"
+      }
+    },
+    "40eeb312-119e-44ee-a4da-fab908083d04": {
+      "@type": "gridBlock",
+      "blocks": {
+        "3131582e-133c-49f1-8f8a-84178fa65bdf": {
+          "@type": "teaser",
+          "description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+              "@type": "Document",
+              "Description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+              "Title": "Inhaltstyp: Seite (Page)",
+              "getRemoteUrl": null,
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "image_scales": {
+                "preview_image": [
+                  {
+                    "content-type": "image/jpeg",
+                    "download": "@@images/preview_image-2400-dd70655eae2a121e9b3d20b15d5292db.jpeg",
+                    "filename": "black-starry-night.jpg",
+                    "height": 1708,
+                    "scales": {
+                      "great": {
+                        "download": "@@images/preview_image-1200-02d0687099bde73e5189270d53df7e22.jpeg",
+                        "height": 854,
+                        "width": 1200
+                      },
+                      "huge": {
+                        "download": "@@images/preview_image-1600-275bd418c80864fc5cc8b0b0c7f4a0a2.jpeg",
+                        "height": 1138,
+                        "width": 1600
+                      },
+                      "icon": {
+                        "download": "@@images/preview_image-32-848481d517c9091a765ccf7a6ef88277.jpeg",
+                        "height": 22,
+                        "width": 32
+                      },
+                      "large": {
+                        "download": "@@images/preview_image-800-255c17a5d39f4bb2d79c72d56934b342.jpeg",
+                        "height": 569,
+                        "width": 800
+                      },
+                      "larger": {
+                        "download": "@@images/preview_image-1000-661e34a155a000108788ca0d60f4b22c.jpeg",
+                        "height": 711,
+                        "width": 1000
+                      },
+                      "mini": {
+                        "download": "@@images/preview_image-200-614da3a8827dc90cb92618ada1980504.jpeg",
+                        "height": 142,
+                        "width": 200
+                      },
+                      "preview": {
+                        "download": "@@images/preview_image-400-bf2a5268ec239c40c54556e7f48b1cf6.jpeg",
+                        "height": 284,
+                        "width": 400
+                      },
+                      "teaser": {
+                        "download": "@@images/preview_image-600-b1f4235a88cb99bd1c5ab3dceaf953ee.jpeg",
+                        "height": 427,
+                        "width": 600
+                      },
+                      "thumb": {
+                        "download": "@@images/preview_image-128-80ae3135a04405512335f90c8ce4cb3e.jpeg",
+                        "height": 91,
+                        "width": 128
+                      },
+                      "tile": {
+                        "download": "@@images/preview_image-64-fbe446c415c4dbcbca8b81c451ee4659.jpeg",
+                        "height": 45,
+                        "width": 64
+                      }
+                    },
+                    "size": 693013,
+                    "width": 2400
+                  }
+                ]
+              },
+              "title": "Inhaltstyp: Seite (Page)"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Inhaltstyp: Seite (Page)"
+        },
+        "f3719d15-b7aa-491b-951b-afe82762bc74": {
+          "@type": "teaser",
+          "description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+              "@type": "Document",
+              "Description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+              "Title": "Inhaltstyp: Seite (Page)",
+              "getRemoteUrl": null,
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "image_scales": {
+                "preview_image": [
+                  {
+                    "content-type": "image/jpeg",
+                    "download": "@@images/preview_image-2400-dd70655eae2a121e9b3d20b15d5292db.jpeg",
+                    "filename": "black-starry-night.jpg",
+                    "height": 1708,
+                    "scales": {
+                      "great": {
+                        "download": "@@images/preview_image-1200-02d0687099bde73e5189270d53df7e22.jpeg",
+                        "height": 854,
+                        "width": 1200
+                      },
+                      "huge": {
+                        "download": "@@images/preview_image-1600-275bd418c80864fc5cc8b0b0c7f4a0a2.jpeg",
+                        "height": 1138,
+                        "width": 1600
+                      },
+                      "icon": {
+                        "download": "@@images/preview_image-32-848481d517c9091a765ccf7a6ef88277.jpeg",
+                        "height": 22,
+                        "width": 32
+                      },
+                      "large": {
+                        "download": "@@images/preview_image-800-255c17a5d39f4bb2d79c72d56934b342.jpeg",
+                        "height": 569,
+                        "width": 800
+                      },
+                      "larger": {
+                        "download": "@@images/preview_image-1000-661e34a155a000108788ca0d60f4b22c.jpeg",
+                        "height": 711,
+                        "width": 1000
+                      },
+                      "mini": {
+                        "download": "@@images/preview_image-200-614da3a8827dc90cb92618ada1980504.jpeg",
+                        "height": 142,
+                        "width": 200
+                      },
+                      "preview": {
+                        "download": "@@images/preview_image-400-bf2a5268ec239c40c54556e7f48b1cf6.jpeg",
+                        "height": 284,
+                        "width": 400
+                      },
+                      "teaser": {
+                        "download": "@@images/preview_image-600-b1f4235a88cb99bd1c5ab3dceaf953ee.jpeg",
+                        "height": 427,
+                        "width": 600
+                      },
+                      "thumb": {
+                        "download": "@@images/preview_image-128-80ae3135a04405512335f90c8ce4cb3e.jpeg",
+                        "height": 91,
+                        "width": 128
+                      },
+                      "tile": {
+                        "download": "@@images/preview_image-64-fbe446c415c4dbcbca8b81c451ee4659.jpeg",
+                        "height": 45,
+                        "width": 64
+                      }
+                    },
+                    "size": 693013,
+                    "width": 2400
+                  }
+                ]
+              },
+              "title": "Inhaltstyp: Seite (Page)"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Inhaltstyp: Seite (Page)"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "f3719d15-b7aa-491b-951b-afe82762bc74",
+          "3131582e-133c-49f1-8f8a-84178fa65bdf"
+        ]
+      },
+      "styles": {}
+    },
+    "4e9eb380-26e1-4840-861c-b3b269ba6fd3": {
+      "@type": "gridBlock",
+      "blocks": {
+        "3131582e-133c-49f1-8f8a-84178fa65bdf": {
+          "@type": "teaser",
+          "description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+              "@type": "Document",
+              "Description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+              "Title": "Inhaltstyp: Seite (Page)",
+              "getRemoteUrl": null,
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "image_scales": {
+                "preview_image": [
+                  {
+                    "content-type": "image/jpeg",
+                    "download": "@@images/preview_image-2400-dd70655eae2a121e9b3d20b15d5292db.jpeg",
+                    "filename": "black-starry-night.jpg",
+                    "height": 1708,
+                    "scales": {
+                      "great": {
+                        "download": "@@images/preview_image-1200-02d0687099bde73e5189270d53df7e22.jpeg",
+                        "height": 854,
+                        "width": 1200
+                      },
+                      "huge": {
+                        "download": "@@images/preview_image-1600-275bd418c80864fc5cc8b0b0c7f4a0a2.jpeg",
+                        "height": 1138,
+                        "width": 1600
+                      },
+                      "icon": {
+                        "download": "@@images/preview_image-32-848481d517c9091a765ccf7a6ef88277.jpeg",
+                        "height": 22,
+                        "width": 32
+                      },
+                      "large": {
+                        "download": "@@images/preview_image-800-255c17a5d39f4bb2d79c72d56934b342.jpeg",
+                        "height": 569,
+                        "width": 800
+                      },
+                      "larger": {
+                        "download": "@@images/preview_image-1000-661e34a155a000108788ca0d60f4b22c.jpeg",
+                        "height": 711,
+                        "width": 1000
+                      },
+                      "mini": {
+                        "download": "@@images/preview_image-200-614da3a8827dc90cb92618ada1980504.jpeg",
+                        "height": 142,
+                        "width": 200
+                      },
+                      "preview": {
+                        "download": "@@images/preview_image-400-bf2a5268ec239c40c54556e7f48b1cf6.jpeg",
+                        "height": 284,
+                        "width": 400
+                      },
+                      "teaser": {
+                        "download": "@@images/preview_image-600-b1f4235a88cb99bd1c5ab3dceaf953ee.jpeg",
+                        "height": 427,
+                        "width": 600
+                      },
+                      "thumb": {
+                        "download": "@@images/preview_image-128-80ae3135a04405512335f90c8ce4cb3e.jpeg",
+                        "height": 91,
+                        "width": 128
+                      },
+                      "tile": {
+                        "download": "@@images/preview_image-64-fbe446c415c4dbcbca8b81c451ee4659.jpeg",
+                        "height": 45,
+                        "width": 64
+                      }
+                    },
+                    "size": 693013,
+                    "width": 2400
+                  }
+                ]
+              },
+              "title": "Inhaltstyp: Seite (Page)"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Inhaltstyp: Seite (Page)"
+        },
+        "f3719d15-b7aa-491b-951b-afe82762bc74": {
+          "@type": "teaser",
+          "description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+              "@type": "Document",
+              "Description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+              "Title": "Inhaltstyp: Seite (Page)",
+              "getRemoteUrl": null,
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "image_scales": {
+                "preview_image": [
+                  {
+                    "content-type": "image/jpeg",
+                    "download": "@@images/preview_image-2400-dd70655eae2a121e9b3d20b15d5292db.jpeg",
+                    "filename": "black-starry-night.jpg",
+                    "height": 1708,
+                    "scales": {
+                      "great": {
+                        "download": "@@images/preview_image-1200-02d0687099bde73e5189270d53df7e22.jpeg",
+                        "height": 854,
+                        "width": 1200
+                      },
+                      "huge": {
+                        "download": "@@images/preview_image-1600-275bd418c80864fc5cc8b0b0c7f4a0a2.jpeg",
+                        "height": 1138,
+                        "width": 1600
+                      },
+                      "icon": {
+                        "download": "@@images/preview_image-32-848481d517c9091a765ccf7a6ef88277.jpeg",
+                        "height": 22,
+                        "width": 32
+                      },
+                      "large": {
+                        "download": "@@images/preview_image-800-255c17a5d39f4bb2d79c72d56934b342.jpeg",
+                        "height": 569,
+                        "width": 800
+                      },
+                      "larger": {
+                        "download": "@@images/preview_image-1000-661e34a155a000108788ca0d60f4b22c.jpeg",
+                        "height": 711,
+                        "width": 1000
+                      },
+                      "mini": {
+                        "download": "@@images/preview_image-200-614da3a8827dc90cb92618ada1980504.jpeg",
+                        "height": 142,
+                        "width": 200
+                      },
+                      "preview": {
+                        "download": "@@images/preview_image-400-bf2a5268ec239c40c54556e7f48b1cf6.jpeg",
+                        "height": 284,
+                        "width": 400
+                      },
+                      "teaser": {
+                        "download": "@@images/preview_image-600-b1f4235a88cb99bd1c5ab3dceaf953ee.jpeg",
+                        "height": 427,
+                        "width": 600
+                      },
+                      "thumb": {
+                        "download": "@@images/preview_image-128-80ae3135a04405512335f90c8ce4cb3e.jpeg",
+                        "height": 91,
+                        "width": 128
+                      },
+                      "tile": {
+                        "download": "@@images/preview_image-64-fbe446c415c4dbcbca8b81c451ee4659.jpeg",
+                        "height": 45,
+                        "width": 64
+                      }
+                    },
+                    "size": 693013,
+                    "width": 2400
+                  }
+                ]
+              },
+              "title": "Inhaltstyp: Seite (Page)"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Inhaltstyp: Seite (Page)"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "f3719d15-b7aa-491b-951b-afe82762bc74",
+          "3131582e-133c-49f1-8f8a-84178fa65bdf"
+        ]
+      },
+      "styles": {}
+    },
+    "56d0c2cc-77db-4ca9-8a75-5153206733f8": {
+      "@type": "title"
+    },
+    "737892ac-6258-4558-a873-1ab20b16adf8": {
+      "@type": "gridBlock",
+      "blocks": {
+        "3131582e-133c-49f1-8f8a-84178fa65bdf": {
+          "@type": "teaser",
+          "description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+              "@type": "Document",
+              "Description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+              "Title": "Inhaltstyp: Seite (Page)",
+              "getRemoteUrl": null,
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "image_scales": {
+                "preview_image": [
+                  {
+                    "content-type": "image/jpeg",
+                    "download": "@@images/preview_image-2400-dd70655eae2a121e9b3d20b15d5292db.jpeg",
+                    "filename": "black-starry-night.jpg",
+                    "height": 1708,
+                    "scales": {
+                      "great": {
+                        "download": "@@images/preview_image-1200-02d0687099bde73e5189270d53df7e22.jpeg",
+                        "height": 854,
+                        "width": 1200
+                      },
+                      "huge": {
+                        "download": "@@images/preview_image-1600-275bd418c80864fc5cc8b0b0c7f4a0a2.jpeg",
+                        "height": 1138,
+                        "width": 1600
+                      },
+                      "icon": {
+                        "download": "@@images/preview_image-32-848481d517c9091a765ccf7a6ef88277.jpeg",
+                        "height": 22,
+                        "width": 32
+                      },
+                      "large": {
+                        "download": "@@images/preview_image-800-255c17a5d39f4bb2d79c72d56934b342.jpeg",
+                        "height": 569,
+                        "width": 800
+                      },
+                      "larger": {
+                        "download": "@@images/preview_image-1000-661e34a155a000108788ca0d60f4b22c.jpeg",
+                        "height": 711,
+                        "width": 1000
+                      },
+                      "mini": {
+                        "download": "@@images/preview_image-200-614da3a8827dc90cb92618ada1980504.jpeg",
+                        "height": 142,
+                        "width": 200
+                      },
+                      "preview": {
+                        "download": "@@images/preview_image-400-bf2a5268ec239c40c54556e7f48b1cf6.jpeg",
+                        "height": 284,
+                        "width": 400
+                      },
+                      "teaser": {
+                        "download": "@@images/preview_image-600-b1f4235a88cb99bd1c5ab3dceaf953ee.jpeg",
+                        "height": 427,
+                        "width": 600
+                      },
+                      "thumb": {
+                        "download": "@@images/preview_image-128-80ae3135a04405512335f90c8ce4cb3e.jpeg",
+                        "height": 91,
+                        "width": 128
+                      },
+                      "tile": {
+                        "download": "@@images/preview_image-64-fbe446c415c4dbcbca8b81c451ee4659.jpeg",
+                        "height": 45,
+                        "width": 64
+                      }
+                    },
+                    "size": 693013,
+                    "width": 2400
+                  }
+                ]
+              },
+              "title": "Inhaltstyp: Seite (Page)"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Inhaltstyp: Seite (Page)"
+        },
+        "f3719d15-b7aa-491b-951b-afe82762bc74": {
+          "@type": "teaser",
+          "description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+              "@type": "Document",
+              "Description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+              "Title": "Inhaltstyp: Seite (Page)",
+              "getRemoteUrl": null,
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "image_scales": {
+                "preview_image": [
+                  {
+                    "content-type": "image/jpeg",
+                    "download": "@@images/preview_image-2400-dd70655eae2a121e9b3d20b15d5292db.jpeg",
+                    "filename": "black-starry-night.jpg",
+                    "height": 1708,
+                    "scales": {
+                      "great": {
+                        "download": "@@images/preview_image-1200-02d0687099bde73e5189270d53df7e22.jpeg",
+                        "height": 854,
+                        "width": 1200
+                      },
+                      "huge": {
+                        "download": "@@images/preview_image-1600-275bd418c80864fc5cc8b0b0c7f4a0a2.jpeg",
+                        "height": 1138,
+                        "width": 1600
+                      },
+                      "icon": {
+                        "download": "@@images/preview_image-32-848481d517c9091a765ccf7a6ef88277.jpeg",
+                        "height": 22,
+                        "width": 32
+                      },
+                      "large": {
+                        "download": "@@images/preview_image-800-255c17a5d39f4bb2d79c72d56934b342.jpeg",
+                        "height": 569,
+                        "width": 800
+                      },
+                      "larger": {
+                        "download": "@@images/preview_image-1000-661e34a155a000108788ca0d60f4b22c.jpeg",
+                        "height": 711,
+                        "width": 1000
+                      },
+                      "mini": {
+                        "download": "@@images/preview_image-200-614da3a8827dc90cb92618ada1980504.jpeg",
+                        "height": 142,
+                        "width": 200
+                      },
+                      "preview": {
+                        "download": "@@images/preview_image-400-bf2a5268ec239c40c54556e7f48b1cf6.jpeg",
+                        "height": 284,
+                        "width": 400
+                      },
+                      "teaser": {
+                        "download": "@@images/preview_image-600-b1f4235a88cb99bd1c5ab3dceaf953ee.jpeg",
+                        "height": 427,
+                        "width": 600
+                      },
+                      "thumb": {
+                        "download": "@@images/preview_image-128-80ae3135a04405512335f90c8ce4cb3e.jpeg",
+                        "height": 91,
+                        "width": 128
+                      },
+                      "tile": {
+                        "download": "@@images/preview_image-64-fbe446c415c4dbcbca8b81c451ee4659.jpeg",
+                        "height": 45,
+                        "width": 64
+                      }
+                    },
+                    "size": 693013,
+                    "width": 2400
+                  }
+                ]
+              },
+              "title": "Inhaltstyp: Seite (Page)"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Inhaltstyp: Seite (Page)"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "f3719d15-b7aa-491b-951b-afe82762bc74",
+          "3131582e-133c-49f1-8f8a-84178fa65bdf"
+        ]
+      },
+      "styles": {}
+    },
+    "7c111480-cf9a-469c-8d95-d79aeda7281e": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "94d7dd2e-4b12-43d6-a79c-e49f85818042": {
+      "@type": "__button",
+      "inneralign": "left",
+      "styles": {}
+    },
+    "cb28e9c6-7ae8-4aa6-b081-48ed87867c0e": {
+      "@type": "__button",
+      "inneralign": "left",
+      "styles": {
+        "backgroundColor": "grey"
+      }
+    },
+    "e40d01ac-6b59-4da0-9f70-a7f6f9ee8289": {
+      "@type": "__button",
+      "inneralign": "left",
+      "styles": {}
+    },
+    "e57d83d2-3534-42ad-bd2e-681804c07055": {
+      "@type": "gridBlock",
+      "blocks": {
+        "3131582e-133c-49f1-8f8a-84178fa65bdf": {
+          "@type": "teaser",
+          "description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+              "@type": "Document",
+              "Description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+              "Title": "Inhaltstyp: Seite (Page)",
+              "getRemoteUrl": null,
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "image_scales": {
+                "preview_image": [
+                  {
+                    "content-type": "image/jpeg",
+                    "download": "@@images/preview_image-2400-dd70655eae2a121e9b3d20b15d5292db.jpeg",
+                    "filename": "black-starry-night.jpg",
+                    "height": 1708,
+                    "scales": {
+                      "great": {
+                        "download": "@@images/preview_image-1200-02d0687099bde73e5189270d53df7e22.jpeg",
+                        "height": 854,
+                        "width": 1200
+                      },
+                      "huge": {
+                        "download": "@@images/preview_image-1600-275bd418c80864fc5cc8b0b0c7f4a0a2.jpeg",
+                        "height": 1138,
+                        "width": 1600
+                      },
+                      "icon": {
+                        "download": "@@images/preview_image-32-848481d517c9091a765ccf7a6ef88277.jpeg",
+                        "height": 22,
+                        "width": 32
+                      },
+                      "large": {
+                        "download": "@@images/preview_image-800-255c17a5d39f4bb2d79c72d56934b342.jpeg",
+                        "height": 569,
+                        "width": 800
+                      },
+                      "larger": {
+                        "download": "@@images/preview_image-1000-661e34a155a000108788ca0d60f4b22c.jpeg",
+                        "height": 711,
+                        "width": 1000
+                      },
+                      "mini": {
+                        "download": "@@images/preview_image-200-614da3a8827dc90cb92618ada1980504.jpeg",
+                        "height": 142,
+                        "width": 200
+                      },
+                      "preview": {
+                        "download": "@@images/preview_image-400-bf2a5268ec239c40c54556e7f48b1cf6.jpeg",
+                        "height": 284,
+                        "width": 400
+                      },
+                      "teaser": {
+                        "download": "@@images/preview_image-600-b1f4235a88cb99bd1c5ab3dceaf953ee.jpeg",
+                        "height": 427,
+                        "width": 600
+                      },
+                      "thumb": {
+                        "download": "@@images/preview_image-128-80ae3135a04405512335f90c8ce4cb3e.jpeg",
+                        "height": 91,
+                        "width": 128
+                      },
+                      "tile": {
+                        "download": "@@images/preview_image-64-fbe446c415c4dbcbca8b81c451ee4659.jpeg",
+                        "height": 45,
+                        "width": 64
+                      }
+                    },
+                    "size": 693013,
+                    "width": 2400
+                  }
+                ]
+              },
+              "title": "Inhaltstyp: Seite (Page)"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Inhaltstyp: Seite (Page)"
+        },
+        "f3719d15-b7aa-491b-951b-afe82762bc74": {
+          "@type": "teaser",
+          "description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+              "@type": "Document",
+              "Description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+              "Title": "Inhaltstyp: Seite (Page)",
+              "getRemoteUrl": null,
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "image_scales": {
+                "preview_image": [
+                  {
+                    "content-type": "image/jpeg",
+                    "download": "@@images/preview_image-2400-dd70655eae2a121e9b3d20b15d5292db.jpeg",
+                    "filename": "black-starry-night.jpg",
+                    "height": 1708,
+                    "scales": {
+                      "great": {
+                        "download": "@@images/preview_image-1200-02d0687099bde73e5189270d53df7e22.jpeg",
+                        "height": 854,
+                        "width": 1200
+                      },
+                      "huge": {
+                        "download": "@@images/preview_image-1600-275bd418c80864fc5cc8b0b0c7f4a0a2.jpeg",
+                        "height": 1138,
+                        "width": 1600
+                      },
+                      "icon": {
+                        "download": "@@images/preview_image-32-848481d517c9091a765ccf7a6ef88277.jpeg",
+                        "height": 22,
+                        "width": 32
+                      },
+                      "large": {
+                        "download": "@@images/preview_image-800-255c17a5d39f4bb2d79c72d56934b342.jpeg",
+                        "height": 569,
+                        "width": 800
+                      },
+                      "larger": {
+                        "download": "@@images/preview_image-1000-661e34a155a000108788ca0d60f4b22c.jpeg",
+                        "height": 711,
+                        "width": 1000
+                      },
+                      "mini": {
+                        "download": "@@images/preview_image-200-614da3a8827dc90cb92618ada1980504.jpeg",
+                        "height": 142,
+                        "width": 200
+                      },
+                      "preview": {
+                        "download": "@@images/preview_image-400-bf2a5268ec239c40c54556e7f48b1cf6.jpeg",
+                        "height": 284,
+                        "width": 400
+                      },
+                      "teaser": {
+                        "download": "@@images/preview_image-600-b1f4235a88cb99bd1c5ab3dceaf953ee.jpeg",
+                        "height": 427,
+                        "width": 600
+                      },
+                      "thumb": {
+                        "download": "@@images/preview_image-128-80ae3135a04405512335f90c8ce4cb3e.jpeg",
+                        "height": 91,
+                        "width": 128
+                      },
+                      "tile": {
+                        "download": "@@images/preview_image-64-fbe446c415c4dbcbca8b81c451ee4659.jpeg",
+                        "height": 45,
+                        "width": 64
+                      }
+                    },
+                    "size": 693013,
+                    "width": 2400
+                  }
+                ]
+              },
+              "title": "Inhaltstyp: Seite (Page)"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Inhaltstyp: Seite (Page)"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "f3719d15-b7aa-491b-951b-afe82762bc74",
+          "3131582e-133c-49f1-8f8a-84178fa65bdf"
+        ]
+      },
+      "styles": {
+        "backgroundColor": "grey"
+      }
+    },
+    "ee448ae9-5d4d-4511-9fda-ff528b909279": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.",
+      "styles": {
+        "backgroundColor": "grey"
+      },
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "f2a4fae7-5a93-4ad3-9bdc-9f87fb01cdf6": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "56d0c2cc-77db-4ca9-8a75-5153206733f8",
+      "737892ac-6258-4558-a873-1ab20b16adf8",
+      "e40d01ac-6b59-4da0-9f70-a7f6f9ee8289",
+      "f2a4fae7-5a93-4ad3-9bdc-9f87fb01cdf6",
+      "94d7dd2e-4b12-43d6-a79c-e49f85818042",
+      "4e9eb380-26e1-4840-861c-b3b269ba6fd3",
+      "7c111480-cf9a-469c-8d95-d79aeda7281e",
+      "e57d83d2-3534-42ad-bd2e-681804c07055",
+      "cb28e9c6-7ae8-4aa6-b081-48ed87867c0e",
+      "ee448ae9-5d4d-4511-9fda-ff528b909279",
+      "09e2b7da-59b3-4aca-84e0-d21e910f6700",
+      "40eeb312-119e-44ee-a4da-fab908083d04"
+    ]
+  },
+  "contributors": [],
+  "created": "2023-07-06T21:35:22+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2023-07-06T18:35:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "exportimport.versions": {},
+  "id": "grid-and-button",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2023-09-22T14:07:46+00:00",
+  "nav_title": null,
+  "parent": {
+    "@id": "/vertical-spacing",
+    "@type": "Document",
+    "UID": "c40a2be214b645338a7ef2e711e2f5c6",
+    "description": "",
+    "image_field": null,
+    "image_scales": null,
+    "review_state": "published",
+    "title": "Vertical Spacing",
+    "type_title": "Page"
+  },
+  "preview_caption": null,
+  "preview_image": null,
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "Grid and Button",
+  "type_title": "Page",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2023-07-06T21:35:22+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2023-07-06T21:35:22+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

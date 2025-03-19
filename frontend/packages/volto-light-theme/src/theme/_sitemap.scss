@@ -1,0 +1,31 @@
+@use 'sass:map';
+.section-sitemap {
+  #page-sitemap {
+    .q.container {
+      @include default-container-width();
+    }
+
+    h1 {
+      @include page-title();
+      @include vertical-space-h1();
+      @include word-break();
+    }
+
+    ul {
+      li.with-children {
+        a {
+          font-weight: $bold;
+          line-height: map.get($line-heights, 3xl);
+          text-decoration: none;
+        }
+        ul {
+          li {
+            a {
+              font-weight: $regular;
+            }
+          }
+        }
+      }
+    }
+  }
+}

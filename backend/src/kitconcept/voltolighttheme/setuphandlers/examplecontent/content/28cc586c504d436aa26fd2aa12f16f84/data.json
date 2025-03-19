@@ -1,0 +1,1605 @@
+{
+  "@id": "/block/grid-block/image",
+  "@type": "Document",
+  "UID": "28cc586c504d436aa26fd2aa12f16f84",
+  "allow_discussion": false,
+  "blocks": {
+    "14b875e3-8bda-4610-98dc-ebbd03b8c929": {
+      "@type": "gridBlock",
+      "blocks": {
+        "34340073-e534-42ad-9cfb-8eab299228a9": {
+          "@type": "image",
+          "align": "center",
+          "credit": {},
+          "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+          "image_field": "image",
+          "image_scales": {
+            "image": [
+              {
+                "content-type": "image/jpeg",
+                "download": "@@images/image-2400-59ba0e28b8fb813be7e18935e5f63a59.jpeg",
+                "filename": "black-starry-night.jpg",
+                "height": 1708,
+                "scales": {
+                  "great": {
+                    "download": "@@images/image-1200-7cca3b5b9ba61195f9190c32b3a54ec9.jpeg",
+                    "height": 854,
+                    "width": 1200
+                  },
+                  "huge": {
+                    "download": "@@images/image-1600-6ff92f1800f77515dde1be81b0fdd72a.jpeg",
+                    "height": 1138,
+                    "width": 1600
+                  },
+                  "icon": {
+                    "download": "@@images/image-32-2a46e7a6b76a8db3a7941215c4de8a01.jpeg",
+                    "height": 22,
+                    "width": 32
+                  },
+                  "large": {
+                    "download": "@@images/image-800-3a7c82cae430c36e707b83909a496b32.jpeg",
+                    "height": 569,
+                    "width": 800
+                  },
+                  "larger": {
+                    "download": "@@images/image-1000-f4a4c8b8e8e5ffebfbdbcff0115bfc09.jpeg",
+                    "height": 711,
+                    "width": 1000
+                  },
+                  "mini": {
+                    "download": "@@images/image-200-3bdc6d1e0c48ce4430f75a4ac55b939e.jpeg",
+                    "height": 142,
+                    "width": 200
+                  },
+                  "preview": {
+                    "download": "@@images/image-400-71bf22b0c5006001209fc8fadb40b10a.jpeg",
+                    "height": 284,
+                    "width": 400
+                  },
+                  "teaser": {
+                    "download": "@@images/image-600-75bdd455dcec596851abe1b072dc76fe.jpeg",
+                    "height": 427,
+                    "width": 600
+                  },
+                  "thumb": {
+                    "download": "@@images/image-128-fc31735ade965dca8ce6946f7746c583.jpeg",
+                    "height": 91,
+                    "width": 128
+                  },
+                  "tile": {
+                    "download": "@@images/image-64-598079775de66e3ee3d5a51362938e1a.jpeg",
+                    "height": 45,
+                    "width": 64
+                  }
+                },
+                "size": 693013,
+                "width": 2400
+              }
+            ]
+          },
+          "size": "l",
+          "title": "Image",
+          "url": "resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+        },
+        "b1015ec4-9ddf-4e59-b6bf-214fc12c3a3d": {
+          "@type": "image",
+          "align": "center",
+          "credit": {},
+          "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+          "image_field": "image",
+          "image_scales": {
+            "image": [
+              {
+                "content-type": "image/jpeg",
+                "download": "@@images/image-2400-59ba0e28b8fb813be7e18935e5f63a59.jpeg",
+                "filename": "black-starry-night.jpg",
+                "height": 1708,
+                "scales": {
+                  "great": {
+                    "download": "@@images/image-1200-7cca3b5b9ba61195f9190c32b3a54ec9.jpeg",
+                    "height": 854,
+                    "width": 1200
+                  },
+                  "huge": {
+                    "download": "@@images/image-1600-6ff92f1800f77515dde1be81b0fdd72a.jpeg",
+                    "height": 1138,
+                    "width": 1600
+                  },
+                  "icon": {
+                    "download": "@@images/image-32-2a46e7a6b76a8db3a7941215c4de8a01.jpeg",
+                    "height": 22,
+                    "width": 32
+                  },
+                  "large": {
+                    "download": "@@images/image-800-3a7c82cae430c36e707b83909a496b32.jpeg",
+                    "height": 569,
+                    "width": 800
+                  },
+                  "larger": {
+                    "download": "@@images/image-1000-f4a4c8b8e8e5ffebfbdbcff0115bfc09.jpeg",
+                    "height": 711,
+                    "width": 1000
+                  },
+                  "mini": {
+                    "download": "@@images/image-200-3bdc6d1e0c48ce4430f75a4ac55b939e.jpeg",
+                    "height": 142,
+                    "width": 200
+                  },
+                  "preview": {
+                    "download": "@@images/image-400-71bf22b0c5006001209fc8fadb40b10a.jpeg",
+                    "height": 284,
+                    "width": 400
+                  },
+                  "teaser": {
+                    "download": "@@images/image-600-75bdd455dcec596851abe1b072dc76fe.jpeg",
+                    "height": 427,
+                    "width": 600
+                  },
+                  "thumb": {
+                    "download": "@@images/image-128-fc31735ade965dca8ce6946f7746c583.jpeg",
+                    "height": 91,
+                    "width": 128
+                  },
+                  "tile": {
+                    "download": "@@images/image-64-598079775de66e3ee3d5a51362938e1a.jpeg",
+                    "height": 45,
+                    "width": 64
+                  }
+                },
+                "size": 693013,
+                "width": 2400
+              }
+            ]
+          },
+          "size": "l",
+          "title": "Image",
+          "url": "resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+        },
+        "e800de8b-25f2-4a40-a3c6-189bec399a45": {
+          "@type": "image",
+          "align": "center",
+          "credit": {},
+          "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+          "image_field": "image",
+          "image_scales": {
+            "image": [
+              {
+                "content-type": "image/jpeg",
+                "download": "@@images/image-2400-59ba0e28b8fb813be7e18935e5f63a59.jpeg",
+                "filename": "black-starry-night.jpg",
+                "height": 1708,
+                "scales": {
+                  "great": {
+                    "download": "@@images/image-1200-7cca3b5b9ba61195f9190c32b3a54ec9.jpeg",
+                    "height": 854,
+                    "width": 1200
+                  },
+                  "huge": {
+                    "download": "@@images/image-1600-6ff92f1800f77515dde1be81b0fdd72a.jpeg",
+                    "height": 1138,
+                    "width": 1600
+                  },
+                  "icon": {
+                    "download": "@@images/image-32-2a46e7a6b76a8db3a7941215c4de8a01.jpeg",
+                    "height": 22,
+                    "width": 32
+                  },
+                  "large": {
+                    "download": "@@images/image-800-3a7c82cae430c36e707b83909a496b32.jpeg",
+                    "height": 569,
+                    "width": 800
+                  },
+                  "larger": {
+                    "download": "@@images/image-1000-f4a4c8b8e8e5ffebfbdbcff0115bfc09.jpeg",
+                    "height": 711,
+                    "width": 1000
+                  },
+                  "mini": {
+                    "download": "@@images/image-200-3bdc6d1e0c48ce4430f75a4ac55b939e.jpeg",
+                    "height": 142,
+                    "width": 200
+                  },
+                  "preview": {
+                    "download": "@@images/image-400-71bf22b0c5006001209fc8fadb40b10a.jpeg",
+                    "height": 284,
+                    "width": 400
+                  },
+                  "teaser": {
+                    "download": "@@images/image-600-75bdd455dcec596851abe1b072dc76fe.jpeg",
+                    "height": 427,
+                    "width": 600
+                  },
+                  "thumb": {
+                    "download": "@@images/image-128-fc31735ade965dca8ce6946f7746c583.jpeg",
+                    "height": 91,
+                    "width": 128
+                  },
+                  "tile": {
+                    "download": "@@images/image-64-598079775de66e3ee3d5a51362938e1a.jpeg",
+                    "height": 45,
+                    "width": 64
+                  }
+                },
+                "size": 693013,
+                "width": 2400
+              }
+            ]
+          },
+          "size": "l",
+          "title": "Image",
+          "url": "resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "b1015ec4-9ddf-4e59-b6bf-214fc12c3a3d",
+          "34340073-e534-42ad-9cfb-8eab299228a9",
+          "e800de8b-25f2-4a40-a3c6-189bec399a45"
+        ]
+      },
+      "styles": {
+        "backgroundColor": "grey"
+      }
+    },
+    "527d1573-85c1-47c7-928a-8dea32153e83": {
+      "@type": "gridBlock",
+      "blocks": {
+        "5e227a15-09e6-49f7-8679-e0b588059e1f": {
+          "@type": "image",
+          "align": "center",
+          "credit": {},
+          "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+          "image_field": "image",
+          "image_scales": {
+            "image": [
+              {
+                "content-type": "image/jpeg",
+                "download": "@@images/image-1126-7b90bd2f737fb08f5e2c5719f2f8bc14.jpeg",
+                "filename": "image-light.jpg",
+                "height": 633,
+                "scales": {
+                  "icon": {
+                    "download": "@@images/image-32-5de0f24798404cddd70cc1d15b1213ba.jpeg",
+                    "height": 17,
+                    "width": 32
+                  },
+                  "large": {
+                    "download": "@@images/image-800-728b0edae32e307d8123462b48fafeaa.jpeg",
+                    "height": 449,
+                    "width": 800
+                  },
+                  "larger": {
+                    "download": "@@images/image-1000-19685fe0e43ca671a6f6a973c7d1f0f5.jpeg",
+                    "height": 562,
+                    "width": 1000
+                  },
+                  "mini": {
+                    "download": "@@images/image-200-cfd42d570345d1134d9b2d0f5726bb2e.jpeg",
+                    "height": 112,
+                    "width": 200
+                  },
+                  "preview": {
+                    "download": "@@images/image-400-a35b24fd0dbe867083f962cf69f19c2a.jpeg",
+                    "height": 224,
+                    "width": 400
+                  },
+                  "teaser": {
+                    "download": "@@images/image-600-702ac2045d4ca6fc61c52749e8c2f24d.jpeg",
+                    "height": 337,
+                    "width": 600
+                  },
+                  "thumb": {
+                    "download": "@@images/image-128-06fa281eabe3bbba6eea685ce60d08f1.jpeg",
+                    "height": 71,
+                    "width": 128
+                  },
+                  "tile": {
+                    "download": "@@images/image-64-f0e777433e3a4227dab46fe8cac688a6.jpeg",
+                    "height": 35,
+                    "width": 64
+                  }
+                },
+                "size": 475285,
+                "width": 1126
+              }
+            ]
+          },
+          "size": "l",
+          "title": "Image - Light",
+          "url": "resolveuid/eec82559bf3242a6be4d43bc2096f399"
+        },
+        "abd3504f-b4dd-48a9-97e2-923f2e63a957": {
+          "@type": "image",
+          "align": "center",
+          "credit": {},
+          "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+          "image_field": "image",
+          "image_scales": {
+            "image": [
+              {
+                "content-type": "image/jpeg",
+                "download": "@@images/image-2400-59ba0e28b8fb813be7e18935e5f63a59.jpeg",
+                "filename": "black-starry-night.jpg",
+                "height": 1708,
+                "scales": {
+                  "great": {
+                    "download": "@@images/image-1200-7cca3b5b9ba61195f9190c32b3a54ec9.jpeg",
+                    "height": 854,
+                    "width": 1200
+                  },
+                  "huge": {
+                    "download": "@@images/image-1600-6ff92f1800f77515dde1be81b0fdd72a.jpeg",
+                    "height": 1138,
+                    "width": 1600
+                  },
+                  "icon": {
+                    "download": "@@images/image-32-2a46e7a6b76a8db3a7941215c4de8a01.jpeg",
+                    "height": 22,
+                    "width": 32
+                  },
+                  "large": {
+                    "download": "@@images/image-800-3a7c82cae430c36e707b83909a496b32.jpeg",
+                    "height": 569,
+                    "width": 800
+                  },
+                  "larger": {
+                    "download": "@@images/image-1000-f4a4c8b8e8e5ffebfbdbcff0115bfc09.jpeg",
+                    "height": 711,
+                    "width": 1000
+                  },
+                  "mini": {
+                    "download": "@@images/image-200-3bdc6d1e0c48ce4430f75a4ac55b939e.jpeg",
+                    "height": 142,
+                    "width": 200
+                  },
+                  "preview": {
+                    "download": "@@images/image-400-71bf22b0c5006001209fc8fadb40b10a.jpeg",
+                    "height": 284,
+                    "width": 400
+                  },
+                  "teaser": {
+                    "download": "@@images/image-600-75bdd455dcec596851abe1b072dc76fe.jpeg",
+                    "height": 427,
+                    "width": 600
+                  },
+                  "thumb": {
+                    "download": "@@images/image-128-fc31735ade965dca8ce6946f7746c583.jpeg",
+                    "height": 91,
+                    "width": 128
+                  },
+                  "tile": {
+                    "download": "@@images/image-64-598079775de66e3ee3d5a51362938e1a.jpeg",
+                    "height": 45,
+                    "width": 64
+                  }
+                },
+                "size": 693013,
+                "width": 2400
+              }
+            ]
+          },
+          "size": "l",
+          "title": "Image",
+          "url": "resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "abd3504f-b4dd-48a9-97e2-923f2e63a957",
+          "5e227a15-09e6-49f7-8679-e0b588059e1f"
+        ]
+      },
+      "styles": {
+        "backgroundColor": "grey"
+      }
+    },
+    "83675906-07fc-468d-b0f3-71536fcb81eb": {
+      "@type": "gridBlock",
+      "blocks": {
+        "10dcdda6-cbbc-4de7-9542-fb9ca7df4638": {
+          "@type": "image",
+          "align": "center",
+          "credit": {},
+          "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+          "image_field": "image",
+          "image_scales": {
+            "image": [
+              {
+                "content-type": "image/jpeg",
+                "download": "@@images/image-1126-7b90bd2f737fb08f5e2c5719f2f8bc14.jpeg",
+                "filename": "image-light.jpg",
+                "height": 633,
+                "scales": {
+                  "icon": {
+                    "download": "@@images/image-32-5de0f24798404cddd70cc1d15b1213ba.jpeg",
+                    "height": 17,
+                    "width": 32
+                  },
+                  "large": {
+                    "download": "@@images/image-800-728b0edae32e307d8123462b48fafeaa.jpeg",
+                    "height": 449,
+                    "width": 800
+                  },
+                  "larger": {
+                    "download": "@@images/image-1000-19685fe0e43ca671a6f6a973c7d1f0f5.jpeg",
+                    "height": 562,
+                    "width": 1000
+                  },
+                  "mini": {
+                    "download": "@@images/image-200-cfd42d570345d1134d9b2d0f5726bb2e.jpeg",
+                    "height": 112,
+                    "width": 200
+                  },
+                  "preview": {
+                    "download": "@@images/image-400-a35b24fd0dbe867083f962cf69f19c2a.jpeg",
+                    "height": 224,
+                    "width": 400
+                  },
+                  "teaser": {
+                    "download": "@@images/image-600-702ac2045d4ca6fc61c52749e8c2f24d.jpeg",
+                    "height": 337,
+                    "width": 600
+                  },
+                  "thumb": {
+                    "download": "@@images/image-128-06fa281eabe3bbba6eea685ce60d08f1.jpeg",
+                    "height": 71,
+                    "width": 128
+                  },
+                  "tile": {
+                    "download": "@@images/image-64-f0e777433e3a4227dab46fe8cac688a6.jpeg",
+                    "height": 35,
+                    "width": 64
+                  }
+                },
+                "size": 475285,
+                "width": 1126
+              }
+            ]
+          },
+          "size": "l",
+          "title": "Image - Light",
+          "url": "resolveuid/eec82559bf3242a6be4d43bc2096f399"
+        },
+        "df0eac4f-de62-444e-9ee0-9a30cf53bce3": {
+          "@type": "image",
+          "align": "center",
+          "credit": {},
+          "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+          "image_field": "image",
+          "image_scales": {
+            "image": [
+              {
+                "content-type": "image/jpeg",
+                "download": "@@images/image-2400-59ba0e28b8fb813be7e18935e5f63a59.jpeg",
+                "filename": "black-starry-night.jpg",
+                "height": 1708,
+                "scales": {
+                  "great": {
+                    "download": "@@images/image-1200-7cca3b5b9ba61195f9190c32b3a54ec9.jpeg",
+                    "height": 854,
+                    "width": 1200
+                  },
+                  "huge": {
+                    "download": "@@images/image-1600-6ff92f1800f77515dde1be81b0fdd72a.jpeg",
+                    "height": 1138,
+                    "width": 1600
+                  },
+                  "icon": {
+                    "download": "@@images/image-32-2a46e7a6b76a8db3a7941215c4de8a01.jpeg",
+                    "height": 22,
+                    "width": 32
+                  },
+                  "large": {
+                    "download": "@@images/image-800-3a7c82cae430c36e707b83909a496b32.jpeg",
+                    "height": 569,
+                    "width": 800
+                  },
+                  "larger": {
+                    "download": "@@images/image-1000-f4a4c8b8e8e5ffebfbdbcff0115bfc09.jpeg",
+                    "height": 711,
+                    "width": 1000
+                  },
+                  "mini": {
+                    "download": "@@images/image-200-3bdc6d1e0c48ce4430f75a4ac55b939e.jpeg",
+                    "height": 142,
+                    "width": 200
+                  },
+                  "preview": {
+                    "download": "@@images/image-400-71bf22b0c5006001209fc8fadb40b10a.jpeg",
+                    "height": 284,
+                    "width": 400
+                  },
+                  "teaser": {
+                    "download": "@@images/image-600-75bdd455dcec596851abe1b072dc76fe.jpeg",
+                    "height": 427,
+                    "width": 600
+                  },
+                  "thumb": {
+                    "download": "@@images/image-128-fc31735ade965dca8ce6946f7746c583.jpeg",
+                    "height": 91,
+                    "width": 128
+                  },
+                  "tile": {
+                    "download": "@@images/image-64-598079775de66e3ee3d5a51362938e1a.jpeg",
+                    "height": 45,
+                    "width": 64
+                  }
+                },
+                "size": 693013,
+                "width": 2400
+              }
+            ]
+          },
+          "size": "l",
+          "title": "Image",
+          "url": "resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "df0eac4f-de62-444e-9ee0-9a30cf53bce3",
+          "10dcdda6-cbbc-4de7-9542-fb9ca7df4638"
+        ]
+      },
+      "styles": {}
+    },
+    "9c34ee64-05bd-470f-ba3c-de604ec47591": {
+      "@type": "gridBlock",
+      "blocks": {
+        "fbb92003-0e22-4937-92af-3a8f3d061f60": {
+          "@type": "image",
+          "align": "center",
+          "credit": {},
+          "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+          "image_field": "image",
+          "image_scales": {
+            "image": [
+              {
+                "content-type": "image/jpeg",
+                "download": "@@images/image-2400-59ba0e28b8fb813be7e18935e5f63a59.jpeg",
+                "filename": "black-starry-night.jpg",
+                "height": 1708,
+                "scales": {
+                  "great": {
+                    "download": "@@images/image-1200-7cca3b5b9ba61195f9190c32b3a54ec9.jpeg",
+                    "height": 854,
+                    "width": 1200
+                  },
+                  "huge": {
+                    "download": "@@images/image-1600-6ff92f1800f77515dde1be81b0fdd72a.jpeg",
+                    "height": 1138,
+                    "width": 1600
+                  },
+                  "icon": {
+                    "download": "@@images/image-32-2a46e7a6b76a8db3a7941215c4de8a01.jpeg",
+                    "height": 22,
+                    "width": 32
+                  },
+                  "large": {
+                    "download": "@@images/image-800-3a7c82cae430c36e707b83909a496b32.jpeg",
+                    "height": 569,
+                    "width": 800
+                  },
+                  "larger": {
+                    "download": "@@images/image-1000-f4a4c8b8e8e5ffebfbdbcff0115bfc09.jpeg",
+                    "height": 711,
+                    "width": 1000
+                  },
+                  "mini": {
+                    "download": "@@images/image-200-3bdc6d1e0c48ce4430f75a4ac55b939e.jpeg",
+                    "height": 142,
+                    "width": 200
+                  },
+                  "preview": {
+                    "download": "@@images/image-400-71bf22b0c5006001209fc8fadb40b10a.jpeg",
+                    "height": 284,
+                    "width": 400
+                  },
+                  "teaser": {
+                    "download": "@@images/image-600-75bdd455dcec596851abe1b072dc76fe.jpeg",
+                    "height": 427,
+                    "width": 600
+                  },
+                  "thumb": {
+                    "download": "@@images/image-128-fc31735ade965dca8ce6946f7746c583.jpeg",
+                    "height": 91,
+                    "width": 128
+                  },
+                  "tile": {
+                    "download": "@@images/image-64-598079775de66e3ee3d5a51362938e1a.jpeg",
+                    "height": 45,
+                    "width": 64
+                  }
+                },
+                "size": 693013,
+                "width": 2400
+              }
+            ]
+          },
+          "size": "l",
+          "title": "Image",
+          "url": "resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "fbb92003-0e22-4937-92af-3a8f3d061f60"
+        ]
+      },
+      "headline": "Block Title",
+      "styles": {
+        "backgroundColor": "grey"
+      }
+    },
+    "a1c1ca3e-6643-4e39-abda-3bf7846daeef": {
+      "@type": "title"
+    },
+    "b769baa0-8834-4434-b1d6-4b612aa6f714": {
+      "@type": "gridBlock",
+      "blocks": {
+        "a7d1d9b8-1caa-41cd-825e-15d4564a57f6": {
+          "@type": "image",
+          "align": "center",
+          "credit": {},
+          "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+          "image_field": "image",
+          "image_scales": {
+            "image": [
+              {
+                "content-type": "image/jpeg",
+                "download": "@@images/image-1126-7b90bd2f737fb08f5e2c5719f2f8bc14.jpeg",
+                "filename": "image-light.jpg",
+                "height": 633,
+                "scales": {
+                  "icon": {
+                    "download": "@@images/image-32-5de0f24798404cddd70cc1d15b1213ba.jpeg",
+                    "height": 17,
+                    "width": 32
+                  },
+                  "large": {
+                    "download": "@@images/image-800-728b0edae32e307d8123462b48fafeaa.jpeg",
+                    "height": 449,
+                    "width": 800
+                  },
+                  "larger": {
+                    "download": "@@images/image-1000-19685fe0e43ca671a6f6a973c7d1f0f5.jpeg",
+                    "height": 562,
+                    "width": 1000
+                  },
+                  "mini": {
+                    "download": "@@images/image-200-cfd42d570345d1134d9b2d0f5726bb2e.jpeg",
+                    "height": 112,
+                    "width": 200
+                  },
+                  "preview": {
+                    "download": "@@images/image-400-a35b24fd0dbe867083f962cf69f19c2a.jpeg",
+                    "height": 224,
+                    "width": 400
+                  },
+                  "teaser": {
+                    "download": "@@images/image-600-702ac2045d4ca6fc61c52749e8c2f24d.jpeg",
+                    "height": 337,
+                    "width": 600
+                  },
+                  "thumb": {
+                    "download": "@@images/image-128-06fa281eabe3bbba6eea685ce60d08f1.jpeg",
+                    "height": 71,
+                    "width": 128
+                  },
+                  "tile": {
+                    "download": "@@images/image-64-f0e777433e3a4227dab46fe8cac688a6.jpeg",
+                    "height": 35,
+                    "width": 64
+                  }
+                },
+                "size": 475285,
+                "width": 1126
+              }
+            ]
+          },
+          "size": "l",
+          "title": "Image - Light",
+          "url": "resolveuid/eec82559bf3242a6be4d43bc2096f399"
+        },
+        "ab3542da-d0d1-450e-abf3-a5f9e6f3eb97": {
+          "@type": "image",
+          "align": "center",
+          "credit": {},
+          "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+          "image_field": "image",
+          "image_scales": {
+            "image": [
+              {
+                "content-type": "image/jpeg",
+                "download": "@@images/image-2400-59ba0e28b8fb813be7e18935e5f63a59.jpeg",
+                "filename": "black-starry-night.jpg",
+                "height": 1708,
+                "scales": {
+                  "great": {
+                    "download": "@@images/image-1200-7cca3b5b9ba61195f9190c32b3a54ec9.jpeg",
+                    "height": 854,
+                    "width": 1200
+                  },
+                  "huge": {
+                    "download": "@@images/image-1600-6ff92f1800f77515dde1be81b0fdd72a.jpeg",
+                    "height": 1138,
+                    "width": 1600
+                  },
+                  "icon": {
+                    "download": "@@images/image-32-2a46e7a6b76a8db3a7941215c4de8a01.jpeg",
+                    "height": 22,
+                    "width": 32
+                  },
+                  "large": {
+                    "download": "@@images/image-800-3a7c82cae430c36e707b83909a496b32.jpeg",
+                    "height": 569,
+                    "width": 800
+                  },
+                  "larger": {
+                    "download": "@@images/image-1000-f4a4c8b8e8e5ffebfbdbcff0115bfc09.jpeg",
+                    "height": 711,
+                    "width": 1000
+                  },
+                  "mini": {
+                    "download": "@@images/image-200-3bdc6d1e0c48ce4430f75a4ac55b939e.jpeg",
+                    "height": 142,
+                    "width": 200
+                  },
+                  "preview": {
+                    "download": "@@images/image-400-71bf22b0c5006001209fc8fadb40b10a.jpeg",
+                    "height": 284,
+                    "width": 400
+                  },
+                  "teaser": {
+                    "download": "@@images/image-600-75bdd455dcec596851abe1b072dc76fe.jpeg",
+                    "height": 427,
+                    "width": 600
+                  },
+                  "thumb": {
+                    "download": "@@images/image-128-fc31735ade965dca8ce6946f7746c583.jpeg",
+                    "height": 91,
+                    "width": 128
+                  },
+                  "tile": {
+                    "download": "@@images/image-64-598079775de66e3ee3d5a51362938e1a.jpeg",
+                    "height": 45,
+                    "width": 64
+                  }
+                },
+                "size": 693013,
+                "width": 2400
+              }
+            ]
+          },
+          "size": "l",
+          "title": "Image",
+          "url": "resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+        },
+        "d8ed659a-020b-4688-9d72-42c518677d4a": {
+          "@type": "image",
+          "align": "center",
+          "credit": {},
+          "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+          "image_field": "image",
+          "image_scales": {
+            "image": [
+              {
+                "content-type": "image/jpeg",
+                "download": "@@images/image-1126-7b90bd2f737fb08f5e2c5719f2f8bc14.jpeg",
+                "filename": "image-light.jpg",
+                "height": 633,
+                "scales": {
+                  "icon": {
+                    "download": "@@images/image-32-5de0f24798404cddd70cc1d15b1213ba.jpeg",
+                    "height": 17,
+                    "width": 32
+                  },
+                  "large": {
+                    "download": "@@images/image-800-728b0edae32e307d8123462b48fafeaa.jpeg",
+                    "height": 449,
+                    "width": 800
+                  },
+                  "larger": {
+                    "download": "@@images/image-1000-19685fe0e43ca671a6f6a973c7d1f0f5.jpeg",
+                    "height": 562,
+                    "width": 1000
+                  },
+                  "mini": {
+                    "download": "@@images/image-200-cfd42d570345d1134d9b2d0f5726bb2e.jpeg",
+                    "height": 112,
+                    "width": 200
+                  },
+                  "preview": {
+                    "download": "@@images/image-400-a35b24fd0dbe867083f962cf69f19c2a.jpeg",
+                    "height": 224,
+                    "width": 400
+                  },
+                  "teaser": {
+                    "download": "@@images/image-600-702ac2045d4ca6fc61c52749e8c2f24d.jpeg",
+                    "height": 337,
+                    "width": 600
+                  },
+                  "thumb": {
+                    "download": "@@images/image-128-06fa281eabe3bbba6eea685ce60d08f1.jpeg",
+                    "height": 71,
+                    "width": 128
+                  },
+                  "tile": {
+                    "download": "@@images/image-64-f0e777433e3a4227dab46fe8cac688a6.jpeg",
+                    "height": 35,
+                    "width": 64
+                  }
+                },
+                "size": 475285,
+                "width": 1126
+              }
+            ]
+          },
+          "size": "l",
+          "title": "Image - Light",
+          "url": "resolveuid/eec82559bf3242a6be4d43bc2096f399"
+        },
+        "f4117857-1464-41c6-8e74-70f82f393891": {
+          "@type": "image",
+          "align": "center",
+          "credit": {},
+          "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+          "image_field": "image",
+          "image_scales": {
+            "image": [
+              {
+                "content-type": "image/jpeg",
+                "download": "@@images/image-2400-59ba0e28b8fb813be7e18935e5f63a59.jpeg",
+                "filename": "black-starry-night.jpg",
+                "height": 1708,
+                "scales": {
+                  "great": {
+                    "download": "@@images/image-1200-7cca3b5b9ba61195f9190c32b3a54ec9.jpeg",
+                    "height": 854,
+                    "width": 1200
+                  },
+                  "huge": {
+                    "download": "@@images/image-1600-6ff92f1800f77515dde1be81b0fdd72a.jpeg",
+                    "height": 1138,
+                    "width": 1600
+                  },
+                  "icon": {
+                    "download": "@@images/image-32-2a46e7a6b76a8db3a7941215c4de8a01.jpeg",
+                    "height": 22,
+                    "width": 32
+                  },
+                  "large": {
+                    "download": "@@images/image-800-3a7c82cae430c36e707b83909a496b32.jpeg",
+                    "height": 569,
+                    "width": 800
+                  },
+                  "larger": {
+                    "download": "@@images/image-1000-f4a4c8b8e8e5ffebfbdbcff0115bfc09.jpeg",
+                    "height": 711,
+                    "width": 1000
+                  },
+                  "mini": {
+                    "download": "@@images/image-200-3bdc6d1e0c48ce4430f75a4ac55b939e.jpeg",
+                    "height": 142,
+                    "width": 200
+                  },
+                  "preview": {
+                    "download": "@@images/image-400-71bf22b0c5006001209fc8fadb40b10a.jpeg",
+                    "height": 284,
+                    "width": 400
+                  },
+                  "teaser": {
+                    "download": "@@images/image-600-75bdd455dcec596851abe1b072dc76fe.jpeg",
+                    "height": 427,
+                    "width": 600
+                  },
+                  "thumb": {
+                    "download": "@@images/image-128-fc31735ade965dca8ce6946f7746c583.jpeg",
+                    "height": 91,
+                    "width": 128
+                  },
+                  "tile": {
+                    "download": "@@images/image-64-598079775de66e3ee3d5a51362938e1a.jpeg",
+                    "height": 45,
+                    "width": 64
+                  }
+                },
+                "size": 693013,
+                "width": 2400
+              }
+            ]
+          },
+          "size": "l",
+          "title": "Image",
+          "url": "resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "d8ed659a-020b-4688-9d72-42c518677d4a",
+          "f4117857-1464-41c6-8e74-70f82f393891",
+          "ab3542da-d0d1-450e-abf3-a5f9e6f3eb97",
+          "a7d1d9b8-1caa-41cd-825e-15d4564a57f6"
+        ]
+      },
+      "styles": {
+        "backgroundColor": "grey"
+      }
+    },
+    "c76741bb-803f-4680-8bee-cb4bdaedf284": {
+      "@type": "gridBlock",
+      "blocks": {
+        "b4ca1a34-cf52-45c7-963a-6e0b09d46e49": {
+          "@type": "image",
+          "align": "center",
+          "credit": {},
+          "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+          "image_field": "image",
+          "image_scales": {
+            "image": [
+              {
+                "content-type": "image/jpeg",
+                "download": "@@images/image-2400-59ba0e28b8fb813be7e18935e5f63a59.jpeg",
+                "filename": "black-starry-night.jpg",
+                "height": 1708,
+                "scales": {
+                  "great": {
+                    "download": "@@images/image-1200-7cca3b5b9ba61195f9190c32b3a54ec9.jpeg",
+                    "height": 854,
+                    "width": 1200
+                  },
+                  "huge": {
+                    "download": "@@images/image-1600-6ff92f1800f77515dde1be81b0fdd72a.jpeg",
+                    "height": 1138,
+                    "width": 1600
+                  },
+                  "icon": {
+                    "download": "@@images/image-32-2a46e7a6b76a8db3a7941215c4de8a01.jpeg",
+                    "height": 22,
+                    "width": 32
+                  },
+                  "large": {
+                    "download": "@@images/image-800-3a7c82cae430c36e707b83909a496b32.jpeg",
+                    "height": 569,
+                    "width": 800
+                  },
+                  "larger": {
+                    "download": "@@images/image-1000-f4a4c8b8e8e5ffebfbdbcff0115bfc09.jpeg",
+                    "height": 711,
+                    "width": 1000
+                  },
+                  "mini": {
+                    "download": "@@images/image-200-3bdc6d1e0c48ce4430f75a4ac55b939e.jpeg",
+                    "height": 142,
+                    "width": 200
+                  },
+                  "preview": {
+                    "download": "@@images/image-400-71bf22b0c5006001209fc8fadb40b10a.jpeg",
+                    "height": 284,
+                    "width": 400
+                  },
+                  "teaser": {
+                    "download": "@@images/image-600-75bdd455dcec596851abe1b072dc76fe.jpeg",
+                    "height": 427,
+                    "width": 600
+                  },
+                  "thumb": {
+                    "download": "@@images/image-128-fc31735ade965dca8ce6946f7746c583.jpeg",
+                    "height": 91,
+                    "width": 128
+                  },
+                  "tile": {
+                    "download": "@@images/image-64-598079775de66e3ee3d5a51362938e1a.jpeg",
+                    "height": 45,
+                    "width": 64
+                  }
+                },
+                "size": 693013,
+                "width": 2400
+              }
+            ]
+          },
+          "size": "l",
+          "title": "Image",
+          "url": "resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+        },
+        "eaa34549-1998-45a4-957e-2ea5d7cf41c4": {
+          "@type": "image",
+          "align": "center",
+          "credit": {},
+          "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+          "image_field": "image",
+          "image_scales": {
+            "image": [
+              {
+                "content-type": "image/jpeg",
+                "download": "@@images/image-1126-7b90bd2f737fb08f5e2c5719f2f8bc14.jpeg",
+                "filename": "image-light.jpg",
+                "height": 633,
+                "scales": {
+                  "icon": {
+                    "download": "@@images/image-32-5de0f24798404cddd70cc1d15b1213ba.jpeg",
+                    "height": 17,
+                    "width": 32
+                  },
+                  "large": {
+                    "download": "@@images/image-800-728b0edae32e307d8123462b48fafeaa.jpeg",
+                    "height": 449,
+                    "width": 800
+                  },
+                  "larger": {
+                    "download": "@@images/image-1000-19685fe0e43ca671a6f6a973c7d1f0f5.jpeg",
+                    "height": 562,
+                    "width": 1000
+                  },
+                  "mini": {
+                    "download": "@@images/image-200-cfd42d570345d1134d9b2d0f5726bb2e.jpeg",
+                    "height": 112,
+                    "width": 200
+                  },
+                  "preview": {
+                    "download": "@@images/image-400-a35b24fd0dbe867083f962cf69f19c2a.jpeg",
+                    "height": 224,
+                    "width": 400
+                  },
+                  "teaser": {
+                    "download": "@@images/image-600-702ac2045d4ca6fc61c52749e8c2f24d.jpeg",
+                    "height": 337,
+                    "width": 600
+                  },
+                  "thumb": {
+                    "download": "@@images/image-128-06fa281eabe3bbba6eea685ce60d08f1.jpeg",
+                    "height": 71,
+                    "width": 128
+                  },
+                  "tile": {
+                    "download": "@@images/image-64-f0e777433e3a4227dab46fe8cac688a6.jpeg",
+                    "height": 35,
+                    "width": 64
+                  }
+                },
+                "size": 475285,
+                "width": 1126
+              }
+            ]
+          },
+          "size": "l",
+          "title": "Image - Light",
+          "url": "resolveuid/eec82559bf3242a6be4d43bc2096f399"
+        },
+        "f6af399c-afa2-4f21-8cd8-0c7fd1178d89": {
+          "@type": "image",
+          "align": "center",
+          "credit": {},
+          "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+          "image_field": "image",
+          "image_scales": {
+            "image": [
+              {
+                "content-type": "image/jpeg",
+                "download": "@@images/image-2400-59ba0e28b8fb813be7e18935e5f63a59.jpeg",
+                "filename": "black-starry-night.jpg",
+                "height": 1708,
+                "scales": {
+                  "great": {
+                    "download": "@@images/image-1200-7cca3b5b9ba61195f9190c32b3a54ec9.jpeg",
+                    "height": 854,
+                    "width": 1200
+                  },
+                  "huge": {
+                    "download": "@@images/image-1600-6ff92f1800f77515dde1be81b0fdd72a.jpeg",
+                    "height": 1138,
+                    "width": 1600
+                  },
+                  "icon": {
+                    "download": "@@images/image-32-2a46e7a6b76a8db3a7941215c4de8a01.jpeg",
+                    "height": 22,
+                    "width": 32
+                  },
+                  "large": {
+                    "download": "@@images/image-800-3a7c82cae430c36e707b83909a496b32.jpeg",
+                    "height": 569,
+                    "width": 800
+                  },
+                  "larger": {
+                    "download": "@@images/image-1000-f4a4c8b8e8e5ffebfbdbcff0115bfc09.jpeg",
+                    "height": 711,
+                    "width": 1000
+                  },
+                  "mini": {
+                    "download": "@@images/image-200-3bdc6d1e0c48ce4430f75a4ac55b939e.jpeg",
+                    "height": 142,
+                    "width": 200
+                  },
+                  "preview": {
+                    "download": "@@images/image-400-71bf22b0c5006001209fc8fadb40b10a.jpeg",
+                    "height": 284,
+                    "width": 400
+                  },
+                  "teaser": {
+                    "download": "@@images/image-600-75bdd455dcec596851abe1b072dc76fe.jpeg",
+                    "height": 427,
+                    "width": 600
+                  },
+                  "thumb": {
+                    "download": "@@images/image-128-fc31735ade965dca8ce6946f7746c583.jpeg",
+                    "height": 91,
+                    "width": 128
+                  },
+                  "tile": {
+                    "download": "@@images/image-64-598079775de66e3ee3d5a51362938e1a.jpeg",
+                    "height": 45,
+                    "width": 64
+                  }
+                },
+                "size": 693013,
+                "width": 2400
+              }
+            ]
+          },
+          "size": "l",
+          "title": "Image",
+          "url": "resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "f6af399c-afa2-4f21-8cd8-0c7fd1178d89",
+          "eaa34549-1998-45a4-957e-2ea5d7cf41c4",
+          "b4ca1a34-cf52-45c7-963a-6e0b09d46e49"
+        ]
+      },
+      "styles": {}
+    },
+    "f285924d-8f1c-4cc6-8505-5d506cf5fb7f": {
+      "@type": "gridBlock",
+      "blocks": {
+        "313a4e76-dc52-4c36-b8bf-5aac8b605eca": {
+          "@type": "image",
+          "align": "center",
+          "credit": {},
+          "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+          "image_field": "image",
+          "image_scales": {
+            "image": [
+              {
+                "content-type": "image/jpeg",
+                "download": "@@images/image-2400-59ba0e28b8fb813be7e18935e5f63a59.jpeg",
+                "filename": "black-starry-night.jpg",
+                "height": 1708,
+                "scales": {
+                  "great": {
+                    "download": "@@images/image-1200-7cca3b5b9ba61195f9190c32b3a54ec9.jpeg",
+                    "height": 854,
+                    "width": 1200
+                  },
+                  "huge": {
+                    "download": "@@images/image-1600-6ff92f1800f77515dde1be81b0fdd72a.jpeg",
+                    "height": 1138,
+                    "width": 1600
+                  },
+                  "icon": {
+                    "download": "@@images/image-32-2a46e7a6b76a8db3a7941215c4de8a01.jpeg",
+                    "height": 22,
+                    "width": 32
+                  },
+                  "large": {
+                    "download": "@@images/image-800-3a7c82cae430c36e707b83909a496b32.jpeg",
+                    "height": 569,
+                    "width": 800
+                  },
+                  "larger": {
+                    "download": "@@images/image-1000-f4a4c8b8e8e5ffebfbdbcff0115bfc09.jpeg",
+                    "height": 711,
+                    "width": 1000
+                  },
+                  "mini": {
+                    "download": "@@images/image-200-3bdc6d1e0c48ce4430f75a4ac55b939e.jpeg",
+                    "height": 142,
+                    "width": 200
+                  },
+                  "preview": {
+                    "download": "@@images/image-400-71bf22b0c5006001209fc8fadb40b10a.jpeg",
+                    "height": 284,
+                    "width": 400
+                  },
+                  "teaser": {
+                    "download": "@@images/image-600-75bdd455dcec596851abe1b072dc76fe.jpeg",
+                    "height": 427,
+                    "width": 600
+                  },
+                  "thumb": {
+                    "download": "@@images/image-128-fc31735ade965dca8ce6946f7746c583.jpeg",
+                    "height": 91,
+                    "width": 128
+                  },
+                  "tile": {
+                    "download": "@@images/image-64-598079775de66e3ee3d5a51362938e1a.jpeg",
+                    "height": 45,
+                    "width": 64
+                  }
+                },
+                "size": 693013,
+                "width": 2400
+              }
+            ]
+          },
+          "size": "l",
+          "title": "Image",
+          "url": "resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "313a4e76-dc52-4c36-b8bf-5aac8b605eca"
+        ]
+      },
+      "headline": "Block Title",
+      "styles": {}
+    },
+    "f2bea32a-e68e-496e-8c47-8ba97c7a0203": {
+      "@type": "gridBlock",
+      "blocks": {
+        "005c5f82-50a6-43b5-a2a0-2e2d79575a7a": {
+          "@type": "image",
+          "align": "center",
+          "credit": {},
+          "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+          "image_field": "image",
+          "image_scales": {
+            "image": [
+              {
+                "content-type": "image/jpeg",
+                "download": "@@images/image-1126-7b90bd2f737fb08f5e2c5719f2f8bc14.jpeg",
+                "filename": "image-light.jpg",
+                "height": 633,
+                "scales": {
+                  "icon": {
+                    "download": "@@images/image-32-5de0f24798404cddd70cc1d15b1213ba.jpeg",
+                    "height": 17,
+                    "width": 32
+                  },
+                  "large": {
+                    "download": "@@images/image-800-728b0edae32e307d8123462b48fafeaa.jpeg",
+                    "height": 449,
+                    "width": 800
+                  },
+                  "larger": {
+                    "download": "@@images/image-1000-19685fe0e43ca671a6f6a973c7d1f0f5.jpeg",
+                    "height": 562,
+                    "width": 1000
+                  },
+                  "mini": {
+                    "download": "@@images/image-200-cfd42d570345d1134d9b2d0f5726bb2e.jpeg",
+                    "height": 112,
+                    "width": 200
+                  },
+                  "preview": {
+                    "download": "@@images/image-400-a35b24fd0dbe867083f962cf69f19c2a.jpeg",
+                    "height": 224,
+                    "width": 400
+                  },
+                  "teaser": {
+                    "download": "@@images/image-600-702ac2045d4ca6fc61c52749e8c2f24d.jpeg",
+                    "height": 337,
+                    "width": 600
+                  },
+                  "thumb": {
+                    "download": "@@images/image-128-06fa281eabe3bbba6eea685ce60d08f1.jpeg",
+                    "height": 71,
+                    "width": 128
+                  },
+                  "tile": {
+                    "download": "@@images/image-64-f0e777433e3a4227dab46fe8cac688a6.jpeg",
+                    "height": 35,
+                    "width": 64
+                  }
+                },
+                "size": 475285,
+                "width": 1126
+              }
+            ]
+          },
+          "size": "l",
+          "title": "Image - Light",
+          "url": "resolveuid/eec82559bf3242a6be4d43bc2096f399"
+        },
+        "5026c16c-7ed3-4c0d-9417-1d242980a9c0": {
+          "@type": "image",
+          "align": "center",
+          "credit": {},
+          "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+          "image_field": "image",
+          "image_scales": {
+            "image": [
+              {
+                "content-type": "image/jpeg",
+                "download": "@@images/image-1126-7b90bd2f737fb08f5e2c5719f2f8bc14.jpeg",
+                "filename": "image-light.jpg",
+                "height": 633,
+                "scales": {
+                  "icon": {
+                    "download": "@@images/image-32-5de0f24798404cddd70cc1d15b1213ba.jpeg",
+                    "height": 17,
+                    "width": 32
+                  },
+                  "large": {
+                    "download": "@@images/image-800-728b0edae32e307d8123462b48fafeaa.jpeg",
+                    "height": 449,
+                    "width": 800
+                  },
+                  "larger": {
+                    "download": "@@images/image-1000-19685fe0e43ca671a6f6a973c7d1f0f5.jpeg",
+                    "height": 562,
+                    "width": 1000
+                  },
+                  "mini": {
+                    "download": "@@images/image-200-cfd42d570345d1134d9b2d0f5726bb2e.jpeg",
+                    "height": 112,
+                    "width": 200
+                  },
+                  "preview": {
+                    "download": "@@images/image-400-a35b24fd0dbe867083f962cf69f19c2a.jpeg",
+                    "height": 224,
+                    "width": 400
+                  },
+                  "teaser": {
+                    "download": "@@images/image-600-702ac2045d4ca6fc61c52749e8c2f24d.jpeg",
+                    "height": 337,
+                    "width": 600
+                  },
+                  "thumb": {
+                    "download": "@@images/image-128-06fa281eabe3bbba6eea685ce60d08f1.jpeg",
+                    "height": 71,
+                    "width": 128
+                  },
+                  "tile": {
+                    "download": "@@images/image-64-f0e777433e3a4227dab46fe8cac688a6.jpeg",
+                    "height": 35,
+                    "width": 64
+                  }
+                },
+                "size": 475285,
+                "width": 1126
+              }
+            ]
+          },
+          "size": "l",
+          "title": "Image - Light",
+          "url": "resolveuid/eec82559bf3242a6be4d43bc2096f399"
+        },
+        "b6bc575a-f53b-4ce6-8a83-1340aa5bddb7": {
+          "@type": "image",
+          "align": "center",
+          "credit": {},
+          "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+          "image_field": "image",
+          "image_scales": {
+            "image": [
+              {
+                "content-type": "image/jpeg",
+                "download": "@@images/image-2400-59ba0e28b8fb813be7e18935e5f63a59.jpeg",
+                "filename": "black-starry-night.jpg",
+                "height": 1708,
+                "scales": {
+                  "great": {
+                    "download": "@@images/image-1200-7cca3b5b9ba61195f9190c32b3a54ec9.jpeg",
+                    "height": 854,
+                    "width": 1200
+                  },
+                  "huge": {
+                    "download": "@@images/image-1600-6ff92f1800f77515dde1be81b0fdd72a.jpeg",
+                    "height": 1138,
+                    "width": 1600
+                  },
+                  "icon": {
+                    "download": "@@images/image-32-2a46e7a6b76a8db3a7941215c4de8a01.jpeg",
+                    "height": 22,
+                    "width": 32
+                  },
+                  "large": {
+                    "download": "@@images/image-800-3a7c82cae430c36e707b83909a496b32.jpeg",
+                    "height": 569,
+                    "width": 800
+                  },
+                  "larger": {
+                    "download": "@@images/image-1000-f4a4c8b8e8e5ffebfbdbcff0115bfc09.jpeg",
+                    "height": 711,
+                    "width": 1000
+                  },
+                  "mini": {
+                    "download": "@@images/image-200-3bdc6d1e0c48ce4430f75a4ac55b939e.jpeg",
+                    "height": 142,
+                    "width": 200
+                  },
+                  "preview": {
+                    "download": "@@images/image-400-71bf22b0c5006001209fc8fadb40b10a.jpeg",
+                    "height": 284,
+                    "width": 400
+                  },
+                  "teaser": {
+                    "download": "@@images/image-600-75bdd455dcec596851abe1b072dc76fe.jpeg",
+                    "height": 427,
+                    "width": 600
+                  },
+                  "thumb": {
+                    "download": "@@images/image-128-fc31735ade965dca8ce6946f7746c583.jpeg",
+                    "height": 91,
+                    "width": 128
+                  },
+                  "tile": {
+                    "download": "@@images/image-64-598079775de66e3ee3d5a51362938e1a.jpeg",
+                    "height": 45,
+                    "width": 64
+                  }
+                },
+                "size": 693013,
+                "width": 2400
+              }
+            ]
+          },
+          "size": "l",
+          "title": "Image",
+          "url": "resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+        },
+        "da85c8f3-5de2-4d66-822d-a177e42821ff": {
+          "@type": "image",
+          "align": "center",
+          "credit": {},
+          "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+          "image_field": "image",
+          "image_scales": {
+            "image": [
+              {
+                "content-type": "image/jpeg",
+                "download": "@@images/image-2400-59ba0e28b8fb813be7e18935e5f63a59.jpeg",
+                "filename": "black-starry-night.jpg",
+                "height": 1708,
+                "scales": {
+                  "great": {
+                    "download": "@@images/image-1200-7cca3b5b9ba61195f9190c32b3a54ec9.jpeg",
+                    "height": 854,
+                    "width": 1200
+                  },
+                  "huge": {
+                    "download": "@@images/image-1600-6ff92f1800f77515dde1be81b0fdd72a.jpeg",
+                    "height": 1138,
+                    "width": 1600
+                  },
+                  "icon": {
+                    "download": "@@images/image-32-2a46e7a6b76a8db3a7941215c4de8a01.jpeg",
+                    "height": 22,
+                    "width": 32
+                  },
+                  "large": {
+                    "download": "@@images/image-800-3a7c82cae430c36e707b83909a496b32.jpeg",
+                    "height": 569,
+                    "width": 800
+                  },
+                  "larger": {
+                    "download": "@@images/image-1000-f4a4c8b8e8e5ffebfbdbcff0115bfc09.jpeg",
+                    "height": 711,
+                    "width": 1000
+                  },
+                  "mini": {
+                    "download": "@@images/image-200-3bdc6d1e0c48ce4430f75a4ac55b939e.jpeg",
+                    "height": 142,
+                    "width": 200
+                  },
+                  "preview": {
+                    "download": "@@images/image-400-71bf22b0c5006001209fc8fadb40b10a.jpeg",
+                    "height": 284,
+                    "width": 400
+                  },
+                  "teaser": {
+                    "download": "@@images/image-600-75bdd455dcec596851abe1b072dc76fe.jpeg",
+                    "height": 427,
+                    "width": 600
+                  },
+                  "thumb": {
+                    "download": "@@images/image-128-fc31735ade965dca8ce6946f7746c583.jpeg",
+                    "height": 91,
+                    "width": 128
+                  },
+                  "tile": {
+                    "download": "@@images/image-64-598079775de66e3ee3d5a51362938e1a.jpeg",
+                    "height": 45,
+                    "width": 64
+                  }
+                },
+                "size": 693013,
+                "width": 2400
+              }
+            ]
+          },
+          "size": "l",
+          "title": "Image",
+          "url": "resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "5026c16c-7ed3-4c0d-9417-1d242980a9c0",
+          "da85c8f3-5de2-4d66-822d-a177e42821ff",
+          "b6bc575a-f53b-4ce6-8a83-1340aa5bddb7",
+          "005c5f82-50a6-43b5-a2a0-2e2d79575a7a"
+        ]
+      },
+      "styles": {}
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "a1c1ca3e-6643-4e39-abda-3bf7846daeef",
+      "f285924d-8f1c-4cc6-8505-5d506cf5fb7f",
+      "83675906-07fc-468d-b0f3-71536fcb81eb",
+      "c76741bb-803f-4680-8bee-cb4bdaedf284",
+      "f2bea32a-e68e-496e-8c47-8ba97c7a0203",
+      "9c34ee64-05bd-470f-ba3c-de604ec47591",
+      "527d1573-85c1-47c7-928a-8dea32153e83",
+      "14b875e3-8bda-4610-98dc-ebbd03b8c929",
+      "b769baa0-8834-4434-b1d6-4b612aa6f714"
+    ]
+  },
+  "contributors": [],
+  "created": "2023-07-06T21:35:22+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "\nThe Grid block allows adding multi-column blocks. A grid block can contain between one and four columns of different blocks. Text, teasers, images and videos can be added in a grid block.",
+  "effective": "2023-07-06T18:35:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "exportimport.versions": {},
+  "id": "image",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2023-09-22T14:35:52+00:00",
+  "nav_title": null,
+  "parent": {
+    "@id": "/block/grid-block",
+    "@type": "Document",
+    "UID": "99c70917b6894af08dd306fdbc0eff6a",
+    "description": " The Grid block allows adding multi-column blocks. A grid block can contain between one and four columns of different blocks. Teasers and images can be added in a grid block.",
+    "image_field": null,
+    "image_scales": null,
+    "review_state": "published",
+    "title": "Grid",
+    "type_title": "Page"
+  },
+  "preview_caption": null,
+  "preview_image": null,
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "Grid-image block",
+  "type_title": "Page",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2023-07-06T21:35:22+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2023-07-06T21:35:22+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}
