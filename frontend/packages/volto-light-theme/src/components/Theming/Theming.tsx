@@ -2,7 +2,7 @@ import Helmet from '@plone/volto/helpers/Helmet/Helmet';
 import type { Content } from '@plone/types';
 import { useSelector } from 'react-redux';
 import isEmpty from 'lodash/isEmpty';
-import config from '@plone/registry';
+import type { SiteThemeSettings } from '../../types';
 
 type FormState = {
   content: {
@@ -13,34 +13,37 @@ type FormState = {
   };
 };
 
-// TODO: Change when we have the final list of colors
-// and if they are nested in the serialization under a key
-function buildStyleTag(content: Content, colors: string[]) {
-  if (Array.isArray(colors)) {
-    return colors
-      .filter((color) => content[color])
-      .map((color) => {
-        return `--${color.replace(/_/g, '-')}: ${content[color]}; `;
-      })
-      .join('');
-  }
+function buildStyleTag(content: Partial<Content>, colors: SiteThemeSettings) {
+  const colorKeys = Object.keys(colors);
+  return colorKeys
+    .filter((color) => content[color])
+    .map((color) => {
+      return `--${color.replace(/_/g, '-')}: ${content[color]}; `;
+    })
+    .join('');
 }
 
-const Theming = ({ navRoot }) => {
-  const colorFields = config.settings.userDefinedControlPanelColors;
+const Theming = ({ content }: { content: Content }) => {
+  const colorSettings =
+    content?.['@components']?.inherit?.['voltolighttheme.theme']?.data;
   const formData = useSelector<FormState, Content>(
     (state) => state.form.global,
   );
 
-  const liveContent = navRoot ? (!isEmpty(formData) ? formData : navRoot) : {};
+  const liveContent = colorSettings
+    ? !isEmpty(formData)
+      ? formData
+      : colorSettings
+    : {};
 
   return (
     <>
       <Helmet>
         <style>
-          {`
+          {colorSettings &&
+            `
 :root {
-  ${buildStyleTag(liveContent, colorFields)}
+  ${buildStyleTag(liveContent, colorSettings)}
 }
                 `}
         </style>

@@ -5,6 +5,7 @@ import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/Cond
 import { useSelector } from 'react-redux';
 import { Container } from '@plone/components';
 import cx from 'classnames';
+import type { SiteFooterSettings } from '../../types';
 
 type FormState = {
   content: {
@@ -13,25 +14,23 @@ type FormState = {
   form: {
     global: Content;
   };
-  navroot: {
-    data: {
-      navroot: Content;
-    };
-  };
 };
 
 const FooterLogos = () => {
-  const navroot = useSelector<FormState, Content>(
-    (state) => state.navroot.data.navroot,
-  );
   const formState = useSelector<FormState, Content>(
     (state) => state.form.global,
   );
-  const logos = formState?.footer_logos || navroot?.footer_logos;
-  const logosSize = formState?.footer_logos_size || navroot?.footer_logos_size;
+  const footerSettings = useSelector<FormState, SiteFooterSettings>(
+    (state) =>
+      state.content.data?.['@components']?.inherit?.['voltolighttheme.footer']
+        ?.data,
+  );
+  const logos = formState?.footer_logos || footerSettings?.footer_logos;
+  const logosSize =
+    formState?.footer_logos_size || footerSettings?.footer_logos_size;
   const footer_logos_container_width =
     formState?.footer_logos_container_width ||
-    navroot?.footer_logos_container_width;
+    footerSettings?.footer_logos_container_width;
 
   return (
     <Container className={cx({ [footer_logos_container_width]: 1 })}>
@@ -40,9 +39,8 @@ const FooterLogos = () => {
           [logosSize]: logosSize,
         })}
       >
-        {!isEmpty(logos?.blocks)
-          ? logos.blocks_layout.items.map((itemId) => {
-              const logo = logos.blocks[itemId];
+        {!isEmpty(logos)
+          ? logos.map((logo) => {
               const logoInfo: {
                 hrefTitle: string;
                 href: string;
@@ -73,7 +71,7 @@ const FooterLogos = () => {
               if (!logoInfo.src) return null;
 
               return (
-                <li className="item" key={logoInfo.href}>
+                <li className="item" key={logoInfo['@id']}>
                   {/* @ts-ignore */}
                   <ConditionalLink
                     condition={logoInfo.href}
