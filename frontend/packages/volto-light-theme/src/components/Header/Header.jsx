@@ -1,4 +1,5 @@
 // SemanticUI-free pre-@plone/components
+import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, Container } from '@plone/components';
@@ -69,21 +70,35 @@ const InternetHeader = ({ pathname, siteLabel, token, siteAction }) => {
   );
 };
 
-const IntranetHeader = ({ pathname, siteLabel, token, siteAction }) => {
+const IntranetHeader = ({ pathname, siteLabel, token }) => {
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   const dispatch = useDispatch();
 
-  const navRoot = useSelector((state) => state.navroot?.data?.navroot);
+  const headerSettings = useSelector(
+    (state) =>
+      state.content.data?.['@components']?.inherit?.['voltolighttheme.header']
+        ?.data,
+  );
   const formData = useSelector((state) => state.form.global);
 
   const intranetFlag =
     !isEmpty(formData) && formData.intranet_flag
       ? formData?.intranet_flag || siteLabel
-      : navRoot?.intranet_flag || siteLabel;
+      : headerSettings?.intranet_flag || siteLabel;
 
   const complementary_logo =
     !isEmpty(formData) && formData?.complementary_logo?.data
       ? `data:${formData.complementary_logo['content-type']};base64,${formData.complementary_logo.data}`
-      : navRoot?.complementary_logo?.download;
+      : headerSettings?.complementary_logo?.download;
+
+  const headerActions =
+    !isEmpty(formData) && formData?.header_actions
+      ? formData.header_actions
+      : headerSettings?.header_actions;
 
   const pointToSidebar = (fieldSetName, fieldId) => {
     dispatch(setSidebarTab(0));
@@ -98,14 +113,15 @@ const IntranetHeader = ({ pathname, siteLabel, token, siteAction }) => {
 
           <div className="tools">
             {!token && <Anontools />}
-            {siteAction &&
-              siteAction.map((item) => (
-                <UniversalLink key={item.url} href={item.url}>
+            {headerActions &&
+              headerActions.map((item) => (
+                <UniversalLink key={item['@id']} href={item.href[0]['@id']}>
                   {item.title}
                 </UniversalLink>
               ))}
           </div>
           {siteLabel &&
+            isClient &&
             (!isEmpty(formData) ? (
               <Button
                 className="intranet-flag"

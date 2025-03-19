@@ -72,6 +72,13 @@ html[style*='padding-right'] .sidebar-container {
   margin-right: 15px;
 }
 
+// Set desktop flex direction starting at largest-mobile-screen to prevent layout from breaking at 768px with expanded toolbar.
+body {
+  @media only screen and (min-width: $largest-mobile-screen) {
+    flex-direction: row;
+  }
+}
+
 // We expect initially three main containers
 .header-wrapper {
   // This is the pusher for the header under 1440px so over that is tight to the border

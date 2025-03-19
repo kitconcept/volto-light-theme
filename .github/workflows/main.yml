@@ -170,6 +170,7 @@ jobs:
       packages: write
 
   acceptance:
+    if: ${{ always() && !contains(needs.*.result, 'failure') }}
     uses: ./.github/workflows/frontend-acceptance.yml
     needs:
       - config
@@ -193,6 +194,7 @@ jobs:
       a11y: ${{ matrix.a11y || false }}
 
   visual-acceptance:
+    if: ${{ always() && !contains(needs.*.result, 'failure') }}
     uses: ./.github/workflows/visual-acceptance.yml
     needs:
       - config

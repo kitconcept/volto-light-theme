@@ -15,7 +15,13 @@ import installSlots from './config/slots';
 import installSummary from './config/summary';
 
 import '@plone/components/dist/basic.css';
-import type { BlocksData } from '@plone/types';
+
+import type {
+  CustomInheritBehavior,
+  SiteHeaderSettings,
+  SiteThemeSettings,
+  SiteFooterSettings,
+} from './types';
 
 defineMessages({
   Press: {
@@ -38,9 +44,16 @@ defineMessages({
 
 declare module '@plone/types' {
   export interface Content {
-    footer_logos: BlocksData;
     footer_logos_container_width: string;
     footer_logos_size: string;
+  }
+
+  export interface Expanders {
+    inherit: {
+      'voltolighttheme.header': CustomInheritBehavior<SiteHeaderSettings>;
+      'voltolighttheme.theme': CustomInheritBehavior<SiteThemeSettings>;
+      'voltolighttheme.footer': CustomInheritBehavior<SiteFooterSettings>;
+    };
   }
 }
 
