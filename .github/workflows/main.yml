@@ -17,6 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       backend: ${{ steps.filter.outputs.backend }}
+      devops: ${{ steps.filter.outputs.devops }}
       docs: ${{ steps.filter.outputs.docs }}
       frontend: ${{ steps.filter.outputs.frontend }}
       BASE_TAG: ${{ steps.vars.outputs.BASE_TAG }}
@@ -56,6 +57,8 @@ jobs:
             backend:
               - 'backend/**'
               - '.github/workflows/backend*'
+            devops:
+              - 'devops/**'
             docs:
               - '.readthedocs.yaml'
               - 'docs/**'
