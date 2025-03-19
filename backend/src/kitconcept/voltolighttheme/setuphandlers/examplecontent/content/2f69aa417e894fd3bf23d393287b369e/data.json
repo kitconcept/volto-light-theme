@@ -1,0 +1,304 @@
+{
+  "@id": "/block/heading-block",
+  "@type": "Document",
+  "UID": "2f69aa417e894fd3bf23d393287b369e",
+  "allow_discussion": false,
+  "blocks": {
+    "0126e819-d955-41c5-a736-2f0b5ffda8a1": {
+      "@type": "separator",
+      "styles": {
+        "align": "full"
+      }
+    },
+    "06a960a6-795c-409d-a55f-94d5047e3514": {
+      "@type": "slate",
+      "plaintext": "Headline H2",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Headline H2"
+            }
+          ],
+          "type": "h2"
+        }
+      ]
+    },
+    "1bedcc9d-1c02-44e8-bb8e-5c46d6c67d3d": {
+      "@type": "gridBlock",
+      "blocks": {
+        "882e7872-bcf3-4234-a510-d1cff6bf2f7f": {
+          "@type": "teaser",
+          "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+              "@type": "Document",
+              "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "Title": "Page",
+              "getRemoteUrl": null,
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "image_scales": {
+                "preview_image": [
+                  {
+                    "content-type": "image/jpeg",
+                    "download": "@@images/preview_image-2400-dd70655eae2a121e9b3d20b15d5292db.jpeg",
+                    "filename": "black-starry-night.jpg",
+                    "height": 1708,
+                    "scales": {
+                      "great": {
+                        "download": "@@images/preview_image-1200-02d0687099bde73e5189270d53df7e22.jpeg",
+                        "height": 854,
+                        "width": 1200
+                      },
+                      "huge": {
+                        "download": "@@images/preview_image-1600-275bd418c80864fc5cc8b0b0c7f4a0a2.jpeg",
+                        "height": 1138,
+                        "width": 1600
+                      },
+                      "icon": {
+                        "download": "@@images/preview_image-32-848481d517c9091a765ccf7a6ef88277.jpeg",
+                        "height": 22,
+                        "width": 32
+                      },
+                      "large": {
+                        "download": "@@images/preview_image-800-255c17a5d39f4bb2d79c72d56934b342.jpeg",
+                        "height": 569,
+                        "width": 800
+                      },
+                      "larger": {
+                        "download": "@@images/preview_image-1000-661e34a155a000108788ca0d60f4b22c.jpeg",
+                        "height": 711,
+                        "width": 1000
+                      },
+                      "mini": {
+                        "download": "@@images/preview_image-200-614da3a8827dc90cb92618ada1980504.jpeg",
+                        "height": 142,
+                        "width": 200
+                      },
+                      "preview": {
+                        "download": "@@images/preview_image-400-bf2a5268ec239c40c54556e7f48b1cf6.jpeg",
+                        "height": 284,
+                        "width": 400
+                      },
+                      "teaser": {
+                        "download": "@@images/preview_image-600-b1f4235a88cb99bd1c5ab3dceaf953ee.jpeg",
+                        "height": 427,
+                        "width": 600
+                      },
+                      "thumb": {
+                        "download": "@@images/preview_image-128-80ae3135a04405512335f90c8ce4cb3e.jpeg",
+                        "height": 91,
+                        "width": 128
+                      },
+                      "tile": {
+                        "download": "@@images/preview_image-64-fbe446c415c4dbcbca8b81c451ee4659.jpeg",
+                        "height": 45,
+                        "width": 64
+                      }
+                    },
+                    "size": 693013,
+                    "width": 2400
+                  }
+                ]
+              },
+              "title": "Page"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Teaser Title H2"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "882e7872-bcf3-4234-a510-d1cff6bf2f7f"
+        ]
+      },
+      "headline": "Block Title",
+      "styles": {}
+    },
+    "36960cee-ec85-458b-b0be-d2e7a5a41e5f": {
+      "@type": "introduction",
+      "plaintext": "Highlight Title H2\nLorem ipsum vitae elit libero, a pharetra augue. Nulla vitae elit libero, a pharetra augue. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper.",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Highlight Title H2 "
+            }
+          ],
+          "type": "h2"
+        },
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum vitae elit libero, a pharetra augue. Nulla vitae elit libero, a pharetra augue. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "4a0352d5-89df-48aa-944e-7270e81351d4": {
+      "@type": "separator",
+      "styles": {
+        "align": "full",
+        "backgroundColor": "transparent",
+        "noLine": false
+      }
+    },
+    "7a405d27-e5ca-426c-bca4-e40cc338f7ba": {
+      "@type": "slate",
+      "plaintext": "Headline H3",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Headline H3"
+            }
+          ],
+          "type": "h3"
+        }
+      ]
+    },
+    "7ebc67e3-e666-43f4-9fce-5dc14f98834f": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "b4691078-153d-451f-9b47-fa6f852a1e6c": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "e328753b-d914-4bcb-8b8b-2d5060476efe": {
+      "@type": "separator",
+      "styles": {
+        "align": "full"
+      }
+    },
+    "e58cca3c-95d4-4819-951d-48415706bf41": {
+      "@type": "title"
+    },
+    "faabad67-4aa2-4774-a48c-b1accf288700": {
+      "@type": "introduction",
+      "plaintext": "Lorem ipsum vitae elit libero, a pharetra augue. Nulla vitae elit libero, a pharetra augue. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper.",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum vitae elit libero, a pharetra augue. Nulla vitae elit libero, a pharetra augue. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "fe637263-126e-4a7f-b4aa-36369c5155cc": {
+      "@type": "separator",
+      "styles": {
+        "align": "full"
+      }
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "e58cca3c-95d4-4819-951d-48415706bf41",
+      "4a0352d5-89df-48aa-944e-7270e81351d4",
+      "faabad67-4aa2-4774-a48c-b1accf288700",
+      "fe637263-126e-4a7f-b4aa-36369c5155cc",
+      "36960cee-ec85-458b-b0be-d2e7a5a41e5f",
+      "e328753b-d914-4bcb-8b8b-2d5060476efe",
+      "06a960a6-795c-409d-a55f-94d5047e3514",
+      "b4691078-153d-451f-9b47-fa6f852a1e6c",
+      "7a405d27-e5ca-426c-bca4-e40cc338f7ba",
+      "7ebc67e3-e666-43f4-9fce-5dc14f98834f",
+      "0126e819-d955-41c5-a736-2f0b5ffda8a1",
+      "1bedcc9d-1c02-44e8-bb8e-5c46d6c67d3d"
+    ]
+  },
+  "contributors": [],
+  "created": "2023-07-06T21:35:08+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "\nThe heading block allows you to display headings to group multiple blocks under one topic.",
+  "effective": "2023-07-06T18:35:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "exportimport.versions": {},
+  "id": "heading-block",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2023-09-30T07:05:29+00:00",
+  "nav_title": null,
+  "parent": {
+    "@id": "/block",
+    "@type": "Document",
+    "UID": "425695d2b7cb47e69374d6f211f17e38",
+    "description": "",
+    "image_field": null,
+    "image_scales": null,
+    "review_state": "published",
+    "title": "Blocks",
+    "type_title": "Page"
+  },
+  "preview_caption": null,
+  "preview_image": null,
+  "review_state": "published",
+  "rights": null,
+  "subjects": [],
+  "title": "Heading",
+  "type_title": "Page",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2023-07-06T21:35:08+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2023-07-06T21:35:08+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

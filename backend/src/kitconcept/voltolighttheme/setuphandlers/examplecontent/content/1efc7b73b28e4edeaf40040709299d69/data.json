@@ -1,0 +1,642 @@
+{
+  "@id": "/vertical-spacing/teasers-and-text",
+  "@type": "Document",
+  "UID": "1efc7b73b28e4edeaf40040709299d69",
+  "allow_discussion": false,
+  "blocks": {
+    "427934d4-5170-40af-b849-44b55c44f697": {
+      "@type": "teaser",
+      "description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+      "href": [
+        {
+          "@id": "resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+          "@type": "Document",
+          "Description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+          "Title": "Inhaltstyp: Seite (Page)",
+          "getRemoteUrl": null,
+          "hasPreviewImage": true,
+          "head_title": null,
+          "image_field": "preview_image",
+          "image_scales": {
+            "preview_image": [
+              {
+                "content-type": "image/jpeg",
+                "download": "@@images/preview_image-2400-dd70655eae2a121e9b3d20b15d5292db.jpeg",
+                "filename": "black-starry-night.jpg",
+                "height": 1708,
+                "scales": {
+                  "great": {
+                    "download": "@@images/preview_image-1200-02d0687099bde73e5189270d53df7e22.jpeg",
+                    "height": 854,
+                    "width": 1200
+                  },
+                  "huge": {
+                    "download": "@@images/preview_image-1600-275bd418c80864fc5cc8b0b0c7f4a0a2.jpeg",
+                    "height": 1138,
+                    "width": 1600
+                  },
+                  "icon": {
+                    "download": "@@images/preview_image-32-848481d517c9091a765ccf7a6ef88277.jpeg",
+                    "height": 22,
+                    "width": 32
+                  },
+                  "large": {
+                    "download": "@@images/preview_image-800-255c17a5d39f4bb2d79c72d56934b342.jpeg",
+                    "height": 569,
+                    "width": 800
+                  },
+                  "larger": {
+                    "download": "@@images/preview_image-1000-661e34a155a000108788ca0d60f4b22c.jpeg",
+                    "height": 711,
+                    "width": 1000
+                  },
+                  "mini": {
+                    "download": "@@images/preview_image-200-614da3a8827dc90cb92618ada1980504.jpeg",
+                    "height": 142,
+                    "width": 200
+                  },
+                  "preview": {
+                    "download": "@@images/preview_image-400-bf2a5268ec239c40c54556e7f48b1cf6.jpeg",
+                    "height": 284,
+                    "width": 400
+                  },
+                  "teaser": {
+                    "download": "@@images/preview_image-600-b1f4235a88cb99bd1c5ab3dceaf953ee.jpeg",
+                    "height": 427,
+                    "width": 600
+                  },
+                  "thumb": {
+                    "download": "@@images/preview_image-128-80ae3135a04405512335f90c8ce4cb3e.jpeg",
+                    "height": 91,
+                    "width": 128
+                  },
+                  "tile": {
+                    "download": "@@images/preview_image-64-fbe446c415c4dbcbca8b81c451ee4659.jpeg",
+                    "height": 45,
+                    "width": 64
+                  }
+                },
+                "size": 693013,
+                "width": 2400
+              }
+            ]
+          },
+          "title": "Inhaltstyp: Seite (Page)"
+        }
+      ],
+      "styles": {
+        "align": "left",
+        "backgroundColor": "grey"
+      },
+      "title": "Inhaltstyp: Seite (Page)"
+    },
+    "5803406e-bb08-42b1-994d-96dfdb068555": {
+      "@type": "teaser",
+      "description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+      "href": [
+        {
+          "@id": "resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+          "@type": "Document",
+          "Description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+          "Title": "Inhaltstyp: Seite (Page)",
+          "getRemoteUrl": null,
+          "hasPreviewImage": true,
+          "head_title": null,
+          "image_field": "preview_image",
+          "image_scales": {
+            "preview_image": [
+              {
+                "content-type": "image/jpeg",
+                "download": "@@images/preview_image-2400-dd70655eae2a121e9b3d20b15d5292db.jpeg",
+                "filename": "black-starry-night.jpg",
+                "height": 1708,
+                "scales": {
+                  "great": {
+                    "download": "@@images/preview_image-1200-02d0687099bde73e5189270d53df7e22.jpeg",
+                    "height": 854,
+                    "width": 1200
+                  },
+                  "huge": {
+                    "download": "@@images/preview_image-1600-275bd418c80864fc5cc8b0b0c7f4a0a2.jpeg",
+                    "height": 1138,
+                    "width": 1600
+                  },
+                  "icon": {
+                    "download": "@@images/preview_image-32-848481d517c9091a765ccf7a6ef88277.jpeg",
+                    "height": 22,
+                    "width": 32
+                  },
+                  "large": {
+                    "download": "@@images/preview_image-800-255c17a5d39f4bb2d79c72d56934b342.jpeg",
+                    "height": 569,
+                    "width": 800
+                  },
+                  "larger": {
+                    "download": "@@images/preview_image-1000-661e34a155a000108788ca0d60f4b22c.jpeg",
+                    "height": 711,
+                    "width": 1000
+                  },
+                  "mini": {
+                    "download": "@@images/preview_image-200-614da3a8827dc90cb92618ada1980504.jpeg",
+                    "height": 142,
+                    "width": 200
+                  },
+                  "preview": {
+                    "download": "@@images/preview_image-400-bf2a5268ec239c40c54556e7f48b1cf6.jpeg",
+                    "height": 284,
+                    "width": 400
+                  },
+                  "teaser": {
+                    "download": "@@images/preview_image-600-b1f4235a88cb99bd1c5ab3dceaf953ee.jpeg",
+                    "height": 427,
+                    "width": 600
+                  },
+                  "thumb": {
+                    "download": "@@images/preview_image-128-80ae3135a04405512335f90c8ce4cb3e.jpeg",
+                    "height": 91,
+                    "width": 128
+                  },
+                  "tile": {
+                    "download": "@@images/preview_image-64-fbe446c415c4dbcbca8b81c451ee4659.jpeg",
+                    "height": 45,
+                    "width": 64
+                  }
+                },
+                "size": 693013,
+                "width": 2400
+              }
+            ]
+          },
+          "title": "Inhaltstyp: Seite (Page)"
+        }
+      ],
+      "styles": {
+        "align": "right",
+        "backgroundColor": "grey"
+      },
+      "title": "Inhaltstyp: Seite (Page)"
+    },
+    "91161714-fcea-4bdd-b809-9edd4cc1da2b": {
+      "@type": "gridBlock",
+      "blocks": {
+        "3131582e-133c-49f1-8f8a-84178fa65bdf": {
+          "@type": "teaser",
+          "description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+              "@type": "Document",
+              "Description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+              "Title": "Inhaltstyp: Seite (Page)",
+              "getRemoteUrl": null,
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "image_scales": {
+                "preview_image": [
+                  {
+                    "content-type": "image/jpeg",
+                    "download": "@@images/preview_image-2400-dd70655eae2a121e9b3d20b15d5292db.jpeg",
+                    "filename": "black-starry-night.jpg",
+                    "height": 1708,
+                    "scales": {
+                      "great": {
+                        "download": "@@images/preview_image-1200-02d0687099bde73e5189270d53df7e22.jpeg",
+                        "height": 854,
+                        "width": 1200
+                      },
+                      "huge": {
+                        "download": "@@images/preview_image-1600-275bd418c80864fc5cc8b0b0c7f4a0a2.jpeg",
+                        "height": 1138,
+                        "width": 1600
+                      },
+                      "icon": {
+                        "download": "@@images/preview_image-32-848481d517c9091a765ccf7a6ef88277.jpeg",
+                        "height": 22,
+                        "width": 32
+                      },
+                      "large": {
+                        "download": "@@images/preview_image-800-255c17a5d39f4bb2d79c72d56934b342.jpeg",
+                        "height": 569,
+                        "width": 800
+                      },
+                      "larger": {
+                        "download": "@@images/preview_image-1000-661e34a155a000108788ca0d60f4b22c.jpeg",
+                        "height": 711,
+                        "width": 1000
+                      },
+                      "mini": {
+                        "download": "@@images/preview_image-200-614da3a8827dc90cb92618ada1980504.jpeg",
+                        "height": 142,
+                        "width": 200
+                      },
+                      "preview": {
+                        "download": "@@images/preview_image-400-bf2a5268ec239c40c54556e7f48b1cf6.jpeg",
+                        "height": 284,
+                        "width": 400
+                      },
+                      "teaser": {
+                        "download": "@@images/preview_image-600-b1f4235a88cb99bd1c5ab3dceaf953ee.jpeg",
+                        "height": 427,
+                        "width": 600
+                      },
+                      "thumb": {
+                        "download": "@@images/preview_image-128-80ae3135a04405512335f90c8ce4cb3e.jpeg",
+                        "height": 91,
+                        "width": 128
+                      },
+                      "tile": {
+                        "download": "@@images/preview_image-64-fbe446c415c4dbcbca8b81c451ee4659.jpeg",
+                        "height": 45,
+                        "width": 64
+                      }
+                    },
+                    "size": 693013,
+                    "width": 2400
+                  }
+                ]
+              },
+              "title": "Inhaltstyp: Seite (Page)"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Inhaltstyp: Seite (Page)"
+        },
+        "f3719d15-b7aa-491b-951b-afe82762bc74": {
+          "@type": "teaser",
+          "description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+              "@type": "Document",
+              "Description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+              "Title": "Inhaltstyp: Seite (Page)",
+              "getRemoteUrl": null,
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "image_scales": {
+                "preview_image": [
+                  {
+                    "content-type": "image/jpeg",
+                    "download": "@@images/preview_image-2400-dd70655eae2a121e9b3d20b15d5292db.jpeg",
+                    "filename": "black-starry-night.jpg",
+                    "height": 1708,
+                    "scales": {
+                      "great": {
+                        "download": "@@images/preview_image-1200-02d0687099bde73e5189270d53df7e22.jpeg",
+                        "height": 854,
+                        "width": 1200
+                      },
+                      "huge": {
+                        "download": "@@images/preview_image-1600-275bd418c80864fc5cc8b0b0c7f4a0a2.jpeg",
+                        "height": 1138,
+                        "width": 1600
+                      },
+                      "icon": {
+                        "download": "@@images/preview_image-32-848481d517c9091a765ccf7a6ef88277.jpeg",
+                        "height": 22,
+                        "width": 32
+                      },
+                      "large": {
+                        "download": "@@images/preview_image-800-255c17a5d39f4bb2d79c72d56934b342.jpeg",
+                        "height": 569,
+                        "width": 800
+                      },
+                      "larger": {
+                        "download": "@@images/preview_image-1000-661e34a155a000108788ca0d60f4b22c.jpeg",
+                        "height": 711,
+                        "width": 1000
+                      },
+                      "mini": {
+                        "download": "@@images/preview_image-200-614da3a8827dc90cb92618ada1980504.jpeg",
+                        "height": 142,
+                        "width": 200
+                      },
+                      "preview": {
+                        "download": "@@images/preview_image-400-bf2a5268ec239c40c54556e7f48b1cf6.jpeg",
+                        "height": 284,
+                        "width": 400
+                      },
+                      "teaser": {
+                        "download": "@@images/preview_image-600-b1f4235a88cb99bd1c5ab3dceaf953ee.jpeg",
+                        "height": 427,
+                        "width": 600
+                      },
+                      "thumb": {
+                        "download": "@@images/preview_image-128-80ae3135a04405512335f90c8ce4cb3e.jpeg",
+                        "height": 91,
+                        "width": 128
+                      },
+                      "tile": {
+                        "download": "@@images/preview_image-64-fbe446c415c4dbcbca8b81c451ee4659.jpeg",
+                        "height": 45,
+                        "width": 64
+                      }
+                    },
+                    "size": 693013,
+                    "width": 2400
+                  }
+                ]
+              },
+              "title": "Inhaltstyp: Seite (Page)"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Inhaltstyp: Seite (Page)"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "f3719d15-b7aa-491b-951b-afe82762bc74",
+          "3131582e-133c-49f1-8f8a-84178fa65bdf"
+        ]
+      },
+      "headline": "This one has heading",
+      "styles": {}
+    },
+    "af8bd9d7-c793-4619-941a-22885c1dcb0f": {
+      "@type": "title"
+    },
+    "b986af79-52ce-4787-a632-d08fc3b8f39f": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit tortor eget felis porttitor volutpat.",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit tortor eget felis porttitor volutpat."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "c444e3d8-260d-4953-a821-59dcf419622c": {
+      "@type": "teaser",
+      "description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+      "href": [
+        {
+          "@id": "resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+          "@type": "Document",
+          "Description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+          "Title": "Inhaltstyp: Seite (Page)",
+          "getRemoteUrl": null,
+          "hasPreviewImage": true,
+          "head_title": null,
+          "image_field": "preview_image",
+          "image_scales": {
+            "preview_image": [
+              {
+                "content-type": "image/jpeg",
+                "download": "@@images/preview_image-2400-dd70655eae2a121e9b3d20b15d5292db.jpeg",
+                "filename": "black-starry-night.jpg",
+                "height": 1708,
+                "scales": {
+                  "great": {
+                    "download": "@@images/preview_image-1200-02d0687099bde73e5189270d53df7e22.jpeg",
+                    "height": 854,
+                    "width": 1200
+                  },
+                  "huge": {
+                    "download": "@@images/preview_image-1600-275bd418c80864fc5cc8b0b0c7f4a0a2.jpeg",
+                    "height": 1138,
+                    "width": 1600
+                  },
+                  "icon": {
+                    "download": "@@images/preview_image-32-848481d517c9091a765ccf7a6ef88277.jpeg",
+                    "height": 22,
+                    "width": 32
+                  },
+                  "large": {
+                    "download": "@@images/preview_image-800-255c17a5d39f4bb2d79c72d56934b342.jpeg",
+                    "height": 569,
+                    "width": 800
+                  },
+                  "larger": {
+                    "download": "@@images/preview_image-1000-661e34a155a000108788ca0d60f4b22c.jpeg",
+                    "height": 711,
+                    "width": 1000
+                  },
+                  "mini": {
+                    "download": "@@images/preview_image-200-614da3a8827dc90cb92618ada1980504.jpeg",
+                    "height": 142,
+                    "width": 200
+                  },
+                  "preview": {
+                    "download": "@@images/preview_image-400-bf2a5268ec239c40c54556e7f48b1cf6.jpeg",
+                    "height": 284,
+                    "width": 400
+                  },
+                  "teaser": {
+                    "download": "@@images/preview_image-600-b1f4235a88cb99bd1c5ab3dceaf953ee.jpeg",
+                    "height": 427,
+                    "width": 600
+                  },
+                  "thumb": {
+                    "download": "@@images/preview_image-128-80ae3135a04405512335f90c8ce4cb3e.jpeg",
+                    "height": 91,
+                    "width": 128
+                  },
+                  "tile": {
+                    "download": "@@images/preview_image-64-fbe446c415c4dbcbca8b81c451ee4659.jpeg",
+                    "height": 45,
+                    "width": 64
+                  }
+                },
+                "size": 693013,
+                "width": 2400
+              }
+            ]
+          },
+          "title": "Inhaltstyp: Seite (Page)"
+        }
+      ],
+      "styles": {
+        "align": "right",
+        "backgroundColor": "grey"
+      },
+      "title": "Inhaltstyp: Seite (Page)"
+    },
+    "d5b58f85-a6e5-43bd-a8e8-e4015f2835c1": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit tortor eget felis porttitor volutpat.",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit tortor eget felis porttitor volutpat."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "f7f6732e-091b-4a80-87d7-55e10dd43696": {
+      "@type": "teaser",
+      "description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+      "href": [
+        {
+          "@id": "resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+          "@type": "Document",
+          "Description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+          "Title": "Inhaltstyp: Seite (Page)",
+          "getRemoteUrl": null,
+          "hasPreviewImage": true,
+          "head_title": null,
+          "image_field": "preview_image",
+          "image_scales": {
+            "preview_image": [
+              {
+                "content-type": "image/jpeg",
+                "download": "@@images/preview_image-2400-dd70655eae2a121e9b3d20b15d5292db.jpeg",
+                "filename": "black-starry-night.jpg",
+                "height": 1708,
+                "scales": {
+                  "great": {
+                    "download": "@@images/preview_image-1200-02d0687099bde73e5189270d53df7e22.jpeg",
+                    "height": 854,
+                    "width": 1200
+                  },
+                  "huge": {
+                    "download": "@@images/preview_image-1600-275bd418c80864fc5cc8b0b0c7f4a0a2.jpeg",
+                    "height": 1138,
+                    "width": 1600
+                  },
+                  "icon": {
+                    "download": "@@images/preview_image-32-848481d517c9091a765ccf7a6ef88277.jpeg",
+                    "height": 22,
+                    "width": 32
+                  },
+                  "large": {
+                    "download": "@@images/preview_image-800-255c17a5d39f4bb2d79c72d56934b342.jpeg",
+                    "height": 569,
+                    "width": 800
+                  },
+                  "larger": {
+                    "download": "@@images/preview_image-1000-661e34a155a000108788ca0d60f4b22c.jpeg",
+                    "height": 711,
+                    "width": 1000
+                  },
+                  "mini": {
+                    "download": "@@images/preview_image-200-614da3a8827dc90cb92618ada1980504.jpeg",
+                    "height": 142,
+                    "width": 200
+                  },
+                  "preview": {
+                    "download": "@@images/preview_image-400-bf2a5268ec239c40c54556e7f48b1cf6.jpeg",
+                    "height": 284,
+                    "width": 400
+                  },
+                  "teaser": {
+                    "download": "@@images/preview_image-600-b1f4235a88cb99bd1c5ab3dceaf953ee.jpeg",
+                    "height": 427,
+                    "width": 600
+                  },
+                  "thumb": {
+                    "download": "@@images/preview_image-128-80ae3135a04405512335f90c8ce4cb3e.jpeg",
+                    "height": 91,
+                    "width": 128
+                  },
+                  "tile": {
+                    "download": "@@images/preview_image-64-fbe446c415c4dbcbca8b81c451ee4659.jpeg",
+                    "height": 45,
+                    "width": 64
+                  }
+                },
+                "size": 693013,
+                "width": 2400
+              }
+            ]
+          },
+          "title": "Inhaltstyp: Seite (Page)"
+        }
+      ],
+      "styles": {
+        "align": "left",
+        "backgroundColor": "grey"
+      },
+      "title": "Inhaltstyp: Seite (Page)"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "af8bd9d7-c793-4619-941a-22885c1dcb0f",
+      "427934d4-5170-40af-b849-44b55c44f697",
+      "5803406e-bb08-42b1-994d-96dfdb068555",
+      "91161714-fcea-4bdd-b809-9edd4cc1da2b",
+      "d5b58f85-a6e5-43bd-a8e8-e4015f2835c1",
+      "f7f6732e-091b-4a80-87d7-55e10dd43696",
+      "c444e3d8-260d-4953-a821-59dcf419622c",
+      "b986af79-52ce-4787-a632-d08fc3b8f39f"
+    ]
+  },
+  "contributors": [],
+  "created": "2023-07-06T21:35:23+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2023-07-06T18:35:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "exportimport.versions": {},
+  "id": "teasers-and-text",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2023-09-22T14:07:46+00:00",
+  "nav_title": null,
+  "parent": {
+    "@id": "/vertical-spacing",
+    "@type": "Document",
+    "UID": "c40a2be214b645338a7ef2e711e2f5c6",
+    "description": "",
+    "image_field": null,
+    "image_scales": null,
+    "review_state": "published",
+    "title": "Vertical Spacing",
+    "type_title": "Page"
+  },
+  "preview_caption": null,
+  "preview_image": null,
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "Teasers and Text",
+  "type_title": "Page",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2023-07-06T21:35:23+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2023-07-06T21:35:23+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}
