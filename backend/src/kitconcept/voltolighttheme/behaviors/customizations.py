@@ -35,22 +35,18 @@ messages = {
 
 OBJECT_LIST_DEFAULT_VALUE = []
 
-OBJECT_LIST = json.dumps(
-    {
-        "type": "array",
-        "items": {
-            "type": "object",
-        },
-    }
-)
+OBJECT_LIST = json.dumps({
+    "type": "array",
+    "items": {
+        "type": "object",
+    },
+})
 
-FONT_VOCABULARY = SimpleVocabulary(
-    [
-        SimpleTerm(value="default", title=_("Default FZJ font")),
-        SimpleTerm(value="impact-arialNarrow", title=_("Impact / Arial Narrow")),
-        SimpleTerm(value="georgia-lucidaSans", title=_("Georgia / Lucida Sans")),
-    ]
-)
+FONT_VOCABULARY = SimpleVocabulary([
+    SimpleTerm(value="default", title=_("Default FZJ font")),
+    SimpleTerm(value="impact-arialNarrow", title=_("Impact / Arial Narrow")),
+    SimpleTerm(value="georgia-lucidaSans", title=_("Georgia / Lucida Sans")),
+])
 
 
 @provider(IFormFieldProvider)
