@@ -225,7 +225,6 @@ jobs:
 
 
   backend-release:
-    if: ${{ needs.config.outputs.backend == 'true' }}
     uses: ./.github/workflows/backend-image-release.yml
     needs:
       - config
@@ -239,7 +238,6 @@ jobs:
       plone-version: ${{ needs.config.outputs.PLONE_VERSION }}
 
   frontend-release:
-    if: ${{ needs.config.outputs.frontend == 'true' }}
     uses: ./.github/workflows/frontend-image-release.yml
     needs:
       - config
