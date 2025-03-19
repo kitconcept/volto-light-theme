@@ -42,13 +42,11 @@ jobs:
           images: |
             ${{ inputs.image-name-prefix }}-${{ inputs.image-name-suffix }}
           labels: |
-            org.label-schema.docker.cmd=docker run -d -p 8080:8080 ${{ inputs.image-name-prefix }}-${{ inputs.image-name-suffix }}:${{ inputs.base-tag }}
+            org.label-schema.docker.cmd=docker run -d -p 3000:3000 ${{ inputs.image-name-prefix }}-${{ inputs.image-name-suffix }}:${{ inputs.base-tag }}
           flavor:
             latest=false
           tags: |
-            type=ref,event=branch
-            type=sha
-            type=raw,value=latest,enable={{is_default_branch}}
+            type=raw,value=${{ inputs.base-tag }}
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
