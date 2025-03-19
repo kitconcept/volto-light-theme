@@ -1,0 +1,232 @@
+.ui.basic.segment.content-area {
+  // We cancel the padding and margin from the segment
+  // allowing the content elements to be the ones that push for
+  // the required vertical spacing
+  padding: 0;
+  margin-top: 0;
+}
+
+.contenttype-news-item {
+  .documentFirstHeading {
+    margin-top: 0px;
+  }
+  .blocks-group-wrapper {
+    padding-top: 0px;
+  }
+  #page-document .dates {
+    @include default-container-width();
+    @include adjustMarginsToContainer($default-container-width);
+    margin-top: $spacing-medium;
+    margin-bottom: $spacing-medium;
+    .day {
+      @include body-text-bold();
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    @container (min-width: #{$tablet-breakpoint} ) {
+      .day + .head-title::before {
+        content: '|';
+      }
+    }
+
+    @container (max-width: #{$largest-mobile-screen} ) {
+      margin-bottom: $spacing-small;
+      .day {
+        display: none;
+      }
+    }
+  }
+}
+
+// Event content type
+
+.contenttype-event {
+  // Doing this because of semantic ui react important mark
+  @container (max-width: #{$largest-mobile-screen} ) {
+    .ui.stackable.grid.details-container {
+      margin-right: $spacing-small !important;
+      margin-left: $spacing-small !important;
+    }
+    .ui.grid.details-container .row .column {
+      padding: 0px !important;
+    }
+  }
+
+  .ui.grid.details-container .row .column {
+    padding: 0px;
+  }
+
+  .documentFirstHeading {
+    margin-top: 0px;
+  }
+
+  .blocks-group-wrapper {
+    padding-top: 0px;
+    padding-bottom: $spacing-xlarge;
+    @container (max-width: #{$largest-mobile-screen} ) {
+      padding-bottom: $spacing-large;
+    }
+  }
+
+  #page-document {
+    .dates,
+    .details-container {
+      @include default-container-width();
+      @include adjustMarginsToContainer($default-container-width);
+    }
+  }
+  .dates {
+    margin-top: $spacing-medium;
+    margin-bottom: $spacing-medium;
+    @container (max-width: #{$largest-mobile-screen} ) {
+      margin-bottom: $spacing-small;
+    }
+
+    .day {
+      @include body-text-bold();
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .day + .head-title::before {
+      content: '|';
+    }
+  }
+
+  .details-container {
+    padding-top: $spacing-xlarge;
+    padding-bottom: $spacing-xlarge;
+    border-top: 1px solid $black;
+    border-bottom: 1px solid $black;
+    margin-top: 0px;
+    margin-bottom: $spacing-xlarge;
+    @container (max-width: #{$largest-mobile-screen} ) {
+      padding-top: $spacing-large;
+      padding-bottom: $spacing-large;
+      margin-bottom: $spacing-large;
+    }
+    .two.column.row {
+      padding-top: 0px;
+      .event-title {
+        margin-bottom: 25px;
+        .event-heading {
+          @include headtitle2();
+          letter-spacing: 1px;
+          text-transform: uppercase;
+        }
+        .event-detail {
+          margin-top: 10px;
+          font-size: 24px;
+          font-weight: 300;
+          line-height: 33px;
+          p,
+          a {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 24px;
+            font-weight: 300;
+            line-height: 33px;
+          }
+        }
+        .separator {
+          width: 170px;
+          height: 30px;
+          border-right: none;
+          border-bottom: 1px solid #000;
+        }
+      }
+
+      .event-button {
+        padding-top: 50px;
+        a:after {
+          display: none !important;
+        }
+        .button.event-btn {
+          padding: 8px 20px;
+          border: 1px solid #000;
+          background-color: transparent;
+          color: #000;
+          font-size: 16px;
+          font-weight: 900;
+          line-height: 20px;
+          a {
+            color: #000;
+            font-size: 16px;
+            font-weight: 900;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.contenttype-file {
+  .content-area {
+    a {
+      text-decoration: underline;
+    }
+    span {
+      color: $darkGrey;
+    }
+  }
+}
+.contenttype-image {
+  .content-area {
+    figure {
+      img {
+        object-fit: contain;
+      }
+      figcaption {
+        margin-top: $spacing-small;
+        margin-bottom: 0;
+        .title {
+          margin-bottom: 5px;
+        }
+        .description div {
+          margin-bottom: 5px;
+        }
+        .credits {
+          padding-bottom: $spacing-small;
+          margin-bottom: 0;
+          color: #0066cc;
+        }
+      }
+    }
+  }
+}
+
+.contenttype-link,
+.contenttype-file,
+.contenttype-image {
+  #page-document > *,
+  #page-edit > *,
+  #page-add > * {
+    @include default-container-width();
+    @include adjustMarginsToContainer($default-container-width);
+  }
+
+  #page-document > p {
+    @include narrow-container-width();
+    @include adjustMarginsToContainer($narrow-container-width);
+  }
+  .documentDescription {
+    margin-bottom: $spacing-medium;
+    color: $black;
+    @include body-text();
+
+    @media only screen and (max-width: $largest-mobile-screen) {
+      margin-bottom: $spacing-large;
+    }
+  }
+}
+
+// hide some fields from edit & add forms
+.field-wrapper-changeNote {
+  display: none;
+}
+
+// Login page
+.content-area #page-login {
+  padding-top: $spacing-large;
+}

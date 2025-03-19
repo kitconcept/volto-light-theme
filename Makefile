@@ -2,27 +2,19 @@
 #     https://tech.davis-hansson.com/p/make/
 SHELL:=bash
 .ONESHELL:
-.SHELLFLAGS:=-eu -o pipefail -c
+.SHELLFLAGS:=-xeu -o pipefail -O inherit_errexit -c
 .SILENT:
 .DELETE_ON_ERROR:
 MAKEFLAGS+=--warn-undefined-variables
 MAKEFLAGS+=--no-builtin-rules
 
 CURRENT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
+GIT_FOLDER=$(CURRENT_DIR)/.git
 
-# Sphinx variables
-# You can set these variables from the command line.
-SPHINXOPTS      ?=
-VALEOPTS        ?=
-# Internal variables.
-SPHINXBUILD     = "$(realpath bin/sphinx-build)"
-SPHINXAUTOBUILD = "$(realpath bin/sphinx-autobuild)"
-DOCS_DIR        = ./docs/
-BUILDDIR        = ./_build/
-ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(SPHINXOPTS) .
-VALEFILES       := $(shell find $(DOCS_DIR) -type f -name "*.md" -print)
+PROJECT_NAME=volto-light-theme
+IMAGE_NAME=ghcr.io/kitconcept/voltolighttheme
 
-# Recipe snippets for reuse
+VOLTO_VERSION=$(shell cat frontend/mrs.developer.json | python -c "import sys, json; print(json.load(sys.stdin)['core']['tag'])")
 
 # We like colors
 # From: https://coderwall.com/p/izxssa/colored-makefile-for-golang-projects
@@ -31,253 +23,234 @@ GREEN=`tput setaf 2`
 RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
 
-NODEBIN = ./node_modules/.bin
+.PHONY: all
+all: install
 
-PLONE_VERSION=6
-DOCKER_IMAGE=ghcr.io/kitconcept/voltolighttheme:latest
-DOCKER_IMAGE_ACCEPTANCE=plone/server-acceptance:${PLONE_VERSION}
-
-ADDON_NAME='@kitconcept/volto-light-theme'
-
-
+# Add the following 'help' target to your Makefile
+# And add help text after each target name starting with '\#\#'
 .PHONY: help
-help: ## Show this help
-	@echo -e "$$(grep -hE '^\S+:.*##' $(MAKEFILE_LIST) | sed -e 's/:.*##\s*/:/' -e 's/^\(.\+\):\(.*\)/\\x1b[36m\1\\x1b[m:\2/' | column -c2 -t -s :)"
+help: ## This help message
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
-## Docs
+###########################################
+# Frontend
+###########################################
+.PHONY: frontend-install
+frontend-install:  ## Install React Frontend
+	$(MAKE) -C "./frontend/" install
 
-bin/python: ## Create a Python virtual environment with the latest pip, and install documentation requirements
-	python3 -m venv . || virtualenv --clear --python=python3 .
-	bin/python -m pip install --upgrade pip
-	@echo "Python environment created."
-	bin/pip install -r requirements-docs.txt
-	@echo "Requirements installed."
+.PHONY: frontend-build
+frontend-build:  ## Build React Frontend
+	$(MAKE) -C "./frontend/" build
 
-.PHONY: docs-clean
-docs-clean:  ## Clean current and legacy docs build directories, and Python virtual environment
-	rm -rf bin include lib
-	rm -rf docs/_build
-	cd $(DOCS_DIR) && rm -rf $(BUILDDIR)/
+.PHONY: frontend-start
+frontend-start:  ## Start React Frontend
+	$(MAKE) -C "./frontend/" start
 
-.PHONY: docs-html
-docs-html: bin/python  ## Build html
-	cd $(DOCS_DIR) && $(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
-	@echo
-	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
+.PHONY: frontend-test
+frontend-test:  ## Test frontend codebase
+	@echo "Test frontend"
+	$(MAKE) -C "./frontend/" test
 
-.PHONY: docs-livehtml
-docs-livehtml: bin/python  ## Rebuild Sphinx documentation on changes, with live-reload in the browser
-	cd "$(DOCS_DIR)" && ${SPHINXAUTOBUILD} \
-		--ignore "*.swp" \
-		-b html . "$(BUILDDIR)/html" $(SPHINXOPTS)
+###########################################
+# Backend
+###########################################
+.PHONY: backend-install
+backend-install:  ## Create virtualenv and install Plone
+	$(MAKE) -C "./backend/" install
+	$(MAKE) backend-create-site
 
-.PHONY: docs-linkcheck
-docs-linkcheck: bin/python  ## Run linkcheck
-	cd $(DOCS_DIR) && $(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) $(BUILDDIR)/linkcheck
-	@echo
-	@echo "Link check complete; look for any errors in the above output " \
-		"or in $(BUILDDIR)/linkcheck/ ."
+.PHONY: backend-build
+backend-build:  ## Build Backend
+	$(MAKE) -C "./backend/" install
 
-.PHONY: docs-linkcheckbroken
-docs-linkcheckbroken: bin/python  ## Run linkcheck and show only broken links
-	cd $(DOCS_DIR) && $(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) $(BUILDDIR)/linkcheck | GREP_COLORS='0;31' grep -wi "broken\|redirect" --color=always | GREP_COLORS='0;31' grep -vi "https://github.com/plone/volto/issues/" --color=always && if test $$? -eq 0; then exit 1; fi || test $$? -ne 0
+.PHONY: backend-create-site
+backend-create-site: ## Create a Plone site with default content
+	$(MAKE) -C "./backend/" create-site
 
-.PHONY: docs-vale
-docs-vale: bin/python  ## Install (once) and run Vale style, grammar, and spell checks
-	bin/vale sync
-	bin/vale --no-wrap $(VALEOPTS) $(VALEFILES)
-	@echo
-	@echo "Vale is finished; look for any errors in the above output."
+.PHONY: backend-update-example-content
+backend-update-example-content: ## Export example content inside package
+	$(MAKE) -C "./backend/" update-example-content
 
-.PHONY: docs-rtd-pr-preview
-docs-rtd-pr-preview: ## Build previews of pull requests that have documentation changes on Read the Docs via CI
-	pip install -r requirements-docs.txt
-	cd $(DOCS_DIR) && sphinx-build -b html $(ALLSPHINXOPTS) ${READTHEDOCS_OUTPUT}/html/
+.PHONY: backend-start
+backend-start: ## Start Plone Backend
+	$(MAKE) -C "./backend/" start
 
-.PHONY: docs-rtd-registry
-docs-rtd-registry: ## Build Plone Registry docs on RTD
-	pip install -r ../../requirements-docs.txt && cd $(DOCS_DIR) && sphinx-build -b html $(ALLSPHINXOPTS) ${READTHEDOCS_OUTPUT}/html/
+.PHONY: backend-test
+backend-test:  ## Test backend codebase
+	@echo "Test backend"
+	$(MAKE) -C "./backend/" test
 
-# Dev Helpers
+###########################################
+# Docs
+###########################################
+.PHONY: docs-install
+docs-install:  ## Install documentation dependencies
+	$(MAKE) -C "./docs/" install
 
+.PHONY: docs-build
+docs-build:  ## Build documentation
+	$(MAKE) -C "./docs/" html
+
+.PHONY: docs-live
+docs-live:  ## Rebuild documentation on changes, with live-reload in the browser
+	$(MAKE) -C "./docs/" livehtml
+
+
+###########################################
+# Environment
+###########################################
 .PHONY: install
-install: ## Installs the add-on in a development environment
-	pnpm dlx mrs-developer missdev --no-config --fetch-https
-	pnpm i
-	make build-deps
+install:  ## Install
+	@echo "Install Backend & Frontend"
+	$(MAKE) backend-install
+	$(MAKE) frontend-install
+	$(MAKE) docs-install
 
-.PHONY: start
-start: ## Starts Volto, allowing reloading of the add-on during development
-	pnpm start
+.PHONY: clean
+clean:  ## Clean installation
+	@echo "Clean installation"
+	$(MAKE) -C "./backend/" clean
+	$(MAKE) -C "./frontend/" clean
 
-.PHONY: build
-build: ## Build a production bundle for distribution of the project with the add-on
-	pnpm build
-
-core/packages/registry/dist: $(shell find core/packages/registry/src -type f)
-	pnpm --filter @plone/registry build
-
-core/packages/components/dist: $(shell find core/packages/components/src -type f)
-	pnpm --filter @plone/components build
-
-.PHONY: build-deps
-build-deps: core/packages/registry/dist core/packages/components/dist ## Build dependencies
-
-.PHONY: i18n
-i18n: ## Sync i18n
-	pnpm --filter $(ADDON_NAME) i18n
-
-.PHONY: ci-i18n
-ci-i18n: ## Check if i18n is not synced
-	pnpm --filter $(ADDON_NAME) i18n && git diff -G'^[^\"POT]' --exit-code
-
+###########################################
+# QA
+###########################################
 .PHONY: format
-format: ## Format codebase
-	pnpm lint:fix
-	pnpm prettier:fix
-	pnpm stylelint:fix
+format:  ## Format codebase
+	@echo "Format the codebase"
+	$(MAKE) -C "./backend/" format
+	$(MAKE) -C "./frontend/" format
 
 .PHONY: lint
-lint: ## Lint, or catch and remove problems, in code base
-	pnpm lint
-	pnpm prettier
-	pnpm stylelint --allow-empty-input
+lint:  ## Format codebase
+	@echo "Lint the codebase"
+	$(MAKE) -C "./backend/" lint
+	$(MAKE) -C "./frontend/" lint
 
-.PHONY: release
-release: ## Release the add-on on npmjs.org
-	pnpm release
+###########################################
+# i18n
+###########################################
+.PHONY: i18n
+i18n:  ## Update locales
+	@echo "Update locales"
+	$(MAKE) -C "./backend/" i18n
+	$(MAKE) -C "./frontend/" i18n
 
-.PHONY: release-dry-run
-release-dry-run: ## Dry-run the release of the add-on on npmjs.org
-	pnpm release
+###########################################
+# Tests
+###########################################
 
 .PHONY: test
-test: ## Run unit tests
-	pnpm test
+test:  backend-test frontend-test ## Test codebase
 
-.PHONY: test-ci
-ci-test: ## Run unit tests in CI
-	CI=1 RAZZLE_JEST_CONFIG=$(CURRENT_DIR)/jest-addon.config.js pnpm --filter @plone/volto test -- --passWithNoTests
 
-.PHONY: backend-docker-start
-backend-docker-start:	## Starts a Docker-based backend for development
-	@echo "$(GREEN)==> Start Docker-based Plone Backend$(RESET)"
-	docker run -it --rm --name=backend -p 8080:8080 -e SITE=Plone $(DOCKER_IMAGE)
+###########################################
+# Docker Images
+###########################################
+.PHONY: build-images
+build-images:  ## Build docker images
+	@echo "Build"
+	$(MAKE) -C "./backend/" build-image
+	$(MAKE) -C "./frontend/" build-image
 
-## Storybook
-.PHONY: storybook-start
-storybook-start: ## Start Storybook server on port 6006
-	@echo "$(GREEN)==> Start Storybook$(RESET)"
-	pnpm run storybook
+###########################################
+# Stack: Development
+###########################################
+.PHONY: stack-start
+stack-start:  ## Local Stack: Start Services
+	@echo "Start local Docker stack"
+	VOLTO_VERSION=$(VOLTO_VERSION) PLONE_VERSION=$(PLONE_VERSION) docker compose -f docker-compose-dev.yml up -d --build
+	@echo "Now visit: http://voltolighttheme.localhost"
 
-.PHONY: storybook-build
-storybook-build: ## Build Storybook
-	@echo "$(GREEN)==> Build Storybook$(RESET)"
-	mkdir -p $(CURRENT_DIR)/.storybook-build
-	pnpm run build-storybook -o $(CURRENT_DIR)/.storybook-build
+.PHONY: stack-create-site
+stack-create-site:  ## Local Stack: Create a new site
+	@echo "Create a new site in the local Docker stack"
+	VOLTO_VERSION=$(VOLTO_VERSION) PLONE_VERSION=$(PLONE_VERSION) docker compose -f docker-compose-dev.yml exec backend ./docker-entrypoint.sh create-site
 
-## Acceptance
+.PHONY: stack-status
+stack-status:  ## Local Stack: Check Status
+	@echo "Check the status of the local Docker stack"
+	@docker compose -f docker-compose-dev.yml ps
+
+.PHONY: stack-stop
+stack-stop:  ##  Local Stack: Stop Services
+	@echo "Stop local Docker stack"
+	@docker compose -f docker-compose-dev.yml stop
+
+.PHONY: stack-rm
+stack-rm:  ## Local Stack: Remove Services and Volumes
+	@echo "Remove local Docker stack"
+	@docker compose -f docker-compose-dev.yml down
+
+###########################################
+# Acceptance
+###########################################
+.PHONY: acceptance-backend-dev-start
+acceptance-backend-dev-start:
+	@echo "Start acceptance backend"
+	$(MAKE) -C "./backend/" acceptance-backend-start
+
 .PHONY: acceptance-frontend-dev-start
-acceptance-frontend-dev-start: ## Start acceptance frontend in development mode
-	RAZZLE_API_PATH=http://127.0.0.1:55001/plone pnpm start
-
-.PHONY: acceptance-frontend-prod-start
-acceptance-frontend-prod-start: ## Start acceptance frontend in production mode
-	RAZZLE_API_PATH=http://127.0.0.1:55001/plone pnpm build && pnpm start:prod
-
-.PHONY: acceptance-backend-start
-acceptance-backend-start: ## Start backend acceptance server
-	docker run -it --rm -p 55001:55001 $(DOCKER_IMAGE_ACCEPTANCE)
-
-.PHONY: ci-acceptance-backend-start
-ci-acceptance-backend-start: ## Start backend acceptance server in headless mode for CI
-	docker run -i --rm -p 55001:55001 $(DOCKER_IMAGE_ACCEPTANCE)
+acceptance-frontend-dev-start:
+	@echo "Start acceptance frontend"
+	$(MAKE) -C "./frontend/" acceptance-frontend-dev-start
 
 .PHONY: acceptance-test
-acceptance-test: ## Start Cypress in interactive mode
-	pnpm --filter @plone/volto exec cypress open --config-file $(CURRENT_DIR)/cypress.config.js --config specPattern=$(CURRENT_DIR)'/cypress/tests/main/**/*.{js,jsx,ts,tsx}'
+acceptance-test:
+	@echo "Start acceptance tests in interactive mode"
+	$(MAKE) -C "./frontend/" acceptance-test
+
+# Build Docker images
+.PHONY: acceptance-frontend-image-build
+acceptance-frontend-image-build:
+	@echo "Build acceptance frontend image"
+	@docker build frontend -t kitconcept/voltolighttheme-frontend:acceptance -f frontend/Dockerfile --build-arg VOLTO_VERSION=$(VOLTO_VERSION)
+
+.PHONY: acceptance-backend-image-build
+acceptance-backend-image-build:
+	@echo "Build acceptance backend image"
+	@docker build backend -t kitconcept/voltolighttheme-backend:acceptance -f backend/Dockerfile.acceptance --build-arg PLONE_VERSION=$(PLONE_VERSION)
+
+.PHONY: acceptance-images-build
+acceptance-images-build: ## Build Acceptance frontend/backend images
+	$(MAKE) acceptance-backend-image-build
+	$(MAKE) acceptance-frontend-image-build
+
+.PHONY: acceptance-frontend-container-start
+acceptance-frontend-container-start:
+	@echo "Start acceptance frontend"
+	@docker run --rm -p 3000:3000 --name brfields-frontend-acceptance --link brfields-backend-acceptance:backend -e RAZZLE_API_PATH=http://localhost:55001/plone -e RAZZLE_INTERNAL_API_PATH=http://backend:55001/plone -d kitconcept/voltolighttheme-frontend:acceptance
+
+.PHONY: acceptance-backend-container-start
+acceptance-backend-container-start:
+	@echo "Start acceptance backend"
+	@docker run --rm -p 55001:55001 --name brfields-backend-acceptance -d kitconcept/voltolighttheme-backend:acceptance
+
+.PHONY: acceptance-containers-start
+acceptance-containers-start: ## Start Acceptance containers
+	$(MAKE) acceptance-backend-container-start
+	$(MAKE) acceptance-frontend-container-start
+
+.PHONY: acceptance-containers-stop
+acceptance-containers-stop: ## Stop Acceptance containers
+	@echo "Stop acceptance containers"
+	@docker stop brfields-frontend-acceptance
+	@docker stop brfields-backend-acceptance
 
 .PHONY: ci-acceptance-test
-ci-acceptance-test: ## Run cypress tests in headless mode for CI
-	pnpm --filter @plone/volto exec cypress run --config-file $(CURRENT_DIR)/cypress.config.js --config specPattern=$(CURRENT_DIR)'/cypress/tests/main/**/*.{js,jsx,ts,tsx}'
-
-# a11y tests
-.PHONY: acceptance-a11y-frontend-prod-start
-acceptance-a11y-frontend-prod-start: ## Start a11y acceptance frontend in prod mode
-	pnpm build && pnpm start:prod
-
-.PHONY: ci-acceptance-a11y-backend-start
-ci-acceptance-a11y-backend-start: ## Start acceptance a11y server in CI mode (no terminal attached)
-	docker run -i --rm --name=backend -p 8080:8080 -e SITE=Plone -e ADDONS='$(KGS)' $(DOCKER_IMAGE)
-
-.PHONY: acceptance-a11y-test
-acceptance-a11y-test: ## Start a11y Cypress in interactive mode
-	CYPRESS_a11y=1 CYPRESS_API_PATH=http://localhost:8080/Plone pnpm exec cypress open specPattern=$(CURRENT_DIR)'/cypress/tests/a11y/**/*.{js,jsx,ts,tsx}'
-
-.PHONY: ci-acceptance-a11y-test
-ci-acceptance-a11y-test: ## Run a11y cypress tests in headless mode for CI
-	CYPRESS_a11y=1 CYPRESS_API_PATH=http://localhost:8080/Plone pnpm exec cypress run --config specPattern=$(CURRENT_DIR)'/cypress/tests/a11y/**/*.{js,jsx,ts,tsx}'
-
-### Visual acceptance tests ###
-#
-# Useful env vars:
-#
-# cypress_cumulativeReport: cumulative report file, by default `cumulative.report`
-# cypress_cumulativeSummaryReport: cumulative summary report file, by default adding `-summary.report`
-#                                  to the end of the cumulative file
-#                                  They are placed into `frontend/cypress/config` and
-#                                  cannot be outside
-#                                  of Cypress due to its virtual filesystem.
-#
-# Env vars in support of CI runs:
-#
-# cypress_baseUrl: url of server to run the test against
-#                  e.g. cypress_baseUrl=https://plone-redaktion.de
-#
-#
-
-.PHONY: acceptance-test-visual
-acceptance-test-visual: ## Start visual Cypress Acceptance Tests
-	NODE_ENV=production $(NODEBIN)/cypress open --config-file cypress/config/cypress.visual.config.js --config specPattern='$(SPEC)'
-
-# Running the visual tests in headless, cumulative mode will SKIP tests that have run previously, and
-# only run the still failing tests HOWEVER the results are not collected in interactive mode due to
-# inherent limitations of Cypress. But if you run the tests in cumulative headless mode first,
-# then this command can be used to run ONLY the failing tests in interactive mode.
-.PHONY: acceptance-test-visual-cumulative
-acceptance-test-visual-cumulative: ## Start visual Cypress Acceptance Tests with cumulative filtering
-	@echo WARNING: cumulative results are NOT collected in interactive mode, use headless mode for collection
-	NODE_ENV=production cypress_enableCumulative=true $(NODEBIN)/cypress open --config-file cypress/config/cypress.visual.config.js
-
-.PHONY: ci-acceptance-test-visual
-ci-acceptance-test-visual: ## Start visual Cypress Acceptance Tests in headless mode
-	NODE_ENV=production $(NODEBIN)/cypress run --browser firefox --config-file cypress/config/cypress.visual.config.js --config specPattern='$(SPEC)'
-
-# Running the visual tests in headless, cumulative mode will SKIP tests that have run previously, and
-# only run the still failing tests.
-.PHONY: ci-acceptance-test-visual-cumulative
-ci-acceptance-test-visual-cumulative: ## Start visual Cypress Acceptance Tests in headless mode
-	NODE_ENV=production cypress_enableCumulative=true $(NODEBIN)/cypress run --browser firefox --config-file cypress/config/cypress.visual.config.js
-
-# Automatically update all changed visual snapshots
-.PHONY: ci-acceptance-test-visual-update
-ci-acceptance-test-visual-update: ## Start visual Cypress Acceptance Tests in headless mode, always pass and update images
-	NODE_ENV=production cypress_pluginVisualRegressionUpdateImages=true $(NODEBIN)/cypress run --browser firefox --config-file cypress/config/cypress.visual.config.js
-
-# Automatically update all changed visual snapshots, and
-# running the visual tests in headless, cumulative mode will SKIP tests that have run previously, and
-# only run the still failing tests
-.PHONY: ci-acceptance-test-visual-update-cumulative
-ci-acceptance-test-visual-update-cumulative: ## Start visual Cypress Acceptance Tests in headless mode, always pass and update images, with cumulative results
-	NODE_ENV=production cypress_enableCumulative=true cypress_pluginVisualRegressionUpdateImages=true $(NODEBIN)/cypress run --browser firefox --config-file cypress/config/cypress.visual.config.js
-
-.PHONY: summarize-cumulative-state
-summarize-cumulative-state: ## Summarize cumulative state into ...-summary.report
-	pnpm summarize-cumulative-state
-
+ci-acceptance-test:
+	@echo "Run acceptance tests in CI mode"
+	$(MAKE) acceptance-containers-start
+	pnpm dlx wait-on --httpTimeout 20000 http-get://localhost:55001/plone http://localhost:3000
+	$(MAKE) -C "./frontend/" ci-acceptance-test
+	$(MAKE) acceptance-containers-stop
 
 .PHONY: ci-acceptance-server-visual-start
-ci-acceptance-server-visual-start: ci-acceptance-a11y-backend-start
+ci-acceptance-server-visual-start: backend-install
+	@echo "Starting backend server"
+	$(MAKE) backend-start
 
 .PHONY: ci-acceptance-frontend-visual-start
-ci-acceptance-frontend-visual-start: acceptance-a11y-frontend-prod-start
+ci-acceptance-frontend-visual-start:
+	$(MAKE) -C "./frontend/" acceptance-a11y-frontend-prod-start

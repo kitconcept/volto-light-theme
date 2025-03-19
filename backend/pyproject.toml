@@ -1,0 +1,191 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "kitconcept.voltolighttheme"
+dynamic = ["version"]
+description = "Plone package providing features for @kitconcept/volto-light-theme"
+readme = "README.md"
+license = "GPL-2.0-only"
+requires-python = ">=3.10"
+authors = [
+    { name = "kitconcept GmbH", email = "contact@kitconcept.com" },
+]
+keywords = [
+    "CMS",
+    "Plone",
+    "Volto",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Web Environment",
+    "Framework :: Plone",
+    "Framework :: Plone :: 6.0",
+    "Framework :: Plone :: 6.1",
+    "Framework :: Plone :: Addon",
+    "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+dependencies = [
+    "Products.CMFPlone>=6.0",
+    "plone.api",
+    "plone.restapi>=9.13.2",
+    "plone.volto",
+]
+
+[project.optional-dependencies]
+demo = [
+    "plone.exportimport",
+]
+test = [
+    "plone.app.testing",
+    "plone.exportimport",
+    "plone.restapi[test]",
+    "pytest-cov",
+    "pytest-plone>=0.5.0",
+    "pytest",
+]
+
+[project.urls]
+Homepage = "https://github.com/kitconcept/volto-light-theme"
+PyPI = "https://pypi.org/project/kitconcept.voltolighttheme"
+Source = "https://github.com/kitconcept/volto-light-theme"
+Tracker = "https://github.com/kitconcept/volto-light-theme/issues"
+
+[project.entry-points."z3c.autoinclude.plugin"]
+target = "plone"
+
+[tool.uv]
+managed = false
+
+[tool.hatch.build]
+strict-naming = false
+packages = ["src/kitconcept",]
+
+[tool.hatch.version]
+path = "src/kitconcept/voltolighttheme/__init__.py"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/src",
+]
+
+[tool.hatch.build.targets.wheel]
+sources = ["src"]
+only-include = ["src/kitconcept/voltolighttheme"]
+
+[tool.towncrier]
+directory = "news/"
+filename = "CHANGELOG.md"
+start_string = "<!-- towncrier release notes start -->\n"
+title_format = "## {version} ({project_date})"
+template = "news/.changelog_template.jinja"
+issue_format = "[#{issue}](https://github.com/kitconcept/volto-light-theme/issues/{issue})"
+underlines = ["", "", ""]
+
+[[tool.towncrier.type]]
+directory = "breaking"
+name = "Breaking changes:"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "feature"
+name = "New features:"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "bugfix"
+name = "Bug fixes:"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "internal"
+name = "Internal:"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "documentation"
+name = "Documentation:"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "tests"
+name = "Tests"
+showcontent = true
+
+[tool.ruff]
+target-version = "py310"
+line-length = 88
+fix = true
+lint.select = [
+    # flake8-2020
+    "YTT",
+    # flake8-bandit
+    "S",
+    # flake8-bugbear
+    "B",
+    # flake8-builtins
+    "A",
+    # flake8-comprehensions
+    "C4",
+    # flake8-debugger
+    "T10",
+    # flake8-simplify
+    "SIM",
+    # mccabe
+    "C90",
+    # pycodestyle
+    "E", "W",
+    # pyflakes
+    "F",
+    # pygrep-hooks
+    "PGH",
+    # pyupgrade
+    "UP",
+    # ruff
+    "RUF",
+]
+lint.ignore = [
+    # DoNotAssignLambda
+    "E731",
+]
+
+[tool.ruff.lint.isort]
+case-sensitive = false
+no-sections = true
+force-single-line = true
+from-first = true
+lines-after-imports = 2
+lines-between-types = 1
+
+[tool.ruff.format]
+preview = true
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["E501", "RUF001", "S101"]
+
+[tool.check-manifest]
+ignore = [
+    ".editorconfig",
+    ".flake8",
+    "dependabot.yml",
+    "mx.ini",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.coverage.run]
+source_pkgs = ["kitconcept.voltolighttheme", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/kitconcept/voltolighttheme/locales/__init__.py",
+  "src/kitconcept/voltolighttheme/locales/__main__.py",
+]

@@ -1,0 +1,37 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    i18n_domain="kitconcept.voltolighttheme"
+    >
+
+  <genericsetup:registerProfile
+      name="default"
+      title="Volto Light Theme: Install"
+      description="Package to configure a new Volto Light Theme site"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/default"
+      />
+
+  <configure zcml:condition="installed plone.exportimport">
+    <genericsetup:registerProfile
+        name="demo"
+        title="Volto Light Theme: Demo"
+        description="Package to add example content to a new Volto Light Theme site"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        directory="profiles/demo"
+        post_handler=".setuphandlers.demo.create_example_content"
+        />
+  </configure>
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="Volto Light Theme: Uninstall"
+      description="Uninstall Volto Light Theme setup."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/uninstall"
+      />
+
+  <include package=".upgrades" />
+
+</configure>

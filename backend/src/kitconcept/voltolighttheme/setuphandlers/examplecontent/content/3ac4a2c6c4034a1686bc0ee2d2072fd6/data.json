@@ -1,0 +1,133 @@
+{
+  "@id": "/block/grid-block/listing",
+  "@type": "Document",
+  "UID": "3ac4a2c6c4034a1686bc0ee2d2072fd6",
+  "allow_discussion": false,
+  "blocks": {
+    "5a361b25-3e19-4c06-866f-a2db6feed983": {
+      "@type": "gridBlock",
+      "blocks": {
+        "0fae8b67-374c-4ca2-b3e0-86114e2f17e1": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "limit": "7",
+            "query": [
+              {
+                "i": "path",
+                "o": "plone.app.querystring.operation.string.absolutePath",
+                "v": "/block/grid-block"
+              }
+            ],
+            "sort_on": "getId",
+            "sort_order": "descending",
+            "sort_order_boolean": true
+          },
+          "styles": {},
+          "variation": "default"
+        },
+        "b940ae89-2b34-472b-aac8-f3d96dfe46f4": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "limit": "7",
+            "query": [
+              {
+                "i": "path",
+                "o": "plone.app.querystring.operation.string.absolutePath",
+                "v": "/block/grid-block"
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "styles": {},
+          "variation": "default"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "b940ae89-2b34-472b-aac8-f3d96dfe46f4",
+          "0fae8b67-374c-4ca2-b3e0-86114e2f17e1"
+        ]
+      },
+      "styles": {}
+    },
+    "fc7973d9-34e3-484c-a20b-1af7eecd9879": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "fc7973d9-34e3-484c-a20b-1af7eecd9879",
+      "5a361b25-3e19-4c06-866f-a2db6feed983"
+    ]
+  },
+  "contributors": [],
+  "created": "2023-07-06T21:35:22+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "\nThe Grid block allows adding multi-column blocks. A grid block can contain between one and four columns of different blocks. This is a grid block with multiple listing blocks.",
+  "effective": "2023-07-06T18:35:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "exportimport.versions": {},
+  "id": "listing",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2023-09-27T08:36:08+00:00",
+  "nav_title": null,
+  "parent": {
+    "@id": "/block/grid-block",
+    "@type": "Document",
+    "UID": "99c70917b6894af08dd306fdbc0eff6a",
+    "description": " The Grid block allows adding multi-column blocks. A grid block can contain between one and four columns of different blocks. Teasers and images can be added in a grid block.",
+    "image_field": null,
+    "image_scales": null,
+    "review_state": "published",
+    "title": "Grid",
+    "type_title": "Page"
+  },
+  "preview_caption": null,
+  "preview_image": {
+    "blob_path": "3ac4a2c6c4034a1686bc0ee2d2072fd6/preview_image/black-starry-night.jpg",
+    "content-type": "image/jpeg",
+    "filename": "black-starry-night.jpg",
+    "height": 1708,
+    "size": 693013,
+    "width": 2400
+  },
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "Grid-Listing",
+  "type_title": "Page",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2023-07-06T21:35:22+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2023-07-06T21:35:22+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

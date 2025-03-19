@@ -1,11 +1,11 @@
-version: '3.3'
+version: '3.9'
 
 services:
 
   frontend:
-    image: ghcr.io/kitconcept/voltolighttheme-frontend:${STACK_PARAM:-latest}
+    image: ${IMAGE_NAME_PREFIX}-frontend:${IMAGE_TAG:-latest}
     environment:
-      RAZZLE_INTERNAL_API_PATH: http://light-theme-kitconcept-io_backend:8080/Plone
+      RAZZLE_INTERNAL_API_PATH: http://${STACK_NAME}_backend:8080/Plone
     depends_on:
       - backend
     networks:
@@ -19,23 +19,22 @@ services:
           - node.labels.type == app
           - node.labels.env == staging
       labels:
-        - traefik.enable=true
-        - traefik.docker.network=public
-        - traefik.constraint-label=public
+        - "traefik.enable=true"
+        - "traefik.docker.network=public"
+        - "traefik.constraint-label=public"
         # Service
-        - traefik.http.services.svc-lighttheme-stg-front.loadbalancer.server.port=3000
+        - "traefik.http.services.svc-$${STACK_PREFIX}-front.loadbalancer.server.port=3000"
         # Middlewares
         # Routers
-        ## light-theme.kitconcept.io
-        - traefik.http.routers.rt-lighttheme-stg-front.rule=Host(`light-theme.kitconcept.io`)
-        - traefik.http.routers.rt-lighttheme-stg-front.entrypoints=https
-        - traefik.http.routers.rt-lighttheme-stg-front.tls=true
-        - traefik.http.routers.rt-lighttheme-stg-front.tls.certresolver=le
-        - traefik.http.routers.rt-lighttheme-stg-front.service=svc-lighttheme-stg-front
-        - traefik.http.routers.rt-lighttheme-stg-front.middlewares=gzip
+        - "traefik.http.routers.rt-$${STACK_PREFIX}-front.rule=Host(`$${HOSTNAME}`)"
+        - "traefik.http.routers.rt-$${STACK_PREFIX}-front.entrypoints=https"
+        - "traefik.http.routers.rt-$${STACK_PREFIX}-front.tls=true"
+        - "traefik.http.routers.rt-$${STACK_PREFIX}-front.tls.certresolver=le"
+        - "traefik.http.routers.rt-$${STACK_PREFIX}-front.service=svc-$${STACK_PREFIX}-front"
+        - "traefik.http.routers.rt-$${STACK_PREFIX}-front.middlewares=gzip"
 
   backend:
-    image: ghcr.io/kitconcept/voltolighttheme:latest
+    image: ${IMAGE_NAME_PREFIX}-backend:${IMAGE_TAG:-latest}
     networks:
       - public
     deploy:
@@ -45,20 +44,20 @@ services:
           - node.labels.type == app
           - node.labels.env == staging
       labels:
-        - traefik.enable=true
-        - traefik.docker.network=public
-        - traefik.constraint-label=public
+        - "traefik.enable=true"
+        - "traefik.docker.network=public"
+        - "traefik.constraint-label=public"
         # Service
-        - traefik.http.services.svc-lighttheme-stg-backend.loadbalancer.server.port=8080
+        - "traefik.http.services.svc-$${STACK_PREFIX}-backend.loadbalancer.server.port=8080"
         # Middleware
-        - "traefik.http.middlewares.mw-lighttheme-stg-backend-vhm.replacepathregex.regex=^/\\+\\+api\\+\\+($$|/.*)"
-        - "traefik.http.middlewares.mw-lighttheme-stg-backend-vhm.replacepathregex.replacement=/VirtualHostBase/https/light-theme.kitconcept.io/Plone/++api++/VirtualHostRoot/$$1"
+        - "traefik.http.middlewares.mw-$${STACK_PREFIX}-backend-vhm.replacepathregex.regex=^/\\+\\+api\\+\\+($$|/.*)"
+        - "traefik.http.middlewares.mw-$${STACK_PREFIX}-backend-vhm.replacepathregex.replacement=/VirtualHostBase/https/$${HOSTNAME}/Plone/++api++/VirtualHostRoot/$$1"
         # Router ++api++
-        - traefik.http.routers.rt-lighttheme-stg-backend.rule=Host(`light-theme.kitconcept.io`) && (PathPrefix(`/++api++`))
-        - traefik.http.routers.rt-lighttheme-stg-backend.entrypoints=https
-        - traefik.http.routers.rt-lighttheme-stg-backend.tls=true
-        - traefik.http.routers.rt-lighttheme-stg-backend.service=svc-lighttheme-stg-backend
-        - traefik.http.routers.rt-lighttheme-stg-backend.middlewares=gzip,mw-lighttheme-stg-backend-vhm
+        - "traefik.http.routers.rt-$${STACK_PREFIX}-backend.rule=Host(`$${HOSTNAME}`) && (PathPrefix(`/++api++`))"
+        - "traefik.http.routers.rt-$${STACK_PREFIX}-backend.entrypoints=https"
+        - "traefik.http.routers.rt-$${STACK_PREFIX}-backend.tls=true"
+        - "traefik.http.routers.rt-$${STACK_PREFIX}-backend.service=svc-$${STACK_PREFIX}-backend"
+        - "traefik.http.routers.rt-$${STACK_PREFIX}-backend.middlewares=gzip,mw-$${STACK_PREFIX}-backend-vhm"
 
 networks:
   public:

@@ -1,0 +1,66 @@
+name: Backend Lint
+
+on:
+  workflow_call:
+    inputs:
+      python-version:
+        required: true
+        type: string
+      plone-version:
+        required: true
+        type: string
+
+defaults:
+  run:
+    working-directory: backend
+
+jobs:
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+
+        - name: Checkout
+          uses: actions/checkout@v4
+
+        - name: Install the latest version of uv
+          uses: astral-sh/setup-uv@v5
+          with:
+            python-version: ${{ inputs.python-version }}
+
+        - name: Check formatting
+          if: ${{ success() || failure() }}
+          id: ruff-format
+          run: uvx ruff@latest format --diff
+
+        - name: Check lint
+          if: ${{ success() || failure() }}
+          id: ruff-lint
+          run: uvx ruff@latest check --diff
+
+        - name: Check XML / ZCML
+          if: ${{ success() || failure() }}
+          id: zpretty
+          run: uvx zpretty@latest --check src
+
+        - name: Check Package Metadata
+          if: ${{ success() || failure() }}
+          id: pyroma
+          run: uvx pyroma@latest -d .
+
+        - name: Check Python Versions
+          if: ${{ success() || failure() }}
+          id: py-versions
+          run: uvx check-python-versions@latest .
+
+        - name: Report
+          if: ${{ success() || failure() }}
+          run: |
+            echo '# Code Analysis' >> $GITHUB_STEP_SUMMARY
+            echo '| Test | Status |' >> $GITHUB_STEP_SUMMARY
+            echo '| --- | --- |' >> $GITHUB_STEP_SUMMARY
+            echo '| Format | ${{ steps.ruff-format.conclusion == 'failure' && '❌' || ' ✅' }} |' >> $GITHUB_STEP_SUMMARY
+            echo '| Lint | ${{ steps.ruff-lint.conclusion == 'failure' && '❌' || ' ✅' }} |' >> $GITHUB_STEP_SUMMARY
+            echo '| XML / ZCML | ${{ steps.zpretty.conclusion == 'failure' && '❌' || ' ✅' }} |' >> $GITHUB_STEP_SUMMARY
+            echo '| Package Metadata | ${{ steps.pyroma.conclusion == 'failure' && '❌' || ' ✅' }} |' >> $GITHUB_STEP_SUMMARY
+            echo '| Python Versions | ${{ steps.py-versions.conclusion == 'failure' && '❌' || ' ✅' }} |' >> $GITHUB_STEP_SUMMARY

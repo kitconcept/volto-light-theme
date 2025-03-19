@@ -1,0 +1,1202 @@
+{
+  "@id": "/block/slider",
+  "@type": "Document",
+  "UID": "ccba1307927b4407ac855f1947fd4c99",
+  "allow_discussion": false,
+  "blocks": {
+    "15064f53-213d-48e7-a514-9d9cf0d187b2": {
+      "@type": "slider",
+      "autoplayDelay": 4000,
+      "autoplayEnabled": false,
+      "autoplayJump": false,
+      "slides": [
+        {
+          "@id": "920b9ced-82a9-4301-87d6-07a53b3153d9",
+          "buttonText": "Custom Button text",
+          "description": " The highlight block allows you to highlight and tease a single piece of content. The content is displayed with a large image and a title and description in a banderole.",
+          "flagAlign": "right",
+          "head_title": "Custom Head Title",
+          "href": [
+            {
+              "@id": "../../resolveuid/8416628543f146ff9a18d281c03e2399",
+              "@type": "Document",
+              "Description": " The highlight block allows you to highlight and tease a single piece of content. The content is displayed with a large image and a title and description in a banderole.",
+              "Title": "Highlight",
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "title": "Highlight"
+            }
+          ],
+          "title": "Highlight"
+        },
+        {
+          "@id": "7f0554c8-5e3f-4b7d-a5c9-330959fadf1b",
+          "buttonText": "Custom Button text",
+          "description": " The highlight block allows you to highlight and tease a single piece of content. The content is displayed with a large image and a title and description in a banderole.",
+          "flagAlign": "right",
+          "head_title": "Custom Head Title",
+          "href": [
+            {
+              "@id": "../../resolveuid/8416628543f146ff9a18d281c03e2399",
+              "@type": "Document",
+              "Description": " The highlight block allows you to highlight and tease a single piece of content. The content is displayed with a large image and a title and description in a banderole.",
+              "Title": "Highlight",
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "title": "Highlight"
+            }
+          ],
+          "preview_image": [
+            {
+              "@id": "../../resolveuid/eec82559bf3242a6be4d43bc2096f399",
+              "@type": "Image",
+              "CreationDate": "2023-07-07T03:05:08+05:30",
+              "Creator": "admin",
+              "Date": "2023-09-22T19:57:57+05:30",
+              "Description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+              "EffectiveDate": "None",
+              "ExpirationDate": "None",
+              "ModificationDate": "2023-09-22T19:57:57+05:30",
+              "Subject": [],
+              "Title": "Image - Light",
+              "Type": "Image",
+              "UID": "eec82559bf3242a6be4d43bc2096f399",
+              "author_name": null,
+              "cmf_uid": null,
+              "commentators": [],
+              "created": "2023-07-06T21:35:08+00:00",
+              "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+              "effective": "1969-12-30T18:30:00+00:00",
+              "end": null,
+              "exclude_from_nav": false,
+              "expires": "2499-12-30T18:30:00+00:00",
+              "getIcon": true,
+              "getId": "image-light",
+              "getObjSize": "464.1 KB",
+              "getPath": "/Plone/content-types/image-light",
+              "getRemoteUrl": null,
+              "getURL": "http://localhost:3000/content-types/image-light",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "id": "image-light",
+              "image_field": "image",
+              "in_response_to": null,
+              "is_folderish": false,
+              "last_comment_date": null,
+              "listCreators": [
+                "admin"
+              ],
+              "location": null,
+              "mime_type": "image/jpeg",
+              "modified": "2023-09-22T14:27:57+00:00",
+              "nav_title": null,
+              "portal_type": "Image",
+              "review_state": null,
+              "start": null,
+              "sync_uid": null,
+              "title": "Image - Light",
+              "total_comments": 0,
+              "type_title": "Image"
+            }
+          ],
+          "title": "Highlight"
+        },
+        {
+          "@id": "947bea4f-de6b-4de3-bcaf-76e46a62dfb5",
+          "buttonText": "Custom Button text",
+          "description": " The highlight block allows you to highlight and tease a single piece of content. The content is displayed with a large image and a title and description in a banderole.",
+          "flagAlign": "left",
+          "head_title": "Custom Head Title",
+          "href": [
+            {
+              "@id": "../../resolveuid/8416628543f146ff9a18d281c03e2399",
+              "@type": "Document",
+              "Description": " The highlight block allows you to highlight and tease a single piece of content. The content is displayed with a large image and a title and description in a banderole.",
+              "Title": "Highlight",
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "title": "Highlight"
+            }
+          ],
+          "title": "Highlight"
+        }
+      ],
+      "styles": {
+        "backgroundColor": "grey"
+      }
+    },
+    "16a2702d-4fb0-4e73-a17c-884ef9d04e6d": {
+      "@type": "slider",
+      "autoplayDelay": 4000,
+      "autoplayEnabled": false,
+      "autoplayJump": false,
+      "slides": [
+        {
+          "@id": "8089c4fd-efe2-4cf4-9ae5-7f80f907f16d",
+          "description": " The heading block allows you to display headings to group multiple blocks under one topic.",
+          "flagAlign": "left",
+          "head_title": "Custom Head Title",
+          "href": [
+            {
+              "@id": "../../resolveuid/2f69aa417e894fd3bf23d393287b369e",
+              "@type": "Document",
+              "Description": " The heading block allows you to display headings to group multiple blocks under one topic.",
+              "Title": "Heading",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "",
+              "title": "Heading"
+            }
+          ],
+          "preview_image": [
+            {
+              "@id": "../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "@type": "Image",
+              "CreationDate": "2023-07-07T03:05:08+05:30",
+              "Creator": "admin",
+              "Date": "2023-09-22T19:58:04+05:30",
+              "Description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+              "EffectiveDate": "None",
+              "ExpirationDate": "None",
+              "ModificationDate": "2023-09-22T19:58:04+05:30",
+              "Subject": [],
+              "Title": "Image",
+              "Type": "Image",
+              "UID": "970ec24c76784c66a06d8c8d8b6522b2",
+              "author_name": null,
+              "cmf_uid": null,
+              "commentators": [],
+              "created": "2023-07-06T21:35:08+00:00",
+              "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+              "effective": "1969-12-30T18:30:00+00:00",
+              "end": null,
+              "exclude_from_nav": false,
+              "expires": "2499-12-30T18:30:00+00:00",
+              "getIcon": true,
+              "getId": "image",
+              "getObjSize": "676.8 KB",
+              "getPath": "/Plone/content-types/image",
+              "getRemoteUrl": null,
+              "getURL": "http://localhost:3000/content-types/image",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "id": "image",
+              "image_field": "image",
+              "in_response_to": null,
+              "is_folderish": false,
+              "last_comment_date": null,
+              "listCreators": [
+                "admin"
+              ],
+              "location": null,
+              "mime_type": "image/jpeg",
+              "modified": "2023-09-22T14:28:04+00:00",
+              "nav_title": null,
+              "portal_type": "Image",
+              "review_state": null,
+              "start": null,
+              "sync_uid": null,
+              "title": "Image",
+              "total_comments": 0,
+              "type_title": "Image"
+            }
+          ],
+          "title": "Heading"
+        },
+        {
+          "@id": "ff22cdc3-2219-4b3e-b043-265e5d670770",
+          "flagAlign": "left",
+          "href": [
+            {
+              "@id": "../../resolveuid/405582582e70493c96a6c549444a1eaa",
+              "@type": "Document",
+              "Description": " The button block shows a button for which a link (internal or external) can be stored. The button can be displayed left, right or center and have a background color.",
+              "Title": "Button",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "",
+              "title": "Button"
+            }
+          ],
+          "preview_image": [
+            {
+              "@id": "../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "@type": "Image",
+              "CreationDate": "2023-07-07T03:05:08+05:30",
+              "Creator": "admin",
+              "Date": "2023-09-22T19:58:04+05:30",
+              "Description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+              "EffectiveDate": "None",
+              "ExpirationDate": "None",
+              "ModificationDate": "2023-09-22T19:58:04+05:30",
+              "Subject": [],
+              "Title": "Image",
+              "Type": "Image",
+              "UID": "970ec24c76784c66a06d8c8d8b6522b2",
+              "author_name": null,
+              "cmf_uid": null,
+              "commentators": [],
+              "created": "2023-07-06T21:35:08+00:00",
+              "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+              "effective": "1969-12-30T18:30:00+00:00",
+              "end": null,
+              "exclude_from_nav": false,
+              "expires": "2499-12-30T18:30:00+00:00",
+              "getIcon": true,
+              "getId": "image",
+              "getObjSize": "676.8 KB",
+              "getPath": "/Plone/content-types/image",
+              "getRemoteUrl": null,
+              "getURL": "http://localhost:3000/content-types/image",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "id": "image",
+              "image_field": "image",
+              "in_response_to": null,
+              "is_folderish": false,
+              "last_comment_date": null,
+              "listCreators": [
+                "admin"
+              ],
+              "location": null,
+              "mime_type": "image/jpeg",
+              "modified": "2023-09-22T14:28:04+00:00",
+              "nav_title": null,
+              "portal_type": "Image",
+              "review_state": null,
+              "start": null,
+              "sync_uid": null,
+              "title": "Image",
+              "total_comments": 0,
+              "type_title": "Image"
+            }
+          ],
+          "title": "Button"
+        },
+        {
+          "@id": "decdd296-6aff-47e6-9aaf-a83c4f41470b",
+          "description": "This section has a sample of content types available in this site.",
+          "flagAlign": "left",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../resolveuid/e8178744e30a418b9a5768997bb29a19",
+              "@type": "Document",
+              "Description": "This section has a sample of content types available in this site.",
+              "Title": "Content Types",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "image",
+              "title": "Content Types"
+            }
+          ],
+          "preview_image": [
+            {
+              "@id": "../../resolveuid/eec82559bf3242a6be4d43bc2096f399",
+              "@type": "Image",
+              "CreationDate": "2023-07-07T03:05:08+05:30",
+              "Creator": "admin",
+              "Date": "2023-09-22T19:57:57+05:30",
+              "Description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+              "EffectiveDate": "None",
+              "ExpirationDate": "None",
+              "ModificationDate": "2023-09-22T19:57:57+05:30",
+              "Subject": [],
+              "Title": "Image - Light",
+              "Type": "Image",
+              "UID": "eec82559bf3242a6be4d43bc2096f399",
+              "author_name": null,
+              "cmf_uid": null,
+              "commentators": [],
+              "created": "2023-07-06T21:35:08+00:00",
+              "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+              "effective": "1969-12-30T18:30:00+00:00",
+              "end": null,
+              "exclude_from_nav": false,
+              "expires": "2499-12-30T18:30:00+00:00",
+              "getIcon": true,
+              "getId": "image-light",
+              "getObjSize": "464.1 KB",
+              "getPath": "/Plone/content-types/image-light",
+              "getRemoteUrl": null,
+              "getURL": "http://localhost:3000/content-types/image-light",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "id": "image-light",
+              "image_field": "image",
+              "in_response_to": null,
+              "is_folderish": false,
+              "last_comment_date": null,
+              "listCreators": [
+                "admin"
+              ],
+              "location": null,
+              "mime_type": "image/jpeg",
+              "modified": "2023-09-22T14:27:57+00:00",
+              "nav_title": null,
+              "portal_type": "Image",
+              "review_state": null,
+              "start": null,
+              "sync_uid": null,
+              "title": "Image - Light",
+              "total_comments": 0,
+              "type_title": "Image"
+            }
+          ],
+          "title": "Content Types"
+        }
+      ],
+      "styles": {}
+    },
+    "2acaf75c-42b4-4a55-8810-664cfa9c8282": {
+      "@type": "slider",
+      "autoplayDelay": 4000,
+      "autoplayEnabled": false,
+      "autoplayJump": false,
+      "slides": [
+        {
+          "@id": "07bee906-21d9-480f-a698-298e27b70c3c",
+          "description": " The heading block allows you to display headings to group multiple blocks under one topic.",
+          "flagAlign": "left",
+          "head_title": "Custom Head Title",
+          "href": [
+            {
+              "@id": "../../resolveuid/8416628543f146ff9a18d281c03e2399",
+              "@type": "Document",
+              "Description": " The highlight block allows you to highlight and tease a single piece of content. The content is displayed with a large image and a title and description in a banderole.",
+              "Title": "Highlight",
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "title": "Highlight"
+            }
+          ],
+          "title": "Heading"
+        },
+        {
+          "@id": "e4b1eabd-9022-4516-9215-b7b7e4dd98e9",
+          "description": " The highlight block allows you to highlight and tease a single piece of content. The content is displayed with a large image and a title and description in a banderole.",
+          "flagAlign": "left",
+          "head_title": "Custom Head Title",
+          "href": [
+            {
+              "@id": "../../resolveuid/8416628543f146ff9a18d281c03e2399",
+              "@type": "Document",
+              "Description": " The highlight block allows you to highlight and tease a single piece of content. The content is displayed with a large image and a title and description in a banderole.",
+              "Title": "Highlight",
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "title": "Highlight"
+            }
+          ],
+          "preview_image": [
+            {
+              "@id": "../../resolveuid/eec82559bf3242a6be4d43bc2096f399",
+              "@type": "Image",
+              "CreationDate": "2023-07-07T03:05:08+05:30",
+              "Creator": "admin",
+              "Date": "2023-09-22T19:57:57+05:30",
+              "Description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+              "EffectiveDate": "None",
+              "ExpirationDate": "None",
+              "ModificationDate": "2023-09-22T19:57:57+05:30",
+              "Subject": [],
+              "Title": "Image - Light",
+              "Type": "Image",
+              "UID": "eec82559bf3242a6be4d43bc2096f399",
+              "author_name": null,
+              "cmf_uid": null,
+              "commentators": [],
+              "created": "2023-07-06T21:35:08+00:00",
+              "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+              "effective": "1969-12-30T18:30:00+00:00",
+              "end": null,
+              "exclude_from_nav": false,
+              "expires": "2499-12-30T18:30:00+00:00",
+              "getIcon": true,
+              "getId": "image-light",
+              "getObjSize": "464.1 KB",
+              "getPath": "/Plone/content-types/image-light",
+              "getRemoteUrl": null,
+              "getURL": "http://localhost:3000/content-types/image-light",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "id": "image-light",
+              "image_field": "image",
+              "in_response_to": null,
+              "is_folderish": false,
+              "last_comment_date": null,
+              "listCreators": [
+                "admin"
+              ],
+              "location": null,
+              "mime_type": "image/jpeg",
+              "modified": "2023-09-22T14:27:57+00:00",
+              "nav_title": null,
+              "portal_type": "Image",
+              "review_state": null,
+              "start": null,
+              "sync_uid": null,
+              "title": "Image - Light",
+              "total_comments": 0,
+              "type_title": "Image"
+            }
+          ],
+          "title": "Highlight"
+        },
+        {
+          "@id": "89d8ee31-831b-43ab-aa02-2b9d6a7ae0a9",
+          "description": " The highlight block allows you to highlight and tease a single piece of content. The content is displayed with a large image and a title and description in a banderole.",
+          "flagAlign": "left",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../resolveuid/8416628543f146ff9a18d281c03e2399",
+              "@type": "Document",
+              "Description": " The highlight block allows you to highlight and tease a single piece of content. The content is displayed with a large image and a title and description in a banderole.",
+              "Title": "Highlight",
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "title": "Highlight"
+            }
+          ],
+          "title": "Highlight"
+        }
+      ],
+      "styles": {
+        "backgroundColor": "grey"
+      }
+    },
+    "2ec50754-9d4a-49bb-a71b-957482028abe": {
+      "@type": "slider",
+      "autoplayDelay": 4000,
+      "autoplayEnabled": false,
+      "autoplayJump": false,
+      "slides": [
+        {
+          "@id": "f470f258-c92f-4d0d-b627-34e4ac13a35e",
+          "description": " The highlight block allows you to highlight and tease a single piece of content. The content is displayed with a large image and a title and description in a banderole.",
+          "flagAlign": "left",
+          "head_title": "Custom Head Title",
+          "href": [
+            {
+              "@id": "../../resolveuid/8416628543f146ff9a18d281c03e2399",
+              "Description": " The highlight block allows you to highlight and tease a single piece of content. The content is displayed with a large image and a title and description in a banderole.",
+              "Title": "Highlight",
+              "hasPreviewImage": true,
+              "image_field": "preview_image",
+              "title": "Highlight"
+            }
+          ],
+          "preview_image": [
+            {
+              "@id": "../../resolveuid/eec82559bf3242a6be4d43bc2096f399",
+              "@type": "Image",
+              "CreationDate": "2023-07-07T03:05:08+05:30",
+              "Creator": "admin",
+              "Date": "2023-09-22T19:57:57+05:30",
+              "Description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+              "EffectiveDate": "None",
+              "ExpirationDate": "None",
+              "ModificationDate": "2023-09-22T19:57:57+05:30",
+              "Subject": [],
+              "Title": "Image - Light",
+              "Type": "Image",
+              "UID": "eec82559bf3242a6be4d43bc2096f399",
+              "author_name": null,
+              "cmf_uid": null,
+              "commentators": [],
+              "created": "2023-07-06T21:35:08+00:00",
+              "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+              "effective": "1969-12-30T18:30:00+00:00",
+              "end": null,
+              "exclude_from_nav": false,
+              "expires": "2499-12-30T18:30:00+00:00",
+              "getIcon": true,
+              "getId": "image-light",
+              "getObjSize": "464.1 KB",
+              "getPath": "/Plone/content-types/image-light",
+              "getRemoteUrl": null,
+              "getURL": "http://localhost:3000/content-types/image-light",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "id": "image-light",
+              "image_field": "image",
+              "in_response_to": null,
+              "is_folderish": false,
+              "last_comment_date": null,
+              "listCreators": [
+                "admin"
+              ],
+              "location": null,
+              "mime_type": "image/jpeg",
+              "modified": "2023-09-22T14:27:57+00:00",
+              "nav_title": null,
+              "portal_type": "Image",
+              "review_state": null,
+              "start": null,
+              "sync_uid": null,
+              "title": "Image - Light",
+              "total_comments": 0,
+              "type_title": "Image"
+            }
+          ],
+          "title": "Highlight"
+        },
+        {
+          "@id": "b2cacf9a-9797-4d49-b861-cdb1a3889006",
+          "description": " The introductory block allows the display of an introductory text, which is displayed larger than normal continuous text.",
+          "flagAlign": "left",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../resolveuid/00cef5f245a342958288ace545e3c097",
+              "@type": "Document",
+              "Description": " The introductory block allows the display of an introductory text, which is displayed larger than normal continuous text.",
+              "Title": "Introduction",
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "title": "Introduction"
+            }
+          ],
+          "preview_image": [
+            {
+              "@id": "../../resolveuid/eec82559bf3242a6be4d43bc2096f399",
+              "@type": "Image",
+              "CreationDate": "2023-07-07T03:05:08+05:30",
+              "Creator": "admin",
+              "Date": "2023-09-22T19:57:57+05:30",
+              "Description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+              "EffectiveDate": "None",
+              "ExpirationDate": "None",
+              "ModificationDate": "2023-09-22T19:57:57+05:30",
+              "Subject": [],
+              "Title": "Image - Light",
+              "Type": "Image",
+              "UID": "eec82559bf3242a6be4d43bc2096f399",
+              "author_name": null,
+              "cmf_uid": null,
+              "commentators": [],
+              "created": "2023-07-06T21:35:08+00:00",
+              "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+              "effective": "1969-12-30T18:30:00+00:00",
+              "end": null,
+              "exclude_from_nav": false,
+              "expires": "2499-12-30T18:30:00+00:00",
+              "getIcon": true,
+              "getId": "image-light",
+              "getObjSize": "464.1 KB",
+              "getPath": "/Plone/content-types/image-light",
+              "getRemoteUrl": null,
+              "getURL": "http://localhost:3000/content-types/image-light",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "id": "image-light",
+              "image_field": "image",
+              "in_response_to": null,
+              "is_folderish": false,
+              "last_comment_date": null,
+              "listCreators": [
+                "admin"
+              ],
+              "location": null,
+              "mime_type": "image/jpeg",
+              "modified": "2023-09-22T14:27:57+00:00",
+              "nav_title": null,
+              "portal_type": "Image",
+              "review_state": null,
+              "start": null,
+              "sync_uid": null,
+              "title": "Image - Light",
+              "total_comments": 0,
+              "type_title": "Image"
+            }
+          ],
+          "title": "Introduction"
+        }
+      ],
+      "styles": {}
+    },
+    "445aa65d-e0a0-47cb-9c49-7958d214db37": {
+      "@type": "heading",
+      "heading": "Custom Button Text",
+      "styles": {}
+    },
+    "5012da82-0e4a-44aa-912f-39d197a6a4e9": {
+      "@type": "title"
+    },
+    "6173dc0f-f2b9-4936-b4b9-64771fa065c9": {
+      "@type": "heading",
+      "heading": "Flag on the Right",
+      "styles": {}
+    },
+    "7eb40607-b61c-4560-ab45-7ede4c393e73": {
+      "@type": "slider",
+      "autoplayDelay": 4000,
+      "autoplayEnabled": false,
+      "autoplayJump": false,
+      "slides": [
+        {
+          "@id": "6f6b08dd-fdf6-4478-ab9e-0de43448fe71",
+          "description": " The highlight block allows you to highlight and tease a single piece of content. The content is displayed with a large image and a title and description in a banderole.",
+          "flagAlign": "left",
+          "head_title": "Custom Head Title",
+          "href": [
+            {
+              "@id": "../../resolveuid/8416628543f146ff9a18d281c03e2399",
+              "@type": "Document",
+              "Description": " The highlight block allows you to highlight and tease a single piece of content. The content is displayed with a large image and a title and description in a banderole.",
+              "Title": "Highlight",
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "title": "Highlight"
+            }
+          ],
+          "title": "Highlight"
+        },
+        {
+          "@id": "169eb25f-62a4-4382-9af8-1b69bf248bbb",
+          "description": " The highlight block allows you to highlight and tease a single piece of content. The content is displayed with a large image and a title and description in a banderole.",
+          "flagAlign": "left",
+          "head_title": "Another Head Title",
+          "href": [
+            {
+              "@id": "../../resolveuid/8416628543f146ff9a18d281c03e2399",
+              "@type": "Document",
+              "Description": " The highlight block allows you to highlight and tease a single piece of content. The content is displayed with a large image and a title and description in a banderole.",
+              "Title": "Highlight",
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "title": "Highlight"
+            }
+          ],
+          "title": "Highlight"
+        },
+        {
+          "@id": "35f6a8cf-4063-4b1f-8d44-aeaa9f970531",
+          "description": " The highlight block allows you to highlight and tease a single piece of content. The content is displayed with a large image and a title and description in a banderole.",
+          "flagAlign": "left",
+          "head_title": "This is third slider",
+          "href": [
+            {
+              "@id": "../../resolveuid/8416628543f146ff9a18d281c03e2399",
+              "@type": "Document",
+              "Description": " The highlight block allows you to highlight and tease a single piece of content. The content is displayed with a large image and a title and description in a banderole.",
+              "Title": "Highlight",
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "title": "Highlight"
+            }
+          ],
+          "title": "Highlight"
+        }
+      ],
+      "styles": {}
+    },
+    "8504088e-e855-43fd-a94d-b21ffa1e1fde": {
+      "@type": "slider",
+      "autoplayDelay": 4000,
+      "autoplayEnabled": false,
+      "autoplayJump": false,
+      "slides": [
+        {
+          "@id": "7c6f7559-be1a-499d-b549-8ab7af952ce8",
+          "description": " The heading block allows you to display headings to group multiple blocks under one topic.",
+          "flagAlign": "right",
+          "head_title": "Custom Head Title",
+          "href": [
+            {
+              "@id": "../../resolveuid/2f69aa417e894fd3bf23d393287b369e",
+              "@type": "Document",
+              "Description": " The heading block allows you to display headings to group multiple blocks under one topic.",
+              "Title": "Heading",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "",
+              "title": "Heading"
+            }
+          ],
+          "preview_image": [
+            {
+              "@id": "../../resolveuid/eec82559bf3242a6be4d43bc2096f399",
+              "@type": "Image",
+              "CreationDate": "2023-07-07T03:05:08+05:30",
+              "Creator": "admin",
+              "Date": "2023-09-22T19:57:57+05:30",
+              "Description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+              "EffectiveDate": "None",
+              "ExpirationDate": "None",
+              "ModificationDate": "2023-09-22T19:57:57+05:30",
+              "Subject": [],
+              "Title": "Image - Light",
+              "Type": "Image",
+              "UID": "eec82559bf3242a6be4d43bc2096f399",
+              "author_name": null,
+              "cmf_uid": null,
+              "commentators": [],
+              "created": "2023-07-06T21:35:08+00:00",
+              "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+              "effective": "1969-12-30T18:30:00+00:00",
+              "end": null,
+              "exclude_from_nav": false,
+              "expires": "2499-12-30T18:30:00+00:00",
+              "getIcon": true,
+              "getId": "image-light",
+              "getObjSize": "464.1 KB",
+              "getPath": "/Plone/content-types/image-light",
+              "getRemoteUrl": null,
+              "getURL": "http://localhost:3000/content-types/image-light",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "id": "image-light",
+              "image_field": "image",
+              "in_response_to": null,
+              "is_folderish": false,
+              "last_comment_date": null,
+              "listCreators": [
+                "admin"
+              ],
+              "location": null,
+              "mime_type": "image/jpeg",
+              "modified": "2023-09-22T14:27:57+00:00",
+              "nav_title": null,
+              "portal_type": "Image",
+              "review_state": null,
+              "start": null,
+              "sync_uid": null,
+              "title": "Image - Light",
+              "total_comments": 0,
+              "type_title": "Image"
+            }
+          ],
+          "title": "Heading"
+        },
+        {
+          "@id": "b5d2ef08-b005-4823-88e6-4aa573cf6467",
+          "description": " The heading block allows you to display headings to group multiple blocks under one topic.",
+          "flagAlign": "right",
+          "head_title": "Custom Head Title",
+          "href": [
+            {
+              "@id": "../../resolveuid/425695d2b7cb47e69374d6f211f17e38",
+              "@type": "Document",
+              "Description": "",
+              "Title": "Blocks",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "",
+              "title": "Blocks"
+            }
+          ],
+          "preview_image": [
+            {
+              "@id": "../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "@type": "Image",
+              "CreationDate": "2023-07-07T03:05:08+05:30",
+              "Creator": "admin",
+              "Date": "2023-09-22T19:58:04+05:30",
+              "Description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+              "EffectiveDate": "None",
+              "ExpirationDate": "None",
+              "ModificationDate": "2023-09-22T19:58:04+05:30",
+              "Subject": [],
+              "Title": "Image",
+              "Type": "Image",
+              "UID": "970ec24c76784c66a06d8c8d8b6522b2",
+              "author_name": null,
+              "cmf_uid": null,
+              "commentators": [],
+              "created": "2023-07-06T21:35:08+00:00",
+              "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+              "effective": "1969-12-30T18:30:00+00:00",
+              "end": null,
+              "exclude_from_nav": false,
+              "expires": "2499-12-30T18:30:00+00:00",
+              "getIcon": true,
+              "getId": "image",
+              "getObjSize": "676.8 KB",
+              "getPath": "/Plone/content-types/image",
+              "getRemoteUrl": null,
+              "getURL": "http://localhost:3000/content-types/image",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "id": "image",
+              "image_field": "image",
+              "in_response_to": null,
+              "is_folderish": false,
+              "last_comment_date": null,
+              "listCreators": [
+                "admin"
+              ],
+              "location": null,
+              "mime_type": "image/jpeg",
+              "modified": "2023-09-22T14:28:04+00:00",
+              "nav_title": null,
+              "portal_type": "Image",
+              "review_state": null,
+              "start": null,
+              "sync_uid": null,
+              "title": "Image",
+              "total_comments": 0,
+              "type_title": "Image"
+            }
+          ],
+          "title": "Blocks"
+        },
+        {
+          "@id": "558a8fb4-4474-4995-bf40-07a5d3a74d4c",
+          "description": "This section has a sample of content types available in this site.",
+          "flagAlign": "right",
+          "head_title": "Custom Head Title",
+          "href": [
+            {
+              "@id": "../../resolveuid/e8178744e30a418b9a5768997bb29a19",
+              "@type": "Document",
+              "Description": "This section has a sample of content types available in this site.",
+              "Title": "Content Types",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "image",
+              "title": "Content Types"
+            }
+          ],
+          "preview_image": [
+            {
+              "@id": "../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "@type": "Image",
+              "CreationDate": "2023-07-07T03:05:08+05:30",
+              "Creator": "admin",
+              "Date": "2023-09-22T19:58:04+05:30",
+              "Description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+              "EffectiveDate": "None",
+              "ExpirationDate": "None",
+              "ModificationDate": "2023-09-22T19:58:04+05:30",
+              "Subject": [],
+              "Title": "Image",
+              "Type": "Image",
+              "UID": "970ec24c76784c66a06d8c8d8b6522b2",
+              "author_name": null,
+              "cmf_uid": null,
+              "commentators": [],
+              "created": "2023-07-06T21:35:08+00:00",
+              "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+              "effective": "1969-12-30T18:30:00+00:00",
+              "end": null,
+              "exclude_from_nav": false,
+              "expires": "2499-12-30T18:30:00+00:00",
+              "getIcon": true,
+              "getId": "image",
+              "getObjSize": "676.8 KB",
+              "getPath": "/Plone/content-types/image",
+              "getRemoteUrl": null,
+              "getURL": "http://localhost:3000/content-types/image",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "id": "image",
+              "image_field": "image",
+              "in_response_to": null,
+              "is_folderish": false,
+              "last_comment_date": null,
+              "listCreators": [
+                "admin"
+              ],
+              "location": null,
+              "mime_type": "image/jpeg",
+              "modified": "2023-09-22T14:28:04+00:00",
+              "nav_title": null,
+              "portal_type": "Image",
+              "review_state": null,
+              "start": null,
+              "sync_uid": null,
+              "title": "Image",
+              "total_comments": 0,
+              "type_title": "Image"
+            }
+          ],
+          "title": "Content Types"
+        }
+      ],
+      "styles": {}
+    },
+    "86ca8d67-eb85-4ad0-bba8-8516ed019aae": {
+      "@type": "slider",
+      "autoplayDelay": 4000,
+      "autoplayEnabled": false,
+      "autoplayJump": false,
+      "slides": [
+        {
+          "@id": "9cef6f40-1bb4-47e3-87fc-fa375fb66a30",
+          "buttonText": "Button Text",
+          "description": " The heading block allows you to display headings to group multiple blocks under one topic.",
+          "flagAlign": "left",
+          "head_title": "Custom Head Title",
+          "href": [
+            {
+              "@id": "../../resolveuid/425695d2b7cb47e69374d6f211f17e38",
+              "@type": "Document",
+              "Description": "",
+              "Title": "Blocks",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "",
+              "title": "Blocks"
+            }
+          ],
+          "preview_image": [
+            {
+              "@id": "../../resolveuid/eec82559bf3242a6be4d43bc2096f399",
+              "@type": "Image",
+              "CreationDate": "2023-07-07T03:05:08+05:30",
+              "Creator": "admin",
+              "Date": "2023-09-22T19:57:57+05:30",
+              "Description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+              "EffectiveDate": "None",
+              "ExpirationDate": "None",
+              "ModificationDate": "2023-09-22T19:57:57+05:30",
+              "Subject": [],
+              "Title": "Image - Light",
+              "Type": "Image",
+              "UID": "eec82559bf3242a6be4d43bc2096f399",
+              "author_name": null,
+              "cmf_uid": null,
+              "commentators": [],
+              "created": "2023-07-06T21:35:08+00:00",
+              "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+              "effective": "1969-12-30T18:30:00+00:00",
+              "end": null,
+              "exclude_from_nav": false,
+              "expires": "2499-12-30T18:30:00+00:00",
+              "getIcon": true,
+              "getId": "image-light",
+              "getObjSize": "464.1 KB",
+              "getPath": "/Plone/content-types/image-light",
+              "getRemoteUrl": null,
+              "getURL": "http://localhost:3000/content-types/image-light",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "id": "image-light",
+              "image_field": "image",
+              "in_response_to": null,
+              "is_folderish": false,
+              "last_comment_date": null,
+              "listCreators": [
+                "admin"
+              ],
+              "location": null,
+              "mime_type": "image/jpeg",
+              "modified": "2023-09-22T14:27:57+00:00",
+              "nav_title": null,
+              "portal_type": "Image",
+              "review_state": null,
+              "start": null,
+              "sync_uid": null,
+              "title": "Image - Light",
+              "total_comments": 0,
+              "type_title": "Image"
+            }
+          ],
+          "title": "Blocks"
+        },
+        {
+          "@id": "91d83870-6751-4d4b-9ce0-279463b0ce96",
+          "buttonText": "Button Text",
+          "description": " The heading block allows you to display headings to group multiple blocks under one topic.",
+          "flagAlign": "left",
+          "href": [
+            {
+              "@id": "../../resolveuid/2f69aa417e894fd3bf23d393287b369e",
+              "@type": "Document",
+              "Description": " The heading block allows you to display headings to group multiple blocks under one topic.",
+              "Title": "Heading",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "",
+              "title": "Heading"
+            }
+          ],
+          "preview_image": [
+            {
+              "@id": "../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "@type": "Image",
+              "CreationDate": "2023-07-07T03:05:08+05:30",
+              "Creator": "admin",
+              "Date": "2023-09-22T19:58:04+05:30",
+              "Description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+              "EffectiveDate": "None",
+              "ExpirationDate": "None",
+              "ModificationDate": "2023-09-22T19:58:04+05:30",
+              "Subject": [],
+              "Title": "Image",
+              "Type": "Image",
+              "UID": "970ec24c76784c66a06d8c8d8b6522b2",
+              "author_name": null,
+              "cmf_uid": null,
+              "commentators": [],
+              "created": "2023-07-06T21:35:08+00:00",
+              "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+              "effective": "1969-12-30T18:30:00+00:00",
+              "end": null,
+              "exclude_from_nav": false,
+              "expires": "2499-12-30T18:30:00+00:00",
+              "getIcon": true,
+              "getId": "image",
+              "getObjSize": "676.8 KB",
+              "getPath": "/Plone/content-types/image",
+              "getRemoteUrl": null,
+              "getURL": "http://localhost:3000/content-types/image",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "id": "image",
+              "image_field": "image",
+              "in_response_to": null,
+              "is_folderish": false,
+              "last_comment_date": null,
+              "listCreators": [
+                "admin"
+              ],
+              "location": null,
+              "mime_type": "image/jpeg",
+              "modified": "2023-09-22T14:28:04+00:00",
+              "nav_title": null,
+              "portal_type": "Image",
+              "review_state": null,
+              "start": null,
+              "sync_uid": null,
+              "title": "Image",
+              "total_comments": 0,
+              "type_title": "Image"
+            }
+          ],
+          "title": "Heading"
+        },
+        {
+          "@id": "b8dda2e8-018f-4fcf-bb9b-52d5fc4de582",
+          "buttonText": "Button Text",
+          "description": " The highlight block allows you to highlight and tease a single piece of content. The content is displayed with a large image and a title and description in a banderole.",
+          "flagAlign": "left",
+          "head_title": "Custom Head Title",
+          "href": [
+            {
+              "@id": "../../resolveuid/8416628543f146ff9a18d281c03e2399",
+              "@type": "Document",
+              "Description": " The highlight block allows you to highlight and tease a single piece of content. The content is displayed with a large image and a title and description in a banderole.",
+              "Title": "Highlight",
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "title": "Highlight"
+            }
+          ],
+          "title": "Highlight"
+        }
+      ],
+      "styles": {}
+    },
+    "9226ebdd-788b-49ea-bea0-42d8f1d9a398": {
+      "@type": "heading",
+      "heading": "Custom Image override",
+      "styles": {}
+    },
+    "c5f7eb49-a37e-4413-a985-1200aa5757b4": {
+      "@type": "heading",
+      "heading": "Slider with Grey Background",
+      "styles": {}
+    },
+    "c75ef0e0-c321-4b21-9ba4-dcff108e4176": {
+      "@type": "heading",
+      "heading": "Custom Head Title",
+      "styles": {}
+    },
+    "ead5079f-176d-4858-a75b-12f729249032": {
+      "@type": "slate"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "5012da82-0e4a-44aa-912f-39d197a6a4e9",
+      "16a2702d-4fb0-4e73-a17c-884ef9d04e6d",
+      "6173dc0f-f2b9-4936-b4b9-64771fa065c9",
+      "8504088e-e855-43fd-a94d-b21ffa1e1fde",
+      "445aa65d-e0a0-47cb-9c49-7958d214db37",
+      "86ca8d67-eb85-4ad0-bba8-8516ed019aae",
+      "c75ef0e0-c321-4b21-9ba4-dcff108e4176",
+      "7eb40607-b61c-4560-ab45-7ede4c393e73",
+      "9226ebdd-788b-49ea-bea0-42d8f1d9a398",
+      "2ec50754-9d4a-49bb-a71b-957482028abe",
+      "c5f7eb49-a37e-4413-a985-1200aa5757b4",
+      "2acaf75c-42b4-4a55-8810-664cfa9c8282",
+      "15064f53-213d-48e7-a514-9d9cf0d187b2",
+      "ead5079f-176d-4858-a75b-12f729249032"
+    ]
+  },
+  "contributors": [],
+  "created": "2024-04-08T11:46:58+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "The Slider block allows you to add a slider to a page. A slider can display and tease multiple content on the website. Each piece of content is represented with an image containing the title, description and a button that leads to the linked content.\n",
+  "effective": "2024-04-08T17:54:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "exportimport.versions": {},
+  "id": "slider",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2024-04-08T12:26:50+00:00",
+  "nav_title": null,
+  "parent": {
+    "@id": "/block",
+    "@type": "Document",
+    "UID": "425695d2b7cb47e69374d6f211f17e38",
+    "description": "",
+    "image_field": null,
+    "image_scales": null,
+    "review_state": "published",
+    "title": "Blocks",
+    "type_title": "Page"
+  },
+  "preview_caption": null,
+  "preview_image": null,
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "Slider",
+  "type_title": "Page",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2024-04-08T11:46:58+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2024-04-08T12:24:20+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

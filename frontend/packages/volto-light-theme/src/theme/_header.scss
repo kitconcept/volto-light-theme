@@ -1,0 +1,1073 @@
+.header-wrapper .header {
+  display: flex;
+  flex-direction: column;
+
+  .logo-nav-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-top: 25px;
+    padding-bottom: 35px;
+
+    .logo {
+      max-width: 200px;
+      max-height: 80px;
+      flex: 1 1 0;
+      align-self: center;
+
+      a {
+        display: block;
+
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+    }
+
+    .complementary-logo {
+      max-width: 200px;
+      max-height: 80px;
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    .navigation {
+      display: flex;
+      flex: 3.5 1 0;
+      align-self: center;
+      justify-content: center;
+
+      @media only screen and (max-width: $largest-mobile-screen) {
+        display: none;
+      }
+
+      .desktop.menu {
+        display: flex;
+        justify-content: flex-end;
+
+        a.item {
+          padding: 0 5px;
+          margin: 0 5px;
+          color: $black;
+          font-size: 18px;
+          font-weight: 600;
+          line-height: 24px;
+          text-align: center;
+        }
+      }
+
+      .mobile-menu {
+        .mobile-menu-nav {
+          > div {
+            display: flex;
+            flex-direction: column;
+          }
+
+          a.item {
+            width: 100%;
+            padding: 2rem 1.2rem 1.5rem 1.2rem;
+            color: $black;
+            font-size: 18px;
+
+            &.active {
+              border-bottom: 4px solid $black;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .search-wrapper {
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: row-reverse;
+
+    @media only screen and (max-width: 991px) {
+      &.navigation-desktop {
+        display: none;
+      }
+    }
+
+    .search {
+      .searchbox {
+        display: flex;
+
+        input {
+          border: none;
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+
+      .search-button {
+        text-align: right;
+      }
+
+      button {
+        width: 64px;
+        height: 64px;
+        border: none;
+        border-radius: 50%;
+        background-color: transparent;
+        color: $black;
+        transition:
+          background-color 200ms ease-in-out,
+          color 300ms ease-in-out;
+
+        svg {
+          transition: transform 300ms ease-in-out;
+          transition-property: transform;
+        }
+
+        &:hover {
+          background-color: $darkGrey;
+          color: $white;
+          cursor: pointer;
+
+          svg {
+            transform: scale(0.75);
+          }
+        }
+
+        &:active {
+          transform: scale(0.85);
+          transition-duration: 100ms;
+          transition-property: transform;
+        }
+      }
+
+      .search-bar {
+        position: absolute;
+        z-index: 10;
+        top: -135px;
+        left: 0;
+        width: 100%;
+        height: 90px;
+        padding-top: 2rem;
+        transition:
+          top 500ms ease-in-out,
+          height 600ms ease-in-out;
+        transition-property: top, height;
+
+        &.active {
+          top: 0;
+          height: 188px;
+
+          @media only screen and (max-width: $largest-mobile-screen) {
+            height: calc(100vh - 130px);
+          }
+        }
+
+        .ui.container {
+          display: flex;
+          height: 100%;
+          align-items: center;
+          justify-content: center;
+          @media only screen and (max-width: $largest-mobile-screen) {
+            height: unset;
+          }
+          form {
+            width: 100%;
+
+            .searchbox {
+              justify-content: space-between;
+              padding-top: 0;
+              padding-bottom: 0.5rem;
+              border-bottom: 2px solid $black;
+              border-left: none;
+              margin-left: 12.6rem;
+
+              @media only screen and (max-width: $tablet-breakpoint) {
+                padding-top: 2rem;
+                margin-left: 0.5rem;
+              }
+
+              @media only screen and (max-width: $large-monitor-breakpoint) {
+                padding-top: 0;
+              }
+
+              input {
+                overflow: hidden;
+                width: 70%;
+                padding-left: 0;
+                margin-right: 1rem;
+                font-size: 1.5rem;
+
+                @media only screen and (min-width: $tablet-breakpoint) and (max-width: 788px) {
+                  margin-left: 1.5rem;
+                }
+
+                &::placeholder {
+                  opacity: 0.5;
+                }
+              }
+
+              button {
+                width: 75px;
+                height: 75px;
+                padding: 10px;
+                margin-right: 7px;
+
+                &:hover {
+                  border-radius: 50%;
+                  background-color: $darkGrey;
+                  svg {
+                    fill: $white !important;
+                  }
+                }
+
+                svg {
+                  fill: $black;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .tools-wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding-top: 16px;
+
+    .intranet-flag {
+      padding: 10px $spacing-small;
+      border: none;
+      margin-top: -16px;
+      margin-left: 213px;
+      background-color: $secondary-grey;
+
+      @media only screen and (max-width: $narrow-container-width) {
+        margin-left: 0px;
+      }
+
+      p {
+        @include marginal-title();
+        font-weight: 400;
+        text-transform: capitalize;
+      }
+    }
+
+    .language-selector {
+      padding-left: 40px;
+    }
+
+    .language-selector a {
+      text-transform: uppercase;
+    }
+
+    .tools {
+      display: flex;
+    }
+
+    .tools a {
+      margin-right: 10px;
+      color: $black;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .tools a:not(:last-child):after {
+      padding-right: 0;
+      padding-left: 10px;
+      content: '|';
+      font-size: 14px;
+    }
+
+    .tools .anontools {
+      display: flex;
+      margin-right: 10px;
+
+      a {
+        margin-right: 10px;
+        color: $black;
+      }
+
+      &:after {
+        content: '|';
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+// Intranet Header
+
+.header-wrapper.intranet-header {
+  .header {
+    .logo-nav-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: baseline;
+      justify-content: space-between;
+
+      @media only screen and (max-width: $narrow-container-width) {
+        position: relative;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+
+      .mobile-nav.mobile.only {
+        @media only screen and (max-width: $narrow-container-width) {
+          position: absolute;
+          top: 19px;
+          right: 0;
+        }
+
+        .menu-drawer {
+          @media only screen and (max-width: $computer-breakpoint) {
+            top: 210px;
+
+            .search-button {
+              display: none;
+            }
+          }
+        }
+      }
+      .logo {
+        @media only screen and (max-width: $largest-mobile-screen) {
+          flex: 0 1 auto;
+        }
+      }
+      .navigation {
+        margin: 29px auto 0 auto;
+      }
+    }
+
+    .navigation {
+      display: flex;
+      flex: 3.5 1 0;
+      align-self: center;
+      justify-content: center;
+      margin-bottom: 40px;
+
+      @media only screen and (max-width: $largest-mobile-screen) {
+        display: none;
+      }
+
+      .desktop.menu {
+        display: flex;
+        justify-content: flex-end;
+
+        a.item {
+          padding: 0 5px;
+          margin: 0 5px;
+          color: $black;
+          font-size: 18px;
+          font-weight: 600;
+          line-height: 24px;
+          text-align: center;
+        }
+      }
+
+      .mobile-menu {
+        .mobile-menu-nav {
+          > div {
+            display: flex;
+            flex-direction: column;
+          }
+
+          a.item {
+            width: 100%;
+            padding: 2rem 1.2rem 1.5rem 1.2rem;
+            color: $black;
+            font-size: 18px;
+
+            &.active {
+              border-bottom: 4px solid $black;
+            }
+          }
+        }
+      }
+    }
+
+    .complementary-logo {
+      display: flex;
+      max-width: 200px;
+      flex: 1 1 auto;
+      flex-direction: row-reverse;
+
+      @media only screen and (max-width: $largest-mobile-screen) {
+        display: none;
+      }
+    }
+
+    .search-wrapper {
+      display: flex;
+      max-width: 600px;
+      flex: 3.5 1 0;
+      align-self: center;
+      justify-content: center;
+
+      @media only screen and (max-width: $narrow-container-width) {
+        width: 100%;
+        margin-left: 0%;
+      }
+      @media only screen and (max-width: $largest-mobile-screen) {
+        flex: 0 1 auto;
+      }
+
+      .search {
+        width: 100%;
+        border-bottom: 2px solid $secondary-grey;
+        .field.searchbox {
+          border: none;
+
+          .ui.input input {
+            width: 500px;
+
+            &::placeholder {
+              color: #808080;
+              @include body-text();
+            }
+            @media only screen and (max-width: $narrow-container-width) {
+              width: 100%;
+            }
+          }
+
+          button {
+            @media only screen and (max-width: $narrow-container-width) {
+              padding-left: 9px;
+            }
+            &:hover {
+              background-color: transparent;
+              color: $black;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+
+    .tools-wrapper {
+      justify-content: space-between;
+      @media only screen and (max-width: $narrow-container-width) {
+        flex-direction: row;
+      }
+
+      .tools {
+        @media only screen and (max-width: $narrow-container-width) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+/* we have to align the search hide with desktop naviation hide.
+And destktop navigation uses different breakpoint for different mode and it is coming
+from volto core */
+body.has-toolbar:not(.has-sidebar):not(.has-sidebar-collapsed) {
+  .search-wrapper {
+    @media only screen and (max-width: 1071px) {
+      &.navigation-desktop {
+        display: none;
+      }
+    }
+  }
+}
+
+body.has-toolbar.has-sidebar {
+  .search-wrapper {
+    @media only screen and (max-width: 1447px) {
+      &.navigation-desktop {
+        display: none;
+      }
+    }
+  }
+}
+
+// Fat Navigation fix in edit view
+
+/* Fat menu implementation */
+.navigation {
+  height: 64px;
+
+  @media only screen and (max-width: $tablet-breakpoint) {
+    display: none !important;
+  }
+
+  .item {
+    position: relative;
+    color: $black;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    text-transform: initial;
+
+    &.active::before,
+    &:hover::before {
+      position: absolute;
+      bottom: -49px;
+      width: 100%;
+      border-bottom: 9px solid var(--accent-color, $black);
+      content: '';
+    }
+  }
+
+  .ui.container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .menu-wrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  ul.desktop-menu {
+    display: flex;
+    min-height: initial;
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+    list-style: none;
+
+    & > li > button,
+    & > li > a {
+      padding: 0;
+      padding-top: 20px;
+      padding-bottom: 6px;
+      border: none;
+      border-bottom: 9px solid transparent;
+      margin: 0;
+      margin-left: 20px;
+      background: none;
+      cursor: pointer;
+      font-weight: 700;
+      text-transform: none;
+    }
+    & > li > a {
+      display: block;
+
+      &.item {
+        &.active::before,
+        &:hover::before {
+          display: none;
+        }
+      }
+    }
+
+    & > li:first-child > button {
+      margin-left: 0;
+    }
+
+    .submenu-wrapper {
+      position: absolute;
+      z-index: 11;
+      right: 50%;
+      left: 50%;
+      width: 100vw;
+      max-width: initial;
+      margin-top: 40px;
+      margin-right: -50vw;
+      margin-left: -50vw;
+    }
+
+    .submenu {
+      display: none;
+      height: auto;
+      padding: 50px 102px 70px;
+      background: $lightgrey;
+      box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.25);
+
+      @media only screen and (min-width: $tablet-breakpoint) and (max-width: $computer-breakpoint) {
+        padding: 40px 40px;
+      }
+
+      ul {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        padding: 0;
+        padding-top: 50px;
+        list-style: none;
+
+        .sub-submenu ul {
+          display: flex;
+          flex-direction: column;
+          padding-top: 0;
+          margin-top: 20px;
+
+          li {
+            padding: 0;
+            padding-bottom: 10px;
+
+            a {
+              padding-bottom: 0;
+              font-size: 14px;
+              font-weight: 400;
+              line-height: 18px;
+            }
+
+            a.current.active {
+              font-weight: 700;
+            }
+          }
+        }
+      }
+
+      .close {
+        position: absolute;
+        top: 27px;
+        right: 75px;
+        border: 0;
+        margin-left: 28px;
+        color: $black;
+        cursor: pointer;
+        &:focus {
+          outline: 1px solid $black;
+        }
+      }
+
+      &-inner {
+        width: 100%;
+
+        h2 {
+          position: relative;
+          display: inline-block;
+          margin-left: 25px;
+          color: $black;
+          @include introduction();
+          text-align: left;
+        }
+
+        .subitem-wrapper {
+          width: 20%;
+          padding: 0 20px 0 10px;
+          padding-left: 25px;
+          border-left: 1px solid #000;
+
+          /* This is for tablet landscape mode */
+          @media only screen and (min-width: 1011px) and (max-width: 1280px) {
+            width: 33.33%;
+          }
+
+          .left-arrow {
+            position: absolute;
+            left: -45px;
+            border-bottom: none;
+            font-family: 'Arial';
+            font-size: 35px;
+            transform: rotate(270deg);
+            visibility: hidden;
+          }
+
+          &:nth-of-type(5n) {
+            padding-right: 0;
+          }
+
+          &:nth-of-type(n + 6) {
+            margin-top: 70px;
+            // padding: 0 80px 0 10px;
+          }
+
+          /* This is for tablet landscape mode */
+          @media only screen and (min-width: 1011px) and (max-width: 1280px) {
+            &:nth-of-type(n + 4) {
+              margin-top: 70px;
+            }
+          }
+
+          /* This is for tablet landscape mode */
+          @media only screen and (min-width: 1011px) and (max-width: 1280px) {
+            &:nth-of-type(3n) {
+              padding-right: 0;
+            }
+          }
+
+          a.current {
+            .left-arrow {
+              visibility: visible;
+            }
+          }
+
+          a {
+            span {
+              @include word-break();
+            }
+          }
+        }
+      }
+
+      &.active {
+        display: flex;
+      }
+
+      a {
+        position: relative;
+        display: inline-flex;
+        align-items: flex-start;
+        padding-bottom: 8px;
+        color: $black;
+
+        @include body-text-bold();
+
+        span {
+          border-bottom: 1px solid transparent;
+          word-break: break-word;
+        }
+
+        span:hover {
+          border-bottom: 1px solid #000;
+        }
+      }
+    }
+  }
+}
+
+/* Fat menu in Edit mode */
+.view-editview,
+.view-addview {
+  .navigation {
+    ul.desktop-menu .submenu-wrapper {
+      display: none;
+    }
+
+    .item:hover::before,
+    .item.active::before {
+      display: none;
+    }
+  }
+}
+
+// Mobile Navigation
+
+// applies on body when menu is open
+.has-menu-open {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.mobile-nav {
+  .ui.basic.button.search {
+    padding: 15px;
+  }
+
+  .hamburger-toggler {
+    width: 40px;
+    height: 24px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .hamburger-wrapper {
+    display: flex;
+  }
+
+  .hamburger-inner,
+  .hamburger-inner:before,
+  .hamburger-inner:after,
+  .hamburger:before,
+  .hamburger:after {
+    height: 4px;
+    border-radius: 0;
+  }
+}
+
+.mobile-nav div.menu-drawer {
+  .header,
+  .header button {
+    font-weight: 700;
+  }
+
+  li.header {
+    margin: 0 !important;
+  }
+
+  li.current:before {
+    position: absolute;
+    left: -50px;
+    width: 0;
+    height: 100%;
+    border-left: 9px solid black;
+    content: '';
+  }
+
+  .search-header {
+    display: flex;
+    flex-flow: row-reverse;
+    align-items: center;
+    .search-wrapper .search {
+      padding-top: 20px;
+      button {
+        padding: 0px;
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+.header-wrapper.institut {
+  .menu-drawer {
+    z-index: 520;
+  }
+}
+
+.menu-drawer {
+  position: fixed;
+  top: 135px;
+  right: 0;
+  display: flex;
+  width: 100vw;
+  height: calc(100vh - 110px);
+  flex-direction: column;
+  padding-bottom: 80px;
+  /* line-height: 70px; */
+  background-color: #f4f7f8;
+  color: #fffffe;
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 0.3px;
+  overflow-y: auto;
+  text-align: left;
+
+  // commented since it is overriden by next media query
+  //@media only screen and (max-width: $computer-breakpoint) {
+  //  top: calc(157px + 1rem); // Adjusting the margin top of the logo
+  //}
+
+  @media only screen and (max-width: $computer-breakpoint) {
+    top: calc(135px + 1rem); // Adjusting the margin top of the logo
+  }
+
+  &.search-menu {
+    height: 250px;
+  }
+
+  &.subsection {
+    z-index: 9;
+    flex-direction: column;
+  }
+
+  .search-hero {
+    position: static;
+
+    @media only screen and (max-width: $computer-breakpoint) {
+      position: relative;
+    }
+
+    .ui.input input {
+      font-size: 24px;
+    }
+
+    .ui.form.inline-search {
+      padding: 1rem;
+
+      @media only screen and (min-width: $tablet-breakpoint) and (max-width: $computer-breakpoint) {
+        padding: 0 150px;
+      }
+    }
+
+    .ui.button .icon {
+      height: 30px !important;
+    }
+  }
+
+  ul.mobile-tools {
+    padding: 60px 30px 0 30px;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 200;
+    list-style: none;
+
+    li {
+      display: list-item !important;
+      padding: 4px 0 !important;
+      border-bottom: 0 !important;
+      margin-left: 0 !important;
+    }
+
+    .search-container-mobile {
+      padding-top: 0px;
+    }
+
+    li a {
+      display: inline !important;
+      color: blue;
+      text-decoration: underline;
+    }
+
+    span {
+      color: $black;
+    }
+
+    .language-selector *:not(:last-child):after {
+      margin-right: 5px;
+      margin-left: 5px;
+      content: '|';
+      font-weight: 300;
+    }
+
+    &.secondary {
+      margin: 20px 0;
+
+      .language-selector {
+        display: flex;
+      }
+
+      li {
+        padding: 20px 0;
+        border-bottom: none;
+        text-transform: uppercase;
+      }
+
+      a {
+        color: grey;
+      }
+
+      span {
+        color: black;
+      }
+
+      .search-container-mobile {
+        padding-top: 0px;
+
+        button {
+          width: auto;
+          padding: 0px;
+          border-bottom: none;
+        }
+      }
+    }
+  }
+
+  ul.sections {
+    width: 100%;
+    padding: 0 30px;
+    margin-top: 0;
+    color: $white;
+    font-size: 20px;
+    list-style: none;
+
+    li {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      border-bottom: 1px solid;
+      margin-left: 20px;
+      color: $black;
+      line-height: 24px;
+
+      .icon:hover {
+        cursor: pointer;
+      }
+
+      &.header {
+        align-items: flex-start;
+        line-height: 36px;
+      }
+
+      &.current {
+        font-weight: 700;
+      }
+
+      &.has-children {
+        border-bottom: 0;
+      }
+
+      &.sub-sub-section {
+        padding-left: 1em;
+        border-bottom: 0;
+
+        &.last-child {
+          border-bottom: 1px solid;
+        }
+      }
+    }
+
+    a {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+      color: $black;
+      line-height: 36px;
+    }
+
+    .subsection {
+      .button-wrapper {
+        margin: 0 30px;
+        margin-top: 20px;
+      }
+
+      button {
+        padding: 20px 0 0 10px;
+        border: 0px;
+        background: transparent;
+        color: $black;
+
+        span {
+          display: inline-block;
+          padding-top: 22px;
+          font-size: 14px;
+          font-weight: bold;
+          vertical-align: top;
+        }
+      }
+    }
+  }
+}
+
+.has-toolbar .menu-drawer,
+.has-toolbar-collapsed .menu-drawer {
+  top: 158px;
+  width: 100%;
+  height: calc(100vh - 158px);
+}
+
+.menu-drawer {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.menu-drawer-enter.menu-drawer-enter-active {
+  opacity: 1;
+  /* transform: translate(0%, 0%); */
+  transition:
+    transform 0.5s cubic-bezier(0.09, 0.11, 0.24, 0.91),
+    opacity 500ms;
+  visibility: visible;
+}
+
+.menu-drawer-enter-done {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu-drawer-exit {
+  opacity: 1;
+  /* transform: translate(0%, 0%); */
+  transition:
+    transform 0.5s cubic-bezier(0.09, 0.11, 0.24, 0.91),
+    opacity 500ms;
+  visibility: visible;
+}
+
+.menu-drawer-exit.menu-drawer-exit-active {
+  opacity: 0;
+  /* transform: translate(-100%, 0%); */
+  transition:
+    transform 0.5s cubic-bezier(0.09, 0.11, 0.24, 0.91),
+    opacity 500ms;
+}
