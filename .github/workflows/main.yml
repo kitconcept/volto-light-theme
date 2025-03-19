@@ -2,16 +2,11 @@ name: Volto Light Theme CI
 
 on:
   push:
-    paths:
-      - "backend/**"
-      - "docs/**"
-      - "frontend/**"
-      - ".github/workflows/backend*"
-      - ".github/workflows/frontend*"
-      - ".github/workflows/main.yml"
   workflow_dispatch:
 
 env:
+  HOSTNAME: "light-theme.kitconcept.io"
+  STACK_PREFIX: "lighttheme-stg"
   IMAGE_NAME_PREFIX: ghcr.io/kitconcept/voltolighttheme
   NODE_VERSION: "22.x"
   PYTHON_VERSION: "3.12"
@@ -21,7 +16,9 @@ jobs:
   config:
     runs-on: ubuntu-latest
     outputs:
+      acceptance: ${{ steps.filter.outputs.acceptance }}
       backend: ${{ steps.filter.outputs.backend }}
+      devops: ${{ steps.filter.outputs.devops }}
       docs: ${{ steps.filter.outputs.docs }}
       frontend: ${{ steps.filter.outputs.frontend }}
       BASE_TAG: ${{ steps.vars.outputs.BASE_TAG }}
@@ -30,6 +27,11 @@ jobs:
       PYTHON_VERSION: ${{ env.PYTHON_VERSION }}
       PLONE_VERSION: ${{ env.PLONE_VERSION }}
       VOLTO_VERSION: ${{ steps.vars.outputs.VOLTO_VERSION }}
+      HOSTNAME: ${{ env.HOSTNAME }}
+      ENVIRONMENT: ${{ steps.vars.outputs.ENVIRONMENT }}
+      STACK_NAME: ${{ steps.vars.outputs.STACK_NAME }}
+      STACK_PREFIX: ${{ env.STACK_PREFIX }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -39,19 +41,28 @@ jobs:
         run: |
           echo "BASE_TAG=sha-$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
           python3 -c 'import json; data = json.load(open("./frontend/mrs.developer.json")); print("VOLTO_VERSION=" + (data["core"].get("tag") or "latest"))' >> $GITHUB_OUTPUT
+          echo "ENVIRONMENT=${{ env.HOSTNAME }}" >> $GITHUB_OUTPUT
+          echo "STACK_NAME=${ENVIRONMENT//./-}" >> $GITHUB_OUTPUT
 
       - name: Test vars
         run: |
           echo "BASE_TAG=${{ steps.vars.outputs.BASE_TAG }}"
           echo 'VOLTO_VERSION=${{ steps.vars.outputs.VOLTO_VERSION }}'
+          echo 'ENVIRONMENT=${{ steps.vars.outputs.ENVIRONMENT }}'
+          echo 'STACK_NAME=${{ steps.vars.outputs.STACK_NAME }}'
 
       - uses: dorny/paths-filter@v3.0.2
         id: filter
         with:
           filters: |
+            acceptance:
+              - 'backend/**'
+              - 'frontend/**'
             backend:
               - 'backend/**'
               - '.github/workflows/backend*'
+            devops:
+              - 'devops/**'
             docs:
               - '.readthedocs.yaml'
               - 'docs/**'
@@ -100,7 +111,7 @@ jobs:
     if: ${{ needs.config.outputs.backend == 'true' }}
 
   backend-build:
-    if: ${{ (needs.config.outputs.frontend == 'true' || needs.config.outputs.backend == 'true') && (always() && !contains(needs.*.result, 'failure'))}}
+    if: ${{ needs.config.outputs.acceptance == 'true' && (always() && !contains(needs.*.result, 'failure'))}}
     uses: ./.github/workflows/backend-image-build.yml
     needs:
       - config
@@ -141,7 +152,7 @@ jobs:
     if: ${{ needs.config.outputs.frontend == 'true' }}
 
   frontend-build:
-    if: ${{ (needs.config.outputs.frontend == 'true' || needs.config.outputs.backend == 'true') && (always() && !contains(needs.*.result, 'failure'))}}
+    if: ${{ needs.config.outputs.acceptance == 'true' && (always() && !contains(needs.*.result, 'failure'))}}
     uses: ./.github/workflows/frontend-image-build.yml
     needs:
       - config
@@ -159,7 +170,7 @@ jobs:
       packages: write
 
   acceptance:
-    if: ${{ always() && !contains(needs.*.result, 'failure') }}
+    if: ${{ needs.config.outputs.acceptance == 'true' && (always() && !contains(needs.*.result, 'failure'))}}
     uses: ./.github/workflows/frontend-acceptance.yml
     needs:
       - config
@@ -183,7 +194,7 @@ jobs:
       a11y: ${{ matrix.a11y || false }}
 
   visual-acceptance:
-    if: ${{ always() && !contains(needs.*.result, 'failure') }}
+    if: ${{ needs.config.outputs.acceptance == 'true' && (always() && !contains(needs.*.result, 'failure'))}}
     uses: ./.github/workflows/visual-acceptance.yml
     needs:
       - config
@@ -218,7 +229,6 @@ jobs:
 
 
   backend-release:
-    if: ${{ needs.config.outputs.backend == 'true' }}
     uses: ./.github/workflows/backend-image-release.yml
     needs:
       - config
@@ -232,7 +242,6 @@ jobs:
       plone-version: ${{ needs.config.outputs.PLONE_VERSION }}
 
   frontend-release:
-    if: ${{ needs.config.outputs.frontend == 'true' }}
     uses: ./.github/workflows/frontend-image-release.yml
     needs:
       - config
@@ -245,6 +254,36 @@ jobs:
       image-name-suffix: frontend
       node-version: ${{ needs.config.outputs.NODE_VERSION }}
       volto-version: ${{ needs.config.outputs.VOLTO_VERSION }}
+    permissions:
+      contents: read
+      packages: write
+
+  deploy:
+    uses: kitconcept/meta/.github/workflows/deploy.yml@main
+    if: ${{ github.ref == 'refs/heads/main' }}
+    needs:
+      - config
+      - backend-release
+      - frontend-release
+    with:
+        tag: ${{ needs.config.outputs.BASE_TAG }}
+        environment: ${{ needs.config.outputs.ENVIRONMENT }}
+        stack-name: ${{ needs.config.outputs.STACK_NAME }}
+        stack-file: devops/stacks/${{ needs.config.outputs.ENVIRONMENT }}.yml
+        registry: "ghcr.io"
+        username: ${{ github.actor }}
+    secrets:
+      password: ${{ secrets.GITHUB_TOKEN }}
+      remote-host: ${{ secrets.DEPLOY_HOST }}
+      remote-port: ${{ secrets.DEPLOY_PORT }}
+      remote-user: ${{ secrets.DEPLOY_USER }}
+      remote-private-key: ${{ secrets.DEPLOY_SSH }}
+      env-file: |
+        IMAGE_NAME_PREFIX=${{ needs.config.outputs.IMAGE_NAME_PREFIX }}
+        IMAGE_TAG=${{ needs.config.outputs.BASE_TAG }}
+        STACK_NAME=${{ needs.config.outputs.STACK_NAME }}
+        STACK_PREFIX=${{ needs.config.outputs.STACK_PREFIX }}
+        HOSTNAME=${{ needs.config.outputs.HOSTNAME }}
     permissions:
       contents: read
       packages: write

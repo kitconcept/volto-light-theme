@@ -51,6 +51,10 @@ jobs:
           tags: |
             type=ref,event=branch
             type=sha
+            type=raw,value=${{ inputs.base-tag }}
+            type=pep440,pattern={{version}}
+            type=pep440,pattern={{major}}.{{minor}}
+            type=pep440,pattern={{major}}
             type=raw,value=latest,enable={{is_default_branch}}
 
       - name: Login to Container Registry

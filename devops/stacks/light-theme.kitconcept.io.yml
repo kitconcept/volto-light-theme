@@ -1,0 +1,65 @@
+version: '3.9'
+
+services:
+
+  frontend:
+    image: ${IMAGE_NAME_PREFIX}-frontend:${IMAGE_TAG:-latest}
+    environment:
+      RAZZLE_INTERNAL_API_PATH: http://${STACK_NAME}_backend:8080/Plone
+    depends_on:
+      - backend
+    networks:
+      - public
+    healthcheck:
+      disable: true
+    deploy:
+      replicas: 2
+      placement:
+        constraints:
+          - node.labels.type == app
+          - node.labels.env == staging
+      labels:
+        - "traefik.enable=true"
+        - "traefik.docker.network=public"
+        - "traefik.constraint-label=public"
+        # Service
+        - "traefik.http.services.svc-$${STACK_PREFIX}-front.loadbalancer.server.port=3000"
+        # Middlewares
+        # Routers
+        - "traefik.http.routers.rt-$${STACK_PREFIX}-front.rule=Host(`$${HOSTNAME}`)"
+        - "traefik.http.routers.rt-$${STACK_PREFIX}-front.entrypoints=https"
+        - "traefik.http.routers.rt-$${STACK_PREFIX}-front.tls=true"
+        - "traefik.http.routers.rt-$${STACK_PREFIX}-front.tls.certresolver=le"
+        - "traefik.http.routers.rt-$${STACK_PREFIX}-front.service=svc-$${STACK_PREFIX}-front"
+        - "traefik.http.routers.rt-$${STACK_PREFIX}-front.middlewares=gzip"
+
+  backend:
+    image: ${IMAGE_NAME_PREFIX}-backend:${IMAGE_TAG:-latest}
+    networks:
+      - public
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.type == app
+          - node.labels.env == staging
+      labels:
+        - "traefik.enable=true"
+        - "traefik.docker.network=public"
+        - "traefik.constraint-label=public"
+        # Service
+        - "traefik.http.services.svc-$${STACK_PREFIX}-backend.loadbalancer.server.port=8080"
+        # Middleware
+        - "traefik.http.middlewares.mw-$${STACK_PREFIX}-backend-vhm.replacepathregex.regex=^/\\+\\+api\\+\\+($$|/.*)"
+        - "traefik.http.middlewares.mw-$${STACK_PREFIX}-backend-vhm.replacepathregex.replacement=/VirtualHostBase/https/$${HOSTNAME}/Plone/++api++/VirtualHostRoot/$$1"
+        # Router ++api++
+        - "traefik.http.routers.rt-$${STACK_PREFIX}-backend.rule=Host(`$${HOSTNAME}`) && (PathPrefix(`/++api++`))"
+        - "traefik.http.routers.rt-$${STACK_PREFIX}-backend.entrypoints=https"
+        - "traefik.http.routers.rt-$${STACK_PREFIX}-backend.tls=true"
+        - "traefik.http.routers.rt-$${STACK_PREFIX}-backend.service=svc-$${STACK_PREFIX}-backend"
+        - "traefik.http.routers.rt-$${STACK_PREFIX}-backend.middlewares=gzip,mw-$${STACK_PREFIX}-backend-vhm"
+
+networks:
+  public:
+    external: true
+    driver: overlay
