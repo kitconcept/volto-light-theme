@@ -2,6 +2,9 @@ name: Visual acceptance tests
 on:
   workflow_call:
     inputs:
+      name:
+        required: true
+        type: string
       short-name:
         required: true
         type: string
@@ -23,7 +26,9 @@ env:
   CYPRESS_A11Y: true
 
 jobs:
+
   visual-acceptance-tests:
+    name: ${{ inputs.name }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
