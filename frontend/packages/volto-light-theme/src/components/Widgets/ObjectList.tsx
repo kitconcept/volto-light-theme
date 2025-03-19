@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
-import omit from 'lodash/omit';
 import { Button } from '@plone/components';
 import { Text } from 'react-aria-components';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
@@ -9,10 +8,6 @@ import { applySchemaDefaults } from '@plone/volto/helpers/Blocks/Blocks';
 import { reorderArray } from '@plone/volto/helpers/Utils/Utils';
 import AnimateHeight from 'react-animate-height';
 import ObjectWidget from '@plone/volto/components/manage/Widgets/ObjectWidget';
-import {
-  getBlocksFieldname,
-  getBlocksLayoutFieldname,
-} from '@plone/volto/helpers/Blocks/Blocks';
 import DndSortableList from '../../helpers/DndSortableList';
 import cx from 'classnames';
 import upSVG from '@plone/volto/icons/up-key.svg';
@@ -125,23 +120,6 @@ export type ObjectListWidgetProps = {
     contentType: string;
   }) => JSONSchema;
 };
-
-function deleteBlock(formData, blockId: string) {
-  const blocksFieldname = getBlocksFieldname(formData);
-  const blocksLayoutFieldname = getBlocksLayoutFieldname(formData);
-
-  let newFormData = {
-    ...formData,
-    [blocksLayoutFieldname]: {
-      items: formData[blocksLayoutFieldname].items.filter(
-        (value) => value !== blockId,
-      ),
-    },
-    [blocksFieldname]: omit(formData[blocksFieldname], [blockId]),
-  };
-
-  return newFormData;
-}
 
 const ObjectListWidget = (props: ObjectListWidgetProps) => {
   const { block, fieldSet, id, value, onChange, schemaEnhancer, schemaName } =
@@ -271,16 +249,26 @@ const ObjectListWidget = (props: ObjectListWidgetProps) => {
                       `${objectSchema.title} #${index !== undefined ? index + 1 : ''}`}
                   </div>
                   <div className="olw-tools">
-                    <button
-                      aria-label={`${intl.formatMessage(
-                        messages.labelRemoveItem,
-                      )} #${index + 1}`}
-                      onClick={() => {
-                        onChange(id, deleteBlock(value, uid));
+                    <div
+                      role="presentation"
+                      onClick={(e) => {
+                        e.stopPropagation();
                       }}
                     >
-                      <Icon name={deleteSVG} size="20px" color="#e40166" />
-                    </button>
+                      <Button
+                        aria-label={`${intl.formatMessage(
+                          messages.labelRemoveItem,
+                        )} #${index + 1}`}
+                        onPress={() => {
+                          onChange(
+                            id,
+                            value.filter((v, i) => i !== index),
+                          );
+                        }}
+                      >
+                        <Icon name={deleteSVG} size="20px" color="#e40166" />
+                      </Button>
+                    </div>
                     {activeObject === index ? (
                       <Icon name={upSVG} size="20px" />
                     ) : (

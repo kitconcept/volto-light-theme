@@ -21,22 +21,28 @@ const Logo = () => {
   const site = useSelector((state) => state.site.data);
   const navroot = useSelector((state) => state.navroot.data);
   const navRootPath = flattenToAppURL(navroot?.navroot?.['@id']) || '/';
-  const navRootLogo = navroot?.navroot?.logo?.download || null;
-  const navRootLogoWidth = navroot?.navroot?.logo?.width || null;
-  const navRootLogoHeight = navroot?.navroot?.logo?.height || null;
+  const headerSettings = useSelector(
+    (state) =>
+      state.content.data?.['@components']?.inherit?.['voltolighttheme.header']
+        ?.data,
+  );
+  const logo = headerSettings?.logo;
+  const logoUrl = logo?.download || null;
+  const logoWidth = logo?.width || null;
+  const logoHeight = logo?.height || null;
 
   return (
     <Link to={navRootPath} aria-label={intl.formatMessage(messages.home)}>
       <img
         src={
-          navRootLogo
-            ? flattenToAppURL(navRootLogo)
+          logoUrl
+            ? flattenToAppURL(logoUrl)
             : site['plone.site_logo']
               ? flattenToAppURL(site['plone.site_logo'])
               : LogoImage
         }
-        width={navRootLogoWidth}
-        height={navRootLogoHeight}
+        width={logoWidth}
+        height={logoHeight}
         alt={
           intl.formatMessage(messages.logoOf) + ' ' + site['plone.site_title']
         }
