@@ -98,7 +98,7 @@ const IntranetHeader = ({ pathname, siteLabel, token }) => {
   const headerActions =
     !isEmpty(formData) && formData?.header_actions
       ? formData.header_actions
-      : navRoot?.header_actions;
+      : headerSettings?.header_actions;
 
   const pointToSidebar = (fieldSetName, fieldId) => {
     dispatch(setSidebarTab(0));

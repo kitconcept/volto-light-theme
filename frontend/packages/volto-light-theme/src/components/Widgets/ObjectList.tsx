@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
-import omit from 'lodash/omit';
 import { Button } from '@plone/components';
 import { Text } from 'react-aria-components';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
@@ -9,10 +8,6 @@ import { applySchemaDefaults } from '@plone/volto/helpers/Blocks/Blocks';
 import { reorderArray } from '@plone/volto/helpers/Utils/Utils';
 import AnimateHeight from 'react-animate-height';
 import ObjectWidget from '@plone/volto/components/manage/Widgets/ObjectWidget';
-import {
-  getBlocksFieldname,
-  getBlocksLayoutFieldname,
-} from '@plone/volto/helpers/Blocks/Blocks';
 import DndSortableList from '../../helpers/DndSortableList';
 import cx from 'classnames';
 import upSVG from '@plone/volto/icons/up-key.svg';
@@ -255,6 +250,7 @@ const ObjectListWidget = (props: ObjectListWidgetProps) => {
                   </div>
                   <div className="olw-tools">
                     <div
+                      role="presentation"
                       onClick={(e) => {
                         e.stopPropagation();
                       }}
