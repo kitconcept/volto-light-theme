@@ -115,7 +115,7 @@ const IntranetHeader = ({ pathname, siteLabel, token }) => {
             {!token && <Anontools />}
             {headerActions &&
               headerActions.map((item) => (
-                <UniversalLink key={item['@id']} href={item.href[0]['@id']}>
+                <UniversalLink key={item['@id']} href={item.href?.[0]['@id']}>
                   {item.title}
                 </UniversalLink>
               ))}
