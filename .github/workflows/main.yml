@@ -2,13 +2,6 @@ name: Volto Light Theme CI
 
 on:
   push:
-    paths:
-      - "backend/**"
-      - "docs/**"
-      - "frontend/**"
-      - ".github/workflows/backend*"
-      - ".github/workflows/frontend*"
-      - ".github/workflows/main.yml"
   workflow_dispatch:
 
 env:
