@@ -260,11 +260,11 @@ jobs:
 
   deploy:
     uses: kitconcept/meta/.github/workflows/deploy.yml@main
+    if: ${{ github.ref == 'refs/heads/main' }}
     needs:
       - config
       - backend-release
       - frontend-release
-    if: ${{ always() && github.ref == 'refs/heads/main' && !contains(needs.*.result, 'failure') }}
     with:
         tag: ${{ needs.config.outputs.BASE_TAG }}
         environment: ${{ needs.config.outputs.ENVIRONMENT }}
