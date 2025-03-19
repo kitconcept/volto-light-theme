@@ -1,0 +1,1544 @@
+{
+  "@id": "/Plone",
+  "@type": "Plone Site",
+  "UID": "plone_site_root",
+  "allow_discussion": null,
+  "blocks": {
+    "10444da6-9565-407d-b79c-ab9726bd3a84": {
+      "@type": "slider",
+      "slides": [
+        {
+          "@id": "925d8233-a87b-4939-bedb-3f20b9499384",
+          "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. ",
+          "flagAlign": "left",
+          "head_title": "Head title ",
+          "href": [
+            {
+              "@id": "resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+              "@type": "Document",
+              "Description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+              "Title": "Inhaltstyp: Seite (Page)",
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "image_scales": {
+                "preview_image": [
+                  {
+                    "content-type": "image/jpeg",
+                    "download": "@@images/preview_image-2400-dd70655eae2a121e9b3d20b15d5292db.jpeg",
+                    "filename": "black-starry-night.jpg",
+                    "height": 1708,
+                    "scales": {
+                      "great": {
+                        "download": "@@images/preview_image-1200-02d0687099bde73e5189270d53df7e22.jpeg",
+                        "height": 854,
+                        "width": 1200
+                      },
+                      "huge": {
+                        "download": "@@images/preview_image-1600-275bd418c80864fc5cc8b0b0c7f4a0a2.jpeg",
+                        "height": 1138,
+                        "width": 1600
+                      },
+                      "icon": {
+                        "download": "@@images/preview_image-32-848481d517c9091a765ccf7a6ef88277.jpeg",
+                        "height": 22,
+                        "width": 32
+                      },
+                      "large": {
+                        "download": "@@images/preview_image-800-255c17a5d39f4bb2d79c72d56934b342.jpeg",
+                        "height": 569,
+                        "width": 800
+                      },
+                      "larger": {
+                        "download": "@@images/preview_image-1000-661e34a155a000108788ca0d60f4b22c.jpeg",
+                        "height": 711,
+                        "width": 1000
+                      },
+                      "mini": {
+                        "download": "@@images/preview_image-200-614da3a8827dc90cb92618ada1980504.jpeg",
+                        "height": 142,
+                        "width": 200
+                      },
+                      "preview": {
+                        "download": "@@images/preview_image-400-bf2a5268ec239c40c54556e7f48b1cf6.jpeg",
+                        "height": 284,
+                        "width": 400
+                      },
+                      "teaser": {
+                        "download": "@@images/preview_image-600-b1f4235a88cb99bd1c5ab3dceaf953ee.jpeg",
+                        "height": 427,
+                        "width": 600
+                      },
+                      "thumb": {
+                        "download": "@@images/preview_image-128-80ae3135a04405512335f90c8ce4cb3e.jpeg",
+                        "height": 91,
+                        "width": 128
+                      },
+                      "tile": {
+                        "download": "@@images/preview_image-64-fbe446c415c4dbcbca8b81c451ee4659.jpeg",
+                        "height": 45,
+                        "width": 64
+                      }
+                    },
+                    "size": 693013,
+                    "width": 2400
+                  }
+                ]
+              },
+              "title": "Inhaltstyp: Seite (Page)"
+            }
+          ],
+          "title": "Slide Title"
+        },
+        {
+          "@id": "5061dc92-7a34-4468-8c3b-dcdde94e1df8",
+          "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. ",
+          "flagAlign": "left",
+          "head_title": "Head title ",
+          "href": [
+            {
+              "@id": "resolveuid/99c70917b6894af08dd306fdbc0eff6a",
+              "@type": "Document",
+              "Description": "Der Grid-Block erlaubt das Hinzuf\u00fcgen mehrspaltiger Bl\u00f6cke. Ein Grid-Block kann zwischen ein und vier Spalten mit unterschiedlichen Bl\u00f6cken enthalten.Teaser und Bilder k\u00f6nnen in einem Grid-Block hinzugef\u00fcgt werden.",
+              "Title": "Block: Grid",
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "image_scales": {
+                "preview_image": [
+                  {
+                    "content-type": "image/jpeg",
+                    "download": "@@images/preview_image-2400-f9aa7b8d1e2e40de094f1e9f08efb1bf.jpeg",
+                    "filename": "black-starry-night.jpg",
+                    "height": 1708,
+                    "scales": {
+                      "great": {
+                        "download": "@@images/preview_image-1200-a9951363537c3406c7e8f0ce40693ddd.jpeg",
+                        "height": 854,
+                        "width": 1200
+                      },
+                      "huge": {
+                        "download": "@@images/preview_image-1600-b57582f266d44aa33c84096930783ebd.jpeg",
+                        "height": 1138,
+                        "width": 1600
+                      },
+                      "icon": {
+                        "download": "@@images/preview_image-32-c858266edae8c1701c0a52872df9186b.jpeg",
+                        "height": 22,
+                        "width": 32
+                      },
+                      "large": {
+                        "download": "@@images/preview_image-800-f8ba2ef21cf6870af4c095bc18c8bfd3.jpeg",
+                        "height": 569,
+                        "width": 800
+                      },
+                      "larger": {
+                        "download": "@@images/preview_image-1000-8a34f321086727890671e1c2de6bd83a.jpeg",
+                        "height": 711,
+                        "width": 1000
+                      },
+                      "mini": {
+                        "download": "@@images/preview_image-200-61a4fec2eac88cedf03b1905b553f8a3.jpeg",
+                        "height": 142,
+                        "width": 200
+                      },
+                      "preview": {
+                        "download": "@@images/preview_image-400-e5b17fad7696eba84f60f6c72e896b14.jpeg",
+                        "height": 284,
+                        "width": 400
+                      },
+                      "teaser": {
+                        "download": "@@images/preview_image-600-fd0ea9b2a5c98d53ae4063e3cf109f81.jpeg",
+                        "height": 427,
+                        "width": 600
+                      },
+                      "thumb": {
+                        "download": "@@images/preview_image-128-64695facf03cd16699147f64a83054ad.jpeg",
+                        "height": 91,
+                        "width": 128
+                      },
+                      "tile": {
+                        "download": "@@images/preview_image-64-5aef2f45c044064cec0cd2ce5caee94c.jpeg",
+                        "height": 45,
+                        "width": 64
+                      }
+                    },
+                    "size": 693013,
+                    "width": 2400
+                  }
+                ]
+              },
+              "title": "Block: Grid"
+            }
+          ],
+          "preview_image": [],
+          "title": "Slide Title"
+        },
+        {
+          "@id": "52884dd0-0c9b-49fe-be99-3cf88c10b2df",
+          "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. ",
+          "flagAlign": "left",
+          "head_title": "Head title ",
+          "href": [
+            {
+              "@id": "resolveuid/bd2b39d2745847db82ed197a4eb1effc",
+              "@type": "Document",
+              "Description": "Der Teaser-Block erlaubt das Hinzuf\u00fcgen eines Elements welches einen bestehenden Inhalte der Webseite mit einem Bild, einem Titel und einer Beschreibung anteasert.",
+              "Title": "Block: Teaser",
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "image_scales": {
+                "preview_image": [
+                  {
+                    "content-type": "image/jpeg",
+                    "download": "@@images/preview_image-2400-92152ce7c34859059ec84e0b11761cc3.jpeg",
+                    "filename": "black-starry-night.jpg",
+                    "height": 1708,
+                    "scales": {
+                      "great": {
+                        "download": "@@images/preview_image-1200-1e518c9d8f9134ba97f2a4e2702deedd.jpeg",
+                        "height": 854,
+                        "width": 1200
+                      },
+                      "huge": {
+                        "download": "@@images/preview_image-1600-fcfdcd9e8e025729ee2b6caea0a3d1d3.jpeg",
+                        "height": 1138,
+                        "width": 1600
+                      },
+                      "icon": {
+                        "download": "@@images/preview_image-32-0e0dd37b35e2f2d60d6eeae26aea3f02.jpeg",
+                        "height": 22,
+                        "width": 32
+                      },
+                      "large": {
+                        "download": "@@images/preview_image-800-01cee157a8f1f5d7dfec96379b18a290.jpeg",
+                        "height": 569,
+                        "width": 800
+                      },
+                      "larger": {
+                        "download": "@@images/preview_image-1000-9d61c4c454645335cf4bdecf9c395b1b.jpeg",
+                        "height": 711,
+                        "width": 1000
+                      },
+                      "mini": {
+                        "download": "@@images/preview_image-200-656d5c420e8697062bfe37770af79eaa.jpeg",
+                        "height": 142,
+                        "width": 200
+                      },
+                      "preview": {
+                        "download": "@@images/preview_image-400-023b9af0a00566e4e7c09701ab00d273.jpeg",
+                        "height": 284,
+                        "width": 400
+                      },
+                      "teaser": {
+                        "download": "@@images/preview_image-600-18517bc36465f3674f92d7f4c070677d.jpeg",
+                        "height": 427,
+                        "width": 600
+                      },
+                      "thumb": {
+                        "download": "@@images/preview_image-128-2ad943a2fe79e1cadce08427813cb056.jpeg",
+                        "height": 91,
+                        "width": 128
+                      },
+                      "tile": {
+                        "download": "@@images/preview_image-64-b1b1709feb2ccd08b0fdeb0664cf74cd.jpeg",
+                        "height": 45,
+                        "width": 64
+                      }
+                    },
+                    "size": 693013,
+                    "width": 2400
+                  }
+                ]
+              },
+              "title": "Block: Teaser"
+            }
+          ],
+          "preview_image": [],
+          "title": "Slide Title"
+        }
+      ],
+      "styles": {}
+    },
+    "1e730622-4982-4c61-a779-e06d70581c42": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "Teaser Horizontal with Background",
+      "styles": {
+        "backgroundColor": "grey"
+      },
+      "tag": "h2"
+    },
+    "27c9bfc9-af66-4545-9e38-a69bfb09a282": {
+      "@type": "gridBlock",
+      "blocks": {
+        "281a22fb-c353-4b91-b2bc-88e6a52ed65a": {
+          "@type": "teaser",
+          "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+          "head_title": "Head title ",
+          "href": [
+            {
+              "@id": "resolveuid/bd2b39d2745847db82ed197a4eb1effc",
+              "@type": "Document",
+              "Description": "Der Teaser-Block erlaubt das Hinzuf\u00fcgen eines Elements welches einen bestehenden Inhalte der Webseite mit einem Bild, einem Titel und einer Beschreibung anteasert.",
+              "Title": "Block: Teaser",
+              "getRemoteUrl": null,
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "image_scales": {
+                "preview_image": [
+                  {
+                    "content-type": "image/jpeg",
+                    "download": "@@images/preview_image-2400-92152ce7c34859059ec84e0b11761cc3.jpeg",
+                    "filename": "black-starry-night.jpg",
+                    "height": 1708,
+                    "scales": {
+                      "great": {
+                        "download": "@@images/preview_image-1200-1e518c9d8f9134ba97f2a4e2702deedd.jpeg",
+                        "height": 854,
+                        "width": 1200
+                      },
+                      "huge": {
+                        "download": "@@images/preview_image-1600-fcfdcd9e8e025729ee2b6caea0a3d1d3.jpeg",
+                        "height": 1138,
+                        "width": 1600
+                      },
+                      "icon": {
+                        "download": "@@images/preview_image-32-0e0dd37b35e2f2d60d6eeae26aea3f02.jpeg",
+                        "height": 22,
+                        "width": 32
+                      },
+                      "large": {
+                        "download": "@@images/preview_image-800-01cee157a8f1f5d7dfec96379b18a290.jpeg",
+                        "height": 569,
+                        "width": 800
+                      },
+                      "larger": {
+                        "download": "@@images/preview_image-1000-9d61c4c454645335cf4bdecf9c395b1b.jpeg",
+                        "height": 711,
+                        "width": 1000
+                      },
+                      "mini": {
+                        "download": "@@images/preview_image-200-656d5c420e8697062bfe37770af79eaa.jpeg",
+                        "height": 142,
+                        "width": 200
+                      },
+                      "preview": {
+                        "download": "@@images/preview_image-400-023b9af0a00566e4e7c09701ab00d273.jpeg",
+                        "height": 284,
+                        "width": 400
+                      },
+                      "teaser": {
+                        "download": "@@images/preview_image-600-18517bc36465f3674f92d7f4c070677d.jpeg",
+                        "height": 427,
+                        "width": 600
+                      },
+                      "thumb": {
+                        "download": "@@images/preview_image-128-2ad943a2fe79e1cadce08427813cb056.jpeg",
+                        "height": 91,
+                        "width": 128
+                      },
+                      "tile": {
+                        "download": "@@images/preview_image-64-b1b1709feb2ccd08b0fdeb0664cf74cd.jpeg",
+                        "height": 45,
+                        "width": 64
+                      }
+                    },
+                    "size": 693013,
+                    "width": 2400
+                  }
+                ]
+              },
+              "title": "Block: Teaser"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Teaser Title H3"
+        },
+        "f34fa7dd-ce59-4f7f-b795-7d7f1e388df1": {
+          "@type": "teaser",
+          "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+          "head_title": "Head title ",
+          "href": [
+            {
+              "@id": "resolveuid/99c70917b6894af08dd306fdbc0eff6a",
+              "@type": "Document",
+              "Description": "Der Grid-Block erlaubt das Hinzuf\u00fcgen mehrspaltiger Bl\u00f6cke. Ein Grid-Block kann zwischen ein und vier Spalten mit unterschiedlichen Bl\u00f6cken enthalten.Teaser und Bilder k\u00f6nnen in einem Grid-Block hinzugef\u00fcgt werden.",
+              "Title": "Block: Grid",
+              "getRemoteUrl": null,
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "image_scales": {
+                "preview_image": [
+                  {
+                    "content-type": "image/jpeg",
+                    "download": "@@images/preview_image-2400-f9aa7b8d1e2e40de094f1e9f08efb1bf.jpeg",
+                    "filename": "black-starry-night.jpg",
+                    "height": 1708,
+                    "scales": {
+                      "great": {
+                        "download": "@@images/preview_image-1200-a9951363537c3406c7e8f0ce40693ddd.jpeg",
+                        "height": 854,
+                        "width": 1200
+                      },
+                      "huge": {
+                        "download": "@@images/preview_image-1600-b57582f266d44aa33c84096930783ebd.jpeg",
+                        "height": 1138,
+                        "width": 1600
+                      },
+                      "icon": {
+                        "download": "@@images/preview_image-32-c858266edae8c1701c0a52872df9186b.jpeg",
+                        "height": 22,
+                        "width": 32
+                      },
+                      "large": {
+                        "download": "@@images/preview_image-800-f8ba2ef21cf6870af4c095bc18c8bfd3.jpeg",
+                        "height": 569,
+                        "width": 800
+                      },
+                      "larger": {
+                        "download": "@@images/preview_image-1000-8a34f321086727890671e1c2de6bd83a.jpeg",
+                        "height": 711,
+                        "width": 1000
+                      },
+                      "mini": {
+                        "download": "@@images/preview_image-200-61a4fec2eac88cedf03b1905b553f8a3.jpeg",
+                        "height": 142,
+                        "width": 200
+                      },
+                      "preview": {
+                        "download": "@@images/preview_image-400-e5b17fad7696eba84f60f6c72e896b14.jpeg",
+                        "height": 284,
+                        "width": 400
+                      },
+                      "teaser": {
+                        "download": "@@images/preview_image-600-fd0ea9b2a5c98d53ae4063e3cf109f81.jpeg",
+                        "height": 427,
+                        "width": 600
+                      },
+                      "thumb": {
+                        "download": "@@images/preview_image-128-64695facf03cd16699147f64a83054ad.jpeg",
+                        "height": 91,
+                        "width": 128
+                      },
+                      "tile": {
+                        "download": "@@images/preview_image-64-5aef2f45c044064cec0cd2ce5caee94c.jpeg",
+                        "height": 45,
+                        "width": 64
+                      }
+                    },
+                    "size": 693013,
+                    "width": 2400
+                  }
+                ]
+              },
+              "title": "Block: Grid"
+            }
+          ],
+          "preview_image": [
+            {
+              "@id": "resolveuid/eec82559bf3242a6be4d43bc2096f399",
+              "image_field": "image",
+              "image_scales": {
+                "image": [
+                  {
+                    "content-type": "image/jpeg",
+                    "download": "@@images/image-1126-7b90bd2f737fb08f5e2c5719f2f8bc14.jpeg",
+                    "filename": "image-light.jpg",
+                    "height": 633,
+                    "scales": {
+                      "icon": {
+                        "download": "@@images/image-32-5de0f24798404cddd70cc1d15b1213ba.jpeg",
+                        "height": 17,
+                        "width": 32
+                      },
+                      "large": {
+                        "download": "@@images/image-800-728b0edae32e307d8123462b48fafeaa.jpeg",
+                        "height": 449,
+                        "width": 800
+                      },
+                      "larger": {
+                        "download": "@@images/image-1000-19685fe0e43ca671a6f6a973c7d1f0f5.jpeg",
+                        "height": 562,
+                        "width": 1000
+                      },
+                      "mini": {
+                        "download": "@@images/image-200-cfd42d570345d1134d9b2d0f5726bb2e.jpeg",
+                        "height": 112,
+                        "width": 200
+                      },
+                      "preview": {
+                        "download": "@@images/image-400-a35b24fd0dbe867083f962cf69f19c2a.jpeg",
+                        "height": 224,
+                        "width": 400
+                      },
+                      "teaser": {
+                        "download": "@@images/image-600-702ac2045d4ca6fc61c52749e8c2f24d.jpeg",
+                        "height": 337,
+                        "width": 600
+                      },
+                      "thumb": {
+                        "download": "@@images/image-128-06fa281eabe3bbba6eea685ce60d08f1.jpeg",
+                        "height": 71,
+                        "width": 128
+                      },
+                      "tile": {
+                        "download": "@@images/image-64-f0e777433e3a4227dab46fe8cac688a6.jpeg",
+                        "height": 35,
+                        "width": 64
+                      }
+                    },
+                    "size": 475285,
+                    "width": 1126
+                  }
+                ]
+              },
+              "title": "Image - Light"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Teaser Title H3"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "281a22fb-c353-4b91-b2bc-88e6a52ed65a",
+          "f34fa7dd-ce59-4f7f-b795-7d7f1e388df1"
+        ]
+      },
+      "styles": {
+        "backgroundColor": "grey"
+      }
+    },
+    "281dee5f-1e5c-4ef4-b7c2-20da7f43093c": {
+      "@type": "teaser",
+      "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper ",
+      "head_title": "Head title",
+      "href": [
+        {
+          "@id": "resolveuid/99c70917b6894af08dd306fdbc0eff6a",
+          "@type": "Document",
+          "Description": "Der Grid-Block erlaubt das Hinzuf\u00fcgen mehrspaltiger Bl\u00f6cke. Ein Grid-Block kann zwischen ein und vier Spalten mit unterschiedlichen Bl\u00f6cken enthalten.Teaser und Bilder k\u00f6nnen in einem Grid-Block hinzugef\u00fcgt werden.",
+          "Title": "Block: Grid",
+          "getRemoteUrl": null,
+          "hasPreviewImage": true,
+          "head_title": null,
+          "image_field": "preview_image",
+          "image_scales": {
+            "preview_image": [
+              {
+                "content-type": "image/jpeg",
+                "download": "@@images/preview_image-2400-f9aa7b8d1e2e40de094f1e9f08efb1bf.jpeg",
+                "filename": "black-starry-night.jpg",
+                "height": 1708,
+                "scales": {
+                  "great": {
+                    "download": "@@images/preview_image-1200-a9951363537c3406c7e8f0ce40693ddd.jpeg",
+                    "height": 854,
+                    "width": 1200
+                  },
+                  "huge": {
+                    "download": "@@images/preview_image-1600-b57582f266d44aa33c84096930783ebd.jpeg",
+                    "height": 1138,
+                    "width": 1600
+                  },
+                  "icon": {
+                    "download": "@@images/preview_image-32-c858266edae8c1701c0a52872df9186b.jpeg",
+                    "height": 22,
+                    "width": 32
+                  },
+                  "large": {
+                    "download": "@@images/preview_image-800-f8ba2ef21cf6870af4c095bc18c8bfd3.jpeg",
+                    "height": 569,
+                    "width": 800
+                  },
+                  "larger": {
+                    "download": "@@images/preview_image-1000-8a34f321086727890671e1c2de6bd83a.jpeg",
+                    "height": 711,
+                    "width": 1000
+                  },
+                  "mini": {
+                    "download": "@@images/preview_image-200-61a4fec2eac88cedf03b1905b553f8a3.jpeg",
+                    "height": 142,
+                    "width": 200
+                  },
+                  "preview": {
+                    "download": "@@images/preview_image-400-e5b17fad7696eba84f60f6c72e896b14.jpeg",
+                    "height": 284,
+                    "width": 400
+                  },
+                  "teaser": {
+                    "download": "@@images/preview_image-600-fd0ea9b2a5c98d53ae4063e3cf109f81.jpeg",
+                    "height": 427,
+                    "width": 600
+                  },
+                  "thumb": {
+                    "download": "@@images/preview_image-128-64695facf03cd16699147f64a83054ad.jpeg",
+                    "height": 91,
+                    "width": 128
+                  },
+                  "tile": {
+                    "download": "@@images/preview_image-64-5aef2f45c044064cec0cd2ce5caee94c.jpeg",
+                    "height": 45,
+                    "width": 64
+                  }
+                },
+                "size": 693013,
+                "width": 2400
+              }
+            ]
+          },
+          "title": "Block: Grid"
+        }
+      ],
+      "styles": {
+        "align": "left"
+      },
+      "title": "Teaser Headline "
+    },
+    "383c512f-e7a4-4426-b721-9ebaf7248f8f": {
+      "@type": "teaser",
+      "description": "Der Grid-Block erlaubt das Hinzuf\u00fcgen mehrspaltiger Bl\u00f6cke. Ein Grid-Block kann zwischen ein und vier Spalten mit unterschiedlichen Bl\u00f6cken enthalten.Teaser und Bilder k\u00f6nnen in einem Grid-Block hinzugef\u00fcgt werden.",
+      "head_title": "Head title",
+      "href": [
+        {
+          "@id": "resolveuid/99c70917b6894af08dd306fdbc0eff6a",
+          "@type": "Document",
+          "Description": "Der Grid-Block erlaubt das Hinzuf\u00fcgen mehrspaltiger Bl\u00f6cke. Ein Grid-Block kann zwischen ein und vier Spalten mit unterschiedlichen Bl\u00f6cken enthalten.Teaser und Bilder k\u00f6nnen in einem Grid-Block hinzugef\u00fcgt werden.",
+          "Title": "Block: Grid",
+          "getRemoteUrl": null,
+          "hasPreviewImage": true,
+          "head_title": null,
+          "image_field": "preview_image",
+          "image_scales": {
+            "preview_image": [
+              {
+                "content-type": "image/jpeg",
+                "download": "@@images/preview_image-2400-f9aa7b8d1e2e40de094f1e9f08efb1bf.jpeg",
+                "filename": "black-starry-night.jpg",
+                "height": 1708,
+                "scales": {
+                  "great": {
+                    "download": "@@images/preview_image-1200-a9951363537c3406c7e8f0ce40693ddd.jpeg",
+                    "height": 854,
+                    "width": 1200
+                  },
+                  "huge": {
+                    "download": "@@images/preview_image-1600-b57582f266d44aa33c84096930783ebd.jpeg",
+                    "height": 1138,
+                    "width": 1600
+                  },
+                  "icon": {
+                    "download": "@@images/preview_image-32-c858266edae8c1701c0a52872df9186b.jpeg",
+                    "height": 22,
+                    "width": 32
+                  },
+                  "large": {
+                    "download": "@@images/preview_image-800-f8ba2ef21cf6870af4c095bc18c8bfd3.jpeg",
+                    "height": 569,
+                    "width": 800
+                  },
+                  "larger": {
+                    "download": "@@images/preview_image-1000-8a34f321086727890671e1c2de6bd83a.jpeg",
+                    "height": 711,
+                    "width": 1000
+                  },
+                  "mini": {
+                    "download": "@@images/preview_image-200-61a4fec2eac88cedf03b1905b553f8a3.jpeg",
+                    "height": 142,
+                    "width": 200
+                  },
+                  "preview": {
+                    "download": "@@images/preview_image-400-e5b17fad7696eba84f60f6c72e896b14.jpeg",
+                    "height": 284,
+                    "width": 400
+                  },
+                  "teaser": {
+                    "download": "@@images/preview_image-600-fd0ea9b2a5c98d53ae4063e3cf109f81.jpeg",
+                    "height": 427,
+                    "width": 600
+                  },
+                  "thumb": {
+                    "download": "@@images/preview_image-128-64695facf03cd16699147f64a83054ad.jpeg",
+                    "height": 91,
+                    "width": 128
+                  },
+                  "tile": {
+                    "download": "@@images/preview_image-64-5aef2f45c044064cec0cd2ce5caee94c.jpeg",
+                    "height": 45,
+                    "width": 64
+                  }
+                },
+                "size": 693013,
+                "width": 2400
+              }
+            ]
+          },
+          "title": "Block: Grid"
+        }
+      ],
+      "preview_image": [
+        {
+          "@id": "resolveuid/eec82559bf3242a6be4d43bc2096f399",
+          "image_field": "image",
+          "image_scales": {
+            "image": [
+              {
+                "content-type": "image/jpeg",
+                "download": "@@images/image-1126-7b90bd2f737fb08f5e2c5719f2f8bc14.jpeg",
+                "filename": "image-light.jpg",
+                "height": 633,
+                "scales": {
+                  "icon": {
+                    "download": "@@images/image-32-5de0f24798404cddd70cc1d15b1213ba.jpeg",
+                    "height": 17,
+                    "width": 32
+                  },
+                  "large": {
+                    "download": "@@images/image-800-728b0edae32e307d8123462b48fafeaa.jpeg",
+                    "height": 449,
+                    "width": 800
+                  },
+                  "larger": {
+                    "download": "@@images/image-1000-19685fe0e43ca671a6f6a973c7d1f0f5.jpeg",
+                    "height": 562,
+                    "width": 1000
+                  },
+                  "mini": {
+                    "download": "@@images/image-200-cfd42d570345d1134d9b2d0f5726bb2e.jpeg",
+                    "height": 112,
+                    "width": 200
+                  },
+                  "preview": {
+                    "download": "@@images/image-400-a35b24fd0dbe867083f962cf69f19c2a.jpeg",
+                    "height": 224,
+                    "width": 400
+                  },
+                  "teaser": {
+                    "download": "@@images/image-600-702ac2045d4ca6fc61c52749e8c2f24d.jpeg",
+                    "height": 337,
+                    "width": 600
+                  },
+                  "thumb": {
+                    "download": "@@images/image-128-06fa281eabe3bbba6eea685ce60d08f1.jpeg",
+                    "height": 71,
+                    "width": 128
+                  },
+                  "tile": {
+                    "download": "@@images/image-64-f0e777433e3a4227dab46fe8cac688a6.jpeg",
+                    "height": 35,
+                    "width": 64
+                  }
+                },
+                "size": 475285,
+                "width": 1126
+              }
+            ]
+          },
+          "title": "Image - Light"
+        }
+      ],
+      "styles": {
+        "align": "left",
+        "backgroundColor": "grey"
+      },
+      "title": "Teaser Title H2"
+    },
+    "4f02f1a1-685a-4f79-a776-01cbd0af42e4": {
+      "@type": "gridBlock",
+      "blocks": {
+        "3fac2508-ed58-40d0-aa2e-898844814566": {
+          "@type": "teaser",
+          "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+          "head_title": "Head title ",
+          "href": [
+            {
+              "@id": "resolveuid/bd2b39d2745847db82ed197a4eb1effc",
+              "@type": "Document",
+              "Description": "Der Teaser-Block erlaubt das Hinzuf\u00fcgen eines Elements welches einen bestehenden Inhalte der Webseite mit einem Bild, einem Titel und einer Beschreibung anteasert.",
+              "Title": "Block: Teaser",
+              "getRemoteUrl": null,
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "image_scales": {
+                "preview_image": [
+                  {
+                    "content-type": "image/jpeg",
+                    "download": "@@images/preview_image-2400-92152ce7c34859059ec84e0b11761cc3.jpeg",
+                    "filename": "black-starry-night.jpg",
+                    "height": 1708,
+                    "scales": {
+                      "great": {
+                        "download": "@@images/preview_image-1200-1e518c9d8f9134ba97f2a4e2702deedd.jpeg",
+                        "height": 854,
+                        "width": 1200
+                      },
+                      "huge": {
+                        "download": "@@images/preview_image-1600-fcfdcd9e8e025729ee2b6caea0a3d1d3.jpeg",
+                        "height": 1138,
+                        "width": 1600
+                      },
+                      "icon": {
+                        "download": "@@images/preview_image-32-0e0dd37b35e2f2d60d6eeae26aea3f02.jpeg",
+                        "height": 22,
+                        "width": 32
+                      },
+                      "large": {
+                        "download": "@@images/preview_image-800-01cee157a8f1f5d7dfec96379b18a290.jpeg",
+                        "height": 569,
+                        "width": 800
+                      },
+                      "larger": {
+                        "download": "@@images/preview_image-1000-9d61c4c454645335cf4bdecf9c395b1b.jpeg",
+                        "height": 711,
+                        "width": 1000
+                      },
+                      "mini": {
+                        "download": "@@images/preview_image-200-656d5c420e8697062bfe37770af79eaa.jpeg",
+                        "height": 142,
+                        "width": 200
+                      },
+                      "preview": {
+                        "download": "@@images/preview_image-400-023b9af0a00566e4e7c09701ab00d273.jpeg",
+                        "height": 284,
+                        "width": 400
+                      },
+                      "teaser": {
+                        "download": "@@images/preview_image-600-18517bc36465f3674f92d7f4c070677d.jpeg",
+                        "height": 427,
+                        "width": 600
+                      },
+                      "thumb": {
+                        "download": "@@images/preview_image-128-2ad943a2fe79e1cadce08427813cb056.jpeg",
+                        "height": 91,
+                        "width": 128
+                      },
+                      "tile": {
+                        "download": "@@images/preview_image-64-b1b1709feb2ccd08b0fdeb0664cf74cd.jpeg",
+                        "height": 45,
+                        "width": 64
+                      }
+                    },
+                    "size": 693013,
+                    "width": 2400
+                  }
+                ]
+              },
+              "title": "Block: Teaser"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Teaser Title H2"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "3fac2508-ed58-40d0-aa2e-898844814566"
+        ]
+      },
+      "headline": "Gridblock with Teaser",
+      "styles": {
+        "backgroundColor": "grey"
+      }
+    },
+    "85655a82-c662-4626-a1dd-cded660ee494": {
+      "@type": "listing",
+      "headline": "Listing",
+      "headlineTag": "h2",
+      "querystring": {
+        "limit": "3",
+        "query": [
+          {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+              "Document"
+            ]
+          },
+          {
+            "i": "Subject",
+            "o": "plone.app.querystring.operation.selection.none",
+            "v": [
+              "main folder"
+            ]
+          }
+        ],
+        "sort_order": "ascending"
+      },
+      "styles": {},
+      "variation": "default"
+    },
+    "9ec8a368-7228-448d-a131-706e135be5c2": {
+      "@type": "__button",
+      "inneralign": "left",
+      "styles": {
+        "backgroundColor": "grey",
+        "buttonAlign": "wide"
+      },
+      "title": "Button"
+    },
+    "bf44d5f1-a6fb-4049-bc1c-0e9885f73b90": {
+      "@type": "__button",
+      "inneralign": "left",
+      "styles": {
+        "backgroundColor": "grey",
+        "buttonAlign": "wide"
+      },
+      "title": "Button"
+    },
+    "d792eaa5-73c2-45f1-9662-756dedf86cd1": {
+      "@type": "__button",
+      "inneralign": "left",
+      "styles": {
+        "buttonAlign": "wide"
+      },
+      "title": "Button"
+    },
+    "e5e851c5-d634-4c70-b720-024c98d38c6d": {
+      "@type": "teaser",
+      "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper ",
+      "head_title": "Head title",
+      "href": [
+        {
+          "@id": "resolveuid/bd2b39d2745847db82ed197a4eb1effc",
+          "@type": "Document",
+          "Description": "Der Teaser-Block erlaubt das Hinzuf\u00fcgen eines Elements welches einen bestehenden Inhalte der Webseite mit einem Bild, einem Titel und einer Beschreibung anteasert.",
+          "Title": "Block: Teaser",
+          "getRemoteUrl": null,
+          "hasPreviewImage": true,
+          "head_title": null,
+          "image_field": "preview_image",
+          "image_scales": {
+            "preview_image": [
+              {
+                "content-type": "image/jpeg",
+                "download": "@@images/preview_image-2400-92152ce7c34859059ec84e0b11761cc3.jpeg",
+                "filename": "black-starry-night.jpg",
+                "height": 1708,
+                "scales": {
+                  "great": {
+                    "download": "@@images/preview_image-1200-1e518c9d8f9134ba97f2a4e2702deedd.jpeg",
+                    "height": 854,
+                    "width": 1200
+                  },
+                  "huge": {
+                    "download": "@@images/preview_image-1600-fcfdcd9e8e025729ee2b6caea0a3d1d3.jpeg",
+                    "height": 1138,
+                    "width": 1600
+                  },
+                  "icon": {
+                    "download": "@@images/preview_image-32-0e0dd37b35e2f2d60d6eeae26aea3f02.jpeg",
+                    "height": 22,
+                    "width": 32
+                  },
+                  "large": {
+                    "download": "@@images/preview_image-800-01cee157a8f1f5d7dfec96379b18a290.jpeg",
+                    "height": 569,
+                    "width": 800
+                  },
+                  "larger": {
+                    "download": "@@images/preview_image-1000-9d61c4c454645335cf4bdecf9c395b1b.jpeg",
+                    "height": 711,
+                    "width": 1000
+                  },
+                  "mini": {
+                    "download": "@@images/preview_image-200-656d5c420e8697062bfe37770af79eaa.jpeg",
+                    "height": 142,
+                    "width": 200
+                  },
+                  "preview": {
+                    "download": "@@images/preview_image-400-023b9af0a00566e4e7c09701ab00d273.jpeg",
+                    "height": 284,
+                    "width": 400
+                  },
+                  "teaser": {
+                    "download": "@@images/preview_image-600-18517bc36465f3674f92d7f4c070677d.jpeg",
+                    "height": 427,
+                    "width": 600
+                  },
+                  "thumb": {
+                    "download": "@@images/preview_image-128-2ad943a2fe79e1cadce08427813cb056.jpeg",
+                    "height": 91,
+                    "width": 128
+                  },
+                  "tile": {
+                    "download": "@@images/preview_image-64-b1b1709feb2ccd08b0fdeb0664cf74cd.jpeg",
+                    "height": 45,
+                    "width": 64
+                  }
+                },
+                "size": 693013,
+                "width": 2400
+              }
+            ]
+          },
+          "title": "Block: Teaser"
+        }
+      ],
+      "preview_image": [
+        {
+          "@id": "resolveuid/eec82559bf3242a6be4d43bc2096f399",
+          "image_field": "image",
+          "image_scales": {
+            "image": [
+              {
+                "content-type": "image/jpeg",
+                "download": "@@images/image-1126-7b90bd2f737fb08f5e2c5719f2f8bc14.jpeg",
+                "filename": "image-light.jpg",
+                "height": 633,
+                "scales": {
+                  "icon": {
+                    "download": "@@images/image-32-5de0f24798404cddd70cc1d15b1213ba.jpeg",
+                    "height": 17,
+                    "width": 32
+                  },
+                  "large": {
+                    "download": "@@images/image-800-728b0edae32e307d8123462b48fafeaa.jpeg",
+                    "height": 449,
+                    "width": 800
+                  },
+                  "larger": {
+                    "download": "@@images/image-1000-19685fe0e43ca671a6f6a973c7d1f0f5.jpeg",
+                    "height": 562,
+                    "width": 1000
+                  },
+                  "mini": {
+                    "download": "@@images/image-200-cfd42d570345d1134d9b2d0f5726bb2e.jpeg",
+                    "height": 112,
+                    "width": 200
+                  },
+                  "preview": {
+                    "download": "@@images/image-400-a35b24fd0dbe867083f962cf69f19c2a.jpeg",
+                    "height": 224,
+                    "width": 400
+                  },
+                  "teaser": {
+                    "download": "@@images/image-600-702ac2045d4ca6fc61c52749e8c2f24d.jpeg",
+                    "height": 337,
+                    "width": 600
+                  },
+                  "thumb": {
+                    "download": "@@images/image-128-06fa281eabe3bbba6eea685ce60d08f1.jpeg",
+                    "height": 71,
+                    "width": 128
+                  },
+                  "tile": {
+                    "download": "@@images/image-64-f0e777433e3a4227dab46fe8cac688a6.jpeg",
+                    "height": 35,
+                    "width": 64
+                  }
+                },
+                "size": 475285,
+                "width": 1126
+              }
+            ]
+          },
+          "title": "Image - Light"
+        }
+      ],
+      "styles": {
+        "align": "right"
+      },
+      "title": "Teaser Headline "
+    },
+    "eb4928c3-4cfd-4876-bedd-28ff45b3fe60": {
+      "@type": "teaser",
+      "description": "Der Teaser-Block erlaubt das Hinzuf\u00fcgen eines Elements welches einen bestehenden Inhalte der Webseite mit einem Bild, einem Titel und einer Beschreibung anteasert.",
+      "head_title": "Head title",
+      "href": [
+        {
+          "@id": "resolveuid/bd2b39d2745847db82ed197a4eb1effc",
+          "@type": "Document",
+          "Description": "Der Teaser-Block erlaubt das Hinzuf\u00fcgen eines Elements welches einen bestehenden Inhalte der Webseite mit einem Bild, einem Titel und einer Beschreibung anteasert.",
+          "Title": "Block: Teaser",
+          "getRemoteUrl": null,
+          "hasPreviewImage": true,
+          "head_title": null,
+          "image_field": "preview_image",
+          "image_scales": {
+            "preview_image": [
+              {
+                "content-type": "image/jpeg",
+                "download": "@@images/preview_image-2400-92152ce7c34859059ec84e0b11761cc3.jpeg",
+                "filename": "black-starry-night.jpg",
+                "height": 1708,
+                "scales": {
+                  "great": {
+                    "download": "@@images/preview_image-1200-1e518c9d8f9134ba97f2a4e2702deedd.jpeg",
+                    "height": 854,
+                    "width": 1200
+                  },
+                  "huge": {
+                    "download": "@@images/preview_image-1600-fcfdcd9e8e025729ee2b6caea0a3d1d3.jpeg",
+                    "height": 1138,
+                    "width": 1600
+                  },
+                  "icon": {
+                    "download": "@@images/preview_image-32-0e0dd37b35e2f2d60d6eeae26aea3f02.jpeg",
+                    "height": 22,
+                    "width": 32
+                  },
+                  "large": {
+                    "download": "@@images/preview_image-800-01cee157a8f1f5d7dfec96379b18a290.jpeg",
+                    "height": 569,
+                    "width": 800
+                  },
+                  "larger": {
+                    "download": "@@images/preview_image-1000-9d61c4c454645335cf4bdecf9c395b1b.jpeg",
+                    "height": 711,
+                    "width": 1000
+                  },
+                  "mini": {
+                    "download": "@@images/preview_image-200-656d5c420e8697062bfe37770af79eaa.jpeg",
+                    "height": 142,
+                    "width": 200
+                  },
+                  "preview": {
+                    "download": "@@images/preview_image-400-023b9af0a00566e4e7c09701ab00d273.jpeg",
+                    "height": 284,
+                    "width": 400
+                  },
+                  "teaser": {
+                    "download": "@@images/preview_image-600-18517bc36465f3674f92d7f4c070677d.jpeg",
+                    "height": 427,
+                    "width": 600
+                  },
+                  "thumb": {
+                    "download": "@@images/preview_image-128-2ad943a2fe79e1cadce08427813cb056.jpeg",
+                    "height": 91,
+                    "width": 128
+                  },
+                  "tile": {
+                    "download": "@@images/preview_image-64-b1b1709feb2ccd08b0fdeb0664cf74cd.jpeg",
+                    "height": 45,
+                    "width": 64
+                  }
+                },
+                "size": 693013,
+                "width": 2400
+              }
+            ]
+          },
+          "title": "Block: Teaser"
+        }
+      ],
+      "styles": {
+        "align": "right",
+        "backgroundColor": "grey"
+      },
+      "title": "Teaser Title H2"
+    },
+    "ebeaa1f2-cd65-4310-9a26-75e75397553b": {
+      "@type": "gridBlock",
+      "blocks": {
+        "1cb175da-206f-473d-a044-62ce98524198": {
+          "@type": "teaser",
+          "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu ",
+          "head_title": "Head title",
+          "href": [
+            {
+              "@id": "resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+              "@type": "Document",
+              "Description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
+              "Title": "Inhaltstyp: Seite (Page)",
+              "getRemoteUrl": null,
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "image_scales": {
+                "preview_image": [
+                  {
+                    "content-type": "image/jpeg",
+                    "download": "@@images/preview_image-2400-dd70655eae2a121e9b3d20b15d5292db.jpeg",
+                    "filename": "black-starry-night.jpg",
+                    "height": 1708,
+                    "scales": {
+                      "great": {
+                        "download": "@@images/preview_image-1200-02d0687099bde73e5189270d53df7e22.jpeg",
+                        "height": 854,
+                        "width": 1200
+                      },
+                      "huge": {
+                        "download": "@@images/preview_image-1600-275bd418c80864fc5cc8b0b0c7f4a0a2.jpeg",
+                        "height": 1138,
+                        "width": 1600
+                      },
+                      "icon": {
+                        "download": "@@images/preview_image-32-848481d517c9091a765ccf7a6ef88277.jpeg",
+                        "height": 22,
+                        "width": 32
+                      },
+                      "large": {
+                        "download": "@@images/preview_image-800-255c17a5d39f4bb2d79c72d56934b342.jpeg",
+                        "height": 569,
+                        "width": 800
+                      },
+                      "larger": {
+                        "download": "@@images/preview_image-1000-661e34a155a000108788ca0d60f4b22c.jpeg",
+                        "height": 711,
+                        "width": 1000
+                      },
+                      "mini": {
+                        "download": "@@images/preview_image-200-614da3a8827dc90cb92618ada1980504.jpeg",
+                        "height": 142,
+                        "width": 200
+                      },
+                      "preview": {
+                        "download": "@@images/preview_image-400-bf2a5268ec239c40c54556e7f48b1cf6.jpeg",
+                        "height": 284,
+                        "width": 400
+                      },
+                      "teaser": {
+                        "download": "@@images/preview_image-600-b1f4235a88cb99bd1c5ab3dceaf953ee.jpeg",
+                        "height": 427,
+                        "width": 600
+                      },
+                      "thumb": {
+                        "download": "@@images/preview_image-128-80ae3135a04405512335f90c8ce4cb3e.jpeg",
+                        "height": 91,
+                        "width": 128
+                      },
+                      "tile": {
+                        "download": "@@images/preview_image-64-fbe446c415c4dbcbca8b81c451ee4659.jpeg",
+                        "height": 45,
+                        "width": 64
+                      }
+                    },
+                    "size": 693013,
+                    "width": 2400
+                  }
+                ]
+              },
+              "title": "Inhaltstyp: Seite (Page)"
+            }
+          ],
+          "preview_image": [
+            {
+              "@id": "resolveuid/eec82559bf3242a6be4d43bc2096f399",
+              "image_field": "image",
+              "image_scales": {
+                "image": [
+                  {
+                    "content-type": "image/jpeg",
+                    "download": "@@images/image-1126-7b90bd2f737fb08f5e2c5719f2f8bc14.jpeg",
+                    "filename": "image-light.jpg",
+                    "height": 633,
+                    "scales": {
+                      "icon": {
+                        "download": "@@images/image-32-5de0f24798404cddd70cc1d15b1213ba.jpeg",
+                        "height": 17,
+                        "width": 32
+                      },
+                      "large": {
+                        "download": "@@images/image-800-728b0edae32e307d8123462b48fafeaa.jpeg",
+                        "height": 449,
+                        "width": 800
+                      },
+                      "larger": {
+                        "download": "@@images/image-1000-19685fe0e43ca671a6f6a973c7d1f0f5.jpeg",
+                        "height": 562,
+                        "width": 1000
+                      },
+                      "mini": {
+                        "download": "@@images/image-200-cfd42d570345d1134d9b2d0f5726bb2e.jpeg",
+                        "height": 112,
+                        "width": 200
+                      },
+                      "preview": {
+                        "download": "@@images/image-400-a35b24fd0dbe867083f962cf69f19c2a.jpeg",
+                        "height": 224,
+                        "width": 400
+                      },
+                      "teaser": {
+                        "download": "@@images/image-600-702ac2045d4ca6fc61c52749e8c2f24d.jpeg",
+                        "height": 337,
+                        "width": 600
+                      },
+                      "thumb": {
+                        "download": "@@images/image-128-06fa281eabe3bbba6eea685ce60d08f1.jpeg",
+                        "height": 71,
+                        "width": 128
+                      },
+                      "tile": {
+                        "download": "@@images/image-64-f0e777433e3a4227dab46fe8cac688a6.jpeg",
+                        "height": 35,
+                        "width": 64
+                      }
+                    },
+                    "size": 475285,
+                    "width": 1126
+                  }
+                ]
+              },
+              "title": "Image - Light"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Teaser Title H3"
+        },
+        "b7e240a5-367d-48f0-ad67-c3bbfb0e941d": {
+          "@type": "teaser",
+          "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu ",
+          "head_title": "Head title",
+          "href": [
+            {
+              "@id": "resolveuid/99c70917b6894af08dd306fdbc0eff6a",
+              "@type": "Document",
+              "Description": "Der Grid-Block erlaubt das Hinzuf\u00fcgen mehrspaltiger Bl\u00f6cke. Ein Grid-Block kann zwischen ein und vier Spalten mit unterschiedlichen Bl\u00f6cken enthalten.Teaser und Bilder k\u00f6nnen in einem Grid-Block hinzugef\u00fcgt werden.",
+              "Title": "Block: Grid",
+              "getRemoteUrl": null,
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "image_scales": {
+                "preview_image": [
+                  {
+                    "content-type": "image/jpeg",
+                    "download": "@@images/preview_image-2400-f9aa7b8d1e2e40de094f1e9f08efb1bf.jpeg",
+                    "filename": "black-starry-night.jpg",
+                    "height": 1708,
+                    "scales": {
+                      "great": {
+                        "download": "@@images/preview_image-1200-a9951363537c3406c7e8f0ce40693ddd.jpeg",
+                        "height": 854,
+                        "width": 1200
+                      },
+                      "huge": {
+                        "download": "@@images/preview_image-1600-b57582f266d44aa33c84096930783ebd.jpeg",
+                        "height": 1138,
+                        "width": 1600
+                      },
+                      "icon": {
+                        "download": "@@images/preview_image-32-c858266edae8c1701c0a52872df9186b.jpeg",
+                        "height": 22,
+                        "width": 32
+                      },
+                      "large": {
+                        "download": "@@images/preview_image-800-f8ba2ef21cf6870af4c095bc18c8bfd3.jpeg",
+                        "height": 569,
+                        "width": 800
+                      },
+                      "larger": {
+                        "download": "@@images/preview_image-1000-8a34f321086727890671e1c2de6bd83a.jpeg",
+                        "height": 711,
+                        "width": 1000
+                      },
+                      "mini": {
+                        "download": "@@images/preview_image-200-61a4fec2eac88cedf03b1905b553f8a3.jpeg",
+                        "height": 142,
+                        "width": 200
+                      },
+                      "preview": {
+                        "download": "@@images/preview_image-400-e5b17fad7696eba84f60f6c72e896b14.jpeg",
+                        "height": 284,
+                        "width": 400
+                      },
+                      "teaser": {
+                        "download": "@@images/preview_image-600-fd0ea9b2a5c98d53ae4063e3cf109f81.jpeg",
+                        "height": 427,
+                        "width": 600
+                      },
+                      "thumb": {
+                        "download": "@@images/preview_image-128-64695facf03cd16699147f64a83054ad.jpeg",
+                        "height": 91,
+                        "width": 128
+                      },
+                      "tile": {
+                        "download": "@@images/preview_image-64-5aef2f45c044064cec0cd2ce5caee94c.jpeg",
+                        "height": 45,
+                        "width": 64
+                      }
+                    },
+                    "size": 693013,
+                    "width": 2400
+                  }
+                ]
+              },
+              "title": "Block: Grid"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Teaser Title H3"
+        },
+        "dfc48794-4d58-43ce-9413-7a0f48b0defe": {
+          "@type": "teaser",
+          "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu ",
+          "head_title": "Head title",
+          "href": [
+            {
+              "@id": "resolveuid/bd2b39d2745847db82ed197a4eb1effc",
+              "@type": "Document",
+              "Description": "Der Teaser-Block erlaubt das Hinzuf\u00fcgen eines Elements welches einen bestehenden Inhalte der Webseite mit einem Bild, einem Titel und einer Beschreibung anteasert.",
+              "Title": "Block: Teaser",
+              "getRemoteUrl": null,
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "image_scales": {
+                "preview_image": [
+                  {
+                    "content-type": "image/jpeg",
+                    "download": "@@images/preview_image-2400-92152ce7c34859059ec84e0b11761cc3.jpeg",
+                    "filename": "black-starry-night.jpg",
+                    "height": 1708,
+                    "scales": {
+                      "great": {
+                        "download": "@@images/preview_image-1200-1e518c9d8f9134ba97f2a4e2702deedd.jpeg",
+                        "height": 854,
+                        "width": 1200
+                      },
+                      "huge": {
+                        "download": "@@images/preview_image-1600-fcfdcd9e8e025729ee2b6caea0a3d1d3.jpeg",
+                        "height": 1138,
+                        "width": 1600
+                      },
+                      "icon": {
+                        "download": "@@images/preview_image-32-0e0dd37b35e2f2d60d6eeae26aea3f02.jpeg",
+                        "height": 22,
+                        "width": 32
+                      },
+                      "large": {
+                        "download": "@@images/preview_image-800-01cee157a8f1f5d7dfec96379b18a290.jpeg",
+                        "height": 569,
+                        "width": 800
+                      },
+                      "larger": {
+                        "download": "@@images/preview_image-1000-9d61c4c454645335cf4bdecf9c395b1b.jpeg",
+                        "height": 711,
+                        "width": 1000
+                      },
+                      "mini": {
+                        "download": "@@images/preview_image-200-656d5c420e8697062bfe37770af79eaa.jpeg",
+                        "height": 142,
+                        "width": 200
+                      },
+                      "preview": {
+                        "download": "@@images/preview_image-400-023b9af0a00566e4e7c09701ab00d273.jpeg",
+                        "height": 284,
+                        "width": 400
+                      },
+                      "teaser": {
+                        "download": "@@images/preview_image-600-18517bc36465f3674f92d7f4c070677d.jpeg",
+                        "height": 427,
+                        "width": 600
+                      },
+                      "thumb": {
+                        "download": "@@images/preview_image-128-2ad943a2fe79e1cadce08427813cb056.jpeg",
+                        "height": 91,
+                        "width": 128
+                      },
+                      "tile": {
+                        "download": "@@images/preview_image-64-b1b1709feb2ccd08b0fdeb0664cf74cd.jpeg",
+                        "height": 45,
+                        "width": 64
+                      }
+                    },
+                    "size": 693013,
+                    "width": 2400
+                  }
+                ]
+              },
+              "title": "Block: Teaser"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Teaser Title H3"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "b7e240a5-367d-48f0-ad67-c3bbfb0e941d",
+          "1cb175da-206f-473d-a044-62ce98524198",
+          "dfc48794-4d58-43ce-9413-7a0f48b0defe"
+        ]
+      },
+      "headline": "Gridblock with Teasers",
+      "styles": {}
+    },
+    "ed6e59c1-4697-4762-9ad3-51d815eaa9a3": {
+      "@type": "__button",
+      "inneralign": "left",
+      "styles": {
+        "buttonAlign": "wide"
+      },
+      "title": "Button"
+    },
+    "f3c40432-4cf8-4272-89df-9432522553b9": {
+      "@type": "__button",
+      "inneralign": "left",
+      "styles": {
+        "buttonAlign": "wide"
+      },
+      "title": "Button"
+    },
+    "f90b204f-9110-4791-b9b9-541f3d85def9": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "Teaser Stand-Alone",
+      "styles": {}
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "10444da6-9565-407d-b79c-ab9726bd3a84",
+      "ebeaa1f2-cd65-4310-9a26-75e75397553b",
+      "ed6e59c1-4697-4762-9ad3-51d815eaa9a3",
+      "4f02f1a1-685a-4f79-a776-01cbd0af42e4",
+      "27c9bfc9-af66-4545-9e38-a69bfb09a282",
+      "bf44d5f1-a6fb-4049-bc1c-0e9885f73b90",
+      "f90b204f-9110-4791-b9b9-541f3d85def9",
+      "281dee5f-1e5c-4ef4-b7c2-20da7f43093c",
+      "e5e851c5-d634-4c70-b720-024c98d38c6d",
+      "f3c40432-4cf8-4272-89df-9432522553b9",
+      "1e730622-4982-4c61-a779-e06d70581c42",
+      "383c512f-e7a4-4426-b721-9ebaf7248f8f",
+      "eb4928c3-4cfd-4876-bedd-28ff45b3fe60",
+      "9ec8a368-7228-448d-a131-706e135be5c2",
+      "85655a82-c662-4626-a1dd-cded660ee494",
+      "d792eaa5-73c2-45f1-9662-756dedf86cd1"
+    ]
+  },
+  "contributors": [],
+  "creators": [
+    "admin"
+  ],
+  "description": "Site created with a new Plone Distribution",
+  "effective": null,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "exportimport.versions": {},
+  "id": "Plone",
+  "is_folderish": true,
+  "items_total": 4,
+  "language": "##DEFAULT##",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "parent": {},
+  "review_state": null,
+  "rights": "",
+  "subjects": [],
+  "table_of_contents": null,
+  "title": "Plone",
+  "type_title": "Plone Site",
+  "workflow_history": {}
+}

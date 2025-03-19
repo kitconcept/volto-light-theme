@@ -9,7 +9,6 @@ on:
     paths:
       - "docs/**"
       - .readthedocs.yaml
-      - requirements-docs.txt
 
 permissions:
   pull-requests: write

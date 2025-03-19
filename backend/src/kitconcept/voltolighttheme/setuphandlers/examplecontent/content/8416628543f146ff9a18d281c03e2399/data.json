@@ -1,0 +1,854 @@
+{
+  "@id": "/block/highlight-block",
+  "@type": "Document",
+  "UID": "8416628543f146ff9a18d281c03e2399",
+  "allow_discussion": false,
+  "blocks": {
+    "25a0a1b5-3ce9-468f-8968-9a7f83ca4e53": {
+      "@type": "highlight",
+      "button": true,
+      "buttonLink": [
+        {
+          "@id": "/content-types/page",
+          "@type": "Document",
+          "CreationDate": "2023-07-06T23:35:20+02:00",
+          "Creator": "admin",
+          "Date": "2023-07-06T18:35:00+02:00",
+          "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+          "EffectiveDate": "2023-07-06T18:35:00+02:00",
+          "ExpirationDate": "None",
+          "ModificationDate": "2023-09-22T16:25:49+02:00",
+          "Subject": [],
+          "Title": "Page",
+          "Type": "Page",
+          "UID": "7ab9c48ede33415fa2a66a99549c8f70",
+          "author_name": null,
+          "cmf_uid": null,
+          "commentators": [],
+          "created": "2023-07-06T21:35:20+00:00",
+          "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+          "effective": "2023-07-06T16:35:00+00:00",
+          "end": null,
+          "exclude_from_nav": false,
+          "expires": "2499-12-30T22:00:00+00:00",
+          "getIcon": null,
+          "getId": "page",
+          "getObjSize": "676.8 KB",
+          "getPath": "/Plone/content-types/page",
+          "getRemoteUrl": null,
+          "getURL": "http://localhost:8080/Plone/content-types/page",
+          "hasPreviewImage": true,
+          "head_title": null,
+          "id": "page",
+          "image_field": "preview_image",
+          "in_response_to": null,
+          "is_folderish": true,
+          "last_comment_date": null,
+          "listCreators": [
+            "admin"
+          ],
+          "location": null,
+          "mime_type": "text/plain",
+          "modified": "2023-09-22T14:25:49+00:00",
+          "nav_title": null,
+          "portal_type": "Document",
+          "review_state": "published",
+          "start": null,
+          "sync_uid": null,
+          "title": "Page",
+          "total_comments": 0,
+          "type_title": "Page"
+        }
+      ],
+      "buttonText": "Button ",
+      "image_field": "image",
+      "image_scales": {
+        "image": [
+          {
+            "content-type": "image/jpeg",
+            "download": "@@images/image-2400-59ba0e28b8fb813be7e18935e5f63a59.jpeg",
+            "filename": "black-starry-night.jpg",
+            "height": 1708,
+            "scales": {
+              "great": {
+                "download": "@@images/image-1200-7cca3b5b9ba61195f9190c32b3a54ec9.jpeg",
+                "height": 854,
+                "width": 1200
+              },
+              "huge": {
+                "download": "@@images/image-1600-6ff92f1800f77515dde1be81b0fdd72a.jpeg",
+                "height": 1138,
+                "width": 1600
+              },
+              "icon": {
+                "download": "@@images/image-32-2a46e7a6b76a8db3a7941215c4de8a01.jpeg",
+                "height": 22,
+                "width": 32
+              },
+              "large": {
+                "download": "@@images/image-800-3a7c82cae430c36e707b83909a496b32.jpeg",
+                "height": 569,
+                "width": 800
+              },
+              "larger": {
+                "download": "@@images/image-1000-f4a4c8b8e8e5ffebfbdbcff0115bfc09.jpeg",
+                "height": 711,
+                "width": 1000
+              },
+              "mini": {
+                "download": "@@images/image-200-3bdc6d1e0c48ce4430f75a4ac55b939e.jpeg",
+                "height": 142,
+                "width": 200
+              },
+              "preview": {
+                "download": "@@images/image-400-71bf22b0c5006001209fc8fadb40b10a.jpeg",
+                "height": 284,
+                "width": 400
+              },
+              "teaser": {
+                "download": "@@images/image-600-75bdd455dcec596851abe1b072dc76fe.jpeg",
+                "height": 427,
+                "width": 600
+              },
+              "thumb": {
+                "download": "@@images/image-128-fc31735ade965dca8ce6946f7746c583.jpeg",
+                "height": 91,
+                "width": 128
+              },
+              "tile": {
+                "download": "@@images/image-64-598079775de66e3ee3d5a51362938e1a.jpeg",
+                "height": 45,
+                "width": 64
+              }
+            },
+            "size": 693013,
+            "width": 2400
+          }
+        ]
+      },
+      "plaintext": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.",
+      "styles": {
+        "descriptionColor": "highlight-custom-color-4"
+      },
+      "title": "Highlight-Block",
+      "url": "resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet, "
+            },
+            {
+              "children": [
+                {
+                  "text": "consetetur sadipscing"
+                }
+              ],
+              "data": {
+                "url": "http://host.docker.internal:8080/Plone/block/button-block"
+              },
+              "type": "link"
+            },
+            {
+              "text": " elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "417e7343-af04-4da4-96bf-29321a3e0fc6": {
+      "@type": "highlight",
+      "button": true,
+      "buttonLink": [
+        {
+          "@id": "/content-types/page",
+          "@type": "Document",
+          "CreationDate": "2023-07-06T23:35:20+02:00",
+          "Creator": "admin",
+          "Date": "2023-07-06T18:35:00+02:00",
+          "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+          "EffectiveDate": "2023-07-06T18:35:00+02:00",
+          "ExpirationDate": "None",
+          "ModificationDate": "2023-09-22T16:25:49+02:00",
+          "Subject": [],
+          "Title": "Page",
+          "Type": "Page",
+          "UID": "7ab9c48ede33415fa2a66a99549c8f70",
+          "author_name": null,
+          "cmf_uid": null,
+          "commentators": [],
+          "created": "2023-07-06T21:35:20+00:00",
+          "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+          "effective": "2023-07-06T16:35:00+00:00",
+          "end": null,
+          "exclude_from_nav": false,
+          "expires": "2499-12-30T22:00:00+00:00",
+          "getIcon": null,
+          "getId": "page",
+          "getObjSize": "676.8 KB",
+          "getPath": "/Plone/content-types/page",
+          "getRemoteUrl": null,
+          "getURL": "http://localhost:8080/Plone/content-types/page",
+          "hasPreviewImage": true,
+          "head_title": null,
+          "id": "page",
+          "image_field": "preview_image",
+          "in_response_to": null,
+          "is_folderish": true,
+          "last_comment_date": null,
+          "listCreators": [
+            "admin"
+          ],
+          "location": null,
+          "mime_type": "text/plain",
+          "modified": "2023-09-22T14:25:49+00:00",
+          "nav_title": null,
+          "portal_type": "Document",
+          "review_state": "published",
+          "start": null,
+          "sync_uid": null,
+          "title": "Page",
+          "total_comments": 0,
+          "type_title": "Page"
+        }
+      ],
+      "buttonText": "Button ",
+      "image_field": "image",
+      "image_scales": {
+        "image": [
+          {
+            "content-type": "image/jpeg",
+            "download": "@@images/image-2400-59ba0e28b8fb813be7e18935e5f63a59.jpeg",
+            "filename": "black-starry-night.jpg",
+            "height": 1708,
+            "scales": {
+              "great": {
+                "download": "@@images/image-1200-7cca3b5b9ba61195f9190c32b3a54ec9.jpeg",
+                "height": 854,
+                "width": 1200
+              },
+              "huge": {
+                "download": "@@images/image-1600-6ff92f1800f77515dde1be81b0fdd72a.jpeg",
+                "height": 1138,
+                "width": 1600
+              },
+              "icon": {
+                "download": "@@images/image-32-2a46e7a6b76a8db3a7941215c4de8a01.jpeg",
+                "height": 22,
+                "width": 32
+              },
+              "large": {
+                "download": "@@images/image-800-3a7c82cae430c36e707b83909a496b32.jpeg",
+                "height": 569,
+                "width": 800
+              },
+              "larger": {
+                "download": "@@images/image-1000-f4a4c8b8e8e5ffebfbdbcff0115bfc09.jpeg",
+                "height": 711,
+                "width": 1000
+              },
+              "mini": {
+                "download": "@@images/image-200-3bdc6d1e0c48ce4430f75a4ac55b939e.jpeg",
+                "height": 142,
+                "width": 200
+              },
+              "preview": {
+                "download": "@@images/image-400-71bf22b0c5006001209fc8fadb40b10a.jpeg",
+                "height": 284,
+                "width": 400
+              },
+              "teaser": {
+                "download": "@@images/image-600-75bdd455dcec596851abe1b072dc76fe.jpeg",
+                "height": 427,
+                "width": 600
+              },
+              "thumb": {
+                "download": "@@images/image-128-fc31735ade965dca8ce6946f7746c583.jpeg",
+                "height": 91,
+                "width": 128
+              },
+              "tile": {
+                "download": "@@images/image-64-598079775de66e3ee3d5a51362938e1a.jpeg",
+                "height": 45,
+                "width": 64
+              }
+            },
+            "size": 693013,
+            "width": 2400
+          }
+        ]
+      },
+      "plaintext": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.",
+      "styles": {
+        "descriptionColor": "highlight-custom-color-2"
+      },
+      "title": "Highlight-Block",
+      "url": "resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet, "
+            },
+            {
+              "children": [
+                {
+                  "text": "consetetur sadipscing"
+                }
+              ],
+              "data": {
+                "url": "http://host.docker.internal:8080/Plone/block/button-block"
+              },
+              "type": "link"
+            },
+            {
+              "text": " elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "67a6a73a-5ae7-4e14-a11b-bd0139e56513": {
+      "@type": "highlight",
+      "button": true,
+      "buttonLink": [
+        {
+          "@id": "/content-types/page",
+          "@type": "Document",
+          "CreationDate": "2023-07-06T23:35:20+02:00",
+          "Creator": "admin",
+          "Date": "2023-07-06T18:35:00+02:00",
+          "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+          "EffectiveDate": "2023-07-06T18:35:00+02:00",
+          "ExpirationDate": "None",
+          "ModificationDate": "2023-09-22T16:25:49+02:00",
+          "Subject": [],
+          "Title": "Page",
+          "Type": "Page",
+          "UID": "7ab9c48ede33415fa2a66a99549c8f70",
+          "author_name": null,
+          "cmf_uid": null,
+          "commentators": [],
+          "created": "2023-07-06T21:35:20+00:00",
+          "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+          "effective": "2023-07-06T16:35:00+00:00",
+          "end": null,
+          "exclude_from_nav": false,
+          "expires": "2499-12-30T22:00:00+00:00",
+          "getIcon": null,
+          "getId": "page",
+          "getObjSize": "676.8 KB",
+          "getPath": "/Plone/content-types/page",
+          "getRemoteUrl": null,
+          "getURL": "http://localhost:8080/Plone/content-types/page",
+          "hasPreviewImage": true,
+          "head_title": null,
+          "id": "page",
+          "image_field": "preview_image",
+          "in_response_to": null,
+          "is_folderish": true,
+          "last_comment_date": null,
+          "listCreators": [
+            "admin"
+          ],
+          "location": null,
+          "mime_type": "text/plain",
+          "modified": "2023-09-22T14:25:49+00:00",
+          "nav_title": null,
+          "portal_type": "Document",
+          "review_state": "published",
+          "start": null,
+          "sync_uid": null,
+          "title": "Page",
+          "total_comments": 0,
+          "type_title": "Page"
+        }
+      ],
+      "buttonText": "Button ",
+      "image_field": "image",
+      "image_scales": {
+        "image": [
+          {
+            "content-type": "image/jpeg",
+            "download": "@@images/image-2400-59ba0e28b8fb813be7e18935e5f63a59.jpeg",
+            "filename": "black-starry-night.jpg",
+            "height": 1708,
+            "scales": {
+              "great": {
+                "download": "@@images/image-1200-7cca3b5b9ba61195f9190c32b3a54ec9.jpeg",
+                "height": 854,
+                "width": 1200
+              },
+              "huge": {
+                "download": "@@images/image-1600-6ff92f1800f77515dde1be81b0fdd72a.jpeg",
+                "height": 1138,
+                "width": 1600
+              },
+              "icon": {
+                "download": "@@images/image-32-2a46e7a6b76a8db3a7941215c4de8a01.jpeg",
+                "height": 22,
+                "width": 32
+              },
+              "large": {
+                "download": "@@images/image-800-3a7c82cae430c36e707b83909a496b32.jpeg",
+                "height": 569,
+                "width": 800
+              },
+              "larger": {
+                "download": "@@images/image-1000-f4a4c8b8e8e5ffebfbdbcff0115bfc09.jpeg",
+                "height": 711,
+                "width": 1000
+              },
+              "mini": {
+                "download": "@@images/image-200-3bdc6d1e0c48ce4430f75a4ac55b939e.jpeg",
+                "height": 142,
+                "width": 200
+              },
+              "preview": {
+                "download": "@@images/image-400-71bf22b0c5006001209fc8fadb40b10a.jpeg",
+                "height": 284,
+                "width": 400
+              },
+              "teaser": {
+                "download": "@@images/image-600-75bdd455dcec596851abe1b072dc76fe.jpeg",
+                "height": 427,
+                "width": 600
+              },
+              "thumb": {
+                "download": "@@images/image-128-fc31735ade965dca8ce6946f7746c583.jpeg",
+                "height": 91,
+                "width": 128
+              },
+              "tile": {
+                "download": "@@images/image-64-598079775de66e3ee3d5a51362938e1a.jpeg",
+                "height": 45,
+                "width": 64
+              }
+            },
+            "size": 693013,
+            "width": 2400
+          }
+        ]
+      },
+      "plaintext": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.",
+      "styles": {
+        "descriptionColor": "highlight-custom-color-3"
+      },
+      "title": "Highlight-Block",
+      "url": "resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet, "
+            },
+            {
+              "children": [
+                {
+                  "text": "consetetur sadipscing"
+                }
+              ],
+              "data": {
+                "url": "http://host.docker.internal:8080/Plone/block/button-block"
+              },
+              "type": "link"
+            },
+            {
+              "text": " elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "8d932379-1247-4281-bd30-dfecd5b3c378": {
+      "@type": "highlight",
+      "button": true,
+      "buttonLink": [
+        {
+          "@id": "/content-types/page",
+          "@type": "Document",
+          "CreationDate": "2023-07-06T23:35:20+02:00",
+          "Creator": "admin",
+          "Date": "2023-07-06T18:35:00+02:00",
+          "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+          "EffectiveDate": "2023-07-06T18:35:00+02:00",
+          "ExpirationDate": "None",
+          "ModificationDate": "2023-09-22T16:25:49+02:00",
+          "Subject": [],
+          "Title": "Page",
+          "Type": "Page",
+          "UID": "7ab9c48ede33415fa2a66a99549c8f70",
+          "author_name": null,
+          "cmf_uid": null,
+          "commentators": [],
+          "created": "2023-07-06T21:35:20+00:00",
+          "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+          "effective": "2023-07-06T16:35:00+00:00",
+          "end": null,
+          "exclude_from_nav": false,
+          "expires": "2499-12-30T22:00:00+00:00",
+          "getIcon": null,
+          "getId": "page",
+          "getObjSize": "676.8 KB",
+          "getPath": "/Plone/content-types/page",
+          "getRemoteUrl": null,
+          "getURL": "http://localhost:8080/Plone/content-types/page",
+          "hasPreviewImage": true,
+          "head_title": null,
+          "id": "page",
+          "image_field": "preview_image",
+          "in_response_to": null,
+          "is_folderish": true,
+          "last_comment_date": null,
+          "listCreators": [
+            "admin"
+          ],
+          "location": null,
+          "mime_type": "text/plain",
+          "modified": "2023-09-22T14:25:49+00:00",
+          "nav_title": null,
+          "portal_type": "Document",
+          "review_state": "published",
+          "start": null,
+          "sync_uid": null,
+          "title": "Page",
+          "total_comments": 0,
+          "type_title": "Page"
+        }
+      ],
+      "buttonText": "Button ",
+      "image_field": "image",
+      "image_scales": {
+        "image": [
+          {
+            "content-type": "image/jpeg",
+            "download": "@@images/image-2400-59ba0e28b8fb813be7e18935e5f63a59.jpeg",
+            "filename": "black-starry-night.jpg",
+            "height": 1708,
+            "scales": {
+              "great": {
+                "download": "@@images/image-1200-7cca3b5b9ba61195f9190c32b3a54ec9.jpeg",
+                "height": 854,
+                "width": 1200
+              },
+              "huge": {
+                "download": "@@images/image-1600-6ff92f1800f77515dde1be81b0fdd72a.jpeg",
+                "height": 1138,
+                "width": 1600
+              },
+              "icon": {
+                "download": "@@images/image-32-2a46e7a6b76a8db3a7941215c4de8a01.jpeg",
+                "height": 22,
+                "width": 32
+              },
+              "large": {
+                "download": "@@images/image-800-3a7c82cae430c36e707b83909a496b32.jpeg",
+                "height": 569,
+                "width": 800
+              },
+              "larger": {
+                "download": "@@images/image-1000-f4a4c8b8e8e5ffebfbdbcff0115bfc09.jpeg",
+                "height": 711,
+                "width": 1000
+              },
+              "mini": {
+                "download": "@@images/image-200-3bdc6d1e0c48ce4430f75a4ac55b939e.jpeg",
+                "height": 142,
+                "width": 200
+              },
+              "preview": {
+                "download": "@@images/image-400-71bf22b0c5006001209fc8fadb40b10a.jpeg",
+                "height": 284,
+                "width": 400
+              },
+              "teaser": {
+                "download": "@@images/image-600-75bdd455dcec596851abe1b072dc76fe.jpeg",
+                "height": 427,
+                "width": 600
+              },
+              "thumb": {
+                "download": "@@images/image-128-fc31735ade965dca8ce6946f7746c583.jpeg",
+                "height": 91,
+                "width": 128
+              },
+              "tile": {
+                "download": "@@images/image-64-598079775de66e3ee3d5a51362938e1a.jpeg",
+                "height": 45,
+                "width": 64
+              }
+            },
+            "size": 693013,
+            "width": 2400
+          }
+        ]
+      },
+      "plaintext": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.",
+      "styles": {
+        "descriptionColor": "highlight-custom-color-1"
+      },
+      "title": "Highlight-Block",
+      "url": "resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet, "
+            },
+            {
+              "children": [
+                {
+                  "text": "consetetur sadipscing"
+                }
+              ],
+              "data": {
+                "url": "http://host.docker.internal:8080/Plone/block/button-block"
+              },
+              "type": "link"
+            },
+            {
+              "text": " elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "94655cc3-817d-48ba-bc20-6e9f7796dc46": {
+      "@type": "highlight",
+      "button": true,
+      "buttonLink": [
+        {
+          "@id": "/content-types/page",
+          "@type": "Document",
+          "CreationDate": "2023-07-06T23:35:20+02:00",
+          "Creator": "admin",
+          "Date": "2023-07-06T18:35:00+02:00",
+          "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+          "EffectiveDate": "2023-07-06T18:35:00+02:00",
+          "ExpirationDate": "None",
+          "ModificationDate": "2023-09-22T16:25:49+02:00",
+          "Subject": [],
+          "Title": "Page",
+          "Type": "Page",
+          "UID": "7ab9c48ede33415fa2a66a99549c8f70",
+          "author_name": null,
+          "cmf_uid": null,
+          "commentators": [],
+          "created": "2023-07-06T21:35:20+00:00",
+          "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+          "effective": "2023-07-06T16:35:00+00:00",
+          "end": null,
+          "exclude_from_nav": false,
+          "expires": "2499-12-30T22:00:00+00:00",
+          "getIcon": null,
+          "getId": "page",
+          "getObjSize": "676.8 KB",
+          "getPath": "/Plone/content-types/page",
+          "getRemoteUrl": null,
+          "getURL": "http://localhost:8080/Plone/content-types/page",
+          "hasPreviewImage": true,
+          "head_title": null,
+          "id": "page",
+          "image_field": "preview_image",
+          "in_response_to": null,
+          "is_folderish": true,
+          "last_comment_date": null,
+          "listCreators": [
+            "admin"
+          ],
+          "location": null,
+          "mime_type": "text/plain",
+          "modified": "2023-09-22T14:25:49+00:00",
+          "nav_title": null,
+          "portal_type": "Document",
+          "review_state": "published",
+          "start": null,
+          "sync_uid": null,
+          "title": "Page",
+          "total_comments": 0,
+          "type_title": "Page"
+        }
+      ],
+      "buttonText": "Button ",
+      "image_field": "image",
+      "image_scales": {
+        "image": [
+          {
+            "content-type": "image/jpeg",
+            "download": "@@images/image-2400-59ba0e28b8fb813be7e18935e5f63a59.jpeg",
+            "filename": "black-starry-night.jpg",
+            "height": 1708,
+            "scales": {
+              "great": {
+                "download": "@@images/image-1200-7cca3b5b9ba61195f9190c32b3a54ec9.jpeg",
+                "height": 854,
+                "width": 1200
+              },
+              "huge": {
+                "download": "@@images/image-1600-6ff92f1800f77515dde1be81b0fdd72a.jpeg",
+                "height": 1138,
+                "width": 1600
+              },
+              "icon": {
+                "download": "@@images/image-32-2a46e7a6b76a8db3a7941215c4de8a01.jpeg",
+                "height": 22,
+                "width": 32
+              },
+              "large": {
+                "download": "@@images/image-800-3a7c82cae430c36e707b83909a496b32.jpeg",
+                "height": 569,
+                "width": 800
+              },
+              "larger": {
+                "download": "@@images/image-1000-f4a4c8b8e8e5ffebfbdbcff0115bfc09.jpeg",
+                "height": 711,
+                "width": 1000
+              },
+              "mini": {
+                "download": "@@images/image-200-3bdc6d1e0c48ce4430f75a4ac55b939e.jpeg",
+                "height": 142,
+                "width": 200
+              },
+              "preview": {
+                "download": "@@images/image-400-71bf22b0c5006001209fc8fadb40b10a.jpeg",
+                "height": 284,
+                "width": 400
+              },
+              "teaser": {
+                "download": "@@images/image-600-75bdd455dcec596851abe1b072dc76fe.jpeg",
+                "height": 427,
+                "width": 600
+              },
+              "thumb": {
+                "download": "@@images/image-128-fc31735ade965dca8ce6946f7746c583.jpeg",
+                "height": 91,
+                "width": 128
+              },
+              "tile": {
+                "download": "@@images/image-64-598079775de66e3ee3d5a51362938e1a.jpeg",
+                "height": 45,
+                "width": 64
+              }
+            },
+            "size": 693013,
+            "width": 2400
+          }
+        ]
+      },
+      "plaintext": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.",
+      "styles": {
+        "descriptionColor": "highlight-custom-color-5"
+      },
+      "title": "Highlight-Block",
+      "url": "resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet, "
+            },
+            {
+              "children": [
+                {
+                  "text": "consetetur sadipscing"
+                }
+              ],
+              "data": {
+                "url": "http://host.docker.internal:8080/Plone/block/button-block"
+              },
+              "type": "link"
+            },
+            {
+              "text": " elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "af3c704a-1f80-48c8-843b-dc29368d43d9": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "af3c704a-1f80-48c8-843b-dc29368d43d9",
+      "8d932379-1247-4281-bd30-dfecd5b3c378",
+      "417e7343-af04-4da4-96bf-29321a3e0fc6",
+      "67a6a73a-5ae7-4e14-a11b-bd0139e56513",
+      "25a0a1b5-3ce9-468f-8968-9a7f83ca4e53",
+      "94655cc3-817d-48ba-bc20-6e9f7796dc46"
+    ]
+  },
+  "contributors": [],
+  "created": "2023-07-06T21:35:08+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "\nThe highlight block allows you to highlight and tease a single piece of content. The content is displayed with a large image and a title and description in a banderole.",
+  "effective": "2023-07-06T18:35:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "exportimport.versions": {},
+  "id": "highlight-block",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2023-09-30T07:01:03+00:00",
+  "nav_title": null,
+  "parent": {
+    "@id": "/block",
+    "@type": "Document",
+    "UID": "425695d2b7cb47e69374d6f211f17e38",
+    "description": "",
+    "image_field": null,
+    "image_scales": null,
+    "review_state": "published",
+    "title": "Blocks",
+    "type_title": "Page"
+  },
+  "preview_caption": null,
+  "preview_image": {
+    "blob_path": "8416628543f146ff9a18d281c03e2399/preview_image/black-starry-night.jpg",
+    "content-type": "image/jpeg",
+    "filename": "black-starry-night.jpg",
+    "height": 1708,
+    "size": 693013,
+    "width": 2400
+  },
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "Highlight",
+  "type_title": "Page",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2023-07-06T21:35:08+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2023-07-06T21:35:08+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

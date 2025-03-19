@@ -1,0 +1,545 @@
+{
+  "@id": "/vertical-spacing/highlight-and-text",
+  "@type": "Document",
+  "UID": "6a82ae8d8a434e019b404f4387fe1a42",
+  "allow_discussion": false,
+  "blocks": {
+    "429c0a28-cf90-4d4d-ad8a-acc904bf3070": {
+      "@type": "highlight",
+      "allow_image_download": true,
+      "alt": "",
+      "blurhash": "1.3398:L89aT~e:0MMcRln3MwSiZ~EQs6x]",
+      "button": true,
+      "buttonLink": [
+        {
+          "@id": "resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+          "@type": "Document",
+          "CreationDate": "2023-07-06T23:35:20+02:00",
+          "Creator": "admin",
+          "Date": "2023-07-06T18:35:00+02:00",
+          "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+          "EffectiveDate": "2023-07-06T18:35:00+02:00",
+          "ExpirationDate": "None",
+          "ModificationDate": "2023-09-22T16:25:49+02:00",
+          "Subject": [],
+          "Title": "Page",
+          "Type": "Page",
+          "UID": "7ab9c48ede33415fa2a66a99549c8f70",
+          "author_name": null,
+          "cmf_uid": null,
+          "commentators": [],
+          "created": "2023-07-06T21:35:20+00:00",
+          "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+          "effective": "2023-07-06T16:35:00+00:00",
+          "end": null,
+          "exclude_from_nav": false,
+          "expires": "2499-12-30T22:00:00+00:00",
+          "getIcon": null,
+          "getId": "page",
+          "getObjSize": "676.8 KB",
+          "getPath": "/Plone/content-types/page",
+          "getRemoteUrl": null,
+          "getURL": "http://localhost:8080/Plone/content-types/page",
+          "hasPreviewImage": true,
+          "head_title": null,
+          "id": "page",
+          "image_field": "preview_image",
+          "image_scales": {
+            "preview_image": [
+              {
+                "content-type": "image/jpeg",
+                "download": "@@images/preview_image-2400-dd70655eae2a121e9b3d20b15d5292db.jpeg",
+                "filename": "black-starry-night.jpg",
+                "height": 1708,
+                "scales": {
+                  "great": {
+                    "download": "@@images/preview_image-1200-02d0687099bde73e5189270d53df7e22.jpeg",
+                    "height": 854,
+                    "width": 1200
+                  },
+                  "huge": {
+                    "download": "@@images/preview_image-1600-275bd418c80864fc5cc8b0b0c7f4a0a2.jpeg",
+                    "height": 1138,
+                    "width": 1600
+                  },
+                  "icon": {
+                    "download": "@@images/preview_image-32-848481d517c9091a765ccf7a6ef88277.jpeg",
+                    "height": 22,
+                    "width": 32
+                  },
+                  "large": {
+                    "download": "@@images/preview_image-800-255c17a5d39f4bb2d79c72d56934b342.jpeg",
+                    "height": 569,
+                    "width": 800
+                  },
+                  "larger": {
+                    "download": "@@images/preview_image-1000-661e34a155a000108788ca0d60f4b22c.jpeg",
+                    "height": 711,
+                    "width": 1000
+                  },
+                  "mini": {
+                    "download": "@@images/preview_image-200-614da3a8827dc90cb92618ada1980504.jpeg",
+                    "height": 142,
+                    "width": 200
+                  },
+                  "preview": {
+                    "download": "@@images/preview_image-400-bf2a5268ec239c40c54556e7f48b1cf6.jpeg",
+                    "height": 284,
+                    "width": 400
+                  },
+                  "teaser": {
+                    "download": "@@images/preview_image-600-b1f4235a88cb99bd1c5ab3dceaf953ee.jpeg",
+                    "height": 427,
+                    "width": 600
+                  },
+                  "thumb": {
+                    "download": "@@images/preview_image-128-80ae3135a04405512335f90c8ce4cb3e.jpeg",
+                    "height": 91,
+                    "width": 128
+                  },
+                  "tile": {
+                    "download": "@@images/preview_image-64-fbe446c415c4dbcbca8b81c451ee4659.jpeg",
+                    "height": 45,
+                    "width": 64
+                  }
+                },
+                "size": 693013,
+                "width": 2400
+              }
+            ]
+          },
+          "in_response_to": null,
+          "is_folderish": true,
+          "last_comment_date": null,
+          "listCreators": [
+            "admin"
+          ],
+          "location": null,
+          "mime_type": "text/plain",
+          "modified": "2023-09-22T14:25:49+00:00",
+          "nav_title": null,
+          "portal_type": "Document",
+          "review_state": "published",
+          "start": null,
+          "sync_uid": null,
+          "title": "Page",
+          "total_comments": 0,
+          "type_title": "Page"
+        }
+      ],
+      "buttonText": "Mehr Infos",
+      "credit": {
+        "data": "<a href=\"/de/service/impressum\">DLR (CC BY-NC-ND 3.0)</a>"
+      },
+      "description_color": "blue3",
+      "image_field": "image",
+      "image_scales": {
+        "image": [
+          {
+            "content-type": "image/jpeg",
+            "download": "@@images/image-1126-7b90bd2f737fb08f5e2c5719f2f8bc14.jpeg",
+            "filename": "image-light.jpg",
+            "height": 633,
+            "scales": {
+              "icon": {
+                "download": "@@images/image-32-5de0f24798404cddd70cc1d15b1213ba.jpeg",
+                "height": 17,
+                "width": 32
+              },
+              "large": {
+                "download": "@@images/image-800-728b0edae32e307d8123462b48fafeaa.jpeg",
+                "height": 449,
+                "width": 800
+              },
+              "larger": {
+                "download": "@@images/image-1000-19685fe0e43ca671a6f6a973c7d1f0f5.jpeg",
+                "height": 562,
+                "width": 1000
+              },
+              "mini": {
+                "download": "@@images/image-200-cfd42d570345d1134d9b2d0f5726bb2e.jpeg",
+                "height": 112,
+                "width": 200
+              },
+              "preview": {
+                "download": "@@images/image-400-a35b24fd0dbe867083f962cf69f19c2a.jpeg",
+                "height": 224,
+                "width": 400
+              },
+              "teaser": {
+                "download": "@@images/image-600-702ac2045d4ca6fc61c52749e8c2f24d.jpeg",
+                "height": 337,
+                "width": 600
+              },
+              "thumb": {
+                "download": "@@images/image-128-06fa281eabe3bbba6eea685ce60d08f1.jpeg",
+                "height": 71,
+                "width": 128
+              },
+              "tile": {
+                "download": "@@images/image-64-f0e777433e3a4227dab46fe8cac688a6.jpeg",
+                "height": 35,
+                "width": 64
+              }
+            },
+            "size": 475285,
+            "width": 1126
+          }
+        ]
+      },
+      "plaintext": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.",
+      "styles": {
+        "descriptionColor": "highlight-custom-color-3"
+      },
+      "title": "Highlight-Block",
+      "url": "resolveuid/eec82559bf3242a6be4d43bc2096f399",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "4974677f-f93a-41ba-9136-73c7b487754f": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.",
+      "styles": {
+        "backgroundColor": "grey"
+      },
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "94ef94a6-33af-47b4-a848-473d585b91dd": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "Grey variant",
+      "tag": "h2"
+    },
+    "a117798d-06a3-4c57-92a9-672f1ce5dc90": {
+      "@type": "highlight",
+      "allow_image_download": true,
+      "alt": "",
+      "blurhash": "1.3398:L89aT~e:0MMcRln3MwSiZ~EQs6x]",
+      "button": true,
+      "buttonLink": [
+        {
+          "@id": "/de/das-dlr",
+          "@type": "Document",
+          "CreationDate": "2022-05-31T17:16:44+02:00",
+          "Creator": "admin",
+          "Date": "2022-05-31T17:16:45+02:00",
+          "Description": "Das DLR ist das Forschungszentrum der Bundesrepublik Deutschland f\u00fcr Luft- und Raumfahrt. Wir betreiben Forschung und Entwicklung in Luftfahrt, Raumfahrt, Energie und Verkehr, Sicherheit und Digitalisierung. Die Deutsche Raumfahrtagentur im DLR ist im Auftrag der Bundesregierung f\u00fcr die Planung und Umsetzung der deutschen Raumfahrtaktivit\u00e4ten zust\u00e4ndig. Zwei DLR Projekttr\u00e4ger betreuen F\u00f6rderprogramme und unterst\u00fctzen den Wissenstransfer.",
+          "EffectiveDate": "2022-05-31T17:16:45+02:00",
+          "ExpirationDate": "None",
+          "Language": "de",
+          "ModificationDate": "2022-05-31T17:20:31+02:00",
+          "Subject": [],
+          "Title": "Das DLR",
+          "TranslationGroup": "0feca0b2e07945ee8c61c60ad49005cc",
+          "Type": "Seite",
+          "UID": "0835c0b72abf4c7aaf509b3b65b88ab5",
+          "academic": null,
+          "administrational_units": [],
+          "author_name": null,
+          "award_date_month": null,
+          "award_date_year": null,
+          "award_type": null,
+          "building": null,
+          "cmf_uid": 3,
+          "commentators": [],
+          "created": "2022-05-31T15:16:44+00:00",
+          "description": "Das DLR ist das Forschungszentrum der Bundesrepublik Deutschland f\u00fcr Luft- und Raumfahrt. Wir betreiben Forschung und Entwicklung in Luftfahrt, Raumfahrt, Energie und Verkehr, Sicherheit und Digitalisierung. Die Deutsche Raumfahrtagentur im DLR ist im Auftrag der Bundesregierung f\u00fcr die Planung und Umsetzung der deutschen Raumfahrtaktivit\u00e4ten zust\u00e4ndig. Zwei DLR Projekttr\u00e4ger betreuen F\u00f6rderprogramme und unterst\u00fctzen den Wissenstransfer.",
+          "detailed_description": null,
+          "effective": "2022-05-31T15:16:45+00:00",
+          "email": null,
+          "end": null,
+          "event_type": null,
+          "exclude_from_nav": false,
+          "expires": "2499-12-30T22:00:00+00:00",
+          "external_funding_provider_1": null,
+          "external_funding_provider_1_link": null,
+          "external_funding_provider_2": null,
+          "external_funding_provider_2_link": null,
+          "external_funding_provider_3": null,
+          "external_funding_provider_3_link": null,
+          "firstname": null,
+          "getIcon": true,
+          "getId": "das-dlr",
+          "getObjSize": "0 KB",
+          "getPath": "/Plone/de/das-dlr",
+          "getRemoteUrl": null,
+          "getURL": "http://localhost:3000/de/das-dlr",
+          "hasPreviewImage": false,
+          "head_title": null,
+          "id": "das-dlr",
+          "image_field": "image",
+          "in_response_to": null,
+          "institute": [],
+          "institutes": [],
+          "is_folderish": true,
+          "is_geschaeftsbereich_or_stabstelle": null,
+          "is_young_research_group": null,
+          "job_offer_category": null,
+          "job_offer_fingerprint": null,
+          "job_offer_institute": null,
+          "job_offer_location": null,
+          "job_offer_target_group": null,
+          "last_comment_date": null,
+          "listCreators": [
+            "admin"
+          ],
+          "location": null,
+          "member_fullnames": null,
+          "member_source": null,
+          "members": [],
+          "mime_type": "text/plain",
+          "modified": "2022-05-31T15:20:31+00:00",
+          "name": null,
+          "nav_title": null,
+          "phone": null,
+          "portal_type": "Document",
+          "positions": null,
+          "project_end_month": null,
+          "project_end_year": null,
+          "project_start_month": null,
+          "project_start_year": null,
+          "project_type": null,
+          "research_group": [],
+          "research_topics": [],
+          "review_state": "published",
+          "rights": "",
+          "room": null,
+          "show_navigation_portlet": false,
+          "sort_id": 1,
+          "start": null,
+          "sync_uid": null,
+          "title": "Das DLR",
+          "topic": [],
+          "total_comments": 0,
+          "website_link": null,
+          "year": "2022"
+        }
+      ],
+      "buttonText": "Mehr Infos",
+      "credit": {
+        "data": "<a href=\"/de/service/impressum\">DLR (CC BY-NC-ND 3.0)</a>"
+      },
+      "description_color": "blue3",
+      "image_field": "image",
+      "image_scales": {
+        "image": [
+          {
+            "content-type": "image/jpeg",
+            "download": "@@images/image-2400-59ba0e28b8fb813be7e18935e5f63a59.jpeg",
+            "filename": "black-starry-night.jpg",
+            "height": 1708,
+            "scales": {
+              "great": {
+                "download": "@@images/image-1200-7cca3b5b9ba61195f9190c32b3a54ec9.jpeg",
+                "height": 854,
+                "width": 1200
+              },
+              "huge": {
+                "download": "@@images/image-1600-6ff92f1800f77515dde1be81b0fdd72a.jpeg",
+                "height": 1138,
+                "width": 1600
+              },
+              "icon": {
+                "download": "@@images/image-32-2a46e7a6b76a8db3a7941215c4de8a01.jpeg",
+                "height": 22,
+                "width": 32
+              },
+              "large": {
+                "download": "@@images/image-800-3a7c82cae430c36e707b83909a496b32.jpeg",
+                "height": 569,
+                "width": 800
+              },
+              "larger": {
+                "download": "@@images/image-1000-f4a4c8b8e8e5ffebfbdbcff0115bfc09.jpeg",
+                "height": 711,
+                "width": 1000
+              },
+              "mini": {
+                "download": "@@images/image-200-3bdc6d1e0c48ce4430f75a4ac55b939e.jpeg",
+                "height": 142,
+                "width": 200
+              },
+              "preview": {
+                "download": "@@images/image-400-71bf22b0c5006001209fc8fadb40b10a.jpeg",
+                "height": 284,
+                "width": 400
+              },
+              "teaser": {
+                "download": "@@images/image-600-75bdd455dcec596851abe1b072dc76fe.jpeg",
+                "height": 427,
+                "width": 600
+              },
+              "thumb": {
+                "download": "@@images/image-128-fc31735ade965dca8ce6946f7746c583.jpeg",
+                "height": 91,
+                "width": 128
+              },
+              "tile": {
+                "download": "@@images/image-64-598079775de66e3ee3d5a51362938e1a.jpeg",
+                "height": 45,
+                "width": 64
+              }
+            },
+            "size": 693013,
+            "width": 2400
+          }
+        ]
+      },
+      "plaintext": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.",
+      "styles": {
+        "descriptionColor": "highlight-custom-color-2"
+      },
+      "title": "Highlight-Block",
+      "url": "resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "c006d4d9-ccbc-43f2-938c-af4d091defed": {
+      "@type": "slate",
+      "plaintext": "",
+      "styles": {},
+      "value": [
+        {
+          "children": [
+            {
+              "text": ""
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "c9a5a276-8e30-4cec-b5e2-d1c2c29d130c": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "d73dd331-8c5b-4719-85b5-db5039fb938e": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.",
+      "styles": {
+        "backgroundColor": "grey"
+      },
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "eb96fbff-47dd-498b-8bd3-2ec5097ce673": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "eb96fbff-47dd-498b-8bd3-2ec5097ce673",
+      "a117798d-06a3-4c57-92a9-672f1ce5dc90",
+      "c9a5a276-8e30-4cec-b5e2-d1c2c29d130c",
+      "94ef94a6-33af-47b4-a848-473d585b91dd",
+      "c006d4d9-ccbc-43f2-938c-af4d091defed",
+      "429c0a28-cf90-4d4d-ad8a-acc904bf3070",
+      "4974677f-f93a-41ba-9136-73c7b487754f",
+      "d73dd331-8c5b-4719-85b5-db5039fb938e"
+    ]
+  },
+  "contributors": [],
+  "created": "2023-07-06T21:35:23+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2023-07-06T18:35:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "exportimport.versions": {},
+  "id": "highlight-and-text",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2023-09-30T06:56:05+00:00",
+  "nav_title": null,
+  "parent": {
+    "@id": "/vertical-spacing",
+    "@type": "Document",
+    "UID": "c40a2be214b645338a7ef2e711e2f5c6",
+    "description": "",
+    "image_field": null,
+    "image_scales": null,
+    "review_state": "published",
+    "title": "Vertical Spacing",
+    "type_title": "Page"
+  },
+  "preview_caption": null,
+  "preview_image": null,
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "Highlight and Text",
+  "type_title": "Page",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2023-07-06T21:35:23+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2023-07-06T21:35:23+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}
