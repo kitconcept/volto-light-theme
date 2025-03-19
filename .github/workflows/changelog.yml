@@ -8,10 +8,64 @@ on:
 env:
   NODE_VERSION: 22.x
   ADDON_NAME: volto-light-theme
+  BASE_BRANCH: main
 
 jobs:
-  build:
+  config:
     runs-on: ubuntu-latest
+    outputs:
+      backend: ${{ steps.filter.outputs.backend }}
+      frontend: ${{ steps.filter.outputs.frontend }}
+      repository: ${{ steps.filter.outputs.repository }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - uses: dorny/paths-filter@v3.0.2
+        id: filter
+        with:
+          filters: |
+            backend:
+              - 'backend/**'
+            repository:
+              - '.github/**'
+              - '.devops/**'
+              - '.docs/**'
+              - '.vscode/**'
+            frontend:
+              - 'frontend/**'
+
+  backend:
+    if: ${{ needs.config.outputs.backend == 'true' }}
+    runs-on: ubuntu-latest
+    needs:
+      - config
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Fetch all history
+          fetch-depth: '0'
+
+      - name: Install pipx
+        run: pip install towncrier
+
+      - name: Check for presence of a Change Log fragment (only pull requests)
+        if: github.event_name == 'pull_request'
+        run: |
+          # Fetch the pull request' base branch so towncrier will be able to
+          # compare the current branch with the base branch.
+          # Source: https://github.com/actions/checkout/#fetch-all-branches.
+          git fetch --no-tags origin ${BASE_BRANCH}
+          towncrier check  --compare-with origin/${{ env.BASE_BRANCH }} --config backend/pyproject.toml --dir backend/
+
+  frontend:
+    if: ${{ needs.config.outputs.frontend == 'true' }}
+    runs-on: ubuntu-latest
+    needs:
+      - config
+    defaults:
+      run:
+        working-directory: ./frontend
     steps:
       - uses: actions/checkout@v4
         with:
@@ -46,12 +100,34 @@ jobs:
         run: make install
 
       - name: Check for presence of a Change Log fragment (only pull requests)
+        if: github.event_name == 'pull_request'
         run: |
           # Fetch the pull request' base branch so towncrier will be able to
           # compare the current branch with the base branch.
           # Source: https://github.com/actions/checkout/#fetch-all-branches.
           git fetch --no-tags origin ${BASE_BRANCH}
-          towncrier check --dir packages/${ADDON_NAME}
-        env:
-          BASE_BRANCH: ${{ github.base_ref }}
+          cd ..
+          towncrier check --compare-with origin/${{ env.BASE_BRANCH }} --config frontend/packages/${{ env.ADDON_NAME }}/towncrier.toml --dir frontend/packages/${{ env.ADDON_NAME }}
+
+  repository:
+    if: ${{ needs.config.outputs.repository == 'true' }}
+    runs-on: ubuntu-latest
+    needs:
+      - config
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Fetch all history
+          fetch-depth: '0'
+
+      - name: Install pipx
+        run: pip install towncrier
+
+      - name: Check for presence of a Change Log fragment (only pull requests)
         if: github.event_name == 'pull_request'
+        run: |
+          # Fetch the pull request' base branch so towncrier will be able to
+          # compare the current branch with the base branch.
+          # Source: https://github.com/actions/checkout/#fetch-all-branches.
+          git fetch --no-tags origin ${BASE_BRANCH}
+          towncrier check  --compare-with origin/${{ env.BASE_BRANCH }} --config towncrier.toml --dir .

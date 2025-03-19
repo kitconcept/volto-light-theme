@@ -1,0 +1,30 @@
+[repository]
+name = "Volto Light Theme"
+managed_by_uv = false
+changelog = "CHANGELOG.md"
+version = "version.txt"
+compose = "docker-compose.yml"
+
+[repository.towncrier]
+section = "Project"
+settings = "towncrier.toml"
+
+[backend]
+path = "backend"
+
+[backend.package]
+name = "kitconcept.voltolighttheme"
+path = "backend"
+changelog = "backend/CHANGELOG.md"
+towncrier_settings = "backend/pyproject.toml"
+publish = true
+
+[frontend]
+path = "frontend"
+
+[frontend.package]
+name = "@kitconcept/volto-light-theme"
+path = "frontend/packages/volto-light-theme"
+changelog = "frontend/packages/volto-light-theme/CHANGELOG.md"
+towncrier_settings = "frontend/packages/volto-light-theme/towncrier.toml"
+publish = true

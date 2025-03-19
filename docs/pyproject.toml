@@ -1,0 +1,15 @@
+[project]
+name = "voltolighttheme-docs"
+version = "1.0.0"
+description = "Volto Light Theme documentation"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "linkify-it-py",
+    "myst-parser",
+    "plone-sphinx-theme",
+    "sphinx-autobuild",
+    "sphinx-copybutton",
+    "sphinx-design",
+    "sphinxext-opengraph",
+]

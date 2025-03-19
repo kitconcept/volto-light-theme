@@ -1,0 +1,52 @@
+name: Backend Test Coverage
+
+on:
+  workflow_call:
+    inputs:
+      python-version:
+        required: true
+        type: string
+      plone-version:
+        required: true
+        type: string
+
+defaults:
+  run:
+    working-directory: backend
+
+env:
+  PLONE_VERSION: ${{ inputs.plone-version }}
+
+jobs:
+
+  coverage:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+
+        - name: Install the latest version of uv
+          uses: astral-sh/setup-uv@v5
+          with:
+            python-version: ${{ inputs.python-version }}
+            enable-cache: false
+
+        - name: Restore uv cache
+          uses: actions/cache@v4
+          with:
+            path: /tmp/.uv-cache
+            key: uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.plone-version }}-${{ hashFiles('pyproject.toml') }}
+            restore-keys: |
+              uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.plone-version }}-${{ hashFiles('pyproject.toml') }}
+              uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.plone-version }}
+
+        - name: Install Plone and package
+          run: make install
+
+        - name: Run tests
+          run: make test-coverage
+
+        - name: Report Coverage
+          run: |
+            echo "# Coverage Report" >> $GITHUB_STEP_SUMMARY
+            echo "$(uv run coverage report --format markdown)" >> $GITHUB_STEP_SUMMARY

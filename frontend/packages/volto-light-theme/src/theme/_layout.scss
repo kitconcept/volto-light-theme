@@ -1,0 +1,467 @@
+:root {
+  --layout-container-width: #{$layout-container-width};
+  --default-container-width: #{$default-container-width};
+  --narrow-container-width: #{$narrow-container-width};
+
+  --align-right: end;
+  --align-left: start;
+  --align-center: center;
+}
+
+@mixin narrow-container-width() {
+  max-width: var(--narrow-container-width);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin default-container-width() {
+  max-width: var(--default-container-width);
+  margin-right: auto;
+  margin-left: auto;
+
+  // This is mostly cosmetics if you don't want to "see" the jump
+  // but a nice animation instead - PoC (WIP)
+  // @media only screen and (max-width: #{$default-container-width + 5px}) {
+  //   margin-right: 5px;
+  //   margin-left: 5px;
+  // }
+}
+
+@mixin layout-container-width() {
+  max-width: var(--layout-container-width);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin variable-container-width() {
+  max-width: var(--block-width, --layout-container-width);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+// One still cannot use CSS custom properties directly on @container queries
+@mixin adjustMarginsToContainer($width) {
+  @container (max-width: #{$width + 2 * $horizontal-space-small-screens}) {
+    margin-right: $horizontal-space-small-screens;
+    margin-left: $horizontal-space-small-screens;
+  }
+}
+
+@mixin adjustMarginsToEditContainer($width) {
+  @container (max-width: #{$width + 2 * $spacing-medium}) {
+    margin-right: $spacing-medium;
+    margin-left: $spacing-medium;
+  }
+}
+
+// Container adjustments for dealing correctly with absolute positioned elements
+@mixin container-preference-order($zindex) {
+  position: relative;
+  z-index: $zindex;
+}
+
+// RAC Popovers have problems with SemanticUI CSS in the BODY tag
+// SemanticUI by default uses `overflow-x: hidden`.
+// TODO: Remove when https://github.com/plone/volto/pull/6513 is merged and released.
+body {
+  overflow-x: initial;
+}
+
+// This helps not to have a little layout shift when the RAC Popovers are shown.
+html[style*='padding-right'] .sidebar-container {
+  margin-right: 15px;
+}
+
+// Set desktop flex direction starting at largest-mobile-screen to prevent layout from breaking at 768px with expanded toolbar.
+body {
+  @media only screen and (min-width: $largest-mobile-screen) {
+    flex-direction: row;
+  }
+}
+
+// We expect initially three main containers
+.header-wrapper {
+  // This is the pusher for the header under 1440px so over that is tight to the border
+  padding: 0 1em;
+
+  .q.container,
+  .a.container {
+    @include container-preference-order(12);
+  }
+}
+
+.content-area {
+  .q.container,
+  .a.container {
+    @include container-preference-order(10);
+  }
+}
+
+footer {
+  .q.container,
+  .a.container {
+    @include container-preference-order(8);
+  }
+}
+
+// If using popperjs, we need also to set preference too to the
+// popperjs container. The sidebar container has 150, so it has to be higher.
+[data-popper-placement] {
+  @include container-preference-order(200);
+}
+
+// Container widths for configurable via block styling wrapper
+// TODO: consider renaming "align" property to something more meaningful
+.has--align--center {
+  @include narrow-container-width();
+}
+
+.has--align--wide {
+  @include default-container-width();
+}
+
+.has--align--full {
+  @include layout-container-width();
+}
+
+// Container definitions for elements
+#page-document .blocks-group-wrapper > * {
+  @include layout-container-width();
+}
+
+#page-history > * {
+  @include layout-container-width();
+}
+
+#page-contents > * {
+  @include layout-container-width();
+}
+
+.header-wrapper .header {
+  @include layout-container-width();
+  // @include adjustMarginsToContainer($layout-container-width);
+}
+
+.breadcrumbs .breadcrumb {
+  @include default-container-width();
+  @include adjustMarginsToContainer($default-container-width);
+}
+// External link Styling
+
+// Slate Style External Links
+.content-area .ui.container,
+.content-area .q.container,
+.content-area .a.container {
+  a.external:after,
+  a.external:after {
+    @include external-link-icon();
+    margin-top: -25px;
+    margin-left: 3px;
+  }
+}
+.content-area #page-edit .ui.container,
+.content-area .q.container,
+.content-area .a.container {
+  a.external:after,
+  a.external:after {
+    @include external-link-icon();
+    margin-top: -25px;
+    margin-left: 3px;
+  }
+}
+
+/*
+External link removal for all the blocks.
+*/
+.content-area #page-edit .ui.container,
+.content-area .q.container,
+.content-area .a.container {
+  .block.button,
+  .block.listing,
+  .block.image,
+  .block.teaser {
+    a.external:after,
+    a.external:after {
+      display: none;
+    }
+  }
+}
+
+// Content Layout Styling
+#page-document .blocks-group-wrapper {
+  & > h2,
+  & > h3,
+  & > h4,
+  & > h5,
+  & > h6,
+  & > ul,
+  & > ol,
+  & > li,
+  & > p,
+  & > span,
+  & > blockquote,
+  & > .block.image.align.left.medium,
+  & > .block.image.align.left.small,
+  & > .block.image.align.right.medium,
+  & > .block.video.align.left,
+  & > .block.video.align.right,
+  & > .block.maps.align.left,
+  & > .block.maps.align.right,
+  & > .block.image.align.right.small,
+  & > .block.video.align.center .video-inner,
+  & > .block.maps.align.center .maps-inner,
+  .download-event,
+  .block.separator.has--align--left .line,
+  .block.separator.has--align--center .line,
+  & > pre,
+  & > .block.code {
+    @include narrow-container-width();
+    // Why was this for? Removing for now (Victor: 2023-07-06)
+    // @include adjustMarginsToContainer($narrow-container-width + 2 * 36px);
+    @include adjustMarginsToContainer($narrow-container-width);
+  }
+
+  & > h1.documentFirstHeading,
+  & > .block.image.align.left,
+  & > .block.image.align.right,
+  & > .block.image.align.center,
+  & > .block.image.align.wide figure,
+  & > .block.video.align.left,
+  & > .block.video.align.right,
+  & > .block.maps.align.left,
+  & > .block.maps.align.right,
+  & > .block.video.align.wide .video-inner,
+  & > .block.maps.align.wide .maps-inner,
+  & > .block.__button,
+  & > .block.eventMetadata .details-container,
+  & > .block.listing .listing-item,
+  & > .block.listing .emptyListing,
+  & > .block.listing .image-gallery,
+  & > .block.listing.grid,
+  & > .block.search.grid,
+  & > .block.search .searchBlock-container,
+  & > .block h2.headline,
+  & > .block.heading .heading-wrapper,
+  & > .block.teaser .teaser-item.default,
+  & > .block.highlight .teaser-description-title,
+  & > table,
+  & > .table-of-contents,
+  & > .accordion-block,
+  & > .slate blockquote {
+    @include default-container-width();
+    @include adjustMarginsToContainer($default-container-width);
+  }
+
+  & > .block.teaser,
+  & > .block.image.align.full,
+  & > .block.video.align.full,
+  & > .block.maps.align.full {
+    @include layout-container-width();
+  }
+
+  /* Styling align left and right in mobile view */
+  .block.video.align.right .video-inner,
+  .block.video.align.left .video-inner,
+  .block.maps.align.right iframe,
+  .block.maps.align.left iframe {
+    @container (max-width: #{$largest-mobile-screen}) {
+      width: 100%;
+    }
+  }
+
+  & > h1.documentFirstHeading {
+    @include adjustMarginsToContainer($default-container-width);
+  }
+
+  & > .block {
+    // This is the default spacing in between same-color blocks
+    margin-bottom: $block-vertical-space;
+
+    // Default side margins on smaller screens
+    &.has--block-width--narrow {
+      @include adjustMarginsToContainer($narrow-container-width);
+    }
+
+    &:not(.highlight, .teaser, .gridBlock, .slider).has--block-width--default {
+      @include adjustMarginsToContainer($default-container-width);
+    }
+
+    &.has--block-width--layout {
+      @include adjustMarginsToContainer($layout-container-width);
+    }
+  }
+
+  &:last-child {
+    margin-bottom: -1rem !important;
+  }
+}
+
+// Setting a default, for all blocks
+// We want all blocks in edit go layout by default
+// But block's inner containers can go less (eg. grid)
+// Excluding the contained (blocks in block) ones
+#page-add,
+#page-edit {
+  [class*='block-editor-']:not(.contained) {
+    @include layout-container-width();
+    @include adjustMarginsToEditContainer($layout-container-width);
+  }
+}
+
+// Add/Edit views
+#page-add,
+#page-edit {
+  .block.slate .slate-editor,
+  .block-editor-image.left.medium,
+  .block-editor-image.left.small,
+  .block-editor-image.right.medium,
+  .block-editor-image.right.small,
+  .block-editor-video.align.left,
+  .block-editor-video.align.right,
+  .block-editor-video.center .video-inner,
+  .block.maps.align.center .maps-inner,
+  .block-editor-separator.has--align--left
+    .block.separator.inner
+    .block.separator
+    .block.separator
+    .line,
+  .block-editor-separator.has--align--center
+    .block.separator.inner
+    .block.separator
+    .block.separator
+    .line,
+  .block-editor-codeBlock,
+  .block-editor-mermaidBlock,
+  .block-editor-description .documentDescription {
+    @include narrow-container-width();
+    @include adjustMarginsToEditContainer($narrow-container-width);
+  }
+
+  .block-editor-title h1,
+  .block-editor-image.left.large,
+  .block-editor-image.right.large,
+  .block-editor-image.wide figure, // Wide images are always large
+  .block-editor-image.wide.large figure,
+  .block-editor-video.align.left,
+  .block-editor-video.align.right,
+  .block.maps.align.left,
+  .block.maps.align.right,
+  .block.video.align.wide .video-inner,
+  .block.maps.align.wide .maps-inner,
+
+  .block.introduction .slate-editor,
+  .block.heading .heading-wrapper,
+  .block-editor-listing .items,
+  .block-editor-listing .listing.message,
+  .block-editor-search .searchBlock-container,
+  .block.teaser.has--align--center,
+  .block.eventMetadata .details-container,
+  .block-editor-teaser .teaser-item.default,
+  .block-editor-slateTable .block.table,
+  .block-editor-highlight .teaser-description-title,
+  .block-editor-toc .table-of-contents {
+    @include default-container-width();
+    @include adjustMarginsToEditContainer($default-container-width);
+  }
+
+  .block-editor-slate,
+  .block-editor-image,
+  .block-editor-slider,
+  .block-editor-teaser,
+  .block-editor-separator.has--align--left {
+    @include layout-container-width();
+    @include adjustMarginsToEditContainer($layout-container-width);
+  }
+
+  /* Styling align left and right in mobile view */
+  .block.video.align.right .video-inner,
+  .block.video.align.left .video-inner {
+    @container (max-width: #{$largest-mobile-screen}) {
+      width: 100%;
+    }
+  }
+}
+
+// Grids adjustments (has to be paired with collections/grid.variables)
+// TODO: Move to our own grid component
+.block.__grid .ui.stackable,
+.block.__grid h2.headline,
+.block.gridBlock .ui.stackable,
+.block.gridBlock .grid-items,
+.block.gridBlock h2.headline {
+  @include default-container-width();
+  // Adding 2 * 10px (one for each side) we force the container to extend the value of
+  // the gutter to match the other blocks margin.
+  max-width: calc(var(--default-container-width) + 2 * 10px);
+}
+
+// Custom adjustMarginsToContainer() for grids
+// $default-container-width + 2 * 20px to compensate the width of the gutter on each side
+// (2 * (10px from the margin + 10px from the inner padding of the column))
+// It's a media query because we have to cancel the one imposed by SemanticUI Grid
+@media only screen and (max-width: $default-container-width + 2 * 20px) {
+  .block.gridBlock {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+}
+
+// We have to adjust the inner headings also because of the extra margin added in the
+// above rule
+#page-document .blocks-group-wrapper > .block h2.headline {
+  @container (max-width: #{$default-container-width + 2 * 20px}) {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+}
+
+// Fix for Image Grid with only one image
+#page-document .block.gridBlock .block.image.align.center figure,
+#page-document .block.gridBlock .block.image.align.center figure {
+  max-width: unset;
+}
+
+// handlers adjustments
+body.has-toolbar.has-sidebar .drag.handle.wrapper {
+  margin-left: -30px !important;
+}
+
+body.has-toolbar.has-sidebar .block .ui.basic.button.delete-button {
+  margin-right: -30px !important;
+}
+
+// Listings edge case, conflicting with Pastanaga CSS
+.listing-item {
+  width: initial;
+}
+
+#page-add,
+#page-edit,
+#page-document {
+  img {
+    object-position: center;
+  }
+}
+
+#page-add,
+#page-edit {
+  .block-editor-accordion {
+    [class*='block-editor-'] {
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+}
+
+// Create content page form
+#page-add,
+#page-edit {
+  > .container {
+    > .ui.form {
+      margin-top: $spacing-small;
+      @include default-container-width();
+    }
+  }
+}
+
+@import 'bgcolor-blocks-layout';

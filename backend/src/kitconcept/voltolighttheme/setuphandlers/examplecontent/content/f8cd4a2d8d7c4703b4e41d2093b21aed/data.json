@@ -1,0 +1,3411 @@
+{
+  "@id": "/block/block-accordion",
+  "@type": "Document",
+  "UID": "f8cd4a2d8d7c4703b4e41d2093b21aed",
+  "allow_discussion": false,
+  "blocks": {
+    "41a82a93-c00c-4a40-bac8-53a3e3420c8e": {
+      "@type": "accordion",
+      "collapsed": false,
+      "data": {
+        "blocks": {
+          "262a2478-3a63-445a-aab7-edf55cceebcf": {
+            "@type": "accordionPanel",
+            "blocks": {
+              "c9580c7a-ab67-44f7-8532-59a4ba9fd846": {
+                "@type": "listing",
+                "headlineTag": "h2",
+                "querystring": {
+                  "limit": "3",
+                  "query": [
+                    {
+                      "i": "Description",
+                      "o": "plone.app.querystring.operation.string.contains",
+                      "v": "block"
+                    }
+                  ],
+                  "sort_order": "descending",
+                  "sort_order_boolean": true
+                },
+                "styles": {},
+                "variation": "summary"
+              }
+            },
+            "blocks_layout": {
+              "items": [
+                "c9580c7a-ab67-44f7-8532-59a4ba9fd846"
+              ]
+            },
+            "title": "Accordion with listing"
+          },
+          "b58c92b4-6604-4408-9039-a147965fa4bd": {
+            "@type": "accordionPanel",
+            "blocks": {
+              "1b91cfac-d8a1-4327-9896-e8e3ee7a9c03": {
+                "@type": "teaser",
+                "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper ",
+                "head_title": null,
+                "href": [
+                  {
+                    "@id": "/content-types/image-light",
+                    "@type": "Image",
+                    "Description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+                    "Title": "Image - Light",
+                    "getRemoteUrl": null,
+                    "hasPreviewImage": null,
+                    "head_title": null,
+                    "image_field": "image",
+                    "image_scales": {
+                      "image": [
+                        {
+                          "content-type": "image/jpeg",
+                          "download": "@@images/image-1126-7b90bd2f737fb08f5e2c5719f2f8bc14.jpeg",
+                          "filename": "image-light.jpg",
+                          "height": 633,
+                          "scales": {
+                            "icon": {
+                              "download": "@@images/image-32-5de0f24798404cddd70cc1d15b1213ba.jpeg",
+                              "height": 17,
+                              "width": 32
+                            },
+                            "large": {
+                              "download": "@@images/image-800-728b0edae32e307d8123462b48fafeaa.jpeg",
+                              "height": 449,
+                              "width": 800
+                            },
+                            "larger": {
+                              "download": "@@images/image-1000-19685fe0e43ca671a6f6a973c7d1f0f5.jpeg",
+                              "height": 562,
+                              "width": 1000
+                            },
+                            "mini": {
+                              "download": "@@images/image-200-cfd42d570345d1134d9b2d0f5726bb2e.jpeg",
+                              "height": 112,
+                              "width": 200
+                            },
+                            "preview": {
+                              "download": "@@images/image-400-a35b24fd0dbe867083f962cf69f19c2a.jpeg",
+                              "height": 224,
+                              "width": 400
+                            },
+                            "teaser": {
+                              "download": "@@images/image-600-702ac2045d4ca6fc61c52749e8c2f24d.jpeg",
+                              "height": 337,
+                              "width": 600
+                            },
+                            "thumb": {
+                              "download": "@@images/image-128-06fa281eabe3bbba6eea685ce60d08f1.jpeg",
+                              "height": 71,
+                              "width": 128
+                            },
+                            "tile": {
+                              "download": "@@images/image-64-f0e777433e3a4227dab46fe8cac688a6.jpeg",
+                              "height": 35,
+                              "width": 64
+                            }
+                          },
+                          "size": 475285,
+                          "width": 1126
+                        }
+                      ]
+                    },
+                    "title": "Image - Light"
+                  }
+                ],
+                "styles": {
+                  "align": "left"
+                },
+                "title": "Teaser Title H2"
+              },
+              "2b7a6783-7323-4fbd-b0a1-3d304b8a526a": {
+                "@type": "teaser",
+                "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper ",
+                "head_title": null,
+                "href": [
+                  {
+                    "@id": "resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+                    "@type": "Document",
+                    "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+                    "Title": "Page",
+                    "getRemoteUrl": null,
+                    "hasPreviewImage": true,
+                    "head_title": null,
+                    "image_field": "preview_image",
+                    "image_scales": {
+                      "preview_image": [
+                        {
+                          "content-type": "image/jpeg",
+                          "download": "@@images/preview_image-2400-dd70655eae2a121e9b3d20b15d5292db.jpeg",
+                          "filename": "black-starry-night.jpg",
+                          "height": 1708,
+                          "scales": {
+                            "great": {
+                              "download": "@@images/preview_image-1200-02d0687099bde73e5189270d53df7e22.jpeg",
+                              "height": 854,
+                              "width": 1200
+                            },
+                            "huge": {
+                              "download": "@@images/preview_image-1600-275bd418c80864fc5cc8b0b0c7f4a0a2.jpeg",
+                              "height": 1138,
+                              "width": 1600
+                            },
+                            "icon": {
+                              "download": "@@images/preview_image-32-848481d517c9091a765ccf7a6ef88277.jpeg",
+                              "height": 22,
+                              "width": 32
+                            },
+                            "large": {
+                              "download": "@@images/preview_image-800-255c17a5d39f4bb2d79c72d56934b342.jpeg",
+                              "height": 569,
+                              "width": 800
+                            },
+                            "larger": {
+                              "download": "@@images/preview_image-1000-661e34a155a000108788ca0d60f4b22c.jpeg",
+                              "height": 711,
+                              "width": 1000
+                            },
+                            "mini": {
+                              "download": "@@images/preview_image-200-614da3a8827dc90cb92618ada1980504.jpeg",
+                              "height": 142,
+                              "width": 200
+                            },
+                            "preview": {
+                              "download": "@@images/preview_image-400-bf2a5268ec239c40c54556e7f48b1cf6.jpeg",
+                              "height": 284,
+                              "width": 400
+                            },
+                            "teaser": {
+                              "download": "@@images/preview_image-600-b1f4235a88cb99bd1c5ab3dceaf953ee.jpeg",
+                              "height": 427,
+                              "width": 600
+                            },
+                            "thumb": {
+                              "download": "@@images/preview_image-128-80ae3135a04405512335f90c8ce4cb3e.jpeg",
+                              "height": 91,
+                              "width": 128
+                            },
+                            "tile": {
+                              "download": "@@images/preview_image-64-fbe446c415c4dbcbca8b81c451ee4659.jpeg",
+                              "height": 45,
+                              "width": 64
+                            }
+                          },
+                          "size": 693013,
+                          "width": 2400
+                        }
+                      ]
+                    },
+                    "title": "Page"
+                  }
+                ],
+                "styles": {
+                  "align": "right"
+                },
+                "title": "Teaser Title H2"
+              },
+              "eb600a9b-7400-4b4e-bb40-70ddb6911749": {
+                "@type": "teaser",
+                "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo",
+                "head_title": null,
+                "href": [
+                  {
+                    "@id": "resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+                    "@type": "Document",
+                    "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+                    "Title": "Page",
+                    "getRemoteUrl": null,
+                    "hasPreviewImage": true,
+                    "head_title": null,
+                    "image_field": "preview_image",
+                    "image_scales": {
+                      "preview_image": [
+                        {
+                          "content-type": "image/jpeg",
+                          "download": "@@images/preview_image-2400-dd70655eae2a121e9b3d20b15d5292db.jpeg",
+                          "filename": "black-starry-night.jpg",
+                          "height": 1708,
+                          "scales": {
+                            "great": {
+                              "download": "@@images/preview_image-1200-02d0687099bde73e5189270d53df7e22.jpeg",
+                              "height": 854,
+                              "width": 1200
+                            },
+                            "huge": {
+                              "download": "@@images/preview_image-1600-275bd418c80864fc5cc8b0b0c7f4a0a2.jpeg",
+                              "height": 1138,
+                              "width": 1600
+                            },
+                            "icon": {
+                              "download": "@@images/preview_image-32-848481d517c9091a765ccf7a6ef88277.jpeg",
+                              "height": 22,
+                              "width": 32
+                            },
+                            "large": {
+                              "download": "@@images/preview_image-800-255c17a5d39f4bb2d79c72d56934b342.jpeg",
+                              "height": 569,
+                              "width": 800
+                            },
+                            "larger": {
+                              "download": "@@images/preview_image-1000-661e34a155a000108788ca0d60f4b22c.jpeg",
+                              "height": 711,
+                              "width": 1000
+                            },
+                            "mini": {
+                              "download": "@@images/preview_image-200-614da3a8827dc90cb92618ada1980504.jpeg",
+                              "height": 142,
+                              "width": 200
+                            },
+                            "preview": {
+                              "download": "@@images/preview_image-400-bf2a5268ec239c40c54556e7f48b1cf6.jpeg",
+                              "height": 284,
+                              "width": 400
+                            },
+                            "teaser": {
+                              "download": "@@images/preview_image-600-b1f4235a88cb99bd1c5ab3dceaf953ee.jpeg",
+                              "height": 427,
+                              "width": 600
+                            },
+                            "thumb": {
+                              "download": "@@images/preview_image-128-80ae3135a04405512335f90c8ce4cb3e.jpeg",
+                              "height": 91,
+                              "width": 128
+                            },
+                            "tile": {
+                              "download": "@@images/preview_image-64-fbe446c415c4dbcbca8b81c451ee4659.jpeg",
+                              "height": 45,
+                              "width": 64
+                            }
+                          },
+                          "size": 693013,
+                          "width": 2400
+                        }
+                      ]
+                    },
+                    "title": "Page"
+                  }
+                ],
+                "styles": {
+                  "align": "center"
+                },
+                "title": "Teaser Title H2"
+              }
+            },
+            "blocks_layout": {
+              "items": [
+                "eb600a9b-7400-4b4e-bb40-70ddb6911749",
+                "1b91cfac-d8a1-4327-9896-e8e3ee7a9c03",
+                "2b7a6783-7323-4fbd-b0a1-3d304b8a526a"
+              ]
+            },
+            "title": "Accordion with teaser"
+          },
+          "bc2c120e-51df-4c47-b4d0-5a11311d020d": {
+            "@type": "accordionPanel",
+            "blocks": {
+              "c85ec1d2-f371-4ed4-be65-8fa0a091b833": {
+                "@type": "slate",
+                "plaintext": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+                "styles": {},
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              }
+            },
+            "blocks_layout": {
+              "items": [
+                "c85ec1d2-f371-4ed4-be65-8fa0a091b833"
+              ]
+            },
+            "title": "Accordion with text"
+          },
+          "d2168440-888d-4081-8409-b59392abc189": {
+            "@type": "accordionPanel",
+            "blocks": {
+              "05ee41f0-e8b8-4181-a773-366ca209dbc8": {
+                "@type": "slate",
+                "plaintext": "Text Heading H3",
+                "styles": {},
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Text Heading H3"
+                      }
+                    ],
+                    "type": "h2"
+                  }
+                ]
+              },
+              "1060e842-2b14-43dc-9e43-c25022029a94": {
+                "@type": "image",
+                "align": "right",
+                "credit": {},
+                "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+                "image_field": "image",
+                "image_scales": {
+                  "image": [
+                    {
+                      "content-type": "image/jpeg",
+                      "download": "@@images/image-1126-7b90bd2f737fb08f5e2c5719f2f8bc14.jpeg",
+                      "filename": "image-light.jpg",
+                      "height": 633,
+                      "scales": {
+                        "icon": {
+                          "download": "@@images/image-32-5de0f24798404cddd70cc1d15b1213ba.jpeg",
+                          "height": 17,
+                          "width": 32
+                        },
+                        "large": {
+                          "download": "@@images/image-800-728b0edae32e307d8123462b48fafeaa.jpeg",
+                          "height": 449,
+                          "width": 800
+                        },
+                        "larger": {
+                          "download": "@@images/image-1000-19685fe0e43ca671a6f6a973c7d1f0f5.jpeg",
+                          "height": 562,
+                          "width": 1000
+                        },
+                        "mini": {
+                          "download": "@@images/image-200-cfd42d570345d1134d9b2d0f5726bb2e.jpeg",
+                          "height": 112,
+                          "width": 200
+                        },
+                        "preview": {
+                          "download": "@@images/image-400-a35b24fd0dbe867083f962cf69f19c2a.jpeg",
+                          "height": 224,
+                          "width": 400
+                        },
+                        "teaser": {
+                          "download": "@@images/image-600-702ac2045d4ca6fc61c52749e8c2f24d.jpeg",
+                          "height": 337,
+                          "width": 600
+                        },
+                        "thumb": {
+                          "download": "@@images/image-128-06fa281eabe3bbba6eea685ce60d08f1.jpeg",
+                          "height": 71,
+                          "width": 128
+                        },
+                        "tile": {
+                          "download": "@@images/image-64-f0e777433e3a4227dab46fe8cac688a6.jpeg",
+                          "height": 35,
+                          "width": 64
+                        }
+                      },
+                      "size": 475285,
+                      "width": 1126
+                    }
+                  ]
+                },
+                "size": "m",
+                "styles": {
+                  "size:noprefix": "medium"
+                },
+                "title": "Image - Light",
+                "url": "resolveuid/eec82559bf3242a6be4d43bc2096f399"
+              },
+              "11af3b59-7720-4875-b0b9-90be5807d476": {
+                "@type": "separator",
+                "styles": {
+                  "align": "left"
+                }
+              },
+              "1becedb6-65f6-4bee-9b36-5c38deaa4141": {
+                "@type": "slate",
+                "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+                "styles": {},
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "1da28f76-9d9c-4a98-af0b-2e8c7abc1c35": {
+                "@type": "separator",
+                "styles": {
+                  "align": "left"
+                }
+              },
+              "1eb2924b-8de0-4152-8ae0-50eb27c3fad8": {
+                "@type": "slate",
+                "plaintext": "Text Heading H3",
+                "styles": {},
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Text Heading H3"
+                      }
+                    ],
+                    "type": "h2"
+                  }
+                ]
+              },
+              "6e94c839-855c-43ff-92fa-a2f9dfac2bc9": {
+                "@type": "image",
+                "align": "center",
+                "credit": {},
+                "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+                "image_field": "image",
+                "image_scales": {
+                  "image": [
+                    {
+                      "content-type": "image/jpeg",
+                      "download": "@@images/image-2400-59ba0e28b8fb813be7e18935e5f63a59.jpeg",
+                      "filename": "black-starry-night.jpg",
+                      "height": 1708,
+                      "scales": {
+                        "great": {
+                          "download": "@@images/image-1200-7cca3b5b9ba61195f9190c32b3a54ec9.jpeg",
+                          "height": 854,
+                          "width": 1200
+                        },
+                        "huge": {
+                          "download": "@@images/image-1600-6ff92f1800f77515dde1be81b0fdd72a.jpeg",
+                          "height": 1138,
+                          "width": 1600
+                        },
+                        "icon": {
+                          "download": "@@images/image-32-2a46e7a6b76a8db3a7941215c4de8a01.jpeg",
+                          "height": 22,
+                          "width": 32
+                        },
+                        "large": {
+                          "download": "@@images/image-800-3a7c82cae430c36e707b83909a496b32.jpeg",
+                          "height": 569,
+                          "width": 800
+                        },
+                        "larger": {
+                          "download": "@@images/image-1000-f4a4c8b8e8e5ffebfbdbcff0115bfc09.jpeg",
+                          "height": 711,
+                          "width": 1000
+                        },
+                        "mini": {
+                          "download": "@@images/image-200-3bdc6d1e0c48ce4430f75a4ac55b939e.jpeg",
+                          "height": 142,
+                          "width": 200
+                        },
+                        "preview": {
+                          "download": "@@images/image-400-71bf22b0c5006001209fc8fadb40b10a.jpeg",
+                          "height": 284,
+                          "width": 400
+                        },
+                        "teaser": {
+                          "download": "@@images/image-600-75bdd455dcec596851abe1b072dc76fe.jpeg",
+                          "height": 427,
+                          "width": 600
+                        },
+                        "thumb": {
+                          "download": "@@images/image-128-fc31735ade965dca8ce6946f7746c583.jpeg",
+                          "height": 91,
+                          "width": 128
+                        },
+                        "tile": {
+                          "download": "@@images/image-64-598079775de66e3ee3d5a51362938e1a.jpeg",
+                          "height": 45,
+                          "width": 64
+                        }
+                      },
+                      "size": 693013,
+                      "width": 2400
+                    }
+                  ]
+                },
+                "size": "l",
+                "title": "Image",
+                "url": "resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+              },
+              "725bfc52-49f6-4e70-8d11-48c537cfb5ff": {
+                "@type": "slate",
+                "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+                "styles": {},
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "76ab99ce-789c-41b2-9df8-4322c8c8c1ad": {
+                "@type": "slate",
+                "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+                "styles": {},
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "773db1b3-7504-40e2-bf09-ce96e31249b2": {
+                "@type": "separator",
+                "styles": {
+                  "align": "left"
+                }
+              },
+              "89d2ea6e-b8fb-4d13-a251-37cc3bbb5961": {
+                "@type": "image",
+                "align": "left",
+                "credit": {},
+                "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+                "image_field": "image",
+                "image_scales": {
+                  "image": [
+                    {
+                      "content-type": "image/jpeg",
+                      "download": "@@images/image-1126-7b90bd2f737fb08f5e2c5719f2f8bc14.jpeg",
+                      "filename": "image-light.jpg",
+                      "height": 633,
+                      "scales": {
+                        "icon": {
+                          "download": "@@images/image-32-5de0f24798404cddd70cc1d15b1213ba.jpeg",
+                          "height": 17,
+                          "width": 32
+                        },
+                        "large": {
+                          "download": "@@images/image-800-728b0edae32e307d8123462b48fafeaa.jpeg",
+                          "height": 449,
+                          "width": 800
+                        },
+                        "larger": {
+                          "download": "@@images/image-1000-19685fe0e43ca671a6f6a973c7d1f0f5.jpeg",
+                          "height": 562,
+                          "width": 1000
+                        },
+                        "mini": {
+                          "download": "@@images/image-200-cfd42d570345d1134d9b2d0f5726bb2e.jpeg",
+                          "height": 112,
+                          "width": 200
+                        },
+                        "preview": {
+                          "download": "@@images/image-400-a35b24fd0dbe867083f962cf69f19c2a.jpeg",
+                          "height": 224,
+                          "width": 400
+                        },
+                        "teaser": {
+                          "download": "@@images/image-600-702ac2045d4ca6fc61c52749e8c2f24d.jpeg",
+                          "height": 337,
+                          "width": 600
+                        },
+                        "thumb": {
+                          "download": "@@images/image-128-06fa281eabe3bbba6eea685ce60d08f1.jpeg",
+                          "height": 71,
+                          "width": 128
+                        },
+                        "tile": {
+                          "download": "@@images/image-64-f0e777433e3a4227dab46fe8cac688a6.jpeg",
+                          "height": 35,
+                          "width": 64
+                        }
+                      },
+                      "size": 475285,
+                      "width": 1126
+                    }
+                  ]
+                },
+                "size": "s",
+                "styles": {
+                  "size:noprefix": "small"
+                },
+                "title": "Image - Light",
+                "url": "resolveuid/eec82559bf3242a6be4d43bc2096f399"
+              },
+              "8f1ad076-32b9-432b-9308-8b0972a8f57e": {
+                "@type": "image",
+                "align": "right",
+                "credit": {},
+                "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+                "image_field": "image",
+                "image_scales": {
+                  "image": [
+                    {
+                      "content-type": "image/jpeg",
+                      "download": "@@images/image-2400-59ba0e28b8fb813be7e18935e5f63a59.jpeg",
+                      "filename": "black-starry-night.jpg",
+                      "height": 1708,
+                      "scales": {
+                        "great": {
+                          "download": "@@images/image-1200-7cca3b5b9ba61195f9190c32b3a54ec9.jpeg",
+                          "height": 854,
+                          "width": 1200
+                        },
+                        "huge": {
+                          "download": "@@images/image-1600-6ff92f1800f77515dde1be81b0fdd72a.jpeg",
+                          "height": 1138,
+                          "width": 1600
+                        },
+                        "icon": {
+                          "download": "@@images/image-32-2a46e7a6b76a8db3a7941215c4de8a01.jpeg",
+                          "height": 22,
+                          "width": 32
+                        },
+                        "large": {
+                          "download": "@@images/image-800-3a7c82cae430c36e707b83909a496b32.jpeg",
+                          "height": 569,
+                          "width": 800
+                        },
+                        "larger": {
+                          "download": "@@images/image-1000-f4a4c8b8e8e5ffebfbdbcff0115bfc09.jpeg",
+                          "height": 711,
+                          "width": 1000
+                        },
+                        "mini": {
+                          "download": "@@images/image-200-3bdc6d1e0c48ce4430f75a4ac55b939e.jpeg",
+                          "height": 142,
+                          "width": 200
+                        },
+                        "preview": {
+                          "download": "@@images/image-400-71bf22b0c5006001209fc8fadb40b10a.jpeg",
+                          "height": 284,
+                          "width": 400
+                        },
+                        "teaser": {
+                          "download": "@@images/image-600-75bdd455dcec596851abe1b072dc76fe.jpeg",
+                          "height": 427,
+                          "width": 600
+                        },
+                        "thumb": {
+                          "download": "@@images/image-128-fc31735ade965dca8ce6946f7746c583.jpeg",
+                          "height": 91,
+                          "width": 128
+                        },
+                        "tile": {
+                          "download": "@@images/image-64-598079775de66e3ee3d5a51362938e1a.jpeg",
+                          "height": 45,
+                          "width": 64
+                        }
+                      },
+                      "size": 693013,
+                      "width": 2400
+                    }
+                  ]
+                },
+                "size": "s",
+                "styles": {
+                  "size:noprefix": "small"
+                },
+                "title": "Image",
+                "url": "resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+              },
+              "b4536f61-92a1-4b65-aa40-c142d799f0ba": {
+                "@type": "slate",
+                "plaintext": "Text Heading H3",
+                "styles": {},
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Text Heading H3"
+                      }
+                    ],
+                    "type": "h2"
+                  }
+                ]
+              },
+              "c0b3b08e-c350-43e6-84e9-787903d91f8c": {
+                "@type": "image",
+                "align": "left",
+                "credit": {},
+                "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+                "image_field": "image",
+                "image_scales": {
+                  "image": [
+                    {
+                      "content-type": "image/jpeg",
+                      "download": "@@images/image-2400-59ba0e28b8fb813be7e18935e5f63a59.jpeg",
+                      "filename": "black-starry-night.jpg",
+                      "height": 1708,
+                      "scales": {
+                        "great": {
+                          "download": "@@images/image-1200-7cca3b5b9ba61195f9190c32b3a54ec9.jpeg",
+                          "height": 854,
+                          "width": 1200
+                        },
+                        "huge": {
+                          "download": "@@images/image-1600-6ff92f1800f77515dde1be81b0fdd72a.jpeg",
+                          "height": 1138,
+                          "width": 1600
+                        },
+                        "icon": {
+                          "download": "@@images/image-32-2a46e7a6b76a8db3a7941215c4de8a01.jpeg",
+                          "height": 22,
+                          "width": 32
+                        },
+                        "large": {
+                          "download": "@@images/image-800-3a7c82cae430c36e707b83909a496b32.jpeg",
+                          "height": 569,
+                          "width": 800
+                        },
+                        "larger": {
+                          "download": "@@images/image-1000-f4a4c8b8e8e5ffebfbdbcff0115bfc09.jpeg",
+                          "height": 711,
+                          "width": 1000
+                        },
+                        "mini": {
+                          "download": "@@images/image-200-3bdc6d1e0c48ce4430f75a4ac55b939e.jpeg",
+                          "height": 142,
+                          "width": 200
+                        },
+                        "preview": {
+                          "download": "@@images/image-400-71bf22b0c5006001209fc8fadb40b10a.jpeg",
+                          "height": 284,
+                          "width": 400
+                        },
+                        "teaser": {
+                          "download": "@@images/image-600-75bdd455dcec596851abe1b072dc76fe.jpeg",
+                          "height": 427,
+                          "width": 600
+                        },
+                        "thumb": {
+                          "download": "@@images/image-128-fc31735ade965dca8ce6946f7746c583.jpeg",
+                          "height": 91,
+                          "width": 128
+                        },
+                        "tile": {
+                          "download": "@@images/image-64-598079775de66e3ee3d5a51362938e1a.jpeg",
+                          "height": 45,
+                          "width": 64
+                        }
+                      },
+                      "size": 693013,
+                      "width": 2400
+                    }
+                  ]
+                },
+                "size": "m",
+                "styles": {
+                  "size:noprefix": "medium"
+                },
+                "title": "Image",
+                "url": "resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+              },
+              "c3344b1c-89b9-4119-993e-58ef6bece880": {
+                "@type": "slate",
+                "plaintext": "Text Heading H3",
+                "styles": {},
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Text Heading H3"
+                      }
+                    ],
+                    "type": "h2"
+                  }
+                ]
+              },
+              "c3d2c41a-8e53-45a4-b212-cb54dad6045d": {
+                "@type": "slate",
+                "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+                "styles": {},
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "d754b95e-7fa8-4cbd-9997-f2bb6cde26df": {
+                "@type": "image",
+                "align": "left",
+                "credit": {},
+                "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+                "image_field": "image",
+                "image_scales": {
+                  "image": [
+                    {
+                      "content-type": "image/jpeg",
+                      "download": "@@images/image-1126-7b90bd2f737fb08f5e2c5719f2f8bc14.jpeg",
+                      "filename": "image-light.jpg",
+                      "height": 633,
+                      "scales": {
+                        "icon": {
+                          "download": "@@images/image-32-5de0f24798404cddd70cc1d15b1213ba.jpeg",
+                          "height": 17,
+                          "width": 32
+                        },
+                        "large": {
+                          "download": "@@images/image-800-728b0edae32e307d8123462b48fafeaa.jpeg",
+                          "height": 449,
+                          "width": 800
+                        },
+                        "larger": {
+                          "download": "@@images/image-1000-19685fe0e43ca671a6f6a973c7d1f0f5.jpeg",
+                          "height": 562,
+                          "width": 1000
+                        },
+                        "mini": {
+                          "download": "@@images/image-200-cfd42d570345d1134d9b2d0f5726bb2e.jpeg",
+                          "height": 112,
+                          "width": 200
+                        },
+                        "preview": {
+                          "download": "@@images/image-400-a35b24fd0dbe867083f962cf69f19c2a.jpeg",
+                          "height": 224,
+                          "width": 400
+                        },
+                        "teaser": {
+                          "download": "@@images/image-600-702ac2045d4ca6fc61c52749e8c2f24d.jpeg",
+                          "height": 337,
+                          "width": 600
+                        },
+                        "thumb": {
+                          "download": "@@images/image-128-06fa281eabe3bbba6eea685ce60d08f1.jpeg",
+                          "height": 71,
+                          "width": 128
+                        },
+                        "tile": {
+                          "download": "@@images/image-64-f0e777433e3a4227dab46fe8cac688a6.jpeg",
+                          "height": 35,
+                          "width": 64
+                        }
+                      },
+                      "size": 475285,
+                      "width": 1126
+                    }
+                  ]
+                },
+                "size": "l",
+                "title": "Image - Light",
+                "url": "resolveuid/eec82559bf3242a6be4d43bc2096f399"
+              },
+              "d77557e0-793a-408f-9940-a0ad80d3be8f": {
+                "@type": "slate",
+                "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+                "styles": {},
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "da31d046-9d5f-48db-9368-c5a943c35aa1": {
+                "@type": "slate",
+                "plaintext": "Text Heading H3",
+                "styles": {},
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Text Heading H3"
+                      }
+                    ],
+                    "type": "h2"
+                  }
+                ]
+              },
+              "ee0d02f1-ff2c-4dee-a79f-a1ed105cc84c": {
+                "@type": "slate",
+                "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+                "styles": {},
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              }
+            },
+            "blocks_layout": {
+              "items": [
+                "6e94c839-855c-43ff-92fa-a2f9dfac2bc9",
+                "1da28f76-9d9c-4a98-af0b-2e8c7abc1c35",
+                "ee0d02f1-ff2c-4dee-a79f-a1ed105cc84c",
+                "d754b95e-7fa8-4cbd-9997-f2bb6cde26df",
+                "b4536f61-92a1-4b65-aa40-c142d799f0ba",
+                "725bfc52-49f6-4e70-8d11-48c537cfb5ff",
+                "773db1b3-7504-40e2-bf09-ce96e31249b2",
+                "c0b3b08e-c350-43e6-84e9-787903d91f8c",
+                "1eb2924b-8de0-4152-8ae0-50eb27c3fad8",
+                "c3d2c41a-8e53-45a4-b212-cb54dad6045d",
+                "1060e842-2b14-43dc-9e43-c25022029a94",
+                "da31d046-9d5f-48db-9368-c5a943c35aa1",
+                "1becedb6-65f6-4bee-9b36-5c38deaa4141",
+                "11af3b59-7720-4875-b0b9-90be5807d476",
+                "89d2ea6e-b8fb-4d13-a251-37cc3bbb5961",
+                "05ee41f0-e8b8-4181-a773-366ca209dbc8",
+                "d77557e0-793a-408f-9940-a0ad80d3be8f",
+                "8f1ad076-32b9-432b-9308-8b0972a8f57e",
+                "c3344b1c-89b9-4119-993e-58ef6bece880",
+                "76ab99ce-789c-41b2-9df8-4322c8c8c1ad"
+              ]
+            },
+            "title": "Accordion with image"
+          },
+          "d80e4d6f-b708-4f45-8c3a-fc8f8ccc07c0": {
+            "@type": "accordionPanel",
+            "blocks": {
+              "f56375fe-70a1-4ac1-a94c-adc9998db548": {
+                "@type": "slateTable",
+                "styles": {
+                  "backgroundColor": "transparent"
+                },
+                "table": {
+                  "basic": false,
+                  "celled": true,
+                  "compact": false,
+                  "fixed": true,
+                  "hideHeaders": false,
+                  "inverted": false,
+                  "rows": [
+                    {
+                      "cells": [
+                        {
+                          "key": "f446n",
+                          "type": "header",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Title Tablehead "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        },
+                        {
+                          "key": "26qcg",
+                          "type": "header",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Title Tablehead "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        },
+                        {
+                          "key": "dhv72",
+                          "type": "header",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Title Tablehead "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        }
+                      ],
+                      "key": "dda2b"
+                    },
+                    {
+                      "cells": [
+                        {
+                          "key": "52vlv",
+                          "type": "data",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H3"
+                                }
+                              ],
+                              "type": "h2"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H2"
+                                }
+                              ],
+                              "type": "h3"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Text can be "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "bold"
+                                    }
+                                  ],
+                                  "type": "strong"
+                                },
+                                {
+                                  "text": " or "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "italic"
+                                    }
+                                  ],
+                                  "type": "em"
+                                },
+                                {
+                                  "text": " or a "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "Link"
+                                    }
+                                  ],
+                                  "data": {
+                                    "url": "../../resolveuid/1367ce64d3d440b7975652f6f36be9be"
+                                  },
+                                  "type": "link"
+                                },
+                                {
+                                  "text": " "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        },
+                        {
+                          "key": "5ko7h",
+                          "type": "data",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H3"
+                                }
+                              ],
+                              "type": "h2"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H2"
+                                }
+                              ],
+                              "type": "h3"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Text can be "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "bold"
+                                    }
+                                  ],
+                                  "type": "strong"
+                                },
+                                {
+                                  "text": " or "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "italic"
+                                    }
+                                  ],
+                                  "type": "em"
+                                },
+                                {
+                                  "text": " or a "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "Link"
+                                    }
+                                  ],
+                                  "data": {
+                                    "url": "../../resolveuid/1367ce64d3d440b7975652f6f36be9be"
+                                  },
+                                  "type": "link"
+                                },
+                                {
+                                  "text": " "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        },
+                        {
+                          "key": "878jv",
+                          "type": "data",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H3"
+                                }
+                              ],
+                              "type": "h2"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H2"
+                                }
+                              ],
+                              "type": "h3"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Text can be "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "bold"
+                                    }
+                                  ],
+                                  "type": "strong"
+                                },
+                                {
+                                  "text": " or "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "italic"
+                                    }
+                                  ],
+                                  "type": "em"
+                                },
+                                {
+                                  "text": " or a "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "Link"
+                                    }
+                                  ],
+                                  "data": {
+                                    "url": "../../resolveuid/1367ce64d3d440b7975652f6f36be9be"
+                                  },
+                                  "type": "link"
+                                },
+                                {
+                                  "text": " "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        }
+                      ],
+                      "key": "3ihrs"
+                    },
+                    {
+                      "cells": [
+                        {
+                          "key": "754if",
+                          "type": "data",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H3"
+                                }
+                              ],
+                              "type": "h2"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H2"
+                                }
+                              ],
+                              "type": "h3"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Text can be "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "bold"
+                                    }
+                                  ],
+                                  "type": "strong"
+                                },
+                                {
+                                  "text": " or "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "italic"
+                                    }
+                                  ],
+                                  "type": "em"
+                                },
+                                {
+                                  "text": " or a "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "Link"
+                                    }
+                                  ],
+                                  "data": {
+                                    "url": "../../resolveuid/1367ce64d3d440b7975652f6f36be9be"
+                                  },
+                                  "type": "link"
+                                },
+                                {
+                                  "text": " "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        },
+                        {
+                          "key": "1bjdt",
+                          "type": "data",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H3"
+                                }
+                              ],
+                              "type": "h2"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H2"
+                                }
+                              ],
+                              "type": "h3"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Text can be "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "bold"
+                                    }
+                                  ],
+                                  "type": "strong"
+                                },
+                                {
+                                  "text": " or "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "italic"
+                                    }
+                                  ],
+                                  "type": "em"
+                                },
+                                {
+                                  "text": " or a "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "Link"
+                                    }
+                                  ],
+                                  "data": {
+                                    "url": "../../resolveuid/1367ce64d3d440b7975652f6f36be9be"
+                                  },
+                                  "type": "link"
+                                },
+                                {
+                                  "text": " "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        },
+                        {
+                          "key": "32g6k",
+                          "type": "data",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H3"
+                                }
+                              ],
+                              "type": "h2"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H2"
+                                }
+                              ],
+                              "type": "h3"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Text can be "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "bold"
+                                    }
+                                  ],
+                                  "type": "strong"
+                                },
+                                {
+                                  "text": " or "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "italic"
+                                    }
+                                  ],
+                                  "type": "em"
+                                },
+                                {
+                                  "text": " or a "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "Link"
+                                    }
+                                  ],
+                                  "data": {
+                                    "url": "../../resolveuid/1367ce64d3d440b7975652f6f36be9be"
+                                  },
+                                  "type": "link"
+                                },
+                                {
+                                  "text": " "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        }
+                      ],
+                      "key": "au6so"
+                    },
+                    {
+                      "cells": [
+                        {
+                          "key": "5fhem",
+                          "type": "data",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H3"
+                                }
+                              ],
+                              "type": "h2"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H2"
+                                }
+                              ],
+                              "type": "h3"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Text can be "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "bold"
+                                    }
+                                  ],
+                                  "type": "strong"
+                                },
+                                {
+                                  "text": " or "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "italic"
+                                    }
+                                  ],
+                                  "type": "em"
+                                },
+                                {
+                                  "text": " or a "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "Link"
+                                    }
+                                  ],
+                                  "data": {
+                                    "url": "../../resolveuid/1367ce64d3d440b7975652f6f36be9be"
+                                  },
+                                  "type": "link"
+                                },
+                                {
+                                  "text": " "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        },
+                        {
+                          "key": "e78dh",
+                          "type": "data",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H3"
+                                }
+                              ],
+                              "type": "h2"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H2"
+                                }
+                              ],
+                              "type": "h3"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Text can be "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "bold"
+                                    }
+                                  ],
+                                  "type": "strong"
+                                },
+                                {
+                                  "text": " or "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "italic"
+                                    }
+                                  ],
+                                  "type": "em"
+                                },
+                                {
+                                  "text": " or a "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "Link"
+                                    }
+                                  ],
+                                  "data": {
+                                    "url": "../../resolveuid/1367ce64d3d440b7975652f6f36be9be"
+                                  },
+                                  "type": "link"
+                                },
+                                {
+                                  "text": " "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        },
+                        {
+                          "key": "feacr",
+                          "type": "data",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H3"
+                                }
+                              ],
+                              "type": "h2"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H2"
+                                }
+                              ],
+                              "type": "h3"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Text can be "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "bold"
+                                    }
+                                  ],
+                                  "type": "strong"
+                                },
+                                {
+                                  "text": " or "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "italic"
+                                    }
+                                  ],
+                                  "type": "em"
+                                },
+                                {
+                                  "text": " or a "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "Link"
+                                    }
+                                  ],
+                                  "data": {
+                                    "url": "../../resolveuid/1367ce64d3d440b7975652f6f36be9be"
+                                  },
+                                  "type": "link"
+                                },
+                                {
+                                  "text": " "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        }
+                      ],
+                      "key": "fqhgk"
+                    }
+                  ],
+                  "striped": true
+                }
+              }
+            },
+            "blocks_layout": {
+              "items": [
+                "f56375fe-70a1-4ac1-a94c-adc9998db548"
+              ]
+            },
+            "title": "Accordion with table"
+          }
+        },
+        "blocks_layout": {
+          "items": [
+            "bc2c120e-51df-4c47-b4d0-5a11311d020d",
+            "d2168440-888d-4081-8409-b59392abc189",
+            "b58c92b4-6604-4408-9039-a147965fa4bd",
+            "262a2478-3a63-445a-aab7-edf55cceebcf",
+            "d80e4d6f-b708-4f45-8c3a-fc8f8ccc07c0"
+          ]
+        }
+      },
+      "filtering": false,
+      "non_exclusive": false,
+      "right_arrows": true,
+      "styles": {}
+    },
+    "8f68209e-220e-4230-9d42-8b0602573bd9": {
+      "@type": "accordion",
+      "collapsed": false,
+      "data": {
+        "blocks": {
+          "262a2478-3a63-445a-aab7-edf55cceebcf": {
+            "@type": "accordionPanel",
+            "blocks": {
+              "c9580c7a-ab67-44f7-8532-59a4ba9fd846": {
+                "@type": "listing",
+                "headlineTag": "h2",
+                "querystring": {
+                  "limit": "3",
+                  "query": [
+                    {
+                      "i": "Description",
+                      "o": "plone.app.querystring.operation.string.contains",
+                      "v": "block"
+                    }
+                  ],
+                  "sort_order": "descending",
+                  "sort_order_boolean": true
+                },
+                "styles": {},
+                "variation": "summary"
+              }
+            },
+            "blocks_layout": {
+              "items": [
+                "c9580c7a-ab67-44f7-8532-59a4ba9fd846"
+              ]
+            },
+            "title": "Accordion with listing"
+          },
+          "39f75787-bd7a-42dc-ab40-a6c9dfd2a8f1": {
+            "@type": "accordionPanel",
+            "blocks": {
+              "afacd5e4-5914-46b6-b9f9-ebd8bbda9d35": {
+                "@type": "slate",
+                "plaintext": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+                "styles": {},
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              }
+            },
+            "blocks_layout": {
+              "items": [
+                "afacd5e4-5914-46b6-b9f9-ebd8bbda9d35"
+              ]
+            },
+            "title": "Accordion with text"
+          },
+          "b58c92b4-6604-4408-9039-a147965fa4bd": {
+            "@type": "accordionPanel",
+            "blocks": {
+              "1b91cfac-d8a1-4327-9896-e8e3ee7a9c03": {
+                "@type": "teaser",
+                "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper ",
+                "head_title": null,
+                "href": [
+                  {
+                    "@id": "/content-types/image-light",
+                    "@type": "Image",
+                    "Description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+                    "Title": "Image - Light",
+                    "getRemoteUrl": null,
+                    "hasPreviewImage": null,
+                    "head_title": null,
+                    "image_field": "image",
+                    "image_scales": {
+                      "image": [
+                        {
+                          "content-type": "image/jpeg",
+                          "download": "@@images/image-1126-7b90bd2f737fb08f5e2c5719f2f8bc14.jpeg",
+                          "filename": "image-light.jpg",
+                          "height": 633,
+                          "scales": {
+                            "icon": {
+                              "download": "@@images/image-32-5de0f24798404cddd70cc1d15b1213ba.jpeg",
+                              "height": 17,
+                              "width": 32
+                            },
+                            "large": {
+                              "download": "@@images/image-800-728b0edae32e307d8123462b48fafeaa.jpeg",
+                              "height": 449,
+                              "width": 800
+                            },
+                            "larger": {
+                              "download": "@@images/image-1000-19685fe0e43ca671a6f6a973c7d1f0f5.jpeg",
+                              "height": 562,
+                              "width": 1000
+                            },
+                            "mini": {
+                              "download": "@@images/image-200-cfd42d570345d1134d9b2d0f5726bb2e.jpeg",
+                              "height": 112,
+                              "width": 200
+                            },
+                            "preview": {
+                              "download": "@@images/image-400-a35b24fd0dbe867083f962cf69f19c2a.jpeg",
+                              "height": 224,
+                              "width": 400
+                            },
+                            "teaser": {
+                              "download": "@@images/image-600-702ac2045d4ca6fc61c52749e8c2f24d.jpeg",
+                              "height": 337,
+                              "width": 600
+                            },
+                            "thumb": {
+                              "download": "@@images/image-128-06fa281eabe3bbba6eea685ce60d08f1.jpeg",
+                              "height": 71,
+                              "width": 128
+                            },
+                            "tile": {
+                              "download": "@@images/image-64-f0e777433e3a4227dab46fe8cac688a6.jpeg",
+                              "height": 35,
+                              "width": 64
+                            }
+                          },
+                          "size": 475285,
+                          "width": 1126
+                        }
+                      ]
+                    },
+                    "title": "Image - Light"
+                  }
+                ],
+                "styles": {
+                  "align": "left"
+                },
+                "title": "Teaser Title H2"
+              },
+              "2b7a6783-7323-4fbd-b0a1-3d304b8a526a": {
+                "@type": "teaser",
+                "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper ",
+                "head_title": null,
+                "href": [
+                  {
+                    "@id": "resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+                    "@type": "Document",
+                    "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+                    "Title": "Page",
+                    "getRemoteUrl": null,
+                    "hasPreviewImage": true,
+                    "head_title": null,
+                    "image_field": "preview_image",
+                    "image_scales": {
+                      "preview_image": [
+                        {
+                          "content-type": "image/jpeg",
+                          "download": "@@images/preview_image-2400-dd70655eae2a121e9b3d20b15d5292db.jpeg",
+                          "filename": "black-starry-night.jpg",
+                          "height": 1708,
+                          "scales": {
+                            "great": {
+                              "download": "@@images/preview_image-1200-02d0687099bde73e5189270d53df7e22.jpeg",
+                              "height": 854,
+                              "width": 1200
+                            },
+                            "huge": {
+                              "download": "@@images/preview_image-1600-275bd418c80864fc5cc8b0b0c7f4a0a2.jpeg",
+                              "height": 1138,
+                              "width": 1600
+                            },
+                            "icon": {
+                              "download": "@@images/preview_image-32-848481d517c9091a765ccf7a6ef88277.jpeg",
+                              "height": 22,
+                              "width": 32
+                            },
+                            "large": {
+                              "download": "@@images/preview_image-800-255c17a5d39f4bb2d79c72d56934b342.jpeg",
+                              "height": 569,
+                              "width": 800
+                            },
+                            "larger": {
+                              "download": "@@images/preview_image-1000-661e34a155a000108788ca0d60f4b22c.jpeg",
+                              "height": 711,
+                              "width": 1000
+                            },
+                            "mini": {
+                              "download": "@@images/preview_image-200-614da3a8827dc90cb92618ada1980504.jpeg",
+                              "height": 142,
+                              "width": 200
+                            },
+                            "preview": {
+                              "download": "@@images/preview_image-400-bf2a5268ec239c40c54556e7f48b1cf6.jpeg",
+                              "height": 284,
+                              "width": 400
+                            },
+                            "teaser": {
+                              "download": "@@images/preview_image-600-b1f4235a88cb99bd1c5ab3dceaf953ee.jpeg",
+                              "height": 427,
+                              "width": 600
+                            },
+                            "thumb": {
+                              "download": "@@images/preview_image-128-80ae3135a04405512335f90c8ce4cb3e.jpeg",
+                              "height": 91,
+                              "width": 128
+                            },
+                            "tile": {
+                              "download": "@@images/preview_image-64-fbe446c415c4dbcbca8b81c451ee4659.jpeg",
+                              "height": 45,
+                              "width": 64
+                            }
+                          },
+                          "size": 693013,
+                          "width": 2400
+                        }
+                      ]
+                    },
+                    "title": "Page"
+                  }
+                ],
+                "styles": {
+                  "align": "right"
+                },
+                "title": "Teaser Title H2"
+              },
+              "eb600a9b-7400-4b4e-bb40-70ddb6911749": {
+                "@type": "teaser",
+                "description": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo",
+                "head_title": null,
+                "href": [
+                  {
+                    "@id": "resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+                    "@type": "Document",
+                    "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+                    "Title": "Page",
+                    "getRemoteUrl": null,
+                    "hasPreviewImage": true,
+                    "head_title": null,
+                    "image_field": "preview_image",
+                    "image_scales": {
+                      "preview_image": [
+                        {
+                          "content-type": "image/jpeg",
+                          "download": "@@images/preview_image-2400-dd70655eae2a121e9b3d20b15d5292db.jpeg",
+                          "filename": "black-starry-night.jpg",
+                          "height": 1708,
+                          "scales": {
+                            "great": {
+                              "download": "@@images/preview_image-1200-02d0687099bde73e5189270d53df7e22.jpeg",
+                              "height": 854,
+                              "width": 1200
+                            },
+                            "huge": {
+                              "download": "@@images/preview_image-1600-275bd418c80864fc5cc8b0b0c7f4a0a2.jpeg",
+                              "height": 1138,
+                              "width": 1600
+                            },
+                            "icon": {
+                              "download": "@@images/preview_image-32-848481d517c9091a765ccf7a6ef88277.jpeg",
+                              "height": 22,
+                              "width": 32
+                            },
+                            "large": {
+                              "download": "@@images/preview_image-800-255c17a5d39f4bb2d79c72d56934b342.jpeg",
+                              "height": 569,
+                              "width": 800
+                            },
+                            "larger": {
+                              "download": "@@images/preview_image-1000-661e34a155a000108788ca0d60f4b22c.jpeg",
+                              "height": 711,
+                              "width": 1000
+                            },
+                            "mini": {
+                              "download": "@@images/preview_image-200-614da3a8827dc90cb92618ada1980504.jpeg",
+                              "height": 142,
+                              "width": 200
+                            },
+                            "preview": {
+                              "download": "@@images/preview_image-400-bf2a5268ec239c40c54556e7f48b1cf6.jpeg",
+                              "height": 284,
+                              "width": 400
+                            },
+                            "teaser": {
+                              "download": "@@images/preview_image-600-b1f4235a88cb99bd1c5ab3dceaf953ee.jpeg",
+                              "height": 427,
+                              "width": 600
+                            },
+                            "thumb": {
+                              "download": "@@images/preview_image-128-80ae3135a04405512335f90c8ce4cb3e.jpeg",
+                              "height": 91,
+                              "width": 128
+                            },
+                            "tile": {
+                              "download": "@@images/preview_image-64-fbe446c415c4dbcbca8b81c451ee4659.jpeg",
+                              "height": 45,
+                              "width": 64
+                            }
+                          },
+                          "size": 693013,
+                          "width": 2400
+                        }
+                      ]
+                    },
+                    "title": "Page"
+                  }
+                ],
+                "styles": {
+                  "align": "center"
+                },
+                "title": "Teaser Title H2"
+              }
+            },
+            "blocks_layout": {
+              "items": [
+                "eb600a9b-7400-4b4e-bb40-70ddb6911749",
+                "1b91cfac-d8a1-4327-9896-e8e3ee7a9c03",
+                "2b7a6783-7323-4fbd-b0a1-3d304b8a526a"
+              ]
+            },
+            "title": "Accordion with teaser"
+          },
+          "d2168440-888d-4081-8409-b59392abc189": {
+            "@type": "accordionPanel",
+            "blocks": {
+              "05ee41f0-e8b8-4181-a773-366ca209dbc8": {
+                "@type": "slate",
+                "plaintext": "Text Heading H3",
+                "styles": {},
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Text Heading H3"
+                      }
+                    ],
+                    "type": "h2"
+                  }
+                ]
+              },
+              "1060e842-2b14-43dc-9e43-c25022029a94": {
+                "@type": "image",
+                "align": "right",
+                "credit": {},
+                "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+                "image_field": "image",
+                "image_scales": {
+                  "image": [
+                    {
+                      "content-type": "image/jpeg",
+                      "download": "@@images/image-1126-7b90bd2f737fb08f5e2c5719f2f8bc14.jpeg",
+                      "filename": "image-light.jpg",
+                      "height": 633,
+                      "scales": {
+                        "icon": {
+                          "download": "@@images/image-32-5de0f24798404cddd70cc1d15b1213ba.jpeg",
+                          "height": 17,
+                          "width": 32
+                        },
+                        "large": {
+                          "download": "@@images/image-800-728b0edae32e307d8123462b48fafeaa.jpeg",
+                          "height": 449,
+                          "width": 800
+                        },
+                        "larger": {
+                          "download": "@@images/image-1000-19685fe0e43ca671a6f6a973c7d1f0f5.jpeg",
+                          "height": 562,
+                          "width": 1000
+                        },
+                        "mini": {
+                          "download": "@@images/image-200-cfd42d570345d1134d9b2d0f5726bb2e.jpeg",
+                          "height": 112,
+                          "width": 200
+                        },
+                        "preview": {
+                          "download": "@@images/image-400-a35b24fd0dbe867083f962cf69f19c2a.jpeg",
+                          "height": 224,
+                          "width": 400
+                        },
+                        "teaser": {
+                          "download": "@@images/image-600-702ac2045d4ca6fc61c52749e8c2f24d.jpeg",
+                          "height": 337,
+                          "width": 600
+                        },
+                        "thumb": {
+                          "download": "@@images/image-128-06fa281eabe3bbba6eea685ce60d08f1.jpeg",
+                          "height": 71,
+                          "width": 128
+                        },
+                        "tile": {
+                          "download": "@@images/image-64-f0e777433e3a4227dab46fe8cac688a6.jpeg",
+                          "height": 35,
+                          "width": 64
+                        }
+                      },
+                      "size": 475285,
+                      "width": 1126
+                    }
+                  ]
+                },
+                "size": "m",
+                "styles": {
+                  "size:noprefix": "medium"
+                },
+                "title": "Image - Light",
+                "url": "resolveuid/eec82559bf3242a6be4d43bc2096f399"
+              },
+              "11af3b59-7720-4875-b0b9-90be5807d476": {
+                "@type": "separator",
+                "styles": {
+                  "align": "left"
+                }
+              },
+              "1becedb6-65f6-4bee-9b36-5c38deaa4141": {
+                "@type": "slate",
+                "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+                "styles": {},
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "1da28f76-9d9c-4a98-af0b-2e8c7abc1c35": {
+                "@type": "separator",
+                "styles": {
+                  "align": "left"
+                }
+              },
+              "1eb2924b-8de0-4152-8ae0-50eb27c3fad8": {
+                "@type": "slate",
+                "plaintext": "Text Heading H3",
+                "styles": {},
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Text Heading H3"
+                      }
+                    ],
+                    "type": "h2"
+                  }
+                ]
+              },
+              "6e94c839-855c-43ff-92fa-a2f9dfac2bc9": {
+                "@type": "image",
+                "align": "center",
+                "credit": {},
+                "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+                "image_field": "image",
+                "image_scales": {
+                  "image": [
+                    {
+                      "content-type": "image/jpeg",
+                      "download": "@@images/image-1126-7b90bd2f737fb08f5e2c5719f2f8bc14.jpeg",
+                      "filename": "image-light.jpg",
+                      "height": 633,
+                      "scales": {
+                        "icon": {
+                          "download": "@@images/image-32-5de0f24798404cddd70cc1d15b1213ba.jpeg",
+                          "height": 17,
+                          "width": 32
+                        },
+                        "large": {
+                          "download": "@@images/image-800-728b0edae32e307d8123462b48fafeaa.jpeg",
+                          "height": 449,
+                          "width": 800
+                        },
+                        "larger": {
+                          "download": "@@images/image-1000-19685fe0e43ca671a6f6a973c7d1f0f5.jpeg",
+                          "height": 562,
+                          "width": 1000
+                        },
+                        "mini": {
+                          "download": "@@images/image-200-cfd42d570345d1134d9b2d0f5726bb2e.jpeg",
+                          "height": 112,
+                          "width": 200
+                        },
+                        "preview": {
+                          "download": "@@images/image-400-a35b24fd0dbe867083f962cf69f19c2a.jpeg",
+                          "height": 224,
+                          "width": 400
+                        },
+                        "teaser": {
+                          "download": "@@images/image-600-702ac2045d4ca6fc61c52749e8c2f24d.jpeg",
+                          "height": 337,
+                          "width": 600
+                        },
+                        "thumb": {
+                          "download": "@@images/image-128-06fa281eabe3bbba6eea685ce60d08f1.jpeg",
+                          "height": 71,
+                          "width": 128
+                        },
+                        "tile": {
+                          "download": "@@images/image-64-f0e777433e3a4227dab46fe8cac688a6.jpeg",
+                          "height": 35,
+                          "width": 64
+                        }
+                      },
+                      "size": 475285,
+                      "width": 1126
+                    }
+                  ]
+                },
+                "size": "l",
+                "title": "Image - Light",
+                "url": "resolveuid/eec82559bf3242a6be4d43bc2096f399"
+              },
+              "725bfc52-49f6-4e70-8d11-48c537cfb5ff": {
+                "@type": "slate",
+                "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+                "styles": {},
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "76ab99ce-789c-41b2-9df8-4322c8c8c1ad": {
+                "@type": "slate",
+                "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+                "styles": {},
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "773db1b3-7504-40e2-bf09-ce96e31249b2": {
+                "@type": "separator",
+                "styles": {
+                  "align": "left"
+                }
+              },
+              "89d2ea6e-b8fb-4d13-a251-37cc3bbb5961": {
+                "@type": "image",
+                "align": "left",
+                "credit": {},
+                "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+                "image_field": "image",
+                "image_scales": {
+                  "image": [
+                    {
+                      "content-type": "image/jpeg",
+                      "download": "@@images/image-2400-59ba0e28b8fb813be7e18935e5f63a59.jpeg",
+                      "filename": "black-starry-night.jpg",
+                      "height": 1708,
+                      "scales": {
+                        "great": {
+                          "download": "@@images/image-1200-7cca3b5b9ba61195f9190c32b3a54ec9.jpeg",
+                          "height": 854,
+                          "width": 1200
+                        },
+                        "huge": {
+                          "download": "@@images/image-1600-6ff92f1800f77515dde1be81b0fdd72a.jpeg",
+                          "height": 1138,
+                          "width": 1600
+                        },
+                        "icon": {
+                          "download": "@@images/image-32-2a46e7a6b76a8db3a7941215c4de8a01.jpeg",
+                          "height": 22,
+                          "width": 32
+                        },
+                        "large": {
+                          "download": "@@images/image-800-3a7c82cae430c36e707b83909a496b32.jpeg",
+                          "height": 569,
+                          "width": 800
+                        },
+                        "larger": {
+                          "download": "@@images/image-1000-f4a4c8b8e8e5ffebfbdbcff0115bfc09.jpeg",
+                          "height": 711,
+                          "width": 1000
+                        },
+                        "mini": {
+                          "download": "@@images/image-200-3bdc6d1e0c48ce4430f75a4ac55b939e.jpeg",
+                          "height": 142,
+                          "width": 200
+                        },
+                        "preview": {
+                          "download": "@@images/image-400-71bf22b0c5006001209fc8fadb40b10a.jpeg",
+                          "height": 284,
+                          "width": 400
+                        },
+                        "teaser": {
+                          "download": "@@images/image-600-75bdd455dcec596851abe1b072dc76fe.jpeg",
+                          "height": 427,
+                          "width": 600
+                        },
+                        "thumb": {
+                          "download": "@@images/image-128-fc31735ade965dca8ce6946f7746c583.jpeg",
+                          "height": 91,
+                          "width": 128
+                        },
+                        "tile": {
+                          "download": "@@images/image-64-598079775de66e3ee3d5a51362938e1a.jpeg",
+                          "height": 45,
+                          "width": 64
+                        }
+                      },
+                      "size": 693013,
+                      "width": 2400
+                    }
+                  ]
+                },
+                "size": "s",
+                "styles": {
+                  "size:noprefix": "small"
+                },
+                "title": "Image",
+                "url": "resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+              },
+              "8f1ad076-32b9-432b-9308-8b0972a8f57e": {
+                "@type": "image",
+                "align": "right",
+                "credit": {},
+                "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+                "image_field": "image",
+                "image_scales": {
+                  "image": [
+                    {
+                      "content-type": "image/jpeg",
+                      "download": "@@images/image-2400-59ba0e28b8fb813be7e18935e5f63a59.jpeg",
+                      "filename": "black-starry-night.jpg",
+                      "height": 1708,
+                      "scales": {
+                        "great": {
+                          "download": "@@images/image-1200-7cca3b5b9ba61195f9190c32b3a54ec9.jpeg",
+                          "height": 854,
+                          "width": 1200
+                        },
+                        "huge": {
+                          "download": "@@images/image-1600-6ff92f1800f77515dde1be81b0fdd72a.jpeg",
+                          "height": 1138,
+                          "width": 1600
+                        },
+                        "icon": {
+                          "download": "@@images/image-32-2a46e7a6b76a8db3a7941215c4de8a01.jpeg",
+                          "height": 22,
+                          "width": 32
+                        },
+                        "large": {
+                          "download": "@@images/image-800-3a7c82cae430c36e707b83909a496b32.jpeg",
+                          "height": 569,
+                          "width": 800
+                        },
+                        "larger": {
+                          "download": "@@images/image-1000-f4a4c8b8e8e5ffebfbdbcff0115bfc09.jpeg",
+                          "height": 711,
+                          "width": 1000
+                        },
+                        "mini": {
+                          "download": "@@images/image-200-3bdc6d1e0c48ce4430f75a4ac55b939e.jpeg",
+                          "height": 142,
+                          "width": 200
+                        },
+                        "preview": {
+                          "download": "@@images/image-400-71bf22b0c5006001209fc8fadb40b10a.jpeg",
+                          "height": 284,
+                          "width": 400
+                        },
+                        "teaser": {
+                          "download": "@@images/image-600-75bdd455dcec596851abe1b072dc76fe.jpeg",
+                          "height": 427,
+                          "width": 600
+                        },
+                        "thumb": {
+                          "download": "@@images/image-128-fc31735ade965dca8ce6946f7746c583.jpeg",
+                          "height": 91,
+                          "width": 128
+                        },
+                        "tile": {
+                          "download": "@@images/image-64-598079775de66e3ee3d5a51362938e1a.jpeg",
+                          "height": 45,
+                          "width": 64
+                        }
+                      },
+                      "size": 693013,
+                      "width": 2400
+                    }
+                  ]
+                },
+                "size": "s",
+                "styles": {
+                  "size:noprefix": "small"
+                },
+                "title": "Image",
+                "url": "resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+              },
+              "b4536f61-92a1-4b65-aa40-c142d799f0ba": {
+                "@type": "slate",
+                "plaintext": "Text Heading H3",
+                "styles": {},
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Text Heading H3"
+                      }
+                    ],
+                    "type": "h2"
+                  }
+                ]
+              },
+              "c0b3b08e-c350-43e6-84e9-787903d91f8c": {
+                "@type": "image",
+                "align": "left",
+                "credit": {},
+                "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+                "image_field": "image",
+                "image_scales": {
+                  "image": [
+                    {
+                      "content-type": "image/jpeg",
+                      "download": "@@images/image-2400-59ba0e28b8fb813be7e18935e5f63a59.jpeg",
+                      "filename": "black-starry-night.jpg",
+                      "height": 1708,
+                      "scales": {
+                        "great": {
+                          "download": "@@images/image-1200-7cca3b5b9ba61195f9190c32b3a54ec9.jpeg",
+                          "height": 854,
+                          "width": 1200
+                        },
+                        "huge": {
+                          "download": "@@images/image-1600-6ff92f1800f77515dde1be81b0fdd72a.jpeg",
+                          "height": 1138,
+                          "width": 1600
+                        },
+                        "icon": {
+                          "download": "@@images/image-32-2a46e7a6b76a8db3a7941215c4de8a01.jpeg",
+                          "height": 22,
+                          "width": 32
+                        },
+                        "large": {
+                          "download": "@@images/image-800-3a7c82cae430c36e707b83909a496b32.jpeg",
+                          "height": 569,
+                          "width": 800
+                        },
+                        "larger": {
+                          "download": "@@images/image-1000-f4a4c8b8e8e5ffebfbdbcff0115bfc09.jpeg",
+                          "height": 711,
+                          "width": 1000
+                        },
+                        "mini": {
+                          "download": "@@images/image-200-3bdc6d1e0c48ce4430f75a4ac55b939e.jpeg",
+                          "height": 142,
+                          "width": 200
+                        },
+                        "preview": {
+                          "download": "@@images/image-400-71bf22b0c5006001209fc8fadb40b10a.jpeg",
+                          "height": 284,
+                          "width": 400
+                        },
+                        "teaser": {
+                          "download": "@@images/image-600-75bdd455dcec596851abe1b072dc76fe.jpeg",
+                          "height": 427,
+                          "width": 600
+                        },
+                        "thumb": {
+                          "download": "@@images/image-128-fc31735ade965dca8ce6946f7746c583.jpeg",
+                          "height": 91,
+                          "width": 128
+                        },
+                        "tile": {
+                          "download": "@@images/image-64-598079775de66e3ee3d5a51362938e1a.jpeg",
+                          "height": 45,
+                          "width": 64
+                        }
+                      },
+                      "size": 693013,
+                      "width": 2400
+                    }
+                  ]
+                },
+                "size": "m",
+                "styles": {
+                  "size:noprefix": "medium"
+                },
+                "title": "Image",
+                "url": "resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+              },
+              "c3344b1c-89b9-4119-993e-58ef6bece880": {
+                "@type": "slate",
+                "plaintext": "Text Heading H3",
+                "styles": {},
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Text Heading H3"
+                      }
+                    ],
+                    "type": "h2"
+                  }
+                ]
+              },
+              "c3d2c41a-8e53-45a4-b212-cb54dad6045d": {
+                "@type": "slate",
+                "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+                "styles": {},
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "d754b95e-7fa8-4cbd-9997-f2bb6cde26df": {
+                "@type": "image",
+                "align": "left",
+                "credit": {},
+                "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+                "image_field": "image",
+                "image_scales": {
+                  "image": [
+                    {
+                      "content-type": "image/jpeg",
+                      "download": "@@images/image-2400-59ba0e28b8fb813be7e18935e5f63a59.jpeg",
+                      "filename": "black-starry-night.jpg",
+                      "height": 1708,
+                      "scales": {
+                        "great": {
+                          "download": "@@images/image-1200-7cca3b5b9ba61195f9190c32b3a54ec9.jpeg",
+                          "height": 854,
+                          "width": 1200
+                        },
+                        "huge": {
+                          "download": "@@images/image-1600-6ff92f1800f77515dde1be81b0fdd72a.jpeg",
+                          "height": 1138,
+                          "width": 1600
+                        },
+                        "icon": {
+                          "download": "@@images/image-32-2a46e7a6b76a8db3a7941215c4de8a01.jpeg",
+                          "height": 22,
+                          "width": 32
+                        },
+                        "large": {
+                          "download": "@@images/image-800-3a7c82cae430c36e707b83909a496b32.jpeg",
+                          "height": 569,
+                          "width": 800
+                        },
+                        "larger": {
+                          "download": "@@images/image-1000-f4a4c8b8e8e5ffebfbdbcff0115bfc09.jpeg",
+                          "height": 711,
+                          "width": 1000
+                        },
+                        "mini": {
+                          "download": "@@images/image-200-3bdc6d1e0c48ce4430f75a4ac55b939e.jpeg",
+                          "height": 142,
+                          "width": 200
+                        },
+                        "preview": {
+                          "download": "@@images/image-400-71bf22b0c5006001209fc8fadb40b10a.jpeg",
+                          "height": 284,
+                          "width": 400
+                        },
+                        "teaser": {
+                          "download": "@@images/image-600-75bdd455dcec596851abe1b072dc76fe.jpeg",
+                          "height": 427,
+                          "width": 600
+                        },
+                        "thumb": {
+                          "download": "@@images/image-128-fc31735ade965dca8ce6946f7746c583.jpeg",
+                          "height": 91,
+                          "width": 128
+                        },
+                        "tile": {
+                          "download": "@@images/image-64-598079775de66e3ee3d5a51362938e1a.jpeg",
+                          "height": 45,
+                          "width": 64
+                        }
+                      },
+                      "size": 693013,
+                      "width": 2400
+                    }
+                  ]
+                },
+                "size": "l",
+                "title": "Image",
+                "url": "resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+              },
+              "d77557e0-793a-408f-9940-a0ad80d3be8f": {
+                "@type": "slate",
+                "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+                "styles": {},
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore blandit praesent luptatum zzril qui Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              },
+              "da31d046-9d5f-48db-9368-c5a943c35aa1": {
+                "@type": "slate",
+                "plaintext": "Text Heading H3",
+                "styles": {},
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Text Heading H3"
+                      }
+                    ],
+                    "type": "h2"
+                  }
+                ]
+              },
+              "ee0d02f1-ff2c-4dee-a79f-a1ed105cc84c": {
+                "@type": "slate",
+                "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+                "styles": {},
+                "value": [
+                  {
+                    "children": [
+                      {
+                        "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+                      }
+                    ],
+                    "type": "p"
+                  }
+                ]
+              }
+            },
+            "blocks_layout": {
+              "items": [
+                "6e94c839-855c-43ff-92fa-a2f9dfac2bc9",
+                "1da28f76-9d9c-4a98-af0b-2e8c7abc1c35",
+                "ee0d02f1-ff2c-4dee-a79f-a1ed105cc84c",
+                "d754b95e-7fa8-4cbd-9997-f2bb6cde26df",
+                "b4536f61-92a1-4b65-aa40-c142d799f0ba",
+                "725bfc52-49f6-4e70-8d11-48c537cfb5ff",
+                "773db1b3-7504-40e2-bf09-ce96e31249b2",
+                "c0b3b08e-c350-43e6-84e9-787903d91f8c",
+                "1eb2924b-8de0-4152-8ae0-50eb27c3fad8",
+                "c3d2c41a-8e53-45a4-b212-cb54dad6045d",
+                "1060e842-2b14-43dc-9e43-c25022029a94",
+                "da31d046-9d5f-48db-9368-c5a943c35aa1",
+                "1becedb6-65f6-4bee-9b36-5c38deaa4141",
+                "11af3b59-7720-4875-b0b9-90be5807d476",
+                "89d2ea6e-b8fb-4d13-a251-37cc3bbb5961",
+                "05ee41f0-e8b8-4181-a773-366ca209dbc8",
+                "d77557e0-793a-408f-9940-a0ad80d3be8f",
+                "8f1ad076-32b9-432b-9308-8b0972a8f57e",
+                "c3344b1c-89b9-4119-993e-58ef6bece880",
+                "76ab99ce-789c-41b2-9df8-4322c8c8c1ad"
+              ]
+            },
+            "title": "Accordion with image"
+          },
+          "d80e4d6f-b708-4f45-8c3a-fc8f8ccc07c0": {
+            "@type": "accordionPanel",
+            "blocks": {
+              "f56375fe-70a1-4ac1-a94c-adc9998db548": {
+                "@type": "slateTable",
+                "styles": {
+                  "backgroundColor": "transparent"
+                },
+                "table": {
+                  "basic": false,
+                  "celled": true,
+                  "compact": false,
+                  "fixed": true,
+                  "hideHeaders": false,
+                  "inverted": false,
+                  "rows": [
+                    {
+                      "cells": [
+                        {
+                          "key": "f446n",
+                          "type": "header",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Title Tablehead "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        },
+                        {
+                          "key": "26qcg",
+                          "type": "header",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Title Tablehead "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        },
+                        {
+                          "key": "dhv72",
+                          "type": "header",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Title Tablehead "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        }
+                      ],
+                      "key": "dda2b"
+                    },
+                    {
+                      "cells": [
+                        {
+                          "key": "52vlv",
+                          "type": "data",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H3"
+                                }
+                              ],
+                              "type": "h2"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H2"
+                                }
+                              ],
+                              "type": "h3"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Text can be "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "bold"
+                                    }
+                                  ],
+                                  "type": "strong"
+                                },
+                                {
+                                  "text": " or "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "italic"
+                                    }
+                                  ],
+                                  "type": "em"
+                                },
+                                {
+                                  "text": " or a "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "Link"
+                                    }
+                                  ],
+                                  "data": {
+                                    "url": "../../resolveuid/1367ce64d3d440b7975652f6f36be9be"
+                                  },
+                                  "type": "link"
+                                },
+                                {
+                                  "text": " "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        },
+                        {
+                          "key": "5ko7h",
+                          "type": "data",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H3"
+                                }
+                              ],
+                              "type": "h2"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H2"
+                                }
+                              ],
+                              "type": "h3"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Text can be "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "bold"
+                                    }
+                                  ],
+                                  "type": "strong"
+                                },
+                                {
+                                  "text": " or "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "italic"
+                                    }
+                                  ],
+                                  "type": "em"
+                                },
+                                {
+                                  "text": " or a "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "Link"
+                                    }
+                                  ],
+                                  "data": {
+                                    "url": "../../resolveuid/1367ce64d3d440b7975652f6f36be9be"
+                                  },
+                                  "type": "link"
+                                },
+                                {
+                                  "text": " "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        },
+                        {
+                          "key": "878jv",
+                          "type": "data",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H3"
+                                }
+                              ],
+                              "type": "h2"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H2"
+                                }
+                              ],
+                              "type": "h3"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Text can be "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "bold"
+                                    }
+                                  ],
+                                  "type": "strong"
+                                },
+                                {
+                                  "text": " or "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "italic"
+                                    }
+                                  ],
+                                  "type": "em"
+                                },
+                                {
+                                  "text": " or a "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "Link"
+                                    }
+                                  ],
+                                  "data": {
+                                    "url": "../../resolveuid/1367ce64d3d440b7975652f6f36be9be"
+                                  },
+                                  "type": "link"
+                                },
+                                {
+                                  "text": " "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        }
+                      ],
+                      "key": "3ihrs"
+                    },
+                    {
+                      "cells": [
+                        {
+                          "key": "754if",
+                          "type": "data",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H3"
+                                }
+                              ],
+                              "type": "h2"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H2"
+                                }
+                              ],
+                              "type": "h3"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Text can be "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "bold"
+                                    }
+                                  ],
+                                  "type": "strong"
+                                },
+                                {
+                                  "text": " or "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "italic"
+                                    }
+                                  ],
+                                  "type": "em"
+                                },
+                                {
+                                  "text": " or a "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "Link"
+                                    }
+                                  ],
+                                  "data": {
+                                    "url": "../../resolveuid/1367ce64d3d440b7975652f6f36be9be"
+                                  },
+                                  "type": "link"
+                                },
+                                {
+                                  "text": " "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        },
+                        {
+                          "key": "1bjdt",
+                          "type": "data",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H3"
+                                }
+                              ],
+                              "type": "h2"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H2"
+                                }
+                              ],
+                              "type": "h3"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Text can be "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "bold"
+                                    }
+                                  ],
+                                  "type": "strong"
+                                },
+                                {
+                                  "text": " or "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "italic"
+                                    }
+                                  ],
+                                  "type": "em"
+                                },
+                                {
+                                  "text": " or a "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "Link"
+                                    }
+                                  ],
+                                  "data": {
+                                    "url": "../../resolveuid/1367ce64d3d440b7975652f6f36be9be"
+                                  },
+                                  "type": "link"
+                                },
+                                {
+                                  "text": " "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        },
+                        {
+                          "key": "32g6k",
+                          "type": "data",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H3"
+                                }
+                              ],
+                              "type": "h2"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H2"
+                                }
+                              ],
+                              "type": "h3"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Text can be "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "bold"
+                                    }
+                                  ],
+                                  "type": "strong"
+                                },
+                                {
+                                  "text": " or "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "italic"
+                                    }
+                                  ],
+                                  "type": "em"
+                                },
+                                {
+                                  "text": " or a "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "Link"
+                                    }
+                                  ],
+                                  "data": {
+                                    "url": "../../resolveuid/1367ce64d3d440b7975652f6f36be9be"
+                                  },
+                                  "type": "link"
+                                },
+                                {
+                                  "text": " "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        }
+                      ],
+                      "key": "au6so"
+                    },
+                    {
+                      "cells": [
+                        {
+                          "key": "5fhem",
+                          "type": "data",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H3"
+                                }
+                              ],
+                              "type": "h2"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H2"
+                                }
+                              ],
+                              "type": "h3"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Text can be "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "bold"
+                                    }
+                                  ],
+                                  "type": "strong"
+                                },
+                                {
+                                  "text": " or "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "italic"
+                                    }
+                                  ],
+                                  "type": "em"
+                                },
+                                {
+                                  "text": " or a "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "Link"
+                                    }
+                                  ],
+                                  "data": {
+                                    "url": "../../resolveuid/1367ce64d3d440b7975652f6f36be9be"
+                                  },
+                                  "type": "link"
+                                },
+                                {
+                                  "text": " "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        },
+                        {
+                          "key": "e78dh",
+                          "type": "data",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H3"
+                                }
+                              ],
+                              "type": "h2"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H2"
+                                }
+                              ],
+                              "type": "h3"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Text can be "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "bold"
+                                    }
+                                  ],
+                                  "type": "strong"
+                                },
+                                {
+                                  "text": " or "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "italic"
+                                    }
+                                  ],
+                                  "type": "em"
+                                },
+                                {
+                                  "text": " or a "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "Link"
+                                    }
+                                  ],
+                                  "data": {
+                                    "url": "../../resolveuid/1367ce64d3d440b7975652f6f36be9be"
+                                  },
+                                  "type": "link"
+                                },
+                                {
+                                  "text": " "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        },
+                        {
+                          "key": "feacr",
+                          "type": "data",
+                          "value": [
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H3"
+                                }
+                              ],
+                              "type": "h2"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Heading H2"
+                                }
+                              ],
+                              "type": "h3"
+                            },
+                            {
+                              "children": [
+                                {
+                                  "text": "Text can be "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "bold"
+                                    }
+                                  ],
+                                  "type": "strong"
+                                },
+                                {
+                                  "text": " or "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "italic"
+                                    }
+                                  ],
+                                  "type": "em"
+                                },
+                                {
+                                  "text": " or a "
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "text": "Link"
+                                    }
+                                  ],
+                                  "data": {
+                                    "url": "../../resolveuid/1367ce64d3d440b7975652f6f36be9be"
+                                  },
+                                  "type": "link"
+                                },
+                                {
+                                  "text": " "
+                                }
+                              ],
+                              "type": "p"
+                            }
+                          ]
+                        }
+                      ],
+                      "key": "fqhgk"
+                    }
+                  ],
+                  "striped": true
+                }
+              }
+            },
+            "blocks_layout": {
+              "items": [
+                "f56375fe-70a1-4ac1-a94c-adc9998db548"
+              ]
+            },
+            "title": "Accordion with table"
+          }
+        },
+        "blocks_layout": {
+          "items": [
+            "39f75787-bd7a-42dc-ab40-a6c9dfd2a8f1",
+            "d2168440-888d-4081-8409-b59392abc189",
+            "b58c92b4-6604-4408-9039-a147965fa4bd",
+            "262a2478-3a63-445a-aab7-edf55cceebcf",
+            "d80e4d6f-b708-4f45-8c3a-fc8f8ccc07c0"
+          ]
+        }
+      },
+      "filtering": false,
+      "non_exclusive": false,
+      "right_arrows": true,
+      "styles": {
+        "backgroundColor": "grey"
+      }
+    },
+    "fec13476-1231-42fc-84d5-b110e8e3c6e7": {
+      "@type": "title"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "fec13476-1231-42fc-84d5-b110e8e3c6e7",
+      "41a82a93-c00c-4a40-bac8-53a3e3420c8e",
+      "8f68209e-220e-4230-9d42-8b0602573bd9"
+    ]
+  },
+  "contributors": [],
+  "created": "2023-07-27T19:48:00+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "The accordion contains other blocks in an accordion behavior layout.",
+  "effective": "2023-09-22T16:09:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "exportimport.versions": {},
+  "id": "block-accordion",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2023-09-27T08:30:36+00:00",
+  "nav_title": null,
+  "parent": {
+    "@id": "/block",
+    "@type": "Document",
+    "UID": "425695d2b7cb47e69374d6f211f17e38",
+    "description": "",
+    "image_field": null,
+    "image_scales": null,
+    "review_state": "published",
+    "title": "Blocks",
+    "type_title": "Page"
+  },
+  "preview_caption": null,
+  "preview_image": null,
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "Accordion",
+  "type_title": "Page",
+  "version": "current",
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2023-07-27T19:48:01+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2023-09-22T14:09:24+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}
