@@ -6,6 +6,7 @@ from plone.exportimport import importers
 from Products.GenericSetup.tool import SetupTool
 from zope.component import queryUtility
 
+
 EXAMPLE_CONTENT_FOLDER = Path(__file__).parent / "examplecontent"
 
 
@@ -34,7 +35,7 @@ def create_example_content(portal_setup: SetupTool):
         logger.info(line)
 
 
-def apply_site_customization_behaviors(portal_setup: SetupTool)
+def apply_site_customization_behaviors(portal_setup: SetupTool):
     prepend_behavior("Plone Site", "voltolighttheme.footer")
     prepend_behavior("Plone Site", "voltolighttheme.theme")
     prepend_behavior("Plone Site", "voltolighttheme.header")
