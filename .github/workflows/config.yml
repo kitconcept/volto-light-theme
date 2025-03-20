@@ -102,7 +102,7 @@ jobs:
           STACK_FILE=${{ inputs.stack-file }}
           echo "ENVIRONMENT=${ENVIRONMENT}" >> $GITHUB_OUTPUT
           echo "STACK_NAME=${ENVIRONMENT//./-}" >> $GITHUB_OUTPUT
-          echo "STACK_FILE=${STACK_FILE:-devops/stacks/${environment}.yml}" >> $GITHUB_OUTPUT
+          echo "STACK_FILE=${STACK_FILE:-devops/stacks/${{ inputs.hostname }}.yml}" >> $GITHUB_OUTPUT
 
       - uses: dorny/paths-filter@v3.0.2
         id: filter
