@@ -37,29 +37,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Download Backend Image
-        uses: actions/download-artifact@v4
-        with:
-          name: backend-image
-          path: ${{ runner.temp }}
-
-      - name: Download Backend Acceptance Image
-        uses: actions/download-artifact@v4
-        with:
-          name: backend-acceptance-image
-          path: ${{ runner.temp }}
-
-      - name: Download Frontend Image
-        uses: actions/download-artifact@v4
-        with:
-          name: frontend-image
-          path: ${{ runner.temp }}
-
       - name: Load images
         run: |
-          docker load --input ${{ runner.temp }}/backend-image.tar
-          docker load --input ${{ runner.temp }}/backend-acceptance-image.tar
-          docker load --input ${{ runner.temp }}/frontend-image.tar
+          docker pull ${{ inputs.image-name-prefix }}-backend-acceptance:${{ inputs.image-tag }}
+          docker pull ${{ inputs.image-name-prefix }}-backend:${{ inputs.image-tag }}
+          docker pull ${{ inputs.image-name-prefix }}-frontend:${{ inputs.image-tag }}
           docker image ls -a
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
