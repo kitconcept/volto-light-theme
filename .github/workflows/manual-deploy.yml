@@ -23,7 +23,7 @@ jobs:
     needs:
         - config
     with:
-        tag: ${{ needs.config.outputs.base-tag }}
+        tag: ${{ github.ref_name }}
         environment: ${{ needs.config.outputs.environment }}
         stack-name: ${{ needs.config.outputs.stack-name }}
         stack-file: ${{ needs.config.outputs.stack-file }}
@@ -37,7 +37,7 @@ jobs:
         remote-private-key: ${{ secrets.DEPLOY_SSH }}
         env-file: |
             IMAGE_NAME_PREFIX=${{ needs.config.outputs.image-name-prefix }}
-            IMAGE_TAG=${{ github.ref }}
+            IMAGE_TAG=${{ github.ref_name }}
             STACK_NAME=${{ needs.config.outputs.stack-name }}
             STACK_PREFIX=${{ needs.config.outputs.stack-prefix }}
             HOSTNAME=${{ needs.config.outputs.hostname }}
