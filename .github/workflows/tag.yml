@@ -1,0 +1,100 @@
+name: "VLT: Tag and Release"
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  config:
+    name: "Config: Compute values used in workflow"
+    uses: ./.github/workflows/config.yml
+    with:
+      hostname: "light-theme.kitconcept.io"
+      stack-prefix: "lighttheme-stg"
+
+  backend-build:
+    name: "Backend: Build container image (${{ needs.config.outputs.base-tag }})"
+    uses: ./.github/workflows/backend-image-build.yml
+    needs:
+      - config
+    with:
+      base-tag: ${{ needs.config.outputs.base-tag }}
+      image-name-prefix: ${{ needs.config.outputs.image-name-prefix }}
+      image-name-suffix: backend
+      plone-version: ${{ needs.config.outputs.plone-version }}
+
+  backend-release:
+    name: "Backend: Release container image"
+    uses: ./.github/workflows/backend-image-release.yml
+    needs:
+      - config
+      - backend-build
+    with:
+      base-tag: ${{ needs.config.outputs.base-tag }}
+      image-name-prefix: ${{ needs.config.outputs.image-name-prefix }}
+      image-name-suffix: backend
+      push: true
+      plone-version: ${{ needs.config.outputs.plone-version }}
+
+  frontend-build:
+    name: "Frontend: Build container image (${{ needs.config.outputs.base-tag }})"
+    uses: ./.github/workflows/frontend-image-build.yml
+    needs:
+      - config
+    with:
+      base-tag: ${{ needs.config.outputs.base-tag }}
+      image-name-prefix: ${{ needs.config.outputs.image-name-prefix }}
+      image-name-suffix: frontend
+      node-version: ${{ needs.config.outputs.node-version }}
+      volto-version: ${{ needs.config.outputs.volto-version }}
+    permissions:
+      contents: read
+      packages: write
+
+  frontend-release:
+    name: "Frontend: Release container image"
+    uses: ./.github/workflows/frontend-image-release.yml
+    needs:
+      - config
+      - frontend-build
+    with:
+      base-tag: ${{ needs.config.outputs.base-tag }}
+      image-name-prefix: ${{ needs.config.outputs.image-name-prefix }}
+      image-name-suffix: frontend
+      push: true
+      volto-version: ${{ needs.config.outputs.volto-version }}
+    permissions:
+      contents: read
+      packages: write
+
+  deploy:
+    name: "Deploy: ${{ needs.config.outputs.hostname }}"
+    uses: kitconcept/meta/.github/workflows/deploy.yml@main
+    if: ${{ always() && github.ref == 'refs/heads/main' && (!contains(needs.*.result, 'failure') && !contains(needs.*.result, 'skipped')) }}
+    needs:
+      - config
+      - backend-release
+      - frontend-release
+    with:
+        tag: ${{ needs.config.outputs.base-tag }}
+        environment: ${{ needs.config.outputs.environment }}
+        stack-name: ${{ needs.config.outputs.stack-name }}
+        stack-file: ${{ needs.config.outputs.stack-file }}
+        registry: "ghcr.io"
+        username: ${{ github.actor }}
+    secrets:
+      password: ${{ secrets.GITHUB_TOKEN }}
+      remote-host: ${{ secrets.DEPLOY_HOST }}
+      remote-port: ${{ secrets.DEPLOY_PORT }}
+      remote-user: ${{ secrets.DEPLOY_USER }}
+      remote-private-key: ${{ secrets.DEPLOY_SSH }}
+      env-file: |
+        IMAGE_NAME_PREFIX=${{ needs.config.outputs.image-name-prefix }}
+        IMAGE_TAG=${{ needs.config.outputs.base-tag }}
+        STACK_NAME=${{ needs.config.outputs.stack-name }}
+        STACK_PREFIX=${{ needs.config.outputs.stack-prefix }}
+        HOSTNAME=${{ needs.config.outputs.hostname }}
+    permissions:
+      contents: read
+      packages: write
