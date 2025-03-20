@@ -77,8 +77,8 @@ class ISiteHeaderCustomizationSettings(model.Schema):
         title=_("label_complementary_logo", default="Complementary Logo"),
         description=_(
             "help_complementary_logo",
-            default="If the project has a complimentary logo, please upload it here. "
-            "It will show in the right side of the header",
+            default="If the project has a complementary logo, please upload it here. "
+            "It will show in the right side of the header.",
         ),
         required=False,
     )

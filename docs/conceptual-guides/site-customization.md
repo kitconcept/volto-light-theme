@@ -10,40 +10,43 @@ myst:
 # Site customization
 
 VLT supports site customization via the add-on `kitconcept.voltolighttheme`.
-This add-on has a behavior that can be applied to the Plone site root or to any object that implements the `INavigationRoot` interface, such as the language root folder.
-This behavior provide a set of fields that allow you to customize the properties and the look and feel of the site.
+This add-on has behaviors that can be applied to the Plone site root or to any object that implements the `INavigationRoot` interface, such as the language root folder.
+These behaviors provide fields that allow you to customize the properties and the look and feel of the site.
 
 ````{important}
-A site is content that exist under a parent object that implements `INavigationRoot`, this could be the root Plone site itself, a language root folder (LRF) (eg. `/en` or `/ca`), or an imaginary "subsite" content type.
-Site can be __nested__ so the settings that are applied are always the ones from the nearest site ancestor to the current content object.
+A site is content that exists under a parent object that implements `INavigationRoot`.
+This could be the root Plone site itself, a language root folder (LRF) such as `/en` or `/ca`, or a virtual "subsite" content type.
+Sites can be _nested_, so the settings that are applied are always the ones from the nearest site ancestor to the current content object.
 
 For example, given this structure:
 
-```
+```console
 Plone site (/)
-├─ LRF (/en)
-   ├─ Document (/en/document1)
-   ├─ Subsite (/en/subsite)
-      ├─ Document (/en/subsite/document2)
+└── LRF (/en)
+    ├── Document (/en/document1)
+    └── Subsite (/en/subsite)
+        └── Document (/en/subsite/document2)
 ```
 
-If `/en` has a custom logo, `/en/document1` will show this logo, because it's the nearest site ancestor.
-If the subsite `/en/subsite` has set another logo, `/en/subsite/document2` will show it instead of the one set in `/en`.
-This allows to create several levels of customizations inside your Plone site.
+If `/en` has a custom logo, then `/en/document1` will inherit and show the logo from `/en` because it's `/en/document1`'s nearest site ancestor.
+
+Similarly, if the subsite `/en/subsite` has set a different logo, then `/en/subsite/document2` will show the logo from `/en/subsite` instead of the one set in `/en`.
+
+This lets you create several levels of customizations inside your Plone site.
 ````
 
-## Adding the behaviors
+## Add behaviors
 
 The behaviors are named:
 
-- voltolighttheme.header
-- voltolighttheme.theme
-- voltolighttheme.footer
+-   `voltolighttheme.header`
+-   `voltolighttheme.theme`
+-   `voltolighttheme.footer`
 
 These behaviors enable fields for customizing the site in the assigned content type.
 You should assign them to the content type that you want to customize.
 
-If you want to add them to a Plone site add this to {file}`<your_backend_addon>/profiles/default/types/Plone_Site.xml`:
+To add them to a Plone site, add the following snippet to {file}`<your_backend_addon>/profiles/default/types/Plone_Site.xml`.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -62,7 +65,7 @@ If you want to add them to a Plone site add this to {file}`<your_backend_addon>/
 </object>
 ```
 
-in case you want to add them at the very top of your content type form, you will have to redefine all the current behaviors:
+In case you want to add them at the very top of your content type form, you will have to redefine all the current behaviors.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -89,13 +92,13 @@ in case you want to add them at the very top of your content type form, you will
 ```
 
 ```{note}
-This is shown as a reference, and will remove any other behavior that you might have customized in your content type (Plone Site) in this case, because the `purge="true"` directive.
-You have to option of doing it programatically or via ZMI (portal_types/Plone Site) in case you want to reorder them manually.
+This is shown as a reference, and will remove any other behavior that you might have customized in your content type (Plone Site) due to the `purge="true"` directive.
+You have the option of doing it either programmatically or via ZMI (`portal_types/Plone Site`) in case you want to reorder them manually.
 ```
 
 ## Header
 
-You can customize the following aspects of the header your site.
+You can customize the following aspects of the header in your site.
 
 ### Site logo
 
@@ -103,8 +106,8 @@ You can define the site logo for the main site as well as the subsites provided 
 
 ### Complementary logo
 
-You can define a complementary logo in the header, for convenience purposes.
-This logo shows up on the right-most side of the header.
+You can define a complementary logo in the header.
+This is a second logo shown on the right-most side of the header.
 
 ### Intranet flag
 
@@ -145,7 +148,7 @@ You can customize the footer background color in this widget.
 
 ## Footer
 
-You can customize the following aspects of the footer your site.
+You can customize the following aspects of the footer in your site.
 
 ### Footer links
 
