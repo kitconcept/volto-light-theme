@@ -98,8 +98,9 @@ jobs:
         run: |
           echo "BASE_TAG=sha-$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
           python3 -c 'import json; data = json.load(open("./frontend/mrs.developer.json")); print("VOLTO_VERSION=" + (data["core"].get("tag") or "latest"))' >> $GITHUB_OUTPUT
-          echo "ENVIRONMENT=${{ inputs.hostname }}" >> $GITHUB_OUTPUT
-          echo "STACK_NAME=${/${{ inputs.hostname }}/./-}" >> $GITHUB_OUTPUT
+          ENVIRONMENT=${{ inputs.hostname }}
+          echo "ENVIRONMENT=${ENVIRONMENT}" >> $GITHUB_OUTPUT
+          echo "STACK_NAME=${ENVIRONMENT//./-}" >> $GITHUB_OUTPUT
 
       - uses: dorny/paths-filter@v3.0.2
         id: filter
