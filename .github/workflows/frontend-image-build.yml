@@ -69,12 +69,6 @@ jobs:
           file: frontend/Dockerfile
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          push: true
           build-args: |
             VOLTO_VERSION=${{ inputs.volto-version }}
-          outputs: type=docker,dest=${{ runner.temp }}/frontend-image.tar
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: frontend-image
-          path: ${{ runner.temp }}/frontend-image.tar

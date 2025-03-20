@@ -67,16 +67,10 @@ jobs:
           file: backend/Dockerfile
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          push: true
           build-args: |
             PLONE_VERSION=${{ inputs.plone-version }}
             SEED=$GITHUB_RUN_ID
-          outputs: type=docker,dest=${{ runner.temp }}/backend-image.tar
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: backend-image
-          path: ${{ runner.temp }}/backend-image.tar
 
   build-acceptance:
     runs-on: ubuntu-latest
