@@ -12,12 +12,12 @@ on:
       image-name-suffix:
         required: true
         type: string
-      node-version:
-        required: true
-        type: string
       volto-version:
         required: true
         type: string
+      push:
+        required: true
+        type: boolean
 
 jobs:
   release:
@@ -72,7 +72,7 @@ jobs:
           platforms: linux/amd64
           context: frontend/
           file: frontend/Dockerfile
-          push: ${{ github.event_name != 'pull_request' }}
+          push: ${{ inputs.push }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
