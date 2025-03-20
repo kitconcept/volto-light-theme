@@ -11,7 +11,6 @@ jobs:
     name: "Config: Compute values used in workflow"
     uses: ./.github/workflows/config.yml
 
-
   docs:
     name: "Documentation: Run tests"
     uses: ./.github/workflows/docs.yml
@@ -182,7 +181,7 @@ jobs:
   backend-release:
     name: "Backend: Release container image"
     uses: ./.github/workflows/backend-image-release.yml
-    if: ${{ always() && (!contains(needs.*.result, 'failure') && !contains(needs.*.result, 'skipped')) }}
+    if: ${{ needs.config.outputs.acceptance == 'true' && (always() && !contains(needs.*.result, 'failure'))}}
     needs:
       - config
       - acceptance
@@ -198,7 +197,7 @@ jobs:
   frontend-release:
     name: "Frontend: Release container image"
     uses: ./.github/workflows/frontend-image-release.yml
-    if: ${{ always() && (!contains(needs.*.result, 'failure') && !contains(needs.*.result, 'skipped')) }}
+    if: ${{ needs.config.outputs.acceptance == 'true' && (always() && !contains(needs.*.result, 'failure'))}}
     needs:
       - config
       - frontend-build
@@ -217,7 +216,7 @@ jobs:
   deploy:
     name: "Deploy: ${{ needs.config.outputs.hostname }}"
     uses: kitconcept/meta/.github/workflows/deploy.yml@main
-    if: ${{ always() && github.ref == 'refs/heads/main' && (!contains(needs.*.result, 'failure') && !contains(needs.*.result, 'skipped')) }}
+    if: ${{ needs.config.outputs.acceptance == 'true' && (always() && github.ref == 'refs/heads/main' && !contains(needs.*.result, 'failure')) }}
     needs:
       - config
       - backend-release
@@ -244,3 +243,45 @@ jobs:
     permissions:
       contents: read
       packages: write
+
+  report:
+    name: "Final report"
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    needs:
+      - config
+      - docs
+      - backend-lint
+      - backend-test
+      - backend-coverage
+      - backend-build
+      - frontend-lint
+      - frontend-unit
+      - frontend-i18n
+      - frontend-build
+      - acceptance
+      - visual-acceptance
+      - backend-release
+      - frontend-release
+      - deploy
+    steps:
+      - name: Write report
+        run: |
+          echo '# Workflow Report' >> $GITHUB_STEP_SUMMARY
+          echo '| Job | Status | Conclusion |' >> $GITHUB_STEP_SUMMARY
+          echo '| --- | --- |' >> $GITHUB_STEP_SUMMARY
+          echo '| ${{ needs.config.result.name }} | ${{ needs.config.result.conclusion }} | ${{ needs.config.result.status }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| ${{ needs.docs.result.name }} | ${{ needs.docs.result.conclusion }} | ${{ needs.docs.result.status }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| ${{ needs.backend-lint.result.name }} | ${{ needs.backend-lint.result.conclusion }} | ${{ needs.backend-lint.result.status }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| ${{ needs.backend-test.result.name }} | ${{ needs.backend-test.result.conclusion }} | ${{ needs.backend-test.result.status }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| ${{ needs.backend-coverage.result.name }} | ${{ needs.backend-coverage.result.conclusion }} | ${{ needs.backend-coverage.result.status }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| ${{ needs.backend-build.result.name }} | ${{ needs.backend-build.result.conclusion }} | ${{ needs.backend-build.result.status }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| ${{ needs.frontend-lint.result.name }} | ${{ needs.frontend-lint.result.conclusion }} | ${{ needs.frontend-lint.result.status }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| ${{ needs.frontend-unit.result.name }} | ${{ needs.frontend-unit.result.conclusion }} | ${{ needs.frontend-unit.result.status }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| ${{ needs.frontend-i18n.result.name }} | ${{ needs.frontend-i18n.result.conclusion }} | ${{ needs.frontend-i18n.result.status }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| ${{ needs.frontend-build.result.name }} | ${{ needs.frontend-build.result.conclusion }} | ${{ needs.frontend-build.result.status }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| ${{ needs.acceptance.result.name }} | ${{ needs.acceptance.result.conclusion }} | ${{ needs.acceptance.result.status }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| ${{ needs.visual-acceptance.result.name }} | ${{ needs.visual-acceptance.result.conclusion }} | ${{ needs.visual-acceptance.result.status }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| ${{ needs.backend-release.result.name }} | ${{ needs.backend-release.result.conclusion }} | ${{ needs.backend-release.result.status }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| ${{ needs.frontend-release.result.name }} | ${{ needs.frontend-release.result.conclusion }} | ${{ needs.frontend-release.result.status }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| ${{ needs.deploy.result.name }} | ${{ needs.deploy.result.conclusion }} | ${{ needs.deploy.result.status }} |' >> $GITHUB_STEP_SUMMARY
