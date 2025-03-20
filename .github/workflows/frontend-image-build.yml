@@ -70,7 +70,5 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           push: true
-          cache-from: type=registry,ref=${{ inputs.image-name-prefix }}-${{ inputs.image-name-suffix }}:buildcache-${{ github.ref_name }}
-          cache-to: type=registry,ref=${{ inputs.image-name-prefix }}-${{ inputs.image-name-suffix }}:buildcache-${{ inputs.base-tag }},mode=max
           build-args: |
             VOLTO_VERSION=${{ inputs.volto-version }}
