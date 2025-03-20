@@ -182,7 +182,7 @@ jobs:
   backend-release:
     name: "Backend: Release container image"
     uses: ./.github/workflows/backend-image-release.yml
-    if: ${{ always() && (!contains(needs.*.result, 'failure') && !contains(needs.*.result, 'skipped')) }}
+    if: ${{ needs.config.outputs.acceptance == 'true' && (always() && !contains(needs.*.result, 'failure'))}}
     needs:
       - config
       - acceptance
@@ -198,7 +198,7 @@ jobs:
   frontend-release:
     name: "Frontend: Release container image"
     uses: ./.github/workflows/frontend-image-release.yml
-    if: ${{ always() && (!contains(needs.*.result, 'failure') && !contains(needs.*.result, 'skipped')) }}
+    if: ${{ needs.config.outputs.acceptance == 'true' && (always() && !contains(needs.*.result, 'failure'))}}
     needs:
       - config
       - frontend-build
@@ -217,7 +217,7 @@ jobs:
   deploy:
     name: "Deploy: ${{ needs.config.outputs.hostname }}"
     uses: kitconcept/meta/.github/workflows/deploy.yml@main
-    if: ${{ always() && github.ref == 'refs/heads/main' && (!contains(needs.*.result, 'failure') && !contains(needs.*.result, 'skipped')) }}
+    if: ${{ needs.config.outputs.acceptance == 'true' && (always() && github.ref == 'refs/heads/main' && !contains(needs.*.result, 'failure')) }}
     needs:
       - config
       - backend-release
