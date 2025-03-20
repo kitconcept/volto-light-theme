@@ -115,6 +115,9 @@ jobs:
     uses: ./.github/workflows/backend-image-build.yml
     needs:
       - config
+      - backend-lint
+      - backend-test
+      - backend-coverage
     with:
       base-tag: ${{ needs.config.outputs.BASE_TAG }}
       image-name-prefix: ${{ needs.config.outputs.IMAGE_NAME_PREFIX }}
@@ -153,6 +156,9 @@ jobs:
     uses: ./.github/workflows/frontend-image-build.yml
     needs:
       - config
+      - frontend-lint
+      - frontend-i18n
+      - frontend-unit
     with:
       base-tag: ${{ needs.config.outputs.BASE_TAG }}
       image-name-prefix: ${{ needs.config.outputs.IMAGE_NAME_PREFIX }}
