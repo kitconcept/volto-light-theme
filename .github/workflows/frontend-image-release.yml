@@ -29,10 +29,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Load image
-        run: |
-          docker pull ${{ inputs.image-name-prefix }}-${{ inputs.image-name-suffix }}:${{ inputs.base-tag }}
-          docker image ls -a
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
 
       - name: Docker meta
         id: meta
@@ -69,5 +70,7 @@ jobs:
           push: ${{ inputs.push }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=registry,ref=${{ inputs.image-name-prefix }}-${{ inputs.image-name-suffix }}:buildcache-${{ inputs.base-tag }}
+          cache-to: type=registry,ref=${{ inputs.image-name-prefix }}-${{ inputs.image-name-suffix }}:buildcache-${{ github.ref_name }},mode=max
           build-args: |
             VOLTO_VERSION=${{ inputs.volto-version }}

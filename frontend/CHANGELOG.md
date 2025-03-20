@@ -1,6 +1,46 @@
 # kitconcept's volto-light-theme Release Notes
 
+<!-- You should *NOT* be adding new change log entries to this file.
+     You should create a file in the news directory instead.
+     For helpful instructions, please see:
+     https://6.docs.plone.org/contributing/index.html?highlight=towncrier#change-log-entry
+-->
+
 <!-- towncrier release notes start -->
+
+## 6.0.0-alpha.17 (2025-03-20)
+
+### Breaking
+
+- Renamed widget: `ThemeColorPicker` -> `ColorPicker`. @sneridagh [#486](https://github.com/kitconcept/volto-light-theme/pull/486)
+- Renamed widget: `BackgroundColorWidget` -> `themeColorSwatch`. @sneridagh [#486](https://github.com/kitconcept/volto-light-theme/pull/486)
+- Renamed widget: `sizeWidget` -> `size`. @sneridagh [#486](https://github.com/kitconcept/volto-light-theme/pull/486)
+
+### Feature
+
+- New widget: `colorPicker`. @sneridagh [#486](https://github.com/kitconcept/volto-light-theme/pull/486)
+- New widget: `themeColorSwatch`. @sneridagh [#486](https://github.com/kitconcept/volto-light-theme/pull/486)
+- Add `@kitconcept/volto-banner-block` to the recommended VLT add-ons. @sneridagh [#487](https://github.com/kitconcept/volto-light-theme/pull/487)
+- New widget: `object_list`. @sneridagh [#491](https://github.com/kitconcept/volto-light-theme/pull/491)
+- Use the `@inherit` endpoint. @sneridagh [#494](https://github.com/kitconcept/volto-light-theme/pull/494)
+- Update volto-highlight-block to 4.1.0 @sneridagh [#498](https://github.com/kitconcept/volto-light-theme/pull/498)
+
+### Bugfix
+
+- Remove title attribute from the logo. @davisagli [#336](https://github.com/kitconcept/volto-light-theme/pull/336)
+- Color fixes for description, links and buttons for Slider & Highlight blocks. @danalvrz [#476](https://github.com/kitconcept/volto-light-theme/pull/476)
+- Fixed nested blocks theme: when the theme is not set, inherit from parent instead of getting the default one for the current nested block. @sneridagh [#489](https://github.com/kitconcept/volto-light-theme/pull/489)
+- Fix workflow: acceptance always runs, even if one of the dependencies are skipped. @sneridagh [#492](https://github.com/kitconcept/volto-light-theme/pull/492)
+- Add actions to header + Fix hydration problem in /edit + Sitemap container. @sneridagh [#492](https://github.com/kitconcept/volto-light-theme/pull/492)
+- Specify desktop flex direction starting at 768px screen width. @danalvrz [#496](https://github.com/kitconcept/volto-light-theme/pull/496)
+
+### Internal
+
+- Added deployment workflow. @ericof [#495](https://github.com/kitconcept/volto-light-theme/pull/495)
+
+### Documentation
+
+- Update requirements for plone.restapi in docs. @sneridagh [#498](https://github.com/kitconcept/volto-light-theme/pull/498)
 
 ## 6.0.0-alpha.16 (2025-03-03)
 
@@ -169,7 +209,7 @@
 
 ### Bugfix
 
-- Change the pin type in `workspace` dependency declaration for `@plone/components`. @sneridagh
+- Change the pin type in `workspace` dependency declaration for `@plone/components`. @sneridagh 
 
 ## 6.0.0-alpha.0 (2024-11-21)
 
