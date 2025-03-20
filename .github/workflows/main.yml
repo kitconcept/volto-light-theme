@@ -224,7 +224,7 @@ jobs:
   deploy:
     name: "Deploy: ${{ needs.config.outputs.hostname }}"
     uses: kitconcept/meta/.github/workflows/deploy.yml@main
-    if: ${{ always() && github.ref == 'refs/heads/main' }}
+    if: ${{ always() && github.ref == 'refs/heads/main' && (!contains(needs.*.result, 'failure') && !contains(needs.*.result, 'skipped')) }}
     needs:
       - config
       - backend-release
