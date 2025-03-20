@@ -6,8 +6,6 @@ from plone.schema import JSONField
 from plone.supermodel import model
 from zope.interface import provider
 from zope.schema import TextLine
-from zope.schema.vocabulary import SimpleTerm
-from zope.schema.vocabulary import SimpleVocabulary
 
 import json
 
