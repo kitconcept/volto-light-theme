@@ -1,0 +1,45 @@
+name: "VLT: Manual Deploy"
+description: "Always using the branch / tag name"
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  config:
+    uses: ./.github/workflows/config.yml
+    with:
+      hostname: "light-theme.kitconcept.io"
+      stack-prefix: "lighttheme-stg"
+      image-name-prefix: ghcr.io/kitconcept/voltolighttheme
+      node-version: "22.x"
+      python-version: "3.12"
+      plone-version: "6.1.0"
+
+  deploy:
+    uses: kitconcept/meta/.github/workflows/deploy.yml@main
+    if: ${{ github.ref == 'refs/heads/main' }}
+    needs:
+        - config
+    with:
+        tag: ${{ needs.config.outputs.base-tag }}
+        environment: ${{ needs.config.outputs.environment }}
+        stack-name: ${{ needs.config.outputs.stack-name }}
+        stack-file: ${{ needs.config.outputs.stack-file }}
+        registry: "ghcr.io"
+        username: ${{ github.actor }}
+    secrets:
+        password: ${{ secrets.GITHUB_TOKEN }}
+        remote-host: ${{ secrets.DEPLOY_HOST }}
+        remote-port: ${{ secrets.DEPLOY_PORT }}
+        remote-user: ${{ secrets.DEPLOY_USER }}
+        remote-private-key: ${{ secrets.DEPLOY_SSH }}
+        env-file: |
+            IMAGE_NAME_PREFIX=${{ needs.config.outputs.image-name-prefix }}
+            IMAGE_TAG=${{ github.ref }}
+            STACK_NAME=${{ needs.config.outputs.stack-name }}
+            STACK_PREFIX=${{ needs.config.outputs.stack-prefix }}
+            HOSTNAME=${{ needs.config.outputs.hostname }}
+    permissions:
+        contents: read
+        packages: write
