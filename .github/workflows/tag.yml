@@ -71,7 +71,7 @@ jobs:
   deploy:
     name: "Deploy: ${{ needs.config.outputs.hostname }}"
     uses: kitconcept/meta/.github/workflows/deploy.yml@main
-    if: ${{ always() && github.ref == 'refs/heads/main' && (!contains(needs.*.result, 'failure') && !contains(needs.*.result, 'skipped')) }}
+    if: ${{ always() && (!contains(needs.*.result, 'failure') && !contains(needs.*.result, 'skipped')) }}
     needs:
       - config
       - backend-release
@@ -98,3 +98,27 @@ jobs:
     permissions:
       contents: read
       packages: write
+
+  report:
+    name: "Final report"
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    needs:
+      - config
+      - backend-build
+      - backend-release
+      - frontend-build
+      - frontend-release
+      - deploy
+    steps:
+      - name: Write report
+        run: |
+          echo '# Workflow Report' >> $GITHUB_STEP_SUMMARY
+          echo '| Job ID | Conclusion |' >> $GITHUB_STEP_SUMMARY
+          echo '| --- | --- |' >> $GITHUB_STEP_SUMMARY
+          echo '| config | ${{ needs.config.result }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| backend-build | ${{ needs.backend-build.result }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| backend-release | ${{ needs.backend-release.result }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| frontend-build | ${{ needs.frontend-build.result }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| frontend-release | ${{ needs.frontend-release.result }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| deploy | ${{ needs.deploy.result }} |' >> $GITHUB_STEP_SUMMARY
