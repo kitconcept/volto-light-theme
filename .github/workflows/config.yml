@@ -12,7 +12,6 @@ on:
       stack-file:
         required: false
         type: string
-        default: "devops/stacks/${{ inputs.hostname }}.yml"
       image-name-prefix:
         required: true
         type: string
@@ -70,7 +69,7 @@ on:
         value: ${{ jobs.config.outputs.stack-name }}
       stack-file:
         description: "Deploy: Name of the stack file to be used"
-        value: ${{ inputs.stack-file }}
+        value: ${{ jobs.config.outputs.stack-file }}
       stack-prefix:
         description: "Deploy: Short name to be used to create Traefik labels"
         value: ${{ inputs.stack-prefix }}
@@ -88,6 +87,7 @@ jobs:
       volto-version: ${{ steps.vars.outputs.VOLTO_VERSION }}
       environment: ${{ steps.vars.outputs.ENVIRONMENT }}
       stack-name: ${{ steps.vars.outputs.STACK_NAME }}
+      stack-file: ${{ steps.vars.outputs.STACK_FILE }}
 
     steps:
       - name: Checkout
@@ -99,8 +99,10 @@ jobs:
           echo "BASE_TAG=sha-$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
           python3 -c 'import json; data = json.load(open("./frontend/mrs.developer.json")); print("VOLTO_VERSION=" + (data["core"].get("tag") or "latest"))' >> $GITHUB_OUTPUT
           ENVIRONMENT=${{ inputs.hostname }}
+          STACK_FILE=${{ inputs.stack-file }}
           echo "ENVIRONMENT=${ENVIRONMENT}" >> $GITHUB_OUTPUT
           echo "STACK_NAME=${ENVIRONMENT//./-}" >> $GITHUB_OUTPUT
+          echo "STACK_FILE=${STACK_FILE:-devops/stacks/${environment}.yml}" >> $GITHUB_OUTPUT
 
       - uses: dorny/paths-filter@v3.0.2
         id: filter
@@ -130,6 +132,7 @@ jobs:
           echo 'VOLTO_VERSION: ${{ steps.vars.outputs.VOLTO_VERSION }}'
           echo 'ENVIRONMENT: ${{ steps.vars.outputs.ENVIRONMENT }}'
           echo 'STACK_NAME: ${{ steps.vars.outputs.STACK_NAME }}'
+          echo 'STACK_FILE: ${{ steps.vars.outputs.STACK_FILE }}'
           echo 'event-name: ${{ github.event_name }}'
           echo 'Paths - acceptance: ${{ steps.filter.outputs.acceptance }}'
           echo 'Paths - backend: ${{ steps.filter.outputs.backend }}'
