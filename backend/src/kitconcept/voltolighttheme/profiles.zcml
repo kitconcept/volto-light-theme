@@ -20,7 +20,7 @@
         description="Package to add example content to a new Volto Light Theme site"
         provides="Products.GenericSetup.interfaces.EXTENSION"
         directory="profiles/demo"
-        post_handler=".setuphandlers.demo.create_example_content"
+        post_handler=".setuphandlers.demo.post_install"
         />
   </configure>
 
