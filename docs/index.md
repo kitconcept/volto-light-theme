@@ -52,7 +52,7 @@ how-to-guides/upgrade-guide
 conceptual-guides/requirements-and-specifications
 conceptual-guides/layout
 conceptual-guides/vertical-spacing
-% conceptual-guides/customization-behavior
+conceptual-guides/site-customization
 conceptual-guides/block-model-v3
 ```
 
