@@ -39,6 +39,7 @@ jobs:
     if: ${{ needs.config.outputs.backend == 'true' }}
 
   backend-test:
+    name: "Backend: Run tests"
     uses: ./.github/workflows/backend-test.yml
     needs:
         - config
