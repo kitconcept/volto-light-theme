@@ -1,12 +1,9 @@
 # kitconcept.voltolighttheme
 
-Example content for @kitconcept/volto-light-theme
+Behaviors and example content to be used by @kitconcept/volto-light-theme
 
 ## Features
 
-### Content Types
-
-- TBD
 
 ### Initial content
 
