@@ -10,13 +10,25 @@ myst:
 # Site customization
 
 VLT supports site customization via the add-on `kitconcept.voltolighttheme`.
-This add-on has behaviors that can be applied to the Plone site root or to any object that implements the `INavigationRoot` interface, such as the language root folder.
+This add-on has behaviors that can be applied to any content type.
 These behaviors provide fields that allow you to customize the properties and the look and feel of the site.
 
-````{important}
-A site is content that exists under a parent object that implements `INavigationRoot`.
-This could be the root Plone site itself, a language root folder (LRF) such as `/en` or `/ca`, or a virtual "subsite" content type.
-Sites can be _nested_, so the settings that are applied are always the ones from the nearest site ancestor to the current content object.
+In Volto, content types also work as a directory in a file system tree where they can contain additional content types.
+In VLT, through the use of the `@inherit` endpoint, children inherit the behaviors from `kitconcept.voltolighttheme` from the closest ancestor.
+
+## Plone site root
+
+Every Plone site has a site root.
+Content types inherit the behaviors from this single parent.
+
+## Subsites
+
+Subsites are typically child content types within a Plone Site.
+They usually implement {term}`INavigationRoot` behavior.
+Language root folders (LRF), such as `/en` or `/ca`, are subsites.
+You can create a content type that implements `INavigationRoot`, adding it anywhere in your site tree, and it will work as a subsite.
+
+Subsites can be _nested_, so the settings that are applied are always the ones from the nearest site ancestor to the current content object.
 
 For example, given this structure:
 
@@ -33,7 +45,6 @@ If `/en` has a custom logo, then `/en/document1` will inherit and show the logo 
 Similarly, if the subsite `/en/subsite` has set a different logo, then `/en/subsite/document2` will show the logo from `/en/subsite` instead of the one set in `/en`.
 
 This lets you create several levels of customizations inside your Plone site.
-````
 
 ## Add behaviors
 
@@ -102,7 +113,7 @@ You can customize the following aspects of the header in your site.
 
 ### Site logo
 
-You can define the site logo for the main site as well as the subsites provided by content types that implement the `INavigationRoot` interface.
+You can define the main site logo shown in the top left-most side of the header.
 
 ### Complementary logo
 
