@@ -56,6 +56,8 @@ jobs:
         with:
           filters: |
             acceptance:
+              - '.github/workflows/backend*'
+              - '.github/workflows/frontend*'
               - 'backend/**'
               - 'frontend/**'
             backend:
@@ -229,7 +231,6 @@ jobs:
 
   backend-release:
     uses: ./.github/workflows/backend-image-release.yml
-    if: ${{ always() }}
     needs:
       - config
       - acceptance
