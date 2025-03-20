@@ -1,0 +1,131 @@
+name: 'VLT: Compute Config variables'
+
+on:
+  workflow_call:
+    inputs:
+      hostname:
+        required: true
+        type: string
+      stack-prefix:
+        required: true
+        type: string
+      stack-file:
+        required: false
+        type: string
+        default: "devops/stacks/${{ inputs.hostname }}.yml"
+      image-name-prefix:
+        required: true
+        type: string
+      node-version:
+        required: true
+        type: string
+      python-version:
+        required: true
+        type: string
+      plone-version:
+        required: true
+        type: string
+    outputs:
+      acceptance:
+        description: "Flag reporting if we should run the acceptance jobs"
+        value: ${{ jobs.config.outputs.acceptance }}
+      backend:
+        description: "Flag reporting if we should run the backend jobs"
+        value: ${{ jobs.config.outputs.backend }}
+      devops:
+        description: "Flag reporting if we should run the devops jobs"
+        value: ${{ jobs.config.outputs.devops }}
+      docs:
+        description: "Flag reporting if we should run the docs jobs"
+        value: ${{ jobs.config.outputs.docs }}
+      frontend:
+        description: "Flag reporting if we should run the frontend jobs"
+        value: ${{ jobs.config.outputs.frontend }}
+      base-tag:
+        description: "Base tag to be used when creating container images"
+        value: ${{ jobs.config.outputs.base-tag }}
+      image-name-prefix:
+        description: "Image name prefix for container images"
+        value: ${{ inputs.image-name-prefix }}
+      node-version:
+        description: "Node version to be used"
+        value: ${{ inputs.node-version }}
+      python-version:
+        description: "Python version to be used"
+        value: ${{ inputs.python-version }}
+      plone-version:
+        description: "Plone version to be used"
+        value: ${{ inputs.plone-version }}
+      volto-version:
+        description: "Volto version to be used"
+        value: ${{ jobs.config.outputs.volto-version }}
+      hostname:
+        description: "Deploy: Hostname to be used for the site"
+        value: ${{ inputs.hostname }}
+      environment:
+        description: "Deploy: Environment used to get secrets and variables from."
+        value: ${{ jobs.config.outputs.ENVIRONMENT }}
+      stack-name:
+        description: "Deploy: Name of the Docker stack to be used"
+        value: ${{ jobs.config.outputs.stack-name }}
+      stack-file:
+        description: "Deploy: Name of the stack file to be used"
+        value: ${{ inputs.stack-file }}
+      stack-prefix:
+        description: "Deploy: Short name to be used to create Traefik labels"
+        value: ${{ inputs.stack-prefix }}
+
+jobs:
+  config:
+    runs-on: ubuntu-latest
+    outputs:
+      acceptance: ${{ steps.filter.outputs.acceptance }}
+      backend: ${{ steps.filter.outputs.backend }}
+      devops: ${{ steps.filter.outputs.devops }}
+      docs: ${{ steps.filter.outputs.docs }}
+      frontend: ${{ steps.filter.outputs.frontend }}
+      base-tag: ${{ steps.vars.outputs.BASE_TAG }}
+      volto-version: ${{ steps.vars.outputs.VOLTO_VERSION }}
+      environment: ${{ steps.vars.outputs.ENVIRONMENT }}
+      stack-name: ${{ steps.vars.outputs.STACK_NAME }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compute several vars needed for the CI
+        id: vars
+        run: |
+          echo "BASE_TAG=sha-$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+          python3 -c 'import json; data = json.load(open("./frontend/mrs.developer.json")); print("VOLTO_VERSION=" + (data["core"].get("tag") or "latest"))' >> $GITHUB_OUTPUT
+          echo "ENVIRONMENT=${{ inputs.hostname }}" >> $GITHUB_OUTPUT
+          echo "STACK_NAME=${${{ inputs.hostname }}//./-}" >> $GITHUB_OUTPUT
+
+      - name: Test vars
+        run: |
+          echo "BASE_TAG=${{ steps.vars.outputs.BASE_TAG }}"
+          echo 'VOLTO_VERSION=${{ steps.vars.outputs.VOLTO_VERSION }}'
+          echo 'ENVIRONMENT=${{ steps.vars.outputs.ENVIRONMENT }}'
+          echo 'STACK_NAME=${{ steps.vars.outputs.STACK_NAME }}'
+
+      - uses: dorny/paths-filter@v3.0.2
+        id: filter
+        with:
+          filters: |
+            acceptance:
+              - '.github/workflows/backend*'
+              - '.github/workflows/frontend*'
+              - 'backend/**'
+              - 'frontend/**'
+            backend:
+              - 'backend/**'
+              - '.github/workflows/backend*'
+            devops:
+              - 'devops/**'
+            docs:
+              - '.readthedocs.yaml'
+              - 'docs/**'
+              - '.github/workflows/docs.yaml'
+            frontend:
+              - 'frontend/**'
+              - '.github/workflows/frontend*'
