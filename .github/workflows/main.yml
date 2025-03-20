@@ -22,7 +22,7 @@ jobs:
 
   backend-lint:
     name: "Backend: Run lint checkers"
-    uses: ./.github/workflows/backend-lint.yml
+    uses: kitconcept/meta/.github/workflows/backend-lint.yml@main
     needs:
         - config
     with:
@@ -32,7 +32,7 @@ jobs:
 
   backend-test:
     name: "Backend: Run tests"
-    uses: ./.github/workflows/backend-test.yml
+    uses: kitconcept/meta/.github/workflows/backend-test.yml@main
     needs:
         - config
     strategy:
@@ -46,7 +46,7 @@ jobs:
 
   backend-coverage:
     name: "Backend: Run test coverage"
-    uses: ./.github/workflows/backend-coverage.yml
+    uses: kitconcept/meta/.github/workflows/backend-coverage.yml@main
     needs:
         - config
     with:
@@ -71,7 +71,7 @@ jobs:
 
   frontend-lint:
     name: "Frontend: Run lint checkers"
-    uses: ./.github/workflows/frontend-lint.yml
+    uses: kitconcept/meta/.github/workflows/frontend-lint.yml@main
     needs:
         - config
     with:
@@ -83,7 +83,7 @@ jobs:
 
   frontend-unit:
     name: "Frontend: Run unit tests"
-    uses: ./.github/workflows/frontend-unit.yml
+    uses: kitconcept/meta/.github/workflows/frontend-test.yml@main
     needs:
         - config
     with:
@@ -92,7 +92,7 @@ jobs:
 
   frontend-i18n:
     name: "Frontend: Run i18n checks"
-    uses: ./.github/workflows/frontend-i18n.yml
+    uses: kitconcept/meta/.github/workflows/frontend-i18n.yml@main
     needs:
         - config
     with:
