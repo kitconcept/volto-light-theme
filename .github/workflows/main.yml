@@ -189,7 +189,7 @@ jobs:
   backend-release:
     name: "Backend: Release container image"
     uses: ./.github/workflows/backend-image-release.yml
-    if: ${{ (always() && !contains(needs.*.result, 'failure')) }}
+    if: ${{ always() && (!contains(needs.*.result, 'failure') && !contains(needs.*.result, 'skipped')) }}
     needs:
       - config
       - acceptance
@@ -205,7 +205,7 @@ jobs:
   frontend-release:
     name: "Frontend: Release container image"
     uses: ./.github/workflows/frontend-image-release.yml
-    if: ${{ always() && !contains(needs.*.result, 'failure') }}
+    if: ${{ always() && (!contains(needs.*.result, 'failure') && !contains(needs.*.result, 'skipped')) }}
     needs:
       - config
       - frontend-build
