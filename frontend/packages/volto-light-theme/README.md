@@ -1,9 +1,7 @@
 # Volto Light Theme by kitconcept
 
 [![NPM](https://img.shields.io/npm/v/@kitconcept/volto-light-theme.svg)](https://www.npmjs.com/package/@kitconcept/volto-light-theme)
-[![Build Status](https://github.com/kitconcept/volto-light-theme/actions/workflows/code.yml/badge.svg)](https://github.com/kitconcept/volto-light-theme/actions)
-[![Build Status](https://github.com/kitconcept/volto-light-theme/actions/workflows/unit.yml/badge.svg)](https://github.com/kitconcept/volto-light-theme/actions)
-[![Build Status](https://github.com/kitconcept/volto-light-theme/actions/workflows/acceptance.yml/badge.svg)](https://github.com/kitconcept/volto-light-theme/actions)
+[![Build Status](https://github.com/kitconcept/volto-light-theme/actions/workflows/main.yml/badge.svg)](https://github.com/kitconcept/volto-light-theme/actions)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://kitconcept.com/kitconcept-white.svg">
@@ -16,7 +14,7 @@ The main vision of the Volto Light Theme (VLT) is to serve as a foundation for k
 It incorporates feedback from the company's clients and Plone community from the last few years of projects and the success stories in the UI/UX side.
 It aims to be future-proof, keeping it aligned with the upcoming Volto and Plone 7 vision in terms of theming strategy decided by the Plone community.
 
-![Volto-Light-Theme](https://github.com/kitconcept/volto-light-theme/raw/main/volto-light-theme.png)
+![Volto-Light-Theme](https://github.com/kitconcept/volto-light-theme/raw/main/docs/_static/volto-light-theme.png)
 
 ## Documentation
 
