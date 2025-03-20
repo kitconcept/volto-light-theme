@@ -39,3 +39,19 @@ jobs:
     permissions:
         contents: read
         packages: write
+
+  report:
+    name: "Final report"
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    needs:
+      - config
+      - deploy
+    steps:
+      - name: Write report
+        run: |
+          echo '# Workflow Report' >> $GITHUB_STEP_SUMMARY
+          echo '| Job | Status | Conclusion |' >> $GITHUB_STEP_SUMMARY
+          echo '| --- | --- | --- |' >> $GITHUB_STEP_SUMMARY
+          echo '| ${{ fromJSON(needs.config.result.name) }} | ${{ fromJSON(needs.config.result.conclusion) }} | ${{ fromJSON(needs.config.result.status) }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| ${{ fromJSON(needs.deploy.result.name) }} | ${{ fromJSON(needs.deploy.result.conclusion) }} | ${{ fromJSON(needs.deploy.result.status) }} |' >> $GITHUB_STEP_SUMMARY
