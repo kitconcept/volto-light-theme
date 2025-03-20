@@ -101,13 +101,6 @@ jobs:
           echo "ENVIRONMENT=${{ inputs.hostname }}" >> $GITHUB_OUTPUT
           echo "STACK_NAME=${${{ inputs.hostname }}//./-}" >> $GITHUB_OUTPUT
 
-      - name: Test vars
-        run: |
-          echo "BASE_TAG=${{ steps.vars.outputs.BASE_TAG }}"
-          echo 'VOLTO_VERSION=${{ steps.vars.outputs.VOLTO_VERSION }}'
-          echo 'ENVIRONMENT=${{ steps.vars.outputs.ENVIRONMENT }}'
-          echo 'STACK_NAME=${{ steps.vars.outputs.STACK_NAME }}'
-
       - uses: dorny/paths-filter@v3.0.2
         id: filter
         with:
@@ -129,3 +122,16 @@ jobs:
             frontend:
               - 'frontend/**'
               - '.github/workflows/frontend*'
+
+      - name: Test vars
+        run: |
+          echo "BASE_TAG: ${{ steps.vars.outputs.BASE_TAG }}"
+          echo 'VOLTO_VERSION: ${{ steps.vars.outputs.VOLTO_VERSION }}'
+          echo 'ENVIRONMENT: ${{ steps.vars.outputs.ENVIRONMENT }}'
+          echo 'STACK_NAME: ${{ steps.vars.outputs.STACK_NAME }}'
+          echo 'event-name: ${{ github.event_name }}'
+          echo 'Paths - acceptance: ${{ steps.filter.outputs.acceptance }}'
+          echo 'Paths - backend: ${{ steps.filter.outputs.backend }}'
+          echo 'Paths - devops: ${{ steps.filter.outputs.devops }}'
+          echo 'Paths - docs: ${{ steps.filter.outputs.docs }}'
+          echo 'Paths - frontend: ${{ steps.filter.outputs.frontend }}'
