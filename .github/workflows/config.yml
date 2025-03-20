@@ -6,7 +6,7 @@ on:
       hostname:
         required: false
         type: string
-        default: "kitconcept/meta/.github/workflows/deploy.yml@main"
+        default: "light-theme.kitconcept.io"
       stack-prefix:
         required: false
         type: string
