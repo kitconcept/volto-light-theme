@@ -1,94 +1,45 @@
-name: Volto Light Theme CI
+name: "VLT: CI"
+description: "Main workflow for Volto Light Theme"
 
 on:
   push:
   workflow_dispatch:
 
-env:
-  HOSTNAME: "light-theme.kitconcept.io"
-  STACK_PREFIX: "lighttheme-stg"
-  IMAGE_NAME_PREFIX: ghcr.io/kitconcept/voltolighttheme
-  NODE_VERSION: "22.x"
-  PYTHON_VERSION: "3.12"
-  PLONE_VERSION: "6.1.0"
 
 jobs:
   config:
-    runs-on: ubuntu-latest
-    outputs:
-      acceptance: ${{ steps.filter.outputs.acceptance }}
-      backend: ${{ steps.filter.outputs.backend }}
-      devops: ${{ steps.filter.outputs.devops }}
-      docs: ${{ steps.filter.outputs.docs }}
-      frontend: ${{ steps.filter.outputs.frontend }}
-      BASE_TAG: ${{ steps.vars.outputs.BASE_TAG }}
-      IMAGE_NAME_PREFIX: ${{ env.IMAGE_NAME_PREFIX }}
-      NODE_VERSION: ${{ env.NODE_VERSION }}
-      PYTHON_VERSION: ${{ env.PYTHON_VERSION }}
-      PLONE_VERSION: ${{ env.PLONE_VERSION }}
-      VOLTO_VERSION: ${{ steps.vars.outputs.VOLTO_VERSION }}
-      HOSTNAME: ${{ env.HOSTNAME }}
-      ENVIRONMENT: ${{ steps.vars.outputs.ENVIRONMENT }}
-      STACK_NAME: ${{ steps.vars.outputs.STACK_NAME }}
-      STACK_PREFIX: ${{ env.STACK_PREFIX }}
+    name: "Config: Compute values used in workflow"
+    uses: ./.github/workflows/config.yml
+    with:
+      hostname: "light-theme.kitconcept.io"
+      stack-prefix: "lighttheme-stg"
+      image-name-prefix: ghcr.io/kitconcept/voltolighttheme
+      node-version: "22.x"
+      python-version: "3.12"
+      plone-version: "6.1.0"
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Compute several vars needed for the CI
-        id: vars
-        run: |
-          echo "BASE_TAG=sha-$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
-          python3 -c 'import json; data = json.load(open("./frontend/mrs.developer.json")); print("VOLTO_VERSION=" + (data["core"].get("tag") or "latest"))' >> $GITHUB_OUTPUT
-          echo "ENVIRONMENT=${{ env.HOSTNAME }}" >> $GITHUB_OUTPUT
-          echo "STACK_NAME=${ENVIRONMENT//./-}" >> $GITHUB_OUTPUT
-
-      - name: Test vars
-        run: |
-          echo "BASE_TAG=${{ steps.vars.outputs.BASE_TAG }}"
-          echo 'VOLTO_VERSION=${{ steps.vars.outputs.VOLTO_VERSION }}'
-          echo 'ENVIRONMENT=${{ steps.vars.outputs.ENVIRONMENT }}'
-          echo 'STACK_NAME=${{ steps.vars.outputs.STACK_NAME }}'
-
-      - uses: dorny/paths-filter@v3.0.2
-        id: filter
-        with:
-          filters: |
-            acceptance:
-              - 'backend/**'
-              - 'frontend/**'
-            backend:
-              - 'backend/**'
-              - '.github/workflows/backend*'
-            devops:
-              - 'devops/**'
-            docs:
-              - '.readthedocs.yaml'
-              - 'docs/**'
-              - '.github/workflows/docs.yaml'
-            frontend:
-              - 'frontend/**'
-              - '.github/workflows/frontend*'
 
   docs:
+    name: "Documentation: Run tests"
     uses: ./.github/workflows/docs.yml
     needs:
         - config
     with:
-        python-version: ${{ needs.config.outputs.PYTHON_VERSION }}
+        python-version: ${{ needs.config.outputs.python-version }}
     if: ${{ needs.config.outputs.docs == 'true' }}
 
   backend-lint:
+    name: "Backend: Run lint checkers"
     uses: ./.github/workflows/backend-lint.yml
     needs:
         - config
     with:
-        python-version: ${{ needs.config.outputs.PYTHON_VERSION }}
-        plone-version: ${{ needs.config.outputs.PLONE_VERSION }}
+        python-version: ${{ needs.config.outputs.python-version }}
+        plone-version: ${{ needs.config.outputs.plone-version }}
     if: ${{ needs.config.outputs.backend == 'true' }}
 
   backend-test:
+    name: "Backend: Run tests"
     uses: ./.github/workflows/backend-test.yml
     needs:
         - config
@@ -102,15 +53,17 @@ jobs:
     if: ${{ needs.config.outputs.backend == 'true' }}
 
   backend-coverage:
+    name: "Backend: Run test coverage"
     uses: ./.github/workflows/backend-coverage.yml
     needs:
         - config
     with:
-        python-version: ${{ needs.config.outputs.PYTHON_VERSION }}
-        plone-version: ${{ needs.config.outputs.PLONE_VERSION }}
+        python-version: ${{ needs.config.outputs.python-version }}
+        plone-version: ${{ needs.config.outputs.plone-version }}
     if: ${{ needs.config.outputs.backend == 'true' }}
 
   backend-build:
+    name: "Backend: Build container image (${{ needs.config.outputs.base-tag }})"
     if: ${{ needs.config.outputs.acceptance == 'true' && (always() && !contains(needs.*.result, 'failure'))}}
     uses: ./.github/workflows/backend-image-build.yml
     needs:
@@ -119,39 +72,43 @@ jobs:
       - backend-test
       - backend-coverage
     with:
-      base-tag: ${{ needs.config.outputs.BASE_TAG }}
-      image-name-prefix: ${{ needs.config.outputs.IMAGE_NAME_PREFIX }}
+      base-tag: ${{ needs.config.outputs.base-tag }}
+      image-name-prefix: ${{ needs.config.outputs.image-name-prefix }}
       image-name-suffix: backend
-      plone-version: ${{ needs.config.outputs.PLONE_VERSION }}
+      plone-version: ${{ needs.config.outputs.plone-version }}
 
   frontend-lint:
+    name: "Frontend: Run lint checkers"
     uses: ./.github/workflows/frontend-lint.yml
     needs:
         - config
     with:
-        node-version: ${{ needs.config.outputs.NODE_VERSION }}
+        node-version: ${{ needs.config.outputs.node-version }}
     if: ${{ needs.config.outputs.frontend == 'true' }}
     permissions:
       contents: read
       packages: write
 
   frontend-unit:
+    name: "Frontend: Run unit tests"
     uses: ./.github/workflows/frontend-unit.yml
     needs:
         - config
     with:
-        node-version: ${{ needs.config.outputs.NODE_VERSION }}
+        node-version: ${{ needs.config.outputs.node-version }}
     if: ${{ needs.config.outputs.frontend == 'true' }}
 
   frontend-i18n:
+    name: "Frontend: Run i18n checks"
     uses: ./.github/workflows/frontend-i18n.yml
     needs:
         - config
     with:
-        node-version: ${{ needs.config.outputs.NODE_VERSION }}
+        node-version: ${{ needs.config.outputs.node-version }}
     if: ${{ needs.config.outputs.frontend == 'true' }}
 
   frontend-build:
+    name: "Frontend: Build container image (${{ needs.config.outputs.base-tag }})"
     if: ${{ needs.config.outputs.acceptance == 'true' && (always() && !contains(needs.*.result, 'failure'))}}
     uses: ./.github/workflows/frontend-image-build.yml
     needs:
@@ -160,16 +117,17 @@ jobs:
       - frontend-i18n
       - frontend-unit
     with:
-      base-tag: ${{ needs.config.outputs.BASE_TAG }}
-      image-name-prefix: ${{ needs.config.outputs.IMAGE_NAME_PREFIX }}
+      base-tag: ${{ needs.config.outputs.base-tag }}
+      image-name-prefix: ${{ needs.config.outputs.image-name-prefix }}
       image-name-suffix: frontend
-      node-version: ${{ needs.config.outputs.NODE_VERSION }}
-      volto-version: ${{ needs.config.outputs.VOLTO_VERSION }}
+      node-version: ${{ needs.config.outputs.node-version }}
+      volto-version: ${{ needs.config.outputs.volto-version }}
     permissions:
       contents: read
       packages: write
 
   acceptance:
+    name: "Acceptance: ${{ matrix.name }}"
     if: ${{ needs.config.outputs.acceptance == 'true' && (always() && !contains(needs.*.result, 'failure'))}}
     uses: ./.github/workflows/frontend-acceptance.yml
     needs:
@@ -188,14 +146,15 @@ jobs:
     with:
       name: ${{ matrix.name }}
       short-name: ${{ matrix.short-name }}
-      node-version: ${{ needs.config.outputs.NODE_VERSION }}
-      image-name-prefix: ${{ needs.config.outputs.IMAGE_NAME_PREFIX }}
-      image-tag: ${{ needs.config.outputs.BASE_TAG }}
+      node-version: ${{ needs.config.outputs.node-version }}
+      image-name-prefix: ${{ needs.config.outputs.image-name-prefix }}
+      image-tag: ${{ needs.config.outputs.base-tag }}
       a11y: ${{ matrix.a11y || false }}
 
   visual-acceptance:
+    name: "Visual Acceptance: ${{ matrix.name }}"
     if: ${{ needs.config.outputs.acceptance == 'true' && (always() && !contains(needs.*.result, 'failure'))}}
-    uses: ./.github/workflows/visual-acceptance.yml
+    uses: ./.github/workflows/frontend-visual-acceptance.yml
     needs:
       - config
       - backend-build
@@ -223,54 +182,58 @@ jobs:
     with:
       name: ${{ matrix.name }}
       short-name: ${{ matrix.short-name }}
-      node-version: ${{ needs.config.outputs.NODE_VERSION }}
-      image-name-prefix: ${{ needs.config.outputs.IMAGE_NAME_PREFIX }}
-      image-tag: ${{ needs.config.outputs.BASE_TAG }}
+      node-version: ${{ needs.config.outputs.node-version }}
+      image-name-prefix: ${{ needs.config.outputs.image-name-prefix }}
+      image-tag: ${{ needs.config.outputs.base-tag }}
 
   backend-release:
+    name: "Backend: Release container image"
     uses: ./.github/workflows/backend-image-release.yml
-    if: ${{ always() }}
+    if: ${{ always() && (!contains(needs.*.result, 'failure') && !contains(needs.*.result, 'skipped')) }}
     needs:
       - config
       - acceptance
       - backend-build
       - visual-acceptance
     with:
-      base-tag: ${{ needs.config.outputs.BASE_TAG }}
-      image-name-prefix: ${{ needs.config.outputs.IMAGE_NAME_PREFIX }}
+      base-tag: ${{ needs.config.outputs.base-tag }}
+      image-name-prefix: ${{ needs.config.outputs.image-name-prefix }}
       image-name-suffix: backend
       push: ${{ (github.event_name != 'pull_request') && !contains(needs.*.result, 'failure') }}
-      plone-version: ${{ needs.config.outputs.PLONE_VERSION }}
+      plone-version: ${{ needs.config.outputs.plone-version }}
 
   frontend-release:
+    name: "Frontend: Release container image"
     uses: ./.github/workflows/frontend-image-release.yml
+    if: ${{ always() && (!contains(needs.*.result, 'failure') && !contains(needs.*.result, 'skipped')) }}
     needs:
       - config
       - frontend-build
       - acceptance
       - visual-acceptance
     with:
-      base-tag: ${{ needs.config.outputs.BASE_TAG }}
-      image-name-prefix: ${{ needs.config.outputs.IMAGE_NAME_PREFIX }}
+      base-tag: ${{ needs.config.outputs.base-tag }}
+      image-name-prefix: ${{ needs.config.outputs.image-name-prefix }}
       image-name-suffix: frontend
       push: ${{ (github.event_name != 'pull_request') && !contains(needs.*.result, 'failure') }}
-      volto-version: ${{ needs.config.outputs.VOLTO_VERSION }}
+      volto-version: ${{ needs.config.outputs.volto-version }}
     permissions:
       contents: read
       packages: write
 
   deploy:
+    name: "Deploy: ${{ needs.config.outputs.hostname }}"
     uses: kitconcept/meta/.github/workflows/deploy.yml@main
-    if: ${{ github.ref == 'refs/heads/main' }}
+    if: ${{ always() && github.ref == 'refs/heads/main' && (!contains(needs.*.result, 'failure') && !contains(needs.*.result, 'skipped')) }}
     needs:
       - config
       - backend-release
       - frontend-release
     with:
-        tag: ${{ needs.config.outputs.BASE_TAG }}
-        environment: ${{ needs.config.outputs.ENVIRONMENT }}
-        stack-name: ${{ needs.config.outputs.STACK_NAME }}
-        stack-file: devops/stacks/${{ needs.config.outputs.ENVIRONMENT }}.yml
+        tag: ${{ needs.config.outputs.base-tag }}
+        environment: ${{ needs.config.outputs.environment }}
+        stack-name: ${{ needs.config.outputs.stack-name }}
+        stack-file: ${{ needs.config.outputs.stack-file }}
         registry: "ghcr.io"
         username: ${{ github.actor }}
     secrets:
@@ -280,11 +243,11 @@ jobs:
       remote-user: ${{ secrets.DEPLOY_USER }}
       remote-private-key: ${{ secrets.DEPLOY_SSH }}
       env-file: |
-        IMAGE_NAME_PREFIX=${{ needs.config.outputs.IMAGE_NAME_PREFIX }}
-        IMAGE_TAG=${{ needs.config.outputs.BASE_TAG }}
-        STACK_NAME=${{ needs.config.outputs.STACK_NAME }}
-        STACK_PREFIX=${{ needs.config.outputs.STACK_PREFIX }}
-        HOSTNAME=${{ needs.config.outputs.HOSTNAME }}
+        IMAGE_NAME_PREFIX=${{ needs.config.outputs.image-name-prefix }}
+        IMAGE_TAG=${{ needs.config.outputs.base-tag }}
+        STACK_NAME=${{ needs.config.outputs.stack-name }}
+        STACK_PREFIX=${{ needs.config.outputs.stack-prefix }}
+        HOSTNAME=${{ needs.config.outputs.hostname }}
     permissions:
       contents: read
       packages: write

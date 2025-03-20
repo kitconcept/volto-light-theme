@@ -23,15 +23,15 @@ services:
         - "traefik.docker.network=public"
         - "traefik.constraint-label=public"
         # Service
-        - "traefik.http.services.svc-$${STACK_PREFIX}-front.loadbalancer.server.port=3000"
+        - "traefik.http.services.svc-${STACK_PREFIX}-front.loadbalancer.server.port=3000"
         # Middlewares
         # Routers
-        - "traefik.http.routers.rt-$${STACK_PREFIX}-front.rule=Host(`$${HOSTNAME}`)"
-        - "traefik.http.routers.rt-$${STACK_PREFIX}-front.entrypoints=https"
-        - "traefik.http.routers.rt-$${STACK_PREFIX}-front.tls=true"
-        - "traefik.http.routers.rt-$${STACK_PREFIX}-front.tls.certresolver=le"
-        - "traefik.http.routers.rt-$${STACK_PREFIX}-front.service=svc-$${STACK_PREFIX}-front"
-        - "traefik.http.routers.rt-$${STACK_PREFIX}-front.middlewares=gzip"
+        - "traefik.http.routers.rt-${STACK_PREFIX}-front.rule=Host(`${HOSTNAME}`)"
+        - "traefik.http.routers.rt-${STACK_PREFIX}-front.entrypoints=https"
+        - "traefik.http.routers.rt-${STACK_PREFIX}-front.tls=true"
+        - "traefik.http.routers.rt-${STACK_PREFIX}-front.tls.certresolver=le"
+        - "traefik.http.routers.rt-${STACK_PREFIX}-front.service=svc-${STACK_PREFIX}-front"
+        - "traefik.http.routers.rt-${STACK_PREFIX}-front.middlewares=gzip"
 
   backend:
     image: ${IMAGE_NAME_PREFIX}-backend:${IMAGE_TAG:-latest}
@@ -48,16 +48,16 @@ services:
         - "traefik.docker.network=public"
         - "traefik.constraint-label=public"
         # Service
-        - "traefik.http.services.svc-$${STACK_PREFIX}-backend.loadbalancer.server.port=8080"
+        - "traefik.http.services.svc-${STACK_PREFIX}-backend.loadbalancer.server.port=8080"
         # Middleware
-        - "traefik.http.middlewares.mw-$${STACK_PREFIX}-backend-vhm.replacepathregex.regex=^/\\+\\+api\\+\\+($$|/.*)"
-        - "traefik.http.middlewares.mw-$${STACK_PREFIX}-backend-vhm.replacepathregex.replacement=/VirtualHostBase/https/$${HOSTNAME}/Plone/++api++/VirtualHostRoot/$$1"
+        - "traefik.http.middlewares.mw-${STACK_PREFIX}-backend-vhm.replacepathregex.regex=^/\\+\\+api\\+\\+($$|/.*)"
+        - "traefik.http.middlewares.mw-${STACK_PREFIX}-backend-vhm.replacepathregex.replacement=/VirtualHostBase/https/${HOSTNAME}/Plone/++api++/VirtualHostRoot/$$1"
         # Router ++api++
-        - "traefik.http.routers.rt-$${STACK_PREFIX}-backend.rule=Host(`$${HOSTNAME}`) && (PathPrefix(`/++api++`))"
-        - "traefik.http.routers.rt-$${STACK_PREFIX}-backend.entrypoints=https"
-        - "traefik.http.routers.rt-$${STACK_PREFIX}-backend.tls=true"
-        - "traefik.http.routers.rt-$${STACK_PREFIX}-backend.service=svc-$${STACK_PREFIX}-backend"
-        - "traefik.http.routers.rt-$${STACK_PREFIX}-backend.middlewares=gzip,mw-$${STACK_PREFIX}-backend-vhm"
+        - "traefik.http.routers.rt-${STACK_PREFIX}-backend.rule=Host(`${HOSTNAME}`) && (PathPrefix(`/++api++`))"
+        - "traefik.http.routers.rt-${STACK_PREFIX}-backend.entrypoints=https"
+        - "traefik.http.routers.rt-${STACK_PREFIX}-backend.tls=true"
+        - "traefik.http.routers.rt-${STACK_PREFIX}-backend.service=svc-${STACK_PREFIX}-backend"
+        - "traefik.http.routers.rt-${STACK_PREFIX}-backend.middlewares=gzip,mw-${STACK_PREFIX}-backend-vhm"
 
 networks:
   public:
