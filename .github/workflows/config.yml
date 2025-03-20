@@ -4,26 +4,32 @@ on:
   workflow_call:
     inputs:
       hostname:
-        required: true
+        required: false
         type: string
+        default: "kitconcept/meta/.github/workflows/deploy.yml@main"
       stack-prefix:
-        required: true
+        required: false
         type: string
+        default: "lighttheme-stg"
       stack-file:
         required: false
         type: string
       image-name-prefix:
-        required: true
+        required: false
         type: string
+        default: "ghcr.io/kitconcept/voltolighttheme"
       node-version:
-        required: true
+        required: false
         type: string
+        default: "22.x"
       python-version:
-        required: true
+        required: false
         type: string
+        default: "3.12"
       plone-version:
-        required: true
+        required: false
         type: string
+        default: "6.1.0"
     outputs:
       acceptance:
         description: "Flag reporting if we should run the acceptance jobs"

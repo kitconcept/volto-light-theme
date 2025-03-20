@@ -6,15 +6,10 @@ on:
 
 
 jobs:
+
   config:
+    name: "Config: Compute values used in workflow"
     uses: ./.github/workflows/config.yml
-    with:
-      hostname: "light-theme.kitconcept.io"
-      stack-prefix: "lighttheme-stg"
-      image-name-prefix: ghcr.io/kitconcept/voltolighttheme
-      node-version: "22.x"
-      python-version: "3.12"
-      plone-version: "6.1.0"
 
   deploy:
     name: "Deploy: ${{ needs.config.outputs.hostname }}"
