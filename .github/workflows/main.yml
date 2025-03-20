@@ -116,8 +116,8 @@ jobs:
     needs:
       - config
       - backend-lint
-      - backend-coverage
       - backend-test
+      - backend-coverage
     with:
       base-tag: ${{ needs.config.outputs.BASE_TAG }}
       image-name-prefix: ${{ needs.config.outputs.IMAGE_NAME_PREFIX }}
@@ -185,8 +185,8 @@ jobs:
           - name: "a11y"
             short-name: a11y
             a11y: true
-    name: ${{ matrix.name }}
     with:
+      name: ${{ matrix.name }}
       short-name: ${{ matrix.short-name }}
       node-version: ${{ needs.config.outputs.NODE_VERSION }}
       image-name-prefix: ${{ needs.config.outputs.IMAGE_NAME_PREFIX }}
@@ -220,25 +220,26 @@ jobs:
             short-name: vertical-spacing
           - name: "Typography"
             short-name: typography
-    name: ${{ matrix.name }}
     with:
+      name: ${{ matrix.name }}
       short-name: ${{ matrix.short-name }}
       node-version: ${{ needs.config.outputs.NODE_VERSION }}
       image-name-prefix: ${{ needs.config.outputs.IMAGE_NAME_PREFIX }}
       image-tag: ${{ needs.config.outputs.BASE_TAG }}
 
-
   backend-release:
     uses: ./.github/workflows/backend-image-release.yml
+    if: ${{ always() }}
     needs:
       - config
-      - backend-build
       - acceptance
+      - backend-build
       - visual-acceptance
     with:
       base-tag: ${{ needs.config.outputs.BASE_TAG }}
       image-name-prefix: ${{ needs.config.outputs.IMAGE_NAME_PREFIX }}
       image-name-suffix: backend
+      push: ${{ (github.event_name != 'pull_request') && !contains(needs.*.result, 'failure') }}
       plone-version: ${{ needs.config.outputs.PLONE_VERSION }}
 
   frontend-release:
@@ -252,7 +253,7 @@ jobs:
       base-tag: ${{ needs.config.outputs.BASE_TAG }}
       image-name-prefix: ${{ needs.config.outputs.IMAGE_NAME_PREFIX }}
       image-name-suffix: frontend
-      node-version: ${{ needs.config.outputs.NODE_VERSION }}
+      push: ${{ (github.event_name != 'pull_request') && !contains(needs.*.result, 'failure') }}
       volto-version: ${{ needs.config.outputs.VOLTO_VERSION }}
     permissions:
       contents: read
