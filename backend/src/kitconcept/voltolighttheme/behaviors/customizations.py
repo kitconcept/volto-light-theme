@@ -96,6 +96,11 @@ class ISiteHeaderCustomizationSettings(model.Schema):
     )
     header_actions = JSONField(
         title=_("Site Actions"),
+        description=_(
+            "help_header_actions",
+            default="The site actions are the links that show in the top right side"
+            " of the header.",
+        ),
         schema=OBJECT_LIST,
         default=OBJECT_LIST_DEFAULT_VALUE,
         required=False,
