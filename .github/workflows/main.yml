@@ -1,4 +1,5 @@
 name: "VLT: CI"
+description: "Main workflow for Volto Light Theme"
 
 on:
   push:
@@ -7,6 +8,7 @@ on:
 
 jobs:
   config:
+    name: "Config: Compute values used in workflow"
     uses: ./.github/workflows/config.yml
     with:
       hostname: "light-theme.kitconcept.io"
@@ -18,6 +20,7 @@ jobs:
 
 
   docs:
+    name: "Documentation: Run tests"
     uses: ./.github/workflows/docs.yml
     needs:
         - config
@@ -26,6 +29,7 @@ jobs:
     if: ${{ needs.config.outputs.docs == 'true' }}
 
   backend-lint:
+    name: "Backend: Run lint checkers"
     uses: ./.github/workflows/backend-lint.yml
     needs:
         - config
@@ -48,6 +52,7 @@ jobs:
     if: ${{ needs.config.outputs.backend == 'true' }}
 
   backend-coverage:
+    name: "Backend: Run test coverage"
     uses: ./.github/workflows/backend-coverage.yml
     needs:
         - config
@@ -57,6 +62,7 @@ jobs:
     if: ${{ needs.config.outputs.backend == 'true' }}
 
   backend-build:
+    name: "Backend: Build container image (${{ needs.config.outputs.base-tag }})"
     if: ${{ needs.config.outputs.acceptance == 'true' && (always() && !contains(needs.*.result, 'failure'))}}
     uses: ./.github/workflows/backend-image-build.yml
     needs:
@@ -71,6 +77,7 @@ jobs:
       plone-version: ${{ needs.config.outputs.plone-version }}
 
   frontend-lint:
+    name: "Frontend: Run lint checkers"
     uses: ./.github/workflows/frontend-lint.yml
     needs:
         - config
@@ -82,6 +89,7 @@ jobs:
       packages: write
 
   frontend-unit:
+    name: "Frontend: Run unit tests"
     uses: ./.github/workflows/frontend-unit.yml
     needs:
         - config
@@ -90,6 +98,7 @@ jobs:
     if: ${{ needs.config.outputs.frontend == 'true' }}
 
   frontend-i18n:
+    name: "Frontend: Run i18n checks"
     uses: ./.github/workflows/frontend-i18n.yml
     needs:
         - config
@@ -98,6 +107,7 @@ jobs:
     if: ${{ needs.config.outputs.frontend == 'true' }}
 
   frontend-build:
+    name: "Frontend: Build container image (${{ needs.config.outputs.base-tag }})"
     if: ${{ needs.config.outputs.acceptance == 'true' && (always() && !contains(needs.*.result, 'failure'))}}
     uses: ./.github/workflows/frontend-image-build.yml
     needs:
@@ -116,6 +126,7 @@ jobs:
       packages: write
 
   acceptance:
+    name: "Acceptance: ${{ matrix.name }}"
     if: ${{ needs.config.outputs.acceptance == 'true' && (always() && !contains(needs.*.result, 'failure'))}}
     uses: ./.github/workflows/frontend-acceptance.yml
     needs:
@@ -140,6 +151,7 @@ jobs:
       a11y: ${{ matrix.a11y || false }}
 
   visual-acceptance:
+    name: "Visual Acceptance: ${{ matrix.name }}"
     if: ${{ needs.config.outputs.acceptance == 'true' && (always() && !contains(needs.*.result, 'failure'))}}
     uses: ./.github/workflows/frontend-visual-acceptance.yml
     needs:
@@ -174,6 +186,7 @@ jobs:
       image-tag: ${{ needs.config.outputs.base-tag }}
 
   backend-release:
+    name: "Backend: Release container image"
     uses: ./.github/workflows/backend-image-release.yml
     if: ${{ (always() && !contains(needs.*.result, 'failure')) }}
     needs:
@@ -189,6 +202,7 @@ jobs:
       plone-version: ${{ needs.config.outputs.plone-version }}
 
   frontend-release:
+    name: "Frontend: Release container image"
     uses: ./.github/workflows/frontend-image-release.yml
     if: ${{ always() && !contains(needs.*.result, 'failure') }}
     needs:
@@ -207,6 +221,7 @@ jobs:
       packages: write
 
   deploy:
+    name: "Deploy: ${{ needs.config.outputs.hostname }}"
     uses: kitconcept/meta/.github/workflows/deploy.yml@main
     if: ${{ always() && github.ref == 'refs/heads/main' }}
     needs:
