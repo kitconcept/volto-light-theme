@@ -42,12 +42,6 @@ OBJECT_LIST = json.dumps({
     },
 })
 
-FONT_VOCABULARY = SimpleVocabulary([
-    SimpleTerm(value="default", title=_("Default FZJ font")),
-    SimpleTerm(value="impact-arialNarrow", title=_("Impact / Arial Narrow")),
-    SimpleTerm(value="georgia-lucidaSans", title=_("Georgia / Lucida Sans")),
-])
-
 
 @provider(IFormFieldProvider)
 class ISiteHeaderCustomizationSettings(model.Schema):
