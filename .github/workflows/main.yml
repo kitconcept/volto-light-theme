@@ -175,6 +175,7 @@ jobs:
 
   backend-release:
     uses: ./.github/workflows/backend-image-release.yml
+    if: ${{ (always() && !contains(needs.*.result, 'failure')) }}
     needs:
       - config
       - acceptance
@@ -189,6 +190,7 @@ jobs:
 
   frontend-release:
     uses: ./.github/workflows/frontend-image-release.yml
+    if: ${{ always() && !contains(needs.*.result, 'failure') }}
     needs:
       - config
       - frontend-build
@@ -206,7 +208,7 @@ jobs:
 
   deploy:
     uses: kitconcept/meta/.github/workflows/deploy.yml@main
-    if: ${{ github.ref == 'refs/heads/main' }}
+    if: ${{ always() && github.ref == 'refs/heads/main' }}
     needs:
       - config
       - backend-release
