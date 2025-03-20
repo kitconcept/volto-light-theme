@@ -5,6 +5,10 @@ changelog = "CHANGELOG.md"
 version = "version.txt"
 compose = "docker-compose.yml"
 
+[repository.towncrier]
+section = "Project"
+settings = "towncrier.toml"
+
 [backend]
 path = "backend"
 

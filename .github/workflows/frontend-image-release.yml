@@ -12,12 +12,12 @@ on:
       image-name-suffix:
         required: true
         type: string
-      node-version:
-        required: true
-        type: string
       volto-version:
         required: true
         type: string
+      push:
+        required: true
+        type: boolean
 
 jobs:
   release:
@@ -53,6 +53,10 @@ jobs:
           tags: |
             type=ref,event=branch
             type=sha
+            type=raw,value=${{ inputs.base-tag }}
+            type=pep440,pattern={{version}}
+            type=pep440,pattern={{major}}.{{minor}}
+            type=pep440,pattern={{major}}
             type=raw,value=latest,enable={{is_default_branch}}
 
       - name: Login to Container Registry
@@ -68,7 +72,7 @@ jobs:
           platforms: linux/amd64
           context: frontend/
           file: frontend/Dockerfile
-          push: ${{ github.event_name != 'pull_request' }}
+          push: ${{ inputs.push }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
