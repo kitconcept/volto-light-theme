@@ -31,11 +31,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Load image
-        run: |
-          docker pull ${{ inputs.image-name-prefix }}-${{ inputs.image-name-suffix }}:${{ inputs.base-tag }}
-          docker image ls -a
-
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
 
