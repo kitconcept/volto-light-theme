@@ -51,7 +51,7 @@ jobs:
       - name: Write report
         run: |
           echo '# Workflow Report' >> $GITHUB_STEP_SUMMARY
-          echo '| Job | Status | Conclusion |' >> $GITHUB_STEP_SUMMARY
-          echo '| --- | --- | --- |' >> $GITHUB_STEP_SUMMARY
-          echo '| ${{ fromJSON(needs.config.result.name) }} | ${{ fromJSON(needs.config.result.conclusion) }} | ${{ fromJSON(needs.config.result.status) }} |' >> $GITHUB_STEP_SUMMARY
-          echo '| ${{ fromJSON(needs.deploy.result.name) }} | ${{ fromJSON(needs.deploy.result.conclusion) }} | ${{ fromJSON(needs.deploy.result.status) }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| Job ID | Conclusion |' >> $GITHUB_STEP_SUMMARY
+          echo '| --- | --- |' >> $GITHUB_STEP_SUMMARY
+          echo '| config | ${{ needs.config.result }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| deploy | ${{ needs.deploy.result }} |' >> $GITHUB_STEP_SUMMARY

@@ -268,20 +268,20 @@ jobs:
       - name: Write report
         run: |
           echo '# Workflow Report' >> $GITHUB_STEP_SUMMARY
-          echo '| Job | Status | Conclusion |' >> $GITHUB_STEP_SUMMARY
-          echo '| --- | --- | --- |' >> $GITHUB_STEP_SUMMARY
-          echo '| ${{ fromJSON(needs.config.result.name) }} | ${{ fromJSON(needs.config.result.conclusion) }} | ${{ fromJSON(needs.config.result.status) }} |' >> $GITHUB_STEP_SUMMARY
-          echo '| ${{ fromJSON(needs.docs.result.name) }} | ${{ fromJSON(needs.docs.result.conclusion) }} | ${{ fromJSON(needs.docs.result.status) }} |' >> $GITHUB_STEP_SUMMARY
-          echo '| ${{ fromJSON(needs.backend-lint.result.name) }} | ${{ fromJSON(needs.backend-lint.result.conclusion) }} | ${{ fromJSON(needs.backend-lint.result.status) }} |' >> $GITHUB_STEP_SUMMARY
-          echo '| ${{ fromJSON(needs.backend-test.result.name) }} | ${{ fromJSON(needs.backend-test.result.conclusion) }} | ${{ fromJSON(needs.backend-test.result.status) }} |' >> $GITHUB_STEP_SUMMARY
-          echo '| ${{ fromJSON(needs.backend-coverage.result.name) }} | ${{ fromJSON(needs.backend-coverage.result.conclusion) }} | ${{ fromJSON(needs.backend-coverage.result.status) }} |' >> $GITHUB_STEP_SUMMARY
-          echo '| ${{ fromJSON(needs.backend-build.result.name) }} | ${{ fromJSON(needs.backend-build.result.conclusion) }} | ${{ fromJSON(needs.backend-build.result.status) }} |' >> $GITHUB_STEP_SUMMARY
-          echo '| ${{ fromJSON(needs.frontend-lint.result.name) }} | ${{ fromJSON(needs.frontend-lint.result.conclusion) }} | ${{ fromJSON(needs.frontend-lint.result.status) }} |' >> $GITHUB_STEP_SUMMARY
-          echo '| ${{ fromJSON(needs.frontend-unit.result.name) }} | ${{ fromJSON(needs.frontend-unit.result.conclusion) }} | ${{ fromJSON(needs.frontend-unit.result.status) }} |' >> $GITHUB_STEP_SUMMARY
-          echo '| ${{ fromJSON(needs.frontend-i18n.result.name) }} | ${{ fromJSON(needs.frontend-i18n.result.conclusion) }} | ${{ fromJSON(needs.frontend-i18n.result.status) }} |' >> $GITHUB_STEP_SUMMARY
-          echo '| ${{ fromJSON(needs.frontend-build.result.name) }} | ${{ fromJSON(needs.frontend-build.result.conclusion) }} | ${{ fromJSON(needs.frontend-build.result.status) }} |' >> $GITHUB_STEP_SUMMARY
-          echo '| ${{ fromJSON(needs.acceptance.result.name) }} | ${{ fromJSON(needs.acceptance.result.conclusion) }} | ${{ fromJSON(needs.acceptance.result.status) }} |' >> $GITHUB_STEP_SUMMARY
-          echo '| ${{ fromJSON(needs.visual-acceptance.result.name) }} | ${{ fromJSON(needs.visual-acceptance.result.conclusion) }} | ${{ fromJSON(needs.visual-acceptance.result.status) }} |' >> $GITHUB_STEP_SUMMARY
-          echo '| ${{ fromJSON(needs.backend-release.result.name) }} | ${{ fromJSON(needs.backend-release.result.conclusion) }} | ${{ fromJSON(needs.backend-release.result.status) }} |' >> $GITHUB_STEP_SUMMARY
-          echo '| ${{ fromJSON(needs.frontend-release.result.name) }} | ${{ fromJSON(needs.frontend-release.result.conclusion) }} | ${{ fromJSON(needs.frontend-release.result.status) }} |' >> $GITHUB_STEP_SUMMARY
-          echo '| ${{ fromJSON(needs.deploy.result.name) }} | ${{ fromJSON(needs.deploy.result.conclusion) }} | ${{ fromJSON(needs.deploy.result.status) }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| Job ID | Conclusion |' >> $GITHUB_STEP_SUMMARY
+          echo '| --- | --- |' >> $GITHUB_STEP_SUMMARY
+          echo '| config | ${{ needs.config.result }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| docs | ${{ needs.docs.result }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| backend-lint | ${{ needs.backend-lint.result }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| backend-test | ${{ needs.backend-test.result }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| backend-coverage | ${{ needs.backend-coverage.result }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| backend-build | ${{ needs.backend-build.result }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| frontend-lint | ${{ needs.frontend-lint.result }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| frontend-unit | ${{ needs.frontend-unit.result }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| frontend-i18n | ${{ needs.frontend-i18n.result }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| frontend-build | ${{ needs.frontend-build.result }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| acceptance | ${{ needs.acceptance.result }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| visual-acceptance | ${{ needs.visual-acceptance.result }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| backend-release | ${{ needs.backend-release.result }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| frontend-release | ${{ needs.frontend-release.result }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| deploy | ${{ needs.deploy.result }} |' >> $GITHUB_STEP_SUMMARY
