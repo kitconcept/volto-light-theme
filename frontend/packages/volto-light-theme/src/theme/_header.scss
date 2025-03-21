@@ -625,8 +625,9 @@ body.has-toolbar.has-sidebar {
         position: absolute;
         top: 27px;
         right: 75px;
+        display: grid;
+        padding: 0;
         border: 0;
-        margin-left: 28px;
         color: $black;
         cursor: pointer;
         &:focus {
