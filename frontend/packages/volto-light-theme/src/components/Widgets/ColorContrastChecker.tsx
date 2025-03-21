@@ -15,14 +15,16 @@ type FormState = {
 
 const ColorContrastChecker = (props: { id: string; value: string }) => {
   const { id, value } = props;
-  const [backgroundColor, setBackgroundColor] = useState('#ffffff');
-  const [foregroundColor, setForegroundColor] = useState('#000000');
+  const [ligtherColor, setLigtherColor] = useState('#ffffff');
+  const [darkerColor, setDarkerColor] = useState('#000000');
   const [contrastRatio, setContrastRatio] = useState(21);
 
   const formData = useSelector<FormState, Content>(
     (state) => state.form.global,
   );
-  const colorPairMap = config.settings.colorContrastPairMap;
+  const colorMap = config.settings.colorMap;
+  const colorPair = colorMap[id].colorPair;
+  const colorDefault = colorMap[id].default;
 
   // Convert hex to RGB
   const hexToRgb = (hex) => {
@@ -52,27 +54,28 @@ const ColorContrastChecker = (props: { id: string; value: string }) => {
     return (lighter + 0.05) / (darker + 0.05);
   };
 
+  const ligtherColorObject = hexToRgb(ligtherColor);
+  const darkerColorObject = hexToRgb(darkerColor);
+
+  const lcLum = getLuminance(
+    ligtherColorObject?.r,
+    ligtherColorObject?.g,
+    ligtherColorObject?.b,
+  );
+  const dcLum = getLuminance(
+    darkerColorObject?.r,
+    darkerColorObject?.g,
+    darkerColorObject?.b,
+  );
+
+  const ratio = getContrastRatio(lcLum, dcLum);
+
   useEffect(() => {
-    const bg = hexToRgb(backgroundColor);
-    const fg = hexToRgb(foregroundColor);
-    if (bg && fg) {
-      const bgLum = getLuminance(bg.r, bg.g, bg.b);
-      const fgLum = getLuminance(fg.r, fg.g, fg.b);
-      const ratio = getContrastRatio(bgLum, fgLum);
-      setContrastRatio(ratio);
-    }
+    setDarkerColor(value ?? colorDefault);
+    setLigtherColor(formData[colorPair] ?? colorMap[colorPair].default);
+    setContrastRatio(ratio);
 
-    const colorPair = formData[colorPairMap[id]]?.toString();
-    const newColorHex = value?.toString();
-
-    if (id.includes('foreground')) {
-      setForegroundColor(newColorHex);
-      setBackgroundColor(colorPair ?? backgroundColor);
-    } else {
-      setForegroundColor(colorPair ?? foregroundColor);
-      setBackgroundColor(newColorHex);
-    }
-  }, [backgroundColor, colorPairMap, foregroundColor, formData, id, value]);
+  }, [ratio, value, formData]);
 
   // Get WCAG compliance levels
   const getComplianceLevel = (ratio) => {
