@@ -39,7 +39,7 @@ const FooterLogos = () => {
           [logosSize]: logosSize,
         })}
       >
-        {!isEmpty(logos)
+        {logos && Array.isArray(logos)
           ? logos.map((logo) => {
               const logoInfo: {
                 hrefTitle: string;
