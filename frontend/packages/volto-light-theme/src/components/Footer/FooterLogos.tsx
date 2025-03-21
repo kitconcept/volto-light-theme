@@ -1,5 +1,4 @@
 import type { Content } from '@plone/types';
-import isEmpty from 'lodash/isEmpty';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
 import { useSelector } from 'react-redux';
