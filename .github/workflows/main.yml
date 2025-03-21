@@ -13,12 +13,12 @@ jobs:
 
   docs:
     name: "Documentation: Run tests"
-    uses: ./.github/workflows/docs.yml
+    uses: kitconcept/meta/.github/workflows/docs.yml@main
+    if: ${{ needs.config.outputs.docs == 'true' }}
     needs:
         - config
     with:
         python-version: ${{ needs.config.outputs.python-version }}
-    if: ${{ needs.config.outputs.docs == 'true' }}
 
   backend-lint:
     name: "Backend: Run lint checkers"
@@ -87,6 +87,7 @@ jobs:
     needs:
         - config
     with:
+        working-directory: frontend
         node-version: ${{ needs.config.outputs.node-version }}
     if: ${{ needs.config.outputs.frontend == 'true' }}
 
