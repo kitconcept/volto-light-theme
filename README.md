@@ -1,9 +1,9 @@
-# Volto Light Theme by kitconcept 🚀
-
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://kitconcept.com/kitconcept-white.svg">
-  <img width="300" alt="kitconcept, GmbH" src="https://kitconcept.com/kitconcept-black.svg">
+  <source align="right" media="(prefers-color-scheme: dark)" srcset="https://kitconcept.com/kitconcept-white.svg">
+  <img align="right" width="300" alt="kitconcept, GmbH" src="https://kitconcept.com/kitconcept-black.svg">
 </picture>
+
+# Volto Light Theme
 
 <div align="center">
 
@@ -20,17 +20,19 @@
 
 </div>
 
-## Vision
-
-The main vision of the Volto Light Theme (VLT) is to serve as a foundation for kitconcept's future projects, following the release of Plone 6.
+Volto Light Theme (VLT) mission is to serve as a foundation for kitconcept's future projects, following the release of Plone 6.
 It incorporates feedback from the company's clients and Plone community from the last few years of projects and the success stories in the UI/UX side.
 It aims to be future-proof, keeping it aligned with the upcoming Volto and Plone 7 vision in terms of theming strategy decided by the Plone community.
 
-## Documentation
+## Demo 🌎
+
+You can try VLT online in: [https://light-theme.kitconcept.io/](https://light-theme.kitconcept.io/)
+
+## Documentation 📖
 
 You can find the documentation of this package at https://volto-light-theme.readthedocs.io.
 
-## Upgrade Guide
+## Upgrade 🚀
 
 See a detailed upgrade guide at https://volto-light-theme.readthedocs.io/latest/upgrade-guide.html.
 
@@ -93,7 +95,7 @@ On your computer, create a new folder and download the current `docker-compose.y
 ```sh
 mkdir try-vlt
 cd try-vlt
-curl -L -o docker-compose.yml https://raw.githubusercontent.com/kitconcept/volto-light-theme/refs/heads/monorepo/docker-compose.yml
+curl -L -o docker-compose.yml https://raw.githubusercontent.com/kitconcept/volto-light-theme/refs/heads/main/docker-compose.yml
 ```
 
 Then start the stack using:
@@ -158,4 +160,4 @@ make i18n
 
 ## Credits & Acknowledgements 🙏
 
-This package is developed and maintained by the [kitconcept GmbH](https://kitconcept.com) ❤️.
+This package is developed and maintained by [kitconcept GmbH](https://kitconcept.com) ❤️.
