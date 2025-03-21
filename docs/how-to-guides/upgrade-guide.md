@@ -24,7 +24,8 @@ It used to have a blocks data structure (with `blocks` and `blocks_data`), but h
 
 An automatic upgrade step is provided with this version that updates the data structure in your Plone site root when the `kitconcept.voltolighttheme` behaviors are applied there.
 
-If you've applied these behaviors to other content types, you'll need to create a custom upgrade step based on this one to update those content objects accordingly. The provided upgrade step serves as a helpful reference implementation.
+If you've applied these behaviors to other content types, you'll need to create a custom upgrade step based on this one to update those content objects accordingly.
+The [provided upgrade step](backend/src/kitconcept/voltolighttheme/upgrades/v20250321001.py) serves as a helpful reference implementation.
 
 ### Color definitions
 
