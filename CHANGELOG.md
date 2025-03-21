@@ -1,6 +1,45 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 6.0.0a18 (2025-03-21)
+
+### Backend
+
+
+#### New features:
+
+- Added upgrade step for update old data structure in `footer_links` and `footer_logos`. @sneridagh [#508](https://github.com/kitconcept/volto-light-theme/issues/508)
+- Install behavior to Plone site in demo profile. @sneridagh 
+
+
+
+### Frontend
+
+#### Feature
+
+- Add Color Contrast Checker component @danalvrz [#463](https://github.com/kitconcept/volto-light-theme/pull/463)
+- Add docs for ColorContrastChecker. @danalvrz [#507](https://github.com/kitconcept/volto-light-theme/pull/507)
+
+#### Bugfix
+
+- Make the `footer_links` and `footer_logos` loops more resilient. @sneridagh [#508](https://github.com/kitconcept/volto-light-theme/pull/508)
+
+
+
+### Project
+
+
+#### Internal
+
+- GHA: Fix tag workflow @ericof 
+
+
+#### Documentation
+
+- Added upgrade guide documentation for update old data structure in `footer_links` and `footer_logos`. @sneridagh [#508](https://github.com/kitconcept/volto-light-theme/pull/508)
+
+
+
 ## 6.0.0a17 (2025-03-20)
 
 ### Backend

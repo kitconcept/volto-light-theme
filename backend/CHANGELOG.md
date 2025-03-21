@@ -2,6 +2,14 @@
 
 <!-- towncrier release notes start -->
 
+## 6.0.0a18 (2025-03-21)
+
+
+### New features:
+
+- Added upgrade step for update old data structure in `footer_links` and `footer_logos`. @sneridagh [#508](https://github.com/kitconcept/volto-light-theme/issues/508)
+- Install behavior to Plone site in demo profile. @sneridagh 
+
 ## 6.0.0a17 (2025-03-20)
 
 
