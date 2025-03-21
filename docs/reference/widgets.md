@@ -39,6 +39,83 @@ It uses the {file}`/src/components/widgets/ColorPicker` component.
 :alt: colorPicker
 ```
 
+## `ColorContrastChecker` component
+
+The `ColorContrastChecker` is a component that helps ensure text accessibility by calculating the contrast ratio between two colors. It is based on WCAG (Web Content Accessibility Guidelines) accessibility standards. It can be added in a widget following a color input field to let the user know in real-time of insufficient contrast. It can be found at {file}`/src/components/widgets/ColorContrastChecker`. 
+
+
+```{image} /_static/colorContrastChecker.png
+:alt: colorContrastChecker
+```
+
+### Usage
+
+Import the component into your widget:
+
+```tsx
+import ContrastChecker from './ContrastChecker';
+
+const MyColorWidget = (props: { id: string; value: string; }) => {
+  return (
+    <>
+      <FormFieldWrapper {...props} />
+      <ContrastChecker {...props} />
+    </>
+  );
+}
+
+export default MyColorWidget;
+```
+
+#### Color Input
+
+The component accepts hex color codes (e.g., #FF0000) and compares the field's value against its paired color from the global form data. These color pairings, and default values, are defined in the configuration registry under `config.settings.colorMap`:
+
+```jsx
+  config.settings.colorMap = {
+    primary_color: {
+      colorPair: 'primary_foreground_color',
+      default: '#ffffff',
+    },
+    primary_foreground_color: {
+      colorPair: 'primary_color',
+      default: '#000000',
+    },
+    secondary_color: {
+      colorPair: 'secondary_foreground_color',
+      default: '#ecebeb',
+    },
+    secondary_foreground_color: {
+      colorPair: 'secondary_color',
+      default: '#000000',
+    },
+    accent_color: { 
+      colorPair: 'accent_foreground_color', 
+      default: '#ecebeb' 
+    },
+    accent_foreground_color: { 
+      colorPair: 'accent_color', 
+      default: '#ffffff' 
+    },
+  };
+```
+
+#### Contrast Calculation
+
+The component calculates contrast using the following steps:
+
+1. **Convert Hex to RGB** with `hexToRgb(hex)`.
+
+2. **Calculate Relative Luminance** using the WCAG formula with `getLuminance(r, g, b)`.
+
+3. **Determine Contrast Ratio** using `getContrastRatio(l1, l2)`.
+
+#### Additional resources
+
+- [WCAG 2.1 Contrast Guidelines](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html)
+- [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/)
+- [Color Contrast for Better Readability](https://www.w3.org/WAI/tips/designing/#provide-sufficient-contrast-between-foreground-and-background)
+
 ## `object_list` (Volto widget override)
 
 The `object_list` widget overrides the Volto `object_list` widget.

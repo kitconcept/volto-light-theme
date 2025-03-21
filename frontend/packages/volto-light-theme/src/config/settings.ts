@@ -34,13 +34,25 @@ export default function install(config: ConfigType) {
     },
   ];
 
-  config.settings.colorContrastPairMap = {
-    primary_color: 'primary_foreground_color',
-    primary_foreground_color: 'primary_color',
-    secondary_color: 'secondary_foreground_color',
-    secondary_foreground_color: 'secondary_color',
-    accent_color: 'accent_foreground_color',
-    accent_foreground_color: 'accent_color',
+  config.settings.colorMap = {
+    primary_color: {
+      colorPair: 'primary_foreground_color',
+      default: '#ffffff',
+    },
+    primary_foreground_color: {
+      colorPair: 'primary_color',
+      default: '#000000',
+    },
+    secondary_color: {
+      colorPair: 'secondary_foreground_color',
+      default: '#ecebeb',
+    },
+    secondary_foreground_color: {
+      colorPair: 'secondary_color',
+      default: '#000000',
+    },
+    accent_color: { colorPair: 'accent_foreground_color', default: '#ecebeb' },
+    accent_foreground_color: { colorPair: 'accent_color', default: '#ffffff' },
   };
 
   return config;

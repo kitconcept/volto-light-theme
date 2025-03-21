@@ -1,0 +1,1 @@
+Add docs for ColorContrastChecker. @danalvrz
