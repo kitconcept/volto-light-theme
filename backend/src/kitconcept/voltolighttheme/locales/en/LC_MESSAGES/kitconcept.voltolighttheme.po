@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-05-25 17:12+0000\n"
+"POT-Creation-Date: 2025-03-21 14:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,3 +13,119 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: kitconcept.voltolighttheme\n"
+
+#: kitconcept/voltolighttheme/behaviors/customizations.py:181
+msgid "Footer customizations"
+msgstr ""
+
+#: kitconcept/voltolighttheme/behaviors/customizations.py:251
+msgid "Footer links"
+msgstr ""
+
+#: kitconcept/voltolighttheme/behaviors/customizations.py:198
+msgid "Footer logos"
+msgstr ""
+
+#: kitconcept/voltolighttheme/behaviors/customizations.py:225
+msgid "Footer logos container width"
+msgstr ""
+
+#: kitconcept/voltolighttheme/behaviors/customizations.py:238
+msgid "Footer logos size"
+msgstr ""
+
+#: kitconcept/voltolighttheme/behaviors/customizations.py:50
+msgid "Header customizations"
+msgstr ""
+
+#: kitconcept/voltolighttheme/profiles.zcml:24
+msgid "Package to add example content to a new Volto Light Theme site"
+msgstr ""
+
+#: kitconcept/voltolighttheme/profiles.zcml:14
+msgid "Package to configure a new Volto Light Theme site"
+msgstr ""
+
+#: kitconcept/voltolighttheme/behaviors/customizations.py:96
+msgid "Site Actions"
+msgstr ""
+
+#: kitconcept/voltolighttheme/behaviors/customizations.py:115
+msgid "Theming"
+msgstr ""
+
+#: kitconcept/voltolighttheme/profiles.zcml:33
+msgid "Uninstall Volto Light Theme setup."
+msgstr ""
+
+#: kitconcept/voltolighttheme/profiles.zcml:24
+msgid "Volto Light Theme: Demo"
+msgstr ""
+
+#: kitconcept/voltolighttheme/profiles.zcml:14
+msgid "Volto Light Theme: Install"
+msgstr ""
+
+#: kitconcept/voltolighttheme/profiles.zcml:33
+msgid "Volto Light Theme: Uninstall"
+msgstr ""
+
+#. Default: "If the project has a complementary logo, please upload it here. It will show in the right side of the header."
+#: kitconcept/voltolighttheme/behaviors/customizations.py:70
+msgid "help_complementary_logo"
+msgstr ""
+
+#. Default: "The site actions are the links that show in the top right side of the header."
+#: kitconcept/voltolighttheme/behaviors/customizations.py:97
+msgid "help_header_actions"
+msgstr ""
+
+#. Default: "If your site is an intranet, the intranet flag is the color pill at the top left of the header."
+#: kitconcept/voltolighttheme/behaviors/customizations.py:80
+msgid "help_intranet_flag"
+msgstr ""
+
+#. Default: "If the site or subsite has a logo, please upload it here."
+#: kitconcept/voltolighttheme/behaviors/customizations.py:61
+msgid "help_site_logo"
+msgstr ""
+
+#. Default: "accent_colordefault"
+#: kitconcept/voltolighttheme/behaviors/customizations.py:128
+msgid "label_accent_color"
+msgstr ""
+
+#. Default: "accent_foreground_colordefault"
+#: kitconcept/voltolighttheme/behaviors/customizations.py:136
+msgid "label_accent_foreground_color"
+msgstr ""
+
+#. Default: "Complementary Logo"
+#: kitconcept/voltolighttheme/behaviors/customizations.py:69
+msgid "label_complementary_logo"
+msgstr ""
+
+#. Default: "Intranet Flag"
+#: kitconcept/voltolighttheme/behaviors/customizations.py:79
+msgid "label_intranet_flag"
+msgstr ""
+
+#. Default: "primary_foreground_colordefault"
+#: kitconcept/voltolighttheme/behaviors/customizations.py:147
+msgid "label_primary_foreground_color"
+msgstr ""
+
+#. Default: "secondary_colordefault"
+#: kitconcept/voltolighttheme/behaviors/customizations.py:156
+msgid "label_secondary_color"
+msgstr ""
+
+#. Default: "secondary_foreground_colordefault"
+#: kitconcept/voltolighttheme/behaviors/customizations.py:167
+msgid "label_secondary_foreground_color"
+msgstr ""
+
+#. Default: "Site Logo"
+#: kitconcept/voltolighttheme/behaviors/customizations.py:60
+msgid "label_site_logo"
+msgstr ""

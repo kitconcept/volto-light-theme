@@ -11,18 +11,29 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+#. Default: "Action"
+#: components/Widgets/schema/headerActionsSchema
+msgid "Action"
+msgstr ""
+
 #. Default: "Add"
-#: components/Widgets/BlocksObjectWidget
+#: components/Widgets/BlocksObject
+#: components/Widgets/ObjectList
 msgid "Add (object list)"
 msgstr ""
 
+#. Default: "Add action"
+#: components/Widgets/schema/headerActionsSchema
+msgid "Add action"
+msgstr ""
+
 #. Default: "Add link"
-#: components/Widgets/FooterLinksWidget
+#: components/Widgets/schema/footerLinksSchema
 msgid "Add link"
 msgstr ""
 
 #. Default: "Add logo"
-#: components/Widgets/FooterLogosWidget
+#: components/Widgets/schema/footerLogosSchema
 msgid "Add logo"
 msgstr ""
 
@@ -33,7 +44,7 @@ msgid "Alignment"
 msgstr ""
 
 #. Default: "Alt text"
-#: components/Widgets/FooterLogosWidget
+#: components/Widgets/schema/footerLogosSchema
 msgid "Alt text"
 msgstr ""
 
@@ -65,8 +76,7 @@ msgid "Button text"
 msgstr "Texto do botão"
 
 #. Default: "Center"
-#: components/Widgets/AlignWidget
-#: components/Widgets/BlockAlignmentWidget
+#: components/Widgets/BlockAlignment
 msgid "Center"
 msgstr "Centralizado"
 
@@ -77,7 +87,8 @@ msgid "Close menu"
 msgstr "Fechar menu"
 
 #. Default: "Collapse item"
-#: components/Widgets/BlocksObjectWidget
+#: components/Widgets/BlocksObject
+#: components/Widgets/ObjectList
 msgid "Collapse item"
 msgstr ""
 
@@ -97,14 +108,13 @@ msgid "Copyright"
 msgstr "Copyright"
 
 #. Default: "Default"
-#: components/Widgets/BlockWidthWidget
+#: components/Widgets/BlockWidth
 msgid "Default"
 msgstr ""
 
 #. Default: "Description"
 #: components/Blocks/Image/schema
-#: components/Widgets/FooterLinksWidget
-#: components/Widgets/FooterLogosWidget
+#: components/Widgets/schema/footerLogosSchema
 msgid "Description"
 msgstr "Descrição"
 
@@ -114,7 +124,8 @@ msgid "Distributed under the {license}."
 msgstr "Distribuído sob a licença {license}."
 
 #. Default: "Empty object list"
-#: components/Widgets/BlocksObjectWidget
+#: components/Widgets/BlocksObject
+#: components/Widgets/ObjectList
 msgid "Empty object list"
 msgstr ""
 
@@ -129,8 +140,7 @@ msgid "Flag align"
 msgstr "Alinhar"
 
 #. Default: "Full"
-#: components/Widgets/AlignWidget
-#: components/Widgets/BlockWidthWidget
+#: components/Widgets/BlockWidth
 msgid "Full"
 msgstr "Completo"
 
@@ -140,8 +150,7 @@ msgid "GNU GPL license"
 msgstr "Licença GNU GPL"
 
 #. Default: "Headline"
-#: components/Widgets/FooterLinksWidget
-#: components/Widgets/FooterLogosWidget
+#: components/Widgets/schema/footerLogosSchema
 msgid "Headline"
 msgstr ""
 
@@ -151,8 +160,7 @@ msgid "Hide Button"
 msgstr "Ocultar botão"
 
 #. Default: "Hide description"
-#: components/Widgets/FooterLinksWidget
-#: components/Widgets/FooterLogosWidget
+#: components/Widgets/schema/footerLogosSchema
 msgid "Hide description"
 msgstr ""
 
@@ -168,50 +176,30 @@ msgstr "Início"
 msgid "ICS-Download"
 msgstr "Baixar ICS"
 
-#. Default: "Icon"
-#: components/Widgets/FooterLinksWidget
-#: components/Widgets/FooterLogosWidget
-msgid "Icon"
-msgstr ""
-
 #. Default: "Image"
 #: components/Blocks/Image/ImageSidebar
 msgid "Image"
 msgstr "Imagem"
 
-#. Default: "Item"
-#: components/Widgets/FooterLinksWidget
-#: components/Widgets/FooterLogosWidget
-msgid "Item"
-msgstr ""
-
-#. Default: "Items"
-#: components/Widgets/FooterLinksWidget
-#: components/Widgets/FooterLogosWidget
-msgid "Items"
-msgstr ""
-
-#. Default: "Items to show"
-#: components/Widgets/FooterLinksWidget
-#: components/Widgets/FooterLogosWidget
-msgid "Items to show"
-msgstr ""
-
 #. Default: "Large"
-#: components/Widgets/SizeWidget
+#: components/Widgets/Size
 msgid "Large"
 msgstr ""
 
 #. Default: "Layout"
-#: components/Widgets/BlockWidthWidget
+#: components/Widgets/BlockWidth
 msgid "Layout"
 msgstr ""
 
 #. Default: "Left"
-#: components/Widgets/AlignWidget
-#: components/Widgets/BlockAlignmentWidget
+#: components/Widgets/BlockAlignment
 msgid "Left"
 msgstr "Esquerda"
+
+#. Default: "Link"
+#: components/Widgets/schema/footerLinksSchema
+msgid "Link"
+msgstr ""
 
 #. Default: "List"
 #: index
@@ -233,9 +221,13 @@ msgstr "Local"
 msgid "Log in"
 msgstr "Entrar"
 
+#. Default: "Logo"
+#: components/Widgets/schema/footerLogosSchema
+msgid "Logo"
+msgstr ""
+
 #. Default: "Logo image"
-#: components/Widgets/FooterLinksWidget
-#: components/Widgets/FooterLogosWidget
+#: components/Widgets/schema/footerLogosSchema
 msgid "Logo image"
 msgstr ""
 
@@ -245,12 +237,12 @@ msgid "Logo of"
 msgstr ""
 
 #. Default: "Medium"
-#: components/Widgets/SizeWidget
+#: components/Widgets/Size
 msgid "Medium"
 msgstr ""
 
 #. Default: "Narrow"
-#: components/Widgets/BlockWidthWidget
+#: components/Widgets/BlockWidth
 msgid "Narrow"
 msgstr ""
 
@@ -270,8 +262,9 @@ msgid "No items found in this container."
 msgstr "Nenhum item encontrado nesta pasta"
 
 #. Default: "Open in a new tab"
-#: components/Widgets/FooterLinksWidget
-#: components/Widgets/FooterLogosWidget
+#: components/Widgets/schema/footerLinksSchema
+#: components/Widgets/schema/footerLogosSchema
+#: components/Widgets/schema/headerActionsSchema
 msgid "Open in a new tab"
 msgstr ""
 
@@ -328,7 +321,8 @@ msgid "Register"
 msgstr "Criar conta"
 
 #. Default: "Remove item"
-#: components/Widgets/BlocksObjectWidget
+#: components/Widgets/BlocksObject
+#: components/Widgets/ObjectList
 msgid "Remove item"
 msgstr ""
 
@@ -338,8 +332,7 @@ msgid "Result"
 msgstr "Resultado"
 
 #. Default: "Right"
-#: components/Widgets/AlignWidget
-#: components/Widgets/BlockAlignmentWidget
+#: components/Widgets/BlockAlignment
 msgid "Right"
 msgstr "Direita"
 
@@ -374,8 +367,7 @@ msgid "Searched for"
 msgstr "Busca por"
 
 #. Default: "Settings"
-#: components/Widgets/FooterLinksWidget
-#: components/Widgets/FooterLogosWidget
+#: components/Widgets/schema/footerLogosSchema
 msgid "Settings"
 msgstr ""
 
@@ -385,7 +377,8 @@ msgid "Short line"
 msgstr ""
 
 #. Default: "Show item"
-#: components/Widgets/BlocksObjectWidget
+#: components/Widgets/BlocksObject
+#: components/Widgets/ObjectList
 msgid "Show item"
 msgstr ""
 
@@ -395,7 +388,7 @@ msgid "Sitemap"
 msgstr "Mapa do Site"
 
 #. Default: "Small"
-#: components/Widgets/SizeWidget
+#: components/Widgets/Size
 msgid "Small"
 msgstr ""
 
@@ -420,8 +413,9 @@ msgid "Switch to"
 msgstr ""
 
 #. Default: "Target"
-#: components/Widgets/FooterLinksWidget
-#: components/Widgets/FooterLogosWidget
+#: components/Widgets/schema/footerLinksSchema
+#: components/Widgets/schema/footerLogosSchema
+#: components/Widgets/schema/headerActionsSchema
 msgid "Target"
 msgstr ""
 
@@ -432,8 +426,9 @@ msgstr "O {plonecms} tem {copyright} 2000-{current_year} pela {plonefoundation} 
 
 #. Default: "Title"
 #: components/Blocks/Image/schema
-#: components/Widgets/FooterLinksWidget
-#: components/Widgets/FooterLogosWidget
+#: components/Widgets/schema/footerLinksSchema
+#: components/Widgets/schema/footerLogosSchema
+#: components/Widgets/schema/headerActionsSchema
 msgid "Title"
 msgstr "Título"
 
@@ -441,11 +436,6 @@ msgstr "Título"
 #: components/Blocks/EventMetadata/View
 msgid "Website"
 msgstr "Site"
-
-#. Default: "Wide"
-#: components/Widgets/AlignWidget
-msgid "Wide"
-msgstr "Largo"
 
 #. Default: "Clear image"
 #: components/Blocks/Image/ImageSidebar
