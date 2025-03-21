@@ -18,6 +18,30 @@ myst:
 
 The data structure used to hold the fields `footer_links` and `footer_logos` have changed.
 It used to have a blocks data structure (with `blocks` and `blocks_data`), but has been updated to use a bare array with the objects inside using the `object_list` widget.
+For the record, these are the shapes of the new objects:
+
+```ts
+type hrefType = {
+  '@id': string;
+  title: string;
+} & Partial<Brain>;
+
+type footerLink = {
+  '@id': string;
+  title: string;
+  href: Array<hrefType>;
+};
+
+type footerLogo = {
+  '@id': string;
+  title: string;
+  logo: Image;
+  href: Array<hrefType>;
+};
+
+type footerLinks = Array<footerLink>
+type footerLogos = Array<footerLogo>
+```
 
 ```{versionadded} 6.0.0-alpha.18
 ```
