@@ -10,7 +10,7 @@ const FooterLinks = (props: FooterLinksProps) => {
 
   return (
     <ul className="footer-links">
-      {!isEmpty(links)
+      {links && Array.isArray(links)
         ? links.map((link) => {
             if (isEmpty(link) || !link.href) return null;
 
