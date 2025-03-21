@@ -8,6 +8,17 @@
 
 <!-- towncrier release notes start -->
 
+## 6.0.0-alpha.18 (2025-03-21)
+
+### Feature
+
+- Add Color Contrast Checker component @danalvrz [#463](https://github.com/kitconcept/volto-light-theme/pull/463)
+- Add docs for ColorContrastChecker. @danalvrz [#507](https://github.com/kitconcept/volto-light-theme/pull/507)
+
+### Bugfix
+
+- Make the `footer_links` and `footer_logos` loops more resilient. @sneridagh [#508](https://github.com/kitconcept/volto-light-theme/pull/508)
+
 ## 6.0.0-alpha.17 (2025-03-20)
 
 ### Breaking
