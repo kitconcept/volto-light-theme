@@ -57,17 +57,34 @@ jobs:
   backend-build:
     name: "Backend: Build container image (${{ needs.config.outputs.base-tag }})"
     if: ${{ needs.config.outputs.acceptance == 'true' && (always() && !contains(needs.*.result, 'failure'))}}
-    uses: ./.github/workflows/backend-image-build.yml
+    uses: kitconcept/meta/.github/workflows/image-build.yml@main
     needs:
       - config
       - backend-lint
       - backend-test
       - backend-coverage
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - working-directory: backend
+            image-name-suffix: backend
+            dockerfile: Dockerfile
+          - working-directory: backend
+            image-name-suffix: backend-acceptance
+            dockerfile: Dockerfile.acceptance
     with:
       base-tag: ${{ needs.config.outputs.base-tag }}
       image-name-prefix: ${{ needs.config.outputs.image-name-prefix }}
-      image-name-suffix: backend
-      plone-version: ${{ needs.config.outputs.plone-version }}
+      working-directory: ${{ matrix.working-directory }}
+      image-name-suffix: ${{ matrix.image-name-suffix }}
+      dockerfile: ${{ matrix.dockerfile }}
+      build-args: |
+        PLONE_VERSION=${{ needs.config.outputs.plone-version }}
+        SEED=$GITHUB_RUN_ID
+    secrets:
+      username: ${{ github.actor }}
+      password: ${{ secrets.GITHUB_TOKEN }}
 
   frontend-lint:
     name: "Frontend: Run lint checkers"
@@ -103,7 +120,7 @@ jobs:
   frontend-build:
     name: "Frontend: Build container image (${{ needs.config.outputs.base-tag }})"
     if: ${{ needs.config.outputs.acceptance == 'true' && (always() && !contains(needs.*.result, 'failure'))}}
-    uses: ./.github/workflows/frontend-image-build.yml
+    uses: kitconcept/meta/.github/workflows/image-build.yml@main
     needs:
       - config
       - frontend-lint
@@ -113,11 +130,12 @@ jobs:
       base-tag: ${{ needs.config.outputs.base-tag }}
       image-name-prefix: ${{ needs.config.outputs.image-name-prefix }}
       image-name-suffix: frontend
-      node-version: ${{ needs.config.outputs.node-version }}
-      volto-version: ${{ needs.config.outputs.volto-version }}
-    permissions:
-      contents: read
-      packages: write
+      working-directory: frontend
+      build-args: |
+        VOLTO_VERSION=${{ needs.config.outputs.volto-version }}
+    secrets:
+      username: ${{ github.actor }}
+      password: ${{ secrets.GITHUB_TOKEN }}
 
   acceptance:
     name: "Acceptance: ${{ matrix.name }}"
