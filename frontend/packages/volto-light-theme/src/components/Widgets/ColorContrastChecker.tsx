@@ -74,8 +74,7 @@ const ColorContrastChecker = (props: { id: string; value: string }) => {
     setDarkerColor(value ?? colorDefault);
     setLigtherColor(formData[colorPair] ?? colorMap[colorPair].default);
     setContrastRatio(ratio);
-
-  }, [ratio, value, formData]);
+  }, [ratio, value, formData, colorDefault, colorPair, colorMap]);
 
   // Get WCAG compliance levels
   const getComplianceLevel = (ratio) => {
