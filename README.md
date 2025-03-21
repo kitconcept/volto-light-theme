@@ -16,7 +16,7 @@
 [![Build Status](https://github.com/kitconcept/volto-light-theme/actions/workflows/main.yml/badge.svg)](https://github.com/kitconcept/volto-light-theme/actions)
 
 [![GitHub contributors](https://img.shields.io/github/contributors/kitconcept/volto-light-theme)](https://github.com/kitconcept/volto-light-theme)
-[![GitHub Repo stars](https://img.shields.io/github/stars/collective/volto-light-theme?style=social)](https://github.com/collective/volto-light-theme)
+[![GitHub Repo stars](https://img.shields.io/github/stars/kitconcept/volto-light-theme?style=social)](https://github.com/kitconcept/volto-light-theme)
 
 </div>
 
