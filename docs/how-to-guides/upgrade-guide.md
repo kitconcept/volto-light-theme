@@ -11,6 +11,46 @@ myst:
 
 ## volto-light-theme 6.0.0
 
+### Updated data structure for `footer_links` and `footer_logos`.
+
+```{versionadded} 6.0.0-alpha.17
+```
+
+The data structure used to hold the fields `footer_links` and `footer_logos` have changed.
+It used to have a blocks data structure (with `blocks` and `blocks_data`), but has been updated to use a bare array with the objects inside using the `object_list` widget.
+For the record, these are the shapes of the new objects:
+
+```ts
+type hrefType = {
+  '@id': string;
+  title: string;
+} & Partial<Brain>;
+
+type footerLink = {
+  '@id': string;
+  title: string;
+  href: Array<hrefType>;
+};
+
+type footerLogo = {
+  '@id': string;
+  title: string;
+  logo: Image;
+  href: Array<hrefType>;
+};
+
+type footerLinks = Array<footerLink>
+type footerLogos = Array<footerLogo>
+```
+
+```{versionadded} 6.0.0-alpha.18
+```
+
+An automatic upgrade step is provided with this version that updates the data structure in your Plone site root when the `kitconcept.voltolighttheme` behaviors are applied there.
+
+If you've applied these behaviors to other content types, you'll need to create a custom upgrade step based on this one to update those content objects accordingly.
+The [provided upgrade step](backend/src/kitconcept/voltolighttheme/upgrades/v20250321001.py) serves as a helpful reference implementation.
+
 ### Color definitions
 
 The VLT has migrated to use the standardized color definitions in Volto.
