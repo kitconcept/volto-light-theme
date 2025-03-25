@@ -1,6 +1,30 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 6.0.0a19 (2025-03-25)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Fix grid creation, improve the blockConfig check. @sneridagh [#510](https://github.com/kitconcept/volto-light-theme/pull/510)
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 6.0.0a18 (2025-03-21)
 
 ### Backend
