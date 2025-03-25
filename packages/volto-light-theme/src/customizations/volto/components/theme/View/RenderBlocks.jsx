@@ -15,11 +15,9 @@ import {
   hasBlocksData,
 } from '@plone/volto/helpers/Blocks/Blocks';
 import { defineMessages, useIntl } from 'react-intl';
-import { map } from 'lodash';
-
 import StyleWrapper from '@plone/volto/components/manage/Blocks/Block/StyleWrapper';
 import config from '@plone/volto/registry';
-import { ViewDefaultBlock } from '@plone/volto/components';
+import ViewDefaultBlock from '@plone/volto/components/manage/Blocks/Block/DefaultView';
 import MaybeWrap from '@plone/volto/components/manage/MaybeWrap/MaybeWrap';
 import RenderEmptyBlock from '@plone/volto/components/theme/View/RenderEmptyBlock';
 
@@ -49,7 +47,7 @@ const RenderBlocks = (props) => {
 
   return hasBlocksData(content) ? (
     <CustomTag>
-      {map(content[blocksLayoutFieldname].items, (block) => {
+      {content[blocksLayoutFieldname].items.map((block) => {
         const currentBlockModel =
           blocksConfig[content[blocksFieldname]?.[block]?.['@type']]
             ?.blockModel;
