@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 6.0.0-alpha.19 (2025-03-25)
+
+### Bugfix
+
+- Fix grid creation, improve the blockConfig check. @sneridagh [#510](https://github.com/kitconcept/volto-light-theme/pull/510)
+
 ## 6.0.0-alpha.18 (2025-03-21)
 
 ### Feature

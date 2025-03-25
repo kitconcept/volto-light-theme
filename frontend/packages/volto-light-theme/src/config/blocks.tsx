@@ -136,11 +136,11 @@ export default function install(config: ConfigType) {
   function blockThemesEnhancer({ data, container }) {
     if (!data['@type']) return {};
     const blockConfig = config.blocks.blocksConfig[data['@type']];
+    if (!blockConfig) return {};
     const blockStyleDefinitions =
       // We look up for the blockThemes in the block's config, then in the global config
       // We keep `colors` for BBB, but `themes` should be used
       blockConfig.themes || blockConfig.colors || config.blocks.themes || [];
-    if (!blockConfig) return {};
 
     if (
       !isEmpty(container) &&
