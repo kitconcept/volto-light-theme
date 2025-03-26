@@ -66,8 +66,7 @@ target = "plone"
 managed = false
 
 [tool.hatch.build]
-strict-naming = false
-packages = ["src/kitconcept",]
+strict-naming = true
 
 [tool.hatch.version]
 path = "src/kitconcept/voltolighttheme/__init__.py"
@@ -78,8 +77,7 @@ include = [
 ]
 
 [tool.hatch.build.targets.wheel]
-sources = ["src"]
-only-include = ["src/kitconcept/voltolighttheme"]
+packages = ["src/kitconcept",]
 
 [tool.towncrier]
 directory = "news/"
