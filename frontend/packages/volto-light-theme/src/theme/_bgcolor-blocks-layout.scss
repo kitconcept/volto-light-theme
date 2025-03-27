@@ -23,7 +23,8 @@
     color: var(--theme-foreground-color);
   }
 
-  a:not(.item):not(
+  :not(.teaser-item)
+    > a:not(.item):not(
       :has(> .teaser-item),
       :has(> .listing-body),
       :has(> .card-container)

@@ -125,13 +125,13 @@
       position: absolute;
       z-index: 100;
       bottom: 0;
-      padding: 0 1rem 0 1rem;
+      padding: 0 1rem 15px 1rem;
       margin: 0;
 
       .title {
         margin: 0 0 20px 0;
         color: $white !important;
-        letter-spacing: 1px;
+        letter-spacing: 0;
         @include text-heading-h3();
       }
 
@@ -300,7 +300,7 @@
           .title {
             margin: 0 0 15px 0;
             color: $white !important;
-            letter-spacing: 1px;
+            letter-spacing: 0;
             @include text-heading-h4();
           }
         }
