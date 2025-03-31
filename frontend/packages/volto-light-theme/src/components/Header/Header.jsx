@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, Container } from '@plone/components';
 import MobileNavigation from '../MobileNavigation/MobileNavigation';
-import { useIntl, defineMessages } from 'react-intl';
 import config from '@plone/volto/registry';
 import cx from 'classnames';
 import IntranetSearchWidget from '../SearchWidget/IntranetSearchWidget';
@@ -24,14 +23,19 @@ import UniversalLink from '@plone/volto/components/manage/UniversalLink/Universa
 
 import SlotRenderer from '@plone/volto/components/theme/SlotRenderer/SlotRenderer';
 
-const messages = defineMessages({
-  siteLabel: {
-    id: 'siteLabel',
-    defaultMessage: ' ',
-  },
-});
+const InternetHeader = ({ pathname, token }) => {
+  const headerSettings = useSelector(
+    (state) =>
+      state.content.data?.['@components']?.inherit?.['voltolighttheme.header']
+        ?.data,
+  );
+  const formData = useSelector((state) => state.form.global);
 
-const InternetHeader = ({ pathname, siteLabel, token, siteAction }) => {
+  const headerActions =
+    !isEmpty(formData) && formData?.header_actions
+      ? formData.header_actions
+      : headerSettings?.header_actions;
+
   return (
     <>
       <div className="header">
@@ -40,18 +44,14 @@ const InternetHeader = ({ pathname, siteLabel, token, siteAction }) => {
 
           <div className="tools">
             {!token && <Anontools />}
-            {siteAction &&
-              siteAction.map((item) => (
-                <UniversalLink key={item.url} href={item.url}>
+            {headerActions &&
+              Array.isArray(headerActions) &&
+              headerActions.map((item) => (
+                <UniversalLink key={item['@id']} href={item.href?.[0]['@id']}>
                   {item.title}
                 </UniversalLink>
               ))}
           </div>
-          {siteLabel && (
-            <div className="intranet">
-              <p>{siteLabel}</p>
-            </div>
-          )}
         </div>
         <div className="logo-nav-wrapper">
           <div className="logo">
@@ -70,7 +70,7 @@ const InternetHeader = ({ pathname, siteLabel, token, siteAction }) => {
   );
 };
 
-const IntranetHeader = ({ pathname, siteLabel, token }) => {
+const IntranetHeader = ({ pathname, token }) => {
   const [isClient, setIsClient] = useState(false);
   useEffect(() => {
     setIsClient(true);
@@ -87,8 +87,8 @@ const IntranetHeader = ({ pathname, siteLabel, token }) => {
 
   const intranetFlag =
     !isEmpty(formData) && formData.intranet_flag
-      ? formData?.intranet_flag || siteLabel
-      : headerSettings?.intranet_flag || siteLabel;
+      ? formData?.intranet_flag
+      : headerSettings?.intranet_flag;
 
   const complementary_logo =
     !isEmpty(formData) && formData?.complementary_logo?.data
@@ -121,7 +121,7 @@ const IntranetHeader = ({ pathname, siteLabel, token }) => {
                 </UniversalLink>
               ))}
           </div>
-          {siteLabel &&
+          {intranetFlag &&
             isClient &&
             (!isEmpty(formData) ? (
               <Button
@@ -165,44 +165,36 @@ const IntranetHeader = ({ pathname, siteLabel, token }) => {
 
 const Header = (props) => {
   const { pathname } = props;
-  let siteLabel = config.settings.siteLabel;
   const intranetHeader = config.settings.intranetHeader;
   const token = useSelector((state) => state.userSession.token);
   const content = useSelector((state) => state.content.data);
-  const siteAction = useSelector(
-    (state) => state.content.data?.['@components']?.actions?.site_actions,
+  const headerSettings = useSelector(
+    (state) =>
+      state.content.data?.['@components']?.inherit?.['voltolighttheme.header']
+        ?.data,
   );
-  const navRoot = useSelector((state) => state.navroot?.data?.navroot);
-  const intl = useIntl();
-  const translatedSiteLabel = intl.formatMessage(messages.siteLabel);
+  const formData = useSelector((state) => state.form.global);
 
-  siteLabel =
-    siteLabel &&
-    (translatedSiteLabel !== 'siteLabel' && translatedSiteLabel !== ' '
-      ? translatedSiteLabel
-      : siteLabel);
+  const navRoot = useSelector((state) => state.navroot?.data?.navroot);
+
+  const has_intranet_header =
+    intranetHeader || !isEmpty(formData)
+      ? formData.has_intranet_header
+      : headerSettings?.has_intranet_header;
 
   return (
     <>
       <SlotRenderer name="aboveHeader" content={content} navRoot={navRoot} />
       <header
-        className={cx('header-wrapper', { 'intranet-header': intranetHeader })}
+        className={cx('header-wrapper', {
+          'intranet-header': has_intranet_header,
+        })}
       >
         <Container layout>
-          {intranetHeader ? (
-            <IntranetHeader
-              pathname={pathname}
-              siteLabel={siteLabel}
-              token={token}
-              siteAction={siteAction}
-            />
+          {has_intranet_header ? (
+            <IntranetHeader pathname={pathname} token={token} />
           ) : (
-            <InternetHeader
-              pathname={pathname}
-              siteLabel={siteLabel}
-              token={token}
-              siteAction={siteAction}
-            />
+            <InternetHeader pathname={pathname} token={token} />
           )}
         </Container>
       </header>

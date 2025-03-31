@@ -11,6 +11,28 @@ myst:
 
 ## volto-light-theme 6.0.0
 
+### New `kitconcept.voltolighttheme` backend package
+
+VLT is now a package with both frontend and backend add-ons.
+Although is not strictly mandatory, it is recommended for a better experience that you install the new backend package `kitconcept.voltolighttheme` in your backend build.
+Enable the site customization behaviors at least to your Plone site as shown in the {ref}`site-customization` documentation.
+
+### All feature flags has been removed
+```{deprecated} 6.0.0-alpha.20
+```
+
+VLT used to have feature flags to enable or disable some theme features.
+These have been removed and moved as site customization settings.
+They are provided by the `voltolighttheme.header` behavior in the `kitconcept.voltolighttheme` add-on.
+
+### Plone portal actions in headers are no longer supported
+```{deprecated} 6.0.0-alpha.20
+```
+
+VLT no longer shows the Plone "portal actions" in the theme headers.
+They have been replaced by the add-on {ref}`site-customization-actions` feature.
+It is controlled by the `headersActions` field, provided by the `voltolighttheme.header` behavior in the `kitconcept.voltolighttheme` add-on.
+
 ### Updated data structure for `footer_links` and `footer_logos`.
 
 ```{versionadded} 6.0.0-alpha.17
