@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-ARG PLONE_VERSION=6.1.0
+ARG PLONE_VERSION=undefined
 ARG SEED=1000
 FROM plone/server-builder:${PLONE_VERSION} AS builder
 
