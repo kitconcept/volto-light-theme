@@ -5,7 +5,7 @@ import { Link, useHistory } from 'react-router-dom';
 import cx from 'classnames';
 import { CSSTransition } from 'react-transition-group';
 import { doesNodeContainClick } from 'semantic-ui-react/dist/commonjs/lib';
-
+import isEmpty from 'lodash/isEmpty';
 import config from '@plone/volto/registry';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import SearchWidget from '@plone/volto/components/theme/SearchWidget/SearchWidget';
@@ -61,6 +61,17 @@ const MenuItem = ({
     }
   }, [resetToRoot]);
 
+  const headerSettings = useSelector(
+    (state) =>
+      state.content.data?.['@components']?.inherit?.['voltolighttheme.header']
+        ?.data,
+  );
+  const formData = useSelector((state) => state.form.global);
+
+  const has_intranet_header = !isEmpty(formData)
+    ? formData.has_intranet_header
+    : headerSettings?.has_intranet_header;
+
   return (
     <li className={section.url === pathname ? 'current' : ''}>
       <Link
@@ -79,19 +90,31 @@ const MenuItem = ({
         unmountOnExit
       >
         <div className="menu-drawer subsection">
-          <div className="search-header">
-            <div className="search-wrapper">
-              <div className="search">
-                <SearchWidget />
+          {!has_intranet_header ? (
+            <div className="search-header">
+              <div className="search-wrapper">
+                <div className="search">
+                  <SearchWidget />
+                </div>
               </div>
+
+              <button onClick={closeSubMenu}>
+                <Icon name={arrowLeftSVG} size="60px" />
+                <span>
+                  <FormattedMessage {...messages.back} />
+                </span>
+              </button>
             </div>
-            <button onClick={closeSubMenu}>
-              <Icon name={arrowLeftSVG} size="60px" />
-              <span>
-                <FormattedMessage {...messages.back} />
-              </span>
-            </button>
-          </div>
+          ) : (
+            <div>
+              <button onClick={closeSubMenu}>
+                <Icon name={arrowLeftSVG} size="60px" />
+                <span>
+                  <FormattedMessage {...messages.back} />
+                </span>
+              </button>
+            </div>
+          )}
           <ul className="sections">
             <li className="header">{section.nav_title || section.title}</li>
             <li>
@@ -131,6 +154,16 @@ const MobileNavigation = (props) => {
   const currentLang = useSelector((state) => state.intl.locale);
   const items = useSelector((state) => state.navigation.items || []);
   const history = useHistory();
+
+  const headerSettings = useSelector(
+    (state) =>
+      state.content.data?.['@components']?.inherit?.['voltolighttheme.header']
+        ?.data,
+  );
+  const formData = useSelector((state) => state.form.global);
+  const has_intranet_header = !isEmpty(formData)
+    ? formData.has_intranet_header
+    : headerSettings?.has_intranet_header;
 
   const Footer = props.MobileToolsFooter || MobileToolsFooter;
 
@@ -218,13 +251,15 @@ const MobileNavigation = (props) => {
         classNames="menu-drawer"
       >
         <div className="menu-drawer">
-          <div className="search-header">
-            <div className="search-wrapper">
-              <div className="search">
-                <SearchWidget />
+          {!has_intranet_header && (
+            <div className="search-header">
+              <div className="search-wrapper">
+                <div className="search">
+                  <SearchWidget />
+                </div>
               </div>
             </div>
-          </div>
+          )}
           <ul className="sections">
             <li className="header">
               <Link

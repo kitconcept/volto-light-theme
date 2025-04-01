@@ -147,6 +147,7 @@ const IntranetHeader = ({ pathname, token }) => {
               <IntranetSearchWidget />
             </div>
           </div>
+          <MobileNavigation pathname={pathname} />
           <div className="complementary-logo">
             {complementary_logo && (
               <img
@@ -155,7 +156,6 @@ const IntranetHeader = ({ pathname, token }) => {
               />
             )}
           </div>
-          <MobileNavigation pathname={pathname} />
         </div>
         <Navigation pathname={pathname} />
       </div>
@@ -165,7 +165,6 @@ const IntranetHeader = ({ pathname, token }) => {
 
 const Header = (props) => {
   const { pathname } = props;
-  const intranetHeader = config.settings.intranetHeader;
   const token = useSelector((state) => state.userSession.token);
   const content = useSelector((state) => state.content.data);
   const headerSettings = useSelector(
@@ -177,10 +176,9 @@ const Header = (props) => {
 
   const navRoot = useSelector((state) => state.navroot?.data?.navroot);
 
-  const has_intranet_header =
-    intranetHeader || !isEmpty(formData)
-      ? formData.has_intranet_header
-      : headerSettings?.has_intranet_header;
+  const has_intranet_header = !isEmpty(formData)
+    ? formData.has_intranet_header
+    : headerSettings?.has_intranet_header;
 
   return (
     <>
