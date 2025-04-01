@@ -11,7 +11,7 @@ const Tags = ({ content }) => {
   if (!config.settings.showTags || !tags.length) return null;
 
   return (
-    <Container className="tags">
+    <Container className="default tags">
       {tags.map((tag) => (
         <Link className="ui label" to={`/search?Subject=${tag}`} key={tag}>
           {tag}
