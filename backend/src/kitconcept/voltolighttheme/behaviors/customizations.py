@@ -5,6 +5,7 @@ from plone.namedfile.field import NamedBlobImage
 from plone.schema import JSONField
 from plone.supermodel import model
 from zope.interface import provider
+from zope.schema import Bool
 from zope.schema import TextLine
 
 import json
@@ -51,6 +52,8 @@ class ISiteHeaderCustomizationSettings(model.Schema):
         fields=[
             "logo",
             "complementary_logo",
+            "has_fat_menu",
+            "has_intranet_header",
             "intranet_flag",
             "header_actions",
         ],
@@ -75,12 +78,32 @@ class ISiteHeaderCustomizationSettings(model.Schema):
         required=False,
     )
 
+    has_fat_menu = Bool(
+        title=_("label_enable_fat_menu", default="Enable Fat Menu"),
+        description=_(
+            "help_enable_fat_menu",
+            default="If enabled, the fat menu will be shown.",
+        ),
+        required=False,
+        default=True,
+    )
+
+    has_intranet_header = Bool(
+        title=_("label_has_intranet_header", default="Enable Intranet Header"),
+        description=_(
+            "help_has_intranet_header",
+            default="If enabled, the intranet header will be shown.",
+        ),
+        required=False,
+        default=False,
+    )
+
     intranet_flag = TextLine(
         title=_("label_intranet_flag", default="Intranet Flag"),
         description=_(
             "help_intranet_flag",
-            default="If your site is an intranet, the intranet flag is the color pill"
-            " at the top left of the header.",
+            default="If your site has an intranet header, the intranet flag is the"
+            " color pill at the top left of the header.",
         ),
         required=False,
     )

@@ -245,7 +245,7 @@
       padding: 10px $spacing-small;
       border: none;
       margin-top: -16px;
-      margin-left: 213px;
+      margin-left: 20vw;
       background-color: $secondary-grey;
 
       @media only screen and (max-width: $narrow-container-width) {
@@ -309,20 +309,21 @@
     .logo-nav-wrapper {
       display: flex;
       flex-direction: row;
-      align-items: baseline;
+      align-items: center;
       justify-content: space-between;
 
       @media only screen and (max-width: $narrow-container-width) {
         position: relative;
         flex-wrap: wrap;
-        justify-content: flex-start;
+        justify-content: space-between;
       }
 
       .mobile-nav.mobile.only {
         @media only screen and (max-width: $narrow-container-width) {
-          position: absolute;
-          top: 19px;
-          right: 0;
+          display: flex;
+          flex: 0 1 130px;
+          flex-direction: row-reverse;
+          order: 2;
         }
 
         .menu-drawer {
@@ -336,8 +337,11 @@
         }
       }
       .logo {
-        @media only screen and (max-width: $largest-mobile-screen) {
-          flex: 0 1 auto;
+        @media only screen and (max-width: $narrow-container-width) {
+          order: 0;
+        }
+        @media only screen and (max-width: $computer-breakpoint) {
+          flex: 0 1 130px;
         }
       }
       .navigation {
@@ -398,34 +402,41 @@
       flex: 1 1 auto;
       flex-direction: row-reverse;
 
-      @media only screen and (max-width: $largest-mobile-screen) {
-        display: none;
+      @media only screen and (max-width: $computer-breakpoint) {
+        flex: 0 1 55px;
+      }
+
+      @media only screen and (max-width: $narrow-container-width) {
+        order: 1;
       }
     }
 
     .search-wrapper {
       display: flex;
       max-width: 600px;
-      flex: 3.5 1 0;
+      flex: 1 1 0;
       align-self: center;
       justify-content: center;
 
       @media only screen and (max-width: $narrow-container-width) {
+        flex: 1 1 auto;
+        order: 3;
+      }
+
+      @media only screen and (max-width: $narrow-container-width) {
         width: 100%;
         margin-left: 0%;
-      }
-      @media only screen and (max-width: $largest-mobile-screen) {
-        flex: 0 1 auto;
       }
 
       .search {
         width: 100%;
         border-bottom: 2px solid $secondary-grey;
         .field.searchbox {
+          padding-right: 1em;
           border: none;
 
           .ui.input input {
-            width: 500px;
+            width: 90%;
 
             &::placeholder {
               color: #808080;
@@ -1032,7 +1043,7 @@ body.has-toolbar.has-sidebar {
 
 .has-toolbar .menu-drawer,
 .has-toolbar-collapsed .menu-drawer {
-  top: 158px;
+  top: 258px;
   width: 100%;
   height: calc(100vh - 158px);
 }
