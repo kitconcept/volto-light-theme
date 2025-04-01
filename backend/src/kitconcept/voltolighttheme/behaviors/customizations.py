@@ -102,8 +102,8 @@ class ISiteHeaderCustomizationSettings(model.Schema):
         title=_("label_intranet_flag", default="Intranet Flag"),
         description=_(
             "help_intranet_flag",
-            default="If your site has an intranet header, the intranet flag is the color pill"
-            " at the top left of the header.",
+            default="If your site has an intranet header, the intranet flag is the"
+            " color pill at the top left of the header.",
         ),
         required=False,
     )
