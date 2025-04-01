@@ -245,8 +245,16 @@
       padding: 10px $spacing-small;
       border: none;
       margin-top: -16px;
-      margin-left: 20vw;
+      margin-left: 200px;
       background-color: $secondary-grey;
+
+      @media only screen and (max-width: $computer-breakpoint) {
+        margin-left: 150px;
+      }
+
+      @media only screen and (max-width: $tablet-breakpoint) {
+        margin-left: 125px;
+      }
 
       @media only screen and (max-width: $narrow-container-width) {
         margin-left: 0px;
