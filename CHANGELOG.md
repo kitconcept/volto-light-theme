@@ -1,6 +1,44 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 6.0.0a20 (2025-04-01)
+
+### Backend
+
+
+#### New features:
+
+- Added new fields `has_intranet_header` and `has_fat_menu` to site customization behaviors. @sneridagh [#516](https://github.com/kitconcept/volto-light-theme/issues/516)
+
+
+#### Internal:
+
+- Ensures filename of source distribution follows PEP 625. @ericof 
+
+
+
+### Frontend
+
+#### Breaking
+
+- Remove feature flags, move to site customizations. @sneridagh [#516](https://github.com/kitconcept/volto-light-theme/pull/516)
+- Remove Plone portal actions from headers. @sneridagh [#516](https://github.com/kitconcept/volto-light-theme/pull/516)
+
+#### Bugfix
+
+- Minor CSS fixes and add docs on colors. @danalvrz [#509](https://github.com/kitconcept/volto-light-theme/pull/509)
+
+
+
+### Project
+
+
+#### Documentation
+
+- Complete upgrade guide with the recent breaking changes and additions. @sneridagh [#516](https://github.com/kitconcept/volto-light-theme/pull/516)
+
+
+
 ## 6.0.0a19 (2025-03-25)
 
 ### Backend
