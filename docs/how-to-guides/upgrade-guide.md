@@ -24,7 +24,7 @@ Enable the site customization behaviors at least to your Plone site as shown in 
 ```{deprecated} 6.0.0-alpha.20
 ```
 
-VLT used to have feature flags to enable or disable some theme features:
+VLT used to have feature flags in the Volto configuration to enable or disable some theme features:
 - config.settings.intranetHeader
 - config.settings.enableFatMenu
 - config.settings.siteLabel
