@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import cx from 'classnames';
 import { CSSTransition } from 'react-transition-group';
-import { doesNodeContainClick } from 'semantic-ui-react/dist/commonjs/lib';
+import doesNodeContainClick from '../../helpers/doesNodeContainClick';
 import isEmpty from 'lodash/isEmpty';
 import config from '@plone/volto/registry';
 import Icon from '@plone/volto/components/theme/Icon/Icon';

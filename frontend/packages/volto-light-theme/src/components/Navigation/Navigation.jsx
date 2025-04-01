@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import isEmpty from 'lodash/isEmpty';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { doesNodeContainClick } from 'semantic-ui-react/dist/commonjs/lib';
+import doesNodeContainClick from '../../helpers/doesNodeContainClick';
 import { useIntl, defineMessages, injectIntl } from 'react-intl';
 import cx from 'classnames';
 import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
