@@ -87,14 +87,6 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         }
       }
     }
-
-    .button {
-      color: $white;
-    }
-
-    & > a {
-      text-decoration: none;
-    }
   }
 
   .slide-wrapper:not(.empty-slide) {
@@ -111,6 +103,7 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
     border: 1px solid currentColor;
     border-radius: 0;
     background-color: transparent;
+    color: $white;
     font-size: 16px;
     font-weight: 900;
     line-height: 20px;
