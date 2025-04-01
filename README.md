@@ -1,6 +1,6 @@
 <picture>
-  <source align="right" media="(prefers-color-scheme: dark)" srcset="https://kitconcept.com/kitconcept-white.svg">
-  <img align="right" width="300" alt="kitconcept, GmbH" src="https://kitconcept.com/kitconcept-black.svg">
+  <source align="right" width="200" media="(prefers-color-scheme: dark)" srcset="https://kitconcept.com/kitconcept-white.svg">
+  <img align="right" width="200" alt="kitconcept, GmbH" src="https://kitconcept.com/kitconcept-black.svg">
 </picture>
 
 # Volto Light Theme

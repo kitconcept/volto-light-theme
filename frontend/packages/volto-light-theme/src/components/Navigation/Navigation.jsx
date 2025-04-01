@@ -2,9 +2,10 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
+import isEmpty from 'lodash/isEmpty';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { doesNodeContainClick } from 'semantic-ui-react/dist/commonjs/lib';
+import doesNodeContainClick from '../../helpers/doesNodeContainClick';
 import { useIntl, defineMessages, injectIntl } from 'react-intl';
 import cx from 'classnames';
 import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
@@ -33,7 +34,17 @@ const Navigation = ({ pathname }) => {
   const navigation = useRef(null);
   const dispatch = useDispatch();
   const intl = useIntl();
-  const enableFatMenu = config.settings.enableFatMenu;
+  const headerSettings = useSelector(
+    (state) =>
+      state.content.data?.['@components']?.inherit?.['voltolighttheme.header']
+        ?.data,
+  );
+  const formData = useSelector((state) => state.form.global);
+
+  const has_fat_menu =
+    !isEmpty(formData) && formData?.has_fat_menu
+      ? formData.has_fat_menu
+      : headerSettings?.has_fat_menu;
 
   const lang = useSelector((state) => state.intl.locale);
   const token = useSelector((state) => state.userSession.token, shallowEqual);
@@ -102,7 +113,7 @@ const Navigation = ({ pathname }) => {
         <ul className="desktop-menu">
           {items.map((item, index) => (
             <li key={item.url}>
-              {enableFatMenu ? (
+              {has_fat_menu ? (
                 <>
                   <button
                     onClick={() => openMenu(index)}
