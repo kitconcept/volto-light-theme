@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, Container } from '@plone/components';
 import MobileNavigation from '../MobileNavigation/MobileNavigation';
-import config from '@plone/volto/registry';
 import cx from 'classnames';
 import IntranetSearchWidget from '../SearchWidget/IntranetSearchWidget';
 import isEmpty from 'lodash/isEmpty';
