@@ -8,6 +8,13 @@
 
 <!-- towncrier release notes start -->
 
+## 6.0.0-alpha.21 (2025-04-02)
+
+### Bugfix
+
+- Fixed `Tags` component container. @sneridagh [#517](https://github.com/kitconcept/volto-light-theme/pull/517)
+- Improve position of the intranet flag in responsive viewports. @sneridagh [#518](https://github.com/kitconcept/volto-light-theme/pull/518)
+
 ## 6.0.0-alpha.20 (2025-04-01)
 
 ### Breaking

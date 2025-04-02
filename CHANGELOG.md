@@ -1,6 +1,35 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 6.0.0a21 (2025-04-02)
+
+### Backend
+
+
+#### Internal:
+
+- Test with Plone 6.1.1. @davisagli 
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Fixed `Tags` component container. @sneridagh [#517](https://github.com/kitconcept/volto-light-theme/pull/517)
+- Improve position of the intranet flag in responsive viewports. @sneridagh [#518](https://github.com/kitconcept/volto-light-theme/pull/518)
+
+
+
+### Project
+
+
+#### Internal
+
+- Adjust CI to get Plone version from backend Makefile. @davisagli 
+
+
+
 ## 6.0.0a20 (2025-04-01)
 
 ### Backend
