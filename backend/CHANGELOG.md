@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 6.0.0a21 (2025-04-02)
+
+
+### Internal:
+
+- Test with Plone 6.1.1. @davisagli 
+
 ## 6.0.0a20 (2025-04-01)
 
 
