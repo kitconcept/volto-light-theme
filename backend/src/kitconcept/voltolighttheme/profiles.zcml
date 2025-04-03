@@ -30,7 +30,6 @@
       description="Package to install the behaviors to a new Volto Light Theme site"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       directory="profiles/acceptance"
-      post_handler=".setuphandlers.acceptance.post_install"
       />
 
   <genericsetup:registerProfile
