@@ -7,6 +7,8 @@ myst:
     "keywords": "Plone, customization, behavior, Volto Light Theme"
 ---
 
+(site-customization)=
+
 # Site customization
 
 VLT supports site customization via the add-on `kitconcept.voltolighttheme`.
@@ -120,9 +122,22 @@ You can define the main site logo shown in the top left-most side of the header.
 You can define a complementary logo in the header.
 This is a second logo shown on the right-most side of the header.
 
+### Fat menu
+
+VLT has a fat menu, located below the main site sections.
+You can trigger it by clicking on one of the main site sections.
+You can disable it, as it's enabled by default.
+
+### Intranet header
+
+Your site can have a different header intended to use in intranet sites.
+If enabled, the intranet header will show instead of the default one.
+
 ### Intranet flag
 
-If you use the intranet header (`config.settings.intranetHeader`), the intranet flag is the text in the grey pill at the top of the header.
+If you have enabled the intranet header, the intranet flag is the text in the grey pill at the top of the header.
+
+(site-customization-actions)=
 
 ### Actions
 

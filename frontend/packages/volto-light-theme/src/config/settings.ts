@@ -11,13 +11,9 @@ declare module '@plone/types' {
 export default function install(config: ConfigType) {
   config.settings.enableAutoBlockGroupingByBackgroundColor = true;
   config.settings.navDepth = 3;
-  config.settings.enableFatMenu = true;
   config.settings.slate.useLinkedHeadings = false;
   config.settings.contentMetadataTagsImageField = 'preview_image';
   config.settings.querystringSearchGet = true;
-
-  config.settings.siteLabel = '';
-  config.settings.intranetHeader = false;
 
   config.settings.slidingSearchAnimation = true;
   config.settings.openExternalLinkInNewTab = true;

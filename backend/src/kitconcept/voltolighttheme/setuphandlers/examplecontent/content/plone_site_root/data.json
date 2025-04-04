@@ -3,6 +3,37 @@
   "@type": "Plone Site",
   "UID": "plone_site_root",
   "allow_discussion": null,
+  "header_actions": [
+    {
+      "@id": "1",
+      "title": "login",
+      "href": [
+        {
+          "@id": "/login"
+        }
+      ]
+    },
+    {
+      "@id": "2",
+      "title": "Documentation",
+      "href": [
+        {
+          "@id": "https://volto-light-theme.readthedocs.io/"
+        }
+      ],
+      "openLinkInNewTab": true
+    },
+    {
+      "@id": "3",
+      "title": "Github",
+      "href": [
+        {
+          "@id": "https://github.com/kitconcept/volto-light-theme"
+        }
+      ],
+      "openLinkInNewTab": true
+    }
+  ],
   "blocks": {
     "10444da6-9565-407d-b79c-ab9726bd3a84": {
       "@type": "slider",
@@ -842,9 +873,7 @@
         }
       },
       "blocks_layout": {
-        "items": [
-          "3fac2508-ed58-40d0-aa2e-898844814566"
-        ]
+        "items": ["3fac2508-ed58-40d0-aa2e-898844814566"]
       },
       "headline": "Gridblock with Teaser",
       "styles": {
@@ -861,16 +890,12 @@
           {
             "i": "portal_type",
             "o": "plone.app.querystring.operation.selection.any",
-            "v": [
-              "Document"
-            ]
+            "v": ["Document"]
           },
           {
             "i": "Subject",
             "o": "plone.app.querystring.operation.selection.none",
-            "v": [
-              "main folder"
-            ]
+            "v": ["main folder"]
           }
         ],
         "sort_order": "ascending"
@@ -1515,9 +1540,7 @@
     ]
   },
   "contributors": [],
-  "creators": [
-    "admin"
-  ],
+  "creators": ["admin"],
   "description": "Site created with a new Plone Distribution",
   "effective": null,
   "exclude_from_nav": false,

@@ -11,6 +11,36 @@ myst:
 
 ## volto-light-theme 6.0.0
 
+This section describes how to upgrade to volto-light-theme 6.0.0 from 5.x.x.
+See each major version to upgrade between major versions.
+
+### New `kitconcept.voltolighttheme` backend package
+
+VLT is now a package with both frontend and backend add-ons.
+Although it is not strictly mandatory, it is recommended for a better experience that you install the new backend package `kitconcept.voltolighttheme` in your backend build.
+Enable the site customization behaviors at least to your Plone site as shown in the {ref}`site-customization` documentation.
+
+### All feature flags has been removed
+```{deprecated} 6.0.0-alpha.20
+```
+
+VLT used to have feature flags in the Volto configuration to enable or disable some theme features:
+
+- `config.settings.intranetHeader`
+- `config.settings.enableFatMenu`
+- `config.settings.siteLabel`
+
+These have been removed as feature flags, and moved to site customization settings.
+They are provided by the `voltolighttheme.header` behavior in the `kitconcept.voltolighttheme` add-on.
+
+### Plone portal actions in headers are no longer supported
+```{deprecated} 6.0.0-alpha.20
+```
+
+VLT no longer shows the Plone "portal actions" in the theme headers.
+They have been replaced by the add-on {ref}`site-customization-actions` feature.
+It is controlled by the `headers_actions` field, provided by the `voltolighttheme.header` behavior in the `kitconcept.voltolighttheme` add-on.
+
 ### Updated data structure for `footer_links` and `footer_logos`.
 
 ```{versionadded} 6.0.0-alpha.17
@@ -50,6 +80,13 @@ An automatic upgrade step is provided with this version that updates the data st
 
 If you've applied these behaviors to other content types, you'll need to create a custom upgrade step based on this one to update those content objects accordingly.
 The [provided upgrade step](backend/src/kitconcept/voltolighttheme/upgrades/v20250321001.py) serves as a helpful reference implementation.
+
+### `Anontools` component removed from headers
+```{deprecated} 6.0.0-alpha.22
+```
+
+The `Anontools` component was included alongside the site actions.
+If you want to restore it, you can add it as a header action by adding it to the `headers_actions` field, provided by the `voltolighttheme.header` behavior in the `kitconcept.voltolighttheme` add-on.
 
 ### Color definitions
 

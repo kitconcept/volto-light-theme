@@ -32,7 +32,7 @@ BACKEND_FOLDER=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 ifdef PLONE_VERSION
 PLONE_VERSION := $(PLONE_VERSION)
 else
-PLONE_VERSION := 6.1.0
+PLONE_VERSION := 6.1.1
 endif
 
 EXAMPLE_CONTENT_FOLDER=${BACKEND_FOLDER}/src/kitconcept/voltolighttheme/setuphandlers/examplecontent
@@ -145,7 +145,7 @@ build-image-acceptance:  ## Build acceptance Docker Image
 # Acceptance tests
 .PHONY: acceptance-backend-start
 acceptance-backend-start: ## Start backend acceptance server
-	ZSERVER_HOST=0.0.0.0 ZSERVER_PORT=55001 LISTEN_PORT=55001 APPLY_PROFILES="kitconcept.voltolighttheme:default" CONFIGURE_PACKAGES="plone.restapi,plone.volto,plone.volto.cors,kitconcept.voltolighttheme" uv run robot-server plone.app.robotframework.testing.VOLTO_ROBOT_TESTING
+	ZSERVER_HOST=0.0.0.0 ZSERVER_PORT=55001 LISTEN_PORT=55001 APPLY_PROFILES="kitconcept.voltolighttheme:acceptance" CONFIGURE_PACKAGES="plone.restapi,plone.volto,plone.volto.cors,kitconcept.voltolighttheme" uv run robot-server plone.app.robotframework.testing.VOLTO_ROBOT_TESTING
 
 .PHONY: acceptance-image-build
 acceptance-image-build:  ## Build Docker Images

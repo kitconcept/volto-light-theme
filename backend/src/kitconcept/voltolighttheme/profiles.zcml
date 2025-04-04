@@ -25,6 +25,14 @@
   </configure>
 
   <genericsetup:registerProfile
+      name="acceptance"
+      title="Volto Light Theme: Acceptance"
+      description="Package to install the behaviors to a new Volto Light Theme site"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/acceptance"
+      />
+
+  <genericsetup:registerProfile
       name="uninstall"
       title="Volto Light Theme: Uninstall"
       description="Uninstall Volto Light Theme setup."
