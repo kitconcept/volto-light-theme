@@ -34,7 +34,7 @@ You can find the documentation of this package at https://volto-light-theme.read
 
 ## Upgrade 🚀
 
-See a detailed upgrade guide at https://volto-light-theme.readthedocs.io/latest/upgrade-guide.html.
+See a detailed upgrade guide at https://volto-light-theme.readthedocs.io/how-to-guides/upgrade-guide.html.
 
 ## Developing 🏁
 
