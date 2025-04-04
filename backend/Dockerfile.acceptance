@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-ARG PLONE_VERSION=6.1.0
+ARG PLONE_VERSION=undefined
 FROM plone/server-builder:${PLONE_VERSION} AS builder
 
 WORKDIR /app
@@ -30,7 +30,7 @@ LABEL maintainer="kitconcept GmbH <info@kitconcept.com>" \
       org.label-schema.vendor="kitconcept GmbH"
 
 ENV CONFIGURE_PACKAGES="plone.restapi,plone.volto,plone.volto.cors,kitconcept.voltolighttheme"
-ENV APPLY_PROFILES="kitconcept.voltolighttheme:default"
+ENV APPLY_PROFILES="kitconcept.voltolighttheme:acceptance"
 
 # Copy /app from builder
 COPY --from=builder /app /app

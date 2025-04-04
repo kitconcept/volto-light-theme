@@ -1,6 +1,6 @@
 <picture>
-  <source align="right" media="(prefers-color-scheme: dark)" srcset="https://kitconcept.com/kitconcept-white.svg">
-  <img align="right" width="300" alt="kitconcept, GmbH" src="https://kitconcept.com/kitconcept-black.svg">
+  <source align="right" width="200" media="(prefers-color-scheme: dark)" srcset="https://kitconcept.com/kitconcept-white.svg">
+  <img align="right" width="200" alt="kitconcept, GmbH" src="https://kitconcept.com/kitconcept-black.svg">
 </picture>
 
 # Volto Light Theme
@@ -34,7 +34,7 @@ You can find the documentation of this package at https://volto-light-theme.read
 
 ## Upgrade 🚀
 
-See a detailed upgrade guide at https://volto-light-theme.readthedocs.io/latest/upgrade-guide.html.
+See a detailed upgrade guide at https://volto-light-theme.readthedocs.io/how-to-guides/upgrade-guide.html.
 
 ## Developing 🏁
 

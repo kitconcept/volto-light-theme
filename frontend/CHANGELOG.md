@@ -8,6 +8,24 @@
 
 <!-- towncrier release notes start -->
 
+## 6.0.0-alpha.21 (2025-04-02)
+
+### Bugfix
+
+- Fixed `Tags` component container. @sneridagh [#517](https://github.com/kitconcept/volto-light-theme/pull/517)
+- Improve position of the intranet flag in responsive viewports. @sneridagh [#518](https://github.com/kitconcept/volto-light-theme/pull/518)
+
+## 6.0.0-alpha.20 (2025-04-01)
+
+### Breaking
+
+- Remove feature flags, move to site customizations. @sneridagh [#516](https://github.com/kitconcept/volto-light-theme/pull/516)
+- Remove Plone portal actions from headers. @sneridagh [#516](https://github.com/kitconcept/volto-light-theme/pull/516)
+
+### Bugfix
+
+- Minor CSS fixes and add docs on colors. @danalvrz [#509](https://github.com/kitconcept/volto-light-theme/pull/509)
+
 ## 6.0.0-alpha.19 (2025-03-25)
 
 ### Bugfix
