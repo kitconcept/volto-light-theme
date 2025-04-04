@@ -32,4 +32,11 @@
       provides=".customizations.ISiteFooterCustomizationSettings"
       />
 
+  <plone:behavior
+      name="voltolighttheme.sticky_menu"
+      title="Sticky menu"
+      description="Sticky menu showing in the right side of the screen"
+      provides=".sticky_menu.IStickyMenuSettings"
+      />
+
 </configure>

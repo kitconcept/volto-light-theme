@@ -1,0 +1,78 @@
+import type { Content } from '@plone/types';
+import { useSelector } from 'react-redux';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
+import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
+import type { StickyMenuSettings } from '../../types';
+
+type FormState = {
+  content: {
+    data: Content;
+  };
+  form: {
+    global: Content;
+  };
+};
+
+const StickyMenu = ({ content }: { content: Content }) => {
+  const currentMenuData =
+    content?.['@components']?.inherit?.['voltolighttheme.sticky_menu']?.data
+      ?.sticky_menu;
+  const formMenuData = useSelector<
+    FormState,
+    StickyMenuSettings['sticky_menu']
+  >((state) => state.form.global?.sticky_menu);
+
+  const menuData = formMenuData || currentMenuData;
+
+  return (
+    <ul className="sticky-menu">
+      {menuData && Array.isArray(menuData)
+        ? menuData.map((item) => {
+            const itemInfo: {
+              hrefTitle: string;
+              href: string;
+              itemHref: string;
+              src: string;
+              srcAlt: string;
+            } = {
+              hrefTitle: '',
+              href: '',
+              itemHref: '',
+              src: '',
+              srcAlt: '',
+            };
+            if (item?.href?.length > 0) {
+              itemInfo.hrefTitle = item.href[0]['title'];
+              itemInfo.href = flattenToAppURL(item.href[0]['@id']);
+            }
+            if (item?.icon && item.icon[0]?.image_scales) {
+              itemInfo.itemHref = item.icon[0]['@id'];
+              itemInfo.srcAlt = item['alt'];
+              itemInfo.src = `${flattenToAppURL(itemInfo.itemHref)}/${item.icon[0].image_scales[item.icon[0].image_field][0].download}`;
+            } else if (item?.icon && item.icon[0]) {
+              itemInfo.itemHref = item.icon[0]['@id'];
+              itemInfo.srcAlt = item['alt'];
+              itemInfo.src = `${flattenToAppURL(itemInfo.itemHref)}/@@images/image`;
+            }
+
+            if (!itemInfo.src) return null;
+
+            return (
+              <li className="item" key={itemInfo['@id']}>
+                {/* @ts-ignore */}
+                <ConditionalLink
+                  condition={itemInfo.href}
+                  to={itemInfo.href}
+                  title={itemInfo.hrefTitle || itemInfo.srcAlt}
+                >
+                  <img src={itemInfo.src} alt={itemInfo.srcAlt} />
+                </ConditionalLink>
+              </li>
+            );
+          })
+        : null}
+    </ul>
+  );
+};
+
+export default StickyMenu;

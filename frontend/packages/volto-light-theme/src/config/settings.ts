@@ -25,7 +25,7 @@ export default function install(config: ConfigType) {
       GET_CONTENT: ['inherit'],
       querystring: {
         'expand.inherit.behaviors':
-          'voltolighttheme.header,voltolighttheme.theme,voltolighttheme.footer',
+          'voltolighttheme.header,voltolighttheme.theme,voltolighttheme.footer,voltolighttheme.sticky_menu',
       },
     },
   ];
