@@ -85,8 +85,8 @@ The [provided upgrade step](backend/src/kitconcept/voltolighttheme/upgrades/v202
 ```{deprecated} 6.0.0-alpha.22
 ```
 
-The `Anontools` component was included side by side the site actions.
-If you want to get it back you can add it as a header action by adding it to the `headers_actions` field, provided by the `voltolighttheme.header` behavior in the `kitconcept.voltolighttheme` add-on.
+The `Anontools` component was included alongside the site actions.
+If you want to restore it, you can add it as a header action by adding it to the `headers_actions` field, provided by the `voltolighttheme.header` behavior in the `kitconcept.voltolighttheme` add-on.
 
 ### Color definitions
 
