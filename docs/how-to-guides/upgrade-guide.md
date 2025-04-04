@@ -39,7 +39,7 @@ They are provided by the `voltolighttheme.header` behavior in the `kitconcept.vo
 
 VLT no longer shows the Plone "portal actions" in the theme headers.
 They have been replaced by the add-on {ref}`site-customization-actions` feature.
-It is controlled by the `headersActions` field, provided by the `voltolighttheme.header` behavior in the `kitconcept.voltolighttheme` add-on.
+It is controlled by the `headers_actions` field, provided by the `voltolighttheme.header` behavior in the `kitconcept.voltolighttheme` add-on.
 
 ### Updated data structure for `footer_links` and `footer_logos`.
 
@@ -80,6 +80,13 @@ An automatic upgrade step is provided with this version that updates the data st
 
 If you've applied these behaviors to other content types, you'll need to create a custom upgrade step based on this one to update those content objects accordingly.
 The [provided upgrade step](backend/src/kitconcept/voltolighttheme/upgrades/v20250321001.py) serves as a helpful reference implementation.
+
+### `Anontools` component removed from headers
+```{deprecated} 6.0.0-alpha.22
+```
+
+The `Anontools` component was included alongside the site actions.
+If you want to restore it, you can add it as a header action by adding it to the `headers_actions` field, provided by the `voltolighttheme.header` behavior in the `kitconcept.voltolighttheme` add-on.
 
 ### Color definitions
 

@@ -13,7 +13,6 @@ import {
 } from '@plone/volto/actions/sidebar/sidebar';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 
-import Anontools from '@plone/volto/components/theme/Anontools/Anontools';
 import LanguageSelector from '@plone/volto/components/theme/LanguageSelector/LanguageSelector';
 import Logo from '@plone/volto/components/theme/Logo/Logo';
 import Navigation from '@plone/volto/components/theme/Navigation/Navigation';
@@ -42,7 +41,6 @@ const InternetHeader = ({ pathname, token }) => {
           <LanguageSelector />
 
           <div className="tools">
-            {!token && <Anontools />}
             {headerActions &&
               Array.isArray(headerActions) &&
               headerActions.map((item) => (
@@ -111,7 +109,6 @@ const IntranetHeader = ({ pathname, token }) => {
           <LanguageSelector />
 
           <div className="tools">
-            {!token && <Anontools />}
             {headerActions &&
               Array.isArray(headerActions) &&
               headerActions.map((item) => (
