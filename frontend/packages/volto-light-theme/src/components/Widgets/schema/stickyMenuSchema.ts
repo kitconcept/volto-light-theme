@@ -63,7 +63,7 @@ export function stickyMenuSchema({
       {
         id: 'default',
         title: 'Default',
-        fields: ['icon', 'alt', 'href', 'openLinkInNewTab'],
+        fields: ['title', 'icon', 'alt', 'href', 'openLinkInNewTab'],
       },
     ],
 

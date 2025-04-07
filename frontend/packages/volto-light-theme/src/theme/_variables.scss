@@ -146,6 +146,9 @@ $secondary-grey: #ececec !default;
 
   // It is possible to set an aspect ratio for all images, using the folowing CSS custom property:
   // --image-aspect-ratio: calc(16 / 9);
+
+  // Sticky Menu color
+  --sticky-menu-background: var(--accent-color);
 }
 
 // Image Aspect Ratio
