@@ -22,6 +22,13 @@ import UniversalLink from '@plone/volto/components/manage/UniversalLink/Universa
 import SlotRenderer from '@plone/volto/components/theme/SlotRenderer/SlotRenderer';
 
 const InternetHeader = ({ pathname, token }) => {
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  const dispatch = useDispatch();
+
   const headerSettings = useSelector(
     (state) =>
       state.content.data?.['@components']?.inherit?.['voltolighttheme.header']
@@ -29,10 +36,20 @@ const InternetHeader = ({ pathname, token }) => {
   );
   const formData = useSelector((state) => state.form.global);
 
+  const intranetFlag =
+    !isEmpty(formData) && formData.intranet_flag
+      ? formData?.intranet_flag
+      : headerSettings?.intranet_flag;
+
   const headerActions =
     !isEmpty(formData) && formData?.header_actions
       ? formData.header_actions
       : headerSettings?.header_actions;
+
+  const pointToSidebar = (fieldSetName, fieldId) => {
+    dispatch(setSidebarTab(0));
+    dispatch(setMetadataFocus(fieldSetName, fieldId));
+  };
 
   return (
     <>
@@ -49,6 +66,22 @@ const InternetHeader = ({ pathname, token }) => {
                 </UniversalLink>
               ))}
           </div>
+          {intranetFlag &&
+            isClient &&
+            (!isEmpty(formData) ? (
+              <Button
+                className="intranet-flag"
+                onPress={() =>
+                  pointToSidebar('header customizations', 'intranet_flag')
+                }
+              >
+                <p>{intranetFlag}</p>
+              </Button>
+            ) : (
+              <div className="intranet-flag">
+                <p>{intranetFlag}</p>
+              </div>
+            ))}
         </div>
         <div className="logo-nav-wrapper">
           <div className="logo">

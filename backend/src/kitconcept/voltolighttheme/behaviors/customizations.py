@@ -72,8 +72,8 @@ class ISiteHeaderCustomizationSettings(model.Schema):
         title=_("label_complementary_logo", default="Complementary Logo"),
         description=_(
             "help_complementary_logo",
-            default="If the project has a complementary logo, please upload it here. "
-            "It will show in the right side of the header.",
+            default="If your site has an intranet header,"
+            " it will show in the right side of the header.",
         ),
         required=False,
     )
@@ -99,11 +99,10 @@ class ISiteHeaderCustomizationSettings(model.Schema):
     )
 
     intranet_flag = TextLine(
-        title=_("label_intranet_flag", default="Intranet Flag"),
+        title=_("label_intranet_flag", default="Site Flag"),
         description=_(
             "help_intranet_flag",
-            default="If your site has an intranet header, the intranet flag is the"
-            " color pill at the top left of the header.",
+            default="The colored pill at the top left of the header.",
         ),
         required=False,
     )
