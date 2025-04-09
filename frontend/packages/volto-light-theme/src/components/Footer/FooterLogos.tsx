@@ -70,7 +70,7 @@ const FooterLogos = () => {
               if (!logoInfo.src) return null;
 
               return (
-                <li className="item" key={logoInfo['@id']}>
+                <li className="item" key={logo['@id']}>
                   {/* @ts-ignore */}
                   <ConditionalLink
                     condition={logoInfo.href}
