@@ -24,6 +24,13 @@ type footerLogo = {
   href: Array<hrefType>;
 };
 
+type stickyMenu = {
+  '@id': string;
+  title: string;
+  icon: Image;
+  href: Array<hrefType>;
+};
+
 export type SiteHeaderSettings = {
   logo: string;
   complementary_logo: string;
@@ -47,6 +54,10 @@ export type SiteFooterSettings = {
   footer_logos_size: string;
 };
 
+export type StickyMenuSettings = {
+  sticky_menu: Array<stickyMenu>;
+};
+
 export type CustomInheritBehavior<T> = {
   data: T;
   from: {
@@ -58,5 +69,6 @@ export type CustomInheritBehavior<T> = {
 declare module '@plone/types' {
   export interface Content {
     footer_logos: Array<footerLogo>;
+    sticky_menu: Array<stickyMenu>;
   }
 }

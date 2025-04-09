@@ -21,6 +21,7 @@ import type {
   SiteHeaderSettings,
   SiteThemeSettings,
   SiteFooterSettings,
+  StickyMenuSettings,
 } from './types';
 
 defineMessages({
@@ -53,6 +54,7 @@ declare module '@plone/types' {
       'voltolighttheme.header': CustomInheritBehavior<SiteHeaderSettings>;
       'voltolighttheme.theme': CustomInheritBehavior<SiteThemeSettings>;
       'voltolighttheme.footer': CustomInheritBehavior<SiteFooterSettings>;
+      'voltolighttheme.sticky_menu': CustomInheritBehavior<StickyMenuSettings>;
     };
   }
 }
