@@ -9,12 +9,14 @@ type headerAction = {
   '@id': string;
   title: string;
   href: Array<hrefType>;
+  openInNewTab: boolean;
 };
 
 type footerLink = {
   '@id': string;
   title: string;
   href: Array<hrefType>;
+  openInNewTab: boolean;
 };
 
 type footerLogo = {
@@ -22,6 +24,15 @@ type footerLogo = {
   title: string;
   logo: Image;
   href: Array<hrefType>;
+  openInNewTab: boolean;
+};
+
+type iconLink = {
+  '@id': string;
+  title: string;
+  logo: Image;
+  href: Array<hrefType>;
+  openInNewTab: boolean;
 };
 
 export type SiteHeaderSettings = {
@@ -41,10 +52,16 @@ export type SiteThemeSettings = {
 };
 
 export type SiteFooterSettings = {
-  footer_links: Array<footerLink>;
   footer_logos: Array<footerLogo>;
   footer_logos_container_width: string;
   footer_logos_size: string;
+  footer_address: string;
+  footer_column_left: Array<footerLink>;
+  footer_column_middle: Array<footerLink>;
+  footer_column_right: Array<footerLink>;
+  followus_links: Array<iconLink>;
+  footer_logo: Image;
+  footer_links: Array<footerLink>;
 };
 
 export type CustomInheritBehavior<T> = {

@@ -10,6 +10,7 @@ import ObjectList from '../components/Widgets/ObjectList';
 import { headerActionsSchema } from '../components/Widgets/schema/headerActionsSchema';
 import { footerLogosSchema } from '../components/Widgets/schema/footerLogosSchema';
 import { footerLinksSchema } from '../components/Widgets/schema/footerLinksSchema';
+import { iconLinkListSchema } from '../components/Widgets/schema/iconLinkListSchema';
 
 declare module '@plone/types' {
   export interface WidgetsConfigByWidget {
@@ -55,6 +56,12 @@ export default function install(config: ConfigType) {
     name: 'footerLinks',
     type: 'schema',
     method: footerLinksSchema,
+  });
+
+  config.registerUtility({
+    name: 'iconLinkList',
+    type: 'schema',
+    method: iconLinkListSchema,
   });
 
   return config;
