@@ -27,10 +27,10 @@ type footerLogo = {
   openInNewTab: boolean;
 };
 
-type iconLink = {
+export type iconLink = {
   '@id': string;
   title: string;
-  logo: Image;
+  icon: Image;
   href: Array<hrefType>;
   openInNewTab: boolean;
 };
@@ -75,5 +75,7 @@ export type CustomInheritBehavior<T> = {
 declare module '@plone/types' {
   export interface Content {
     footer_logos: Array<footerLogo>;
+    followus_links: Array<iconLink>;
+    footer_links: Array<footerLink>;
   }
 }

@@ -1,4 +1,3 @@
-import { FormattedMessage, defineMessages, useIntl } from 'react-intl';
 import { useSelector, shallowEqual } from 'react-redux';
 import Logo from '@plone/volto/components/theme/Logo/Logo';
 import { Container } from '@plone/components';
@@ -18,7 +17,6 @@ type FormState = {
 };
 
 const Footer = () => {
-  const intl = useIntl();
   const content = useSelector<FormState, Content>(
     (state) => state.content.data,
     shallowEqual,
