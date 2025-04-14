@@ -15,7 +15,9 @@ export function useLiveData<T>(
   behavior: string,
   field: string,
 ) {
-  const current = content?.['@components']?.inherit?.[behavior]?.data?.[field];
+  const current = content?.['@components']?.inherit?.[behavior]?.data?.[
+    field
+  ] as T;
 
   const formData = useSelector<FormState, T>(
     (state) => state.form.global?.[field],
