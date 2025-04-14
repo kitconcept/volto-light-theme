@@ -1,6 +1,6 @@
 import { FormattedMessage, defineMessages, useIntl } from 'react-intl';
 import Logo from '@plone/volto/components/theme/Logo/Logo';
-import FooterLinks from './FooterLinks';
+import LinkList from './LinkList';
 import type { SiteFooterSettings } from '../../types';
 
 const messages = defineMessages({
@@ -63,7 +63,7 @@ const SimpleFooter = (props: SimpleFooterProps) => {
           }}
         />
       </div>
-      <FooterLinks links={props.footerLinks} />
+      <LinkList links={props.footerLinks} />
       <div className="logo">
         <Logo />
       </div>

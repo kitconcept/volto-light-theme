@@ -1,9 +1,9 @@
 import isEmpty from 'lodash/isEmpty';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
-import type { SiteFooterSettings } from '../../types';
+import type { Link } from '../../types';
 
-type ColumnLinksProps = { links: SiteFooterSettings['footer_links'] };
+type ColumnLinksProps = { links: Array<Link> };
 
 const ColumnLinks = (props: ColumnLinksProps) => {
   const { links } = props;

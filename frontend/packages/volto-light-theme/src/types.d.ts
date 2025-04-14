@@ -12,7 +12,7 @@ type headerAction = {
   openInNewTab: boolean;
 };
 
-type footerLink = {
+export type Link = {
   '@id': string;
   title: string;
   href: Array<hrefType>;
@@ -56,12 +56,15 @@ export type SiteFooterSettings = {
   footer_logos_container_width: string;
   footer_logos_size: string;
   footer_address: string;
-  footer_column_left: Array<footerLink>;
-  footer_column_middle: Array<footerLink>;
-  footer_column_right: Array<footerLink>;
+  footer_column_left_header: string;
+  footer_column_left: Array<Link>;
+  footer_column_middle_header: string;
+  footer_column_middle: Array<Link>;
+  footer_column_right_header: string;
+  footer_column_right: Array<Link>;
   followus_links: Array<iconLink>;
   footer_logo: Image;
-  footer_links: Array<footerLink>;
+  footer_links: Array<Link>;
 };
 
 export type CustomInheritBehavior<T> = {
@@ -76,6 +79,6 @@ declare module '@plone/types' {
   export interface Content {
     footer_logos: Array<footerLogo>;
     followus_links: Array<iconLink>;
-    footer_links: Array<footerLink>;
+    footer_links: Array<Link>;
   }
 }

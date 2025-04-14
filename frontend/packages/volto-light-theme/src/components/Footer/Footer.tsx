@@ -6,6 +6,7 @@ import ColumnLinks from './ColumnLinks';
 import type { Content } from '@plone/types';
 import type { SiteFooterSettings } from '../../types';
 import SimpleFooter from './SimpleFooter';
+import { useLiveData } from '@kitconcept/volto-light-theme/helpers/liveData';
 
 type FormState = {
   content: {
@@ -22,12 +23,38 @@ const Footer = () => {
     shallowEqual,
   );
 
-  const footerSettings = useSelector<FormState, SiteFooterSettings>(
-    (state) =>
-      state.content.data?.['@components']?.inherit?.['voltolighttheme.footer']
-        ?.data,
+  const footer_address = useLiveData<SiteFooterSettings['footer_address']>(
+    content,
+    'voltolighttheme.footer',
+    'footer_address',
   );
-  const footerLinks = footerSettings?.footer_links;
+
+  const footer_column_left_header = useLiveData<
+    SiteFooterSettings['footer_column_left_header']
+  >(content, 'voltolighttheme.footer', 'footer_column_left_header');
+  const footer_column_left = useLiveData<
+    SiteFooterSettings['footer_column_left']
+  >(content, 'voltolighttheme.footer', 'footer_column_left');
+
+  const footer_column_middle_header = useLiveData<
+    SiteFooterSettings['footer_column_middle_header']
+  >(content, 'voltolighttheme.footer', 'footer_column_middle_header');
+  const footer_column_middle = useLiveData<
+    SiteFooterSettings['footer_column_middle']
+  >(content, 'voltolighttheme.footer', 'footer_column_middle');
+
+  const footer_column_right_header = useLiveData<
+    SiteFooterSettings['footer_column_right_header']
+  >(content, 'voltolighttheme.footer', 'footer_column_right_header');
+  const footer_column_right = useLiveData<
+    SiteFooterSettings['footer_column_right']
+  >(content, 'voltolighttheme.footer', 'footer_column_right');
+
+  const footer_links = useLiveData<SiteFooterSettings['footer_links']>(
+    content,
+    'voltolighttheme.footer',
+    'footer_links',
+  );
 
   return (
     <footer id="footer">
@@ -35,8 +62,8 @@ const Footer = () => {
 
       <Container className="footer">
         {/* If there's not set footer_address then we show the simple footer */}
-        {!footerSettings?.footer_address ? (
-          <SimpleFooter footerLinks={footerLinks} />
+        {!footer_address ? (
+          <SimpleFooter footerLinks={footer_links} />
         ) : (
           <Container className="default">
             <div className="footer-grid">
@@ -45,23 +72,35 @@ const Footer = () => {
                 <p
                   style={{ whiteSpace: 'pre-line' }}
                   dangerouslySetInnerHTML={{
-                    __html: footerSettings.footer_address,
+                    __html: footer_address,
                   }}
                 />
               </div>
-              {footerSettings?.footer_column_left && (
+
+              {footer_column_left && (
                 <div className="address-left">
-                  <ColumnLinks links={footerSettings.footer_column_left} />
+                  {footer_column_left_header && (
+                    <h2>{footer_column_left_header}</h2>
+                  )}
+                  <ColumnLinks links={footer_column_left} />
                 </div>
               )}
-              {footerSettings?.footer_column_middle && (
+
+              {footer_column_middle && (
                 <div className="address-middle">
-                  <ColumnLinks links={footerSettings.footer_column_middle} />
+                  {footer_column_middle_header && (
+                    <h2>{footer_column_middle_header}</h2>
+                  )}
+                  <ColumnLinks links={footer_column_middle} />
                 </div>
               )}
-              {footerSettings?.footer_column_right && (
+
+              {footer_column_right && (
                 <div className="address-right">
-                  <ColumnLinks links={footerSettings.footer_column_right} />
+                  {footer_column_right_header && (
+                    <h2>{footer_column_right_header}</h2>
+                  )}
+                  <ColumnLinks links={footer_column_right} />
                 </div>
               )}
             </div>

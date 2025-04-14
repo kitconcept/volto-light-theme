@@ -1,9 +1,10 @@
-import type { Content } from '@plone/types';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
-import { useSelector } from 'react-redux';
+import { useSelector, shallowEqual } from 'react-redux';
 import { Container } from '@plone/components';
+import { useLiveData } from '@kitconcept/volto-light-theme/helpers/liveData';
 import cx from 'classnames';
+import type { Content } from '@plone/types';
 import type { SiteFooterSettings } from '../../types';
 
 type FormState = {
@@ -16,30 +17,33 @@ type FormState = {
 };
 
 const FooterLogos = () => {
-  const formState = useSelector<FormState, Content>(
-    (state) => state.form.global,
+  const content = useSelector<FormState, Content>(
+    (state) => state.content.data,
+    shallowEqual,
   );
-  const footerSettings = useSelector<FormState, SiteFooterSettings>(
-    (state) =>
-      state.content.data?.['@components']?.inherit?.['voltolighttheme.footer']
-        ?.data,
+
+  const footer_logos = useLiveData<SiteFooterSettings['footer_logos']>(
+    content,
+    'voltolighttheme.footer',
+    'footer_logos',
   );
-  const logos = formState?.footer_logos || footerSettings?.footer_logos;
-  const logosSize =
-    formState?.footer_logos_size || footerSettings?.footer_logos_size;
-  const footer_logos_container_width =
-    formState?.footer_logos_container_width ||
-    footerSettings?.footer_logos_container_width;
+
+  const footer_logos_size = useLiveData<
+    SiteFooterSettings['footer_logos_size']
+  >(content, 'voltolighttheme.footer', 'footer_logos_size');
+  const footer_logos_container_width = useLiveData<
+    SiteFooterSettings['footer_logos_container_width']
+  >(content, 'voltolighttheme.footer', 'footer_logos_container_width');
 
   return (
     <Container className={cx({ [footer_logos_container_width]: 1 })}>
       <ul
         className={cx('footer-logos', {
-          [logosSize]: logosSize,
+          [footer_logos_size]: footer_logos_size,
         })}
       >
-        {logos && Array.isArray(logos)
-          ? logos.map((logo) => {
+        {footer_logos && Array.isArray(footer_logos)
+          ? footer_logos.map((logo) => {
               const logoInfo: {
                 hrefTitle: string;
                 href: string;
