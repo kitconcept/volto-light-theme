@@ -2,33 +2,6 @@
   margin-top: $footer-vertical-spacing-top;
   text-align: center;
 
-  ul.footer-logos {
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    padding: $pre-footer-vertical-spacing 0;
-    padding-left: 0;
-    margin-top: 0;
-    margin-bottom: $spacing-medium;
-    gap: 60px 20px;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    list-style: none;
-
-    &.s {
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    }
-
-    &.l img {
-      max-width: min(100%, 240px);
-      max-height: 165px;
-    }
-
-    &.s img {
-      max-width: min(100%, 175px);
-      max-height: 120px;
-    }
-  }
-
   .footer {
     padding: 4.2rem 2rem;
     background-color: $lightgrey;
@@ -175,5 +148,32 @@
     img {
       width: 100%;
     }
+  }
+}
+
+ul.logos-container {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  padding: $pre-footer-vertical-spacing 0;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: $spacing-medium;
+  gap: 60px 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  list-style: none;
+
+  &.s {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  &.l img {
+    max-width: min(100%, 240px);
+    max-height: 165px;
+  }
+
+  &.s img {
+    max-width: min(100%, 175px);
+    max-height: 120px;
   }
 }
