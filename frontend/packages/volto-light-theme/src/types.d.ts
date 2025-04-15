@@ -19,7 +19,15 @@ export type Link = {
   openInNewTab: boolean;
 };
 
-type footerLogo = {
+export type Logo = {
+  '@id': string;
+  title: string;
+  logo: Image;
+  href: Array<hrefType>;
+  openInNewTab: boolean;
+};
+
+export type footerLogo = {
   '@id': string;
   title: string;
   logo: Image;
