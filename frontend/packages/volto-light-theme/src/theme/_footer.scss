@@ -51,25 +51,23 @@
       }
     }
 
-    ul.footer-links {
+    .followus-and-links {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
       justify-content: center;
-      padding-left: 0;
-      margin-top: 1.4rem;
-      list-style: none;
+    }
 
-      li {
-        padding: 0 7px;
-        border-right: 1px solid #205c90;
-        font-size: 18px;
-        &:last-of-type {
-          border: none;
-        }
+    .follow-us {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
 
-        a {
-          color: $blue-for-grey-contrast;
-        }
+    .footer-links {
+      ul {
+        justify-content: center;
       }
     }
 
@@ -94,6 +92,12 @@
       display: grid;
       gap: 1rem;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      text-align: left;
+
+      h2 {
+        @include text-heading-h4();
+        margin-bottom: $spacing-small;
+      }
 
       ul {
         display: flex;
@@ -107,14 +111,15 @@
           font-size: 18px;
 
           a {
-            color: $blue-for-grey-contrast;
+            color: $black;
+            text-decoration: underline;
           }
         }
       }
 
       .address-column {
         justify-self: start;
-        text-align: left;
+        @include body-text();
 
         img {
           margin-bottom: 38px;
@@ -125,6 +130,8 @@
 
   .follow-us-links-and-logo {
     display: flex;
+    margin-top: $spacing-xlarge;
+    margin-bottom: $spacing-xlarge;
   }
 
   .followus-and-links {
@@ -142,6 +149,25 @@
   }
 
   .follow-us {
+    text-align: left;
+
+    span {
+      @include headtitle2();
+      text-transform: uppercase;
+    }
+
+    .image-wrapper {
+      line-height: 0;
+    }
+
+    ul {
+      margin: 50px 0;
+    }
+
+    li {
+      margin-right: 15px;
+    }
+
     li span {
       display: none;
     }
@@ -151,18 +177,21 @@
     li {
       position: relative;
       padding: 0 8px;
-      font-size: 18px;
+      @include add(size, xs);
+      @include add(height, s);
 
       &:not(:last-child):after {
         position: absolute;
         right: -3px;
         display: inline-block;
-        color: $blue-for-grey-contrast;
+        color: $black;
         content: '|';
       }
 
       a {
-        color: $blue-for-grey-contrast;
+        @include add(size, xs);
+        @include add(height, s);
+        color: $black;
       }
     }
   }
@@ -175,5 +204,13 @@
     img {
       width: 100%;
     }
+  }
+
+  .colophon {
+    @include add(size, xs);
+    @include add(height, s);
+    padding-top: 50px;
+    border-top: 1px solid $black;
+    margin-bottom: 12px;
   }
 }

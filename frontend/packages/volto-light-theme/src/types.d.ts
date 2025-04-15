@@ -52,6 +52,7 @@ export type SiteThemeSettings = {
 };
 
 export type SiteFooterSettings = {
+  has_enhanced_footer: boolean;
   footer_logos: Array<footerLogo>;
   footer_logos_container_width: string;
   footer_logos_size: string;
@@ -63,7 +64,7 @@ export type SiteFooterSettings = {
   footer_column_right_header: string;
   footer_column_right: Array<Link>;
   followus_links: Array<iconLink>;
-  footer_logo: Image;
+  footer_logo: Image & { data?: string };
   footer_links: Array<Link>;
 };
 

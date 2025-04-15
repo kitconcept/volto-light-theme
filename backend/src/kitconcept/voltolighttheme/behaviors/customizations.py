@@ -203,6 +203,7 @@ class ISiteFooterCustomizationSettings(model.Schema):
         "footer",
         label=_("Footer customizations"),
         fields=[
+            "has_enhanced_footer",
             "footer_logos",
             "footer_logos_container_width",
             "footer_logos_size",
@@ -218,6 +219,16 @@ class ISiteFooterCustomizationSettings(model.Schema):
             "footer_logo_link",
             "footer_links",
         ],
+    )
+
+    has_enhanced_footer = Bool(
+        title=_("label_enable_enhanced_footer", default="Enable Enhanced Footer"),
+        description=_(
+            "help_enable_enhanced_footer",
+            default="If enabled, the enhanced footer will be shown.",
+        ),
+        required=False,
+        default=False,
     )
 
     directives.widget(

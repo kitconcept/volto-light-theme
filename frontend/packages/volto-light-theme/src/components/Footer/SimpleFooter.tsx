@@ -1,87 +1,36 @@
 import { FormattedMessage, defineMessages, useIntl } from 'react-intl';
-import Logo from '@plone/volto/components/theme/Logo/Logo';
 import LinkList from './LinkList';
+import IconLinkList from './IconLinkList';
 import type { SiteFooterSettings } from '../../types';
-
-const messages = defineMessages({
-  copyright: {
-    id: 'Copyright',
-    defaultMessage: 'Copyright',
-  },
-});
+import { useLiveData } from '@kitconcept/volto-light-theme/helpers/liveData';
+import type { Content } from '@plone/types';
 
 type SimpleFooterProps = {
-  footerLinks: SiteFooterSettings['footer_links'];
+  footer_links: SiteFooterSettings['footer_links'];
+  content: Content;
 };
 
 const SimpleFooter = (props: SimpleFooterProps) => {
-  const intl = useIntl();
+  const { content, footer_links } = props;
+
+  const followus_links = useLiveData<SiteFooterSettings['followus_links']>(
+    content,
+    'voltolighttheme.footer',
+    'followus_links',
+  );
+
   return (
-    <>
-      <div className="footer-message">
-        <FormattedMessage
-          id="The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
-          defaultMessage="The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
-          values={{
-            plonecms: (
-              <FormattedMessage
-                id="Plone{reg} Open Source CMS/WCM"
-                defaultMessage="Plone{reg} Open Source CMS/WCM"
-                values={{ reg: <sup>®</sup> }}
-              />
-            ),
-            copyright: (
-              <abbr title={intl.formatMessage(messages.copyright)}>©</abbr>
-            ),
-            current_year: new Date().getFullYear(),
-            plonefoundation: (
-              <a className="item" href="http://plone.org/foundation">
-                <FormattedMessage
-                  id="Plone Foundation"
-                  defaultMessage="Plone Foundation"
-                />
-              </a>
-            ),
-          }}
-        />{' '}
-        <br />
-        <FormattedMessage
-          id="Distributed under the {license}."
-          defaultMessage="Distributed under the {license}."
-          values={{
-            license: (
-              <a
-                className="item"
-                href="http://creativecommons.org/licenses/GPL/2.0/"
-              >
-                <FormattedMessage
-                  id="GNU GPL license"
-                  defaultMessage="GNU GPL license"
-                />
-              </a>
-            ),
-          }}
-        />
+    <div className="followus-and-links">
+      <div className="follow-us">
+        <span>
+          <FormattedMessage id="Follow us:" defaultMessage="Follow us:" />
+        </span>
+        <IconLinkList iconLinks={followus_links} />
       </div>
-      <LinkList links={props.footerLinks} />
-      <div className="logo">
-        <Logo />
+      <div className="footer-links">
+        <LinkList links={footer_links} />
       </div>
-      <a className="item powered-by" href="https://plone.org">
-        <FormattedMessage
-          id="Powered by Plone & Python"
-          defaultMessage="Powered by Plone & Python"
-        />
-      </a>
-      <br />
-      <div className="footer-branding">
-        Made with{' '}
-        <span role="img" aria-label="love" style={{ color: 'red' }}>
-          ❤️
-        </span>{' '}
-        by kitconcept
-      </div>{' '}
-    </>
+    </div>
   );
 };
 

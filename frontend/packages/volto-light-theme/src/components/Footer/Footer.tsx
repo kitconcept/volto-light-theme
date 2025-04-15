@@ -23,6 +23,10 @@ const Footer = () => {
     shallowEqual,
   );
 
+  const has_enhanced_footer = useLiveData<
+    SiteFooterSettings['has_enhanced_footer']
+  >(content, 'voltolighttheme.footer', 'has_enhanced_footer');
+
   const footer_address = useLiveData<SiteFooterSettings['footer_address']>(
     content,
     'voltolighttheme.footer',
@@ -62,8 +66,8 @@ const Footer = () => {
 
       <Container className="footer">
         {/* If there's not set footer_address then we show the simple footer */}
-        {!footer_address ? (
-          <SimpleFooter footerLinks={footer_links} />
+        {!has_enhanced_footer ? (
+          <SimpleFooter content={content} footer_links={footer_links} />
         ) : (
           <Container className="default">
             <div className="footer-grid">
