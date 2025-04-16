@@ -1,8 +1,8 @@
 import { useSelector, shallowEqual } from 'react-redux';
 import { useLiveData } from '@kitconcept/volto-light-theme/helpers/liveData';
-import LogosContainer from '../LogosContainer/LogosContainer';
+import LogosContainer from '../../LogosContainer/LogosContainer';
 import type { Content } from '@plone/types';
-import type { SiteFooterSettings } from '../../types';
+import type { SiteFooterSettings } from '../../../types';
 
 type FormState = {
   content: {

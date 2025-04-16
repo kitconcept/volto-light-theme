@@ -21,7 +21,7 @@ const LinkList = (props: LinksProps) => {
 
             return (
               <li className="item" key={href}>
-                <UniversalLink href={href} openLinkInNewTab={undefined}>
+                <UniversalLink href={href} openLinkInNewTab={link.openInNewTab}>
                   {title}
                 </UniversalLink>
               </li>

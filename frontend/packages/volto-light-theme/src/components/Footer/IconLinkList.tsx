@@ -51,6 +51,7 @@ const IconLinkList = (props: IconLinkListProps) => {
                   condition={itemInfo.href}
                   to={itemInfo.href}
                   title={itemInfo.hrefTitle || itemInfo.srcAlt}
+                  openLinkInNewTab={item.openInNewTab}
                 >
                   <div className="image-wrapper">
                     <img src={itemInfo.src} alt={itemInfo.srcAlt} />

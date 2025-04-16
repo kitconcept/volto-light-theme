@@ -44,10 +44,11 @@ export type iconLink = {
 };
 
 export type SiteHeaderSettings = {
-  logo: string;
-  complementary_logo: string;
+  logo: Image & { data?: string };
+  complementary_logo: Image & { data?: string };
   intranet_flag: string;
   header_actions: Array<headerAction>;
+  has_intranet_header: boolean;
 };
 
 export type SiteThemeSettings = {

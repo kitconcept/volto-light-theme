@@ -1,12 +1,13 @@
+import { FormattedMessage } from 'react-intl';
+import cx from 'classnames';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
 import { Container } from '@plone/components';
 import { useLiveData } from '@kitconcept/volto-light-theme/helpers/liveData';
-import LinkList from './LinkList';
-import IconLinkList from './IconLinkList';
-import type { SiteFooterSettings } from '../../types';
+import LinkList from '../LinkList';
+import IconLinkList from '../IconLinkList';
+import type { SiteFooterSettings } from '../../../types';
 import type { Content } from '@plone/types';
-import { FormattedMessage } from 'react-intl';
-import cx from 'classnames';
 
 const FollowUsPostFooterLogoAndLinks = ({ content }: { content: Content }) => {
   const has_enhanced_footer = useLiveData<
@@ -30,6 +31,10 @@ const FollowUsPostFooterLogoAndLinks = ({ content }: { content: Content }) => {
     'voltolighttheme.footer',
     'footer_logo',
   );
+
+  const footerLogoSrc = footer_logo?.data
+    ? `data:${footer_logo['content-type']};base64,${footer_logo.data}`
+    : flattenToAppURL(footer_logo?.download);
 
   return (
     <>
@@ -56,15 +61,9 @@ const FollowUsPostFooterLogoAndLinks = ({ content }: { content: Content }) => {
               <ConditionalLink
                 condition={content?.footer_logo_link}
                 to={content?.footer_logo_link}
+                openLinkInNewTab={true}
               >
-                <img
-                  src={
-                    footer_logo?.data
-                      ? `data:${footer_logo['content-type']};base64,${footer_logo.data}`
-                      : footer_logo?.download
-                  }
-                  alt="Sponsor Logo"
-                />
+                <img src={footerLogoSrc} alt="Sponsor Logo" />
               </ConditionalLink>
             </div>
           ) : null}

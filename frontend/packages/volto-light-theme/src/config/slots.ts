@@ -1,7 +1,7 @@
 import type { ConfigType } from '@plone/registry';
 import Theming from '../components/Theming/Theming';
-import FooterLogos from '../components/Footer/FooterLogos';
-import FollowUsLogoAndLinks from '../components/Footer/FollowUsLogoAndLinks';
+import FooterLogos from '../components/Footer/slots/FooterLogos';
+import FollowUsLogoAndLinks from '../components/Footer/slots/FollowUsLogoAndLinks';
 import Colophon from '../components/Footer/slots/Colophon';
 import Copyright from '../components/Footer/slots/Copyright';
 
