@@ -3,6 +3,7 @@ import Theming from '../components/Theming/Theming';
 import FooterLogos from '../components/Footer/FooterLogos';
 import FollowUsLogoAndLinks from '../components/Footer/FollowUsLogoAndLinks';
 import Colophon from '../components/Footer/slots/Colophon';
+import Copyright from '../components/Footer/slots/Copyright';
 
 export default function install(config: ConfigType) {
   config.registerSlotComponent({
@@ -21,6 +22,12 @@ export default function install(config: ConfigType) {
     name: 'PostFooterFollowUsLogoAndLinks',
     slot: 'postFooter',
     component: FollowUsLogoAndLinks,
+  });
+
+  config.registerSlotComponent({
+    name: 'Copyright',
+    slot: 'innerSimpleFooter',
+    component: Copyright,
   });
 
   config.registerSlotComponent({

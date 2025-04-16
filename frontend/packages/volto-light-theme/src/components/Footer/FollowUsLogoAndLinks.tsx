@@ -6,6 +6,7 @@ import IconLinkList from './IconLinkList';
 import type { SiteFooterSettings } from '../../types';
 import type { Content } from '@plone/types';
 import { FormattedMessage } from 'react-intl';
+import cx from 'classnames';
 
 const FollowUsPostFooterLogoAndLinks = ({ content }: { content: Content }) => {
   const has_enhanced_footer = useLiveData<
@@ -33,7 +34,11 @@ const FollowUsPostFooterLogoAndLinks = ({ content }: { content: Content }) => {
   return (
     <>
       {has_enhanced_footer ? (
-        <Container className="default follow-us-links-and-logo">
+        <Container
+          className={cx('default follow-us-links-and-logo', {
+            'no-logo': !footer_logo?.data && !footer_logo?.download,
+          })}
+        >
           <div className="followus-and-links">
             <div className="follow-us">
               <span>
@@ -45,22 +50,24 @@ const FollowUsPostFooterLogoAndLinks = ({ content }: { content: Content }) => {
               <LinkList links={footer_links} />
             </div>
           </div>
-          <div className="footer-logo">
-            {/* @ts-ignore */}
-            <ConditionalLink
-              condition={content?.footer_logo_link}
-              to={content?.footer_logo_link}
-            >
-              <img
-                src={
-                  footer_logo?.data
-                    ? `data:${footer_logo['content-type']};base64,${footer_logo.data}`
-                    : footer_logo?.download
-                }
-                alt="Sponsor Logo"
-              />
-            </ConditionalLink>
-          </div>
+          {footer_logo?.data || footer_logo?.download ? (
+            <div className="footer-logo">
+              {/* @ts-ignore */}
+              <ConditionalLink
+                condition={content?.footer_logo_link}
+                to={content?.footer_logo_link}
+              >
+                <img
+                  src={
+                    footer_logo?.data
+                      ? `data:${footer_logo['content-type']};base64,${footer_logo.data}`
+                      : footer_logo?.download
+                  }
+                  alt="Sponsor Logo"
+                />
+              </ConditionalLink>
+            </div>
+          ) : null}
         </Container>
       ) : null}
     </>

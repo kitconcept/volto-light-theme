@@ -1,10 +1,12 @@
 #footer {
   margin-top: $footer-vertical-spacing-top;
   text-align: center;
+  .container {
+    padding: 0 1rem;
+  }
 
   .footer {
-    padding: 4.2rem 2rem;
-    background-color: $lightgrey;
+    padding: $spacing-xlarge 2rem;
     font-size: 18px;
 
     a.powered-by {
@@ -98,6 +100,22 @@
           margin-bottom: 38px;
         }
       }
+
+      @media only screen and (max-width: $largest-mobile-screen) {
+        gap: $spacing-xlarge;
+
+        .address-column {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .address-left,
+        .address-middle,
+        .address-right {
+          justify-self: center;
+        }
+      }
     }
   }
 
@@ -105,6 +123,60 @@
     display: flex;
     margin-top: $spacing-xlarge;
     margin-bottom: $spacing-xlarge;
+
+    &.no-logo {
+      justify-content: center;
+
+      .followus-and-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .follow-us {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .footer-links {
+        ul {
+          justify-content: center;
+        }
+      }
+    }
+
+    @media only screen and (max-width: $largest-mobile-screen) {
+      flex-direction: column;
+      align-items: center;
+
+      .followus-and-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .follow-us {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .footer-links {
+        ul {
+          justify-content: center;
+        }
+      }
+
+      .footer-logo {
+        padding-top: 50px;
+        margin: 0 auto;
+      }
+    }
   }
 
   .followus-and-links {
@@ -122,6 +194,7 @@
   }
 
   .follow-us {
+    padding-top: 50px;
     text-align: left;
 
     span {
@@ -182,9 +255,21 @@
   .colophon {
     @include add(size, xs);
     @include add(height, s);
-    padding-top: 50px;
-    border-top: 1px solid $black;
-    margin-bottom: 12px;
+    padding-bottom: $spacing-small;
+
+    &:before {
+      display: block;
+      padding-top: 50px;
+      border-top: 1px solid $black;
+      content: '';
+      @include default-container-width();
+    }
+  }
+
+  .footer + .colophon {
+    padding-top: 0;
+    border: none;
+    background-color: var(--footer-background);
   }
 }
 

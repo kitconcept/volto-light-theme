@@ -1,9 +1,10 @@
-import { FormattedMessage, defineMessages, useIntl } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 import LinkList from './LinkList';
 import IconLinkList from './IconLinkList';
 import type { SiteFooterSettings } from '../../types';
 import { useLiveData } from '@kitconcept/volto-light-theme/helpers/liveData';
 import type { Content } from '@plone/types';
+import SlotRenderer from '@plone/volto/components/theme/SlotRenderer/SlotRenderer';
 
 type SimpleFooterProps = {
   footer_links: SiteFooterSettings['footer_links'];
@@ -20,17 +21,21 @@ const SimpleFooter = (props: SimpleFooterProps) => {
   );
 
   return (
-    <div className="followus-and-links">
-      <div className="follow-us">
-        <span>
-          <FormattedMessage id="Follow us:" defaultMessage="Follow us:" />
-        </span>
-        <IconLinkList iconLinks={followus_links} />
+    <>
+      <SlotRenderer name="innerSimpleFooter" content={content} />
+
+      <div className="followus-and-links">
+        <div className="follow-us">
+          <span>
+            <FormattedMessage id="Follow us:" defaultMessage="Follow us:" />
+          </span>
+          <IconLinkList iconLinks={followus_links} />
+        </div>
+        <div className="footer-links">
+          <LinkList links={footer_links} />
+        </div>
       </div>
-      <div className="footer-links">
-        <LinkList links={footer_links} />
-      </div>
-    </div>
+    </>
   );
 };
 
