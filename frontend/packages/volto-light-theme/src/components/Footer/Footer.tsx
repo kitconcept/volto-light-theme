@@ -65,7 +65,6 @@ const Footer = () => {
       <SlotRenderer name="preFooter" content={content} />
 
       <Container className="footer">
-        {/* If there's not set footer_address then we show the simple footer */}
         {!has_enhanced_footer ? (
           <SimpleFooter content={content} footer_links={footer_links} />
         ) : (

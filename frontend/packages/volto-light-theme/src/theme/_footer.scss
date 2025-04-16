@@ -1,16 +1,21 @@
 #footer {
   margin-top: $footer-vertical-spacing-top;
   text-align: center;
+
   .container {
     padding: 0 1rem;
   }
 
   .footer {
     padding: $spacing-xlarge 2rem;
+    color: var(--footer-foreground, $black);
     font-size: 18px;
 
+    a {
+      color: var(--footer-foreground);
+    }
+
     a.powered-by {
-      color: $blue-for-grey-contrast;
       font-size: 14px;
     }
     .footer-branding {
@@ -20,7 +25,6 @@
     .footer-message {
       font-weight: $bold;
       a {
-        color: $blue-for-grey-contrast;
         font-weight: inherit;
         text-decoration: underline;
       }
@@ -86,7 +90,6 @@
           font-size: 18px;
 
           a {
-            color: $black;
             text-decoration: underline;
           }
         }
@@ -230,14 +233,13 @@
         position: absolute;
         right: -3px;
         display: inline-block;
-        color: $black;
+        color: var(--footer-foreground, $black);
         content: '|';
       }
 
       a {
         @include add(size, xs);
         @include add(height, s);
-        color: $black;
       }
     }
   }
@@ -270,6 +272,11 @@
     padding-top: 0;
     border: none;
     background-color: var(--footer-background);
+    color: var(--footer-foreground);
+
+    &:before {
+      border-top: 1px solid var(--footer-foreground, $black);
+    }
   }
 }
 

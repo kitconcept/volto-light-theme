@@ -23,7 +23,7 @@ export function useLiveData<T>(
     (state) => state.form.global?.[field],
   );
 
-  const data = formData || current;
+  const data = formData ?? current;
 
   return data;
 }
