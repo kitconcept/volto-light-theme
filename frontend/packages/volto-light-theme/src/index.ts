@@ -46,6 +46,7 @@ declare module '@plone/types' {
   export interface Content {
     footer_logos_container_width: string;
     footer_logos_size: string;
+    footer_logo_link: string;
   }
 
   export interface Expanders {
