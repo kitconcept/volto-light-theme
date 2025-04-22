@@ -17,18 +17,29 @@ msgstr ""
 "Domain: volto\n"
 "X-Generator: Poedit 3.0.1\n"
 
+#. Default: "Action"
+#: components/Widgets/schema/headerActionsSchema
+msgid "Action"
+msgstr ""
+
 #. Default: "Add"
-#: components/Widgets/BlocksObjectWidget
+#: components/Widgets/BlocksObject
+#: components/Widgets/ObjectList
 msgid "Add (object list)"
 msgstr ""
 
+#. Default: "Add action"
+#: components/Widgets/schema/headerActionsSchema
+msgid "Add action"
+msgstr ""
+
 #. Default: "Add link"
-#: components/Widgets/FooterLinksWidget
+#: components/Widgets/schema/footerLinksSchema
 msgid "Add link"
 msgstr ""
 
 #. Default: "Add logo"
-#: components/Widgets/FooterLogosWidget
+#: components/Widgets/schema/footerLogosSchema
 msgid "Add logo"
 msgstr ""
 
@@ -39,7 +50,7 @@ msgid "Alignment"
 msgstr ""
 
 #. Default: "Alt text"
-#: components/Widgets/FooterLogosWidget
+#: components/Widgets/schema/footerLogosSchema
 msgid "Alt text"
 msgstr ""
 
@@ -71,8 +82,7 @@ msgid "Button text"
 msgstr "Botoiaren testua"
 
 #. Default: "Center"
-#: components/Widgets/AlignWidget
-#: components/Widgets/BlockAlignmentWidget
+#: components/Widgets/BlockAlignment
 msgid "Center"
 msgstr "Erdiratu"
 
@@ -83,8 +93,14 @@ msgid "Close menu"
 msgstr "Itxi menua"
 
 #. Default: "Collapse item"
-#: components/Widgets/BlocksObjectWidget
+#: components/Widgets/BlocksObject
+#: components/Widgets/ObjectList
 msgid "Collapse item"
+msgstr ""
+
+#. Default: "The color contrast ratio {contrastRatio}:1 might not be accesible for all. WCAG Level: {complianceLevel}"
+#: components/Widgets/ColorContrastChecker
+msgid "ColorContrastCheckerMessage"
 msgstr ""
 
 #. Default: "Contact"
@@ -103,14 +119,13 @@ msgid "Copyright"
 msgstr "Copyright"
 
 #. Default: "Default"
-#: components/Widgets/BlockWidthWidget
+#: components/Widgets/BlockWidth
 msgid "Default"
 msgstr ""
 
 #. Default: "Description"
 #: components/Blocks/Image/schema
-#: components/Widgets/FooterLinksWidget
-#: components/Widgets/FooterLogosWidget
+#: components/Widgets/schema/footerLogosSchema
 msgid "Description"
 msgstr "Deskribapena"
 
@@ -120,7 +135,8 @@ msgid "Distributed under the {license}."
 msgstr "{lizentzia} lizentziapean banatua."
 
 #. Default: "Empty object list"
-#: components/Widgets/BlocksObjectWidget
+#: components/Widgets/BlocksObject
+#: components/Widgets/ObjectList
 msgid "Empty object list"
 msgstr ""
 
@@ -135,8 +151,7 @@ msgid "Flag align"
 msgstr "Alineazioa"
 
 #. Default: "Full"
-#: components/Widgets/AlignWidget
-#: components/Widgets/BlockWidthWidget
+#: components/Widgets/BlockWidth
 msgid "Full"
 msgstr "Osoa"
 
@@ -146,8 +161,7 @@ msgid "GNU GPL license"
 msgstr "GNU GPL"
 
 #. Default: "Headline"
-#: components/Widgets/FooterLinksWidget
-#: components/Widgets/FooterLogosWidget
+#: components/Widgets/schema/footerLogosSchema
 msgid "Headline"
 msgstr ""
 
@@ -157,8 +171,7 @@ msgid "Hide Button"
 msgstr "Ezkutatu botoia"
 
 #. Default: "Hide description"
-#: components/Widgets/FooterLinksWidget
-#: components/Widgets/FooterLogosWidget
+#: components/Widgets/schema/footerLogosSchema
 msgid "Hide description"
 msgstr ""
 
@@ -174,50 +187,30 @@ msgstr "Hasiera"
 msgid "ICS-Download"
 msgstr "Deskargatu ICS fitxategia "
 
-#. Default: "Icon"
-#: components/Widgets/FooterLinksWidget
-#: components/Widgets/FooterLogosWidget
-msgid "Icon"
-msgstr ""
-
 #. Default: "Image"
 #: components/Blocks/Image/ImageSidebar
 msgid "Image"
 msgstr "Irudia"
 
-#. Default: "Item"
-#: components/Widgets/FooterLinksWidget
-#: components/Widgets/FooterLogosWidget
-msgid "Item"
-msgstr ""
-
-#. Default: "Items"
-#: components/Widgets/FooterLinksWidget
-#: components/Widgets/FooterLogosWidget
-msgid "Items"
-msgstr ""
-
-#. Default: "Items to show"
-#: components/Widgets/FooterLinksWidget
-#: components/Widgets/FooterLogosWidget
-msgid "Items to show"
-msgstr ""
-
 #. Default: "Large"
-#: components/Widgets/SizeWidget
+#: components/Widgets/Size
 msgid "Large"
 msgstr ""
 
 #. Default: "Layout"
-#: components/Widgets/BlockWidthWidget
+#: components/Widgets/BlockWidth
 msgid "Layout"
 msgstr ""
 
 #. Default: "Left"
-#: components/Widgets/AlignWidget
-#: components/Widgets/BlockAlignmentWidget
+#: components/Widgets/BlockAlignment
 msgid "Left"
 msgstr "Ezkerrean"
+
+#. Default: "Link"
+#: components/Widgets/schema/footerLinksSchema
+msgid "Link"
+msgstr ""
 
 #. Default: "List"
 #: index
@@ -239,9 +232,13 @@ msgstr "Kokalekua"
 msgid "Log in"
 msgstr "Sartu"
 
+#. Default: "Logo"
+#: components/Widgets/schema/footerLogosSchema
+msgid "Logo"
+msgstr ""
+
 #. Default: "Logo image"
-#: components/Widgets/FooterLinksWidget
-#: components/Widgets/FooterLogosWidget
+#: components/Widgets/schema/footerLogosSchema
 msgid "Logo image"
 msgstr ""
 
@@ -251,12 +248,12 @@ msgid "Logo of"
 msgstr ""
 
 #. Default: "Medium"
-#: components/Widgets/SizeWidget
+#: components/Widgets/Size
 msgid "Medium"
 msgstr ""
 
 #. Default: "Narrow"
-#: components/Widgets/BlockWidthWidget
+#: components/Widgets/BlockWidth
 msgid "Narrow"
 msgstr ""
 
@@ -276,8 +273,9 @@ msgid "No items found in this container."
 msgstr "Ez dago elementurik"
 
 #. Default: "Open in a new tab"
-#: components/Widgets/FooterLinksWidget
-#: components/Widgets/FooterLogosWidget
+#: components/Widgets/schema/footerLinksSchema
+#: components/Widgets/schema/footerLogosSchema
+#: components/Widgets/schema/headerActionsSchema
 msgid "Open in a new tab"
 msgstr ""
 
@@ -334,7 +332,8 @@ msgid "Register"
 msgstr "Eman izena"
 
 #. Default: "Remove item"
-#: components/Widgets/BlocksObjectWidget
+#: components/Widgets/BlocksObject
+#: components/Widgets/ObjectList
 msgid "Remove item"
 msgstr ""
 
@@ -344,8 +343,7 @@ msgid "Result"
 msgstr "Emaitza"
 
 #. Default: "Right"
-#: components/Widgets/AlignWidget
-#: components/Widgets/BlockAlignmentWidget
+#: components/Widgets/BlockAlignment
 msgid "Right"
 msgstr "Eskuman"
 
@@ -380,8 +378,7 @@ msgid "Searched for"
 msgstr "Hau bilatu duzu"
 
 #. Default: "Settings"
-#: components/Widgets/FooterLinksWidget
-#: components/Widgets/FooterLogosWidget
+#: components/Widgets/schema/footerLogosSchema
 msgid "Settings"
 msgstr ""
 
@@ -391,7 +388,8 @@ msgid "Short line"
 msgstr ""
 
 #. Default: "Show item"
-#: components/Widgets/BlocksObjectWidget
+#: components/Widgets/BlocksObject
+#: components/Widgets/ObjectList
 msgid "Show item"
 msgstr ""
 
@@ -401,7 +399,7 @@ msgid "Sitemap"
 msgstr "Webgunearen mapa"
 
 #. Default: "Small"
-#: components/Widgets/SizeWidget
+#: components/Widgets/Size
 msgid "Small"
 msgstr ""
 
@@ -426,8 +424,9 @@ msgid "Switch to"
 msgstr "Hona aldatu"
 
 #. Default: "Target"
-#: components/Widgets/FooterLinksWidget
-#: components/Widgets/FooterLogosWidget
+#: components/Widgets/schema/footerLinksSchema
+#: components/Widgets/schema/footerLogosSchema
+#: components/Widgets/schema/headerActionsSchema
 msgid "Target"
 msgstr ""
 
@@ -438,8 +437,9 @@ msgstr "{plonecms} {copyright} 2000-{current_year} {plonefoundation} eta lagunek
 
 #. Default: "Title"
 #: components/Blocks/Image/schema
-#: components/Widgets/FooterLinksWidget
-#: components/Widgets/FooterLogosWidget
+#: components/Widgets/schema/footerLinksSchema
+#: components/Widgets/schema/footerLogosSchema
+#: components/Widgets/schema/headerActionsSchema
 msgid "Title"
 msgstr "Izenburua"
 
@@ -447,11 +447,6 @@ msgstr "Izenburua"
 #: components/Blocks/EventMetadata/View
 msgid "Website"
 msgstr "Webgunea"
-
-#. Default: "Wide"
-#: components/Widgets/AlignWidget
-msgid "Wide"
-msgstr "Zabala"
 
 #. Default: "Clear image"
 #: components/Blocks/Image/ImageSidebar
@@ -477,8 +472,3 @@ msgstr "Informazio gehiago"
 #: components/Blocks/Listing/ListingBody
 msgid "of"
 msgstr "-"
-
-#. Default: ""
-#: components/Header/Header
-msgid "siteLabel"
-msgstr " "
