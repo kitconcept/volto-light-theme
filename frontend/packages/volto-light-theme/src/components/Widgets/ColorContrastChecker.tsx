@@ -91,7 +91,7 @@ const ColorContrastChecker = (props: { id: string; value: string }) => {
           aria-live="polite"
         >
           The color contrast ratio ({contrastRatio.toFixed(2)}:1) might not be
-          accesible for all. WCAG Level: {getComplianceLevel(contrastRatio)}
+          accessible for all. WCAG Level: {getComplianceLevel(contrastRatio)}
           <a
             target="_blank"
             href="https://webaim.org/articles/contrast/"
