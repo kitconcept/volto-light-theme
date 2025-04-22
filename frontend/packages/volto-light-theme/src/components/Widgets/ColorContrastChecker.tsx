@@ -94,7 +94,7 @@ const ColorContrastChecker = (props: { id: string; value: string }) => {
           <FormattedMessage
             id="ColorContrastCheckerMessage"
             defaultMessage={
-              'The color contrast ratio {contrastRatio}:1 might not be accesible for all. WCAG Level: {complianceLevel}'
+              'The color contrast ratio {contrastRatio}:1 might not be accessible for all. WCAG Level: {complianceLevel}'
             }
             values={{
               contrastRatio: contrastRatio.toFixed(1),
