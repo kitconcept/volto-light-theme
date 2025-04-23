@@ -8,6 +8,7 @@ import LinkList from '../LinkList';
 import IconLinkList from '../IconLinkList';
 import type { SiteFooterSettings } from '../../../types';
 import type { Content } from '@plone/types';
+import SlotRenderer from '@plone/volto/components/theme/SlotRenderer/SlotRenderer';
 
 const FollowUsPostFooterLogoAndLinks = ({ content }: { content: Content }) => {
   const has_enhanced_footer = useLiveData<
@@ -49,7 +50,9 @@ const FollowUsPostFooterLogoAndLinks = ({ content }: { content: Content }) => {
               <span>
                 <FormattedMessage id="Follow us:" defaultMessage="Follow us:" />
               </span>
-              <IconLinkList iconLinks={followus_links} />
+              {/* <IconLinkList iconLinks={followus_links} />
+               */}
+              <SlotRenderer name="followUs" content={content} />
             </div>
             <div className="footer-links">
               <LinkList links={footer_links} />

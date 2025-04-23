@@ -103,11 +103,11 @@ export type ObjectListWidgetProps = {
   /**
    * The schema for the ObjectListWidget.
    */
-  schema: ObjectListWidgetSchema;
+  schema?: ObjectListWidgetSchema;
   /**
    * The name of the schema.
    */
-  schemaName: string;
+  schemaName?: string | undefined;
   /**
    * An optional function to enhance the schema.
    * @param args An object containing the schema, form data, intl, navRoot, and contentType.

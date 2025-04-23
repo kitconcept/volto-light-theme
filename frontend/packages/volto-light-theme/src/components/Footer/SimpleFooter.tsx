@@ -29,6 +29,7 @@ const SimpleFooter = (props: SimpleFooterProps) => {
           <span>
             <FormattedMessage id="Follow us:" defaultMessage="Follow us:" />
           </span>
+          <SlotRenderer name="followUs" content={content} />
           <IconLinkList iconLinks={followus_links} />
         </div>
         <div className="footer-links">

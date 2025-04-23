@@ -8,6 +8,17 @@ declare module '@plone/types' {
   }
 }
 
+type apiExpanderInherit = {
+  match: string;
+  GET_CONTENT: string[];
+  querystring:
+    | { [key: string]: string }
+    | ((
+        config,
+        querystring: { config: ConfigType; querystring: object },
+      ) => { [key: string]: string });
+};
+
 export default function install(config: ConfigType) {
   config.settings.enableAutoBlockGroupingByBackgroundColor = true;
   config.settings.navDepth = 3;
@@ -23,11 +34,24 @@ export default function install(config: ConfigType) {
     {
       match: '',
       GET_CONTENT: ['inherit'],
-      querystring: {
-        'expand.inherit.behaviors':
-          'voltolighttheme.header,voltolighttheme.theme,voltolighttheme.footer',
+      querystring: (config, querystring) => {
+        if (querystring['expand.inherit.behaviors']) {
+          return {
+            'expand.inherit.behaviors': querystring[
+              'expand.inherit.behaviors'
+            ].concat(
+              ',',
+              'voltolighttheme.header,voltolighttheme.theme,voltolighttheme.footer',
+            ),
+          };
+        } else {
+          return {
+            'expand.inherit.behaviors':
+              'voltolighttheme.header,voltolighttheme.theme,voltolighttheme.footer',
+          };
+        }
       },
-    },
+    } as apiExpanderInherit,
   ];
 
   config.settings.colorMap = {
