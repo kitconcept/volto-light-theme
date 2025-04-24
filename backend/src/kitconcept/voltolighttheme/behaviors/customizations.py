@@ -214,7 +214,6 @@ class ISiteFooterCustomizationSettings(model.Schema):
             "footer_column_middle",
             "footer_column_right_header",
             "footer_column_right",
-            "followus_links",
             "footer_logo",
             "footer_logo_link",
             "footer_links",
@@ -369,21 +368,6 @@ class ISiteFooterCustomizationSettings(model.Schema):
             "The right-most column appearing after the middle column. It can contain"
             " a list of links."
         ),
-        schema=OBJECT_LIST,
-        default=OBJECT_LIST_DEFAULT_VALUE,
-        required=False,
-        widget="",
-    )
-
-    directives.widget(
-        "followus_links",
-        frontendOptions={
-            "widget": "object_list",
-            "widgetProps": {"schemaName": "iconLinkList"},
-        },
-    )
-    followus_links = JSONField(
-        title=_("Follow us links"),
         schema=OBJECT_LIST,
         default=OBJECT_LIST_DEFAULT_VALUE,
         required=False,
