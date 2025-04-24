@@ -39,39 +39,37 @@ const FollowUsPostFooterLogoAndLinks = ({ content }: { content: Content }) => {
 
   return (
     <>
-      {has_enhanced_footer ? (
-        <Container
-          className={cx('default follow-us-links-and-logo', {
-            'no-logo': !footer_logo?.data && !footer_logo?.download,
-          })}
-        >
-          <div className="followus-and-links">
-            <div className="follow-us">
-              <span>
-                <FormattedMessage id="Follow us:" defaultMessage="Follow us:" />
-              </span>
-              {/* <IconLinkList iconLinks={followus_links} />
-               */}
-              <SlotRenderer name="followUs" content={content} />
-            </div>
-            <div className="footer-links">
-              <LinkList links={footer_links} />
-            </div>
+      <Container
+        className={cx('default follow-us-links-and-logo', {
+          'no-logo': !footer_logo?.data && !footer_logo?.download,
+        })}
+      >
+        <div className="followus-and-links">
+          <div className="follow-us">
+            <span>
+              <FormattedMessage id="Follow us:" defaultMessage="Follow us:" />
+            </span>
+            {/* <IconLinkList iconLinks={followus_links} />
+             */}
+            <SlotRenderer name="followUs" content={content} />
           </div>
-          {footer_logo?.data || footer_logo?.download ? (
-            <div className="footer-logo">
-              {/* @ts-ignore */}
-              <ConditionalLink
-                condition={content?.footer_logo_link}
-                to={content?.footer_logo_link}
-                openLinkInNewTab={true}
-              >
-                <img src={footerLogoSrc} alt="Sponsor Logo" />
-              </ConditionalLink>
-            </div>
-          ) : null}
-        </Container>
-      ) : null}
+          <div className="footer-links">
+            <LinkList links={footer_links} />
+          </div>
+        </div>
+        {footer_logo?.data || footer_logo?.download ? (
+          <div className="footer-logo">
+            {/* @ts-ignore */}
+            <ConditionalLink
+              condition={content?.footer_logo_link}
+              to={content?.footer_logo_link}
+              openLinkInNewTab={true}
+            >
+              <img src={footerLogoSrc} alt="Sponsor Logo" />
+            </ConditionalLink>
+          </div>
+        ) : null}
+      </Container>
     </>
   );
 };

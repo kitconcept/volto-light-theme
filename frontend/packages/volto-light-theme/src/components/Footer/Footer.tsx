@@ -23,37 +23,6 @@ const Footer = () => {
     shallowEqual,
   );
 
-  const has_enhanced_footer = useLiveData<
-    SiteFooterSettings['has_enhanced_footer']
-  >(content, 'voltolighttheme.footer', 'has_enhanced_footer');
-
-  const footer_address = useLiveData<SiteFooterSettings['footer_address']>(
-    content,
-    'voltolighttheme.footer',
-    'footer_address',
-  );
-
-  const footer_column_left_header = useLiveData<
-    SiteFooterSettings['footer_column_left_header']
-  >(content, 'voltolighttheme.footer', 'footer_column_left_header');
-  const footer_column_left = useLiveData<
-    SiteFooterSettings['footer_column_left']
-  >(content, 'voltolighttheme.footer', 'footer_column_left');
-
-  const footer_column_middle_header = useLiveData<
-    SiteFooterSettings['footer_column_middle_header']
-  >(content, 'voltolighttheme.footer', 'footer_column_middle_header');
-  const footer_column_middle = useLiveData<
-    SiteFooterSettings['footer_column_middle']
-  >(content, 'voltolighttheme.footer', 'footer_column_middle');
-
-  const footer_column_right_header = useLiveData<
-    SiteFooterSettings['footer_column_right_header']
-  >(content, 'voltolighttheme.footer', 'footer_column_right_header');
-  const footer_column_right = useLiveData<
-    SiteFooterSettings['footer_column_right']
-  >(content, 'voltolighttheme.footer', 'footer_column_right');
-
   const footer_links = useLiveData<SiteFooterSettings['footer_links']>(
     content,
     'voltolighttheme.footer',
@@ -63,8 +32,11 @@ const Footer = () => {
   return (
     <footer id="footer">
       <SlotRenderer name="preFooter" content={content} />
-
-      <Container className="footer">
+      <SlotRenderer name="footer" content={content} />
+      <Container className="post-footer">
+        <SlotRenderer name="postFooter" content={content} />
+      </Container>
+      {/* <Container className="footer">
         {!has_enhanced_footer ? (
           <SimpleFooter content={content} footer_links={footer_links} />
         ) : (
@@ -109,9 +81,7 @@ const Footer = () => {
             </div>
           </Container>
         )}
-      </Container>
-
-      <SlotRenderer name="postFooter" content={content} />
+      </Container> */}
     </footer>
   );
 };

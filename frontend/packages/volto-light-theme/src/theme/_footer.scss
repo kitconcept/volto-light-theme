@@ -6,6 +6,13 @@
     padding: 0 1rem;
   }
 
+  .post-footer {
+    padding: $spacing-xlarge 2rem;
+    background: var(--footer-background);
+    color: var(--footer-foreground, $black);
+    font-size: 18px;
+  }
+
   .footer {
     padding: $spacing-xlarge 2rem;
     color: var(--footer-foreground, $black);
@@ -124,8 +131,7 @@
 
   .follow-us-links-and-logo {
     display: flex;
-    margin-top: $spacing-xlarge;
-    margin-bottom: $spacing-xlarge;
+    margin-bottom: 50px;
 
     &.no-logo {
       justify-content: center;
@@ -197,20 +203,17 @@
   }
 
   .follow-us {
-    padding-top: 50px;
+    margin-bottom: 50px;
     text-align: left;
 
     span {
       @include headtitle2();
+      margin-bottom: 50px;
       text-transform: uppercase;
     }
 
     .image-wrapper {
       line-height: 0;
-    }
-
-    ul {
-      margin: 50px 0;
     }
 
     li {
@@ -240,6 +243,7 @@
       a {
         @include add(size, xs);
         @include add(height, s);
+        color: var(--footer-foreground);
       }
     }
   }
@@ -258,6 +262,17 @@
     @include add(size, xs);
     @include add(height, s);
     padding-bottom: $spacing-small;
+
+    a {
+      @include add(size, xs);
+      @include add(height, s);
+      color: var(--footer-foreground);
+      text-decoration: underline;
+    }
+
+    img {
+      margin-top: 25px;
+    }
 
     &:before {
       display: block;

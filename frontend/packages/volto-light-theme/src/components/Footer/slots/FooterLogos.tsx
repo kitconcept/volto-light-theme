@@ -32,13 +32,13 @@ const FooterLogos = () => {
     SiteFooterSettings['footer_logos_container_width']
   >(content, 'voltolighttheme.footer', 'footer_logos_container_width');
 
-  return (
+  return footer_logos.length > 0 ? (
     <LogosContainer
       logos={footer_logos}
       logos_size={footer_logos_size}
       logos_container_width={footer_logos_container_width}
     />
-  );
+  ) : null;
 };
 
 export default FooterLogos;

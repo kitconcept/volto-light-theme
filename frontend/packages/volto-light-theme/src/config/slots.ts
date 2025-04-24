@@ -4,6 +4,7 @@ import FooterLogos from '../components/Footer/slots/FooterLogos';
 import FollowUsLogoAndLinks from '../components/Footer/slots/FollowUsLogoAndLinks';
 import Colophon from '../components/Footer/slots/Colophon';
 import Copyright from '../components/Footer/slots/Copyright';
+import CoreFooter from '../components/Footer/slots/CoreFooter';
 
 export default function install(config: ConfigType) {
   config.registerSlotComponent({
@@ -18,16 +19,16 @@ export default function install(config: ConfigType) {
     component: FooterLogos,
   });
 
+  // config.registerSlotComponent({
+  //   name: 'coreFooter',
+  //   slot: 'footer',
+  //   component: CoreFooter,
+  // });
+
   config.registerSlotComponent({
     name: 'PostFooterFollowUsLogoAndLinks',
     slot: 'postFooter',
     component: FollowUsLogoAndLinks,
-  });
-
-  config.registerSlotComponent({
-    name: 'Copyright',
-    slot: 'innerSimpleFooter',
-    component: Copyright,
   });
 
   config.registerSlotComponent({
