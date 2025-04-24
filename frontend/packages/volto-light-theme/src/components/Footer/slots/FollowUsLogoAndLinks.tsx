@@ -3,24 +3,13 @@ import cx from 'classnames';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
 import { Container } from '@plone/components';
-import { useLiveData } from '@kitconcept/volto-light-theme/helpers/liveData';
+import { useLiveData } from '@kitconcept/volto-light-theme/helpers/useLiveData';
 import LinkList from '../LinkList';
-import IconLinkList from '../IconLinkList';
 import type { SiteFooterSettings } from '../../../types';
 import type { Content } from '@plone/types';
 import SlotRenderer from '@plone/volto/components/theme/SlotRenderer/SlotRenderer';
 
 const FollowUsPostFooterLogoAndLinks = ({ content }: { content: Content }) => {
-  const has_enhanced_footer = useLiveData<
-    SiteFooterSettings['has_enhanced_footer']
-  >(content, 'voltolighttheme.footer', 'has_enhanced_footer');
-
-  const followus_links = useLiveData<SiteFooterSettings['followus_links']>(
-    content,
-    'voltolighttheme.footer',
-    'followus_links',
-  );
-
   const footer_links = useLiveData<SiteFooterSettings['footer_links']>(
     content,
     'voltolighttheme.footer',
@@ -29,7 +18,7 @@ const FollowUsPostFooterLogoAndLinks = ({ content }: { content: Content }) => {
 
   const footer_logo = useLiveData<SiteFooterSettings['footer_logo']>(
     content,
-    'voltolighttheme.footer',
+    'kitconcept.volto.footer',
     'footer_logo',
   );
 
@@ -49,8 +38,6 @@ const FollowUsPostFooterLogoAndLinks = ({ content }: { content: Content }) => {
             <span>
               <FormattedMessage id="Follow us:" defaultMessage="Follow us:" />
             </span>
-            {/* <IconLinkList iconLinks={followus_links} />
-             */}
             <SlotRenderer name="followUs" content={content} />
           </div>
           <div className="footer-links">
@@ -59,6 +46,12 @@ const FollowUsPostFooterLogoAndLinks = ({ content }: { content: Content }) => {
         </div>
         {footer_logo?.data || footer_logo?.download ? (
           <div className="footer-logo">
+            <span>
+              <FormattedMessage
+                id="Sponsored by:"
+                defaultMessage="Sponsored by:"
+              />
+            </span>
             {/* @ts-ignore */}
             <ConditionalLink
               condition={content?.footer_logo_link}

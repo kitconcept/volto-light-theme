@@ -1,6 +1,6 @@
 import { Container } from '@plone/components';
 import Logo from '@plone/volto/components/theme/Logo/Logo';
-import { useLiveData } from '@kitconcept/volto-light-theme/helpers/liveData';
+import { useLiveData } from '@kitconcept/volto-light-theme/helpers/useLiveData';
 import ColumnLinks from '../ColumnLinks';
 import type { SiteFooterSettings } from '../../../types';
 import type { Content } from '@plone/types';
@@ -8,34 +8,30 @@ import type { Content } from '@plone/types';
 const CoreFooter = ({ content }: { content: Content }) => {
   const footer_address = useLiveData<SiteFooterSettings['footer_address']>(
     content,
-    'voltolighttheme.footer',
+    'kitconcept.volto.footer',
     'footer_address',
   );
 
   const footer_column_left_header = useLiveData<
     SiteFooterSettings['footer_column_left_header']
-  >(content, 'voltolighttheme.footer', 'footer_column_left_header');
+  >(content, 'kitconcept.volto.footer', 'footer_column_left_header');
   const footer_column_left = useLiveData<
     SiteFooterSettings['footer_column_left']
-  >(content, 'voltolighttheme.footer', 'footer_column_left');
+  >(content, 'kitconcept.volto.footer', 'footer_column_left');
 
   const footer_column_middle_header = useLiveData<
     SiteFooterSettings['footer_column_middle_header']
-  >(content, 'voltolighttheme.footer', 'footer_column_middle_header');
+  >(content, 'kitconcept.volto.footer', 'footer_column_middle_header');
   const footer_column_middle = useLiveData<
     SiteFooterSettings['footer_column_middle']
-  >(content, 'voltolighttheme.footer', 'footer_column_middle');
+  >(content, 'kitconcept.volto.footer', 'footer_column_middle');
 
   const footer_column_right_header = useLiveData<
     SiteFooterSettings['footer_column_right_header']
-  >(content, 'voltolighttheme.footer', 'footer_column_right_header');
+  >(content, 'kitconcept.volto.footer', 'footer_column_right_header');
   const footer_column_right = useLiveData<
     SiteFooterSettings['footer_column_right']
-  >(content, 'voltolighttheme.footer', 'footer_column_right');
-
-  const has_enhanced_footer = useLiveData<
-    SiteFooterSettings['has_enhanced_footer']
-  >(content, 'voltolighttheme.footer', 'has_enhanced_footer');
+  >(content, 'kitconcept.volto.footer', 'footer_column_right');
 
   return (
     <Container className="footer">

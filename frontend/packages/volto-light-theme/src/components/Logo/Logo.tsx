@@ -4,7 +4,7 @@ import { useSelector, shallowEqual } from 'react-redux';
 import { Link } from 'react-router-dom';
 import LogoImage from '@plone/volto/components/theme/Logo/Logo.svg';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
-import { useLiveData } from '@kitconcept/volto-light-theme/helpers/liveData';
+import { useLiveData } from '@kitconcept/volto-light-theme/helpers/useLiveData';
 import type { SiteHeaderSettings } from '../../types';
 import type { Content } from '@plone/types';
 

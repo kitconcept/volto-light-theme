@@ -1,5 +1,5 @@
 import { useSelector, shallowEqual } from 'react-redux';
-import { useLiveData } from '@kitconcept/volto-light-theme/helpers/liveData';
+import { useLiveData } from '@kitconcept/volto-light-theme/helpers/useLiveData';
 import LogosContainer from '../../LogosContainer/LogosContainer';
 import type { Content } from '@plone/types';
 import type { SiteFooterSettings } from '../../../types';
@@ -32,7 +32,7 @@ const FooterLogos = () => {
     SiteFooterSettings['footer_logos_container_width']
   >(content, 'voltolighttheme.footer', 'footer_logos_container_width');
 
-  return footer_logos.length > 0 ? (
+  return footer_logos?.length > 0 ? (
     <LogosContainer
       logos={footer_logos}
       logos_size={footer_logos_size}

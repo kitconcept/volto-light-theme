@@ -17,7 +17,7 @@ import SearchWidget from '@plone/volto/components/theme/SearchWidget/SearchWidge
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import SlotRenderer from '@plone/volto/components/theme/SlotRenderer/SlotRenderer';
 
-import { useLiveData } from '@kitconcept/volto-light-theme/helpers/liveData';
+import { useLiveData } from '@kitconcept/volto-light-theme/helpers/useLiveData';
 
 import MobileNavigation from '../MobileNavigation/MobileNavigation';
 import IntranetSearchWidget from '../SearchWidget/IntranetSearchWidget';

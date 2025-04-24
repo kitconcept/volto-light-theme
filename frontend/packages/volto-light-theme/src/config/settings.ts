@@ -20,6 +20,8 @@ type apiExpanderInherit = {
 };
 
 export default function install(config: ConfigType) {
+  const EXPANDERS_INHERIT_BEHAVIORS =
+    'voltolighttheme.header,voltolighttheme.theme,voltolighttheme.footer,kitconcept.volto.footer';
   config.settings.enableAutoBlockGroupingByBackgroundColor = true;
   config.settings.navDepth = 3;
   config.settings.slate.useLinkedHeadings = false;
@@ -39,15 +41,11 @@ export default function install(config: ConfigType) {
           return {
             'expand.inherit.behaviors': querystring[
               'expand.inherit.behaviors'
-            ].concat(
-              ',',
-              'voltolighttheme.header,voltolighttheme.theme,voltolighttheme.footer',
-            ),
+            ].concat(',', EXPANDERS_INHERIT_BEHAVIORS),
           };
         } else {
           return {
-            'expand.inherit.behaviors':
-              'voltolighttheme.header,voltolighttheme.theme,voltolighttheme.footer',
+            'expand.inherit.behaviors': EXPANDERS_INHERIT_BEHAVIORS,
           };
         }
       },

@@ -208,6 +208,7 @@
 
     span {
       @include headtitle2();
+      display: block;
       margin-bottom: 50px;
       text-transform: uppercase;
     }
@@ -249,9 +250,18 @@
   }
 
   .footer-logo {
+    min-width: 180px;
     max-width: 240px;
     height: auto;
     margin-left: auto;
+
+    span {
+      display: block;
+      margin-bottom: 50px;
+      text-align: left;
+      text-transform: uppercase;
+      @include headtitle2();
+    }
 
     img {
       width: 100%;
@@ -283,15 +293,8 @@
     }
   }
 
-  .footer + .colophon {
-    padding-top: 0;
-    border: none;
-    background-color: var(--footer-background);
-    color: var(--footer-foreground);
-
-    &:before {
-      border-top: 1px solid var(--footer-foreground, $black);
-    }
+  .footer + .post-footer {
+    background-color: transparent;
   }
 }
 
