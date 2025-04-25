@@ -40,6 +40,7 @@ const FollowUsPostFooterLogoAndLinks = ({ content }: { content: Content }) => {
           <SlotRenderer name="followUs" content={content} />
         </div>
         <div className="footer-links">
+          <SlotRenderer name="footerLinks" content={content} />
           <LinkList links={footer_links} />
         </div>
       </div>

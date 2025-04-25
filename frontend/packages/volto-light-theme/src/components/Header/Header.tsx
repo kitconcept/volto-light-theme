@@ -165,6 +165,8 @@ const IntranetHeader = ({ pathname, content }) => {
           <LanguageSelector />
 
           <div className="tools">
+            <SlotRenderer name="headerTools" content={content} />
+
             {header_actions &&
               Array.isArray(header_actions) &&
               header_actions.map((item) => (
@@ -247,6 +249,7 @@ const Header = (props) => {
           )}
         </Container>
       </header>
+      <SlotRenderer name="belowHeader" content={content} navRoot={navRoot} />
     </>
   );
 };
