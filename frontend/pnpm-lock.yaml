@@ -1588,7 +1588,7 @@ importers:
         version: 4.1.2(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(storybook@8.5.3(prettier@3.2.5))
       '@kitconcept/volto-slider-block':
         specifier: ^6.3.1
-        version: 6.3.1(@plone/volto@18.14.0(@babel/runtime@7.24.1)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(embla-carousel@8.0.0)(react@18.2.0)
+        version: 6.3.1(@plone/volto@18.14.1(@babel/runtime@7.24.1)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(embla-carousel@8.0.0)(react@18.2.0)
       '@plone/components':
         specifier: workspace:^
         version: link:../../core/packages/components
@@ -1682,7 +1682,7 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1
       react-intl:
-        specifier: 3.12.1
+        specifier: ^3.12.1
         version: 3.12.1(react@18.2.0)
       release-it:
         specifier: ^17.7.0
@@ -3803,8 +3803,8 @@ packages:
       react-dom:
         optional: true
 
-  '@plone/registry@2.5.1':
-    resolution: {integrity: sha512-9i2je02GYi4VcATBP6DAxKsVj79/ragOxqsYY+BzKtR2kmqFVl4BKg3/LkRpNvTp6X/O0JKuJhR7joQm0daMpQ==}
+  '@plone/registry@2.5.2':
+    resolution: {integrity: sha512-ZSnpOq9oAmHcNEY/WzUonXqFRkONbW7qdOj6jtWNAFquZfpfzZlxTniExH/AURkXAS8pp2EGiwf1BT7x5gIhYg==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -3826,8 +3826,8 @@ packages:
       react: ^18.2.0
       react-dom: ^18.2.0
 
-  '@plone/volto@18.14.0':
-    resolution: {integrity: sha512-/1AazfW8BWuhXcpj0ywegT3JnoTAhLbDX4eHcpR+RL0bxoo+ltSfMcavr2Y31JubcciEVDYXiPo8xx+i0oNvDw==}
+  '@plone/volto@18.14.1':
+    resolution: {integrity: sha512-KNvY/ktXbx4EAm/41vC+qB8IbTGbdp1zCCxjDvYA1r7UtIEHMcROpNY63BvId/3Es1jBOvK4RkDDiwBKuo5WkA==}
     engines: {node: ^20 || ^22}
 
   '@pmmmwh/react-refresh-webpack-plugin@0.5.15':
@@ -18954,9 +18954,9 @@ snapshots:
     transitivePeerDependencies:
       - storybook
 
-  '@kitconcept/volto-slider-block@6.3.1(@plone/volto@18.14.0(@babel/runtime@7.24.1)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(embla-carousel@8.0.0)(react@18.2.0)':
+  '@kitconcept/volto-slider-block@6.3.1(@plone/volto@18.14.1(@babel/runtime@7.24.1)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(embla-carousel@8.0.0)(react@18.2.0)':
     dependencies:
-      '@plone/volto': 18.14.0(@babel/runtime@7.24.1)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)
+      '@plone/volto': 18.14.1(@babel/runtime@7.24.1)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)
       deepmerge: 4.2.2
       embla-carousel-autoplay: 8.0.0(embla-carousel@8.0.0)
       embla-carousel-react: 8.0.0(react@18.2.0)
@@ -19512,7 +19512,7 @@ snapshots:
     transitivePeerDependencies:
       - storybook
 
-  '@plone/registry@2.5.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@plone/registry@2.5.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       auto-config-loader: 1.7.7
       crypto-random-string: 3.2.0
@@ -19623,11 +19623,11 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@plone/volto@18.14.0(@babel/runtime@7.24.1)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)':
+  '@plone/volto@18.14.1(@babel/runtime@7.24.1)(@popperjs/core@2.11.8)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)':
     dependencies:
       '@loadable/component': 5.14.1(react@18.2.0)
       '@loadable/server': 5.14.0(@loadable/component@5.14.1(react@18.2.0))(react@18.2.0)
-      '@plone/registry': 2.5.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@plone/registry': 2.5.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone/scripts': 3.9.0(debug@4.3.2)
       '@plone/volto-slate': 18.3.0(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
       '@redux-devtools/extension': 3.3.0(redux@4.2.1)
@@ -29318,7 +29318,11 @@ snapshots:
       pretty-format: 26.6.2
       throat: 5.0.0
     transitivePeerDependencies:
+      - bufferutil
+      - canvas
       - supports-color
+      - ts-node
+      - utf-8-validate
 
   jest-leak-detector@26.6.2:
     dependencies:

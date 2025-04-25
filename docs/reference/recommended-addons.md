@@ -1,3 +1,12 @@
+---
+myst:
+  html_meta:
+    "description": "Volto Light Theme recommended add-ons"
+    "property=og:description": "Volto Light Theme recommended add-ons"
+    "property=og:title": "Recommended add-ons"
+    "keywords": "Volto Light Theme, add-ons, recommended add-ons"
+---
+
 # Recommended add-ons
 
 `@kitconcept/volto-light-theme` works with the core Plone Blocks and with the blocks provided by these add-ons:

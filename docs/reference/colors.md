@@ -1,3 +1,12 @@
+---
+myst:
+  html_meta:
+    "description": "Volto Light Theme colors definitions"
+    "property=og:description": "Volto Light Theme colors definitions"
+    "property=og:title": "Colors"
+    "keywords": "Volto Light Theme, Colors"
+---
+
 # Colors
 
 The VLT has migrated to use the standardized color definitions in Volto.
