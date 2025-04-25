@@ -48,7 +48,7 @@ const CoreFooter = ({ content }: { content: Content }) => {
           </div>
 
           {footer_column_left && (
-            <div className="address-left">
+            <div className="column-left">
               {footer_column_left_header && (
                 <h2>{footer_column_left_header}</h2>
               )}
@@ -57,7 +57,7 @@ const CoreFooter = ({ content }: { content: Content }) => {
           )}
 
           {footer_column_middle && (
-            <div className="address-middle">
+            <div className="column-middle">
               {footer_column_middle_header && (
                 <h2>{footer_column_middle_header}</h2>
               )}
@@ -66,7 +66,7 @@ const CoreFooter = ({ content }: { content: Content }) => {
           )}
 
           {footer_column_right && (
-            <div className="address-right">
+            <div className="column-right">
               {footer_column_right_header && (
                 <h2>{footer_column_right_header}</h2>
               )}

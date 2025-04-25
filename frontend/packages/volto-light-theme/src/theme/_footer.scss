@@ -114,15 +114,18 @@
       @media only screen and (max-width: $largest-mobile-screen) {
         gap: $spacing-xlarge;
 
+        text-align: center;
+
         .address-column {
           display: flex;
           flex-direction: column;
           align-items: center;
         }
 
-        .address-left,
-        .address-middle,
-        .address-right {
+        .address-column,
+        .column-left,
+        .column-middle,
+        .column-right {
           justify-self: center;
         }
       }
@@ -184,6 +187,9 @@
       .footer-logo {
         padding-top: 50px;
         margin: 0 auto;
+        span {
+          text-align: center;
+        }
       }
     }
   }
