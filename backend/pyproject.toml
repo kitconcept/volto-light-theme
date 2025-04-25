@@ -37,7 +37,7 @@ dependencies = [
     "plone.api",
     "plone.restapi>=9.13.2",
     "plone.volto",
-    "plonegovbr.socialmedia"
+    "plonegovbr.socialmedia>=1.0.0a4"
 ]
 
 [project.optional-dependencies]
