@@ -6,7 +6,6 @@ from plone.schema import JSONField
 from plone.supermodel import model
 from zope.interface import provider
 from zope.schema import Bool
-from zope.schema import Text
 from zope.schema import TextLine
 
 import json
