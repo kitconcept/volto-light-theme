@@ -1597,6 +1597,16 @@
       "title": "BlueSky"
     },
     {
+      "@id": "feeb27a8-7d05-4745-bcc2-27268a49e601",
+      "href": [
+        {
+          "@id": "https://mastodon.social/",
+          "title": "Mastodon"
+        }
+      ],
+      "id": "mastodon"
+    },
+    {
       "@id": "19db10a6-801b-41cf-b65e-184c53efb107",
       "href": [
         {
@@ -1605,16 +1615,6 @@
         }
       ],
       "id": "discord"
-    },
-    {
-      "@id": "feeb27a8-7d05-4745-bcc2-27268a49e601",
-      "href": [
-        {
-          "@id": "https://hub.docker.com",
-          "title": "Docker"
-        }
-      ],
-      "id": "docker"
     }
   ],
   "footer_links": [
@@ -1622,18 +1622,18 @@
       "@id": "642b07b2-bbd1-49f0-8465-a729fcd0d363",
       "href": [
         {
-          "@id": "/impressum",
-          "title": "/impressum"
+          "@id": "/imprint",
+          "title": "imprint"
         }
       ],
-      "title": "impressum"
+      "title": "imprint"
     },
     {
       "@id": "93a800b9-8563-4dfd-8dae-a6b9564b2b0a",
       "href": [
         {
           "@id": "/accessibility",
-          "title": "/accessibility"
+          "title": "accessibility"
         }
       ],
       "title": "accessibility"
@@ -1643,10 +1643,10 @@
       "href": [
         {
           "@id": "/legal",
-          "title": "/legal"
+          "title": "legal"
         }
       ],
-      "title": "legal"
+      "title": "privacy policy"
     }
   ]
 }
