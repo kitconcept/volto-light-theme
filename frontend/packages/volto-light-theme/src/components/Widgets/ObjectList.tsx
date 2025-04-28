@@ -122,8 +122,15 @@ export type ObjectListWidgetProps = {
 };
 
 const ObjectListWidget = (props: ObjectListWidgetProps) => {
-  const { block, fieldSet, id, value, onChange, schemaEnhancer, schemaName } =
-    props;
+  const {
+    block,
+    fieldSet,
+    id,
+    value = [],
+    onChange,
+    schemaEnhancer,
+    schemaName,
+  } = props;
 
   const schema =
     config.getUtility({
