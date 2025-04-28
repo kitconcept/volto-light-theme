@@ -22,9 +22,6 @@ In the module {file}`distributions.py`, you can find the behaviors that are used
 They are used to customize sites created from kitconcept's distributions.
 You can use them to customize your site as well if they fit your needs.
 
-The behaviors are named:
--   `kitconcept.distributions.footer`
-
 ## `kitconcept.distributions.footer` behavior
 
 It adds further customizations the footer of the site, adding a core central footer with four columns.
