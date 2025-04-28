@@ -37,7 +37,7 @@ jobs:
         - config
     strategy:
       matrix:
-        python-version: ["3.13", "3.12", "3.11", "3.10"]
+        python-version: ["3.13", "3.12"]
         plone-version: ["6.1-latest", "6.0-latest"]
     with:
         python-version: ${{ matrix.python-version }}
