@@ -9,7 +9,7 @@ myst:
 
 (site-customization)=
 
-# kitconcept's distributions site customization
+# Customization behavior for kitconcept distributions
 
 VLT supports site customization via the add-on `kitconcept.voltolighttheme`.
 This add-on has behaviors that can be applied to any content type.
@@ -18,8 +18,8 @@ These behaviors provide fields that allow you to customize the properties and th
 In Volto, content types also work as a directory in a file system tree where they can contain additional content types.
 In VLT, through the use of the `@inherit` endpoint, children inherit the behaviors from `kitconcept.voltolighttheme` from the closest ancestor.
 
-In the module `distributions.py` you can find the behaviors that are used to customize the site.
-They are used by kitconcept's distributions to add further customizations and features to kitconcept's distributions sites.
+In the module {file}`distributions.py`, you can find the behaviors that are used to customize the site.
+They are used to customize sites created from kitconcept's distributions.
 You can use them to customize your site as well if they fit your needs.
 
 The behaviors are named:
