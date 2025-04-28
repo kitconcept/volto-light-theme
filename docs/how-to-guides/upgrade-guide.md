@@ -28,22 +28,27 @@ The footer has been overhauled to be more modular and extensible without shadowi
 It has defined slots for the `preFooter`, `postFooter`, `footer`, `footerLinks`, and `followUs` areas.
 
 It now also features the integration of `@plonegovbr/volto-social-media` so you can easily add social media links to your footer.
-See next section for more information.
+See the section {ref}`plonegovbr-volto-social-media-label` for more information.
 
-If you have customized the footer in your site, you might need to adapt your customizations to use the new elements and/or remove the things that your design doesn't need.
+If you have customized the footer in your site, you might need to adapt your customizations to use the new elements or remove the things that your design doesn't need.
 
 ```{image} /_static/footer6.png
-:alt: New footer in VLT 6.0.0
+:alt: Updated footer in VLT 6.0.0
 ```
+
+
+(plonegovbr-volto-social-media-label)=
 
 ### `@plonegovbr/volto-social-media` integration
 ```{versionadded} 6.0.0-alpha.22
 ```
 
-Not a breaking change, but a new feature worth mentioning since it needs a new behavior `plonegovbr.socialmedia.links` to be installed in your Plone site (or subsite, if you want to).
+`@plonegovbr/volto-social-media` is a new feature that adds social media links and icons to your Plone site or subsite footer.
+It requires a new behavior `plonegovbr.socialmedia.links` to be installed in your Plone site or subsite.
 See the {ref}`social-media` section for more information.
 
-### All feature flags has been removed
+
+### All feature flags have been removed
 ```{deprecated} 6.0.0-alpha.20
 ```
 

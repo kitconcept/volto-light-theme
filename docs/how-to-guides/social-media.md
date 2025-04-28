@@ -15,13 +15,13 @@ myst:
 ```
 
 VLT integrates with the add-on `@plonegovbr/volto-social-media` to provide behaviors for adding social media links and main configuration to your site.
-You can use it to customize your site along with the behaviors in `kitconcept.voltolighttheme` as well if they fit your needs.
+You can use it to customize your site, as well as the behaviors in `kitconcept.voltolighttheme`, if they fit your needs.
 
 It has two behaviors:
 - `plonegovbr.socialmedia.links`
 - `plonegovbr.socialmedia.settings`
 
-that can be added to any content type (eg. `Plone Site` or `Subsite`) to add the social media links and main configuration to your site.
+You can add these behaviors to any content type, such as `Plone Site` or `Subsite`, to add the social media links and main configuration to your site.
 
 It is recommended to add the behavior `plonegovbr.socialmedia.settings` to your Plone site, and the behavior `plonegovbr.socialmedia.links` to your site and subsites as well.
 

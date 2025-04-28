@@ -30,7 +30,7 @@ const Copyright = () => {
             ),
             current_year: new Date().getFullYear(),
             plonefoundation: (
-              <a className="item" href="http://plone.org/foundation">
+              <a className="item" href="https://plone.org/foundation">
                 <FormattedMessage
                   id="Plone Foundation"
                   defaultMessage="Plone Foundation"
@@ -47,11 +47,11 @@ const Copyright = () => {
             license: (
               <a
                 className="item"
-                href="http://creativecommons.org/licenses/GPL/2.0/"
+                href="https://www.gnu.org/licenses/old-licenses/lgpl-2.0.html"
               >
                 <FormattedMessage
                   id="GNU GPL license"
-                  defaultMessage="GNU GPL license"
+                  defaultMessage="GNU GPL v2 license"
                 />
               </a>
             ),

@@ -4,7 +4,7 @@ myst:
     "description": "Volto Light Theme recommended add-ons"
     "property=og:description": "Volto Light Theme recommended add-ons"
     "property=og:title": "Recommended add-ons"
-    "keywords": "Volto Light Theme, add-ons, recommended add-ons"
+    "keywords": "Volto Light Theme, add-ons, recommended"
 ---
 
 # Recommended add-ons
