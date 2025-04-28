@@ -18,7 +18,7 @@ const FollowUsPostFooterLogoAndLinks = ({ content }: { content: Content }) => {
 
   const footer_logo = useLiveData<SiteFooterSettings['footer_logo']>(
     content,
-    'kitconcept.volto.footer',
+    'kitconcept.distributions.footer',
     'footer_logo',
   );
 

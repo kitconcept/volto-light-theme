@@ -8,30 +8,30 @@ import type { Content } from '@plone/types';
 const CoreFooter = ({ content }: { content: Content }) => {
   const footer_address = useLiveData<SiteFooterSettings['footer_address']>(
     content,
-    'kitconcept.volto.footer',
+    'kitconcept.distributions.footer',
     'footer_address',
   );
 
   const footer_column_left_header = useLiveData<
     SiteFooterSettings['footer_column_left_header']
-  >(content, 'kitconcept.volto.footer', 'footer_column_left_header');
+  >(content, 'kitconcept.distributions.footer', 'footer_column_left_header');
   const footer_column_left = useLiveData<
     SiteFooterSettings['footer_column_left']
-  >(content, 'kitconcept.volto.footer', 'footer_column_left');
+  >(content, 'kitconcept.distributions.footer', 'footer_column_left');
 
   const footer_column_middle_header = useLiveData<
     SiteFooterSettings['footer_column_middle_header']
-  >(content, 'kitconcept.volto.footer', 'footer_column_middle_header');
+  >(content, 'kitconcept.distributions.footer', 'footer_column_middle_header');
   const footer_column_middle = useLiveData<
     SiteFooterSettings['footer_column_middle']
-  >(content, 'kitconcept.volto.footer', 'footer_column_middle');
+  >(content, 'kitconcept.distributions.footer', 'footer_column_middle');
 
   const footer_column_right_header = useLiveData<
     SiteFooterSettings['footer_column_right_header']
-  >(content, 'kitconcept.volto.footer', 'footer_column_right_header');
+  >(content, 'kitconcept.distributions.footer', 'footer_column_right_header');
   const footer_column_right = useLiveData<
     SiteFooterSettings['footer_column_right']
-  >(content, 'kitconcept.volto.footer', 'footer_column_right');
+  >(content, 'kitconcept.distributions.footer', 'footer_column_right');
 
   return (
     <Container className="footer">

@@ -1651,43 +1651,6 @@ importers:
         specifier: ^17.7.0
         version: 17.7.0(typescript@5.7.3)
 
-  packages/volto-social-media/frontend/packages/volto-social-media:
-    dependencies:
-      '@plone/components':
-        specifier: workspace:*
-        version: link:../../../../../core/packages/components
-      react:
-        specifier: 18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: 18.2.0
-        version: 18.2.0(react@18.2.0)
-    devDependencies:
-      '@plone/scripts':
-        specifier: ^3.6.2
-        version: 3.9.0
-      '@plone/types':
-        specifier: workspace:*
-        version: link:../../../../../core/packages/types
-      '@types/jest':
-        specifier: ^29.5.8
-        version: 29.5.12
-      '@types/lodash':
-        specifier: ^4.14.201
-        version: 4.17.0
-      '@types/react':
-        specifier: ^18.3.12
-        version: 18.3.12
-      '@types/react-dom':
-        specifier: ^18.3.1
-        version: 18.3.1
-      react-intl:
-        specifier: ^3.12.1
-        version: 3.12.1(react@18.2.0)
-      release-it:
-        specifier: ^17.7.0
-        version: 17.7.0(typescript@5.7.3)
-
 packages:
 
   '@aashutoshrathi/word-wrap@1.2.6':
