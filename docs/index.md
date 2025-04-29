@@ -56,6 +56,7 @@ conceptual-guides/requirements-and-specifications
 conceptual-guides/layout
 conceptual-guides/vertical-spacing
 conceptual-guides/site-customization
+conceptual-guides/distributions-customization
 conceptual-guides/block-model-v3
 ```
 
@@ -65,6 +66,7 @@ conceptual-guides/block-model-v3
 :caption: Reference
 reference/colors
 reference/widgets
+reference/slots
 reference/helpers
 reference/feature-flags
 reference/recommended-addons
