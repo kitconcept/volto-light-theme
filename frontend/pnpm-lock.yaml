@@ -1593,8 +1593,8 @@ importers:
         specifier: workspace:^
         version: link:../../core/packages/components
       '@plonegovbr/volto-social-media':
-        specifier: ^2.0.0-alpha.4
-        version: 2.0.0-alpha.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.5.3(prettier@3.2.5))
+        specifier: ^2.0.0-alpha.5
+        version: 2.0.0-alpha.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.5.3(prettier@3.2.5))
       classnames:
         specifier: ^2.2.6
         version: 2.2.6
@@ -3807,8 +3807,8 @@ packages:
     resolution: {integrity: sha512-CmqsDHXwVX15LnIY3l8KivFKm2+ZWOVrfHBXE5nyVa2wC15RgxjUbT+cUCyZWNbPD6/K5YVbLq6w3BYC75q+ww==}
     engines: {node: ^20 || ^22}
 
-  '@plonegovbr/volto-social-media@2.0.0-alpha.4':
-    resolution: {integrity: sha512-eguITKkLOcjA0TEsRjlj8pCrJ7LcLQmYwt39eCN/FdQ9aLKvN6xSEz4RYKzai7jyevKXbbrLY2OLpWd5yUC9/Q==}
+  '@plonegovbr/volto-social-media@2.0.0-alpha.5':
+    resolution: {integrity: sha512-bJUtqRUNRZvRN9JHk7jqqrK6qhBgtSmVmMoSZ7yd+lqyys67n25+yyTKq642tzAAJhFBE9fbCT84AI5Q1dUmAg==}
     peerDependencies:
       react: 18.2.0
       react-dom: 18.2.0
@@ -19710,7 +19710,7 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@plonegovbr/volto-social-media@2.0.0-alpha.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.5.3(prettier@3.2.5))':
+  '@plonegovbr/volto-social-media@2.0.0-alpha.5(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.5.3(prettier@3.2.5))':
     dependencies:
       '@plone/components': 3.0.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.5.3(prettier@3.2.5))
       react: 18.2.0
@@ -29292,11 +29292,7 @@ snapshots:
       pretty-format: 26.6.2
       throat: 5.0.0
     transitivePeerDependencies:
-      - bufferutil
-      - canvas
       - supports-color
-      - ts-node
-      - utf-8-validate
 
   jest-leak-detector@26.6.2:
     dependencies:
