@@ -20,7 +20,35 @@ VLT is now a package with both frontend and backend add-ons.
 Although it is not strictly mandatory, it is recommended for a better experience that you install the new backend package `kitconcept.voltolighttheme` in your backend build.
 Enable the site customization behaviors at least to your Plone site as shown in the {ref}`site-customization` documentation.
 
-### All feature flags has been removed
+### New look and feel and features for the footer
+```{versionadded} 6.0.0-alpha.22
+```
+
+The footer has been overhauled to be more modular and extensible without shadowing.
+It has defined slots for the `preFooter`, `postFooter`, `footer`, `footerLinks`, and `followUs` areas.
+
+It now also features the integration of `@plonegovbr/volto-social-media` so you can easily add social media links to your footer.
+See the section {ref}`plonegovbr-volto-social-media-label` for more information.
+
+If you have customized the footer in your site, you might need to adapt your customizations to use the new elements or remove the things that your design doesn't need.
+
+```{image} /_static/footer6.png
+:alt: Updated footer in VLT 6.0.0
+```
+
+
+(plonegovbr-volto-social-media-label)=
+
+### `@plonegovbr/volto-social-media` integration
+```{versionadded} 6.0.0-alpha.22
+```
+
+`@plonegovbr/volto-social-media` is a new feature that adds social media links and icons to your Plone site or subsite footer.
+It requires a new behavior `plonegovbr.socialmedia.links` to be installed in your Plone site or subsite.
+See the {ref}`social-media` section for more information.
+
+
+### All feature flags have been removed
 ```{deprecated} 6.0.0-alpha.20
 ```
 
