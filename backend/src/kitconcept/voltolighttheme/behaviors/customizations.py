@@ -202,10 +202,10 @@ class ISiteFooterCustomizationSettings(model.Schema):
         "footer",
         label=_("Footer customizations"),
         fields=[
-            "footer_links",
             "footer_logos",
             "footer_logos_container_width",
             "footer_logos_size",
+            "footer_links",
         ],
     )
 
