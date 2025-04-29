@@ -14,7 +14,7 @@ const Colophon = ({ content }: { content: Content }) => {
 
   return (
     <Container className="colophon">
-      <div className="powered-by">Powered by Plone and Light Theme</div>
+      <div className="powered-by">Powered by Plone and Volto Light Theme</div>
       <Copyright />
       {!logo && <Logo />}
     </Container>
