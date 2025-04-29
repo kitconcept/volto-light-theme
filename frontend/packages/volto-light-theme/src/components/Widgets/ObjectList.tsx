@@ -193,8 +193,8 @@ const ObjectListWidget = (props: ObjectListWidgetProps) => {
                 intl,
               });
 
-              onChange(id, [...value, dataWithDefaults]);
-              setActiveObject(value.length);
+              onChange(id, [...(value || []), dataWithDefaults]);
+              setActiveObject(value?.length || 0);
             }}
           >
             <Icon name={addSVG} size="18px" />
