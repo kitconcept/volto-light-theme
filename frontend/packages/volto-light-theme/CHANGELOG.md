@@ -8,6 +8,31 @@
 
 <!-- towncrier release notes start -->
 
+## 6.0.0-alpha.22 (2025-04-29)
+
+### Breaking
+
+- Remove `Anontools` from the headers.
+  If you want to add them, you can use the `header_actions` field in the site customization behaviors. @sneridagh [#522](https://github.com/kitconcept/volto-light-theme/pull/522)
+- Updated the footer structure and look and feel:
+  - Follow us, powered by `@plonegovbr/volto-social-media`
+  - Footer links
+  - Colophon
+
+  All of them are powered by their slots, so they are customizable.
+
+  @sneridagh [#525](https://github.com/kitconcept/volto-light-theme/pull/525)
+
+### Feature
+
+- Allow `intranet_flag` in both headers. @sneridagh [#524](https://github.com/kitconcept/volto-light-theme/pull/524)
+- Added distribution core footer, only active if the `kitconcept.distributions.footer` is installed. @sneridagh [#525](https://github.com/kitconcept/volto-light-theme/pull/525)
+
+### Bugfix
+
+- Minor typo fix in color contrast check message. @danalvrz [#526](https://github.com/kitconcept/volto-light-theme/pull/526)
+- Fix customized object list widget when data doesn't contain a value yet. @davisagli [#527](https://github.com/kitconcept/volto-light-theme/pull/527)
+
 ## 6.0.0-alpha.21 (2025-04-02)
 
 ### Bugfix
