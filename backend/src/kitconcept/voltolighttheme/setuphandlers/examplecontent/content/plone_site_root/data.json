@@ -1563,5 +1563,94 @@
   "table_of_contents": null,
   "title": "Plone",
   "type_title": "Plone Site",
-  "workflow_history": {}
+  "workflow_history": {},
+  "social_links": [
+    {
+      "@id": "a5368555-78cc-4ecc-86f7-3b48f9ae952f",
+      "href": [
+        {
+          "@id": "https://facebook.com",
+          "title": "Facebook"
+        }
+      ],
+      "id": "facebook",
+      "title": "facebook"
+    },
+    {
+      "@id": "bd3753bd-452c-4127-866d-f32cefb930c6",
+      "href": [
+        {
+          "@id": "https://x.com",
+          "title": "X"
+        }
+      ],
+      "id": "x",
+      "title": "x"
+    },
+    {
+      "@id": "e66141da-5464-4e63-9beb-2225885ba45c",
+      "href": [
+        {
+          "@id": "https://bluesky.com",
+          "title": "BlueSky"
+        }
+      ],
+      "id": "bluesky",
+      "title": "BlueSky"
+    },
+    {
+      "@id": "feeb27a8-7d05-4745-bcc2-27268a49e601",
+      "href": [
+        {
+          "@id": "https://mastodon.social/",
+          "title": "Mastodon"
+        }
+      ],
+      "id": "mastodon",
+      "title": "Mastodon"
+    },
+    {
+      "@id": "19db10a6-801b-41cf-b65e-184c53efb107",
+      "href": [
+        {
+          "@id": "https://discord.com",
+          "title": "Discord"
+        }
+      ],
+      "id": "discord",
+      "title": "Discord"
+    }
+  ],
+  "footer_links": [
+    {
+      "@id": "642b07b2-bbd1-49f0-8465-a729fcd0d363",
+      "href": [
+        {
+          "@id": "/imprint",
+          "title": "imprint"
+        }
+      ],
+      "title": "imprint"
+    },
+    {
+      "@id": "93a800b9-8563-4dfd-8dae-a6b9564b2b0a",
+      "href": [
+        {
+          "@id": "/accessibility",
+          "title": "accessibility"
+        }
+      ],
+      "title": "accessibility"
+    },
+    {
+      "@id": "6c596bb9-5cff-4c01-85fe-b1db9d5f886c",
+      "href": [
+        {
+          "@id": "/legal",
+          "title": "legal"
+        }
+      ],
+      "title": "privacy policy"
+    }
+  ]
 }

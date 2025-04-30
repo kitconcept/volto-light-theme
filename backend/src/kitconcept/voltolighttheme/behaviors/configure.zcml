@@ -33,9 +33,16 @@
       />
 
   <plone:behavior
-      name="voltolighttheme.sticky_menu"
+      name="kitconcept.distributions.footer"
+      title="kitconcept distributions footer customizations"
+      description="Set of fields to customize kitconcept's distribution sites and subsites"
+      provides=".distributions.IKitconceptVoltoFooterSettings"
+      />
+
+  <plone:behavior
+      name="kitconcept.sticky_menu"
       title="Sticky menu"
-      description="Sticky menu showing in the right side of the screen"
+      description="Sticky menu showing fixed in the right side of the screen"
       provides=".sticky_menu.IStickyMenuSettings"
       />
 
