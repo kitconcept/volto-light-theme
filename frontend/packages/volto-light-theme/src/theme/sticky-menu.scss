@@ -13,16 +13,14 @@
     list-style: none;
 
     li a {
-      --sticky-menu-background: #555;
-      --sticky-menu-foreground: #fff;
       display: flex;
       height: 93px;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       margin-bottom: 2px;
-      background: var(--sticky-menu-background);
-      color: var(--sticky-menu-foreground);
+      background: var(--sticky-menu-color, #555);
+      color: var(--sticky-menu-foreground-color, #fff);
       font-family: Inter;
       font-size: 10px;
       font-style: normal;
@@ -44,5 +42,5 @@
 }
 
 body.view-editview .sticky-menu {
-  display: none;
+  // display: none;
 }

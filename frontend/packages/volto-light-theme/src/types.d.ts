@@ -84,6 +84,8 @@ export type SiteFooterSettings = {
 
 export type StickyMenuSettings = {
   sticky_menu: Array<stickyMenu>;
+  sticky_menu_color: string;
+  sticky_menu_foreground_color: string;
 };
 
 export type CustomInheritBehavior<T> = {

@@ -2,6 +2,7 @@ from kitconcept.voltolighttheme import _
 from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.schema import JSONField
+from plone.schema import TextLine
 from plone.supermodel import model
 from zope.interface import provider
 
@@ -27,7 +28,27 @@ class IStickyMenuSettings(model.Schema):
         label=_("Sticky menu"),
         fields=[
             "sticky_menu",
+            "sticky_menu_color",
+            "sticky_menu_foreground_color",
         ],
+    )
+
+    directives.widget("sticky_menu_color", frontendOptions={"widget": "colorPicker"})
+    sticky_menu_color = TextLine(
+        title=_("label_sticky_menu_color", default="Sticky menu background color"),
+        required=False,
+    )
+
+    directives.widget(
+        "sticky_menu_foreground_color",
+        frontendOptions={"widget": "colorPicker"},
+    )
+    sticky_menu_foreground_color = TextLine(
+        title=_(
+            "label_sticky_menu_foreground_color",
+            default="Sticky menu text color",
+        ),
+        required=False,
     )
 
     directives.widget(
