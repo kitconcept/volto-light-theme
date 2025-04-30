@@ -121,6 +121,18 @@ export type ObjectListWidgetProps = {
   }) => JSONSchema;
 };
 
+const EMPTY_SCHEMA = {
+  fieldsets: [
+    {
+      id: 'default',
+      title: 'Default',
+      fields: [],
+    },
+  ],
+  properties: {},
+  required: [],
+};
+
 const ObjectListWidget = (props: ObjectListWidgetProps) => {
   const {
     block,
@@ -136,7 +148,9 @@ const ObjectListWidget = (props: ObjectListWidgetProps) => {
     config.getUtility({
       type: 'schema',
       name: schemaName,
-    }).method || props.schema;
+    }).method ||
+    props.schema ||
+    EMPTY_SCHEMA;
 
   const [localActiveObject, setLocalActiveObject] = useState(
     props.activeObject ?? value?.length - 1,
