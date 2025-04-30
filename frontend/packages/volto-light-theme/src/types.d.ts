@@ -75,6 +75,10 @@ export type SiteFooterSettings = {
   footer_links: Array<Link>;
 };
 
+export type PloneGobrSocialMediaSettings = {
+  social_links: Array<iconLink>;
+};
+
 export type CustomInheritBehavior<T> = {
   data: T;
   from: {

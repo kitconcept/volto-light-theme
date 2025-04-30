@@ -5,11 +5,18 @@ import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/Cond
 import { Container } from '@plone/components';
 import { useLiveData } from '@kitconcept/volto-light-theme/helpers/useLiveData';
 import LinkList from '../LinkList';
-import type { SiteFooterSettings } from '../../../types';
+import type {
+  PloneGobrSocialMediaSettings,
+  SiteFooterSettings,
+} from '../../../types';
 import type { Content } from '@plone/types';
 import SlotRenderer from '@plone/volto/components/theme/SlotRenderer/SlotRenderer';
 
 const FollowUsPostFooterLogoAndLinks = ({ content }: { content: Content }) => {
+  const social_links = useLiveData<
+    PloneGobrSocialMediaSettings['social_links']
+  >(content, 'plonegovbr.socialmedia.settings', 'social_links');
+
   const footer_links = useLiveData<SiteFooterSettings['footer_links']>(
     content,
     'voltolighttheme.footer',
@@ -33,16 +40,20 @@ const FollowUsPostFooterLogoAndLinks = ({ content }: { content: Content }) => {
       })}
     >
       <div className="followus-and-links">
-        <div className="follow-us">
-          <span>
-            <FormattedMessage id="Follow us:" defaultMessage="Follow us:" />
-          </span>
-          <SlotRenderer name="followUs" content={content} />
-        </div>
-        <div className="footer-links">
-          <SlotRenderer name="footerLinks" content={content} />
-          <LinkList links={footer_links} />
-        </div>
+        {social_links?.length > 0 && (
+          <div className="follow-us">
+            <span>
+              <FormattedMessage id="Follow us:" defaultMessage="Follow us:" />
+            </span>
+            <SlotRenderer name="followUs" content={content} />
+          </div>
+        )}
+        {footer_links?.length > 0 && (
+          <div className="footer-links">
+            <SlotRenderer name="footerLinks" content={content} />
+            <LinkList links={footer_links} />
+          </div>
+        )}
       </div>
       {footer_logo?.data || footer_logo?.download ? (
         <div className="footer-logo">

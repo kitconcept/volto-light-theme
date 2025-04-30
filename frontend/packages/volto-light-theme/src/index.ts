@@ -21,6 +21,7 @@ import type {
   SiteHeaderSettings,
   SiteThemeSettings,
   SiteFooterSettings,
+  PloneGobrSocialMediaSettings,
 } from './types';
 
 defineMessages({
@@ -55,6 +56,7 @@ declare module '@plone/types' {
       'voltolighttheme.theme': CustomInheritBehavior<SiteThemeSettings>;
       'voltolighttheme.footer': CustomInheritBehavior<SiteFooterSettings>;
       'kitconcept.distributions.footer': CustomInheritBehavior<SiteFooterSettings>;
+      'plonegovbr.socialmedia.settings': CustomInheritBehavior<PloneGobrSocialMediaSettings>;
     };
   }
 }
