@@ -28,7 +28,7 @@ export default function install(config: ConfigType) {
     name: 'coreFooter',
     slot: 'footer',
     component: CoreFooter,
-    predicates: [hasInheritedBehavior('kitconcept.distributions.footer')],
+    predicates: [hasInheritedBehavior('kitconcept.footer')],
   });
 
   config.registerSlotComponent({
