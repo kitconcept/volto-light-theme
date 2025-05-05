@@ -1,6 +1,93 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 6.0.0a23 (2025-04-30)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Do not use the color contrast checker if the field is not in the color map settings config. @sneridagh [#529](https://github.com/kitconcept/volto-light-theme/pull/529)
+- Adjustments to the footer, conditional "Follow us" text and footer_links container. @sneridagh [#529](https://github.com/kitconcept/volto-light-theme/pull/529)
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
+## 6.0.0a22 (2025-04-29)
+
+### Backend
+
+
+#### New features:
+
+- Added `distributions.py` module. Added new behavior: `kitconcept.distributions.footer`.
+  These behaviors power the "distribution" side of VLT customizations.
+  @sneridagh [#525](https://github.com/kitconcept/volto-light-theme/issues/525)
+
+
+#### Bug fixes:
+
+- Adjust help for fields `intranet_flag` `complementary_logo`. @sneridagh [#524](https://github.com/kitconcept/volto-light-theme/issues/524)
+
+
+#### Internal:
+
+- Improve setup profiles for demo and acceptance. @sneridagh [#522](https://github.com/kitconcept/volto-light-theme/issues/522)
+- Remove support for Python 3.10 and 3.11. @sneridagh [#525](https://github.com/kitconcept/volto-light-theme/issues/525)
+
+
+
+### Frontend
+
+#### Breaking
+
+- Remove `Anontools` from the headers.
+  If you want to add them, you can use the `header_actions` field in the site customization behaviors. @sneridagh [#522](https://github.com/kitconcept/volto-light-theme/pull/522)
+- Updated the footer structure and look and feel:
+  - Follow us, powered by `@plonegovbr/volto-social-media`
+  - Footer links
+  - Colophon
+
+  All of them are powered by their slots, so they are customizable.
+
+  @sneridagh [#525](https://github.com/kitconcept/volto-light-theme/pull/525)
+
+#### Feature
+
+- Allow `intranet_flag` in both headers. @sneridagh [#524](https://github.com/kitconcept/volto-light-theme/pull/524)
+- Added distribution core footer, only active if the `kitconcept.distributions.footer` is installed. @sneridagh [#525](https://github.com/kitconcept/volto-light-theme/pull/525)
+
+#### Bugfix
+
+- Minor typo fix in color contrast check message. @danalvrz [#526](https://github.com/kitconcept/volto-light-theme/pull/526)
+- Fix customized object list widget when data doesn't contain a value yet. @davisagli [#527](https://github.com/kitconcept/volto-light-theme/pull/527)
+
+
+
+### Project
+
+
+#### Documentation
+
+- Updated upgrade guide for the removal of the `Anontools` from the headers. @sneridagh [#522](https://github.com/kitconcept/volto-light-theme/pull/522)
+- Added documentation for custom slots present in VLT and how to remove the "Colophon".
+  Added documentation for kitconcept's distribution behaviors. @sneridagh [#525](https://github.com/kitconcept/volto-light-theme/pull/525)
+
+
+
 ## 6.0.0a21 (2025-04-02)
 
 ### Backend

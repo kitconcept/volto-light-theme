@@ -21,6 +21,7 @@ import type {
   SiteHeaderSettings,
   SiteThemeSettings,
   SiteFooterSettings,
+  PloneGobrSocialMediaSettings,
 } from './types';
 
 defineMessages({
@@ -46,6 +47,7 @@ declare module '@plone/types' {
   export interface Content {
     footer_logos_container_width: string;
     footer_logos_size: string;
+    footer_logo_link: string;
   }
 
   export interface Expanders {
@@ -53,6 +55,8 @@ declare module '@plone/types' {
       'voltolighttheme.header': CustomInheritBehavior<SiteHeaderSettings>;
       'voltolighttheme.theme': CustomInheritBehavior<SiteThemeSettings>;
       'voltolighttheme.footer': CustomInheritBehavior<SiteFooterSettings>;
+      'kitconcept.footer': CustomInheritBehavior<SiteFooterSettings>;
+      'plonegovbr.socialmedia.settings': CustomInheritBehavior<PloneGobrSocialMediaSettings>;
     };
   }
 }

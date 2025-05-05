@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { FormattedMessage } from 'react-intl';
 import type { Content } from '@plone/types';
 import cx from 'classnames';
 import config from '@plone/volto/registry';
@@ -90,8 +91,16 @@ const ColorContrastChecker = (props: { id: string; value: string }) => {
           role="alert"
           aria-live="polite"
         >
-          The color contrast ratio ({contrastRatio.toFixed(2)}:1) might not be
-          accesible for all. WCAG Level: {getComplianceLevel(contrastRatio)}
+          <FormattedMessage
+            id="ColorContrastCheckerMessage"
+            defaultMessage={
+              'The color contrast ratio {contrastRatio}:1 might not be accessible for all. WCAG Level: {complianceLevel}'
+            }
+            values={{
+              contrastRatio: contrastRatio.toFixed(1),
+              complianceLevel: getComplianceLevel(contrastRatio),
+            }}
+          />
           <a
             target="_blank"
             href="https://webaim.org/articles/contrast/"

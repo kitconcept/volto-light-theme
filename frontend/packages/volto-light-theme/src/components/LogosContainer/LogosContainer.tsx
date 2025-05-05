@@ -1,41 +1,23 @@
-import type { Content } from '@plone/types';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
-import { useSelector } from 'react-redux';
 import { Container } from '@plone/components';
 import cx from 'classnames';
 import type { SiteFooterSettings } from '../../types';
 
-type FormState = {
-  content: {
-    data: Content;
-  };
-  form: {
-    global: Content;
-  };
+type LogosContainerProps = {
+  logos: SiteFooterSettings['footer_logos'];
+  logos_size: SiteFooterSettings['footer_logos_size'];
+  logos_container_width: SiteFooterSettings['footer_logos_container_width'];
 };
 
-const FooterLogos = () => {
-  const formState = useSelector<FormState, Content>(
-    (state) => state.form.global,
-  );
-  const footerSettings = useSelector<FormState, SiteFooterSettings>(
-    (state) =>
-      state.content.data?.['@components']?.inherit?.['voltolighttheme.footer']
-        ?.data,
-  );
-  const logos = formState?.footer_logos || footerSettings?.footer_logos;
-  const logosSize =
-    formState?.footer_logos_size || footerSettings?.footer_logos_size;
-  const footer_logos_container_width =
-    formState?.footer_logos_container_width ||
-    footerSettings?.footer_logos_container_width;
+const LogosContainer = (props: LogosContainerProps) => {
+  const { logos, logos_size, logos_container_width } = props;
 
   return (
-    <Container className={cx({ [footer_logos_container_width]: 1 })}>
+    <Container className={cx({ [logos_container_width]: 1 })}>
       <ul
-        className={cx('footer-logos', {
-          [logosSize]: logosSize,
+        className={cx('logos-container', {
+          [logos_size]: logos_size,
         })}
       >
         {logos && Array.isArray(logos)
@@ -70,12 +52,13 @@ const FooterLogos = () => {
               if (!logoInfo.src) return null;
 
               return (
-                <li className="item" key={logoInfo['@id']}>
+                <li className="item" key={logo['@id']}>
                   {/* @ts-ignore */}
                   <ConditionalLink
                     condition={logoInfo.href}
                     to={logoInfo.href}
                     title={logoInfo.hrefTitle || logoInfo.srcAlt}
+                    openLinkInNewTab={logo.openInNewTab}
                   >
                     <img src={logoInfo.src} alt={logoInfo.srcAlt} />
                   </ConditionalLink>
@@ -88,4 +71,4 @@ const FooterLogos = () => {
   );
 };
 
-export default FooterLogos;
+export default LogosContainer;

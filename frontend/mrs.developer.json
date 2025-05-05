@@ -4,7 +4,7 @@
     "package": "@plone/volto",
     "url": "git@github.com:plone/volto.git",
     "https": "https://github.com/plone/volto.git",
-    "tag": "18.11.0",
+    "tag": "18.14.1",
     "filterBlobs": true
   },
   "volto-button-block": {
@@ -62,5 +62,13 @@
     "package": "@kitconcept/volto-banner-block",
     "url": "git@github.com:kitconcept/volto-banner-block.git",
     "https": "https://github.com/kitconcept/volto-banner-block.git"
+  },
+  "volto-social-media": {
+    "develop": false,
+    "output": "packages",
+    "package": "@plonegovbr/volto-social-media",
+    "url": "git@github.com:plonegovbr/social-media.git",
+    "https": "https://github.com/plonegovbr/social-media.git",
+    "branch": "main"
   }
 }

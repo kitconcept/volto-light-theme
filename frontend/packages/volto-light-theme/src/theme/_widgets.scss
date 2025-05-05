@@ -183,4 +183,12 @@ span.color-contrast-label {
       cursor: pointer;
     }
   }
+
+  .olw-item-content {
+    margin-bottom: 20px;
+  }
+
+  #sidebar-properties &:first-child {
+    margin-top: 10px;
+  }
 }
