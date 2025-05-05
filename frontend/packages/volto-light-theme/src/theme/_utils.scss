@@ -37,7 +37,7 @@
 
 @mixin default-aspect-ratio {
   height: auto; // needed width width, height props and aspect ratio
-  aspect-ratio: $aspect-ratio;
+  aspect-ratio: var(--image-aspect-ratio, $aspect-ratio);
   object-fit: cover;
   object-position: top left;
 }

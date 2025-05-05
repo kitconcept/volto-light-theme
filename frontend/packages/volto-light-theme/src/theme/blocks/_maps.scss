@@ -1,14 +1,14 @@
 .block.maps {
   iframe {
     height: unset;
-    aspect-ratio: $aspect-ratio;
+    aspect-ratio: var(--image-aspect-ratio, $aspect-ratio);
   }
   &.align.left {
     iframe {
       height: unset;
       margin-right: 20px !important;
       margin-bottom: 20px !important;
-      aspect-ratio: $aspect-ratio;
+      aspect-ratio: var(--image-aspect-ratio, $aspect-ratio);
       @container (max-width: #{$largest-mobile-screen}) {
         margin-bottom: $spacing-large !important;
       }
@@ -21,7 +21,7 @@
       height: unset;
       margin-bottom: 20px !important;
       margin-left: 20px !important;
-      aspect-ratio: $aspect-ratio;
+      aspect-ratio: var(--image-aspect-ratio, $aspect-ratio);
       @container (max-width: #{$largest-mobile-screen}) {
         margin-bottom: $spacing-large !important;
       }

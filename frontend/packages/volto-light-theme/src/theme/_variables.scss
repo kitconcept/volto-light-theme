@@ -114,6 +114,11 @@ $secondary-grey: #ececec !default;
   syntax: '<color>';
 }
 
+@property --image-aspect-ratio {
+  inherits: true;
+  syntax: '<number> | auto';
+}
+
 :root {
   --background: initial;
   --text-color: initial;
