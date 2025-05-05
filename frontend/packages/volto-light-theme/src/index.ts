@@ -55,7 +55,7 @@ declare module '@plone/types' {
       'voltolighttheme.header': CustomInheritBehavior<SiteHeaderSettings>;
       'voltolighttheme.theme': CustomInheritBehavior<SiteThemeSettings>;
       'voltolighttheme.footer': CustomInheritBehavior<SiteFooterSettings>;
-      'kitconcept.distributions.footer': CustomInheritBehavior<SiteFooterSettings>;
+      'kitconcept.footer': CustomInheritBehavior<SiteFooterSettings>;
       'plonegovbr.socialmedia.settings': CustomInheritBehavior<PloneGobrSocialMediaSettings>;
     };
   }
