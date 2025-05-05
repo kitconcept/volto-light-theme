@@ -88,6 +88,10 @@ export type StickyMenuSettings = {
   sticky_menu_foreground_color: string;
 };
 
+export type PloneGobrSocialMediaSettings = {
+  social_links: Array<iconLink>;
+};
+
 export type CustomInheritBehavior<T> = {
   data: T;
   from: {

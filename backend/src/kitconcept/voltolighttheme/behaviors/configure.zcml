@@ -33,10 +33,10 @@
       />
 
   <plone:behavior
-      name="kitconcept.distributions.footer"
-      title="kitconcept distributions footer customizations"
-      description="Set of fields to customize kitconcept's distribution sites and subsites"
-      provides=".distributions.IKitconceptVoltoFooterSettings"
+      name="kitconcept.footer"
+      title="kitconcept specific footer customizations"
+      description="Set of fields to customize kitconcept's distributions sites and subsites"
+      provides=".footer.IKitconceptVoltoFooterSettings"
       />
 
   <plone:behavior

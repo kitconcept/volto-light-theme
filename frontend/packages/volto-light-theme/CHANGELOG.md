@@ -8,6 +8,13 @@
 
 <!-- towncrier release notes start -->
 
+## 6.0.0-alpha.23 (2025-04-30)
+
+### Bugfix
+
+- Do not use the color contrast checker if the field is not in the color map settings config. @sneridagh [#529](https://github.com/kitconcept/volto-light-theme/pull/529)
+- Adjustments to the footer, conditional "Follow us" text and footer_links container. @sneridagh [#529](https://github.com/kitconcept/volto-light-theme/pull/529)
+
 ## 6.0.0-alpha.22 (2025-04-29)
 
 ### Breaking
