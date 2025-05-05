@@ -183,7 +183,15 @@ export class Edit extends Component {
                     )
                 : null
             }
-            className={`${blocksConfig?.[type]?.blockModel === 3 && 'block-inner-container'} ${this.props.data.variation ? this.props.data.variation : ''}`}
+            // START CUSTOMIZATION
+            className={cx(this.props.data.variation, {
+              'block-inner-container': blocksConfig?.[type]?.blockModel === 3,
+              [`block ${type}`]: blocksConfig?.[type]?.blockModel !== 3,
+              selected: this.props.selected || this.props.multiSelected,
+              multiSelected: this.props.multiSelected,
+              hovered: this.props.hovered === this.props.id,
+            })}
+            // END CUSTOMIZATION
             style={{ outline: 'none' }}
             ref={this.blockNode}
             // The tabIndex is required for the keyboard navigation
@@ -236,12 +244,14 @@ export class Edit extends Component {
                     )
                 : null
             }
-            className={cx({
-              type: type,
+            // START CUSTOMIZATION
+            className={cx(type, {
+              block: blocksConfig?.[type]?.blockModel !== 3,
               selected: this.props.selected || this.props.multiSelected,
               multiSelected: this.props.multiSelected,
               hovered: this.props.hovered === this.props.id,
             })}
+            // END CUSTOMIZATION
             style={{ outline: 'none' }}
             ref={this.blockNode}
             // The tabIndex is required for the keyboard navigation

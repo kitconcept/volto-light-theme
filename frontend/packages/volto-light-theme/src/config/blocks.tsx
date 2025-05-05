@@ -61,7 +61,6 @@ declare module '@plone/types' {
     unwantedButtons?: string[];
     imageScale?: string;
     allowed_headings?: string[][];
-    blockModel?: any;
   }
   export interface BlocksFormData {
     headline: string;
@@ -278,9 +277,6 @@ export default function install(config: ConfigType) {
   config.blocks.blocksConfig.gridBlock.blocksConfig.listing.allowed_headline_tags =
     [['h2', 'h2']];
 
-  config.blocks.blocksConfig.title.category = 'heading';
-  config.blocks.blocksConfig.title.blockModel = config.settings.blockModel;
-
   config.blocks.blocksConfig.introduction = {
     ...config.blocks.blocksConfig.introduction,
     unwantedButtons: ['heading-three', 'blockquote'],
@@ -291,8 +287,6 @@ export default function install(config: ConfigType) {
     ...config.blocks.blocksConfig.slate,
     schemaEnhancer: defaultStylingSchema,
     sidebarTab: 1,
-    category: 'inline',
-    blockModel: config.settings.blockModel,
   };
 
   config.blocks.blocksConfig.teaser = {
@@ -343,8 +337,6 @@ export default function install(config: ConfigType) {
   config.blocks.blocksConfig.__button = {
     ...config.blocks.blocksConfig.__button,
     schemaEnhancer: ButtonStylingSchema,
-    category: 'action',
-    blockModel: config.settings.blockModel,
   };
 
   config.blocks.blocksConfig.eventMetadata = {

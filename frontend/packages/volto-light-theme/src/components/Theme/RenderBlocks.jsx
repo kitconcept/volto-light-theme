@@ -1,4 +1,5 @@
 import React from 'react';
+import { defineMessages, useIntl } from 'react-intl';
 import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
 import {
   applyBlockDefaults,
@@ -6,11 +7,9 @@ import {
   getBlocksLayoutFieldname,
   hasBlocksData,
 } from '@plone/volto/helpers/Blocks/Blocks';
-import { defineMessages, useIntl } from 'react-intl';
-
 import StyleWrapper from '@plone/volto/components/manage/Blocks/Block/StyleWrapper';
 import config from '@plone/volto/registry';
-import { default as ViewDefaultBlock } from '@plone/volto/components/manage/Blocks/Block/DefaultView';
+import ViewDefaultBlock from '@plone/volto/components/manage/Blocks/Block/DefaultView';
 import MaybeWrap from '@plone/volto/components/manage/MaybeWrap/MaybeWrap';
 import RenderEmptyBlock from '@plone/volto/components/theme/View/RenderEmptyBlock';
 
@@ -36,6 +35,7 @@ const RenderBlocks = (props) => {
   const blocksConfig = props.blocksConfig || config.blocks.blocksConfig;
   const CustomTag = props.as || React.Fragment;
 
+  // If the global block model is set to 3, we use the old RenderBlocks component
   if (config.settings.blockModel !== 3) return <RenderBlocksV2 {...props} />;
 
   return hasBlocksData(content) ? (

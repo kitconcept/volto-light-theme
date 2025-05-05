@@ -49,8 +49,8 @@
 
 @mixin adjustMarginsToEditContainer($width) {
   @container (max-width: #{$width + 2 * $spacing-medium}) {
-    margin-right: 0;
-    margin-left: 0;
+    margin-right: $spacing-medium;
+    margin-left: $spacing-medium;
   }
 }
 
@@ -426,6 +426,10 @@ body.has-toolbar.has-sidebar .drag.handle.wrapper {
   margin-left: -30px !important;
 }
 
+body.has-toolbar.has-sidebar .block .ui.basic.button.delete-button {
+  margin-right: -30px !important;
+}
+
 // Listings edge case, conflicting with Pastanaga CSS
 .listing-item {
   width: initial;
@@ -457,230 +461,6 @@ body.has-toolbar.has-sidebar .drag.handle.wrapper {
       margin-top: $spacing-small;
       @include default-container-width();
     }
-  }
-}
-
-.block {
-  // Add Block button
-  button.ui.basic.icon.button.block-add-button.new-add-block {
-    z-index: 98;
-    bottom: -11px;
-    background: $white !important;
-    color: rgb(0, 112, 162) !important;
-  }
-  // Block controls
-  .block-controls {
-    position: absolute;
-    z-index: 98;
-    top: 0;
-    right: 0;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: end;
-
-    .ui.basic.button {
-      line-height: 1rem;
-    }
-
-    .ui.basic.button.delete-button {
-      position: relative;
-      padding: 3px;
-      border-radius: 50% !important;
-      margin-top: 6px !important;
-      margin-right: 8px !important;
-      background: $white !important;
-
-      &:hover {
-        background: $white !important;
-        opacity: 1 !important;
-      }
-    }
-
-    .ui.basic.button.move-down-button {
-      padding: 3px;
-      border: none;
-      border-radius: 50% !important;
-      margin-top: 6px !important;
-      margin-right: 8px;
-      background: $white !important;
-      &:hover {
-        background: $white !important;
-        opacity: 1 !important;
-      }
-    }
-
-    .ui.basic.button.move-up-button {
-      padding: 3px;
-      border: none;
-      border-radius: 50% !important;
-      margin-top: 6px !important;
-      margin-right: 8px !important;
-      background: $white !important;
-      &:hover {
-        background: $white !important;
-        opacity: 1 !important;
-      }
-    }
-  }
-
-  .power-user-menu {
-    z-index: 100;
-    left: unset;
-  }
-
-  .slate-editor:has(span[data-slate-placeholder='true']) {
-    & > [data-slate-node='value'] {
-      min-width: $narrow-container-width;
-    }
-    .block-inner-container {
-      flex-direction: row;
-    }
-  }
-
-  &.previous--has--different--backgroundColor {
-    .power-user-menu {
-      z-index: 100;
-      top: calc($color-block-change-vertical-spacing + 30px);
-      left: unset;
-    }
-  }
-
-  &:hover {
-    .border-line {
-      background-color: rgb(0, 112, 162, 0.5);
-    }
-  }
-
-  &.selected .border-line,
-  &.multiSelected .border-line {
-    background-color: rgb(0, 112, 162);
-  }
-
-  &.multiSelected:has(+ .block.multiSelected) {
-    .border-bottom {
-      background-color: transparent;
-      background-image: linear-gradient(
-        to right,
-        rgb(0, 112, 162),
-        rgb(0, 112, 162) 5px,
-        transparent 5px,
-        transparent
-      );
-      background-size: 10px 100%;
-    }
-  }
-
-  &.multiSelected + .block.multiSelected {
-    .border-top {
-      display: none;
-    }
-  }
-
-  .border-line {
-    position: absolute;
-    z-index: 97;
-    background-color: transparent;
-    content: '';
-    &.border-top {
-      top: -1px;
-      width: 100%;
-      height: 2px;
-    }
-    &.border-bottom {
-      bottom: -1px;
-      width: 100%;
-      height: 2px;
-    }
-    &.border-left {
-      top: 0;
-      left: 0;
-      width: 2px;
-      height: 100%;
-    }
-    &.border-right {
-      top: 0;
-      right: 0;
-      width: 2px;
-      height: 100%;
-    }
-  }
-}
-
-.block-inner-container {
-  @include layout-container-width();
-  display: flex;
-  justify-content: var(--block-alignment, start);
-
-  // Default spacing between sibling blocks
-  padding-bottom: $block-vertical-space;
-}
-
-// Blocks spatial relationships by category
-.category-heading {
-  .block-inner-container {
-    @include default-container-width();
-    @include adjustMarginsToContainer($default-container-width);
-  }
-
-  // Adjust spacing depending on next block's category
-  &:has(+ .category-separator) {
-    .block-inner-container {
-      padding-bottom: 0 !important;
-    }
-  }
-}
-
-.category-inline {
-  .block-inner-container {
-    @include narrow-container-width();
-    @include adjustMarginsToContainer($narrow-container-width);
-  }
-
-  // Adjust spacing depending on next block's category
-  &:has(+ .category-separator) {
-    .block-inner-container {
-      padding-bottom: 0 !important;
-    }
-  }
-
-  &:has(+ .category-action) {
-    .block-inner-container {
-      padding-bottom: $spacing-large !important;
-    }
-  }
-
-  &:has(+ .category-heading) {
-    .block-inner-container {
-      padding-bottom: $spacing-large !important;
-    }
-  }
-}
-
-.category-action {
-  .block-inner-container {
-    @include variable-container-width();
-  }
-
-  // Adjust spacing depending on next block's category
-  &:has(+ .category-separator) {
-    .block-inner-container {
-      padding-bottom: 0 !important;
-    }
-  }
-}
-
-.category-separator {
-  .block-inner-container {
-    @include variable-container-width();
-    padding-top: $spacing-xlarge;
-    padding-bottom: $spacing-xlarge;
-  }
-}
-
-.category-image-card {
-  .block-inner-container {
-    padding-top: $spacing-large;
-    padding-bottom: $spacing-large;
   }
 }
 
