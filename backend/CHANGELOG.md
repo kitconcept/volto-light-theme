@@ -2,6 +2,31 @@
 
 <!-- towncrier release notes start -->
 
+## 6.0.0a23 (2025-04-30)
+
+No significant changes.
+
+
+## 6.0.0a22 (2025-04-29)
+
+
+### New features:
+
+- Added `distributions.py` module. Added new behavior: `kitconcept.distributions.footer`.
+  These behaviors power the "distribution" side of VLT customizations.
+  @sneridagh [#525](https://github.com/kitconcept/volto-light-theme/issues/525)
+
+
+### Bug fixes:
+
+- Adjust help for fields `intranet_flag` `complementary_logo`. @sneridagh [#524](https://github.com/kitconcept/volto-light-theme/issues/524)
+
+
+### Internal:
+
+- Improve setup profiles for demo and acceptance. @sneridagh [#522](https://github.com/kitconcept/volto-light-theme/issues/522)
+- Remove support for Python 3.10 and 3.11. @sneridagh [#525](https://github.com/kitconcept/volto-light-theme/issues/525)
+
 ## 6.0.0a21 (2025-04-02)
 
 

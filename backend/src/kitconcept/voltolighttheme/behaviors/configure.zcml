@@ -32,4 +32,11 @@
       provides=".customizations.ISiteFooterCustomizationSettings"
       />
 
+  <plone:behavior
+      name="kitconcept.footer"
+      title="kitconcept specific footer customizations"
+      description="Set of fields to customize kitconcept's distributions sites and subsites"
+      provides=".footer.IKitconceptVoltoFooterSettings"
+      />
+
 </configure>

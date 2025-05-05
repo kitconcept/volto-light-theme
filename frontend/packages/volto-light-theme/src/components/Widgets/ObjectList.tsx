@@ -103,11 +103,11 @@ export type ObjectListWidgetProps = {
   /**
    * The schema for the ObjectListWidget.
    */
-  schema: ObjectListWidgetSchema;
+  schema?: ObjectListWidgetSchema;
   /**
    * The name of the schema.
    */
-  schemaName: string;
+  schemaName?: string | undefined;
   /**
    * An optional function to enhance the schema.
    * @param args An object containing the schema, form data, intl, navRoot, and contentType.
@@ -121,15 +121,36 @@ export type ObjectListWidgetProps = {
   }) => JSONSchema;
 };
 
+const EMPTY_SCHEMA = {
+  fieldsets: [
+    {
+      id: 'default',
+      title: 'Default',
+      fields: [],
+    },
+  ],
+  properties: {},
+  required: [],
+};
+
 const ObjectListWidget = (props: ObjectListWidgetProps) => {
-  const { block, fieldSet, id, value, onChange, schemaEnhancer, schemaName } =
-    props;
+  const {
+    block,
+    fieldSet,
+    id,
+    value = [],
+    onChange,
+    schemaEnhancer,
+    schemaName,
+  } = props;
 
   const schema =
     config.getUtility({
       type: 'schema',
       name: schemaName,
-    }).method || props.schema;
+    }).method ||
+    props.schema ||
+    EMPTY_SCHEMA;
 
   const [localActiveObject, setLocalActiveObject] = useState(
     props.activeObject ?? value?.length - 1,
@@ -193,8 +214,8 @@ const ObjectListWidget = (props: ObjectListWidgetProps) => {
                 intl,
               });
 
-              onChange(id, [...value, dataWithDefaults]);
-              setActiveObject(value.length);
+              onChange(id, [...(value || []), dataWithDefaults]);
+              setActiveObject(value?.length || 0);
             }}
           >
             <Icon name={addSVG} size="18px" />

@@ -1,4 +1,5 @@
 const addons = [
+  '@plonegovbr/volto-social-media',
   '@eeacms/volto-accordion-block',
   '@kitconcept/volto-button-block',
   '@kitconcept/volto-heading-block',

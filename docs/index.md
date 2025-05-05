@@ -41,6 +41,8 @@ _Volto Light Theme_
 :caption: How-to guides
 how-to-guides/install
 how-to-guides/summary
+how-to-guides/remove-colophon
+how-to-guides/social-media
 how-to-guides/contributing
 how-to-guides/releases
 how-to-guides/upgrade-guide
@@ -63,6 +65,7 @@ conceptual-guides/block-model-v3
 :caption: Reference
 reference/colors
 reference/widgets
+reference/slots
 reference/helpers
 reference/feature-flags
 reference/recommended-addons

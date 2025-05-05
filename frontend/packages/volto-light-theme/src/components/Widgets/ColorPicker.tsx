@@ -3,6 +3,7 @@ import { HexColorPicker, HexColorInput } from 'react-colorful';
 import { Button, Dialog, DialogTrigger, Popover } from 'react-aria-components';
 import { ColorSwatch, CloseIcon } from '@plone/components';
 import ColorContrastChecker from './ColorContrastChecker';
+import config from '@plone/volto/registry';
 
 const ColorPicker = (props: {
   id: string;
@@ -48,7 +49,9 @@ const ColorPicker = (props: {
           <CloseIcon size="S" />
         </Button>
       </FormFieldWrapper>
-      <ColorContrastChecker {...props} />
+      {config.settings.colorMap[props.id] && (
+        <ColorContrastChecker {...props} />
+      )}
     </>
   );
 };

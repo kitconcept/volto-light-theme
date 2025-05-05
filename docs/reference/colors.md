@@ -1,3 +1,12 @@
+---
+myst:
+  html_meta:
+    "description": "Volto Light Theme colors definitions"
+    "property=og:description": "Volto Light Theme colors definitions"
+    "property=og:title": "Colors"
+    "keywords": "Volto Light Theme, Colors"
+---
+
 # Colors
 
 The VLT has migrated to use the standardized color definitions in Volto.
@@ -22,7 +31,26 @@ The site theme considers three main color pairs:
 --accent-foreground-color;
 ```
 
-As an additional layer on top of this, some semantic custom properties for the basic layout sections have been set in place in a way we feel helps create a cohesive final design. For example, in the case of the site's Header and Footer:
+### Color mapping to site layout elements
+
+As an additional layer on top of this, some semantic custom properties for the basic layout sections have been set in place in a way we feel helps create a cohesive final design.
+
+#### Navigation text color:
+`--primary-foreground-color`
+
+#### Fat menu and breadcrumbs text color
+`--accent-foreground-color`
+
+#### Fat menu background color
+`--accent-color`
+
+#### Footer font color
+`--secondary-foreground-color`
+
+#### Footer background color
+`--secondary-color`
+
+For example, in the case of the site's Header and Footer:
 
 ```scss
   // Header
@@ -33,7 +61,6 @@ As an additional layer on top of this, some semantic custom properties for the b
   --footer-background: var(--secondary-color);
   --footer-foreground: var(--secondary-foreground-color);
 ```
-
 
 ## Block themes
 
