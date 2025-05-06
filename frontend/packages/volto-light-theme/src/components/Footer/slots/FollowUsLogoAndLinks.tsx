@@ -4,7 +4,7 @@ import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
 import { Container } from '@plone/components';
 import { useLiveData } from '@kitconcept/volto-light-theme/helpers/useLiveData';
-import LinkList from '../LinkList';
+import LinkList from '../../../primitives/LinkList';
 import type {
   PloneGobrSocialMediaSettings,
   SiteFooterSettings,

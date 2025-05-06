@@ -10,7 +10,6 @@ import ObjectList from '../components/Widgets/ObjectList';
 import { headerActionsSchema } from '../components/Widgets/schema/headerActionsSchema';
 import { footerLogosSchema } from '../components/Widgets/schema/footerLogosSchema';
 import { footerLinksSchema } from '../components/Widgets/schema/footerLinksSchema';
-import { stickyMenuSchema } from '../components/Widgets/schema/stickyMenuSchema';
 import { iconLinkListSchema } from '../components/Widgets/schema/iconLinkListSchema';
 
 declare module '@plone/types' {
@@ -57,12 +56,6 @@ export default function install(config: ConfigType) {
     name: 'footerLinks',
     type: 'schema',
     method: footerLinksSchema,
-  });
-
-  config.registerUtility({
-    name: 'stickyMenu',
-    type: 'schema',
-    method: stickyMenuSchema,
   });
 
   config.registerUtility({

@@ -43,13 +43,6 @@ export type iconLink = {
   openInNewTab: boolean;
 };
 
-type stickyMenu = {
-  '@id': string;
-  title: string;
-  icon: Image;
-  href: Array<hrefType>;
-};
-
 export type SiteHeaderSettings = {
   logo: Image & { data?: string };
   complementary_logo: Image & { data?: string };
@@ -83,7 +76,7 @@ export type SiteFooterSettings = {
 };
 
 export type StickyMenuSettings = {
-  sticky_menu: Array<stickyMenu>;
+  sticky_menu: Array<iconLink>;
   sticky_menu_color: string;
   sticky_menu_foreground_color: string;
 };

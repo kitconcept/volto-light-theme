@@ -1,7 +1,7 @@
 import isEmpty from 'lodash/isEmpty';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
-import type { Link } from '../../types';
+import type { Link } from '../types';
 
 type LinksProps = { links: Array<Link> };
 

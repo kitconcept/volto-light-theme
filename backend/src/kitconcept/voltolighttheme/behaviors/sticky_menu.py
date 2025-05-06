@@ -55,7 +55,7 @@ class IStickyMenuSettings(model.Schema):
         "sticky_menu",
         frontendOptions={
             "widget": "object_list",
-            "widgetProps": {"schemaName": "stickyMenu"},
+            "widgetProps": {"schemaName": "iconLinkList"},
         },
     )
     sticky_menu = JSONField(
