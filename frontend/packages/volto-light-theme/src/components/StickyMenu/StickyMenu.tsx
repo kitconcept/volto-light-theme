@@ -1,9 +1,7 @@
-import type { Content } from '@plone/types';
-import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
-import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
-import type { StickyMenuSettings } from '../../types';
 import { useLiveData } from '@kitconcept/volto-light-theme/helpers/useLiveData';
 import IconLinkList from '@kitconcept/volto-light-theme/primitives/IconLinkList';
+import type { StickyMenuSettings } from '../../types';
+import type { Content } from '@plone/types';
 
 const StickyMenu = ({ content }: { content: Content }) => {
   const menuData = useLiveData<StickyMenuSettings['sticky_menu']>(
