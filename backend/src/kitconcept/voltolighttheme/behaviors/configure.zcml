@@ -39,4 +39,11 @@
       provides=".footer.IKitconceptVoltoFooterSettings"
       />
 
+  <plone:behavior
+      name="kitconcept.sticky_menu"
+      title="Sticky menu"
+      description="Sticky menu showing fixed in the right side of the screen"
+      provides=".sticky_menu.IStickyMenuSettings"
+      />
+
 </configure>

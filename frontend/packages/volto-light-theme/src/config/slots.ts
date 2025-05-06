@@ -4,6 +4,7 @@ import FooterLogos from '../components/Footer/slots/FooterLogos';
 import FollowUsLogoAndLinks from '../components/Footer/slots/FollowUsLogoAndLinks';
 import Colophon from '../components/Footer/slots/Colophon';
 import CoreFooter from '../components/Footer/slots/CoreFooter';
+import StickyMenu from '../components/StickyMenu/StickyMenu';
 import type { Content } from '@plone/types';
 
 export function hasInheritedBehavior(behavior: string) {
@@ -16,6 +17,12 @@ export default function install(config: ConfigType) {
     slot: 'aboveHeader',
     name: 'Theming',
     component: Theming,
+  });
+
+  config.registerSlotComponent({
+    slot: 'aboveHeader',
+    name: 'StickyMenu',
+    component: StickyMenu,
   });
 
   config.registerSlotComponent({

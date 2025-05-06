@@ -1,6 +1,6 @@
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
-import type { iconLink } from '../../types';
+import type { iconLink } from '../types';
 
 type IconLinkListProps = {
   iconLinks: Array<iconLink>;

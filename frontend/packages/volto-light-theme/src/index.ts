@@ -21,6 +21,7 @@ import type {
   SiteHeaderSettings,
   SiteThemeSettings,
   SiteFooterSettings,
+  StickyMenuSettings,
   PloneGobrSocialMediaSettings,
 } from './types';
 
@@ -55,6 +56,7 @@ declare module '@plone/types' {
       'voltolighttheme.header': CustomInheritBehavior<SiteHeaderSettings>;
       'voltolighttheme.theme': CustomInheritBehavior<SiteThemeSettings>;
       'voltolighttheme.footer': CustomInheritBehavior<SiteFooterSettings>;
+      'kitconcept.sticky_menu': CustomInheritBehavior<StickyMenuSettings>;
       'kitconcept.footer': CustomInheritBehavior<SiteFooterSettings>;
       'plonegovbr.socialmedia.settings': CustomInheritBehavior<PloneGobrSocialMediaSettings>;
     };

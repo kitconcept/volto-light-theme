@@ -8,6 +8,14 @@
 
 <!-- towncrier release notes start -->
 
+## 6.0.0-alpha.24 (2025-05-06)
+
+### Feature
+
+- Added `sticky_menu` slot. @sneridagh [#523](https://github.com/kitconcept/volto-light-theme/pull/523)
+- Better naming for the specific kitconcept's behaviors for distributions. @sneridagh [#530](https://github.com/kitconcept/volto-light-theme/pull/530)
+- Use `--image-aspect-ratio` for all images. @danalvrz [#533](https://github.com/kitconcept/volto-light-theme/pull/533)
+
 ## 6.0.0-alpha.23 (2025-04-30)
 
 ### Bugfix
