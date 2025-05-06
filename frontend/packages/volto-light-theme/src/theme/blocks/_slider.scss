@@ -20,7 +20,10 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
 
     img {
       // Override Volto's Image Component inline style aspect ratio.
-      aspect-ratio: var(--image-aspect-ratio, $sliderImagesAspectRatio) !important;
+      aspect-ratio: var(
+        --image-aspect-ratio,
+        $sliderImagesAspectRatio
+      ) !important;
     }
   }
 
