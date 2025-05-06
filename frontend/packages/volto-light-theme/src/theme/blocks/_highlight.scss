@@ -1,4 +1,6 @@
 .block.highlight {
+  --highlight-images-aspect-ratio: var(--image-aspect-ratio, 1.7777777778);
+
   .teaser-item.top .highlight-description {
     .title h2 {
       @include highlight-title();

@@ -82,7 +82,7 @@
       img {
         width: 220px;
         height: min-content;
-        aspect-ratio: $aspect-ratio !important;
+        aspect-ratio: var(--image-aspect-ratio, $aspect-ratio) !important;
         @container (max-width: #{$largest-mobile-screen}) {
           width: 100%;
           min-width: 335px;
@@ -177,7 +177,7 @@
       img.item-image {
         width: 100%;
         margin: 0;
-        aspect-ratio: $aspect-ratio !important;
+        aspect-ratio: var(--image-aspect-ratio, $aspect-ratio) !important;
       }
 
       .item {
