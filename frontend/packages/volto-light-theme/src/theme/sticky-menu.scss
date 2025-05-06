@@ -39,8 +39,12 @@
       height: auto;
     }
   }
+
+  @media only screen and (max-width: $largest-mobile-screen) {
+    display: none;
+  }
 }
 
 body.view-editview .sticky-menu {
-  // display: none;
+  display: none;
 }
