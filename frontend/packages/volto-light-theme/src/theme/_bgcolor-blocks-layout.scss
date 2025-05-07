@@ -120,6 +120,23 @@
       }
     }
 
+    .card .card-wrapper {
+      .actions .button {
+        border-color: var(--theme-foreground-color);
+          background-color: var(--theme-color);
+
+          color: var(--theme-foreground-color);
+
+          &:hover,
+          &:active,
+          &:focus {
+            border-color: var(--theme-foreground-color);
+            background-color: var(--theme-foreground-color);
+            color: var(--theme-color);
+          }
+      }
+    }
+
     // Teaser
     &.teaser {
       .teaser-item {

@@ -63,6 +63,33 @@
       margin: 0;
       @include body-text();
     }
+
+    p.description:not(:last-child) {
+      margin-bottom: 40px;
+    }
+
+    .actions {
+      .button {
+        @include body-text-bold();
+        text-decoration: none;
+        padding: 8px 20px;
+        border: 1px solid $black;
+        border-radius: unset;
+        margin: 0;
+        background: none;
+        border-color: var(--theme-foreground-color);
+        background-color: var(--theme-color);
+        color: var(--theme-foreground-color);
+
+        &:hover,
+        &:active,
+        &:focus {
+          border-color: var(--theme-foreground-color);
+          background-color: var(--theme-foreground-color);
+          color: var(--theme-color);
+        }
+      }
+    }
   }
 }
 
