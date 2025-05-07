@@ -71,15 +71,15 @@
     .actions {
       .button {
         @include body-text-bold();
-        text-decoration: none;
         padding: 8px 20px;
         border: 1px solid $black;
+        border-color: var(--theme-foreground-color);
         border-radius: unset;
         margin: 0;
         background: none;
-        border-color: var(--theme-foreground-color);
         background-color: var(--theme-color);
         color: var(--theme-foreground-color);
+        text-decoration: none;
 
         &:hover,
         &:active,
