@@ -29,7 +29,7 @@ const TeaserDefaultTemplate = (props) => {
   const Summary =
     config.getComponent({
       name: 'Summary',
-      dependencies: [data['@type']],
+      dependencies: [href['@type']],
     }).component || DefaultSummary;
   const { openExternalLinkInNewTab } = config.settings;
 
@@ -75,7 +75,7 @@ const TeaserDefaultTemplate = (props) => {
                 )
               )}
               <div className="content">
-                <Summary item={data} HeadingTag="h2" />
+                <Summary item={{ ...href, ...data }} HeadingTag="h2" />
               </div>
             </div>
           </MaybeWrap>
