@@ -1,3 +1,82 @@
+export const ObjectBrowserItem = {
+  '@id': '/folder/page',
+  '@type': 'Document',
+  description:
+    'The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.',
+  Description:
+    'The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.',
+  Title: 'Page',
+  title: 'Page',
+  getRemoteUrl: null,
+  hasPreviewImage: true,
+  head_title: null,
+  image_field: 'preview_image',
+  image_scales: {
+    preview_image: [
+      {
+        'content-type': 'image/jpeg',
+        download: '/black-starry-night.jpg',
+        filename: 'black-starry-night.jpg',
+        height: 1708,
+        scales: {
+          great: {
+            download: '/black-starry-night.jpg',
+            height: 854,
+            width: 1200,
+          },
+          huge: {
+            download: '/black-starry-night.jpg',
+            height: 1138,
+            width: 1600,
+          },
+          icon: {
+            download: '/black-starry-night.jpg',
+            height: 22,
+            width: 32,
+          },
+          large: {
+            download: '/black-starry-night.jpg',
+            height: 569,
+            width: 800,
+          },
+          larger: {
+            download: '/black-starry-night.jpg',
+            height: 711,
+            width: 1000,
+          },
+          mini: {
+            download: '/black-starry-night.jpg',
+            height: 142,
+            width: 200,
+          },
+          preview: {
+            download: '/black-starry-night.jpg',
+            height: 284,
+            width: 400,
+          },
+          teaser: {
+            download: '/black-starry-night.jpg',
+            height: 427,
+            width: 600,
+          },
+          thumb: {
+            download: '/black-starry-night.jpg',
+            height: 91,
+            width: 128,
+          },
+          tile: {
+            download: '/black-starry-night.jpg',
+            height: 45,
+            width: 64,
+          },
+        },
+        size: 693013,
+        width: 2400,
+      },
+    ],
+  },
+};
+
 export const teaserBlock = {
   '@type': 'teaser',
   description:
