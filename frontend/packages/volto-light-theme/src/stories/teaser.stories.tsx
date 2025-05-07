@@ -18,10 +18,14 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Left: Story = {
   render: (args) => (
     <Wrapper>
-      <TeaserDefaultBody {...args} />
+      <div style={{ width: 'var(--default-container-width)' }}>
+        <BlockWrapper {...args}>
+          <TeaserDefaultBody {...args} />
+        </BlockWrapper>
+      </div>
     </Wrapper>
   ),
   args: {
@@ -29,12 +33,34 @@ export const Default: Story = {
   },
 };
 
+export const Right: Story = {
+  render: (args) => (
+    <Wrapper>
+      <div style={{ width: 'var(--default-container-width)' }}>
+        <BlockWrapper {...args}>
+          <TeaserDefaultBody {...args} />
+        </BlockWrapper>
+      </div>
+    </Wrapper>
+  ),
+  args: {
+    data: {
+      ...teaserBlock,
+      styles: {
+        align: 'right',
+      },
+    },
+  },
+};
+
 export const Center: Story = {
   render: (args) => (
     <Wrapper>
-      <BlockWrapper {...args}>
-        <TeaserDefaultBody {...args} />
-      </BlockWrapper>
+      <div style={{ width: 'var(--default-container-width)' }}>
+        <BlockWrapper {...args}>
+          <TeaserDefaultBody {...args} />
+        </BlockWrapper>
+      </div>
     </Wrapper>
   ),
   args: {

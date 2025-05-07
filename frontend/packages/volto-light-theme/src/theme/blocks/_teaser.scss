@@ -25,12 +25,20 @@
     border-bottom: 1px solid $black;
   }
 
+  .card-wrapper {
+    border-bottom: 1px solid $black;
+  }
+
   .image-wrapper {
     width: 100%;
   }
 
   &.has--align--left,
   &.has--align--right {
+    .card-wrapper {
+      padding-bottom: 40px;
+    }
+
     .teaser-item.default {
       display: flex;
 
@@ -115,11 +123,13 @@
 
   &.is--last--of--block-type,
   &.next--has--different--backgroundColor {
+    .card-wrapper,
     .teaser-item.default {
       padding-bottom: 0;
       border-bottom: none;
     }
     &.next--is--__button {
+      .card-wrapper,
       .teaser-item.default {
         padding-bottom: 40px;
         border-bottom: 1px solid;
