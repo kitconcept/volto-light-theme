@@ -2,7 +2,7 @@
 .card {
   position: relative;
   // padding: 1rem;
-  border: 1px solid var(--card-border, #d0d7de);
+  // border: 1px solid var(--card-border, #d0d7de);
   // border-radius: 0.5rem;
   transition: box-shadow 0.15s ease;
 }
@@ -31,11 +31,6 @@
 }
 
 .card {
-  // ??
-  // .card-wrapper {
-  //   background: var(--theme-high-contrast-color);
-  // }
-
   .image-wrapper {
     width: 100%;
 
@@ -46,7 +41,8 @@
   }
 
   .content {
-    padding: 40px 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
 
     .headline {
       margin-bottom: 20px;
@@ -66,6 +62,96 @@
     p {
       margin: 0;
       @include body-text();
+    }
+  }
+}
+
+// Variants
+// // Contained
+.card {
+  .contained & .card-wrapper {
+    background: var(--theme-high-contrast-color);
+  }
+
+  .contained & .content {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+// // Left-aligned
+.card {
+  .has--align--left:not(.contained) &,
+  .has--align--right:not(.contained) & {
+    .card-wrapper {
+      display: flex;
+
+      .image-wrapper {
+        // width: 50%;
+        flex: 1 1 50%;
+        margin-right: 20px;
+
+        @media only screen and (max-width: $largest-mobile-screen) {
+          margin-right: 0;
+          margin-bottom: 26px;
+        }
+      }
+
+      .content {
+        // width: 50%;
+        flex: 1 1 50%;
+        padding: 0;
+      }
+    }
+  }
+
+  .has--align--left:not(.contained) & {
+    .image-wrapper {
+      margin-right: 20px;
+    }
+  }
+
+  .has--align--right & {
+    .card-wrapper {
+      flex-direction: row-reverse;
+    }
+
+    .image-wrapper {
+      margin-left: 20px;
+    }
+  }
+}
+
+@container (max-width: #{$largest-mobile-screen}) {
+  .card {
+    .has--align--left:not(.contained) &,
+    .has--align--right:not(.contained) & {
+      .card-wrapper {
+        display: block;
+      }
+      .image-wrapper {
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+// Heading sizes
+@container (min-width: #{$largest-mobile-screen}) {
+  .card {
+    .content {
+      .one & h2 {
+        margin-bottom: 40px !important;
+        @include text-heading-h2();
+      }
+      .two & h2,
+      .three & h2 {
+        @include text-heading-h3();
+      }
+      .four & h2 {
+        @include text-heading-h4();
+      }
     }
   }
 }

@@ -9,6 +9,7 @@ import UniversalLink from '@plone/volto/components/manage/UniversalLink/Universa
 import cx from 'classnames';
 import config from '@plone/volto/registry';
 import DefaultSummary from '@kitconcept/volto-light-theme/components/Summary/DefaultSummary';
+import Card from '../../Card/Card';
 
 const messages = defineMessages({
   PleaseChooseContent: {
@@ -32,6 +33,11 @@ const TeaserDefaultTemplate = (props) => {
       dependencies: [href['@type']],
     }).component || DefaultSummary;
   const { openExternalLinkInNewTab } = config.settings;
+  const openLinkInNewTab =
+    data.openLinkInNewTab ||
+    (openExternalLinkInNewTab && !isInternalURL(href['@id']))
+      ? '_blank'
+      : null;
 
   return (
     <div className={cx('block teaser', className)} style={style}>
@@ -44,7 +50,17 @@ const TeaserDefaultTemplate = (props) => {
             </div>
           </Message>
         )}
-        {href && (
+        <Card
+          target={href['@id']}
+          image={image}
+          item={!data.overwrite ? href : { ...href, ...data }}
+          openLinkInNewTab={openLinkInNewTab}
+          enableLink={!isEditMode}
+          summaryComponent={Summary}
+          imageComponent={Image}
+          imageSRC={url && !image?.image_field ? url : undefined}
+        />
+        {/* {href && (
           <MaybeWrap
             condition={!isEditMode}
             as={UniversalLink}
@@ -79,7 +95,7 @@ const TeaserDefaultTemplate = (props) => {
               </div>
             </div>
           </MaybeWrap>
-        )}
+        )} */}
       </>
     </div>
   );

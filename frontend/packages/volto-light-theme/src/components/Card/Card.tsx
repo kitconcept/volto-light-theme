@@ -9,28 +9,29 @@ type CardProps = {
   image?: ObjectBrowserItem;
   imageSRC?: string;
   openLinkInNewTab?: boolean;
-  item?: ObjectBrowserItem;
+  item?: Partial<ObjectBrowserItem>;
   enableLink?: boolean;
   imageComponent?: React.ComponentType<any>;
   summaryComponent?: React.ComponentType<any>;
+  hide_description?: boolean;
 };
 
 type DefaultSummaryProps = {
-  item: ObjectBrowserItem;
+  item: Partial<ObjectBrowserItem>;
+  titleId?: string;
   HeadingTag?: React.ElementType;
+  hide_description?: boolean;
 };
 
 const DefaultSummary = (props: DefaultSummaryProps) => {
-  const { item, HeadingTag = 'h3' } = props;
+  const { item, HeadingTag = 'h3', hide_description } = props;
   return (
     <>
       {item?.head_title && <div className="headline">{item.head_title}</div>}
       <HeadingTag className="title">
         {item.title ? item.title : item.id}
       </HeadingTag>
-      {!item.hide_description && (
-        <p className="description">{item.description}</p>
-      )}
+      {!hide_description && <p className="description">{item.description}</p>}
     </>
   );
 };
@@ -58,6 +59,7 @@ const Card = (props: CardProps) => {
     enableLink,
     imageComponent,
     summaryComponent,
+    hide_description,
   } = props;
 
   const Image = imageComponent || DefaultImage;
@@ -68,6 +70,7 @@ const Card = (props: CardProps) => {
     <div className="card">
       {target && (
         <>
+          {/* @ts-ignore */}
           <ConditionalLink
             condition={enableLink}
             href={target}
@@ -94,7 +97,12 @@ const Card = (props: CardProps) => {
               )
             )}
             <div className="content">
-              <Summary item={item} titleId={titleId} HeadingTag="h2" />
+              <Summary
+                item={item}
+                titleId={titleId}
+                HeadingTag="h2"
+                hide_description={hide_description}
+              />
             </div>
           </div>
         </>

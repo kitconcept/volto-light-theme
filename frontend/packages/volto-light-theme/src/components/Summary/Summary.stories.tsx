@@ -1,130 +1,121 @@
 import React from 'react';
-import Card from './Card';
+import DefaultSummary from './DefaultSummary';
+import { default as NewsItemSummaryComponent } from './NewsItemSummary';
+import { default as EventSummaryComponent } from './EventSummary';
+import { default as FileSummaryComponent } from './FileSummary';
 
 import type { Meta, StoryObj } from '@storybook/react';
-import { ObjectBrowserItem } from '../../stories/mocks';
 import Wrapper from '@plone/volto/storybook';
 
 const meta = {
-  title: 'Primitives/Card',
-  component: Card,
+  title: 'Primitives/Summary',
+  component: DefaultSummary,
   parameters: {
     layout: 'centered',
     // backgrounds: { disable: true },
   },
   tags: ['autodocs'],
-} satisfies Meta<typeof Card>;
+} satisfies Meta<typeof DefaultSummary>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Simple: Story = {
+export const Summary: Story = {
   render: (args) => (
     <div style={{ width: '300px' }}>
       <Wrapper>
-        <Card {...args} />
+        <DefaultSummary {...args} />
       </Wrapper>
     </div>
   ),
   args: {
-    target: '/folder/page',
-    imageSRC: '/black-starry-night.jpg',
     item: {
       title: 'Simple Card with strings',
       description:
         'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
       head_title: 'Simple Card',
     },
-    enableLink: true,
   },
 };
 
-export const AlignedLeft: Story = {
-  render: (args) => (
-    <Wrapper>
-      <div
-        className="has--align--left"
-        style={{ width: 'var(--default-container-width)' }}
-      >
-        <Card {...args} />
-      </div>
-    </Wrapper>
-  ),
-  args: {
-    target: '/folder/page',
-    imageSRC: '/black-starry-night.jpg',
-    item: {
-      title: 'Simple Card with strings',
-      description:
-        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
-      head_title: 'Simple Card',
-    },
-    enableLink: true,
-  },
-};
-
-export const AlignedRight: Story = {
-  render: (args) => (
-    <Wrapper>
-      <div
-        className="has--align--right"
-        style={{ width: 'var(--default-container-width)' }}
-      >
-        <Card {...args} />
-      </div>
-    </Wrapper>
-  ),
-  args: {
-    target: '/folder/page',
-    imageSRC: '/black-starry-night.jpg',
-    item: {
-      title: 'Simple Card with strings',
-      description:
-        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
-      head_title: 'Simple Card',
-    },
-    enableLink: true,
-  },
-};
-
-export const SimpleContained: Story = {
+export const SummaryHideDescription: Story = {
   render: (args) => (
     <div style={{ width: '300px' }}>
       <Wrapper>
-        <div
-          className="contained"
-          style={{ ['--theme-high-contrast-color' as string]: '#ecebeb' }}
-        >
-          <Card {...args} />
-        </div>
+        <DefaultSummary {...args} />
       </Wrapper>
     </div>
   ),
   args: {
-    target: '/folder/page',
-    imageSRC: '/black-starry-night.jpg',
     item: {
       title: 'Simple Card with strings',
       description:
         'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
       head_title: 'Simple Card',
     },
-    enableLink: true,
+    hide_description: true,
   },
 };
 
-export const Default: Story = {
+export const NewsItemSummary: Story = {
   render: (args) => (
     <div style={{ width: '300px' }}>
       <Wrapper>
-        <Card {...args} />
+        <NewsItemSummaryComponent {...args} />
       </Wrapper>
     </div>
   ),
   args: {
-    target: ObjectBrowserItem['@id'],
-    item: ObjectBrowserItem,
-    // image: ObjectBrowserItem.image_scales[ObjectBrowserItem.image_field][0],
-    enableLink: true,
+    item: {
+      title: 'Simple Card with strings',
+      description:
+        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
+      head_title: 'Simple Card',
+      start: '2023-01-01T11:00:00+00:00',
+      end: '2023-12-31T12:00:00+00:00',
+      effective: '2023-07-06T18:35:00+00:00',
+    },
+  },
+};
+
+export const EventSummary: Story = {
+  render: (args) => (
+    <div style={{ width: '300px' }}>
+      <Wrapper>
+        <EventSummaryComponent {...args} />
+      </Wrapper>
+    </div>
+  ),
+  args: {
+    item: {
+      title: 'Simple Card with strings',
+      description:
+        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
+      head_title: 'Simple Card',
+      start: '2023-01-01T11:00:00+00:00',
+      end: '2023-12-31T12:00:00+00:00',
+      effective: '2023-07-06T18:35:00+00:00',
+    },
+  },
+};
+
+export const FileSummary: Story = {
+  render: (args) => (
+    <div style={{ width: '300px' }}>
+      <Wrapper>
+        <FileSummaryComponent {...args} />
+      </Wrapper>
+    </div>
+  ),
+  args: {
+    item: {
+      title: 'Simple Card with strings',
+      description:
+        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
+      head_title: 'Simple Card',
+      start: '2023-01-01T11:00:00+00:00',
+      end: '2023-12-31T12:00:00+00:00',
+      effective: '2023-07-06T18:35:00+00:00',
+    },
   },
 };

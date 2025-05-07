@@ -1,3 +1,5 @@
+const demoImage = 'black-starry-night.jpg';
+
 export const ObjectBrowserItem = {
   '@id': '/folder/page',
   '@type': 'Document',
@@ -15,57 +17,57 @@ export const ObjectBrowserItem = {
     preview_image: [
       {
         'content-type': 'image/jpeg',
-        download: '/black-starry-night.jpg',
+        download: demoImage,
         filename: 'black-starry-night.jpg',
         height: 1708,
         scales: {
           great: {
-            download: '/black-starry-night.jpg',
+            download: demoImage,
             height: 854,
             width: 1200,
           },
           huge: {
-            download: '/black-starry-night.jpg',
+            download: demoImage,
             height: 1138,
             width: 1600,
           },
           icon: {
-            download: '/black-starry-night.jpg',
+            download: demoImage,
             height: 22,
             width: 32,
           },
           large: {
-            download: '/black-starry-night.jpg',
+            download: demoImage,
             height: 569,
             width: 800,
           },
           larger: {
-            download: '/black-starry-night.jpg',
+            download: demoImage,
             height: 711,
             width: 1000,
           },
           mini: {
-            download: '/black-starry-night.jpg',
+            download: demoImage,
             height: 142,
             width: 200,
           },
           preview: {
-            download: '/black-starry-night.jpg',
+            download: demoImage,
             height: 284,
             width: 400,
           },
           teaser: {
-            download: '/black-starry-night.jpg',
+            download: demoImage,
             height: 427,
             width: 600,
           },
           thumb: {
-            download: '/black-starry-night.jpg',
+            download: demoImage,
             height: 91,
             width: 128,
           },
           tile: {
-            download: '/black-starry-night.jpg',
+            download: demoImage,
             height: 45,
             width: 64,
           },
@@ -79,75 +81,75 @@ export const ObjectBrowserItem = {
 
 export const teaserBlock = {
   '@type': 'teaser',
-  description:
-    'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
-  head_title: 'Head title',
   href: [
     {
-      '@id': '',
+      '@id': '.',
       '@type': 'Document',
-      Description:
-        'The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.',
+      title: 'Page',
       Title: 'Page',
+      description:
+        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
+      Description:
+        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
       getRemoteUrl: null,
       hasPreviewImage: true,
-      head_title: null,
+      head_title: 'Head title',
       image_field: 'preview_image',
       image_scales: {
         preview_image: [
           {
             'content-type': 'image/jpeg',
-            download: '/black-starry-night.jpg',
+            download: demoImage,
             filename: 'black-starry-night.jpg',
             height: 1708,
             scales: {
               great: {
-                download: '/black-starry-night.jpg',
+                download: demoImage,
                 height: 854,
                 width: 1200,
               },
               huge: {
-                download: '/black-starry-night.jpg',
+                download: demoImage,
                 height: 1138,
                 width: 1600,
               },
               icon: {
-                download: '/black-starry-night.jpg',
+                download: demoImage,
                 height: 22,
                 width: 32,
               },
               large: {
-                download: '/black-starry-night.jpg',
+                download: demoImage,
                 height: 569,
                 width: 800,
               },
               larger: {
-                download: '/black-starry-night.jpg',
+                download: demoImage,
                 height: 711,
                 width: 1000,
               },
               mini: {
-                download: '/black-starry-night.jpg',
+                download: demoImage,
                 height: 142,
                 width: 200,
               },
               preview: {
-                download: '/black-starry-night.jpg',
+                download: demoImage,
                 height: 284,
                 width: 400,
               },
               teaser: {
-                download: '/black-starry-night.jpg',
+                download: demoImage,
                 height: 427,
                 width: 600,
               },
               thumb: {
-                download: '/black-starry-night.jpg',
+                download: demoImage,
                 height: 91,
                 width: 128,
               },
               tile: {
-                download: '/black-starry-night.jpg',
+                download: demoImage,
                 height: 45,
                 width: 64,
               },
@@ -157,13 +159,90 @@ export const teaserBlock = {
           },
         ],
       },
-      title: 'Page',
     },
   ],
   styles: {
     align: 'left',
   },
   title: 'Headline H2',
+};
+
+export const gridBlockOne = {
+  '@type': 'gridBlock',
+  blocks: {
+    '281a22fb-c353-4b91-b2bc-88e6a52ed65a': {
+      ...teaserBlock,
+    },
+  },
+  blocks_layout: {
+    items: ['281a22fb-c353-4b91-b2bc-88e6a52ed65a'],
+  },
+};
+
+export const gridBlockTwo = {
+  '@type': 'gridBlock',
+  blocks: {
+    '281a22fb-c353-4b91-b2bc-88e6a52ed65a': {
+      ...teaserBlock,
+    },
+    'f34fa7dd-ce59-4f7f-b795-7d7f1e388df1': {
+      ...teaserBlock,
+    },
+  },
+  blocks_layout: {
+    items: [
+      '281a22fb-c353-4b91-b2bc-88e6a52ed65a',
+      'f34fa7dd-ce59-4f7f-b795-7d7f1e388df1',
+    ],
+  },
+};
+
+export const gridBlockThree = {
+  '@type': 'gridBlock',
+  blocks: {
+    '281a22fb-c353-4b91-b2bc-88e6a52ed65a': {
+      ...teaserBlock,
+    },
+    'f34fa7dd-ce59-4f7f-b795-7d7f1e388df1': {
+      ...teaserBlock,
+    },
+    'f34fa7dd-ce59-4f7f-b795-7d7f1e388df2': {
+      ...teaserBlock,
+    },
+  },
+  blocks_layout: {
+    items: [
+      '281a22fb-c353-4b91-b2bc-88e6a52ed65a',
+      'f34fa7dd-ce59-4f7f-b795-7d7f1e388df1',
+      'f34fa7dd-ce59-4f7f-b795-7d7f1e388df2',
+    ],
+  },
+};
+
+export const gridBlockFour = {
+  '@type': 'gridBlock',
+  blocks: {
+    '281a22fb-c353-4b91-b2bc-88e6a52ed65a': {
+      ...teaserBlock,
+    },
+    'f34fa7dd-ce59-4f7f-b795-7d7f1e388df1': {
+      ...teaserBlock,
+    },
+    '281a22fb-c353-4b91-b2bc-88e6a52ed652': {
+      ...teaserBlock,
+    },
+    'f34fa7dd-ce59-4f7f-b795-7d7f1e388df2': {
+      ...teaserBlock,
+    },
+  },
+  blocks_layout: {
+    items: [
+      '281a22fb-c353-4b91-b2bc-88e6a52ed65a',
+      'f34fa7dd-ce59-4f7f-b795-7d7f1e388df1',
+      '281a22fb-c353-4b91-b2bc-88e6a52ed652',
+      'f34fa7dd-ce59-4f7f-b795-7d7f1e388df2',
+    ],
+  },
 };
 
 export const gridBlock = {
@@ -176,70 +255,73 @@ export const gridBlock = {
       head_title: 'Head title ',
       href: [
         {
-          '@id': '',
+          '@id': '.',
           '@type': 'Document',
-          Description:
+          description:
             'Der Teaser-Block erlaubt das Hinzuf\u00fcgen eines Elements welches einen bestehenden Inhalte der Webseite mit einem Bild, einem Titel und einer Beschreibung anteasert.',
           Title: 'Block: Teaser',
+          Description:
+            'Der Teaser-Block erlaubt das Hinzuf\u00fcgen eines Elements welches einen bestehenden Inhalte der Webseite mit einem Bild, einem Titel und einer Beschreibung anteasert.',
+          title: 'Block: Teaser',
           getRemoteUrl: null,
           hasPreviewImage: true,
-          head_title: null,
+          head_title: 'Head Title',
           image_field: 'preview_image',
           image_scales: {
             preview_image: [
               {
                 'content-type': 'image/jpeg',
-                download: '/black-starry-night.jpg',
+                download: demoImage,
                 filename: 'black-starry-night.jpg',
                 height: 1708,
                 scales: {
                   great: {
-                    download: '/black-starry-night.jpg',
+                    download: demoImage,
                     height: 854,
                     width: 1200,
                   },
                   huge: {
-                    download: '/black-starry-night.jpg',
+                    download: demoImage,
                     height: 1138,
                     width: 1600,
                   },
                   icon: {
-                    download: '/black-starry-night.jpg',
+                    download: demoImage,
                     height: 22,
                     width: 32,
                   },
                   large: {
-                    download: '/black-starry-night.jpg',
+                    download: demoImage,
                     height: 569,
                     width: 800,
                   },
                   larger: {
-                    download: '/black-starry-night.jpg',
+                    download: demoImage,
                     height: 711,
                     width: 1000,
                   },
                   mini: {
-                    download: '/black-starry-night.jpg',
+                    download: demoImage,
                     height: 142,
                     width: 200,
                   },
                   preview: {
-                    download: '/black-starry-night.jpg',
+                    download: demoImage,
                     height: 284,
                     width: 400,
                   },
                   teaser: {
-                    download: '/black-starry-night.jpg',
+                    download: demoImage,
                     height: 427,
                     width: 600,
                   },
                   thumb: {
-                    download: '/black-starry-night.jpg',
+                    download: demoImage,
                     height: 91,
                     width: 128,
                   },
                   tile: {
-                    download: '/black-starry-night.jpg',
+                    download: demoImage,
                     height: 45,
                     width: 64,
                   },
@@ -249,7 +331,6 @@ export const gridBlock = {
               },
             ],
           },
-          title: 'Block: Teaser',
         },
       ],
       styles: {
@@ -264,70 +345,73 @@ export const gridBlock = {
       head_title: 'Head title ',
       href: [
         {
-          '@id': 'resolveuid/99c70917b6894af08dd306fdbc0eff6a',
+          '@id': '.',
           '@type': 'Document',
+          description:
+            'Der Grid-Block erlaubt das Hinzuf\u00fcgen mehrspaltiger Bl\u00f6cke. Ein Grid-Block kann zwischen ein und vier Spalten mit unterschiedlichen Bl\u00f6cken enthalten.Teaser und Bilder k\u00f6nnen in einem Grid-Block hinzugef\u00fcgt werden.',
+          title: 'Block: Grid',
           Description:
             'Der Grid-Block erlaubt das Hinzuf\u00fcgen mehrspaltiger Bl\u00f6cke. Ein Grid-Block kann zwischen ein und vier Spalten mit unterschiedlichen Bl\u00f6cken enthalten.Teaser und Bilder k\u00f6nnen in einem Grid-Block hinzugef\u00fcgt werden.',
           Title: 'Block: Grid',
           getRemoteUrl: null,
           hasPreviewImage: true,
-          head_title: null,
+          head_title: 'Head Title',
           image_field: 'preview_image',
           image_scales: {
             preview_image: [
               {
                 'content-type': 'image/jpeg',
-                download: '/black-starry-night.jpg',
+                download: demoImage,
                 filename: 'black-starry-night.jpg',
                 height: 1708,
                 scales: {
                   great: {
-                    download: '/black-starry-night.jpg',
+                    download: demoImage,
                     height: 854,
                     width: 1200,
                   },
                   huge: {
-                    download: '/black-starry-night.jpg',
+                    download: demoImage,
                     height: 1138,
                     width: 1600,
                   },
                   icon: {
-                    download: '/black-starry-night.jpg',
+                    download: demoImage,
                     height: 22,
                     width: 32,
                   },
                   large: {
-                    download: '/black-starry-night.jpg',
+                    download: demoImage,
                     height: 569,
                     width: 800,
                   },
                   larger: {
-                    download: '/black-starry-night.jpg',
+                    download: demoImage,
                     height: 711,
                     width: 1000,
                   },
                   mini: {
-                    download: '/black-starry-night.jpg',
+                    download: demoImage,
                     height: 142,
                     width: 200,
                   },
                   preview: {
-                    download: '/black-starry-night.jpg',
+                    download: demoImage,
                     height: 284,
                     width: 400,
                   },
                   teaser: {
-                    download: '/black-starry-night.jpg',
+                    download: demoImage,
                     height: 427,
                     width: 600,
                   },
                   thumb: {
-                    download: '/black-starry-night.jpg',
+                    download: demoImage,
                     height: 91,
                     width: 128,
                   },
                   tile: {
-                    download: '/black-starry-night.jpg',
+                    download: demoImage,
                     height: 45,
                     width: 64,
                   },
@@ -337,7 +421,6 @@ export const gridBlock = {
               },
             ],
           },
-          title: 'Block: Grid',
         },
       ],
       preview_image: [
@@ -348,47 +431,47 @@ export const gridBlock = {
             image: [
               {
                 'content-type': 'image/jpeg',
-                download: '/black-starry-night.jpg',
+                download: demoImage,
                 filename: 'image-light.jpg',
                 height: 633,
                 scales: {
                   icon: {
-                    download: '/black-starry-night.jpg',
+                    download: demoImage,
                     height: 17,
                     width: 32,
                   },
                   large: {
-                    download: '/black-starry-night.jpg',
+                    download: demoImage,
                     height: 449,
                     width: 800,
                   },
                   larger: {
-                    download: '/black-starry-night.jpg',
+                    download: demoImage,
                     height: 562,
                     width: 1000,
                   },
                   mini: {
-                    download: '/black-starry-night.jpg',
+                    download: demoImage,
                     height: 112,
                     width: 200,
                   },
                   preview: {
-                    download: '/black-starry-night.jpg',
+                    download: demoImage,
                     height: 224,
                     width: 400,
                   },
                   teaser: {
-                    download: '/black-starry-night.jpg',
+                    download: demoImage,
                     height: 337,
                     width: 600,
                   },
                   thumb: {
-                    download: '/black-starry-night.jpg',
+                    download: demoImage,
                     height: 71,
                     width: 128,
                   },
                   tile: {
-                    download: '/black-starry-night.jpg',
+                    download: demoImage,
                     height: 35,
                     width: 64,
                   },
