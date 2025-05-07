@@ -2,6 +2,7 @@ import * as React from 'react';
 import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
 import cx from 'classnames';
 import type { ObjectBrowserItem } from '@plone/types';
+import { FormattedMessage } from 'react-intl';
 
 type CardProps = {
   className?: string;
@@ -9,10 +10,12 @@ type CardProps = {
   image?: ObjectBrowserItem;
   imageSRC?: string;
   openLinkInNewTab?: boolean;
+  showActions?: boolean;
   item?: Partial<ObjectBrowserItem>;
   enableLink?: boolean;
   imageComponent?: React.ComponentType<any>;
   summaryComponent?: React.ComponentType<any>;
+  actionsComponent?: React.ComponentType<any>;
   hide_description?: boolean;
 };
 
@@ -48,6 +51,15 @@ const DefaultImage = (props: any) => {
   );
 };
 
+const DefaultActions = (props: any) => {
+  const { target, item, openLinkInNewTab } = props;
+  return (
+    <a className="button" href={target} target={openLinkInNewTab}>
+      {item.buttonText || <FormattedMessage id="More" defaultMessage="More" />}
+    </a>
+  );
+};
+
 const Card = (props: CardProps) => {
   const {
     className,
@@ -59,11 +71,14 @@ const Card = (props: CardProps) => {
     enableLink,
     imageComponent,
     summaryComponent,
+    actionsComponent,
     hide_description,
+    showActions = false,
   } = props;
 
   const Image = imageComponent || DefaultImage;
   const Summary = summaryComponent || DefaultSummary;
+  const Actions = actionsComponent || DefaultActions;
   const titleId = React.useId();
 
   return (
@@ -77,36 +92,46 @@ const Card = (props: CardProps) => {
             target={openLinkInNewTab}
             aria-labelledby={titleId}
           />
-          <div className={cx('card-wrapper', className)}>
-            {/* It's an external image, providing a string (src) */}
-            {imageSRC ? (
-              <div className="image-wrapper">
-                <Image src={imageSRC} alt="" loading="lazy" responsive={true} />
-              </div>
-            ) : (
-              (item.hasPreviewImage || item.image_field || image) && (
-                <div className="image-wrapper">
-                  <Image
-                    item={image || item}
-                    imageField={image ? image.image_field : item.image_field}
-                    alt=""
-                    loading="lazy"
-                    responsive={true}
-                  />
-                </div>
-              )
-            )}
-            <div className="content">
-              <Summary
-                item={item}
-                titleId={titleId}
-                HeadingTag="h2"
-                hide_description={hide_description}
-              />
-            </div>
-          </div>
         </>
       )}
+
+      <div className={cx('card-wrapper', className)}>
+        {/* It's an external image, providing a string (src) */}
+        {imageSRC ? (
+          <div className="image-wrapper">
+            <Image src={imageSRC} alt="" loading="lazy" responsive={true} />
+          </div>
+        ) : (
+          (item.hasPreviewImage || item.image_field || image) && (
+            <div className="image-wrapper">
+              <Image
+                item={image || item}
+                imageField={image ? image.image_field : item.image_field}
+                alt=""
+                loading="lazy"
+                responsive={true}
+              />
+            </div>
+          )
+        )}
+        <div className="content">
+          <Summary
+            item={item}
+            titleId={titleId}
+            HeadingTag="h2"
+            hide_description={hide_description}
+          />
+          {showActions && (
+            <div className="actions">
+              <Actions
+                item={item}
+                target={target}
+                openLinkInNewTab={openLinkInNewTab}
+              />
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
