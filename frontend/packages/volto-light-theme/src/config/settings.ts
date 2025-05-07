@@ -31,6 +31,8 @@ export default function install(config: ConfigType) {
   config.settings.slidingSearchAnimation = true;
   config.settings.openExternalLinkInNewTab = true;
 
+  config.settings.blockModel = 3;
+
   config.settings.apiExpanders = [
     ...config.settings.apiExpanders,
     {
