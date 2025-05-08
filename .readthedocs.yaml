@@ -10,10 +10,11 @@ build:
   os: ubuntu-22.04
   tools:
     python: "3.12"
-    nodejs: "22.14.0"
+    nodejs: "22"
   jobs:
     install:
       - pip install uv
+      - asdf global nodejs 22.14.0
       - corepack prepare pnpm@* --activate
       - asdf reshim nodejs
       - make -C "./docs/" install
