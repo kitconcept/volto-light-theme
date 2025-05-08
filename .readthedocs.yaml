@@ -10,10 +10,14 @@ build:
   os: ubuntu-22.04
   tools:
     python: "3.12"
+    nodejs: "22"
   jobs:
     install:
       - pip install uv
+      - corepack enable
       - make -C "./docs/" install
+      - make -C "./frontend/" install
     build:
       html:
         - make -C "./docs/" rtd-build
+        - pnpm run build-storybook -o $READTHEDOCS_OUTPUT/html/storybook
