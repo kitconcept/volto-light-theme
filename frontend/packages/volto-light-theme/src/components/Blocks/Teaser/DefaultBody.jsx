@@ -21,7 +21,7 @@ const messages = defineMessages({
 const TeaserDefaultTemplate = (props) => {
   const { className, data, isEditMode, style } = props;
   const intl = useIntl();
-  const href = data.href?.[0];
+  const href = data.href?.[0] || {};
   const image = data.preview_image?.[0];
   const url = data.preview_image?.[0]?.['@id'];
 
