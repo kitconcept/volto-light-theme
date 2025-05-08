@@ -23,4 +23,4 @@ build:
     build:
       html:
         - make -C "./docs/" rtd-build
-        - pnpm run build-storybook -o $READTHEDOCS_OUTPUT/html/storybook
+        - (cd frontend && pnpm run build-storybook -o $READTHEDOCS_OUTPUT/html/storybook)
