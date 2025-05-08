@@ -21,7 +21,7 @@ const messages = defineMessages({
 const TeaserDefaultTemplate = (props) => {
   const { className, data, isEditMode, style } = props;
   const intl = useIntl();
-  const href = data.href?.[0];
+  const href = data.href?.[0] || {};
   const image = data.preview_image?.[0];
   const url = data.preview_image?.[0]?.['@id'];
 
@@ -29,7 +29,7 @@ const TeaserDefaultTemplate = (props) => {
   const Summary =
     config.getComponent({
       name: 'Summary',
-      dependencies: [data['@type']],
+      dependencies: [href['@type']],
     }).component || DefaultSummary;
   const { openExternalLinkInNewTab } = config.settings;
 
@@ -75,7 +75,7 @@ const TeaserDefaultTemplate = (props) => {
                 )
               )}
               <div className="content">
-                <Summary item={data} HeadingTag="h2" />
+                <Summary item={{ ...href, ...data }} HeadingTag="h2" />
               </div>
             </div>
           </MaybeWrap>
