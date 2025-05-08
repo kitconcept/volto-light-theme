@@ -1,0 +1,1 @@
+Add --image-aspect-ratio docs & make Slider use the CSS prop. @danalvrz
