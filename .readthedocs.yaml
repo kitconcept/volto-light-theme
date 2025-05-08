@@ -14,7 +14,8 @@ build:
   jobs:
     install:
       - pip install uv
-      - corepack enable
+      - corepack prepare pnpm@* --activate
+      - asdf reshim nodejs
       - make -C "./docs/" install
       - make -C "./frontend/" install
     build:
