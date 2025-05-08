@@ -24,11 +24,11 @@ type DefaultSummaryProps = {
 };
 
 const DefaultSummary = (props: DefaultSummaryProps) => {
-  const { item, HeadingTag = 'h3', hide_description } = props;
+  const { item, HeadingTag = 'h3', titleId, hide_description } = props;
   return (
     <>
       {item?.head_title && <div className="headline">{item.head_title}</div>}
-      <HeadingTag className="title">
+      <HeadingTag className="title" id={titleId}>
         {item.title ? item.title : item.id}
       </HeadingTag>
       {!hide_description && <p className="description">{item.description}</p>}

@@ -409,10 +409,25 @@ External link removal for all the blocks.
 
 // We have to adjust the inner headings also because of the extra margin added in the
 // above rule
-#page-document .blocks-group-wrapper > .block h2.headline {
+#page-document .blocks-group-wrapper > .block.gridBlock h2.headline {
   @container (max-width: #{$default-container-width + 2 * 20px}) {
     margin-right: 10px;
     margin-left: 10px;
+  }
+}
+
+// Adjust the grid columns padding for under the default-width container.
+// For the rest, we rely on the default SemanticUI grid behavior and the adjustments
+// made above.
+@container (max-width: #{$default-container-width + 2 * 20px}) {
+  .block.gridBlock .ui.stackable.grid > .column:not(.row) {
+    padding-right: 20px !important;
+    padding-left: 20px !important;
+    transition: padding 0.3s ease;
+  }
+  #page-document .blocks-group-wrapper > .block.gridBlock h2.headline {
+    margin-right: 20px;
+    margin-left: 20px;
   }
 }
 
