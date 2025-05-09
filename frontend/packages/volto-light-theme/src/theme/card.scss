@@ -1,32 +1,20 @@
-/* CardLink.css */
 .card {
   position: relative;
-  // padding: 1rem;
-  // border: 1px solid var(--card-border, #d0d7de);
-  // border-radius: 0.5rem;
   transition: box-shadow 0.15s ease;
 }
 
-/* Hover / focus affordance */
 .card:hover,
 .card:focus-within {
   cursor: pointer;
 }
 
-/* 1️⃣  Full-area link overlay  */
 .card a {
-  position: absolute;
-  z-index: 1;
   inset: 0; /* top:0 right:0 bottom:0 left:0 */
   text-decoration: none; /* remove default underline */
-  /* You can add :hover styles here if you like */
 }
 
-/* 2️⃣  Raise real content above the overlay to keep it selectable */
 .card .content,
 .card .content * {
-  position: relative;
-  z-index: 2;
   user-select: text; /* explicit for clarity */
 }
 

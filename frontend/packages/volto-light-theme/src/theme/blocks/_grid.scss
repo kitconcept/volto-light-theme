@@ -333,3 +333,12 @@
 .block.gridBlock h2.title {
   margin-bottom: 20px !important;
 }
+
+// Watch out for the following rule, it is used to override the default
+// behavior of the block editor when selecting a block but it stopped working
+// if the z-index is still -1 (from 6.0.0-alpha.0)
+// I have no clue what is going on here, but it used to be important
+// related to selecting and clicking things inside (or prevent some event bubbling)
+.block.gridBlock [class^='block-editor-'].selected .cell-wrapper::before {
+  z-index: unset;
+}

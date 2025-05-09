@@ -25,10 +25,6 @@
     border-bottom: 1px solid $black;
   }
 
-  .card-wrapper {
-    border-bottom: 1px solid $black;
-  }
-
   .image-wrapper {
     width: 100%;
   }
@@ -135,6 +131,13 @@
         border-bottom: 1px solid;
       }
     }
+  }
+}
+
+// Only bottom border in render, just for top level teasers
+.blocks-group-wrapper > .block.teaser {
+  .card-wrapper {
+    border-bottom: 1px solid var(--theme-foreground-color, $black);
   }
 }
 
