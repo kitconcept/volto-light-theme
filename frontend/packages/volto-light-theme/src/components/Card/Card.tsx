@@ -12,7 +12,7 @@ type CardProps = {
   item?: Partial<ObjectBrowserItem>;
   enableLink?: boolean;
   imageInset?: React.ReactNode;
-  actionableInset?: React.ReactNode;
+  actionsInset?: React.ReactNode;
   imageComponent?: React.ComponentType<any>;
   summaryComponent?: React.ComponentType<any>;
   hide_description?: boolean;
@@ -63,7 +63,7 @@ const Card = (props: CardProps) => {
     summaryComponent,
     hide_description,
     imageInset,
-    actionableInset,
+    actionsInset,
   } = props;
 
   const Image = imageComponent || DefaultImage;
@@ -91,6 +91,13 @@ const Card = (props: CardProps) => {
     }
   };
 
+  const hasImageInset =
+    !!imageInset ||
+    !!imageSRC ||
+    !!image ||
+    !!item.image_field ||
+    item.hasPreviewImage;
+
   return (
     <div
       className={cx('card', className)}
@@ -102,36 +109,41 @@ const Card = (props: CardProps) => {
     >
       {/* @ts-expect-error since this has no children, should fail */}
       <ConditionalLink
+        aria-labelledby={titleId}
         condition={enableLink && !!target}
         href={target}
         openLinkInNewTab={openLinkInNewTab}
-        aria-labelledby={titleId}
         ref={linkRef}
       />
       <div className="card-wrapper">
-        {imageInset ? (
-          imageInset
-        ) : (
-          <>
-            {/* It's an external image, providing a string (src) */}
-            {imageSRC ? (
-              <div className="image-wrapper">
-                <Image src={imageSRC} alt="" loading="lazy" responsive={true} />
-              </div>
+        {hasImageInset && (
+          <div className="image-wrapper">
+            {imageInset ? (
+              imageInset
             ) : (
-              (item.hasPreviewImage || item.image_field || image) && (
-                <div className="image-wrapper">
+              <>
+                {/* It's an external image, providing a string (src) */}
+                {imageSRC ? (
                   <Image
-                    item={image || item}
-                    imageField={image ? image.image_field : item.image_field}
+                    src={imageSRC}
                     alt=""
                     loading="lazy"
                     responsive={true}
                   />
-                </div>
-              )
+                ) : (
+                  (item.hasPreviewImage || item.image_field || image) && (
+                    <Image
+                      item={image || item}
+                      imageField={image ? image.image_field : item.image_field}
+                      alt=""
+                      loading="lazy"
+                      responsive={true}
+                    />
+                  )
+                )}
+              </>
             )}
-          </>
+          </div>
         )}
         <div className="content">
           <Summary
@@ -140,7 +152,9 @@ const Card = (props: CardProps) => {
             HeadingTag="h2"
             hide_description={hide_description}
           />
-          {actionableInset ? actionableInset : null}
+          <div className="actions-wrapper">
+            {actionsInset ? actionsInset : null}
+          </div>
         </div>
       </div>
     </div>

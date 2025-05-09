@@ -4,6 +4,7 @@ import Card from './Card';
 import type { Meta, StoryObj } from '@storybook/react';
 import { ObjectBrowserItem } from '../../stories/mocks';
 import Wrapper from '@plone/volto/storybook';
+import { Button } from '@plone/components';
 
 const meta = {
   title: 'Primitives/Card',
@@ -152,11 +153,9 @@ export const CustomImageInset: Story = {
     target: '/folder/page',
     imageSRC: 'black-starry-night.jpg',
     imageInset: (
-      <div className="image-wrapper">
-        <div className="date-inset">
-          <div className="day">10</div>
-          <div className="month">May 2025</div>
-        </div>
+      <div className="date-inset">
+        <div className="day">10</div>
+        <div className="month">May 2025</div>
       </div>
     ),
     item: {
@@ -164,6 +163,34 @@ export const CustomImageInset: Story = {
       description:
         'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
       head_title: 'Simple Card',
+    },
+    enableLink: true,
+  },
+};
+
+export const CustomActionInset: Story = {
+  render: (args) => (
+    <Wrapper>
+      <div style={{ width: 'var(--default-container-width)' }}>
+        <Card {...args} />
+      </div>
+    </Wrapper>
+  ),
+  args: {
+    target: '/folder/page',
+    imageSRC: 'black-starry-night.jpg',
+    actionsInset: (
+      <div style={{ marginTop: '20px' }}>
+        <a href="https://www.plone.org" rel="noreferrer" target="_blank">
+          <Button>Read More</Button>
+        </a>
+      </div>
+    ),
+    item: {
+      title: 'Card with a button (actionable inset)',
+      description:
+        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
+      head_title: 'This is the kicker',
     },
     enableLink: true,
   },
