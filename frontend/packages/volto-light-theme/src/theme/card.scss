@@ -143,3 +143,27 @@
     }
   }
 }
+
+// Listing
+.card {
+  .card-listing & .card-wrapper {
+    display: flex;
+
+    .image-wrapper {
+      // width: 50%;
+      flex: 0 1 220px;
+      margin-right: 20px;
+
+      @media only screen and (max-width: $largest-mobile-screen) {
+        margin-right: 0;
+        margin-bottom: 26px;
+      }
+    }
+
+    .content {
+      // width: 50%;
+      flex: 1 1 50%;
+      padding: 0;
+    }
+  }
+}
