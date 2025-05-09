@@ -28,7 +28,7 @@ export const Simple: Story = {
   ),
   args: {
     target: '/folder/page',
-    imageSRC: '/black-starry-night.jpg',
+    imageSRC: 'black-starry-night.jpg',
     item: {
       title: 'Simple Card with strings',
       description:
@@ -52,7 +52,7 @@ export const AlignedLeft: Story = {
   ),
   args: {
     target: '/folder/page',
-    imageSRC: '/black-starry-night.jpg',
+    imageSRC: 'black-starry-night.jpg',
     item: {
       title: 'Simple Card with strings',
       description:
@@ -76,7 +76,7 @@ export const AlignedRight: Story = {
   ),
   args: {
     target: '/folder/page',
-    imageSRC: '/black-starry-night.jpg',
+    imageSRC: 'black-starry-night.jpg',
     item: {
       title: 'Simple Card with strings',
       description:
@@ -102,7 +102,7 @@ export const SimpleContained: Story = {
   ),
   args: {
     target: '/folder/page',
-    imageSRC: '/black-starry-night.jpg',
+    imageSRC: 'black-starry-night.jpg',
     item: {
       title: 'Simple Card with strings',
       description:
