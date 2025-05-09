@@ -3,9 +3,10 @@ import {
   formatDateRange,
 } from '@kitconcept/volto-light-theme/helpers/dates';
 import FormattedDate from '@plone/volto/components/theme/FormattedDate/FormattedDate';
+import type { DefaultSummaryProps } from './DefaultSummary';
 
-const EventSummary = (props) => {
-  const { item, HeadingTag = 'h3' } = props;
+const EventSummary = (props: DefaultSummaryProps) => {
+  const { item, HeadingTag = 'h3', hide_description } = props;
   const start = parseDateFromCatalog(item.start);
   const end = parseDateFromCatalog(item.end);
   const headline = [
@@ -14,6 +15,7 @@ const EventSummary = (props) => {
         {formatDateRange({ start, end, locale: item.Language })}
       </span>
     ) : start ? (
+      // @ts-expect-error
       <FormattedDate key="day" date={start} />
     ) : null,
     item.head_title,
@@ -28,9 +30,7 @@ const EventSummary = (props) => {
       <HeadingTag className="title">
         {item.title ? item.title : item.id}
       </HeadingTag>
-      {!item.hide_description && (
-        <p className="description">{item.description}</p>
-      )}
+      {!hide_description && <p className="description">{item.description}</p>}
     </>
   );
 };

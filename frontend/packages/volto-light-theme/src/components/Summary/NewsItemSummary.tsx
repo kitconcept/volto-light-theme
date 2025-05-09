@@ -1,12 +1,14 @@
 import { parseDateFromCatalog } from '@kitconcept/volto-light-theme/helpers/dates';
 import FormattedDate from '@plone/volto/components/theme/FormattedDate/FormattedDate';
+import type { DefaultSummaryProps } from './DefaultSummary';
 
-const NewsItemSummary = (props) => {
-  const { item, HeadingTag = 'h3' } = props;
+const NewsItemSummary = (props: DefaultSummaryProps) => {
+  const { item, HeadingTag = 'h3', hide_description } = props;
 
   const effective = parseDateFromCatalog(item.effective);
   const headline = [
     effective ? (
+      // @ts-expect-error
       <FormattedDate
         key="day"
         date={effective}
@@ -30,9 +32,7 @@ const NewsItemSummary = (props) => {
       <HeadingTag className="title">
         {item.title ? item.title : item.id}
       </HeadingTag>
-      {!item.hide_description && (
-        <p className="description">{item.description}</p>
-      )}
+      {!hide_description && <p className="description">{item.description}</p>}
     </>
   );
 };

@@ -657,7 +657,7 @@
         padding-top: 0;
         background: var(--theme-high-contrast-color);
 
-        .teaser-item {
+        .teaser-item:not(.placeholder) {
           background: var(--theme-high-contrast-color);
         }
         .grid-teaser-item {

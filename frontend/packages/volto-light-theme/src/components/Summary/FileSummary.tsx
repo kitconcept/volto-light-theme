@@ -1,7 +1,8 @@
 import FileType from '@kitconcept/volto-light-theme/helpers/Filetype';
+import type { DefaultSummaryProps } from './DefaultSummary';
 
-const FileSummary = (props) => {
-  const { item, HeadingTag = 'h3' } = props;
+const FileSummary = (props: DefaultSummaryProps) => {
+  const { item, HeadingTag = 'h3', hide_description } = props;
 
   const headline = [item.getObjSize, FileType(item.mime_type), item.head_title]
     .filter((x) => x)
@@ -14,9 +15,7 @@ const FileSummary = (props) => {
       <HeadingTag className="title">
         {item.title ? item.title : item.id}
       </HeadingTag>
-      {!item.hide_description && (
-        <p className="description">{item.description}</p>
-      )}
+      {!hide_description && <p className="description">{item.description}</p>}
     </>
   );
 };

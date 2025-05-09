@@ -71,4 +71,5 @@ reference/helpers
 reference/feature-flags
 reference/recommended-addons
 reference/compatibility
+reference/storybook
 ```
