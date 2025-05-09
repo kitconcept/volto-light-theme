@@ -100,7 +100,7 @@ const Card = (props: CardProps) => {
 
   return (
     <div
-      className={cx('card', className)}
+      className={cx('card-wrapper', className)}
       onClick={onClick}
       onKeyDown={onKeyDown}
       role={enableLink ? 'link' : undefined}
@@ -115,7 +115,7 @@ const Card = (props: CardProps) => {
         openLinkInNewTab={openLinkInNewTab}
         ref={linkRef}
       />
-      <div className="card-wrapper">
+      <div className="card">
         {hasImageInset && (
           <div className="image-wrapper">
             {imageInset ? (

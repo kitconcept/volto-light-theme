@@ -6,15 +6,17 @@
   align-items: center;
   justify-content: center;
   border-radius: 100%;
-  background-color: #ecebeb;
+  background-color: var(--accent-color, #ecebeb);
   .day {
     font-size: 52px;
     font-style: normal;
     font-weight: 300;
     line-height: 60px;
+    color: var(--accent-foreground-color, #000);
   }
   .month {
     font-size: 14px;
+    color: var(--accent-foreground-color, #000);
   }
 }
 

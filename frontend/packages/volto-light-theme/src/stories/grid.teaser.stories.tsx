@@ -26,7 +26,7 @@ type Story = StoryObj<typeof meta>;
 export const One: Story = {
   render: (args) => (
     <Wrapper>
-      <div style={{ width: 'var(--default-container-width)' }}>
+      <div>
         <BlockWrapper {...args}>
           <GridBlockView {...args} />
         </BlockWrapper>
@@ -56,7 +56,7 @@ export const Two: Story = {
 export const Three: Story = {
   render: (args) => (
     <Wrapper>
-      <div style={{ width: 'var(--default-container-width)' }}>
+      <div className="page-layout">
         <BlockWrapper {...args}>
           <GridBlockView {...args} />
         </BlockWrapper>

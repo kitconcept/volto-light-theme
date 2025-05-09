@@ -21,7 +21,7 @@ type Story = StoryObj<typeof meta>;
 export const Left: Story = {
   render: (args) => (
     <Wrapper>
-      <div style={{ width: 'var(--default-container-width)' }}>
+      <div className="page-layout">
         <BlockWrapper {...args}>
           <TeaserDefaultBody {...args} />
         </BlockWrapper>

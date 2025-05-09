@@ -90,11 +90,14 @@ export const AlignedRight: Story = {
 
 export const SimpleContained: Story = {
   render: (args) => (
-    <div style={{ width: '300px' }}>
+    <div>
       <Wrapper>
         <div
           className="contained"
-          style={{ ['--theme-high-contrast-color' as string]: '#ecebeb' }}
+          style={{
+            ['--theme-high-contrast-color' as string]: '#ecebeb',
+            width: 'calc(var(--default-container-width) * .5)',
+          }}
         >
           <Card {...args} />
         </div>
@@ -171,7 +174,14 @@ export const CustomImageInset: Story = {
 export const CustomActionInset: Story = {
   render: (args) => (
     <Wrapper>
-      <div style={{ width: 'var(--default-container-width)' }}>
+      <div
+        style={{
+          width: 'var(--default-container-width)',
+          ['--theme-high-contrast-color' as string]: '#ecebeb',
+          ['--theme-foreground-color' as string]: '#000',
+          ['--theme-color' as string]: '#fff',
+        }}
+      >
         <Card {...args} />
       </div>
     </Wrapper>
@@ -180,11 +190,14 @@ export const CustomActionInset: Story = {
     target: '/folder/page',
     imageSRC: 'black-starry-night.jpg',
     actionsInset: (
-      <div style={{ marginTop: '20px' }}>
-        <a href="https://www.plone.org" rel="noreferrer" target="_blank">
-          <Button>Read More</Button>
-        </a>
-      </div>
+      <a
+        className="button"
+        href="https://www.plone.org"
+        rel="noreferrer"
+        target="_blank"
+      >
+        Read More
+      </a>
     ),
     item: {
       title: 'Card with a button (actionable inset)',

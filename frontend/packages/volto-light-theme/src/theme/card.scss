@@ -1,21 +1,22 @@
-.card {
+.card-wrapper {
   position: relative;
   transition: box-shadow 0.15s ease;
 }
 
-.card:hover,
+.card-wrapper:hover,
 .card:focus-within {
   cursor: pointer;
 }
 
-.card a {
+.card-wrapper .card a {
   inset: 0; /* top:0 right:0 bottom:0 left:0 */
   text-decoration: none; /* remove default underline */
 }
 
-.card .content,
-.card .content * {
+.card-wrapper .card .content,
+.card-wrapper .card .content * {
   user-select: text; /* explicit for clarity */
+  color: var(--theme-foreground-color);
 }
 
 .card {
@@ -50,38 +51,67 @@
     p {
       margin: 0;
       @include body-text();
+
+      // Add margin-bottom to description if actions-wrapper is not empty
+      &:not(:has(+ :empty)) {
+        margin-bottom: 40px;
+      }
+    }
+
+    .actions-wrapper {
+      .button {
+        @include body-text-bold();
+        padding: 8px 20px;
+        border: 1px solid $black;
+        border-color: var(--theme-foreground-color);
+        border-radius: unset;
+        margin: 0;
+        background: none;
+        background-color: var(--theme-color);
+        text-decoration: none;
+        transition: all 0.15s ease-in-out;
+
+        &:hover,
+        &:active,
+        &:focus {
+          border-color: var(--theme-foreground-color);
+          background-color: var(--theme-foreground-color);
+          color: var(--theme-color);
+        }
+      }
     }
   }
 }
 
 // Variants
-// // Contained
-.card {
-  .contained & .card-wrapper {
-    background: var(--theme-high-contrast-color);
-  }
-
-  .contained & .content {
-    padding-right: 20px;
-    padding-left: 20px;
+// Contained blocks
+.contained {
+  .card-wrapper {
+    .card {
+      background: var(--theme-high-contrast-color);
+      .content {
+        padding-right: 20px;
+        padding-left: 20px;
+      }
+    }
   }
 }
 
-// // Left-aligned
-.card {
-  .has--align--left:not(.contained) &,
-  .has--align--right:not(.contained) & {
-    .card-wrapper {
+// Not contained blocks
+:not(.contained) {
+  &.has--align--left,
+  &.has--align--right {
+    .card-wrapper .card {
       display: flex;
 
       .image-wrapper {
         // width: 50%;
         flex: 1 1 50%;
-        margin-right: 20px;
 
         @media only screen and (max-width: $largest-mobile-screen) {
-          margin-right: 0;
-          margin-bottom: 26px;
+          margin-right: 0 !important;
+          margin-left: 0 !important;
+          margin-bottom: $spacing-small;
         }
       }
 
@@ -93,28 +123,27 @@
     }
   }
 
-  .has--align--left:not(.contained) & {
+  &.has--align--left .card-wrapper .card {
     .image-wrapper {
-      margin-right: 20px;
+      margin-right: $spacing-small;
     }
   }
 
-  .has--align--right & {
-    .card-wrapper {
+  &.has--align--right .card-wrapper {
+    .card {
       flex-direction: row-reverse;
-    }
-
-    .image-wrapper {
-      margin-left: 20px;
+      .image-wrapper {
+        margin-left: $spacing-small;
+      }
     }
   }
 }
 
 @container (max-width: #{$largest-mobile-screen}) {
-  .card {
+  .card-wrapper {
     .has--align--left:not(.contained) &,
     .has--align--right:not(.contained) & {
-      .card-wrapper {
+      .card {
         display: block;
       }
       .image-wrapper {
@@ -130,7 +159,7 @@
   .card {
     .content {
       .one & h2 {
-        margin-bottom: 40px !important;
+        margin-bottom: $spacing-medium !important;
         @include text-heading-h2();
       }
       .two & h2,
@@ -152,11 +181,11 @@
     .image-wrapper {
       // width: 50%;
       flex: 0 1 220px;
-      margin-right: 20px;
+      margin-right: $spacing-small;
 
       @media only screen and (max-width: $largest-mobile-screen) {
         margin-right: 0;
-        margin-bottom: 26px;
+        margin-bottom: $spacing-small;
       }
     }
 

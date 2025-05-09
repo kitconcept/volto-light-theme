@@ -5,6 +5,7 @@ import UniversalLink from '@plone/volto/components/manage/UniversalLink/Universa
 import { flattenToAppURL, isInternalURL } from '@plone/volto/helpers/Url/Url';
 import config from '@plone/volto/registry';
 import DefaultSummary from '@kitconcept/volto-light-theme/components/Summary/DefaultSummary';
+import Card from '../../Card/Card';
 
 const DefaultTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
   let link = null;
@@ -21,7 +22,7 @@ const DefaultTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
   }
 
   return (
-    <>
+    <div className="block-inner-container">
       <div className="items">
         {items.map((item) => {
           const Summary =
@@ -31,18 +32,19 @@ const DefaultTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
             }).component || DefaultSummary;
           return (
             <div className="listing-item" key={item['@id']}>
-              <ConditionalLink item={item} condition={!isEditMode}>
-                <div className="listing-body">
-                  <Summary item={item} HeadingTag="h2" />
-                </div>
-              </ConditionalLink>
+              <Card
+                target={item.getURL}
+                item={item}
+                enableLink={!isEditMode}
+                summaryComponent={Summary}
+              />
             </div>
           );
         })}
       </div>
 
       {link && <div className="footer">{link}</div>}
-    </>
+    </div>
   );
 };
 DefaultTemplate.propTypes = {
