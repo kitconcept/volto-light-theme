@@ -11,6 +11,8 @@ type CardProps = {
   openLinkInNewTab?: boolean;
   item?: Partial<ObjectBrowserItem>;
   enableLink?: boolean;
+  imageInset?: React.ReactNode;
+  actionableInset?: React.ReactNode;
   imageComponent?: React.ComponentType<any>;
   summaryComponent?: React.ComponentType<any>;
   hide_description?: boolean;
@@ -60,6 +62,8 @@ const Card = (props: CardProps) => {
     imageComponent,
     summaryComponent,
     hide_description,
+    imageInset,
+    actionableInset,
   } = props;
 
   const Image = imageComponent || DefaultImage;
@@ -105,23 +109,29 @@ const Card = (props: CardProps) => {
         ref={linkRef}
       />
       <div className="card-wrapper">
-        {/* It's an external image, providing a string (src) */}
-        {imageSRC ? (
-          <div className="image-wrapper">
-            <Image src={imageSRC} alt="" loading="lazy" responsive={true} />
-          </div>
+        {imageInset ? (
+          imageInset
         ) : (
-          (item.hasPreviewImage || item.image_field || image) && (
-            <div className="image-wrapper">
-              <Image
-                item={image || item}
-                imageField={image ? image.image_field : item.image_field}
-                alt=""
-                loading="lazy"
-                responsive={true}
-              />
-            </div>
-          )
+          <>
+            {/* It's an external image, providing a string (src) */}
+            {imageSRC ? (
+              <div className="image-wrapper">
+                <Image src={imageSRC} alt="" loading="lazy" responsive={true} />
+              </div>
+            ) : (
+              (item.hasPreviewImage || item.image_field || image) && (
+                <div className="image-wrapper">
+                  <Image
+                    item={image || item}
+                    imageField={image ? image.image_field : item.image_field}
+                    alt=""
+                    loading="lazy"
+                    responsive={true}
+                  />
+                </div>
+              )
+            )}
+          </>
         )}
         <div className="content">
           <Summary
@@ -130,6 +140,7 @@ const Card = (props: CardProps) => {
             HeadingTag="h2"
             hide_description={hide_description}
           />
+          {actionableInset ? actionableInset : null}
         </div>
       </div>
     </div>

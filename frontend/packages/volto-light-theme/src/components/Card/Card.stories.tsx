@@ -137,6 +137,38 @@ export const SimpleListing: Story = {
   },
 };
 
+export const CustomImageInset: Story = {
+  render: (args) => (
+    <Wrapper>
+      <div
+        className="card-listing"
+        style={{ width: 'var(--default-container-width)' }}
+      >
+        <Card {...args} />
+      </div>
+    </Wrapper>
+  ),
+  args: {
+    target: '/folder/page',
+    imageSRC: 'black-starry-night.jpg',
+    imageInset: (
+      <div className="image-wrapper">
+        <div className="date-inset">
+          <div className="day">10</div>
+          <div className="month">May 2025</div>
+        </div>
+      </div>
+    ),
+    item: {
+      title: 'Simple Card with strings',
+      description:
+        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
+      head_title: 'Simple Card',
+    },
+    enableLink: true,
+  },
+};
+
 export const Default: Story = {
   render: (args) => (
     <div style={{ width: '300px' }}>
