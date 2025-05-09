@@ -40,8 +40,8 @@ const TeaserDefaultTemplate = (props) => {
 
   return (
     <div className={cx('block teaser', className)} style={style}>
-      <>
-        {isEmpty(href) && isEditMode && (
+      <div className="block-inner-container">
+        {!href && isEditMode && (
           <Message>
             <div className="teaser-item placeholder">
               <img src={imageBlockSVG} alt="" />
@@ -59,7 +59,7 @@ const TeaserDefaultTemplate = (props) => {
           imageComponent={Image}
           imageSRC={url && !image?.image_field ? url : undefined}
         />
-      </>
+      </div>
     </div>
   );
 };
