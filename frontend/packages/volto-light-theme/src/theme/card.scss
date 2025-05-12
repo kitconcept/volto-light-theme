@@ -57,7 +57,7 @@
 // Variants
 // // Contained
 .card {
-  .contained & .card-wrapper {
+  .contained & .content-wrapper {
     background: var(--theme-high-contrast-color);
   }
 
@@ -71,7 +71,7 @@
 .card {
   .has--align--left:not(.contained) &,
   .has--align--right:not(.contained) & {
-    .card-wrapper {
+    .content-wrapper {
       display: flex;
 
       .image-wrapper {
@@ -100,7 +100,7 @@
   }
 
   .has--align--right & {
-    .card-wrapper {
+    .content-wrapper {
       flex-direction: row-reverse;
     }
 
@@ -114,7 +114,7 @@
   .card {
     .has--align--left:not(.contained) &,
     .has--align--right:not(.contained) & {
-      .card-wrapper {
+      .content-wrapper {
         display: block;
       }
       .image-wrapper {
@@ -146,7 +146,7 @@
 
 // Listing
 .card {
-  .card-listing & .card-wrapper {
+  .card-listing & .content-wrapper {
     display: flex;
 
     .image-wrapper {

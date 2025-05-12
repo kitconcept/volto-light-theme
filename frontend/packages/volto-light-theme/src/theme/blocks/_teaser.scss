@@ -31,7 +31,7 @@
 
   &.has--align--left,
   &.has--align--right {
-    .card-wrapper {
+    .content-wrapper {
       padding-bottom: 40px;
     }
 
@@ -119,13 +119,13 @@
 
   &.is--last--of--block-type,
   &.next--has--different--backgroundColor {
-    .card-wrapper,
+    .content-wrapper,
     .teaser-item.default {
       padding-bottom: 0;
       border-bottom: none;
     }
     &.next--is--__button {
-      .card-wrapper,
+      .content-wrapper,
       .teaser-item.default {
         padding-bottom: 40px;
         border-bottom: 1px solid;
@@ -136,7 +136,7 @@
 
 // Only bottom border in render, just for top level teasers
 .blocks-group-wrapper > .block.teaser {
-  .card-wrapper {
+  .content-wrapper {
     border-bottom: 1px solid var(--theme-foreground-color, $black);
   }
 }

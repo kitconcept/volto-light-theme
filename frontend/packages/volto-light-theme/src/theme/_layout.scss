@@ -243,7 +243,7 @@ External link removal for all the blocks.
   & > .block h2.headline,
   & > .block.heading .heading-wrapper,
   & > .block.teaser .teaser-item.default,
-  & > .block.teaser .card-wrapper, // deprecate when category is in place
+  & > .block.teaser .content-wrapper, // deprecate when category is in place
   & > .block.highlight .teaser-description-title,
   & > table,
   & > .table-of-contents,
@@ -482,7 +482,6 @@ body.has-toolbar.has-sidebar .block .ui.basic.button.delete-button {
 
 // Category teaser
 .category-teaser {
-  .card-wrapper,
   .block-inner-container {
     @include default-container-width();
     @include adjustMarginsToContainer($default-container-width);

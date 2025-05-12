@@ -115,7 +115,7 @@ const Card = (props: CardProps) => {
         openLinkInNewTab={openLinkInNewTab}
         ref={linkRef}
       />
-      <div className="card-wrapper">
+      <div className="content-wrapper">
         {hasImageInset && (
           <div className="image-wrapper">
             {imageInset ? (
@@ -152,9 +152,9 @@ const Card = (props: CardProps) => {
             HeadingTag="h2"
             hide_description={hide_description}
           />
-          <div className="actions-wrapper">
-            {actionsInset ? actionsInset : null}
-          </div>
+          {actionsInset ? (
+            <div className="actions-wrapper">{actionsInset}</div>
+          ) : null}
         </div>
       </div>
     </div>
