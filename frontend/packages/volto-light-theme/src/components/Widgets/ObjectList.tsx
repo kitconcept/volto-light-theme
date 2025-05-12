@@ -176,7 +176,8 @@ const ObjectListWidget = (props: ObjectListWidgetProps) => {
     setActiveObject(newIndex);
   }
 
-  const objectSchema = typeof schema === 'function' ? schema(props) : schema;
+  const objectSchema =
+    typeof schema === 'function' ? schema({ ...props, activeObject }) : schema;
 
   function handleDragEnd(event) {
     const { active, over } = event;
