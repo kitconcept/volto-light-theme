@@ -38,6 +38,7 @@ const TeaserDefaultTemplate = (props) => {
       ? '_blank'
       : null;
 
+  const { '@id': id, ...filteredData } = data;
   return (
     <div className={cx('block teaser', className)} style={style}>
       <>
@@ -52,7 +53,7 @@ const TeaserDefaultTemplate = (props) => {
         <Card
           target={href['@id']}
           image={image}
-          item={!data.overwrite ? href : { ...href, ...data }}
+          item={!data.overwrite ? href : { ...href, ...filteredData }}
           openLinkInNewTab={openLinkInNewTab}
           enableLink={!isEditMode}
           summaryComponent={Summary}
