@@ -65,50 +65,7 @@ const Card = (props: CardProps) => {
         openLinkInNewTab={openLinkInNewTab}
         ref={linkRef}
       />
-      <div className="content-wrapper">
-        {props.children}
-        {/*
-        {hasImageInset && (
-          <div className="image-wrapper">
-            {imageInset ? (
-              imageInset
-            ) : (
-              <>
-
-                {imageSRC ? (
-                  <Image
-                    src={imageSRC}
-                    alt=""
-                    loading="lazy"
-                    responsive={true}
-                  />
-                ) : (
-                  (item.hasPreviewImage || item.image_field || image) && (
-                    <Image
-                      item={image || item}
-                      imageField={image ? image.image_field : item.image_field}
-                      alt=""
-                      loading="lazy"
-                      responsive={true}
-                    />
-                  )
-                )}
-              </>
-            )}
-          </div>
-        )}
-        <div className="content">
-          <Summary
-            item={item}
-            titleId={titleId}
-            HeadingTag="h2"
-            hide_description={hide_description}
-          />
-          {actionsInset ? (
-            <div className="actions-wrapper">{actionsInset}</div>
-          ) : null}
-        </div>*/}
-      </div>
+      <div className="content-wrapper">{props.children}</div>
     </div>
   );
 };

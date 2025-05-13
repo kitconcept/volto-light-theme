@@ -37,8 +37,9 @@ const TeaserDefaultTemplate = (props) => {
     (openExternalLinkInNewTab && !isInternalURL(href['@id']))
       ? '_blank'
       : null;
-
+  const a11yLinkId = React.useId();
   const { '@id': id, ...filteredData } = data;
+
   return (
     <div className={cx('block teaser', className)} style={style}>
       <>
@@ -54,6 +55,7 @@ const TeaserDefaultTemplate = (props) => {
           href={href['@id']}
           openLinkInNewTab={openLinkInNewTab}
           enableLink={!isEditMode}
+          a11yLinkId={a11yLinkId}
         >
           <Card.Image
             src={url && !image?.image_field ? url : undefined}
@@ -64,7 +66,7 @@ const TeaserDefaultTemplate = (props) => {
             <Summary
               item={!data.overwrite ? href : { ...href, ...filteredData }}
               HeadingTag="h2"
-              titleId="card-title"
+              titleId={a11yLinkId}
             />
           </Card.Summary>
         </Card>
