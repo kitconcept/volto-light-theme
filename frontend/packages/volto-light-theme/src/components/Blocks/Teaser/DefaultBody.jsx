@@ -61,7 +61,7 @@ const TeaserDefaultTemplate = (props) => {
             imageComponent={Image}
           />
           <Card.Summary>
-            <DefaultSummary
+            <Summary
               item={!data.overwrite ? href : { ...href, ...filteredData }}
               HeadingTag="h2"
               titleId="card-title"
