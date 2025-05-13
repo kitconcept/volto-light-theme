@@ -51,15 +51,23 @@ const TeaserDefaultTemplate = (props) => {
           </Message>
         )}
         <Card
-          target={href['@id']}
-          image={image}
-          item={!data.overwrite ? href : { ...href, ...filteredData }}
+          href={href['@id']}
           openLinkInNewTab={openLinkInNewTab}
           enableLink={!isEditMode}
-          summaryComponent={Summary}
-          imageComponent={Image}
-          imageSRC={url && !image?.image_field ? url : undefined}
-        />
+        >
+          <Card.Image
+            src={url && !image?.image_field ? url : undefined}
+            item={!data.overwrite ? href : { ...href, ...filteredData }}
+            imageComponent={Image}
+          />
+          <Card.Summary>
+            <DefaultSummary
+              item={!data.overwrite ? href : { ...href, ...filteredData }}
+              HeadingTag="h2"
+              titleId="card-title"
+            />
+          </Card.Summary>
+        </Card>
       </>
     </div>
   );
