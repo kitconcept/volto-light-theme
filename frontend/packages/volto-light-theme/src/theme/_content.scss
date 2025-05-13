@@ -79,9 +79,9 @@
     }
   }
   .dates {
-    color: var(--primary-foreground-color);
     margin-top: $spacing-medium;
     margin-bottom: $spacing-medium;
+    color: var(--primary-foreground-color);
     @container (max-width: #{$largest-mobile-screen} ) {
       margin-bottom: $spacing-small;
     }

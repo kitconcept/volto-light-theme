@@ -2,9 +2,9 @@
   .details-container {
     padding-top: $spacing-xlarge;
     padding-bottom: $spacing-xlarge;
+    border-color: var(--theme-foreground-color);
     border-top: 1px solid $black;
     border-bottom: 1px solid $black;
-    border-color: var(--theme-foreground-color);
     margin-top: 0px;
     margin-bottom: $spacing-xlarge;
     @container (max-width: #{$largest-mobile-screen} ) {
@@ -45,9 +45,9 @@
           .separator {
             width: 170px;
             height: 30px;
+            border-color: var(--theme-foreground-color);
             border-right: none;
             border-bottom: 1px solid #000;
-            border-color: var(--theme-foreground-color);
           }
         }
       }
