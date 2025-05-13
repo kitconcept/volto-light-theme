@@ -82,6 +82,9 @@
 
 // Color map
 @mixin use-theme-colors() {
+  #page-document {
+    background: var(--primary-color);
+  }
   // Page title
   h1.documentFirstHeading {
     color: var(--theme-foreground-color);
@@ -95,6 +98,11 @@
   .table-of-contents {
     h2 {
       color: var(--theme-foreground-color);
+    }
+    .ui.bulleted.list li {
+      &::before {
+        color: var(--link-foreground-color) !important;
+      }
     }
   }
 
@@ -727,6 +735,12 @@
       }
     }
 
+    &.eventMetadata {
+      .details-container {
+        color: var(--theme-foreground-color);
+      }
+    }
+
     .cookie-consent-buttons {
       button.button {
         color: black;
@@ -838,8 +852,11 @@
     }
 
     [class^='block-editor-'] {
-      a.slate-editor-link {
-        color: var(--theme-foreground-color);
+      a.slate-editor-link span[data-slate-string='true'] {
+        color: var(
+          --link-foreground-color,
+          --theme-foreground-color
+        ) !important;
       }
 
       .block {
@@ -905,6 +922,14 @@
             p {
               color: black !important;
             }
+          }
+        }
+
+        .eventMetadata {
+          color: var(--theme-foreground-color);
+
+          a {
+            color: var(--link-foreground-color, --theme-foreground-color);
           }
         }
       }
@@ -1133,6 +1158,26 @@
         & > span,
         & > div {
           color: var(--primary-foreground-color);
+
+          .ui.pagination.menu {
+            background: var(--primary-color);
+
+            a.item {
+              color: var(--primary-foreground-color);
+
+              &:not([aria-current='true']) {
+                color: var(--link-foreground-color);
+              }
+
+              &.disabled {
+                color: var(--primary-foreground-color) !important;
+                opacity: 0.8;
+              }
+            }
+            a.item:not([aria-current='true']) {
+              color: var(--link-foreground-color);
+            }
+          }
         }
 
         #content-core {

@@ -1,6 +1,7 @@
 #footer {
-  margin-top: $footer-vertical-spacing-top;
+  padding-top: $footer-vertical-spacing-top;
   text-align: center;
+  background: var(--footer-background);
 
   .container {
     padding: 0 1rem;
