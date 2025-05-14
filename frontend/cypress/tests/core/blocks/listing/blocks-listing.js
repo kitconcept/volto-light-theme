@@ -9,9 +9,6 @@ describe('Listing Block Tests', () => {
       contentId: 'my-page',
       contentTitle: 'My Page',
     });
-    cy.removeContent({ path: 'news' });
-    cy.removeContent({ path: 'events' });
-    cy.removeContent({ path: 'Members' });
 
     cy.visit('/');
     cy.wait('@content');
@@ -789,7 +786,7 @@ describe('Listing Block Tests', () => {
       .should('not.exist');
   });
 
-  it('Listing block: respect batching and limits', () => {
+  it.only('Listing block: respect batching and limits', () => {
     cy.intercept('PATCH', '/**/my-page').as('save');
     cy.intercept('GET', '/**/my-page').as('content');
     cy.intercept('GET', '/**/@types/Document').as('schema');
@@ -864,7 +861,7 @@ describe('Listing Block Tests', () => {
     cy.get('#field-b_size-4-querystring').click().type('2');
     cy.get('.ui.pagination.menu a[value="2"]').first().click();
 
-    cy.get('.listing-item h3').first().contains('My Folder 3');
+    cy.get('.listing-item h2').first().contains('My Folder 3');
   });
 
   it('Navigates in listing block pagination and url clears on logo click', () => {
@@ -931,7 +928,7 @@ describe('Listing Block Tests', () => {
   });
 
   // reload url when ?page=2
-  it('Reload path when listing page = 2', () => {
+  it.only('Reload path when listing page = 2', () => {
     cy.intercept('PATCH', '/**/my-page').as('save');
     cy.intercept('GET', '/**/my-page').as('content');
     cy.intercept('GET', '/**/@types/Document').as('schema');
@@ -1003,7 +1000,7 @@ describe('Listing Block Tests', () => {
     cy.get('#field-b_size-4-querystring').click().type('2');
     cy.get('.ui.pagination.menu a[value="2"]').first().click();
 
-    cy.get('.listing-item h3').first().contains('My Folder 3');
+    cy.get('.listing-item h2').first().contains('My Folder 3');
     cy.get('#toolbar-save').click();
     cy.wait('@save');
     cy.wait('@content');

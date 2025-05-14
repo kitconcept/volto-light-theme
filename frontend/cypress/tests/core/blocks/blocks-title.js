@@ -20,6 +20,6 @@ describe('Title Block Tests', () => {
   it('No border in input', () => {
     cy.get('.block-editor-title [role=textbox]')
       .click()
-      .should('have.css', 'outline', 'rgba(0, 0, 0, 0.87) none 0px');
+      .should('have.css', 'outline', 'rgb(0, 0, 0) none 0px');
   });
 });

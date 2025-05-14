@@ -29,7 +29,10 @@ describe('Blocks Tests', () => {
       },
     });
     cy.visit('/test-doc');
-    cy.get('#page-document div').should('have.text', 'Unknown Block missing');
+    cy.get('#page-document .blocks-group-wrapper div').should(
+      'have.text',
+      'Unknown Block missing',
+    );
   });
 
   // it('Add hero block', () => {

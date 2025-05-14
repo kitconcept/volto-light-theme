@@ -22,12 +22,14 @@ describe('Block Indexing Tests', () => {
     cy.get('#toolbar-save').click();
 
     // WHEN: I search for Avram
-    cy.findByLabelText('Search').filter('button').click();
-    cy.get('input[name="SearchableText"]')
+    cy.get('.navigation-desktop .search-button')
+      .findByLabelText('Search')
+      .filter('button')
+      .click();
+    cy.get('.navigation-desktop input[name="SearchableText"]')
       .should('not.be.disabled')
       .clear()
-      .type('Avram');
-    cy.get('button[aria-label="Search"]').click();
+      .type('Avram{enter}');
 
     // THEN: The search results should contain the page 'Noam Avram Chomsky'
     cy.get('#content-core').contains('My Page');

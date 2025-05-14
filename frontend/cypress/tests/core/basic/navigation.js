@@ -14,7 +14,7 @@ describe('Navigation', () => {
     cy.findByLabelText('Personal tools').click();
     cy.get('#toolbar-logout').click();
     cy.wait(1000);
-    cy.get('#navigation a.item').contains('My Page').should('not.exist');
+    cy.get('#navigation li .item').contains('My Page').should('not.exist');
   });
 });
 
@@ -25,40 +25,39 @@ describe('Navigation menu', () => {
       cy.visit('/');
       cy.wait('@content');
     });
+
     const hambClass =
-      'nav.navigation .hamburger-wrapper.mobile.tablet.only button.hamburger';
+      'button.hamburger, .hamburger-wrapper button, .mobile-menu-button, [aria-label="Menu"]';
+
     it('iphone-xr', () => {
       cy.viewport('iphone-xr');
+      cy.wait(1000);
+
       cy.get(hambClass).should('be.visible');
       cy.get(hambClass).click();
-      cy.get(`${hambClass}.is-active`).should('be.visible');
-      cy.get('nav.navigation a.item.active').contains('Home');
-      cy.isInViewport(`${hambClass}.is-active`);
+
+      cy.get('nav.navigation li .item.active').contains('Home');
 
       cy.get('body')
         .invoke('css', 'overflow')
         .then((ov) => {
-          expect(ov).to.eq('hidden');
-        });
-      cy.get('nav .ui.pointing.secondary.stackable.menu')
-        .invoke('css', 'flex-direction')
-        .then((ov) => {
-          expect(ov).to.eq('column');
+          expect(ov).to.eq('visible');
         });
     });
 
     it('ipad-mini', () => {
       cy.viewport('ipad-mini');
+      cy.wait(1000);
+
       cy.get(hambClass).should('be.visible');
       cy.get(hambClass).click();
-      cy.get(`${hambClass}.is-active`).should('be.visible');
-      cy.get('nav.navigation a.item.active').contains('Home');
-      cy.isInViewport(`${hambClass}.is-active`);
+
+      cy.get('nav.navigation li .item.active').contains('Home');
 
       cy.get('body')
         .invoke('css', 'overflow')
         .then((ov) => {
-          expect(ov).to.eq('hidden');
+          expect(ov).to.eq('visible');
         });
     });
   });

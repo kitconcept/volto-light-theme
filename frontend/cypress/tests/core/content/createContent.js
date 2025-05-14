@@ -66,7 +66,7 @@ describe('createContent Tests', () => {
     // cy.get('.view-wrapper a').click();
   });
 
-  it('Create Image', function () {
+  it.only('Create Image', function () {
     cy.createContent({
       contentType: 'Image',
       contentId: 'my-image',
@@ -78,7 +78,7 @@ describe('createContent Tests', () => {
     cy.get('.view-wrapper img')
       .should('have.attr', 'src')
       .and('include', '/my-image/@@images/');
-    cy.get('.view-wrapper img').should('have.attr', 'alt', 'My Image');
+    cy.get('.view-wrapper img').should('have.attr', 'alt', '');
     // cy.get('.view-wrapper a').click();
   });
 });

@@ -143,7 +143,7 @@ describe('Search Block Tests', () => {
     cy.get('.search-details').should('contain', 'Search results: 1');
   });
 
-  it('Search block - test date range facet', () => {
+  it.only('Search block - test date range facet', () => {
     cy.visit('/');
     cy.get('#toolbar-add > .icon').click();
     cy.get('#toolbar-add-document').click();

@@ -42,10 +42,10 @@ describe('Text Block Tests', () => {
 
     cy.log('then the page view should contain a link');
 
-    cy.get('.ui.container p').contains(
+    cy.get('.blocks-group-wrapper p').contains(
       'Colorless green ideas sleep furiously.',
     );
-    cy.get('.ui.container p a')
+    cy.get('.blocks-group-wrapper p a')
       .should('have.text', 'furiously')
       .and('have.attr', 'href')
       .and('include', 'https://google.com');
@@ -66,10 +66,10 @@ describe('Text Block Tests', () => {
     cy.toolbarSave();
 
     cy.log('then the page view should contain a mailto link');
-    cy.get('.ui.container p').contains(
+    cy.get('.blocks-group-wrapper p').contains(
       'Colorless green ideas sleep furiously.',
     );
-    cy.get('.ui.container p a')
+    cy.get('.blocks-group-wrapper p a')
       .should('have.text', 'furiously')
       .and('have.attr', 'href')
       .and('include', 'mailto:hello@example.com');
