@@ -16,10 +16,7 @@ myst:
 | 5.x.x       |   >= Volto 17.18.0 | >= Plone 6.0.x |
 | 6.x.x       |   >=Volto 18.19.0  | >=9.13.2 |
 
-Compatibility with Volto 16 might be achieved, but it has to be at the customization level in the specific project add-on.
-This is mainly due to the `RenderBlocks` customization that is based on the one in Volto 17, because of the Grid block in core and the autogrouping feature.
-
-Same applies for achieving compatibility with Volto 17 beyond 5.x.x series, it will require backporting the utilities registry along with the client transforms for Redux reducers and the `styleWrapperStyleObjectEnhancer` feature.
+Achieving compatibility with Volto 17 beyond 5.x.x series might be possible but it will require backporting the utilities registry along with the client transforms for Redux reducers and the `styleWrapperStyleObjectEnhancer` feature.
 
 For 6 series, it is recommended to use always latests versions both Plone, Plone RESTAPI and Volto.
 
