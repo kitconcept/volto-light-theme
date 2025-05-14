@@ -35,7 +35,7 @@ export const Simple: Story = {
         <Card href={args.href}>
           <Card.Image src={imageSRC} />
           <Card.Summary>
-            <DefaultSummary item={item} HeadingTag="h2" titleId="card-title" />
+            <DefaultSummary item={item} HeadingTag="h2" />
           </Card.Summary>
         </Card>
       </Wrapper>
@@ -43,7 +43,6 @@ export const Simple: Story = {
   ),
   args: {
     href: '/folder/page',
-    enableLink: true,
   },
 };
 
@@ -57,7 +56,7 @@ export const AlignedLeft: Story = {
         <Card href={args.href}>
           <Card.Image src={imageSRC} />
           <Card.Summary>
-            <DefaultSummary item={item} HeadingTag="h2" titleId="card-title" />
+            <DefaultSummary item={item} HeadingTag="h2" />
           </Card.Summary>
         </Card>
       </div>
@@ -65,7 +64,6 @@ export const AlignedLeft: Story = {
   ),
   args: {
     href: '/folder/page',
-    enableLink: true,
   },
 };
 
@@ -79,7 +77,7 @@ export const AlignedRight: Story = {
         <Card href={args.href}>
           <Card.Image src={imageSRC} />
           <Card.Summary>
-            <DefaultSummary item={item} HeadingTag="h2" titleId="card-title" />
+            <DefaultSummary item={item} HeadingTag="h2" />
           </Card.Summary>
         </Card>
       </div>
@@ -87,7 +85,6 @@ export const AlignedRight: Story = {
   ),
   args: {
     href: '/folder/page',
-    enableLink: true,
   },
 };
 
@@ -102,11 +99,7 @@ export const SimpleContained: Story = {
           <Card href={args.href}>
             <Card.Image src={imageSRC} />
             <Card.Summary>
-              <DefaultSummary
-                item={item}
-                HeadingTag="h2"
-                titleId="card-title"
-              />
+              <DefaultSummary item={item} HeadingTag="h2" />
             </Card.Summary>
           </Card>
         </div>
@@ -115,7 +108,6 @@ export const SimpleContained: Story = {
   ),
   args: {
     href: '/folder/page',
-    enableLink: true,
   },
 };
 
@@ -129,7 +121,7 @@ export const SimpleListing: Story = {
         <Card href={args.href}>
           <Card.Image src={imageSRC} />
           <Card.Summary>
-            <DefaultSummary item={item} HeadingTag="h2" titleId="card-title" />
+            <DefaultSummary item={item} HeadingTag="h2" />
           </Card.Summary>
         </Card>
       </div>
@@ -137,7 +129,6 @@ export const SimpleListing: Story = {
   ),
   args: {
     href: '/folder/page',
-    enableLink: true,
   },
 };
 
@@ -148,7 +139,7 @@ export const CustomImageInset: Story = {
         className="card-listing"
         style={{ width: 'var(--default-container-width)' }}
       >
-        <Card href={args.href} a11yLinkId="card-title">
+        <Card href={args.href}>
           <Card.Image>
             <div className="date-inset">
               <div className="day">10</div>
@@ -156,7 +147,7 @@ export const CustomImageInset: Story = {
             </div>
           </Card.Image>
           <Card.Summary>
-            <DefaultSummary item={item} HeadingTag="h2" titleId="card-title" />
+            <DefaultSummary item={item} HeadingTag="h2" />
           </Card.Summary>
         </Card>
       </div>
@@ -164,7 +155,6 @@ export const CustomImageInset: Story = {
   ),
   args: {
     href: '/folder/page',
-    enableLink: true,
   },
 };
 
@@ -175,7 +165,7 @@ export const CustomActionInset: Story = {
         <Card href={args.href}>
           <Card.Image src={imageSRC} />
           <Card.Summary>
-            <DefaultSummary item={item} HeadingTag="h2" titleId="card-title" />
+            <DefaultSummary item={item} HeadingTag="h2" />
           </Card.Summary>
           <Card.Actions>
             <div style={{ marginTop: '20px' }}>
@@ -190,7 +180,6 @@ export const CustomActionInset: Story = {
   ),
   args: {
     href: '/folder/page',
-    enableLink: true,
   },
 };
 
@@ -201,11 +190,7 @@ export const Default: Story = {
         <Card href={args.href}>
           <Card.Image src={imageSRC} />
           <Card.Summary>
-            <DefaultSummary
-              item={ObjectBrowserItem}
-              HeadingTag="h2"
-              titleId="card-title"
-            />
+            <DefaultSummary item={ObjectBrowserItem} HeadingTag="h2" />
           </Card.Summary>
         </Card>
       </Wrapper>
@@ -214,6 +199,5 @@ export const Default: Story = {
   args: {
     href: ObjectBrowserItem['@id'],
     // image: ObjectBrowserItem.image_scales[ObjectBrowserItem.image_field][0],
-    enableLink: true,
   },
 };

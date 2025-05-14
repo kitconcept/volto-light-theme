@@ -243,7 +243,7 @@ External link removal for all the blocks.
   & > .block h2.headline,
   & > .block.heading .heading-wrapper,
   & > .block.teaser .teaser-item.default,
-  & > .block.teaser .content-wrapper, // deprecate when category is in place
+  & > .block.teaser .card-inner, // deprecate when category is in place
   & > .block.highlight .teaser-description-title,
   & > table,
   & > .table-of-contents,
@@ -420,9 +420,14 @@ External link removal for all the blocks.
 // For the rest, we rely on the default SemanticUI grid behavior and the adjustments
 // made above.
 @container (max-width: #{$default-container-width + 2 * 20px}) {
-  .block.gridBlock .ui.stackable.grid > .column:not(.row) {
-    padding-right: 20px !important;
-    padding-left: 20px !important;
+  // .block.gridBlock .ui.stackable.grid > .column:not(.row) {
+  //   padding-right: 20px !important;
+  //   padding-left: 20px !important;
+  //   transition: padding 0.3s ease;
+  // }
+  .block.gridBlock .ui.stackable.grid {
+    padding-right: 10px !important;
+    padding-left: 10px !important;
     transition: padding 0.3s ease;
   }
   #page-document .blocks-group-wrapper > .block.gridBlock h2.headline {

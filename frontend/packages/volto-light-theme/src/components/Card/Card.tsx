@@ -6,9 +6,7 @@ import type { ObjectBrowserItem } from '@plone/types';
 type CardProps = {
   className?: string;
   href?: string;
-  a11yLinkId?: string;
   openLinkInNewTab?: boolean;
-  enableLink?: boolean;
   children?: React.ReactNode;
 };
 
@@ -24,9 +22,19 @@ const DefaultImage = (props: any) => {
   );
 };
 
-const Card = (props: CardProps) => {
-  const { className, href, openLinkInNewTab, enableLink, a11yLinkId } = props;
+const childrenWithProps = (children, extraProps) => {
+  return React.Children.map(children, (child) => {
+    if (React.isValidElement(child)) {
+      return React.cloneElement(child, extraProps);
+    }
+    return child;
+  });
+};
 
+const Card = (props: CardProps) => {
+  const { className, href, openLinkInNewTab } = props;
+
+  const a11yLabelId = React.useId();
   const linkRef = React.useRef<HTMLAnchorElement>(null);
 
   const triggerNavigation = () => {
@@ -38,11 +46,11 @@ const Card = (props: CardProps) => {
   };
 
   const onClick: React.MouseEventHandler<HTMLDivElement> = () => {
-    if (enableLink) triggerNavigation();
+    if (href) triggerNavigation();
   };
 
   const onKeyDown: React.KeyboardEventHandler<HTMLDivElement> = (e) => {
-    if (!enableLink) return;
+    if (!href) return;
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
       triggerNavigation();
@@ -54,18 +62,20 @@ const Card = (props: CardProps) => {
       className={cx('card', className)}
       onClick={onClick}
       onKeyDown={onKeyDown}
-      role={enableLink ? 'link' : undefined}
-      tabIndex={enableLink ? 0 : undefined}
+      role={href ? 'link' : undefined}
+      tabIndex={href ? 0 : undefined}
     >
       {/* @ts-expect-error since this has no children, should fail */}
       <ConditionalLink
-        aria-labelledby={a11yLinkId}
-        condition={enableLink && !!href}
+        aria-labelledby={a11yLabelId}
+        condition={!!href}
         href={href}
         openLinkInNewTab={openLinkInNewTab}
         ref={linkRef}
       />
-      <div className="content-wrapper">{props.children}</div>
+      <div className="card-inner">
+        {childrenWithProps(props.children, { a11yLabelId })}
+      </div>
     </div>
   );
 };
@@ -104,7 +114,9 @@ const CardImage = (props: CardImageProps) => {
 };
 
 const CardSummary = (props: any) => (
-  <div className="content">{props.children}</div>
+  <div className="card-summary">
+    {childrenWithProps(props.children, { a11yLabelId: props.a11yLabelId })}
+  </div>
 );
 const CardActions = (props: any) => (
   <div className="actions-wrapper">{props.children}</div>

@@ -37,7 +37,6 @@ const TeaserDefaultTemplate = (props) => {
     (openExternalLinkInNewTab && !isInternalURL(href['@id']))
       ? '_blank'
       : null;
-  const a11yLinkId = React.useId();
   const { '@id': id, ...filteredData } = data;
 
   return (
@@ -52,10 +51,8 @@ const TeaserDefaultTemplate = (props) => {
           </Message>
         )}
         <Card
-          href={href['@id']}
+          href={!isEditMode ? href['@id'] : null}
           openLinkInNewTab={openLinkInNewTab}
-          enableLink={!isEditMode}
-          a11yLinkId={a11yLinkId}
         >
           <Card.Image
             src={url && !image?.image_field ? url : undefined}
@@ -66,7 +63,6 @@ const TeaserDefaultTemplate = (props) => {
             <Summary
               item={!data.overwrite ? href : { ...href, ...filteredData }}
               HeadingTag="h2"
-              titleId={a11yLinkId}
             />
           </Card.Summary>
         </Card>
