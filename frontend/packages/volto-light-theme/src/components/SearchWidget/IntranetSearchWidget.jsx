@@ -9,6 +9,7 @@ import { Form, Input } from 'semantic-ui-react';
 import { compose } from 'redux';
 import { PropTypes } from 'prop-types';
 import { defineMessages, injectIntl } from 'react-intl';
+import { connect } from 'react-redux';
 
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import zoomSVG from '@plone/volto/icons/zoom.svg';
@@ -78,13 +79,24 @@ class IntranetSearchWidget extends Component {
    * @returns {undefined}
    */
   onSubmit(event) {
+    const searchURL =
+      this.props.site['kitconcept.intranet.external_search_url'];
     const path =
       this.props.pathname?.length > 0
         ? `&path=${encodeURIComponent(this.props.pathname)}`
         : '';
-    this.props.history.push(
-      `/search?SearchableText=${encodeURIComponent(this.state.text)}${path}`,
-    );
+
+    if (searchURL) {
+      window.open(
+        `${searchURL}?SearchableText=${encodeURIComponent(this.state.text)}${path}`,
+        '_blank',
+        'noopener,noreferrer',
+      );
+    } else {
+      this.props.history.push(
+        `/search?SearchableText=${encodeURIComponent(this.state.text)}${path}`,
+      );
+    }
     // reset input value
     this.setState({
       text: '',
@@ -99,6 +111,8 @@ class IntranetSearchWidget extends Component {
    */
   render() {
     const { intl } = this.props;
+    const searchFieldPlaceholder =
+      this.props.site['kitconcept.intranet.search_field_placeholder'];
     return (
       <Form action="/search" onSubmit={this.onSubmit}>
         <Form.Field className="searchbox">
@@ -109,7 +123,14 @@ class IntranetSearchWidget extends Component {
             value={this.state.text}
             transparent
             autoComplete="off"
-            placeholder={intl.formatMessage(messages.placeholder)}
+            placeholder={
+              searchFieldPlaceholder
+                ? intl.formatMessage({
+                    id: searchFieldPlaceholder,
+                    defaultMessage: searchFieldPlaceholder,
+                  })
+                : intl.formatMessage(messages.placeholder)
+            }
             title={intl.formatMessage(messages.search)}
           />
           <button aria-label={intl.formatMessage(messages.search)}>
@@ -121,4 +142,10 @@ class IntranetSearchWidget extends Component {
   }
 }
 
-export default compose(withRouter, injectIntl)(IntranetSearchWidget);
+export default compose(
+  withRouter,
+  injectIntl,
+  connect((state, props) => ({
+    site: state.site.data,
+  })),
+)(IntranetSearchWidget);
