@@ -1,6 +1,36 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 6.0.0a25 (2025-05-14)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Feature
+
+- Add --image-aspect-ratio docs & make Slider use the CSS prop. @danalvrz [#535](https://github.com/kitconcept/volto-light-theme/pull/535)
+- Integration with the intranet control panel settings for the intranet header. @sneridagh [#542](https://github.com/kitconcept/volto-light-theme/pull/542)
+
+#### Bugfix
+
+- Fixed props for Summary component in Teaser view. @sneridagh [#536](https://github.com/kitconcept/volto-light-theme/pull/536)
+- Color fixes for Footer & metadata block. @danalvrz [#544](https://github.com/kitconcept/volto-light-theme/pull/544)
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 6.0.0a24 (2025-05-06)
 
 ### Backend
