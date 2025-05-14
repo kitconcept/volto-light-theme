@@ -168,7 +168,7 @@ This component saves the value of the custom CSS property `--block-width` as a S
 This component is removed because it was obsolete.
 Use the `blockAlignment` or `blockWidth` widgets instead.
 
-### The card primitve has been applied to the Teaser block
+### The card primitive has been applied to the Teaser block
 
 ```{versionadded} 6.0.0-alpha.25
 ```
