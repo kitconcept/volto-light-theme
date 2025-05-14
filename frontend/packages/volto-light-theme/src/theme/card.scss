@@ -13,8 +13,8 @@
   text-decoration: none; /* remove default underline */
 }
 
-.card .content,
-.card .content * {
+.card .card-summary,
+.card .card-summary * {
   user-select: text; /* explicit for clarity */
 }
 
@@ -28,7 +28,7 @@
     }
   }
 
-  .content {
+  .card-summary {
     padding-top: 40px;
     padding-bottom: 40px;
 
@@ -57,11 +57,11 @@
 // Variants
 // // Contained
 .card {
-  .contained & .content-wrapper {
+  .contained & .card-inner {
     background: var(--theme-high-contrast-color);
   }
 
-  .contained & .content {
+  .contained & .card-summary {
     padding-right: 20px;
     padding-left: 20px;
   }
@@ -71,13 +71,11 @@
 .card {
   .has--align--left:not(.contained) &,
   .has--align--right:not(.contained) & {
-    .content-wrapper {
+    .card-inner {
       display: flex;
 
       .image-wrapper {
-        // width: 50%;
         flex: 1 1 50%;
-        margin-right: 20px;
 
         @media only screen and (max-width: $largest-mobile-screen) {
           margin-right: 0;
@@ -85,7 +83,7 @@
         }
       }
 
-      .content {
+      .card-summary {
         // width: 50%;
         flex: 1 1 50%;
         padding: 0;
@@ -100,11 +98,12 @@
   }
 
   .has--align--right & {
-    .content-wrapper {
+    .card-inner {
       flex-direction: row-reverse;
     }
 
     .image-wrapper {
+      margin-right: 0px;
       margin-left: 20px;
     }
   }
@@ -114,7 +113,7 @@
   .card {
     .has--align--left:not(.contained) &,
     .has--align--right:not(.contained) & {
-      .content-wrapper {
+      .card-inner {
         display: block;
       }
       .image-wrapper {
@@ -128,7 +127,7 @@
 // Heading sizes
 @container (min-width: #{$largest-mobile-screen}) {
   .card {
-    .content {
+    .card-summary {
       .one & h2 {
         margin-bottom: 40px !important;
         @include text-heading-h2();
@@ -146,7 +145,7 @@
 
 // Listing
 .card {
-  .card-listing & .content-wrapper {
+  .card-listing & .card-inner {
     display: flex;
 
     .image-wrapper {
@@ -160,7 +159,7 @@
       }
     }
 
-    .content {
+    .card-summary {
       // width: 50%;
       flex: 1 1 50%;
       padding: 0;

@@ -5,6 +5,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ObjectBrowserItem } from '../../stories/mocks';
 import Wrapper from '@plone/volto/storybook';
 import { Button } from '@plone/components';
+import DefaultSummary from '../Summary/DefaultSummary';
 
 const meta = {
   title: 'Primitives/Card',
@@ -19,24 +20,29 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const item = {
+  title: 'Card Title',
+  description:
+    'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
+  head_title: 'Card Kicker',
+};
+const imageSRC = 'black-starry-night.jpg';
+
 export const Simple: Story = {
   render: (args) => (
     <div style={{ width: '300px' }}>
       <Wrapper>
-        <Card {...args} />
+        <Card href={args.href}>
+          <Card.Image src={imageSRC} />
+          <Card.Summary>
+            <DefaultSummary item={item} HeadingTag="h2" />
+          </Card.Summary>
+        </Card>
       </Wrapper>
     </div>
   ),
   args: {
-    target: '/folder/page',
-    imageSRC: 'black-starry-night.jpg',
-    item: {
-      title: 'Simple Card with strings',
-      description:
-        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
-      head_title: 'Simple Card',
-    },
-    enableLink: true,
+    href: '/folder/page',
   },
 };
 
@@ -47,20 +53,17 @@ export const AlignedLeft: Story = {
         className="has--align--left"
         style={{ width: 'var(--default-container-width)' }}
       >
-        <Card {...args} />
+        <Card href={args.href}>
+          <Card.Image src={imageSRC} />
+          <Card.Summary>
+            <DefaultSummary item={item} HeadingTag="h2" />
+          </Card.Summary>
+        </Card>
       </div>
     </Wrapper>
   ),
   args: {
-    target: '/folder/page',
-    imageSRC: 'black-starry-night.jpg',
-    item: {
-      title: 'Simple Card with strings',
-      description:
-        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
-      head_title: 'Simple Card',
-    },
-    enableLink: true,
+    href: '/folder/page',
   },
 };
 
@@ -71,20 +74,17 @@ export const AlignedRight: Story = {
         className="has--align--right"
         style={{ width: 'var(--default-container-width)' }}
       >
-        <Card {...args} />
+        <Card href={args.href}>
+          <Card.Image src={imageSRC} />
+          <Card.Summary>
+            <DefaultSummary item={item} HeadingTag="h2" />
+          </Card.Summary>
+        </Card>
       </div>
     </Wrapper>
   ),
   args: {
-    target: '/folder/page',
-    imageSRC: 'black-starry-night.jpg',
-    item: {
-      title: 'Simple Card with strings',
-      description:
-        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
-      head_title: 'Simple Card',
-    },
-    enableLink: true,
+    href: '/folder/page',
   },
 };
 
@@ -96,21 +96,18 @@ export const SimpleContained: Story = {
           className="contained"
           style={{ ['--theme-high-contrast-color' as string]: '#ecebeb' }}
         >
-          <Card {...args} />
+          <Card href={args.href}>
+            <Card.Image src={imageSRC} />
+            <Card.Summary>
+              <DefaultSummary item={item} HeadingTag="h2" />
+            </Card.Summary>
+          </Card>
         </div>
       </Wrapper>
     </div>
   ),
   args: {
-    target: '/folder/page',
-    imageSRC: 'black-starry-night.jpg',
-    item: {
-      title: 'Simple Card with strings',
-      description:
-        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
-      head_title: 'Simple Card',
-    },
-    enableLink: true,
+    href: '/folder/page',
   },
 };
 
@@ -121,20 +118,17 @@ export const SimpleListing: Story = {
         className="card-listing"
         style={{ width: 'var(--default-container-width)' }}
       >
-        <Card {...args} />
+        <Card href={args.href}>
+          <Card.Image src={imageSRC} />
+          <Card.Summary>
+            <DefaultSummary item={item} HeadingTag="h2" />
+          </Card.Summary>
+        </Card>
       </div>
     </Wrapper>
   ),
   args: {
-    target: '/folder/page',
-    imageSRC: 'black-starry-night.jpg',
-    item: {
-      title: 'Simple Card with strings',
-      description:
-        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
-      head_title: 'Simple Card',
-    },
-    enableLink: true,
+    href: '/folder/page',
   },
 };
 
@@ -145,26 +139,22 @@ export const CustomImageInset: Story = {
         className="card-listing"
         style={{ width: 'var(--default-container-width)' }}
       >
-        <Card {...args} />
+        <Card href={args.href}>
+          <Card.Image>
+            <div className="date-inset">
+              <div className="day">10</div>
+              <div className="month">May 2025</div>
+            </div>
+          </Card.Image>
+          <Card.Summary>
+            <DefaultSummary item={item} HeadingTag="h2" />
+          </Card.Summary>
+        </Card>
       </div>
     </Wrapper>
   ),
   args: {
-    target: '/folder/page',
-    imageSRC: 'black-starry-night.jpg',
-    imageInset: (
-      <div className="date-inset">
-        <div className="day">10</div>
-        <div className="month">May 2025</div>
-      </div>
-    ),
-    item: {
-      title: 'Simple Card with strings',
-      description:
-        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
-      head_title: 'Simple Card',
-    },
-    enableLink: true,
+    href: '/folder/page',
   },
 };
 
@@ -172,27 +162,24 @@ export const CustomActionInset: Story = {
   render: (args) => (
     <Wrapper>
       <div style={{ width: 'var(--default-container-width)' }}>
-        <Card {...args} />
+        <Card href={args.href}>
+          <Card.Image src={imageSRC} />
+          <Card.Summary>
+            <DefaultSummary item={item} HeadingTag="h2" />
+          </Card.Summary>
+          <Card.Actions>
+            <div style={{ marginTop: '20px' }}>
+              <a href="https://www.plone.org" rel="noreferrer" target="_blank">
+                <Button>Read More</Button>
+              </a>
+            </div>
+          </Card.Actions>
+        </Card>
       </div>
     </Wrapper>
   ),
   args: {
-    target: '/folder/page',
-    imageSRC: 'black-starry-night.jpg',
-    actionsInset: (
-      <div style={{ marginTop: '20px' }}>
-        <a href="https://www.plone.org" rel="noreferrer" target="_blank">
-          <Button>Read More</Button>
-        </a>
-      </div>
-    ),
-    item: {
-      title: 'Card with a button (actionable inset)',
-      description:
-        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
-      head_title: 'This is the kicker',
-    },
-    enableLink: true,
+    href: '/folder/page',
   },
 };
 
@@ -200,14 +187,17 @@ export const Default: Story = {
   render: (args) => (
     <div style={{ width: '300px' }}>
       <Wrapper>
-        <Card {...args} />
+        <Card href={args.href}>
+          <Card.Image src={imageSRC} />
+          <Card.Summary>
+            <DefaultSummary item={ObjectBrowserItem} HeadingTag="h2" />
+          </Card.Summary>
+        </Card>
       </Wrapper>
     </div>
   ),
   args: {
-    target: ObjectBrowserItem['@id'],
-    item: ObjectBrowserItem,
+    href: ObjectBrowserItem['@id'],
     // image: ObjectBrowserItem.image_scales[ObjectBrowserItem.image_field][0],
-    enableLink: true,
   },
 };

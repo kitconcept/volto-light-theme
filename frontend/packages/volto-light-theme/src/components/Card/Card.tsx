@@ -5,37 +5,9 @@ import type { ObjectBrowserItem } from '@plone/types';
 
 type CardProps = {
   className?: string;
-  target?: string;
-  image?: ObjectBrowserItem;
-  imageSRC?: string;
+  href?: string;
   openLinkInNewTab?: boolean;
-  item?: Partial<ObjectBrowserItem>;
-  enableLink?: boolean;
-  imageInset?: React.ReactNode;
-  actionsInset?: React.ReactNode;
-  imageComponent?: React.ComponentType<any>;
-  summaryComponent?: React.ComponentType<any>;
-  hide_description?: boolean;
-};
-
-type DefaultSummaryProps = {
-  item: Partial<ObjectBrowserItem>;
-  titleId?: string;
-  HeadingTag?: React.ElementType;
-  hide_description?: boolean;
-};
-
-const DefaultSummary = (props: DefaultSummaryProps) => {
-  const { item, HeadingTag = 'h3', titleId, hide_description } = props;
-  return (
-    <>
-      {item?.head_title && <div className="headline">{item.head_title}</div>}
-      <HeadingTag className="title" id={titleId}>
-        {item.title ? item.title : item.id}
-      </HeadingTag>
-      {!hide_description && <p className="description">{item.description}</p>}
-    </>
-  );
+  children?: React.ReactNode;
 };
 
 const DefaultImage = (props: any) => {
@@ -50,25 +22,19 @@ const DefaultImage = (props: any) => {
   );
 };
 
-const Card = (props: CardProps) => {
-  const {
-    className,
-    target,
-    item,
-    image,
-    imageSRC,
-    openLinkInNewTab,
-    enableLink,
-    imageComponent,
-    summaryComponent,
-    hide_description,
-    imageInset,
-    actionsInset,
-  } = props;
+const childrenWithProps = (children, extraProps) => {
+  return React.Children.map(children, (child) => {
+    if (React.isValidElement(child)) {
+      return React.cloneElement(child, extraProps);
+    }
+    return child;
+  });
+};
 
-  const Image = imageComponent || DefaultImage;
-  const Summary = summaryComponent || DefaultSummary;
-  const titleId = React.useId();
+const Card = (props: CardProps) => {
+  const { className, href, openLinkInNewTab } = props;
+
+  const a11yLabelId = React.useId();
   const linkRef = React.useRef<HTMLAnchorElement>(null);
 
   const triggerNavigation = () => {
@@ -80,85 +46,84 @@ const Card = (props: CardProps) => {
   };
 
   const onClick: React.MouseEventHandler<HTMLDivElement> = () => {
-    if (enableLink) triggerNavigation();
+    if (href) triggerNavigation();
   };
 
   const onKeyDown: React.KeyboardEventHandler<HTMLDivElement> = (e) => {
-    if (!enableLink) return;
+    if (!href) return;
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
       triggerNavigation();
     }
   };
 
-  const hasImageInset =
-    !!imageInset ||
-    !!imageSRC ||
-    !!image ||
-    !!item.image_field ||
-    item.hasPreviewImage;
-
   return (
     <div
       className={cx('card', className)}
       onClick={onClick}
       onKeyDown={onKeyDown}
-      role={enableLink ? 'link' : undefined}
-      tabIndex={enableLink ? 0 : undefined}
-      aria-labelledby={titleId}
+      role={href ? 'link' : undefined}
+      tabIndex={href ? 0 : undefined}
     >
       {/* @ts-expect-error since this has no children, should fail */}
       <ConditionalLink
-        aria-labelledby={titleId}
-        condition={enableLink && !!target}
-        href={target}
+        aria-labelledby={a11yLabelId}
+        condition={!!href}
+        href={href}
         openLinkInNewTab={openLinkInNewTab}
         ref={linkRef}
       />
-      <div className="content-wrapper">
-        {hasImageInset && (
-          <div className="image-wrapper">
-            {imageInset ? (
-              imageInset
-            ) : (
-              <>
-                {/* It's an external image, providing a string (src) */}
-                {imageSRC ? (
-                  <Image
-                    src={imageSRC}
-                    alt=""
-                    loading="lazy"
-                    responsive={true}
-                  />
-                ) : (
-                  (item.hasPreviewImage || item.image_field || image) && (
-                    <Image
-                      item={image || item}
-                      imageField={image ? image.image_field : item.image_field}
-                      alt=""
-                      loading="lazy"
-                      responsive={true}
-                    />
-                  )
-                )}
-              </>
-            )}
-          </div>
-        )}
-        <div className="content">
-          <Summary
-            item={item}
-            titleId={titleId}
-            HeadingTag="h2"
-            hide_description={hide_description}
-          />
-          {actionsInset ? (
-            <div className="actions-wrapper">{actionsInset}</div>
-          ) : null}
-        </div>
+      <div className="card-inner">
+        {childrenWithProps(props.children, { a11yLabelId })}
       </div>
     </div>
   );
 };
+
+type CardImageProps = {
+  src?: string;
+  item?: Partial<ObjectBrowserItem>;
+  image?: ObjectBrowserItem;
+  imageComponent?: React.ComponentType<any>;
+  children?: React.ReactNode;
+};
+
+const CardImage = (props: CardImageProps) => {
+  const { src, item, image, imageComponent } = props;
+  const Image = imageComponent || DefaultImage;
+
+  return (
+    <div className="image-wrapper">
+      {src ? (
+        <Image src={src} alt="" loading="lazy" responsive={true} />
+      ) : item || image ? (
+        (item.hasPreviewImage || item.image_field || image) && (
+          <Image
+            item={image || item}
+            imageField={image ? image.image_field : item.image_field}
+            alt=""
+            loading="lazy"
+            responsive={true}
+          />
+        )
+      ) : (
+        props.children
+      )}
+    </div>
+  );
+};
+
+const CardSummary = (props: any) => (
+  <div className="card-summary">
+    {childrenWithProps(props.children, { a11yLabelId: props.a11yLabelId })}
+  </div>
+);
+const CardActions = (props: any) => (
+  <div className="actions-wrapper">{props.children}</div>
+);
+
+Card.Image = CardImage;
+Card.Summary = CardSummary;
+Card.Actions = CardActions;
 
 export default Card;
