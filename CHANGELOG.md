@@ -1,6 +1,32 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 6.0.0 (2025-05-14)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+No significant changes.
+
+
+### Project
+
+
+#### Internal
+
+- Release VLT 6.0.0 final.
+  See the new documentation: https://volto-light-theme.readthedocs.io/
+  the upgrade guide: https://volto-light-theme.readthedocs.io/how-to-guides/upgrade-guide.html
+  and the final release notes: https://github.com/kitconcept/volto-light-theme/releases/tag/6.0.0 
+
+
+
 ## 6.0.0a25 (2025-05-14)
 
 ### Backend
