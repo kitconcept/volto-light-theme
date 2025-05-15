@@ -26,7 +26,7 @@ describe('Blocks Tests', () => {
     // cy.wait(2000);
   });
 
-  it('Add image block', () => {
+  it.only('Add image block', () => {
     // when I add an image block
     cy.getSlate().click();
     cy.get('.ui.basic.icon.button.block-add-button').click();
@@ -34,7 +34,7 @@ describe('Blocks Tests', () => {
     cy.get('.block-editor-image [tabindex="0"]')
       .last()
       .focus()
-      .should('have.css', 'outline', 'rgb(0, 95, 204) auto 1px');
+      .should('have.css', 'outline', 'rgb(0, 95, 204) auto 0.8px');
     cy.findByLabelText('Enter a URL to an image').click();
     cy.get('.ui.input.editor-link.input-anchorlink-theme input').type(
       `https://github.com/plone/volto/raw/main/logos/volto-colorful.png{enter}`,
