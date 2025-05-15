@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 6.0.1 (2025-05-15)
+
+### Bugfix
+
+- Removed background color specification in the whole footer. We only want it in some areas of it, and depending if some sections are present or not. @sneridagh 
+
 ## 6.0.0 (2025-05-14)
 
 ## 6.0.0-alpha.25 (2025-05-14)
