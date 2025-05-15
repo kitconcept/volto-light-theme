@@ -4,8 +4,11 @@ import cx from 'classnames';
 import type { ObjectBrowserItem } from '@plone/types';
 
 type CardProps = {
+  /** Optional additional CSS class names to apply to the card. */
   className?: string;
+  /** Optional URL to make the card clickable as a link. */
   href?: string;
+  /** If true and `href` is provided, opens the link in a new browser tab. */
   openLinkInNewTab?: boolean;
   children?: React.ReactNode;
 };
@@ -81,9 +84,13 @@ const Card = (props: CardProps) => {
 };
 
 type CardImageProps = {
+  /** The source URL of the image to display. */
   src?: string;
+  /** An optional item object, used to provide image data from the current item. */
   item?: Partial<ObjectBrowserItem>;
-  image?: ObjectBrowserItem;
+  /** An optional image object, used as an alternative source of image data for the item. */
+  image?: Partial<ObjectBrowserItem>;
+  /** A custom React component to render the image. */
   imageComponent?: React.ComponentType<any>;
   children?: React.ReactNode;
 };
@@ -97,10 +104,10 @@ const CardImage = (props: CardImageProps) => {
       {src ? (
         <Image src={src} alt="" loading="lazy" responsive={true} />
       ) : item || image ? (
-        (item.hasPreviewImage || item.image_field || image) && (
+        (item?.hasPreviewImage || item?.image_field || image) && (
           <Image
             item={image || item}
-            imageField={image ? image.image_field : item.image_field}
+            imageField={image ? image.image_field : item?.image_field}
             alt=""
             loading="lazy"
             responsive={true}
@@ -113,11 +120,18 @@ const CardImage = (props: CardImageProps) => {
   );
 };
 
-const CardSummary = (props: any) => (
+type CardSummaryProps = {
+  /** The ID of the element that labels the card. */
+  a11yLabelId?: string;
+  children?: React.ReactNode;
+};
+
+const CardSummary = (props: CardSummaryProps) => (
   <div className="card-summary">
     {childrenWithProps(props.children, { a11yLabelId: props.a11yLabelId })}
   </div>
 );
+
 const CardActions = (props: any) => (
   <div className="actions-wrapper">{props.children}</div>
 );

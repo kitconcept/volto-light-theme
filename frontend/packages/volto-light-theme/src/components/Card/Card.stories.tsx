@@ -14,6 +14,13 @@ const meta = {
     layout: 'centered',
     // backgrounds: { disable: true },
   },
+  decorators: [
+    (Story) => (
+      <Wrapper>
+        <Story />
+      </Wrapper>
+    ),
+  ],
   tags: ['autodocs'],
 } satisfies Meta<typeof Card>;
 
@@ -27,40 +34,42 @@ const item = {
   head_title: 'Card Kicker',
 };
 const imageSRC = 'black-starry-night.jpg';
+const imageSRC2 = 'image-light.jpg';
 
 export const Simple: Story = {
   render: (args) => (
-    <div style={{ width: '300px' }}>
-      <Wrapper>
-        <Card href={args.href}>
-          <Card.Image src={imageSRC} />
-          <Card.Summary>
-            <DefaultSummary item={item} HeadingTag="h2" />
-          </Card.Summary>
-        </Card>
-      </Wrapper>
-    </div>
+    <Card href={args.href}>
+      <Card.Image src={imageSRC} />
+      <Card.Summary>
+        <DefaultSummary item={item} HeadingTag="h2" />
+      </Card.Summary>
+    </Card>
   ),
   args: {
     href: '/folder/page',
   },
+  decorators: [
+    (Story) => (
+      <div style={{ width: '300px' }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export const AlignedLeft: Story = {
   render: (args) => (
-    <Wrapper>
-      <div
-        className="has--align--left"
-        style={{ width: 'var(--default-container-width)' }}
-      >
-        <Card href={args.href}>
-          <Card.Image src={imageSRC} />
-          <Card.Summary>
-            <DefaultSummary item={item} HeadingTag="h2" />
-          </Card.Summary>
-        </Card>
-      </div>
-    </Wrapper>
+    <div
+      className="has--align--left"
+      style={{ width: 'var(--default-container-width)' }}
+    >
+      <Card href={args.href}>
+        <Card.Image src={imageSRC} />
+        <Card.Summary>
+          <DefaultSummary item={item} HeadingTag="h2" />
+        </Card.Summary>
+      </Card>
+    </div>
   ),
   args: {
     href: '/folder/page',
@@ -69,19 +78,17 @@ export const AlignedLeft: Story = {
 
 export const AlignedRight: Story = {
   render: (args) => (
-    <Wrapper>
-      <div
-        className="has--align--right"
-        style={{ width: 'var(--default-container-width)' }}
-      >
-        <Card href={args.href}>
-          <Card.Image src={imageSRC} />
-          <Card.Summary>
-            <DefaultSummary item={item} HeadingTag="h2" />
-          </Card.Summary>
-        </Card>
-      </div>
-    </Wrapper>
+    <div
+      className="has--align--right"
+      style={{ width: 'var(--default-container-width)' }}
+    >
+      <Card href={args.href}>
+        <Card.Image src={imageSRC} />
+        <Card.Summary>
+          <DefaultSummary item={item} HeadingTag="h2" />
+        </Card.Summary>
+      </Card>
+    </div>
   ),
   args: {
     href: '/folder/page',
@@ -90,114 +97,134 @@ export const AlignedRight: Story = {
 
 export const SimpleContained: Story = {
   render: (args) => (
-    <div style={{ width: '300px' }}>
-      <Wrapper>
-        <div
-          className="contained"
-          style={{ ['--theme-high-contrast-color' as string]: '#ecebeb' }}
-        >
-          <Card href={args.href}>
-            <Card.Image src={imageSRC} />
-            <Card.Summary>
-              <DefaultSummary item={item} HeadingTag="h2" />
-            </Card.Summary>
-          </Card>
-        </div>
-      </Wrapper>
+    <div
+      className="contained"
+      style={{ ['--theme-high-contrast-color' as string]: '#ecebeb' }}
+    >
+      <Card href={args.href}>
+        <Card.Image src={imageSRC} />
+        <Card.Summary>
+          <DefaultSummary item={item} HeadingTag="h2" />
+        </Card.Summary>
+      </Card>
     </div>
   ),
   args: {
     href: '/folder/page',
   },
+  decorators: [
+    (Story) => (
+      <div style={{ width: '300px' }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export const SimpleListing: Story = {
   render: (args) => (
-    <Wrapper>
-      <div
-        className="card-listing"
-        style={{ width: 'var(--default-container-width)' }}
-      >
-        <Card href={args.href}>
-          <Card.Image src={imageSRC} />
-          <Card.Summary>
-            <DefaultSummary item={item} HeadingTag="h2" />
-          </Card.Summary>
-        </Card>
-      </div>
-    </Wrapper>
-  ),
-  args: {
-    href: '/folder/page',
-  },
-};
-
-export const CustomImageInset: Story = {
-  render: (args) => (
-    <Wrapper>
-      <div
-        className="card-listing"
-        style={{ width: 'var(--default-container-width)' }}
-      >
-        <Card href={args.href}>
-          <Card.Image>
-            <div className="date-inset">
-              <div className="day">10</div>
-              <div className="month">May 2025</div>
-            </div>
-          </Card.Image>
-          <Card.Summary>
-            <DefaultSummary item={item} HeadingTag="h2" />
-          </Card.Summary>
-        </Card>
-      </div>
-    </Wrapper>
-  ),
-  args: {
-    href: '/folder/page',
-  },
-};
-
-export const CustomActionInset: Story = {
-  render: (args) => (
-    <Wrapper>
-      <div style={{ width: 'var(--default-container-width)' }}>
-        <Card href={args.href}>
-          <Card.Image src={imageSRC} />
-          <Card.Summary>
-            <DefaultSummary item={item} HeadingTag="h2" />
-          </Card.Summary>
-          <Card.Actions>
-            <div style={{ marginTop: '20px' }}>
-              <a href="https://www.plone.org" rel="noreferrer" target="_blank">
-                <Button>Read More</Button>
-              </a>
-            </div>
-          </Card.Actions>
-        </Card>
-      </div>
-    </Wrapper>
-  ),
-  args: {
-    href: '/folder/page',
-  },
-};
-
-export const Default: Story = {
-  render: (args) => (
-    <div style={{ width: '300px' }}>
-      <Wrapper>
-        <Card href={args.href}>
-          <Card.Image src={imageSRC} />
-          <Card.Summary>
-            <DefaultSummary item={ObjectBrowserItem} HeadingTag="h2" />
-          </Card.Summary>
-        </Card>
-      </Wrapper>
+    <div
+      className="card-listing"
+      style={{ width: 'var(--default-container-width)' }}
+    >
+      <Card href={args.href}>
+        <Card.Image src={imageSRC} />
+        <Card.Summary>
+          <DefaultSummary item={item} HeadingTag="h2" />
+        </Card.Summary>
+      </Card>
     </div>
   ),
   args: {
-    href: ObjectBrowserItem['@id'],
-    // image: ObjectBrowserItem.image_scales[ObjectBrowserItem.image_field][0],
+    href: '/folder/page',
   },
+};
+
+export const CustomImage: Story = {
+  render: (args) => (
+    <div
+      className="card-listing"
+      style={{ width: 'var(--default-container-width)' }}
+    >
+      <Card href={args.href}>
+        <Card.Image>
+          <div className="date-inset">
+            <div className="day">10</div>
+            <div className="month">May 2025</div>
+          </div>
+        </Card.Image>
+        <Card.Summary>
+          <DefaultSummary item={item} HeadingTag="h2" />
+        </Card.Summary>
+      </Card>
+    </div>
+  ),
+  args: {
+    href: '/folder/page',
+  },
+};
+
+export const CustomAction: Story = {
+  render: (args) => (
+    <div style={{ width: 'var(--default-container-width)' }}>
+      <Card href={args.href}>
+        <Card.Image src={imageSRC} />
+        <Card.Summary>
+          <DefaultSummary item={item} HeadingTag="h2" />
+        </Card.Summary>
+        <Card.Actions>
+          <div style={{ marginTop: '20px' }}>
+            <a href="https://www.plone.org" rel="noreferrer" target="_blank">
+              <Button>Read More</Button>
+            </a>
+          </div>
+        </Card.Actions>
+      </Card>
+    </div>
+  ),
+  args: {
+    href: '/folder/page',
+  },
+};
+
+export const WithItem: Story = {
+  render: (args) => (
+    <Card href={args.href}>
+      <Card.Image src={imageSRC} />
+      <Card.Summary>
+        <DefaultSummary item={ObjectBrowserItem(imageSRC)} HeadingTag="h2" />
+      </Card.Summary>
+    </Card>
+  ),
+  args: {
+    href: ObjectBrowserItem(imageSRC)['@id'],
+  },
+  decorators: [
+    (Story) => (
+      <div style={{ width: '300px' }}>
+        <Story />
+      </div>
+    ),
+  ],
+};
+
+export const WithCustomImage: Story = {
+  render: (args) => (
+    <Card href={args.href}>
+      <Card.Image image={ObjectBrowserItem(imageSRC2)} />
+      <Card.Summary>
+        <DefaultSummary item={ObjectBrowserItem(imageSRC)} HeadingTag="h2" />
+      </Card.Summary>
+    </Card>
+  ),
+  args: {
+    href: ObjectBrowserItem(imageSRC)['@id'],
+  },
+  decorators: [
+    (Story) => (
+      <div style={{ width: '300px' }}>
+        <Story />
+      </div>
+    ),
+  ],
 };

@@ -57,6 +57,7 @@ const TeaserDefaultTemplate = (props) => {
           <Card.Image
             src={url && !image?.image_field ? url : undefined}
             item={!data.overwrite ? href : { ...href, ...filteredData }}
+            image={data.overwrite ? image : undefined}
             imageComponent={Image}
           />
           <Card.Summary>

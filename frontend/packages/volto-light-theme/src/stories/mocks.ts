@@ -1,83 +1,85 @@
 const demoImage = 'black-starry-night.jpg';
 
-export const ObjectBrowserItem = {
-  '@id': '/folder/page',
-  '@type': 'Document',
-  description:
-    'The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.',
-  Description:
-    'The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.',
-  Title: 'Page',
-  title: 'Page',
-  getRemoteUrl: null,
-  hasPreviewImage: true,
-  head_title: null,
-  image_field: 'preview_image',
-  image_scales: {
-    preview_image: [
-      {
-        'content-type': 'image/jpeg',
-        download: demoImage,
-        filename: 'black-starry-night.jpg',
-        height: 1708,
-        scales: {
-          great: {
-            download: demoImage,
-            height: 854,
-            width: 1200,
+export function ObjectBrowserItem(demoImage) {
+  return {
+    '@id': '/folder/page',
+    '@type': 'Document',
+    description:
+      'The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.',
+    Description:
+      'The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.',
+    Title: 'Page',
+    title: 'Page',
+    getRemoteUrl: null,
+    hasPreviewImage: true,
+    head_title: null,
+    image_field: 'preview_image',
+    image_scales: {
+      preview_image: [
+        {
+          'content-type': 'image/jpeg',
+          download: demoImage,
+          filename: 'black-starry-night.jpg',
+          height: 1708,
+          scales: {
+            great: {
+              download: demoImage,
+              height: 854,
+              width: 1200,
+            },
+            huge: {
+              download: demoImage,
+              height: 1138,
+              width: 1600,
+            },
+            icon: {
+              download: demoImage,
+              height: 22,
+              width: 32,
+            },
+            large: {
+              download: demoImage,
+              height: 569,
+              width: 800,
+            },
+            larger: {
+              download: demoImage,
+              height: 711,
+              width: 1000,
+            },
+            mini: {
+              download: demoImage,
+              height: 142,
+              width: 200,
+            },
+            preview: {
+              download: demoImage,
+              height: 284,
+              width: 400,
+            },
+            teaser: {
+              download: demoImage,
+              height: 427,
+              width: 600,
+            },
+            thumb: {
+              download: demoImage,
+              height: 91,
+              width: 128,
+            },
+            tile: {
+              download: demoImage,
+              height: 45,
+              width: 64,
+            },
           },
-          huge: {
-            download: demoImage,
-            height: 1138,
-            width: 1600,
-          },
-          icon: {
-            download: demoImage,
-            height: 22,
-            width: 32,
-          },
-          large: {
-            download: demoImage,
-            height: 569,
-            width: 800,
-          },
-          larger: {
-            download: demoImage,
-            height: 711,
-            width: 1000,
-          },
-          mini: {
-            download: demoImage,
-            height: 142,
-            width: 200,
-          },
-          preview: {
-            download: demoImage,
-            height: 284,
-            width: 400,
-          },
-          teaser: {
-            download: demoImage,
-            height: 427,
-            width: 600,
-          },
-          thumb: {
-            download: demoImage,
-            height: 91,
-            width: 128,
-          },
-          tile: {
-            download: demoImage,
-            height: 45,
-            width: 64,
-          },
+          size: 693013,
+          width: 2400,
         },
-        size: 693013,
-        width: 2400,
-      },
-    ],
-  },
-};
+      ],
+    },
+  };
+}
 
 export const teaserBlock = {
   '@type': 'teaser',
