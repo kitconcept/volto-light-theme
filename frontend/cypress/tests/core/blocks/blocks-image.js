@@ -26,7 +26,7 @@ describe('Blocks Tests', () => {
     // cy.wait(2000);
   });
 
-  it.only('Add image block', () => {
+  it('Add image block', () => {
     // when I add an image block
     cy.getSlate().click();
     cy.get('.ui.basic.icon.button.block-add-button').click();
