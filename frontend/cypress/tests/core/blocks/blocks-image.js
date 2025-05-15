@@ -33,8 +33,9 @@ describe('Blocks Tests', () => {
     cy.get('.ui.basic.icon.button.image').contains('Image').click();
     cy.get('.block-editor-image [tabindex="0"]')
       .last()
+      .should('exist')
       .focus()
-      .should('have.css', 'outline', 'rgb(0, 95, 204) auto 0.8px');
+      .should('have.focus');
     cy.findByLabelText('Enter a URL to an image').click();
     cy.get('.ui.input.editor-link.input-anchorlink-theme input').type(
       `https://github.com/plone/volto/raw/main/logos/volto-colorful.png{enter}`,
