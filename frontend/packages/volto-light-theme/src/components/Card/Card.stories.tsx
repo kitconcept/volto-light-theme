@@ -57,6 +57,27 @@ export const Simple: Story = {
   ],
 };
 
+export const SimpleWithoutLink: Story = {
+  render: (args) => (
+    <Card>
+      <Card.Image src={imageSRC} />
+      <Card.Summary>
+        <DefaultSummary item={item} HeadingTag="h2" />
+      </Card.Summary>
+    </Card>
+  ),
+  args: {
+    href: '/folder/page',
+  },
+  decorators: [
+    (Story) => (
+      <div style={{ width: '300px' }}>
+        <Story />
+      </div>
+    ),
+  ],
+};
+
 export const AlignedLeft: Story = {
   render: (args) => (
     <div
