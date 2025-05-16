@@ -8,6 +8,16 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0-alpha.1 (2025-05-16)
+
+### Breaking
+
+- Move the `Card` component to `primitives` folder. @sneridagh [#548](https://github.com/kitconcept/volto-light-theme/pull/548)
+
+### Bugfix
+
+- Fix condition on showing the card or not if the placeholder is present. @sneridagh [#548](https://github.com/kitconcept/volto-light-theme/pull/548)
+
 ## 7.0.0-alpha.0 (2025-05-16)
 
 ### Breaking
