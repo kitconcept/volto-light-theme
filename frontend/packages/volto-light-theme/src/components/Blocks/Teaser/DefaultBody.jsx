@@ -7,7 +7,7 @@ import { isInternalURL } from '@plone/volto/helpers/Url/Url';
 import cx from 'classnames';
 import config from '@plone/volto/registry';
 import DefaultSummary from '@kitconcept/volto-light-theme/components/Summary/DefaultSummary';
-import Card from '../../Card/Card';
+import Card from '../../../primitives/Card/Card';
 import isEmpty from 'lodash/isEmpty';
 
 const messages = defineMessages({
@@ -42,31 +42,32 @@ const TeaserDefaultTemplate = (props) => {
   return (
     <div className={cx('block teaser', className)} style={style}>
       <>
-        {isEmpty(href) && isEditMode && (
+        {isEmpty(href) && isEditMode ? (
           <Message>
             <div className="teaser-item placeholder">
               <img src={imageBlockSVG} alt="" />
               <p>{intl.formatMessage(messages.PleaseChooseContent)}</p>
             </div>
           </Message>
-        )}
-        <Card
-          href={!isEditMode ? href['@id'] : null}
-          openLinkInNewTab={openLinkInNewTab}
-        >
-          <Card.Image
-            src={url && !image?.image_field ? url : undefined}
-            item={!data.overwrite ? href : { ...href, ...filteredData }}
-            image={data.overwrite ? image : undefined}
-            imageComponent={Image}
-          />
-          <Card.Summary>
-            <Summary
+        ) : (
+          <Card
+            href={!isEditMode ? href['@id'] : null}
+            openLinkInNewTab={openLinkInNewTab}
+          >
+            <Card.Image
+              src={url && !image?.image_field ? url : undefined}
               item={!data.overwrite ? href : { ...href, ...filteredData }}
-              HeadingTag="h2"
+              image={data.overwrite ? image : undefined}
+              imageComponent={Image}
             />
-          </Card.Summary>
-        </Card>
+            <Card.Summary>
+              <Summary
+                item={!data.overwrite ? href : { ...href, ...filteredData }}
+                HeadingTag="h2"
+              />
+            </Card.Summary>
+          </Card>
+        )}
       </>
     </div>
   );
