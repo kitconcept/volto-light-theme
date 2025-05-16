@@ -5,7 +5,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ObjectBrowserItem } from '../../stories/mocks';
 import Wrapper from '@plone/volto/storybook';
 import { Button } from '@plone/components';
-import DefaultSummary from '../Summary/DefaultSummary';
+import DefaultSummary from '../../components/Summary/DefaultSummary';
 
 const meta = {
   title: 'Primitives/Card',
