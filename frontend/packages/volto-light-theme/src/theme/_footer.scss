@@ -1,21 +1,41 @@
 #footer {
-  padding-top: $footer-vertical-spacing-top;
+  margin-top: 1rem;
+
+  background: var(--footer-background);
+  color: var(--footer-foreground, $black);
   text-align: center;
+
+  &:has(.main-footer) {
+    --footer-background: var(--primary-color, $white);
+    --footer-foreground: var(--primary-foreground-color, $black);
+  }
 
   .container {
     padding: 0 1rem;
   }
 
-  .post-footer {
+  & > :first-child:not(:empty) {
+    padding-top: $footer-vertical-spacing-top;
+  }
+
+  .pre-footer {
+    &:has(.logos-container) {
+      --footer-background: var(--primary-color, $white);
+      --footer-foreground: var(--primary-foreground-color, $black);
+    }
+
+    background: var(--footer-background, $white);
+    color: var(--footer-foreground, $black);
+  }
+
+  .main-footer {
+    --footer-background: var(--secondary-color, $white);
+    --footer-foreground: var(--secondary-foreground-color, $black);
+
     padding: $spacing-xlarge 2rem;
     background: var(--footer-background);
     color: var(--footer-foreground, $black);
-    font-size: 18px;
-  }
 
-  .footer {
-    padding: $spacing-xlarge 2rem;
-    color: var(--footer-foreground, $black);
     font-size: 18px;
 
     a {
@@ -54,6 +74,18 @@
     .footer-links {
       ul {
         justify-content: center;
+      }
+    }
+    .address-column {
+      & > a:has(img) {
+        display: block;
+        max-width: 200px;
+
+        img {
+          max-width: 100%;
+          height: auto;
+          object-fit: contain;
+        }
       }
     }
 
@@ -130,6 +162,13 @@
         }
       }
     }
+  }
+
+  .post-footer {
+    padding: $spacing-xlarge 2rem;
+    background: var(--footer-background);
+    color: var(--footer-foreground, $black);
+    font-size: 18px;
   }
 
   .follow-us-links-and-logo {
@@ -299,8 +338,9 @@
     }
   }
 
-  .footer + .post-footer {
-    background-color: transparent;
+  .main-footer + .post-footer {
+    background-color: var(--primary-color, $white);
+    color: var(--primary-foreground-color, $black);
   }
 }
 

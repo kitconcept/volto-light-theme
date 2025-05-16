@@ -34,7 +34,7 @@ const CoreFooter = ({ content }: { content: Content }) => {
   >(content, 'kitconcept.footer', 'footer_column_right');
 
   return (
-    <Container className="footer">
+    <Container className="main-footer">
       <Container className="default">
         <div className="footer-grid">
           <div className="address-column">

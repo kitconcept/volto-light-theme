@@ -1,0 +1,1 @@
+Improve Footer color handling. @danalvrz
