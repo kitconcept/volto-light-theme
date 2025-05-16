@@ -1,0 +1,168 @@
+.card {
+  position: relative;
+  transition: box-shadow 0.15s ease;
+}
+
+.card:has(a):hover,
+.card:has(a):focus-within {
+  cursor: pointer;
+}
+
+.card a {
+  inset: 0; /* top:0 right:0 bottom:0 left:0 */
+  text-decoration: none; /* remove default underline */
+}
+
+.card .card-summary,
+.card .card-summary * {
+  user-select: text; /* explicit for clarity */
+}
+
+.card {
+  .image-wrapper {
+    width: 100%;
+
+    img {
+      display: block;
+      aspect-ratio: var(--image-aspect-ratio, $aspect-ratio) !important;
+    }
+  }
+
+  .card-summary {
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    .headline {
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      @include headtitle1();
+    }
+    h2 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      @include text-heading-h2();
+      @container (max-width: #{$largest-mobile-screen}) {
+        @include text-heading-h3();
+        margin-bottom: 20px;
+      }
+    }
+    p {
+      margin: 0;
+      @include body-text();
+    }
+  }
+}
+
+// Variants
+// // Contained
+.card {
+  .contained & .card-inner {
+    background: var(--theme-high-contrast-color);
+  }
+
+  .contained & .card-summary {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+// // Left-aligned
+.card {
+  .has--align--left:not(.contained) &,
+  .has--align--right:not(.contained) & {
+    .card-inner {
+      display: flex;
+
+      .image-wrapper {
+        flex: 1 1 50%;
+
+        @media only screen and (max-width: $largest-mobile-screen) {
+          margin-right: 0;
+          margin-bottom: 26px;
+        }
+      }
+
+      .card-summary {
+        // width: 50%;
+        flex: 1 1 50%;
+        padding: 0;
+      }
+    }
+  }
+
+  .has--align--left:not(.contained) & {
+    .image-wrapper {
+      margin-right: 20px;
+    }
+  }
+
+  .has--align--right & {
+    .card-inner {
+      flex-direction: row-reverse;
+    }
+
+    .image-wrapper {
+      margin-right: 0px;
+      margin-left: 20px;
+    }
+  }
+}
+
+@container (max-width: #{$largest-mobile-screen}) {
+  .card {
+    .has--align--left:not(.contained) &,
+    .has--align--right:not(.contained) & {
+      .card-inner {
+        display: block;
+      }
+      .image-wrapper {
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+// Heading sizes
+@container (min-width: #{$largest-mobile-screen}) {
+  .card {
+    .card-summary {
+      .one & h2 {
+        margin-bottom: 40px !important;
+        @include text-heading-h2();
+      }
+      .two & h2,
+      .three & h2 {
+        @include text-heading-h3();
+      }
+      .four & h2 {
+        @include text-heading-h4();
+      }
+    }
+  }
+}
+
+// Listing
+.card {
+  .card-listing & .card-inner {
+    display: flex;
+
+    .image-wrapper {
+      // width: 50%;
+      flex: 0 1 var(--card-listing-image-size, 220px);
+      margin-right: 20px;
+
+      @media only screen and (max-width: $largest-mobile-screen) {
+        margin-right: 0;
+        margin-bottom: 26px;
+      }
+    }
+
+    .card-summary {
+      // width: 50%;
+      flex: 1 1 50%;
+      padding: 0;
+    }
+  }
+}
