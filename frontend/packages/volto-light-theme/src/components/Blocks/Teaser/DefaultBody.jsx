@@ -7,7 +7,7 @@ import { isInternalURL } from '@plone/volto/helpers/Url/Url';
 import cx from 'classnames';
 import config from '@plone/volto/registry';
 import DefaultSummary from '@kitconcept/volto-light-theme/components/Summary/DefaultSummary';
-import Card from '../../Card/Card';
+import Card from '../../../primitives/Card/Card';
 import isEmpty from 'lodash/isEmpty';
 
 const messages = defineMessages({
