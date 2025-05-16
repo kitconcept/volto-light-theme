@@ -10,10 +10,17 @@ build:
   os: ubuntu-22.04
   tools:
     python: "3.12"
+    nodejs: "22"
   jobs:
     install:
       - pip install uv
+      - npm i -g corepack@latest
+      - corepack enable
+      - corepack prepare pnpm@* --activate
+      - asdf reshim nodejs
       - make -C "./docs/" install
+      - make -C "./frontend/" install
     build:
       html:
         - make -C "./docs/" rtd-build
+        - (cd frontend && pnpm run storybook-build -o $READTHEDOCS_OUTPUT/html/storybook)
