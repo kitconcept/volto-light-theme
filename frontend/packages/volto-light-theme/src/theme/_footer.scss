@@ -1,5 +1,5 @@
 #footer {
-  margin-top: $footer-vertical-spacing-top;
+  padding-top: $footer-vertical-spacing-top;
   text-align: center;
 
   .container {
@@ -293,7 +293,7 @@
     &:before {
       display: block;
       padding-top: 50px;
-      border-top: 1px solid $black;
+      border-top: 1px solid var(--footer-foreground, $black);
       content: '';
       @include default-container-width();
     }

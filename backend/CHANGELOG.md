@@ -2,6 +2,29 @@
 
 <!-- towncrier release notes start -->
 
+## 6.0.1 (2025-05-15)
+
+No significant changes.
+
+
+## 6.0.0 (2025-05-14)
+
+No significant changes.
+
+
+## 6.0.0a25 (2025-05-14)
+
+No significant changes.
+
+
+## 6.0.0a24 (2025-05-06)
+
+
+### New features:
+
+- Added behavior `voltolighttheme.sticky_menu`. @sneridagh [#523](https://github.com/kitconcept/volto-light-theme/issues/523)
+- Better naming for the specific kitconcept's behaviors for distributions. @sneridagh [#530](https://github.com/kitconcept/volto-light-theme/issues/530)
+
 ## 6.0.0a23 (2025-04-30)
 
 No significant changes.

@@ -66,8 +66,10 @@ conceptual-guides/block-model-v3
 reference/colors
 reference/widgets
 reference/slots
+reference/image-aspect-ratio
 reference/helpers
 reference/feature-flags
 reference/recommended-addons
 reference/compatibility
+reference/storybook
 ```

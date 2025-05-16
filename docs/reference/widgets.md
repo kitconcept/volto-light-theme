@@ -322,7 +322,7 @@ It uses the {file}`/src/components/widgets/BlockWidth` component.
 It's based on the {file}`/src/components/widgets/Buttons` component under the hood, so the actions and the styles to be applied are configurable.
 It uses the {file}`/src/components/widgets/BlockAlignment` component.
 
-```{image} /_static/BlockAlignment.png
+```{image} /_static/blockAlignment.png
 :alt: BlockAlignment
 ```
 

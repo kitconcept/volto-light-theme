@@ -1,6 +1,117 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 6.0.1 (2025-05-15)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Removed background color specification in the whole footer. We only want it in some areas of it, and depending if some sections are present or not. @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
+## 6.0.0 (2025-05-14)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+No significant changes.
+
+
+### Project
+
+
+#### Internal
+
+- Release VLT 6.0.0 final.
+  See the new documentation: https://volto-light-theme.readthedocs.io/
+  the upgrade guide: https://volto-light-theme.readthedocs.io/how-to-guides/upgrade-guide.html
+  and the final release notes: https://github.com/kitconcept/volto-light-theme/releases/tag/6.0.0 
+
+
+
+## 6.0.0a25 (2025-05-14)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Feature
+
+- Add --image-aspect-ratio docs & make Slider use the CSS prop. @danalvrz [#535](https://github.com/kitconcept/volto-light-theme/pull/535)
+- Integration with the intranet control panel settings for the intranet header. @sneridagh [#542](https://github.com/kitconcept/volto-light-theme/pull/542)
+
+#### Bugfix
+
+- Fixed props for Summary component in Teaser view. @sneridagh [#536](https://github.com/kitconcept/volto-light-theme/pull/536)
+- Color fixes for Footer & metadata block. @danalvrz [#544](https://github.com/kitconcept/volto-light-theme/pull/544)
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
+## 6.0.0a24 (2025-05-06)
+
+### Backend
+
+
+#### New features:
+
+- Added behavior `voltolighttheme.sticky_menu`. @sneridagh [#523](https://github.com/kitconcept/volto-light-theme/issues/523)
+- Better naming for the specific kitconcept's behaviors for distributions. @sneridagh [#530](https://github.com/kitconcept/volto-light-theme/issues/530)
+
+
+
+### Frontend
+
+#### Feature
+
+- Added `sticky_menu` slot. @sneridagh [#523](https://github.com/kitconcept/volto-light-theme/pull/523)
+- Better naming for the specific kitconcept's behaviors for distributions. @sneridagh [#530](https://github.com/kitconcept/volto-light-theme/pull/530)
+- Use `--image-aspect-ratio` for all images. @danalvrz [#533](https://github.com/kitconcept/volto-light-theme/pull/533)
+
+
+
+### Project
+
+
+#### Documentation
+
+- Remove mention to kitconcept's specific behaviors for distributions since we don't know their final location. @sneridagh [#530](https://github.com/kitconcept/volto-light-theme/pull/530)
+
+
+
 ## 6.0.0a23 (2025-04-30)
 
 ### Backend

@@ -75,6 +75,12 @@ export type SiteFooterSettings = {
   footer_links: Array<Link>;
 };
 
+export type StickyMenuSettings = {
+  sticky_menu: Array<iconLink>;
+  sticky_menu_color: string;
+  sticky_menu_foreground_color: string;
+};
+
 export type PloneGobrSocialMediaSettings = {
   social_links: Array<iconLink>;
 };
@@ -90,6 +96,7 @@ export type CustomInheritBehavior<T> = {
 declare module '@plone/types' {
   export interface Content {
     footer_logos: Array<footerLogo>;
+    sticky_menu: Array<stickyMenu>;
     footer_links: Array<Link>;
   }
 }

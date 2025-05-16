@@ -4,11 +4,11 @@ import { Message } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
 import imageBlockSVG from '@plone/volto/components/manage/Blocks/Image/block-image.svg';
 import { isInternalURL } from '@plone/volto/helpers/Url/Url';
-import MaybeWrap from '@plone/volto/components/manage/MaybeWrap/MaybeWrap';
-import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import cx from 'classnames';
 import config from '@plone/volto/registry';
 import DefaultSummary from '@kitconcept/volto-light-theme/components/Summary/DefaultSummary';
+import Card from '../../../primitives/Card/Card';
+import isEmpty from 'lodash/isEmpty';
 
 const messages = defineMessages({
   PleaseChooseContent: {
@@ -21,7 +21,7 @@ const messages = defineMessages({
 const TeaserDefaultTemplate = (props) => {
   const { className, data, isEditMode, style } = props;
   const intl = useIntl();
-  const href = data.href?.[0];
+  const href = data.href?.[0] || {};
   const image = data.preview_image?.[0];
   const url = data.preview_image?.[0]?.['@id'];
 
@@ -29,56 +29,44 @@ const TeaserDefaultTemplate = (props) => {
   const Summary =
     config.getComponent({
       name: 'Summary',
-      dependencies: [data['@type']],
+      dependencies: [href['@type']],
     }).component || DefaultSummary;
   const { openExternalLinkInNewTab } = config.settings;
+  const openLinkInNewTab =
+    data.openLinkInNewTab ||
+    (openExternalLinkInNewTab && !isInternalURL(href['@id']))
+      ? '_blank'
+      : null;
+  const { '@id': id, ...filteredData } = data;
 
   return (
     <div className={cx('block teaser', className)} style={style}>
       <>
-        {!href && isEditMode && (
+        {isEmpty(href) && isEditMode ? (
           <Message>
             <div className="teaser-item placeholder">
               <img src={imageBlockSVG} alt="" />
               <p>{intl.formatMessage(messages.PleaseChooseContent)}</p>
             </div>
           </Message>
-        )}
-        {href && (
-          <MaybeWrap
-            condition={!isEditMode}
-            as={UniversalLink}
-            href={href['@id']}
-            target={
-              data.openLinkInNewTab ||
-              (openExternalLinkInNewTab && !isInternalURL(href['@id']))
-                ? '_blank'
-                : null
-            }
+        ) : (
+          <Card
+            href={!isEditMode ? href['@id'] : null}
+            openLinkInNewTab={openLinkInNewTab}
           >
-            <div className="teaser-item default">
-              {url && !image?.image_field ? (
-                <div className="image-wrapper">
-                  <Image src={url} alt="" loading="lazy" responsive={true} />
-                </div>
-              ) : (
-                (href.hasPreviewImage || href.image_field || image) && (
-                  <div className="image-wrapper">
-                    <Image
-                      item={image || href}
-                      imageField={image ? image.image_field : href.image_field}
-                      alt=""
-                      loading="lazy"
-                      responsive={true}
-                    />
-                  </div>
-                )
-              )}
-              <div className="content">
-                <Summary item={data} HeadingTag="h2" />
-              </div>
-            </div>
-          </MaybeWrap>
+            <Card.Image
+              src={url && !image?.image_field ? url : undefined}
+              item={!data.overwrite ? href : { ...href, ...filteredData }}
+              image={data.overwrite ? image : undefined}
+              imageComponent={Image}
+            />
+            <Card.Summary>
+              <Summary
+                item={!data.overwrite ? href : { ...href, ...filteredData }}
+                HeadingTag="h2"
+              />
+            </Card.Summary>
+          </Card>
         )}
       </>
     </div>

@@ -14,7 +14,7 @@
   height: 100%;
 
   a.external {
-    .content h2:after {
+    .card-summary h2:after {
       @include external-link-icon();
     }
   }
@@ -31,6 +31,10 @@
 
   &.has--align--left,
   &.has--align--right {
+    .card-inner {
+      padding-bottom: 40px;
+    }
+
     .teaser-item.default {
       display: flex;
 
@@ -91,7 +95,7 @@
     }
   }
 
-  .content {
+  .card-summary {
     .headline {
       margin-bottom: 20px;
       letter-spacing: 1px;
@@ -115,16 +119,25 @@
 
   &.is--last--of--block-type,
   &.next--has--different--backgroundColor {
+    .card-inner,
     .teaser-item.default {
       padding-bottom: 0;
       border-bottom: none;
     }
     &.next--is--__button {
+      .card-inner,
       .teaser-item.default {
         padding-bottom: 40px;
         border-bottom: 1px solid;
       }
     }
+  }
+}
+
+// Only bottom border in render, just for top level teasers
+.blocks-group-wrapper > .block.teaser {
+  .card-inner {
+    border-bottom: 1px solid var(--theme-foreground-color, $black);
   }
 }
 

@@ -54,6 +54,7 @@ extensions = [
     "sphinx_copybutton",
     "sphinx_design",
     "sphinxext.opengraph",
+    "sphinx_reredirects",
 ]
 
 
@@ -233,3 +234,9 @@ ogp_type = "website"
 ogp_custom_meta_tags = [
     '<meta property="og:locale" content="en_US" />',
 ]
+
+# -- sphinx-reredirects configuration ----------------------------------
+# https://documatt.com/sphinx-reredirects/usage.html
+redirects = {
+    "reference/storybook": "/storybook",
+}
