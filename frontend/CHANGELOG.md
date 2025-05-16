@@ -8,6 +8,17 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0-alpha.0 (2025-05-16)
+
+### Breaking
+
+- The new card primitive has been applied to all Teasers. @sneridagh
+  See upgrade guide for more information. [#537](https://github.com/kitconcept/volto-light-theme/pull/537)
+
+### Feature
+
+- Added new card primitive. @sneridagh [#537](https://github.com/kitconcept/volto-light-theme/pull/537)
+
 ## 6.0.1 (2025-05-15)
 
 ### Bugfix
