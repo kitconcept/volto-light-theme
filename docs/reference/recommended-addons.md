@@ -18,6 +18,8 @@ myst:
 -   [Introduction Block](https://www.npmjs.com/package/@kitconcept/volto-introduction-block)
 -   [Highlight Block](https://www.npmjs.com/package/@kitconcept/volto-highlight-block)
 -   [Banner Block](https://www.npmjs.com/package/@kitconcept/volto-banner-block)
+-   [Carousel Block](https://www.npmjs.com/package/@kitconcept/volto-carousel-block)
+-   [Logos Block](https://www.npmjs.com/package/@kitconcept/volto-logos-block)
 -   [EEA Accordion Block](https://www.npmjs.com/package/@eeacms/volto-accordion-block)
 
 It also works well with the following add-ons:
