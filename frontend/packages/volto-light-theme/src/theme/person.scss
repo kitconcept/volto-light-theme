@@ -1,0 +1,33 @@
+.card {
+  .teasing-person.has--align--left:not(.contained) &,
+  .has--align--left:not(.contained) .teasing-person &,
+  .teasing-person.has--align--right:not(.contained) & {
+    .card-inner {
+      .image-wrapper {
+        flex: 0 1 var(--card-listing-image-size, 220px);
+        img {
+          aspect-ratio: initial !important;
+        }
+      }
+    }
+
+    .card-summary {
+      align-self: center;
+
+      .description {
+        margin-bottom: $spacing-small;
+      }
+    }
+  }
+}
+
+.summary-email {
+  display: flex;
+  align-items: center;
+  margin-bottom: $spacing-small;
+}
+
+.summary-room-phone {
+  display: flex;
+  gap: $spacing-small;
+}

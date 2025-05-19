@@ -277,7 +277,6 @@
   .colophon {
     @include add(size, xs);
     @include add(height, s);
-    padding-bottom: $spacing-small;
 
     a {
       @include add(size, xs);

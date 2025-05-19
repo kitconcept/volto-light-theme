@@ -1,4 +1,5 @@
 const demoImage = 'black-starry-night.jpg';
+const personImage = 'person.png';
 
 export function ObjectBrowserItem(demoImage) {
   return {
@@ -152,6 +153,98 @@ export const teaserBlock = {
               },
               tile: {
                 download: demoImage,
+                height: 45,
+                width: 64,
+              },
+            },
+            size: 693013,
+            width: 2400,
+          },
+        ],
+      },
+    },
+  ],
+  styles: {
+    align: 'left',
+  },
+  title: 'Headline H2',
+};
+
+export const personBlock = {
+  '@type': 'teaser',
+  href: [
+    {
+      '@id': '.',
+      '@type': 'Person',
+      title: 'Kathryn Janeway',
+      Title: 'Kathryn Janeway',
+      description:
+        'USS Voyager Captain from the 24th century. She is known for her strong leadership skills and her ability to make tough decisions in difficult situations.',
+      Description:
+        'USS Voyager Captain from the 24th century. She is known for her strong leadership skills and her ability to make tough decisions in difficult situations.',
+      contact_email: 'janeway@ufp.earth.com',
+      contact_room: "Captain's Ready Room",
+      contact_phone: '123456789',
+      contact_building: 'Sapphire Building',
+      contact_website: null,
+      getRemoteUrl: null,
+      hasPreviewImage: true,
+      image_field: 'preview_image',
+      image_scales: {
+        preview_image: [
+          {
+            'content-type': 'image/jpeg',
+            download: personImage,
+            filename: 'black-starry-night.jpg',
+            height: 1708,
+            scales: {
+              great: {
+                download: personImage,
+                height: 854,
+                width: 1200,
+              },
+              huge: {
+                download: personImage,
+                height: 1138,
+                width: 1600,
+              },
+              icon: {
+                download: personImage,
+                height: 22,
+                width: 32,
+              },
+              large: {
+                download: personImage,
+                height: 569,
+                width: 800,
+              },
+              larger: {
+                download: personImage,
+                height: 711,
+                width: 1000,
+              },
+              mini: {
+                download: personImage,
+                height: 142,
+                width: 200,
+              },
+              preview: {
+                download: personImage,
+                height: 284,
+                width: 400,
+              },
+              teaser: {
+                download: personImage,
+                height: 427,
+                width: 600,
+              },
+              thumb: {
+                download: personImage,
+                height: 91,
+                width: 128,
+              },
+              tile: {
+                download: personImage,
                 height: 45,
                 width: 64,
               },

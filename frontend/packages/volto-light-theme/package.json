@@ -34,6 +34,9 @@
     "release-alpha": "release-it --preRelease=alpha",
     "release-rc": "release-it --preRelease=rc"
   },
+  "addons": [
+    "@kitconcept/volto-bm3-compat"
+  ],
   "devDependencies": {
     "@plone/scripts": "^3.6.2",
     "@plone/types": "workspace:*",
@@ -55,6 +58,7 @@
     "uuid": "^11.0.0"
   },
   "peerDependencies": {
+    "@kitconcept/volto-bm3-compat": "^1.0.0-alpha.1",
     "@eeacms/volto-accordion-block": "^10.4.6",
     "@kitconcept/volto-banner-block": "^1.0.1",
     "@kitconcept/volto-button-block": "^4.0.0-alpha.0",
