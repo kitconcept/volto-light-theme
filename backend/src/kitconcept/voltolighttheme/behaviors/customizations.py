@@ -206,6 +206,7 @@ class ISiteFooterCustomizationSettings(model.Schema):
             "footer_logos_container_width",
             "footer_logos_size",
             "footer_links",
+            "footer_colophon_text",
         ],
     )
 
@@ -275,4 +276,13 @@ class ISiteFooterCustomizationSettings(model.Schema):
         default=OBJECT_LIST_DEFAULT_VALUE,
         required=False,
         widget="",
+    )
+
+    footer_colophon_text = TextLine(
+        title=_("Footer colophon text"),
+        description=_(
+            "help_footer_colophon_text",
+            default="The text that shows in the footer colophon.",
+        ),
+        required=False,
     )
