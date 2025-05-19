@@ -186,3 +186,9 @@ These are links to other pages, each of which is defined by the fields for a tit
 The footer can contain a list of logos.
 These are images defined in the site with links to other pages, each of which is defined by the fields for a title, a target URL, and a boolean for whether or not to open the link in a new tab.
 Their appearance can be further customized by defining the size of the logos, as either `small` or `large`, and the width of the their container, either `default` or `layout`.
+
+### Footer colophon text
+
+The footer contains a colophon text by default.
+It's the last line of the footer.
+You can customize it to show any text you want using this option.
