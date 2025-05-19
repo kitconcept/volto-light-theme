@@ -8,6 +8,16 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0-alpha.2 (2025-05-19)
+
+### Breaking
+
+- Update to use `volto-button-block` 4a0. @sneridagh [#553](https://github.com/kitconcept/volto-light-theme/pull/553)
+
+### Feature
+
+- Added the `volto-logos-block` and `volto-carousel-block` as recommended add-ons. @sneridagh [#550](https://github.com/kitconcept/volto-light-theme/pull/550)
+
 ## 7.0.0-alpha.1 (2025-05-16)
 
 ### Breaking
