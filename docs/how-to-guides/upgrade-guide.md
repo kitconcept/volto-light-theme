@@ -9,6 +9,64 @@ myst:
 
 # Upgrade guide
 
+## volto-light-theme 7.0.0
+
+### The card primitive has been applied to the Teaser block
+
+```{versionadded} 7.0.0-alpha.0
+```
+
+The Teaser block now uses the new `Card` primitive.
+It is a new component that provides a consistent way to display content in a card format.
+It is used in the Teaser block, and it can be used in other blocks as well.
+The card component has the feature of allowing the user to select the text inside the card.
+From a developer's perspective, you can pass the elements (insets) inside the card as props.
+
+If you have customized the Teaser block or any of its variants (left, right, top), you might need to adapt your customizations to use the new `Card` component.
+The inner structure of the Teaser block has changed, and the CSS classes have been updated to use the new `Card` component.
+
+Old structure:
+
+```html
+<div class="block teaser">
+  <a>
+    <div class="teaser-item default">
+      <div class="image-wrapper">
+        <img src="..." alt="..." />
+      </div>
+      <div class="content">
+        <h2 class="title">...</h2>
+        <p class="description">...</p>
+      </div>
+    </div>
+  </a>
+</div>
+```
+
+New structure:
+
+```html
+<div class="block teaser">
+  <div class="card">
+    <a>
+      <div class="card-inner">
+        <div class="image-wrapper">
+          <img src="..." alt="..." />
+        </div>
+        <div class="card-summary">
+          <h2 class="title">...</h2>
+          <p class="description">...</p>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+```
+
+- `teaser-item default` class has been replaced by the `card-inner` class.
+- `content` class has been replaced by the `card-summary` class.
+The rest of the structure remains roughly the same.
+
 ## volto-light-theme 6.0.0
 
 This section describes how to upgrade to volto-light-theme 6.0.0 from 5.x.x.

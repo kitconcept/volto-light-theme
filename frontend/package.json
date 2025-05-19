@@ -1,6 +1,6 @@
 {
   "name": "@kitconcept/volto-light-theme-dev",
-  "version": "6.0.0-alpha.24",
+  "version": "7.0.0-alpha.2",
   "description": "Volto Light Theme by kitconcept",
   "main": "src/index.js",
   "types": "src/types/index.d.ts",
@@ -42,7 +42,9 @@
     "dry-release": "release-it --dry-run",
     "release": "pnpm --filter @kitconcept/volto-light-theme run release",
     "release-major-alpha": "pnpm --filter @kitconcept/volto-light-theme run release-major-alpha",
-    "release-alpha": "pnpm --filter @kitconcept/volto-light-theme run release-alpha"
+    "release-alpha": "pnpm --filter @kitconcept/volto-light-theme run release-alpha",
+    "storybook": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto storybook dev -p 6006 -c $(pwd)/.storybook",
+    "storybook-build": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto build-storybook -c $(pwd)/.storybook"
   },
   "devDependencies": {
     "@cypress/skip-test": "2.6.1",

@@ -8,6 +8,57 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0-alpha.2 (2025-05-19)
+
+### Breaking
+
+- Update to use `volto-button-block` 4a0. @sneridagh [#553](https://github.com/kitconcept/volto-light-theme/pull/553)
+
+### Feature
+
+- Added the `volto-logos-block` and `volto-carousel-block` as recommended add-ons. @sneridagh [#550](https://github.com/kitconcept/volto-light-theme/pull/550)
+
+## 7.0.0-alpha.1 (2025-05-16)
+
+### Breaking
+
+- Move the `Card` component to `primitives` folder. @sneridagh [#548](https://github.com/kitconcept/volto-light-theme/pull/548)
+
+### Bugfix
+
+- Fix condition on showing the card or not if the placeholder is present. @sneridagh [#548](https://github.com/kitconcept/volto-light-theme/pull/548)
+
+## 7.0.0-alpha.0 (2025-05-16)
+
+### Breaking
+
+- The new card primitive has been applied to all Teasers. @sneridagh
+  See upgrade guide for more information. [#537](https://github.com/kitconcept/volto-light-theme/pull/537)
+
+### Feature
+
+- Added new card primitive. @sneridagh [#537](https://github.com/kitconcept/volto-light-theme/pull/537)
+
+## 6.0.1 (2025-05-15)
+
+### Bugfix
+
+- Removed background color specification in the whole footer. We only want it in some areas of it, and depending if some sections are present or not. @sneridagh 
+
+## 6.0.0 (2025-05-14)
+
+## 6.0.0-alpha.25 (2025-05-14)
+
+### Feature
+
+- Add --image-aspect-ratio docs & make Slider use the CSS prop. @danalvrz [#535](https://github.com/kitconcept/volto-light-theme/pull/535)
+- Integration with the intranet control panel settings for the intranet header. @sneridagh [#542](https://github.com/kitconcept/volto-light-theme/pull/542)
+
+### Bugfix
+
+- Fixed props for Summary component in Teaser view. @sneridagh [#536](https://github.com/kitconcept/volto-light-theme/pull/536)
+- Color fixes for Footer & metadata block. @danalvrz [#544](https://github.com/kitconcept/volto-light-theme/pull/544)
+
 ## 6.0.0-alpha.24 (2025-05-06)
 
 ### Feature
