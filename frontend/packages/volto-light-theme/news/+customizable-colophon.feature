@@ -1,1 +1,1 @@
-Added customizable Colophon Footer support. @sneridagh
+Added support for a customizable colophon footer. @sneridagh

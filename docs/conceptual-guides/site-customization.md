@@ -189,5 +189,6 @@ Their appearance can be further customized by defining the size of the logos, as
 
 ### Footer colophon text
 
-The footer contains by default a colophon text.
-It's the last line of the footer, but it can be customized to show any text you want using this option.
+The footer contains a colophon text by default.
+It's the last line of the footer.
+You can customize it to show any text you want using this option.
