@@ -73,6 +73,7 @@ export type SiteFooterSettings = {
   footer_column_right: Array<Link>;
   footer_logo: Image & { data?: string };
   footer_links: Array<Link>;
+  footer_colophon_text: string;
 };
 
 export type StickyMenuSettings = {
