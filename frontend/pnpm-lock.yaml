@@ -1572,8 +1572,8 @@ importers:
         specifier: ^1.0.1
         version: 1.0.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@kitconcept/volto-button-block':
-        specifier: ^3.0.3
-        version: 3.0.3(classnames@2.2.6)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)
+        specifier: ^4.0.0-alpha.0
+        version: 4.0.0-alpha.0(classnames@2.2.6)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)
       '@kitconcept/volto-carousel-block':
         specifier: ^2.0.0-alpha.0
         version: 2.0.0-alpha.0(classnames@2.2.6)(embla-carousel@8.6.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -3146,10 +3146,10 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0
 
-  '@kitconcept/volto-button-block@3.0.3':
-    resolution: {integrity: sha512-H1N3OY1XRxyU9u8Cjkmf5QtdBYB6010nzke9DHU3lJLItGzP84Qg3dw6RFWV0oE/EcKhZHh0tr6kxnYIpIaiFg==}
+  '@kitconcept/volto-button-block@4.0.0-alpha.0':
+    resolution: {integrity: sha512-vAqZpMLwWQivB7QwvHKRSwyvkQMEq08eSbZOjX80lCHKtrlA5dwZhBId5yhPIuyKPRqpLlUBuDkgDTQwRZLDXw==}
     peerDependencies:
-      classnames: ^2.2.6
+      classnames: ^2.5.1
       react: 18.2.0
       react-dom: 18.2.0
       react-intl: ^3.12.1
@@ -16736,8 +16736,9 @@ snapshots:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
-  '@kitconcept/volto-button-block@3.0.3(classnames@2.2.6)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)':
+  '@kitconcept/volto-button-block@4.0.0-alpha.0(classnames@2.2.6)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)':
     dependencies:
+      '@kitconcept/volto-bm3-compat': 1.0.0-alpha.1(classnames@2.2.6)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       classnames: 2.2.6
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
