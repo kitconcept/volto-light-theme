@@ -3,6 +3,6 @@
  * REASON: Better wrap for Teasers.
  */
 
-import Body from '../../../../../../components/Blocks/Teaser/Body';
+import TeaserBody from '../../../../../../components/Blocks/Teaser/Body';
 
-export default Body;
+export default TeaserBody;

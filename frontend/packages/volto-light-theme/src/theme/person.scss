@@ -1,7 +1,7 @@
 .card {
-  .teasing-person.has--align--left:not(.contained) &,
-  .has--align--left:not(.contained) .teasing-person &,
-  .teasing-person.has--align--right:not(.contained) & {
+  .person-teaser.has--align--left:not(.contained) &,
+  .has--align--left:not(.contained) .person-teaser &,
+  .person-teaser.has--align--right:not(.contained) & {
     .card-inner {
       .image-wrapper {
         flex: 0 1 var(--card-listing-image-size, 220px);
@@ -19,9 +19,79 @@
       }
     }
   }
+
+  .person-teaser & {
+    .card-summary {
+      .description {
+        margin-bottom: $spacing-small;
+      }
+    }
+  }
+
+  .contained.person-teaser & {
+    .image-wrapper {
+      display: flex;
+      max-height: 255px;
+      justify-content: center;
+      aspect-ratio: var(--image-aspect-ratio, 1.7777777778);
+
+      img {
+        max-width: 198px; // 255x198px Roughly 3:4 (enough to cover the 16:9 portrait height)
+        height: 100%;
+        flex: 0 1 auto;
+        aspect-ratio: initial !important;
+        object-fit: cover;
+        object-position: top center;
+      }
+    }
+  }
 }
 
-.summary-email {
+// One column exception for contained person-teasers
+.one .contained.person-teaser {
+  width: calc(var(--default-container-width) / 2);
+
+  .column & {
+    align-items: center;
+  }
+}
+
+.one .column:has(.contained.person-teaser) {
+  align-items: center;
+}
+
+// Three column exception for contained person-teasers
+.three .contained.person-teaser {
+  .summary-room-phone {
+    flex-direction: column;
+
+    .summary-extra-info {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// contained person-teasers do not have background color, so we need to set it to --theme-color
+body .block.gridBlock .block.teaser.contained.person-teaser .card-inner {
+  background: var(--theme-color);
+}
+
+// contained person-teasers do not have background color, so we need to remove the padding
+// to snap to the default container width
+.contained.person-teaser {
+  .card-summary {
+    padding-right: 0px;
+    padding-left: 0px;
+    text-align: center;
+  }
+
+  .summary-extra-info,
+  .summary-room-phone {
+    justify-content: center;
+  }
+}
+
+.summary-extra-info {
   display: flex;
   align-items: center;
   margin-bottom: $spacing-small;

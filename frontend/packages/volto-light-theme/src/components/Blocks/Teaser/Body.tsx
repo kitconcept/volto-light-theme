@@ -32,7 +32,7 @@ const TeaserBody = (props) => {
     <BlockWrapper
       {...props}
       className={cx(
-        { [`teasing-${hasType?.toLowerCase()}`]: hasType },
+        { [`${hasType?.toLowerCase()}-teaser`]: hasType },
         className,
       )}
     >

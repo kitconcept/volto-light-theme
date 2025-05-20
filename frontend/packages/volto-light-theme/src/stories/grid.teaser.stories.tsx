@@ -5,6 +5,10 @@ import {
   gridBlockTwo,
   gridBlockThree,
   gridBlockFour,
+  gridBlockTwoDocumentPerson,
+  gridBlockOnePerson,
+  gridBlockTwoPerson,
+  gridBlockThreePerson,
 } from './mocks';
 import Wrapper from '@plone/volto/storybook';
 import BlockWrapper from './BlockWrapper';
@@ -152,5 +156,65 @@ export const FourInversed: Story = {
   ),
   args: {
     data: { ...gridBlockFour, theme: 'grey' },
+  },
+};
+
+export const OnePerson: Story = {
+  render: (args) => (
+    <Wrapper>
+      <div style={{ width: 'var(--default-container-width)' }}>
+        <BlockWrapper {...args}>
+          <GridBlockView {...args} />
+        </BlockWrapper>
+      </div>
+    </Wrapper>
+  ),
+  args: {
+    data: gridBlockOnePerson,
+  },
+};
+
+export const TwoDocumentPerson: Story = {
+  render: (args) => (
+    <Wrapper>
+      <div style={{ width: 'var(--default-container-width)' }}>
+        <BlockWrapper {...args}>
+          <GridBlockView {...args} />
+        </BlockWrapper>
+      </div>
+    </Wrapper>
+  ),
+  args: {
+    data: gridBlockTwoDocumentPerson,
+  },
+};
+
+export const TwoPerson: Story = {
+  render: (args) => (
+    <Wrapper>
+      <div style={{ width: 'var(--default-container-width)' }}>
+        <BlockWrapper {...args}>
+          <GridBlockView {...args} />
+        </BlockWrapper>
+      </div>
+    </Wrapper>
+  ),
+  args: {
+    data: gridBlockTwoPerson,
+  },
+};
+
+export const ThreePerson: Story = {
+  render: (args) => (
+    <Wrapper>
+      <div style={{ width: 'var(--default-container-width)' }}>
+        <BlockWrapper {...args}>
+          <GridBlockView {...args} />
+        </BlockWrapper>
+      </div>
+    </Wrapper>
+  ),
+  args: {
+    data: gridBlockThreePerson,
   },
 };

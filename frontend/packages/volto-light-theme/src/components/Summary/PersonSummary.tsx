@@ -23,7 +23,7 @@ const PersonSummary = (props: PersonSummaryProps) => {
       {!hide_description && <p className="description">{item.description}</p>}
 
       {item.contact_email && (
-        <div className="summary-email">
+        <div className="summary-extra-info">
           <Icon name={mailSVG} size="24px" />
           <a href={`mailto:${item.contact_email}`}>{item.contact_email}</a>
         </div>
@@ -31,13 +31,13 @@ const PersonSummary = (props: PersonSummaryProps) => {
 
       <div className="summary-room-phone">
         {item.contact_room && (
-          <div className="summary-email">
+          <div className="summary-extra-info">
             <Icon name={locationSVG} size="24px" />
             {item.contact_room}
           </div>
         )}
         {item.contact_phone && (
-          <div className="summary-email">
+          <div className="summary-extra-info">
             <Icon name={phoneSVG} size="24px" />
             {item.contact_phone}
           </div>
