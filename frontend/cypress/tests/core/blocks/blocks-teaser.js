@@ -46,8 +46,8 @@ context('Blocks Acceptance Tests', () => {
     cy.get('.block.teaser .image-wrapper img')
       .should('have.attr', 'src')
       .and('include', '/document/blue-orchids/@@images/preview_image-');
-    cy.get('.block.teaser .content h2').contains('Blue Orchids');
-    cy.get('.block.teaser .content p').contains(
+    cy.get('.block.teaser .card-summary h2').contains('Blue Orchids');
+    cy.get('.block.teaser .card-summary p').contains(
       'are growing on the mountain tops',
     );
   });
@@ -78,8 +78,8 @@ context('Blocks Acceptance Tests', () => {
     cy.get('#toolbar-save').click();
 
     cy.visit('/document');
-    cy.get('.block.teaser .content h2').contains('Blue Orchids');
-    cy.get('.block.teaser .content p').contains(
+    cy.get('.block.teaser .card-summary h2').contains('Blue Orchids');
+    cy.get('.block.teaser .card-summary p').contains(
       'are growing on the mountain tops',
     );
     cy.navigate('/document/blue-orchids/edit');
@@ -93,8 +93,10 @@ context('Blocks Acceptance Tests', () => {
     cy.get('.documentFirstHeading').contains('Blue Orchids and Tulips');
     // THEN I can see the updated content in the teaser
     cy.navigate('/document');
-    cy.get('.block.teaser .content h2').contains('Blue Orchids and Tulips');
-    cy.get('.block.teaser .content p').contains(
+    cy.get('.block.teaser .card-summary h2').contains(
+      'Blue Orchids and Tulips',
+    );
+    cy.get('.block.teaser .card-summary p').contains(
       'are beautifully growing on the mountain tops',
     );
   });
@@ -125,7 +127,9 @@ context('Blocks Acceptance Tests', () => {
     cy.get('#sidebar-properties #field-title').type(' and Tulips');
     cy.get('#toolbar-save').click();
     cy.visit('/document');
-    cy.get('.block.teaser .content h2').contains('Blue Orchids and Tulips');
+    cy.get('.block.teaser .card-summary h2').contains(
+      'Blue Orchids and Tulips',
+    );
 
     cy.visit('/document/blue-orchids/edit');
     cy.get('.documentFirstHeading').type(' but no Tulips');
@@ -134,7 +138,9 @@ context('Blocks Acceptance Tests', () => {
     cy.get('.documentFirstHeading').contains('Blue Orchids but no Tulips');
     // THEN I still see the overwritten content in the teaser
     cy.visit('/document');
-    cy.get('.block.teaser .content h2').contains('Blue Orchids and Tulips');
+    cy.get('.block.teaser .card-summary h2').contains(
+      'Blue Orchids and Tulips',
+    );
   });
 
   it('As editor I can add a Teaser block and override the data with an external image ', () => {
@@ -175,6 +181,6 @@ context('Blocks Acceptance Tests', () => {
         'include',
         'https://github.com/plone/volto/raw/main/logos/volto-colorful.png',
       );
-    cy.get('.block.teaser .content h2').contains('Blue Orchids');
+    cy.get('.block.teaser .card-summary h2').contains('Blue Orchids');
   });
 });
