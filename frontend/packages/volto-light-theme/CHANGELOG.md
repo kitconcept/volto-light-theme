@@ -8,6 +8,13 @@
 
 <!-- towncrier release notes start -->
 
+## 6.1.0 (2025-05-20)
+
+### Feature
+
+- Improve Footer color handling. @danalvrz [#551](https://github.com/kitconcept/volto-light-theme/pull/551)
+- Added support for a customizable colophon footer. @sneridagh 
+
 ## 6.0.1 (2025-05-15)
 
 ### Bugfix
