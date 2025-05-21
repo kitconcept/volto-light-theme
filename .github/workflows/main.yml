@@ -132,6 +132,8 @@ jobs:
         include:
           - name: "Main"
             short-name: main
+          - name: "Core"
+            short-name: core
           - name: "a11y"
             short-name: a11y
             a11y: true
