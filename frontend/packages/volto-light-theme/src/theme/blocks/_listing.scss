@@ -361,7 +361,7 @@
 
       @container (max-width: #{$largest-mobile-screen}) {
         &.mobile-pagination {
-          display: unset;
+          display: table-row;
         }
 
         &.desktop-pagination {
