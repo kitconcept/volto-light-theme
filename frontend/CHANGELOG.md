@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0-alpha.4 (2025-05-22)
+
+### Internal
+
+- Added some of the Volto's Cypress tests. @sneridagh [#540](https://github.com/kitconcept/volto-light-theme/pull/540)
+
 ## 7.0.0-alpha.3 (2025-05-20)
 
 ### Feature

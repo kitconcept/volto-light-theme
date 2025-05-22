@@ -1,6 +1,35 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 7.0.0a4 (2025-05-22)
+
+### Backend
+
+
+#### New features:
+
+- Added customizable colophon footer behavior field `footer_colophon_text`. @sneridagh 
+
+
+
+### Frontend
+
+#### Internal
+
+- Added some of the Volto's Cypress tests. @sneridagh [#540](https://github.com/kitconcept/volto-light-theme/pull/540)
+
+
+
+### Project
+
+
+#### Documentation
+
+- Added Storybook for VLT. @sneridagh [#537](https://github.com/kitconcept/volto-light-theme/pull/537)
+- Added documentation for customizable colophon footer. @sneridagh 
+
+
+
 ## 6.0.1 (2025-05-15)
 
 ### Backend
