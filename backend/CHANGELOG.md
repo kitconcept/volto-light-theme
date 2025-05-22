@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 6.2.0 (2025-05-22)
+
+
+### New features:
+
+- Added customizable colophon footer behavior field `footer_colophon_text`. @sneridagh 
+
 ## 6.0.1 (2025-05-15)
 
 No significant changes.
