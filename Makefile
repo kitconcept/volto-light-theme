@@ -254,3 +254,13 @@ ci-acceptance-server-visual-start: backend-install
 .PHONY: ci-acceptance-frontend-visual-start
 ci-acceptance-frontend-visual-start:
 	$(MAKE) -C "./frontend/" acceptance-a11y-frontend-prod-start
+
+.PHONY: release
+release: ## Release
+	@echo "Releasing..."
+	uvx repoplone release release
+
+.PHONY: release-alpha
+release-alpha: ## Release
+	@echo "Releasing..."
+	uvx repoplone release alpha

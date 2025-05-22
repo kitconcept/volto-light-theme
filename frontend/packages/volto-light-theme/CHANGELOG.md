@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 6.2.0 (2025-05-22)
+
+### Internal
+
+- Re-releasing 6.1.0 since we forgot to issue the release of the backend add-on. @sneridagh 
+
 ## 6.1.0 (2025-05-20)
 
 ### Feature
