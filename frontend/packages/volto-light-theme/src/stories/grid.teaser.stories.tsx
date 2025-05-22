@@ -9,6 +9,7 @@ import {
   gridBlockOnePerson,
   gridBlockTwoPerson,
   gridBlockThreePerson,
+  gridBlockFourPerson,
 } from './mocks';
 import Wrapper from '@plone/volto/storybook';
 import BlockWrapper from './BlockWrapper';
@@ -216,5 +217,20 @@ export const ThreePerson: Story = {
   ),
   args: {
     data: gridBlockThreePerson,
+  },
+};
+
+export const FourPerson: Story = {
+  render: (args) => (
+    <Wrapper>
+      <div style={{ width: 'var(--default-container-width)' }}>
+        <BlockWrapper {...args}>
+          <GridBlockView {...args} />
+        </BlockWrapper>
+      </div>
+    </Wrapper>
+  ),
+  args: {
+    data: gridBlockFourPerson,
   },
 };

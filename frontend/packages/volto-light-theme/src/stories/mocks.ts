@@ -665,3 +665,29 @@ export const gridBlockThreePerson = {
     ],
   },
 };
+
+export const gridBlockFourPerson = {
+  '@type': 'gridBlock',
+  blocks: {
+    '281a22fb-c353-4b91-b2bc-88e6a52ed65a': {
+      ...personBlock,
+    },
+    'f34fa7dd-ce59-4f7f-b795-7d7f1e388df1': {
+      ...personBlock,
+    },
+    'f34fa7dd-ce59-4f7f-b795-7d7f1e388df2': {
+      ...personBlock,
+    },
+    'f34fa7dd-ce59-4f7f-b795-7d7f1e388df3': {
+      ...personBlock,
+    },
+  },
+  blocks_layout: {
+    items: [
+      '281a22fb-c353-4b91-b2bc-88e6a52ed65a',
+      'f34fa7dd-ce59-4f7f-b795-7d7f1e388df1',
+      'f34fa7dd-ce59-4f7f-b795-7d7f1e388df2',
+      'f34fa7dd-ce59-4f7f-b795-7d7f1e388df3',
+    ],
+  },
+};

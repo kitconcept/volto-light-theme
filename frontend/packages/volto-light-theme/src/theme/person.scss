@@ -31,7 +31,7 @@
   .contained.person-teaser & {
     .image-wrapper {
       display: flex;
-      max-height: 255px;
+      height: 255px;
       justify-content: center;
       aspect-ratio: var(--image-aspect-ratio, 1.7777777778);
 
@@ -61,7 +61,8 @@
 }
 
 // Three column exception for contained person-teasers
-.three .contained.person-teaser {
+.three .contained.person-teaser,
+.four .contained.person-teaser {
   .summary-room-phone {
     flex-direction: column;
 
