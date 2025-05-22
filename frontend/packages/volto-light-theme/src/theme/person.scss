@@ -102,3 +102,22 @@ body .block.gridBlock .block.teaser.contained.person-teaser .card-inner {
   display: flex;
   gap: $spacing-small;
 }
+
+// Listings (no card)
+.block.listing {
+  .listing-item.person-listing {
+    &,
+    & a {
+      align-items: center;
+    }
+
+    h2,
+    h3 {
+      margin-bottom: $spacing-small !important;
+    }
+
+    img {
+      aspect-ratio: initial !important;
+    }
+  }
+}

@@ -1,5 +1,5 @@
 const demoImage = 'black-starry-night.jpg';
-const personImage = 'black-starry-night.jpg';
+const personImage = 'person.png';
 
 export function ObjectBrowserItem(demoImage) {
   return {
@@ -690,4 +690,99 @@ export const gridBlockFourPerson = {
       'f34fa7dd-ce59-4f7f-b795-7d7f1e388df3',
     ],
   },
+};
+
+export const listingBlockPerson = {
+  '@type': 'listing',
+  items: [
+    {
+      '@id': 'http://localhost:3000/asdasd-asdasdasd',
+      '@type': 'Person',
+      CreationDate: '2025-05-19T17:23:06+02:00',
+      Creator: 'admin',
+      Date: '2025-05-22T09:10:50+02:00',
+      Description:
+        'USS Voyager Captain from the 24th century. She is known for her strong leadership skills and her ability to make tough decisions in difficult situations.',
+      EffectiveDate: 'None',
+      ExpirationDate: 'None',
+      ModificationDate: '2025-05-22T09:10:50+02:00',
+      Subject: [],
+      Title: 'Kathryn Janeway',
+      Type: 'Person',
+      UID: '2b730627efc24a089e00a315735bfe5b',
+      cmf_uid: 1,
+      contact_building: null,
+      contact_email: 'janeway@ufp.earth.com',
+      contact_phone: '124312312313',
+      contact_room: 'Ready room',
+      country: null,
+      created: '2025-05-19T15:23:06+00:00',
+      description:
+        'USS Voyager Captain from the 24th century. She is known for her strong leadership skills and her ability to make tough decisions in difficult situations.',
+      effective: '1969-12-30T22:00:00+00:00',
+      end: null,
+      exclude_from_nav: false,
+      expires: '2499-12-30T22:00:00+00:00',
+      getIcon: null,
+      getId: 'asdasd-asdasdasd',
+      getObjSize: '0 KB',
+      getPath: '/Plone/asdasd-asdasdasd',
+      getRemoteUrl: null,
+      getURL: 'http://localhost:3000/asdasd-asdasdasd',
+      hasPreviewImage: null,
+      head_title: null,
+      id: 'asdasd-asdasdasd',
+      image_field: 'preview_image_link',
+      image_scales: {
+        preview_image_link: [
+          {
+            base_path: './',
+            'content-type': 'image/png',
+            download: personImage,
+            filename: 'person.png',
+            height: 286,
+            scales: {
+              icon: {
+                download: personImage,
+                height: 32,
+                width: 24,
+              },
+              mini: {
+                download: personImage,
+                height: 260,
+                width: 200,
+              },
+              thumb: {
+                download: personImage,
+                height: 128,
+                width: 98,
+              },
+              tile: {
+                download: personImage,
+                height: 64,
+                width: 49,
+              },
+            },
+            size: 37757,
+            width: 220,
+          },
+        ],
+      },
+      is_folderish: true,
+      listCreators: ['admin'],
+      location: null,
+      mime_type: 'text/plain',
+      modified: '2025-05-22T07:10:50+00:00',
+      nav_title: null,
+      portal_type: 'Person',
+      review_state: 'private',
+      roles: ['member'],
+      start: null,
+      sync_uid: null,
+      title: 'Kathryn Janeway',
+      type_title: 'Person',
+      username: null,
+    },
+  ],
+  items_total: 1,
 };

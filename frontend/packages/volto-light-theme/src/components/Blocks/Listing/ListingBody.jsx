@@ -35,7 +35,7 @@ const Headline = ({
   );
 };
 
-const ListingBody = withQuerystringResults((props) => {
+export const ListingBody = (props) => {
   const {
     data = {},
     isEditMode,
@@ -192,6 +192,6 @@ const ListingBody = withQuerystringResults((props) => {
       )}
     </>
   );
-});
+};
 
-export default injectIntl(ListingBody);
+export default injectIntl(withQuerystringResults(ListingBody));
