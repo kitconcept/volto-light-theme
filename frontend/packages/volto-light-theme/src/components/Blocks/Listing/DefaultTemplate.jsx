@@ -5,6 +5,7 @@ import UniversalLink from '@plone/volto/components/manage/UniversalLink/Universa
 import { flattenToAppURL, isInternalURL } from '@plone/volto/helpers/Url/Url';
 import config from '@plone/volto/registry';
 import DefaultSummary from '@kitconcept/volto-light-theme/components/Summary/DefaultSummary';
+import cx from 'classnames';
 
 const DefaultTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
   let link = null;
@@ -30,7 +31,12 @@ const DefaultTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
               dependencies: [item['@type']],
             }).component || DefaultSummary;
           return (
-            <div className="listing-item" key={item['@id']}>
+            <div
+              className={cx('listing-item', {
+                [`${item['@type']?.toLowerCase()}-listing`]: item['@type'],
+              })}
+              key={item['@id']}
+            >
               <ConditionalLink item={item} condition={!isEditMode}>
                 <div className="listing-body">
                   <Summary item={item} HeadingTag="h2" />
