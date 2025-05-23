@@ -1,18 +1,11 @@
 import * as React from 'react';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
-import type { ObjectBrowserItem } from '@plone/types';
 import mailSVG from '@plone/volto/icons/email.svg';
 import locationSVG from '@plone/volto/icons/map.svg';
 import phoneSVG from '@plone/volto/icons/mobile.svg';
+import type { DefaultSummaryProps } from './DefaultSummary';
 
-export type PersonSummaryProps = {
-  item: Partial<ObjectBrowserItem>;
-  HeadingTag?: React.ElementType;
-  a11yLabelId?: string;
-  hide_description?: boolean;
-};
-
-const PersonSummary = (props: PersonSummaryProps) => {
+const PersonSummary = (props: DefaultSummaryProps) => {
   const { item, HeadingTag = 'h3', a11yLabelId, hide_description } = props;
   return (
     <>
