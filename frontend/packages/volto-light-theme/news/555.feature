@@ -1,1 +1,1 @@
-Person look and feel in teasers, teasers in grids and listings. @sneridagh
+Add support for Person content type in teasers, teasers in grids and listings. @sneridagh
