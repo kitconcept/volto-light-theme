@@ -68,11 +68,9 @@ export const ListingBody = (props) => {
     ListingBodyTemplate =
       variation?.template ?? defaultVariation?.template ?? null;
   }
-  let galleryRef;
 
-  if (data.variation === 'imageGallery') {
-    galleryRef = useRef();
-  }
+  const galleryRef = useRef();
+
   const listingRef = createRef();
   const NoResults = variation?.noResultsComponent
     ? variation.noResultsComponent
@@ -95,7 +93,7 @@ export const ListingBody = (props) => {
           <ListingBodyTemplate
             items={listingItems}
             isEditMode={isEditMode}
-            ref={galleryRef}
+            ref={data.variation === 'imageGallery' ? galleryRef : undefined}
             {...data}
             {...variation}
           />
