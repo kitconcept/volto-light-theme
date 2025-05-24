@@ -87,11 +87,11 @@ class IntranetSearchWidget extends Component {
         : '';
 
     if (searchURL) {
-      window.open(
-        `${searchURL}?SearchableText=${encodeURIComponent(this.state.text)}${path}`,
-        '_blank',
-        'noopener,noreferrer',
-      );
+      // If searchURL contains {searchTerm}, replace it with the encoded search text
+      const externalUrl =
+        searchURL.replace('{searchTerm}', encodeURIComponent(this.state.text)) +
+        path;
+      window.open(externalUrl, '_blank', 'noopener,noreferrer');
     } else {
       this.props.history.push(
         `/search?SearchableText=${encodeURIComponent(this.state.text)}${path}`,
