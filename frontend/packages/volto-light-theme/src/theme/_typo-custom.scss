@@ -76,6 +76,13 @@ h1.documentFirstHeading {
   &::before {
     display: none;
   }
+
+  &:has([data-slate-placeholder='true']) {
+    min-width: $default-container-width;
+    [data-slate-placeholder='true'] {
+      margin-top: 40px;
+    }
+  }
 }
 
 // Block Title

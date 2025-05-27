@@ -38,8 +38,270 @@
   }
 }
 
+// Edit helpers
 .block {
-  background-color: var(--theme-color);
+  // Add Block button
+  button.ui.basic.icon.button.block-add-button.new-add-block {
+    z-index: 98;
+    bottom: -11px;
+    background: $white !important;
+    color: rgb(0, 112, 162) !important;
+  }
+  // Block controls
+  .block-controls {
+    position: absolute;
+    z-index: 98;
+    top: 0;
+
+    right: 2rem;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: end;
+
+    .ui.basic.button {
+      line-height: 1rem;
+    }
+
+    .ui.basic.button.delete-button {
+      position: relative;
+      padding: 3px;
+      border-radius: 50% !important;
+      margin-top: 6px !important;
+      margin-right: 8px !important;
+      background: $white !important;
+
+      &:hover {
+        background: $white !important;
+        opacity: 1 !important;
+      }
+    }
+
+    .ui.basic.button.move-down-button {
+      padding: 3px;
+      border: none;
+      border-radius: 50% !important;
+      margin-top: 6px !important;
+      margin-right: 8px;
+      background: $white !important;
+      &:hover {
+        background: $white !important;
+        opacity: 1 !important;
+      }
+    }
+
+    .ui.basic.button.move-up-button {
+      padding: 3px;
+      border: none;
+      border-radius: 50% !important;
+      margin-top: 6px !important;
+      margin-right: 8px !important;
+      background: $white !important;
+      &:hover {
+        background: $white !important;
+        opacity: 1 !important;
+      }
+    }
+  }
+
+  .power-user-menu {
+    z-index: 100;
+    left: unset;
+  }
+
+  &.previous--has--different--backgroundColor {
+    .power-user-menu {
+      z-index: 100;
+      top: calc($color-block-change-vertical-spacing + 30px);
+      left: unset;
+    }
+  }
+
+  &:hover,
+  &.hovered {
+    .border-line {
+      background-color: rgb(0, 112, 162, 0.5);
+    }
+  }
+
+  &.selected .border-line,
+  &.multiSelected .border-line {
+    background-color: rgb(0, 112, 162);
+  }
+
+  &.multiSelected:has(+ .block.multiSelected) {
+    .border-bottom {
+      background-color: transparent;
+      background-image: linear-gradient(
+        to right,
+        rgb(0, 112, 162),
+        rgb(0, 112, 162) 5px,
+        transparent 5px,
+        transparent
+      );
+      background-size: 10px 100%;
+    }
+  }
+
+  &.multiSelected + .block.multiSelected {
+    .border-top {
+      display: none;
+    }
+  }
+
+  .border-line {
+    position: absolute;
+    z-index: 97;
+    background-color: transparent;
+    content: '';
+    &.border-top {
+      top: -1px;
+      width: 100%;
+      height: 2px;
+    }
+    &.border-bottom {
+      bottom: -1px;
+      width: 100%;
+      height: 2px;
+    }
+    &.border-left {
+      top: 0;
+      left: 0;
+      width: 2px;
+      height: 100%;
+    }
+    &.border-right {
+      top: 0;
+      right: 0;
+      width: 2px;
+      height: 100%;
+    }
+  }
+}
+
+.block {
+  background: var(--theme-color);
+  color: var(--theme-foreground-color);
+
+  .block-inner-container {
+    @include default-container-width();
+    display: grid;
+    place-content: var(--block-alignment, start);
+
+    // Default spacing between sibling blocks
+    padding-bottom: $block-vertical-space;
+  }
+
+  // Blocks spatial relationships by category
+  &.category-heading {
+    .block-inner-container {
+      @include default-container-width();
+      @include adjustMarginsToContainer($default-container-width);
+    }
+
+    // Adjust spacing depending on next block's category
+    &:has(+ .category-separator) {
+      .block-inner-container {
+        padding-bottom: 0 !important;
+      }
+    }
+  }
+
+  &.category-inline {
+    .block-inner-container {
+      @include narrow-container-width();
+      @include adjustMarginsToContainer($narrow-container-width);
+    }
+
+    // Adjust spacing depending on next block's category
+    &:has(+ .category-separator) {
+      .block-inner-container {
+        padding-bottom: 0 !important;
+      }
+    }
+
+    &:has(+ .category-action) {
+      .block-inner-container {
+        padding-bottom: $spacing-large !important;
+      }
+    }
+
+    &:has(+ .category-heading) {
+      .block-inner-container {
+        padding-bottom: $spacing-large !important;
+      }
+    }
+  }
+
+  &.category-action {
+    .block-inner-container {
+      @include variable-container-width();
+    }
+
+    // Adjust spacing depending on next block's category
+    &:has(+ .category-separator) {
+      .block-inner-container {
+        padding-bottom: 0 !important;
+      }
+    }
+  }
+
+  &.category-separator {
+    .block-inner-container {
+      @include variable-container-width();
+      padding-top: $spacing-xlarge;
+      padding-bottom: $spacing-xlarge;
+    }
+  }
+
+  &.category-image-card {
+    .block-inner-container {
+      padding-top: $spacing-large;
+      padding-bottom: $spacing-large;
+    }
+  }
+
+  // Cancel bottom margin from core
+  margin-bottom: 0;
+  // For testing purposes, mark boundaries of the block
+  // border: 1px inset purple;
+
+  &:not(.category-separator) {
+    // Add padding-top to Outer container & remove padding-top from Inner container if previous block has different BG color
+    &.previous--has--different--backgroundColor {
+      padding-top: $color-block-change-vertical-spacing;
+
+      .block-inner-container {
+        padding-top: 0 !important;
+      }
+
+      @container (max-width: #{$largest-mobile-screen}) {
+        padding-top: $spacing-large !important;
+      }
+    }
+
+    // Add padding-bottom to Outer container & remove padding-bottom from Inner container if next block has different BG color
+    &.next--has--different--backgroundColor {
+      padding-bottom: $color-block-change-vertical-spacing;
+
+      .block-inner-container {
+        padding-bottom: 0 !important;
+      }
+
+      @container (max-width: #{$largest-mobile-screen}) {
+        padding-bottom: $spacing-large !important;
+      }
+    }
+  }
+}
+
+// Animations
+#page-edit {
+  .block {
+    transition: padding 500ms ease-in-out;
+    .block-inner-container {
+      transition: all 500ms ease-in-out;
+    }
+  }
 }
 
 #page-document .blocks-group-wrapper {
@@ -110,7 +372,8 @@
   .block {
     // Button
     &.__button {
-      & > .button.container {
+      & > .button.container,
+      & > .block-inner-container {
         & .ui.button {
           border-color: var(--theme-foreground-color);
           background-color: var(--theme-color);

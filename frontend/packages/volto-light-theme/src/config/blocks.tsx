@@ -287,6 +287,14 @@ export default function install(config: ConfigType) {
     ...config.blocks.blocksConfig.slate,
     schemaEnhancer: defaultStylingSchema,
     sidebarTab: 1,
+    blockModel: config.settings.blockModel,
+    category: 'inline',
+  };
+
+  config.blocks.blocksConfig.title = {
+    ...config.blocks.blocksConfig.title,
+    blockModel: config.settings.blockModel,
+    category: 'heading',
   };
 
   config.blocks.blocksConfig.teaser = {
@@ -337,6 +345,8 @@ export default function install(config: ConfigType) {
   config.blocks.blocksConfig.__button = {
     ...config.blocks.blocksConfig.__button,
     schemaEnhancer: ButtonStylingSchema,
+    blockModel: config.settings.blockModel,
+    category: 'action',
   };
 
   config.blocks.blocksConfig.eventMetadata = {

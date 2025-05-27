@@ -18,11 +18,40 @@ import EditDefaultBlock from '@plone/volto/components/manage/Blocks/Block/Defaul
 import SidebarPortal from '@plone/volto/components/manage/Sidebar/SidebarPortal';
 import BlockSettingsSidebar from '@plone/volto/components/manage/Blocks/Block/Settings';
 import BlockSettingsSchema from '@plone/volto/components/manage/Blocks/Block/Schema';
+import BlockChooserButton from '@plone/volto/components/manage/BlockChooser/BlockChooserButton';
+import isBoolean from 'lodash/isBoolean';
+import includes from 'lodash/includes';
+import downSVG from '@plone/volto/icons/down-key.svg';
+import upSVG from '@plone/volto/icons/up-key.svg';
+import { Button } from '@plone/components';
+import trashSVG from '@plone/volto/icons/delete.svg';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
+import { endsWith, find, keys } from 'lodash';
+import move from 'lodash-move';
+import {
+  blockHasValue,
+  buildStyleClassNamesFromData,
+  buildStyleObjectFromData,
+  buildStyleClassNamesExtenders,
+} from '@plone/volto/helpers/Blocks/Blocks';
+import MaybeWrap from '@plone/volto/components/manage/MaybeWrap/MaybeWrap';
 
 const messages = defineMessages({
   unknownBlock: {
     id: 'Unknown Block',
     defaultMessage: 'Unknown Block {block}',
+  },
+  delete: {
+    id: 'delete',
+    defaultMessage: 'Delete',
+  },
+  moveUp: {
+    id: 'Move up',
+    defaultMessage: 'Move up',
+  },
+  moveDown: {
+    id: 'Move down',
+    defaultMessage: 'Move down',
   },
 });
 
@@ -123,6 +152,9 @@ export class Edit extends Component {
   render() {
     const { blocksConfig = config.blocks.blocksConfig } = this.props;
     const { editable, type } = this.props;
+    const required = isBoolean(this.props.data.required)
+      ? this.props.data.required
+      : includes(config.blocks.requiredBlocks, type);
 
     const disableNewBlocks = this.props.data?.disableNewBlocks;
 
@@ -136,11 +168,60 @@ export class Edit extends Component {
     const schema = blocksConfig?.[type]?.['schema'] || BlockSettingsSchema;
     const blockHasOwnFocusManagement =
       blocksConfig?.[type]?.['blockHasOwnFocusManagement'] || null;
+    const getBlocksLayoutFieldname = (props) => {
+      return (
+        find(
+          keys(props),
+          (key) => key !== 'volto.blocks' && endsWith(key, 'blocks_layout'),
+        ) || null
+      );
+    };
+    const blocksLayoutFieldname = getBlocksLayoutFieldname(
+      this.props.properties,
+    );
+
+    const blocks_layout = this.props.properties[blocksLayoutFieldname];
+
+    const moveBlock = (formData, source, destination) => {
+      const blocksLayoutFieldname = getBlocksLayoutFieldname(formData);
+      return {
+        ...formData,
+        [blocksLayoutFieldname]: {
+          items: move(
+            formData[blocksLayoutFieldname].items,
+            source,
+            destination,
+          ),
+        },
+      };
+    };
+
+    let classNames = buildStyleClassNamesFromData(this.props.data.styles);
+
+    classNames =
+      blocksConfig?.[type]?.blockModel === 3
+        ? buildStyleClassNamesExtenders({
+            block: this.props.block,
+            content: this.props.content,
+            data: this.props.data,
+            classNames,
+          })
+        : '';
+
+    const styles =
+      blocksConfig?.[type]?.blockModel === 3
+        ? {
+            style: { ...buildStyleObjectFromData(this.props.data) },
+          }
+        : { style: { outline: 'none' } };
+
+    const category = blocksConfig?.[type]?.category;
 
     return (
       <>
         {Block !== null ? (
           <div
+            {...styles}
             role="presentation"
             onMouseEnter={(e) => {
               e.preventDefault();
@@ -184,25 +265,128 @@ export class Edit extends Component {
                 : null
             }
             // START CUSTOMIZATION
-            className={cx(this.props.data.variation, {
-              'block-inner-container': blocksConfig?.[type]?.blockModel === 3,
-              [`block ${type}`]: blocksConfig?.[type]?.blockModel !== 3,
-              selected: this.props.selected || this.props.multiSelected,
-              multiSelected: this.props.multiSelected,
-              hovered: this.props.hovered === this.props.id,
-            })}
-            // END CUSTOMIZATION
-            style={{ outline: 'none' }}
+            className={cx(
+              this.props.data.variation,
+              classNames,
+              `block ${type}`,
+              {
+                [`category-${category}`]:
+                  blocksConfig?.[type]?.blockModel === 3,
+                selected: this.props.selected || this.props.multiSelected,
+                multiSelected: this.props.multiSelected,
+                hovered: this.props.hovered === this.props.id,
+              },
+            )}
             ref={this.blockNode}
             // The tabIndex is required for the keyboard navigation
             /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
             tabIndex={!blockHasOwnFocusManagement ? -1 : null}
           >
-            <Block
-              {...this.props}
-              blockNode={this.blockNode}
-              data={this.props.data}
-            />
+            <MaybeWrap
+              condition={blocksConfig?.[type]?.blockModel === 3}
+              as={'div'}
+              className="block-inner-container"
+            >
+              <Block
+                {...this.props}
+                blockNode={this.blockNode}
+                data={this.props.data}
+              />
+            </MaybeWrap>
+
+            {blocksConfig?.[type]?.blockModel === 3 && (
+              <div className="block-edit-helpers">
+                <div className="block-controls">
+                  {this.props.selected && !required && editable && (
+                    <Button
+                      icon
+                      basic
+                      onClick={() =>
+                        this.props.onDeleteBlock(this.props.block, true)
+                      }
+                      className="delete-button"
+                      aria-label={this.props.intl.formatMessage(
+                        messages.delete,
+                      )}
+                    >
+                      <Icon name={trashSVG} size="18px" />
+                    </Button>
+                  )}
+                  {this.props.index > 0 && this.props.selected && (
+                    <Button
+                      icon
+                      basic
+                      onClick={() =>
+                        this.props.onChangeFormData(
+                          moveBlock(
+                            this.props.properties,
+                            this.props.index,
+                            this.props.index - 1,
+                          ),
+                        )
+                      }
+                      className="move-up-button"
+                      aria-label={this.props.intl.formatMessage(
+                        messages.moveUp,
+                      )}
+                    >
+                      <Icon name={upSVG} size="18px" />
+                    </Button>
+                  )}
+                  {this.props.index < blocks_layout.items.length - 1 &&
+                    this.props.selected && (
+                      <Button
+                        icon
+                        basic
+                        onClick={() =>
+                          this.props.onChangeFormData(
+                            moveBlock(
+                              this.props.properties,
+                              this.props.index,
+                              this.props.index + 1,
+                            ),
+                          )
+                        }
+                        className="move-down-button"
+                        aria-label={this.props.intl.formatMessage(
+                          messages.moveDown,
+                        )}
+                      >
+                        <Icon name={downSVG} size="18px" />
+                      </Button>
+                    )}
+                </div>
+                <div className="border-top border-line"></div>
+                <div className="border-bottom border-line"></div>
+                <div className="border-left border-line"></div>
+                <div className="border-right border-line"></div>
+
+                {config.experimental.addBlockButton.enabled &&
+                  this.props.showBlockChooser && (
+                    <BlockChooserButton
+                      data={this.props.data}
+                      block={this.props.block}
+                      onInsertBlock={(id, value) => {
+                        if (blockHasValue(this.props.data)) {
+                          this.props.onSelectBlock(
+                            this.props.onInsertBlock(id, value),
+                          );
+                        } else {
+                          this.props.onChangeBlock(id, value);
+                        }
+                      }}
+                      onMutateBlock={this.props.onMutateBlock}
+                      allowedBlocks={this.props.allowedBlocks}
+                      blocksConfig={blocksConfig}
+                      size="24px"
+                      properties={this.props.properties}
+                      navRoot={this.props.navRoot}
+                      contentType={this.props.contentType}
+                    />
+                  )}
+              </div>
+            )}
+            {/* END CUSTOMIZATION */}
             {this.props.manage && (
               <SidebarPortal
                 selected={this.props.selected}
@@ -245,8 +429,7 @@ export class Edit extends Component {
                 : null
             }
             // START CUSTOMIZATION
-            className={cx(type, {
-              block: blocksConfig?.[type]?.blockModel !== 3,
+            className={cx(type, 'block', {
               selected: this.props.selected || this.props.multiSelected,
               multiSelected: this.props.multiSelected,
               hovered: this.props.hovered === this.props.id,

@@ -10,7 +10,7 @@ import {
   buildStyleClassNamesExtenders,
 } from '@plone/volto/helpers/Blocks/Blocks';
 import dragSVG from '@plone/volto/icons/drag.svg';
-import { Button } from 'semantic-ui-react';
+import { Button } from '@plone/components';
 import includes from 'lodash/includes';
 import isBoolean from 'lodash/isBoolean';
 import { defineMessages, injectIntl } from 'react-intl';
@@ -80,20 +80,14 @@ const EditBlockWrapper = (props) => {
     style: { ...style, ...draginfo.draggableProps.style },
   };
 
-  const category = blocksConfig?.[type]?.category;
-
-  return (
+  return blocksConfig?.[type]?.blockModel !== 3 ? (
     <div
       ref={draginfo.innerRef}
       {...styleMergedWithDragProps}
       // Right now, we can have the alignment information in the styles property or in the
       // block data root, we inject the classname here for having control over the whole
       // Block Edit wrapper
-      className={cx(classNames, {
-        [`block ${data['@type']}`]: blocksConfig?.[type]?.blockModel === 3,
-        [`block-editor-${data['@type']}`]:
-          blocksConfig?.[type]?.blockModel !== 3,
-        [`category-${category}`]: category,
+      className={cx(classNames, `block-editor-${data['@type']}`, {
         [data.align]: data.align,
       })}
     >
@@ -161,6 +155,8 @@ const EditBlockWrapper = (props) => {
         </div>
       </div>
     </div>
+  ) : (
+    <>{children}</>
   );
 };
 
