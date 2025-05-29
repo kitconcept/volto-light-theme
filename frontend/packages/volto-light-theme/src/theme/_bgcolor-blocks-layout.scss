@@ -58,47 +58,33 @@
     flex-direction: row-reverse;
     justify-content: end;
 
-    .ui.basic.button {
-      line-height: 1rem;
-    }
-
-    .ui.basic.button.delete-button {
-      position: relative;
-      padding: 3px;
-      border-radius: 50% !important;
-      margin-top: 6px !important;
-      margin-right: 8px !important;
-      background: $white !important;
-
-      &:hover {
-        background: $white !important;
-        opacity: 1 !important;
-      }
-    }
-
-    .ui.basic.button.move-down-button {
+    button {
+      width: 25px;
+      height: 25px;
       padding: 3px;
       border: none;
-      border-radius: 50% !important;
-      margin-top: 6px !important;
+      border-radius: 50%;
+      margin-top: 6px;
       margin-right: 8px;
-      background: $white !important;
-      &:hover {
-        background: $white !important;
-        opacity: 1 !important;
+      background: $white;
+      color: rgba(0, 0, 0, 0.7);
+      cursor: pointer;
+      font-weight: 400;
+      line-height: 1em;
+      opacity: 0.7;
+      text-shadow: none;
+      text-transform: none;
+
+      &:hover,
+      &:focus {
+        opacity: 1;
       }
     }
 
-    .ui.basic.button.move-up-button {
-      padding: 3px;
-      border: none;
-      border-radius: 50% !important;
-      margin-top: 6px !important;
-      margin-right: 8px !important;
-      background: $white !important;
-      &:hover {
-        background: $white !important;
-        opacity: 1 !important;
+    .delete-button {
+      &:hover,
+      &:focus {
+        color: #e40166 !important;
       }
     }
   }
@@ -178,17 +164,51 @@
   }
 }
 
+// For backwards compatibility with bm2 + Semantic UI
+#page-edit,
+#page-add {
+  [class*='block-editor-'] {
+    .block {
+      button.delete-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0;
+        border: none;
+        border-radius: 0.22222222rem;
+        background: transparent none !important;
+        color: rgba(0, 0, 0, 0.6) !important;
+        cursor: pointer;
+        font-weight: 400;
+        text-shadow: none !important;
+        text-transform: none;
+
+        &:hover,
+        &:focus {
+          color: #e40166 !important;
+        }
+      }
+      button.ui.basic.icon.button.block-add-button.new-add-block {
+        bottom: -20px !important;
+      }
+    }
+  }
+}
+
 .block {
+
+  // Cancel bottom margin from core
+  margin-bottom: 0;
   background: var(--theme-color);
   color: var(--theme-foreground-color);
 
   .block-inner-container {
     @include default-container-width();
     display: grid;
-    place-content: var(--block-alignment, start);
 
     // Default spacing between sibling blocks
     padding-bottom: $block-vertical-space;
+    place-content: var(--block-alignment, start);
   }
 
   // Blocks spatial relationships by category
@@ -259,9 +279,6 @@
       padding-bottom: $spacing-large;
     }
   }
-
-  // Cancel bottom margin from core
-  margin-bottom: 0;
   // For testing purposes, mark boundaries of the block
   // border: 1px inset purple;
 

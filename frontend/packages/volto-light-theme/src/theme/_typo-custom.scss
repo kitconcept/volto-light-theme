@@ -63,7 +63,8 @@ em span span {
   }
 }
 
-h1.documentFirstHeading {
+h1.documentFirstHeading,
+h1.documentFirstHeading:last-child {
   border: none;
   @include page-title();
   @include vertical-space-h1();
