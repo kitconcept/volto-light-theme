@@ -80,9 +80,6 @@ h1.documentFirstHeading:last-child {
 
   &:has([data-slate-placeholder='true']) {
     min-width: $default-container-width;
-    [data-slate-placeholder='true'] {
-      margin-top: 40px;
-    }
   }
 }
 
