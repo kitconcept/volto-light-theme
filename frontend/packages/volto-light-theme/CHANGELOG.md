@@ -8,6 +8,29 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0-alpha.4 (2025-05-22)
+
+### Internal
+
+- Added some of the Volto's Cypress tests. @sneridagh [#540](https://github.com/kitconcept/volto-light-theme/pull/540)
+
+## 7.0.0-alpha.3 (2025-05-20)
+
+### Feature
+
+- Improve Footer color handling. @danalvrz [#551](https://github.com/kitconcept/volto-light-theme/pull/551)
+- Added support for a customizable colophon footer. @sneridagh 
+
+## 7.0.0-alpha.2 (2025-05-19)
+
+### Breaking
+
+- Update to use `volto-button-block` 4a0. @sneridagh [#553](https://github.com/kitconcept/volto-light-theme/pull/553)
+
+### Feature
+
+- Added the `volto-logos-block` and `volto-carousel-block` as recommended add-ons. @sneridagh [#550](https://github.com/kitconcept/volto-light-theme/pull/550)
+
 ## 7.0.0-alpha.1 (2025-05-16)
 
 ### Breaking
