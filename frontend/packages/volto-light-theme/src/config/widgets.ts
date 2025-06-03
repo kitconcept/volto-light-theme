@@ -39,8 +39,6 @@ export default function install(config: ConfigType) {
   // it uses also dnd-kit for drag and drop
   config.widgets.widget.object_list = ObjectList;
 
-  // config.widgets.id.preview_image_link = config.widgets.widget.image;
-
   config.widgets.widget.blockWidth = BlockWidth;
   config.widgets.widget.blockAlignment = BlockAlignment;
   config.widgets.widget.colorPicker = ColorPicker;
