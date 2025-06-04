@@ -61,6 +61,14 @@ declare module '@plone/types' {
       'plonegovbr.socialmedia.settings': CustomInheritBehavior<PloneGobrSocialMediaSettings>;
     };
   }
+
+  export interface ObjectBrowserItem {
+    contact_email: string;
+    contact_phone: string;
+    contact_room: string;
+    contact_website: string;
+    contact_building: string;
+  }
 }
 
 const applyConfig = (config: ConfigType) => {

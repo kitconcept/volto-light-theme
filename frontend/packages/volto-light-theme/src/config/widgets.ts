@@ -13,6 +13,10 @@ import { footerLinksSchema } from '../components/Widgets/schema/footerLinksSchem
 import { iconLinkListSchema } from '../components/Widgets/schema/iconLinkListSchema';
 
 declare module '@plone/types' {
+  export interface WidgetsConfigById {
+    preview_image_link: React.ComponentType;
+  }
+
   export interface WidgetsConfigByWidget {
     themeColorSwatch: typeof ColorSwatch;
     blockWidth: typeof BlockWidth;
@@ -20,6 +24,7 @@ declare module '@plone/types' {
     size: typeof Size;
     colorPicker: typeof ColorPicker;
     blocksObject: typeof BlocksObject;
+    image: React.ComponentType;
   }
 }
 
