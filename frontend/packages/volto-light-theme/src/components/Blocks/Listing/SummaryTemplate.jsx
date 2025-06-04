@@ -5,6 +5,7 @@ import Component from '@plone/volto/components/theme/Component/Component';
 import { flattenToAppURL, isInternalURL } from '@plone/volto/helpers/Url/Url';
 import config from '@plone/volto/registry';
 import DefaultSummary from '@kitconcept/volto-light-theme/components/Summary/DefaultSummary';
+import cx from 'classnames';
 
 const SummaryTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
   let link = null;
@@ -46,7 +47,12 @@ const SummaryTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
               </>
             );
           return (
-            <div className="listing-item" key={item['@id']}>
+            <div
+              className={cx('listing-item', {
+                [`${item['@type']?.toLowerCase()}-listing`]: item['@type'],
+              })}
+              key={item['@id']}
+            >
               <ConditionalLink item={item} condition={!isEditMode}>
                 <ItemBodyTemplate item={item} />
               </ConditionalLink>
