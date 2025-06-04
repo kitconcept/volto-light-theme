@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0-alpha.6 (2025-06-04)
+
+### Internal
+
+- Update social media to latest to fix Redux complaining. @sneridagh 
+
 ## 7.0.0-alpha.5 (2025-06-04)
 
 ### Breaking
