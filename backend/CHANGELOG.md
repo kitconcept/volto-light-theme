@@ -2,6 +2,11 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0a5 (2025-06-04)
+
+No significant changes.
+
+
 ## 7.0.0a4 (2025-05-22)
 
 
