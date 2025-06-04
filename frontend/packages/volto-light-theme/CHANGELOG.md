@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0-alpha.7 (2025-06-04)
+
+### Feature
+
+- Update pt_BR translation. @ericof 
+
 ## 7.0.0-alpha.6 (2025-06-04)
 
 ### Internal
