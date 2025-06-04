@@ -8,6 +8,24 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0-alpha.5 (2025-06-04)
+
+### Breaking
+
+- The `Body` Teaser component has been shadowed, including the `placeholder` in case that the Teaser is empty. @sneridagh
+  See [the upgrade guide](https://volto-light-theme.readthedocs.io/how-to-guides/upgrade-guide.html) for more information. [#555](https://github.com/kitconcept/volto-light-theme/pull/555)
+
+### Feature
+
+- Add support for Person content type in teasers, teasers in grids and listings. @sneridagh [#555](https://github.com/kitconcept/volto-light-theme/pull/555)
+- Added string interpolation {searchTerm} in the custom searchURL in intranet header search widget. @sneridagh 
+
+## 7.0.0-alpha.4 (2025-05-22)
+
+### Internal
+
+- Added some of the Volto's Cypress tests. @sneridagh [#540](https://github.com/kitconcept/volto-light-theme/pull/540)
+
 ## 7.0.0-alpha.3 (2025-05-20)
 
 ### Feature

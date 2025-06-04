@@ -4,6 +4,7 @@ const path = require('path');
 
 const projectRootPath = path.resolve('.');
 const lessPlugin = require('@plone/volto/webpack-plugins/webpack-less-plugin');
+const RelativeResolverPlugin = require('@plone/volto/webpack-plugins/webpack-relative-resolver');
 const scssPlugin = require('razzle-plugin-scss');
 
 const createConfig = require('razzle/config/createConfigAsync.js');
@@ -148,6 +149,10 @@ module.exports = {
         ...config.resolve,
         alias: { ...config.resolve.alias, ...baseConfig.resolve.alias },
         fallback: { ...config.resolve.fallback, zlib: false },
+        plugins: [
+          ...(config.resolve.plugins || []),
+          new RelativeResolverPlugin(registry),
+        ],
       },
     };
 

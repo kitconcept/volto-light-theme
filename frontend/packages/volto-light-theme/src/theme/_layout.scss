@@ -358,6 +358,7 @@ External link removal for all the blocks.
   .block.teaser.has--align--center,
   .block.eventMetadata .details-container,
   .block-editor-teaser .teaser-item.default,
+  .block-editor-teaser .card-inner, // deprecate when category is in place
   .block-editor-slateTable .block.table,
   .block-editor-highlight .teaser-description-title,
   .block-editor-toc .table-of-contents {
@@ -460,6 +461,7 @@ body.has-toolbar.has-sidebar .block .ui.basic.button.delete-button {
 #page-edit,
 #page-document {
   img {
+    object-fit: cover;
     object-position: center;
   }
 }

@@ -67,7 +67,7 @@
   }
 }
 
-// // Left-aligned
+// // Side-aligned
 .card {
   .has--align--left:not(.contained) &,
   .has--align--right:not(.contained) & {
@@ -149,7 +149,6 @@
     display: flex;
 
     .image-wrapper {
-      // width: 50%;
       flex: 0 1 var(--card-listing-image-size, 220px);
       margin-right: 20px;
 
@@ -160,7 +159,6 @@
     }
 
     .card-summary {
-      // width: 50%;
       flex: 1 1 50%;
       padding: 0;
     }
