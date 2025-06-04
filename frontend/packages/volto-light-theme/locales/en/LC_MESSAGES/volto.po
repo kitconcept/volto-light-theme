@@ -27,6 +27,11 @@ msgstr ""
 msgid "Add action"
 msgstr ""
 
+#. Default: "Add item"
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Add item"
+msgstr ""
+
 #. Default: "Add link"
 #: components/Widgets/schema/footerLinksSchema
 msgid "Add link"
@@ -45,6 +50,7 @@ msgstr ""
 
 #. Default: "Alt text"
 #: components/Widgets/schema/footerLogosSchema
+#: components/Widgets/schema/iconLinkListSchema
 msgid "Alt text"
 msgstr ""
 
@@ -108,7 +114,7 @@ msgid "Continue reading"
 msgstr ""
 
 #. Default: "Copyright"
-#: components/Footer/Footer
+#: components/Footer/slots/Copyright
 msgid "Copyright"
 msgstr ""
 
@@ -120,11 +126,12 @@ msgstr ""
 #. Default: "Description"
 #: components/Blocks/Image/schema
 #: components/Widgets/schema/footerLogosSchema
+#: components/Widgets/schema/iconLinkListSchema
 msgid "Description"
 msgstr ""
 
 #. Default: "Distributed under the {license}."
-#: components/Footer/Footer
+#: components/Footer/slots/Copyright
 msgid "Distributed under the {license}."
 msgstr ""
 
@@ -144,18 +151,24 @@ msgstr ""
 msgid "Flag align"
 msgstr ""
 
+#. Default: "Follow us:"
+#: components/Footer/slots/FollowUsLogoAndLinks
+msgid "Follow us:"
+msgstr ""
+
 #. Default: "Full"
 #: components/Widgets/BlockWidth
 msgid "Full"
 msgstr ""
 
-#. Default: "GNU GPL license"
-#: components/Footer/Footer
+#. Default: "GNU GPL v2 license"
+#: components/Footer/slots/Copyright
 msgid "GNU GPL license"
 msgstr ""
 
 #. Default: "Headline"
 #: components/Widgets/schema/footerLogosSchema
+#: components/Widgets/schema/iconLinkListSchema
 msgid "Headline"
 msgstr ""
 
@@ -166,6 +179,7 @@ msgstr ""
 
 #. Default: "Hide description"
 #: components/Widgets/schema/footerLogosSchema
+#: components/Widgets/schema/iconLinkListSchema
 msgid "Hide description"
 msgstr ""
 
@@ -184,6 +198,16 @@ msgstr ""
 #. Default: "Image"
 #: components/Blocks/Image/ImageSidebar
 msgid "Image"
+msgstr ""
+
+#. Default: "Item"
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Item"
+msgstr ""
+
+#. Default: "Item icon"
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Item icon"
 msgstr ""
 
 #. Default: "Large"
@@ -270,6 +294,7 @@ msgstr ""
 #: components/Widgets/schema/footerLinksSchema
 #: components/Widgets/schema/footerLogosSchema
 #: components/Widgets/schema/headerActionsSchema
+#: components/Widgets/schema/iconLinkListSchema
 msgid "Open in a new tab"
 msgstr ""
 
@@ -286,28 +311,24 @@ msgstr ""
 
 #. Default: "Phone"
 #: components/Blocks/EventMetadata/View
+#: components/Summary/PersonSummary
 msgid "Phone"
 msgstr ""
 
 #. Default: "Please choose an existing content as source for this element"
 #: components/Blocks/Slider/DefaultBody
-#: components/Blocks/Teaser/DefaultBody
+#: components/Blocks/Teaser/Body
 msgid "Please choose an existing content as source for this element"
 msgstr ""
 
 #. Default: "Plone Foundation"
-#: components/Footer/Footer
+#: components/Footer/slots/Copyright
 msgid "Plone Foundation"
 msgstr ""
 
 #. Default: "Plone{reg} Open Source CMS/WCM"
-#: components/Footer/Footer
+#: components/Footer/slots/Copyright
 msgid "Plone{reg} Open Source CMS/WCM"
-msgstr ""
-
-#. Default: "Powered by Plone & Python"
-#: components/Footer/Footer
-msgid "Powered by Plone & Python"
 msgstr ""
 
 #. Default: "Press"
@@ -339,6 +360,11 @@ msgstr ""
 #. Default: "Right"
 #: components/Widgets/BlockAlignment
 msgid "Right"
+msgstr ""
+
+#. Default: "Room"
+#: components/Summary/PersonSummary
+msgid "Room"
 msgstr ""
 
 #. Default: "Search"
@@ -373,6 +399,7 @@ msgstr ""
 
 #. Default: "Settings"
 #: components/Widgets/schema/footerLogosSchema
+#: components/Widgets/schema/iconLinkListSchema
 msgid "Settings"
 msgstr ""
 
@@ -407,6 +434,11 @@ msgstr ""
 msgid "Source"
 msgstr ""
 
+#. Default: "Sponsored by:"
+#: components/Footer/slots/FollowUsLogoAndLinks
+msgid "Sponsored by:"
+msgstr ""
+
 #. Default: "Start"
 #: components/Blocks/EventMetadata/View
 msgid "Start"
@@ -421,11 +453,12 @@ msgstr ""
 #: components/Widgets/schema/footerLinksSchema
 #: components/Widgets/schema/footerLogosSchema
 #: components/Widgets/schema/headerActionsSchema
+#: components/Widgets/schema/iconLinkListSchema
 msgid "Target"
 msgstr ""
 
 #. Default: "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
-#: components/Footer/Footer
+#: components/Footer/slots/Copyright
 msgid "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
 msgstr ""
 
@@ -434,12 +467,18 @@ msgstr ""
 #: components/Widgets/schema/footerLinksSchema
 #: components/Widgets/schema/footerLogosSchema
 #: components/Widgets/schema/headerActionsSchema
+#: components/Widgets/schema/iconLinkListSchema
 msgid "Title"
 msgstr ""
 
 #. Default: "Website"
 #: components/Blocks/EventMetadata/View
 msgid "Website"
+msgstr ""
+
+#. Default: "eMail"
+#: components/Summary/PersonSummary
+msgid "eMail"
 msgstr ""
 
 #. Default: "Clear image"
