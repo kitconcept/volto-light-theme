@@ -305,18 +305,18 @@
         .ui.pagination.menu {
           background: none;
 
-          a {
+          a.item {
             max-height: 38px !important;
-            border-color: var(--theme-foreground-color) !important;
-            color: var(--theme-foreground-color) !important;
+            border-color: var(--theme-foreground-color);
+            color: var(--theme-foreground-color);
 
             &.disabled {
               color: var(--theme-low-contrast-foreground-color) !important;
             }
 
             &.active {
-              background: var(--theme-foreground-color) !important;
-              color: var(--theme-color) !important;
+              background: var(--theme-foreground-color);
+              color: var(--theme-color);
             }
           }
         }
