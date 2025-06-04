@@ -14,39 +14,45 @@ msgstr ""
 #. Default: "Action"
 #: components/Widgets/schema/headerActionsSchema
 msgid "Action"
-msgstr ""
+msgstr "Ação"
 
 #. Default: "Add"
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
 msgid "Add (object list)"
-msgstr ""
+msgstr "Adicionar"
 
 #. Default: "Add action"
 #: components/Widgets/schema/headerActionsSchema
 msgid "Add action"
-msgstr ""
+msgstr "Adicionar ação"
+
+#. Default: "Add item"
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Add item"
+msgstr "Adicionar item"
 
 #. Default: "Add link"
 #: components/Widgets/schema/footerLinksSchema
 msgid "Add link"
-msgstr ""
+msgstr "Adicionar link"
 
 #. Default: "Add logo"
 #: components/Widgets/schema/footerLogosSchema
 msgid "Add logo"
-msgstr ""
+msgstr "Adicionar logo"
 
 #. Default: "Alignment"
 #: components/Blocks/Button/schema
 #: components/Blocks/Separator/schema
 msgid "Alignment"
-msgstr ""
+msgstr "Alinhamento"
 
 #. Default: "Alt text"
 #: components/Widgets/schema/footerLogosSchema
+#: components/Widgets/schema/iconLinkListSchema
 msgid "Alt text"
-msgstr ""
+msgstr "Texto alternativo"
 
 #. Default: "Back"
 #: components/MobileNavigation/MobileNavigation
@@ -68,7 +74,7 @@ msgstr "Largura do bloco"
 #. Default: "Breadcrumbs"
 #: components/Breadcrumbs/Breadcrumbs
 msgid "Breadcrumbs"
-msgstr "Breadcrumbs"
+msgstr "Migalhas"
 
 #. Default: "Button text"
 #: components/Blocks/Slider/schema
@@ -90,12 +96,12 @@ msgstr "Fechar menu"
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
 msgid "Collapse item"
-msgstr ""
+msgstr "Colapsar item"
 
 #. Default: "The color contrast ratio {contrastRatio}:1 might not be accessible for all. WCAG Level: {complianceLevel}"
 #: components/Widgets/ColorContrastChecker
 msgid "ColorContrastCheckerMessage"
-msgstr ""
+msgstr "A razão de contraste de cor {contrastRatio}:1 pode não ser acessível para todos. Nível WCAG: {complianceLevel}"
 
 #. Default: "Contact"
 #: components/Blocks/EventMetadata/View
@@ -108,23 +114,24 @@ msgid "Continue reading"
 msgstr "Continue lendo"
 
 #. Default: "Copyright"
-#: components/Footer/Footer
+#: components/Footer/slots/Copyright
 msgid "Copyright"
 msgstr "Copyright"
 
 #. Default: "Default"
 #: components/Widgets/BlockWidth
 msgid "Default"
-msgstr ""
+msgstr "Padrão"
 
 #. Default: "Description"
 #: components/Blocks/Image/schema
 #: components/Widgets/schema/footerLogosSchema
+#: components/Widgets/schema/iconLinkListSchema
 msgid "Description"
 msgstr "Descrição"
 
 #. Default: "Distributed under the {license}."
-#: components/Footer/Footer
+#: components/Footer/slots/Copyright
 msgid "Distributed under the {license}."
 msgstr "Distribuído sob a licença {license}."
 
@@ -132,7 +139,7 @@ msgstr "Distribuído sob a licença {license}."
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
 msgid "Empty object list"
-msgstr ""
+msgstr "Lista de objetos vazia"
 
 #. Default: "End"
 #: components/Blocks/EventMetadata/View
@@ -144,20 +151,26 @@ msgstr "Término"
 msgid "Flag align"
 msgstr "Alinhar"
 
+#. Default: "Follow us:"
+#: components/Footer/slots/FollowUsLogoAndLinks
+msgid "Follow us:"
+msgstr "Acompanhe-nos:"
+
 #. Default: "Full"
 #: components/Widgets/BlockWidth
 msgid "Full"
 msgstr "Completo"
 
-#. Default: "GNU GPL license"
-#: components/Footer/Footer
+#. Default: "GNU GPL v2 license"
+#: components/Footer/slots/Copyright
 msgid "GNU GPL license"
 msgstr "Licença GNU GPL"
 
 #. Default: "Headline"
 #: components/Widgets/schema/footerLogosSchema
+#: components/Widgets/schema/iconLinkListSchema
 msgid "Headline"
-msgstr ""
+msgstr "Chamada"
 
 #. Default: "Hide Button"
 #: components/Blocks/Slider/schema
@@ -166,8 +179,9 @@ msgstr "Ocultar botão"
 
 #. Default: "Hide description"
 #: components/Widgets/schema/footerLogosSchema
+#: components/Widgets/schema/iconLinkListSchema
 msgid "Hide description"
-msgstr ""
+msgstr "Ocultar descrição"
 
 #. Default: "Home"
 #: components/Breadcrumbs/Breadcrumbs
@@ -186,15 +200,25 @@ msgstr "Baixar ICS"
 msgid "Image"
 msgstr "Imagem"
 
+#. Default: "Item"
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Item"
+msgstr "Item"
+
+#. Default: "Item icon"
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Item icon"
+msgstr "Ícone do item"
+
 #. Default: "Large"
 #: components/Widgets/Size
 msgid "Large"
-msgstr ""
+msgstr "Grande"
 
 #. Default: "Layout"
 #: components/Widgets/BlockWidth
 msgid "Layout"
-msgstr ""
+msgstr "Layout"
 
 #. Default: "Left"
 #: components/Widgets/BlockAlignment
@@ -204,17 +228,17 @@ msgstr "Esquerda"
 #. Default: "Link"
 #: components/Widgets/schema/footerLinksSchema
 msgid "Link"
-msgstr ""
+msgstr "Link"
 
 #. Default: "List"
 #: index
 msgid "List"
-msgstr ""
+msgstr "Lista"
 
 #. Default: "List with images"
 #: index
 msgid "List with images"
-msgstr ""
+msgstr "Lista com imagens"
 
 #. Default: "Location"
 #: components/Blocks/EventMetadata/View
@@ -229,27 +253,27 @@ msgstr "Entrar"
 #. Default: "Logo"
 #: components/Widgets/schema/footerLogosSchema
 msgid "Logo"
-msgstr ""
+msgstr "Logo"
 
 #. Default: "Logo image"
 #: components/Widgets/schema/footerLogosSchema
 msgid "Logo image"
-msgstr ""
+msgstr "Imagem da logo"
 
 #. Default: "Logo of"
 #: components/Logo/Logo
 msgid "Logo of"
-msgstr ""
+msgstr "Logo de"
 
 #. Default: "Medium"
 #: components/Widgets/Size
 msgid "Medium"
-msgstr ""
+msgstr "Médio"
 
 #. Default: "Narrow"
 #: components/Widgets/BlockWidth
 msgid "Narrow"
-msgstr ""
+msgstr "Estreito"
 
 #. Default: "Next Page"
 #: components/Blocks/Listing/ListingBody
@@ -270,8 +294,9 @@ msgstr "Nenhum item encontrado nesta pasta"
 #: components/Widgets/schema/footerLinksSchema
 #: components/Widgets/schema/footerLogosSchema
 #: components/Widgets/schema/headerActionsSchema
+#: components/Widgets/schema/iconLinkListSchema
 msgid "Open in a new tab"
-msgstr ""
+msgstr "Abrir em uma nova aba"
 
 #. Default: "Open menu"
 #: components/MobileNavigation/MobileNavigation
@@ -286,29 +311,25 @@ msgstr "Geral"
 
 #. Default: "Phone"
 #: components/Blocks/EventMetadata/View
+#: components/Summary/PersonSummary
 msgid "Phone"
 msgstr "Telefone"
 
 #. Default: "Please choose an existing content as source for this element"
 #: components/Blocks/Slider/DefaultBody
-#: components/Blocks/Teaser/DefaultBody
+#: components/Blocks/Teaser/Body
 msgid "Please choose an existing content as source for this element"
 msgstr "Por favor, escolha um conteúdo existente como fonte para esse elemento"
 
 #. Default: "Plone Foundation"
-#: components/Footer/Footer
+#: components/Footer/slots/Copyright
 msgid "Plone Foundation"
 msgstr "Plone Foundation"
 
 #. Default: "Plone{reg} Open Source CMS/WCM"
-#: components/Footer/Footer
+#: components/Footer/slots/Copyright
 msgid "Plone{reg} Open Source CMS/WCM"
 msgstr "Plone{reg} Open Source CMS/WCM"
-
-#. Default: "Powered by Plone & Python"
-#: components/Footer/Footer
-msgid "Powered by Plone & Python"
-msgstr "Feito com Plone & Python"
 
 #. Default: "Press"
 #: index
@@ -329,7 +350,7 @@ msgstr "Criar conta"
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
 msgid "Remove item"
-msgstr ""
+msgstr "Remover item"
 
 #. Default: "Result"
 #: components/Blocks/Listing/ListingBody
@@ -340,6 +361,11 @@ msgstr "Resultado"
 #: components/Widgets/BlockAlignment
 msgid "Right"
 msgstr "Direita"
+
+#. Default: "Room"
+#: components/Summary/PersonSummary
+msgid "Room"
+msgstr "Sala"
 
 #. Default: "Search"
 #: components/Blocks/Search/components/SearchInput
@@ -359,7 +385,7 @@ msgstr "Buscar no site"
 #. Default: "Search for People, E-Mail Address, Phone Number, ..."
 #: components/SearchWidget/IntranetSearchWidget
 msgid "Search for People, E-Mail Address, Phone Number, ..."
-msgstr ""
+msgstr "Buscar por pessoas, e-mail, telefone, ..."
 
 #. Default: "Search results"
 #: components/Blocks/Search/components/SearchDetails
@@ -373,19 +399,20 @@ msgstr "Busca por"
 
 #. Default: "Settings"
 #: components/Widgets/schema/footerLogosSchema
+#: components/Widgets/schema/iconLinkListSchema
 msgid "Settings"
-msgstr ""
+msgstr "Configurações"
 
 #. Default: "Short line"
 #: components/Blocks/Separator/schema
 msgid "Short line"
-msgstr ""
+msgstr "Linha curta"
 
 #. Default: "Show item"
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
 msgid "Show item"
-msgstr ""
+msgstr "Exibir item"
 
 #. Default: "Sitemap"
 #: index
@@ -395,7 +422,7 @@ msgstr "Mapa do Site"
 #. Default: "Small"
 #: components/Widgets/Size
 msgid "Small"
-msgstr ""
+msgstr "Pequeno"
 
 #. Default: "Sorting"
 #: components/Blocks/Search/TopSideFacets
@@ -407,6 +434,11 @@ msgstr "Ordenação"
 msgid "Source"
 msgstr "Fonte"
 
+#. Default: "Sponsored by:"
+#: components/Footer/slots/FollowUsLogoAndLinks
+msgid "Sponsored by:"
+msgstr "Apoiado por:"
+
 #. Default: "Start"
 #: components/Blocks/EventMetadata/View
 msgid "Start"
@@ -415,17 +447,18 @@ msgstr "Início"
 #. Default: "Switch to"
 #: components/LanguageSelector/LanguageSelector
 msgid "Switch to"
-msgstr ""
+msgstr "Alternar para"
 
 #. Default: "Target"
 #: components/Widgets/schema/footerLinksSchema
 #: components/Widgets/schema/footerLogosSchema
 #: components/Widgets/schema/headerActionsSchema
+#: components/Widgets/schema/iconLinkListSchema
 msgid "Target"
-msgstr ""
+msgstr "Alvo"
 
 #. Default: "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
-#: components/Footer/Footer
+#: components/Footer/slots/Copyright
 msgid "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
 msgstr "O {plonecms} tem {copyright} 2000-{current_year} pela {plonefoundation} e comunidade."
 
@@ -434,6 +467,7 @@ msgstr "O {plonecms} tem {copyright} 2000-{current_year} pela {plonefoundation} 
 #: components/Widgets/schema/footerLinksSchema
 #: components/Widgets/schema/footerLogosSchema
 #: components/Widgets/schema/headerActionsSchema
+#: components/Widgets/schema/iconLinkListSchema
 msgid "Title"
 msgstr "Título"
 
@@ -441,6 +475,11 @@ msgstr "Título"
 #: components/Blocks/EventMetadata/View
 msgid "Website"
 msgstr "Site"
+
+#. Default: "eMail"
+#: components/Summary/PersonSummary
+msgid "eMail"
+msgstr "E-mail"
 
 #. Default: "Clear image"
 #: components/Blocks/Image/ImageSidebar
