@@ -35,7 +35,7 @@ const Headline = ({
   );
 };
 
-const ListingBody = withQuerystringResults((props) => {
+export const ListingBody = (props) => {
   const {
     data = {},
     isEditMode,
@@ -68,11 +68,9 @@ const ListingBody = withQuerystringResults((props) => {
     ListingBodyTemplate =
       variation?.template ?? defaultVariation?.template ?? null;
   }
-  let galleryRef;
 
-  if (data.variation === 'imageGallery') {
-    galleryRef = useRef();
-  }
+  const galleryRef = useRef();
+
   const listingRef = createRef();
   const NoResults = variation?.noResultsComponent
     ? variation.noResultsComponent
@@ -95,7 +93,7 @@ const ListingBody = withQuerystringResults((props) => {
           <ListingBodyTemplate
             items={listingItems}
             isEditMode={isEditMode}
-            ref={galleryRef}
+            ref={data.variation === 'imageGallery' ? galleryRef : undefined}
             {...data}
             {...variation}
           />
@@ -192,6 +190,6 @@ const ListingBody = withQuerystringResults((props) => {
       )}
     </>
   );
-});
+};
 
-export default injectIntl(ListingBody);
+export default injectIntl(withQuerystringResults(ListingBody));

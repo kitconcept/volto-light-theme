@@ -2,6 +2,25 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0a7 (2025-06-04)
+
+
+### New features:
+
+- Update pt_BR translation. @ericof 
+
+## 7.0.0a6 (2025-06-04)
+
+
+### Internal:
+
+- Update social media to latest to fix Redux complaining. @sneridagh 
+
+## 7.0.0a5 (2025-06-04)
+
+No significant changes.
+
+
 ## 7.0.0a4 (2025-05-22)
 
 

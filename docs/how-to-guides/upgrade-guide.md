@@ -67,6 +67,38 @@ New structure:
 - `content` class has been replaced by the `card-summary` class.
 The rest of the structure remains roughly the same.
 
+### The Teaser `Body` component has been shadowed
+
+```{versionadded} 7.0.0-alpha.4
+```
+
+The shadow does not include the placeholder in case that the teaser is empty.
+This makes it easier to customize the Teaser block without having to override the entire component, including the placeholder.
+This is an excerpt of the new shadowed Teaser `Body` component:
+
+```tsx
+<BlockWrapper
+  {...props}
+  className={cx(
+    { [`${hasType?.toLowerCase()}-teaser`]: hasType },
+    className,
+  )}
+>
+  {isEmpty(data.href) && isEditMode ? (
+    <div className="ui message">
+      <div className="teaser-item placeholder">
+        <img src={imageBlockSVG} alt="" />
+        <p>{intl.formatMessage(messages.PleaseChooseContent)}</p>
+      </div>
+    </div>
+  ) : (
+    <BodyComponent {...props} />
+  )}
+</BlockWrapper>
+```
+
+If you have customized Teaser Body components, or registered components with `Teaser` depending on the content type, you will need to remove the `placeholder` from your them, as it is now handled by the `Body` component.
+
 ## volto-light-theme 6.0.0
 
 This section describes how to upgrade to volto-light-theme 6.0.0 from 5.x.x.

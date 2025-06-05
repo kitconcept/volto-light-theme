@@ -570,42 +570,22 @@
           }
         }
       }
+
       .pagination-wrapper {
         .ui.pagination.desktop-pagination.menu {
-          display: flex;
           background: none;
 
           a {
-            max-height: 38px !important;
-            border-color: var(--theme-foreground-color);
-            color: var(--theme-foreground-color);
-
             &:nth-child(n):not(:last-child) {
               border-right: none;
-            }
-
-            &.disabled {
-              color: var(--theme-low-contrast-foreground-color) !important;
-            }
-
-            &.active {
-              background: var(--theme-foreground-color);
-              color: var(--theme-color);
             }
           }
         }
 
-        .total {
-          color: var(--theme-foreground-color);
-        }
-      }
-
-      .pagination-wrapper {
         .ui.pagination.menu {
-          display: flex;
           background: none;
 
-          a {
+          a.item {
             max-height: 38px !important;
             border-color: var(--theme-foreground-color);
             color: var(--theme-foreground-color);
