@@ -283,7 +283,13 @@ External link removal for all the blocks.
       @include adjustMarginsToContainer($narrow-container-width);
     }
 
-    &:not(.highlight, .teaser, .gridBlock, .slider).has--block-width--default {
+    &:not(
+        .highlight,
+        .teaser,
+        .gridBlock,
+        .slider,
+        .listing
+      ).has--block-width--default {
       @include adjustMarginsToContainer($default-container-width);
     }
 

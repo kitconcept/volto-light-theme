@@ -228,6 +228,24 @@
         right: -68px;
       }
 
+      @media only screen and (max-width: $narrow-container-width) {
+        &.image-gallery-left-nav {
+          left: -0.5rem;
+        }
+        &.image-gallery-right-nav {
+          right: -0.5rem;
+        }
+      }
+
+      @media only screen and (max-width: 1085px) {
+        &.image-gallery-left-nav {
+          left: -1rem;
+        }
+        &.image-gallery-right-nav {
+          right: -1rem;
+        }
+      }
+
       &.image-gallery-fullscreen-button,
       &.image-gallery-play-button {
         bottom: -94px;
@@ -361,7 +379,7 @@
 
       @container (max-width: #{$largest-mobile-screen}) {
         &.mobile-pagination {
-          display: unset;
+          display: table-row;
         }
 
         &.desktop-pagination {
