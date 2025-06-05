@@ -187,8 +187,8 @@ $grid-block-vertical-spacing-top: $spacing-xlarge !default;
 $grid-block-vertical-spacing-bottom: $spacing-xlarge !default;
 
 @mixin vertical-space-h1() {
-  margin-top: $spacing-medium;
-  margin-bottom: $spacing-large;
+  padding-top: $spacing-medium;
+  margin-bottom: $spacing-xlarge;
   @media only screen and (max-width: $largest-mobile-screen) {
     margin-bottom: $spacing-large;
   }

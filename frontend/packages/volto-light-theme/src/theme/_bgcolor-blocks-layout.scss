@@ -195,7 +195,8 @@
   }
 }
 
-.block {
+// For backwards compatibility with bm2 & .blocks-group-wrapper
+:not(.blocks-group-wrapper) > .block {
   // Cancel bottom margin from core
   margin-bottom: 0;
   background: var(--theme-color);

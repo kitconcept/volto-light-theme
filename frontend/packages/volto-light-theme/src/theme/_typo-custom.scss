@@ -82,6 +82,10 @@ h1.documentFirstHeading:last-child {
     min-width: $default-container-width;
   }
 }
+:not(.blocks-group-wrapper) > h1.documentFirstHeading,
+:not(.blocks-group-wrapper) > h1.documentFirstHeading:last-child {
+    margin-bottom: $spacing-large !important;
+  }
 
 // Block Title
 .block h2.headline {
