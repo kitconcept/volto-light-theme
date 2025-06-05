@@ -1,5 +1,8 @@
 export const teaserSchemaEnhancer = ({ schema, formData, intl }) => {
   schema.properties.href.selectedItemAttrs.push('getRemoteUrl');
+  schema.properties.href.selectedItemAttrs.push('effective');
+  schema.properties.href.selectedItemAttrs.push('start');
+  schema.properties.href.selectedItemAttrs.push('end');
 
   return schema;
 };
