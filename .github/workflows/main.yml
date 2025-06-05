@@ -132,8 +132,12 @@ jobs:
         include:
           - name: "Main"
             short-name: main
-          - name: "Core"
-            short-name: core
+          - name: "Core - Basic"
+            short-name: core/basic
+          - name: "Core - Blocks"
+            short-name: core/blocks
+          - name: "Core - Content"
+            short-name: core/content
           - name: "a11y"
             short-name: a11y
             a11y: true
