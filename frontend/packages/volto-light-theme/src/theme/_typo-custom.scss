@@ -82,10 +82,13 @@ h1.documentFirstHeading:last-child {
     min-width: $default-container-width;
   }
 }
+// For backwards compatibility with bm2
 :not(.blocks-group-wrapper) > h1.documentFirstHeading,
 :not(.blocks-group-wrapper) > h1.documentFirstHeading:last-child {
-    margin-bottom: $spacing-large !important;
-  }
+  padding-top: 0 !important;
+  margin-top: $spacing-medium;
+  margin-bottom: $spacing-large;
+}
 
 // Block Title
 .block h2.headline {
