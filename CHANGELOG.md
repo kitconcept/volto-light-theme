@@ -1,6 +1,58 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 7.0.0a7 (2025-06-04)
+
+### Backend
+
+
+#### New features:
+
+- Update pt_BR translation. @ericof 
+
+
+
+### Frontend
+
+#### Feature
+
+- Update pt_BR translation. @ericof 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
+## 7.0.0a6 (2025-06-04)
+
+### Backend
+
+
+#### Internal:
+
+- Update social media to latest to fix Redux complaining. @sneridagh 
+
+
+
+### Frontend
+
+#### Internal
+
+- Update social media to latest to fix Redux complaining. @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 7.0.0a5 (2025-06-04)
 
 ### Backend
