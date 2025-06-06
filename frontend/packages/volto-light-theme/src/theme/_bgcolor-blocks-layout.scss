@@ -352,6 +352,11 @@
   }
 }
 
+:not(.blocks-group-wrapper) > [class*='block-editor-'] {
+  // add margin to bm2 blocks
+  margin-top: 2rem;
+}
+
 // Animations
 #page-edit {
   .block {

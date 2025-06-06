@@ -24,10 +24,10 @@ describe('New Block Auto Focus Tests', () => {
   it('Press Enter on a description block adds new autofocused default block', () => {
     cy.addNewBlock('description');
     cy.get('.documentDescription').first().click().type('{enter}');
-    cy.get('.block-editor-description + .block-editor-slate');
+    cy.get('.block-editor-description + .block-editor-slate, .block-editor-description + .slate.block');
     cy.wait(500);
-    cy.get('*[class*="block-editor-"]')
-      .eq(2)
+    cy.get('*[class*="block-editor-"], .slate.block[class*="next-"]')
+      .eq(1)
       .within(() => {
         return cy.get('.selected');
       });
@@ -40,9 +40,9 @@ describe('New Block Auto Focus Tests', () => {
     cy.get('.blocks-chooser .text').contains('Text').click({ force: true });
     cy.get('.text-slate-editor-inner').first().click().type('{enter}');
     cy.wait(500);
-    cy.get('.block-editor-slate + .block-editor-slate');
-    cy.get('*[class*="block-editor-"]')
-      .eq(2)
+    cy.get('.block-editor-slate + .block-editor-slate, .slate.block + .slate.block');
+    cy.get('*[class*="block-editor-"], .slate.block[class*="next-"]')
+      .eq(1)
       .within(() => {
         return cy.get('.selected');
       });
@@ -59,8 +59,8 @@ describe('New Block Auto Focus Tests', () => {
       });
     cy.get('.block-editor-image').wait(500).click('topLeft').type('{enter}');
     cy.wait(500);
-    cy.get('*[class*="block-editor-"]')
-      .eq(2)
+    cy.get('*[class*="block-editor-"], .slate.block[class*="next-"]')
+      .eq(1)
       .within(() => {
         return cy.get('.selected');
       });
@@ -75,10 +75,10 @@ describe('New Block Auto Focus Tests', () => {
         expect($img[0].naturalWidth).to.be.greaterThan(0);
       });
     cy.get('.block-editor-video').first().click().type('{enter}');
-    cy.get('.block-editor-slate + .block-editor-slate');
+    cy.get('.block-editor-slate + .block-editor-slate, .slate + .slate');
     cy.wait(500);
-    cy.get('*[class*="block-editor-"]')
-      .eq(2)
+    cy.get('*[class*="block-editor-"], .slate.block[class*="next-"]')
+      .eq(1)
       .within(() => {
         return cy.get('.selected');
       });
@@ -88,7 +88,7 @@ describe('New Block Auto Focus Tests', () => {
     cy.addNewBlock('listing');
     cy.get('.block-editor-listing').first().click().type('{enter}');
     cy.wait(500);
-    cy.get('*[class*="block-editor-"]')
+    cy.get('*[class*="block-editor-"], .block[class*="next-"]')
       .eq(2)
       .within(() => {
         return cy.get('.selected');
@@ -99,7 +99,7 @@ describe('New Block Auto Focus Tests', () => {
     cy.addNewBlock('contents');
     cy.get('.block-editor-toc').first().click().type('{enter}');
     cy.wait(500);
-    cy.get('*[class*="block-editor-"]')
+    cy.get('*[class*="block-editor-"], .block[class*="next-"]')
       .eq(2)
       .within(() => {
         return cy.get('.selected');
@@ -116,7 +116,7 @@ describe('New Block Auto Focus Tests', () => {
       });
     cy.get('.block-editor-maps').first().click().type('{enter}');
     cy.wait(500);
-    cy.get('*[class*="block-editor-"]')
+    cy.get('*[class*="block-editor-"], .block[class*="next-"]')
       .eq(2)
       .within(() => {
         return cy.get('.selected');
@@ -127,7 +127,7 @@ describe('New Block Auto Focus Tests', () => {
     cy.addNewBlock('html');
     cy.get('.block-editor-html').first().click().type('{enter}');
     cy.wait(500);
-    cy.get('*[class*="block-editor-"]')
+    cy.get('*[class*="block-editor-"], .block[class*="next-"]')
       .eq(2)
       .within(() => {
         return cy.get('.selected');
@@ -138,7 +138,7 @@ describe('New Block Auto Focus Tests', () => {
     cy.addNewBlock('search');
     cy.get('.block-editor-search').first().click().type('{enter}');
     cy.wait(500);
-    cy.get('*[class*="block-editor-"]')
+    cy.get('*[class*="block-editor-"], .block[class*="next-"]')
       .eq(2)
       .within(() => {
         return cy.get('.selected');
