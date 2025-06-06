@@ -1,6 +1,34 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 7.0.0a8 (2025-06-06)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Fix duplicated pagination on mobile. @danalvrz [#558](https://github.com/kitconcept/volto-light-theme/pull/558)
+- Fixed summaries on Events and News Items. @sneridagh [#567](https://github.com/kitconcept/volto-light-theme/pull/567)
+- Update volto-carousel-block, fixed adaptation needed for the latest VLT changes. @sneridagh 
+
+
+
+### Project
+
+
+#### Internal
+
+- Split the core acceptance tests in three so they are more performant. @sneridagh 
+
+
+
 ## 7.0.0a7 (2025-06-04)
 
 ### Backend
