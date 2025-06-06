@@ -8,6 +8,14 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0-alpha.8 (2025-06-06)
+
+### Bugfix
+
+- Fix duplicated pagination on mobile. @danalvrz [#558](https://github.com/kitconcept/volto-light-theme/pull/558)
+- Fixed summaries on Events and News Items. @sneridagh [#567](https://github.com/kitconcept/volto-light-theme/pull/567)
+- Update volto-carousel-block, fixed adaptation needed for the latest VLT changes. @sneridagh 
+
 ## 7.0.0-alpha.7 (2025-06-04)
 
 ### Feature
