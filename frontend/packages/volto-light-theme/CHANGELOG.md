@@ -8,6 +8,16 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0-alpha.9 (2025-06-09)
+
+### Bugfix
+
+- Fixed Teaser styling @sneridagh [#573](https://github.com/kitconcept/volto-light-theme/pull/573)
+
+### Internal
+
+- Fix aspect ratio for images in file teaser block @iRohitSingh 
+
 ## 7.0.0-alpha.8 (2025-06-06)
 
 ### Bugfix
