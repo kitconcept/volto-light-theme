@@ -1,6 +1,34 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 7.0.0a9 (2025-06-09)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Fixed Teaser styling @sneridagh [#573](https://github.com/kitconcept/volto-light-theme/pull/573)
+
+#### Internal
+
+- Fix aspect ratio for images in file teaser block @iRohitSingh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 7.0.0a8 (2025-06-06)
 
 ### Backend
