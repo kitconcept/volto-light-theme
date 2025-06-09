@@ -1,6 +1,8 @@
 .card {
   .person-teaser.has--align--left:not(.contained) &,
   .has--align--left:not(.contained) .person-teaser &,
+  .has--align--right:not(.contained) .person-teaser &,
+  .has--align--center:not(.contained) .person-teaser &,
   .person-teaser.has--align--right:not(.contained) & {
     .card-inner {
       .image-wrapper {
@@ -28,18 +30,48 @@
     }
   }
 
-  .contained.person-teaser & {
+  // Teaser (standalone) top
+  .has--align--center:not(.contained) .person-teaser & {
+    width: calc(var(--default-container-width) / 2);
+    margin-right: auto;
+    margin-left: auto;
+
     .image-wrapper {
       display: flex;
-      height: 255px;
       justify-content: center;
-      aspect-ratio: var(--image-aspect-ratio, 1.7777777778);
+    }
+    .card-summary {
+      padding-right: 0px;
+      padding-left: 0px;
+      text-align: center;
+    }
+
+    .summary-extra-info,
+    .summary-room-phone {
+      justify-content: center;
+    }
+  }
+
+  // Teaser in Grid
+  .contained.person-teaser & {
+    // Exploration for rounded images in person-teasers
+    // --person-image-height: auto;
+    // --person-image-border-radius: 10000px;
+    // --person-image-aspect-ratio: 1/1;
+    .image-wrapper {
+      display: flex;
+      height: var(--person-image-height, 255px);
+      justify-content: center;
+      // Removed since it was causing the cards to have more width than the available container
+      // for +2 columns
+      // aspect-ratio: var(--image-aspect-ratio, 1.7777777778);
 
       img {
         max-width: 198px; // 255x198px Roughly 3:4 (enough to cover the 16:9 portrait height)
         height: 100%;
         flex: 0 1 auto;
-        aspect-ratio: initial !important;
+        border-radius: var(--person-image-border-radius, 0px);
+        aspect-ratio: var(--person-image-aspect-ratio, initial) !important;
         object-fit: cover;
         object-position: top center;
       }
@@ -101,6 +133,13 @@ body .block.gridBlock .block.teaser.contained.person-teaser .card-inner {
 .summary-room-phone {
   display: flex;
   gap: $spacing-small;
+}
+
+// One person teaser in Grid, edit mode
+.block.gridBlock .one .cell-wrapper:has(.person-teaser) {
+  max-width: var(--default-container-width) / 2;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 // Listings (no card)
