@@ -15,7 +15,7 @@
 
   &.file-teaser .card .card-inner .image-wrapper {
     img {
-      aspect-ratio: $aspect-ratio-A4 !important;
+      aspect-ratio: var(--file-image-aspect-ratio, $aspect-ratio-A4) !important;
     }
   }
 
