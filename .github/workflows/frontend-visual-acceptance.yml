@@ -81,6 +81,7 @@ jobs:
           run: |
             docker run -i --net=host --rm --name=backend ${{ inputs.image-name-prefix }}-backend:${{ inputs.image-tag }} &
             docker run -i --net=host --rm --name=frontend ${{ inputs.image-name-prefix }}-frontend:${{ inputs.image-tag }} &
+            make -C "./frontend/" storybook-start &
           # your step-level and job-level environment variables are available to your commands as-is
           # npm install will count towards the wait-for timeout
           # whenever possible, move unrelated scripts to a different step
@@ -89,6 +90,7 @@ jobs:
           wait-on: |
             http-get://localhost:8080/Plone
             http://localhost:3000
+            http://localhost:6006
           # IMPORTANT: to use environment variables in wait-on, you must use this form: ${{ env.VAR }}
           # See wait-on section below for all resource types and prefixes
 
@@ -108,7 +110,7 @@ jobs:
           # working-directory: backend
 
       - name: Run tests
-        run: make ci-acceptance-test-visual SPEC='cypress/tests/visual/${{ inputs.short-name }}.cy.js'
+        run: make ci-acceptance-test-visual SPEC='cypress/tests/visual/${{ inputs.short-name }}.cy.{js,jsx,ts,tsx}'
 
       # Upload Cypress screenshots
       - uses: actions/upload-artifact@v4

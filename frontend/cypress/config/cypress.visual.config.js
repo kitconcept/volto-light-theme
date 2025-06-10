@@ -28,7 +28,7 @@ module.exports = defineConfig(
           browsers: config.browsers.filter((b) => b.name === 'firefox'),
         };
       },
-      specPattern: 'cypress/tests/visual/*.cy.js',
+      specPattern: 'cypress/tests/visual/**/*.cy.{js,jsx,ts,tsx}',
       // a11 tests require a site root without /en
       baseUrl: 'http://localhost:3000/',
     }),
@@ -37,7 +37,10 @@ module.exports = defineConfig(
       visual: true,
       a11y: true,
       API_PATH: 'http://localhost:8080/Plone',
-      pluginVisualRegressionImagesDir: '../../__image_snapshots__',
+      pluginVisualRegressionImagesPath: path.resolve(
+        __dirname,
+        '../__image_snapshots__',
+      ),
       pluginVisualRegressionDiffConfig: { includeAA: false, threshold: 0.01 },
       pluginVisualRegressionMaxDiffThreshold: 0.5,
       // pluginVisualRegressionUpdateImages: true,

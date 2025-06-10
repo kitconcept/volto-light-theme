@@ -177,6 +177,9 @@ jobs:
             short-name: vertical-spacing
           - name: "Typography"
             short-name: typography
+          - name: "Storybook - Card"
+            short-name: storybook/card
+
     with:
       name: ${{ matrix.name }}
       short-name: ${{ matrix.short-name }}
