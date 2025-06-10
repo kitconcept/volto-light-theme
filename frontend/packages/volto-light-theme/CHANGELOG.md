@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0-alpha.10 (2025-06-10)
+
+### Bugfix
+
+- Fixed Person Teaser top variant. Added Storybook. @sneridagh 
+
 ## 7.0.0-alpha.9 (2025-06-09)
 
 ### Bugfix

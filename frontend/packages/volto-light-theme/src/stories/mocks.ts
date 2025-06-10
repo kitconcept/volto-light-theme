@@ -196,7 +196,7 @@ export const personBlock = {
             'content-type': 'image/jpeg',
             download: personImage,
             filename: 'black-starry-night.jpg',
-            height: 1708,
+            height: 286,
             scales: {
               great: {
                 download: personImage,
@@ -250,7 +250,7 @@ export const personBlock = {
               },
             },
             size: 693013,
-            width: 2400,
+            width: 200,
           },
         ],
       },

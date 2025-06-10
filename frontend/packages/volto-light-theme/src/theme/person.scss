@@ -1,8 +1,9 @@
 .card {
   .person-teaser.has--align--left:not(.contained) &,
   .has--align--left:not(.contained) .person-teaser &,
-  .has--align--right:not(.contained) .person-teaser &,
   .has--align--center:not(.contained) .person-teaser &,
+  .person-teaser.has--align--center:not(.contained) &,
+  .has--align--right:not(.contained) .person-teaser &,
   .person-teaser.has--align--right:not(.contained) & {
     .card-inner {
       .image-wrapper {
@@ -31,7 +32,8 @@
   }
 
   // Teaser (standalone) top
-  .has--align--center:not(.contained) .person-teaser & {
+  .has--align--center:not(.contained) .person-teaser &,
+  .person-teaser.has--align--center:not(.contained) & {
     width: calc(var(--default-container-width) / 2);
     margin-right: auto;
     margin-left: auto;
