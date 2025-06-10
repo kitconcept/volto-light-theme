@@ -1852,18 +1852,18 @@
       "d014183d-90b3-4716-9fad-b375d3ef78eb"
     ]
   },
+  "changeNote": "",
   "contributors": [],
   "created": "2023-07-06T21:35:22+00:00",
   "creators": [
     "admin"
   ],
   "description": "\nThe Grid block allows adding multi-column blocks. A grid block can contain between one and four columns of different blocks. Text, teasers, images and videos can be added in a grid block.",
-  "effective": "2023-07-06T18:35:00",
+  "effective": "2023-07-06T18:35:00+00:00",
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
-  "exportimport.versions": {},
   "id": "teaser",
   "is_folderish": true,
   "language": "##DEFAULT##",
@@ -1872,19 +1872,8 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2023-09-22T14:39:26+00:00",
+  "modified": "2025-06-10T10:49:18+00:00",
   "nav_title": null,
-  "parent": {
-    "@id": "/block/grid-block",
-    "@type": "Document",
-    "UID": "99c70917b6894af08dd306fdbc0eff6a",
-    "description": " The Grid block allows adding multi-column blocks. A grid block can contain between one and four columns of different blocks. Teasers and images can be added in a grid block.",
-    "image_field": null,
-    "image_scales": null,
-    "review_state": "published",
-    "title": "Grid",
-    "type_title": "Page"
-  },
   "preview_caption": null,
   "preview_image": null,
   "review_state": "published",
@@ -1893,6 +1882,7 @@
   "title": "Grid-Teaser block",
   "type_title": "Page",
   "version": "current",
+  "versioning_enabled": true,
   "workflow_history": {
     "simple_publication_workflow": [
       {

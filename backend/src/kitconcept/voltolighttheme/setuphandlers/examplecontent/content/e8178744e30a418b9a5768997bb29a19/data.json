@@ -36,18 +36,18 @@
       "fdb1dfd1-6073-4ad0-a147-c0709c39734d"
     ]
   },
+  "changeNote": "",
   "contributors": [],
   "created": "2023-09-22T14:05:45+00:00",
   "creators": [
     "admin"
   ],
   "description": "This section has a sample of content types available in this site.",
-  "effective": "2023-09-22T16:09:00",
+  "effective": "2023-09-22T16:09:00+00:00",
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
-  "exportimport.versions": {},
   "id": "content-types",
   "is_folderish": true,
   "language": "##DEFAULT##",
@@ -56,16 +56,8 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2024-06-06T10:37:26+00:00",
+  "modified": "2025-06-09T13:45:21+00:00",
   "nav_title": null,
-  "parent": {
-    "@id": "/",
-    "@type": "Plone Site",
-    "UID": "plone_site_root",
-    "description": "Site created with a new Plone Distribution",
-    "title": "Plone",
-    "type_title": "Plone Site"
-  },
   "preview_caption": null,
   "preview_image": null,
   "review_state": "published",
@@ -76,6 +68,7 @@
   "title": "Content Types",
   "type_title": "Page",
   "version": "current",
+  "versioning_enabled": true,
   "workflow_history": {
     "simple_publication_workflow": [
       {

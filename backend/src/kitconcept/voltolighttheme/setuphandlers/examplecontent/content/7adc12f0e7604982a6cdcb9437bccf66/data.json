@@ -1137,172 +1137,23 @@
       "b5daf12e-2f85-4dff-b391-b03940e07171"
     ]
   },
-  "changeActor": "admin",
-  "changeNote": null,
+  "changeNote": "",
   "contact_email": "m.mustermann@plone.com",
   "contact_name": "Max Mustermann",
   "contact_phone": "+49 1234 567-890",
   "contributors": [],
   "created": "2023-07-06T21:35:07+00:00",
-  "creators": ["admin"],
+  "creators": [
+    "admin"
+  ],
   "description": "The event content type can be used to display an event on the website.",
-  "effective": "2023-07-06T18:35:00",
+  "effective": "2023-07-06T18:35:00+00:00",
   "end": "2023-12-31T12:00:00+00:00",
   "event_url": "http://www.musterevents.com",
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
-  "exportimport.versions": {
-    "0": {
-      "@id": "/content-types/event",
-      "@type": "Event",
-      "UID": "f8373241865042f6adfb97d557b4963e",
-      "allow_discussion": false,
-      "attendees": [],
-      "blocks": {},
-      "blocks_layout": {
-        "items": []
-      },
-      "changeNote": "",
-      "contact_email": null,
-      "contact_name": null,
-      "contact_phone": null,
-      "contributors": [],
-      "created": "2024-06-06T10:37:25+00:00",
-      "creators": ["admin"],
-      "description": "",
-      "effective": null,
-      "end": "2024-06-12T13:00:00+00:00",
-      "event_url": null,
-      "exclude_from_nav": false,
-      "expires": null,
-      "id": "event",
-      "is_folderish": true,
-      "language": "",
-      "layout": "event_view",
-      "location": null,
-      "lock": {
-        "locked": false,
-        "stealable": true
-      },
-      "modified": "2024-06-06T10:37:25+00:00",
-      "open_end": false,
-      "parent": {
-        "@id": "/content-types",
-        "@type": "Document",
-        "description": "This section has a sample of content types available in this site.",
-        "image_field": null,
-        "image_scales": null,
-        "review_state": "published",
-        "title": "Content Types",
-        "type_title": "Page"
-      },
-      "preview_caption": null,
-      "preview_image": null,
-      "recurrence": null,
-      "relatedItems": [],
-      "review_state": "published",
-      "rights": "",
-      "start": "2024-06-12T12:00:00+00:00",
-      "subjects": [],
-      "sync_uid": null,
-      "title": "",
-      "type_title": "Event",
-      "version": 0,
-      "versioning_enabled": true,
-      "whole_day": false,
-      "working_copy": null,
-      "working_copy_of": null
-    },
-    "1": {
-      "@id": "/content-types/event",
-      "@type": "Event",
-      "UID": "f8373241865042f6adfb97d557b4963e",
-      "allow_discussion": false,
-      "attendees": [],
-      "blocks": {
-        "6e6979eb-af21-466f-b2de-3148144ac950": {
-          "@type": "slate",
-          "plaintext": "",
-          "styles": {},
-          "value": [
-            {
-              "children": [
-                {
-                  "text": ""
-                }
-              ],
-              "type": "p"
-            }
-          ]
-        },
-        "b539ed36-442b-4c7d-8b9b-8af01963c206": {
-          "@type": "eventMetadata"
-        },
-        "d3f1c443-583f-4e8e-a682-3bf25752a300": {
-          "@type": "title"
-        }
-      },
-      "blocks_layout": {
-        "items": [
-          "d3f1c443-583f-4e8e-a682-3bf25752a300",
-          "b539ed36-442b-4c7d-8b9b-8af01963c206",
-          "6e6979eb-af21-466f-b2de-3148144ac950"
-        ]
-      },
-      "changeNote": "",
-      "contact_email": "m.mustermann@plone.com",
-      "contact_name": "Max Mustermann",
-      "contact_phone": "+49 1234 567-890",
-      "contributors": [],
-      "created": "2024-06-06T10:37:25+00:00",
-      "creators": ["admin"],
-      "description": "The event content type can be used to display an event on the website.",
-      "effective": "2023-07-06T18:35:00",
-      "end": "2023-12-31T12:00:00+00:00",
-      "event_url": "http://www.musterevents.com",
-      "exclude_from_nav": false,
-      "expires": null,
-      "id": "event",
-      "is_folderish": true,
-      "language": "en",
-      "layout": "event_view",
-      "location": "Musterhausener Landstrasse 134 Standort E123 67111 Musterhausen",
-      "lock": {
-        "locked": false,
-        "stealable": true
-      },
-      "modified": "2024-06-06T10:37:25+00:00",
-      "open_end": false,
-      "parent": {
-        "@id": "/content-types",
-        "@type": "Document",
-        "description": "This section has a sample of content types available in this site.",
-        "image_field": null,
-        "image_scales": null,
-        "review_state": "published",
-        "title": "Content Types",
-        "type_title": "Page"
-      },
-      "preview_caption": null,
-      "preview_image": null,
-      "recurrence": null,
-      "relatedItems": [],
-      "review_state": "published",
-      "rights": "",
-      "start": "2023-01-01T11:00:00+00:00",
-      "subjects": [],
-      "sync_uid": null,
-      "title": "Event",
-      "type_title": "Event",
-      "version": 1,
-      "versioning_enabled": true,
-      "whole_day": false,
-      "working_copy": null,
-      "working_copy_of": null
-    }
-  },
   "id": "event",
   "is_folderish": true,
   "language": "##DEFAULT##",
@@ -1314,17 +1165,6 @@
   },
   "modified": "2024-04-08T14:21:24+00:00",
   "open_end": false,
-  "parent": {
-    "@id": "/content-types",
-    "@type": "Document",
-    "UID": "e8178744e30a418b9a5768997bb29a19",
-    "description": "This section has a sample of content types available in this site.",
-    "image_field": null,
-    "image_scales": null,
-    "review_state": "published",
-    "title": "Content Types",
-    "type_title": "Page"
-  },
   "preview_caption": null,
   "preview_image": {
     "blob_path": "7adc12f0e7604982a6cdcb9437bccf66/preview_image/event.svg",

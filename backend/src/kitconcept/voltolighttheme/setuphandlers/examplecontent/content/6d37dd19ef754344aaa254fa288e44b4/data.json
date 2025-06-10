@@ -221,18 +221,18 @@
       "49a61581-70ce-4810-84c2-1d91ac421197"
     ]
   },
+  "changeNote": "",
   "contributors": [],
   "created": "2023-07-06T21:35:22+00:00",
   "creators": [
     "admin"
   ],
   "description": "\nThe video block can contain videos from YouTube.",
-  "effective": "2023-07-06T18:35:00",
+  "effective": "2023-07-06T18:35:00+00:00",
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
-  "exportimport.versions": {},
   "id": "video-block",
   "is_folderish": true,
   "language": "##DEFAULT##",
@@ -243,17 +243,6 @@
   },
   "modified": "2023-09-22T15:16:09+00:00",
   "nav_title": null,
-  "parent": {
-    "@id": "/block",
-    "@type": "Document",
-    "UID": "425695d2b7cb47e69374d6f211f17e38",
-    "description": "",
-    "image_field": null,
-    "image_scales": null,
-    "review_state": "published",
-    "title": "Blocks",
-    "type_title": "Page"
-  },
   "preview_caption": null,
   "preview_image": null,
   "review_state": "published",
@@ -262,6 +251,7 @@
   "title": "Video",
   "type_title": "Page",
   "version": "current",
+  "versioning_enabled": true,
   "workflow_history": {
     "simple_publication_workflow": [
       {

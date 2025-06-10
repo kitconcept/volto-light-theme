@@ -558,18 +558,18 @@
       "e770913c-fb7b-4cf1-94a8-7eb6e24ff66e"
     ]
   },
+  "changeNote": "",
   "contributors": [],
   "created": "2023-07-06T21:35:22+00:00",
   "creators": [
     "admin"
   ],
   "description": "This page has a sample of the typography available in the theme.",
-  "effective": "2023-07-06T18:35:00",
+  "effective": "2023-07-06T18:35:00+00:00",
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
-  "exportimport.versions": {},
   "id": "typography",
   "is_folderish": true,
   "language": "##DEFAULT##",
@@ -580,14 +580,6 @@
   },
   "modified": "2023-09-25T17:00:04+00:00",
   "nav_title": "Typography",
-  "parent": {
-    "@id": "/",
-    "@type": "Plone Site",
-    "UID": "plone_site_root",
-    "description": "Site created with a new Plone Distribution",
-    "title": "Plone",
-    "type_title": "Plone Site"
-  },
   "preview_caption": null,
   "preview_image": null,
   "review_state": "published",
@@ -596,6 +588,7 @@
   "title": "Typography - Page Title (H1, 48/56px)",
   "type_title": "Page",
   "version": "current",
+  "versioning_enabled": true,
   "workflow_history": {
     "simple_publication_workflow": [
       {

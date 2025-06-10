@@ -2,7 +2,7 @@
   "@id": "/content-types/news-item",
   "@type": "News Item",
   "UID": "8cc3e9af77c0452aa2278b0bfdcf9c85",
-  "allow_discussion": false,
+  "allow_discussion": null,
   "blocks": {
     "07f0bb3b-a762-4f41-9f02-052921e9fd28": {
       "@type": "slate",
@@ -1146,73 +1146,18 @@
       "8fe9052b-d9a4-48dd-ae47-80b256826aca"
     ]
   },
-  "changeActor": "admin",
-  "changeNote": null,
+  "changeNote": "",
   "contributors": [],
   "created": "2023-07-06T21:35:19+00:00",
   "creators": [
     "admin"
   ],
   "description": "The News Item content type can be used to display News content on the website.",
-  "effective": "2023-01-01T10:42:00",
+  "effective": "2023-01-01T10:42:00+00:00",
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
-  "exportimport.versions": {
-    "0": {
-      "@id": "/content-types/news-item",
-      "@type": "News Item",
-      "UID": "ef095d81568f442fa8b651c07fd78506",
-      "allow_discussion": false,
-      "blocks": {},
-      "blocks_layout": {
-        "items": []
-      },
-      "changeNote": "",
-      "contributors": [],
-      "created": "2024-06-06T10:37:26+00:00",
-      "creators": [
-        "admin"
-      ],
-      "description": "",
-      "effective": null,
-      "exclude_from_nav": false,
-      "expires": null,
-      "head_title": null,
-      "id": "news-item",
-      "image": null,
-      "image_caption": null,
-      "is_folderish": true,
-      "language": "",
-      "layout": "newsitem_view",
-      "lock": {
-        "locked": false,
-        "stealable": true
-      },
-      "modified": "2024-06-06T10:37:26+00:00",
-      "parent": {
-        "@id": "/content-types",
-        "@type": "Document",
-        "description": "This section has a sample of content types available in this site.",
-        "image_field": null,
-        "image_scales": null,
-        "review_state": "published",
-        "title": "Content Types",
-        "type_title": "Page"
-      },
-      "relatedItems": [],
-      "review_state": "published",
-      "rights": "",
-      "subjects": [],
-      "title": "",
-      "type_title": "News Item",
-      "version": 0,
-      "versioning_enabled": true,
-      "working_copy": null,
-      "working_copy_of": null
-    }
-  },
   "head_title": "Head title",
   "id": "news-item",
   "image": null,
@@ -1225,17 +1170,6 @@
     "stealable": true
   },
   "modified": "2023-09-22T14:26:55+00:00",
-  "parent": {
-    "@id": "/content-types",
-    "@type": "Document",
-    "UID": "e8178744e30a418b9a5768997bb29a19",
-    "description": "This section has a sample of content types available in this site.",
-    "image_field": null,
-    "image_scales": null,
-    "review_state": "published",
-    "title": "Content Types",
-    "type_title": "Page"
-  },
   "review_state": "published",
   "rights": "",
   "subjects": [],

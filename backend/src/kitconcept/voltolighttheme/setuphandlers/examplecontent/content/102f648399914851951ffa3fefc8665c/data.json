@@ -5177,18 +5177,18 @@
       "4266731a-e721-4f2f-95de-c7c3e885677b"
     ]
   },
+  "changeNote": "",
   "contributors": [],
   "created": "2023-07-06T21:35:20+00:00",
   "creators": [
     "admin"
   ],
   "description": "The Table block allows you to add a table to a page.",
-  "effective": "2023-07-06T18:35:00",
+  "effective": "2023-07-06T18:35:00+00:00",
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
-  "exportimport.versions": {},
   "id": "table-block",
   "is_folderish": true,
   "language": "##DEFAULT##",
@@ -5199,17 +5199,6 @@
   },
   "modified": "2023-09-22T15:08:06+00:00",
   "nav_title": null,
-  "parent": {
-    "@id": "/block",
-    "@type": "Document",
-    "UID": "425695d2b7cb47e69374d6f211f17e38",
-    "description": "",
-    "image_field": null,
-    "image_scales": null,
-    "review_state": "published",
-    "title": "Blocks",
-    "type_title": "Page"
-  },
   "preview_caption": null,
   "preview_image": {
     "blob_path": "102f648399914851951ffa3fefc8665c/preview_image/black-starry-night.jpg",
@@ -5225,6 +5214,7 @@
   "title": "Table",
   "type_title": "Page",
   "version": "current",
+  "versioning_enabled": true,
   "workflow_history": {
     "simple_publication_workflow": [
       {

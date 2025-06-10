@@ -167,18 +167,18 @@
       "f9dec030-b72d-4940-af4c-6dc123cea7a6"
     ]
   },
+  "changeNote": "",
   "contributors": [],
   "created": "2023-07-28T09:10:43+00:00",
   "creators": [
     "admin"
   ],
   "description": "The maps block can have embeded a Map (Google Maps, OpenMaps, etc).",
-  "effective": "2023-09-22T16:09:00",
+  "effective": "2023-09-22T16:09:00+00:00",
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
-  "exportimport.versions": {},
   "id": "maps-block",
   "is_folderish": true,
   "language": "##DEFAULT##",
@@ -189,17 +189,6 @@
   },
   "modified": "2023-12-21T10:38:49+00:00",
   "nav_title": null,
-  "parent": {
-    "@id": "/block",
-    "@type": "Document",
-    "UID": "425695d2b7cb47e69374d6f211f17e38",
-    "description": "",
-    "image_field": null,
-    "image_scales": null,
-    "review_state": "published",
-    "title": "Blocks",
-    "type_title": "Page"
-  },
   "preview_caption": null,
   "preview_image": null,
   "review_state": "published",
@@ -208,6 +197,7 @@
   "title": "Maps",
   "type_title": "Page",
   "version": "current",
+  "versioning_enabled": true,
   "workflow_history": {
     "simple_publication_workflow": [
       {
