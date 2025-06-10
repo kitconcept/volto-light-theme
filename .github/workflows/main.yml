@@ -179,6 +179,14 @@ jobs:
             short-name: typography
           - name: "Storybook - Card"
             short-name: storybook/card
+          - name: "Storybook - Grid"
+            short-name: storybook/grid
+          - name: "Storybook - Listing"
+            short-name: storybook/listing
+          - name: "Storybook - Teaser"
+            short-name: storybook/teaser
+          - name: "Storybook - Summary"
+            short-name: storybook/summary
 
     with:
       name: ${{ matrix.name }}

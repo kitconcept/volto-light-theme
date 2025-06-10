@@ -53,7 +53,7 @@ export const Right: Story = {
   },
 };
 
-export const Center: Story = {
+export const Top: Story = {
   render: (args) => (
     <Wrapper>
       <div style={{ width: 'var(--default-container-width)' }}>
@@ -73,7 +73,7 @@ export const Center: Story = {
   },
 };
 
-export const PersonTeaser: Story = {
+export const PersonTeaserLeft: Story = {
   render: (args) => (
     <Wrapper>
       <div style={{ width: 'var(--default-container-width)' }}>

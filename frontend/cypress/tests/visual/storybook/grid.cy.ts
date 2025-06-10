@@ -1,0 +1,39 @@
+/// <reference types="cypress" />
+
+describe('Blocks Grid Teaser', () => {
+  const storiesUnderTest = [
+    { name: 'One Teaser', id: 'blocks-grid-teaser--one' },
+    { name: 'Two Teaser', id: 'blocks-grid-teaser--two' },
+    { name: 'Three Teaser', id: 'blocks-grid-teaser--three' },
+    { name: 'Four Teaser', id: 'blocks-grid-teaser--four' },
+    { name: 'Inversed One Teaser', id: 'blocks-grid-teaser--one-inversed' },
+    { name: 'Inversed Two Teaser', id: 'blocks-grid-teaser--two-inversed' },
+    { name: 'Inversed Three Teaser', id: 'blocks-grid-teaser--three-inversed' },
+    { name: 'Inversed Four Teaser', id: 'blocks-grid-teaser--four-inversed' },
+  ];
+
+  storiesUnderTest.forEach((story) => {
+    it(`${story.name}`, () => {
+      const storyUrl = `http://localhost:6006/iframe.html?viewMode=story&id=${story.id}&globals=&args=`;
+      cy.visit(storyUrl);
+      cy.get('.volto-storybook-container').matchImage();
+    });
+  });
+});
+
+describe('Blocks Grid Teaser Person', () => {
+  const storiesUnderTest = [
+    { name: 'One Person Teaser', id: 'blocks-grid-teaser--one-person' },
+    { name: 'Two Person Teaser', id: 'blocks-grid-teaser--two-person' },
+    { name: 'Three Person Teaser', id: 'blocks-grid-teaser--three-person' },
+    { name: 'Four Person Teaser', id: 'blocks-grid-teaser--four-person' },
+  ];
+
+  storiesUnderTest.forEach((story) => {
+    it(`${story.name}`, () => {
+      const storyUrl = `http://localhost:6006/iframe.html?viewMode=story&id=${story.id}&globals=&args=`;
+      cy.visit(storyUrl);
+      cy.get('.volto-storybook-container').matchImage();
+    });
+  });
+});
