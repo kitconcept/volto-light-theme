@@ -87,3 +87,43 @@ export const PersonTeaser: Story = {
     data: personBlock,
   },
 };
+
+export const PersonTeaserTop: Story = {
+  render: (args) => (
+    <Wrapper>
+      <div style={{ width: 'calc(var(--default-container-width) / 2)' }}>
+        <BlockWrapper {...args}>
+          <TeaserBody {...args} />
+        </BlockWrapper>
+      </div>
+    </Wrapper>
+  ),
+  args: {
+    data: {
+      ...personBlock,
+      styles: {
+        align: 'center',
+      },
+    },
+  },
+};
+
+export const PersonTeaserRight: Story = {
+  render: (args) => (
+    <Wrapper>
+      <div style={{ width: 'var(--default-container-width)' }}>
+        <BlockWrapper {...args}>
+          <TeaserBody {...args} />
+        </BlockWrapper>
+      </div>
+    </Wrapper>
+  ),
+  args: {
+    data: {
+      ...personBlock,
+      styles: {
+        align: 'right',
+      },
+    },
+  },
+};
