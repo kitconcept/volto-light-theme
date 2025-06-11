@@ -179,14 +179,19 @@ jobs:
             short-name: typography
           - name: "Storybook - Card"
             short-name: storybook/card
+            storybook: true
           - name: "Storybook - Grid"
             short-name: storybook/grid
+            storybook: true
           - name: "Storybook - Listing"
             short-name: storybook/listing
+            storybook: true
           - name: "Storybook - Teaser"
             short-name: storybook/teaser
+            storybook: true
           - name: "Storybook - Summary"
             short-name: storybook/summary
+            storybook: true
 
     with:
       name: ${{ matrix.name }}

@@ -17,6 +17,10 @@ on:
       image-tag:
         required: true
         type: string
+      storybook:
+        required: false
+        default: false
+        type: boolean
 
 defaults:
   run:
@@ -76,12 +80,12 @@ jobs:
         run: make cypress-install
 
       - uses: JarvusInnovations/background-action@v1
+        if: ${{ inputs.storybook != true || inputs.storybook != 'true' }}
         name: Start Servers
         with:
           run: |
             docker run -i --net=host --rm --name=backend ${{ inputs.image-name-prefix }}-backend:${{ inputs.image-tag }} &
             docker run -i --net=host --rm --name=frontend ${{ inputs.image-name-prefix }}-frontend:${{ inputs.image-tag }} &
-            make -C "./frontend/" storybook-start &
           # your step-level and job-level environment variables are available to your commands as-is
           # npm install will count towards the wait-for timeout
           # whenever possible, move unrelated scripts to a different step
@@ -108,6 +112,20 @@ jobs:
           # failure = exit-early or timeout
 
           # working-directory: backend
+
+      - uses: JarvusInnovations/background-action@v1
+        if: ${{ inputs.storybook == true || inputs.storybook == 'true' }}
+        name: Start Servers
+        with:
+          run: |
+            make -C "./frontend/" storybook-start &
+          wait-on: |
+            http://localhost:6006
+          tail: true # true = stderr,stdout
+          log-output-resume: stderr
+          wait-for: 10m
+          log-output: stderr,stdout # same as true
+          log-output-if: failure
 
       - name: Run tests
         run: make ci-acceptance-test-visual SPEC='cypress/tests/visual/${{ inputs.short-name }}.cy.{js,jsx,ts,tsx}'
