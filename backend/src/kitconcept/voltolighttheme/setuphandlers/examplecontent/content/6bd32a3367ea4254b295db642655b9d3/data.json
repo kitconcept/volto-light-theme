@@ -11,30 +11,19 @@
       "headlineTag": "h2",
       "query": [],
       "querystring": {
-        "b_size": "4",
-        "limit": "10",
+        "b_size": "5",
         "query": [
           {
-            "i": "portal_type",
-            "o": "plone.app.querystring.operation.selection.any",
-            "v": [
-              "Document"
-            ]
-          },
-          {
-            "i": "Subject",
-            "o": "plone.app.querystring.operation.selection.none",
-            "v": [
-              "main folder"
-            ]
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/content-types::1"
           }
         ],
         "sort_on": "getId",
         "sort_order": "ascending"
       },
-      "styles": {
-        "backgroundColor": "transparent"
-      },
+      "styles": {},
+      "theme": "default",
       "variation": "default"
     },
     "2a597dde-dd2b-4c66-816c-09e243a188f5": {
@@ -44,29 +33,19 @@
       "headlineTag": "h2",
       "query": [],
       "querystring": {
-        "limit": "5",
+        "b_size": "5",
         "query": [
           {
-            "i": "portal_type",
-            "o": "plone.app.querystring.operation.selection.any",
-            "v": [
-              "Document"
-            ]
-          },
-          {
-            "i": "Subject",
-            "o": "plone.app.querystring.operation.selection.none",
-            "v": [
-              "main folder"
-            ]
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/content-types::1"
           }
         ],
         "sort_on": "getId",
         "sort_order": "ascending"
       },
-      "styles": {
-        "backgroundColor": "transparent"
-      },
+      "styles": {},
+      "theme": "default",
       "variation": "grid"
     },
     "43068b6d-d8e9-4acc-912b-eabcdc650939": {
@@ -79,29 +58,19 @@
       "headlineTag": "h2",
       "query": [],
       "querystring": {
-        "limit": "5",
+        "b_size": "5",
         "query": [
           {
-            "i": "portal_type",
-            "o": "plone.app.querystring.operation.selection.any",
-            "v": [
-              "Document"
-            ]
-          },
-          {
-            "i": "Subject",
-            "o": "plone.app.querystring.operation.selection.none",
-            "v": [
-              "main folder"
-            ]
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/content-types::1"
           }
         ],
         "sort_on": "getId",
         "sort_order": "ascending"
       },
-      "styles": {
-        "backgroundColor": "grey"
-      },
+      "styles": {},
+      "theme": "grey",
       "variation": "summary"
     },
     "c2eaacd0-4e96-4344-a0ac-26ed644fc503": {
@@ -123,6 +92,7 @@
         "sort_order": "ascending"
       },
       "styles": {},
+      "theme": "default",
       "variation": "imageGallery"
     }
   },
@@ -155,7 +125,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2023-09-22T14:56:41+00:00",
+  "modified": "2025-06-11T17:45:41+00:00",
   "nav_title": null,
   "preview_caption": null,
   "preview_image": null,
