@@ -535,18 +535,18 @@
       "620f0540-8c3d-422d-a1c6-47037b5dbfbc"
     ]
   },
+  "changeNote": "",
   "contributors": [],
   "created": "2023-07-06T21:35:20+00:00",
   "creators": [
     "admin"
   ],
   "description": "The teaser block allows you to add an element that teases existing website content with an image, a title and a description.",
-  "effective": "2023-07-06T18:35:00",
+  "effective": "2023-07-06T18:35:00+00:00",
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
-  "exportimport.versions": {},
   "id": "teaser-block",
   "is_folderish": true,
   "language": "##DEFAULT##",
@@ -557,17 +557,6 @@
   },
   "modified": "2023-09-22T15:12:06+00:00",
   "nav_title": null,
-  "parent": {
-    "@id": "/block",
-    "@type": "Document",
-    "UID": "425695d2b7cb47e69374d6f211f17e38",
-    "description": "",
-    "image_field": null,
-    "image_scales": null,
-    "review_state": "published",
-    "title": "Blocks",
-    "type_title": "Page"
-  },
   "preview_caption": null,
   "preview_image": {
     "blob_path": "bd2b39d2745847db82ed197a4eb1effc/preview_image/black-starry-night.jpg",
@@ -583,6 +572,7 @@
   "title": "Teaser",
   "type_title": "Page",
   "version": "current",
+  "versioning_enabled": true,
   "workflow_history": {
     "simple_publication_workflow": [
       {

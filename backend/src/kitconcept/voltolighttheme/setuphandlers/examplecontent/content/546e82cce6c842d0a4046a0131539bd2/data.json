@@ -503,18 +503,18 @@
       "c0f46bdd-58ae-48a1-9ee7-a9ba780d7386"
     ]
   },
+  "changeNote": "",
   "contributors": [],
   "created": "2023-07-06T21:35:20+00:00",
   "creators": [
     "admin"
   ],
   "description": "\nThe separator block allows blocks or groups of blocks to be visually separated by a horizontal line.",
-  "effective": "2023-07-06T18:35:00",
+  "effective": "2023-07-06T18:35:00+00:00",
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
-  "exportimport.versions": {},
   "id": "separator-block",
   "is_folderish": true,
   "language": "##DEFAULT##",
@@ -525,17 +525,6 @@
   },
   "modified": "2023-12-21T10:51:31+00:00",
   "nav_title": null,
-  "parent": {
-    "@id": "/block",
-    "@type": "Document",
-    "UID": "425695d2b7cb47e69374d6f211f17e38",
-    "description": "",
-    "image_field": null,
-    "image_scales": null,
-    "review_state": "published",
-    "title": "Blocks",
-    "type_title": "Page"
-  },
   "preview_caption": null,
   "preview_image": null,
   "review_state": "published",
@@ -544,6 +533,7 @@
   "title": "Separator",
   "type_title": "Page",
   "version": "current",
+  "versioning_enabled": true,
   "workflow_history": {
     "simple_publication_workflow": [
       {

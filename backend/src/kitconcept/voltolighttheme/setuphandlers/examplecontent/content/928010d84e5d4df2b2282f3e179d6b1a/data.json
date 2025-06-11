@@ -52,18 +52,18 @@
       "42b7d589-4d35-4b81-9fe9-ea17437beb81"
     ]
   },
+  "changeNote": "",
   "contributors": [],
   "created": "2023-07-06T21:35:20+00:00",
   "creators": [
     "admin"
   ],
   "description": "The search block allows the content of the website to be listed. Users can use so-called facets to select certain properties of the listed content in order to filter them (e.g. filtering the news of 2022).",
-  "effective": "2023-07-06T18:35:00",
+  "effective": "2023-07-06T18:35:00+00:00",
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
-  "exportimport.versions": {},
   "id": "search-block",
   "is_folderish": true,
   "language": "##DEFAULT##",
@@ -74,17 +74,6 @@
   },
   "modified": "2023-12-28T09:36:10+00:00",
   "nav_title": null,
-  "parent": {
-    "@id": "/block",
-    "@type": "Document",
-    "UID": "425695d2b7cb47e69374d6f211f17e38",
-    "description": "",
-    "image_field": null,
-    "image_scales": null,
-    "review_state": "published",
-    "title": "Blocks",
-    "type_title": "Page"
-  },
   "preview_caption": null,
   "preview_image": {
     "blob_path": "928010d84e5d4df2b2282f3e179d6b1a/preview_image/black-starry-night.jpg",
@@ -100,6 +89,7 @@
   "title": "Search",
   "type_title": "Page",
   "version": "current",
+  "versioning_enabled": true,
   "workflow_history": {
     "simple_publication_workflow": [
       {

@@ -62,18 +62,18 @@
       "5a361b25-3e19-4c06-866f-a2db6feed983"
     ]
   },
+  "changeNote": "",
   "contributors": [],
   "created": "2023-07-06T21:35:22+00:00",
   "creators": [
     "admin"
   ],
   "description": "\nThe Grid block allows adding multi-column blocks. A grid block can contain between one and four columns of different blocks. This is a grid block with multiple listing blocks.",
-  "effective": "2023-07-06T18:35:00",
+  "effective": "2023-07-06T18:35:00+00:00",
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
-  "exportimport.versions": {},
   "id": "listing",
   "is_folderish": true,
   "language": "##DEFAULT##",
@@ -84,17 +84,6 @@
   },
   "modified": "2023-09-27T08:36:08+00:00",
   "nav_title": null,
-  "parent": {
-    "@id": "/block/grid-block",
-    "@type": "Document",
-    "UID": "99c70917b6894af08dd306fdbc0eff6a",
-    "description": " The Grid block allows adding multi-column blocks. A grid block can contain between one and four columns of different blocks. Teasers and images can be added in a grid block.",
-    "image_field": null,
-    "image_scales": null,
-    "review_state": "published",
-    "title": "Grid",
-    "type_title": "Page"
-  },
   "preview_caption": null,
   "preview_image": {
     "blob_path": "3ac4a2c6c4034a1686bc0ee2d2072fd6/preview_image/black-starry-night.jpg",
@@ -110,6 +99,7 @@
   "title": "Grid-Listing",
   "type_title": "Page",
   "version": "current",
+  "versioning_enabled": true,
   "workflow_history": {
     "simple_publication_workflow": [
       {

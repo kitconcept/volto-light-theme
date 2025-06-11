@@ -3347,18 +3347,18 @@
       "8f68209e-220e-4230-9d42-8b0602573bd9"
     ]
   },
+  "changeNote": "",
   "contributors": [],
   "created": "2023-07-27T19:48:00+00:00",
   "creators": [
     "admin"
   ],
   "description": "The accordion contains other blocks in an accordion behavior layout.",
-  "effective": "2023-09-22T16:09:00",
+  "effective": "2023-09-22T16:09:00+00:00",
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
-  "exportimport.versions": {},
   "id": "block-accordion",
   "is_folderish": true,
   "language": "##DEFAULT##",
@@ -3369,17 +3369,6 @@
   },
   "modified": "2023-09-27T08:30:36+00:00",
   "nav_title": null,
-  "parent": {
-    "@id": "/block",
-    "@type": "Document",
-    "UID": "425695d2b7cb47e69374d6f211f17e38",
-    "description": "",
-    "image_field": null,
-    "image_scales": null,
-    "review_state": "published",
-    "title": "Blocks",
-    "type_title": "Page"
-  },
   "preview_caption": null,
   "preview_image": null,
   "review_state": "published",
@@ -3388,6 +3377,7 @@
   "title": "Accordion",
   "type_title": "Page",
   "version": "current",
+  "versioning_enabled": true,
   "workflow_history": {
     "simple_publication_workflow": [
       {
