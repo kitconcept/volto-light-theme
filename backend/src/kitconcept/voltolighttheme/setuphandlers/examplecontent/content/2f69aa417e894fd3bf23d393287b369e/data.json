@@ -240,18 +240,18 @@
       "1bedcc9d-1c02-44e8-bb8e-5c46d6c67d3d"
     ]
   },
+  "changeNote": "",
   "contributors": [],
   "created": "2023-07-06T21:35:08+00:00",
   "creators": [
     "admin"
   ],
   "description": "\nThe heading block allows you to display headings to group multiple blocks under one topic.",
-  "effective": "2023-07-06T18:35:00",
+  "effective": "2023-07-06T18:35:00+00:00",
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
-  "exportimport.versions": {},
   "id": "heading-block",
   "is_folderish": true,
   "language": "##DEFAULT##",
@@ -262,17 +262,6 @@
   },
   "modified": "2023-09-30T07:05:29+00:00",
   "nav_title": null,
-  "parent": {
-    "@id": "/block",
-    "@type": "Document",
-    "UID": "425695d2b7cb47e69374d6f211f17e38",
-    "description": "",
-    "image_field": null,
-    "image_scales": null,
-    "review_state": "published",
-    "title": "Blocks",
-    "type_title": "Page"
-  },
   "preview_caption": null,
   "preview_image": null,
   "review_state": "published",
@@ -281,6 +270,7 @@
   "title": "Heading",
   "type_title": "Page",
   "version": "current",
+  "versioning_enabled": true,
   "workflow_history": {
     "simple_publication_workflow": [
       {

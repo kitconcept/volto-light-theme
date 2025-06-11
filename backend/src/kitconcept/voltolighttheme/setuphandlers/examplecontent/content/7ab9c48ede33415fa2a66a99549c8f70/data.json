@@ -1183,18 +1183,18 @@
       "9a3d1a33-d559-45af-846b-8a2a37a51e0d"
     ]
   },
+  "changeNote": "",
   "contributors": [],
   "created": "2023-07-06T21:35:20+00:00",
   "creators": [
     "admin"
   ],
   "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
-  "effective": "2023-07-06T18:35:00",
+  "effective": "2023-07-06T18:35:00+00:00",
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
-  "exportimport.versions": {},
   "id": "page",
   "is_folderish": true,
   "language": "##DEFAULT##",
@@ -1205,17 +1205,6 @@
   },
   "modified": "2023-09-22T14:25:49+00:00",
   "nav_title": null,
-  "parent": {
-    "@id": "/content-types",
-    "@type": "Document",
-    "UID": "e8178744e30a418b9a5768997bb29a19",
-    "description": "This section has a sample of content types available in this site.",
-    "image_field": null,
-    "image_scales": null,
-    "review_state": "published",
-    "title": "Content Types",
-    "type_title": "Page"
-  },
   "preview_caption": null,
   "preview_image": {
     "blob_path": "7ab9c48ede33415fa2a66a99549c8f70/preview_image/black-starry-night.jpg",
@@ -1231,6 +1220,7 @@
   "title": "Page",
   "type_title": "Page",
   "version": "current",
+  "versioning_enabled": true,
   "workflow_history": {
     "simple_publication_workflow": [
       {

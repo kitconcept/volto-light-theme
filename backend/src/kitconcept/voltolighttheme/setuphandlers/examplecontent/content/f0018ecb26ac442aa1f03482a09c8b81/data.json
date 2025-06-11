@@ -833,18 +833,18 @@
       "40eeb312-119e-44ee-a4da-fab908083d04"
     ]
   },
+  "changeNote": "",
   "contributors": [],
   "created": "2023-07-06T21:35:22+00:00",
   "creators": [
     "admin"
   ],
   "description": "",
-  "effective": "2023-07-06T18:35:00",
+  "effective": "2023-07-06T18:35:00+00:00",
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
-  "exportimport.versions": {},
   "id": "grid-and-button",
   "is_folderish": true,
   "language": "##DEFAULT##",
@@ -855,17 +855,6 @@
   },
   "modified": "2023-09-22T14:07:46+00:00",
   "nav_title": null,
-  "parent": {
-    "@id": "/vertical-spacing",
-    "@type": "Document",
-    "UID": "c40a2be214b645338a7ef2e711e2f5c6",
-    "description": "",
-    "image_field": null,
-    "image_scales": null,
-    "review_state": "published",
-    "title": "Vertical Spacing",
-    "type_title": "Page"
-  },
   "preview_caption": null,
   "preview_image": null,
   "review_state": "published",
@@ -874,6 +863,7 @@
   "title": "Grid and Button",
   "type_title": "Page",
   "version": "current",
+  "versioning_enabled": true,
   "workflow_history": {
     "simple_publication_workflow": [
       {

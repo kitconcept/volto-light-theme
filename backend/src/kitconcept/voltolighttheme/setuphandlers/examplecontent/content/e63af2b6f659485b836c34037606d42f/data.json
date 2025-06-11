@@ -1,0 +1,839 @@
+{
+  "@id": "/block/grid-block/teaser/grid-teaser-event",
+  "@type": "Document",
+  "UID": "e63af2b6f659485b836c34037606d42f",
+  "allow_discussion": null,
+  "blocks": {
+    "07283742-a48a-4f30-b7d9-5fd5ef724150": {
+      "@type": "gridBlock",
+      "blocks": {
+        "66573466-9235-424b-81cb-727746110abd": {
+          "@type": "teaser",
+          "description": "The event content type can be used to display an event on the website.",
+          "head_title": "Head Title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/7adc12f0e7604982a6cdcb9437bccf66",
+              "@type": "Event",
+              "Description": "The event content type can be used to display an event on the website.",
+              "Title": "Event",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": "2023-12-31T12:00:00+00:00",
+              "getRemoteUrl": null,
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "start": "2023-01-01T11:00:00+00:00",
+              "title": "Event"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Event"
+        },
+        "e6bde028-9c83-4b9f-bd24-001a493e7b8b": {
+          "@type": "teaser",
+          "description": "The event content type can be used to display an event on the website.",
+          "head_title": "Head Title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/7adc12f0e7604982a6cdcb9437bccf66",
+              "@type": "Event",
+              "Description": "The event content type can be used to display an event on the website.",
+              "Title": "Event",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": "2023-12-31T12:00:00+00:00",
+              "getRemoteUrl": null,
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "start": "2023-01-01T11:00:00+00:00",
+              "title": "Event"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Event"
+        },
+        "f1066a6e-788a-43c6-9544-593ebd4b1247": {
+          "@type": "teaser",
+          "description": "The event content type can be used to display an event on the website.",
+          "head_title": "Head Title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/7adc12f0e7604982a6cdcb9437bccf66",
+              "@type": "Event",
+              "Description": "The event content type can be used to display an event on the website.",
+              "Title": "Event",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": "2023-12-31T12:00:00+00:00",
+              "getRemoteUrl": null,
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "start": "2023-01-01T11:00:00+00:00",
+              "title": "Event"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Event"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "f1066a6e-788a-43c6-9544-593ebd4b1247",
+          "66573466-9235-424b-81cb-727746110abd",
+          "e6bde028-9c83-4b9f-bd24-001a493e7b8b"
+        ]
+      },
+      "styles": {},
+      "theme": "default"
+    },
+    "1aa705af-9651-4824-9270-eadf0a88fcda": {
+      "@type": "gridBlock",
+      "blocks": {
+        "b4cadbe6-e185-4dbf-beb4-e8312f04fa80": {
+          "@type": "teaser",
+          "description": "The event content type can be used to display an event on the website.",
+          "head_title": "Head Title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/7adc12f0e7604982a6cdcb9437bccf66",
+              "@type": "Event",
+              "Description": "The event content type can be used to display an event on the website.",
+              "Title": "Event",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": "2023-12-31T12:00:00+00:00",
+              "getRemoteUrl": null,
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "start": "2023-01-01T11:00:00+00:00",
+              "title": "Event"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "center"
+          },
+          "theme": "default",
+          "title": "Event"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "b4cadbe6-e185-4dbf-beb4-e8312f04fa80"
+        ]
+      },
+      "headline": "Block Title",
+      "styles": {},
+      "theme": "default"
+    },
+    "79fb1503-ddd7-4309-9707-9f7931293907": {
+      "@type": "gridBlock",
+      "blocks": {
+        "cba28700-df42-431a-a7da-9489cd2bad10": {
+          "@type": "teaser",
+          "description": "The event content type can be used to display an event on the website.",
+          "head_title": "Head Title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/7adc12f0e7604982a6cdcb9437bccf66",
+              "@type": "Event",
+              "Description": "The event content type can be used to display an event on the website.",
+              "Title": "Event",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": "2023-12-31T12:00:00+00:00",
+              "getRemoteUrl": null,
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "start": "2023-01-01T11:00:00+00:00",
+              "title": "Event"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Event"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "cba28700-df42-431a-a7da-9489cd2bad10"
+        ]
+      },
+      "headline": "Block Title",
+      "styles": {},
+      "theme": "grey"
+    },
+    "815ce907-3a34-46b8-b9c6-ea0200dc10cb": {
+      "@type": "gridBlock",
+      "blocks": {
+        "079189f3-0086-4843-ae29-52e999bdcf53": {
+          "@type": "teaser",
+          "description": "The event content type can be used to display an event on the website.",
+          "head_title": "Head Title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/7adc12f0e7604982a6cdcb9437bccf66",
+              "@type": "Event",
+              "Description": "The event content type can be used to display an event on the website.",
+              "Title": "Event",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": "2023-12-31T12:00:00+00:00",
+              "getRemoteUrl": null,
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "start": "2023-01-01T11:00:00+00:00",
+              "title": "Event"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Event"
+        },
+        "a9dd17e3-468f-4b28-ad03-63fdbee3e5f3": {
+          "@type": "teaser",
+          "description": "The event content type can be used to display an event on the website.",
+          "head_title": "Head Title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/7adc12f0e7604982a6cdcb9437bccf66",
+              "@type": "Event",
+              "Description": "The event content type can be used to display an event on the website.",
+              "Title": "Event",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": "2023-12-31T12:00:00+00:00",
+              "getRemoteUrl": null,
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "start": "2023-01-01T11:00:00+00:00",
+              "title": "Event"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Event"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "a9dd17e3-468f-4b28-ad03-63fdbee3e5f3",
+          "079189f3-0086-4843-ae29-52e999bdcf53"
+        ]
+      },
+      "styles": {},
+      "theme": "grey"
+    },
+    "a6a3afc5-2522-47d1-9a6f-f0c424d296a2": {
+      "@type": "gridBlock",
+      "blocks": {
+        "06b7595b-3d15-4a5b-a578-b6a5148f098c": {
+          "@type": "teaser",
+          "description": "The event content type can be used to display an event on the website.",
+          "head_title": "Head Title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/7adc12f0e7604982a6cdcb9437bccf66",
+              "@type": "Event",
+              "Description": "The event content type can be used to display an event on the website.",
+              "Title": "Event",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": "2023-12-31T12:00:00+00:00",
+              "getRemoteUrl": null,
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "start": "2023-01-01T11:00:00+00:00",
+              "title": "Event"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Event"
+        },
+        "5fc0a4bc-16a0-4dc5-9416-d1e932f1440e": {
+          "@type": "teaser",
+          "description": "The event content type can be used to display an event on the website.",
+          "head_title": "Head Title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/7adc12f0e7604982a6cdcb9437bccf66",
+              "@type": "Event",
+              "Description": "The event content type can be used to display an event on the website.",
+              "Title": "Event",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": "2023-12-31T12:00:00+00:00",
+              "getRemoteUrl": null,
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "start": "2023-01-01T11:00:00+00:00",
+              "title": "Event"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Event"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "5fc0a4bc-16a0-4dc5-9416-d1e932f1440e",
+          "06b7595b-3d15-4a5b-a578-b6a5148f098c"
+        ]
+      },
+      "styles": {},
+      "theme": "default"
+    },
+    "af812f4e-c2d9-4543-addd-999e5c63aed3": {
+      "@type": "title"
+    },
+    "be56931f-2960-471a-abe9-d76b5955e786": {
+      "@type": "gridBlock",
+      "blocks": {
+        "16391442-9895-477f-ae52-52cd116e18f0": {
+          "@type": "teaser",
+          "description": "The event content type can be used to display an event on the website.",
+          "head_title": "Head Title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/7adc12f0e7604982a6cdcb9437bccf66",
+              "@type": "Event",
+              "Description": "The event content type can be used to display an event on the website.",
+              "Title": "Event",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": "2023-12-31T12:00:00+00:00",
+              "getRemoteUrl": null,
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "start": "2023-01-01T11:00:00+00:00",
+              "title": "Event"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Event"
+        },
+        "9adbd535-9b3a-4ab7-a4e7-3c7b7bc5575f": {
+          "@type": "teaser",
+          "description": "The event content type can be used to display an event on the website.",
+          "head_title": "Head Title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/7adc12f0e7604982a6cdcb9437bccf66",
+              "@type": "Event",
+              "Description": "The event content type can be used to display an event on the website.",
+              "Title": "Event",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": "2023-12-31T12:00:00+00:00",
+              "getRemoteUrl": null,
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "start": "2023-01-01T11:00:00+00:00",
+              "title": "Event"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Event"
+        },
+        "d36e799e-f2ba-4cc1-a5b3-384515a9dc4d": {
+          "@type": "teaser",
+          "description": "The event content type can be used to display an event on the website.",
+          "head_title": "Head Title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/7adc12f0e7604982a6cdcb9437bccf66",
+              "@type": "Event",
+              "Description": "The event content type can be used to display an event on the website.",
+              "Title": "Event",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": "2023-12-31T12:00:00+00:00",
+              "getRemoteUrl": null,
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "start": "2023-01-01T11:00:00+00:00",
+              "title": "Event"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Event"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "16391442-9895-477f-ae52-52cd116e18f0",
+          "9adbd535-9b3a-4ab7-a4e7-3c7b7bc5575f",
+          "d36e799e-f2ba-4cc1-a5b3-384515a9dc4d"
+        ]
+      },
+      "styles": {},
+      "theme": "grey"
+    },
+    "d4e353fc-3b7e-4ff9-8554-bb024a75b442": {
+      "@type": "gridBlock",
+      "blocks": {
+        "2dd11b41-03a4-4d01-83f7-2e25194456a4": {
+          "@type": "teaser",
+          "description": "The event content type can be used to display an event on the website.",
+          "head_title": "Head Title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/7adc12f0e7604982a6cdcb9437bccf66",
+              "@type": "Event",
+              "Description": "The event content type can be used to display an event on the website.",
+              "Title": "Event",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": "2023-12-31T12:00:00+00:00",
+              "getRemoteUrl": null,
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "start": "2023-01-01T11:00:00+00:00",
+              "title": "Event"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Event"
+        },
+        "6ab1def5-f9dc-4789-bbea-d334aad85506": {
+          "@type": "teaser",
+          "description": "The event content type can be used to display an event on the website.",
+          "head_title": "Head Title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/7adc12f0e7604982a6cdcb9437bccf66",
+              "@type": "Event",
+              "Description": "The event content type can be used to display an event on the website.",
+              "Title": "Event",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": "2023-12-31T12:00:00+00:00",
+              "getRemoteUrl": null,
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "start": "2023-01-01T11:00:00+00:00",
+              "title": "Event"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Event"
+        },
+        "b3cb5623-3bb1-4adf-8d98-eab1df9713d7": {
+          "@type": "teaser",
+          "description": "The event content type can be used to display an event on the website.",
+          "head_title": "Head Title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/7adc12f0e7604982a6cdcb9437bccf66",
+              "@type": "Event",
+              "Description": "The event content type can be used to display an event on the website.",
+              "Title": "Event",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": "2023-12-31T12:00:00+00:00",
+              "getRemoteUrl": null,
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "start": "2023-01-01T11:00:00+00:00",
+              "title": "Event"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Event"
+        },
+        "f85b7675-bfa5-4476-8db3-8f6e9ade4f2b": {
+          "@type": "teaser",
+          "description": "The event content type can be used to display an event on the website.",
+          "head_title": "Head Title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/7adc12f0e7604982a6cdcb9437bccf66",
+              "@type": "Event",
+              "Description": "The event content type can be used to display an event on the website.",
+              "Title": "Event",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": "2023-12-31T12:00:00+00:00",
+              "getRemoteUrl": null,
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "start": "2023-01-01T11:00:00+00:00",
+              "title": "Event"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Event"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "f85b7675-bfa5-4476-8db3-8f6e9ade4f2b",
+          "b3cb5623-3bb1-4adf-8d98-eab1df9713d7",
+          "2dd11b41-03a4-4d01-83f7-2e25194456a4",
+          "6ab1def5-f9dc-4789-bbea-d334aad85506"
+        ]
+      },
+      "styles": {},
+      "theme": "grey"
+    },
+    "f00ef458-cf5d-4ea5-a9d0-42a3af70de78": {
+      "@type": "gridBlock",
+      "blocks": {
+        "1014c247-6ed9-4e65-a03e-64332b83fe19": {
+          "@type": "teaser",
+          "description": "The event content type can be used to display an event on the website.",
+          "head_title": "Head Title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/7adc12f0e7604982a6cdcb9437bccf66",
+              "@type": "Event",
+              "Description": "The event content type can be used to display an event on the website.",
+              "Title": "Event",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": "2023-12-31T12:00:00+00:00",
+              "getRemoteUrl": null,
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "start": "2023-01-01T11:00:00+00:00",
+              "title": "Event"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Event"
+        },
+        "62976f50-1ca0-4bbc-9f9c-64ffe6dc0267": {
+          "@type": "teaser",
+          "description": "The event content type can be used to display an event on the website.",
+          "head_title": "Head Title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/7adc12f0e7604982a6cdcb9437bccf66",
+              "@type": "Event",
+              "Description": "The event content type can be used to display an event on the website.",
+              "Title": "Event",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": "2023-12-31T12:00:00+00:00",
+              "getRemoteUrl": null,
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "start": "2023-01-01T11:00:00+00:00",
+              "title": "Event"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Event"
+        },
+        "dbad5e71-0ce7-471c-bfd0-52dd3da0dfd2": {
+          "@type": "teaser",
+          "description": "The event content type can be used to display an event on the website.",
+          "head_title": "Head Title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/7adc12f0e7604982a6cdcb9437bccf66",
+              "@type": "Event",
+              "Description": "The event content type can be used to display an event on the website.",
+              "Title": "Event",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": "2023-12-31T12:00:00+00:00",
+              "getRemoteUrl": null,
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "start": "2023-01-01T11:00:00+00:00",
+              "title": "Event"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Event"
+        },
+        "ddf74cc3-fac8-461d-a1e9-1f68e28c7f62": {
+          "@type": "teaser",
+          "description": "The event content type can be used to display an event on the website.",
+          "head_title": "Head Title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/7adc12f0e7604982a6cdcb9437bccf66",
+              "@type": "Event",
+              "Description": "The event content type can be used to display an event on the website.",
+              "Title": "Event",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": "2023-12-31T12:00:00+00:00",
+              "getRemoteUrl": null,
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "start": "2023-01-01T11:00:00+00:00",
+              "title": "Event"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "Event"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "1014c247-6ed9-4e65-a03e-64332b83fe19",
+          "ddf74cc3-fac8-461d-a1e9-1f68e28c7f62",
+          "dbad5e71-0ce7-471c-bfd0-52dd3da0dfd2",
+          "62976f50-1ca0-4bbc-9f9c-64ffe6dc0267"
+        ]
+      },
+      "styles": {},
+      "theme": "default"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "af812f4e-c2d9-4543-addd-999e5c63aed3",
+      "1aa705af-9651-4824-9270-eadf0a88fcda",
+      "a6a3afc5-2522-47d1-9a6f-f0c424d296a2",
+      "07283742-a48a-4f30-b7d9-5fd5ef724150",
+      "f00ef458-cf5d-4ea5-a9d0-42a3af70de78",
+      "79fb1503-ddd7-4309-9707-9f7931293907",
+      "815ce907-3a34-46b8-b9c6-ea0200dc10cb",
+      "be56931f-2960-471a-abe9-d76b5955e786",
+      "d4e353fc-3b7e-4ff9-8554-bb024a75b442"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-06-10T09:56:49+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": null,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "id": "grid-teaser-event",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-06-10T10:30:52+00:00",
+  "nav_title": null,
+  "preview_caption": null,
+  "preview_image": null,
+  "review_state": "private",
+  "rights": "",
+  "subjects": [],
+  "title": "Grid Teaser Event",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-06-10T09:56:49+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

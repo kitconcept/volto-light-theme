@@ -783,18 +783,18 @@
       "94655cc3-817d-48ba-bc20-6e9f7796dc46"
     ]
   },
+  "changeNote": "",
   "contributors": [],
   "created": "2023-07-06T21:35:08+00:00",
   "creators": [
     "admin"
   ],
   "description": "\nThe highlight block allows you to highlight and tease a single piece of content. The content is displayed with a large image and a title and description in a banderole.",
-  "effective": "2023-07-06T18:35:00",
+  "effective": "2023-07-06T18:35:00+00:00",
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
-  "exportimport.versions": {},
   "id": "highlight-block",
   "is_folderish": true,
   "language": "##DEFAULT##",
@@ -805,17 +805,6 @@
   },
   "modified": "2023-09-30T07:01:03+00:00",
   "nav_title": null,
-  "parent": {
-    "@id": "/block",
-    "@type": "Document",
-    "UID": "425695d2b7cb47e69374d6f211f17e38",
-    "description": "",
-    "image_field": null,
-    "image_scales": null,
-    "review_state": "published",
-    "title": "Blocks",
-    "type_title": "Page"
-  },
   "preview_caption": null,
   "preview_image": {
     "blob_path": "8416628543f146ff9a18d281c03e2399/preview_image/black-starry-night.jpg",
@@ -831,6 +820,7 @@
   "title": "Highlight",
   "type_title": "Page",
   "version": "current",
+  "versioning_enabled": true,
   "workflow_history": {
     "simple_publication_workflow": [
       {
