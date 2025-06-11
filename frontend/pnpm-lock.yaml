@@ -1650,12 +1650,18 @@ importers:
       '@storybook/react':
         specifier: ^8.6.12
         version: 8.6.12(@storybook/test@8.6.12(storybook@8.6.12(prettier@3.2.5)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.12(prettier@3.2.5))(typescript@5.8.3)
+      '@testing-library/cypress':
+        specifier: 10.0.3
+        version: 10.0.3(cypress@13.13.2)
       '@types/jest':
         specifier: ^29.5.8
         version: 29.5.14
       '@types/lodash':
         specifier: ^4.14.201
         version: 4.17.16
+      '@types/node':
+        specifier: ^22
+        version: 22.15.3
       '@types/react':
         specifier: ^18.3.12
         version: 18.3.20
@@ -1665,6 +1671,9 @@ importers:
       release-it:
         specifier: ^19.0.3
         version: 19.0.3(@types/node@22.15.3)(magicast@0.3.5)
+      typescript:
+        specifier: ^5.7.3
+        version: 5.8.3
 
 packages:
 
@@ -4952,6 +4961,12 @@ packages:
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
       cypress: ^12.0.0 || ^13.0.0
+
+  '@testing-library/cypress@10.0.3':
+    resolution: {integrity: sha512-TeZJMCNtiS59cPWalra7LgADuufO5FtbqQBYxuAgdX6ZFAR2D9CtQwAG8VbgvFcchW3K414va/+7P4OkQ80UVg==}
+    engines: {node: '>=12', npm: '>=6'}
+    peerDependencies:
+      cypress: ^12.0.0 || ^13.0.0 || ^14.0.0
 
   '@testing-library/dom@10.4.0':
     resolution: {integrity: sha512-pemlzrSESWbdAloYml3bAJMEfNh1Z7EduzqPKprCH5S341frlpYnUEW0H72dLxa6IsYr+mPno20GiSm+h9dEdQ==}
@@ -19828,6 +19843,12 @@ snapshots:
       '@testing-library/dom': 9.3.4
       cypress: 13.13.2
 
+  '@testing-library/cypress@10.0.3(cypress@13.13.2)':
+    dependencies:
+      '@babel/runtime': 7.20.6
+      '@testing-library/dom': 10.4.0
+      cypress: 13.13.2
+
   '@testing-library/dom@10.4.0':
     dependencies:
       '@babel/code-frame': 7.27.1
@@ -20302,7 +20323,7 @@ snapshots:
 
   '@types/testing-library__dom@7.5.0':
     dependencies:
-      '@testing-library/dom': 6.16.0
+      '@testing-library/dom': 10.4.0
 
   '@types/testing-library__jest-dom@5.14.9':
     dependencies:
@@ -20643,7 +20664,7 @@ snapshots:
       std-env: 3.9.0
       strip-literal: 2.1.1
       test-exclude: 6.0.0
-      vitest: 2.1.9(@types/node@22.15.3)(@vitest/ui@2.1.9)(jsdom@21.1.2)(less@3.11.1)(lightningcss@1.29.3)(sass@1.87.0)(terser@5.39.0)
+      vitest: 2.1.9(@types/node@22.15.3)(@vitest/ui@2.1.9)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.29.3)(sass@1.87.0)(terser@5.39.0)
     transitivePeerDependencies:
       - supports-color
 
