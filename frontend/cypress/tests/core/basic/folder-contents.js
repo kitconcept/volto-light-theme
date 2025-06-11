@@ -25,7 +25,10 @@ describe('Folder Contents Tests', () => {
     // when I rename a content object
     cy.get('svg[class="icon unchecked"]').click();
     cy.get('svg[class="icon rename"]').click();
-    cy.get('input[name="0_title"]').clear().type('Brand new document title');
+    cy.get('input[name="0_title"]')
+      .should('.be.enabled')
+      .clear()
+      .type('Brand new document title');
     cy.get('input[name="0_id"]').clear().type('brand-new-document-title');
     cy.get('.modal button[title="Save"]').click();
 
