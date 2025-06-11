@@ -80,7 +80,7 @@ jobs:
         run: make cypress-install
 
       - uses: JarvusInnovations/background-action@v1
-        if: ${{ inputs.storybook != true || inputs.storybook != 'true' }}
+        if: ${{ inputs.storybook == false || inputs.storybook == 'false' }}
         name: Start Servers
         with:
           run: |
