@@ -196,6 +196,7 @@ jobs:
     with:
       name: ${{ matrix.name }}
       short-name: ${{ matrix.short-name }}
+      storybook: ${{ matrix.storybook || false }}
       node-version: ${{ needs.config.outputs.node-version }}
       image-name-prefix: ${{ needs.config.outputs.image-name-prefix }}
       image-tag: ${{ needs.config.outputs.base-tag }}
