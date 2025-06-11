@@ -177,9 +177,26 @@ jobs:
             short-name: vertical-spacing
           - name: "Typography"
             short-name: typography
+          - name: "Storybook - Card"
+            short-name: storybook/card
+            storybook: true
+          - name: "Storybook - Grid"
+            short-name: storybook/grid
+            storybook: true
+          - name: "Storybook - Listing"
+            short-name: storybook/listing
+            storybook: true
+          - name: "Storybook - Teaser"
+            short-name: storybook/teaser
+            storybook: true
+          - name: "Storybook - Summary"
+            short-name: storybook/summary
+            storybook: true
+
     with:
       name: ${{ matrix.name }}
       short-name: ${{ matrix.short-name }}
+      storybook: ${{ matrix.storybook || false }}
       node-version: ${{ needs.config.outputs.node-version }}
       image-name-prefix: ${{ needs.config.outputs.image-name-prefix }}
       image-tag: ${{ needs.config.outputs.base-tag }}
