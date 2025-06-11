@@ -93,7 +93,6 @@ jobs:
           wait-on: |
             http-get://localhost:8080/Plone
             http://localhost:3000
-            http://localhost:6006
           # IMPORTANT: to use environment variables in wait-on, you must use this form: ${{ env.VAR }}
           # See wait-on section below for all resource types and prefixes
 
