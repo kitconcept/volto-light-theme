@@ -26,7 +26,7 @@ describe('Folder Contents Tests', () => {
     cy.get('svg[class="icon unchecked"]').click();
     cy.get('svg[class="icon rename"]').click();
     cy.get('input[name="0_title"]')
-      .should('.be.enabled')
+      .should('be.enabled')
       .clear()
       .type('Brand new document title');
     cy.get('input[name="0_id"]').clear().type('brand-new-document-title');
