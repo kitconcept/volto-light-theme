@@ -98,7 +98,8 @@ test: ## Run unit tests
 
 .PHONY: test-ci
 ci-test: ## Run unit tests in CI
-	CI=1 RAZZLE_JEST_CONFIG=$(CURRENT_DIR)/jest-addon.config.js pnpm --filter @plone/volto test -- --passWithNoTests
+	VOLTOCONFIG=$(CURRENT_DIR)/volto.config.js pnpm --filter @plone/volto i18n
+	CI=1 pnpm test -- --passWithNoTests
 
 .PHONY: build-image
 build-image:  ## Build Docker Image
