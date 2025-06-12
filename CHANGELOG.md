@@ -1,6 +1,75 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 7.0.0a11 (2025-06-12)
+
+### Backend
+
+
+#### Internal:
+
+- Add example content of missing blocks @iRohitSingh 
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Do not show sticky menu in add view. @sneridagh 
+- Fix aspect ratio for images in file grid teaser block @iRohitSingh 
+- Fixed position of sticky menu for small screens. @sneridagh 
+
+#### Internal
+
+- Added visual regression tests for Storybook stories. @sneridagh [#576](https://github.com/kitconcept/volto-light-theme/pull/576)
+- Upgrade to Volto 18.23.0 @sneridagh 
+- Use `vitest` for unit tests. @sneridagh 
+
+
+
+### Project
+
+
+#### Internal
+
+- Added visual regression tests for Storybook stories. @sneridagh [#576](https://github.com/kitconcept/volto-light-theme/pull/576)
+- Fix acceptance test commands. @davisagli 
+
+
+
+## 7.0.0a11 (2025-06-12)
+
+### Backend
+
+
+#### Internal:
+
+- Add example content of missing blocks @iRohitSingh 
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Do not show sticky menu in add view. @sneridagh 
+- Fix aspect ratio for images in file grid teaser block @iRohitSingh 
+- Fixed position of sticky menu for small screens. @sneridagh 
+
+#### Internal
+
+- Added visual regression tests for Storybook stories. @sneridagh [#576](https://github.com/kitconcept/volto-light-theme/pull/576)
+- Upgrade to Volto 18.23.0 @sneridagh 
+- Use `vitest` for unit tests. @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
 ## 7.0.0a10 (2025-06-10)
 
 ### Backend

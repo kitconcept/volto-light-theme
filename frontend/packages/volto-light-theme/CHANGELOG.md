@@ -8,6 +8,20 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0-alpha.11 (2025-06-12)
+
+### Bugfix
+
+- Do not show sticky menu in add view. @sneridagh 
+- Fix aspect ratio for images in file grid teaser block @iRohitSingh 
+- Fixed position of sticky menu for small screens. @sneridagh 
+
+### Internal
+
+- Added visual regression tests for Storybook stories. @sneridagh [#576](https://github.com/kitconcept/volto-light-theme/pull/576)
+- Upgrade to Volto 18.23.0 @sneridagh 
+- Use `vitest` for unit tests. @sneridagh 
+
 ## 7.0.0-alpha.10 (2025-06-10)
 
 ### Bugfix

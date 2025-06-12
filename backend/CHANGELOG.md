@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0a11 (2025-06-12)
+
+
+### Internal:
+
+- Add example content of missing blocks @iRohitSingh 
+
 ## 7.0.0a10 (2025-06-10)
 
 No significant changes.
