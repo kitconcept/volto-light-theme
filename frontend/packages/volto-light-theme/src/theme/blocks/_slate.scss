@@ -3,3 +3,9 @@
 #page-edit .block-editor-slate.has--backgroundColor--grey {
   background-color: $lightgrey;
 }
+
+.slate-editor {
+  [data-slate-node='element']:has([data-slate-placeholder='true']) {
+    min-width: 200px;
+  }
+}
