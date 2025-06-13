@@ -145,7 +145,7 @@ You can define the actions located at the top right of the header.
 These are links to other pages, each of which is defined by the fields for a title, a target URL, and a boolean for whether or not to open the link in a new tab.
 
 The special actions `login`, `logout`, and `register` are shown if they are enabled in your Plone site as actions.
-These can be defined in the `Actions` control panel in the Plone site or programmatically via Generic Setup.
+These can be defined in the {guilabel}`Actions` control panel in the Plone site or programmatically via Generic Setup.
 
 ## Theming
 

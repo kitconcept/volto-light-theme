@@ -1,1 +1,1 @@
-Reintroduce an improved Annontools using portal_actions. @sneridagh
+Reintroduce an improved `Annontools` using `portal_actions`. @sneridagh
