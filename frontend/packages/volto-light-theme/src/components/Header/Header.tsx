@@ -75,6 +75,8 @@ const InternetHeader = ({ pathname, content }) => {
           <LanguageSelector />
 
           <div className="tools">
+            <SlotRenderer name="headerTools" content={content} />
+
             {header_actions &&
               Array.isArray(header_actions) &&
               header_actions.map((item) => (

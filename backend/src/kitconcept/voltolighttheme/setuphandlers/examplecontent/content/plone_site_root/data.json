@@ -276,9 +276,7 @@
         }
       },
       "blocks_layout": {
-        "items": [
-          "3fac2508-ed58-40d0-aa2e-898844814566"
-        ]
+        "items": ["3fac2508-ed58-40d0-aa2e-898844814566"]
       },
       "headline": "Gridblock with Teaser",
       "styles": {},
@@ -545,9 +543,7 @@
   },
   "complementary_logo": null,
   "contributors": [],
-  "creators": [
-    "admin"
-  ],
+  "creators": ["admin"],
   "description": "Site created with a new Plone Distribution",
   "effective": null,
   "exclude_from_nav": false,
@@ -599,15 +595,6 @@
       "@id": "1",
       "href": [
         {
-          "@id": "/login"
-        }
-      ],
-      "title": "login"
-    },
-    {
-      "@id": "2",
-      "href": [
-        {
           "@id": "https://volto-light-theme.readthedocs.io/"
         }
       ],
@@ -615,7 +602,7 @@
       "title": "Documentation"
     },
     {
-      "@id": "3",
+      "@id": "2",
       "href": [
         {
           "@id": "https://github.com/kitconcept/volto-light-theme"
