@@ -5,6 +5,7 @@ import FollowUsLogoAndLinks from '../components/Footer/slots/FollowUsLogoAndLink
 import Colophon from '../components/Footer/slots/Colophon';
 import CoreFooter from '../components/Footer/slots/CoreFooter';
 import StickyMenu from '../components/StickyMenu/StickyMenu';
+import Anontools from '../components/Anontools/Anontools';
 import type { Content } from '@plone/types';
 
 export function hasInheritedBehavior(behavior: string) {
@@ -23,6 +24,12 @@ export default function install(config: ConfigType) {
     slot: 'aboveHeader',
     name: 'StickyMenu',
     component: StickyMenu,
+  });
+
+  config.registerSlotComponent({
+    slot: 'headerTools',
+    name: 'Anontools',
+    component: Anontools,
   });
 
   config.registerSlotComponent({
