@@ -277,6 +277,11 @@ export default function install(config: ConfigType) {
   config.blocks.blocksConfig.gridBlock.blocksConfig.listing.allowed_headline_tags =
     [['h2', 'h2']];
 
+  config.blocks.blocksConfig.gridBlock.blocksConfig.listing.variations =
+    cloneDeep(
+      listingBlockVariations.filter((variation) => variation.id !== 'grid'),
+    );
+
   config.blocks.blocksConfig.introduction = {
     ...config.blocks.blocksConfig.introduction,
     unwantedButtons: ['heading-three', 'blockquote'],
