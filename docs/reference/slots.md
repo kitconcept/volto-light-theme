@@ -37,7 +37,7 @@ The `FooterLogos` component will be rendered in the `preFooter` slot of the page
 
 `headerTools`
 :   The `headerTools` slot adds content in the header tools at the top-most right area of the page.
-    By default, it has the `Anontools` component, which provides the login, logout and register links, if enabled as actions in your Plone site.
+    By default, it has the `Anontools` component, which provides the login, logout and register links if they are enabled in the `portal_actions` tool in your Plone site.
 
 `preFooter`
 :   The `preFooter` slot adds content before the footer of the page.
