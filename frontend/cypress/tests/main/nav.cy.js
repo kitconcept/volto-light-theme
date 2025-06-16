@@ -51,4 +51,22 @@ context('Navigation Acceptance Tests', () => {
     cy.get('.subsubitem-wrapper').findByText('Level 3').click();
     cy.get('.documentFirstHeading').should('have.text', 'Level 3');
   });
+  it('As editor testing Breadcrumbs', function () {
+    cy.wait('@content');
+    cy.get('ul.desktop-menu button').contains('Level 1').click();
+    cy.get('.subsubitem-wrapper').findByText('Level 3').click();
+    cy.get('.breadcrumb').should('exist');
+    cy.get('.breadcrumb .home').find('svg').should('exist');
+  });
+
+  it('As editor testing the navigation_title is present for page content types', function () {
+    cy.visit('/level-1/edit');
+    cy.wait('@content');
+    cy.get('#field-nav_title').click().type('Navigation title');
+    cy.get('#toolbar-save').click();
+    cy.get('.breadcrumb .section').should('have.text', 'Navigation title');
+    cy.get('#navigation .desktop-menu li .item')
+      .contains('Navigation title')
+      .should('exist');
+  });
 });
