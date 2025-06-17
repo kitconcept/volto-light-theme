@@ -1,0 +1,1 @@
+Add Navigation Title behaviour in Event and News Item content type @iRohitSingh
