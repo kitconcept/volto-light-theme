@@ -162,3 +162,9 @@ body .block.gridBlock .block.teaser.contained.person-teaser .card-inner {
     }
   }
 }
+
+// Person in search block
+.block.search.summary .listing-item img,
+.block-editor-search.summary .listing-item img {
+  aspect-ratio: initial !important;
+}
