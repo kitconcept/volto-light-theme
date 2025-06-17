@@ -131,8 +131,9 @@ jobs:
         run: make ci-acceptance-test-visual SPEC='cypress/tests/visual/${{ inputs.short-name }}.cy.{js,jsx,ts,tsx}'
 
       - name: Run tests Storybook
+        # must be in the storybook directory
         if: ${{ inputs.storybook == true || inputs.storybook == 'true' }}
-        run: make ci-acceptance-test-visual-storybook SPEC='cypress/tests/visual/${{ inputs.short-name }}.cy.{js,jsx,ts,tsx}'
+        run: make ci-acceptance-test-visual-storybook SPEC='cypress/tests/visual/storybook/${{ inputs.short-name }}.cy.{js,jsx,ts,tsx}'
 
       # Upload Cypress screenshots
       - uses: actions/upload-artifact@v4

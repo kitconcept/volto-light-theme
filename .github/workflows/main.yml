@@ -178,19 +178,19 @@ jobs:
           - name: "Typography"
             short-name: typography
           - name: "Storybook - Card"
-            short-name: storybook/card
+            short-name: card
             storybook: true
           - name: "Storybook - Grid"
-            short-name: storybook/grid
+            short-name: grid
             storybook: true
           - name: "Storybook - Listing"
-            short-name: storybook/listing
+            short-name: listing
             storybook: true
           - name: "Storybook - Teaser"
-            short-name: storybook/teaser
+            short-name: teaser
             storybook: true
           - name: "Storybook - Summary"
-            short-name: storybook/summary
+            short-name: summary
             storybook: true
 
     with:
