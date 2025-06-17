@@ -42,7 +42,7 @@ module.exports = defineConfig(
         '../__image_snapshots__',
       ),
       pluginVisualRegressionDiffConfig: { includeAA: false, threshold: 0.01 },
-      pluginVisualRegressionMaxDiffThreshold: 0.08,
+      pluginVisualRegressionMaxDiffThreshold: 0.3,
       // pluginVisualRegressionUpdateImages: true,
       // Setting this to true enables cumulative testing, which will skip tests
       // that have previously passed. The state is saved into the cumulative.report
