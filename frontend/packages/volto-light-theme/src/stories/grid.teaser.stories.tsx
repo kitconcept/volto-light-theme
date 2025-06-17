@@ -6,6 +6,7 @@ import {
   gridBlockThree,
   gridBlockFour,
   gridBlockTwoDocumentPerson,
+  gridBlockTwoPersonDifferentRatio,
   gridBlockOnePerson,
   gridBlockTwoPerson,
   gridBlockThreePerson,
@@ -31,7 +32,12 @@ type Story = StoryObj<typeof meta>;
 export const One: Story = {
   render: (args) => (
     <Wrapper>
-      <div style={{ width: 'var(--default-container-width)' }}>
+      <div
+        style={{
+          containerType: 'inline-size',
+          width: 'var(--default-container-width)',
+        }}
+      >
         <BlockWrapper {...args}>
           <GridBlockView {...args} />
         </BlockWrapper>
@@ -46,7 +52,12 @@ export const One: Story = {
 export const Two: Story = {
   render: (args) => (
     <Wrapper>
-      <div style={{ width: 'var(--default-container-width)' }}>
+      <div
+        style={{
+          containerType: 'inline-size',
+          width: 'var(--default-container-width)',
+        }}
+      >
         <BlockWrapper {...args}>
           <GridBlockView {...args} />
         </BlockWrapper>
@@ -61,7 +72,12 @@ export const Two: Story = {
 export const Three: Story = {
   render: (args) => (
     <Wrapper>
-      <div style={{ width: 'var(--default-container-width)' }}>
+      <div
+        style={{
+          containerType: 'inline-size',
+          width: 'var(--default-container-width)',
+        }}
+      >
         <BlockWrapper {...args}>
           <GridBlockView {...args} />
         </BlockWrapper>
@@ -76,7 +92,12 @@ export const Three: Story = {
 export const Four: Story = {
   render: (args) => (
     <Wrapper>
-      <div style={{ width: 'var(--default-container-width)' }}>
+      <div
+        style={{
+          containerType: 'inline-size',
+          width: 'var(--default-container-width)',
+        }}
+      >
         <BlockWrapper {...args}>
           <GridBlockView {...args} />
         </BlockWrapper>
@@ -94,7 +115,13 @@ export const OneInversed: Story = {
   },
   render: (args) => (
     <Wrapper>
-      <div style={{ padding: '40px', backgroundColor: '#ecebeb' }}>
+      <div
+        style={{
+          containerType: 'inline-size',
+          padding: '40px',
+          backgroundColor: '#ecebeb',
+        }}
+      >
         <BlockWrapper {...args}>
           <GridBlockView {...args} />
         </BlockWrapper>
@@ -112,7 +139,13 @@ export const TwoInversed: Story = {
   },
   render: (args) => (
     <Wrapper>
-      <div style={{ padding: '40px', backgroundColor: '#ecebeb' }}>
+      <div
+        style={{
+          containerType: 'inline-size',
+          padding: '40px',
+          backgroundColor: '#ecebeb',
+        }}
+      >
         <BlockWrapper {...args}>
           <GridBlockView {...args} />
         </BlockWrapper>
@@ -130,7 +163,13 @@ export const ThreeInversed: Story = {
   },
   render: (args) => (
     <Wrapper>
-      <div style={{ padding: '40px', backgroundColor: '#ecebeb' }}>
+      <div
+        style={{
+          containerType: 'inline-size',
+          padding: '40px',
+          backgroundColor: '#ecebeb',
+        }}
+      >
         <BlockWrapper {...args}>
           <GridBlockView {...args} />
         </BlockWrapper>
@@ -148,7 +187,13 @@ export const FourInversed: Story = {
   },
   render: (args) => (
     <Wrapper>
-      <div style={{ padding: '40px', backgroundColor: '#ecebeb' }}>
+      <div
+        style={{
+          containerType: 'inline-size',
+          padding: '40px',
+          backgroundColor: '#ecebeb',
+        }}
+      >
         <BlockWrapper {...args}>
           <GridBlockView {...args} />
         </BlockWrapper>
@@ -163,7 +208,12 @@ export const FourInversed: Story = {
 export const OnePerson: Story = {
   render: (args) => (
     <Wrapper>
-      <div style={{ width: 'var(--default-container-width)' }}>
+      <div
+        style={{
+          containerType: 'inline-size',
+          width: 'var(--default-container-width)',
+        }}
+      >
         <BlockWrapper {...args}>
           <GridBlockView {...args} />
         </BlockWrapper>
@@ -175,25 +225,15 @@ export const OnePerson: Story = {
   },
 };
 
-export const TwoDocumentPerson: Story = {
-  render: (args) => (
-    <Wrapper>
-      <div style={{ width: 'var(--default-container-width)' }}>
-        <BlockWrapper {...args}>
-          <GridBlockView {...args} />
-        </BlockWrapper>
-      </div>
-    </Wrapper>
-  ),
-  args: {
-    data: gridBlockTwoDocumentPerson,
-  },
-};
-
 export const TwoPerson: Story = {
   render: (args) => (
     <Wrapper>
-      <div style={{ width: 'var(--default-container-width)' }}>
+      <div
+        style={{
+          containerType: 'inline-size',
+          width: 'var(--default-container-width)',
+        }}
+      >
         <BlockWrapper {...args}>
           <GridBlockView {...args} />
         </BlockWrapper>
@@ -205,10 +245,55 @@ export const TwoPerson: Story = {
   },
 };
 
+export const TwoDocumentAndPerson: Story = {
+  render: (args) => (
+    <Wrapper>
+      <div
+        style={{
+          containerType: 'inline-size',
+          width: 'var(--default-container-width)',
+        }}
+      >
+        <BlockWrapper {...args}>
+          <GridBlockView {...args} />
+        </BlockWrapper>
+      </div>
+    </Wrapper>
+  ),
+  args: {
+    data: gridBlockTwoDocumentPerson,
+  },
+};
+
+export const TwoPersonsDifferentImageRatio: Story = {
+  render: (args) => (
+    <Wrapper>
+      <div
+        style={{
+          containerType: 'inline-size',
+          width: 'var(--default-container-width)',
+        }}
+      >
+        <BlockWrapper {...args}>
+          <GridBlockView {...args} />
+        </BlockWrapper>
+      </div>
+    </Wrapper>
+  ),
+  args: {
+    data: gridBlockTwoPersonDifferentRatio,
+  },
+};
+
 export const ThreePerson: Story = {
   render: (args) => (
     <Wrapper>
-      <div style={{ width: 'var(--default-container-width)' }}>
+      <div
+        style={{
+          containerType: 'inline-size',
+          width: 'var(--default-container-width)',
+        }}
+      >
         <BlockWrapper {...args}>
           <GridBlockView {...args} />
         </BlockWrapper>
@@ -223,7 +308,12 @@ export const ThreePerson: Story = {
 export const FourPerson: Story = {
   render: (args) => (
     <Wrapper>
-      <div style={{ width: 'var(--default-container-width)' }}>
+      <div
+        style={{
+          containerType: 'inline-size',
+          width: 'var(--default-container-width)',
+        }}
+      >
         <BlockWrapper {...args}>
           <GridBlockView {...args} />
         </BlockWrapper>

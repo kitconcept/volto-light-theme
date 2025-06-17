@@ -127,7 +127,12 @@ jobs:
           log-output-if: failure
 
       - name: Run tests
+        if: ${{ inputs.storybook == false || inputs.storybook == 'false' || inputs.storybook == null }}
         run: make ci-acceptance-test-visual SPEC='cypress/tests/visual/${{ inputs.short-name }}.cy.{js,jsx,ts,tsx}'
+
+      - name: Run tests Storybook
+        if: ${{ inputs.storybook == true || inputs.storybook == 'true' }}
+        run: make ci-acceptance-test-visual-storybook SPEC='cypress/tests/visual/${{ inputs.short-name }}.cy.{js,jsx,ts,tsx}'
 
       # Upload Cypress screenshots
       - uses: actions/upload-artifact@v4
