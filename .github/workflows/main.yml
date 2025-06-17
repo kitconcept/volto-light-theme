@@ -150,7 +150,7 @@ jobs:
       a11y: ${{ matrix.a11y || false }}
 
   visual-acceptance:
-    name: "Visual Acceptance: ${{ matrix.name }}"
+    name: "Visual Acceptance"
     if: ${{ needs.config.outputs.acceptance == 'true' && (always() && !contains(needs.*.result, 'failure'))}}
     uses: ./.github/workflows/frontend-visual-acceptance.yml
     needs:

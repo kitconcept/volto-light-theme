@@ -27,6 +27,14 @@ describe('Blocks Grid Teaser Person', () => {
     { name: 'Two Person Teaser', id: 'blocks-grid-teaser--two-person' },
     { name: 'Three Person Teaser', id: 'blocks-grid-teaser--three-person' },
     { name: 'Four Person Teaser', id: 'blocks-grid-teaser--four-person' },
+    {
+      name: 'Two Document and Person Teaser',
+      id: 'blocks-grid-teaser--two-document-and-person',
+    },
+    {
+      name: 'Two Persons different aspect-ratio',
+      id: 'blocks-grid-teaser--two-persons-different-image-ratio',
+    },
   ];
 
   storiesUnderTest.forEach((story) => {
