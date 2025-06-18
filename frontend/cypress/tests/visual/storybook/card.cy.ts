@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-describe('Primitives Card', () => {
+describe('Storybook - Primitives Card -', () => {
   const storiesUnderTest = [
     { name: 'Simple', id: 'primitives-card--simple' },
     { name: 'Simple without link', id: 'primitives-card--simple-without-link' },

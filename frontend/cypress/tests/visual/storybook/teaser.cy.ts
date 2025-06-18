@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-describe('Blocks Teaser', () => {
+describe('Storybook - Block Teaser -', () => {
   const storiesUnderTest = [
     { name: 'Teaser left', id: 'blocks-teaser--left' },
     { name: 'Teaser right', id: 'blocks-teaser--right' },

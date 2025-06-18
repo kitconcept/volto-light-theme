@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-describe('Blocks Listing', () => {
+describe('Storybook - Block Listing -', () => {
   const storiesUnderTest = [
     { name: 'Person', id: 'blocks-listing--person' },
     { name: 'Person Summary', id: 'blocks-listing--person-summary' },
