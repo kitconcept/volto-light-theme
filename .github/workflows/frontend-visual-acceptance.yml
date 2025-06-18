@@ -48,8 +48,10 @@ jobs:
         if: ${{ inputs.storybook == true || inputs.storybook == 'true' }}
         with:
           name: storybook-build
+          path: frontend/storybook-build
+
       - name: Display structure of downloaded files
-        run: ls -R
+        run: ls -latr
 
       - name: Use Node.js ${{ inputs.node-version }}
         uses: actions/setup-node@v4
@@ -125,7 +127,7 @@ jobs:
         name: Start Servers - Storybook
         with:
           run: |
-            (cd frontend/.storybook-build && python3 -m http.server 3000 &)
+            (cd frontend/storybook-build && python3 -m http.server 3000 &)
             # make -C "./frontend/" storybook-start &
           wait-on: |
             http://localhost:6006
