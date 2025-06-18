@@ -127,7 +127,7 @@ jobs:
         name: Start Servers - Storybook
         with:
           run: |
-            python3 -m http.server 3000 -d frontend/storybook-build &
+            python3 -m http.server 6006 -d frontend/storybook-build &
           wait-on: |
             http://localhost:6006
           tail: true # true = stderr,stdout
