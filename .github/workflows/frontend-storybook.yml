@@ -44,12 +44,12 @@ jobs:
       - name: Build Storybook
         run: make storybook-build
       - name: ls
-        run: ls -R
+        run: ls -latr
 
       # Upload Storybook build
       - uses: actions/upload-artifact@v4
         if: success()
         with:
           name: storybook-build
-          path: frontend/.storybook-build
+          path: .storybook-build
           retention-days: 2
