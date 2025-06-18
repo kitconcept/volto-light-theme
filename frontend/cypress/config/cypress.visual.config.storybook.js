@@ -30,7 +30,7 @@ module.exports = defineConfig(
       },
       specPattern: 'cypress/tests/visual/storybook/**/*.cy.{js,jsx,ts,tsx}',
       // a11 tests require a site root without /en
-      baseUrl: 'http://localhost:3000/',
+      baseUrl: 'http://localhost:6006/',
     }),
     env: {
       API: 'plone',
@@ -42,7 +42,7 @@ module.exports = defineConfig(
         '../__image_snapshots__',
       ),
       pluginVisualRegressionDiffConfig: { includeAA: false, threshold: 0.01 },
-      pluginVisualRegressionMaxDiffThreshold: 0.5,
+      pluginVisualRegressionMaxDiffThreshold: 0.3,
       // pluginVisualRegressionUpdateImages: true,
       // Setting this to true enables cumulative testing, which will skip tests
       // that have previously passed. The state is saved into the cumulative.report

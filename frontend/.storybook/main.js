@@ -75,7 +75,10 @@ module.exports = {
     name: '@storybook/react-webpack5',
     options: { builder: { useSWC: true } },
   },
-  staticDirs: ['../packages/volto-light-theme/src/stories/static'],
+  staticDirs: [
+    '../packages/volto-light-theme/src/stories/static',
+    { from: '../packages', to: '/packages' },
+  ],
   typescript: {
     check: false,
     checkOptions: {},
@@ -155,7 +158,6 @@ module.exports = {
         ],
       },
     };
-
     // Add-ons have to be loaded with babel
     const addonPaths = registry
       .getAddons()

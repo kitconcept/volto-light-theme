@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-describe('Primitives Summary', () => {
+describe('Storybook - Primitives Summary -', () => {
   const storiesUnderTest = [
     { name: 'Default Summary', id: 'primitives-summary--summary' },
     {
