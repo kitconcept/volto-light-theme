@@ -44,12 +44,12 @@ jobs:
       - name: Build Storybook
         run: make storybook-build
       - name: ls
-        run: ls -latr .storybook-build/
+        run: cp -r .storybook-build storybook-build && ls -R storybook-build
 
       # Upload Storybook build
       - uses: actions/upload-artifact@v4
         if: success()
         with:
           name: storybook-build
-          path: .storybook-build/
+          path: storybook-build/
           retention-days: 2
