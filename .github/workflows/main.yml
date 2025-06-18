@@ -149,14 +149,24 @@ jobs:
       image-tag: ${{ needs.config.outputs.base-tag }}
       a11y: ${{ matrix.a11y || false }}
 
+  storybook:
+    name: "Storybook"
+    if: ${{ needs.config.outputs.acceptance == 'true' && (always() && !contains(needs.*.result, 'failure'))}}
+    uses: ./.github/workflows/frontend-storybook.yml
+    needs:
+      - config
+      - backend-build
+      - frontend-build
+
   visual-acceptance:
-    name: "Visual Acceptance"
+    name: "Visual Acceptance: ${{ matrix.name }}"
     if: ${{ needs.config.outputs.acceptance == 'true' && (always() && !contains(needs.*.result, 'failure'))}}
     uses: ./.github/workflows/frontend-visual-acceptance.yml
     needs:
       - config
       - backend-build
       - frontend-build
+      - storybook
     strategy:
       fail-fast: false
       matrix:
@@ -178,19 +188,19 @@ jobs:
           - name: "Typography"
             short-name: typography
           - name: "Storybook - Card"
-            short-name: storybook/card
+            short-name: card
             storybook: true
           - name: "Storybook - Grid"
-            short-name: storybook/grid
+            short-name: grid
             storybook: true
           - name: "Storybook - Listing"
-            short-name: storybook/listing
+            short-name: listing
             storybook: true
           - name: "Storybook - Teaser"
-            short-name: storybook/teaser
+            short-name: teaser
             storybook: true
           - name: "Storybook - Summary"
-            short-name: storybook/summary
+            short-name: summary
             storybook: true
 
     with:

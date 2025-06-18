@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-describe('Blocks Grid Teaser', () => {
+describe('Storybook - Block Grid Teaser -', () => {
   const storiesUnderTest = [
     { name: 'One Teaser', id: 'blocks-grid-teaser--one' },
     { name: 'Two Teaser', id: 'blocks-grid-teaser--two' },
@@ -21,7 +21,7 @@ describe('Blocks Grid Teaser', () => {
   });
 });
 
-describe('Blocks Grid Teaser Person', () => {
+describe('Storybook - Blocks Grid Teaser Person -', () => {
   const storiesUnderTest = [
     { name: 'One Person Teaser', id: 'blocks-grid-teaser--one-person' },
     { name: 'Two Person Teaser', id: 'blocks-grid-teaser--two-person' },

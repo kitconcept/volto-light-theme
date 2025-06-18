@@ -120,7 +120,7 @@ storybook-start: ## Start Storybook server on port 6006
 storybook-build: ## Build Storybook
 	@echo "$(GREEN)==> Build Storybook$(RESET)"
 	mkdir -p $(CURRENT_DIR)/.storybook-build
-	pnpm run build-storybook -o $(CURRENT_DIR)/.storybook-build
+	pnpm run storybook-build -o $(CURRENT_DIR)/.storybook-build
 
 ## Acceptance
 .PHONY: acceptance-frontend-dev-start
