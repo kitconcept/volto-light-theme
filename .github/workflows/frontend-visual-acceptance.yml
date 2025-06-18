@@ -32,7 +32,8 @@ jobs:
 
   visual-acceptance-tests:
     name: ${{ inputs.name }}
-    runs-on: ${{ inputs.storybook && (inputs.storybook == true || inputs.storybook == 'true') && 'macos-latest' || 'ubuntu-latest' }}
+    runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
@@ -42,6 +43,13 @@ jobs:
           docker pull ${{ inputs.image-name-prefix }}-backend:${{ inputs.image-tag }}
           docker pull ${{ inputs.image-name-prefix }}-frontend:${{ inputs.image-tag }}
           docker image ls -a
+
+      - uses: actions/download-artifact@v4
+        if: ${{ inputs.storybook == true || inputs.storybook == 'true' }}
+        with:
+          name: storybook-build
+      - name: Display structure of downloaded files
+        run: ls -R
 
       - name: Use Node.js ${{ inputs.node-version }}
         uses: actions/setup-node@v4
@@ -117,8 +125,8 @@ jobs:
         name: Start Servers - Storybook
         with:
           run: |
-            python3 -m http.server 3000 &
-            make -C "./frontend/" storybook-start &
+            (cd storybook-static && python3 -m http.server 3000 &)
+            # make -C "./frontend/" storybook-start &
           wait-on: |
             http://localhost:6006
           tail: true # true = stderr,stdout
