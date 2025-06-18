@@ -49,5 +49,5 @@ jobs:
         if: success()
         with:
           name: storybook-build
-          path: storybook-static
+          path: .storybook-build
           retention-days: 2
