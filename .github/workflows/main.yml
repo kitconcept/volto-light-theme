@@ -164,6 +164,7 @@ jobs:
       - config
       - backend-build
       - frontend-build
+      - storybook
     strategy:
       fail-fast: false
       matrix:
