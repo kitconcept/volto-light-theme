@@ -150,14 +150,14 @@ jobs:
       a11y: ${{ matrix.a11y || false }}
 
   storybook:
-    name: "Storybook build"
+    name: "Storybook"
     if: ${{ needs.config.outputs.acceptance == 'true' && (always() && !contains(needs.*.result, 'failure'))}}
     uses: ./.github/workflows/frontend-storybook.yml
     needs:
       - config
 
   visual-acceptance:
-    name: "Visual Acceptance"
+    name: "Visual Acceptance: ${{ matrix.name }}"
     if: ${{ needs.config.outputs.acceptance == 'true' && (always() && !contains(needs.*.result, 'failure'))}}
     uses: ./.github/workflows/frontend-visual-acceptance.yml
     needs:

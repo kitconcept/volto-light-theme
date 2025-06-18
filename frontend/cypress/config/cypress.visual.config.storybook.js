@@ -30,7 +30,7 @@ module.exports = defineConfig(
       },
       specPattern: 'cypress/tests/visual/storybook/**/*.cy.{js,jsx,ts,tsx}',
       // a11 tests require a site root without /en
-      baseUrl: 'http://localhost:3000/',
+      baseUrl: 'http://localhost:6006/',
     }),
     env: {
       API: 'plone',
