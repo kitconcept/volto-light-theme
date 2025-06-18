@@ -1,6 +1,52 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 7.0.0a12 (2025-06-18)
+
+### Backend
+
+
+#### New features:
+
+- Reintroduce an improved `Anontools` using `portal_actions`. @sneridagh [#581](https://github.com/kitconcept/volto-light-theme/issues/581)
+
+
+
+### Frontend
+
+#### Feature
+
+- Reintroduce an improved `Anontools` using `portal_actions`. @sneridagh [#581](https://github.com/kitconcept/volto-light-theme/pull/581)
+
+#### Bugfix
+
+- Fix sticky menu precedence in z-index with the fat menu. @sneridagh [#582](https://github.com/kitconcept/volto-light-theme/pull/582)
+- Fixed listing in grids variations to match the standalone ones (except Grid). @sneridagh [#582](https://github.com/kitconcept/volto-light-theme/pull/582)
+- Fixed Person CSS in Search block. @sneridagh [#584](https://github.com/kitconcept/volto-light-theme/pull/584)
+
+
+
+### Project
+
+
+#### Bugfix
+
+- Improved Visual Regression tests. @sneridagh
+  Split the Storybook ones into their own config.
+  Improve naming for GHA UI. [#584](https://github.com/kitconcept/volto-light-theme/pull/584)
+
+
+#### Internal
+
+- Better Storybook support, unique reusable build as an artifact. @sneridagh 
+
+
+#### Documentation
+
+- Reintroduce an improved `Anontools` using `portal_actions`. @sneridagh [#581](https://github.com/kitconcept/volto-light-theme/pull/581)
+
+
+
 ## 7.0.0a11 (2025-06-12)
 
 ### Backend

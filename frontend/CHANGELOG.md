@@ -8,6 +8,18 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0-alpha.12 (2025-06-18)
+
+### Feature
+
+- Reintroduce an improved `Anontools` using `portal_actions`. @sneridagh [#581](https://github.com/kitconcept/volto-light-theme/pull/581)
+
+### Bugfix
+
+- Fix sticky menu precedence in z-index with the fat menu. @sneridagh [#582](https://github.com/kitconcept/volto-light-theme/pull/582)
+- Fixed listing in grids variations to match the standalone ones (except Grid). @sneridagh [#582](https://github.com/kitconcept/volto-light-theme/pull/582)
+- Fixed Person CSS in Search block. @sneridagh [#584](https://github.com/kitconcept/volto-light-theme/pull/584)
+
 ## 7.0.0-alpha.11 (2025-06-12)
 
 ### Bugfix
