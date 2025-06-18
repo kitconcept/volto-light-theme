@@ -32,11 +32,12 @@ jobs:
 
   visual-acceptance-tests:
     name: ${{ inputs.name }}
-    runs-on: macos-latest
+    runs-on: ${{ inputs.storybook && (inputs.storybook == true || inputs.storybook == 'true') && 'macos-latest' || 'ubuntu-latest' }}
     steps:
       - uses: actions/checkout@v4
 
       - name: Load images
+        if: ${{ inputs.storybook == false || inputs.storybook == 'false' || inputs.storybook == null }}
         run: |
           docker pull ${{ inputs.image-name-prefix }}-backend:${{ inputs.image-tag }}
           docker pull ${{ inputs.image-name-prefix }}-frontend:${{ inputs.image-tag }}
