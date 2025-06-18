@@ -1,6 +1,30 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 7.0.0a13 (2025-06-18)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Fixed default `selectedItemAttrs` for Teaser to include Person specific attributes. @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 7.0.0a12 (2025-06-18)
 
 ### Backend

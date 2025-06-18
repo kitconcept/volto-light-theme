@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0-alpha.13 (2025-06-18)
+
+### Bugfix
+
+- Fixed default `selectedItemAttrs` for Teaser to include Person specific attributes. @sneridagh 
+
 ## 7.0.0-alpha.12 (2025-06-18)
 
 ### Feature
