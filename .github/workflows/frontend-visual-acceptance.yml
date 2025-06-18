@@ -50,9 +50,6 @@ jobs:
           name: storybook-build
           path: frontend/storybook-build
 
-      - name: Display structure of downloaded files
-        run: ls -latr
-
       - name: Use Node.js ${{ inputs.node-version }}
         uses: actions/setup-node@v4
         with:

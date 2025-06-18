@@ -155,6 +155,8 @@ jobs:
     uses: ./.github/workflows/frontend-storybook.yml
     needs:
       - config
+      - backend-build
+      - frontend-build
 
   visual-acceptance:
     name: "Visual Acceptance: ${{ matrix.name }}"
