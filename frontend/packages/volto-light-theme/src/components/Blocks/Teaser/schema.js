@@ -7,6 +7,7 @@ export const teaserSchemaEnhancer = ({ schema, formData, intl }) => {
   schema.properties.href.selectedItemAttrs.push('contact_email');
   schema.properties.href.selectedItemAttrs.push('contact_phone');
   schema.properties.href.selectedItemAttrs.push('contact_room');
+
   return schema;
 };
 
