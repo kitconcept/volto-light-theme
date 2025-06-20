@@ -68,7 +68,7 @@
     display: flex;
     align-items: center;
 
-    @media screen and (max-width: '768px') {
+    @container (max-width: #{$largest-mobile-screen}) {
       width: 100%;
     }
 
@@ -91,7 +91,7 @@
       display: flex;
       align-items: center;
 
-      @media screen and (max-width: '768px') {
+      @container (max-width: #{$largest-mobile-screen}) {
         flex-grow: 1;
       }
 
@@ -104,7 +104,7 @@
           fill: black !important;
         }
 
-        @media screen and (max-width: '768px') {
+        @container (max-width: #{$largest-mobile-screen}) {
           .react-select__control {
             width: 100%;
           }
@@ -167,7 +167,7 @@
     gap: 10px;
     justify-content: space-between;
     align-items: center;
-    @media screen and (max-width: '768px') {
+    @container (max-width: #{$largest-mobile-screen}) {
       flex-direction: column;
       align-items: stretch;
       gap: 20px;
@@ -177,7 +177,7 @@
       height: 64px;
       .react-aria-Group {
         height: 100%;
-        @media screen and (max-width: '768px') {
+        @container (max-width: #{$largest-mobile-screen}) {
           width: 100%;
         }
       }
@@ -238,7 +238,7 @@
   .search-filters-sort {
     display: flex;
     align-items: center;
-    @media screen and (max-width: '768px') {
+    @container (max-width: #{$largest-mobile-screen}) {
       flex-direction: column;
       align-items: flex-start;
     }
@@ -247,7 +247,7 @@
   .search-sort-wrapper {
     display: flex;
     align-items: center;
-    @media screen and (max-width: '768px') {
+    @container (max-width: #{$largest-mobile-screen}) {
       width: 100%;
     }
   }
@@ -257,7 +257,7 @@
     margin: 0;
     color: $black;
     font-size: 20px;
-    @media screen and (max-width: '768px') {
+    @container (max-width: #{$largest-mobile-screen}) {
       padding: 0px;
     }
 
@@ -291,6 +291,7 @@
   }
 }
 
+/* Because we override the display of all the header */
 .react-aria-RangeCalendar {
   header {
     display: flex;
