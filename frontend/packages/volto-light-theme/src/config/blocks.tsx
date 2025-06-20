@@ -41,6 +41,11 @@ import { sliderBlockSchemaEnhancer } from '../components/Blocks/Slider/schema';
 import EventMetadataView from '../components/Blocks/EventMetadata/View';
 import isEmpty from 'lodash/isEmpty';
 
+import SearchBlockViewEvent from '../components/Blocks/SearchCustomized/Search/SearchBlockView';
+import SearchBlockEditEvent from '../components/Blocks/SearchCustomized/Search/SearchBlockEdit';
+import SearchBlockSchemaEvent from '../components/Blocks/SearchCustomized/Search/schema';
+import TopSideFacetEvent from '../components/Blocks/SearchCustomized/Search/layout/TopSideFacets';
+
 declare module '@plone/types' {
   export interface BlocksConfigData {
     introduction: BlockConfigBase;
@@ -178,6 +183,26 @@ export default function install(config: ConfigType) {
 
   // Default Blocks configuration
 
+  config.blocks.blocksConfig.eventsearch = {
+    id: 'eventsearch',
+    title: 'Eventsearch',
+    icon: descriptionSVG,
+    group: 'common',
+    view: SearchBlockViewEvent,
+    edit: SearchBlockEditEvent,
+    blockSchema: SearchBlockSchemaEvent,
+    restricted: false,
+    mostUsed: false,
+    sidebarTab: 1,
+    variations: [
+      {
+        id: 'facetsTopSide',
+        title: 'Facets on top',
+        view: TopSideFacetEvent,
+        isDefault: true,
+      },
+    ],
+  };
   config.blocks.blocksConfig.accordion = {
     ...config.blocks.blocksConfig.accordion,
     mostUsed: true,
