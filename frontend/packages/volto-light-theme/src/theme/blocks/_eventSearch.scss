@@ -6,8 +6,228 @@
   grid-auto-rows: auto;
   gap: 20px;
 
-  .search-react-select-container {
-    flex-grow: 1;
+  .first-row {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    @container (max-width: #{$largest-mobile-screen}) {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 20px;
+    }
+
+    .react-aria-DateRangePicker {
+      height: 64px;
+      .react-aria-Group {
+        height: 100%;
+        @container (max-width: #{$largest-mobile-screen}) {
+          width: 100%;
+        }
+      }
+
+      .react-aria-DateInput[slot='start'] {
+        margin-right: 10px;
+        margin-left: 10px;
+      }
+      .react-aria-DateInput[slot='end'] {
+        margin-left: 10px;
+        margin-right: $spacing-small;
+      }
+
+      .react-aria-Button {
+        background: var(--button-background);
+        color: var(--text-color);
+        box-shadow: unset;
+        padding-right: $spacing-medium;
+        cursor: pointer;
+
+        .icon {
+          min-width: 30px;
+        }
+      }
+    }
+
+    .search-details {
+      padding: 0 $spacing-small;
+      margin: 0;
+      color: $black;
+      font-size: $spacing-small;
+      @container (max-width: #{$largest-mobile-screen}) {
+        padding: 0px;
+      }
+
+      .number {
+        font-size: 30px;
+      }
+
+      .label {
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
+
+    .search-filters-sort {
+      display: flex;
+      align-items: center;
+      @container (max-width: #{$largest-mobile-screen}) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .sort-on-wrapper {
+        display: flex;
+        align-items: center;
+
+        @container (max-width: #{$largest-mobile-screen}) {
+          width: 100%;
+        }
+
+        .search-sort-wrapper {
+          margin: 7px 0 0 0;
+          display: flex;
+          align-items: center;
+          flex-grow: 1;
+
+          & > * {
+            height: 50px;
+            border-width: 1px 1px 1px 0;
+            border-style: solid;
+            border-color: $black;
+            border-radius: 0;
+            margin: 0;
+          }
+
+          & > .search-sort-on {
+            border-left-width: 1px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+
+            @container (max-width: #{$largest-mobile-screen}) {
+              flex-grow: 1;
+            }
+
+            .sort-label {
+              display: none;
+            }
+
+            .sorted-label {
+              padding: 2px 8px;
+            }
+
+            #select-search-sort-on {
+              flex-grow: 1;
+
+              .react-select__control {
+                border-color: $black;
+              }
+
+              .icon {
+                fill: black !important;
+              }
+
+              @container (max-width: #{$largest-mobile-screen}) {
+                .react-select__control {
+                  width: 100%;
+                }
+              }
+            }
+
+            /* important is necessary to override the element.styles for icon */
+            svg {
+              width: 36px !important;
+              height: 36px !important;
+              margin-right: 7px;
+            }
+
+            div {
+              border: 0;
+            }
+
+            .react-select__menu {
+              border: solid 1px $black;
+              margin-top: 3px;
+            }
+
+            .react-select__option:not(.react-select__option--is-selected) {
+              svg {
+                visibility: hidden;
+              }
+            }
+
+            .react-select__option--is-selected {
+              svg {
+                fill: $black;
+              }
+            }
+          }
+        }
+
+        button {
+          width: 50px;
+          text-align: center;
+          background: transparent;
+
+          &.active {
+            background: black !important;
+
+            .icon {
+              fill: white !important;
+            }
+          }
+
+          svg {
+            height: 30px !important;
+          }
+        }
+      }
+    }
+  }
+
+  .search-wrapper {
+    display: flex;
+    margin-top: $spacing-small;
+    .search-input {
+      flex-grow: 1;
+      position: relative;
+      .react-aria-TextField {
+        width: 100%;
+      }
+      input {
+        height: 64px;
+        border-radius: 0px;
+        padding-right: 48px;
+        padding-left: 10px;
+      }
+    }
+
+    .search-input-actions {
+      top: 0;
+      position: absolute;
+      right: 10px;
+
+      button {
+        background: transparent;
+        border: none;
+        height: 64px;
+      }
+    }
+  }
+
+  .facets {
+    .icon {
+      fill: $black !important; // Because it is not using currentColor
+    }
+
+    .react-select__clear-indicator {
+      color: $black;
+    }
+  }
+
+  .template-container {
+    margin-top: 60px;
+    position: relative;
   }
 
   // Pagination
@@ -63,241 +283,16 @@
       text-align: center;
     }
   }
-
-  .sort-on-wrapper {
-    display: flex;
-    align-items: center;
-
-    @container (max-width: #{$largest-mobile-screen}) {
-      width: 100%;
-    }
-
-    .search-sort-wrapper {
-      margin: 7px 0 0 0;
-    }
-
-    .search-sort-wrapper > * {
-      height: 50px;
-      border-width: 1px 1px 1px 0;
-      border-style: solid;
-      border-color: $black;
-      border-radius: 0;
-      margin: 0;
-    }
-
-    .search-sort-wrapper > .search-sort-on {
-      border-left-width: 1px;
-      font-size: 14px;
-      display: flex;
-      align-items: center;
-
-      @container (max-width: #{$largest-mobile-screen}) {
-        flex-grow: 1;
-      }
-
-      .sorted-label {
-        padding: 2px 8px;
-      }
-
-      #select-search-sort-on {
-        .icon {
-          fill: black !important;
-        }
-
-        @container (max-width: #{$largest-mobile-screen}) {
-          .react-select__control {
-            width: 100%;
-          }
-        }
-      }
-
-      svg {
-        width: 36px !important;
-        height: 36px !important;
-        margin-right: 7px;
-      }
-
-      div {
-        border: 0;
-      }
-
-      .react-select__menu {
-        border: solid 1px $black;
-        margin-top: 3px;
-      }
-
-      .react-select__option:not(.react-select__option--is-selected) {
-        svg {
-          visibility: hidden;
-        }
-      }
-
-      .react-select__option--is-selected {
-        svg {
-          fill: $black;
-        }
-      }
-    }
-
-    button {
-      width: 50px;
-      text-align: center;
-      background: transparent;
-
-      &.active {
-        background: black !important;
-
-        .icon {
-          fill: white !important;
-        }
-      }
-
-      svg {
-        height: 30px !important;
-      }
-    }
-
-    .sort-label {
-      display: none;
-    }
-  }
-
-  .first-row {
-    display: flex;
-    gap: 10px;
-    justify-content: space-between;
-    align-items: center;
-    @container (max-width: #{$largest-mobile-screen}) {
-      flex-direction: column;
-      align-items: stretch;
-      gap: 20px;
-    }
-
-    .react-aria-DateRangePicker {
-      height: 64px;
-      .react-aria-Group {
-        height: 100%;
-        @container (max-width: #{$largest-mobile-screen}) {
-          width: 100%;
-        }
-      }
-
-      .react-aria-DateInput[slot='start'] {
-        margin-right: 10px;
-        margin-left: 10px;
-      }
-      .react-aria-DateInput[slot='end'] {
-        margin-left: 10px;
-        margin-right: 20px;
-      }
-
-      .react-aria-Button {
-        background: var(--button-background);
-        color: var(--text-color);
-        box-shadow: unset;
-        padding-right: 40px;
-        cursor: pointer;
-
-        .icon {
-          min-width: 30px;
-        }
-      }
-    }
-  }
-
-  .search-wrapper {
-    display: flex;
-    margin-top: 20px;
-    .search-input {
-      flex-grow: 1;
-      position: relative;
-      .react-aria-TextField {
-        width: 100%;
-      }
-      input {
-        height: 64px;
-        border-radius: 0px;
-        padding-right: 48px;
-        padding-left: 10px;
-      }
-    }
-
-    .search-input-actions {
-      top: 0;
-      position: absolute;
-      right: 10px;
-
-      button {
-        background: transparent;
-        border: none;
-        height: 65px;
-      }
-    }
-  }
-
-  .search-filters-sort {
-    display: flex;
-    align-items: center;
-    @container (max-width: #{$largest-mobile-screen}) {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  }
-
-  .search-sort-wrapper {
-    display: flex;
-    align-items: center;
-    @container (max-width: #{$largest-mobile-screen}) {
-      width: 100%;
-    }
-  }
-
-  .search-details {
-    padding: 0 20px;
-    margin: 0;
-    color: $black;
-    font-size: 20px;
-    @container (max-width: #{$largest-mobile-screen}) {
-      padding: 0px;
-    }
-
-    .number {
-      font-size: 30px;
-    }
-
-    .label {
-      font-size: 14px;
-      font-weight: 400;
-    }
-  }
-
-  .react-select__clear-indicator {
-    color: $black;
-  }
-
-  .react-select__control {
-    border-color: $black;
-  }
-
-  .facets {
-    .icon {
-      fill: $black !important; // Because it is not using currentColor
-    }
-  }
-
-  .template-container {
-    margin-top: 60px;
-    position: relative;
-  }
 }
 
-/* Because we override the display of all the header */
+/* Because we override the display of all the header.
+This is css code of popup of calendar */
 .react-aria-RangeCalendar {
   header {
     display: flex;
   }
 
-  //ask victor about this. Font family causing unwanted problems.
+  //ask victor about this. Font family causing unwanted problems in rendering of icon.
   .react-aria-Button {
     font-family: unset;
   }
