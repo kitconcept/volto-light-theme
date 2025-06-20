@@ -12,14 +12,14 @@ import {
   ViewSwitcher,
 } from '../components';
 import SearchDetails from '../../../Search/components/SearchDetails';
-import cx from 'classnames';
+// import cx from 'classnames';
 
-const messages = defineMessages({
-  searchButtonText: {
-    id: 'Search',
-    defaultMessage: 'Search',
-  },
-});
+// const messages = defineMessages({
+//   searchButtonText: {
+//     id: 'Search',
+//     defaultMessage: 'Search',
+//   },
+// });
 
 function getDateRangeIOV(startDate, endDate) {
   if (startDate && endDate && startDate !== endDate) {
@@ -96,16 +96,11 @@ const TopSideFacets = (props) => {
   } = props;
   const { showSearchButton, showSortOnEvent } = data;
   const isLive = !showSearchButton;
-  const intl = useIntl();
-  console.log(sortOn, 'this is ssorton');
-
   const onhandleDateRangeChange = (value) => {
-    console.log('handleDateRangeChange', value);
     const start = toJSDate(value.start);
     const end = toJSDate(value.end);
     const dateRangeQuery = getDateRangeIOV(start, end);
     handleDateRangeChange(dateRangeQuery);
-    console.log('dateRangeQuery', dateRangeQuery);
   };
 
   const FacetWrapper = ({ children }) => {

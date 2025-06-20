@@ -277,30 +277,17 @@ const withSearch = (options) => (WrappedComponent) => {
 
     // TODO: refactor, should use only useLocationStateManager()!!!
     const [searchText, setSearchText] = React.useState(urlSearchText);
-    const [dateRange, setDateRange] = React.useState({});
 
     const handleDateRangeChange = (query) => {
-      // const query = [
-      //   {
-      //     i: 'start',
-      //     o: 'plone.app.querystring.operation.date.largerThan',
-      //     v: '2025-06-10',
-      //   },
-      // ];
-
       setSearchData((prevSearchData) => {
-        const updatedQuery = [
-          ...prevSearchData.query,
-          ...query, // assuming `query` contains your `start` and `end` filters
-        ];
-
+        const filteredQuery = prevSearchData.query?.filter(
+          (item) => item.i !== 'start' && item.i !== 'end',
+        );
+        const updatedQuery = [...filteredQuery, ...query];
         const newSearchData = {
           ...prevSearchData,
           query: updatedQuery,
         };
-
-        console.log('Merged query:', newSearchData);
-
         return newSearchData;
       });
     };
