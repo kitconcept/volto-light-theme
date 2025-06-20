@@ -19,35 +19,36 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const PersonListing: Story = {
+export const Person: Story = {
   render: (args) => (
-    <Wrapper>
-      <div style={{ width: 'var(--default-container-width)' }}>
-        <BlockWrapper {...args}>
-          <div className="block listing">
-            <ListingBody {...args} />
-          </div>
-        </BlockWrapper>
+    <BlockWrapper {...args}>
+      <div className="block listing">
+        <ListingBody {...args} />
       </div>
-    </Wrapper>
+    </BlockWrapper>
   ),
   args: {
     data: listingBlockPerson,
     listingItems: listingBlockPerson.items,
   },
+  decorators: [
+    (Story) => (
+      <Wrapper>
+        <div style={{ width: 'var(--default-container-width)' }}>
+          <Story />
+        </div>
+      </Wrapper>
+    ),
+  ],
 };
 
-export const PersonListingSummary: Story = {
+export const PersonSummary: Story = {
   render: (args) => (
-    <Wrapper>
-      <div style={{ width: 'var(--default-container-width)' }}>
-        <BlockWrapper {...args}>
-          <div className="block listing summary">
-            <ListingBody {...args} />
-          </div>
-        </BlockWrapper>
+    <BlockWrapper {...args}>
+      <div className="block listing summary">
+        <ListingBody {...args} />
       </div>
-    </Wrapper>
+    </BlockWrapper>
   ),
   args: {
     data: {
@@ -60,4 +61,13 @@ export const PersonListingSummary: Story = {
       title: 'List with images',
     },
   },
+  decorators: [
+    (Story) => (
+      <Wrapper>
+        <div style={{ width: 'var(--default-container-width)' }}>
+          <Story />
+        </div>
+      </Wrapper>
+    ),
+  ],
 };

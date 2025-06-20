@@ -1,12 +1,30 @@
 .card {
+  // Person teaser
   .person-teaser.has--align--left:not(.contained) &,
   .has--align--left:not(.contained) .person-teaser &,
+  .has--align--center:not(.contained) .person-teaser &,
+  .person-teaser.has--align--center:not(.contained) &,
+  .has--align--right:not(.contained) .person-teaser &,
   .person-teaser.has--align--right:not(.contained) & {
     .card-inner {
       .image-wrapper {
-        flex: 0 1 var(--card-listing-image-size, 220px);
+        --person-image-max-width: 220px;
+        --person-image-max-height: 285px;
+        overflow: hidden;
+        aspect-ratio: 4 / 5;
+        block-size: auto; // derived from `aspect-ratio`
+
+        /* We allow the browser to adjust the real size within the maximums without
+         distorting the aspect ratio */
+        inline-size: 100%;
+        max-block-size: var(--person-image-max-height);
+        max-inline-size: var(--person-image-max-width);
+
         img {
-          aspect-ratio: initial !important;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: top center;
         }
       }
     }
@@ -28,21 +46,65 @@
     }
   }
 
-  .contained.person-teaser & {
+  // Teaser (standalone) top
+  .has--align--center:not(.contained) .person-teaser &,
+  .person-teaser.has--align--center:not(.contained) & {
+    width: calc(var(--default-container-width) / 2);
+
     .image-wrapper {
-      display: flex;
-      height: 255px;
+      margin: 0 auto;
+    }
+    .card-summary {
+      padding-right: 0px;
+      padding-left: 0px;
+      text-align: center;
+    }
+
+    .summary-extra-info,
+    .summary-room-phone {
       justify-content: center;
-      aspect-ratio: var(--image-aspect-ratio, 1.7777777778);
+    }
+  }
+
+  // Teaser in Grid
+  .contained.person-teaser & {
+    // Exploration for rounded images in person-teasers
+    // --person-image-height: auto;
+    // --person-image-border-radius: 10000px;
+    // --person-image-aspect-ratio: 1/1;
+    .image-wrapper {
+      --person-image-max-width: 220px;
+      --person-image-max-height: 285px;
+      overflow: hidden;
+      margin: 0 auto;
+      aspect-ratio: 4 / 5;
+      block-size: auto; // derived from `aspect-ratio`
+
+      /* We allow the browser to adjust the real size within the maximums without
+       distorting the aspect ratio */
+      inline-size: 100%;
+      max-block-size: var(--person-image-max-height);
+      max-inline-size: var(--person-image-max-width);
 
       img {
-        max-width: 198px; // 255x198px Roughly 3:4 (enough to cover the 16:9 portrait height)
+        width: 100%;
         height: 100%;
-        flex: 0 1 auto;
-        aspect-ratio: initial !important;
         object-fit: cover;
         object-position: top center;
       }
+    }
+  }
+
+  .two .contained.person-teaser & {
+    .image-wrapper {
+      --person-image-max-width: 175px;
+    }
+  }
+
+  .three .contained.person-teaser &,
+  .four .contained.person-teaser & {
+    .image-wrapper {
+      --person-image-max-width: 138px;
     }
   }
 }
@@ -73,6 +135,7 @@
 }
 
 // contained person-teasers do not have background color, so we need to set it to --theme-color
+body .block.gridBlock .block.teaser.contained.person-teaser,
 body .block.gridBlock .block.teaser.contained.person-teaser .card-inner {
   background: var(--theme-color);
 }
@@ -103,6 +166,13 @@ body .block.gridBlock .block.teaser.contained.person-teaser .card-inner {
   gap: $spacing-small;
 }
 
+// One person teaser in Grid, edit mode
+.block.gridBlock .one .cell-wrapper:has(.person-teaser) {
+  max-width: var(--default-container-width) / 2;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 // Listings (no card)
 .block.listing {
   .listing-item.person-listing {
@@ -120,4 +190,14 @@ body .block.gridBlock .block.teaser.contained.person-teaser .card-inner {
       aspect-ratio: initial !important;
     }
   }
+}
+
+// Person in search block
+.block.search.summary .listing-item.person-listing .listing-body {
+  align-self: center;
+}
+
+.block.search.summary .listing-item.person-listing img,
+.block-editor-search.summary .listing-item.person-listing img {
+  aspect-ratio: initial !important;
 }

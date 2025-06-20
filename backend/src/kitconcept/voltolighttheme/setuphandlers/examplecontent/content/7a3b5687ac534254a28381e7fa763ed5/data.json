@@ -1,0 +1,838 @@
+{
+  "@id": "/block/grid-block/teaser/grid-teaser-news-item",
+  "@type": "Document",
+  "UID": "7a3b5687ac534254a28381e7fa763ed5",
+  "allow_discussion": null,
+  "blocks": {
+    "0a53e3a4-2053-4f2c-9c30-2a23a209a920": {
+      "@type": "gridBlock",
+      "blocks": {
+        "ff99d9d2-8dd8-4741-a9b1-c0452fcdd98b": {
+          "@type": "teaser",
+          "description": "The News Item content type can be used to display News content on the website.",
+          "head_title": "Head title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/8cc3e9af77c0452aa2278b0bfdcf9c85",
+              "@type": "News Item",
+              "Description": "The News Item content type can be used to display News content on the website.",
+              "Title": "News Item",
+              "effective": "2023-01-01T10:42:00+00:00",
+              "end": null,
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": "Head title",
+              "image_field": "",
+              "start": null,
+              "title": "News Item"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "News Item"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "ff99d9d2-8dd8-4741-a9b1-c0452fcdd98b"
+        ]
+      },
+      "headline": "Block Title",
+      "styles": {},
+      "theme": "grey"
+    },
+    "69a34758-6822-483f-93cb-80bf6ef99231": {
+      "@type": "gridBlock",
+      "blocks": {
+        "2b641223-7351-4226-b755-70fdf7c7e10a": {
+          "@type": "teaser",
+          "description": "The News Item content type can be used to display News content on the website.",
+          "head_title": "Head title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/8cc3e9af77c0452aa2278b0bfdcf9c85",
+              "@type": "News Item",
+              "Description": "The News Item content type can be used to display News content on the website.",
+              "Title": "News Item",
+              "effective": "2023-01-01T10:42:00+00:00",
+              "end": null,
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": "Head title",
+              "image_field": "",
+              "start": null,
+              "title": "News Item"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "News Item"
+        },
+        "ac64cc39-29d9-4e21-aacd-d6c6d77b3020": {
+          "@type": "teaser",
+          "description": "The News Item content type can be used to display News content on the website.",
+          "head_title": "Head title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/8cc3e9af77c0452aa2278b0bfdcf9c85",
+              "@type": "News Item",
+              "Description": "The News Item content type can be used to display News content on the website.",
+              "Title": "News Item",
+              "effective": "2023-01-01T10:42:00+00:00",
+              "end": null,
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": "Head title",
+              "image_field": "",
+              "start": null,
+              "title": "News Item"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "News Item"
+        },
+        "f0af0fba-af59-4dc4-b6b1-cd3f69caac86": {
+          "@type": "teaser",
+          "description": "The News Item content type can be used to display News content on the website.",
+          "head_title": "Head title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/8cc3e9af77c0452aa2278b0bfdcf9c85",
+              "@type": "News Item",
+              "Description": "The News Item content type can be used to display News content on the website.",
+              "Title": "News Item",
+              "effective": "2023-01-01T10:42:00+00:00",
+              "end": null,
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": "Head title",
+              "image_field": "",
+              "start": null,
+              "title": "News Item"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "News Item"
+        },
+        "fa013589-ac0b-463d-b240-f18ccc590ff9": {
+          "@type": "teaser",
+          "description": "The News Item content type can be used to display News content on the website.",
+          "head_title": "Head title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/8cc3e9af77c0452aa2278b0bfdcf9c85",
+              "@type": "News Item",
+              "Description": "The News Item content type can be used to display News content on the website.",
+              "Title": "News Item",
+              "effective": "2023-01-01T10:42:00+00:00",
+              "end": null,
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": "Head title",
+              "image_field": "",
+              "start": null,
+              "title": "News Item"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "News Item"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "ac64cc39-29d9-4e21-aacd-d6c6d77b3020",
+          "f0af0fba-af59-4dc4-b6b1-cd3f69caac86",
+          "2b641223-7351-4226-b755-70fdf7c7e10a",
+          "fa013589-ac0b-463d-b240-f18ccc590ff9"
+        ]
+      },
+      "styles": {},
+      "theme": "grey"
+    },
+    "859165f5-73a7-4cc2-a322-f5ffcc92c04f": {
+      "@type": "gridBlock",
+      "blocks": {
+        "3c0ef909-51ba-4604-a878-91f2db43f0bf": {
+          "@type": "teaser",
+          "description": "The News Item content type can be used to display News content on the website.",
+          "head_title": "Head title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/8cc3e9af77c0452aa2278b0bfdcf9c85",
+              "@type": "News Item",
+              "Description": "The News Item content type can be used to display News content on the website.",
+              "Title": "News Item",
+              "effective": "2023-01-01T10:42:00+00:00",
+              "end": null,
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": "Head title",
+              "image_field": "",
+              "start": null,
+              "title": "News Item"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "News Item"
+        },
+        "4592b66e-777f-4651-83dc-0ff3903ace6d": {
+          "@type": "teaser",
+          "description": "The News Item content type can be used to display News content on the website.",
+          "head_title": "Head title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/8cc3e9af77c0452aa2278b0bfdcf9c85",
+              "@type": "News Item",
+              "Description": "The News Item content type can be used to display News content on the website.",
+              "Title": "News Item",
+              "effective": "2023-01-01T10:42:00+00:00",
+              "end": null,
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": "Head title",
+              "image_field": "",
+              "start": null,
+              "title": "News Item"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "News Item"
+        },
+        "630e4b00-026f-43fc-830b-ad2b8b72fc41": {
+          "@type": "teaser",
+          "description": "The News Item content type can be used to display News content on the website.",
+          "head_title": "Head title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/8cc3e9af77c0452aa2278b0bfdcf9c85",
+              "@type": "News Item",
+              "Description": "The News Item content type can be used to display News content on the website.",
+              "Title": "News Item",
+              "effective": "2023-01-01T10:42:00+00:00",
+              "end": null,
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": "Head title",
+              "image_field": "",
+              "start": null,
+              "title": "News Item"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "News Item"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "4592b66e-777f-4651-83dc-0ff3903ace6d",
+          "3c0ef909-51ba-4604-a878-91f2db43f0bf",
+          "630e4b00-026f-43fc-830b-ad2b8b72fc41"
+        ]
+      },
+      "styles": {},
+      "theme": "grey"
+    },
+    "a45d6d42-3f4a-4857-bc28-d57975accb37": {
+      "@type": "gridBlock",
+      "blocks": {
+        "5c72db03-cc0d-454e-be9c-2b87b361445a": {
+          "@type": "teaser",
+          "description": "The News Item content type can be used to display News content on the website.",
+          "head_title": "Head title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/8cc3e9af77c0452aa2278b0bfdcf9c85",
+              "@type": "News Item",
+              "Description": "The News Item content type can be used to display News content on the website.",
+              "Title": "News Item",
+              "effective": "2023-01-01T10:42:00+00:00",
+              "end": null,
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": "Head title",
+              "image_field": "",
+              "start": null,
+              "title": "News Item"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "News Item"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "5c72db03-cc0d-454e-be9c-2b87b361445a"
+        ]
+      },
+      "headline": "Block Title",
+      "styles": {},
+      "theme": "default"
+    },
+    "a806539c-69de-432c-ab27-cdae6717d938": {
+      "@type": "gridBlock",
+      "blocks": {
+        "6b337104-a462-419e-bc4a-4d1b1d8a42ba": {
+          "@type": "teaser",
+          "description": "The News Item content type can be used to display News content on the website.",
+          "head_title": "Head title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/8cc3e9af77c0452aa2278b0bfdcf9c85",
+              "@type": "News Item",
+              "Description": "The News Item content type can be used to display News content on the website.",
+              "Title": "News Item",
+              "effective": "2023-01-01T10:42:00+00:00",
+              "end": null,
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": "Head title",
+              "image_field": "",
+              "start": null,
+              "title": "News Item"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "News Item"
+        },
+        "f4713fc9-8fbe-4cca-b2a6-0132e1476b9d": {
+          "@type": "teaser",
+          "description": "The News Item content type can be used to display News content on the website.",
+          "head_title": "Head title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/8cc3e9af77c0452aa2278b0bfdcf9c85",
+              "@type": "News Item",
+              "Description": "The News Item content type can be used to display News content on the website.",
+              "Title": "News Item",
+              "effective": "2023-01-01T10:42:00+00:00",
+              "end": null,
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": "Head title",
+              "image_field": "",
+              "start": null,
+              "title": "News Item"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "News Item"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "f4713fc9-8fbe-4cca-b2a6-0132e1476b9d",
+          "6b337104-a462-419e-bc4a-4d1b1d8a42ba"
+        ]
+      },
+      "styles": {},
+      "theme": "default"
+    },
+    "c5bfb494-a646-4407-ba70-098398a8a126": {
+      "@type": "title"
+    },
+    "cc3269b9-b8fe-4335-abd0-a7d02b44b176": {
+      "@type": "gridBlock",
+      "blocks": {
+        "007411d8-fc4a-43c9-bc9b-bfc24c17a3aa": {
+          "@type": "teaser",
+          "description": "The News Item content type can be used to display News content on the website.",
+          "head_title": "Head title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/8cc3e9af77c0452aa2278b0bfdcf9c85",
+              "@type": "News Item",
+              "Description": "The News Item content type can be used to display News content on the website.",
+              "Title": "News Item",
+              "effective": "2023-01-01T10:42:00+00:00",
+              "end": null,
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": "Head title",
+              "image_field": "",
+              "start": null,
+              "title": "News Item"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "News Item"
+        },
+        "2b88e0e0-2677-4a86-99d1-31bbd5d4b9e6": {
+          "@type": "teaser",
+          "description": "The News Item content type can be used to display News content on the website.",
+          "head_title": "Head title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/8cc3e9af77c0452aa2278b0bfdcf9c85",
+              "@type": "News Item",
+              "Description": "The News Item content type can be used to display News content on the website.",
+              "Title": "News Item",
+              "effective": "2023-01-01T10:42:00+00:00",
+              "end": null,
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": "Head title",
+              "image_field": "",
+              "start": null,
+              "title": "News Item"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "News Item"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "007411d8-fc4a-43c9-bc9b-bfc24c17a3aa",
+          "2b88e0e0-2677-4a86-99d1-31bbd5d4b9e6"
+        ]
+      },
+      "styles": {},
+      "theme": "grey"
+    },
+    "eba5affb-1983-431d-bb30-068ee39f6ff3": {
+      "@type": "gridBlock",
+      "blocks": {
+        "2448325a-3aba-4b79-9304-41d5d77c9206": {
+          "@type": "teaser",
+          "description": "The News Item content type can be used to display News content on the website.",
+          "head_title": "Head title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/8cc3e9af77c0452aa2278b0bfdcf9c85",
+              "@type": "News Item",
+              "Description": "The News Item content type can be used to display News content on the website.",
+              "Title": "News Item",
+              "effective": "2023-01-01T10:42:00+00:00",
+              "end": null,
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": "Head title",
+              "image_field": "",
+              "start": null,
+              "title": "News Item"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "News Item"
+        },
+        "7d1aa4d0-848f-4e8f-a904-e604ddc6748c": {
+          "@type": "teaser",
+          "description": "The News Item content type can be used to display News content on the website.",
+          "head_title": "Head title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/8cc3e9af77c0452aa2278b0bfdcf9c85",
+              "@type": "News Item",
+              "Description": "The News Item content type can be used to display News content on the website.",
+              "Title": "News Item",
+              "effective": "2023-01-01T10:42:00+00:00",
+              "end": null,
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": "Head title",
+              "image_field": "",
+              "start": null,
+              "title": "News Item"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "News Item"
+        },
+        "f0f283cf-1119-47e7-b7c9-ad78fd6ef442": {
+          "@type": "teaser",
+          "description": "The News Item content type can be used to display News content on the website.",
+          "head_title": "Head title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/8cc3e9af77c0452aa2278b0bfdcf9c85",
+              "@type": "News Item",
+              "Description": "The News Item content type can be used to display News content on the website.",
+              "Title": "News Item",
+              "effective": "2023-01-01T10:42:00+00:00",
+              "end": null,
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": "Head title",
+              "image_field": "",
+              "start": null,
+              "title": "News Item"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "News Item"
+        },
+        "f537b41e-937c-44a4-929a-d28f75274732": {
+          "@type": "teaser",
+          "description": "The News Item content type can be used to display News content on the website.",
+          "head_title": "Head title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/8cc3e9af77c0452aa2278b0bfdcf9c85",
+              "@type": "News Item",
+              "Description": "The News Item content type can be used to display News content on the website.",
+              "Title": "News Item",
+              "effective": "2023-01-01T10:42:00+00:00",
+              "end": null,
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": "Head title",
+              "image_field": "",
+              "start": null,
+              "title": "News Item"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "News Item"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "7d1aa4d0-848f-4e8f-a904-e604ddc6748c",
+          "2448325a-3aba-4b79-9304-41d5d77c9206",
+          "f0f283cf-1119-47e7-b7c9-ad78fd6ef442",
+          "f537b41e-937c-44a4-929a-d28f75274732"
+        ]
+      },
+      "styles": {},
+      "theme": "default"
+    },
+    "f9cd0fb1-3c2d-4fc4-9d22-b7d678ace133": {
+      "@type": "gridBlock",
+      "blocks": {
+        "5950d37f-37b2-41c3-8c6c-0c1c312a8d97": {
+          "@type": "teaser",
+          "description": "The News Item content type can be used to display News content on the website.",
+          "head_title": "Head title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/8cc3e9af77c0452aa2278b0bfdcf9c85",
+              "@type": "News Item",
+              "Description": "The News Item content type can be used to display News content on the website.",
+              "Title": "News Item",
+              "effective": "2023-01-01T10:42:00+00:00",
+              "end": null,
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": "Head title",
+              "image_field": "",
+              "start": null,
+              "title": "News Item"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "News Item"
+        },
+        "a39ecea1-2059-4486-b439-3985f04c3959": {
+          "@type": "teaser",
+          "description": "The News Item content type can be used to display News content on the website.",
+          "head_title": "Head title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/8cc3e9af77c0452aa2278b0bfdcf9c85",
+              "@type": "News Item",
+              "Description": "The News Item content type can be used to display News content on the website.",
+              "Title": "News Item",
+              "effective": "2023-01-01T10:42:00+00:00",
+              "end": null,
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": "Head title",
+              "image_field": "",
+              "start": null,
+              "title": "News Item"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "News Item"
+        },
+        "fb740fd1-5b37-4ad6-a228-ded557aa5fb9": {
+          "@type": "teaser",
+          "description": "The News Item content type can be used to display News content on the website.",
+          "head_title": "Head title",
+          "href": [
+            {
+              "@id": "../../../../resolveuid/8cc3e9af77c0452aa2278b0bfdcf9c85",
+              "@type": "News Item",
+              "Description": "The News Item content type can be used to display News content on the website.",
+              "Title": "News Item",
+              "effective": "2023-01-01T10:42:00+00:00",
+              "end": null,
+              "getRemoteUrl": null,
+              "hasPreviewImage": null,
+              "head_title": "Head title",
+              "image_field": "",
+              "start": null,
+              "title": "News Item"
+            }
+          ],
+          "overwrite": true,
+          "preview_image": [
+            {
+              "@id": "../../../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "image_field": "image",
+              "title": "Image"
+            }
+          ],
+          "styles": {
+            "align": "left"
+          },
+          "title": "News Item"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "5950d37f-37b2-41c3-8c6c-0c1c312a8d97",
+          "fb740fd1-5b37-4ad6-a228-ded557aa5fb9",
+          "a39ecea1-2059-4486-b439-3985f04c3959"
+        ]
+      },
+      "styles": {},
+      "theme": "default"
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "c5bfb494-a646-4407-ba70-098398a8a126",
+      "a45d6d42-3f4a-4857-bc28-d57975accb37",
+      "a806539c-69de-432c-ab27-cdae6717d938",
+      "f9cd0fb1-3c2d-4fc4-9d22-b7d678ace133",
+      "eba5affb-1983-431d-bb30-068ee39f6ff3",
+      "0a53e3a4-2053-4f2c-9c30-2a23a209a920",
+      "cc3269b9-b8fe-4335-abd0-a7d02b44b176",
+      "859165f5-73a7-4cc2-a322-f5ffcc92c04f",
+      "69a34758-6822-483f-93cb-80bf6ef99231"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-06-10T09:59:47+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": null,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "id": "grid-teaser-news-item",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-06-10T10:48:51+00:00",
+  "nav_title": null,
+  "preview_caption": null,
+  "preview_image": null,
+  "review_state": "private",
+  "rights": "",
+  "subjects": [],
+  "title": "Grid Teaser News Item",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-06-10T09:59:47+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}

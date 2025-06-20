@@ -47,6 +47,14 @@
     a {
       text-decoration: none;
     }
+    &.file-teaser .card .card-inner .image-wrapper {
+      img {
+        aspect-ratio: var(
+          --file-image-aspect-ratio,
+          $aspect-ratio-A4
+        ) !important;
+      }
+    }
 
     .teaser-item {
       height: 100%;

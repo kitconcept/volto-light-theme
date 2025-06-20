@@ -11,30 +11,19 @@
       "headlineTag": "h2",
       "query": [],
       "querystring": {
-        "b_size": "4",
-        "limit": "10",
+        "b_size": "5",
         "query": [
           {
-            "i": "portal_type",
-            "o": "plone.app.querystring.operation.selection.any",
-            "v": [
-              "Document"
-            ]
-          },
-          {
-            "i": "Subject",
-            "o": "plone.app.querystring.operation.selection.none",
-            "v": [
-              "main folder"
-            ]
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/content-types::1"
           }
         ],
         "sort_on": "getId",
         "sort_order": "ascending"
       },
-      "styles": {
-        "backgroundColor": "transparent"
-      },
+      "styles": {},
+      "theme": "default",
       "variation": "default"
     },
     "2a597dde-dd2b-4c66-816c-09e243a188f5": {
@@ -44,29 +33,19 @@
       "headlineTag": "h2",
       "query": [],
       "querystring": {
-        "limit": "5",
+        "b_size": "5",
         "query": [
           {
-            "i": "portal_type",
-            "o": "plone.app.querystring.operation.selection.any",
-            "v": [
-              "Document"
-            ]
-          },
-          {
-            "i": "Subject",
-            "o": "plone.app.querystring.operation.selection.none",
-            "v": [
-              "main folder"
-            ]
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/content-types::1"
           }
         ],
         "sort_on": "getId",
         "sort_order": "ascending"
       },
-      "styles": {
-        "backgroundColor": "transparent"
-      },
+      "styles": {},
+      "theme": "default",
       "variation": "grid"
     },
     "43068b6d-d8e9-4acc-912b-eabcdc650939": {
@@ -79,29 +58,19 @@
       "headlineTag": "h2",
       "query": [],
       "querystring": {
-        "limit": "5",
+        "b_size": "5",
         "query": [
           {
-            "i": "portal_type",
-            "o": "plone.app.querystring.operation.selection.any",
-            "v": [
-              "Document"
-            ]
-          },
-          {
-            "i": "Subject",
-            "o": "plone.app.querystring.operation.selection.none",
-            "v": [
-              "main folder"
-            ]
+            "i": "path",
+            "o": "plone.app.querystring.operation.string.absolutePath",
+            "v": "/content-types::1"
           }
         ],
         "sort_on": "getId",
         "sort_order": "ascending"
       },
-      "styles": {
-        "backgroundColor": "grey"
-      },
+      "styles": {},
+      "theme": "grey",
       "variation": "summary"
     },
     "c2eaacd0-4e96-4344-a0ac-26ed644fc503": {
@@ -123,6 +92,7 @@
         "sort_order": "ascending"
       },
       "styles": {},
+      "theme": "default",
       "variation": "imageGallery"
     }
   },
@@ -135,18 +105,18 @@
       "c2eaacd0-4e96-4344-a0ac-26ed644fc503"
     ]
   },
+  "changeNote": "",
   "contributors": [],
   "created": "2023-07-06T21:35:19+00:00",
   "creators": [
     "admin"
   ],
   "description": "The listing block allows the display of various listings of content. Editors can configure a number of criteria for listing content (e.g. all news from 2022 with the keyword 'research').",
-  "effective": "2023-07-06T18:35:00",
+  "effective": "2023-07-06T18:35:00+00:00",
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
-  "exportimport.versions": {},
   "id": "listing-block",
   "is_folderish": true,
   "language": "##DEFAULT##",
@@ -155,19 +125,8 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2023-09-22T14:56:41+00:00",
+  "modified": "2025-06-11T17:45:41+00:00",
   "nav_title": null,
-  "parent": {
-    "@id": "/block",
-    "@type": "Document",
-    "UID": "425695d2b7cb47e69374d6f211f17e38",
-    "description": "",
-    "image_field": null,
-    "image_scales": null,
-    "review_state": "published",
-    "title": "Blocks",
-    "type_title": "Page"
-  },
   "preview_caption": null,
   "preview_image": null,
   "review_state": "published",
@@ -176,6 +135,7 @@
   "title": "Listing",
   "type_title": "Page",
   "version": "current",
+  "versioning_enabled": true,
   "workflow_history": {
     "simple_publication_workflow": [
       {

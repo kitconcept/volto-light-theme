@@ -53,7 +53,7 @@ export const Right: Story = {
   },
 };
 
-export const Center: Story = {
+export const Top: Story = {
   render: (args) => (
     <Wrapper>
       <div style={{ width: 'var(--default-container-width)' }}>
@@ -73,7 +73,7 @@ export const Center: Story = {
   },
 };
 
-export const PersonTeaser: Story = {
+export const PersonTeaserLeft: Story = {
   render: (args) => (
     <Wrapper>
       <div style={{ width: 'var(--default-container-width)' }}>
@@ -85,5 +85,45 @@ export const PersonTeaser: Story = {
   ),
   args: {
     data: personBlock,
+  },
+};
+
+export const PersonTeaserTop: Story = {
+  render: (args) => (
+    <Wrapper>
+      <div style={{ width: 'calc(var(--default-container-width) / 2)' }}>
+        <BlockWrapper {...args}>
+          <TeaserBody {...args} />
+        </BlockWrapper>
+      </div>
+    </Wrapper>
+  ),
+  args: {
+    data: {
+      ...personBlock,
+      styles: {
+        align: 'center',
+      },
+    },
+  },
+};
+
+export const PersonTeaserRight: Story = {
+  render: (args) => (
+    <Wrapper>
+      <div style={{ width: 'var(--default-container-width)' }}>
+        <BlockWrapper {...args}>
+          <TeaserBody {...args} />
+        </BlockWrapper>
+      </div>
+    </Wrapper>
+  ),
+  args: {
+    data: {
+      ...personBlock,
+      styles: {
+        align: 'right',
+      },
+    },
   },
 };

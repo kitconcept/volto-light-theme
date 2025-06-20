@@ -1600,7 +1600,7 @@ importers:
         version: 4.1.2(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(storybook@8.6.12(prettier@3.2.5))
       '@kitconcept/volto-slider-block':
         specifier: ^6.3.1
-        version: 6.3.1(@plone/volto@18.22.0(@babel/runtime@7.27.1)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.20))(@types/react@18.3.20)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(embla-carousel@8.6.0)(react@18.2.0)
+        version: 6.3.1(@plone/volto@18.23.0(@babel/runtime@7.27.1)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.20))(@types/react@18.3.20)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(embla-carousel@8.6.0)(react@18.2.0)
       '@plone/components':
         specifier: workspace:^
         version: link:../../core/packages/components
@@ -1650,12 +1650,21 @@ importers:
       '@storybook/react':
         specifier: ^8.6.12
         version: 8.6.12(@storybook/test@8.6.12(storybook@8.6.12(prettier@3.2.5)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.12(prettier@3.2.5))(typescript@5.8.3)
+      '@testing-library/cypress':
+        specifier: 10.0.3
+        version: 10.0.3(cypress@13.13.2)
+      '@testing-library/react':
+        specifier: ^16.2.0
+        version: 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@18.3.7(@types/react@18.3.20))(@types/react@18.3.20)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@types/jest':
         specifier: ^29.5.8
         version: 29.5.14
       '@types/lodash':
         specifier: ^4.14.201
         version: 4.17.16
+      '@types/node':
+        specifier: ^22
+        version: 22.15.3
       '@types/react':
         specifier: ^18.3.12
         version: 18.3.20
@@ -1665,6 +1674,12 @@ importers:
       release-it:
         specifier: ^19.0.3
         version: 19.0.3(@types/node@22.15.3)(magicast@0.3.5)
+      typescript:
+        specifier: ^5.7.3
+        version: 5.8.3
+      vitest:
+        specifier: ^3.1.2
+        version: 3.1.2(@types/debug@4.1.12)(@types/node@22.15.3)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.29.3)(sass@1.87.0)(terser@5.39.0)
 
 packages:
 
@@ -3814,8 +3829,8 @@ packages:
       react-dom:
         optional: true
 
-  '@plone/registry@2.5.3':
-    resolution: {integrity: sha512-+Dc/mEBe7iSin62OXXJErN4x1AUG0HI0aJ9g0doYlYcLdBRqwfHSxMcfyBD5SPQ5RsrAfu56jF2xCuBJUoBp5A==}
+  '@plone/registry@2.5.4':
+    resolution: {integrity: sha512-ygUm4LuOiwWBsyK/2Z4xI3ORvDAIWL4nn1bgcrUc+BconM4bsY1N0ycDH+VpylEMovx/K2r6BR4R82oBa6KP8g==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -3831,14 +3846,14 @@ packages:
     resolution: {integrity: sha512-DbG4TJ09s4An8491aQVJc32XVc4hAaamIE2ymlt27bIVk/Z+Ayx2aFg0M12ykJqSMR1oUYP7/y4vFvopyCObRQ==}
     hasBin: true
 
-  '@plone/volto-slate@18.4.0':
-    resolution: {integrity: sha512-c8Ni4rhh390YiM5Vt5DQ7Oh8vKerUo6WYF8YMBEeCSzzoAYBigF9r/DtStqa95NZ0TXkrHAS7tcIpvGOh8h6kw==}
+  '@plone/volto-slate@18.5.0':
+    resolution: {integrity: sha512-DDGCnf6Hj7NiOS7WcmRiq1FHkLNzdiZuPFuJm4f8PRQtCI8AvAj8aMlaMp2tlZ8f6EhHgAH7VevB1WKtOT8yzw==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
 
-  '@plone/volto@18.22.0':
-    resolution: {integrity: sha512-HDjFbQjdNXoVAvNTDarnQQeKMWf7fDwx7WNEbCylnwPxxiCQOVWxGVpFATDEJrC+0/Sye6t7LZAS3sZxsdGQzw==}
+  '@plone/volto@18.23.0':
+    resolution: {integrity: sha512-vmgiJnvXA+SMUNIY4EfjDaBTOmKpqC1LdVchNK7J1Rf99sLymVDll4vKUexLaEHkH2zPALgaxkqkKcLFb/YDfw==}
     engines: {node: ^20 || ^22}
 
   '@plonegovbr/volto-social-media@2.0.0-alpha.6':
@@ -4956,6 +4971,12 @@ packages:
     peerDependencies:
       cypress: ^12.0.0 || ^13.0.0
 
+  '@testing-library/cypress@10.0.3':
+    resolution: {integrity: sha512-TeZJMCNtiS59cPWalra7LgADuufO5FtbqQBYxuAgdX6ZFAR2D9CtQwAG8VbgvFcchW3K414va/+7P4OkQ80UVg==}
+    engines: {node: '>=12', npm: '>=6'}
+    peerDependencies:
+      cypress: ^12.0.0 || ^13.0.0 || ^14.0.0
+
   '@testing-library/dom@10.4.0':
     resolution: {integrity: sha512-pemlzrSESWbdAloYml3bAJMEfNh1Z7EduzqPKprCH5S341frlpYnUEW0H72dLxa6IsYr+mPno20GiSm+h9dEdQ==}
     engines: {node: '>=18'}
@@ -5044,6 +5065,21 @@ packages:
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
+
+  '@testing-library/react@16.3.0':
+    resolution: {integrity: sha512-kFSyxiEDwv1WLl2fgsq6pPBbw5aWKrsY2/noi1Id0TK0UParSF62oFQFGHXIyaG4pp2tEub/Zlel+fjjZILDsw==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@testing-library/dom': ^10.0.0
+      '@types/react': ^18.0.0 || ^19.0.0
+      '@types/react-dom': ^18.0.0 || ^19.0.0
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
+        optional: true
 
   '@testing-library/react@9.5.0':
     resolution: {integrity: sha512-di1b+D0p+rfeboHO5W7gTVeZDIK5+maEgstrZbWZSSvxDyfDRkkyBE1AJR5Psd6doNldluXlCWqXriUfqu/9Qg==}
@@ -17227,9 +17263,9 @@ snapshots:
     transitivePeerDependencies:
       - storybook
 
-  '@kitconcept/volto-slider-block@6.3.1(@plone/volto@18.22.0(@babel/runtime@7.27.1)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.20))(@types/react@18.3.20)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(embla-carousel@8.6.0)(react@18.2.0)':
+  '@kitconcept/volto-slider-block@6.3.1(@plone/volto@18.23.0(@babel/runtime@7.27.1)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.20))(@types/react@18.3.20)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4))(embla-carousel@8.6.0)(react@18.2.0)':
     dependencies:
-      '@plone/volto': 18.22.0(@babel/runtime@7.27.1)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.20))(@types/react@18.3.20)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)
+      '@plone/volto': 18.23.0(@babel/runtime@7.27.1)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.20))(@types/react@18.3.20)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)
       deepmerge: 4.2.2
       embla-carousel-autoplay: 8.6.0(embla-carousel@8.6.0)
       embla-carousel-react: 8.6.0(react@18.2.0)
@@ -17926,7 +17962,7 @@ snapshots:
     transitivePeerDependencies:
       - storybook
 
-  '@plone/registry@2.5.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@plone/registry@2.5.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       auto-config-loader: 1.7.8
       crypto-random-string: 3.2.0
@@ -17982,7 +18018,7 @@ snapshots:
       - debug
       - supports-color
 
-  '@plone/volto-slate@18.4.0(@types/react-dom@18.3.7(@types/react@18.3.20))(@types/react@18.3.20)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)':
+  '@plone/volto-slate@18.5.0(@types/react-dom@18.3.7(@types/react@18.3.20))(@types/react@18.3.20)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)':
     dependencies:
       classnames: 2.5.1
       github-slugger: 1.4.0
@@ -18016,13 +18052,13 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@plone/volto@18.22.0(@babel/runtime@7.27.1)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.20))(@types/react@18.3.20)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)':
+  '@plone/volto@18.23.0(@babel/runtime@7.27.1)(@popperjs/core@2.11.8)(@types/react-dom@18.3.7(@types/react@18.3.20))(@types/react@18.3.20)(react-with-direction@1.4.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(seamless-immutable@7.1.4)':
     dependencies:
       '@loadable/component': 5.14.1(react@18.2.0)
       '@loadable/server': 5.14.0(@loadable/component@5.14.1(react@18.2.0))(react@18.2.0)
-      '@plone/registry': 2.5.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@plone/registry': 2.5.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone/scripts': 3.10.1(debug@4.3.2)
-      '@plone/volto-slate': 18.4.0(@types/react-dom@18.3.7(@types/react@18.3.20))(@types/react@18.3.20)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
+      '@plone/volto-slate': 18.5.0(@types/react-dom@18.3.7(@types/react@18.3.20))(@types/react@18.3.20)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
       '@redux-devtools/extension': 3.3.0(redux@4.2.1)
       classnames: 2.5.1
       connected-react-router: 6.8.0(history@4.10.1)(immutable@3.8.2)(react-redux@8.1.2(@types/react-dom@18.3.7(@types/react@18.3.20))(@types/react@18.3.20)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router@5.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)(seamless-immutable@7.1.4)
@@ -19835,6 +19871,12 @@ snapshots:
       '@testing-library/dom': 9.3.4
       cypress: 13.13.2
 
+  '@testing-library/cypress@10.0.3(cypress@13.13.2)':
+    dependencies:
+      '@babel/runtime': 7.20.6
+      '@testing-library/dom': 10.4.0
+      cypress: 13.13.2
+
   '@testing-library/dom@10.4.0':
     dependencies:
       '@babel/code-frame': 7.27.1
@@ -19995,6 +20037,16 @@ snapshots:
       react-dom: 18.2.0(react@18.2.0)
     transitivePeerDependencies:
       - '@types/react'
+
+  '@testing-library/react@16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@18.3.7(@types/react@18.3.20))(@types/react@18.3.20)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+    dependencies:
+      '@babel/runtime': 7.20.6
+      '@testing-library/dom': 10.4.0
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    optionalDependencies:
+      '@types/react': 18.3.20
+      '@types/react-dom': 18.3.7(@types/react@18.3.20)
 
   '@testing-library/react@9.5.0(@types/react@18.3.20)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
@@ -20309,7 +20361,7 @@ snapshots:
 
   '@types/testing-library__dom@7.5.0':
     dependencies:
-      '@testing-library/dom': 6.16.0
+      '@testing-library/dom': 10.4.0
 
   '@types/testing-library__jest-dom@5.14.9':
     dependencies:
@@ -32619,7 +32671,7 @@ snapshots:
       std-env: 3.9.0
       tinybench: 2.9.0
       tinyexec: 0.3.2
-      tinyglobby: 0.2.13
+      tinyglobby: 0.2.14
       tinypool: 1.0.2
       tinyrainbow: 2.0.0
       vite: 5.4.19(@types/node@22.15.3)(less@3.11.1)(lightningcss@1.29.3)(sass@1.87.0)(terser@5.39.0)
@@ -32658,7 +32710,7 @@ snapshots:
       std-env: 3.9.0
       tinybench: 2.9.0
       tinyexec: 0.3.2
-      tinyglobby: 0.2.13
+      tinyglobby: 0.2.14
       tinypool: 1.0.2
       tinyrainbow: 2.0.0
       vite: 5.4.19(@types/node@22.15.3)(less@3.11.1)(lightningcss@1.29.3)(sass@1.87.0)(terser@5.39.0)
@@ -32678,7 +32730,6 @@ snapshots:
       - sugarss
       - supports-color
       - terser
-    optional: true
 
   vue-template-compiler@2.7.16:
     dependencies:

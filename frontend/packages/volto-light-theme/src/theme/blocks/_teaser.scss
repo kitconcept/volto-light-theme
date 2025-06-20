@@ -13,6 +13,12 @@
   // We want the image to extend in all its container width
   height: 100%;
 
+  &.file-teaser .card .card-inner .image-wrapper {
+    img {
+      aspect-ratio: var(--file-image-aspect-ratio, $aspect-ratio-A4) !important;
+    }
+  }
+
   a.external {
     .card-summary h2:after {
       @include external-link-icon();

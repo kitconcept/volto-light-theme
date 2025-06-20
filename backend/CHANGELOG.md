@@ -2,6 +2,30 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0a12 (2025-06-18)
+
+
+### New features:
+
+- Reintroduce an improved `Anontools` using `portal_actions`. @sneridagh [#581](https://github.com/kitconcept/volto-light-theme/issues/581)
+
+## 7.0.0a11 (2025-06-12)
+
+
+### Internal:
+
+- Add example content of missing blocks @iRohitSingh 
+
+## 7.0.0a10 (2025-06-10)
+
+No significant changes.
+
+
+## 7.0.0a9 (2025-06-09)
+
+No significant changes.
+
+
 ## 7.0.0a8 (2025-06-06)
 
 No significant changes.

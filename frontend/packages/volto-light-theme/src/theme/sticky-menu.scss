@@ -1,8 +1,15 @@
 .sticky-menu {
   position: fixed;
-  z-index: 1000;
-  top: 373px;
+  z-index: 11;
+  top: 50vh;
   right: 0;
+  transform: translateY(-50%);
+  transition: all 0.2s linear;
+
+  @media (min-height: 920px) {
+    top: 373px;
+    transform: none;
+  }
 
   ul {
     display: flex;
@@ -45,6 +52,7 @@
   }
 }
 
+body.view-addview .sticky-menu,
 body.view-editview .sticky-menu {
   display: none;
 }

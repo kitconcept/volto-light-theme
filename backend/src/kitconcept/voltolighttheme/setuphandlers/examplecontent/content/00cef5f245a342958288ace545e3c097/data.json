@@ -81,18 +81,18 @@
       "177de529-ce72-4721-a58c-15feadaf285e"
     ]
   },
+  "changeNote": "",
   "contributors": [],
   "created": "2023-07-06T21:35:19+00:00",
   "creators": [
     "admin"
   ],
   "description": "\nThe introductory block allows the display of an introductory text, which is displayed larger than normal continuous text.",
-  "effective": "2023-07-06T18:35:00",
+  "effective": "2023-07-06T18:35:00+00:00",
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
-  "exportimport.versions": {},
   "id": "introduction-block",
   "is_folderish": true,
   "language": "##DEFAULT##",
@@ -103,17 +103,6 @@
   },
   "modified": "2023-09-22T14:41:12+00:00",
   "nav_title": null,
-  "parent": {
-    "@id": "/block",
-    "@type": "Document",
-    "UID": "425695d2b7cb47e69374d6f211f17e38",
-    "description": "",
-    "image_field": null,
-    "image_scales": null,
-    "review_state": "published",
-    "title": "Blocks",
-    "type_title": "Page"
-  },
   "preview_caption": null,
   "preview_image": {
     "blob_path": "00cef5f245a342958288ace545e3c097/preview_image/black-starry-night.jpg",
@@ -129,6 +118,7 @@
   "title": "Introduction",
   "type_title": "Page",
   "version": "current",
+  "versioning_enabled": true,
   "workflow_history": {
     "simple_publication_workflow": [
       {

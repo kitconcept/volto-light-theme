@@ -1,3 +1,5 @@
+import cloneDeep from 'lodash/cloneDeep';
+
 const demoImage = 'black-starry-night.jpg';
 const personImage = 'person.png';
 
@@ -196,7 +198,7 @@ export const personBlock = {
             'content-type': 'image/jpeg',
             download: personImage,
             filename: 'black-starry-night.jpg',
-            height: 1708,
+            height: 286,
             scales: {
               great: {
                 download: personImage,
@@ -250,7 +252,7 @@ export const personBlock = {
               },
             },
             size: 693013,
-            width: 2400,
+            width: 200,
           },
         ],
       },
@@ -260,6 +262,69 @@ export const personBlock = {
     align: 'left',
   },
   title: 'Headline H2',
+};
+
+const altPersonBlock = cloneDeep(personBlock);
+
+altPersonBlock.href[0].image_scales.preview_image[0] = {
+  'content-type': 'image/jpeg',
+  download: demoImage,
+  filename: 'black-starry-night.jpg',
+  height: 286,
+  scales: {
+    great: {
+      download: demoImage,
+      height: 854,
+      width: 1200,
+    },
+    huge: {
+      download: demoImage,
+      height: 1138,
+      width: 1600,
+    },
+    icon: {
+      download: demoImage,
+      height: 22,
+      width: 32,
+    },
+    large: {
+      download: demoImage,
+      height: 569,
+      width: 800,
+    },
+    larger: {
+      download: demoImage,
+      height: 711,
+      width: 1000,
+    },
+    mini: {
+      download: demoImage,
+      height: 142,
+      width: 200,
+    },
+    preview: {
+      download: demoImage,
+      height: 284,
+      width: 400,
+    },
+    teaser: {
+      download: demoImage,
+      height: 427,
+      width: 600,
+    },
+    thumb: {
+      download: demoImage,
+      height: 91,
+      width: 128,
+    },
+    tile: {
+      download: demoImage,
+      height: 45,
+      width: 64,
+    },
+  },
+  size: 693013,
+  width: 200,
 };
 
 export const gridBlockOne = {
@@ -634,6 +699,24 @@ export const gridBlockTwoPerson = {
     },
     'f34fa7dd-ce59-4f7f-b795-7d7f1e388df1': {
       ...personBlock,
+    },
+  },
+  blocks_layout: {
+    items: [
+      '281a22fb-c353-4b91-b2bc-88e6a52ed65a',
+      'f34fa7dd-ce59-4f7f-b795-7d7f1e388df1',
+    ],
+  },
+};
+
+export const gridBlockTwoPersonDifferentRatio = {
+  '@type': 'gridBlock',
+  blocks: {
+    '281a22fb-c353-4b91-b2bc-88e6a52ed65a': {
+      ...personBlock,
+    },
+    'f34fa7dd-ce59-4f7f-b795-7d7f1e388df1': {
+      ...altPersonBlock,
     },
   },
   blocks_layout: {

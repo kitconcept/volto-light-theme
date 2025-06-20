@@ -1138,18 +1138,18 @@
       "ead5079f-176d-4858-a75b-12f729249032"
     ]
   },
+  "changeNote": "",
   "contributors": [],
   "created": "2024-04-08T11:46:58+00:00",
   "creators": [
     "admin"
   ],
   "description": "The Slider block allows you to add a slider to a page. A slider can display and tease multiple content on the website. Each piece of content is represented with an image containing the title, description and a button that leads to the linked content.\n",
-  "effective": "2024-04-08T17:54:00",
+  "effective": "2024-04-08T17:54:00+00:00",
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
-  "exportimport.versions": {},
   "id": "slider",
   "is_folderish": true,
   "language": "##DEFAULT##",
@@ -1160,17 +1160,6 @@
   },
   "modified": "2024-04-08T12:26:50+00:00",
   "nav_title": null,
-  "parent": {
-    "@id": "/block",
-    "@type": "Document",
-    "UID": "425695d2b7cb47e69374d6f211f17e38",
-    "description": "",
-    "image_field": null,
-    "image_scales": null,
-    "review_state": "published",
-    "title": "Blocks",
-    "type_title": "Page"
-  },
   "preview_caption": null,
   "preview_image": null,
   "review_state": "published",
@@ -1179,6 +1168,7 @@
   "title": "Slider",
   "type_title": "Page",
   "version": "current",
+  "versioning_enabled": true,
   "workflow_history": {
     "simple_publication_workflow": [
       {

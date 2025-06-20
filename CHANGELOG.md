@@ -1,6 +1,173 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 7.0.0a12 (2025-06-18)
+
+### Backend
+
+
+#### New features:
+
+- Reintroduce an improved `Anontools` using `portal_actions`. @sneridagh [#581](https://github.com/kitconcept/volto-light-theme/issues/581)
+
+
+
+### Frontend
+
+#### Feature
+
+- Reintroduce an improved `Anontools` using `portal_actions`. @sneridagh [#581](https://github.com/kitconcept/volto-light-theme/pull/581)
+
+#### Bugfix
+
+- Fix sticky menu precedence in z-index with the fat menu. @sneridagh [#582](https://github.com/kitconcept/volto-light-theme/pull/582)
+- Fixed listing in grids variations to match the standalone ones (except Grid). @sneridagh [#582](https://github.com/kitconcept/volto-light-theme/pull/582)
+- Fixed Person CSS in Search block. @sneridagh [#584](https://github.com/kitconcept/volto-light-theme/pull/584)
+
+
+
+### Project
+
+
+#### Bugfix
+
+- Improved Visual Regression tests. @sneridagh
+  Split the Storybook ones into their own config.
+  Improve naming for GHA UI. [#584](https://github.com/kitconcept/volto-light-theme/pull/584)
+
+
+#### Internal
+
+- Better Storybook support, unique reusable build as an artifact. @sneridagh 
+
+
+#### Documentation
+
+- Reintroduce an improved `Anontools` using `portal_actions`. @sneridagh [#581](https://github.com/kitconcept/volto-light-theme/pull/581)
+
+
+
+## 7.0.0a11 (2025-06-12)
+
+### Backend
+
+
+#### Internal:
+
+- Add example content of missing blocks @iRohitSingh 
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Do not show sticky menu in add view. @sneridagh 
+- Fix aspect ratio for images in file grid teaser block @iRohitSingh 
+- Fixed position of sticky menu for small screens. @sneridagh 
+
+#### Internal
+
+- Added visual regression tests for Storybook stories. @sneridagh [#576](https://github.com/kitconcept/volto-light-theme/pull/576)
+- Upgrade to Volto 18.23.0 @sneridagh 
+- Use `vitest` for unit tests. @sneridagh 
+
+
+
+### Project
+
+
+#### Internal
+
+- Added visual regression tests for Storybook stories. @sneridagh [#576](https://github.com/kitconcept/volto-light-theme/pull/576)
+- Fix acceptance test commands. @davisagli 
+
+
+
+## 7.0.0a11 (2025-06-12)
+
+### Backend
+
+
+#### Internal:
+
+- Add example content of missing blocks @iRohitSingh 
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Do not show sticky menu in add view. @sneridagh 
+- Fix aspect ratio for images in file grid teaser block @iRohitSingh 
+- Fixed position of sticky menu for small screens. @sneridagh 
+
+#### Internal
+
+- Added visual regression tests for Storybook stories. @sneridagh [#576](https://github.com/kitconcept/volto-light-theme/pull/576)
+- Upgrade to Volto 18.23.0 @sneridagh 
+- Use `vitest` for unit tests. @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+## 7.0.0a10 (2025-06-10)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Fixed Person Teaser top variant. Added Storybook. @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
+## 7.0.0a9 (2025-06-09)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Fixed Teaser styling @sneridagh [#573](https://github.com/kitconcept/volto-light-theme/pull/573)
+
+#### Internal
+
+- Fix aspect ratio for images in file teaser block @iRohitSingh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 7.0.0a8 (2025-06-06)
 
 ### Backend

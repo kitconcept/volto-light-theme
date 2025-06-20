@@ -2,41 +2,15 @@
   "@id": "/Plone",
   "@type": "Plone Site",
   "UID": "plone_site_root",
+  "accent_color": null,
+  "accent_foreground_color": null,
   "allow_discussion": null,
-  "header_actions": [
-    {
-      "@id": "1",
-      "title": "login",
-      "href": [
-        {
-          "@id": "/login"
-        }
-      ]
-    },
-    {
-      "@id": "2",
-      "title": "Documentation",
-      "href": [
-        {
-          "@id": "https://volto-light-theme.readthedocs.io/"
-        }
-      ],
-      "openLinkInNewTab": true
-    },
-    {
-      "@id": "3",
-      "title": "Github",
-      "href": [
-        {
-          "@id": "https://github.com/kitconcept/volto-light-theme"
-        }
-      ],
-      "openLinkInNewTab": true
-    }
-  ],
   "blocks": {
     "10444da6-9565-407d-b79c-ab9726bd3a84": {
       "@type": "slider",
+      "autoplayDelay": 4000,
+      "autoplayEnabled": false,
+      "autoplayJump": false,
       "slides": [
         {
           "@id": "925d8233-a87b-4939-bedb-3f20b9499384",
@@ -52,70 +26,6 @@
               "hasPreviewImage": true,
               "head_title": null,
               "image_field": "preview_image",
-              "image_scales": {
-                "preview_image": [
-                  {
-                    "content-type": "image/jpeg",
-                    "download": "@@images/preview_image-2400-dd70655eae2a121e9b3d20b15d5292db.jpeg",
-                    "filename": "black-starry-night.jpg",
-                    "height": 1708,
-                    "scales": {
-                      "great": {
-                        "download": "@@images/preview_image-1200-02d0687099bde73e5189270d53df7e22.jpeg",
-                        "height": 854,
-                        "width": 1200
-                      },
-                      "huge": {
-                        "download": "@@images/preview_image-1600-275bd418c80864fc5cc8b0b0c7f4a0a2.jpeg",
-                        "height": 1138,
-                        "width": 1600
-                      },
-                      "icon": {
-                        "download": "@@images/preview_image-32-848481d517c9091a765ccf7a6ef88277.jpeg",
-                        "height": 22,
-                        "width": 32
-                      },
-                      "large": {
-                        "download": "@@images/preview_image-800-255c17a5d39f4bb2d79c72d56934b342.jpeg",
-                        "height": 569,
-                        "width": 800
-                      },
-                      "larger": {
-                        "download": "@@images/preview_image-1000-661e34a155a000108788ca0d60f4b22c.jpeg",
-                        "height": 711,
-                        "width": 1000
-                      },
-                      "mini": {
-                        "download": "@@images/preview_image-200-614da3a8827dc90cb92618ada1980504.jpeg",
-                        "height": 142,
-                        "width": 200
-                      },
-                      "preview": {
-                        "download": "@@images/preview_image-400-bf2a5268ec239c40c54556e7f48b1cf6.jpeg",
-                        "height": 284,
-                        "width": 400
-                      },
-                      "teaser": {
-                        "download": "@@images/preview_image-600-b1f4235a88cb99bd1c5ab3dceaf953ee.jpeg",
-                        "height": 427,
-                        "width": 600
-                      },
-                      "thumb": {
-                        "download": "@@images/preview_image-128-80ae3135a04405512335f90c8ce4cb3e.jpeg",
-                        "height": 91,
-                        "width": 128
-                      },
-                      "tile": {
-                        "download": "@@images/preview_image-64-fbe446c415c4dbcbca8b81c451ee4659.jpeg",
-                        "height": 45,
-                        "width": 64
-                      }
-                    },
-                    "size": 693013,
-                    "width": 2400
-                  }
-                ]
-              },
               "title": "Inhaltstyp: Seite (Page)"
             }
           ],
@@ -135,70 +45,6 @@
               "hasPreviewImage": true,
               "head_title": null,
               "image_field": "preview_image",
-              "image_scales": {
-                "preview_image": [
-                  {
-                    "content-type": "image/jpeg",
-                    "download": "@@images/preview_image-2400-f9aa7b8d1e2e40de094f1e9f08efb1bf.jpeg",
-                    "filename": "black-starry-night.jpg",
-                    "height": 1708,
-                    "scales": {
-                      "great": {
-                        "download": "@@images/preview_image-1200-a9951363537c3406c7e8f0ce40693ddd.jpeg",
-                        "height": 854,
-                        "width": 1200
-                      },
-                      "huge": {
-                        "download": "@@images/preview_image-1600-b57582f266d44aa33c84096930783ebd.jpeg",
-                        "height": 1138,
-                        "width": 1600
-                      },
-                      "icon": {
-                        "download": "@@images/preview_image-32-c858266edae8c1701c0a52872df9186b.jpeg",
-                        "height": 22,
-                        "width": 32
-                      },
-                      "large": {
-                        "download": "@@images/preview_image-800-f8ba2ef21cf6870af4c095bc18c8bfd3.jpeg",
-                        "height": 569,
-                        "width": 800
-                      },
-                      "larger": {
-                        "download": "@@images/preview_image-1000-8a34f321086727890671e1c2de6bd83a.jpeg",
-                        "height": 711,
-                        "width": 1000
-                      },
-                      "mini": {
-                        "download": "@@images/preview_image-200-61a4fec2eac88cedf03b1905b553f8a3.jpeg",
-                        "height": 142,
-                        "width": 200
-                      },
-                      "preview": {
-                        "download": "@@images/preview_image-400-e5b17fad7696eba84f60f6c72e896b14.jpeg",
-                        "height": 284,
-                        "width": 400
-                      },
-                      "teaser": {
-                        "download": "@@images/preview_image-600-fd0ea9b2a5c98d53ae4063e3cf109f81.jpeg",
-                        "height": 427,
-                        "width": 600
-                      },
-                      "thumb": {
-                        "download": "@@images/preview_image-128-64695facf03cd16699147f64a83054ad.jpeg",
-                        "height": 91,
-                        "width": 128
-                      },
-                      "tile": {
-                        "download": "@@images/preview_image-64-5aef2f45c044064cec0cd2ce5caee94c.jpeg",
-                        "height": 45,
-                        "width": 64
-                      }
-                    },
-                    "size": 693013,
-                    "width": 2400
-                  }
-                ]
-              },
               "title": "Block: Grid"
             }
           ],
@@ -219,70 +65,6 @@
               "hasPreviewImage": true,
               "head_title": null,
               "image_field": "preview_image",
-              "image_scales": {
-                "preview_image": [
-                  {
-                    "content-type": "image/jpeg",
-                    "download": "@@images/preview_image-2400-92152ce7c34859059ec84e0b11761cc3.jpeg",
-                    "filename": "black-starry-night.jpg",
-                    "height": 1708,
-                    "scales": {
-                      "great": {
-                        "download": "@@images/preview_image-1200-1e518c9d8f9134ba97f2a4e2702deedd.jpeg",
-                        "height": 854,
-                        "width": 1200
-                      },
-                      "huge": {
-                        "download": "@@images/preview_image-1600-fcfdcd9e8e025729ee2b6caea0a3d1d3.jpeg",
-                        "height": 1138,
-                        "width": 1600
-                      },
-                      "icon": {
-                        "download": "@@images/preview_image-32-0e0dd37b35e2f2d60d6eeae26aea3f02.jpeg",
-                        "height": 22,
-                        "width": 32
-                      },
-                      "large": {
-                        "download": "@@images/preview_image-800-01cee157a8f1f5d7dfec96379b18a290.jpeg",
-                        "height": 569,
-                        "width": 800
-                      },
-                      "larger": {
-                        "download": "@@images/preview_image-1000-9d61c4c454645335cf4bdecf9c395b1b.jpeg",
-                        "height": 711,
-                        "width": 1000
-                      },
-                      "mini": {
-                        "download": "@@images/preview_image-200-656d5c420e8697062bfe37770af79eaa.jpeg",
-                        "height": 142,
-                        "width": 200
-                      },
-                      "preview": {
-                        "download": "@@images/preview_image-400-023b9af0a00566e4e7c09701ab00d273.jpeg",
-                        "height": 284,
-                        "width": 400
-                      },
-                      "teaser": {
-                        "download": "@@images/preview_image-600-18517bc36465f3674f92d7f4c070677d.jpeg",
-                        "height": 427,
-                        "width": 600
-                      },
-                      "thumb": {
-                        "download": "@@images/preview_image-128-2ad943a2fe79e1cadce08427813cb056.jpeg",
-                        "height": 91,
-                        "width": 128
-                      },
-                      "tile": {
-                        "download": "@@images/preview_image-64-b1b1709feb2ccd08b0fdeb0664cf74cd.jpeg",
-                        "height": 45,
-                        "width": 64
-                      }
-                    },
-                    "size": 693013,
-                    "width": 2400
-                  }
-                ]
-              },
               "title": "Block: Teaser"
             }
           ],
@@ -290,16 +72,16 @@
           "title": "Slide Title"
         }
       ],
-      "styles": {}
+      "styles": {},
+      "theme": "default"
     },
     "1e730622-4982-4c61-a779-e06d70581c42": {
       "@type": "heading",
       "alignment": "left",
       "heading": "Teaser Horizontal with Background",
-      "styles": {
-        "backgroundColor": "grey"
-      },
-      "tag": "h2"
+      "styles": {},
+      "tag": "h2",
+      "theme": "grey"
     },
     "27c9bfc9-af66-4545-9e38-a69bfb09a282": {
       "@type": "gridBlock",
@@ -314,77 +96,23 @@
               "@type": "Document",
               "Description": "Der Teaser-Block erlaubt das Hinzuf\u00fcgen eines Elements welches einen bestehenden Inhalte der Webseite mit einem Bild, einem Titel und einer Beschreibung anteasert.",
               "Title": "Block: Teaser",
+              "description": "The teaser block allows you to add an element that teases existing website content with an image, a title and a description.",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": null,
+              "getObjSize": "676.8 KB",
               "getRemoteUrl": null,
               "hasPreviewImage": true,
               "head_title": null,
               "image_field": "preview_image",
-              "image_scales": {
-                "preview_image": [
-                  {
-                    "content-type": "image/jpeg",
-                    "download": "@@images/preview_image-2400-92152ce7c34859059ec84e0b11761cc3.jpeg",
-                    "filename": "black-starry-night.jpg",
-                    "height": 1708,
-                    "scales": {
-                      "great": {
-                        "download": "@@images/preview_image-1200-1e518c9d8f9134ba97f2a4e2702deedd.jpeg",
-                        "height": 854,
-                        "width": 1200
-                      },
-                      "huge": {
-                        "download": "@@images/preview_image-1600-fcfdcd9e8e025729ee2b6caea0a3d1d3.jpeg",
-                        "height": 1138,
-                        "width": 1600
-                      },
-                      "icon": {
-                        "download": "@@images/preview_image-32-0e0dd37b35e2f2d60d6eeae26aea3f02.jpeg",
-                        "height": 22,
-                        "width": 32
-                      },
-                      "large": {
-                        "download": "@@images/preview_image-800-01cee157a8f1f5d7dfec96379b18a290.jpeg",
-                        "height": 569,
-                        "width": 800
-                      },
-                      "larger": {
-                        "download": "@@images/preview_image-1000-9d61c4c454645335cf4bdecf9c395b1b.jpeg",
-                        "height": 711,
-                        "width": 1000
-                      },
-                      "mini": {
-                        "download": "@@images/preview_image-200-656d5c420e8697062bfe37770af79eaa.jpeg",
-                        "height": 142,
-                        "width": 200
-                      },
-                      "preview": {
-                        "download": "@@images/preview_image-400-023b9af0a00566e4e7c09701ab00d273.jpeg",
-                        "height": 284,
-                        "width": 400
-                      },
-                      "teaser": {
-                        "download": "@@images/preview_image-600-18517bc36465f3674f92d7f4c070677d.jpeg",
-                        "height": 427,
-                        "width": 600
-                      },
-                      "thumb": {
-                        "download": "@@images/preview_image-128-2ad943a2fe79e1cadce08427813cb056.jpeg",
-                        "height": 91,
-                        "width": 128
-                      },
-                      "tile": {
-                        "download": "@@images/preview_image-64-b1b1709feb2ccd08b0fdeb0664cf74cd.jpeg",
-                        "height": 45,
-                        "width": 64
-                      }
-                    },
-                    "size": 693013,
-                    "width": 2400
-                  }
-                ]
-              },
-              "title": "Block: Teaser"
+              "mime_type": "text/plain",
+              "nav_title": null,
+              "review_state": "published",
+              "start": null,
+              "title": "Teaser",
+              "type_title": "Page"
             }
           ],
+          "overwrite": true,
           "styles": {
             "align": "left"
           },
@@ -400,135 +128,27 @@
               "@type": "Document",
               "Description": "Der Grid-Block erlaubt das Hinzuf\u00fcgen mehrspaltiger Bl\u00f6cke. Ein Grid-Block kann zwischen ein und vier Spalten mit unterschiedlichen Bl\u00f6cken enthalten.Teaser und Bilder k\u00f6nnen in einem Grid-Block hinzugef\u00fcgt werden.",
               "Title": "Block: Grid",
+              "description": " The Grid block allows adding multi-column blocks. A grid block can contain between one and four columns of different blocks. Teasers and images can be added in a grid block.",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": null,
+              "getObjSize": "676.8 KB",
               "getRemoteUrl": null,
               "hasPreviewImage": true,
               "head_title": null,
               "image_field": "preview_image",
-              "image_scales": {
-                "preview_image": [
-                  {
-                    "content-type": "image/jpeg",
-                    "download": "@@images/preview_image-2400-f9aa7b8d1e2e40de094f1e9f08efb1bf.jpeg",
-                    "filename": "black-starry-night.jpg",
-                    "height": 1708,
-                    "scales": {
-                      "great": {
-                        "download": "@@images/preview_image-1200-a9951363537c3406c7e8f0ce40693ddd.jpeg",
-                        "height": 854,
-                        "width": 1200
-                      },
-                      "huge": {
-                        "download": "@@images/preview_image-1600-b57582f266d44aa33c84096930783ebd.jpeg",
-                        "height": 1138,
-                        "width": 1600
-                      },
-                      "icon": {
-                        "download": "@@images/preview_image-32-c858266edae8c1701c0a52872df9186b.jpeg",
-                        "height": 22,
-                        "width": 32
-                      },
-                      "large": {
-                        "download": "@@images/preview_image-800-f8ba2ef21cf6870af4c095bc18c8bfd3.jpeg",
-                        "height": 569,
-                        "width": 800
-                      },
-                      "larger": {
-                        "download": "@@images/preview_image-1000-8a34f321086727890671e1c2de6bd83a.jpeg",
-                        "height": 711,
-                        "width": 1000
-                      },
-                      "mini": {
-                        "download": "@@images/preview_image-200-61a4fec2eac88cedf03b1905b553f8a3.jpeg",
-                        "height": 142,
-                        "width": 200
-                      },
-                      "preview": {
-                        "download": "@@images/preview_image-400-e5b17fad7696eba84f60f6c72e896b14.jpeg",
-                        "height": 284,
-                        "width": 400
-                      },
-                      "teaser": {
-                        "download": "@@images/preview_image-600-fd0ea9b2a5c98d53ae4063e3cf109f81.jpeg",
-                        "height": 427,
-                        "width": 600
-                      },
-                      "thumb": {
-                        "download": "@@images/preview_image-128-64695facf03cd16699147f64a83054ad.jpeg",
-                        "height": 91,
-                        "width": 128
-                      },
-                      "tile": {
-                        "download": "@@images/preview_image-64-5aef2f45c044064cec0cd2ce5caee94c.jpeg",
-                        "height": 45,
-                        "width": 64
-                      }
-                    },
-                    "size": 693013,
-                    "width": 2400
-                  }
-                ]
-              },
-              "title": "Block: Grid"
+              "mime_type": "text/plain",
+              "nav_title": null,
+              "review_state": "published",
+              "start": null,
+              "title": "Grid",
+              "type_title": "Page"
             }
           ],
+          "overwrite": true,
           "preview_image": [
             {
               "@id": "resolveuid/eec82559bf3242a6be4d43bc2096f399",
               "image_field": "image",
-              "image_scales": {
-                "image": [
-                  {
-                    "content-type": "image/jpeg",
-                    "download": "@@images/image-1126-7b90bd2f737fb08f5e2c5719f2f8bc14.jpeg",
-                    "filename": "image-light.jpg",
-                    "height": 633,
-                    "scales": {
-                      "icon": {
-                        "download": "@@images/image-32-5de0f24798404cddd70cc1d15b1213ba.jpeg",
-                        "height": 17,
-                        "width": 32
-                      },
-                      "large": {
-                        "download": "@@images/image-800-728b0edae32e307d8123462b48fafeaa.jpeg",
-                        "height": 449,
-                        "width": 800
-                      },
-                      "larger": {
-                        "download": "@@images/image-1000-19685fe0e43ca671a6f6a973c7d1f0f5.jpeg",
-                        "height": 562,
-                        "width": 1000
-                      },
-                      "mini": {
-                        "download": "@@images/image-200-cfd42d570345d1134d9b2d0f5726bb2e.jpeg",
-                        "height": 112,
-                        "width": 200
-                      },
-                      "preview": {
-                        "download": "@@images/image-400-a35b24fd0dbe867083f962cf69f19c2a.jpeg",
-                        "height": 224,
-                        "width": 400
-                      },
-                      "teaser": {
-                        "download": "@@images/image-600-702ac2045d4ca6fc61c52749e8c2f24d.jpeg",
-                        "height": 337,
-                        "width": 600
-                      },
-                      "thumb": {
-                        "download": "@@images/image-128-06fa281eabe3bbba6eea685ce60d08f1.jpeg",
-                        "height": 71,
-                        "width": 128
-                      },
-                      "tile": {
-                        "download": "@@images/image-64-f0e777433e3a4227dab46fe8cac688a6.jpeg",
-                        "height": 35,
-                        "width": 64
-                      }
-                    },
-                    "size": 475285,
-                    "width": 1126
-                  }
-                ]
-              },
               "title": "Image - Light"
             }
           ],
@@ -544,9 +164,8 @@
           "f34fa7dd-ce59-4f7f-b795-7d7f1e388df1"
         ]
       },
-      "styles": {
-        "backgroundColor": "grey"
-      }
+      "styles": {},
+      "theme": "grey"
     },
     "281dee5f-1e5c-4ef4-b7c2-20da7f43093c": {
       "@type": "teaser",
@@ -558,77 +177,23 @@
           "@type": "Document",
           "Description": "Der Grid-Block erlaubt das Hinzuf\u00fcgen mehrspaltiger Bl\u00f6cke. Ein Grid-Block kann zwischen ein und vier Spalten mit unterschiedlichen Bl\u00f6cken enthalten.Teaser und Bilder k\u00f6nnen in einem Grid-Block hinzugef\u00fcgt werden.",
           "Title": "Block: Grid",
+          "description": " The Grid block allows adding multi-column blocks. A grid block can contain between one and four columns of different blocks. Teasers and images can be added in a grid block.",
+          "effective": "2023-07-06T18:35:00+00:00",
+          "end": null,
+          "getObjSize": "676.8 KB",
           "getRemoteUrl": null,
           "hasPreviewImage": true,
           "head_title": null,
           "image_field": "preview_image",
-          "image_scales": {
-            "preview_image": [
-              {
-                "content-type": "image/jpeg",
-                "download": "@@images/preview_image-2400-f9aa7b8d1e2e40de094f1e9f08efb1bf.jpeg",
-                "filename": "black-starry-night.jpg",
-                "height": 1708,
-                "scales": {
-                  "great": {
-                    "download": "@@images/preview_image-1200-a9951363537c3406c7e8f0ce40693ddd.jpeg",
-                    "height": 854,
-                    "width": 1200
-                  },
-                  "huge": {
-                    "download": "@@images/preview_image-1600-b57582f266d44aa33c84096930783ebd.jpeg",
-                    "height": 1138,
-                    "width": 1600
-                  },
-                  "icon": {
-                    "download": "@@images/preview_image-32-c858266edae8c1701c0a52872df9186b.jpeg",
-                    "height": 22,
-                    "width": 32
-                  },
-                  "large": {
-                    "download": "@@images/preview_image-800-f8ba2ef21cf6870af4c095bc18c8bfd3.jpeg",
-                    "height": 569,
-                    "width": 800
-                  },
-                  "larger": {
-                    "download": "@@images/preview_image-1000-8a34f321086727890671e1c2de6bd83a.jpeg",
-                    "height": 711,
-                    "width": 1000
-                  },
-                  "mini": {
-                    "download": "@@images/preview_image-200-61a4fec2eac88cedf03b1905b553f8a3.jpeg",
-                    "height": 142,
-                    "width": 200
-                  },
-                  "preview": {
-                    "download": "@@images/preview_image-400-e5b17fad7696eba84f60f6c72e896b14.jpeg",
-                    "height": 284,
-                    "width": 400
-                  },
-                  "teaser": {
-                    "download": "@@images/preview_image-600-fd0ea9b2a5c98d53ae4063e3cf109f81.jpeg",
-                    "height": 427,
-                    "width": 600
-                  },
-                  "thumb": {
-                    "download": "@@images/preview_image-128-64695facf03cd16699147f64a83054ad.jpeg",
-                    "height": 91,
-                    "width": 128
-                  },
-                  "tile": {
-                    "download": "@@images/preview_image-64-5aef2f45c044064cec0cd2ce5caee94c.jpeg",
-                    "height": 45,
-                    "width": 64
-                  }
-                },
-                "size": 693013,
-                "width": 2400
-              }
-            ]
-          },
-          "title": "Block: Grid"
+          "mime_type": "text/plain",
+          "nav_title": null,
+          "review_state": "published",
+          "start": null,
+          "title": "Grid",
+          "type_title": "Page"
         }
       ],
+      "overwrite": true,
       "styles": {
         "align": "left"
       },
@@ -644,142 +209,34 @@
           "@type": "Document",
           "Description": "Der Grid-Block erlaubt das Hinzuf\u00fcgen mehrspaltiger Bl\u00f6cke. Ein Grid-Block kann zwischen ein und vier Spalten mit unterschiedlichen Bl\u00f6cken enthalten.Teaser und Bilder k\u00f6nnen in einem Grid-Block hinzugef\u00fcgt werden.",
           "Title": "Block: Grid",
+          "description": " The Grid block allows adding multi-column blocks. A grid block can contain between one and four columns of different blocks. Teasers and images can be added in a grid block.",
+          "effective": "2023-07-06T18:35:00+00:00",
+          "end": null,
+          "getObjSize": "676.8 KB",
           "getRemoteUrl": null,
           "hasPreviewImage": true,
           "head_title": null,
           "image_field": "preview_image",
-          "image_scales": {
-            "preview_image": [
-              {
-                "content-type": "image/jpeg",
-                "download": "@@images/preview_image-2400-f9aa7b8d1e2e40de094f1e9f08efb1bf.jpeg",
-                "filename": "black-starry-night.jpg",
-                "height": 1708,
-                "scales": {
-                  "great": {
-                    "download": "@@images/preview_image-1200-a9951363537c3406c7e8f0ce40693ddd.jpeg",
-                    "height": 854,
-                    "width": 1200
-                  },
-                  "huge": {
-                    "download": "@@images/preview_image-1600-b57582f266d44aa33c84096930783ebd.jpeg",
-                    "height": 1138,
-                    "width": 1600
-                  },
-                  "icon": {
-                    "download": "@@images/preview_image-32-c858266edae8c1701c0a52872df9186b.jpeg",
-                    "height": 22,
-                    "width": 32
-                  },
-                  "large": {
-                    "download": "@@images/preview_image-800-f8ba2ef21cf6870af4c095bc18c8bfd3.jpeg",
-                    "height": 569,
-                    "width": 800
-                  },
-                  "larger": {
-                    "download": "@@images/preview_image-1000-8a34f321086727890671e1c2de6bd83a.jpeg",
-                    "height": 711,
-                    "width": 1000
-                  },
-                  "mini": {
-                    "download": "@@images/preview_image-200-61a4fec2eac88cedf03b1905b553f8a3.jpeg",
-                    "height": 142,
-                    "width": 200
-                  },
-                  "preview": {
-                    "download": "@@images/preview_image-400-e5b17fad7696eba84f60f6c72e896b14.jpeg",
-                    "height": 284,
-                    "width": 400
-                  },
-                  "teaser": {
-                    "download": "@@images/preview_image-600-fd0ea9b2a5c98d53ae4063e3cf109f81.jpeg",
-                    "height": 427,
-                    "width": 600
-                  },
-                  "thumb": {
-                    "download": "@@images/preview_image-128-64695facf03cd16699147f64a83054ad.jpeg",
-                    "height": 91,
-                    "width": 128
-                  },
-                  "tile": {
-                    "download": "@@images/preview_image-64-5aef2f45c044064cec0cd2ce5caee94c.jpeg",
-                    "height": 45,
-                    "width": 64
-                  }
-                },
-                "size": 693013,
-                "width": 2400
-              }
-            ]
-          },
-          "title": "Block: Grid"
+          "mime_type": "text/plain",
+          "nav_title": null,
+          "review_state": "published",
+          "start": null,
+          "title": "Grid",
+          "type_title": "Page"
         }
       ],
+      "overwrite": true,
       "preview_image": [
         {
           "@id": "resolveuid/eec82559bf3242a6be4d43bc2096f399",
           "image_field": "image",
-          "image_scales": {
-            "image": [
-              {
-                "content-type": "image/jpeg",
-                "download": "@@images/image-1126-7b90bd2f737fb08f5e2c5719f2f8bc14.jpeg",
-                "filename": "image-light.jpg",
-                "height": 633,
-                "scales": {
-                  "icon": {
-                    "download": "@@images/image-32-5de0f24798404cddd70cc1d15b1213ba.jpeg",
-                    "height": 17,
-                    "width": 32
-                  },
-                  "large": {
-                    "download": "@@images/image-800-728b0edae32e307d8123462b48fafeaa.jpeg",
-                    "height": 449,
-                    "width": 800
-                  },
-                  "larger": {
-                    "download": "@@images/image-1000-19685fe0e43ca671a6f6a973c7d1f0f5.jpeg",
-                    "height": 562,
-                    "width": 1000
-                  },
-                  "mini": {
-                    "download": "@@images/image-200-cfd42d570345d1134d9b2d0f5726bb2e.jpeg",
-                    "height": 112,
-                    "width": 200
-                  },
-                  "preview": {
-                    "download": "@@images/image-400-a35b24fd0dbe867083f962cf69f19c2a.jpeg",
-                    "height": 224,
-                    "width": 400
-                  },
-                  "teaser": {
-                    "download": "@@images/image-600-702ac2045d4ca6fc61c52749e8c2f24d.jpeg",
-                    "height": 337,
-                    "width": 600
-                  },
-                  "thumb": {
-                    "download": "@@images/image-128-06fa281eabe3bbba6eea685ce60d08f1.jpeg",
-                    "height": 71,
-                    "width": 128
-                  },
-                  "tile": {
-                    "download": "@@images/image-64-f0e777433e3a4227dab46fe8cac688a6.jpeg",
-                    "height": 35,
-                    "width": 64
-                  }
-                },
-                "size": 475285,
-                "width": 1126
-              }
-            ]
-          },
           "title": "Image - Light"
         }
       ],
       "styles": {
-        "align": "left",
-        "backgroundColor": "grey"
+        "align": "left"
       },
+      "theme": "grey",
       "title": "Teaser Title H2"
     },
     "4f02f1a1-685a-4f79-a776-01cbd0af42e4": {
@@ -795,77 +252,23 @@
               "@type": "Document",
               "Description": "Der Teaser-Block erlaubt das Hinzuf\u00fcgen eines Elements welches einen bestehenden Inhalte der Webseite mit einem Bild, einem Titel und einer Beschreibung anteasert.",
               "Title": "Block: Teaser",
+              "description": "The teaser block allows you to add an element that teases existing website content with an image, a title and a description.",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": null,
+              "getObjSize": "676.8 KB",
               "getRemoteUrl": null,
               "hasPreviewImage": true,
               "head_title": null,
               "image_field": "preview_image",
-              "image_scales": {
-                "preview_image": [
-                  {
-                    "content-type": "image/jpeg",
-                    "download": "@@images/preview_image-2400-92152ce7c34859059ec84e0b11761cc3.jpeg",
-                    "filename": "black-starry-night.jpg",
-                    "height": 1708,
-                    "scales": {
-                      "great": {
-                        "download": "@@images/preview_image-1200-1e518c9d8f9134ba97f2a4e2702deedd.jpeg",
-                        "height": 854,
-                        "width": 1200
-                      },
-                      "huge": {
-                        "download": "@@images/preview_image-1600-fcfdcd9e8e025729ee2b6caea0a3d1d3.jpeg",
-                        "height": 1138,
-                        "width": 1600
-                      },
-                      "icon": {
-                        "download": "@@images/preview_image-32-0e0dd37b35e2f2d60d6eeae26aea3f02.jpeg",
-                        "height": 22,
-                        "width": 32
-                      },
-                      "large": {
-                        "download": "@@images/preview_image-800-01cee157a8f1f5d7dfec96379b18a290.jpeg",
-                        "height": 569,
-                        "width": 800
-                      },
-                      "larger": {
-                        "download": "@@images/preview_image-1000-9d61c4c454645335cf4bdecf9c395b1b.jpeg",
-                        "height": 711,
-                        "width": 1000
-                      },
-                      "mini": {
-                        "download": "@@images/preview_image-200-656d5c420e8697062bfe37770af79eaa.jpeg",
-                        "height": 142,
-                        "width": 200
-                      },
-                      "preview": {
-                        "download": "@@images/preview_image-400-023b9af0a00566e4e7c09701ab00d273.jpeg",
-                        "height": 284,
-                        "width": 400
-                      },
-                      "teaser": {
-                        "download": "@@images/preview_image-600-18517bc36465f3674f92d7f4c070677d.jpeg",
-                        "height": 427,
-                        "width": 600
-                      },
-                      "thumb": {
-                        "download": "@@images/preview_image-128-2ad943a2fe79e1cadce08427813cb056.jpeg",
-                        "height": 91,
-                        "width": 128
-                      },
-                      "tile": {
-                        "download": "@@images/preview_image-64-b1b1709feb2ccd08b0fdeb0664cf74cd.jpeg",
-                        "height": 45,
-                        "width": 64
-                      }
-                    },
-                    "size": 693013,
-                    "width": 2400
-                  }
-                ]
-              },
-              "title": "Block: Teaser"
+              "mime_type": "text/plain",
+              "nav_title": null,
+              "review_state": "published",
+              "start": null,
+              "title": "Teaser",
+              "type_title": "Page"
             }
           ],
+          "overwrite": true,
           "styles": {
             "align": "left"
           },
@@ -876,57 +279,32 @@
         "items": ["3fac2508-ed58-40d0-aa2e-898844814566"]
       },
       "headline": "Gridblock with Teaser",
-      "styles": {
-        "backgroundColor": "grey"
-      }
-    },
-    "85655a82-c662-4626-a1dd-cded660ee494": {
-      "@type": "listing",
-      "headline": "Listing",
-      "headlineTag": "h2",
-      "querystring": {
-        "limit": "3",
-        "query": [
-          {
-            "i": "portal_type",
-            "o": "plone.app.querystring.operation.selection.any",
-            "v": ["Document"]
-          },
-          {
-            "i": "Subject",
-            "o": "plone.app.querystring.operation.selection.none",
-            "v": ["main folder"]
-          }
-        ],
-        "sort_order": "ascending"
-      },
       "styles": {},
-      "variation": "default"
+      "theme": "grey"
     },
     "9ec8a368-7228-448d-a131-706e135be5c2": {
       "@type": "__button",
       "inneralign": "left",
       "styles": {
-        "backgroundColor": "grey",
-        "buttonAlign": "wide"
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        }
       },
+      "theme": "grey",
       "title": "Button"
     },
     "bf44d5f1-a6fb-4049-bc1c-0e9885f73b90": {
       "@type": "__button",
       "inneralign": "left",
       "styles": {
-        "backgroundColor": "grey",
-        "buttonAlign": "wide"
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        }
       },
-      "title": "Button"
-    },
-    "d792eaa5-73c2-45f1-9662-756dedf86cd1": {
-      "@type": "__button",
-      "inneralign": "left",
-      "styles": {
-        "buttonAlign": "wide"
-      },
+      "theme": "grey",
       "title": "Button"
     },
     "e5e851c5-d634-4c70-b720-024c98d38c6d": {
@@ -939,135 +317,27 @@
           "@type": "Document",
           "Description": "Der Teaser-Block erlaubt das Hinzuf\u00fcgen eines Elements welches einen bestehenden Inhalte der Webseite mit einem Bild, einem Titel und einer Beschreibung anteasert.",
           "Title": "Block: Teaser",
+          "description": "The teaser block allows you to add an element that teases existing website content with an image, a title and a description.",
+          "effective": "2023-07-06T18:35:00+00:00",
+          "end": null,
+          "getObjSize": "676.8 KB",
           "getRemoteUrl": null,
           "hasPreviewImage": true,
           "head_title": null,
           "image_field": "preview_image",
-          "image_scales": {
-            "preview_image": [
-              {
-                "content-type": "image/jpeg",
-                "download": "@@images/preview_image-2400-92152ce7c34859059ec84e0b11761cc3.jpeg",
-                "filename": "black-starry-night.jpg",
-                "height": 1708,
-                "scales": {
-                  "great": {
-                    "download": "@@images/preview_image-1200-1e518c9d8f9134ba97f2a4e2702deedd.jpeg",
-                    "height": 854,
-                    "width": 1200
-                  },
-                  "huge": {
-                    "download": "@@images/preview_image-1600-fcfdcd9e8e025729ee2b6caea0a3d1d3.jpeg",
-                    "height": 1138,
-                    "width": 1600
-                  },
-                  "icon": {
-                    "download": "@@images/preview_image-32-0e0dd37b35e2f2d60d6eeae26aea3f02.jpeg",
-                    "height": 22,
-                    "width": 32
-                  },
-                  "large": {
-                    "download": "@@images/preview_image-800-01cee157a8f1f5d7dfec96379b18a290.jpeg",
-                    "height": 569,
-                    "width": 800
-                  },
-                  "larger": {
-                    "download": "@@images/preview_image-1000-9d61c4c454645335cf4bdecf9c395b1b.jpeg",
-                    "height": 711,
-                    "width": 1000
-                  },
-                  "mini": {
-                    "download": "@@images/preview_image-200-656d5c420e8697062bfe37770af79eaa.jpeg",
-                    "height": 142,
-                    "width": 200
-                  },
-                  "preview": {
-                    "download": "@@images/preview_image-400-023b9af0a00566e4e7c09701ab00d273.jpeg",
-                    "height": 284,
-                    "width": 400
-                  },
-                  "teaser": {
-                    "download": "@@images/preview_image-600-18517bc36465f3674f92d7f4c070677d.jpeg",
-                    "height": 427,
-                    "width": 600
-                  },
-                  "thumb": {
-                    "download": "@@images/preview_image-128-2ad943a2fe79e1cadce08427813cb056.jpeg",
-                    "height": 91,
-                    "width": 128
-                  },
-                  "tile": {
-                    "download": "@@images/preview_image-64-b1b1709feb2ccd08b0fdeb0664cf74cd.jpeg",
-                    "height": 45,
-                    "width": 64
-                  }
-                },
-                "size": 693013,
-                "width": 2400
-              }
-            ]
-          },
-          "title": "Block: Teaser"
+          "mime_type": "text/plain",
+          "nav_title": null,
+          "review_state": "published",
+          "start": null,
+          "title": "Teaser",
+          "type_title": "Page"
         }
       ],
+      "overwrite": true,
       "preview_image": [
         {
           "@id": "resolveuid/eec82559bf3242a6be4d43bc2096f399",
           "image_field": "image",
-          "image_scales": {
-            "image": [
-              {
-                "content-type": "image/jpeg",
-                "download": "@@images/image-1126-7b90bd2f737fb08f5e2c5719f2f8bc14.jpeg",
-                "filename": "image-light.jpg",
-                "height": 633,
-                "scales": {
-                  "icon": {
-                    "download": "@@images/image-32-5de0f24798404cddd70cc1d15b1213ba.jpeg",
-                    "height": 17,
-                    "width": 32
-                  },
-                  "large": {
-                    "download": "@@images/image-800-728b0edae32e307d8123462b48fafeaa.jpeg",
-                    "height": 449,
-                    "width": 800
-                  },
-                  "larger": {
-                    "download": "@@images/image-1000-19685fe0e43ca671a6f6a973c7d1f0f5.jpeg",
-                    "height": 562,
-                    "width": 1000
-                  },
-                  "mini": {
-                    "download": "@@images/image-200-cfd42d570345d1134d9b2d0f5726bb2e.jpeg",
-                    "height": 112,
-                    "width": 200
-                  },
-                  "preview": {
-                    "download": "@@images/image-400-a35b24fd0dbe867083f962cf69f19c2a.jpeg",
-                    "height": 224,
-                    "width": 400
-                  },
-                  "teaser": {
-                    "download": "@@images/image-600-702ac2045d4ca6fc61c52749e8c2f24d.jpeg",
-                    "height": 337,
-                    "width": 600
-                  },
-                  "thumb": {
-                    "download": "@@images/image-128-06fa281eabe3bbba6eea685ce60d08f1.jpeg",
-                    "height": 71,
-                    "width": 128
-                  },
-                  "tile": {
-                    "download": "@@images/image-64-f0e777433e3a4227dab46fe8cac688a6.jpeg",
-                    "height": 35,
-                    "width": 64
-                  }
-                },
-                "size": 475285,
-                "width": 1126
-              }
-            ]
-          },
           "title": "Image - Light"
         }
       ],
@@ -1086,81 +356,27 @@
           "@type": "Document",
           "Description": "Der Teaser-Block erlaubt das Hinzuf\u00fcgen eines Elements welches einen bestehenden Inhalte der Webseite mit einem Bild, einem Titel und einer Beschreibung anteasert.",
           "Title": "Block: Teaser",
+          "description": "The teaser block allows you to add an element that teases existing website content with an image, a title and a description.",
+          "effective": "2023-07-06T18:35:00+00:00",
+          "end": null,
+          "getObjSize": "676.8 KB",
           "getRemoteUrl": null,
           "hasPreviewImage": true,
           "head_title": null,
           "image_field": "preview_image",
-          "image_scales": {
-            "preview_image": [
-              {
-                "content-type": "image/jpeg",
-                "download": "@@images/preview_image-2400-92152ce7c34859059ec84e0b11761cc3.jpeg",
-                "filename": "black-starry-night.jpg",
-                "height": 1708,
-                "scales": {
-                  "great": {
-                    "download": "@@images/preview_image-1200-1e518c9d8f9134ba97f2a4e2702deedd.jpeg",
-                    "height": 854,
-                    "width": 1200
-                  },
-                  "huge": {
-                    "download": "@@images/preview_image-1600-fcfdcd9e8e025729ee2b6caea0a3d1d3.jpeg",
-                    "height": 1138,
-                    "width": 1600
-                  },
-                  "icon": {
-                    "download": "@@images/preview_image-32-0e0dd37b35e2f2d60d6eeae26aea3f02.jpeg",
-                    "height": 22,
-                    "width": 32
-                  },
-                  "large": {
-                    "download": "@@images/preview_image-800-01cee157a8f1f5d7dfec96379b18a290.jpeg",
-                    "height": 569,
-                    "width": 800
-                  },
-                  "larger": {
-                    "download": "@@images/preview_image-1000-9d61c4c454645335cf4bdecf9c395b1b.jpeg",
-                    "height": 711,
-                    "width": 1000
-                  },
-                  "mini": {
-                    "download": "@@images/preview_image-200-656d5c420e8697062bfe37770af79eaa.jpeg",
-                    "height": 142,
-                    "width": 200
-                  },
-                  "preview": {
-                    "download": "@@images/preview_image-400-023b9af0a00566e4e7c09701ab00d273.jpeg",
-                    "height": 284,
-                    "width": 400
-                  },
-                  "teaser": {
-                    "download": "@@images/preview_image-600-18517bc36465f3674f92d7f4c070677d.jpeg",
-                    "height": 427,
-                    "width": 600
-                  },
-                  "thumb": {
-                    "download": "@@images/preview_image-128-2ad943a2fe79e1cadce08427813cb056.jpeg",
-                    "height": 91,
-                    "width": 128
-                  },
-                  "tile": {
-                    "download": "@@images/preview_image-64-b1b1709feb2ccd08b0fdeb0664cf74cd.jpeg",
-                    "height": 45,
-                    "width": 64
-                  }
-                },
-                "size": 693013,
-                "width": 2400
-              }
-            ]
-          },
-          "title": "Block: Teaser"
+          "mime_type": "text/plain",
+          "nav_title": null,
+          "review_state": "published",
+          "start": null,
+          "title": "Teaser",
+          "type_title": "Page"
         }
       ],
+      "overwrite": true,
       "styles": {
-        "align": "right",
-        "backgroundColor": "grey"
+        "align": "right"
       },
+      "theme": "grey",
       "title": "Teaser Title H2"
     },
     "ebeaa1f2-cd65-4310-9a26-75e75397553b": {
@@ -1176,135 +392,27 @@
               "@type": "Document",
               "Description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
               "Title": "Inhaltstyp: Seite (Page)",
+              "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": null,
+              "getObjSize": "676.8 KB",
               "getRemoteUrl": null,
               "hasPreviewImage": true,
               "head_title": null,
               "image_field": "preview_image",
-              "image_scales": {
-                "preview_image": [
-                  {
-                    "content-type": "image/jpeg",
-                    "download": "@@images/preview_image-2400-dd70655eae2a121e9b3d20b15d5292db.jpeg",
-                    "filename": "black-starry-night.jpg",
-                    "height": 1708,
-                    "scales": {
-                      "great": {
-                        "download": "@@images/preview_image-1200-02d0687099bde73e5189270d53df7e22.jpeg",
-                        "height": 854,
-                        "width": 1200
-                      },
-                      "huge": {
-                        "download": "@@images/preview_image-1600-275bd418c80864fc5cc8b0b0c7f4a0a2.jpeg",
-                        "height": 1138,
-                        "width": 1600
-                      },
-                      "icon": {
-                        "download": "@@images/preview_image-32-848481d517c9091a765ccf7a6ef88277.jpeg",
-                        "height": 22,
-                        "width": 32
-                      },
-                      "large": {
-                        "download": "@@images/preview_image-800-255c17a5d39f4bb2d79c72d56934b342.jpeg",
-                        "height": 569,
-                        "width": 800
-                      },
-                      "larger": {
-                        "download": "@@images/preview_image-1000-661e34a155a000108788ca0d60f4b22c.jpeg",
-                        "height": 711,
-                        "width": 1000
-                      },
-                      "mini": {
-                        "download": "@@images/preview_image-200-614da3a8827dc90cb92618ada1980504.jpeg",
-                        "height": 142,
-                        "width": 200
-                      },
-                      "preview": {
-                        "download": "@@images/preview_image-400-bf2a5268ec239c40c54556e7f48b1cf6.jpeg",
-                        "height": 284,
-                        "width": 400
-                      },
-                      "teaser": {
-                        "download": "@@images/preview_image-600-b1f4235a88cb99bd1c5ab3dceaf953ee.jpeg",
-                        "height": 427,
-                        "width": 600
-                      },
-                      "thumb": {
-                        "download": "@@images/preview_image-128-80ae3135a04405512335f90c8ce4cb3e.jpeg",
-                        "height": 91,
-                        "width": 128
-                      },
-                      "tile": {
-                        "download": "@@images/preview_image-64-fbe446c415c4dbcbca8b81c451ee4659.jpeg",
-                        "height": 45,
-                        "width": 64
-                      }
-                    },
-                    "size": 693013,
-                    "width": 2400
-                  }
-                ]
-              },
-              "title": "Inhaltstyp: Seite (Page)"
+              "mime_type": "text/plain",
+              "nav_title": null,
+              "review_state": "published",
+              "start": null,
+              "title": "Page",
+              "type_title": "Page"
             }
           ],
+          "overwrite": true,
           "preview_image": [
             {
               "@id": "resolveuid/eec82559bf3242a6be4d43bc2096f399",
               "image_field": "image",
-              "image_scales": {
-                "image": [
-                  {
-                    "content-type": "image/jpeg",
-                    "download": "@@images/image-1126-7b90bd2f737fb08f5e2c5719f2f8bc14.jpeg",
-                    "filename": "image-light.jpg",
-                    "height": 633,
-                    "scales": {
-                      "icon": {
-                        "download": "@@images/image-32-5de0f24798404cddd70cc1d15b1213ba.jpeg",
-                        "height": 17,
-                        "width": 32
-                      },
-                      "large": {
-                        "download": "@@images/image-800-728b0edae32e307d8123462b48fafeaa.jpeg",
-                        "height": 449,
-                        "width": 800
-                      },
-                      "larger": {
-                        "download": "@@images/image-1000-19685fe0e43ca671a6f6a973c7d1f0f5.jpeg",
-                        "height": 562,
-                        "width": 1000
-                      },
-                      "mini": {
-                        "download": "@@images/image-200-cfd42d570345d1134d9b2d0f5726bb2e.jpeg",
-                        "height": 112,
-                        "width": 200
-                      },
-                      "preview": {
-                        "download": "@@images/image-400-a35b24fd0dbe867083f962cf69f19c2a.jpeg",
-                        "height": 224,
-                        "width": 400
-                      },
-                      "teaser": {
-                        "download": "@@images/image-600-702ac2045d4ca6fc61c52749e8c2f24d.jpeg",
-                        "height": 337,
-                        "width": 600
-                      },
-                      "thumb": {
-                        "download": "@@images/image-128-06fa281eabe3bbba6eea685ce60d08f1.jpeg",
-                        "height": 71,
-                        "width": 128
-                      },
-                      "tile": {
-                        "download": "@@images/image-64-f0e777433e3a4227dab46fe8cac688a6.jpeg",
-                        "height": 35,
-                        "width": 64
-                      }
-                    },
-                    "size": 475285,
-                    "width": 1126
-                  }
-                ]
-              },
               "title": "Image - Light"
             }
           ],
@@ -1323,77 +431,23 @@
               "@type": "Document",
               "Description": "Der Grid-Block erlaubt das Hinzuf\u00fcgen mehrspaltiger Bl\u00f6cke. Ein Grid-Block kann zwischen ein und vier Spalten mit unterschiedlichen Bl\u00f6cken enthalten.Teaser und Bilder k\u00f6nnen in einem Grid-Block hinzugef\u00fcgt werden.",
               "Title": "Block: Grid",
+              "description": " The Grid block allows adding multi-column blocks. A grid block can contain between one and four columns of different blocks. Teasers and images can be added in a grid block.",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": null,
+              "getObjSize": "676.8 KB",
               "getRemoteUrl": null,
               "hasPreviewImage": true,
               "head_title": null,
               "image_field": "preview_image",
-              "image_scales": {
-                "preview_image": [
-                  {
-                    "content-type": "image/jpeg",
-                    "download": "@@images/preview_image-2400-f9aa7b8d1e2e40de094f1e9f08efb1bf.jpeg",
-                    "filename": "black-starry-night.jpg",
-                    "height": 1708,
-                    "scales": {
-                      "great": {
-                        "download": "@@images/preview_image-1200-a9951363537c3406c7e8f0ce40693ddd.jpeg",
-                        "height": 854,
-                        "width": 1200
-                      },
-                      "huge": {
-                        "download": "@@images/preview_image-1600-b57582f266d44aa33c84096930783ebd.jpeg",
-                        "height": 1138,
-                        "width": 1600
-                      },
-                      "icon": {
-                        "download": "@@images/preview_image-32-c858266edae8c1701c0a52872df9186b.jpeg",
-                        "height": 22,
-                        "width": 32
-                      },
-                      "large": {
-                        "download": "@@images/preview_image-800-f8ba2ef21cf6870af4c095bc18c8bfd3.jpeg",
-                        "height": 569,
-                        "width": 800
-                      },
-                      "larger": {
-                        "download": "@@images/preview_image-1000-8a34f321086727890671e1c2de6bd83a.jpeg",
-                        "height": 711,
-                        "width": 1000
-                      },
-                      "mini": {
-                        "download": "@@images/preview_image-200-61a4fec2eac88cedf03b1905b553f8a3.jpeg",
-                        "height": 142,
-                        "width": 200
-                      },
-                      "preview": {
-                        "download": "@@images/preview_image-400-e5b17fad7696eba84f60f6c72e896b14.jpeg",
-                        "height": 284,
-                        "width": 400
-                      },
-                      "teaser": {
-                        "download": "@@images/preview_image-600-fd0ea9b2a5c98d53ae4063e3cf109f81.jpeg",
-                        "height": 427,
-                        "width": 600
-                      },
-                      "thumb": {
-                        "download": "@@images/preview_image-128-64695facf03cd16699147f64a83054ad.jpeg",
-                        "height": 91,
-                        "width": 128
-                      },
-                      "tile": {
-                        "download": "@@images/preview_image-64-5aef2f45c044064cec0cd2ce5caee94c.jpeg",
-                        "height": 45,
-                        "width": 64
-                      }
-                    },
-                    "size": 693013,
-                    "width": 2400
-                  }
-                ]
-              },
-              "title": "Block: Grid"
+              "mime_type": "text/plain",
+              "nav_title": null,
+              "review_state": "published",
+              "start": null,
+              "title": "Grid",
+              "type_title": "Page"
             }
           ],
+          "overwrite": true,
           "styles": {
             "align": "left"
           },
@@ -1409,77 +463,23 @@
               "@type": "Document",
               "Description": "Der Teaser-Block erlaubt das Hinzuf\u00fcgen eines Elements welches einen bestehenden Inhalte der Webseite mit einem Bild, einem Titel und einer Beschreibung anteasert.",
               "Title": "Block: Teaser",
+              "description": "The teaser block allows you to add an element that teases existing website content with an image, a title and a description.",
+              "effective": "2023-07-06T18:35:00+00:00",
+              "end": null,
+              "getObjSize": "676.8 KB",
               "getRemoteUrl": null,
               "hasPreviewImage": true,
               "head_title": null,
               "image_field": "preview_image",
-              "image_scales": {
-                "preview_image": [
-                  {
-                    "content-type": "image/jpeg",
-                    "download": "@@images/preview_image-2400-92152ce7c34859059ec84e0b11761cc3.jpeg",
-                    "filename": "black-starry-night.jpg",
-                    "height": 1708,
-                    "scales": {
-                      "great": {
-                        "download": "@@images/preview_image-1200-1e518c9d8f9134ba97f2a4e2702deedd.jpeg",
-                        "height": 854,
-                        "width": 1200
-                      },
-                      "huge": {
-                        "download": "@@images/preview_image-1600-fcfdcd9e8e025729ee2b6caea0a3d1d3.jpeg",
-                        "height": 1138,
-                        "width": 1600
-                      },
-                      "icon": {
-                        "download": "@@images/preview_image-32-0e0dd37b35e2f2d60d6eeae26aea3f02.jpeg",
-                        "height": 22,
-                        "width": 32
-                      },
-                      "large": {
-                        "download": "@@images/preview_image-800-01cee157a8f1f5d7dfec96379b18a290.jpeg",
-                        "height": 569,
-                        "width": 800
-                      },
-                      "larger": {
-                        "download": "@@images/preview_image-1000-9d61c4c454645335cf4bdecf9c395b1b.jpeg",
-                        "height": 711,
-                        "width": 1000
-                      },
-                      "mini": {
-                        "download": "@@images/preview_image-200-656d5c420e8697062bfe37770af79eaa.jpeg",
-                        "height": 142,
-                        "width": 200
-                      },
-                      "preview": {
-                        "download": "@@images/preview_image-400-023b9af0a00566e4e7c09701ab00d273.jpeg",
-                        "height": 284,
-                        "width": 400
-                      },
-                      "teaser": {
-                        "download": "@@images/preview_image-600-18517bc36465f3674f92d7f4c070677d.jpeg",
-                        "height": 427,
-                        "width": 600
-                      },
-                      "thumb": {
-                        "download": "@@images/preview_image-128-2ad943a2fe79e1cadce08427813cb056.jpeg",
-                        "height": 91,
-                        "width": 128
-                      },
-                      "tile": {
-                        "download": "@@images/preview_image-64-b1b1709feb2ccd08b0fdeb0664cf74cd.jpeg",
-                        "height": 45,
-                        "width": 64
-                      }
-                    },
-                    "size": 693013,
-                    "width": 2400
-                  }
-                ]
-              },
-              "title": "Block: Teaser"
+              "mime_type": "text/plain",
+              "nav_title": null,
+              "review_state": "published",
+              "start": null,
+              "title": "Teaser",
+              "type_title": "Page"
             }
           ],
+          "overwrite": true,
           "styles": {
             "align": "left"
           },
@@ -1500,7 +500,9 @@
       "@type": "__button",
       "inneralign": "left",
       "styles": {
-        "buttonAlign": "wide"
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        }
       },
       "title": "Button"
     },
@@ -1508,7 +510,9 @@
       "@type": "__button",
       "inneralign": "left",
       "styles": {
-        "buttonAlign": "wide"
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        }
       },
       "title": "Button"
     },
@@ -1534,11 +538,10 @@
       "1e730622-4982-4c61-a779-e06d70581c42",
       "383c512f-e7a4-4426-b721-9ebaf7248f8f",
       "eb4928c3-4cfd-4876-bedd-28ff45b3fe60",
-      "9ec8a368-7228-448d-a131-706e135be5c2",
-      "85655a82-c662-4626-a1dd-cded660ee494",
-      "d792eaa5-73c2-45f1-9662-756dedf86cd1"
+      "9ec8a368-7228-448d-a131-706e135be5c2"
     ]
   },
+  "complementary_logo": null,
   "contributors": [],
   "creators": ["admin"],
   "description": "Site created with a new Plone Distribution",
@@ -1547,8 +550,70 @@
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
-  "exportimport.versions": {},
+  "facebook_app_id": "",
+  "facebook_username": "",
+  "footer_colophon_text": null,
+  "footer_links": [
+    {
+      "@id": "642b07b2-bbd1-49f0-8465-a729fcd0d363",
+      "href": [
+        {
+          "@id": "/imprint",
+          "title": "imprint"
+        }
+      ],
+      "title": "imprint"
+    },
+    {
+      "@id": "93a800b9-8563-4dfd-8dae-a6b9564b2b0a",
+      "href": [
+        {
+          "@id": "/accessibility",
+          "title": "accessibility"
+        }
+      ],
+      "title": "accessibility"
+    },
+    {
+      "@id": "6c596bb9-5cff-4c01-85fe-b1db9d5f886c",
+      "href": [
+        {
+          "@id": "/legal",
+          "title": "legal"
+        }
+      ],
+      "title": "privacy policy"
+    }
+  ],
+  "footer_logos": [],
+  "footer_logos_container_width": "default",
+  "footer_logos_size": "s",
+  "has_fat_menu": true,
+  "has_intranet_header": false,
+  "header_actions": [
+    {
+      "@id": "1",
+      "href": [
+        {
+          "@id": "https://volto-light-theme.readthedocs.io/"
+        }
+      ],
+      "openLinkInNewTab": true,
+      "title": "Documentation"
+    },
+    {
+      "@id": "2",
+      "href": [
+        {
+          "@id": "https://github.com/kitconcept/volto-light-theme"
+        }
+      ],
+      "openLinkInNewTab": true,
+      "title": "Github"
+    }
+  ],
   "id": "Plone",
+  "intranet_flag": null,
   "is_folderish": true,
   "items_total": 4,
   "language": "##DEFAULT##",
@@ -1556,14 +621,14 @@
     "locked": false,
     "stealable": true
   },
-  "parent": {},
+  "logo": null,
+  "preview_caption_link": null,
+  "primary_foreground_color": null,
   "review_state": null,
   "rights": "",
-  "subjects": [],
-  "table_of_contents": null,
-  "title": "Plone",
-  "type_title": "Plone Site",
-  "workflow_history": {},
+  "secondary_color": null,
+  "secondary_foreground_color": null,
+  "share_social_data": true,
   "social_links": [
     {
       "@id": "a5368555-78cc-4ecc-86f7-3b48f9ae952f",
@@ -1621,36 +686,11 @@
       "title": "Discord"
     }
   ],
-  "footer_links": [
-    {
-      "@id": "642b07b2-bbd1-49f0-8465-a729fcd0d363",
-      "href": [
-        {
-          "@id": "/imprint",
-          "title": "imprint"
-        }
-      ],
-      "title": "imprint"
-    },
-    {
-      "@id": "93a800b9-8563-4dfd-8dae-a6b9564b2b0a",
-      "href": [
-        {
-          "@id": "/accessibility",
-          "title": "accessibility"
-        }
-      ],
-      "title": "accessibility"
-    },
-    {
-      "@id": "6c596bb9-5cff-4c01-85fe-b1db9d5f886c",
-      "href": [
-        {
-          "@id": "/legal",
-          "title": "legal"
-        }
-      ],
-      "title": "privacy policy"
-    }
-  ]
+  "subjects": [],
+  "title": "Plone",
+  "type_title": "Plone Site",
+  "workflow_history": {},
+  "working_copy": null,
+  "working_copy_of": null,
+  "x_username": ""
 }

@@ -98,7 +98,8 @@ test: ## Run unit tests
 
 .PHONY: test-ci
 ci-test: ## Run unit tests in CI
-	CI=1 RAZZLE_JEST_CONFIG=$(CURRENT_DIR)/jest-addon.config.js pnpm --filter @plone/volto test -- --passWithNoTests
+	VOLTOCONFIG=$(CURRENT_DIR)/volto.config.js pnpm --filter @plone/volto i18n
+	CI=1 pnpm test -- --passWithNoTests
 
 .PHONY: build-image
 build-image:  ## Build Docker Image
@@ -119,7 +120,7 @@ storybook-start: ## Start Storybook server on port 6006
 storybook-build: ## Build Storybook
 	@echo "$(GREEN)==> Build Storybook$(RESET)"
 	mkdir -p $(CURRENT_DIR)/.storybook-build
-	pnpm run build-storybook -o $(CURRENT_DIR)/.storybook-build
+	pnpm run storybook-build -o $(CURRENT_DIR)/.storybook-build
 
 ## Acceptance
 .PHONY: acceptance-frontend-dev-start
@@ -185,6 +186,10 @@ ci-acceptance-a11y-test: ## Run a11y cypress tests in headless mode for CI
 acceptance-test-visual: ## Start visual Cypress Acceptance Tests
 	NODE_ENV=production $(NODEBIN)/cypress open --config-file cypress/config/cypress.visual.config.js --config specPattern='$(SPEC)'
 
+.PHONY: acceptance-test-visual-storybook
+acceptance-test-visual-storybook: ## Start visual Cypress Acceptance Tests for Storybook
+	NODE_ENV=production $(NODEBIN)/cypress open --config-file cypress/config/cypress.visual.config.storybook.js --config specPattern='$(SPEC)'
+
 # Running the visual tests in headless, cumulative mode will SKIP tests that have run previously, and
 # only run the still failing tests HOWEVER the results are not collected in interactive mode due to
 # inherent limitations of Cypress. But if you run the tests in cumulative headless mode first,
@@ -197,6 +202,10 @@ acceptance-test-visual-cumulative: ## Start visual Cypress Acceptance Tests with
 .PHONY: ci-acceptance-test-visual
 ci-acceptance-test-visual: ## Start visual Cypress Acceptance Tests in headless mode
 	NODE_ENV=production $(NODEBIN)/cypress run --browser firefox --config-file cypress/config/cypress.visual.config.js --config specPattern='$(SPEC)'
+
+.PHONY: ci-acceptance-test-visual-storybook
+ci-acceptance-test-visual-storybook: ## Start visual Cypress Acceptance Tests in headless mode for Storybook
+	NODE_ENV=production $(NODEBIN)/cypress run --browser firefox --config-file cypress/config/cypress.visual.config.storybook.js --config specPattern='$(SPEC)'
 
 # Running the visual tests in headless, cumulative mode will SKIP tests that have run previously, and
 # only run the still failing tests.

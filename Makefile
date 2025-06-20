@@ -15,6 +15,7 @@ PROJECT_NAME=volto-light-theme
 IMAGE_NAME=ghcr.io/kitconcept/voltolighttheme
 
 VOLTO_VERSION=$(shell cat frontend/mrs.developer.json | python -c "import sys, json; print(json.load(sys.stdin)['core']['tag'])")
+PLONE_VERSION=$(shell cat backend/version.txt)
 
 # We like colors
 # From: https://coderwall.com/p/izxssa/colored-makefile-for-golang-projects
@@ -220,12 +221,12 @@ acceptance-images-build: ## Build Acceptance frontend/backend images
 .PHONY: acceptance-frontend-container-start
 acceptance-frontend-container-start:
 	@echo "Start acceptance frontend"
-	@docker run --rm -p 3000:3000 --name brfields-frontend-acceptance --link brfields-backend-acceptance:backend -e RAZZLE_API_PATH=http://localhost:55001/plone -e RAZZLE_INTERNAL_API_PATH=http://backend:55001/plone -d kitconcept/voltolighttheme-frontend:acceptance
+	@docker run --rm -p 3000:3000 --name vlt-frontend-acceptance --link vlt-backend-acceptance:backend -e RAZZLE_API_PATH=http://localhost:55001/plone -e RAZZLE_INTERNAL_API_PATH=http://backend:55001/plone -d kitconcept/voltolighttheme-frontend:acceptance
 
 .PHONY: acceptance-backend-container-start
 acceptance-backend-container-start:
 	@echo "Start acceptance backend"
-	@docker run --rm -p 55001:55001 --name brfields-backend-acceptance -d kitconcept/voltolighttheme-backend:acceptance
+	@docker run --rm -p 55001:55001 --name vlt-backend-acceptance -d kitconcept/voltolighttheme-backend:acceptance
 
 .PHONY: acceptance-containers-start
 acceptance-containers-start: ## Start Acceptance containers
@@ -235,8 +236,8 @@ acceptance-containers-start: ## Start Acceptance containers
 .PHONY: acceptance-containers-stop
 acceptance-containers-stop: ## Stop Acceptance containers
 	@echo "Stop acceptance containers"
-	@docker stop brfields-frontend-acceptance
-	@docker stop brfields-backend-acceptance
+	@docker stop vlt-frontend-acceptance
+	@docker stop vlt-backend-acceptance
 
 .PHONY: ci-acceptance-test
 ci-acceptance-test:
