@@ -3,7 +3,6 @@ import { TextField, Button } from '@plone/components';
 import { defineMessages, useIntl } from 'react-intl';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import loupeSVG from '@plone/volto/icons/zoom.svg';
-import clearSVG from '@plone/volto/icons/clear.svg';
 
 const messages = defineMessages({
   search: {
@@ -17,14 +16,7 @@ const messages = defineMessages({
 });
 
 const SearchInput = (props) => {
-  const {
-    data,
-    searchText,
-    setSearchText,
-    isLive,
-    onTriggerSearch,
-    removeSearchQuery,
-  } = props;
+  const { data, searchText, setSearchText, isLive, onTriggerSearch } = props;
   const intl = useIntl();
 
   return (

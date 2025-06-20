@@ -2,10 +2,11 @@ import React from 'react';
 
 import ListingBody from '@plone/volto/components/manage/Blocks/Listing/ListingBody';
 import { withBlockExtensions } from '@plone/volto/helpers/Extensions';
-
 import config from '@plone/volto/registry';
+import TopSideFacets from './layout/TopSideFacets';
 
-import { withSearch, withQueryString } from './hocs';
+import { withSearch } from './hocs';
+import { withQueryString } from '@plone/volto/components/manage/Blocks/Search/hocs';
 import { compose } from 'redux';
 import { useSelector } from 'react-redux';
 import isEqual from 'lodash/isEqual';
@@ -42,6 +43,10 @@ const blockPropsAreChanged = (prevProps, nextProps) => {
   return isEqual(prev, next);
 };
 
+/* I have made query: [..data.query, ...defaultQuery] to ensure that our event is included
+when you change the facet. Why? When you change the facet, we are creating a new query object,
+since our data.query is empty, we are losing the default event ones. so we make sure we add it
+back to the query. */
 const applyDefaults = (data, root) => {
   const defaultQuery = [
     {
@@ -70,15 +75,14 @@ const applyDefaults = (data, root) => {
     ...data,
     ...sort_on,
     ...sort_order,
-    query: data?.query?.length ? data.query : defaultQuery,
+    query: data?.query?.length
+      ? [...data.query, ...defaultQuery]
+      : defaultQuery,
   };
 };
 
 const SearchBlockView = (props) => {
-  const { id, data, searchData, mode = 'view', variation, className } = props;
-
-  const Layout = variation.view;
-
+  const { id, data, searchData, mode = 'view', className } = props;
   const dataListingBodyVariation = getListingBodyVariation(data).id;
   const [selectedView, setSelectedView] = React.useState(
     dataListingBodyVariation,
@@ -100,7 +104,7 @@ const SearchBlockView = (props) => {
 
   return (
     <div className={cx('block eventsearch', selectedView, className)}>
-      <Layout
+      <TopSideFacets
         {...props}
         isEditMode={mode === 'edit'}
         selectedView={selectedView}
@@ -113,7 +117,7 @@ const SearchBlockView = (props) => {
           path={props.path}
           isEditMode={mode === 'edit'}
         />
-      </Layout>
+      </TopSideFacets>
     </div>
   );
 };

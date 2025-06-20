@@ -10,7 +10,8 @@ import config from '@plone/volto/registry';
 
 import { SearchBlockViewComponent } from './SearchBlockView';
 import Schema from './schema';
-import { withSearch, withQueryString } from './hocs';
+import { withSearch } from './hocs';
+import { withQueryString } from '@plone/volto/components/manage/Blocks/Search/hocs';
 import cloneDeep from 'lodash/cloneDeep';
 
 const messages = defineMessages({

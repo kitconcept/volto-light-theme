@@ -43,11 +43,6 @@ function getInitialState(
 
   return {
     query: [
-      {
-        i: 'portal_type',
-        o: 'plone.app.querystring.operation.selection.any',
-        v: ['Event'],
-      },
       ...(data.query?.query || []),
       ...(facetSettings || [])
         .map((facet) => {

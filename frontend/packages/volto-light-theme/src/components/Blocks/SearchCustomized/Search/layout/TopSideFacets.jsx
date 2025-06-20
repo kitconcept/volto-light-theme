@@ -1,25 +1,10 @@
 import React from 'react';
 import { flushSync } from 'react-dom';
-import { defineMessages, useIntl } from 'react-intl';
 import { Grid } from 'semantic-ui-react';
 import { DateRangePicker } from '../components/DateRangePicker';
 
-import {
-  SearchInput,
-  Facets,
-  FilterList,
-  SortOn,
-  ViewSwitcher,
-} from '../components';
+import { SearchInput, Facets, SortOn } from '../components';
 import SearchDetails from '../../../Search/components/SearchDetails';
-// import cx from 'classnames';
-
-// const messages = defineMessages({
-//   searchButtonText: {
-//     id: 'Search',
-//     defaultMessage: 'Search',
-//   },
-// });
 
 function getDateRangeIOV(startDate, endDate) {
   if (startDate && endDate && startDate !== endDate) {
@@ -86,7 +71,7 @@ const TopSideFacets = (props) => {
     sortOrder,
     onTriggerSearch,
     searchedText, // search text for previous search
-    searchText, // search text currently being entered (controlled input)
+    // searchText, // search text currently being entered (controlled input)
     isEditMode,
     querystring = {},
     handleDateRangeChange,
@@ -125,18 +110,6 @@ const TopSideFacets = (props) => {
         />
         {showSortOnEvent && (
           <div className="search-filters-sort">
-            {/* we don't need filter list
-          <FilterList
-            {...props}
-            isEditMode={isEditMode}
-            setFacets={(f) => {
-              flushSync(() => {
-                setFacets(f);
-                onTriggerSearch(searchedText || '', f);
-              });
-            }}
-          /> */}
-
             <div className="sort-on-wrapper">
               <SortOn
                 data={data}
@@ -163,10 +136,6 @@ const TopSideFacets = (props) => {
                 }}
               />
             </div>
-
-            {data.availableViews && data.availableViews.length > 1 && (
-              <ViewSwitcher {...props} />
-            )}
           </div>
         )}
       </div>
