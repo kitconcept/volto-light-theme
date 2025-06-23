@@ -9,10 +9,11 @@
 
 .contenttype-news-item {
   .documentFirstHeading {
-    margin-top: 0px;
+    margin-top: 0;
+    padding-top: 0;
   }
   .blocks-group-wrapper {
-    padding-top: 0px;
+    padding-top: 0;
   }
   #page-document .dates {
     @include default-container-width();
@@ -26,17 +27,27 @@
       text-transform: uppercase;
     }
 
-    @container (min-width: #{$tablet-breakpoint} ) {
-      .day + .head-title::before {
+    .head-title:has(+ .day) {
+      &::after {
         content: '|';
+        margin-left: 8px;
+      }
+    }
+
+    @container (max-width: #{$tablet-breakpoint} ) {
+      .day,
+      .head-title {
+        font-size: 14px;
+        line-height: 18px;
       }
     }
 
     @container (max-width: #{$largest-mobile-screen} ) {
       margin-bottom: $spacing-small;
-      .day {
-        display: none;
-      }
+    }
+
+    & + .blocks-group-wrapper h1.documentFirstHeading {
+      padding-top: 0;
     }
   }
 }
@@ -51,20 +62,21 @@
       margin-left: $spacing-small !important;
     }
     .ui.grid.details-container .row .column {
-      padding: 0px !important;
+      padding: 0 !important;
     }
   }
 
   .ui.grid.details-container .row .column {
-    padding: 0px;
+    padding: 0;
   }
 
   .documentFirstHeading {
-    margin-top: 0px;
+    margin-top: 0;
+    padding-top: 0;
   }
 
   .blocks-group-wrapper {
-    padding-top: 0px;
+    padding-top: 0;
     padding-bottom: $spacing-xlarge;
     @container (max-width: #{$largest-mobile-screen} ) {
       padding-bottom: $spacing-large;
@@ -91,8 +103,18 @@
       letter-spacing: 1px;
       text-transform: uppercase;
     }
-    .day + .head-title::before {
-      content: '|';
+    .head-title {
+      &::after {
+        content: '|';
+        margin-left: 8px;
+      }
+    }
+    @container (max-width: #{$tablet-breakpoint} ) {
+      .day,
+      .head-title {
+        font-size: 14px;
+        line-height: 18px;
+      }
     }
   }
 
@@ -109,7 +131,7 @@
       margin-bottom: $spacing-large;
     }
     .two.column.row {
-      padding-top: 0px;
+      padding-top: 0;
       .event-title {
         margin-bottom: 25px;
         .event-heading {
