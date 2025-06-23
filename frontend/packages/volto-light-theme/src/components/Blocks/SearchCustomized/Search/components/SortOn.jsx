@@ -8,7 +8,10 @@ import {
   DropdownIndicator,
 } from '@plone/volto/components/manage/Widgets/SelectStyling';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
-import { selectTheme, sortOnSelectStyles } from './SelectStyling';
+import {
+  selectTheme,
+  sortOnSelectStyles,
+} from '@plone/volto/components/manage/Blocks/Search/components/SelectStyling';
 
 import upSVG from '@plone/volto/icons/up.svg';
 import downSVG from '@plone/volto/icons/down.svg';
