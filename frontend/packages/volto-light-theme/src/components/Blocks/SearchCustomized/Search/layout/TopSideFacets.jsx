@@ -2,8 +2,9 @@ import React from 'react';
 import { flushSync } from 'react-dom';
 import { Grid } from 'semantic-ui-react';
 import { DateRangePicker } from '../components/DateRangePicker';
+import { Facets } from '@plone/volto/components/manage/Blocks/Search/components';
 
-import { SearchInput, Facets, SortOn } from '../components';
+import { SearchInput, SortOn } from '../components';
 import SearchDetails from '../../../Search/components/SearchDetails';
 
 function getDateRangeIOV(startDate, endDate) {
