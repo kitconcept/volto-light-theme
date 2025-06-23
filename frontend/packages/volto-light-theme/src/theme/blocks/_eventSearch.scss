@@ -3,14 +3,14 @@
     width: 100%;
   }
   display: grid;
-  grid-auto-rows: auto;
   gap: 20px;
+  grid-auto-rows: auto;
 
   .first-row {
     display: flex;
-    gap: 10px;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    gap: 10px;
     @container (max-width: #{$largest-mobile-screen}) {
       flex-direction: column;
       align-items: stretch;
@@ -31,15 +31,15 @@
         margin-left: 10px;
       }
       .react-aria-DateInput[slot='end'] {
-        margin-left: 10px;
         margin-right: $spacing-small;
+        margin-left: 10px;
       }
 
       .react-aria-Button {
-        background: var(--button-background);
-        color: var(--text-color);
-        box-shadow: unset;
         padding-right: $spacing-medium;
+        background: var(--button-background);
+        box-shadow: unset;
+        color: var(--text-color);
         cursor: pointer;
 
         .icon {
@@ -84,10 +84,10 @@
         }
 
         .search-sort-wrapper {
-          margin: 7px 0 0 0;
           display: flex;
-          align-items: center;
           flex-grow: 1;
+          align-items: center;
+          margin: 7px 0 0 0;
 
           & > * {
             height: 50px;
@@ -99,10 +99,10 @@
           }
 
           & > .search-sort-on {
-            border-left-width: 1px;
-            font-size: 14px;
             display: flex;
             align-items: center;
+            border-left-width: 1px;
+            font-size: 14px;
 
             @container (max-width: #{$largest-mobile-screen}) {
               flex-grow: 1;
@@ -166,8 +166,8 @@
 
         button {
           width: 50px;
-          text-align: center;
           background: transparent;
+          text-align: center;
 
           &.active {
             background: black !important;
@@ -189,28 +189,28 @@
     display: flex;
     margin-top: $spacing-small;
     .search-input {
-      flex-grow: 1;
       position: relative;
+      flex-grow: 1;
       .react-aria-TextField {
         width: 100%;
       }
       input {
         height: 64px;
-        border-radius: 0px;
         padding-right: 48px;
         padding-left: 10px;
+        border-radius: 0px;
       }
     }
 
     .search-input-actions {
-      top: 0;
       position: absolute;
+      top: 0;
       right: 10px;
 
       button {
-        background: transparent;
-        border: none;
         height: 64px;
+        border: none;
+        background: transparent;
       }
     }
   }
@@ -226,8 +226,8 @@
   }
 
   .template-container {
-    margin-top: 60px;
     position: relative;
+    margin-top: 60px;
   }
 
   // Pagination
