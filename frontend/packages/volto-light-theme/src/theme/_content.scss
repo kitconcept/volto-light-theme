@@ -9,8 +9,8 @@
 
 .contenttype-news-item {
   .documentFirstHeading {
-    margin-top: 0;
     padding-top: 0;
+    margin-top: 0;
   }
   .blocks-group-wrapper {
     padding-top: 0;
@@ -29,8 +29,8 @@
 
     .head-title:has(+ .day) {
       &::after {
-        content: '|';
         margin-left: 8px;
+        content: '|';
       }
     }
 
@@ -71,8 +71,8 @@
   }
 
   .documentFirstHeading {
-    margin-top: 0;
     padding-top: 0;
+    margin-top: 0;
   }
 
   .blocks-group-wrapper {
@@ -105,8 +105,8 @@
     }
     .head-title {
       &::after {
-        content: '|';
         margin-left: 8px;
+        content: '|';
       }
     }
     @container (max-width: #{$tablet-breakpoint} ) {
