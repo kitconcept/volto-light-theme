@@ -398,4 +398,7 @@ figcaption {
   & > .block.image.align.center.has--block-width--layout {
     @include adjustMarginsToContainer($layout-container-width);
   }
+  & > .block.image.align.center.has--block-width--narrow {
+    @include adjustMarginsToContainer($narrow-container-width);
+  }
 }
