@@ -57,6 +57,7 @@ declare module '@plone/types' {
     accordion: BlockConfigBase;
     hero: BlockConfigBase;
     slateTable: BlockConfigBase;
+    eventCalendar: BlockConfigBase;
   }
   export interface BlockConfigBase {
     themes?: StyleDefinition[];
@@ -183,9 +184,9 @@ export default function install(config: ConfigType) {
 
   // Default Blocks configuration
 
-  config.blocks.blocksConfig.eventsearch = {
-    id: 'eventsearch',
-    title: 'Eventsearch',
+  config.blocks.blocksConfig.eventCalendar = {
+    id: 'eventCalendar',
+    title: 'Event Calendar',
     icon: descriptionSVG,
     group: 'common',
     view: SearchBlockViewEvent,

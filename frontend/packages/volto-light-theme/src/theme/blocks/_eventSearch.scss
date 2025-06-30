@@ -21,6 +21,8 @@
       height: 64px;
       .react-aria-Group {
         height: 100%;
+        padding-right: 18px;
+        padding-left: 16px;
         @container (max-width: #{$largest-mobile-screen}) {
           width: 100%;
         }
@@ -28,7 +30,6 @@
 
       .react-aria-DateInput[slot='start'] {
         margin-right: 10px;
-        margin-left: 10px;
       }
       .react-aria-DateInput[slot='end'] {
         margin-right: $spacing-small;
@@ -36,7 +37,6 @@
       }
 
       .react-aria-Button {
-        padding-right: $spacing-medium;
         background: var(--button-background);
         box-shadow: unset;
         color: var(--text-color);
@@ -44,6 +44,8 @@
 
         .icon {
           min-width: 30px;
+          position: relative;
+          left: -2px;
         }
       }
     }

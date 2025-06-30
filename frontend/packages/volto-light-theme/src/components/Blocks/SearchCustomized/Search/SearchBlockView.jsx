@@ -10,7 +10,6 @@ import { withQueryString } from '@plone/volto/components/manage/Blocks/Search/ho
 import { compose } from 'redux';
 import { useSelector } from 'react-redux';
 import isEqual from 'lodash/isEqual';
-import isFunction from 'lodash/isFunction';
 import cx from 'classnames';
 
 const getListingBodyVariation = (data) => {
@@ -25,7 +24,7 @@ const getListingBodyVariation = (data) => {
   return variation;
 };
 
-const isfunc = (obj) => isFunction(obj) || typeof obj === 'function';
+const isfunc = (obj) => typeof obj === 'function';
 
 const _filtered = (obj) =>
   Object.assign(
