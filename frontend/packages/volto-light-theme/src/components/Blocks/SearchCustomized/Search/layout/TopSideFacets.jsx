@@ -99,7 +99,7 @@ const TopSideFacets = (props) => {
   };
 
   return (
-    <div className="search-block-event searchBlock-facets" stackable>
+    <div className="search-block-event searchBlock-facets">
       {data.headline && <h2 className="headline">{data.headline}</h2>}
       <div className="first-row">
         <DateRangePicker onChange={onhandleDateRangeChange} />

@@ -285,6 +285,68 @@
       text-align: center;
     }
   }
+
+  .event-calendar {
+    .card-listing {
+      margin-bottom: 47px;
+      &:last-of-type {
+        .card-inner {
+          .card-summary {
+            border-bottom: none;
+          }
+        }
+      }
+
+      .card-inner {
+        align-items: flex-start;
+        .image-wrapper {
+          .date-inset {
+            height: 180px;
+            width: 180px;
+            &.has-end-date {
+              .day {
+                font-size: 36px;
+              }
+
+              .month {
+                font-size: 10px;
+                line-height: 18px;
+                font-weight: 400;
+              }
+            }
+            .separator {
+              height: 1px;
+              width: 71%;
+              background: $black;
+              margin-top: 5px;
+              margin-bottom: 5px;
+            }
+          }
+        }
+
+        .card-summary {
+          align-self: stretch;
+          padding-bottom: 38px;
+          border-bottom: 1px solid $black;
+
+          .headline {
+            display: none;
+            &.calendar {
+              display: block;
+            }
+          }
+
+          .event-title {
+            &:before {
+              margin-left: 5px;
+              margin-right: 5px;
+              content: '|';
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 /* Because we override the display of all the header.

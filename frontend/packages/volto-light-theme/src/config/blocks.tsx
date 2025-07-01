@@ -45,6 +45,7 @@ import SearchBlockViewEvent from '../components/Blocks/SearchCustomized/Search/S
 import SearchBlockEditEvent from '../components/Blocks/SearchCustomized/Search/SearchBlockEdit';
 import SearchBlockSchemaEvent from '../components/Blocks/SearchCustomized/Search/schema';
 import TopSideFacetEvent from '../components/Blocks/SearchCustomized/Search/layout/TopSideFacets';
+import EventCalenderTemplate from '../components/Blocks/SearchCustomized/Search/components/EventTemplate';
 
 declare module '@plone/types' {
   export interface BlocksConfigData {
@@ -242,6 +243,11 @@ export default function install(config: ConfigType) {
       id: 'grid',
       title: 'Grid',
       template: GridListingBlockTemplate,
+    },
+    {
+      id: 'eventCalendar',
+      title: 'Event Calendar',
+      template: EventCalenderTemplate,
     },
     ...config.blocks.blocksConfig.listing.variations.filter(
       (variation) => !['default', 'summary'].includes(variation.id),
