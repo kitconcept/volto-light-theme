@@ -44,7 +44,6 @@ import isEmpty from 'lodash/isEmpty';
 import SearchBlockViewEvent from '../components/Blocks/SearchCustomized/Search/SearchBlockView';
 import SearchBlockEditEvent from '../components/Blocks/SearchCustomized/Search/SearchBlockEdit';
 import SearchBlockSchemaEvent from '../components/Blocks/SearchCustomized/Search/schema';
-import TopSideFacetEvent from '../components/Blocks/SearchCustomized/Search/layout/TopSideFacets';
 import EventCalenderTemplate from '../components/Blocks/SearchCustomized/Search/components/EventTemplate';
 
 declare module '@plone/types' {
@@ -196,14 +195,6 @@ export default function install(config: ConfigType) {
     restricted: false,
     mostUsed: false,
     sidebarTab: 1,
-    variations: [
-      {
-        id: 'facetsTopSide',
-        title: 'Facets on top',
-        view: TopSideFacetEvent,
-        isDefault: true,
-      },
-    ],
   };
   config.blocks.blocksConfig.accordion = {
     ...config.blocks.blocksConfig.accordion,

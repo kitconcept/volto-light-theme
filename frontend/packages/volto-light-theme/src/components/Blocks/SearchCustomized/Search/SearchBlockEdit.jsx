@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import { defineMessages } from 'react-intl';
+// import { defineMessages } from 'react-intl';
 import { compose } from 'redux';
 
 import SidebarPortal from '@plone/volto/components/manage/Sidebar/SidebarPortal';
 import { BlockDataForm } from '@plone/volto/components/manage/Form';
-import { addExtensionFieldToSchema } from '@plone/volto/helpers/Extensions/withBlockSchemaEnhancer';
+// import { addExtensionFieldToSchema } from '@plone/volto/helpers/Extensions/withBlockSchemaEnhancer';
 import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
 import config from '@plone/volto/registry';
 
@@ -14,12 +14,12 @@ import { withSearch } from './hocs';
 import { withQueryString } from '@plone/volto/components/manage/Blocks/Search/hocs';
 import cloneDeep from 'lodash/cloneDeep';
 
-const messages = defineMessages({
-  template: {
-    id: 'Results template',
-    defaultMessage: 'Results template',
-  },
-});
+// const messages = defineMessages({
+//   template: {
+//     id: 'Results template',
+//     defaultMessage: 'Results template',
+//   },
+// });
 
 const SearchBlockEdit = (props) => {
   const {
@@ -38,13 +38,13 @@ const SearchBlockEdit = (props) => {
 
   let schema = Schema({ data, intl });
 
-  schema = addExtensionFieldToSchema({
-    schema,
-    name: 'listingBodyTemplate',
-    items: config.blocks.blocksConfig.listing.variations,
-    intl,
-    title: { id: intl.formatMessage(messages.template) },
-  });
+  // schema = addExtensionFieldToSchema({
+  //   schema,
+  //   name: 'listingBodyTemplate',
+  //   items: config.blocks.blocksConfig.listing.variations,
+  //   intl,
+  //   title: { id: intl.formatMessage(messages.template) },
+  // });
   const listingVariations = config.blocks.blocksConfig?.listing?.variations;
   let activeItem = listingVariations.find(
     (item) => item.id === data.listingBodyTemplate,

@@ -82,19 +82,7 @@ const applyDefaults = (data, root) => {
 
 const SearchBlockView = (props) => {
   const { id, data, searchData, mode = 'view', className } = props;
-  const dataListingBodyVariation = getListingBodyVariation(data).id;
-  const [selectedView, setSelectedView] = React.useState(
-    dataListingBodyVariation,
-  );
-
-  // in the block edit you can change the used listing block variation,
-  // but it's cached here in the state. So we reset it.
-  React.useEffect(() => {
-    if (mode !== 'view') {
-      setSelectedView(dataListingBodyVariation);
-    }
-  }, [dataListingBodyVariation, mode]);
-
+  const selectedView = 'eventCalendar';
   const root = useSelector((state) => state.breadcrumbs.root);
   const listingBodyData = applyDefaults(searchData, root);
 
@@ -107,7 +95,6 @@ const SearchBlockView = (props) => {
         {...props}
         isEditMode={mode === 'edit'}
         selectedView={selectedView}
-        setSelectedView={setSelectedView}
       >
         <ListingBody
           id={id}
