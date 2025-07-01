@@ -12,17 +12,17 @@ import { useSelector } from 'react-redux';
 import isEqual from 'lodash/isEqual';
 import cx from 'classnames';
 
-const getListingBodyVariation = (data) => {
-  const { variations } = config.blocks.blocksConfig.listing;
+// const getListingBodyVariation = (data) => {
+//   const { variations } = config.blocks.blocksConfig.listing;
 
-  let variation = data.listingBodyTemplate
-    ? variations.find(({ id }) => id === data.listingBodyTemplate)
-    : variations.find(({ isDefault }) => isDefault);
+//   let variation = data.listingBodyTemplate
+//     ? variations.find(({ id }) => id === data.listingBodyTemplate)
+//     : variations.find(({ isDefault }) => isDefault);
 
-  if (!variation) variation = variations[0];
+//   if (!variation) variation = variations[0];
 
-  return variation;
-};
+//   return variation;
+// };
 
 const isfunc = (obj) => typeof obj === 'function';
 
