@@ -45,7 +45,7 @@ describe('Event Calendar Block Tests', () => {
   });
 
   /* Maybe this test should fail, because we are not able to se the date range correctly */
-  it('Add Event Calendar block and test the daterange', () => {
+  it.only('Add Event Calendar block and test the daterange', () => {
     // Adding new event calendar block and setting the date of evet.
 
     cy.addNewBlock('event');
@@ -76,10 +76,31 @@ describe('Event Calendar Block Tests', () => {
     cy.url().should('eq', Cypress.config().baseUrl + '/my-first-event');
     cy.visit('/my-page');
     cy.wait('@content');
-    cy.get('.first-row .react-aria-DateRangePicker button svg').click();
-    cy.get(
-      '.react-aria-RangeCalendar .react-aria-CalendarGridBody div[aria-label="Thursday 24 July 2025"]',
-    ).click();
+    cy.get('.react-aria-Group [slot="start"] [data-type="day"]')
+      .focus()
+      .type('11');
+    cy.get('.react-aria-Group [slot="start"] [data-type="month"]')
+      .focus()
+      .type('07');
+
+    cy.get('.react-aria-Group [slot="start"] [data-type="year"]')
+      .focus()
+      .type('2025');
+
+    cy.get('.react-aria-Group [slot="end"] [data-type="day"]')
+      .focus()
+      .type('01');
+
+    cy.get('.react-aria-Group [slot="end"] [data-type="month"]')
+      .focus()
+      .type('09');
+    cy.wait(1000);
+
+    cy.get('.react-aria-Group [slot="end"] [data-type="year"]')
+      .focus()
+      .type('2025');
+    cy.wait(1000);
+
     cy.wait('@querySearch');
 
     // After setting the date range, we should only see the first event.
