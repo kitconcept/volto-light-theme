@@ -150,7 +150,6 @@
 
     // Introduction
     &.introduction {
-      a,
       strong,
       li,
       ul,
@@ -831,18 +830,26 @@
       }
     }
 
-    [class^='block-editor-'] {
-      a.slate-editor-link span[data-slate-string='true'] {
-        color: var(
-          --link-foreground-color,
-          --theme-foreground-color
-        ) !important;
+    [class^='block-editor-']:not(.block-editor-highlight) {
+      .slate,
+      .block {
+        a.slate-editor-link,
+        a.slate-editor-link span {
+          color: var(
+            --link-foreground-color,
+            --theme-foreground-color
+          ) !important;
+        }
+
+        li::marker {
+          color: var(--theme-foreground-color);
+        }
       }
 
       .block {
         .text-slate-editor-inner {
           span {
-            color: var(--theme-foreground-color) !important;
+            color: var(--theme-foreground-color);
           }
         }
 
@@ -872,6 +879,7 @@
           h2,
           p,
           h3,
+          .headline,
           .react-select__placeholder {
             color: var(--theme-foreground-color) !important;
           }
