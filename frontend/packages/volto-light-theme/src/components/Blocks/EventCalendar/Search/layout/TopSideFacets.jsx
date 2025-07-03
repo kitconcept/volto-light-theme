@@ -63,17 +63,17 @@ const TopSideFacets = (props) => {
   const {
     children,
     data,
-    totalItems,
+    // totalItems,
     facets,
     setFacets,
-    setSortOn,
-    setSortOrder,
-    sortOn,
-    sortOrder,
+    // setSortOn,
+    // setSortOrder,
+    // sortOn,
+    // sortOrder,
     onTriggerSearch,
     searchedText, // search text for previous search
     // searchText, // search text currently being entered (controlled input)
-    isEditMode,
+    // isEditMode,
     querystring = {},
     handleDateRangeChange,
     // searchData,

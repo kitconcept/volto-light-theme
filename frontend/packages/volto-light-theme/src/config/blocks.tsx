@@ -41,10 +41,10 @@ import { sliderBlockSchemaEnhancer } from '../components/Blocks/Slider/schema';
 import EventMetadataView from '../components/Blocks/EventMetadata/View';
 import isEmpty from 'lodash/isEmpty';
 
-import SearchBlockViewEvent from '../components/Blocks/SearchCustomized/Search/SearchBlockView';
-import SearchBlockEditEvent from '../components/Blocks/SearchCustomized/Search/SearchBlockEdit';
-import SearchBlockSchemaEvent from '../components/Blocks/SearchCustomized/Search/schema';
-import EventCalenderTemplate from '../components/Blocks/SearchCustomized/Search/components/EventTemplate';
+import SearchBlockViewEvent from '../components/Blocks/EventCalendar/Search/SearchBlockView';
+import SearchBlockEditEvent from '../components/Blocks/EventCalendar/Search/SearchBlockEdit';
+import SearchBlockSchemaEvent from '../components/Blocks/EventCalendar/Search/schema';
+import EventCalenderTemplate from '../components/Blocks/EventCalendar/Search/components/EventTemplate';
 
 declare module '@plone/types' {
   export interface BlocksConfigData {
