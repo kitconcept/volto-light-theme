@@ -7,7 +7,7 @@ import cx from 'classnames';
 const EventItem = ({ item, lang }) => {
   const formatter = new Intl.DateTimeFormat(lang, {
     year: 'numeric',
-    month: 'long',
+    month: 'short',
   });
   const headFormatter = new Intl.DateTimeFormat(lang, {
     day: 'numeric',
@@ -26,12 +26,16 @@ const EventItem = ({ item, lang }) => {
       <Card href={item['@id']} className="event-card">
         <Card.Image>
           <div className={cx('date-inset', { 'has-end-date': end })}>
-            <div className="day">{start.getDate()}</div>
+            <div className="day">
+              {String(start.getDate()).padStart(2, '0')}
+            </div>
             <div className="month">{formattedStartDate}</div>
             {end && (
               <>
                 <div className="separator"></div>
-                <div className="day">{end.getDate()}</div>
+                <div className="day">
+                  {String(end.getDate()).padStart(2, '0')}
+                </div>
                 <div className="month">{formattedEndDate}</div>
               </>
             )}

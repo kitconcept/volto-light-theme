@@ -10,7 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 10px;
+    gap: 20px;
     @container (max-width: #{$largest-mobile-screen}) {
       flex-direction: column;
       align-items: stretch;
@@ -23,17 +23,34 @@
         height: 100%;
         padding-right: 18px;
         padding-left: 16px;
+        border-radius: unset;
+        border-color: $black;
+        outline-color: $black;
+
         @container (max-width: #{$largest-mobile-screen}) {
           width: 100%;
         }
       }
-
       .react-aria-DateInput[slot='start'] {
         margin-right: 10px;
+        outline-color: $black;
+        span {
+          color: $black;
+          &:focus {
+            background: $white;
+          }
+        }
       }
       .react-aria-DateInput[slot='end'] {
         margin-right: $spacing-small;
         margin-left: 10px;
+        outline-color: $black;
+        span {
+          color: $black;
+          &:focus {
+            background: $white;
+          }
+        }
       }
 
       .react-aria-Button {
@@ -189,7 +206,7 @@
 
   .search-wrapper {
     display: flex;
-    margin-top: $spacing-small;
+    flex-grow: 1;
     .search-input {
       position: relative;
       flex-grow: 1;
@@ -201,18 +218,33 @@
         padding-right: 48px;
         padding-left: 10px;
         border-radius: 0px;
+        border: none;
+        background: $lightgrey;
+
+        &:focus {
+          outline-color: $black;
+        }
+
+        &::placeholder {
+          font-weight: 300;
+        }
       }
     }
 
     .search-input-actions {
       position: absolute;
       top: 0;
-      right: 10px;
+      right: 0;
 
       button {
         height: 64px;
         border: none;
         background: transparent;
+        display: flex;
+        align-items: center;
+        .icon {
+          transform: rotate(90deg);
+        }
       }
     }
   }
@@ -220,6 +252,14 @@
   .facets {
     .icon {
       fill: $black !important; // Because it is not using currentColor
+    }
+
+    .react-select__control {
+      border-color: $black;
+
+      .react-select__placeholder {
+        color: $black;
+      }
     }
 
     .react-select__clear-indicator {
@@ -300,12 +340,14 @@
       .card-inner {
         align-items: flex-start;
         .image-wrapper {
+          flex-basis: 140px;
           .date-inset {
-            width: 180px;
-            height: 180px;
+            width: 140px;
+            height: 140px;
             &.has-end-date {
               .day {
                 font-size: 36px;
+                line-height: 38px;
               }
 
               .month {
@@ -351,6 +393,10 @@
 
 /* Because we override the display of all the header.
 This is css code of popup of calendar */
+.react-aria-Popover {
+  border-radius: unset;
+  border-color: $black;
+}
 .react-aria-RangeCalendar {
   header {
     display: flex;
@@ -359,6 +405,7 @@ This is css code of popup of calendar */
   //ask victor about this. Font family causing unwanted problems in rendering of icon.
   .react-aria-Button {
     font-family: unset;
+    border-radius: unset;
   }
   h2 {
     margin: 0;

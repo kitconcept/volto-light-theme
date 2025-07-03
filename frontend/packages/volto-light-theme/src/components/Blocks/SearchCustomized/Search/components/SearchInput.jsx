@@ -41,7 +41,6 @@ const SearchInput = (props) => {
       <div className="search-input-actions">
         {isLive && (
           <>
-            <div className="divider" />
             <Button
               className="search-input-live-icon-button"
               aria-label={`${intl.formatMessage(messages.search)} ${searchText}`}

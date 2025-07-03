@@ -46,7 +46,7 @@ export function DateRangePicker<T extends DateValue>({
           {(segment) => <DateSegment segment={segment} />}
         </DateInput>
         <Button>
-          <Icon name={CalendarSVG} />
+          <Icon name={CalendarSVG} color="#000" />
         </Button>
       </Group>
       {description && <Text slot="description">{description}</Text>}

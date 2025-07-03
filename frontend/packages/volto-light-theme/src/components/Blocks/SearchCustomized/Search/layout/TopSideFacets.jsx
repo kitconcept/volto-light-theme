@@ -4,8 +4,8 @@ import { Grid } from 'semantic-ui-react';
 import { DateRangePicker } from '../components/DateRangePicker';
 import { Facets } from '@plone/volto/components/manage/Blocks/Search/components';
 
-import { SearchInput, SortOn } from '../components';
-import SearchDetails from '../../../Search/components/SearchDetails';
+import { SearchInput } from '../components';
+// import SearchDetails from '../../../Search/components/SearchDetails';
 
 function getDateRangeIOV(startDate, endDate) {
   if (startDate && endDate && startDate !== endDate) {
@@ -80,7 +80,7 @@ const TopSideFacets = (props) => {
     // mode = 'view',
     // variation,
   } = props;
-  const { showSearchButton, showSortOnEvent } = data;
+  const { showSearchButton } = data;
   const isLive = !showSearchButton;
   const onhandleDateRangeChange = (value) => {
     const start = toJSDate(value.start);
@@ -103,13 +103,13 @@ const TopSideFacets = (props) => {
       {data.headline && <h2 className="headline">{data.headline}</h2>}
       <div className="first-row">
         <DateRangePicker onChange={onhandleDateRangeChange} />
-        <SearchDetails
+        {/* <SearchDetails
           text={searchedText}
           total={totalItems}
           as="h5"
           data={data}
-        />
-        {showSortOnEvent && (
+        /> */}
+        {/* {showSortOnEvent && (
           <div className="search-filters-sort">
             <div className="sort-on-wrapper">
               <SortOn
@@ -138,16 +138,11 @@ const TopSideFacets = (props) => {
               />
             </div>
           </div>
-        )}
-      </div>
-      {(Object.keys(data).includes('showSearchInput')
-        ? data.showSearchInput
-        : true) && (
+        )} */}
         <div className="search-wrapper">
           <SearchInput {...props} isLive={isLive} />
         </div>
-      )}
-
+      </div>
       <Grid.Row>
         <Grid.Column>
           {data.facets?.length > 0 && (

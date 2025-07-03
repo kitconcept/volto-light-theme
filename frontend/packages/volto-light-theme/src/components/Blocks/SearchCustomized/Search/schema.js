@@ -138,7 +138,7 @@ const FacetSchema = ({ intl }) => ({
     {
       id: 'default',
       title: 'Default',
-      fields: ['title', 'field', 'type', 'hidden', 'advanced'],
+      fields: ['title', 'field', 'type'],
     },
   ],
   properties: {
@@ -213,21 +213,21 @@ const SearchSchema = ({ data = {}, intl }) => {
       {
         id: 'facets',
         title: intl.formatMessage(messages.facets),
-        fields: ['facetsTitle', 'facets'],
+        fields: ['facets'],
       },
-      {
-        id: 'controls',
-        title: intl.formatMessage(messages.controls),
-        fields: [
-          'showSortOnEvent',
-          ...(data.showSortOnEvent ? ['sortOnOptions'] : []),
-          'showSearchInput',
-          ...(data.showSearchInput ?? true ? ['showSearchButton'] : []),
-          // ...(data.showSearchInput ? ['searchInputPrompt'] : []),
-          // ...(data.showSearchButton ? ['searchButtonLabel'] : []),
-          'showTotalResults',
-        ],
-      },
+      // {
+      //   id: 'controls',
+      //   title: intl.formatMessage(messages.controls),
+      //   fields: [
+      //     'showSortOnEvent',
+      //     ...(data.showSortOnEvent ? ['sortOnOptions'] : []),
+      //     'showSearchInput',
+      //     ...(data.showSearchInput ?? true ? ['showSearchButton'] : []),
+      //     // ...(data.showSearchInput ? ['searchInputPrompt'] : []),
+      //     // ...(data.showSearchButton ? ['searchButtonLabel'] : []),
+      //     'showTotalResults',
+      //   ],
+      // },
     ],
     properties: {
       headline: {
