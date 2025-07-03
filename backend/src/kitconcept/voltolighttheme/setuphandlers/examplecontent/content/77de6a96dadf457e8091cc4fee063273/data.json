@@ -1,0 +1,95 @@
+{
+  "@id": "/block/event-calendar",
+  "@type": "Document",
+  "UID": "77de6a96dadf457e8091cc4fee063273",
+  "allow_discussion": null,
+  "blocks": {
+    "0a4d6119-8af5-42dd-8a7f-43db3849693d": {
+      "@type": "title"
+    },
+    "18bde631-0220-45c8-9783-9f788845d2ac": {
+      "@type": "slate"
+    },
+    "5175502b-8c90-4864-8bb1-ab9a974bebf1": {
+      "@type": "eventCalendar",
+      "facets": [
+        {
+          "@id": "02351ea9-66ed-491a-9ab4-58a59e0139b7",
+          "advanced": false,
+          "field": {
+            "label": "Review state",
+            "value": "review_state"
+          },
+          "hidden": false,
+          "multiple": false,
+          "type": "selectFacet"
+        }
+      ],
+      "showSearchInput": true,
+      "showTotalResults": true
+    },
+    "undefined": {
+      "@type": "eventCalendar",
+      "showSearchInput": true,
+      "showTotalResults": true
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "0a4d6119-8af5-42dd-8a7f-43db3849693d",
+      "5175502b-8c90-4864-8bb1-ab9a974bebf1",
+      "18bde631-0220-45c8-9783-9f788845d2ac"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2025-07-02T13:56:08+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": "2025-07-02T13:56:12+00:00",
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "id": "event-calendar",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2025-07-02T13:56:12+00:00",
+  "nav_title": null,
+  "preview_caption": null,
+  "preview_image": null,
+  "review_state": "published",
+  "rights": "",
+  "subjects": [],
+  "title": "Event Calendar",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2025-07-02T13:56:08+00:00"
+      },
+      {
+        "action": "publish",
+        "actor": "admin",
+        "comments": "",
+        "review_state": "published",
+        "time": "2025-07-02T13:56:12+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}
