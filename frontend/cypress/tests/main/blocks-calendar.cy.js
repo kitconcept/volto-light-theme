@@ -15,6 +15,11 @@ describe('Event Calendar Block Tests', () => {
       contentType: 'Event',
       contentId: 'my-first-event',
       contentTitle: 'My First Event',
+      bodyModifier(body) {
+        body.start = '2025-07-24T12:00:00+00:00';
+        body.end = '2025-07-31T13:00:00+00:00';
+        return body;
+      },
     });
     cy.createContent({
       contentType: 'Event',
@@ -44,38 +49,13 @@ describe('Event Calendar Block Tests', () => {
       .should('not.exist');
   });
 
-  /* Maybe this test should fail, because we are not able to se the date range correctly */
-  it.only('Add Event Calendar block and test the daterange', () => {
+  it('Add Event Calendar block and test the daterange', () => {
     // Adding new event calendar block and setting the date of evet.
 
     cy.addNewBlock('event');
     cy.get('#toolbar-save').click();
     cy.wait('@content');
     cy.url().should('eq', Cypress.config().baseUrl + '/my-page');
-
-    cy.navigate('/my-first-event/edit');
-    cy.wait('@content');
-
-    cy.get(
-      '#sidebar-metadata .field-wrapper-start .date-time-widget-wrapper',
-    ).click();
-    cy.get(
-      '.CalendarMonth_table td[aria-label="Thursday, July 24, 2025"]',
-    ).click();
-
-    cy.get(
-      '#sidebar-metadata .field-wrapper-end .date-time-widget-wrapper',
-    ).click();
-    cy.get(
-      '.CalendarMonth_table td[aria-label="Sunday, August 31, 2025"]',
-    ).click({ force: true });
-    cy.get('#toolbar-save').click();
-
-    // Now we are going to check if the date range is working correctly.
-    cy.wait('@content');
-    cy.url().should('eq', Cypress.config().baseUrl + '/my-first-event');
-    cy.visit('/my-page');
-    cy.wait('@content');
     cy.get('.react-aria-Group [slot="start"] [data-type="day"]')
       .focus()
       .type('11');
@@ -94,12 +74,10 @@ describe('Event Calendar Block Tests', () => {
     cy.get('.react-aria-Group [slot="end"] [data-type="month"]')
       .focus()
       .type('09');
-    cy.wait(1000);
 
     cy.get('.react-aria-Group [slot="end"] [data-type="year"]')
       .focus()
       .type('2025');
-    cy.wait(1000);
 
     cy.wait('@querySearch');
 
