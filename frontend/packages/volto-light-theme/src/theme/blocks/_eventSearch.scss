@@ -23,8 +23,8 @@
         height: 100%;
         padding-right: 18px;
         padding-left: 16px;
-        border-radius: unset;
         border-color: $black;
+        border-radius: unset;
         outline-color: $black;
 
         @container (max-width: #{$largest-mobile-screen}) {
@@ -217,8 +217,8 @@
         height: 64px;
         padding-right: 48px;
         padding-left: 10px;
-        border-radius: 0px;
         border: none;
+        border-radius: 0px;
         background: $lightgrey;
 
         &:focus {
@@ -237,11 +237,11 @@
       right: 0;
 
       button {
+        display: flex;
         height: 64px;
+        align-items: center;
         border: none;
         background: transparent;
-        display: flex;
-        align-items: center;
         .icon {
           transform: rotate(90deg);
         }
@@ -394,8 +394,8 @@
 /* Because we override the display of all the header.
 This is css code of popup of calendar */
 .react-aria-Popover {
-  border-radius: unset;
   border-color: $black;
+  border-radius: unset;
 }
 .react-aria-RangeCalendar {
   header {
@@ -404,8 +404,8 @@ This is css code of popup of calendar */
 
   //ask victor about this. Font family causing unwanted problems in rendering of icon.
   .react-aria-Button {
-    font-family: unset;
     border-radius: unset;
+    font-family: unset;
   }
   h2 {
     margin: 0;
