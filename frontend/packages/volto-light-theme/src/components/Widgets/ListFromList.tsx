@@ -9,13 +9,17 @@ import {
   ListBoxItem,
 } from 'react-aria-components';
 import { useEffect } from 'react';
-// import { isEqual } from 'lodash';
-// import { v4 as uuidv4 } from 'uuid';
+import {
+  normalizeList,
+  denormalizeList,
+} from '@kitconcept/volto-light-theme/helpers/listNormalizer';
 
-interface FileItem {
-  id: string;
-  name: string;
-}
+type ListItem =
+  | { title: string; token: string }
+  | { label: string; value: string }
+  | string;
+
+type ListBoxItem = { label: string; id: string };
 
 const messages = defineMessages({
   optionsLabel: {
@@ -31,7 +35,7 @@ const messages = defineMessages({
 interface DndListBoxProps {
   title: string;
   'aria-label': string;
-  list: ListData<FileItem>;
+  list: ListData<ListBoxItem>;
 }
 
 function DndListBox(props: DndListBoxProps) {
@@ -44,7 +48,7 @@ function DndListBox(props: DndListBoxProps) {
         let item = list.getItem(key);
         return {
           'custom-app-type': JSON.stringify(item),
-          'text/plain': item.name,
+          'text/plain': item.label,
         };
       });
     },
@@ -111,7 +115,7 @@ function DndListBox(props: DndListBoxProps) {
       dragAndDropHooks={dragAndDropHooks}
       renderEmptyState={() => 'Drop items here'}
     >
-      {(item) => <ListBoxItem>{item.name}</ListBoxItem>}
+      {(item) => <ListBoxItem>{item.label}</ListBoxItem>}
     </ListBox>
   );
 }
@@ -121,52 +125,39 @@ type ListFromListProps = {
   title?: string;
   optionsTitle?: string;
   valuesTitle?: string;
-  value?: FileItem[];
-  options: FileItem[];
+  value?: ListItem[];
+  options: ListItem[];
   required?: boolean;
-  default?: FileItem[];
+  default?: ListItem[];
   'aria-label': string;
-  onChange: (id: string, value: FileItem[]) => void;
+  onChange: (id: string, value: ListItem[]) => void;
 };
 
 // Returns items in `list` that do NOT exist in `sublist` (by name and type, ignoring id)
 function differenceByNameAndType(
-  list: FileItem[],
-  sublist: FileItem[],
-): FileItem[] {
-  return list.filter((item) => !sublist.some((sub) => sub.name === item.name));
+  list: ListBoxItem[],
+  sublist: ListBoxItem[],
+): ListBoxItem[] {
+  return list.filter((item) => !sublist.some((sub) => sub.id === item.id));
 }
-
-// // Adds a unique "id" to each item if it doesn't have one, returns a new array (immutable)
-// function addIds<T extends { id?: string }>(
-//   list: T[],
-// ): (Omit<T, 'id'> & { id: string })[] {
-//   return list.map((item) =>
-//     item.id
-//       ? { ...(item as Omit<T, 'id'>), id: item.id }
-//       : { ...(item as Omit<T, 'id'>), id: uuidv4() },
-//   );
-// }
-
-// // Removes the "id" property from each item, returns a new array (immutable)
-// function removeIds<T extends { id?: string }>(list: T[]): Omit<T, 'id'>[] {
-//   return list.map(({ id, ...rest }) => ({ ...rest }));
-// }
 
 function ListFromList(props: ListFromListProps) {
   const { options, value, onChange } = props;
   const intl = useIntl();
 
   let optionsForDisplay = useListData({
-    initialItems: differenceByNameAndType(options, value),
+    initialItems: differenceByNameAndType(
+      normalizeList(options),
+      normalizeList(value),
+    ),
   });
 
   let valueList = useListData({
-    initialItems: value || [],
+    initialItems: normalizeList(value) || [],
   });
 
   useEffect(() => {
-    onChange(props.id, valueList.items);
+    onChange(props.id, denormalizeList(valueList.items));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [valueList.items]);
 
@@ -176,19 +167,24 @@ function ListFromList(props: ListFromListProps) {
     const isSameByNameAndOrder =
       Array.isArray(value) &&
       value.length === valueList.items.length &&
-      value.every((v, i) => v.name === valueList.items[i]?.name);
+      normalizeList(value).every((v, i) => v.id === valueList.items[i]?.id);
 
     if (!isSameByNameAndOrder) {
       valueList.setSelectedKeys(new Set()); // Clear selection if needed
       valueList.remove(...valueList.items.map((item) => item.id));
       if (value && value.length > 0) {
-        valueList.append(...value);
+        valueList.append(...normalizeList(value));
       }
       optionsForDisplay.setSelectedKeys(new Set()); // Clear selection if needed
       optionsForDisplay.remove(
         ...optionsForDisplay.items.map((item) => item.id),
       );
-      optionsForDisplay.append(...differenceByNameAndType(options, value));
+      optionsForDisplay.append(
+        ...differenceByNameAndType(
+          normalizeList(options),
+          normalizeList(value),
+        ),
+      );
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value]);
