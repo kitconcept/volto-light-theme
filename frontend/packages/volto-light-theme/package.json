@@ -48,8 +48,8 @@
     "@types/node": "^22",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
-    "typescript": "^5.7.3",
     "release-it": "^19.0.3",
+    "typescript": "^5.7.3",
     "vitest": "^3.1.2"
   },
   "dependencies": {
@@ -58,14 +58,15 @@
     "@dnd-kit/utilities": "3.2.2",
     "@plone/components": "workspace:^",
     "react-animate-height": "^3.2.3",
-    "react-aria-components": "^1.7.0",
+    "react-aria-components": "^1.10.1",
     "react-colorful": "^5.6.1",
+    "react-stately": "^3.39.0",
     "uuid": "^11.0.0"
   },
   "peerDependencies": {
-    "@kitconcept/volto-bm3-compat": "^1.0.0-alpha.1",
     "@eeacms/volto-accordion-block": "^10.4.6",
     "@kitconcept/volto-banner-block": "^1.0.1",
+    "@kitconcept/volto-bm3-compat": "^1.0.0-alpha.1",
     "@kitconcept/volto-button-block": "^4.0.0-alpha.0",
     "@kitconcept/volto-carousel-block": "^2.0.0-alpha.1",
     "@kitconcept/volto-dsgvo-banner": "^2.4.0",
