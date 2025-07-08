@@ -38,7 +38,8 @@ const CoreFooter = ({ content }: { content: Content }) => {
       <Container className="default">
         <div className="footer-grid">
           <div className="address-column">
-            <Logo />
+            {/* @ts-ignore the Logo definition is different from the Volto one */}
+            <Logo isFooterLogo />
             <p
               style={{ whiteSpace: 'pre-line' }}
               dangerouslySetInnerHTML={{
