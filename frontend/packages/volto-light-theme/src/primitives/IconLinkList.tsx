@@ -42,7 +42,7 @@ const IconLinkList = (props: IconLinkListProps) => {
               itemInfo.src = `${flattenToAppURL(itemInfo.itemHref)}/@@images/image`;
             }
 
-            if (!itemInfo.src) return null;
+            if (!itemInfo.src || !itemInfo.href) return null;
 
             return (
               <li className="item" key={item['@id']}>
