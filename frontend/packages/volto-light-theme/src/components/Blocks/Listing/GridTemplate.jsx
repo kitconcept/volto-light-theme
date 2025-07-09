@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
+import Card from '../../../primitives/Card/Card';
 import Component from '@plone/volto/components/theme/Component/Component';
 import { flattenToAppURL, isInternalURL } from '@plone/volto/helpers/Url/Url';
 import config from '@plone/volto/registry';
@@ -9,6 +10,7 @@ import DefaultSummary from '@kitconcept/volto-light-theme/components/Summary/Def
 const GridTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
   let link = null;
   let href = linkHref?.[0]?.['@id'] || '';
+  const PreviewImageComponent = config.getComponent('PreviewImage').component;
 
   if (isInternalURL(href)) {
     link = (
@@ -38,28 +40,25 @@ const GridTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
             return CustomItemBodyTemplate ? (
               <CustomItemBodyTemplate item={item} />
             ) : (
-              <div className="card-container">
+              <>
                 {item.image_field !== '' && (
-                  <Component
-                    componentName="PreviewImage"
-                    item={item}
-                    alt=""
+                  <Card.Image
                     className="item-image"
+                    item={item}
+                    imageComponent={PreviewImageComponent}
                   />
                 )}
-                <div className="item">
-                  <div className="content">
-                    <Summary item={item} HeadingTag="h2" />
-                  </div>
-                </div>
-              </div>
+                <Card.Summary>
+                  <Summary item={item} HeadingTag="h2" />
+                </Card.Summary>
+              </>
             );
           };
           return (
             <div className="listing-item" key={item['@id']}>
-              <ConditionalLink item={item} condition={!isEditMode}>
+              <Card href={!isEditMode ? item['@id'] : null}>
                 <ItemBodyTemplate item={item} />
-              </ConditionalLink>
+              </Card>
             </div>
           );
         })}
