@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
 import Card from '../../../primitives/Card/Card';
-import Component from '@plone/volto/components/theme/Component/Component';
 import { flattenToAppURL, isInternalURL } from '@plone/volto/helpers/Url/Url';
 import config from '@plone/volto/registry';
 import DefaultSummary from '@kitconcept/volto-light-theme/components/Summary/DefaultSummary';
