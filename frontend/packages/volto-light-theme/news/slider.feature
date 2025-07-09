@@ -1,0 +1,1 @@
+Add flag center position in slider Block @iRohitSingh
