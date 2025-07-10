@@ -2,6 +2,18 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0a14 (2025-07-10)
+
+
+### New features:
+
+- Added `footer_main_logo_inversed` image field to kitconcept.footer behavior. This adds support for setting an inversed color main logo that will appear at the top of the footer address. @sneridagh [#600](https://github.com/kitconcept/volto-light-theme/issues/600)
+
+
+### Internal:
+
+- Add example content for Event Calendar block @iFlameing [#591](https://github.com/kitconcept/volto-light-theme/issues/591)
+
 ## 7.0.0a12 (2025-06-18)
 
 
