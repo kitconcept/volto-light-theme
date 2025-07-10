@@ -42,6 +42,7 @@ const SummaryTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
               <>
                 <Card.Image
                   item={item}
+                  showDefaultImage={true}
                   imageComponent={PreviewImageComponent}
                 />
                 <Card.Summary>
@@ -56,7 +57,7 @@ const SummaryTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
               })}
               key={item['@id']}
             >
-              <Card href={!isEditMode ? href['@id'] : null}>
+              <Card href={!isEditMode ? item['@id'] : null}>
                 <ItemBodyTemplate item={item} />
               </Card>
             </div>

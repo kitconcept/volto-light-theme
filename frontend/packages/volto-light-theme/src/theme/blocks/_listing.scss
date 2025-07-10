@@ -1,3 +1,10 @@
+// Hiding Event Calendar options since it is only for eventCalendar block.
+.inline.field {
+  &.field-wrapper-variation .react-select__menu-list [id$='-option-3'] {
+    display: none;
+  }
+}
+
 // Listing Block
 .block.listing,
 .column > .block.listing,
@@ -66,6 +73,7 @@
       }
       h2 {
         margin-top: 0;
+        margin-bottom: $spacing-medium;
         @include text-heading-h2();
       }
       p {
