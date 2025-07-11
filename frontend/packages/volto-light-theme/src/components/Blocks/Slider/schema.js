@@ -33,7 +33,7 @@ export const sliderBlockSchemaEnhancer = ({ formData, schema, intl }) => {
   schema.properties.slides.schema.properties.flagAlign = {
     widget: 'inner_align',
     title: intl.formatMessage(messages.flagAlign),
-    actions: ['left', 'right'],
+    actions: ['left', 'center', 'right'],
     default: 'left',
   };
 
