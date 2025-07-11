@@ -93,10 +93,11 @@ type CardImageProps = {
   /** A custom React component to render the image. */
   imageComponent?: React.ComponentType<any>;
   children?: React.ReactNode;
+  showDefaultImage?: boolean;
 };
 
 const CardImage = (props: CardImageProps) => {
-  const { src, item, image, imageComponent } = props;
+  const { src, item, image, imageComponent, showDefaultImage } = props;
   const Image = imageComponent || DefaultImage;
 
   return (
@@ -104,7 +105,10 @@ const CardImage = (props: CardImageProps) => {
       {src ? (
         <Image src={src} alt="" loading="lazy" responsive={true} />
       ) : item || image ? (
-        (item?.hasPreviewImage || item?.image_field || image) && (
+        (item?.hasPreviewImage ||
+          item?.image_field ||
+          image ||
+          showDefaultImage) && (
           <Image
             item={image || item}
             imageField={image ? image.image_field : item?.image_field}

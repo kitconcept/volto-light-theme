@@ -1,8 +1,19 @@
 describe('Event Calendar Block Tests', () => {
+  let startDate;
+  let endDate;
   beforeEach(() => {
     cy.intercept('GET', `/**/*?expand*`).as('content');
     cy.intercept('GET', '/**/Document').as('schema');
     cy.intercept('GET', '**/@querystring-search**').as('querySearch');
+    const now = new Date();
+    startDate = new Date(now);
+    startDate.setMonth(startDate.getMonth() + 1);
+
+    // End = start + 7 days
+    endDate = new Date(startDate.getTime() + 7 * 24 * 60 * 60 * 1000);
+    const formatDate = (date) => date.toISOString().replace('.000Z', '+00:00');
+    const eventStart = new Date((startDate.getTime() + endDate.getTime()) / 2);
+    const eventEnd = new Date(eventStart.getTime() + 2 * 24 * 60 * 60 * 1000);
 
     // given a logged in editor and a page in edit mode
     cy.autologin();
@@ -16,8 +27,8 @@ describe('Event Calendar Block Tests', () => {
       contentId: 'my-first-event',
       contentTitle: 'My First Event',
       bodyModifier(body) {
-        body.start = '2025-07-24T12:00:00+00:00';
-        body.end = '2025-07-31T13:00:00+00:00';
+        body.start = formatDate(eventStart);
+        body.end = formatDate(eventEnd);
         return body;
       },
     });
@@ -58,26 +69,26 @@ describe('Event Calendar Block Tests', () => {
     cy.url().should('eq', Cypress.config().baseUrl + '/my-page');
     cy.get('.react-aria-Group [slot="start"] [data-type="day"]')
       .focus()
-      .type('11');
+      .type(startDate.getDate().toString());
     cy.get('.react-aria-Group [slot="start"] [data-type="month"]')
       .focus()
-      .type('07');
+      .type((startDate.getMonth() + 1).toString());
 
     cy.get('.react-aria-Group [slot="start"] [data-type="year"]')
       .focus()
-      .type('2025');
+      .type(startDate.getFullYear().toString());
 
     cy.get('.react-aria-Group [slot="end"] [data-type="day"]')
       .focus()
-      .type('01');
+      .type(endDate.getDate().toString());
 
     cy.get('.react-aria-Group [slot="end"] [data-type="month"]')
       .focus()
-      .type('09');
+      .type((endDate.getMonth() + 1).toString());
 
     cy.get('.react-aria-Group [slot="end"] [data-type="year"]')
       .focus()
-      .type('2025');
+      .type(endDate.getFullYear().toString());
 
     cy.wait('@querySearch');
 

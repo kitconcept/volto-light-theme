@@ -11,6 +11,12 @@
         padding-bottom: 0;
         border-bottom: none;
       }
+
+      .listing-item {
+        .card {
+          flex-grow: 1;
+        }
+      }
     }
     .items {
       padding: 0 !important;

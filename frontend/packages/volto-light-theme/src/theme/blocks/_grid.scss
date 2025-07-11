@@ -184,6 +184,11 @@
     &.previous--has--same--backgroundColor:not(.has--headline) {
       margin-top: 0;
     }
+    .card {
+      .card-inner {
+        background-color: transparent;
+      }
+    }
     h2 {
       margin-bottom: 40px !important;
     }
@@ -349,4 +354,14 @@
 // related to selecting and clicking things inside (or prevent some event bubbling)
 .block.gridBlock [class^='block-editor-'].selected .cell-wrapper::before {
   z-index: unset;
+}
+
+/* Listing template inside grid block doesn't need contained colors */
+
+.block.gridBlock .block.listing.contained {
+  .card {
+    .card-inner {
+      background-color: transparent;
+    }
+  }
 }

@@ -302,7 +302,10 @@ export default function install(config: ConfigType) {
 
   config.blocks.blocksConfig.gridBlock.blocksConfig.listing.variations =
     cloneDeep(
-      listingBlockVariations.filter((variation) => variation.id !== 'grid'),
+      listingBlockVariations.filter(
+        (variation) =>
+          variation.id !== 'grid' && variation.id !== 'eventCalendar',
+      ),
     );
 
   config.blocks.blocksConfig.introduction = {
