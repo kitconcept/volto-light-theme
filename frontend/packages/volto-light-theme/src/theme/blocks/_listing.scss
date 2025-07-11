@@ -1,7 +1,10 @@
 // Hiding Event Calendar options since it is only for eventCalendar block.
 .inline.field {
-  &.field-wrapper-variation .react-select__menu-list [id$='-option-3'] {
-    display: none;
+  &.field-wrapper-variation,
+  &.field-wrapper-listingBodyTemplate {
+    .react-select__menu-list [id$='-option-3'] {
+      display: none;
+    }
   }
 }
 
@@ -93,6 +96,9 @@
 
       .card-inner .image-wrapper {
         flex: 0 0 220px;
+        img {
+          max-width: 100%;
+        }
       }
 
       img {
