@@ -1,6 +1,5 @@
 .block.highlight {
   --highlight-images-aspect-ratio: var(--image-aspect-ratio, 1.7777777778);
-
   .teaser-item.top .highlight-description {
     .title h2 {
       @include highlight-title();
@@ -10,7 +9,19 @@
       p,
       span {
         @include introduction();
-        --link-foreground-color: var(--theme-foreground-color);
+      }
+      strong * {
+        font-weight: inherit;
+      }
+      a {
+        color: inherit !important;
+
+        &::after {
+          background-color: var(
+            --theme-foreground-color,
+            --link-foreground-color
+          );
+        }
       }
     }
 
@@ -19,8 +30,4 @@
       text-decoration: none;
     }
   }
-}
-.block.highlight.has--descriptionColor--highlight-custom-color-2,
-.block-editor-highlight.has--descriptionColor--highlight-custom-color-2 .block {
-  --theme-foreground-color: #fff;
 }
