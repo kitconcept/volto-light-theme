@@ -29,6 +29,7 @@ class IKitconceptVoltoFooterSettings(model.Schema):
         "footer",
         label=_("Footer customizations"),
         fields=[
+            "footer_main_logo_inversed",
             "footer_address",
             "footer_column_left_header",
             "footer_column_left",
@@ -39,6 +40,18 @@ class IKitconceptVoltoFooterSettings(model.Schema):
             "footer_logo",
             "footer_logo_link",
         ],
+    )
+
+    footer_main_logo_inversed = NamedBlobImage(
+        title=_("label_footer_main_logo_inversed", default="Inversed Main Footer Logo"),
+        description=_(
+            "help_footer_main_logo_inversed",
+            default="The footer has a main logo located in the lower"
+            " left side, above the address. In case that the footer has a dark "
+            " background, you can set this inversed logo to ensure it plays well with "
+            "the background color. If not set, the main site logo will be used.",
+        ),
+        required=False,
     )
 
     footer_address = Text(
