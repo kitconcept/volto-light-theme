@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import LogoImage from '@plone/volto/components/theme/Logo/Logo.svg';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { useLiveData } from '@kitconcept/volto-light-theme/helpers/useLiveData';
-import type { SiteHeaderSettings } from '../../types';
+import type { SiteHeaderSettings, SiteFooterSettings } from '../../types';
 import type { Content } from '@plone/types';
 
 const messages = defineMessages({
@@ -36,7 +36,7 @@ type FormState = {
   };
 };
 
-const Logo = () => {
+const Logo = ({ isFooterLogo }: { isFooterLogo: boolean }) => {
   const intl = useIntl();
   const site = useSelector<FormState, Content>((state) => state.site.data);
   const navroot = useSelector<FormState, Content>(
@@ -55,9 +55,20 @@ const Logo = () => {
     'logo',
   );
 
-  const logoSrc = logo?.data
+  const footer_main_logo_inversed = useLiveData<
+    SiteFooterSettings['footer_main_logo_inversed']
+  >(content, 'kitconcept.footer', 'footer_main_logo_inversed');
+
+  const MainLogoSrc = logo?.data
     ? `data:${logo['content-type']};base64,${logo.data}`
     : flattenToAppURL(logo?.download);
+
+  const InversedLogoSrc = footer_main_logo_inversed?.data
+    ? `data:${footer_main_logo_inversed['content-type']};base64,${footer_main_logo_inversed.data}`
+    : flattenToAppURL(footer_main_logo_inversed?.download);
+
+  const logoSrc =
+    isFooterLogo && InversedLogoSrc ? InversedLogoSrc : MainLogoSrc;
 
   const logoWidth = logo?.width || null;
   const logoHeight = logo?.height || null;

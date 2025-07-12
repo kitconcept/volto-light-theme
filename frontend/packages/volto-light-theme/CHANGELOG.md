@@ -8,6 +8,24 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0-alpha.14 (2025-07-10)
+
+### Feature
+
+- Add Event calendar block @iFlameing. [#591](https://github.com/kitconcept/volto-light-theme/pull/591)
+- Added `footer_main_logo_inversed` image field to kitconcept.footer behavior. This adds support for setting an inversed color main logo that will appear at the top of the footer address. @sneridagh [#600](https://github.com/kitconcept/volto-light-theme/pull/600)
+
+### Bugfix
+
+- Fix margins for narrow centered image block on mobile. @danalvrz [#587](https://github.com/kitconcept/volto-light-theme/pull/587)
+- Show date for news item on mobile and display kicker first. @danalvrz [#589](https://github.com/kitconcept/volto-light-theme/pull/589)
+- Fix sticky menu background color problems @iRohitSingh [#594](https://github.com/kitconcept/volto-light-theme/pull/594)
+- Fixed default `selectedItemAttrs` for Teaser to include Person specific attributes. @sneridagh 
+
+### Internal
+
+- Add acceptance test for Grid block(Image and Listing). @iFlameing [#595](https://github.com/kitconcept/volto-light-theme/pull/595)
+
 ## 7.0.0-alpha.12 (2025-06-18)
 
 ### Feature

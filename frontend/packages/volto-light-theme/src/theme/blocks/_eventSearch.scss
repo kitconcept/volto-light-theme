@@ -1,0 +1,415 @@
+.search-block-event.searchBlock-facets {
+  .headline {
+    width: 100%;
+  }
+  display: grid;
+  gap: 20px;
+  grid-auto-rows: auto;
+
+  .first-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    @container (max-width: #{$largest-mobile-screen}) {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 20px;
+    }
+
+    .react-aria-DateRangePicker {
+      height: 64px;
+      .react-aria-Group {
+        height: 100%;
+        padding-right: 18px;
+        padding-left: 16px;
+        border-color: $black;
+        border-radius: unset;
+        outline-color: $black;
+
+        @container (max-width: #{$largest-mobile-screen}) {
+          width: 100%;
+        }
+      }
+      .react-aria-DateInput[slot='start'] {
+        margin-right: 10px;
+        outline-color: $black;
+        span {
+          color: $black;
+          &:focus {
+            background: $white;
+          }
+        }
+      }
+      .react-aria-DateInput[slot='end'] {
+        margin-right: $spacing-small;
+        margin-left: 10px;
+        outline-color: $black;
+        span {
+          color: $black;
+          &:focus {
+            background: $white;
+          }
+        }
+      }
+
+      .react-aria-Button {
+        background: var(--button-background);
+        box-shadow: unset;
+        color: var(--text-color);
+        cursor: pointer;
+
+        .icon {
+          position: relative;
+          left: -2px;
+          min-width: 30px;
+        }
+      }
+    }
+
+    .search-details {
+      padding: 0 $spacing-small;
+      margin: 0;
+      color: $black;
+      font-size: $spacing-small;
+      @container (max-width: #{$largest-mobile-screen}) {
+        padding: 0px;
+      }
+
+      .number {
+        font-size: 30px;
+      }
+
+      .label {
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
+
+    .search-filters-sort {
+      display: flex;
+      align-items: center;
+      @container (max-width: #{$largest-mobile-screen}) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .sort-on-wrapper {
+        display: flex;
+        align-items: center;
+
+        @container (max-width: #{$largest-mobile-screen}) {
+          width: 100%;
+        }
+
+        .search-sort-wrapper {
+          display: flex;
+          flex-grow: 1;
+          align-items: center;
+          margin: 7px 0 0 0;
+
+          & > * {
+            height: 50px;
+            border-width: 1px 1px 1px 0;
+            border-style: solid;
+            border-color: $black;
+            border-radius: 0;
+            margin: 0;
+          }
+
+          & > .search-sort-on {
+            display: flex;
+            align-items: center;
+            border-left-width: 1px;
+            font-size: 14px;
+
+            @container (max-width: #{$largest-mobile-screen}) {
+              flex-grow: 1;
+            }
+
+            .sort-label {
+              display: none;
+            }
+
+            .sorted-label {
+              padding: 2px 8px;
+            }
+
+            #select-search-sort-on {
+              flex-grow: 1;
+
+              .react-select__control {
+                border-color: $black;
+              }
+
+              .icon {
+                fill: black !important;
+              }
+
+              @container (max-width: #{$largest-mobile-screen}) {
+                .react-select__control {
+                  width: 100%;
+                }
+              }
+            }
+
+            /* important is necessary to override the element.styles for icon */
+            svg {
+              width: 36px !important;
+              height: 36px !important;
+              margin-right: 7px;
+            }
+
+            div {
+              border: 0;
+            }
+
+            .react-select__menu {
+              border: solid 1px $black;
+              margin-top: 3px;
+            }
+
+            .react-select__option:not(.react-select__option--is-selected) {
+              svg {
+                visibility: hidden;
+              }
+            }
+
+            .react-select__option--is-selected {
+              svg {
+                fill: $black;
+              }
+            }
+          }
+        }
+
+        button {
+          width: 50px;
+          background: transparent;
+          text-align: center;
+
+          &.active {
+            background: black !important;
+
+            .icon {
+              fill: white !important;
+            }
+          }
+
+          svg {
+            height: 30px !important;
+          }
+        }
+      }
+    }
+  }
+
+  .search-wrapper {
+    display: flex;
+    flex-grow: 1;
+    .search-input {
+      position: relative;
+      flex-grow: 1;
+      .react-aria-TextField {
+        width: 100%;
+      }
+      input {
+        height: 64px;
+        padding-right: 48px;
+        padding-left: 10px;
+        border: none;
+        border-radius: 0px;
+        background: $lightgrey;
+
+        &:focus {
+          outline-color: $black;
+        }
+
+        &::placeholder {
+          font-weight: 300;
+        }
+      }
+    }
+
+    .search-input-actions {
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      button {
+        display: flex;
+        height: 64px;
+        align-items: center;
+        border: none;
+        background: transparent;
+        .icon {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+
+  .facets {
+    .icon {
+      fill: $black !important; // Because it is not using currentColor
+    }
+
+    .react-select__control {
+      border-color: $black;
+
+      .react-select__placeholder {
+        color: $black;
+      }
+    }
+
+    .react-select__clear-indicator {
+      color: $black;
+    }
+  }
+
+  .template-container {
+    position: relative;
+    margin-top: 60px;
+  }
+
+  // Pagination
+  .pagination-wrapper {
+    display: table;
+    margin: auto;
+    border-collapse: collapse;
+    @include body-text();
+
+    .ui.pagination.menu {
+      display: table-row;
+      margin-bottom: 30px;
+
+      .item {
+        display: table-cell;
+        min-width: 32px;
+        padding: 6.5px 10px;
+        border: solid 1px $black;
+        border-radius: 0;
+        border-collapse: collapse;
+        color: $black;
+
+        &:first-child,
+        &:last-child {
+          padding: 6.5px 15px 6.5px 15px;
+        }
+
+        &.active {
+          background-color: $black;
+          color: $white;
+        }
+      }
+
+      &.mobile-pagination {
+        display: none;
+      }
+
+      @container (max-width: #{$largest-mobile-screen}) {
+        &.mobile-pagination {
+          display: table-row;
+        }
+
+        &.desktop-pagination {
+          display: none;
+        }
+      }
+    }
+
+    .total {
+      display: table-caption;
+      margin-top: 30px;
+      caption-side: bottom;
+      text-align: center;
+    }
+  }
+
+  .event-calendar {
+    .card-listing {
+      margin-bottom: 47px;
+      &:last-of-type {
+        .card-inner {
+          .card-summary {
+            border-bottom: none;
+          }
+        }
+      }
+
+      .card-inner {
+        align-items: flex-start;
+        .image-wrapper {
+          flex-basis: 140px;
+          .date-inset {
+            width: 140px;
+            height: 140px;
+            &.has-end-date {
+              .day {
+                font-size: 36px;
+                line-height: 38px;
+              }
+
+              .month {
+                font-size: 10px;
+                font-weight: 400;
+                line-height: 18px;
+              }
+            }
+            .separator {
+              width: 71%;
+              height: 1px;
+              margin-top: 5px;
+              margin-bottom: 5px;
+              background: $black;
+            }
+          }
+        }
+
+        .card-summary {
+          align-self: stretch;
+          padding-bottom: 38px;
+          border-bottom: 1px solid $black;
+
+          .headline {
+            display: none;
+            &.calendar {
+              display: block;
+            }
+          }
+
+          .event-title {
+            &:before {
+              margin-right: 5px;
+              margin-left: 5px;
+              content: '|';
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Because we override the display of all the header.
+This is css code of popup of calendar */
+.react-aria-Popover {
+  border-color: $black;
+  border-radius: unset;
+}
+.react-aria-RangeCalendar {
+  header {
+    display: flex;
+  }
+
+  //ask victor about this. Font family causing unwanted problems in rendering of icon.
+  .react-aria-Button {
+    border-radius: unset;
+    font-family: unset;
+  }
+  h2 {
+    margin: 0;
+    font-size: 1.375rem;
+    text-align: center;
+  }
+}

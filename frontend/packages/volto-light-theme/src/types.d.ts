@@ -64,6 +64,7 @@ export type SiteFooterSettings = {
   footer_logos: Array<footerLogo>;
   footer_logos_container_width: string;
   footer_logos_size: string;
+  footer_main_logo_inversed: Image & { data?: string };
   footer_address: string;
   footer_column_left_header: string;
   footer_column_left: Array<Link>;

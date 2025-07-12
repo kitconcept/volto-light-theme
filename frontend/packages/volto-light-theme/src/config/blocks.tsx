@@ -41,6 +41,11 @@ import { sliderBlockSchemaEnhancer } from '../components/Blocks/Slider/schema';
 import EventMetadataView from '../components/Blocks/EventMetadata/View';
 import isEmpty from 'lodash/isEmpty';
 
+import SearchBlockViewEvent from '../components/Blocks/EventCalendar/Search/SearchBlockView';
+import SearchBlockEditEvent from '../components/Blocks/EventCalendar/Search/SearchBlockEdit';
+import SearchBlockSchemaEvent from '../components/Blocks/EventCalendar/Search/schema';
+import EventCalenderTemplate from '../components/Blocks/EventCalendar/Search/components/EventTemplate';
+
 declare module '@plone/types' {
   export interface BlocksConfigData {
     introduction: BlockConfigBase;
@@ -52,6 +57,7 @@ declare module '@plone/types' {
     accordion: BlockConfigBase;
     hero: BlockConfigBase;
     slateTable: BlockConfigBase;
+    eventCalendar: BlockConfigBase;
   }
   export interface BlockConfigBase {
     themes?: StyleDefinition[];
@@ -178,6 +184,18 @@ export default function install(config: ConfigType) {
 
   // Default Blocks configuration
 
+  config.blocks.blocksConfig.eventCalendar = {
+    id: 'eventCalendar',
+    title: 'Event Calendar',
+    icon: descriptionSVG,
+    group: 'common',
+    view: SearchBlockViewEvent,
+    edit: SearchBlockEditEvent,
+    blockSchema: SearchBlockSchemaEvent,
+    restricted: false,
+    mostUsed: false,
+    sidebarTab: 1,
+  };
   config.blocks.blocksConfig.accordion = {
     ...config.blocks.blocksConfig.accordion,
     mostUsed: true,
@@ -216,6 +234,11 @@ export default function install(config: ConfigType) {
       id: 'grid',
       title: 'Grid',
       template: GridListingBlockTemplate,
+    },
+    {
+      id: 'eventCalendar',
+      title: 'Event Calendar',
+      template: EventCalenderTemplate,
     },
     ...config.blocks.blocksConfig.listing.variations.filter(
       (variation) => !['default', 'summary'].includes(variation.id),
