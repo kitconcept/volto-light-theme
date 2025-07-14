@@ -17,7 +17,6 @@ describe('a11y tests', () => {
     cy.configureAxe({
       // Disabling 'image-alt'
       // semantic-ui-react's Embed doesn't include an alt tag for the placeholder image
-      // Disabling the link-name rule because in card component we are not giving link any text.
       rules: [
         {
           id: 'image-alt',
@@ -25,10 +24,6 @@ describe('a11y tests', () => {
         },
         {
           id: 'nested-interactive',
-          enabled: false,
-        },
-        {
-          id: 'link-name',
           enabled: false,
         },
       ],

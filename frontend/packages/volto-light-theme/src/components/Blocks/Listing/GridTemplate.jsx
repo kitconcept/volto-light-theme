@@ -25,7 +25,7 @@ const GridTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
     <>
       <div className="items">
         {items.map((item) => {
-          const ItemBodyTemplate = () => {
+          const ItemBodyTemplate = (props) => {
             const CustomItemBodyTemplate = config.getComponent({
               name: 'GridListingItemTemplate',
               dependencies: [item['@type']],
@@ -47,7 +47,7 @@ const GridTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
                     imageComponent={PreviewImageComponent}
                   />
                 )}
-                <Card.Summary>
+                <Card.Summary a11yLabelId={props.a11yLabelId}>
                   <Summary item={item} HeadingTag="h2" />
                 </Card.Summary>
               </>

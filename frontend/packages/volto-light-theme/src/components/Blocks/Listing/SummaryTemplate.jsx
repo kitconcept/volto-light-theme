@@ -35,7 +35,7 @@ const SummaryTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
               dependencies: [item['@type']],
             }).component || DefaultSummary;
 
-          const ItemBodyTemplate = () =>
+          const ItemBodyTemplate = (props) =>
             CustomItemBodyTemplate ? (
               <CustomItemBodyTemplate item={item} />
             ) : (
@@ -45,7 +45,7 @@ const SummaryTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
                   showDefaultImage={true}
                   imageComponent={PreviewImageComponent}
                 />
-                <Card.Summary>
+                <Card.Summary a11yLabelId={props.a11yLabelId}>
                   <Summary item={item} HeadingTag="h3" />
                 </Card.Summary>
               </>
