@@ -94,10 +94,13 @@
     .listing-item {
       padding-top: 0 !important;
 
-      .card-inner .image-wrapper {
-        flex: 0 0 220px;
-        img {
-          max-width: 100%;
+      .card {
+        width: 100%;
+        .card-inner .image-wrapper {
+          flex: 0 0 220px;
+          img {
+            max-width: 100%;
+          }
         }
       }
 

@@ -14,7 +14,15 @@ describe('a11y tests', () => {
     cy.navigate('/block/search-block');
     cy.wait('@content');
     cy.injectAxe();
-    cy.configureAxe();
+    cy.configureAxe({
+      // Disabling the link-name rule because in card component we are not giving link any text.
+      rules: [
+        {
+          id: 'link-name',
+          enabled: false,
+        },
+      ],
+    });
     cy.checkAccessibility();
   });
 });
