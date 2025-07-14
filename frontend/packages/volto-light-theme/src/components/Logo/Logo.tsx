@@ -55,20 +55,21 @@ const Logo = ({ isFooterLogo }: { isFooterLogo: boolean }) => {
     'logo',
   );
 
-  const footer_main_logo_inversed = useLiveData<
-    SiteFooterSettings['footer_main_logo_inversed']
-  >(content, 'kitconcept.footer', 'footer_main_logo_inversed');
+  const footer_logo = useLiveData<SiteFooterSettings['footer_logo']>(
+    content,
+    'kitconcept.footer',
+    'footer_logo',
+  );
 
   const MainLogoSrc = logo?.data
     ? `data:${logo['content-type']};base64,${logo.data}`
     : flattenToAppURL(logo?.download);
 
-  const InversedLogoSrc = footer_main_logo_inversed?.data
-    ? `data:${footer_main_logo_inversed['content-type']};base64,${footer_main_logo_inversed.data}`
-    : flattenToAppURL(footer_main_logo_inversed?.download);
+  const FooterLogoSrc = footer_logo?.data
+    ? `data:${footer_logo['content-type']};base64,${footer_logo.data}`
+    : flattenToAppURL(footer_logo?.download);
 
-  const logoSrc =
-    isFooterLogo && InversedLogoSrc ? InversedLogoSrc : MainLogoSrc;
+  const logoSrc = isFooterLogo && FooterLogoSrc ? FooterLogoSrc : MainLogoSrc;
 
   const logoWidth = logo?.width || null;
   const logoHeight = logo?.height || null;
