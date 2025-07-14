@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import LogoImage from '@plone/volto/components/theme/Logo/Logo.svg';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { useLiveData } from '@kitconcept/volto-light-theme/helpers/useLiveData';
-import type { SiteHeaderSettings } from '../../types';
+import type { SiteHeaderSettings, SiteFooterSettings } from '../../types';
 import type { Content } from '@plone/types';
 
 const messages = defineMessages({
@@ -36,7 +36,7 @@ type FormState = {
   };
 };
 
-const Logo = () => {
+const Logo = ({ isFooterLogo }: { isFooterLogo: boolean }) => {
   const intl = useIntl();
   const site = useSelector<FormState, Content>((state) => state.site.data);
   const navroot = useSelector<FormState, Content>(
@@ -55,9 +55,21 @@ const Logo = () => {
     'logo',
   );
 
-  const logoSrc = logo?.data
+  const footer_logo = useLiveData<SiteFooterSettings['footer_logo']>(
+    content,
+    'kitconcept.footer',
+    'footer_logo',
+  );
+
+  const MainLogoSrc = logo?.data
     ? `data:${logo['content-type']};base64,${logo.data}`
     : flattenToAppURL(logo?.download);
+
+  const FooterLogoSrc = footer_logo?.data
+    ? `data:${footer_logo['content-type']};base64,${footer_logo.data}`
+    : flattenToAppURL(footer_logo?.download);
+
+  const logoSrc = isFooterLogo && FooterLogoSrc ? FooterLogoSrc : MainLogoSrc;
 
   const logoWidth = logo?.width || null;
   const logoHeight = logo?.height || null;
