@@ -1,6 +1,7 @@
 {
   "__version__": "1.0.0",
   "_blob_files_": [
+    "c7a92b57c81843a18daacf778f7d548e/image/plone.svg",
     "99c70917b6894af08dd306fdbc0eff6a/preview_image/black-starry-night.jpg",
     "3ac4a2c6c4034a1686bc0ee2d2072fd6/preview_image/black-starry-night.jpg",
     "8416628543f146ff9a18d281c03e2399/preview_image/black-starry-night.jpg",
@@ -15,8 +16,7 @@
     "453f894078814ffbb290ad61a23a6693/file/file.pdf",
     "970ec24c76784c66a06d8c8d8b6522b2/image/black-starry-night.jpg",
     "eec82559bf3242a6be4d43bc2096f399/image/image-light.jpg",
-    "7ab9c48ede33415fa2a66a99549c8f70/preview_image/black-starry-night.jpg",
-    "c7a92b57c81843a18daacf778f7d548e/image/plone.svg"
+    "7ab9c48ede33415fa2a66a99549c8f70/preview_image/black-starry-night.jpg"
   ],
   "_data_files_": [
     "plone_site_root/data.json",
@@ -25,7 +25,6 @@
     "f8cd4a2d8d7c4703b4e41d2093b21aed/data.json",
     "405582582e70493c96a6c549444a1eaa/data.json",
     "6f42321fa6cf4f57969c78a21f92dd79/data.json",
-    "77de6a96dadf457e8091cc4fee063273/data.json",
     "99c70917b6894af08dd306fdbc0eff6a/data.json",
     "28cc586c504d436aa26fd2aa12f16f84/data.json",
     "3ac4a2c6c4034a1686bc0ee2d2072fd6/data.json",
@@ -95,7 +94,6 @@
     "6bd32a3367ea4254b295db642655b9d3": {},
     "6d37dd19ef754344aaa254fa288e44b4": {},
     "6f42321fa6cf4f57969c78a21f92dd79": {},
-    "77de6a96dadf457e8091cc4fee063273": {},
     "7950cae06c994276930f6d13151308c5": {},
     "7a3b5687ac534254a28381e7fa763ed5": {},
     "7ab9c48ede33415fa2a66a99549c8f70": {},
@@ -326,13 +324,6 @@
         ]
       }
     },
-    "77de6a96dadf457e8091cc4fee063273": {
-      "local_roles": {
-        "admin": [
-          "Owner"
-        ]
-      }
-    },
     "7950cae06c994276930f6d13151308c5": {
       "local_roles": {
         "admin": [
@@ -545,11 +536,11 @@
     }
   },
   "ordering": {
-    "00cef5f245a342958288ace545e3c097": 9,
-    "102f648399914851951ffa3fefc8665c": 11,
+    "00cef5f245a342958288ace545e3c097": 7,
+    "102f648399914851951ffa3fefc8665c": 10,
     "195d96ca9952493cbffa69cda040b8b3": 3,
     "1efc7b73b28e4edeaf40040709299d69": 8,
-    "2508797173824f0e9f82bb2e7cfe922d": 12,
+    "2508797173824f0e9f82bb2e7cfe922d": 11,
     "28cc586c504d436aa26fd2aa12f16f84": 1,
     "2f69aa417e894fd3bf23d393287b369e": 0,
     "3906609d0456404ca7146f6aa1f12f32": 13,
@@ -564,9 +555,8 @@
     "546e82cce6c842d0a4046a0131539bd2": 8,
     "6a82ae8d8a434e019b404f4387fe1a42": 5,
     "6bd32a3367ea4254b295db642655b9d3": 5,
-    "6d37dd19ef754344aaa254fa288e44b4": 10,
+    "6d37dd19ef754344aaa254fa288e44b4": 12,
     "6f42321fa6cf4f57969c78a21f92dd79": 17,
-    "77de6a96dadf457e8091cc4fee063273": 20,
     "7950cae06c994276930f6d13151308c5": 9,
     "7a3b5687ac534254a28381e7fa763ed5": 1,
     "7ab9c48ede33415fa2a66a99549c8f70": 0,
@@ -577,7 +567,7 @@
     "928010d84e5d4df2b2282f3e179d6b1a": 6,
     "970ec24c76784c66a06d8c8d8b6522b2": 5,
     "99c70917b6894af08dd306fdbc0eff6a": 2,
-    "bd2b39d2745847db82ed197a4eb1effc": 7,
+    "bd2b39d2745847db82ed197a4eb1effc": 9,
     "c2adb9f7b0824bd5a3e07048d887f48d": 2,
     "c40a2be214b645338a7ef2e711e2f5c6": 44,
     "c7a92b57c81843a18daacf778f7d548e": 8,
