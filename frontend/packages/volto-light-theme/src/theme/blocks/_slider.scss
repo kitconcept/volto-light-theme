@@ -36,7 +36,7 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
     /* We have a slider-wrapper with overflow: hidden, which is causing the flag's
       height to be cropped. * To fix this, I’m adding padding to create extra space. */
     &:has(.has--slider--flagAlign--center) {
-      padding-bottom: 150px;
+      padding-bottom: 190px;
       @media only screen and (max-width: $computer-width) {
         padding-bottom: $spacing-medium;
       }
@@ -68,7 +68,8 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
       }
       &.has--slider--flagAlign--center {
         position: absolute;
-        top: 50%;
+        top: unset;
+        bottom: 45px;
         left: 50%;
         width: 80%;
         padding: $spacing-large;
@@ -82,7 +83,8 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         }
 
         p {
-          margin-bottom: $spacing-large;
+          min-height: 144px;
+          margin-bottom: 60px;
         }
       }
 
@@ -125,9 +127,6 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
 
   .teaser-item.top {
     position: relative;
-    a {
-      position: relative;
-    }
   }
 
   .ui.button {

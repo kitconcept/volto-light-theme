@@ -786,7 +786,7 @@ describe('Listing Block Tests', () => {
       .should('not.exist');
   });
 
-  it.only('Listing block: respect batching and limits', () => {
+  it('Listing block: respect batching and limits', () => {
     cy.intercept('PATCH', '/**/my-page').as('save');
     cy.intercept('GET', '/**/my-page').as('content');
     cy.intercept('GET', '/**/@types/Document').as('schema');
@@ -928,7 +928,7 @@ describe('Listing Block Tests', () => {
   });
 
   // reload url when ?page=2
-  it.only('Reload path when listing page = 2', () => {
+  it('Reload path when listing page = 2', () => {
     cy.intercept('PATCH', '/**/my-page').as('save');
     cy.intercept('GET', '/**/my-page').as('content');
     cy.intercept('GET', '/**/@types/Document').as('schema');
