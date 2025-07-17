@@ -1,6 +1,7 @@
 // See Customization for more info
 import PropTypes from 'prop-types';
 import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
+import Card from '../../../primitives/Card/Card';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import { flattenToAppURL, isInternalURL } from '@plone/volto/helpers/Url/Url';
 import config from '@plone/volto/registry';
@@ -37,11 +38,11 @@ const DefaultTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
               })}
               key={item['@id']}
             >
-              <ConditionalLink item={item} condition={!isEditMode}>
-                <div className="listing-body">
+              <Card href={!isEditMode ? item['@id'] : null}>
+                <Card.Summary>
                   <Summary item={item} HeadingTag="h2" />
-                </div>
-              </ConditionalLink>
+                </Card.Summary>
+              </Card>
             </div>
           );
         })}
