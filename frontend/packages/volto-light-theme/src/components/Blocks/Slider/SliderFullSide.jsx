@@ -1,4 +1,3 @@
-import React from 'react';
 import { useIntl, defineMessages } from 'react-intl';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import MaybeWrap from '@plone/volto/components/manage/MaybeWrap/MaybeWrap';
@@ -32,7 +31,7 @@ const messages = defineMessages({
 
 const DefaultImage = (props) => <img {...props} alt={props.alt || ''} />;
 
-const SliderBody = ({
+const SliderFullHeight = ({
   index,
   onChangeBlock,
   block,
@@ -77,7 +76,7 @@ const SliderBody = ({
     >
       {!href && isEditMode && (
         <Message>
-          <div className="grid-teaser-item default">
+          <div className="grid-teaser-item">
             <img src={imageBlockSVG} alt="" />
             <p>{intl.formatMessage(messages.PleaseChooseContent)}</p>
             <div className="toolbar-inner">
@@ -125,7 +124,7 @@ const SliderBody = ({
                 />
               </div>
             )}
-            {/* START CUSTOMIZATION */}
+
             <div
               className={cx(
                 'teaser-item-title fix-width-issue',
@@ -148,6 +147,7 @@ const SliderBody = ({
               )}
               {/* END CUSTOMIZATION */}
             </div>
+            {/* START CUSTOMIZATION */}
           </MaybeWrap>
         </div>
       )}
@@ -155,4 +155,4 @@ const SliderBody = ({
   );
 };
 
-export default SliderBody;
+export default SliderFullHeight;
