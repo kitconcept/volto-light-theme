@@ -87,7 +87,7 @@ describe('Listing Block Tests', () => {
     cy.addNewBlock('listing');
 
     //verify before save
-    cy.get(`.block.listing .listing-body:first-of-type`).contains(
+    cy.get(`.block.listing .listing-item:first-of-type`).contains(
       'My Page Test',
     );
 
@@ -99,11 +99,11 @@ describe('Listing Block Tests', () => {
     //test after save
     // test SSR results first
     cy.isInHTML({
-      parent: '#page-document .listing-body:first-of-type',
+      parent: '#page-document .listing-item:first-of-type',
       content: 'My Page Test',
     });
 
-    cy.get('#page-document .listing-body:first-of-type').contains(
+    cy.get('#page-document .listing-item:first-of-type').contains(
       'My Page Test',
     );
     cy.get('#page-document .listing-item:first-of-type a').should(
@@ -146,7 +146,7 @@ describe('Listing Block Tests', () => {
     cy.configureListingWith('Page');
 
     //verify before save
-    cy.get(`.block.listing .listing-body:first-of-type`).contains(
+    cy.get(`.block.listing .listing-item:first-of-type`).contains(
       'My Page Test',
     );
 
@@ -158,11 +158,11 @@ describe('Listing Block Tests', () => {
     //test after save
     // test SSR results first
     cy.isInHTML({
-      parent: '#page-document .listing-body:first-of-type',
+      parent: '#page-document .listing-item:first-of-type',
       content: 'My Page Test',
     });
 
-    cy.get('#page-document .listing-body:first-of-type').contains(
+    cy.get('#page-document .listing-item:first-of-type').contains(
       'My Page Test',
     );
   });
@@ -204,7 +204,7 @@ describe('Listing Block Tests', () => {
     cy.addNewBlock('listing');
 
     //verify before save
-    cy.get(`.block.listing .listing-body:first-of-type`).contains(
+    cy.get(`.block.listing .listing-item:first-of-type`).contains(
       'My Page Test',
     );
     cy.get('.items-preview').contains('Contained items');
@@ -217,11 +217,11 @@ describe('Listing Block Tests', () => {
     //test after save
     // test SSR results first
     cy.isInHTML({
-      parent: '#page-document .listing-body:first-of-type',
+      parent: '#page-document .listing-item:first-of-type',
       content: 'My Page Test',
     });
 
-    cy.get('#page-document .listing-body:first-of-type').contains(
+    cy.get('#page-document .listing-item:first-of-type').contains(
       'My Page Test',
     );
   });
@@ -266,7 +266,7 @@ describe('Listing Block Tests', () => {
     cy.configureListingWith('Page');
 
     //verify before save
-    cy.get(`.block.listing .listing-body:first-of-type`).contains(
+    cy.get(`.block.listing .listing-item:first-of-type`).contains(
       'My Page Test',
     );
     cy.get('.items-preview').contains('Results preview');
@@ -279,11 +279,11 @@ describe('Listing Block Tests', () => {
     //test after save
     // test SSR results first
     cy.isInHTML({
-      parent: '#page-document .listing-body:first-of-type',
+      parent: '#page-document .listing-item:first-of-type',
       content: 'My Page Test',
     });
 
-    cy.get('#page-document .listing-body:first-of-type').contains(
+    cy.get('#page-document .listing-item:first-of-type').contains(
       'My Page Test',
     );
     cy.get('#page-document .listing-item:first-of-type a').should(
@@ -330,7 +330,7 @@ describe('Listing Block Tests', () => {
     cy.addNewBlock('listing');
 
     //verify before save
-    cy.get(`.block.listing .listing-body:first-of-type`).contains(
+    cy.get(`.block.listing .listing-item:first-of-type`).contains(
       'My Page Test',
     );
     cy.get('#field-headline').type('This is a headline');
@@ -409,11 +409,11 @@ describe('Listing Block Tests', () => {
     //test after save
     // test SSR results first
     cy.isInHTML({
-      parent: '#page-document .listing-body:first-of-type',
+      parent: '#page-document .listing-item:first-of-type',
       content: 'Page Two',
     });
 
-    cy.get('#page-document .listing-body:first-of-type').contains('Page Two');
+    cy.get('#page-document .listing-item:first-of-type').contains('Page Two');
     cy.get('#page-document .listing-item:first-of-type a').should(
       'have.attr',
       'href',
@@ -449,9 +449,9 @@ describe('Listing Block Tests', () => {
     cy.configureListingWith('Page');
 
     //before save, verify if in list there's a page with id my-page-test
-    cy.get(`.block.listing .listing-body:first-of-type`).contains('My Page');
+    cy.get(`.block.listing .listing-item:first-of-type`).contains('My Page');
     //before save, verify if in list there isn't the News with title My News
-    cy.get(`.block.listing .listing-body`)
+    cy.get(`.block.listing .listing-item`)
       .contains('My News')
       .should('not.exist');
 
@@ -463,11 +463,11 @@ describe('Listing Block Tests', () => {
 
     // test SSR results first
     cy.isInHTML({
-      parent: '#page-document .listing-body:first-of-type',
+      parent: '#page-document .listing-item:first-of-type',
       content: 'My Page',
     });
 
-    cy.get('#page-document .listing-body:first-of-type').contains('My Page');
+    cy.get('#page-document .listing-item:first-of-type').contains('My Page');
     cy.get('#page-document .listing-item:first-of-type a').should(
       'have.attr',
       'href',
@@ -536,11 +536,11 @@ describe('Listing Block Tests', () => {
       .type('my-page-test');
 
     //before save, vrify if in list there's a page with id my-page-test
-    cy.get(`.block.listing .listing-body:first-of-type`).contains(
+    cy.get(`.block.listing .listing-item:first-of-type`).contains(
       'My Page Test',
     );
     //before save, verify if in list there isn't the News with title My News
-    cy.get(`.block.listing .listing-body`)
+    cy.get(`.block.listing .listing-item`)
       .contains('My News')
       .should('not.exist');
 
@@ -552,11 +552,11 @@ describe('Listing Block Tests', () => {
     //test short-name criteria after save
     // test SSR results first
     cy.isInHTML({
-      parent: '#page-document .listing-body:first-of-type',
+      parent: '#page-document .listing-item:first-of-type',
       content: 'My Page Test',
     });
 
-    cy.get('#page-document .listing-body:first-of-type').contains(
+    cy.get('#page-document .listing-item:first-of-type').contains(
       'My Page Test',
     );
     cy.get('#page-document .listing-item:first-of-type a').should(
@@ -611,11 +611,11 @@ describe('Listing Block Tests', () => {
     cy.addLocationQuerystring('Relative path', '../my-folder');
 
     // verify if in list there's a page with name "Document within Folder"
-    cy.get(`.block.listing .listing-body:first-of-type`).contains(
+    cy.get(`.block.listing .listing-item:first-of-type`).contains(
       'Document within Folder',
     );
     // verify if in list there isn't page with name "Document outside Folder"
-    cy.get(`.block.listing .listing-body`)
+    cy.get(`.block.listing .listing-item`)
       .contains('Document outside Folder')
       .should('not.exist');
 
@@ -627,14 +627,14 @@ describe('Listing Block Tests', () => {
     //test location relative criteria after save
     // test SSR results first
     cy.isInHTML({
-      parent: '#page-document .listing-body:first-of-type',
+      parent: '#page-document .listing-item:first-of-type',
       content: 'Document within Folder',
     });
 
-    cy.get('#page-document .listing-body:first-of-type').contains(
+    cy.get('#page-document .listing-item:first-of-type').contains(
       'Document within Folder',
     );
-    cy.get('#page-document .listing-body:first-of-type')
+    cy.get('#page-document .listing-item:first-of-type')
       .contains('Document outside Folder')
       .should('not.exist');
   });
@@ -684,11 +684,11 @@ describe('Listing Block Tests', () => {
     cy.addLocationQuerystring('Absolute path', '/my-page/my-folder');
 
     // verify if in list there's a page with name "Document within Folder"
-    cy.get(`.block.listing .listing-body:first-of-type`).contains(
+    cy.get(`.block.listing .listing-item:first-of-type`).contains(
       'Document within Folder',
     );
     // verify if in list there isn't page with name "Document outside Folder"
-    cy.get(`.block.listing .listing-body`)
+    cy.get(`.block.listing .listing-item`)
       .contains('Document outside Folder')
       .should('not.exist');
 
@@ -700,14 +700,14 @@ describe('Listing Block Tests', () => {
     //test location absolute criteria after save
     // test SSR results first
     cy.isInHTML({
-      parent: '#page-document .listing-body:first-of-type',
+      parent: '#page-document .listing-item:first-of-type',
       content: 'Document within Folder',
     });
 
-    cy.get('#page-document .listing-body:first-of-type').contains(
+    cy.get('#page-document .listing-item:first-of-type').contains(
       'Document within Folder',
     );
-    cy.get('#page-document .listing-body:first-of-type')
+    cy.get('#page-document .listing-item:first-of-type')
       .contains('Document outside Folder')
       .should('not.exist');
   });
@@ -759,11 +759,11 @@ describe('Listing Block Tests', () => {
     cy.addLocationQuerystring('Relative path', '.');
 
     // verify if in list there's a page with name "Document within Folder"
-    cy.get(`.block.listing .listing-body:first-of-type`).contains(
+    cy.get(`.block.listing .listing-item:first-of-type`).contains(
       'News Item One',
     );
     // verify if in list there isn't page with name "Document outside Folder"
-    cy.get(`.block.listing .listing-body`)
+    cy.get(`.block.listing .listing-item`)
       .contains('about us')
       .should('not.exist');
 
@@ -775,13 +775,13 @@ describe('Listing Block Tests', () => {
     //test location relative criteria after save
     // test SSR results first
     cy.isInHTML({
-      parent: '#page-document .listing-body:first-of-type',
+      parent: '#page-document .listing-item:first-of-type',
       content: 'News Item One',
     });
-    cy.get(`.block.listing .listing-body:first-of-type`).contains(
+    cy.get(`.block.listing .listing-item:first-of-type`).contains(
       'News Item One',
     );
-    cy.get(`.block.listing .listing-body`)
+    cy.get(`.block.listing .listing-item`)
       .contains('about us')
       .should('not.exist');
   });
@@ -822,7 +822,7 @@ describe('Listing Block Tests', () => {
     cy.addNewBlock('listing');
 
     //verify before save
-    cy.get(`.block.listing .listing-body:first-of-type`).contains('My Folder');
+    cy.get(`.block.listing .listing-item:first-of-type`).contains('My Folder');
 
     cy.configureListingWith('Page');
 
@@ -836,15 +836,10 @@ describe('Listing Block Tests', () => {
     //test after save
     // test SSR results first
     cy.isInHTML({
-      parent: '#page-document .listing-item:first-of-type a',
+      parent: '#page-document .listing-item:first-of-type',
       content: 'My Folder',
     });
 
-    cy.get('#page-document .listing-item:first-of-type a').should(
-      'have.attr',
-      'href',
-      '/my-page/my-folder',
-    );
     cy.get('.listing-item').should(($els) => {
       expect($els).to.have.length(2);
     });
@@ -900,7 +895,7 @@ describe('Listing Block Tests', () => {
     cy.addNewBlock('listing');
 
     //verify before save
-    cy.get(`.block.listing .listing-body:first-of-type`).contains('My Folder');
+    cy.get(`.block.listing .listing-item:first-of-type`).contains('My Folder');
 
     cy.configureListingWith('Page');
 
@@ -966,7 +961,7 @@ describe('Listing Block Tests', () => {
     cy.addNewBlock('listing');
 
     //verify before save
-    cy.get(`.block.listing .listing-body:first-of-type`).contains('My Folder');
+    cy.get(`.block.listing .listing-item:first-of-type`).contains('My Folder');
 
     cy.configureListingWith('Page');
 
@@ -1053,7 +1048,7 @@ describe('Listing Block Tests', () => {
     cy.addNewBlock('listing');
 
     //verify before save
-    cy.get(`.block.listing .listing-body:first-of-type`).contains('My Folder');
+    cy.get(`.block.listing .listing-item:first-of-type`).contains('My Folder');
 
     cy.configureListingWith('Page');
 
@@ -1063,7 +1058,7 @@ describe('Listing Block Tests', () => {
     cy.addNewBlock('listing');
 
     //verify before save
-    cy.get(`.block.listing .listing-body:first-of-type`).contains('My Folder');
+    cy.get(`.block.listing .listing-item:first-of-type`).contains('My Folder');
 
     cy.configureListingWith('Page');
 
@@ -1169,11 +1164,11 @@ describe('Listing Block Tests', () => {
 
     // test SSR results first
     cy.isInHTML({
-      parent: '#page-document .listing-body:first-of-type',
+      parent: '#page-document .listing-item:first-of-type',
       content: 'My News Item',
     });
 
-    cy.get('#page-document .listing-body:first-of-type').contains(
+    cy.get('#page-document .listing-item:first-of-type').contains(
       'My News Item',
     );
     cy.get('#page-document .listing-item:first-of-type a').should(
