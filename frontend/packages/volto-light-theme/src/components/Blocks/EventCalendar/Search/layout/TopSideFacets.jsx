@@ -85,8 +85,8 @@ const TopSideFacets = (props) => {
   const [dateRange, setDateRange] = React.useState({ start: null, end: null });
   const onhandleDateRangeChange = (value) => {
     setDateRange(value);
-    const start = toJSDate(value.start);
-    const end = toJSDate(value.end);
+    const start = toJSDate(value?.start);
+    const end = toJSDate(value?.end);
     const dateRangeQuery = getDateRangeIOV(start, end);
     handleDateRangeChange(dateRangeQuery);
   };

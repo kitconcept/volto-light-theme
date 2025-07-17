@@ -53,7 +53,7 @@ export function DateRangePicker<T extends DateValue>({
         <Button slot="trigger">
           <Icon name={CalendarSVG} color="#000" />
         </Button>
-        {dateRange.start && (
+        {dateRange?.start && (
           <button className="reset-date-range" onClick={onResetDateRange}>
             <Icon name={ClearSVG} color="#000" size="30px" />
           </button>
