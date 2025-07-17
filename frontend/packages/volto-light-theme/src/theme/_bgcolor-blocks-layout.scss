@@ -527,6 +527,17 @@
           }
         }
       }
+      /* I have removed the .card-container className that's why I have to write this css
+       * I will remove all the .card-container className from repo.
+      */
+      &.grid .card {
+        background-color: var(--theme-high-contrast-color);
+
+        .content,
+        .content p {
+          color: var(--theme-foreground-color);
+        }
+      }
 
       &.imageGallery {
         div > .ui.container {
