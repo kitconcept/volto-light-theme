@@ -65,6 +65,16 @@
           min-width: 30px;
         }
       }
+
+      .reset-date-range {
+        background: none;
+        padding: 0;
+        border: none;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        margin-left: 5px;
+      }
     }
 
     .search-details {

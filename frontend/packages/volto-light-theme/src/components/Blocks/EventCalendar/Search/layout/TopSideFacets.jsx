@@ -82,11 +82,18 @@ const TopSideFacets = (props) => {
   } = props;
   const { showSearchButton } = data;
   const isLive = !showSearchButton;
+  const [dateRange, setDateRange] = React.useState({ start: null, end: null });
   const onhandleDateRangeChange = (value) => {
+    setDateRange(value);
     const start = toJSDate(value.start);
     const end = toJSDate(value.end);
     const dateRangeQuery = getDateRangeIOV(start, end);
     handleDateRangeChange(dateRangeQuery);
+  };
+
+  const onResetDateRange = () => {
+    setDateRange({ start: null, end: null });
+    handleDateRangeChange([]);
   };
 
   const FacetWrapper = ({ children }) => {
@@ -102,7 +109,12 @@ const TopSideFacets = (props) => {
     <div className="search-block-event searchBlock-facets">
       {data.headline && <h2 className="headline">{data.headline}</h2>}
       <div className="first-row">
-        <DateRangePicker onChange={onhandleDateRangeChange} />
+        <DateRangePicker
+          value={dateRange}
+          onChange={onhandleDateRangeChange}
+          onResetDateRange={onResetDateRange}
+          dateRange={dateRange}
+        />
         {/* <SearchDetails
           text={searchedText}
           total={totalItems}
