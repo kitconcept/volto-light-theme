@@ -466,7 +466,7 @@ describe('Search Block Tests', () => {
     // reverse order
     cy.get('label[for=field-sort_order_boolean-2-query]').click();
     //check if the sorting order is working
-    cy.get('.listing-item .listing-body h2.title').first().contains('My Event');
+    cy.get('.listing-item  h2.title').first().contains('My Event');
     cy.get('#select-listingblock-sort-on').click();
     cy.get('.react-select__menu .react-select__group')
       .first()
@@ -479,7 +479,7 @@ describe('Search Block Tests', () => {
       .click();
     cy.wait(5000);
 
-    cy.get('.listing-item .listing-body h2.title').first().contains('My page');
+    cy.get('.listing-item  h2.title').first().contains('My page');
     //save page
     cy.get('#toolbar-save > .icon').click();
     cy.wait(500);
