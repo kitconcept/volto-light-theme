@@ -274,6 +274,8 @@ export default function install(config: ConfigType) {
   config.blocks.blocksConfig.gridBlock.themes = config.blocks.themes;
   config.blocks.blocksConfig.gridBlock.schemaEnhancer = defaultStylingSchema;
   config.blocks.blocksConfig.gridBlock.icon = gridSVG;
+  config.blocks.blocksConfig.gridBlock.category = 'cards';
+  config.blocks.blocksConfig.gridBlock.blockModel = config.settings.blockModel;
 
   // Grids internal `blocksConfig` amendments
   // Slate in grids must have an extra wrapper with the `slate` className
@@ -318,6 +320,14 @@ export default function install(config: ConfigType) {
     ...config.blocks.blocksConfig.slate,
     schemaEnhancer: defaultStylingSchema,
     sidebarTab: 1,
+    blockModel: config.settings.blockModel,
+    category: 'inline',
+  };
+
+  config.blocks.blocksConfig.title = {
+    ...config.blocks.blocksConfig.title,
+    blockModel: config.settings.blockModel,
+    category: 'title',
   };
 
   config.blocks.blocksConfig.teaser = {
@@ -368,6 +378,8 @@ export default function install(config: ConfigType) {
   config.blocks.blocksConfig.__button = {
     ...config.blocks.blocksConfig.__button,
     schemaEnhancer: ButtonStylingSchema,
+    blockModel: config.settings.blockModel,
+    category: 'action',
   };
 
   config.blocks.blocksConfig.eventMetadata = {
