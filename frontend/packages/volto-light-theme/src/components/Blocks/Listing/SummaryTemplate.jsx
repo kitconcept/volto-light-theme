@@ -42,7 +42,7 @@ const SummaryTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
               <>
                 <Card.Image
                   item={item}
-                  showDefaultImage={true}
+                  showPlaceholderImage={true}
                   imageComponent={PreviewImageComponent}
                 />
                 <Card.Summary a11yLabelId={props.a11yLabelId}>
