@@ -39,17 +39,6 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
     flex-direction: column;
   }
   .teaser-item-title {
-    @container (max-width: 1024px) {
-      padding: 30px 30px 30px 80px;
-    }
-
-    @media only screen and (max-width: $computer-width) {
-      position: static;
-      width: 100%;
-      padding: 60px 20px;
-      background: $black;
-      transform: none;
-    }
     .title {
       .supertitle {
         display: inline-block;
@@ -104,7 +93,17 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         background: rgba(0, 0, 0, 0.75);
         color: white;
         transform: translateY(-50%);
+        @container (max-width: 1024px) {
+          padding: 30px 30px 30px 80px;
+        }
 
+        @media only screen and (max-width: $computer-width) {
+          position: static;
+          width: 100%;
+          padding: 60px 20px;
+          background: $black;
+          transform: none;
+        }
         &.has--slider--flagAlign--right {
           right: 0;
         }
@@ -145,7 +144,17 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         background: rgba(0, 0, 0, 0.75);
         color: white;
         // transform: translateY(-50%);
+        @container (max-width: 1024px) {
+          padding: 30px 30px 30px 80px;
+        }
 
+        @media only screen and (max-width: $computer-width) {
+          position: static;
+          width: 100%;
+          padding: 60px 20px;
+          background: $black;
+          transform: none;
+        }
         &.has--slider--flagAlign--right {
           right: 0;
         }
@@ -191,7 +200,17 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         top: 40%;
         width: 40%;
         transform: translateY(-50%);
+        @container (max-width: 1024px) {
+          padding: 30px 30px 30px 80px;
+        }
 
+        @media only screen and (max-width: $computer-width) {
+          position: static;
+          width: 100%;
+          padding: 60px 20px;
+          background: $black;
+          transform: none;
+        }
         &.has--slider--flagAlign--right {
           align-self: flex-end;
         }
@@ -200,27 +219,6 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
           align-self: flex-start;
         }
       }
-    }
-
-    .slide-wrapper:not(.empty-slide) {
-      padding-bottom: $spacing-xlarge;
-    }
-
-    .teaser-item.top {
-      position: relative;
-    }
-
-    .ui.button {
-      display: initial;
-      padding: 8px 20px;
-      border: 1px solid currentColor;
-      border-radius: 0;
-      background-color: transparent;
-      color: $white;
-      font-size: 16px;
-      font-weight: 900;
-      line-height: 20px;
-      text-align: center;
     }
   }
 }
