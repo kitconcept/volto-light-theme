@@ -405,11 +405,11 @@ describe('Event Calendar Block Tests', () => {
     cy.get('#toolbar-save').click();
     cy.wait('@content');
     cy.url().should('eq', Cypress.config().baseUrl + '/my-page');
-    cy.get('.card-listing:nth-child(3) .image-wrapper .date-inset').should(
+    cy.get('.card-listing:first-of-type .image-wrapper .date-inset').should(
       'not.have.class',
       'has-end-date',
     );
-    cy.get('.card-listing:first-of-type .image-wrapper .date-inset').should(
+    cy.get('.card-listing:nth-child(2) .image-wrapper .date-inset').should(
       'have.class',
       'has-end-date',
     );
