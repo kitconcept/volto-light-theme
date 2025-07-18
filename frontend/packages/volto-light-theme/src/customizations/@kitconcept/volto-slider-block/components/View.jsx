@@ -6,7 +6,6 @@
  * DEVELOPER: @Tishasoumya-02
  */
 
-
 import View from '../../../../components/Blocks/Slider/View';
 
 export default View;
