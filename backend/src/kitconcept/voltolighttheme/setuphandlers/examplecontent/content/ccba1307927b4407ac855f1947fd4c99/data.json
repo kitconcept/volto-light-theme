@@ -124,9 +124,8 @@
           "title": "Highlight"
         }
       ],
-      "styles": {
-        "backgroundColor": "grey"
-      }
+      "styles": {},
+      "theme": "grey"
     },
     "16a2702d-4fb0-4e73-a17c-884ef9d04e6d": {
       "@type": "slider",
@@ -136,7 +135,7 @@
       "slides": [
         {
           "@id": "8089c4fd-efe2-4cf4-9ae5-7f80f907f16d",
-          "description": " The heading block allows you to display headings to group multiple blocks under one topic.",
+          "description": "Copy lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.  Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
           "flagAlign": "left",
           "head_title": "Custom Head Title",
           "href": [
@@ -153,22 +152,20 @@
           ],
           "preview_image": [
             {
-              "@id": "../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "@id": "../../resolveuid/eec82559bf3242a6be4d43bc2096f399",
               "@type": "Image",
               "CreationDate": "2023-07-07T03:05:08+05:30",
               "Creator": "admin",
-              "Date": "2023-09-22T19:58:04+05:30",
+              "Date": "2023-09-22T19:57:57+05:30",
               "Description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
               "EffectiveDate": "None",
               "ExpirationDate": "None",
-              "ModificationDate": "2023-09-22T19:58:04+05:30",
+              "ModificationDate": "2023-09-22T19:57:57+05:30",
               "Subject": [],
-              "Title": "Image",
+              "Title": "Image - Light",
               "Type": "Image",
-              "UID": "970ec24c76784c66a06d8c8d8b6522b2",
-              "author_name": null,
+              "UID": "eec82559bf3242a6be4d43bc2096f399",
               "cmf_uid": null,
-              "commentators": [],
               "created": "2023-07-06T21:35:08+00:00",
               "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
               "effective": "1969-12-30T18:30:00+00:00",
@@ -176,35 +173,32 @@
               "exclude_from_nav": false,
               "expires": "2499-12-30T18:30:00+00:00",
               "getIcon": true,
-              "getId": "image",
-              "getObjSize": "676.8 KB",
-              "getPath": "/Plone/content-types/image",
+              "getId": "image-light",
+              "getObjSize": "464.1 KB",
+              "getPath": "/Plone/content-types/image-light",
               "getRemoteUrl": null,
-              "getURL": "http://localhost:3000/content-types/image",
+              "getURL": "http://localhost:3000/content-types/image-light",
               "hasPreviewImage": null,
               "head_title": null,
-              "id": "image",
+              "id": "image-light",
               "image_field": "image",
-              "in_response_to": null,
               "is_folderish": false,
-              "last_comment_date": null,
               "listCreators": [
                 "admin"
               ],
               "location": null,
               "mime_type": "image/jpeg",
-              "modified": "2023-09-22T14:28:04+00:00",
+              "modified": "2023-09-22T14:27:57+00:00",
               "nav_title": null,
               "portal_type": "Image",
               "review_state": null,
               "start": null,
               "sync_uid": null,
-              "title": "Image",
-              "total_comments": 0,
+              "title": "Image - Light",
               "type_title": "Image"
             }
           ],
-          "title": "Heading"
+          "title": "Slide Headline lorem ipsum"
         },
         {
           "@id": "ff22cdc3-2219-4b3e-b043-265e5d670770",
@@ -349,7 +343,13 @@
           "title": "Content Types"
         }
       ],
-      "styles": {}
+      "styles": {},
+      "theme": "default"
+    },
+    "29780438-f606-4ddd-a85a-825e8c83ebce": {
+      "@type": "heading",
+      "heading": "Flag on the Left",
+      "theme": "default"
     },
     "2acaf75c-42b4-4a55-8810-664cfa9c8282": {
       "@type": "slider",
@@ -468,9 +468,8 @@
           "title": "Highlight"
         }
       ],
-      "styles": {
-        "backgroundColor": "grey"
-      }
+      "styles": {},
+      "theme": "grey"
     },
     "2ec50754-9d4a-49bb-a71b-957482028abe": {
       "@type": "slider",
@@ -634,7 +633,13 @@
     "6173dc0f-f2b9-4936-b4b9-64771fa065c9": {
       "@type": "heading",
       "heading": "Flag on the Right",
-      "styles": {}
+      "styles": {},
+      "theme": "default"
+    },
+    "69c0acf0-e618-448f-bf3c-a3a88453133b": {
+      "@type": "heading",
+      "heading": "Flag on the Center",
+      "theme": "default"
     },
     "7eb40607-b61c-4560-ab45-7ede4c393e73": {
       "@type": "slider",
@@ -782,7 +787,7 @@
         },
         {
           "@id": "b5d2ef08-b005-4823-88e6-4aa573cf6467",
-          "description": " The heading block allows you to display headings to group multiple blocks under one topic.",
+          "description": " The heading block allows you to display headings to group multiple ",
           "flagAlign": "right",
           "head_title": "Custom Head Title",
           "href": [
@@ -854,7 +859,7 @@
         },
         {
           "@id": "558a8fb4-4474-4995-bf40-07a5d3a74d4c",
-          "description": "This section has a sample of content types available in this site.",
+          "description": "This section has a sample of content",
           "flagAlign": "right",
           "head_title": "Custom Head Title",
           "href": [
@@ -925,7 +930,8 @@
           "title": "Content Types"
         }
       ],
-      "styles": {}
+      "styles": {},
+      "theme": "default"
     },
     "86ca8d67-eb85-4ad0-bba8-8516ed019aae": {
       "@type": "slider",
@@ -1116,6 +1122,141 @@
       "heading": "Custom Head Title",
       "styles": {}
     },
+    "d9d75408-dc56-4a5a-935c-dd5f56bb0459": {
+      "@type": "slider",
+      "autoplayDelay": 4000,
+      "autoplayEnabled": false,
+      "autoplayJump": false,
+      "slides": [
+        {
+          "@id": "626998c6-98bb-48cf-aff2-2882ea8ebcb9",
+          "description": "Copy lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.  Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+          "flagAlign": "center",
+          "head_title": "Custom Head Title",
+          "href": [
+            {
+              "@id": "../../resolveuid/40a436ad604f4f80aeafe0977806760a",
+              "@type": "Document",
+              "Description": " The image block allows images to be embedded in various display formats. Images can be displayed in different sizes (100%, L, M, S) and aligned left, right or center of the text flow.",
+              "Title": "Image",
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "title": "Image"
+            }
+          ],
+          "title": "Heading"
+        },
+        {
+          "@id": "3b66c348-8936-46ec-b361-b2f7d5287564",
+          "description": " The highlight block allows you to highlight and tease a single piece of content. The content is displayed with a large image and a title and description in a banderole.",
+          "flagAlign": "center",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../resolveuid/8416628543f146ff9a18d281c03e2399",
+              "@type": "Document",
+              "Description": " The highlight block allows you to highlight and tease a single piece of content. The content is displayed with a large image and a title and description in a banderole.",
+              "Title": "Highlight",
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "title": "Highlight"
+            }
+          ],
+          "title": "Highlight"
+        },
+        {
+          "@id": "9ae21697-0204-491a-91ec-86a869b3c546",
+          "description": "The teaser block allows you to add an element that teases existing website content with an image, a title and a description.",
+          "flagAlign": "center",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../resolveuid/bd2b39d2745847db82ed197a4eb1effc",
+              "@type": "Document",
+              "Description": "The teaser block allows you to add an element that teases existing website content with an image, a title and a description.",
+              "Title": "Teaser",
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "title": "Teaser"
+            }
+          ],
+          "title": "Teaser"
+        }
+      ],
+      "styles": {},
+      "theme": "grey"
+    },
+    "db1f74ba-6d25-4a4b-b05e-0e937e10fc06": {
+      "@type": "slider",
+      "autoplayDelay": 4000,
+      "autoplayEnabled": false,
+      "autoplayJump": false,
+      "slides": [
+        {
+          "@id": "cfa1284d-0059-4bfd-b66d-d297d6e71b38",
+          "description": "Copy lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.  Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+          "flagAlign": "center",
+          "head_title": "Custom Head Title",
+          "href": [
+            {
+              "@id": "../../resolveuid/8416628543f146ff9a18d281c03e2399",
+              "@type": "Document",
+              "Description": " The highlight block allows you to highlight and tease a single piece of content. The content is displayed with a large image and a title and description in a banderole.",
+              "Title": "Highlight",
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "title": "Highlight"
+            }
+          ],
+          "title": "Slide Headline lorem ipsum"
+        },
+        {
+          "@id": "c8c1d990-71e1-4b89-b697-19b27a9f86f2",
+          "buttonText": "Button ",
+          "description": "The teaser block allows you to add an element that teases existing website content with an image, a title and a description.",
+          "flagAlign": "center",
+          "head_title": "Custom Head Title",
+          "href": [
+            {
+              "@id": "../../resolveuid/bd2b39d2745847db82ed197a4eb1effc",
+              "@type": "Document",
+              "Description": "The teaser block allows you to add an element that teases existing website content with an image, a title and a description.",
+              "Title": "Teaser",
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "title": "Teaser"
+            }
+          ],
+          "title": "Slide Headline lorem ipsum"
+        },
+        {
+          "@id": "f588636c-f9fb-4793-95b2-524238b0ce84",
+          "description": "The maps block can have embeded a Map (Google Maps, OpenMaps, etc).",
+          "flagAlign": "center",
+          "head_title": "Custom Head Title",
+          "href": [
+            {
+              "@id": "../../resolveuid/40a436ad604f4f80aeafe0977806760a",
+              "@type": "Document",
+              "Description": " The image block allows images to be embedded in various display formats. Images can be displayed in different sizes (100%, L, M, S) and aligned left, right or center of the text flow.",
+              "Title": "Image",
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "title": "Image"
+            }
+          ],
+          "title": "Slide Headline lorem ipsum"
+        }
+      ],
+      "styles": {},
+      "theme": "default"
+    },
     "ead5079f-176d-4858-a75b-12f729249032": {
       "@type": "slate"
     }
@@ -1123,7 +1264,10 @@
   "blocks_layout": {
     "items": [
       "5012da82-0e4a-44aa-912f-39d197a6a4e9",
+      "29780438-f606-4ddd-a85a-825e8c83ebce",
       "16a2702d-4fb0-4e73-a17c-884ef9d04e6d",
+      "69c0acf0-e618-448f-bf3c-a3a88453133b",
+      "db1f74ba-6d25-4a4b-b05e-0e937e10fc06",
       "6173dc0f-f2b9-4936-b4b9-64771fa065c9",
       "8504088e-e855-43fd-a94d-b21ffa1e1fde",
       "445aa65d-e0a0-47cb-9c49-7958d214db37",
@@ -1134,6 +1278,7 @@
       "2ec50754-9d4a-49bb-a71b-957482028abe",
       "c5f7eb49-a37e-4413-a985-1200aa5757b4",
       "2acaf75c-42b4-4a55-8810-664cfa9c8282",
+      "d9d75408-dc56-4a5a-935c-dd5f56bb0459",
       "15064f53-213d-48e7-a514-9d9cf0d187b2",
       "ead5079f-176d-4858-a75b-12f729249032"
     ]
@@ -1158,12 +1303,14 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2024-04-08T12:26:50+00:00",
-  "nav_title": null,
+  "modified": "2025-07-16T16:19:42+00:00",
   "preview_caption": null,
   "preview_image": null,
   "review_state": "published",
   "rights": "",
+  "sticky_menu": [],
+  "sticky_menu_color": null,
+  "sticky_menu_foreground_color": null,
   "subjects": [],
   "title": "Slider",
   "type_title": "Page",

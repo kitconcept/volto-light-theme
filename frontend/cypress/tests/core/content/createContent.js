@@ -66,7 +66,7 @@ describe('createContent Tests', () => {
     // cy.get('.view-wrapper a').click();
   });
 
-  it.only('Create Image', function () {
+  it('Create Image', function () {
     cy.createContent({
       contentType: 'Image',
       contentId: 'my-image',
