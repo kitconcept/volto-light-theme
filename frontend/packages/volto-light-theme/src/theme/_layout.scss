@@ -250,7 +250,6 @@ External link removal for all the blocks.
   & > .table-of-contents,
   & > .accordion-block,
   & > .slate blockquote {
-
     @include default-container-width();
     @include adjustMarginsToContainer($default-container-width);
   }
