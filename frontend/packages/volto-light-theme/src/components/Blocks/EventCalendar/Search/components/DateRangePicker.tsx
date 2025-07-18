@@ -18,20 +18,26 @@ import {
   Text,
   type ValidationResult,
 } from 'react-aria-components';
+import cx from 'classnames';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import CalendarSVG from '@plone/volto/icons/calendar.svg';
+import ClearSVG from '@plone/volto/icons/clear.svg';
 
 export interface DateRangePickerProps<T extends DateValue>
   extends RACDateRangePickerProps<T> {
   label?: string;
   description?: string;
   errorMessage?: string | ((validation: ValidationResult) => string);
+  onResetDateRange: () => void;
+  dateRange?: { start: DateValue; end: DateValue } | null;
 }
 
 export function DateRangePicker<T extends DateValue>({
   label,
   description,
   errorMessage,
+  onResetDateRange,
+  dateRange,
   ...props
 }: DateRangePickerProps<T>) {
   return (
@@ -45,10 +51,17 @@ export function DateRangePicker<T extends DateValue>({
         <DateInput slot="end">
           {(segment) => <DateSegment segment={segment} />}
         </DateInput>
-        <Button>
+        <button
+          className={cx('reset-date-range', { visibility: dateRange?.start })}
+          onClick={onResetDateRange}
+        >
+          <Icon name={ClearSVG} color="#000" size="30px" />
+        </button>
+        <Button slot="trigger">
           <Icon name={CalendarSVG} color="#000" />
         </Button>
       </Group>
+
       {description && <Text slot="description">{description}</Text>}
       <FieldError>{errorMessage}</FieldError>
       <Popover>
