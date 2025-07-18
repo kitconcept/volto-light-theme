@@ -3,7 +3,7 @@ import FormattedDate from '@plone/volto/components/theme/FormattedDate/Formatted
 import type { DefaultSummaryProps } from './DefaultSummary';
 
 const NewsItemSummary = (props: DefaultSummaryProps) => {
-  const { item, HeadingTag = 'h3', hide_description } = props;
+  const { item, HeadingTag = 'h3', a11yLabelId, hide_description } = props;
 
   const effective = parseDateFromCatalog(item.effective);
   const headline = [
@@ -29,7 +29,7 @@ const NewsItemSummary = (props: DefaultSummaryProps) => {
   return (
     <>
       {headline.length ? <div className="headline">{headline}</div> : null}
-      <HeadingTag className="title">
+      <HeadingTag className="title" id={a11yLabelId}>
         {item.title ? item.title : item.id}
       </HeadingTag>
       {!hide_description && <p className="description">{item.description}</p>}
