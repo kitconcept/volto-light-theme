@@ -110,12 +110,7 @@ const SliderBody = ({
             tabIndex="-1"
           >
             {(href?.hasPreviewImage || href.image_field || image) && (
-              <div
-                className={cx(
-                  'highlight-image-wrapper gradient',
-                  `has--slider--flagAlign--${data.flagAlign}`,
-                )}
-              >
+              <div className="highlight-image-wrapper gradient">
                 <Image
                   item={image || href}
                   imageField={image ? image.image_field : href.image_field}
