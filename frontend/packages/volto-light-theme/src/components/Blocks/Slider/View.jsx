@@ -5,7 +5,7 @@ import Autoplay from 'embla-carousel-autoplay';
 import cx from 'classnames';
 import { defineMessages, useIntl } from 'react-intl';
 import Body from '@kitconcept/volto-slider-block/components/Body';
-import { withBlockExtensions } from '@plone/volto/helpers/Extensions/withBlockExtensions';
+import  withBlockExtensions  from '@plone/volto/helpers/Extensions/withBlockExtensions';
 import {
   DotButton,
   NextButton,
