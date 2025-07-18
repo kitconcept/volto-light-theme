@@ -389,7 +389,7 @@ const withSearch = (options) => (WrappedComponent) => {
       preventOverrideOfFacetState,
     ]);
 
-    const [sortOn, setSortOn] = React.useState(data?.query?.sort_on);
+    const [sortOn, setSortOn] = React.useState(data?.query?.sort_on || 'start');
     const [sortOrder, setSortOrder] = React.useState(data?.query?.sort_order);
 
     const [searchData, setSearchData] = React.useState(
