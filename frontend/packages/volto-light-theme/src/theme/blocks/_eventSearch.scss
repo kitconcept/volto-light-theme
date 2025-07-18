@@ -32,9 +32,9 @@
         }
       }
       .react-aria-DateInput[slot='start'] {
+        min-width: 117px;
         margin-right: 15px;
         outline-color: $black;
-        min-width: 117px;
         span {
           color: $black;
           &:focus {
@@ -43,10 +43,10 @@
         }
       }
       .react-aria-DateInput[slot='end'] {
+        min-width: 117px;
         margin-right: 5px;
         margin-left: 15px;
         outline-color: $black;
-        min-width: 117px;
         span {
           color: $black;
           &:focus {
@@ -76,12 +76,12 @@
         margin-right: 5px;
         background: none;
         cursor: pointer;
-        visibility: hidden;
         pointer-events: none;
+        visibility: hidden;
 
         &.visibility {
-          visibility: visible;
           pointer-events: auto;
+          visibility: visible;
         }
       }
     }
