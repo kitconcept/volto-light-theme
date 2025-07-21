@@ -107,10 +107,12 @@ const SliderView = (props) => {
 
   return (
     <>
+      {/* START CUSTOMIZATION */}
       <div
         className={cx('block slider', data.variation || 'default', className)}
         style={{ '--slider-container-width': `${sliderContainerWidth}px` }}
       >
+        {/* END CUSTOMIZATION */}
         {(data.slides?.length === 0 || !data.slides) && isEditMode && (
           <Message>
             <div className="teaser-item default">
