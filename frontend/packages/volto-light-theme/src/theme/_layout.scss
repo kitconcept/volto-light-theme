@@ -369,7 +369,8 @@ External link removal for all the blocks.
   .block-editor-teaser .card-inner, // deprecate when category is in place
   .block-editor-slateTable .block.table,
   .block-editor-highlight .teaser-description-title,
-  .block-editor-toc .table-of-contents {
+  .block-editor-toc .table-of-contents,
+  .block-editor-eventCalendar .search-block-event {
     @include default-container-width();
     @include adjustMarginsToEditContainer($default-container-width);
   }
