@@ -31,7 +31,7 @@ const messages = defineMessages({
 
 const DefaultImage = (props) => <img {...props} alt={props.alt || ''} />;
 
-const SliderFullHeight = ({
+const SliderVariation = ({
   index,
   onChangeBlock,
   block,
@@ -76,7 +76,7 @@ const SliderFullHeight = ({
     >
       {!href && isEditMode && (
         <Message>
-          <div className="grid-teaser-item">
+          <div className="grid-teaser-item full-height">
             <img src={imageBlockSVG} alt="" />
             <p>{intl.formatMessage(messages.PleaseChooseContent)}</p>
             <div className="toolbar-inner">
@@ -95,7 +95,7 @@ const SliderFullHeight = ({
         </Message>
       )}
       {href && (
-        <div className="teaser-item top">
+        <div className="teaser-item full-height top">
           <MaybeWrap
             condition={!isEditMode}
             as={UniversalLink}
@@ -111,7 +111,7 @@ const SliderFullHeight = ({
             {(href?.hasPreviewImage || href.image_field || image) && (
               <div
                 className={cx(
-                  'highlight-image-wrapper gradient',
+                  'highlight-image-wrapper full-height gradient',
                   `has--slider--flagAlign--${data.flagAlign}`,
                 )}
               >
@@ -127,7 +127,7 @@ const SliderFullHeight = ({
 
             <div
               className={cx(
-                'teaser-item-title fix-width-issue',
+                'teaser-item-title full-height fix-width-issue',
                 `has--slider--flagAlign--${data.flagAlign}`,
               )}
             >
@@ -155,4 +155,4 @@ const SliderFullHeight = ({
   );
 };
 
-export default SliderFullHeight;
+export default SliderVariation;
