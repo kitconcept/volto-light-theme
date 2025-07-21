@@ -144,14 +144,14 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
           transform: none;
         }
         &.has--slider--flagAlign--right {
-          padding-left: 80px;
-          padding-right: 60px;
           right: 0;
+          padding-right: 60px;
+          padding-left: 80px;
         }
         &.has--slider--flagAlign--left {
-          padding-left: 60px;
-          padding-right: 80px;
           left: 0;
+          padding-right: 80px;
+          padding-left: 60px;
         }
       }
     }
@@ -200,14 +200,14 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         }
 
         &.has--slider--flagAlign--right {
-          padding-left: 80px;
-          padding-right: 60px;
           right: 0;
+          padding-right: 60px;
+          padding-left: 80px;
         }
         &.has--slider--flagAlign--left {
-          padding-left: 60px;
-          padding-right: 80px;
           left: 0;
+          padding-right: 80px;
+          padding-left: 60px;
         }
       }
     }
@@ -245,15 +245,15 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
           transform: none;
         }
         &.has--slider--flagAlign--right {
-          padding-left: 80px;
-          padding-right: 60px;
           align-self: flex-end;
+          padding-right: 60px;
+          padding-left: 80px;
         }
 
         &.has--slider--flagAlign--left {
-          padding-left: 60px;
-          padding-right: 80px;
           align-self: flex-start;
+          padding-right: 80px;
+          padding-left: 60px;
         }
       }
     }
