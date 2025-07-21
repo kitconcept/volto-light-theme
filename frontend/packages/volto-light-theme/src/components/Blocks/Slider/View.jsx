@@ -105,7 +105,6 @@ const SliderView = (props) => {
     ?.rootNode()
     .getBoundingClientRect().width;
 
-  console.log('data', data.variation);
   return (
     <>
       {/* START CUSTOMIZATION */}

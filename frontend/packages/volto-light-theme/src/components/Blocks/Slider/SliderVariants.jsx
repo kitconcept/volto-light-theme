@@ -47,7 +47,7 @@ const SliderVariants = ({
 
   const Image = config.getComponent('Image').component || DefaultImage;
   const { openExternalLinkInNewTab } = config.settings;
-  console.log('datann', dataBlock.variation);
+
   const handleClick = () => {
     openObjectBrowser({
       onSelectItem: (url, document) => {
