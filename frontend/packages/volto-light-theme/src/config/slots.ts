@@ -7,6 +7,7 @@ import CoreFooter from '../components/Footer/slots/CoreFooter';
 import StickyMenu from '../components/StickyMenu/StickyMenu';
 import Anontools from '../components/Anontools/Anontools';
 import type { Content } from '@plone/types';
+import ConfigInjector from '../components/Theming/ConfigInjector';
 
 export function hasInheritedBehavior(behavior: string) {
   return ({ content }: { content: Content }) =>
@@ -18,6 +19,11 @@ export default function install(config: ConfigType) {
     slot: 'aboveHeader',
     name: 'Theming',
     component: Theming,
+  });
+  config.registerSlotComponent({
+    slot: 'aboveHeader',
+    name: 'ConfigInjector',
+    component: ConfigInjector,
   });
 
   config.registerSlotComponent({

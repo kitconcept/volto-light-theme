@@ -1,4 +1,4 @@
-import type { Brain, Image } from '@plone/types';
+import type { Brain, Image, StyleDefinition } from '@plone/types';
 
 type hrefType = {
   '@id': string;
@@ -85,6 +85,19 @@ export type StickyMenuSettings = {
 
 export type PloneGobrSocialMediaSettings = {
   social_links: Array<iconLink>;
+};
+
+export type MergerDSL = Record<
+  string,
+  {
+    disable?: boolean;
+    variations?: string[];
+    themes?: StyleDefinition[];
+  }
+>;
+
+export type BlocksConfigSettings = {
+  blocks_config_mutator: MergerDSL;
 };
 
 export type CustomInheritBehavior<T> = {

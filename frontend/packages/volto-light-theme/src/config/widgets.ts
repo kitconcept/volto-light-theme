@@ -11,6 +11,7 @@ import { headerActionsSchema } from '../components/Widgets/schema/headerActionsS
 import { footerLogosSchema } from '../components/Widgets/schema/footerLogosSchema';
 import { footerLinksSchema } from '../components/Widgets/schema/footerLinksSchema';
 import { iconLinkListSchema } from '../components/Widgets/schema/iconLinkListSchema';
+import AllowedBlocks from '../components/Widgets/AllowedBlocks';
 
 declare module '@plone/types' {
   export interface WidgetsConfigById {
@@ -25,6 +26,7 @@ declare module '@plone/types' {
     colorPicker: typeof ColorPicker;
     blocksObject: typeof BlocksObject;
     image: React.ComponentType;
+    allowedBlocks: typeof AllowedBlocks;
   }
 }
 
@@ -44,6 +46,8 @@ export default function install(config: ConfigType) {
   config.widgets.widget.colorPicker = ColorPicker;
   config.widgets.widget.size = Size;
   config.widgets.widget.themeColorSwatch = ThemeColorSwatch;
+
+  config.widgets.widget.allowedBlocks = AllowedBlocks;
 
   config.registerUtility({
     name: 'headerActions',
