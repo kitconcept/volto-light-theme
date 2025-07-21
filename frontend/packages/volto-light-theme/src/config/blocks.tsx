@@ -45,7 +45,7 @@ import SearchBlockViewEvent from '../components/Blocks/EventCalendar/Search/Sear
 import SearchBlockEditEvent from '../components/Blocks/EventCalendar/Search/SearchBlockEdit';
 import SearchBlockSchemaEvent from '../components/Blocks/EventCalendar/Search/schema';
 import EventCalenderTemplate from '../components/Blocks/EventCalendar/Search/components/EventTemplate';
-import SliderVariation from '../components/Blocks/Slider/SliderVariation';
+import SliderVariants from '../components/Blocks/Slider/SliderVariants';
 import DefaultBody from '../customizations/@kitconcept/volto-slider-block/components/DefaultBody';
 
 declare module '@plone/types' {
@@ -426,12 +426,17 @@ export default function install(config: ConfigType) {
       {
         id: 'full-height',
         title: 'full-height',
-        view: SliderVariation,
+        view: SliderVariants,
+      },
+      {
+        id: 'side',
+        title: 'side',
+        view: SliderVariants,
       },
       {
         id: 'full-side',
         title: 'full-side',
-        view: SliderVariation,
+        view: SliderVariants,
       },
     ],
     schemaEnhancer: sliderBlockSchemaEnhancer,

@@ -1,3 +1,4 @@
+import React from 'react';
 import { useIntl, defineMessages } from 'react-intl';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import MaybeWrap from '@plone/volto/components/manage/MaybeWrap/MaybeWrap';
@@ -31,7 +32,7 @@ const messages = defineMessages({
 
 const DefaultImage = (props) => <img {...props} alt={props.alt || ''} />;
 
-const SliderVariation = ({
+const SliderVariants = ({
   index,
   onChangeBlock,
   block,
@@ -46,7 +47,7 @@ const SliderVariation = ({
 
   const Image = config.getComponent('Image').component || DefaultImage;
   const { openExternalLinkInNewTab } = config.settings;
-
+  console.log('datann', dataBlock.variation);
   const handleClick = () => {
     openObjectBrowser({
       onSelectItem: (url, document) => {
@@ -76,7 +77,7 @@ const SliderVariation = ({
     >
       {!href && isEditMode && (
         <Message>
-          <div className="grid-teaser-item full-height">
+          <div className="grid-teaser-item default">
             <img src={imageBlockSVG} alt="" />
             <p>{intl.formatMessage(messages.PleaseChooseContent)}</p>
             <div className="toolbar-inner">
@@ -95,7 +96,7 @@ const SliderVariation = ({
         </Message>
       )}
       {href && (
-        <div className="teaser-item full-height top">
+        <div className={cx('teaser-item  top', dataBlock.variation)}>
           <MaybeWrap
             condition={!isEditMode}
             as={UniversalLink}
@@ -111,7 +112,8 @@ const SliderVariation = ({
             {(href?.hasPreviewImage || href.image_field || image) && (
               <div
                 className={cx(
-                  'highlight-image-wrapper full-height gradient',
+                  'highlight-image-wrapper gradient',
+                  dataBlock.variation,
                   `has--slider--flagAlign--${data.flagAlign}`,
                 )}
               >
@@ -124,10 +126,11 @@ const SliderVariation = ({
                 />
               </div>
             )}
-
+            {/* START CUSTOMIZATION */}
             <div
               className={cx(
-                'teaser-item-title full-height fix-width-issue',
+                'teaser-item-title fix-width-issue ',
+                dataBlock.variation,
                 `has--slider--flagAlign--${data.flagAlign}`,
               )}
             >
@@ -147,7 +150,6 @@ const SliderVariation = ({
               )}
               {/* END CUSTOMIZATION */}
             </div>
-            {/* START CUSTOMIZATION */}
           </MaybeWrap>
         </div>
       )}
@@ -155,4 +157,4 @@ const SliderVariation = ({
   );
 };
 
-export default SliderVariation;
+export default SliderVariants;
