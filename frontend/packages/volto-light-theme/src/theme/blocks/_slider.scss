@@ -118,8 +118,7 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
     .teaser-item {
       display: grid;
       align-items: center;
-      padding-right: $spacing-medium;
-      padding-left: $spacing-medium;
+
       aspect-ratio: 16/9;
       background: rgba(0, 0, 0, 0.75);
       grid-template-areas: 'images content';
@@ -134,9 +133,11 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
       }
 
       &.has--slider--flagAlign--right {
+        padding-left: $spacing-medium;
         grid-template-areas: 'images content';
       }
       &.has--slider--flagAlign--left {
+        padding-right: $spacing-medium;
         grid-template-areas: 'content images';
       }
 
