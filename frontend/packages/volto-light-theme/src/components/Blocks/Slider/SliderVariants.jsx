@@ -32,7 +32,7 @@ const messages = defineMessages({
 
 const DefaultImage = (props) => <img {...props} alt={props.alt || ''} />;
 
-const SliderBody = ({
+const SliderVariants = ({
   index,
   onChangeBlock,
   block,
@@ -151,4 +151,4 @@ const SliderBody = ({
   );
 };
 
-export default SliderBody;
+export default SliderVariants;
