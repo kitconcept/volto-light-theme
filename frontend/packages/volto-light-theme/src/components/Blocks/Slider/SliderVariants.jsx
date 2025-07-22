@@ -127,7 +127,6 @@ const SliderVariants = ({
               </div>
             )}
             <div className="teaser-item-title fix-width-issue">
-              {/* END CUSTOMIZATION */}
               <div className="title">
                 {data?.head_title && (
                   <span className="supertitle">{data?.head_title}</span>
@@ -135,15 +134,13 @@ const SliderVariants = ({
                 <h2>{data?.nav_title || data?.title}</h2>
               </div>
               <p>{data?.description}</p>
-              {/* START CUSTOMIZATION */}
+
               {!data.hideButton && (
                 <Button tabIndex={'-1'}>
                   {data.buttonText || intl.formatMessage(messages.ButtonText)}
                 </Button>
               )}
-              {/* END CUSTOMIZATION */}
             </div>
-            {/* START CUSTOMIZATION */}
           </div>
         </MaybeWrap>
       )}
