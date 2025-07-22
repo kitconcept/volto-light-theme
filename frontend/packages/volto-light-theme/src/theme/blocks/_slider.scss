@@ -116,21 +116,21 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
 
   &.side {
     .teaser-item {
-      background: rgba(0, 0, 0, 0.75);
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-areas: 'images content';
-      grid-template-rows: auto;
       align-items: center;
-      aspect-ratio: 16/9;
-      padding-left: $spacing-medium;
       padding-right: $spacing-medium;
+      padding-left: $spacing-medium;
+      aspect-ratio: 16/9;
+      background: rgba(0, 0, 0, 0.75);
+      grid-template-areas: 'images content';
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
 
       @media only screen and (max-width: $computer-width) {
-        aspect-ratio: auto;
         display: block;
-        padding-left: 0;
         padding-right: 0;
+        padding-left: 0;
+        aspect-ratio: auto;
       }
 
       &.has--slider--flagAlign--right {
@@ -154,14 +154,14 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         }
       }
       .teaser-item-title {
-        grid-area: content;
         position: relative;
-        width: 100%;
         top: 0;
-        transform: translateY(0);
-        background: none;
+        width: 100%;
         padding: $spacing-medium;
+        background: none;
         color: white;
+        grid-area: content;
+        transform: translateY(0);
 
         @container (max-width: 1024px) {
           padding: 30px 30px 30px 80px;
@@ -180,28 +180,28 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
 
   &.full-side {
     .teaser-item {
-      background: rgba(0, 0, 0, 0.75);
       display: grid;
-      grid-template-columns: 3fr 2fr;
-      grid-template-areas: 'images content';
-      grid-template-rows: auto;
       align-items: center;
       aspect-ratio: 16/9;
+      background: rgba(0, 0, 0, 0.75);
+      grid-template-areas: 'images content';
+      grid-template-columns: 3fr 2fr;
+      grid-template-rows: auto;
 
       @media only screen and (max-width: $computer-width) {
-        aspect-ratio: auto;
         display: block;
-        padding-left: 0;
         padding-right: 0;
+        padding-left: 0;
+        aspect-ratio: auto;
       }
 
       &.has--slider--flagAlign--right {
-        grid-template-columns: 3fr 2fr;
         grid-template-areas: 'images content';
+        grid-template-columns: 3fr 2fr;
       }
       &.has--slider--flagAlign--left {
-        grid-template-columns: 2fr 3fr;
         grid-template-areas: 'content images';
+        grid-template-columns: 2fr 3fr;
       }
 
       .highlight-image-wrapper {
@@ -219,14 +219,14 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
       }
 
       .teaser-item-title {
-        grid-area: content;
         position: relative;
-        width: 100%;
         top: 0;
-        transform: translateY(0);
-        background: none;
+        width: 100%;
         padding: $spacing-medium;
+        background: none;
         color: white;
+        grid-area: content;
+        transform: translateY(0);
 
         @container (max-width: 1024px) {
           padding: 30px 30px 30px 80px;
@@ -245,18 +245,18 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
 
   &.full-height {
     .teaser-item {
-      background: rgba(0, 0, 0, 0.75);
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-areas: 'images content';
-      grid-template-rows: auto;
       aspect-ratio: 16/9;
+      background: rgba(0, 0, 0, 0.75);
+      grid-template-areas: 'images content';
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
 
       @media only screen and (max-width: $computer-width) {
-        aspect-ratio: auto;
         display: block;
-        padding-left: 0;
         padding-right: 0;
+        padding-left: 0;
+        aspect-ratio: auto;
       }
 
       &.has--slider--flagAlign--right {
@@ -281,15 +281,15 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         }
       }
       .teaser-item-title {
-        align-self: center;
-        grid-area: content;
         position: relative;
-        width: 100%;
         top: 0;
-        transform: translateY(0);
-        background: none;
+        width: 100%;
+        align-self: center;
         padding: $spacing-medium;
+        background: none;
         color: white;
+        grid-area: content;
+        transform: translateY(0);
 
         @container (max-width: 1024px) {
           padding: 30px 30px 30px 80px;

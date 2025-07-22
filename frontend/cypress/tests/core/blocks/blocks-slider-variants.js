@@ -10,7 +10,7 @@ context('Blocks Acceptance Tests', () => {
     });
     cy.autologin();
     cy.visit('/');
-    
+
     // GIVEN a Document with the title document and a Document to reference with the title Blue Orchids
     cy.createContent({
       contentType: 'Image',
