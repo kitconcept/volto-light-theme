@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { TextareaWidget } from '@plone/volto/components/manage/Widgets';
 import { Button, Modal } from '@plone/components';
 import { Dialog, DialogTrigger } from 'react-aria-components';
 import FormFieldWrapper from '@plone/volto/components/manage/Widgets/FormFieldWrapper';

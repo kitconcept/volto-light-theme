@@ -1,4 +1,4 @@
-import type { BlocksConfig, StyleDefinition } from '@plone/types';
+import type { BlocksConfig } from '@plone/types';
 import cloneDeep from 'lodash/cloneDeep';
 import type { MutatorDSL } from '../types';
 
