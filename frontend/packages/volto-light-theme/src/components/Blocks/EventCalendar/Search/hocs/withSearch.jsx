@@ -45,7 +45,6 @@ function getInitialState(
   return {
     query: [
       ...(data.query?.query || []),
-      ...(dateRangeQuery || []),
       ...(facetSettings || [])
         .map((facet) => {
           if (!facet?.field) return null;
@@ -71,6 +70,7 @@ function getInitialState(
             },
           ]
         : []),
+      ...(dateRangeQuery || []),
     ],
     sort_on: sortOnParam || data.query?.sort_on,
     sort_order: sortOrderParam || data.query?.sort_order,
@@ -430,8 +430,8 @@ const withSearch = (options) => (WrappedComponent) => {
       (
         toSearchText = undefined,
         toSearchFacets = undefined,
-        toSortOn = 'start',
-        toSortOrder = 'ascending',
+        toSortOn = undefined,
+        toSortOrder = undefined,
       ) => {
         if (timeoutRef.current) clearTimeout(timeoutRef.current);
         timeoutRef.current = setTimeout(
@@ -442,7 +442,7 @@ const withSearch = (options) => (WrappedComponent) => {
               dateRangeQuery: dateRangeQuery,
               facets: toSearchFacets || facets,
               searchText: toSearchText ? toSearchText.trim() : '',
-              sortOn: toSortOn || undefined,
+              sortOn: toSortOn || sortOn,
               sortOrder: toSortOrder || sortOrder,
               facetSettings,
             });
@@ -450,7 +450,7 @@ const withSearch = (options) => (WrappedComponent) => {
             if (toSortOn) setSortOn(toSortOn || undefined);
             if (toSortOrder) setSortOrder(toSortOrder);
             setSearchData(newSearchData);
-            setLocationSearchData(getSearchFields(newSearchData));
+            // setLocationSearchData(getSearchFields(newSearchData));
           },
           toSearchFacets ? inputDelay / 3 : inputDelay,
         );
