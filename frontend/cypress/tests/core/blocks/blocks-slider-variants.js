@@ -10,10 +10,7 @@ context('Blocks Acceptance Tests', () => {
     });
     cy.autologin();
     cy.visit('/');
-    cy.wait('@content');
-  });
-
-  it('As editor I can add a full-height variant slider block', () => {
+    
     // GIVEN a Document with the title document and a Document to reference with the title Blue Orchids
     cy.createContent({
       contentType: 'Image',
@@ -29,6 +26,10 @@ context('Blocks Acceptance Tests', () => {
       image: true,
       path: '/document',
     });
+    cy.wait('@content');
+  });
+
+  it('As editor I can add a full-height variant slider block', () => {
     cy.visit('/document/edit');
     cy.wait('@schema');
 
@@ -122,21 +123,6 @@ context('Blocks Acceptance Tests', () => {
   });
 
   it('As editor I can add a full-side variant slider block', () => {
-    // GIVEN a Document with the title document and a Document to reference with the title Blue Orchids
-    cy.createContent({
-      contentType: 'Image',
-      contentId: 'my-image',
-      contentTitle: 'My Image',
-      path: '/document',
-    });
-    cy.createContent({
-      contentType: 'Document',
-      contentId: 'blue-orchids',
-      contentTitle: 'Blue Orchids',
-      contentDescription: 'are growing on the mountain tops',
-      image: true,
-      path: '/document',
-    });
     cy.visit('/document/edit');
     cy.wait('@schema');
 
@@ -229,21 +215,6 @@ context('Blocks Acceptance Tests', () => {
     );
   });
   it('As editor I can add a side variant slider block', () => {
-    // GIVEN a Document with the title document and a Document to reference with the title Blue Orchids
-    cy.createContent({
-      contentType: 'Image',
-      contentId: 'my-image',
-      contentTitle: 'My Image',
-      path: '/document',
-    });
-    cy.createContent({
-      contentType: 'Document',
-      contentId: 'blue-orchids',
-      contentTitle: 'Blue Orchids',
-      contentDescription: 'are growing on the mountain tops',
-      image: true,
-      path: '/document',
-    });
     cy.visit('/document/edit');
     cy.wait('@schema');
 
@@ -329,6 +300,7 @@ context('Blocks Acceptance Tests', () => {
     )
       .should('have.attr', 'src')
       .and('include', '/document/my-image/');
+
     cy.get('.teaser-item.side.has--slider--flagAlign--left').should(
       'have.css',
       'background-color',
