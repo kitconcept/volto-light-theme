@@ -20,7 +20,7 @@ const baseBlocksConfig = {
   },
 };
 
-const mergerDSL = {
+const mutator = {
   teaser: {
     disable: true,
     variations: ['variation1', 'variation2'],
@@ -47,12 +47,12 @@ const mergerDSL = {
 
 describe('BlocksConfigMerger', () => {
   it('disables the block if disable is true', () => {
-    const result = BlocksConfigMerger(baseBlocksConfig, mergerDSL);
+    const result = BlocksConfigMerger(baseBlocksConfig, mutator);
     expect(result.teaser.restricted).toBe(true);
   });
 
-  it('filters variations according to mergerDSL', () => {
-    const result = BlocksConfigMerger(baseBlocksConfig, mergerDSL);
+  it('filters variations according to mutator', () => {
+    const result = BlocksConfigMerger(baseBlocksConfig, mutator);
     expect(result.teaser.variations.map((v) => v.id)).toEqual([
       'variation1',
       'variation2',
@@ -62,8 +62,8 @@ describe('BlocksConfigMerger', () => {
     ]);
   });
 
-  it('assigns themes from mergerDSL', () => {
-    const result = BlocksConfigMerger(baseBlocksConfig, mergerDSL);
+  it('assigns themes from mutator', () => {
+    const result = BlocksConfigMerger(baseBlocksConfig, mutator);
     expect(result.teaser.themes).toEqual([
       {
         style: {
@@ -78,20 +78,20 @@ describe('BlocksConfigMerger', () => {
     ]);
   });
 
-  it('does not modify blocks not present in mergerDSL', () => {
-    const result = BlocksConfigMerger(baseBlocksConfig, mergerDSL);
+  it('does not modify blocks not present in mutator', () => {
+    const result = BlocksConfigMerger(baseBlocksConfig, mutator);
     expect(result.teaser.variations.length).toBe(2);
     expect(result.gridBlock.restricted).toBe(false);
   });
 
-  it('ignores blocks in mergerDSL that do not exist in blocksConfig', () => {
-    const result = BlocksConfigMerger(baseBlocksConfig, mergerDSL);
+  it('ignores blocks in mutator that do not exist in blocksConfig', () => {
+    const result = BlocksConfigMerger(baseBlocksConfig, mutator);
     expect(result.description).toBeUndefined();
   });
 
   it('does not mutate the original blocksConfig', () => {
     const original = JSON.parse(JSON.stringify(baseBlocksConfig));
-    BlocksConfigMerger(baseBlocksConfig, mergerDSL);
+    BlocksConfigMerger(baseBlocksConfig, mutator);
     expect(baseBlocksConfig).toEqual(original);
   });
 });

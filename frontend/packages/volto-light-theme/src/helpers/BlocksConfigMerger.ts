@@ -1,6 +1,6 @@
 import type { BlocksConfig, StyleDefinition } from '@plone/types';
 import cloneDeep from 'lodash/cloneDeep';
-import type { MergerDSL } from '../types';
+import type { MutatorDSL } from '../types';
 
 // Utility type for deep recursive Partial
 type DeepPartial<T> = {
@@ -13,7 +13,7 @@ type DeepPartial<T> = {
 
 export function BlocksConfigMerger(
   blocksConfig: DeepPartial<BlocksConfig['blocksConfig']>,
-  merger: MergerDSL,
+  merger: MutatorDSL,
 ): BlocksConfig['blocksConfig'] {
   const mergedConfig = cloneDeep(blocksConfig);
 

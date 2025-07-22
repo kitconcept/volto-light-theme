@@ -87,7 +87,7 @@ export type PloneGobrSocialMediaSettings = {
   social_links: Array<iconLink>;
 };
 
-export type MergerDSL = Record<
+export type MutatorDSL = Record<
   string,
   {
     disable?: boolean;
@@ -97,7 +97,7 @@ export type MergerDSL = Record<
 >;
 
 export type BlocksConfigSettings = {
-  blocks_config_mutator: MergerDSL;
+  blocks_config_mutator: MutatorDSL;
 };
 
 export type CustomInheritBehavior<T> = {

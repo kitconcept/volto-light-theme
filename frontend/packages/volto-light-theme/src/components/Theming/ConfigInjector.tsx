@@ -2,7 +2,7 @@ import config from '@plone/volto/registry';
 import { useSelector } from 'react-redux';
 import { BlocksConfigMerger } from '../../helpers/BlocksConfigMerger';
 import type { Content } from '@plone/types';
-import type { MergerDSL } from '../../types';
+import type { MutatorDSL } from '../../types';
 
 type FormState = {
   content: {
@@ -11,7 +11,7 @@ type FormState = {
 };
 
 const ConfigInjector = () => {
-  const blockConfigData = useSelector<FormState, MergerDSL>(
+  const blockConfigData = useSelector<FormState, MutatorDSL>(
     (state) =>
       state.content.data?.['@components']?.inherit?.['kitconcept.blocks.config']
         ?.data?.blocks_config_mutator,
