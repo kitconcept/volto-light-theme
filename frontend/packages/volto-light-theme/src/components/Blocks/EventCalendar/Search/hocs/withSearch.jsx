@@ -450,7 +450,7 @@ const withSearch = (options) => (WrappedComponent) => {
             if (toSortOn) setSortOn(toSortOn || undefined);
             if (toSortOrder) setSortOrder(toSortOrder);
             setSearchData(newSearchData);
-            // setLocationSearchData(getSearchFields(newSearchData));
+            setLocationSearchData(getSearchFields(newSearchData));
           },
           toSearchFacets ? inputDelay / 3 : inputDelay,
         );
