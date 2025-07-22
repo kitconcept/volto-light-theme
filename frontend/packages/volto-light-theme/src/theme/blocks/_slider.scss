@@ -15,25 +15,26 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
     padding-bottom: 40px;
   }
 
-  .highlight-image-wrapper {
-    display: flex; // Small gap was appearing between the wrapper and the image (??)
-
-    img {
-      // Override Volto's Image Component inline style aspect ratio.
-      aspect-ratio: var(
-        --image-aspect-ratio,
-        $sliderImagesAspectRatio
-      ) !important;
-    }
-  }
-
   .teaser-item,
   .grid-teaser-item {
     flex-direction: column;
   }
+
   .teaser-item {
     margin-bottom: $spacing-medium;
 
+    .highlight-image-wrapper {
+      display: flex; // Small gap was appearing between the wrapper and the image (??)
+
+      img {
+        // Override Volto's Image Component inline style aspect ratio.
+        aspect-ratio: var(
+          --image-aspect-ratio,
+          $sliderImagesAspectRatio
+        ) !important;
+      }
+    }
+    
     .teaser-item-title {
       position: absolute;
       top: 50%;
@@ -113,83 +114,58 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
     text-align: center;
   }
 
-  &.full-height {
-    .teaser-item.full-height {
-      .highlight-image-wrapper.full-height {
-        transform: scaleX(0.5);
-
-        @media only screen and (max-width: $computer-width) {
-          transform: none;
-        }
-        &.has--slider--flagAlign--left {
-          transform-origin: right;
-        }
-        &.has--slider--flagAlign--right {
-          transform-origin: left;
-        }
-      }
-
-      .teaser-item-title.full-height {
-        top: 0;
-        width: 50%;
-        height: 100%;
-        align-content: center;
-        transform: translateY(0%);
-
-        @media only screen and (max-width: $computer-width) {
-          position: static;
-          width: 100%;
-          padding: 60px 20px;
-          background: $black;
-          transform: none;
-        }
-        &.has--slider--flagAlign--right {
-          right: 0;
-          padding-right: 60px;
-          padding-left: 80px;
-        }
-        &.has--slider--flagAlign--left {
-          left: 0;
-          padding-right: 80px;
-          padding-left: 60px;
-        }
-      }
-    }
-  }
-
   &.side {
-    .teaser-item.side {
+    .teaser-item {
       background: rgba(0, 0, 0, 0.75);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: 'images content';
+      grid-template-rows: auto;
+      align-items: center;
+      aspect-ratio: 16/9;
+      padding-left: $spacing-medium;
+      padding-right: $spacing-medium;
 
-      .highlight-image-wrapper.side {
-        transform: scale(0.5, 0.6);
-        @media only screen and (max-width: $computer-width) {
-          transform: none;
-        }
-        &.has--slider--flagAlign--left {
-          transform-origin: right;
-          img {
-            padding-right: 100px;
-            @media only screen and (max-width: $computer-width) {
-              padding-right: 0;
-            }
-          }
-        }
-        &.has--slider--flagAlign--right {
-          transform-origin: left;
-          img {
-            padding-left: 100px;
-            @media only screen and (max-width: $computer-width) {
-              padding-left: 0;
-            }
+      @media only screen and (max-width: $computer-width) {
+        aspect-ratio: auto;
+        display: block;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      &.has--slider--flagAlign--right {
+        grid-template-areas: 'images content';
+      }
+      &.has--slider--flagAlign--left {
+        grid-template-areas: 'content images';
+      }
+
+      .highlight-image-wrapper {
+        grid-area: images;
+        img {
+          aspect-ratio: var(
+            --image-aspect-ratio,
+            $sliderImagesAspectRatio
+          ) !important;
+
+          @media only screen and (max-width: $computer-width) {
+            width: 100%;
           }
         }
       }
-
-      .teaser-item-title.side {
-        top: 50%;
-        width: 50%;
+      .teaser-item-title {
+        grid-area: content;
+        position: relative;
+        width: 100%;
+        top: 0;
+        transform: translateY(0);
         background: none;
+        padding: $spacing-medium;
+        color: white;
+
+        @container (max-width: 1024px) {
+          padding: 30px 30px 30px 80px;
+        }
 
         @media only screen and (max-width: $computer-width) {
           position: static;
@@ -197,45 +173,64 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
           padding: 60px 20px;
           background: $black;
           transform: none;
-        }
-
-        &.has--slider--flagAlign--right {
-          right: 0;
-          padding-right: 60px;
-          padding-left: 80px;
-        }
-        &.has--slider--flagAlign--left {
-          left: 0;
-          padding-right: 80px;
-          padding-left: 60px;
         }
       }
     }
   }
 
   &.full-side {
-    .teaser-item.full-side {
+    .teaser-item {
       background: rgba(0, 0, 0, 0.75);
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      grid-template-areas: 'images content';
+      grid-template-rows: auto;
+      align-items: center;
+      aspect-ratio: 16/9;
 
-      .highlight-image-wrapper.full-side {
-        transform: scale(0.6, 0.6);
+      @media only screen and (max-width: $computer-width) {
+        aspect-ratio: auto;
+        display: block;
+        padding-left: 0;
+        padding-right: 0;
+      }
 
-        @media only screen and (max-width: $computer-width) {
-          transform: none;
-        }
+      &.has--slider--flagAlign--right {
+        grid-template-columns: 3fr 2fr;
+        grid-template-areas: 'images content';
+      }
+      &.has--slider--flagAlign--left {
+        grid-template-columns: 2fr 3fr;
+        grid-template-areas: 'content images';
+      }
 
-        &.has--slider--flagAlign--left {
-          transform-origin: right;
-        }
+      .highlight-image-wrapper {
+        grid-area: images;
+        img {
+          aspect-ratio: var(
+            --image-aspect-ratio,
+            $sliderImagesAspectRatio
+          ) !important;
 
-        &.has--slider--flagAlign--right {
-          transform-origin: left;
+          @media only screen and (max-width: $computer-width) {
+            width: 100%;
+          }
         }
       }
-      .teaser-item-title.full-side {
-        top: 50%;
-        width: 40%;
+
+      .teaser-item-title {
+        grid-area: content;
+        position: relative;
+        width: 100%;
+        top: 0;
+        transform: translateY(0);
         background: none;
+        padding: $spacing-medium;
+        color: white;
+
+        @container (max-width: 1024px) {
+          padding: 30px 30px 30px 80px;
+        }
 
         @media only screen and (max-width: $computer-width) {
           position: static;
@@ -244,16 +239,68 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
           background: $black;
           transform: none;
         }
-        &.has--slider--flagAlign--right {
-          align-self: flex-end;
-          padding-right: 60px;
-          padding-left: 80px;
+      }
+    }
+  }
+
+  &.full-height {
+    .teaser-item {
+      background: rgba(0, 0, 0, 0.75);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: 'images content';
+      grid-template-rows: auto;
+      aspect-ratio: 16/9;
+
+      @media only screen and (max-width: $computer-width) {
+        aspect-ratio: auto;
+        display: block;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      &.has--slider--flagAlign--right {
+        grid-template-areas: 'images content';
+      }
+      &.has--slider--flagAlign--left {
+        grid-template-areas: 'content images';
+      }
+
+      .highlight-image-wrapper {
+        grid-area: images;
+
+        img {
+          aspect-ratio: var(
+            --image-aspect-ratio,
+            $sliderImagesAspectRatio
+          ) !important;
+
+          @media only screen and (max-width: $computer-width) {
+            width: 100%;
+          }
+        }
+      }
+      .teaser-item-title {
+        align-self: center;
+        grid-area: content;
+        position: relative;
+        width: 100%;
+        top: 0;
+        transform: translateY(0);
+        background: none;
+        padding: $spacing-medium;
+        color: white;
+
+        @container (max-width: 1024px) {
+          padding: 30px 30px 30px 80px;
         }
 
-        &.has--slider--flagAlign--left {
-          align-self: flex-start;
-          padding-right: 80px;
-          padding-left: 60px;
+        @media only screen and (max-width: $computer-width) {
+          position: static;
+          width: 100%;
+          padding: 60px 20px;
+          background: $black;
+          transform: none;
         }
       }
     }

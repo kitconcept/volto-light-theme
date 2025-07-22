@@ -32,7 +32,7 @@ const messages = defineMessages({
 
 const DefaultImage = (props) => <img {...props} alt={props.alt || ''} />;
 
-const SliderVariants = ({
+const SliderBody = ({
   index,
   onChangeBlock,
   block,
@@ -96,27 +96,27 @@ const SliderVariants = ({
         </Message>
       )}
       {href && (
-        <div className={cx('teaser-item  top', dataBlock.variation)}>
-          <MaybeWrap
-            condition={!isEditMode}
-            as={UniversalLink}
-            href={href['@id']}
-            target={
-              data.openLinkInNewTab ||
-              (openExternalLinkInNewTab && !isInternalURL(href['@id']))
-                ? '_blank'
-                : null
-            }
-            tabIndex="-1"
+        <MaybeWrap
+          condition={!isEditMode}
+          as={UniversalLink}
+          href={href['@id']}
+          target={
+            data.openLinkInNewTab ||
+            (openExternalLinkInNewTab && !isInternalURL(href['@id']))
+              ? '_blank'
+              : null
+          }
+          tabIndex="-1"
+        >
+          <div
+            className={cx(
+              'teaser-item top',
+              `has--slider--flagAlign--${data.flagAlign}`,
+              dataBlock.variation,
+            )}
           >
             {(href?.hasPreviewImage || href.image_field || image) && (
-              <div
-                className={cx(
-                  'highlight-image-wrapper gradient',
-                  dataBlock.variation,
-                  `has--slider--flagAlign--${data.flagAlign}`,
-                )}
-              >
+              <div className="highlight-image-wrapper gradient">
                 <Image
                   item={image || href}
                   imageField={image ? image.image_field : href.image_field}
@@ -126,14 +126,7 @@ const SliderVariants = ({
                 />
               </div>
             )}
-            {/* START CUSTOMIZATION */}
-            <div
-              className={cx(
-                'teaser-item-title fix-width-issue ',
-                dataBlock.variation,
-                `has--slider--flagAlign--${data.flagAlign}`,
-              )}
-            >
+            <div className="teaser-item-title fix-width-issue">
               {/* END CUSTOMIZATION */}
               <div className="title">
                 {data?.head_title && (
@@ -150,11 +143,12 @@ const SliderVariants = ({
               )}
               {/* END CUSTOMIZATION */}
             </div>
-          </MaybeWrap>
-        </div>
+            {/* START CUSTOMIZATION */}
+          </div>
+        </MaybeWrap>
       )}
     </div>
   );
 };
 
-export default SliderVariants;
+export default SliderBody;
