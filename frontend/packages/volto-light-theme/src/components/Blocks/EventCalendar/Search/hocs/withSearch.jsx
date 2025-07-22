@@ -430,8 +430,8 @@ const withSearch = (options) => (WrappedComponent) => {
       (
         toSearchText = undefined,
         toSearchFacets = undefined,
-        toSortOn = undefined,
-        toSortOrder = undefined,
+        toSortOn = 'start',
+        toSortOrder = 'ascending',
       ) => {
         if (timeoutRef.current) clearTimeout(timeoutRef.current);
         timeoutRef.current = setTimeout(
