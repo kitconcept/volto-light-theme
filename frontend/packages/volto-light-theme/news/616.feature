@@ -1,0 +1,1 @@
+Update carousel block version, example content and cypress @iRohitSingh
