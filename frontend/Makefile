@@ -86,11 +86,11 @@ lint: ## Lint, or catch and remove problems, in code base
 
 .PHONY: release
 release: ## Release the add-on on npmjs.org
-	pnpm release --config .release-it-local.json
+	pnpm release
 
 .PHONY: release-dry-run
 release-dry-run: ## Dry-run the release of the add-on on npmjs.org
-	pnpm dry-release --config .release-it-local.json
+	pnpm release
 
 .PHONY: test
 test: ## Run unit tests
