@@ -1,6 +1,30 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 7.0.0a18 (2025-07-23)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Internal
+
+- Update to latests versions of supported add-ons (as peerDeps). @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 7.0.0a17 (2025-07-23)
 
 ### Backend
