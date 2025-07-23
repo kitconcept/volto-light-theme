@@ -1,6 +1,6 @@
 {
   "plugins": {
-    "../../../../../core/packages/scripts/prepublish.js": {}
+    "../../core/packages/scripts/prepublish.js": {}
   },
   "hooks": {
     "after:bump": [
@@ -10,7 +10,7 @@
       "python3 -c 'import json; data = json.load(open(\"../../package.json\")); data[\"version\"] = \"${version}\"; json.dump(data, open(\"../../package.json\", \"w\"), indent=2)'",
       "git add ../../CHANGELOG.md ../../package.json"
     ],
-    "after:release": "rm .changelog.draft"
+    "after:release": "rm .changelog.draft README.md"
   },
   "npm": {
     "publish": false
