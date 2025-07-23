@@ -8,6 +8,28 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0-alpha.15 (2025-07-17)
+
+### Breaking
+
+- We renamed this three fields in the `kitconcept.footer` behavior. @sneridagh
+  `footer_main_logo_inversed` => `footer_logo`
+  `footer_logo` => `post_footer_logo`
+  `footer_logo_link` => `post_footer_logo_link` 
+
+### Feature
+
+- Added block model v3 as opt-in. @sneridagh [#532](https://github.com/kitconcept/volto-light-theme/pull/532)
+- Update Spanish translation [@macagua] [#596](https://github.com/kitconcept/volto-light-theme/pull/596)
+
+### Bugfix
+
+- Fixed the use case where the sticky menu item is allowed to not have link. @sneridagh 
+
+### Internal
+
+- Improve listing template of Listing, Search and Grid block with Card Component. @iFlameing [#601](https://github.com/kitconcept/volto-light-theme/pull/601)
+
 ## 7.0.0-alpha.14 (2025-07-10)
 
 ### Feature

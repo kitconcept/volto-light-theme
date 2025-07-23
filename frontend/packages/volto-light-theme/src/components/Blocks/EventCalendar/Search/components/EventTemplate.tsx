@@ -4,7 +4,7 @@ import Card from '@kitconcept/volto-light-theme/primitives/Card/Card';
 import DefaultSummary from '@kitconcept/volto-light-theme/components/Summary/DefaultSummary';
 import cx from 'classnames';
 
-const EventItem = ({ item, lang }) => {
+const EventItem = ({ item, lang, isEditMode }) => {
   const formatter = new Intl.DateTimeFormat(lang, {
     year: 'numeric',
     month: 'short',
@@ -16,6 +16,7 @@ const EventItem = ({ item, lang }) => {
   });
   const start = item.start ? new Date(item.start) : null;
   const end = item.end ? new Date(item.end) : null;
+  const notSameDay = end && start.getDate() !== end.getDate();
   const formattedStartDate = start ? formatter.format(start) : '';
   const formattedEndDate = end ? formatter.format(end) : '';
   const formattedHeaderDate = !end
@@ -23,14 +24,14 @@ const EventItem = ({ item, lang }) => {
     : headFormatter.formatRange(start, end);
   return (
     <div className="card-listing">
-      <Card href={item['@id']} className="event-card">
+      <Card href={isEditMode ? '' : item['@id']} className="event-card">
         <Card.Image>
-          <div className={cx('date-inset', { 'has-end-date': end })}>
+          <div className={cx('date-inset', { 'has-end-date': notSameDay })}>
             <div className="day">
               {String(start.getDate()).padStart(2, '0')}
             </div>
             <div className="month">{formattedStartDate}</div>
-            {end && (
+            {notSameDay && (
               <>
                 <div className="separator"></div>
                 <div className="day">
@@ -60,7 +61,12 @@ const EventCalenderTemplate = (props) => {
   return (
     <div className="event-calendar items">
       {props.items.map((item: any, index: number) => (
-        <EventItem key={index} item={item} lang={lang} />
+        <EventItem
+          key={index}
+          item={item}
+          lang={lang}
+          isEditMode={props.isEditMode}
+        />
       ))}
     </div>
   );

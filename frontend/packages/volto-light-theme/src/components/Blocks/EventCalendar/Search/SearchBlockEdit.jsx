@@ -71,8 +71,8 @@ const SearchBlockEdit = (props) => {
     onTriggerSearch(
       '',
       data?.facets,
-      data?.query?.sort_on,
-      data?.query?.sort_order,
+      data?.query?.sort_on || 'start',
+      data?.query?.sort_order || 'ascending',
     );
   }, [deepQuery, onTriggerSearch, data]);
 

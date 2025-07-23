@@ -23,6 +23,7 @@ import type {
   SiteFooterSettings,
   StickyMenuSettings,
   PloneGobrSocialMediaSettings,
+  BlocksConfigSettings,
 } from './types';
 
 defineMessages({
@@ -48,7 +49,7 @@ declare module '@plone/types' {
   export interface Content {
     footer_logos_container_width: string;
     footer_logos_size: string;
-    footer_logo_link: string;
+    post_footer_logo_link: string;
   }
 
   export interface Expanders {
@@ -58,6 +59,7 @@ declare module '@plone/types' {
       'voltolighttheme.footer': CustomInheritBehavior<SiteFooterSettings>;
       'kitconcept.sticky_menu': CustomInheritBehavior<StickyMenuSettings>;
       'kitconcept.footer': CustomInheritBehavior<SiteFooterSettings>;
+      'kitconcept.blocks.config': CustomInheritBehavior<BlocksConfigSettings>;
       'plonegovbr.socialmedia.settings': CustomInheritBehavior<PloneGobrSocialMediaSettings>;
     };
   }

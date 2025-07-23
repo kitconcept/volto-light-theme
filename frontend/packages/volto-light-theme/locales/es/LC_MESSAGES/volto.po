@@ -1,69 +1,72 @@
+# Translation of volto.pot to Spanish
+# Leonardo J. Caballero G. <leonardocaballero@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-02-08T13:36:14.317Z\n"
-"PO-Revision-Date: \n"
-"Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
-"Language: es\n"
+"PO-Revision-Date: 2025-07-07 15:40+0200\n"
+"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"MIME-Version: 1.0\n"
-"Language-Code: en\n"
-"Language-Name: English\n"
+"Language-Code: es\n"
+"Language-Name: Español\n"
 "Preferred-Encodings: utf-8\n"
 "Domain: volto\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.6\n"
+"X-Is-Fallback-For: es-ar es-bo es-cl es-co es-cr es-do es-ec es-es es-sv es-gt es-hn es-mx es-ni es-pa es-py es-pe es-pr es-us es-uy es-ve\n"
 
 #. Default: "Action"
 #: components/Widgets/schema/headerActionsSchema
 msgid "Action"
-msgstr ""
+msgstr "Acción"
 
 #. Default: "Add"
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
 msgid "Add (object list)"
-msgstr ""
+msgstr "Añadir (lista objecto)"
 
 #. Default: "Add action"
 #: components/Widgets/schema/headerActionsSchema
 msgid "Add action"
-msgstr ""
+msgstr "Añadir acción"
 
 #. Default: "Add item"
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Add item"
-msgstr ""
+msgstr "Añadir elemento"
 
 #. Default: "Add link"
 #: components/Widgets/schema/footerLinksSchema
 msgid "Add link"
-msgstr ""
+msgstr "Añadir enlace"
 
 #. Default: "Add logo"
 #: components/Widgets/schema/footerLogosSchema
 msgid "Add logo"
-msgstr ""
+msgstr "Añadir logo"
 
 #. Default: "Alignment"
 #: components/Blocks/Button/schema
 #: components/Blocks/Separator/schema
 msgid "Alignment"
-msgstr ""
+msgstr "Alineación"
 
 #. Default: "Alt text"
 #: components/Widgets/schema/footerLogosSchema
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Alt text"
-msgstr ""
+msgstr "Texto alternativo"
 
 #. Default: "Back"
 #: components/MobileNavigation/MobileNavigation
 msgid "Back"
-msgstr "Atrás"
+msgstr "Volver"
 
 #. Default: "Background color"
 #: components/Blocks/schema
@@ -75,7 +78,7 @@ msgstr "Color de fondo"
 #: components/Blocks/Image/schema
 #: components/Blocks/Separator/schema
 msgid "Block Width"
-msgstr "Anchura del bloque"
+msgstr "Ancho de bloque"
 
 #. Default: "Breadcrumbs"
 #: components/Breadcrumbs/Breadcrumbs
@@ -102,12 +105,12 @@ msgstr "Cerrar menú"
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
 msgid "Collapse item"
-msgstr ""
+msgstr "Contraer elemento"
 
 #. Default: "The color contrast ratio {contrastRatio}:1 might not be accessible for all. WCAG Level: {complianceLevel}"
 #: components/Widgets/ColorContrastChecker
 msgid "ColorContrastCheckerMessage"
-msgstr ""
+msgstr "La relación de contraste de color {contrastRatio}:1 puede no ser accesible para todos. Nivel WCAG: {complianceLevel}"
 
 #. Default: "Contact"
 #: components/Blocks/EventMetadata/View
@@ -127,7 +130,7 @@ msgstr "Copyright"
 #. Default: "Default"
 #: components/Widgets/BlockWidth
 msgid "Default"
-msgstr ""
+msgstr "Por defecto"
 
 #. Default: "Description"
 #: components/Blocks/Image/schema
@@ -145,7 +148,7 @@ msgstr "Distribuido bajo {license}"
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
 msgid "Empty object list"
-msgstr ""
+msgstr "Lista de objetos vacía"
 
 #. Default: "End"
 #: components/Blocks/EventMetadata/View
@@ -160,7 +163,7 @@ msgstr "Alinear"
 #. Default: "Follow us:"
 #: components/Footer/slots/FollowUsLogoAndLinks
 msgid "Follow us:"
-msgstr ""
+msgstr "Síguenos:"
 
 #. Default: "Full"
 #: components/Widgets/BlockWidth
@@ -176,7 +179,7 @@ msgstr "Licencia GNU GPL"
 #: components/Widgets/schema/footerLogosSchema
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Headline"
-msgstr ""
+msgstr "Encabezado"
 
 #. Default: "Hide Button"
 #: components/Blocks/Slider/schema
@@ -187,7 +190,7 @@ msgstr "Esconder botón"
 #: components/Widgets/schema/footerLogosSchema
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Hide description"
-msgstr ""
+msgstr "Ocultar descripción"
 
 #. Default: "Home"
 #: components/Breadcrumbs/Breadcrumbs
@@ -209,22 +212,22 @@ msgstr "Imagen"
 #. Default: "Item"
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Item"
-msgstr ""
+msgstr "Elemento"
 
 #. Default: "Item icon"
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Item icon"
-msgstr ""
+msgstr "Icono de elemento"
 
 #. Default: "Large"
 #: components/Widgets/Size
 msgid "Large"
-msgstr ""
+msgstr "Grande"
 
 #. Default: "Layout"
 #: components/Widgets/BlockWidth
 msgid "Layout"
-msgstr ""
+msgstr "Diseño"
 
 #. Default: "Left"
 #: components/Widgets/BlockAlignment
@@ -234,17 +237,17 @@ msgstr "Izquierda"
 #. Default: "Link"
 #: components/Widgets/schema/footerLinksSchema
 msgid "Link"
-msgstr ""
+msgstr "Enlace"
 
 #. Default: "List"
 #: index
 msgid "List"
-msgstr ""
+msgstr "Lista"
 
 #. Default: "List with images"
 #: index
 msgid "List with images"
-msgstr ""
+msgstr "Lista con imágenes"
 
 #. Default: "Location"
 #: components/Blocks/EventMetadata/View
@@ -259,27 +262,27 @@ msgstr "Entrar"
 #. Default: "Logo"
 #: components/Widgets/schema/footerLogosSchema
 msgid "Logo"
-msgstr ""
+msgstr "Logo"
 
 #. Default: "Logo image"
 #: components/Widgets/schema/footerLogosSchema
 msgid "Logo image"
-msgstr ""
+msgstr "Imagen del logo"
 
 #. Default: "Logo of"
 #: components/Logo/Logo
 msgid "Logo of"
-msgstr ""
+msgstr "Logotipo de"
 
 #. Default: "Medium"
 #: components/Widgets/Size
 msgid "Medium"
-msgstr ""
+msgstr "Mediano"
 
 #. Default: "Narrow"
 #: components/Widgets/BlockWidth
 msgid "Narrow"
-msgstr ""
+msgstr "Estrecho"
 
 #. Default: "Next Page"
 #: components/Blocks/Listing/ListingBody
@@ -294,7 +297,7 @@ msgstr "No se ha seleccionado imagen"
 #. Default: "No items found in this container."
 #: components/Blocks/Listing/ListingBody
 msgid "No items found in this container."
-msgstr "No se han encontrado elementos"
+msgstr "No se han encontrado elementos en este contenedor."
 
 #. Default: "Open in a new tab"
 #: components/Widgets/schema/footerLinksSchema
@@ -302,7 +305,7 @@ msgstr "No se han encontrado elementos"
 #: components/Widgets/schema/headerActionsSchema
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Open in a new tab"
-msgstr ""
+msgstr "Abrir en una nueva pestaña"
 
 #. Default: "Open menu"
 #: components/MobileNavigation/MobileNavigation
@@ -356,7 +359,7 @@ msgstr "Registrar usuario"
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
 msgid "Remove item"
-msgstr ""
+msgstr "Eliminar elemento"
 
 #. Default: "Result"
 #: components/Blocks/Listing/ListingBody
@@ -371,7 +374,7 @@ msgstr "Derecha"
 #. Default: "Room"
 #: components/Summary/PersonSummary
 msgid "Room"
-msgstr ""
+msgstr "Sala"
 
 #. Default: "Search"
 #: components/Blocks/Search/components/SearchInput
@@ -407,18 +410,18 @@ msgstr "Ha buscado"
 #: components/Widgets/schema/footerLogosSchema
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Settings"
-msgstr ""
+msgstr "Ajustes"
 
 #. Default: "Short line"
 #: components/Blocks/Separator/schema
 msgid "Short line"
-msgstr ""
+msgstr "Línea corta"
 
 #. Default: "Show item"
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
 msgid "Show item"
-msgstr ""
+msgstr "Ver elemento"
 
 #. Default: "Sitemap"
 #: index
@@ -428,7 +431,7 @@ msgstr "Mapa del sitio"
 #. Default: "Small"
 #: components/Widgets/Size
 msgid "Small"
-msgstr ""
+msgstr "Pequeño"
 
 #. Default: "Sorting"
 #: components/Blocks/Search/TopSideFacets
@@ -443,7 +446,7 @@ msgstr "Origen"
 #. Default: "Sponsored by:"
 #: components/Footer/slots/FollowUsLogoAndLinks
 msgid "Sponsored by:"
-msgstr ""
+msgstr "Patrocinado por:"
 
 #. Default: "Start"
 #: components/Blocks/EventMetadata/View
@@ -461,7 +464,7 @@ msgstr "Cambiar a"
 #: components/Widgets/schema/headerActionsSchema
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Target"
-msgstr ""
+msgstr "Destino"
 
 #. Default: "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
 #: components/Footer/slots/Copyright
@@ -485,7 +488,7 @@ msgstr "Sitio web"
 #. Default: "eMail"
 #: components/Summary/PersonSummary
 msgid "eMail"
-msgstr ""
+msgstr "Correo electrónico"
 
 #. Default: "Clear image"
 #: components/Blocks/Image/ImageSidebar

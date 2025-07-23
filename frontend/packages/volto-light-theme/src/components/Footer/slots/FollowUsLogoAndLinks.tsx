@@ -23,20 +23,20 @@ const FollowUsPostFooterLogoAndLinks = ({ content }: { content: Content }) => {
     'footer_links',
   );
 
-  const footer_logo = useLiveData<SiteFooterSettings['footer_logo']>(
+  const post_footer_logo = useLiveData<SiteFooterSettings['post_footer_logo']>(
     content,
     'kitconcept.footer',
-    'footer_logo',
+    'post_footer_logo',
   );
 
-  const footerLogoSrc = footer_logo?.data
-    ? `data:${footer_logo['content-type']};base64,${footer_logo.data}`
-    : flattenToAppURL(footer_logo?.download);
+  const footerLogoSrc = post_footer_logo?.data
+    ? `data:${post_footer_logo['content-type']};base64,${post_footer_logo.data}`
+    : flattenToAppURL(post_footer_logo?.download);
 
   return content ? (
     <Container
       className={cx('default follow-us-links-and-logo', {
-        'no-logo': !footer_logo?.data && !footer_logo?.download,
+        'no-logo': !post_footer_logo?.data && !post_footer_logo?.download,
       })}
     >
       <div className="followus-and-links">
@@ -55,7 +55,7 @@ const FollowUsPostFooterLogoAndLinks = ({ content }: { content: Content }) => {
           </div>
         )}
       </div>
-      {footer_logo?.data || footer_logo?.download ? (
+      {post_footer_logo?.data || post_footer_logo?.download ? (
         <div className="footer-logo">
           <span>
             <FormattedMessage
@@ -65,8 +65,8 @@ const FollowUsPostFooterLogoAndLinks = ({ content }: { content: Content }) => {
           </span>
           {/* @ts-ignore */}
           <ConditionalLink
-            condition={content?.footer_logo_link}
-            to={content?.footer_logo_link}
+            condition={content?.post_footer_logo_link}
+            to={content?.post_footer_logo_link}
             openLinkInNewTab={true}
           >
             <img src={footerLogoSrc} alt="Sponsor Logo" />

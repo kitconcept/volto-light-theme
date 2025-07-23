@@ -211,6 +211,11 @@ const SearchSchema = ({ data = {}, intl }) => {
         fields: ['headline'],
       },
       {
+        id: 'searchquery',
+        title: intl.formatMessage(messages.baseSearchQuery),
+        fields: ['query'],
+      },
+      {
         id: 'facets',
         title: intl.formatMessage(messages.facets),
         fields: ['facets'],
@@ -271,6 +276,9 @@ const SearchSchema = ({ data = {}, intl }) => {
       },
       facetsTitle: {
         title: intl.formatMessage(messages.sectionTitle),
+      },
+      query: {
+        title: 'Query',
       },
     },
     required: [],

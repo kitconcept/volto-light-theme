@@ -2,6 +2,21 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0a15 (2025-07-17)
+
+
+### Breaking changes:
+
+- We renamed this three fields in the `kitconcept.footer` behavior. @sneridagh
+  `footer_main_logo_inversed` => `footer_logo`
+  `footer_logo` => `post_footer_logo`
+  `footer_logo_link` => `post_footer_logo_link` 
+
+
+### New features:
+
+- Add Spanish translation [@macagua] [#597](https://github.com/kitconcept/volto-light-theme/issues/597)
+
 ## 7.0.0a14 (2025-07-10)
 
 

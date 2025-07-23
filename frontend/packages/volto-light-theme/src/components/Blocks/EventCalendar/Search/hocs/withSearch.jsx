@@ -36,6 +36,7 @@ function getInitialState(
   id,
   sortOnParam,
   sortOrderParam,
+  dateRangeQuery = [],
 ) {
   const { types: facetWidgetTypes } =
     config.blocks.blocksConfig.search.extensions.facetWidgets;
@@ -69,6 +70,7 @@ function getInitialState(
             },
           ]
         : []),
+      ...(dateRangeQuery || []),
     ],
     sort_on: sortOnParam || data.query?.sort_on,
     sort_order: sortOrderParam || data.query?.sort_order,
@@ -88,6 +90,7 @@ function getInitialState(
  */
 function normalizeState({
   query, // base query
+  dateRangeQuery,
   facets, // facet values
   id, // block id
   searchText, // SearchableText
@@ -154,6 +157,10 @@ function normalizeState({
       o: 'plone.app.querystring.operation.string.contains',
       v: searchText,
     });
+  }
+
+  if (dateRangeQuery) {
+    params.query.push(...dateRangeQuery);
   }
 
   return params;
@@ -272,8 +279,10 @@ const withSearch = (options) => (WrappedComponent) => {
 
     // TODO: refactor, should use only useLocationStateManager()!!!
     const [searchText, setSearchText] = React.useState(urlSearchText);
+    const [dateRangeQuery, setDateRangeQuery] = React.useState([]);
 
     const handleDateRangeChange = (query) => {
+      setDateRangeQuery(query);
       setSearchData((prevSearchData) => {
         const filteredQuery = prevSearchData.query?.filter(
           (item) => item.i !== 'start' && item.i !== 'end',
@@ -380,8 +389,10 @@ const withSearch = (options) => (WrappedComponent) => {
       preventOverrideOfFacetState,
     ]);
 
-    const [sortOn, setSortOn] = React.useState(data?.query?.sort_on);
-    const [sortOrder, setSortOrder] = React.useState(data?.query?.sort_order);
+    const [sortOn, setSortOn] = React.useState(data?.query?.sort_on || 'start');
+    const [sortOrder, setSortOrder] = React.useState(
+      data?.query?.sort_order || 'ascending',
+    );
 
     const [searchData, setSearchData] = React.useState(
       getInitialState(data, facets, urlSearchText, id),
@@ -398,9 +409,18 @@ const withSearch = (options) => (WrappedComponent) => {
           id,
           sortOn,
           sortOrder,
+          dateRangeQuery,
         ),
       );
-    }, [deepData, deepFacets, urlSearchText, id, sortOn, sortOrder]);
+    }, [
+      deepData,
+      deepFacets,
+      urlSearchText,
+      id,
+      sortOn,
+      sortOrder,
+      dateRangeQuery,
+    ]);
 
     const timeoutRef = React.useRef();
     const facetSettings = data?.facets;
@@ -419,9 +439,10 @@ const withSearch = (options) => (WrappedComponent) => {
             const newSearchData = normalizeState({
               id,
               query: data.query || {},
+              dateRangeQuery: dateRangeQuery,
               facets: toSearchFacets || facets,
               searchText: toSearchText ? toSearchText.trim() : '',
-              sortOn: toSortOn || undefined,
+              sortOn: toSortOn || sortOn,
               sortOrder: toSortOrder || sortOrder,
               facetSettings,
             });
@@ -445,6 +466,7 @@ const withSearch = (options) => (WrappedComponent) => {
         sortOn,
         sortOrder,
         facetSettings,
+        dateRangeQuery,
       ],
     );
 

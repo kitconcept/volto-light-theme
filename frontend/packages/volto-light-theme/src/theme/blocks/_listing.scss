@@ -1,3 +1,13 @@
+// Hiding Event Calendar options since it is only for eventCalendar block.
+.inline.field {
+  &.field-wrapper-variation,
+  &.field-wrapper-listingBodyTemplate {
+    .react-select__menu-list [id$='-option-3'] {
+      display: none;
+    }
+  }
+}
+
 // Listing Block
 .block.listing,
 .column > .block.listing,
@@ -53,7 +63,11 @@
       @include block-title();
     }
 
-    .listing-body {
+    .listing-item {
+      .card-summary {
+        padding-top: unset;
+        padding-bottom: unset;
+      }
       .headline {
         margin-bottom: 20px;
         letter-spacing: 1px;
@@ -62,6 +76,7 @@
       }
       h2 {
         margin-top: 0;
+        margin-bottom: $spacing-medium;
         @include text-heading-h2();
       }
       p {
@@ -78,6 +93,16 @@
   &.summary {
     .listing-item {
       padding-top: 0 !important;
+
+      .card {
+        width: 100%;
+        .card-inner .image-wrapper {
+          flex: 0 0 220px;
+          img {
+            max-width: 100%;
+          }
+        }
+      }
 
       img {
         width: 220px;
@@ -169,27 +194,23 @@
         }
       }
 
-      .card-container {
-        width: 100%;
-        height: 100% !important;
+      .card-inner {
+        .image-wrapper {
+          img {
+            width: 100%;
+            margin: 0;
+            aspect-ratio: var(--image-aspect-ratio, $aspect-ratio) !important;
+          }
+        }
       }
 
-      img.item-image {
-        width: 100%;
-        margin: 0;
-        aspect-ratio: var(--image-aspect-ratio, $aspect-ratio) !important;
-      }
-
-      .item {
-        margin-top: 40px;
-      }
-
-      .content {
-        padding: 0 20px 40px 20px;
+      .card-summary {
+        padding: 0 $spacing-small $spacing-medium $spacing-small;
+        margin-top: $spacing-medium;
 
         .headline {
           padding: 0 !important;
-          margin-bottom: 20px;
+          margin-bottom: $spacing-small;
           letter-spacing: 1px;
           text-transform: uppercase;
           @include headtitle1();
@@ -197,7 +218,7 @@
         }
 
         h2 {
-          margin: 0 0 20px 0;
+          margin: 0 0 $spacing-small 0;
           @include text-heading-h3();
         }
         p {
@@ -325,7 +346,7 @@
 
       .image-gallery-thumbnail {
         border: 0;
-        margin-left: 20px;
+        margin-left: $spacing-small;
         opacity: 0.5;
 
         &.active,

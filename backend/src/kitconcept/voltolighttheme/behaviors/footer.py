@@ -29,7 +29,7 @@ class IKitconceptVoltoFooterSettings(model.Schema):
         "footer",
         label=_("Footer customizations"),
         fields=[
-            "footer_main_logo_inversed",
+            "footer_logo",
             "footer_address",
             "footer_column_left_header",
             "footer_column_left",
@@ -37,15 +37,15 @@ class IKitconceptVoltoFooterSettings(model.Schema):
             "footer_column_middle",
             "footer_column_right_header",
             "footer_column_right",
-            "footer_logo",
-            "footer_logo_link",
+            "post_footer_logo",
+            "post_footer_logo_link",
         ],
     )
 
-    footer_main_logo_inversed = NamedBlobImage(
-        title=_("label_footer_main_logo_inversed", default="Inversed Main Footer Logo"),
+    footer_logo = NamedBlobImage(
+        title=_("label_footer_logo", default="Footer Logo"),
         description=_(
-            "help_footer_main_logo_inversed",
+            "help_footer_logo",
             default="The footer has a main logo located in the lower"
             " left side, above the address. In case that the footer has a dark "
             " background, you can set this inversed logo to ensure it plays well with "
@@ -145,11 +145,11 @@ class IKitconceptVoltoFooterSettings(model.Schema):
         widget="",
     )
 
-    footer_logo = NamedBlobImage(
-        title=_("label_footer_logo", default="Footer Logo"),
+    post_footer_logo = NamedBlobImage(
+        title=_("label_post_footer_logo", default="Post Footer Logo"),
         description=_(
-            "help_footer_logo",
-            default="The footer can have a prominent logo located in the lower"
+            "help_post_footer_logo",
+            default="The post footer can have a prominent logo located in the lower"
             " right side. It is normally used for displaying the logo of the site"
             " sponsor.",
         ),
@@ -157,16 +157,16 @@ class IKitconceptVoltoFooterSettings(model.Schema):
     )
 
     directives.widget(
-        "footer_logo_link",
+        "post_footer_logo_link",
         frontendOptions={
             "widget": "url",
         },
     )
-    footer_logo_link = TextLine(
-        title=_("label_footer_logo_link", default="Footer Logo Link"),
+    post_footer_logo_link = TextLine(
+        title=_("label_post_footer_logo_link", default="Post Footer Logo Link"),
         description=_(
-            "help_footer_logo_link",
-            default="The footer logo can be linked to a URL.",
+            "help_post_footer_logo_link",
+            default="The post footer logo can be linked to a URL.",
         ),
         required=False,
     )
