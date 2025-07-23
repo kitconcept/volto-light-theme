@@ -118,31 +118,29 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
     .teaser-item {
       display: grid;
       align-items: center;
-
       aspect-ratio: 16/9;
       background: rgba(0, 0, 0, 0.75);
       grid-template-areas: 'images content';
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto;
-
+      padding: 0 $spacing-medium;
+      gap: 70px;
       @media only screen and (max-width: $computer-width) {
         display: block;
-        padding-right: 0;
-        padding-left: 0;
+        padding: 0 0;
         aspect-ratio: auto;
       }
 
       &.has--slider--flagAlign--right {
-        padding-left: $spacing-medium;
         grid-template-areas: 'images content';
       }
       &.has--slider--flagAlign--left {
-        padding-right: $spacing-medium;
         grid-template-areas: 'content images';
       }
 
       .highlight-image-wrapper {
         grid-area: images;
+
         img {
           aspect-ratio: var(
             --image-aspect-ratio,
@@ -158,7 +156,7 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         position: relative;
         top: 0;
         width: 100%;
-        padding: $spacing-medium;
+        padding: 0;
         background: none;
         color: white;
         grid-area: content;
@@ -188,6 +186,7 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
       grid-template-areas: 'images content';
       grid-template-columns: 3fr 2fr;
       grid-template-rows: auto;
+      gap: 70px;
 
       @media only screen and (max-width: $computer-width) {
         display: block;
@@ -197,12 +196,20 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
       }
 
       &.has--slider--flagAlign--right {
+        padding: 0 50px 0 0;
         grid-template-areas: 'images content';
         grid-template-columns: 3fr 2fr;
+        @media only screen and (max-width: $computer-width) {
+          padding-right: 0;
+        }
       }
       &.has--slider--flagAlign--left {
+        padding: 0 0 0 50px;
         grid-template-areas: 'content images';
         grid-template-columns: 2fr 3fr;
+        @media only screen and (max-width: $computer-width) {
+          padding-left: 0;
+        }
       }
 
       .highlight-image-wrapper {
@@ -223,7 +230,7 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         position: relative;
         top: 0;
         width: 100%;
-        padding: $spacing-medium;
+        padding: 0;
         background: none;
         color: white;
         grid-area: content;
