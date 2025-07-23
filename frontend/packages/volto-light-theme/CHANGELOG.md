@@ -8,6 +8,30 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0-alpha.18 (2025-07-23)
+
+### Internal
+
+- Update to latests versions of supported add-ons (as peerDeps). @sneridagh 
+
+## 7.0.0-alpha.17 (2025-07-23)
+
+## 7.0.0-alpha.16 (2025-07-23)
+
+### Feature
+
+- Add query support in eventCalendar Block. @iFlameing [#609](https://github.com/kitconcept/volto-light-theme/pull/609)
+- Added support for the blocks configuration TTW behavior. @sneridagh [#614](https://github.com/kitconcept/volto-light-theme/pull/614)
+- Update carousel block version, example content and cypress @iRohitSingh [#616](https://github.com/kitconcept/volto-light-theme/pull/616)
+
+### Bugfix
+
+- Fixed missing hide_description prop in the Summary component within
+  TeaserDefaultBodyTemplate and add cypress test for carousel block @iRohitSingh [#610](https://github.com/kitconcept/volto-light-theme/pull/610)
+- Fix the layout of eventCalendar block. @iFlameing [#612](https://github.com/kitconcept/volto-light-theme/pull/612)
+- Fix extra request in edit mode of event calendar block. @iFlameing [#613](https://github.com/kitconcept/volto-light-theme/pull/613)
+- Fix extra request in view mode of event calendar block. @iFlameing [#615](https://github.com/kitconcept/volto-light-theme/pull/615)
+
 ## 7.0.0-alpha.15 (2025-07-17)
 
 ### Breaking

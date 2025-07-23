@@ -1,6 +1,87 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 7.0.0a18 (2025-07-23)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Internal
+
+- Update to latests versions of supported add-ons (as peerDeps). @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
+## 7.0.0a17 (2025-07-23)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+No significant changes.
+
+
+### Project
+
+No significant changes.
+
+
+
+
+## 7.0.0a16 (2025-07-23)
+
+### Backend
+
+
+#### New features:
+
+- Update carousel block version, example content and cypress @iRohitSingh [#616](https://github.com/kitconcept/volto-light-theme/issues/616)
+
+
+
+### Frontend
+
+#### Feature
+
+- Add query support in eventCalendar Block. @iFlameing [#609](https://github.com/kitconcept/volto-light-theme/pull/609)
+- Added support for the blocks configuration TTW behavior. @sneridagh [#614](https://github.com/kitconcept/volto-light-theme/pull/614)
+- Update carousel block version, example content and cypress @iRohitSingh [#616](https://github.com/kitconcept/volto-light-theme/pull/616)
+
+#### Bugfix
+
+- Fixed missing hide_description prop in the Summary component within
+  TeaserDefaultBodyTemplate and add cypress test for carousel block @iRohitSingh [#610](https://github.com/kitconcept/volto-light-theme/pull/610)
+- Fix the layout of eventCalendar block. @iFlameing [#612](https://github.com/kitconcept/volto-light-theme/pull/612)
+- Fix extra request in edit mode of event calendar block. @iFlameing [#613](https://github.com/kitconcept/volto-light-theme/pull/613)
+- Fix extra request in view mode of event calendar block. @iFlameing [#615](https://github.com/kitconcept/volto-light-theme/pull/615)
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 7.0.0a15 (2025-07-17)
 
 ### Backend
