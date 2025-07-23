@@ -599,6 +599,15 @@
       "@id": "1",
       "href": [
         {
+          "@id": "/login"
+        }
+      ],
+      "title": "login"
+    },
+    {
+      "@id": "2",
+      "href": [
+        {
           "@id": "https://volto-light-theme.readthedocs.io/"
         }
       ],
@@ -606,7 +615,7 @@
       "title": "Documentation"
     },
     {
-      "@id": "2",
+      "@id": "3",
       "href": [
         {
           "@id": "https://github.com/kitconcept/volto-light-theme"
