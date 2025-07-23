@@ -196,7 +196,7 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
       }
 
       &.has--slider--flagAlign--right {
-        padding: 0 $spacing-medium 0 0;
+        padding-right: $spacing-medium;
         grid-template-areas: 'images content';
         grid-template-columns: 3fr 2fr;
         @media only screen and (max-width: $computer-width) {
@@ -204,7 +204,7 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         }
       }
       &.has--slider--flagAlign--left {
-        padding: 0 0 0 $spacing-medium;
+        padding-left: $spacing-medium;
         grid-template-areas: 'content images';
         grid-template-columns: 2fr 3fr;
         @media only screen and (max-width: $computer-width) {
