@@ -21,7 +21,7 @@ type apiExpanderInherit = {
 
 export default function install(config: ConfigType) {
   const EXPANDERS_INHERIT_BEHAVIORS =
-    'voltolighttheme.header,voltolighttheme.theme,voltolighttheme.footer,kitconcept.footer,kitconcept.sticky_menu';
+    'voltolighttheme.header,voltolighttheme.theme,voltolighttheme.footer,kitconcept.footer,kitconcept.sticky_menu,kitconcept.blocks.config';
   config.settings.enableAutoBlockGroupingByBackgroundColor = true;
   config.settings.navDepth = 3;
   config.settings.slate.useLinkedHeadings = false;

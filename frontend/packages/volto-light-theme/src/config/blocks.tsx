@@ -425,17 +425,28 @@ export default function install(config: ConfigType) {
       },
       {
         id: 'full-height',
-        title: 'full-height',
+        title: 'Full Height',
         view: SliderVariants,
       },
       {
         id: 'side',
-        title: 'side',
+        title: 'Side',
+        view: SliderVariants,
+      },
+      /* Why do we have two full-side variations?
+      because in listings we don't want to show the eventCalender variation and we dont
+      have any way to remove it from the list of variations in listing blocks because
+      in eventCaledarblock we use listingbody component for showing the variation.
+      you can see the css in listing.scss where we are hiding the option 3 using css
+      line no.6 */
+      {
+        id: 'full-side',
+        title: 'Full Side',
         view: SliderVariants,
       },
       {
         id: 'full-side',
-        title: 'full-side',
+        title: 'Full Side',
         view: SliderVariants,
       },
     ],
