@@ -1578,8 +1578,8 @@ importers:
         specifier: ^4.0.0-alpha.0
         version: 4.0.0-alpha.0(classnames@2.2.6)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)
       '@kitconcept/volto-carousel-block':
-        specifier: ^2.0.0-alpha.1
-        version: 2.0.0-alpha.1(classnames@2.2.6)(embla-carousel@8.6.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: ^2.0.0-alpha.3
+        version: 2.0.0-alpha.3(classnames@2.2.6)(embla-carousel@8.6.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@kitconcept/volto-dsgvo-banner':
         specifier: ^2.4.0
         version: 2.4.0
@@ -3296,8 +3296,8 @@ packages:
       react-dom: 18.2.0
       react-intl: ^3.12.1
 
-  '@kitconcept/volto-carousel-block@2.0.0-alpha.1':
-    resolution: {integrity: sha512-29XK8AC9AwPyOLfXgjN3JIG5Jzrk1NME6XJwkEkAOHqkGCok5dZ9suTqT30HF92h/2uE8PgOSlv/WRxjYzpsLg==}
+  '@kitconcept/volto-carousel-block@2.0.0-alpha.3':
+    resolution: {integrity: sha512-z6D4yK5R3CJDn3NQ0qPD/tciFTyr8CtL+ls0qWR7Kfl2iaSaftiQLF4+OVbUQXcaVCf1lowyeg/2A7aPO5cg/g==}
     peerDependencies:
       react: 18.2.0
       react-dom: 18.2.0
@@ -17215,7 +17215,7 @@ snapshots:
       react-dom: 18.2.0(react@18.2.0)
       react-intl: 3.12.1(react@18.2.0)
 
-  '@kitconcept/volto-carousel-block@2.0.0-alpha.1(classnames@2.2.6)(embla-carousel@8.6.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@kitconcept/volto-carousel-block@2.0.0-alpha.3(classnames@2.2.6)(embla-carousel@8.6.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       '@kitconcept/volto-bm3-compat': 1.0.0-alpha.1(classnames@2.2.6)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       embla-carousel-autoplay: 8.5.2(embla-carousel@8.6.0)
