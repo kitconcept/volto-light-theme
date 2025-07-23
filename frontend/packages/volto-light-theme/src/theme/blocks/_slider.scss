@@ -118,13 +118,13 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
     .teaser-item {
       display: grid;
       align-items: center;
+      padding: 0 $spacing-medium;
       aspect-ratio: 16/9;
       background: rgba(0, 0, 0, 0.75);
+      gap: 70px;
       grid-template-areas: 'images content';
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto;
-      padding: 0 $spacing-medium;
-      gap: 70px;
       @media only screen and (max-width: $computer-width) {
         display: block;
         padding: 0 0;
@@ -183,10 +183,10 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
       align-items: center;
       aspect-ratio: 16/9;
       background: rgba(0, 0, 0, 0.75);
+      gap: 70px;
       grid-template-areas: 'images content';
       grid-template-columns: 3fr 2fr;
       grid-template-rows: auto;
-      gap: 70px;
 
       @media only screen and (max-width: $computer-width) {
         display: block;
