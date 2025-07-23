@@ -77,7 +77,8 @@ context('Blocks Acceptance Tests', () => {
     ).click();
     cy.get('[aria-label="Select Blue Orchids"]').dblclick();
     cy.get('#field-headline').click().clear().type('Carousel Block');
-    cy.get('#field-items_to_show').click().clear().type('2'); // We change the widget in the addon, we will update after release.
+    cy.get('#field-items_to_show').click();
+    cy.findByText('2').click();
     // Select the checkbox
     cy.get('#field-hide_description')
       .check({ force: true })
@@ -106,8 +107,9 @@ context('Blocks Acceptance Tests', () => {
     cy.get('#field-hide_description')
       .check({ force: true })
       .should('be.checked');
-    cy.get('.block.teaser .card-summary ')
-      .contains('are growing on the mountain tops')
-      .should('not.exist');
+    cy.get('.block.teaser:first .card-summary h2').contains('Blue Orchids');
+    cy.get('.block.teaser:first .card-inner .card-summary')
+      .should('be.visible')
+      .should('not.contain', 'are growing on the mountain tops');
   });
 });
