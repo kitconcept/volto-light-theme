@@ -36,6 +36,7 @@ const TeaserDefaultTemplate = (props) => {
         <Summary
           item={!data.overwrite ? href : { ...href, ...filteredData }}
           HeadingTag="h2"
+          hide_description={props.data?.hide_description}
         />
       </Card.Summary>
     </Card>

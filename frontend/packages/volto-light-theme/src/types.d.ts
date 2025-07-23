@@ -1,4 +1,4 @@
-import type { Brain, Image } from '@plone/types';
+import type { Brain, Image, StyleDefinition } from '@plone/types';
 
 type hrefType = {
   '@id': string;
@@ -64,7 +64,7 @@ export type SiteFooterSettings = {
   footer_logos: Array<footerLogo>;
   footer_logos_container_width: string;
   footer_logos_size: string;
-  footer_main_logo_inversed: Image & { data?: string };
+  footer_logo: Image & { data?: string };
   footer_address: string;
   footer_column_left_header: string;
   footer_column_left: Array<Link>;
@@ -72,7 +72,7 @@ export type SiteFooterSettings = {
   footer_column_middle: Array<Link>;
   footer_column_right_header: string;
   footer_column_right: Array<Link>;
-  footer_logo: Image & { data?: string };
+  post_footer_logo: Image & { data?: string };
   footer_links: Array<Link>;
   footer_colophon_text: string;
 };
@@ -85,6 +85,19 @@ export type StickyMenuSettings = {
 
 export type PloneGobrSocialMediaSettings = {
   social_links: Array<iconLink>;
+};
+
+export type MutatorDSL = Record<
+  string,
+  {
+    disable?: boolean;
+    variations?: string[];
+    themes?: StyleDefinition[];
+  }
+>;
+
+export type BlocksConfigSettings = {
+  blocks_config_mutator: MutatorDSL;
 };
 
 export type CustomInheritBehavior<T> = {

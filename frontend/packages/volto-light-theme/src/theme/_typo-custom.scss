@@ -63,7 +63,8 @@ em span span {
   }
 }
 
-h1.documentFirstHeading {
+h1.documentFirstHeading,
+h1.documentFirstHeading:last-child {
   border: none;
   @include page-title();
   @include vertical-space-h1();
@@ -76,6 +77,17 @@ h1.documentFirstHeading {
   &::before {
     display: none;
   }
+
+  &:has([data-slate-placeholder='true']) {
+    min-width: $default-container-width;
+  }
+}
+// For backwards compatibility with bm2
+:not(.blocks-group-wrapper) > h1.documentFirstHeading,
+:not(.blocks-group-wrapper) > h1.documentFirstHeading:last-child {
+  padding-top: 0 !important;
+  margin-top: $spacing-medium;
+  margin-bottom: $spacing-large;
 }
 
 // Block Title
