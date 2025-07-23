@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0-alpha.18 (2025-07-23)
+
+### Internal
+
+- Update to latests versions of supported add-ons (as peerDeps). @sneridagh 
+
 ## 7.0.0-alpha.17 (2025-07-23)
 
 ## 7.0.0-alpha.16 (2025-07-23)
