@@ -270,13 +270,13 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
       &.has--slider--flagAlign--right {
         grid-template-areas: 'images content';
         .teaser-item-title {
-          padding-left: 70px;
+          padding-left: 70px; //Adding gap between the image & content
         }
       }
       &.has--slider--flagAlign--left {
         grid-template-areas: 'content images';
         .teaser-item-title {
-          padding-right: 70px;
+          padding-right: 70px; //Adding gap between the image & content
         }
       }
 
