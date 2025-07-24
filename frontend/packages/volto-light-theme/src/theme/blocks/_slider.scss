@@ -170,6 +170,7 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         @media only screen and (max-width: $computer-width) {
           position: static;
           width: 100%;
+          height: 480px;
           padding: 60px 20px;
           background: $black;
           transform: none;
@@ -244,6 +245,7 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         @media only screen and (max-width: $computer-width) {
           position: static;
           width: 100%;
+          height: 480px;
           padding: 60px 20px;
           background: $black;
           transform: none;
@@ -315,6 +317,7 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         @media only screen and (max-width: $computer-width) {
           position: static;
           width: 100%;
+          height: 480px;
           padding: 60px 20px;
           background: $black;
           transform: none;
