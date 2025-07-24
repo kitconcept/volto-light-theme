@@ -100,6 +100,7 @@ const SliderBody = ({
           <MaybeWrap
             condition={!isEditMode}
             as={UniversalLink}
+            className="link-container"
             href={href['@id']}
             target={
               data.openLinkInNewTab ||

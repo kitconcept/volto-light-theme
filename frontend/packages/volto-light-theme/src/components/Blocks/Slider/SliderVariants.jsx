@@ -100,6 +100,7 @@ const SliderVariants = ({
           condition={!isEditMode}
           as={UniversalLink}
           href={href['@id']}
+          className="link-container"
           target={
             data.openLinkInNewTab ||
             (openExternalLinkInNewTab && !isInternalURL(href['@id']))

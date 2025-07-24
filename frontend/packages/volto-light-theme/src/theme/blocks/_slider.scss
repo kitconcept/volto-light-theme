@@ -20,7 +20,11 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
     flex-direction: column;
     @media only screen and (max-width: $computer-width) {
       height: 100%;
-      background: $black;
+    }
+  }
+  .link-container {
+    @media only screen and (max-width: $computer-width) {
+      height: 100%;
     }
   }
 
@@ -36,13 +40,14 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         ) !important;
       }
     }
-
+    @media only screen and (max-width: $computer-width) {
+      display: flex;
+    }
     .teaser-item-title {
       position: absolute;
       top: 50%;
       width: 570px;
       min-height: 321px;
-      align-content: space-evenly;
       padding: 60px 50px 60px 100px;
       background: rgba(0, 0, 0, 0.75);
       color: white;
@@ -55,7 +60,7 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
       @media only screen and (max-width: $computer-width) {
         position: static;
         width: 100%;
-        align-content: space-evenly;
+        height: 100%;
         padding: 60px 20px;
         background: $black;
         transform: none;
@@ -130,9 +135,10 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto;
       @media only screen and (max-width: $computer-width) {
-        display: block;
+        display: flex;
         padding: 0 0;
         aspect-ratio: auto;
+        gap: 0;
       }
 
       &.has--slider--flagAlign--right {
@@ -167,8 +173,9 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         transform: translateY(0);
 
         @media only screen and (max-width: $computer-width) {
-          position: static;
+          position: relative;
           width: 100%;
+          height: 100%;
           padding: 60px 20px;
           background: $black;
           transform: none;
@@ -189,10 +196,11 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
       grid-template-rows: auto;
 
       @media only screen and (max-width: $computer-width) {
-        display: block;
+        display: flex;
         padding-right: 0;
         padding-left: 0;
         aspect-ratio: auto;
+        gap: 0;
       }
 
       &.has--slider--flagAlign--right {
@@ -237,8 +245,9 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         transform: translateY(0);
 
         @media only screen and (max-width: $computer-width) {
-          position: static;
+          position: relative;
           width: 100%;
+          height: 100%;
           padding: 60px 20px;
           background: $black;
           transform: none;
@@ -257,7 +266,7 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
       grid-template-rows: auto;
 
       @media only screen and (max-width: $computer-width) {
-        display: block;
+        display: flex;
         padding-right: 0;
         padding-left: 0;
         aspect-ratio: auto;
@@ -303,8 +312,9 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         transform: translateY(0);
 
         @media only screen and (max-width: $computer-width) {
-          position: static;
+          position: relative;
           width: 100%;
+          height: 100%;
           padding: 60px 20px;
           background: $black;
           transform: none;
