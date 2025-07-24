@@ -8,7 +8,7 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
   }
 
   .slider-viewport {
-    margin-bottom: 0;
+    margin-bottom: $spacing-medium;
   }
 
   .slider-dots {
@@ -18,11 +18,13 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
   .teaser-item,
   .grid-teaser-item {
     flex-direction: column;
+    @media only screen and (max-width: $computer-width) {
+      height: 100%;
+      background: $black;
+    }
   }
 
   .teaser-item {
-    margin-bottom: $spacing-medium;
-
     .highlight-image-wrapper {
       display: flex; // Small gap was appearing between the wrapper and the image (??)
 
@@ -39,7 +41,7 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
       position: absolute;
       top: 50%;
       width: 570px;
-      min-height: 480px;
+      min-height: 321px;
       align-content: space-evenly;
       padding: 60px 50px 60px 100px;
       background: rgba(0, 0, 0, 0.75);
@@ -52,6 +54,7 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
 
       @media only screen and (max-width: $computer-width) {
         position: static;
+        align-content: space-evenly;
         width: 100%;
         padding: 60px 20px;
         background: $black;
