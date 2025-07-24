@@ -269,9 +269,15 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
 
       &.has--slider--flagAlign--right {
         grid-template-areas: 'images content';
+        .teaser-item-title {
+          padding-left: 70px;
+        }
       }
       &.has--slider--flagAlign--left {
         grid-template-areas: 'content images';
+        .teaser-item-title {
+          padding-right: 70px;
+        }
       }
 
       .highlight-image-wrapper {
@@ -294,6 +300,7 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         width: 100%;
         align-self: center;
         padding: $spacing-medium;
+
         background: none;
         color: white;
         grid-area: content;
