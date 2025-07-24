@@ -163,10 +163,6 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         grid-area: content;
         transform: translateY(0);
 
-        @container (max-width: 1024px) {
-          padding: 30px 30px 30px 80px;
-        }
-
         @media only screen and (max-width: $computer-width) {
           position: static;
           width: 100%;
@@ -238,10 +234,6 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         grid-area: content;
         transform: translateY(0);
 
-        @container (max-width: 1024px) {
-          padding: 30px 30px 30px 80px;
-        }
-
         @media only screen and (max-width: $computer-width) {
           position: static;
           width: 100%;
@@ -303,16 +295,10 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         width: 100%;
         align-self: center;
         padding: $spacing-medium;
-
         background: none;
         color: white;
         grid-area: content;
-
         transform: translateY(0);
-
-        @container (max-width: 1024px) {
-          padding: 30px 30px 30px 80px;
-        }
 
         @media only screen and (max-width: $computer-width) {
           position: static;
