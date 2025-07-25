@@ -1,6 +1,36 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 7.0.0a19 (2025-07-25)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Fix the listing body width in grid listing variation. @iFlameing [#618](https://github.com/kitconcept/volto-light-theme/pull/618)
+
+#### Internal
+
+- Add cypress test for sort_on, sort_order for eventCalendar block. @iFlameing [#619](https://github.com/kitconcept/volto-light-theme/pull/619)
+- Fix alt tag fallback to title if srcAlt is missing in IconLinkList @iRohitSingh [#620](https://github.com/kitconcept/volto-light-theme/pull/620)
+- Use volto-dsgvo-banner 2.5.1 @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 7.0.0a18 (2025-07-23)
 
 ### Backend
