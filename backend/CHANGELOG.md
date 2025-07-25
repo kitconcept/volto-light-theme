@@ -2,6 +2,23 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0a18 (2025-07-23)
+
+No significant changes.
+
+
+## 7.0.0a17 (2025-07-23)
+
+No significant changes.
+
+
+## 7.0.0a16 (2025-07-23)
+
+
+### New features:
+
+- Update carousel block version, example content and cypress @iRohitSingh [#616](https://github.com/kitconcept/volto-light-theme/issues/616)
+
 ## 7.0.0a15 (2025-07-17)
 
 
