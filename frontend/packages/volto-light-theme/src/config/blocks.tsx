@@ -45,6 +45,8 @@ import SearchBlockViewEvent from '../components/Blocks/EventCalendar/Search/Sear
 import SearchBlockEditEvent from '../components/Blocks/EventCalendar/Search/SearchBlockEdit';
 import SearchBlockSchemaEvent from '../components/Blocks/EventCalendar/Search/schema';
 import EventCalenderTemplate from '../components/Blocks/EventCalendar/Search/components/EventTemplate';
+import SliderVariants from '../components/Blocks/Slider/SliderVariants';
+import DefaultBody from '../customizations/@kitconcept/volto-slider-block/components/DefaultBody';
 
 declare module '@plone/types' {
   export interface BlocksConfigData {
@@ -414,6 +416,40 @@ export default function install(config: ConfigType) {
   // Slider Block
   config.blocks.blocksConfig.slider = {
     ...config.blocks.blocksConfig.slider,
+    variations: [
+      {
+        id: 'default',
+        title: 'Default',
+        isDefault: true,
+        view: DefaultBody,
+      },
+      {
+        id: 'full-height',
+        title: 'Full Height',
+        view: SliderVariants,
+      },
+      {
+        id: 'side',
+        title: 'Side',
+        view: SliderVariants,
+      },
+      /* Why do we have two full-side variations?
+      because in listings we don't want to show the eventCalender variation and we dont
+      have any way to remove it from the list of variations in listing blocks because
+      in eventCaledarblock we use listingbody component for showing the variation.
+      you can see the css in listing.scss where we are hiding the option 3 using css
+      line no.6 */
+      {
+        id: 'full-side',
+        title: 'Full Side',
+        view: SliderVariants,
+      },
+      {
+        id: 'full-side',
+        title: 'Full Side',
+        view: SliderVariants,
+      },
+    ],
     schemaEnhancer: sliderBlockSchemaEnhancer,
   };
 
