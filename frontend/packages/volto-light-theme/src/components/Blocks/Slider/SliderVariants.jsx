@@ -32,7 +32,7 @@ const messages = defineMessages({
 
 const DefaultImage = (props) => <img {...props} alt={props.alt || ''} />;
 
-const SliderBody = ({
+const SliderVariants = ({
   index,
   onChangeBlock,
   block,
@@ -96,19 +96,25 @@ const SliderBody = ({
         </Message>
       )}
       {href && (
-        <div className="teaser-item top">
-          <MaybeWrap
-            condition={!isEditMode}
-            as={UniversalLink}
-            className="link-container"
-            href={href['@id']}
-            target={
-              data.openLinkInNewTab ||
-              (openExternalLinkInNewTab && !isInternalURL(href['@id']))
-                ? '_blank'
-                : null
-            }
-            tabIndex="-1"
+        <MaybeWrap
+          condition={!isEditMode}
+          as={UniversalLink}
+          href={href['@id']}
+          className="link-container"
+          target={
+            data.openLinkInNewTab ||
+            (openExternalLinkInNewTab && !isInternalURL(href['@id']))
+              ? '_blank'
+              : null
+          }
+          tabIndex="-1"
+        >
+          <div
+            className={cx(
+              'teaser-item top',
+              `has--slider--flagAlign--${data.flagAlign}`,
+              dataBlock.variation,
+            )}
           >
             {(href?.hasPreviewImage || href.image_field || image) && (
               <div className="highlight-image-wrapper gradient">
@@ -121,14 +127,7 @@ const SliderBody = ({
                 />
               </div>
             )}
-            {/* START CUSTOMIZATION */}
-            <div
-              className={cx(
-                'teaser-item-title fix-width-issue',
-                `has--slider--flagAlign--${data.flagAlign}`,
-              )}
-            >
-              {/* END CUSTOMIZATION */}
+            <div className="teaser-item-title fix-width-issue">
               <div className="title">
                 {data?.head_title && (
                   <span className="supertitle">{data?.head_title}</span>
@@ -136,19 +135,18 @@ const SliderBody = ({
                 <h2>{data?.nav_title || data?.title}</h2>
               </div>
               <p>{data?.description}</p>
-              {/* START CUSTOMIZATION */}
+
               {!data.hideButton && (
                 <Button tabIndex={'-1'}>
                   {data.buttonText || intl.formatMessage(messages.ButtonText)}
                 </Button>
               )}
-              {/* END CUSTOMIZATION */}
             </div>
-          </MaybeWrap>
-        </div>
+          </div>
+        </MaybeWrap>
       )}
     </div>
   );
 };
 
-export default SliderBody;
+export default SliderVariants;
