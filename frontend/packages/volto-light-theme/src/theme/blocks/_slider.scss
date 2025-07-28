@@ -166,8 +166,8 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         position: relative;
         top: 0;
         width: 100%;
-        padding: 0;
         align-content: center;
+        padding: 0;
         background: none;
         color: white;
         grid-area: content;
@@ -188,10 +188,10 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
       background: rgba(0, 0, 0, 0);
 
       svg.icon {
-        background: rgba(0, 0, 0, 0.15);
-        height: 50px !important;
         width: 50px !important;
+        height: 50px !important;
         padding: 40px;
+        background: rgba(0, 0, 0, 0.15);
       }
     }
   }
@@ -249,10 +249,10 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         position: relative;
         top: 0;
         width: 100%;
+        align-self: center;
         padding: 0;
         background: none;
         color: white;
-        align-self: center;
         grid-area: content;
         transform: none;
 
@@ -270,10 +270,10 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
       width: 130px;
       background: rgba(0, 0, 0, 0);
       svg.icon {
-        background: rgba(0, 0, 0, 0.15);
-        height: 50px !important;
         width: 50px !important;
+        height: 50px !important;
         padding: 40px;
+        background: rgba(0, 0, 0, 0.15);
       }
     }
   }
@@ -331,8 +331,8 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         position: relative;
         top: 0;
         width: 100%;
-        padding: $spacing-medium 130px;
         align-self: center;
+        padding: $spacing-medium 130px;
         background: none;
         color: white;
         grid-area: content;
@@ -354,10 +354,10 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
       background: rgba(0, 0, 0, 0);
 
       svg.icon {
-        background: rgba(0, 0, 0, 0.15);
-        height: 50px !important;
         width: 50px !important;
+        height: 50px !important;
         padding: 40px;
+        background: rgba(0, 0, 0, 0.15);
       }
     }
   }
