@@ -8,11 +8,11 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
   }
 
   .slider-viewport {
-    margin-bottom: 47px;
+    margin-bottom: $spacing-medium;
   }
 
   .slider-dots {
-    padding-bottom: 47px;
+    padding-bottom: $spacing-medium;
   }
 
   .teaser-item,
