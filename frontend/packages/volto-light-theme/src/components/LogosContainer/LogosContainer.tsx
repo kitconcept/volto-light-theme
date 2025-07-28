@@ -56,6 +56,7 @@ const LogosContainer = (props: LogosContainerProps) => {
                   {/* @ts-ignore */}
                   <ConditionalLink
                     condition={logoInfo.href}
+                    className="logo-link"
                     to={logoInfo.href}
                     title={logoInfo.hrefTitle || logoInfo.srcAlt}
                     openLinkInNewTab={logo.openInNewTab}
