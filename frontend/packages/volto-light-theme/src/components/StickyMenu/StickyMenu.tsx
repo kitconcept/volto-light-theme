@@ -22,6 +22,7 @@ const StickyMenu = ({ content }: { content: Content }) => {
     <div
       className="sticky-menu"
       role="navigation"
+      aria-label="Sticky menu"
       style={
         {
           '--sticky-menu-color': sticky_menu_color,
