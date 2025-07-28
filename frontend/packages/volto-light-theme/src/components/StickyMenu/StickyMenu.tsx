@@ -21,6 +21,7 @@ const StickyMenu = ({ content }: { content: Content }) => {
   return (
     <div
       className="sticky-menu"
+      role="navigation"
       style={
         {
           '--sticky-menu-color': sticky_menu_color,
