@@ -132,11 +132,11 @@ describe('Event Calendar Block Tests', () => {
 
     // Now we are going to select facet if it is public or private
     cy.get('.facets .react-select-container ').click();
-    cy.get('.react-select__option').contains('Public').click();
+    cy.get('.react-select__option').contains('Published').click();
     cy.wait('@querySearch');
     cy.get('.row.template-container')
       .findByText('My First Event')
-      .should('not.exist');
+      .should('exist');
     cy.get('.row.template-container')
       .findByText('Second Event')
       .should('not.exist');
@@ -163,17 +163,21 @@ describe('Event Calendar Block Tests', () => {
     cy.get('.sidebar-container .tabs-wrapper .menu .item')
       .contains('Block')
       .click();
-    cy.get('.querystring-widget .fields').contains('Add criteria').click();
+    cy.get('#sidebar-properties .querystring-widget .fields')
+      .contains('Add criteria')
+      .click();
     cy.get(
-      '.querystring-widget .fields:first-of-type .field:first-of-type .react-select__menu .react-select__option',
+      '#sidebar-properties .querystring-widget .fields:first-of-type .field:first-of-type .react-select__menu .react-select__option',
     )
       .contains('Review state')
       .click();
 
     //insert Page
-    cy.get('.querystring-widget .fields:first-of-type > .field').click();
     cy.get(
-      '.querystring-widget .fields:first-of-type > .field .react-select__menu .react-select__option',
+      '#sidebar-properties .querystring-widget .fields:first-of-type > .field',
+    ).click();
+    cy.get(
+      '#sidebar-properties .querystring-widget .fields:first-of-type > .field .react-select__menu .react-select__option',
     )
       .contains('Private')
       .click();
@@ -412,6 +416,60 @@ describe('Event Calendar Block Tests', () => {
     cy.get('.card-listing:nth-child(2) .image-wrapper .date-inset').should(
       'have.class',
       'has-end-date',
+    );
+  });
+
+  it('Add eventCalendar Block - sort by Order in folder and sort_order:descending', () => {
+    //add eventCalendar block
+    cy.addNewBlock('event');
+
+    //********  add Type criteria filter
+    cy.configureListingWith('Event');
+
+    // selecting sort_on 'Order in folder'
+    cy.get('#select-listingblock-sort-on')
+      .click()
+      .type('Order in folder {enter}');
+
+    //save
+    cy.get('#toolbar-save').click();
+    cy.wait('@save');
+    cy.wait('@content');
+
+    // My first event should be first in the list
+    cy.get('#page-document .card-listing:first-of-type').contains(
+      'My First Event',
+    );
+    cy.get('#page-document .card-listing:first-of-type a').should(
+      'have.attr',
+      'href',
+      '/my-first-event',
+    );
+
+    // selecting sort order 'Reversed'
+    cy.navigate('/my-page/edit');
+    cy.wait('@content');
+    cy.wait('@schema');
+    cy.wait('@querySearch');
+    cy.get('.block-editor-eventCalendar').click();
+    cy.get('input[name="field-sort_order_boolean-2-query"]')
+      .check({ force: true })
+      .should('be.checked');
+
+    //save
+    cy.get('#toolbar-save').click();
+    cy.wait('@save');
+    cy.wait('@content');
+    cy.wait('@querySearch');
+
+    // Second event should be first in the list
+    cy.get('#page-document .card-listing:first-of-type').contains(
+      'Second Event',
+    );
+    cy.get('#page-document .card-listing:first-of-type a').should(
+      'have.attr',
+      'href',
+      '/my-second-event',
     );
   });
 });
