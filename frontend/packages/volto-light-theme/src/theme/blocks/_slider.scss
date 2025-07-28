@@ -8,11 +8,11 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
   }
 
   .slider-viewport {
-    margin-bottom: $spacing-medium;
+    margin-bottom: 47px;
   }
 
   .slider-dots {
-    padding-bottom: 40px;
+    padding-bottom: 47px;
   }
 
   .teaser-item,
@@ -127,7 +127,7 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
     .teaser-item {
       display: grid;
       align-items: center;
-      padding: 0 $spacing-medium;
+      padding: 0 130px;
       aspect-ratio: 16/9;
       background: rgba(0, 0, 0, 0.75);
       gap: 70px;
@@ -167,10 +167,11 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         top: 0;
         width: 100%;
         padding: 0;
+        align-content: center;
         background: none;
         color: white;
         grid-area: content;
-        transform: translateY(0);
+        transform: none;
 
         @media only screen and (max-width: $computer-width) {
           position: relative;
@@ -182,15 +183,25 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         }
       }
     }
-  }
+    .slider-button {
+      width: 130px;
+      background: rgba(0, 0, 0, 0);
 
+      svg.icon {
+        background: rgba(0, 0, 0, 0.15);
+        height: 50px !important;
+        width: 50px !important;
+        padding: 40px;
+      }
+    }
+  }
   &.full-side {
     .teaser-item {
       display: grid;
       align-items: center;
       aspect-ratio: 16/9;
       background: rgba(0, 0, 0, 0.75);
-      gap: 70px;
+      gap: 60px;
       grid-template-areas: 'images content';
       grid-template-columns: 3fr 2fr;
       grid-template-rows: auto;
@@ -204,7 +215,7 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
       }
 
       &.has--slider--flagAlign--right {
-        padding-right: $spacing-medium;
+        padding-right: 130px;
         grid-template-areas: 'images content';
         grid-template-columns: 3fr 2fr;
         @media only screen and (max-width: $computer-width) {
@@ -212,7 +223,7 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         }
       }
       &.has--slider--flagAlign--left {
-        padding-left: $spacing-medium;
+        padding-left: 130px;
         grid-template-areas: 'content images';
         grid-template-columns: 2fr 3fr;
         @media only screen and (max-width: $computer-width) {
@@ -241,8 +252,9 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         padding: 0;
         background: none;
         color: white;
+        align-self: center;
         grid-area: content;
-        transform: translateY(0);
+        transform: none;
 
         @media only screen and (max-width: $computer-width) {
           position: relative;
@@ -252,6 +264,16 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
           background: $black;
           transform: none;
         }
+      }
+    }
+    .slider-button {
+      width: 130px;
+      background: rgba(0, 0, 0, 0);
+      svg.icon {
+        background: rgba(0, 0, 0, 0.15);
+        height: 50px !important;
+        width: 50px !important;
+        padding: 40px;
       }
     }
   }
@@ -275,13 +297,19 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
       &.has--slider--flagAlign--right {
         grid-template-areas: 'images content';
         .teaser-item-title {
-          padding-left: 70px; //Adding gap between the image & content
+          padding-left: 74px; //Adding gap between the image & content
+          @media only screen and (max-width: $computer-width) {
+            padding-left: 20px;
+          }
         }
       }
       &.has--slider--flagAlign--left {
         grid-template-areas: 'content images';
         .teaser-item-title {
-          padding-right: 70px; //Adding gap between the image & content
+          padding-right: 74px; //Adding gap between the image & content
+          @media only screen and (max-width: $computer-width) {
+            padding-right: 20px;
+          }
         }
       }
 
@@ -303,8 +331,8 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         position: relative;
         top: 0;
         width: 100%;
+        padding: $spacing-medium 130px;
         align-self: center;
-        padding: $spacing-medium;
         background: none;
         color: white;
         grid-area: content;
@@ -319,6 +347,17 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
           background: $black;
           transform: none;
         }
+      }
+    }
+    .slider-button {
+      width: 130px;
+      background: rgba(0, 0, 0, 0);
+
+      svg.icon {
+        background: rgba(0, 0, 0, 0.15);
+        height: 50px !important;
+        width: 50px !important;
+        padding: 40px;
       }
     }
   }
