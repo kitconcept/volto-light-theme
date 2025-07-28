@@ -355,17 +355,35 @@ ul.logos-container {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   list-style: none;
 
+  // Base styles for all images/SVGs
+  .logo-image {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
   &.s {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+    .logo-image {
+      max-width: min(100%, 175px);
+      max-height: 120px;
+    }
   }
 
-  &.l img {
-    max-width: min(100%, 240px);
-    max-height: 165px;
+  &.l {
+    .logo-image {
+      max-width: min(100%, 240px);
+      max-height: 165px;
+    }
   }
 
-  &.s img {
-    max-width: min(100%, 175px);
-    max-height: 120px;
+  .item {
+    display: flex;
+    min-height: 80px;
+    align-items: center;
+    justify-content: center;
   }
 }

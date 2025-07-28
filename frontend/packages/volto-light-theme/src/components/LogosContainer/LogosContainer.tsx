@@ -60,7 +60,11 @@ const LogosContainer = (props: LogosContainerProps) => {
                     title={logoInfo.hrefTitle || logoInfo.srcAlt}
                     openLinkInNewTab={logo.openInNewTab}
                   >
-                    <img src={logoInfo.src} alt={logoInfo.srcAlt} />
+                    <img
+                      className="logo-image"
+                      src={logoInfo.src}
+                      alt={logoInfo.srcAlt}
+                    />
                   </ConditionalLink>
                 </li>
               );
