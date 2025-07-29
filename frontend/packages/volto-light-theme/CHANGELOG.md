@@ -8,6 +8,16 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0-alpha.20 (2025-07-29)
+
+### Feature
+
+- Added Slider Variations @Tishasoumya-02 
+
+### Bugfix
+
+- Fix alt tag fallback in IconLinkList @iRohitSingh [#621](https://github.com/kitconcept/volto-light-theme/pull/621)
+
 ## 7.0.0-alpha.19 (2025-07-25)
 
 ### Bugfix

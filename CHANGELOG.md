@@ -1,6 +1,36 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 7.0.0a20 (2025-07-29)
+
+### Backend
+
+
+#### Internal:
+
+- Add slider variant example content. @Tishasoumya-02 [#slidervariantexample](https://github.com/kitconcept/volto-light-theme/issues/slidervariantexample)
+
+
+
+### Frontend
+
+#### Feature
+
+- Added Slider Variations @Tishasoumya-02 
+
+#### Bugfix
+
+- Fix alt tag fallback in IconLinkList @iRohitSingh [#621](https://github.com/kitconcept/volto-light-theme/pull/621)
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 7.0.0a19 (2025-07-25)
 
 ### Backend
