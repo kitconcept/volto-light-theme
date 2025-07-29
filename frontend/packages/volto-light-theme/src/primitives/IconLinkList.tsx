@@ -59,10 +59,7 @@ const IconLinkList = (props: IconLinkListProps) => {
                   openLinkInNewTab={item.openInNewTab}
                 >
                   <div className="image-wrapper">
-                    <img
-                      src={itemInfo.src}
-                      alt={itemInfo.srcAlt || itemInfo.title}
-                    />
+                    <img src={itemInfo.src} alt={itemInfo.srcAlt || ''} />
                   </div>
                   <span>{itemInfo.title}</span>
                 </ConditionalLink>
