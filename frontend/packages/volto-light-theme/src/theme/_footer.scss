@@ -369,8 +369,6 @@ ul.logos-container {
   }
 
   &.s {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-
     .logo-link,
     .logo-image {
       max-width: min(100%, 175px);
