@@ -46,10 +46,10 @@ jobs:
 
 
       # https://fxdx.dev/webdriver-bidi-becomes-the-default-for-cypress-in-firefox/
-      - name: Configure Firefox 140
+      - name: Configure Firefox 140.0
         uses: browser-actions/setup-firefox@v1
         with:
-          firefox-version: 140
+          firefox-version: 140.0
       - name: Test Firefox version
         run: |
          firefox --version
