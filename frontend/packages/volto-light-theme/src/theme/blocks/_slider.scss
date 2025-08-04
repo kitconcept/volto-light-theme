@@ -8,32 +8,41 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
   }
 
   .slider-viewport {
-    margin-bottom: 0;
+    margin-bottom: $spacing-medium;
   }
 
   .slider-dots {
-    padding-bottom: 40px;
-  }
-
-  .highlight-image-wrapper {
-    display: flex; // Small gap was appearing between the wrapper and the image (??)
-
-    img {
-      // Override Volto's Image Component inline style aspect ratio.
-      aspect-ratio: var(
-        --image-aspect-ratio,
-        $sliderImagesAspectRatio
-      ) !important;
-    }
+    padding-bottom: $spacing-medium;
   }
 
   .teaser-item,
   .grid-teaser-item {
     flex-direction: column;
+    @media only screen and (max-width: $computer-width) {
+      height: 100%;
+    }
   }
-  .teaser-item {
-    padding-bottom: $spacing-medium;
+  .link-container {
+    @media only screen and (max-width: $computer-width) {
+      height: 100%;
+    }
+  }
 
+  .teaser-item {
+    .highlight-image-wrapper {
+      display: flex; // Small gap was appearing between the wrapper and the image (??)
+
+      img {
+        // Override Volto's Image Component inline style aspect ratio.
+        aspect-ratio: var(
+          --image-aspect-ratio,
+          $sliderImagesAspectRatio
+        ) !important;
+      }
+    }
+    @media only screen and (max-width: $computer-width) {
+      display: flex;
+    }
     .teaser-item-title {
       position: absolute;
       top: 50%;
@@ -51,6 +60,7 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
       @media only screen and (max-width: $computer-width) {
         position: static;
         width: 100%;
+        height: 100%;
         padding: 60px 20px;
         background: $black;
         transform: none;
@@ -111,5 +121,78 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
     font-weight: 900;
     line-height: 20px;
     text-align: center;
+  }
+
+  &.simple-side {
+    .teaser-item {
+      display: grid;
+      align-items: center;
+      padding: 0 130px;
+      aspect-ratio: 16/9;
+      background: rgba(0, 0, 0, 0.75);
+      gap: 70px;
+      grid-template-areas: 'images content';
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      @media only screen and (max-width: $computer-width) {
+        display: flex;
+        padding: 0 0;
+        aspect-ratio: auto;
+        gap: 0;
+      }
+
+      &.has--slider--flagAlign--right {
+        grid-template-areas: 'images content';
+      }
+      &.has--slider--flagAlign--left {
+        grid-template-areas: 'content images';
+      }
+
+      .highlight-image-wrapper {
+        grid-area: images;
+
+        img {
+          aspect-ratio: var(
+            --image-aspect-ratio,
+            $sliderImagesAspectRatio
+          ) !important;
+
+          @media only screen and (max-width: $computer-width) {
+            width: 100%;
+          }
+        }
+      }
+      .teaser-item-title {
+        position: relative;
+        top: 0;
+        width: 100%;
+        align-content: center;
+        padding: 0;
+        background: none;
+        color: white;
+        grid-area: content;
+        transform: none;
+
+        @media only screen and (max-width: $computer-width) {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          padding: 60px 20px;
+          background: $black;
+          transform: none;
+        }
+      }
+    }
+    .slider-button {
+      width: 130px;
+      background: rgba(0, 0, 0, 0);
+
+      svg.icon {
+        width: 50px !important;
+        height: 50px !important;
+        padding: 40px;
+        background: rgba(0, 0, 0, 0.15);
+      }
+    }
   }
 }
