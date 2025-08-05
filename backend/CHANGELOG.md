@@ -2,6 +2,20 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0a21 (2025-07-31)
+
+
+### Internal:
+
+- Revert the example content of slider block. @iFlameing [#623](https://github.com/kitconcept/volto-light-theme/issues/623)
+
+## 7.0.0a20 (2025-07-29)
+
+
+### Internal:
+
+- Add slider variant example content. @Tishasoumya-02 [#slidervariantexample](https://github.com/kitconcept/volto-light-theme/issues/slidervariantexample)
+
 ## 7.0.0a19 (2025-07-25)
 
 No significant changes.
