@@ -425,8 +425,8 @@ export default function install(config: ConfigType) {
       },
 
       {
-        id: 'simple-side',
-        title: 'Simple Side',
+        id: 'simple',
+        title: 'Simple',
         view: SliderVariants,
       },
     ],

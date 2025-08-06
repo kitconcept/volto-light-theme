@@ -123,13 +123,13 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
     text-align: center;
   }
 
-  &.simple-side {
+  &.simple {
     .teaser-item {
       display: grid;
       align-items: center;
       padding: 0 130px;
       aspect-ratio: 16/9;
-      background: rgba(0, 0, 0, 0.75);
+      background-color: var(--theme-color);
       gap: 70px;
       grid-template-areas: 'images content';
       grid-template-columns: 1fr 1fr;
@@ -142,10 +142,16 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
       }
 
       &.has--slider--flagAlign--right {
-        grid-template-areas: 'images content';
+        grid-template-areas: 'content images';
+        .teaser-item-title {
+          margin-left: 10px;
+        }
       }
       &.has--slider--flagAlign--left {
-        grid-template-areas: 'content images';
+        grid-template-areas: 'images content';
+        .teaser-item-title {
+          margin-right: 10px;
+        }
       }
 
       .highlight-image-wrapper {
@@ -169,7 +175,7 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         align-content: center;
         padding: 0;
         background: none;
-        color: white;
+        color: var(--theme-foreground-color);
         grid-area: content;
         transform: none;
 
@@ -178,21 +184,41 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
           width: 100%;
           height: 100%;
           padding: 60px 20px;
-          background: $black;
+          background: var(--theme-foreground-color);
           transform: none;
         }
+
+        .title {
+          h2 {
+            color: var(--theme-foreground-color);
+          }
+        }
+        p {
+          color: var(--theme-foreground-color);
+        }
+      }
+      .slider-description {
+        margin-bottom: $spacing-large;
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 24px;
       }
     }
     .slider-button {
+      display: flex;
       width: 130px;
-      background: rgba(0, 0, 0, 0);
-
+      align-items: center;
+      background: none;
+      opacity: 1;
       svg.icon {
         width: 50px !important;
         height: 50px !important;
         padding: 40px;
-        background: rgba(0, 0, 0, 0.15);
+        color: var(--theme-foreground-color);
       }
+    }
+    .ui.button {
+      color: var(--theme-foreground-color);
     }
   }
 }

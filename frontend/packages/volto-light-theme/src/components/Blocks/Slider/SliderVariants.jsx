@@ -134,7 +134,7 @@ const SliderVariants = ({
                 )}
                 <h2>{data?.nav_title || data?.title}</h2>
               </div>
-              <p>{data?.description}</p>
+              <p className="slider-description">{data?.description}</p>
 
               {!data.hideButton && (
                 <Button tabIndex={'-1'}>

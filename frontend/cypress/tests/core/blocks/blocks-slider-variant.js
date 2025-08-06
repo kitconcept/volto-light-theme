@@ -39,7 +39,7 @@ context('Blocks Acceptance Tests', () => {
     cy.get('.blocks-chooser .mostUsed .button.slider')
       .contains('Slider')
       .click({ force: true });
-    cy.get('#field-variation').click().type('simple-side{enter}');
+    cy.get('#field-variation').click().type('simple{enter}');
     cy.get(
       '.objectbrowser-field[aria-labelledby^="fieldset-default-field-label-href-0-"] button[aria-label="Open object browser"]',
     ).click();
@@ -116,7 +116,7 @@ context('Blocks Acceptance Tests', () => {
       .should('have.attr', 'src')
       .and('include', '/document/my-image/');
 
-    cy.get('.teaser-item.simple-side.has--slider--flagAlign--left').should(
+    cy.get('.teaser-item.simple.has--slider--flagAlign--left').should(
       'have.css',
       'background-color',
       'rgba(0, 0, 0, 0.75)',
