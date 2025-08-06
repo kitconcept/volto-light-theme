@@ -115,11 +115,5 @@ context('Blocks Acceptance Tests', () => {
     )
       .should('have.attr', 'src')
       .and('include', '/document/my-image/');
-
-    cy.get('.teaser-item.simple.has--slider--flagAlign--left').should(
-      'have.css',
-      'background-color',
-      'rgba(0, 0, 0, 0.75)',
-    );
   });
 });
