@@ -359,6 +359,8 @@ ul.logos-container {
     display: block;
     width: 100%;
     height: auto;
+    object-fit: contain !important;
+    //using !important because in layout.scss it targets img , so to override it for logo-image, class specificity did'nt work
   }
 
   .logo-link {
