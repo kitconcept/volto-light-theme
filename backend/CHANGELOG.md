@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0a21 (2025-07-31)
+
+
+### Internal:
+
+- Revert the example content of slider block. @iFlameing [#623](https://github.com/kitconcept/volto-light-theme/issues/623)
+
 ## 7.0.0a20 (2025-07-29)
 
 
