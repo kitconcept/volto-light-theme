@@ -12,7 +12,9 @@
 .block.listing,
 .column > .block.listing,
 .block.search,
-.block-editor-search {
+.block-editor-search,
+.block.rssBlock,
+.block-editor-rssBlock {
   &.next--has--same--backgroundColor.next--is--same--block-type,
   &.next--is--__button {
     .listing-item:last-child {
@@ -58,7 +60,8 @@
   }
 
   // Default variation
-  &.default {
+  &.default,
+  & .default-variation {
     .headline {
       @include block-title();
     }
@@ -90,7 +93,8 @@
   }
 
   // Summary variation
-  &.summary {
+  &.summary,
+  & .summary-variation {
     .listing-item {
       padding-top: 0 !important;
 
@@ -134,7 +138,8 @@
   }
 
   // Grid variation
-  &.grid {
+  &.grid,
+  & .grid-variation {
     &.next--has--same--backgroundColor.next--is--same--block-type,
     &.next--is--__button {
       .listing-item:last-child {
@@ -427,8 +432,11 @@
 }
 
 #page-add .block-editor-listing,
-#page-edit .block-editor-listing {
-  .block.listing {
+#page-edit .block-editor-listing,
+#page-add .block-editor-rssBlock,
+#page-edit .block-editor-rssBlock {
+  .block.listing,
+  .block.rssBlock {
     margin-top: 0;
     .items {
       margin-right: auto;
