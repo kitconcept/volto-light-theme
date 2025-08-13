@@ -124,9 +124,8 @@
           "title": "Highlight"
         }
       ],
-      "styles": {
-        "backgroundColor": "grey"
-      }
+      "styles": {},
+      "theme": "grey"
     },
     "16a2702d-4fb0-4e73-a17c-884ef9d04e6d": {
       "@type": "slider",
@@ -468,9 +467,8 @@
           "title": "Highlight"
         }
       ],
-      "styles": {
-        "backgroundColor": "grey"
-      }
+      "styles": {},
+      "theme": "grey"
     },
     "2ec50754-9d4a-49bb-a71b-957482028abe": {
       "@type": "slider",
@@ -634,7 +632,8 @@
     "6173dc0f-f2b9-4936-b4b9-64771fa065c9": {
       "@type": "heading",
       "heading": "Flag on the Right",
-      "styles": {}
+      "styles": {},
+      "theme": "default"
     },
     "7eb40607-b61c-4560-ab45-7ede4c393e73": {
       "@type": "slider",
@@ -701,6 +700,150 @@
         }
       ],
       "styles": {}
+    },
+    "81bca976-b719-4a15-9282-9ee51dfeddac": {
+      "@type": "slider",
+      "autoplayDelay": 4000,
+      "autoplayEnabled": false,
+      "autoplayJump": false,
+      "slides": [
+        {
+          "@id": "2d6a9413-b0ff-4632-b06c-804276454eee",
+          "description": "This section has a sample of content types available in this site.",
+          "flagAlign": "right",
+          "head_title": null,
+          "href": [
+            {
+              "@id": "../../resolveuid/e8178744e30a418b9a5768997bb29a19",
+              "@type": "Document",
+              "Description": "This section has a sample of content types available in this site.",
+              "Title": "Content Types",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "image_field": "image",
+              "title": "Content Types"
+            }
+          ],
+          "preview_image": [
+            {
+              "@id": "../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+              "@type": "Image",
+              "CreationDate": "2023-07-07T03:05:08+05:30",
+              "Creator": "admin",
+              "Date": "2023-09-22T19:58:04+05:30",
+              "Description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+              "EffectiveDate": "None",
+              "ExpirationDate": "None",
+              "ModificationDate": "2023-09-22T19:58:04+05:30",
+              "Subject": [],
+              "Title": "Image",
+              "Type": "Image",
+              "UID": "970ec24c76784c66a06d8c8d8b6522b2",
+              "cmf_uid": null,
+              "created": "2023-07-06T21:35:08+00:00",
+              "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+              "effective": "1969-12-30T18:30:00+00:00",
+              "end": null,
+              "exclude_from_nav": false,
+              "expires": "2499-12-30T18:30:00+00:00",
+              "getIcon": true,
+              "getId": "image",
+              "getObjSize": "676.8 KB",
+              "getPath": "/Plone/content-types/image",
+              "getRemoteUrl": null,
+              "getURL": "http://localhost:3000/content-types/image",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "id": "image",
+              "image_field": "image",
+              "is_folderish": false,
+              "listCreators": [
+                "admin"
+              ],
+              "location": null,
+              "mime_type": "image/jpeg",
+              "modified": "2023-09-22T14:28:04+00:00",
+              "nav_title": null,
+              "portal_type": "Image",
+              "review_state": null,
+              "start": null,
+              "sync_uid": null,
+              "title": "Image",
+              "type_title": "Image"
+            }
+          ],
+          "title": "Content Types"
+        },
+        {
+          "@id": "b01f1d68-ff9e-402a-ab2a-cda2217fc695",
+          "description": " The Grid block allows adding multi-column blocks. A grid block can contain between one and four columns of different blocks. Teasers and images can be added in a grid block.",
+          "flagAlign": "right",
+          "href": [
+            {
+              "@id": "../../resolveuid/99c70917b6894af08dd306fdbc0eff6a",
+              "@type": "Document",
+              "Description": " The Grid block allows adding multi-column blocks. A grid block can contain between one and four columns of different blocks. Teasers and images can be added in a grid block.",
+              "Title": "Grid",
+              "hasPreviewImage": true,
+              "head_title": null,
+              "image_field": "preview_image",
+              "title": "Grid"
+            }
+          ],
+          "preview_image": [
+            {
+              "@id": "../../resolveuid/eec82559bf3242a6be4d43bc2096f399",
+              "@type": "Image",
+              "CreationDate": "2023-07-07T03:05:08+05:30",
+              "Creator": "admin",
+              "Date": "2023-09-22T19:57:57+05:30",
+              "Description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+              "EffectiveDate": "None",
+              "ExpirationDate": "None",
+              "ModificationDate": "2023-09-22T19:57:57+05:30",
+              "Subject": [],
+              "Title": "Image - Light",
+              "Type": "Image",
+              "UID": "eec82559bf3242a6be4d43bc2096f399",
+              "cmf_uid": null,
+              "created": "2023-07-06T21:35:08+00:00",
+              "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
+              "effective": "1969-12-30T18:30:00+00:00",
+              "end": null,
+              "exclude_from_nav": false,
+              "expires": "2499-12-30T18:30:00+00:00",
+              "getIcon": true,
+              "getId": "image-light",
+              "getObjSize": "464.1 KB",
+              "getPath": "/Plone/content-types/image-light",
+              "getRemoteUrl": null,
+              "getURL": "http://localhost:3000/content-types/image-light",
+              "hasPreviewImage": null,
+              "head_title": null,
+              "id": "image-light",
+              "image_field": "image",
+              "is_folderish": false,
+              "listCreators": [
+                "admin"
+              ],
+              "location": null,
+              "mime_type": "image/jpeg",
+              "modified": "2023-09-22T14:27:57+00:00",
+              "nav_title": null,
+              "portal_type": "Image",
+              "review_state": null,
+              "start": null,
+              "sync_uid": null,
+              "title": "Image - Light",
+              "type_title": "Image"
+            }
+          ],
+          "title": "Blocks"
+        }
+      ],
+      "styles": {},
+      "theme": "default",
+      "variation": "simple-side"
     },
     "8504088e-e855-43fd-a94d-b21ffa1e1fde": {
       "@type": "slider",
@@ -1106,6 +1249,12 @@
       "heading": "Custom Image override",
       "styles": {}
     },
+    "becfb782-1e21-40e7-be8d-0c28b90c13c6": {
+      "@type": "heading",
+      "heading": "Simple Side Variant",
+      "styles": {},
+      "theme": "default"
+    },
     "c5f7eb49-a37e-4413-a985-1200aa5757b4": {
       "@type": "heading",
       "heading": "Slider with Grey Background",
@@ -1123,6 +1272,8 @@
   "blocks_layout": {
     "items": [
       "5012da82-0e4a-44aa-912f-39d197a6a4e9",
+      "becfb782-1e21-40e7-be8d-0c28b90c13c6",
+      "81bca976-b719-4a15-9282-9ee51dfeddac",
       "16a2702d-4fb0-4e73-a17c-884ef9d04e6d",
       "6173dc0f-f2b9-4936-b4b9-64771fa065c9",
       "8504088e-e855-43fd-a94d-b21ffa1e1fde",
@@ -1158,7 +1309,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2024-04-08T12:26:50+00:00",
+  "modified": "2025-08-04T13:24:31+00:00",
   "nav_title": null,
   "preview_caption": null,
   "preview_image": null,
