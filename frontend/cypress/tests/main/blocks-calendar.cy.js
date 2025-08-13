@@ -409,6 +409,11 @@ describe('Event Calendar Block Tests', () => {
     cy.get('#toolbar-save').click();
     cy.wait('@content');
     cy.url().should('eq', Cypress.config().baseUrl + '/my-page');
+    
+    // Add waiting for CI environments
+    cy.get('.card-listing', { timeout: 10000 }).should('exist');
+    cy.wait(1000);
+    
     cy.get('.card-listing:first-of-type .image-wrapper .date-inset').should(
       'not.have.class',
       'has-end-date',
