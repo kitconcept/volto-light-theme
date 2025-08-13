@@ -409,19 +409,17 @@ describe('Event Calendar Block Tests', () => {
     cy.get('#toolbar-save').click();
     cy.wait('@content');
     cy.url().should('eq', Cypress.config().baseUrl + '/my-page');
-    
-    // Add waiting for CI environments
-    cy.get('.card-listing', { timeout: 10000 }).should('exist');
-    cy.wait(1000);
-    
-    cy.get('.card-listing:first-of-type .image-wrapper .date-inset').should(
-      'not.have.class',
-      'has-end-date',
-    );
-    cy.get('.card-listing:nth-child(2) .image-wrapper .date-inset').should(
-      'have.class',
-      'has-end-date',
-    );
+    cy.get('.card-listing')
+      .contains('My First Event')
+      .closest('.card-listing')
+      .find('.image-wrapper .date-inset')
+      .should('have.class', 'has-end-date');
+
+    cy.get('.card-listing')
+      .contains('Second Event')
+      .closest('.card-listing')
+      .find('.image-wrapper .date-inset')
+      .should('not.have.class', 'has-end-date');
   });
 
   it('Add eventCalendar Block - sort by Order in folder and sort_order:descending', () => {
