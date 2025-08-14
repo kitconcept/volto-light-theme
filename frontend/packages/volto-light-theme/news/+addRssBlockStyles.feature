@@ -1,1 +1,1 @@
-Add styles for RSS block. @danalvrz
+Add styles for RSS block (note: full functionality requires RSS addon and templates available in kitconcept.intranet). @danalvrz
