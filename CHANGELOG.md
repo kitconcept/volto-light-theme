@@ -1,6 +1,34 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 7.0.0a22 (2025-08-15)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Feature
+
+- Add styles for RSS block (note: full functionality requires RSS addon and templates available in kitconcept.intranet). @danalvrz 
+
+#### Internal
+
+- Fix Logos SVG size issue. @Tishasoumya-02 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 7.0.0a21 (2025-07-31)
 
 ### Backend

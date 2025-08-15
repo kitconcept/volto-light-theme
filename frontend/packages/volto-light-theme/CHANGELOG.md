@@ -8,6 +8,16 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0-alpha.22 (2025-08-15)
+
+### Feature
+
+- Add styles for RSS block (note: full functionality requires RSS addon and templates available in kitconcept.intranet). @danalvrz 
+
+### Internal
+
+- Fix Logos SVG size issue. @Tishasoumya-02 
+
 ## 7.0.0-alpha.21 (2025-07-31)
 
 ### Internal
