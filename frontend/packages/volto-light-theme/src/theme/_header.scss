@@ -335,12 +335,20 @@
         }
 
         .menu-drawer {
-          @media only screen and (max-width: $computer-breakpoint) {
-            top: 210px;
+          @media only screen and (max-width: 961px) {
+            top: 208px;
 
             .search-button {
               display: none;
             }
+          }
+
+          @media only screen and (max-width: $tablet-breakpoint) {
+            top: 168px;
+          }
+
+          @media only screen and (max-width: 620px) {
+            top: 225px;
           }
         }
       }
