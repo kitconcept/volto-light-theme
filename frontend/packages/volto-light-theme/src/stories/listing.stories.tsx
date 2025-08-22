@@ -6,7 +6,6 @@ import Wrapper from '@plone/volto/storybook';
 import BlockWrapper from './BlockWrapper';
 
 import type { Meta, StoryObj } from '@storybook/react';
-import { BodyClass } from '@plone/volto/helpers';
 
 const meta = {
   title: 'Blocks/Listing',
