@@ -324,3 +324,129 @@ export const FourPerson: Story = {
     data: gridBlockFourPerson,
   },
 };
+
+export const OnePersonSquared: Story = {
+  render: (args) => (
+    <Wrapper>
+      <div
+        className="person-squared-images"
+        style={{
+          containerType: 'inline-size',
+          width: 'var(--default-container-width)',
+        }}
+      >
+        <BlockWrapper {...args}>
+          <GridBlockView {...args} />
+        </BlockWrapper>
+      </div>
+    </Wrapper>
+  ),
+  args: {
+    data: gridBlockOnePerson,
+  },
+};
+
+export const TwoPersonSquared: Story = {
+  render: (args) => (
+    <Wrapper>
+      <div
+        className="person-squared-images"
+        style={{
+          containerType: 'inline-size',
+          width: 'var(--default-container-width)',
+        }}
+      >
+        <BlockWrapper {...args}>
+          <GridBlockView {...args} />
+        </BlockWrapper>
+      </div>
+    </Wrapper>
+  ),
+  args: {
+    data: gridBlockTwoPerson,
+  },
+};
+
+export const TwoDocumentAndPersonSquared: Story = {
+  render: (args) => (
+    <Wrapper>
+      <div
+        className="person-squared-images"
+        style={{
+          containerType: 'inline-size',
+          width: 'var(--default-container-width)',
+        }}
+      >
+        <BlockWrapper {...args}>
+          <GridBlockView {...args} />
+        </BlockWrapper>
+      </div>
+    </Wrapper>
+  ),
+  args: {
+    data: gridBlockTwoDocumentPerson,
+  },
+};
+
+export const TwoPersonsDifferentImageRatioSquared: Story = {
+  render: (args) => (
+    <Wrapper>
+      <div
+        className="person-squared-images"
+        style={{
+          containerType: 'inline-size',
+          width: 'var(--default-container-width)',
+        }}
+      >
+        <BlockWrapper {...args}>
+          <GridBlockView {...args} />
+        </BlockWrapper>
+      </div>
+    </Wrapper>
+  ),
+  args: {
+    data: gridBlockTwoPersonDifferentRatio,
+  },
+};
+
+export const ThreePersonSquared: Story = {
+  render: (args) => (
+    <Wrapper>
+      <div
+        className="person-squared-images"
+        style={{
+          containerType: 'inline-size',
+          width: 'var(--default-container-width)',
+        }}
+      >
+        <BlockWrapper {...args}>
+          <GridBlockView {...args} />
+        </BlockWrapper>
+      </div>
+    </Wrapper>
+  ),
+  args: {
+    data: gridBlockThreePerson,
+  },
+};
+
+export const FourPersonSquared: Story = {
+  render: (args) => (
+    <Wrapper>
+      <div
+        className="person-squared-images"
+        style={{
+          containerType: 'inline-size',
+          width: 'var(--default-container-width)',
+        }}
+      >
+        <BlockWrapper {...args}>
+          <GridBlockView {...args} />
+        </BlockWrapper>
+      </div>
+    </Wrapper>
+  ),
+  args: {
+    data: gridBlockFourPerson,
+  },
+};
