@@ -127,3 +127,67 @@ export const PersonTeaserRight: Story = {
     },
   },
 };
+
+export const PersonTeaserLeftSquared: Story = {
+  render: (args) => (
+    <Wrapper>
+      <div
+        className="person-squared-images"
+        style={{ width: 'var(--default-container-width)' }}
+      >
+        <BlockWrapper {...args}>
+          <TeaserBody {...args} />
+        </BlockWrapper>
+      </div>
+    </Wrapper>
+  ),
+  args: {
+    data: personBlock,
+  },
+};
+
+export const PersonTeaserTopSquared: Story = {
+  render: (args) => (
+    <Wrapper>
+      <div
+        className="person-squared-images"
+        style={{ width: 'calc(var(--default-container-width) / 2)' }}
+      >
+        <BlockWrapper {...args}>
+          <TeaserBody {...args} />
+        </BlockWrapper>
+      </div>
+    </Wrapper>
+  ),
+  args: {
+    data: {
+      ...personBlock,
+      styles: {
+        align: 'center',
+      },
+    },
+  },
+};
+
+export const PersonTeaserRightSquared: Story = {
+  render: (args) => (
+    <Wrapper>
+      <div
+        className="person-squared-images"
+        style={{ width: 'var(--default-container-width)' }}
+      >
+        <BlockWrapper {...args}>
+          <TeaserBody {...args} />
+        </BlockWrapper>
+      </div>
+    </Wrapper>
+  ),
+  args: {
+    data: {
+      ...personBlock,
+      styles: {
+        align: 'right',
+      },
+    },
+  },
+};
