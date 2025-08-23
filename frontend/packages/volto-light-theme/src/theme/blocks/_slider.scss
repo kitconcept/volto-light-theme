@@ -124,15 +124,17 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
   }
 
   &.simple {
+    .slider-viewport {
+      margin-bottom: 0;
+    }
     .teaser-item {
       display: grid;
       align-items: center;
       padding: 0 130px;
-      aspect-ratio: 16/9;
+      aspect-ratio: 2/1;
       background-color: var(--theme-color);
-      gap: 70px;
+      gap: clamp(30px, 4vw, 60px);
       grid-template-areas: 'images content';
-      grid-template-columns: 1fr 1fr;
       grid-template-rows: auto;
       @media only screen and (max-width: $computer-width) {
         display: flex;
@@ -143,15 +145,11 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
 
       &.has--slider--flagAlign--right {
         grid-template-areas: 'images content';
-        .teaser-item-title {
-          margin-left: 10px;
-        }
+        grid-template-columns: clamp(300px, 40vw, 600px) auto;
       }
       &.has--slider--flagAlign--left {
         grid-template-areas: 'content images';
-        .teaser-item-title {
-          margin-right: 10px;
-        }
+        grid-template-columns: auto clamp(300px, 40vw, 600px);
       }
 
       .highlight-image-wrapper {
@@ -185,7 +183,17 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
           height: 100%;
           padding: 60px 20px;
           background: var(--theme-foreground-color);
+          color: $white;
           transform: none;
+          .ui.button,
+          .title > h2,
+          p.slider-description {
+            color: $white !important;
+          }
+          p.slider-description {
+            -webkit-line-clamp: 8;
+            line-clamp: 8;
+          }
         }
 
         .title {
@@ -195,6 +203,8 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         }
         p {
           color: var(--theme-foreground-color);
+          -webkit-line-clamp: 10;
+          line-clamp: 10;
         }
       }
       .slider-description {
@@ -207,6 +217,7 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
     .slider-button {
       display: flex;
       width: 130px;
+      height: 100%;
       align-items: center;
       background: none;
       opacity: 1;
