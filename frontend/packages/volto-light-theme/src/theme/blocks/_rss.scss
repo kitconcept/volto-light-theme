@@ -1,0 +1,17 @@
+.block.rssBlock {
+  .card {
+    width: 100%;
+    a.external::after {
+      position: absolute !important;
+      top: $spacing-small;
+      right: 0;
+    }
+  }
+  .grid-variation {
+    .card a.external::after {
+      top: unset;
+      right: 1rem;
+      bottom: 1rem;
+    }
+  }
+}

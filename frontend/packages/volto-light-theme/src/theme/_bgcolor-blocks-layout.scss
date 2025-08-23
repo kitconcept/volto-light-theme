@@ -490,7 +490,8 @@
 
     // Listing
     &.listing,
-    &.search {
+    &.search,
+    &.rssBlock {
       h2.headline {
         color: var(--theme-foreground-color);
       }
@@ -530,7 +531,8 @@
       /* I have removed the .card-container className that's why I have to write this css
        * I will remove all the .card-container className from repo.
       */
-      &.grid .card {
+      &.grid .card,
+      & .grid-variation .card {
         background-color: var(--theme-high-contrast-color);
 
         .content,

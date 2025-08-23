@@ -71,3 +71,113 @@ export const PersonSummary: Story = {
     ),
   ],
 };
+
+export const PersonSummaryWithBigDescription: Story = {
+  render: (args) => (
+    <BlockWrapper {...args}>
+      <div className="block listing summary">
+        <ListingBody {...args} />
+      </div>
+    </BlockWrapper>
+  ),
+  args: {
+    data: {
+      ...listingBlockPerson,
+      items: [
+        {
+          ...listingBlockPerson.items[0],
+          description:
+            'USS Voyager Captain from the 24th century. She is known for her strong leadership skills and her ability to make tough decisions in difficult situations. USS Voyager Captain from the 24th century. She is known for her strong leadership skills and her ability to make tough decisions in difficult situations. USS Voyager Captain from the 24th century. She is known for her strong leadership skills and her ability to make tough decisions in difficult situations. USS Voyager Captain from the 24th century. She is known for her strong leadership skills and her ability to make tough decisions in difficult situations.',
+        },
+      ],
+    },
+    listingItems: listingBlockPerson.items,
+    variation: {
+      id: 'summary',
+      template: SummaryTemplate,
+      title: 'List with images',
+    },
+  },
+  decorators: [
+    (Story) => (
+      <Wrapper>
+        <div style={{ width: 'var(--default-container-width)' }}>
+          <Story />
+        </div>
+      </Wrapper>
+    ),
+  ],
+};
+
+export const PersonSummarySquared: Story = {
+  render: (args) => (
+    <BlockWrapper {...args}>
+      <div className="block listing summary">
+        <ListingBody {...args} />
+      </div>
+    </BlockWrapper>
+  ),
+  args: {
+    data: {
+      ...listingBlockPerson,
+    },
+    listingItems: listingBlockPerson.items,
+    variation: {
+      id: 'summary',
+      template: SummaryTemplate,
+      title: 'List with images',
+    },
+  },
+  decorators: [
+    (Story) => (
+      <Wrapper>
+        <div
+          className="person-squared-images"
+          style={{ width: 'var(--default-container-width)' }}
+        >
+          <Story />
+        </div>
+      </Wrapper>
+    ),
+  ],
+};
+
+export const PersonSummarySquaredWithBigDescription: Story = {
+  render: (args) => (
+    <BlockWrapper {...args}>
+      <div className="block listing summary">
+        <ListingBody {...args} />
+      </div>
+    </BlockWrapper>
+  ),
+  args: {
+    data: {
+      ...listingBlockPerson,
+      items: [
+        {
+          ...listingBlockPerson.items[0],
+          description:
+            'USS Voyager Captain from the 24th century. She is known for her strong leadership skills and her ability to make tough decisions in difficult situations. USS Voyager Captain from the 24th century. She is known for her strong leadership skills and her ability to make tough decisions in difficult situations. USS Voyager Captain from the 24th century. She is known for her strong leadership skills and her ability to make tough decisions in difficult situations. USS Voyager Captain from the 24th century. She is known for her strong leadership skills and her ability to make tough decisions in difficult situations.',
+        },
+      ],
+    },
+    listingItems: listingBlockPerson.items,
+    variation: {
+      id: 'summary',
+      template: SummaryTemplate,
+      title: 'List with images',
+    },
+  },
+  decorators: [
+    (Story) => (
+      <Wrapper>
+        <div
+          className="person-squared-images"
+          style={{ width: 'var(--default-container-width)' }}
+        >
+          <Story />
+        </div>
+      </Wrapper>
+    ),
+  ],
+};

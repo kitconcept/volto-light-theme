@@ -8,6 +8,18 @@ describe('Storybook - Block Teaser -', () => {
     { name: 'Person Teaser left', id: 'blocks-teaser--person-teaser-left' },
     { name: 'Person Teaser right', id: 'blocks-teaser--person-teaser-right' },
     { name: 'Person Teaser top', id: 'blocks-teaser--person-teaser-top' },
+    {
+      name: 'Person Teaser left Squared',
+      id: 'blocks-teaser--person-teaser-left-squared',
+    },
+    {
+      name: 'Person Teaser right Squared',
+      id: 'blocks-teaser--person-teaser-right-squared',
+    },
+    {
+      name: 'Person Teaser top Squared',
+      id: 'blocks-teaser--person-teaser-top-squared',
+    },
   ];
 
   storiesUnderTest.forEach((story) => {
