@@ -23,7 +23,6 @@ import type {
   SiteFooterSettings,
   StickyMenuSettings,
   PloneGobrSocialMediaSettings,
-  BlocksConfigSettings,
 } from './types';
 
 defineMessages({
@@ -59,7 +58,6 @@ declare module '@plone/types' {
       'voltolighttheme.footer': CustomInheritBehavior<SiteFooterSettings>;
       'kitconcept.sticky_menu': CustomInheritBehavior<StickyMenuSettings>;
       'kitconcept.footer': CustomInheritBehavior<SiteFooterSettings>;
-      'kitconcept.blocks.config': CustomInheritBehavior<BlocksConfigSettings>;
       'plonegovbr.socialmedia.settings': CustomInheritBehavior<PloneGobrSocialMediaSettings>;
     };
   }

@@ -11,7 +11,7 @@ import { headerActionsSchema } from '../components/Widgets/schema/headerActionsS
 import { footerLogosSchema } from '../components/Widgets/schema/footerLogosSchema';
 import { footerLinksSchema } from '../components/Widgets/schema/footerLinksSchema';
 import { iconLinkListSchema } from '../components/Widgets/schema/iconLinkListSchema';
-import BlockConfigJSONEditor from '../components/Widgets/BlockConfigJSONEditor';
+import ModalJSONEditor from '../components/Widgets/ModalJSONEditor';
 
 declare module '@plone/types' {
   export interface WidgetsConfigById {
@@ -26,7 +26,7 @@ declare module '@plone/types' {
     colorPicker: typeof ColorPicker;
     blocksObject: typeof BlocksObject;
     image: React.ComponentType;
-    blockConfigEditor: typeof BlockConfigJSONEditor;
+    modalJSONEditor: typeof ModalJSONEditor;
   }
 }
 
@@ -47,7 +47,7 @@ export default function install(config: ConfigType) {
   config.widgets.widget.size = Size;
   config.widgets.widget.themeColorSwatch = ThemeColorSwatch;
 
-  config.widgets.widget.blockConfigEditor = BlockConfigJSONEditor;
+  config.widgets.widget.modalJSONEditor = ModalJSONEditor;
 
   config.registerUtility({
     name: 'headerActions',
