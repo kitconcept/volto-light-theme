@@ -87,19 +87,6 @@ export type PloneGobrSocialMediaSettings = {
   social_links: Array<iconLink>;
 };
 
-export type MutatorDSL = Record<
-  string,
-  {
-    disable?: boolean;
-    variations?: string[];
-    themes?: StyleDefinition[];
-  }
->;
-
-export type BlocksConfigSettings = {
-  blocks_config_mutator: MutatorDSL;
-};
-
 export type CustomInheritBehavior<T> = {
   data: T;
   from: {
