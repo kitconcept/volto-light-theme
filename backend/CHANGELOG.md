@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0a23 (2025-08-25)
+
+
+### Internal:
+
+- Add Simple Side slider block variation example content @Tishasoumya-02 [#SliderVariationExample](https://github.com/kitconcept/volto-light-theme/issues/SliderVariationExample)
+
 ## 7.0.0a22 (2025-08-15)
 
 No significant changes.

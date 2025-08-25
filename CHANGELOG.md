@@ -1,6 +1,41 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 7.0.0a23 (2025-08-25)
+
+### Backend
+
+
+#### Internal:
+
+- Add Simple Side slider block variation example content @Tishasoumya-02 [#SliderVariationExample](https://github.com/kitconcept/volto-light-theme/issues/SliderVariationExample)
+
+
+
+### Frontend
+
+#### Breaking
+
+- By default, the Person images for teasers and listings are rounded (1:1).
+  Added a body tag classname to change them to be squared and 4/5 aspect ratio. @sneridagh 
+
+#### Feature
+
+- Added  Simple Side Slider Variation @Tishasoumya-02 [#sliderVariation](https://github.com/kitconcept/volto-light-theme/pull/sliderVariation)
+
+#### Bugfix
+
+- Fix navigation menu misalignment in Intranet mobile view @iRohitSingh [#627](https://github.com/kitconcept/volto-light-theme/pull/627)
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 7.0.0a22 (2025-08-15)
 
 ### Backend

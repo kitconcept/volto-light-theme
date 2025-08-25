@@ -8,6 +8,21 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0-alpha.23 (2025-08-25)
+
+### Breaking
+
+- By default, the Person images for teasers and listings are rounded (1:1).
+  Added a body tag classname to change them to be squared and 4/5 aspect ratio. @sneridagh 
+
+### Feature
+
+- Added  Simple Side Slider Variation @Tishasoumya-02 [#sliderVariation](https://github.com/kitconcept/volto-light-theme/pull/sliderVariation)
+
+### Bugfix
+
+- Fix navigation menu misalignment in Intranet mobile view @iRohitSingh [#627](https://github.com/kitconcept/volto-light-theme/pull/627)
+
 ## 7.0.0-alpha.22 (2025-08-15)
 
 ### Feature
