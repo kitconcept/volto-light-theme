@@ -3,7 +3,7 @@ import { Button, Modal } from '@plone/components';
 import { Dialog, DialogTrigger } from 'react-aria-components';
 import FormFieldWrapper from '@plone/volto/components/manage/Widgets/FormFieldWrapper';
 
-const BlockConfigJSONEditor = (props) => {
+const ModalJSONEditor = (props) => {
   const [textValue, setTextValue] = React.useState(
     JSON.stringify(props.value, null, 2),
   );
@@ -55,4 +55,4 @@ const BlockConfigJSONEditor = (props) => {
   );
 };
 
-export default BlockConfigJSONEditor;
+export default ModalJSONEditor;
