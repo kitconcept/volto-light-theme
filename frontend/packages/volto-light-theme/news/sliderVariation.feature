@@ -1,1 +1,0 @@
-Added  Simple Side Slider Variation @Tishasoumya-02
