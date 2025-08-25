@@ -1,4 +1,4 @@
-import type { Brain, Image, StyleDefinition } from '@plone/types';
+import type { Brain, Image } from '@plone/types';
 
 type hrefType = {
   '@id': string;
