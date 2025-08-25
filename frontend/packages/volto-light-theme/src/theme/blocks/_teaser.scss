@@ -35,6 +35,12 @@
     width: 100%;
   }
 
+  &.has--align--center.is--first--of--block-type.is--last--of--block-type {
+    .card-summary {
+      padding-bottom: 0px;
+    }
+  }
+
   &.has--align--left,
   &.has--align--right {
     .card-inner {
