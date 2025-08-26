@@ -175,7 +175,8 @@ body .block.gridBlock .block.teaser.contained.person-teaser .card-inner {
 }
 
 // Listings
-.block.listing {
+.block.listing,
+.block.search {
   .listing-item.person-listing {
     &,
     & a {
@@ -222,16 +223,6 @@ body .block.gridBlock .block.teaser.contained.person-teaser .card-inner {
       }
     }
   }
-}
-
-// Person in search block
-.block.search.summary .listing-item.person-listing .listing-body {
-  align-self: center;
-}
-
-.block.search.summary .listing-item.person-listing img,
-.block-editor-search.summary .listing-item.person-listing img {
-  aspect-ratio: initial !important;
 }
 
 // Squared images
