@@ -8,6 +8,16 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0-alpha.24 (2025-08-26)
+
+### Breaking
+
+- Move the `ConfigInjector` code to k.intranet. @sneridagh [#629](https://github.com/kitconcept/volto-light-theme/pull/629)
+
+### Bugfix
+
+- Fixed squared/rounded person image in search block. @sneridagh 
+
 ## 7.0.0-alpha.23 (2025-08-25)
 
 ### Breaking
