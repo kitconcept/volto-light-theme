@@ -1,6 +1,34 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 7.0.0a24 (2025-08-26)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Breaking
+
+- Move the `ConfigInjector` code to k.intranet. @sneridagh [#629](https://github.com/kitconcept/volto-light-theme/pull/629)
+
+#### Bugfix
+
+- Fixed squared/rounded person image in search block. @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 7.0.0a23 (2025-08-25)
 
 ### Backend
