@@ -7,6 +7,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Container as SemanticContainer } from 'semantic-ui-react';
 import { flattenToAppURL } from '@plone/volto/helpers/';
+import { FormattedMessage } from 'react-intl';
 import config from '@plone/volto/registry';
 import FileType from '../../helpers/Filetype';
 
@@ -31,7 +32,14 @@ const FileView = ({ content }) => {
       {content.file?.download && (
         <p>
           <a href={flattenToAppURL(content.file.download)}>
-            {content.file.filename}
+            {content.file.filename ? (
+              content.file.filename
+            ) : (
+              <FormattedMessage
+                id="Download file"
+                defaultMessage="Download file"
+              />
+            )}
           </a>{' '}
           <span>
             ({FileType(content?.file['content-type'])}/{' '}
