@@ -1,5 +1,5 @@
-# Translation of volto.pot to Spanish
-# Leonardo J. Caballero G. <leonardocaballero@gmail.com>, 2025.
+#. Translation of volto.pot to Spanish
+#. Leonardo J. Caballero G. <leonardocaballero@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
@@ -7,12 +7,12 @@ msgstr ""
 "POT-Creation-Date: 2024-02-08T13:36:14.317Z\n"
 "PO-Revision-Date: 2025-07-07 15:40+0200\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
-"Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language: es\n"
-"MIME-Version: 1.0\n"
+"Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
 "Language-Code: es\n"
 "Language-Name: Español\n"
 "Preferred-Encodings: utf-8\n"
@@ -51,6 +51,16 @@ msgstr "Añadir enlace"
 msgid "Add logo"
 msgstr "Añadir logo"
 
+#. Default: "Advanced facet?"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Advanced facet?"
+msgstr ""
+
+#. Default: "Advanced facets are initially hidden and displayed on demand"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Advanced facets are initially hidden and displayed on demand"
+msgstr ""
+
 #. Default: "Alignment"
 #: components/Blocks/Button/schema
 #: components/Blocks/Separator/schema
@@ -63,6 +73,11 @@ msgstr "Alineación"
 msgid "Alt text"
 msgstr "Texto alternativo"
 
+#. Default: "Ascending"
+#: components/Blocks/EventCalendar/Search/components/SortOn
+msgid "Ascending"
+msgstr ""
+
 #. Default: "Back"
 #: components/MobileNavigation/MobileNavigation
 msgid "Back"
@@ -72,6 +87,11 @@ msgstr "Volver"
 #: components/Blocks/schema
 msgid "Background color"
 msgstr "Color de fondo"
+
+#. Default: "Base search query"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Base search query"
+msgstr ""
 
 #. Default: "Block Width"
 #: components/Blocks/Button/schema
@@ -89,6 +109,11 @@ msgstr "Rastro de migas"
 #: components/Blocks/Slider/schema
 msgid "Button text"
 msgstr "Texto del botón"
+
+#. Default: "Cancel search"
+#: components/Blocks/EventCalendar/Search/components/SearchInput
+msgid "Cancel search"
+msgstr ""
 
 #. Default: "Center"
 #: components/Widgets/BlockAlignment
@@ -119,8 +144,14 @@ msgstr "Contacto"
 
 #. Default: "Continue reading"
 #: components/Blocks/Slider/DefaultBody
+#: components/Blocks/Slider/SliderVariants
 msgid "Continue reading"
 msgstr "Seguir leyendo"
+
+#. Default: "Controls"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Controls"
+msgstr ""
 
 #. Default: "Copyright"
 #: components/Footer/slots/Copyright
@@ -131,6 +162,11 @@ msgstr "Copyright"
 #: components/Widgets/BlockWidth
 msgid "Default"
 msgstr "Por defecto"
+
+#. Default: "Descending"
+#: components/Blocks/EventCalendar/Search/components/SortOn
+msgid "Descending"
+msgstr ""
 
 #. Default: "Description"
 #: components/Blocks/Image/schema
@@ -144,6 +180,11 @@ msgstr "Descripción"
 msgid "Distributed under the {license}."
 msgstr "Distribuido bajo {license}"
 
+#. Default: "Download file"
+#: components/Theme/FileView
+msgid "Download file"
+msgstr ""
+
 #. Default: "Empty object list"
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
@@ -154,6 +195,26 @@ msgstr "Lista de objetos vacía"
 #: components/Blocks/EventMetadata/View
 msgid "End"
 msgstr "Fin"
+
+#. Default: "Facet"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Facet"
+msgstr ""
+
+#. Default: "Facet widget"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Facet widget"
+msgstr ""
+
+#. Default: "Facets"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Facets"
+msgstr ""
+
+#. Default: "Field"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Field"
+msgstr ""
 
 #. Default: "Flag align"
 #: components/Blocks/Slider/schema
@@ -176,10 +237,16 @@ msgid "GNU GPL license"
 msgstr "Licencia GNU GPL"
 
 #. Default: "Headline"
+#: components/Blocks/EventCalendar/Search/schema
 #: components/Widgets/schema/footerLogosSchema
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Headline"
 msgstr "Encabezado"
+
+#. Default: "Hidden facets will still filter the results if proper parameters are passed in URLs"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Hidden facets will still filter the results if proper parameters are passed in URLs"
+msgstr ""
 
 #. Default: "Hide Button"
 #: components/Blocks/Slider/schema
@@ -191,6 +258,11 @@ msgstr "Esconder botón"
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Hide description"
 msgstr "Ocultar descripción"
+
+#. Default: "Hide facet?"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Hide facet?"
+msgstr ""
 
 #. Default: "Home"
 #: components/Breadcrumbs/Breadcrumbs
@@ -209,6 +281,12 @@ msgstr "Descargar archivo ICS"
 msgid "Image"
 msgstr "Imagen"
 
+#. Default: "Invalid block - Will be removed on saving"
+#: components/Theme/RenderBlocks
+#: components/Theme/RenderBlocksV2
+msgid "Invalid Block"
+msgstr ""
+
 #. Default: "Item"
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Item"
@@ -218,6 +296,11 @@ msgstr "Elemento"
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Item icon"
 msgstr "Icono de elemento"
+
+#. Default: "Label"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Label"
+msgstr ""
 
 #. Default: "Large"
 #: components/Widgets/Size
@@ -259,6 +342,11 @@ msgstr "Ubicación"
 msgid "Log in"
 msgstr "Entrar"
 
+#. Default: "Log out"
+#: components/Anontools/Anontools
+msgid "Log out"
+msgstr ""
+
 #. Default: "Logo"
 #: components/Widgets/schema/footerLogosSchema
 msgid "Logo"
@@ -279,6 +367,21 @@ msgstr "Logotipo de"
 msgid "Medium"
 msgstr "Mediano"
 
+#. Default: "Move down"
+#: components/Blocks/Block/Edit
+msgid "Move down"
+msgstr ""
+
+#. Default: "Move up"
+#: components/Blocks/Block/Edit
+msgid "Move up"
+msgstr ""
+
+#. Default: "Multiple choices?"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Multiple choices?"
+msgstr ""
+
 #. Default: "Narrow"
 #: components/Widgets/BlockWidth
 msgid "Narrow"
@@ -298,6 +401,11 @@ msgstr "No se ha seleccionado imagen"
 #: components/Blocks/Listing/ListingBody
 msgid "No items found in this container."
 msgstr "No se han encontrado elementos en este contenedor."
+
+#. Default: "No selection"
+#: components/Blocks/EventCalendar/Search/components/SortOn
+msgid "No selection"
+msgstr ""
 
 #. Default: "Open in a new tab"
 #: components/Widgets/schema/footerLinksSchema
@@ -326,6 +434,8 @@ msgstr "Teléfono"
 
 #. Default: "Please choose an existing content as source for this element"
 #: components/Blocks/Slider/DefaultBody
+#: components/Blocks/Slider/SliderVariants
+#: components/Blocks/Slider/View
 #: components/Blocks/Teaser/Body
 msgid "Please choose an existing content as source for this element"
 msgstr "Elija un contenido para utilizarlo como fuente de datos para este elemento"
@@ -377,6 +487,8 @@ msgid "Room"
 msgstr "Sala"
 
 #. Default: "Search"
+#: components/Blocks/EventCalendar/Search/components/SearchInput
+#: components/Blocks/EventCalendar/Search/schema
 #: components/Blocks/Search/components/SearchInput
 #: components/Blocks/Search/TopSideFacets
 #: components/MobileNavigation/MobileNavigation
@@ -391,10 +503,25 @@ msgstr "Buscar"
 msgid "Search Site"
 msgstr "Buscar en el Sitio"
 
+#. Default: "Search block"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Search block"
+msgstr ""
+
+#. Default: "Search button label"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Search button label"
+msgstr ""
+
 #. Default: "Search for People, E-Mail Address, Phone Number, ..."
 #: components/SearchWidget/IntranetSearchWidget
 msgid "Search for People, E-Mail Address, Phone Number, ..."
 msgstr "Busca personas, dirección de correo electrónico, teléfonos, ..."
+
+#. Default: "Search input label"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Search input label"
+msgstr ""
 
 #. Default: "Search results"
 #: components/Blocks/Search/components/SearchDetails
@@ -405,6 +532,11 @@ msgstr "Resultados de búsqueda"
 #: components/Blocks/Search/components/SearchDetails
 msgid "Searched for"
 msgstr "Ha buscado"
+
+#. Default: "Section title"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Section title"
+msgstr ""
 
 #. Default: "Settings"
 #: components/Widgets/schema/footerLogosSchema
@@ -423,6 +555,26 @@ msgstr "Línea corta"
 msgid "Show item"
 msgstr "Ver elemento"
 
+#. Default: "Show search button?"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Show search button?"
+msgstr ""
+
+#. Default: "Show search input?"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Show search input?"
+msgstr ""
+
+#. Default: "Show sorting?"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Show sorting?"
+msgstr ""
+
+#. Default: "Show total results"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Show total results"
+msgstr ""
+
 #. Default: "Sitemap"
 #: index
 msgid "Sitemap"
@@ -433,6 +585,21 @@ msgstr "Mapa del sitio"
 msgid "Small"
 msgstr "Pequeño"
 
+#. Default: "Sort on"
+#: components/Blocks/EventCalendar/Search/components/SortOn
+msgid "Sort on"
+msgstr ""
+
+#. Default: "Sort on options"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Sort on options"
+msgstr ""
+
+#. Default: "Sorted on"
+#: components/Blocks/EventCalendar/Search/components/SortOn
+msgid "Sorted on"
+msgstr ""
+
 #. Default: "Sorting"
 #: components/Blocks/Search/TopSideFacets
 msgid "Sorting"
@@ -440,6 +607,7 @@ msgstr "Ordenación"
 
 #. Default: "Source"
 #: components/Blocks/Slider/DefaultBody
+#: components/Blocks/Slider/SliderVariants
 msgid "Source"
 msgstr "Origen"
 
@@ -466,6 +634,11 @@ msgstr "Cambiar a"
 msgid "Target"
 msgstr "Destino"
 
+#. Default: "The button presence disables the live search, the query is issued when you press ENTER"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "The button presence disables the live search, the query is issued when you press ENTER"
+msgstr ""
+
 #. Default: "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
 #: components/Footer/slots/Copyright
 msgid "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
@@ -480,10 +653,28 @@ msgstr "{plonecms} es {copyright} 2000-{current_year} de la {plonefoundation} y 
 msgid "Title"
 msgstr "Título"
 
+#. Default: "Unknown Block {block}"
+#: components/Blocks/Block/Edit
+#: components/Theme/RenderBlocks
+#: components/Theme/RenderBlocksV2
+msgid "Unknown Block"
+msgstr ""
+
 #. Default: "Website"
 #: components/Blocks/EventMetadata/View
 msgid "Website"
 msgstr "Sitio web"
+
+#. Default: "Available views"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "availableViews"
+msgstr ""
+
+#. Default: "Delete"
+#: components/Blocks/Block/Edit
+#: components/Blocks/Block/EditBlockWrapper
+msgid "delete"
+msgstr ""
 
 #. Default: "eMail"
 #: components/Summary/PersonSummary
@@ -507,6 +698,7 @@ msgstr "Cargando"
 
 #. Default: "More info"
 #: components/Blocks/Slider/DefaultBody
+#: components/Blocks/Slider/SliderVariants
 msgid "moreInfo"
 msgstr "Más información"
 
@@ -514,3 +706,8 @@ msgstr "Más información"
 #: components/Blocks/Listing/ListingBody
 msgid "of"
 msgstr "de"
+
+#. Default: "Views"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "views"
+msgstr ""
