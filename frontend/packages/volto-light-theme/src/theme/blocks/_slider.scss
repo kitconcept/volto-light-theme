@@ -126,6 +126,9 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
   &.simple {
     .slider-viewport {
       margin-bottom: 0;
+      @media only screen and (max-width: $computer-width) {
+        margin-bottom: $spacing-medium;
+      }
     }
     .teaser-item {
       display: grid;
