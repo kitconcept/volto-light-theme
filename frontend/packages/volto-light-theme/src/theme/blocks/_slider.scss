@@ -229,6 +229,17 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         height: 50px !important;
         padding: 40px;
         color: var(--theme-foreground-color);
+        @media only screen and (max-width: $computer-width) {
+          padding: 0;
+        }
+      }
+      @media only screen and (max-width: $computer-width) {
+        position: absolute;
+        width: 50px;
+        height: calc(
+          var(--slider-container-width) * 1 /
+            var(--slider-images-aspect-ratio, 1.77777778)
+        );
       }
     }
     .ui.button {
