@@ -89,9 +89,12 @@
       }
 
       .block.teaser {
-        .teaser-item > .content {
-          h2 {
-            margin-bottom: 40px !important;
+        .card-inner .card-summary {
+          h2.title {
+            padding: 0px;
+            margin-bottom: 20px !important;
+            background: none;
+            text-transform: none;
           }
         }
       }
