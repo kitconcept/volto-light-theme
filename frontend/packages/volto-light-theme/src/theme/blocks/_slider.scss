@@ -42,6 +42,9 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
     }
     @media only screen and (max-width: $computer-width) {
       display: flex;
+      & > a {
+        height: 100%;
+      }
     }
     .teaser-item-title {
       position: absolute;
@@ -181,13 +184,11 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         transform: none;
 
         @media only screen and (max-width: $computer-width) {
-          position: relative;
-          width: 100%;
+          align-content: start;
           height: 100%;
           padding: 60px 20px;
           background: var(--theme-foreground-color);
           color: $white;
-          transform: none;
           .ui.button,
           .title > h2,
           p.slider-description {
@@ -212,9 +213,11 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
       }
       .slider-description {
         margin-bottom: $spacing-large;
-        font-size: 18px;
-        font-weight: 300;
-        line-height: 24px;
+
+        @media only screen and (min-width: $computer-width) {
+          font-size: 18px;
+          line-height: 24px;
+        }
       }
     }
     .slider-button {
@@ -222,8 +225,11 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
       width: 130px;
       height: 100%;
       align-items: center;
-      background: none;
-      opacity: 1;
+
+      @media only screen and (min-width: $computer-width) {
+        background: none;
+        opacity: 1;
+      }
       svg.icon {
         width: 50px !important;
         height: 50px !important;
@@ -231,6 +237,7 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         color: var(--theme-foreground-color);
         @media only screen and (max-width: $computer-width) {
           padding: 0;
+          color: $white;
         }
       }
       @media only screen and (max-width: $computer-width) {
