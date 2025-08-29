@@ -46,7 +46,6 @@
     }
   }
 
-  // Teaser (standalone) top
   .has--align--center:not(.contained) .person-teaser &,
   .person-teaser.has--align--center:not(.contained) & {
     width: calc(var(--default-container-width) / 2);
@@ -254,6 +253,15 @@ body .block.gridBlock .block.teaser.contained.person-teaser .card-inner {
     justify-content: center;
   }
 }
+
+// Teaser (standalone) top centering
+.block.teaser.has--align--center:not(.contained).person-teaser,
+.block-editor-teaser:not(.contained).has--align--center
+  .block.teaser.person-teaser {
+  display: flex;
+  justify-content: center;
+}
+
 // Squared images
 // Custom TTW CSS in case of squared images
 // :root {--person-image-max-height: 285px;--person-image-aspect-ratio: 4 / 5;
