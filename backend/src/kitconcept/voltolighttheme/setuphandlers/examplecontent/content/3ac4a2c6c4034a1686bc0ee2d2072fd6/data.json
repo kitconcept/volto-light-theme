@@ -4,6 +4,102 @@
   "UID": "3ac4a2c6c4034a1686bc0ee2d2072fd6",
   "allow_discussion": false,
   "blocks": {
+    "183d8d28-2494-4215-8e79-d266792df13b": {
+      "@type": "gridBlock",
+      "blocks": {
+        "1352b57a-361a-4e05-87a7-e43e8b6d8a01": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "query": [
+              {
+                "i": "portal_type",
+                "o": "plone.app.querystring.operation.selection.any",
+                "v": [
+                  "Document"
+                ]
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "summary"
+        },
+        "23aee556-a183-49f0-aa71-37b56821ed8d": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "query": [
+              {
+                "i": "portal_type",
+                "o": "plone.app.querystring.operation.selection.any",
+                "v": [
+                  "Document"
+                ]
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "summary"
+        },
+        "7290e61e-4fdc-459a-a295-f1ca0d6a71f9": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "query": [
+              {
+                "i": "portal_type",
+                "o": "plone.app.querystring.operation.selection.any",
+                "v": [
+                  "Document"
+                ]
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "summary"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "7290e61e-4fdc-459a-a295-f1ca0d6a71f9",
+          "23aee556-a183-49f0-aa71-37b56821ed8d",
+          "1352b57a-361a-4e05-87a7-e43e8b6d8a01"
+        ]
+      },
+      "headline": "Three Column",
+      "styles": {},
+      "theme": "default"
+    },
+    "450ad07a-683e-4833-af2d-9a33c4e4b548": {
+      "@type": "gridBlock",
+      "blocks": {
+        "8c5e816a-f5ca-4fb7-a13d-939ed25f01e3": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "query": [
+              {
+                "i": "portal_type",
+                "o": "plone.app.querystring.operation.selection.any",
+                "v": [
+                  "Document"
+                ]
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "summary"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "8c5e816a-f5ca-4fb7-a13d-939ed25f01e3"
+        ]
+      },
+      "headline": "One Column",
+      "styles": {},
+      "theme": "default"
+    },
     "5a361b25-3e19-4c06-866f-a2db6feed983": {
       "@type": "gridBlock",
       "blocks": {
@@ -11,26 +107,94 @@
           "@type": "listing",
           "headlineTag": "h2",
           "querystring": {
-            "limit": "7",
             "query": [
               {
-                "i": "path",
-                "o": "plone.app.querystring.operation.string.absolutePath",
-                "v": "/block/grid-block"
+                "i": "portal_type",
+                "o": "plone.app.querystring.operation.selection.any",
+                "v": [
+                  "Document"
+                ]
               }
             ],
-            "sort_on": "getId",
-            "sort_order": "descending",
-            "sort_order_boolean": true
+            "sort_on": "",
+            "sort_order": "ascending",
+            "sort_order_boolean": false
           },
           "styles": {},
-          "variation": "default"
+          "variation": "summary"
+        },
+        "7d4e2810-6c1f-41a4-823c-a5a050e0d900": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "query": [
+              {
+                "i": "portal_type",
+                "o": "plone.app.querystring.operation.selection.any",
+                "v": [
+                  "Document"
+                ]
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "summary"
+        },
+        "9337406d-f8c1-4f75-ae46-14e79bd76eca": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "query": [
+              {
+                "i": "portal_type",
+                "o": "plone.app.querystring.operation.selection.any",
+                "v": [
+                  "Document"
+                ]
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "summary"
         },
         "b940ae89-2b34-472b-aac8-f3d96dfe46f4": {
           "@type": "listing",
           "headlineTag": "h2",
           "querystring": {
-            "limit": "7",
+            "query": [
+              {
+                "i": "portal_type",
+                "o": "plone.app.querystring.operation.selection.any",
+                "v": [
+                  "Document"
+                ]
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "styles": {},
+          "variation": "summary"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "b940ae89-2b34-472b-aac8-f3d96dfe46f4",
+          "0fae8b67-374c-4ca2-b3e0-86114e2f17e1",
+          "9337406d-f8c1-4f75-ae46-14e79bd76eca",
+          "7d4e2810-6c1f-41a4-823c-a5a050e0d900"
+        ]
+      },
+      "headline": "Four Column",
+      "styles": {},
+      "theme": "default"
+    },
+    "621df036-b82e-4330-b05d-44bf40df1a88": {
+      "@type": "gridBlock",
+      "blocks": {
+        "0425f778-ff2a-4d37-8cd8-d5089cac8cd6": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
             "query": [
               {
                 "i": "path",
@@ -40,17 +204,257 @@
             ],
             "sort_order": "ascending"
           },
-          "styles": {},
+          "variation": "default"
+        },
+        "0c100419-95ba-46a4-a3d3-b86ab56e6d10": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "query": [
+              {
+                "i": "path",
+                "o": "plone.app.querystring.operation.string.absolutePath",
+                "v": "/block/grid-block"
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "default"
+        },
+        "9fa0dad0-8c33-45e7-a58d-dd913cb76a3b": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "query": [
+              {
+                "i": "path",
+                "o": "plone.app.querystring.operation.string.absolutePath",
+                "v": "/block/grid-block"
+              }
+            ],
+            "sort_order": "ascending"
+          },
           "variation": "default"
         }
       },
       "blocks_layout": {
         "items": [
-          "b940ae89-2b34-472b-aac8-f3d96dfe46f4",
-          "0fae8b67-374c-4ca2-b3e0-86114e2f17e1"
+          "0c100419-95ba-46a4-a3d3-b86ab56e6d10",
+          "9fa0dad0-8c33-45e7-a58d-dd913cb76a3b",
+          "0425f778-ff2a-4d37-8cd8-d5089cac8cd6"
         ]
       },
-      "styles": {}
+      "headline": "Three columns",
+      "styles": {},
+      "theme": "default"
+    },
+    "86f38048-5922-49bb-a722-dfe237107c1f": {
+      "@type": "gridBlock",
+      "blocks": {
+        "74620d4d-a6e1-49f6-a717-91d8bbb430e8": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "query": [
+              {
+                "i": "path",
+                "o": "plone.app.querystring.operation.string.absolutePath",
+                "v": "/block/grid-block"
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "default"
+        },
+        "77627224-2347-4b48-848e-40f5e07d6374": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "query": [
+              {
+                "i": "path",
+                "o": "plone.app.querystring.operation.string.absolutePath",
+                "v": "/block/grid-block"
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "default"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "77627224-2347-4b48-848e-40f5e07d6374",
+          "74620d4d-a6e1-49f6-a717-91d8bbb430e8"
+        ]
+      },
+      "headline": "Two columns",
+      "styles": {},
+      "theme": "default"
+    },
+    "8c7a2588-552d-4131-8204-991cb68ba92b": {
+      "@type": "heading",
+      "heading": "List\u00a0variant",
+      "styles": {},
+      "theme": "default"
+    },
+    "947c8cdd-9d11-4a15-a981-29693575ff6e": {
+      "@type": "heading",
+      "heading": "List with image\u00a0variant",
+      "styles": {},
+      "theme": "default"
+    },
+    "cfb130a4-5ca5-4174-b956-8e95b69f91a5": {
+      "@type": "gridBlock",
+      "blocks": {
+        "2e9277f2-90a3-464f-81fd-7115a1e8c4f3": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "query": [
+              {
+                "i": "path",
+                "o": "plone.app.querystring.operation.string.absolutePath",
+                "v": "/block/grid-block"
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "default"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "2e9277f2-90a3-464f-81fd-7115a1e8c4f3"
+        ]
+      },
+      "headline": "One columns",
+      "styles": {},
+      "theme": "default"
+    },
+    "e58a8b2f-1158-47a1-8860-ed7cd9b90c16": {
+      "@type": "gridBlock",
+      "blocks": {
+        "215dad30-1548-4ebd-b5b4-87ae0b1e4515": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "query": [
+              {
+                "i": "path",
+                "o": "plone.app.querystring.operation.string.absolutePath",
+                "v": "/block/grid-block"
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "default"
+        },
+        "5294a40f-8914-4e63-b177-0c1fc5049a07": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "query": [
+              {
+                "i": "path",
+                "o": "plone.app.querystring.operation.string.absolutePath",
+                "v": "/block/grid-block"
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "default"
+        },
+        "67f3972a-2e87-403d-8714-0c3dd3526b80": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "query": [
+              {
+                "i": "path",
+                "o": "plone.app.querystring.operation.string.absolutePath",
+                "v": "/block/grid-block"
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "default"
+        },
+        "f2bfdec4-d72f-4f5d-88d5-97664d562c5b": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "query": [
+              {
+                "i": "path",
+                "o": "plone.app.querystring.operation.string.absolutePath",
+                "v": "/block/grid-block"
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "default"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "67f3972a-2e87-403d-8714-0c3dd3526b80",
+          "5294a40f-8914-4e63-b177-0c1fc5049a07",
+          "f2bfdec4-d72f-4f5d-88d5-97664d562c5b",
+          "215dad30-1548-4ebd-b5b4-87ae0b1e4515"
+        ]
+      },
+      "headline": "Four columns",
+      "styles": {},
+      "theme": "default"
+    },
+    "edc19f1c-3d0d-474f-b0e3-52b3edd08bc6": {
+      "@type": "gridBlock",
+      "blocks": {
+        "17ab7352-1ba7-4c44-890e-b5617785e15d": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "query": [
+              {
+                "i": "portal_type",
+                "o": "plone.app.querystring.operation.selection.any",
+                "v": [
+                  "Document"
+                ]
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "summary"
+        },
+        "ab6b6c2f-2362-42ae-ab91-663b2291a59e": {
+          "@type": "listing",
+          "headlineTag": "h2",
+          "querystring": {
+            "query": [
+              {
+                "i": "portal_type",
+                "o": "plone.app.querystring.operation.selection.any",
+                "v": [
+                  "Document"
+                ]
+              }
+            ],
+            "sort_order": "ascending"
+          },
+          "variation": "summary"
+        }
+      },
+      "blocks_layout": {
+        "items": [
+          "ab6b6c2f-2362-42ae-ab91-663b2291a59e",
+          "17ab7352-1ba7-4c44-890e-b5617785e15d"
+        ]
+      },
+      "headline": "Two Column",
+      "styles": {},
+      "theme": "default"
     },
     "fc7973d9-34e3-484c-a20b-1af7eecd9879": {
       "@type": "title"
@@ -59,7 +463,16 @@
   "blocks_layout": {
     "items": [
       "fc7973d9-34e3-484c-a20b-1af7eecd9879",
-      "5a361b25-3e19-4c06-866f-a2db6feed983"
+      "8c7a2588-552d-4131-8204-991cb68ba92b",
+      "e58a8b2f-1158-47a1-8860-ed7cd9b90c16",
+      "621df036-b82e-4330-b05d-44bf40df1a88",
+      "86f38048-5922-49bb-a722-dfe237107c1f",
+      "cfb130a4-5ca5-4174-b956-8e95b69f91a5",
+      "947c8cdd-9d11-4a15-a981-29693575ff6e",
+      "5a361b25-3e19-4c06-866f-a2db6feed983",
+      "183d8d28-2494-4215-8e79-d266792df13b",
+      "edc19f1c-3d0d-474f-b0e3-52b3edd08bc6",
+      "450ad07a-683e-4833-af2d-9a33c4e4b548"
     ]
   },
   "changeNote": "",
@@ -82,7 +495,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2023-09-27T08:36:08+00:00",
+  "modified": "2025-08-29T14:53:22+00:00",
   "nav_title": null,
   "preview_caption": null,
   "preview_image": {
@@ -95,6 +508,9 @@
   },
   "review_state": "published",
   "rights": "",
+  "sticky_menu": [],
+  "sticky_menu_color": null,
+  "sticky_menu_foreground_color": null,
   "subjects": [],
   "title": "Grid-Listing",
   "type_title": "Page",
