@@ -225,6 +225,35 @@ body .block.gridBlock .block.teaser.contained.person-teaser .card-inner {
   }
 }
 
+.block.listing.grid .listing-item.person-listing {
+  .card {
+    background: var(--theme-color);
+  }
+  .image-wrapper {
+    margin: 0 auto;
+  }
+  .listing-item {
+    &,
+    & a {
+      align-items: inherit;
+    }
+  }
+  .card-summary {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+    text-align: center;
+
+    .description {
+      margin-bottom: $spacing-small !important;
+    }
+  }
+
+  .summary-extra-info,
+  .summary-room-phone {
+    display: inline-flex;
+    justify-content: center;
+  }
+}
 // Squared images
 // Custom TTW CSS in case of squared images
 // :root {--person-image-max-height: 285px;--person-image-aspect-ratio: 4 / 5;
