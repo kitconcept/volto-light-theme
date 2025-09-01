@@ -187,12 +187,12 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
           height: 100%;
           align-content: start;
           padding: 60px 20px;
-          background: var(--theme-foreground-color);
-          color: $white;
+          background: var(--theme-color);
+          color: var(--theme-foreground-color);
           .ui.button,
           .title > h2,
           p.slider-description {
-            color: $white !important;
+            color: var(--theme-foreground-color) !important;
           }
           p.slider-description {
             -webkit-line-clamp: 8;
@@ -225,28 +225,17 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
       width: 130px;
       height: 100%;
       align-items: center;
+      background: none;
+      opacity: 1;
 
-      @media only screen and (min-width: $computer-width) {
-        background: none;
-        opacity: 1;
-      }
       svg.icon {
         width: 50px !important;
         height: 50px !important;
         padding: 40px;
         color: var(--theme-foreground-color);
-        @media only screen and (max-width: $computer-width) {
-          padding: 0;
-          color: $white;
-        }
       }
       @media only screen and (max-width: $computer-width) {
-        position: absolute;
-        width: 50px;
-        height: calc(
-          var(--slider-container-width) * 1 /
-            var(--slider-images-aspect-ratio, 1.77777778)
-        );
+        display: none;
       }
     }
     .ui.button {
