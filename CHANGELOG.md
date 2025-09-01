@@ -1,6 +1,40 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 7.0.0a25 (2025-09-01)
+
+### Backend
+
+
+#### Internal:
+
+- Update example content of grid listing @iRohitSingh [#636](https://github.com/kitconcept/volto-light-theme/issues/636)
+
+
+
+### Frontend
+
+#### Feature
+
+- Fixed missing person grid listing with correct styles. @sneridagh 
+
+#### Bugfix
+
+- Fix teaser regression in accordion due to semantic UI title classname leak @iRohitSingh [#634](https://github.com/kitconcept/volto-light-theme/pull/634)
+- Fix Grid listing variant List with Image not showing columns 3 & 4 properly @iRohitSingh [#636](https://github.com/kitconcept/volto-light-theme/pull/636)
+- Fix download link on File content-type if the file has no filename. [@jnptk] 
+- Fixed bug in person teaser standalone centering. @sneridagh 
+- fix the margin-bottom and arrows for simple slider in mobile view @Tishasoumya-02 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 7.0.0a24 (2025-08-26)
 
 ### Backend
