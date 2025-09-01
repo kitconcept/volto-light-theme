@@ -8,6 +8,20 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0-alpha.25 (2025-09-01)
+
+### Feature
+
+- Fixed missing person grid listing with correct styles. @sneridagh 
+
+### Bugfix
+
+- Fix teaser regression in accordion due to semantic UI title classname leak @iRohitSingh [#634](https://github.com/kitconcept/volto-light-theme/pull/634)
+- Fix Grid listing variant List with Image not showing columns 3 & 4 properly @iRohitSingh [#636](https://github.com/kitconcept/volto-light-theme/pull/636)
+- Fix download link on File content-type if the file has no filename. [@jnptk] 
+- Fixed bug in person teaser standalone centering. @sneridagh 
+- fix the margin-bottom and arrows for simple slider in mobile view @Tishasoumya-02 
+
 ## 7.0.0-alpha.24 (2025-08-26)
 
 ### Breaking

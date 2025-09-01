@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0a25 (2025-09-01)
+
+
+### Internal:
+
+- Update example content of grid listing @iRohitSingh [#636](https://github.com/kitconcept/volto-light-theme/issues/636)
+
 ## 7.0.0a24 (2025-08-26)
 
 No significant changes.
