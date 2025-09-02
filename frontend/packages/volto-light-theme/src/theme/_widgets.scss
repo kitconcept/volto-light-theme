@@ -252,3 +252,10 @@ span.color-contrast-label {
   color: #d01157 !important;
   font-size: 14px;
 }
+
+.field-wrapper-preview_image_link
+  .image-upload-widget-image
+  .image-upload-widget-toolbar
+  .icon.circled:hover {
+  background: $greySnow;
+}
