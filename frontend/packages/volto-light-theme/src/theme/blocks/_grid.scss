@@ -212,13 +212,12 @@
   }
   .ui.stackable.stretched.four.column.grid,
   .ui.stackable.stretched.three.column.grid,
+  .ui.stackable.stretched.two.column.grid,
   .four.grid-items,
-  .three.grid-items {
+  .three.grid-items,
+  .two.grid-items {
     .block.listing.summary {
       .listing-item {
-        &:last-child {
-          padding-bottom: 0px !important;
-        }
         .card-inner {
           flex-direction: column;
           .image-wrapper {
@@ -238,15 +237,30 @@
     }
   }
   .ui.stackable.stretched.four.column.grid,
-  .four.grid-items {
-    .block.listing.summary {
-      .pagination-wrapper .ui.pagination.menu .item {
-        padding: 6.5px 10px;
+  .ui.stackable.stretched.three.column.grid,
+  .four.grid-items,
+  .three.grid-items {
+    .block.listing {
+      .listing-item {
+        &:last-child {
+          padding-bottom: 0px !important;
+        }
+      }
+      .pagination-wrapper {
+        .ui.pagination.desktop-pagination.menu {
+          display: none;
+        }
+        .ui.pagination.mobile-pagination.menu {
+          display: table-row;
+        }
+        .ui.pagination.menu .item {
+          padding: 6.5px 7px;
+        }
       }
     }
   }
   .ui.stackable.stretched.two.column.grid {
-    .block.listing.summary {
+    .block.listing {
       .listing-item {
         &:last-child {
           padding-bottom: 0px !important;
