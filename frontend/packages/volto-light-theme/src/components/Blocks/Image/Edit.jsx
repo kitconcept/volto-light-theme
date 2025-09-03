@@ -30,13 +30,15 @@ function Edit(props) {
 
   const handleChange = React.useCallback(
     async (id, image, { title, image_field, image_scales } = {}) => {
-      const url = image ? image['@id'] || image : '';
-
-      const uploadUrl = url[0]['@id'] ?? url;
+      const url = Array.isArray(image)
+        ? image?.[0]?.['@id']
+        : image
+          ? image['@id'] || image
+          : '';
 
       props.onChangeBlock(props.block, {
         ...props.data,
-        url: flattenToAppURL(uploadUrl),
+        url: flattenToAppURL(url),
         image_field,
         image_scales,
         alt: props.data.alt || title || '',
