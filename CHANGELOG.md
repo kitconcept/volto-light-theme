@@ -1,6 +1,31 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 7.0.0a26 (2025-09-03)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Fix css for cross button on hover @Tishasoumya-02 
+- Remove arrows and fix the background and text colors for slider simple variant @Tishasoumya-02 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 7.0.0a25 (2025-09-01)
 
 ### Backend

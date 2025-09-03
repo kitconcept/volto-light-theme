@@ -8,6 +8,13 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0-alpha.26 (2025-09-03)
+
+### Bugfix
+
+- Fix css for cross button on hover @Tishasoumya-02 
+- Remove arrows and fix the background and text colors for slider simple variant @Tishasoumya-02 
+
 ## 7.0.0-alpha.25 (2025-09-01)
 
 ### Feature
