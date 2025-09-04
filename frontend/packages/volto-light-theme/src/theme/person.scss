@@ -38,7 +38,8 @@
     }
   }
 
-  .person-teaser & {
+  .person-teaser &,
+  .block-editor-teaser .person-teaser & {
     .card-summary {
       .description {
         margin-bottom: $spacing-small;
@@ -66,7 +67,8 @@
   }
 
   // Teaser in Grid
-  .contained.person-teaser & {
+  .contained.person-teaser &,
+  .contained .person-teaser & {
     // Settings for BRH:
     // --person-image-aspect-ratio: 4 / 5;
     // --person-image-border-radius: 0;
@@ -110,7 +112,8 @@
 }
 
 // One column exception for contained person-teasers
-.one .contained.person-teaser {
+.one .contained.person-teaser,
+.one .contained .person-teaser {
   width: calc(var(--default-container-width) / 2);
 
   .column & {
@@ -118,7 +121,8 @@
   }
 }
 
-.one .column:has(.contained.person-teaser) {
+.one .column:has(.contained.person-teaser),
+.one .column:has(.contained .person-teaser) {
   align-items: center;
 }
 
@@ -136,13 +140,16 @@
 
 // contained person-teasers do not have background color, so we need to set it to --theme-color
 body .block.gridBlock .block.teaser.contained.person-teaser,
-body .block.gridBlock .block.teaser.contained.person-teaser .card-inner {
+body .block.gridBlock .block.teaser.contained.person-teaser .card-inner,
+body .block.gridBlock .contained .person-teaser,
+body .block.gridBlock .contained .person-teaser .card-inner {
   background: var(--theme-color);
 }
 
 // contained person-teasers do not have background color, so we need to remove the padding
 // to snap to the default container width
-.contained.person-teaser {
+.contained.person-teaser,
+.contained .person-teaser {
   .card-summary {
     padding-right: 0px;
     padding-left: 0px;
