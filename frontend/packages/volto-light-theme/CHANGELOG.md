@@ -8,6 +8,13 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0-alpha.27 (2025-09-04)
+
+### Bugfix
+
+- Fix grid listing pagination for grid columns 3 & 4. @iRohitSingh [#640](https://github.com/kitconcept/volto-light-theme/pull/640)
+- Fixed grid person teaser in edit mode. @sneridagh 
+
 ## 7.0.0-alpha.26 (2025-09-03)
 
 ### Bugfix
