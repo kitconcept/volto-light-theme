@@ -1,6 +1,31 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 7.0.0a27 (2025-09-04)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Fix grid listing pagination for grid columns 3 & 4. @iRohitSingh [#640](https://github.com/kitconcept/volto-light-theme/pull/640)
+- Fixed grid person teaser in edit mode. @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 7.0.0a26 (2025-09-03)
 
 ### Backend
