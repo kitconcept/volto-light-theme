@@ -1,9 +1,9 @@
 .sticky-menu {
   position: fixed;
   z-index: 11;
-  display: var(--sticky-menu-display, flex);
   top: 50vh;
   right: 0;
+  display: var(--sticky-menu-display, flex);
   transform: translateY(-50%);
   transition: all 0.2s linear;
 
