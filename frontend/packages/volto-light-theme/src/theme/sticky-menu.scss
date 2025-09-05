@@ -1,6 +1,7 @@
 .sticky-menu {
   position: fixed;
   z-index: 11;
+  display: var(--sticky-menu-display, flex);
   top: 50vh;
   right: 0;
   transform: translateY(-50%);
