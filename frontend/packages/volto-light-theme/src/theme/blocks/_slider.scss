@@ -150,11 +150,11 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
       }
 
       &.has--slider--flagAlign--right {
-        grid-template-areas: 'images content';
+        grid-template-areas: 'content images';
         grid-template-columns: clamp(300px, 40vw, 600px) auto;
       }
       &.has--slider--flagAlign--left {
-        grid-template-areas: 'content images';
+        grid-template-areas: 'images content';
         grid-template-columns: auto clamp(300px, 40vw, 600px);
       }
 
