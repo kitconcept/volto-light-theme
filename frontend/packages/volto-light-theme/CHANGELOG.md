@@ -8,6 +8,13 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0-alpha.28 (2025-09-08)
+
+### Bugfix
+
+- Change the icon for eventCalendar block from description to calendar svg. @iFlameing 
+- Fix alignment bug in simple slider variant @Tishasoumya-02 
+
 ## 7.0.0-alpha.27 (2025-09-04)
 
 ### Bugfix

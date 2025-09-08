@@ -1,6 +1,31 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 7.0.0a28 (2025-09-08)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Change the icon for eventCalendar block from description to calendar svg. @iFlameing 
+- Fix alignment bug in simple slider variant @Tishasoumya-02 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 7.0.0a27 (2025-09-04)
 
 ### Backend
