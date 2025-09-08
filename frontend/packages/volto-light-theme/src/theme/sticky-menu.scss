@@ -13,7 +13,6 @@ body.section-historyview,
   z-index: 11;
   top: 50vh;
   right: 0;
-  display: var(--sticky-menu-display, flex);
   transform: translateY(-50%);
   transition: all 0.2s linear;
 
