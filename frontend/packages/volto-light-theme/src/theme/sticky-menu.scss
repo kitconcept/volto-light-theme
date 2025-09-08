@@ -1,3 +1,13 @@
+body.section-historyview,
+.section-sharing,
+.section-aliases,
+.section-links-to-item,
+.section-controlpanel {
+  .sticky-menu {
+    display: none;
+  }
+}
+
 .sticky-menu {
   position: fixed;
   z-index: 11;
