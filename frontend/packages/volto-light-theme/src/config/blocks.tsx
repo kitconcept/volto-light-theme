@@ -34,6 +34,7 @@ import { searchBlockSchemaEnhancer } from '../components/Blocks/Search/schema';
 import gridSVG from '../icons/block_icn_grid.svg';
 import accordionSVG from '../icons/block_icn_accordion.svg';
 import descriptionSVG from '@plone/volto/icons/description.svg';
+import calendarSVG from '@plone/volto/icons/calendar.svg';
 
 import { tocBlockSchemaEnhancer } from '../components/Blocks/Toc/schema';
 import { mapsBlockSchemaEnhancer } from '../components/Blocks/Maps/schema';
@@ -189,7 +190,7 @@ export default function install(config: ConfigType) {
   config.blocks.blocksConfig.eventCalendar = {
     id: 'eventCalendar',
     title: 'Event Calendar',
-    icon: descriptionSVG,
+    icon: calendarSVG,
     group: 'common',
     view: SearchBlockViewEvent,
     edit: SearchBlockEditEvent,
