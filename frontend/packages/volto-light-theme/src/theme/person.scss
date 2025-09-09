@@ -290,3 +290,28 @@ body.person-squared-images,
     }
   }
 }
+// person with Four columns
+.ui.stackable.stretched.four.column.grid {
+  .card-summary {
+    display: grid;
+    .summary-extra-info {
+      gap: 5px;
+      &.email {
+        min-width: 0;
+
+        a {
+          display: block;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+  .block.listing .listing-item.person-listing .card-summary {
+    .summary-room-phone {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+}
