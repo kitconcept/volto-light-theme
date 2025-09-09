@@ -1,11 +1,5 @@
-body.section-historyview,
-.section-sharing,
-.section-aliases,
-.section-links-to-item,
-.section-controlpanel {
-  .sticky-menu {
-    display: none;
-  }
+body.cms-ui .sticky-menu {
+  display: none;
 }
 
 .sticky-menu {
