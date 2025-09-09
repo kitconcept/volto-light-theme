@@ -3,11 +3,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kitconcept.voltolighttheme\n"
-"POT-Creation-Date: 2025-06-04 17:29+0000\n"
+"POT-Creation-Date: 2025-09-09 10:35+0000\n"
 "PO-Revision-Date: 2025-07-07 17:16+0200\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
-"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -16,10 +15,11 @@ msgstr ""
 "Language-Name: Español\n"
 "Preferred-Encodings: utf-8\n"
 "Domain: kitconcept.voltolighttheme\n"
+"Language: es\n"
 "X-Generator: Poedit 3.6\n"
 "X-Is-Fallback-For: es-ar es-bo es-cl es-co es-cr es-do es-ec es-es es-sv es-gt es-hn es-mx es-ni es-pa es-py es-pe es-pr es-us es-uy es-ve\n"
 
-#: kitconcept/voltolighttheme/behaviors/footer.py:45
+#: kitconcept/voltolighttheme/behaviors/footer.py:58
 msgid "Footer address"
 msgstr "Dirección del pie de página"
 
@@ -27,27 +27,27 @@ msgstr "Dirección del pie de página"
 msgid "Footer colophon text"
 msgstr "Texto del colofón a pie de página"
 
-#: kitconcept/voltolighttheme/behaviors/footer.py:69
+#: kitconcept/voltolighttheme/behaviors/footer.py:82
 msgid "Footer column left"
 msgstr "Columna de pie de página a la izquierda"
 
-#: kitconcept/voltolighttheme/behaviors/footer.py:54
+#: kitconcept/voltolighttheme/behaviors/footer.py:67
 msgid "Footer column left header"
 msgstr "Encabezado izquierdo de la columna de pie de página"
 
-#: kitconcept/voltolighttheme/behaviors/footer.py:97
+#: kitconcept/voltolighttheme/behaviors/footer.py:110
 msgid "Footer column middle"
 msgstr "Columna de pie de página central"
 
-#: kitconcept/voltolighttheme/behaviors/footer.py:81
+#: kitconcept/voltolighttheme/behaviors/footer.py:94
 msgid "Footer column middle header"
 msgstr "Encabezado de la columna central de pie de página"
 
-#: kitconcept/voltolighttheme/behaviors/footer.py:124
+#: kitconcept/voltolighttheme/behaviors/footer.py:137
 msgid "Footer column right"
 msgstr "Columna de pie de página a la derecha"
 
-#: kitconcept/voltolighttheme/behaviors/footer.py:109
+#: kitconcept/voltolighttheme/behaviors/footer.py:122
 msgid "Footer column right header"
 msgstr "Encabezado de la columna derecha de pie de página"
 
@@ -96,31 +96,31 @@ msgstr "Acciones en el sitio"
 msgid "Sticky menu"
 msgstr "Menú adhesivo"
 
-#: kitconcept/voltolighttheme/behaviors/footer.py:46
+#: kitconcept/voltolighttheme/behaviors/footer.py:59
 msgid "The footer address that appears below the footer logo in the first footer column."
 msgstr "La dirección de pie de página que aparece debajo del logotipo de pie de página en la primera columna de pie de página."
 
-#: kitconcept/voltolighttheme/behaviors/footer.py:55
+#: kitconcept/voltolighttheme/behaviors/footer.py:68
 msgid "The header of the left-most column appearing after the address column."
 msgstr "El encabezado de la columna situada más a la izquierda después de la columna de direcciones."
 
-#: kitconcept/voltolighttheme/behaviors/footer.py:82
+#: kitconcept/voltolighttheme/behaviors/footer.py:95
 msgid "The header of the middle column appearing between the left and the right columns."
 msgstr "El encabezado de la columna central que aparece entre las columnas izquierda y derecha."
 
-#: kitconcept/voltolighttheme/behaviors/footer.py:110
+#: kitconcept/voltolighttheme/behaviors/footer.py:123
 msgid "The header of the right-most column appearing after the middle column."
 msgstr "El encabezado de la columna de la derecha que aparece después de la columna central."
 
-#: kitconcept/voltolighttheme/behaviors/footer.py:70
+#: kitconcept/voltolighttheme/behaviors/footer.py:83
 msgid "The left-most column appearing after the address column. It can contain a list of links."
 msgstr "La columna situada más a la izquierda después de la columna de direcciones. Puede contener una lista de enlaces."
 
-#: kitconcept/voltolighttheme/behaviors/footer.py:98
+#: kitconcept/voltolighttheme/behaviors/footer.py:111
 msgid "The middle column appearing between the left and the right columns. It can contain a list of links."
 msgstr "La columna central aparece entre las columnas izquierda y derecha. Puede contener una lista de enlaces."
 
-#: kitconcept/voltolighttheme/behaviors/footer.py:125
+#: kitconcept/voltolighttheme/behaviors/footer.py:138
 msgid "The right-most column appearing after the middle column. It can contain a list of links."
 msgstr "La columna situada más a la derecha aparece después de la columna central. Puede contener una lista de enlaces."
 
@@ -163,15 +163,11 @@ msgstr "Si se activa, se mostrará el menú expandido."
 msgid "help_footer_colophon_text"
 msgstr "El texto que aparece en el colofón a pie de página."
 
-#. Default: "The footer can have a prominent logo located in the lower right side. It is normally used for displaying the logo of the site sponsor."
-#: kitconcept/voltolighttheme/behaviors/footer.py:137
+#. Default: "The footer has a main logo located in the lower left side, above the address. In case that the footer has a dark  background, you can set this inversed logo to ensure it plays well with the background color. If not set, the main site logo will be used."
+#: kitconcept/voltolighttheme/behaviors/footer.py:47
+#, fuzzy
 msgid "help_footer_logo"
 msgstr "El pie de página puede tener un logotipo destacado situado en la parte inferior derecha. Normalmente se utiliza para mostrar el logotipo del patrocinador del sitio."
-
-#. Default: "The footer logo can be linked to a URL."
-#: kitconcept/voltolighttheme/behaviors/footer.py:154
-msgid "help_footer_logo_link"
-msgstr "El logotipo del pie de página puede vincularse a una URL."
 
 #. Default: "If enabled, the intranet header will be shown."
 #: kitconcept/voltolighttheme/behaviors/customizations.py:93
@@ -187,6 +183,16 @@ msgstr "Las acciones del sitio son los enlaces que aparecen en la parte superior
 #: kitconcept/voltolighttheme/behaviors/customizations.py:103
 msgid "help_intranet_flag"
 msgstr "La pastilla de color en la parte superior izquierda del encabezado."
+
+#. Default: "The post footer can have a prominent logo located in the lower right side. It is normally used for displaying the logo of the site sponsor."
+#: kitconcept/voltolighttheme/behaviors/footer.py:150
+msgid "help_post_footer_logo"
+msgstr ""
+
+#. Default: "The post footer logo can be linked to a URL."
+#: kitconcept/voltolighttheme/behaviors/footer.py:167
+msgid "help_post_footer_logo_link"
+msgstr ""
 
 #. Default: "If the site or subsite has a logo, please upload it here."
 #: kitconcept/voltolighttheme/behaviors/customizations.py:64
@@ -220,14 +226,9 @@ msgid "label_enable_fat_menu"
 msgstr "Habilitar menú expandido"
 
 #. Default: "Footer Logo"
-#: kitconcept/voltolighttheme/behaviors/footer.py:136
+#: kitconcept/voltolighttheme/behaviors/footer.py:46
 msgid "label_footer_logo"
 msgstr "Logotipo del pie de página"
-
-#. Default: "Footer Logo Link"
-#: kitconcept/voltolighttheme/behaviors/footer.py:153
-msgid "label_footer_logo_link"
-msgstr "Enlace al logotipo a pie de página"
 
 #. Default: "Enable Intranet Header"
 #: kitconcept/voltolighttheme/behaviors/customizations.py:92
@@ -238,6 +239,16 @@ msgstr "Activar encabezado de Intranet"
 #: kitconcept/voltolighttheme/behaviors/customizations.py:102
 msgid "label_intranet_flag"
 msgstr "Bandera del sitio"
+
+#. Default: "Post Footer Logo"
+#: kitconcept/voltolighttheme/behaviors/footer.py:149
+msgid "label_post_footer_logo"
+msgstr ""
+
+#. Default: "Post Footer Logo Link"
+#: kitconcept/voltolighttheme/behaviors/footer.py:166
+msgid "label_post_footer_logo_link"
+msgstr ""
 
 #. Default: "primary_foreground_colordefault"
 #: kitconcept/voltolighttheme/behaviors/customizations.py:169
