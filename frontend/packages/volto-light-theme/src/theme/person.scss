@@ -295,13 +295,16 @@ body.person-squared-images,
   .card-summary {
     display: grid;
     .summary-extra-info {
-      min-width: 0;
-      gap: 6px;
-      .summary-email {
-        display: block;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+      gap: 5px;
+      &.email {
+        min-width: 0;
+
+        a {
+          display: block;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
       }
     }
   }
