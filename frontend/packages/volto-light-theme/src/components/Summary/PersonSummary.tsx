@@ -40,7 +40,7 @@ const PersonSummary = (props: DefaultSummaryProps) => {
             name={mailSVG}
             size="24px"
           />
-          <a href={`mailto:${item.contact_email}`}>{item.contact_email}</a>
+          <a className="summary-email" href={`mailto:${item.contact_email}`}>{item.contact_email}</a>
         </div>
       )}
 

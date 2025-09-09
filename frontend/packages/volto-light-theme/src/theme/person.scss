@@ -297,7 +297,7 @@ body.person-squared-images,
     .summary-extra-info {
       min-width: 0;
       gap: 6px;
-      a {
+      .summary-email {
         display: block;
         overflow: hidden;
         text-overflow: ellipsis;
