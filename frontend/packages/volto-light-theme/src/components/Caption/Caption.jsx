@@ -15,10 +15,10 @@ import PropTypes from 'prop-types';
  * @returns {string} Markup of the component.
  */
 const Caption = ({ as = 'figcaption', title, description, credit }) => {
-  const As = as;
+  const As = as;x
   return (
     <As>
-      {title && <h2 className="title">{title}</h2>}
+      {title && <h5 className="title">{title}</h5>}
       {description && (
         <div className="description">
           {description.split('\n').map((line, index) => (
