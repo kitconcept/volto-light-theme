@@ -18,7 +18,7 @@ const Caption = ({ as = 'figcaption', title, description, credit }) => {
   const As = as;
   return (
     <As>
-      {title && <h5 className="title">{title}</h5>}
+      {title && <strong className="title">{title}</strong>}
       {description && (
         <div className="description">
           {description.split('\n').map((line, index) => (
