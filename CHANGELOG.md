@@ -1,6 +1,37 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 7.0.0b1 (2025-09-10)
+
+### Backend
+
+
+#### New features:
+
+- Update pt_BR translations. @ericof 
+
+
+
+### Frontend
+
+#### Feature
+
+- Update pt_BR translations. @ericof 
+
+#### Bugfix
+
+- Fix stickyMenu visibility so that it is hidden on non-content routes. @Tishasoumya-02 [#642](https://github.com/kitconcept/volto-light-theme/pull/642)
+- Fix person description text overflow in grid listing and teaser blocks @iRohitSingh [#645](https://github.com/kitconcept/volto-light-theme/pull/645)
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 7.0.0a28 (2025-09-08)
 
 ### Backend
