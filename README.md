@@ -78,6 +78,36 @@ make frontend-start
 
 🎉 Your Plone development environment is now live!
 
+### Run acceptance tests
+
+#### Regular acceptance tests
+
+TODO!
+
+#### a11y acceptance
+
+- Start the regular backend with:
+
+```sh
+make start-backend
+```
+
+- Start the frontend with:
+
+```sh
+cd frontend
+make acceptance-a11y-frontend-prod-start
+```
+
+- start Cypress with:
+
+```sh
+cd frontend
+make acceptance-a11y-test
+```
+
+
+
 ## Trying Volto Light Theme with Docker 📦
 
 This setup includes:
