@@ -42,6 +42,10 @@ defineMessages({
     id: 'List with images',
     defaultMessage: 'List with images',
   },
+  Simple: {
+    id: 'Simple',
+    defaultMessage: 'Simple',
+  },
 });
 
 declare module '@plone/types' {
