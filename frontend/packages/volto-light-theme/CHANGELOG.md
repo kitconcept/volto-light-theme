@@ -8,6 +8,17 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0-beta.1 (2025-09-10)
+
+### Feature
+
+- Update pt_BR translations. @ericof 
+
+### Bugfix
+
+- Fix stickyMenu visibility so that it is hidden on non-content routes. @Tishasoumya-02 [#642](https://github.com/kitconcept/volto-light-theme/pull/642)
+- Fix person description text overflow in grid listing and teaser blocks @iRohitSingh [#645](https://github.com/kitconcept/volto-light-theme/pull/645)
+
 ## 7.0.0-alpha.28 (2025-09-08)
 
 ### Bugfix

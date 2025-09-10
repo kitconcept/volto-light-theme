@@ -34,7 +34,7 @@ const PersonSummary = (props: DefaultSummaryProps) => {
       {!hide_description && <p className="description">{item.description}</p>}
 
       {item.contact_email && (
-        <div className="summary-extra-info">
+        <div className="summary-extra-info email">
           <Icon
             title={intl.formatMessage(messages.email)}
             name={mailSVG}
