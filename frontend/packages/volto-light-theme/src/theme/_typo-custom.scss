@@ -11,6 +11,7 @@ li {
   font-family: $page-font;
   font-style: normal;
   @include body-text();
+  margin-bottom; 4px;
 }
 
 @mixin word-break {
@@ -21,10 +22,6 @@ li {
   overflow-wrap: break-word;
   word-break: break-word;
   word-wrap: break-word;
-}
-
-li::marker {
-  line-height: 32px;
 }
 
 .content-area,
