@@ -157,6 +157,7 @@ figcaption {
   white-space: initial;
 
   .title {
+    display: block;
     margin-bottom: 10px;
     @include marginal-title();
   }
