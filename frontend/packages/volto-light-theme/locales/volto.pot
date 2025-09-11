@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2025-08-27T14:54:49.897Z\n"
+"POT-Creation-Date: 2025-09-11T14:25:05.504Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -417,6 +417,16 @@ msgstr ""
 #. Default: "Overview"
 #: components/MobileNavigation/MobileNavigation
 msgid "Overview"
+msgstr ""
+
+#. Default: "Pagination Navigation"
+#: components/Blocks/Listing/ListingBody
+msgid "Pagination Navigation"
+msgstr ""
+
+#. Default: "Pagination Navigation for {headline}"
+#: components/Blocks/Listing/ListingBody
+msgid "Pagination Navigation for {headline}"
 msgstr ""
 
 #. Default: "Phone"
