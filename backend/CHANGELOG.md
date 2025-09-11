@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0b1 (2025-09-10)
+
+
+### New features:
+
+- Update pt_BR translations. @ericof 
+
 ## 7.0.0a28 (2025-09-08)
 
 No significant changes.
