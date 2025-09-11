@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-09-09 10:35+0000\n"
+"POT-Creation-Date: 2025-09-11 22:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 msgid "Footer address"
 msgstr "Rodapé: Endereço"
 
-#: kitconcept/voltolighttheme/behaviors/customizations.py:282
+#: kitconcept/voltolighttheme/behaviors/customizations.py:261
 msgid "Footer colophon text"
 msgstr "Rodapé: Colofão"
 
@@ -46,28 +46,28 @@ msgstr "Rodapé: Coluna da direita"
 msgid "Footer column right header"
 msgstr "Rodapé: Cabeçalho da coluna da direita"
 
-#: kitconcept/voltolighttheme/behaviors/customizations.py:203
+#: kitconcept/voltolighttheme/behaviors/customizations.py:182
 #: kitconcept/voltolighttheme/behaviors/footer.py:30
 msgid "Footer customizations"
 msgstr "Rodapé: Personalizações"
 
-#: kitconcept/voltolighttheme/behaviors/customizations.py:274
+#: kitconcept/voltolighttheme/behaviors/customizations.py:253
 msgid "Footer links"
 msgstr "Rodapé: Links"
 
-#: kitconcept/voltolighttheme/behaviors/customizations.py:221
+#: kitconcept/voltolighttheme/behaviors/customizations.py:200
 msgid "Footer logos"
 msgstr "Rodapé: Logos"
 
-#: kitconcept/voltolighttheme/behaviors/customizations.py:248
+#: kitconcept/voltolighttheme/behaviors/customizations.py:227
 msgid "Footer logos container width"
 msgstr "Rodapé: Largura do container de logos"
 
-#: kitconcept/voltolighttheme/behaviors/customizations.py:261
+#: kitconcept/voltolighttheme/behaviors/customizations.py:240
 msgid "Footer logos size"
 msgstr "Rodapé: Tamanho dos logos"
 
-#: kitconcept/voltolighttheme/behaviors/customizations.py:51
+#: kitconcept/voltolighttheme/behaviors/customizations.py:30
 msgid "Header customizations"
 msgstr "Cabeçalho: Personalizações"
 
@@ -83,7 +83,7 @@ msgstr "Pacote para configurar um novo site com Volto Light Theme"
 msgid "Package to install the behaviors to a new Volto Light Theme site"
 msgstr "Pacote para instalar os comportamentos disponíveis no Volto Light Theme"
 
-#: kitconcept/voltolighttheme/behaviors/customizations.py:118
+#: kitconcept/voltolighttheme/behaviors/customizations.py:97
 msgid "Site Actions"
 msgstr "Ações do site"
 
@@ -119,7 +119,7 @@ msgstr "A coluna do meio que aparece entre as colunas esquerda e direita. Pode c
 msgid "The right-most column appearing after the middle column. It can contain a list of links."
 msgstr "A coluna mais à direita que aparece após a coluna do meio. Pode conter uma lista de links."
 
-#: kitconcept/voltolighttheme/behaviors/customizations.py:137
+#: kitconcept/voltolighttheme/behaviors/customizations.py:116
 msgid "Theming"
 msgstr "Tema"
 
@@ -144,17 +144,17 @@ msgid "Volto Light Theme: Uninstall"
 msgstr "Volto Light Theme: Desinstalação"
 
 #. Default: "If your site has an intranet header, it will show in the right side of the header."
-#: kitconcept/voltolighttheme/behaviors/customizations.py:73
+#: kitconcept/voltolighttheme/behaviors/customizations.py:52
 msgid "help_complementary_logo"
 msgstr "Caso seu site tenha um cabeçalho de intranet, ele será exibido no lado direito do cabeçalho."
 
 #. Default: "If enabled, the fat menu will be shown."
-#: kitconcept/voltolighttheme/behaviors/customizations.py:83
+#: kitconcept/voltolighttheme/behaviors/customizations.py:62
 msgid "help_enable_fat_menu"
 msgstr "Caso ativado, o menu expandido será exibido."
 
 #. Default: "The text that shows in the footer colophon."
-#: kitconcept/voltolighttheme/behaviors/customizations.py:283
+#: kitconcept/voltolighttheme/behaviors/customizations.py:262
 msgid "help_footer_colophon_text"
 msgstr "O texto que é exibido no colofão do rodapé."
 
@@ -165,17 +165,17 @@ msgid "help_footer_logo"
 msgstr "O rodapé pode ter um logo proeminente localizado no lado inferior direito. Normalmente é usado para exibir o logo do patrocinador do site."
 
 #. Default: "If enabled, the intranet header will be shown."
-#: kitconcept/voltolighttheme/behaviors/customizations.py:93
+#: kitconcept/voltolighttheme/behaviors/customizations.py:72
 msgid "help_has_intranet_header"
 msgstr "Caso ativado, o cabeçalho de intranet será exibido."
 
 #. Default: "The site actions are the links that show in the top right side of the header."
-#: kitconcept/voltolighttheme/behaviors/customizations.py:119
+#: kitconcept/voltolighttheme/behaviors/customizations.py:98
 msgid "help_header_actions"
 msgstr "As ações do site são os links que aparecem no lado direito do cabeçalho."
 
 #. Default: "The colored pill at the top left of the header."
-#: kitconcept/voltolighttheme/behaviors/customizations.py:103
+#: kitconcept/voltolighttheme/behaviors/customizations.py:82
 msgid "help_intranet_flag"
 msgstr "Um etiqueta colorida no canto superior esquerdo do cabeçalho."
 
@@ -190,7 +190,7 @@ msgid "help_post_footer_logo_link"
 msgstr "O logo do rodapé pode ser vinculado a uma URL."
 
 #. Default: "If the site or subsite has a logo, please upload it here."
-#: kitconcept/voltolighttheme/behaviors/customizations.py:64
+#: kitconcept/voltolighttheme/behaviors/customizations.py:43
 msgid "help_site_logo"
 msgstr "Caso o site ou subsite tenha uma logo, por favor faça o upload aqui."
 
@@ -199,24 +199,26 @@ msgstr "Caso o site ou subsite tenha uma logo, por favor faça o upload aqui."
 msgid "help_sticky_menu"
 msgstr "O menu fixo é composto por links com ícones que aparecem em uma posição fixa no lado direito da tela."
 
-#. Default: "accent_colordefault"
 #. Fat Menu Background Color
-#: kitconcept/voltolighttheme/behaviors/customizations.py:150
+#. Default: "Fat Menu Background Color"
+#: kitconcept/voltolighttheme/behaviors/customizations.py:129
+#, fuzzy
 msgid "label_accent_color"
 msgstr "Cor de fundo do menu expandido"
 
-#. Default: "accent_foreground_colordefault"
-#: kitconcept/voltolighttheme/behaviors/customizations.py:158
+#. Default: "Fat Menu / Breadcrumbs Text Color"
+#: kitconcept/voltolighttheme/behaviors/customizations.py:137
+#, fuzzy
 msgid "label_accent_foreground_color"
 msgstr "Cor do texto do menu expandido e da barra de migalhas"
 
 #. Default: "Complementary Logo"
-#: kitconcept/voltolighttheme/behaviors/customizations.py:72
+#: kitconcept/voltolighttheme/behaviors/customizations.py:51
 msgid "label_complementary_logo"
 msgstr "Logo complementar"
 
 #. Default: "Enable Fat Menu"
-#: kitconcept/voltolighttheme/behaviors/customizations.py:82
+#: kitconcept/voltolighttheme/behaviors/customizations.py:61
 msgid "label_enable_fat_menu"
 msgstr "Habilitar menu expandido"
 
@@ -226,12 +228,12 @@ msgid "label_footer_logo"
 msgstr "Rodapé: Logo"
 
 #. Default: "Enable Intranet Header"
-#: kitconcept/voltolighttheme/behaviors/customizations.py:92
+#: kitconcept/voltolighttheme/behaviors/customizations.py:71
 msgid "label_has_intranet_header"
 msgstr "Habilitar cabeçalho de intranet"
 
 #. Default: "Site Flag"
-#: kitconcept/voltolighttheme/behaviors/customizations.py:102
+#: kitconcept/voltolighttheme/behaviors/customizations.py:81
 msgid "label_intranet_flag"
 msgstr "Indicação do site"
 
@@ -245,23 +247,26 @@ msgstr "Logo do espaço após o rodapé"
 msgid "label_post_footer_logo_link"
 msgstr "Link do logo do espaço após o rodapé"
 
-#. Default: "primary_foreground_colordefault"
-#: kitconcept/voltolighttheme/behaviors/customizations.py:169
+#. Default: "Navigation Text Color"
+#: kitconcept/voltolighttheme/behaviors/customizations.py:148
+#, fuzzy
 msgid "label_primary_foreground_color"
 msgstr "Cor do texto da navegação"
 
-#. Default: "secondary_colordefault"
-#: kitconcept/voltolighttheme/behaviors/customizations.py:178
+#. Default: "Footer Background Color"
+#: kitconcept/voltolighttheme/behaviors/customizations.py:157
+#, fuzzy
 msgid "label_secondary_color"
 msgstr "Cor de fundo do rodapé"
 
-#. Default: "secondary_foreground_colordefault"
-#: kitconcept/voltolighttheme/behaviors/customizations.py:189
+#. Default: "Footer Font Color"
+#: kitconcept/voltolighttheme/behaviors/customizations.py:168
+#, fuzzy
 msgid "label_secondary_foreground_color"
 msgstr "Cor do texto do rodapé"
 
 #. Default: "Site Logo"
-#: kitconcept/voltolighttheme/behaviors/customizations.py:63
+#: kitconcept/voltolighttheme/behaviors/customizations.py:42
 msgid "label_site_logo"
 msgstr "Logo do site"
 
