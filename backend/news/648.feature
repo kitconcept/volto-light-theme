@@ -1,0 +1,1 @@
+Add missing German translations @danalvrz

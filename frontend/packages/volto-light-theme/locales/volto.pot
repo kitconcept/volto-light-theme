@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2025-09-10T11:09:38.283Z\n"
+"POT-Creation-Date: 2025-09-12T20:20:49.194Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -178,6 +178,11 @@ msgstr ""
 msgid "Download file"
 msgstr ""
 
+#. Default: "E-mail"
+#: components/Summary/PersonSummary
+msgid "E-mail"
+msgstr ""
+
 #. Default: "Empty object list"
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
@@ -231,8 +236,6 @@ msgstr ""
 
 #. Default: "Headline"
 #: components/Blocks/EventCalendar/Search/schema
-#: components/Widgets/schema/footerLogosSchema
-#: components/Widgets/schema/iconLinkListSchema
 msgid "Headline"
 msgstr ""
 
@@ -244,12 +247,6 @@ msgstr ""
 #. Default: "Hide Button"
 #: components/Blocks/Slider/schema
 msgid "Hide Button"
-msgstr ""
-
-#. Default: "Hide description"
-#: components/Widgets/schema/footerLogosSchema
-#: components/Widgets/schema/iconLinkListSchema
-msgid "Hide description"
 msgstr ""
 
 #. Default: "Hide facet?"
@@ -269,6 +266,11 @@ msgstr ""
 msgid "ICS-Download"
 msgstr ""
 
+#. Default: "Icon"
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Icon"
+msgstr ""
+
 #. Default: "Image"
 #: components/Blocks/Image/ImageSidebar
 msgid "Image"
@@ -283,11 +285,6 @@ msgstr ""
 #. Default: "Item"
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Item"
-msgstr ""
-
-#. Default: "Item icon"
-#: components/Widgets/schema/iconLinkListSchema
-msgid "Item icon"
 msgstr ""
 
 #. Default: "Label"
@@ -398,6 +395,11 @@ msgstr ""
 #. Default: "No selection"
 #: components/Blocks/EventCalendar/Search/components/SortOn
 msgid "No selection"
+msgstr ""
+
+#. Default: "Open configuration"
+#: components/Widgets/ModalJSONEditor
+msgid "Open configuration"
 msgstr ""
 
 #. Default: "Open in a new tab"
@@ -541,12 +543,6 @@ msgstr ""
 msgid "Section title"
 msgstr ""
 
-#. Default: "Settings"
-#: components/Widgets/schema/footerLogosSchema
-#: components/Widgets/schema/iconLinkListSchema
-msgid "Settings"
-msgstr ""
-
 #. Default: "Short line"
 #: components/Blocks/Separator/schema
 msgid "Short line"
@@ -682,11 +678,6 @@ msgstr ""
 #: components/Blocks/Block/Edit
 #: components/Blocks/Block/EditBlockWrapper
 msgid "delete"
-msgstr ""
-
-#. Default: "eMail"
-#: components/Summary/PersonSummary
-msgid "eMail"
 msgstr ""
 
 #. Default: "Clear image"
