@@ -19,7 +19,7 @@ msgstr ""
 #. Default: "Action"
 #: components/Widgets/schema/headerActionsSchema
 msgid "Action"
-msgstr ""
+msgstr "Aktion"
 
 #. Default: "Add"
 #: components/Widgets/BlocksObject
@@ -30,17 +30,17 @@ msgstr ""
 #. Default: "Add action"
 #: components/Widgets/schema/headerActionsSchema
 msgid "Add action"
-msgstr ""
+msgstr "Aktion hinzufügen"
 
 #. Default: "Add item"
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Add item"
-msgstr ""
+msgstr "Element hinzufügen"
 
 #. Default: "Add link"
 #: components/Widgets/schema/footerLinksSchema
 msgid "Add link"
-msgstr ""
+msgstr "Link hinzufügen"
 
 #. Default: "Add logo"
 #: components/Widgets/schema/footerLogosSchema
@@ -61,7 +61,7 @@ msgstr ""
 #: components/Blocks/Button/schema
 #: components/Blocks/Separator/schema
 msgid "Alignment"
-msgstr ""
+msgstr "Ausrichtung"
 
 #. Default: "Alt text"
 #: components/Widgets/schema/footerLogosSchema
@@ -131,7 +131,7 @@ msgstr ""
 #. Default: "The color contrast ratio {contrastRatio}:1 might not be accessible for all. WCAG Level: {complianceLevel}"
 #: components/Widgets/ColorContrastChecker
 msgid "ColorContrastCheckerMessage"
-msgstr ""
+msgstr "Das Farbkontrastverhältnis {contrastRatio}:1 ist möglicherweise nicht für alle zugänglich. WCAG-Level: {complianceLevel}"
 
 #. Default: "Contact"
 #: components/Blocks/EventMetadata/View
@@ -181,6 +181,11 @@ msgstr "Vertrieben unter {license}"
 msgid "Download file"
 msgstr "Datei herunterladen"
 
+#. Default: "E-mail"
+#: components/Summary/PersonSummary
+msgid "E-mail"
+msgstr ""
+
 #. Default: "Empty object list"
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
@@ -190,7 +195,7 @@ msgstr ""
 #. Default: "End"
 #: components/Blocks/EventMetadata/View
 msgid "End"
-msgstr "ende"
+msgstr "Ende"
 
 #. Default: "Facet"
 #: components/Blocks/EventCalendar/Search/schema
@@ -234,10 +239,8 @@ msgstr "GNU GPL Lizenz"
 
 #. Default: "Headline"
 #: components/Blocks/EventCalendar/Search/schema
-#: components/Widgets/schema/footerLogosSchema
-#: components/Widgets/schema/iconLinkListSchema
 msgid "Headline"
-msgstr ""
+msgstr "Überschrift"
 
 #. Default: "Hidden facets will still filter the results if proper parameters are passed in URLs"
 #: components/Blocks/EventCalendar/Search/schema
@@ -248,12 +251,6 @@ msgstr ""
 #: components/Blocks/Slider/schema
 msgid "Hide Button"
 msgstr "keinen Button anzeigen"
-
-#. Default: "Hide description"
-#: components/Widgets/schema/footerLogosSchema
-#: components/Widgets/schema/iconLinkListSchema
-msgid "Hide description"
-msgstr ""
 
 #. Default: "Hide facet?"
 #: components/Blocks/EventCalendar/Search/schema
@@ -341,7 +338,7 @@ msgstr "Anmelden"
 #. Default: "Log out"
 #: components/Anontools/Anontools
 msgid "Log out"
-msgstr ""
+msgstr "Ausloggen"
 
 #. Default: "Logo"
 #: components/Widgets/schema/footerLogosSchema
@@ -351,12 +348,12 @@ msgstr ""
 #. Default: "Logo image"
 #: components/Widgets/schema/footerLogosSchema
 msgid "Logo image"
-msgstr ""
+msgstr "Logo Bild"
 
 #. Default: "Logo of"
 #: components/Logo/Logo
 msgid "Logo of"
-msgstr ""
+msgstr "Logo von"
 
 #. Default: "Medium"
 #: components/Widgets/Size
@@ -402,6 +399,11 @@ msgstr "Keine Elemente im Ordner gefunden."
 #: components/Blocks/EventCalendar/Search/components/SortOn
 msgid "No selection"
 msgstr ""
+
+#. Default: "Open configuration"
+#: components/Widgets/ModalJSONEditor
+msgid "Open configuration"
+msgstr "Konfiguration öffnen"
 
 #. Default: "Open in a new tab"
 #: components/Widgets/schema/footerLinksSchema
@@ -480,7 +482,7 @@ msgstr "Rechts"
 #. Default: "Room"
 #: components/Summary/PersonSummary
 msgid "Room"
-msgstr ""
+msgstr "Raum"
 
 #. Default: "Search"
 #: components/Blocks/EventCalendar/Search/components/SearchInput
@@ -512,7 +514,7 @@ msgstr ""
 #. Default: "Search for People, E-Mail Address, Phone Number, ..."
 #: components/SearchWidget/IntranetSearchWidget
 msgid "Search for People, E-Mail Address, Phone Number, ..."
-msgstr ""
+msgstr "Suche nach Personen, E-Mail-Adresse, Telefonnummer, ..."
 
 #. Default: "Search input label"
 #: components/Blocks/EventCalendar/Search/schema
@@ -532,12 +534,6 @@ msgstr "Gesucht für"
 #. Default: "Section title"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Section title"
-msgstr ""
-
-#. Default: "Settings"
-#: components/Widgets/schema/footerLogosSchema
-#: components/Widgets/schema/iconLinkListSchema
-msgid "Settings"
 msgstr ""
 
 #. Default: "Short line"
@@ -633,7 +629,7 @@ msgstr ""
 #: components/Widgets/schema/headerActionsSchema
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Target"
-msgstr ""
+msgstr "Ziel"
 
 #. Default: "The button presence disables the live search, the query is issued when you press ENTER"
 #: components/Blocks/EventCalendar/Search/schema
@@ -675,11 +671,6 @@ msgstr ""
 #: components/Blocks/Block/Edit
 #: components/Blocks/Block/EditBlockWrapper
 msgid "delete"
-msgstr ""
-
-#. Default: "eMail"
-#: components/Summary/PersonSummary
-msgid "eMail"
 msgstr ""
 
 #. Default: "Clear image"

@@ -31,18 +31,6 @@ const messages = defineMessages({
     id: 'Add item',
     defaultMessage: 'Add item',
   },
-  headline: {
-    id: 'Headline',
-    defaultMessage: 'Headline',
-  },
-  hideDescription: {
-    id: 'Hide description',
-    defaultMessage: 'Hide description',
-  },
-  settings: {
-    id: 'Settings',
-    defaultMessage: 'Settings',
-  },
   openLinkInNewTab: {
     id: 'Open in a new tab',
     defaultMessage: 'Open in a new tab',

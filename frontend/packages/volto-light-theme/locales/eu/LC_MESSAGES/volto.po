@@ -182,6 +182,11 @@ msgstr "{lizentzia} lizentziapean banatua."
 msgid "Download file"
 msgstr ""
 
+#. Default: "E-mail"
+#: components/Summary/PersonSummary
+msgid "E-mail"
+msgstr ""
+
 #. Default: "Empty object list"
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
@@ -235,8 +240,6 @@ msgstr "GNU GPL"
 
 #. Default: "Headline"
 #: components/Blocks/EventCalendar/Search/schema
-#: components/Widgets/schema/footerLogosSchema
-#: components/Widgets/schema/iconLinkListSchema
 msgid "Headline"
 msgstr ""
 
@@ -249,12 +252,6 @@ msgstr ""
 #: components/Blocks/Slider/schema
 msgid "Hide Button"
 msgstr "Ezkutatu botoia"
-
-#. Default: "Hide description"
-#: components/Widgets/schema/footerLogosSchema
-#: components/Widgets/schema/iconLinkListSchema
-msgid "Hide description"
-msgstr ""
 
 #. Default: "Hide facet?"
 #: components/Blocks/EventCalendar/Search/schema
@@ -404,6 +401,11 @@ msgstr "Ez dago elementurik"
 msgid "No selection"
 msgstr ""
 
+#. Default: "Open configuration"
+#: components/Widgets/ModalJSONEditor
+msgid "Open configuration"
+msgstr ""
+
 #. Default: "Open in a new tab"
 #: components/Widgets/schema/footerLinksSchema
 #: components/Widgets/schema/footerLogosSchema
@@ -533,12 +535,6 @@ msgstr "Hau bilatu duzu"
 #. Default: "Section title"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Section title"
-msgstr ""
-
-#. Default: "Settings"
-#: components/Widgets/schema/footerLogosSchema
-#: components/Widgets/schema/iconLinkListSchema
-msgid "Settings"
 msgstr ""
 
 #. Default: "Short line"
@@ -676,11 +672,6 @@ msgstr ""
 #: components/Blocks/Block/Edit
 #: components/Blocks/Block/EditBlockWrapper
 msgid "delete"
-msgstr ""
-
-#. Default: "eMail"
-#: components/Summary/PersonSummary
-msgid "eMail"
 msgstr ""
 
 #. Default: "Clear image"

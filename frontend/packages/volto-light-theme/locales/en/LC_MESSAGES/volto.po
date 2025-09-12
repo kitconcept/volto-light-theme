@@ -176,6 +176,11 @@ msgstr ""
 msgid "Download file"
 msgstr ""
 
+#. Default: "E-mail"
+#: components/Summary/PersonSummary
+msgid "E-mail"
+msgstr ""
+
 #. Default: "Empty object list"
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
@@ -229,8 +234,6 @@ msgstr ""
 
 #. Default: "Headline"
 #: components/Blocks/EventCalendar/Search/schema
-#: components/Widgets/schema/footerLogosSchema
-#: components/Widgets/schema/iconLinkListSchema
 msgid "Headline"
 msgstr ""
 
@@ -242,12 +245,6 @@ msgstr ""
 #. Default: "Hide Button"
 #: components/Blocks/Slider/schema
 msgid "Hide Button"
-msgstr ""
-
-#. Default: "Hide description"
-#: components/Widgets/schema/footerLogosSchema
-#: components/Widgets/schema/iconLinkListSchema
-msgid "Hide description"
 msgstr ""
 
 #. Default: "Hide facet?"
@@ -398,6 +395,11 @@ msgstr ""
 msgid "No selection"
 msgstr ""
 
+#. Default: "Open configuration"
+#: components/Widgets/ModalJSONEditor
+msgid "Open configuration"
+msgstr ""
+
 #. Default: "Open in a new tab"
 #: components/Widgets/schema/footerLinksSchema
 #: components/Widgets/schema/footerLogosSchema
@@ -527,12 +529,6 @@ msgstr ""
 #. Default: "Section title"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Section title"
-msgstr ""
-
-#. Default: "Settings"
-#: components/Widgets/schema/footerLogosSchema
-#: components/Widgets/schema/iconLinkListSchema
-msgid "Settings"
 msgstr ""
 
 #. Default: "Short line"
@@ -670,11 +666,6 @@ msgstr ""
 #: components/Blocks/Block/Edit
 #: components/Blocks/Block/EditBlockWrapper
 msgid "delete"
-msgstr ""
-
-#. Default: "eMail"
-#: components/Summary/PersonSummary
-msgid "eMail"
 msgstr ""
 
 #. Default: "Clear image"

@@ -1,9 +1,18 @@
 import * as React from 'react';
+import { defineMessages, useIntl } from 'react-intl';
 import { Button, Modal } from '@plone/components';
 import { Dialog, DialogTrigger } from 'react-aria-components';
 import FormFieldWrapper from '@plone/volto/components/manage/Widgets/FormFieldWrapper';
 
+const messages = defineMessages({
+  openConfiguration: {
+    id: 'Open configuration',
+    defaultMessage: 'Open configuration',
+  },
+});
+
 const ModalJSONEditor = (props) => {
+  const intl = useIntl();
   const [textValue, setTextValue] = React.useState(
     JSON.stringify(props.value, null, 2),
   );
@@ -18,7 +27,9 @@ const ModalJSONEditor = (props) => {
       >
         <DialogTrigger>
           <div className="button-wrapper">
-            <Button aria-label="Open configuration">Open configuration</Button>
+            <Button aria-label="Open configuration">
+              {intl.formatMessage(messages.openConfiguration)}
+            </Button>
           </div>
           <Modal className="block-config-json-editor-modal">
             <Dialog>

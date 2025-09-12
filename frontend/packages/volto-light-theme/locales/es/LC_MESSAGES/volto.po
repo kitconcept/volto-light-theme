@@ -183,6 +183,11 @@ msgstr "Distribuido bajo {license}"
 msgid "Download file"
 msgstr ""
 
+#. Default: "E-mail"
+#: components/Summary/PersonSummary
+msgid "E-mail"
+msgstr ""
+
 #. Default: "Empty object list"
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
@@ -236,8 +241,6 @@ msgstr "Licencia GNU GPL"
 
 #. Default: "Headline"
 #: components/Blocks/EventCalendar/Search/schema
-#: components/Widgets/schema/footerLogosSchema
-#: components/Widgets/schema/iconLinkListSchema
 msgid "Headline"
 msgstr "Encabezado"
 
@@ -250,12 +253,6 @@ msgstr ""
 #: components/Blocks/Slider/schema
 msgid "Hide Button"
 msgstr "Esconder botón"
-
-#. Default: "Hide description"
-#: components/Widgets/schema/footerLogosSchema
-#: components/Widgets/schema/iconLinkListSchema
-msgid "Hide description"
-msgstr "Ocultar descripción"
 
 #. Default: "Hide facet?"
 #: components/Blocks/EventCalendar/Search/schema
@@ -405,6 +402,11 @@ msgstr "No se han encontrado elementos en este contenedor."
 msgid "No selection"
 msgstr ""
 
+#. Default: "Open configuration"
+#: components/Widgets/ModalJSONEditor
+msgid "Open configuration"
+msgstr ""
+
 #. Default: "Open in a new tab"
 #: components/Widgets/schema/footerLinksSchema
 #: components/Widgets/schema/footerLogosSchema
@@ -535,12 +537,6 @@ msgstr "Ha buscado"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Section title"
 msgstr ""
-
-#. Default: "Settings"
-#: components/Widgets/schema/footerLogosSchema
-#: components/Widgets/schema/iconLinkListSchema
-msgid "Settings"
-msgstr "Ajustes"
 
 #. Default: "Short line"
 #: components/Blocks/Separator/schema
@@ -678,11 +674,6 @@ msgstr ""
 #: components/Blocks/Block/EditBlockWrapper
 msgid "delete"
 msgstr ""
-
-#. Default: "eMail"
-#: components/Summary/PersonSummary
-msgid "eMail"
-msgstr "Correo electrónico"
 
 #. Default: "Clear image"
 #: components/Blocks/Image/ImageSidebar
