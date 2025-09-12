@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2025-08-27T14:54:49.897Z\n"
+"POT-Creation-Date: 2025-09-12T06:10:13.077Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -209,7 +209,7 @@ msgstr ""
 msgid "Field"
 msgstr ""
 
-#. Default: "Flag align"
+#. Default: "Align"
 #: components/Blocks/Slider/schema
 msgid "Flag align"
 msgstr ""
@@ -278,6 +278,11 @@ msgstr ""
 #: components/Theme/RenderBlocks
 #: components/Theme/RenderBlocksV2
 msgid "Invalid Block"
+msgstr ""
+
+#. Default: "Invalid Slider source"
+#: components/Blocks/Slider/Data
+msgid "Invalid Slider source"
 msgstr ""
 
 #. Default: "Item"
@@ -453,6 +458,11 @@ msgstr ""
 msgid "Previous Page"
 msgstr ""
 
+#. Default: "Refresh source content"
+#: components/Blocks/Slider/Data
+msgid "Refresh source content"
+msgstr ""
+
 #. Default: "Register"
 #: components/Anontools/Anontools
 msgid "Register"
@@ -462,6 +472,11 @@ msgstr ""
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
 msgid "Remove item"
+msgstr ""
+
+#. Default: "Reset the block"
+#: components/Blocks/Slider/Data
+msgid "Reset the block"
 msgstr ""
 
 #. Default: "Result"
