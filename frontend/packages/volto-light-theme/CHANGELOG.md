@@ -8,6 +8,22 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0-beta.2 (2025-09-12)
+
+### Breaking
+
+- Change image caption title from <h2>to <strong> to improve accessibilty. [#415](https://github.com/kitconcept/volto-light-theme/pull/415)
+
+### Feature
+
+- Add missing German translations @danalvrz [#648](https://github.com/kitconcept/volto-light-theme/pull/648)
+
+### Bugfix
+
+- use listing block headline for aria label of block pagination if available @jackahl [#639](https://github.com/kitconcept/volto-light-theme/pull/639)
+- Add German translation of slider variant "simple" @iRohitSingh [#651](https://github.com/kitconcept/volto-light-theme/pull/651)
+- Change slider block "Flag align" default translation to "Align" and add German translation. @Tishasoumya-02 
+
 ## 7.0.0-beta.1 (2025-09-10)
 
 ### Feature
