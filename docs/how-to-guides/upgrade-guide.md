@@ -99,6 +99,10 @@ This is an excerpt of the new shadowed Teaser `Body` component:
 
 If you have customized Teaser Body components, or registered components with `Teaser` depending on the content type, you will need to remove the `placeholder` from your them, as it is now handled by the `Body` component.
 
+### Changed h2 headline in captions to uses strong
+
+For accessibility reasons we switched the `<h2>` in the image captions to `<strong>` as this better reflects the actual semantic role there. This should not effect you in most cases, but if you mirrored and customise the `<Caption/>` component you might want to amend this in your code as well.
+
 ## volto-light-theme 6.0.0
 
 This section describes how to upgrade to volto-light-theme 6.0.0 from 5.x.x.
