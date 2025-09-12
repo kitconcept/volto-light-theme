@@ -4,7 +4,7 @@ import { defaultStylingSchema } from '../schema';
 const messages = defineMessages({
   flagAlign: {
     id: 'Flag align',
-    defaultMessage: 'Flag align',
+    defaultMessage: 'Align',
   },
   buttonText: {
     id: 'Button text',
