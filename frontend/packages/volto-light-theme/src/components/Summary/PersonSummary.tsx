@@ -12,8 +12,8 @@ const messages = defineMessages({
     defaultMessage: 'Phone',
   },
   email: {
-    id: 'eMail',
-    defaultMessage: 'eMail',
+    id: 'E-mail',
+    defaultMessage: 'E-mail',
   },
   room: {
     id: 'Room',
