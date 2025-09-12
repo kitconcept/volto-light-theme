@@ -16,7 +16,7 @@
 
 #### Breaking
 
-- Change image caption title from <h2>to <strong> to improve accessibilty. [#415](https://github.com/kitconcept/volto-light-theme/pull/415)
+- Change image caption title from `<h2>` to `<strong>` to improve accessibilty. [#415](https://github.com/kitconcept/volto-light-theme/pull/415)
 
 #### Feature
 
