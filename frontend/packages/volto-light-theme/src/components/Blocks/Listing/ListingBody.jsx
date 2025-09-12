@@ -1,11 +1,22 @@
 import React, { createRef, useRef, useMemo } from 'react';
-import { FormattedMessage, injectIntl } from 'react-intl';
+import { FormattedMessage, injectIntl, defineMessages } from 'react-intl';
 import cx from 'classnames';
 import { Pagination, Dimmer, Loader } from 'semantic-ui-react';
 import Slugger from 'github-slugger';
 import { renderLinkElement } from '@plone/volto-slate/editor/render';
 import config from '@plone/volto/registry';
 import withQuerystringResults from '@plone/volto/components/manage/Blocks/Listing/withQuerystringResults';
+
+const messages = defineMessages({
+  PaginationNavigationFor: {
+    id: 'Pagination Navigation for {headline}',
+    defaultMessage: 'Pagination Navigation for {headline}',
+  },
+  PaginationNavigation: {
+    id: 'Pagination Navigation',
+    defaultMessage: 'Pagination Navigation',
+  },
+});
 
 const Headline = ({
   headlineTag,
@@ -100,6 +111,16 @@ export const ListingBody = (props) => {
           {totalPages > 1 && (
             <div className="pagination-wrapper">
               <Pagination
+                aria-label={
+                  data.headline
+                    ? props.intl.formatMessage(
+                        messages.PaginationNavigationFor,
+                        {
+                          headline: data.headline,
+                        },
+                      )
+                    : props.intl.formatMessage(messages.PaginationNavigation)
+                }
                 className="desktop-pagination"
                 activePage={currentPage}
                 totalPages={totalPages}

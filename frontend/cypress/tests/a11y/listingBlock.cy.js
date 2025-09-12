@@ -22,19 +22,6 @@ describe('a11y tests', () => {
           id: 'image-alt',
           enabled: false,
         },
-        {
-          id: 'nested-interactive',
-          enabled: false,
-        },
-        // Disabling 'landmark-unique'
-        // The listing block uses a pagination component.
-        // This pagination component has role="navigation" and the same aria-label
-        // across all listing blocks. Since the listing example content includes
-        // multiple listing blocks, accessibility tests sometimes throw an error.
-        {
-          id: 'landmark-unique',
-          enabled: false,
-        },
       ],
     });
     cy.checkAccessibility();
