@@ -1,0 +1,1 @@
+Add Refresh Content button for slider block @Tishasoumya-02
