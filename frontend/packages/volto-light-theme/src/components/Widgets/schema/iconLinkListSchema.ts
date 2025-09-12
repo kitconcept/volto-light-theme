@@ -20,8 +20,8 @@ const messages = defineMessages({
     defaultMessage: 'Description',
   },
   icon: {
-    id: 'Item icon',
-    defaultMessage: 'Item icon',
+    id: 'Icon',
+    defaultMessage: 'Icon',
   },
   item: {
     id: 'Item',

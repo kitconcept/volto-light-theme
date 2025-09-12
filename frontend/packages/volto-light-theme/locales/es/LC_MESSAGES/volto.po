@@ -274,6 +274,11 @@ msgstr "Inicio"
 msgid "ICS-Download"
 msgstr "Descargar archivo ICS"
 
+#. Default: "Icon"
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Icon"
+msgstr ""
+
 #. Default: "Image"
 #: components/Blocks/Image/ImageSidebar
 msgid "Image"
@@ -289,11 +294,6 @@ msgstr ""
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Item"
 msgstr "Elemento"
-
-#. Default: "Item icon"
-#: components/Widgets/schema/iconLinkListSchema
-msgid "Item icon"
-msgstr "Icono de elemento"
 
 #. Default: "Label"
 #: components/Blocks/EventCalendar/Search/schema

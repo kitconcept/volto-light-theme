@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-09-11 22:57+0000\n"
+"POT-Creation-Date: 2025-09-12 18:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgstr "Rodapé: Endereço"
 msgid "Footer colophon text"
 msgstr "Rodapé: Colofão"
 
-#: kitconcept/voltolighttheme/behaviors/footer.py:82
+#: kitconcept/voltolighttheme/behaviors/footer.py:79
 msgid "Footer column left"
 msgstr "Rodapé: Coluna da esquerda"
 
@@ -30,19 +30,19 @@ msgstr "Rodapé: Coluna da esquerda"
 msgid "Footer column left header"
 msgstr "Rodapé: Cabeçalho da coluna da esquerda"
 
-#: kitconcept/voltolighttheme/behaviors/footer.py:110
+#: kitconcept/voltolighttheme/behaviors/footer.py:103
 msgid "Footer column middle"
 msgstr "Rodapé: Coluna do meio"
 
-#: kitconcept/voltolighttheme/behaviors/footer.py:94
+#: kitconcept/voltolighttheme/behaviors/footer.py:91
 msgid "Footer column middle header"
 msgstr "Rodapé: Cabeçalho da coluna do meio"
 
-#: kitconcept/voltolighttheme/behaviors/footer.py:137
+#: kitconcept/voltolighttheme/behaviors/footer.py:127
 msgid "Footer column right"
 msgstr "Rodapé: Coluna da direita"
 
-#: kitconcept/voltolighttheme/behaviors/footer.py:122
+#: kitconcept/voltolighttheme/behaviors/footer.py:115
 msgid "Footer column right header"
 msgstr "Rodapé: Cabeçalho da coluna da direita"
 
@@ -87,35 +87,19 @@ msgstr "Pacote para instalar os comportamentos disponíveis no Volto Light Theme
 msgid "Site Actions"
 msgstr "Ações do site"
 
-#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:28
-msgid "Sticky menu"
-msgstr "Menu fixo"
-
 #: kitconcept/voltolighttheme/behaviors/footer.py:59
 msgid "The footer address that appears below the footer logo in the first footer column."
 msgstr "O endereço do rodapé que aparece abaixo do logo do rodapé na primeira coluna do rodapé."
 
-#: kitconcept/voltolighttheme/behaviors/footer.py:68
-msgid "The header of the left-most column appearing after the address column."
-msgstr "O cabeçalho da coluna mais à esquerda que aparece após a coluna de endereço."
-
-#: kitconcept/voltolighttheme/behaviors/footer.py:95
-msgid "The header of the middle column appearing between the left and the right columns."
-msgstr "O cabeçalho da coluna do meio que aparece entre as colunas esquerda e direita."
-
-#: kitconcept/voltolighttheme/behaviors/footer.py:123
-msgid "The header of the right-most column appearing after the middle column."
-msgstr "O cabeçalho da coluna mais à direita que aparece após a coluna do meio."
-
-#: kitconcept/voltolighttheme/behaviors/footer.py:83
+#: kitconcept/voltolighttheme/behaviors/footer.py:80
 msgid "The left-most column appearing after the address column. It can contain a list of links."
 msgstr "A coluna mais à esquerda que aparece após a coluna de endereço. Pode conter uma lista de links."
 
-#: kitconcept/voltolighttheme/behaviors/footer.py:111
+#: kitconcept/voltolighttheme/behaviors/footer.py:104
 msgid "The middle column appearing between the left and the right columns. It can contain a list of links."
 msgstr "A coluna do meio que aparece entre as colunas esquerda e direita. Pode conter uma lista de links."
 
-#: kitconcept/voltolighttheme/behaviors/footer.py:138
+#: kitconcept/voltolighttheme/behaviors/footer.py:128
 msgid "The right-most column appearing after the middle column. It can contain a list of links."
 msgstr "A coluna mais à direita que aparece após a coluna do meio. Pode conter uma lista de links."
 
@@ -143,6 +127,11 @@ msgstr "Volto Light Theme: Instalação"
 msgid "Volto Light Theme: Uninstall"
 msgstr "Volto Light Theme: Desinstalação"
 
+#. Default: "Sticky menu"
+#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:28
+msgid "fieldset_sticky_menu"
+msgstr ""
+
 #. Default: "If your site has an intranet header, it will show in the right side of the header."
 #: kitconcept/voltolighttheme/behaviors/customizations.py:52
 msgid "help_complementary_logo"
@@ -160,7 +149,6 @@ msgstr "O texto que é exibido no colofão do rodapé."
 
 #. Default: "The footer has a main logo located in the lower left side, above the address. In case that the footer has a dark  background, you can set this inversed logo to ensure it plays well with the background color. If not set, the main site logo will be used."
 #: kitconcept/voltolighttheme/behaviors/footer.py:47
-#, fuzzy
 msgid "help_footer_logo"
 msgstr "O rodapé pode ter um logo proeminente localizado no lado inferior direito. Normalmente é usado para exibir o logo do patrocinador do site."
 
@@ -180,12 +168,12 @@ msgid "help_intranet_flag"
 msgstr "Um etiqueta colorida no canto superior esquerdo do cabeçalho."
 
 #. Default: "The post footer can have a prominent logo located in the lower right side. It is normally used for displaying the logo of the site sponsor."
-#: kitconcept/voltolighttheme/behaviors/footer.py:150
+#: kitconcept/voltolighttheme/behaviors/footer.py:140
 msgid "help_post_footer_logo"
 msgstr "O espaço após o rodapé pode ter um logo proeminente localizado no lado inferior direito. Normalmente é usado para exibir o logo do patrocinador do site."
 
 #. Default: "The post footer logo can be linked to a URL."
-#: kitconcept/voltolighttheme/behaviors/footer.py:167
+#: kitconcept/voltolighttheme/behaviors/footer.py:157
 msgid "help_post_footer_logo_link"
 msgstr "O logo do rodapé pode ser vinculado a uma URL."
 
@@ -202,13 +190,11 @@ msgstr "O menu fixo é composto por links com ícones que aparecem em uma posiç
 #. Fat Menu Background Color
 #. Default: "Fat Menu Background Color"
 #: kitconcept/voltolighttheme/behaviors/customizations.py:129
-#, fuzzy
 msgid "label_accent_color"
 msgstr "Cor de fundo do menu expandido"
 
 #. Default: "Fat Menu / Breadcrumbs Text Color"
 #: kitconcept/voltolighttheme/behaviors/customizations.py:137
-#, fuzzy
 msgid "label_accent_foreground_color"
 msgstr "Cor do texto do menu expandido e da barra de migalhas"
 
@@ -238,30 +224,27 @@ msgid "label_intranet_flag"
 msgstr "Indicação do site"
 
 #. Default: "Post Footer Logo"
-#: kitconcept/voltolighttheme/behaviors/footer.py:149
+#: kitconcept/voltolighttheme/behaviors/footer.py:139
 msgid "label_post_footer_logo"
 msgstr "Logo do espaço após o rodapé"
 
 #. Default: "Post Footer Logo Link"
-#: kitconcept/voltolighttheme/behaviors/footer.py:166
+#: kitconcept/voltolighttheme/behaviors/footer.py:156
 msgid "label_post_footer_logo_link"
 msgstr "Link do logo do espaço após o rodapé"
 
 #. Default: "Navigation Text Color"
 #: kitconcept/voltolighttheme/behaviors/customizations.py:148
-#, fuzzy
 msgid "label_primary_foreground_color"
 msgstr "Cor do texto da navegação"
 
 #. Default: "Footer Background Color"
 #: kitconcept/voltolighttheme/behaviors/customizations.py:157
-#, fuzzy
 msgid "label_secondary_color"
 msgstr "Cor de fundo do rodapé"
 
 #. Default: "Footer Font Color"
 #: kitconcept/voltolighttheme/behaviors/customizations.py:168
-#, fuzzy
 msgid "label_secondary_foreground_color"
 msgstr "Cor do texto do rodapé"
 
@@ -269,6 +252,11 @@ msgstr "Cor do texto do rodapé"
 #: kitconcept/voltolighttheme/behaviors/customizations.py:42
 msgid "label_site_logo"
 msgstr "Logo do site"
+
+#. Default: "Sticky menu"
+#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:62
+msgid "label_sticky_menu"
+msgstr ""
 
 #. Default: "Sticky menu background color"
 #: kitconcept/voltolighttheme/behaviors/sticky_menu.py:38
