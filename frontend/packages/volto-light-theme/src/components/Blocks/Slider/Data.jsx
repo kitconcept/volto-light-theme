@@ -28,14 +28,21 @@ const messages = defineMessages({
 });
 
 const SliderData = (props) => {
-  const { block, blocksConfig, data, onChangeBlock, navRoot, contentType } =
-    props;
+  const {
+    block,
+    blocksConfig,
+    data,
+    onChangeBlock,
+    navRoot,
+    contentType,
+    activeObject,
+  } = props;
   const dispatch = useDispatch();
   const intl = useIntl();
   const schema = SliderSchema({ ...props, intl });
 
-  const dataTransformer = (resp, currentData, targetIndex) => {
-    const hrefData = {
+  const dataTransformer = (resp, data, activeObject) => {
+    let hrefData = {
       '@id': flattenToAppURL(resp['@id']),
       '@type': resp?.['@type'],
       Description: resp?.description,
@@ -54,67 +61,44 @@ const SliderData = (props) => {
       title: resp.title,
     };
 
-    const updatedSlides = [...currentData.slides];
-
-    updatedSlides[targetIndex] = {
-      '@id': currentData.slides[targetIndex]['@id'],
+    const updatedSlides = [...data.slides];
+    updatedSlides[activeObject] = {
+      '@id': data.slides[activeObject]['@id'],
       description: resp?.description,
       title: resp?.title,
-      flagAlign: currentData.slides[targetIndex]?.flagAlign,
+      flagAlign: data.slides[activeObject]?.flagAlign,
       href: [hrefData],
     };
-
     return {
-      ...currentData,
+      ...data,
       slides: updatedSlides,
     };
   };
 
-  const refresh = async () => {
-    if (isEmpty(data.slides)) return;
-
-    const refreshPromises = data.slides.map((slide, index) => {
-      if (!slide?.href?.[0]?.['@id']) return null;
-
-      return dispatch(
+  const refresh = () => {
+    if (data.slides[activeObject]?.href?.[0]?.['@id']) {
+      dispatch(
         getContent(
-          flattenToAppURL(slide.href[0]['@id']),
+          flattenToAppURL(data.slides[activeObject].href[0]['@id']),
           null,
-          `${block}-slider`,
+          `${block}-slider-${activeObject}`,
         ),
       )
         .then((resp) => {
-          return { resp, index };
+          if (resp) {
+            let blockData = dataTransformer(resp, data, activeObject);
+            onChangeBlock(block, blockData);
+          }
         })
         .catch((e) => {
           toast.error(
             <Toast
               error
-              title={intl.formatMessage(defaultMessages.error)}
-              content={intl.formatMessage(messages.invalidSlider)}
+              title={props.intl.formatMessage(defaultMessages.error)}
+              content={props.intl.formatMessage(messages.invalidSlider)}
             />,
           );
-          return null;
         });
-    });
-
-    try {
-      const results = await Promise.all(refreshPromises);
-      let updatedData = { ...data };
-      results.forEach((result) => {
-        if (result && result.resp) {
-          updatedData = dataTransformer(result.resp, updatedData, result.index);
-        }
-      });
-      onChangeBlock(block, updatedData);
-    } catch (e) {
-      toast.error(
-        <Toast
-          error
-          title={intl.formatMessage(defaultMessages.error)}
-          content={intl.formatMessage(messages.invalidSlider)}
-        />,
-      );
     }
   };
 
