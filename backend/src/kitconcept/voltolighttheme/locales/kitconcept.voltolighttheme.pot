@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-09-09 10:35+0000\n"
+"POT-Creation-Date: 2025-09-12 20:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,11 +21,11 @@ msgstr ""
 msgid "Footer address"
 msgstr ""
 
-#: kitconcept/voltolighttheme/behaviors/customizations.py:282
+#: kitconcept/voltolighttheme/behaviors/customizations.py:259
 msgid "Footer colophon text"
 msgstr ""
 
-#: kitconcept/voltolighttheme/behaviors/footer.py:82
+#: kitconcept/voltolighttheme/behaviors/footer.py:79
 msgid "Footer column left"
 msgstr ""
 
@@ -33,44 +33,44 @@ msgstr ""
 msgid "Footer column left header"
 msgstr ""
 
-#: kitconcept/voltolighttheme/behaviors/footer.py:110
+#: kitconcept/voltolighttheme/behaviors/footer.py:103
 msgid "Footer column middle"
 msgstr ""
 
-#: kitconcept/voltolighttheme/behaviors/footer.py:94
+#: kitconcept/voltolighttheme/behaviors/footer.py:91
 msgid "Footer column middle header"
 msgstr ""
 
-#: kitconcept/voltolighttheme/behaviors/footer.py:137
+#: kitconcept/voltolighttheme/behaviors/footer.py:127
 msgid "Footer column right"
 msgstr ""
 
-#: kitconcept/voltolighttheme/behaviors/footer.py:122
+#: kitconcept/voltolighttheme/behaviors/footer.py:115
 msgid "Footer column right header"
 msgstr ""
 
-#: kitconcept/voltolighttheme/behaviors/customizations.py:203
+#: kitconcept/voltolighttheme/behaviors/customizations.py:180
 #: kitconcept/voltolighttheme/behaviors/footer.py:30
 msgid "Footer customizations"
 msgstr ""
 
-#: kitconcept/voltolighttheme/behaviors/customizations.py:274
+#: kitconcept/voltolighttheme/behaviors/customizations.py:251
 msgid "Footer links"
 msgstr ""
 
-#: kitconcept/voltolighttheme/behaviors/customizations.py:221
+#: kitconcept/voltolighttheme/behaviors/customizations.py:198
 msgid "Footer logos"
 msgstr ""
 
-#: kitconcept/voltolighttheme/behaviors/customizations.py:248
+#: kitconcept/voltolighttheme/behaviors/customizations.py:225
 msgid "Footer logos container width"
 msgstr ""
 
-#: kitconcept/voltolighttheme/behaviors/customizations.py:261
+#: kitconcept/voltolighttheme/behaviors/customizations.py:238
 msgid "Footer logos size"
 msgstr ""
 
-#: kitconcept/voltolighttheme/behaviors/customizations.py:51
+#: kitconcept/voltolighttheme/behaviors/customizations.py:30
 msgid "Header customizations"
 msgstr ""
 
@@ -86,43 +86,27 @@ msgstr ""
 msgid "Package to install the behaviors to a new Volto Light Theme site"
 msgstr ""
 
-#: kitconcept/voltolighttheme/behaviors/customizations.py:118
+#: kitconcept/voltolighttheme/behaviors/customizations.py:97
 msgid "Site Actions"
-msgstr ""
-
-#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:28
-msgid "Sticky menu"
 msgstr ""
 
 #: kitconcept/voltolighttheme/behaviors/footer.py:59
 msgid "The footer address that appears below the footer logo in the first footer column."
 msgstr ""
 
-#: kitconcept/voltolighttheme/behaviors/footer.py:68
-msgid "The header of the left-most column appearing after the address column."
-msgstr ""
-
-#: kitconcept/voltolighttheme/behaviors/footer.py:95
-msgid "The header of the middle column appearing between the left and the right columns."
-msgstr ""
-
-#: kitconcept/voltolighttheme/behaviors/footer.py:123
-msgid "The header of the right-most column appearing after the middle column."
-msgstr ""
-
-#: kitconcept/voltolighttheme/behaviors/footer.py:83
+#: kitconcept/voltolighttheme/behaviors/footer.py:80
 msgid "The left-most column appearing after the address column. It can contain a list of links."
 msgstr ""
 
-#: kitconcept/voltolighttheme/behaviors/footer.py:111
+#: kitconcept/voltolighttheme/behaviors/footer.py:104
 msgid "The middle column appearing between the left and the right columns. It can contain a list of links."
 msgstr ""
 
-#: kitconcept/voltolighttheme/behaviors/footer.py:138
+#: kitconcept/voltolighttheme/behaviors/footer.py:128
 msgid "The right-most column appearing after the middle column. It can contain a list of links."
 msgstr ""
 
-#: kitconcept/voltolighttheme/behaviors/customizations.py:137
+#: kitconcept/voltolighttheme/behaviors/customizations.py:116
 msgid "Theming"
 msgstr ""
 
@@ -146,18 +130,23 @@ msgstr ""
 msgid "Volto Light Theme: Uninstall"
 msgstr ""
 
+#. Default: "Sticky menu"
+#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:28
+msgid "fieldset_sticky_menu"
+msgstr ""
+
 #. Default: "If your site has an intranet header, it will show in the right side of the header."
-#: kitconcept/voltolighttheme/behaviors/customizations.py:73
+#: kitconcept/voltolighttheme/behaviors/customizations.py:52
 msgid "help_complementary_logo"
 msgstr ""
 
 #. Default: "If enabled, the fat menu will be shown."
-#: kitconcept/voltolighttheme/behaviors/customizations.py:83
+#: kitconcept/voltolighttheme/behaviors/customizations.py:62
 msgid "help_enable_fat_menu"
 msgstr ""
 
 #. Default: "The text that shows in the footer colophon."
-#: kitconcept/voltolighttheme/behaviors/customizations.py:283
+#: kitconcept/voltolighttheme/behaviors/customizations.py:260
 msgid "help_footer_colophon_text"
 msgstr ""
 
@@ -167,32 +156,32 @@ msgid "help_footer_logo"
 msgstr ""
 
 #. Default: "If enabled, the intranet header will be shown."
-#: kitconcept/voltolighttheme/behaviors/customizations.py:93
+#: kitconcept/voltolighttheme/behaviors/customizations.py:72
 msgid "help_has_intranet_header"
 msgstr ""
 
 #. Default: "The site actions are the links that show in the top right side of the header."
-#: kitconcept/voltolighttheme/behaviors/customizations.py:119
+#: kitconcept/voltolighttheme/behaviors/customizations.py:98
 msgid "help_header_actions"
 msgstr ""
 
 #. Default: "The colored pill at the top left of the header."
-#: kitconcept/voltolighttheme/behaviors/customizations.py:103
+#: kitconcept/voltolighttheme/behaviors/customizations.py:82
 msgid "help_intranet_flag"
 msgstr ""
 
 #. Default: "The post footer can have a prominent logo located in the lower right side. It is normally used for displaying the logo of the site sponsor."
-#: kitconcept/voltolighttheme/behaviors/footer.py:150
+#: kitconcept/voltolighttheme/behaviors/footer.py:140
 msgid "help_post_footer_logo"
 msgstr ""
 
 #. Default: "The post footer logo can be linked to a URL."
-#: kitconcept/voltolighttheme/behaviors/footer.py:167
+#: kitconcept/voltolighttheme/behaviors/footer.py:157
 msgid "help_post_footer_logo_link"
 msgstr ""
 
 #. Default: "If the site or subsite has a logo, please upload it here."
-#: kitconcept/voltolighttheme/behaviors/customizations.py:64
+#: kitconcept/voltolighttheme/behaviors/customizations.py:43
 msgid "help_site_logo"
 msgstr ""
 
@@ -201,23 +190,23 @@ msgstr ""
 msgid "help_sticky_menu"
 msgstr ""
 
-#. Default: "accent_colordefault"
-#: kitconcept/voltolighttheme/behaviors/customizations.py:150
+#. Default: "Fat Menu Background Color"
+#: kitconcept/voltolighttheme/behaviors/customizations.py:129
 msgid "label_accent_color"
 msgstr ""
 
-#. Default: "accent_foreground_colordefault"
-#: kitconcept/voltolighttheme/behaviors/customizations.py:158
+#. Default: "Fat Menu / Breadcrumbs Text Color"
+#: kitconcept/voltolighttheme/behaviors/customizations.py:137
 msgid "label_accent_foreground_color"
 msgstr ""
 
 #. Default: "Complementary Logo"
-#: kitconcept/voltolighttheme/behaviors/customizations.py:72
+#: kitconcept/voltolighttheme/behaviors/customizations.py:51
 msgid "label_complementary_logo"
 msgstr ""
 
 #. Default: "Enable Fat Menu"
-#: kitconcept/voltolighttheme/behaviors/customizations.py:82
+#: kitconcept/voltolighttheme/behaviors/customizations.py:61
 msgid "label_enable_fat_menu"
 msgstr ""
 
@@ -227,43 +216,48 @@ msgid "label_footer_logo"
 msgstr ""
 
 #. Default: "Enable Intranet Header"
-#: kitconcept/voltolighttheme/behaviors/customizations.py:92
+#: kitconcept/voltolighttheme/behaviors/customizations.py:71
 msgid "label_has_intranet_header"
 msgstr ""
 
 #. Default: "Site Flag"
-#: kitconcept/voltolighttheme/behaviors/customizations.py:102
+#: kitconcept/voltolighttheme/behaviors/customizations.py:81
 msgid "label_intranet_flag"
 msgstr ""
 
 #. Default: "Post Footer Logo"
-#: kitconcept/voltolighttheme/behaviors/footer.py:149
+#: kitconcept/voltolighttheme/behaviors/footer.py:139
 msgid "label_post_footer_logo"
 msgstr ""
 
 #. Default: "Post Footer Logo Link"
-#: kitconcept/voltolighttheme/behaviors/footer.py:166
+#: kitconcept/voltolighttheme/behaviors/footer.py:156
 msgid "label_post_footer_logo_link"
 msgstr ""
 
-#. Default: "primary_foreground_colordefault"
-#: kitconcept/voltolighttheme/behaviors/customizations.py:169
+#. Default: "Navigation Text Color"
+#: kitconcept/voltolighttheme/behaviors/customizations.py:148
 msgid "label_primary_foreground_color"
 msgstr ""
 
-#. Default: "secondary_colordefault"
-#: kitconcept/voltolighttheme/behaviors/customizations.py:178
+#. Default: "Footer Background Color"
+#: kitconcept/voltolighttheme/behaviors/customizations.py:157
 msgid "label_secondary_color"
 msgstr ""
 
-#. Default: "secondary_foreground_colordefault"
-#: kitconcept/voltolighttheme/behaviors/customizations.py:189
+#. Default: "Footer Font Color"
+#: kitconcept/voltolighttheme/behaviors/customizations.py:166
 msgid "label_secondary_foreground_color"
 msgstr ""
 
 #. Default: "Site Logo"
-#: kitconcept/voltolighttheme/behaviors/customizations.py:63
+#: kitconcept/voltolighttheme/behaviors/customizations.py:42
 msgid "label_site_logo"
+msgstr ""
+
+#. Default: "Sticky menu"
+#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:62
+msgid "label_sticky_menu"
 msgstr ""
 
 #. Default: "Sticky menu background color"

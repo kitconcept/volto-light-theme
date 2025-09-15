@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0b2 (2025-09-12)
+
+
+### New features:
+
+- Add missing German translations @danalvrz [#648](https://github.com/kitconcept/volto-light-theme/issues/648)
+
 ## 7.0.0b1 (2025-09-10)
 
 

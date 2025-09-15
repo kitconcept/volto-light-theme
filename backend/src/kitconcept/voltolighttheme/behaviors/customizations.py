@@ -11,27 +11,6 @@ from zope.schema import TextLine
 import json
 
 
-messages = {
-    "accent_color": {
-        "default": "Fat Menu Background Color",
-    },
-    "accent_foreground_color": {
-        "default": "Fat Menu / Breadcrumbs Text Color",
-    },
-    "primary_color": {
-        "default": "Header background color (for dark themes)",
-    },
-    "primary_foreground_color": {
-        "default": "Navigation Text Color",
-    },
-    "secondary_color": {
-        "default": "Footer Background Color",
-    },
-    "secondary_foreground_color": {
-        "default": "Footer Font Color",
-    },
-}
-
 OBJECT_LIST_DEFAULT_VALUE = []
 
 OBJECT_LIST = json.dumps({
@@ -147,7 +126,7 @@ class ISiteThemeCustomizationSettings(model.Schema):
 
     directives.widget("accent_color", frontendOptions={"widget": "colorPicker"})
     accent_color = TextLine(
-        title=_("label_accent_color", default=messages["accent_color"]["default"]),
+        title=_("label_accent_color", default="Fat Menu Background Color"),
         required=False,
     )
 
@@ -157,7 +136,7 @@ class ISiteThemeCustomizationSettings(model.Schema):
     accent_foreground_color = TextLine(
         title=_(
             "label_accent_foreground_color",
-            default=messages["accent_foreground_color"]["default"],
+            default="Fat Menu / Breadcrumbs Text Color",
         ),
         required=False,
     )
@@ -168,16 +147,14 @@ class ISiteThemeCustomizationSettings(model.Schema):
     primary_foreground_color = TextLine(
         title=_(
             "label_primary_foreground_color",
-            default=messages["primary_foreground_color"]["default"],
+            default="Navigation Text Color",
         ),
         required=False,
     )
 
     directives.widget("secondary_color", frontendOptions={"widget": "colorPicker"})
     secondary_color = TextLine(
-        title=_(
-            "label_secondary_color", default=messages["secondary_color"]["default"]
-        ),
+        title=_("label_secondary_color", default="Footer Background Color"),
         required=False,
     )
 
@@ -188,7 +165,7 @@ class ISiteThemeCustomizationSettings(model.Schema):
     secondary_foreground_color = TextLine(
         title=_(
             "label_secondary_foreground_color",
-            default=messages["secondary_foreground_color"]["default"],
+            default="Footer Font Color",
         ),
         required=False,
     )
