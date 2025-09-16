@@ -1,1 +1,1 @@
-Add Refresh Content button for slider block @Tishasoumya-02
+Add Refresh Content button for slider block and cypress test for the same @Tishasoumya-02
