@@ -25,7 +25,7 @@ class IStickyMenuSettings(model.Schema):
 
     model.fieldset(
         "sticky_menu",
-        label=_("Sticky menu"),
+        label=_("fieldset_sticky_menu", default="Sticky menu"),
         fields=[
             "sticky_menu",
             "sticky_menu_color",
@@ -59,7 +59,7 @@ class IStickyMenuSettings(model.Schema):
         },
     )
     sticky_menu = JSONField(
-        title=_("Sticky menu"),
+        title=_("label_sticky_menu", default="Sticky menu"),
         description=_(
             "help_sticky_menu",
             default="The sticky menu is composed by links with icons that show in a "

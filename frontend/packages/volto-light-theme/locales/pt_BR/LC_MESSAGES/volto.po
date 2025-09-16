@@ -176,6 +176,11 @@ msgstr "Distribuído sob a licença {license}."
 msgid "Download file"
 msgstr "Baixar arquivo"
 
+#. Default: "E-mail"
+#: components/Summary/PersonSummary
+msgid "E-mail"
+msgstr ""
+
 #. Default: "Empty object list"
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
@@ -229,8 +234,6 @@ msgstr "Licença GNU GPL"
 
 #. Default: "Headline"
 #: components/Blocks/EventCalendar/Search/schema
-#: components/Widgets/schema/footerLogosSchema
-#: components/Widgets/schema/iconLinkListSchema
 msgid "Headline"
 msgstr "Chamada"
 
@@ -243,12 +246,6 @@ msgstr "Facetas ocultas ainda filtrarão os resultados se parâmetros adequados 
 #: components/Blocks/Slider/schema
 msgid "Hide Button"
 msgstr "Ocultar botão"
-
-#. Default: "Hide description"
-#: components/Widgets/schema/footerLogosSchema
-#: components/Widgets/schema/iconLinkListSchema
-msgid "Hide description"
-msgstr "Ocultar descrição"
 
 #. Default: "Hide facet?"
 #: components/Blocks/EventCalendar/Search/schema
@@ -266,6 +263,11 @@ msgstr "Início"
 #: components/Blocks/EventMetadata/View
 msgid "ICS-Download"
 msgstr "Baixar ICS"
+
+#. Default: "Icon"
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Icon"
+msgstr ""
 
 #. Default: "Image"
 #: components/Blocks/Image/ImageSidebar
@@ -287,11 +289,6 @@ msgstr ""
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Item"
 msgstr "Item"
-
-#. Default: "Item icon"
-#: components/Widgets/schema/iconLinkListSchema
-msgid "Item icon"
-msgstr "Ícone do item"
 
 #. Default: "Label"
 #: components/Blocks/EventCalendar/Search/schema
@@ -402,6 +399,11 @@ msgstr "Nenhum item encontrado nesta pasta"
 #: components/Blocks/EventCalendar/Search/components/SortOn
 msgid "No selection"
 msgstr "Nenhuma seleção"
+
+#. Default: "Open configuration"
+#: components/Widgets/ModalJSONEditor
+msgid "Open configuration"
+msgstr ""
 
 #. Default: "Open in a new tab"
 #: components/Widgets/schema/footerLinksSchema
@@ -554,12 +556,6 @@ msgstr "Busca por"
 msgid "Section title"
 msgstr "Título da seção"
 
-#. Default: "Settings"
-#: components/Widgets/schema/footerLogosSchema
-#: components/Widgets/schema/iconLinkListSchema
-msgid "Settings"
-msgstr "Configurações"
-
 #. Default: "Short line"
 #: components/Blocks/Separator/schema
 msgid "Short line"
@@ -696,11 +692,6 @@ msgstr "Visões disponíveis"
 #: components/Blocks/Block/EditBlockWrapper
 msgid "delete"
 msgstr "Excluir"
-
-#. Default: "eMail"
-#: components/Summary/PersonSummary
-msgid "eMail"
-msgstr "E-mail"
 
 #. Default: "Clear image"
 #: components/Blocks/Image/ImageSidebar

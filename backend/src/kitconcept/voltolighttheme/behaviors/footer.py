@@ -65,9 +65,6 @@ class IKitconceptVoltoFooterSettings(model.Schema):
 
     footer_column_left_header = TextLine(
         title=_("Footer column left header"),
-        description=_(
-            "The header of the left-most column appearing after the address column."
-        ),
         required=False,
     )
 
@@ -92,10 +89,6 @@ class IKitconceptVoltoFooterSettings(model.Schema):
 
     footer_column_middle_header = TextLine(
         title=_("Footer column middle header"),
-        description=_(
-            "The header of the middle column appearing between the left and the right"
-            " columns."
-        ),
         required=False,
     )
 
@@ -120,9 +113,6 @@ class IKitconceptVoltoFooterSettings(model.Schema):
 
     footer_column_right_header = TextLine(
         title=_("Footer column right header"),
-        description=_(
-            "The header of the right-most column appearing after the middle column."
-        ),
         required=False,
     )
 
