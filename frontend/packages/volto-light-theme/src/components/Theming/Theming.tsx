@@ -1,5 +1,5 @@
 import Helmet from '@plone/volto/helpers/Helmet/Helmet';
-import type { Content } from '@plone/types';
+import type { Content, GetTypeResponse } from '@plone/types';
 import { useSelector } from 'react-redux';
 import isEmpty from 'lodash/isEmpty';
 import type { SiteThemeSettings } from '../../types';
@@ -12,6 +12,9 @@ type FormState = {
   };
   form: {
     global: Content;
+  };
+  schema: {
+    schema: GetTypeResponse;
   };
 };
 
@@ -32,9 +35,13 @@ const Theming = ({ content }: { content: Content }) => {
   const formData = useSelector<FormState, Content>(
     (state) => state.form.global,
   );
+  const schema = useSelector<FormState, GetTypeResponse>(
+    (state) => state.schema.schema,
+  );
 
+  // Check if content has all the keys of the VLT theme behavior
   const hasVLTthemeBehavior = Object.keys(colorSettings || {}).every((key) =>
-    Object.prototype.hasOwnProperty.call(content, key),
+    Object.prototype.hasOwnProperty.call(schema?.properties || {}, key),
   );
 
   const isForm = !isEmpty(formData);
