@@ -103,7 +103,7 @@ const SliderData = (props) => {
   };
 
   const ActionButton = (
-    <Button.Group className="refresh teaser">
+    <Button.Group className="refresh slider">
       <Button
         aria-label={intl.formatMessage(messages.refreshSlider)}
         type="button"
