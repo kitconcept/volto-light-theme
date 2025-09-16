@@ -3,6 +3,8 @@ import type { Content } from '@plone/types';
 import { useSelector } from 'react-redux';
 import isEmpty from 'lodash/isEmpty';
 import type { SiteThemeSettings } from '../../types';
+import { useLocation } from 'react-router-dom';
+import { flattenToAppURL, getBaseUrl } from '@plone/volto/helpers/Url/Url';
 
 type FormState = {
   content: {
@@ -24,17 +26,30 @@ function buildStyleTag(content: Partial<Content>, colors: SiteThemeSettings) {
 }
 
 const Theming = ({ content }: { content: Content }) => {
+  const location = useLocation();
   const colorSettings =
     content?.['@components']?.inherit?.['voltolighttheme.theme']?.data;
   const formData = useSelector<FormState, Content>(
     (state) => state.form.global,
   );
 
-  const liveContent = colorSettings
-    ? !isEmpty(formData)
-      ? formData
-      : colorSettings
-    : {};
+  const hasVLTthemeBehavior = Object.keys(colorSettings || {}).every((key) =>
+    Object.prototype.hasOwnProperty.call(content, key),
+  );
+
+  const isForm = !isEmpty(formData);
+  const addingFromInherited =
+    location.pathname.endsWith('/add') &&
+    flattenToAppURL(
+      content?.['@components']?.inherit?.['voltolighttheme.theme'].from['@id'],
+    ) === getBaseUrl(location.pathname);
+
+  let liveContent;
+  if (hasVLTthemeBehavior && !addingFromInherited) {
+    liveContent = colorSettings ? (isForm ? formData : colorSettings) : {};
+  } else {
+    liveContent = colorSettings;
+  }
 
   return (
     <>
