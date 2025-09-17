@@ -14,22 +14,7 @@ describe('a11y tests', () => {
     cy.navigate('/block/grid-block/text');
     cy.wait('@content');
     cy.injectAxe();
-    cy.configureAxe({
-      rules: [
-        // there are copies of slate h2,
-        // which have with the same id
-        {
-          id: 'duplicate-id-active',
-          enabled: false,
-        },
-        // there are missing heading of grid-block
-        // because we are using multiple grid block
-        {
-          id: 'empty-heading',
-          enabled: false,
-        },
-      ],
-    });
+    cy.configureAxe();
     cy.checkAccessibility();
   });
 });

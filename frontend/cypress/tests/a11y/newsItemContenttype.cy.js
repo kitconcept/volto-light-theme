@@ -14,16 +14,7 @@ describe('a11y tests', () => {
     cy.navigate('/content-types/news-item');
     cy.wait('@content');
     cy.injectAxe();
-    cy.configureAxe({
-      rules: [
-        // there are two copies of slate h3,
-        // which have with the same id
-        {
-          id: 'duplicate-id-active',
-          enabled: false,
-        },
-      ],
-    });
+    cy.configureAxe();
     cy.checkAccessibility();
   });
 });
