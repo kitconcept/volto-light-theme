@@ -8,6 +8,19 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0-beta.4 (2025-09-16)
+
+### Internal
+
+- Re-release a3 due to a release process problem. @sneridagh 
+
+## 7.0.0-beta.3 (2025-09-16)
+
+### Bugfix
+
+- Fix cursor not changing on hover over ICS-Download @iRohitSingh [#659](https://github.com/kitconcept/volto-light-theme/pull/659)
+- Fixed theming colors injection on add/edit view. @sneridagh [#660](https://github.com/kitconcept/volto-light-theme/pull/660)
+
 ## 7.0.0-beta.2 (2025-09-12)
 
 ### Breaking

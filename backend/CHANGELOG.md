@@ -2,6 +2,18 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0b4 (2025-09-16)
+
+
+### Internal:
+
+- Re-release a3 due to a release process problem. @sneridagh 
+
+## 7.0.0b3 (2025-09-16)
+
+No significant changes.
+
+
 ## 7.0.0b2 (2025-09-12)
 
 
