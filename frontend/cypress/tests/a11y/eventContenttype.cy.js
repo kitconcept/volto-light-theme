@@ -14,20 +14,7 @@ describe('a11y tests', () => {
     cy.navigate('/content-types/event');
     cy.wait('@content');
     cy.injectAxe();
-    cy.configureAxe({
-      rules: [
-        // TODO: investigate why there are several h2 with the same id
-        // Probably a Volto bug
-        {
-          id: 'duplicate-id',
-          enabled: false,
-        },
-        {
-          id: 'duplicate-id-active',
-          enabled: false,
-        },
-      ],
-    });
+    cy.configureAxe();
     cy.checkAccessibility();
   });
 });
