@@ -43,14 +43,30 @@
 }
 
 @mixin button-style {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 7px 10px;
   border: 2px solid var(--quanta-sapphire);
   border-radius: 10px;
-  margin-bottom: 10px; // Covers long button texts
+  margin: 0;
+  // margin-bottom: 10px; // Covers long button texts
+  appearance: none;
   background-color: transparent;
   color: var(--quanta-sapphire);
   cursor: pointer;
   font-size: 16px;
-  line-height: 0;
+  gap: 4px;
+  // line-height: 0;
   opacity: 0.8;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+
+  // Remove once we are using upddated @plone/components
+  &.react-aria-Button .icon:not(:last-child) {
+    flex-shrink: 0;
+    margin-right: initial;
+  }
 }
