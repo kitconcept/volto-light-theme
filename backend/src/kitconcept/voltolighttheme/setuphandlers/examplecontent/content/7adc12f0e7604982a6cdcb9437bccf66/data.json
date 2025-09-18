@@ -7,16 +7,17 @@
   "blocks": {
     "14b738a2-68fe-47e0-8423-6bd08729e518": {
       "@type": "slate",
-      "plaintext": "Text Heading H2",
+      "plaintext": "Text with image (Medium) aligned left",
       "styles": {},
+      "theme": "default",
       "value": [
         {
           "children": [
             {
-              "text": "Text Heading H2"
+              "text": "Text with image (Medium) aligned left"
             }
           ],
-          "type": "h2"
+          "type": "h3"
         }
       ]
     },
@@ -110,16 +111,17 @@
     },
     "3a7586f5-e7a5-4971-9f19-f462eacbadc9": {
       "@type": "slate",
-      "plaintext": "Text Heading H2",
+      "plaintext": "Text with image aligned right",
       "styles": {},
+      "theme": "default",
       "value": [
         {
           "children": [
             {
-              "text": "Text Heading H2"
+              "text": "Text with image aligned right"
             }
           ],
-          "type": "h2"
+          "type": "h3"
         }
       ]
     },
@@ -198,23 +200,30 @@
     },
     "62e7e65d-1ec4-4bda-b165-70f4c1f3a06b": {
       "@type": "slate",
-      "plaintext": "Text Heading H2",
+      "plaintext": "Text with image (small) aligned right",
       "styles": {},
+      "theme": "default",
       "value": [
         {
           "children": [
             {
-              "text": "Text Heading H2"
+              "text": "Text with image (small) aligned right"
             }
           ],
-          "type": "h2"
+          "type": "h3"
         }
       ]
     },
     "64c03755-c963-4246-9d50-d4f3b1c4bef9": {
       "@type": "separator",
       "styles": {
-        "align": "left"
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--narrow-container-width)"
+        },
+        "shortLine": true
       }
     },
     "6c792644-52e0-43d0-b79d-03741b7601bf": {
@@ -469,16 +478,17 @@
     },
     "8b411f87-c956-42d7-aa1b-106014029d31": {
       "@type": "slate",
-      "plaintext": "Text Heading H2",
+      "plaintext": "Text with image aligned left",
       "styles": {},
+      "theme": "default",
       "value": [
         {
           "children": [
             {
-              "text": "Text Heading H2"
+              "text": "Text with image aligned left"
             }
           ],
-          "type": "h2"
+          "type": "h3"
         }
       ]
     },
@@ -513,7 +523,13 @@
     "984ad5d1-eaf6-4de5-b86b-bbe089d11c58": {
       "@type": "separator",
       "styles": {
-        "align": "left"
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--narrow-container-width)"
+        },
+        "shortLine": true
       }
     },
     "9c66f79a-8497-4d1b-9f99-9e960456f950": {
@@ -973,16 +989,17 @@
     },
     "cec7bbf3-f15b-47ce-956d-a77a1cbed3e6": {
       "@type": "slate",
-      "plaintext": "Text Heading H2",
+      "plaintext": "Text with image (Medium) aligned right",
       "styles": {},
+      "theme": "default",
       "value": [
         {
           "children": [
             {
-              "text": "Text Heading H2"
+              "text": "Text with image (Medium) aligned right"
             }
           ],
-          "type": "h2"
+          "type": "h3"
         }
       ]
     },
@@ -992,13 +1009,41 @@
     "d8a81981-208b-4b52-9dc3-97e51fcf88a7": {
       "@type": "separator",
       "styles": {
-        "align": "left"
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--narrow-container-width)"
+        },
+        "shortLine": true
       }
+    },
+    "de56fc31-906e-4f17-a1f6-2592bece3824": {
+      "@type": "slate",
+      "plaintext": "Text with image (small) aligned left",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Text with image (small) aligned left"
+            }
+          ],
+          "type": "h3"
+        }
+      ]
     },
     "e3e10827-d280-425b-8502-b5a2d995933a": {
       "@type": "separator",
       "styles": {
-        "align": "full"
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
+        "shortLine": false
       }
     },
     "e55a4211-95d1-4731-8a94-f7f1aab6e273": {
@@ -1008,6 +1053,11 @@
       "description": " The Image content type can be used to upload an image in various formats (JPG, GIF, PNG, SVG). The uploaded image should always have a high resolution so that it can be used flexibly, for example as a banner image. Plone automatically delivers the images in the best scaling, so there is no need to scale images down manually.",
       "image_field": "image",
       "size": "l",
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "var(--narrow-container-width)"
+        }
+      },
       "title": "Image - Light",
       "url": "../../resolveuid/eec82559bf3242a6be4d43bc2096f399"
     },
@@ -1058,6 +1108,9 @@
       "image_field": "image",
       "size": "s",
       "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
         "size:noprefix": "small"
       },
       "title": "Image",
@@ -1066,7 +1119,13 @@
     "efe22e15-ed62-499c-974e-cb0ab7d48e83": {
       "@type": "separator",
       "styles": {
-        "align": "full"
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
+        "shortLine": false
       }
     },
     "fd86d3dc-237b-485a-aa31-aba34a667be2": {
@@ -1134,6 +1193,7 @@
       "62e7e65d-1ec4-4bda-b165-70f4c1f3a06b",
       "b8233616-cf48-4584-b84c-efdf9701c75a",
       "ea90cbc3-c7eb-4a41-bfad-07e25b9c7b89",
+      "de56fc31-906e-4f17-a1f6-2592bece3824",
       "b5daf12e-2f85-4dff-b391-b03940e07171"
     ]
   },
@@ -1163,7 +1223,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2024-04-08T14:21:24+00:00",
+  "modified": "2025-09-16T10:37:50+00:00",
   "open_end": false,
   "preview_caption": null,
   "preview_image": {
