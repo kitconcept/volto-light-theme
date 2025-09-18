@@ -8,6 +8,20 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0-beta.5 (2025-09-18)
+
+### Feature
+
+- Add Refresh Content button for slider block and cypress test for the same @Tishasoumya-02 
+
+### Bugfix
+
+- Fix slider button - Improve button mixing for RAC buttons. @sneridagh [#663](https://github.com/kitconcept/volto-light-theme/pull/663)
+
+### Internal
+
+- Fix A11y headlines Unique headings in example content @iRohitSingh [#661](https://github.com/kitconcept/volto-light-theme/pull/661)
+
 ## 7.0.0-beta.4 (2025-09-16)
 
 ### Internal
