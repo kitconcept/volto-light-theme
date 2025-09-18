@@ -11,6 +11,7 @@ import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { Button } from 'semantic-ui-react';
 import reloadSVG from '@plone/volto/icons/reload.svg';
 import { messages as defaultMessages } from '@plone/volto/helpers/MessageLabels/MessageLabels';
+import cloneDeep from 'lodash/cloneDeep';
 
 const messages = defineMessages({
   resetSlider: {
@@ -61,7 +62,8 @@ const SliderData = (props) => {
       title: resp.title,
     };
 
-    const updatedSlides = [...data.slides];
+    const updatedSlides = cloneDeep(data.slides);
+
     updatedSlides[activeObject] = {
       '@id': data.slides[activeObject]['@id'],
       description: resp?.description,
