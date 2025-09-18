@@ -1,6 +1,40 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 7.0.0b5 (2025-09-18)
+
+### Backend
+
+
+#### Internal:
+
+- Fix A11y headlines Unique headings in example content @iRohitSingh [#661](https://github.com/kitconcept/volto-light-theme/issues/661)
+
+
+
+### Frontend
+
+#### Feature
+
+- Add Refresh Content button for slider block and cypress test for the same @Tishasoumya-02 
+
+#### Bugfix
+
+- Fix slider button - Improve button mixing for RAC buttons. @sneridagh [#663](https://github.com/kitconcept/volto-light-theme/pull/663)
+
+#### Internal
+
+- Fix A11y headlines Unique headings in example content @iRohitSingh [#661](https://github.com/kitconcept/volto-light-theme/pull/661)
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 7.0.0b4 (2025-09-16)
 
 ### Backend
