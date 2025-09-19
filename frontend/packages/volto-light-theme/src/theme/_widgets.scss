@@ -142,8 +142,9 @@ span.color-contrast-label {
   .field.inline {
     .add-item-button-wrapper {
       display: flex;
+      align-items: center;
       justify-content: flex-end;
-      padding: 0;
+      padding: 10px 0;
 
       button {
         @include button-style;
@@ -196,9 +197,9 @@ span.color-contrast-label {
 .block-config-json-editor.field.inline {
   .button-wrapper {
     display: flex;
-    min-height: 60px;
+    align-items: center;
     justify-content: flex-end;
-    padding: 0;
+    padding: 10px 0;
 
     button {
       @include button-style;

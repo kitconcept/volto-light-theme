@@ -243,3 +243,18 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
     }
   }
 }
+
+.ui.buttons.refresh.slider button {
+  display: flex;
+  align-items: center;
+  padding: 0.5833em 0.833em;
+  background-color: #e8e8e8 !important;
+  color: rgba(0, 0, 0, 0.6) !important;
+  font-size: 0.85714286rem;
+  font-weight: bold;
+
+  svg {
+    padding: 0 0 0 0.5em;
+    margin-right: 0;
+  }
+}

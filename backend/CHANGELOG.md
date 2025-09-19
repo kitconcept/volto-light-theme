@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0b5 (2025-09-18)
+
+
+### Internal:
+
+- Fix A11y headlines Unique headings in example content @iRohitSingh [#661](https://github.com/kitconcept/volto-light-theme/issues/661)
+
 ## 7.0.0b4 (2025-09-16)
 
 
