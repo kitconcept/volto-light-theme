@@ -117,6 +117,7 @@ const SliderBody = ({
                   alt=""
                   loading="lazy"
                   responsive={true}
+                  sizes="auto, (max-width: 1440px) 100vw, 1440px"
                 />
               </div>
             )}
