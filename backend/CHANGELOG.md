@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0b6 (2025-09-22)
+
+
+### Bug fixes:
+
+- Add missing German translation in footer settings. @danalvrz 
+
 ## 7.0.0b5 (2025-09-18)
 
 
