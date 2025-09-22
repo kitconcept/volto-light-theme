@@ -1,6 +1,32 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 7.0.0b6 (2025-09-22)
+
+### Backend
+
+
+#### Bug fixes:
+
+- Add missing German translation in footer settings. @danalvrz 
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Fix styles for H3 headings in slate grids. @danalvrz 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 7.0.0b5 (2025-09-18)
 
 ### Backend
