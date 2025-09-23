@@ -19,12 +19,12 @@ export function useLiveData<T>(
   const location = useLocation();
   const addMode = location?.pathname?.endsWith('/add');
   const current = behavior
-    ? content?.['@components']?.inherit?.[behavior]?.data?.[field]
+    ? (content?.['@components']?.inherit?.[behavior]?.data?.[field] as T)
     : (content[field] as T);
 
-  const formData = useSelector<FormState, T>((state) => {
-    return state.form.global?.[field];
-  });
+  const formData = useSelector<FormState, T>(
+    (state) => state.form.global?.[field],
+  );
 
   if (addMode) return formData;
 
