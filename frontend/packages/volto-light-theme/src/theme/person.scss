@@ -245,8 +245,8 @@ body .block.gridBlock .contained .person-teaser .card-inner {
       gap: 0;
       .summary-extra-info {
         &:not(:last-child)::after {
-          content: '|';
           margin: 0 7px 0 10px;
+          content: '|';
         }
       }
     }
