@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0-beta.6 (2025-09-22)
+
+### Bugfix
+
+- Fix styles for H3 headings in slate grids. @danalvrz 
+
 ## 7.0.0-beta.5 (2025-09-18)
 
 ### Feature
