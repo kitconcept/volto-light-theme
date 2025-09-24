@@ -26,19 +26,19 @@ const GridTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
     <>
       <div className="items">
         {items.map((item) => {
-          const [ItemBodyTemplate, showLink] = (props) => {
-            const CustomItemBodyTemplate = config.getComponent({
-              name: 'GridListingItemTemplate',
+          const CustomItemBodyTemplate = config.getComponent({
+            name: 'GridListingItemTemplate',
+            dependencies: [item['@type']],
+          }).component;
+          const Summary =
+            config.getComponent({
+              name: 'Summary',
               dependencies: [item['@type']],
-            }).component;
-            const Summary =
-              config.getComponent({
-                name: 'Summary',
-                dependencies: [item['@type']],
-              }).component || DefaultSummary;
-            const showLink = !Summary.hideLink && !isEditMode;
+            }).component || DefaultSummary;
+          const showLink = !Summary.hideLink && !isEditMode;
 
-            const template = CustomItemBodyTemplate ? (
+          const ItemBodyTemplate = (props) =>
+            CustomItemBodyTemplate ? (
               <CustomItemBodyTemplate item={item} />
             ) : (
               <>
@@ -54,8 +54,7 @@ const GridTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
                 </Card.Summary>
               </>
             );
-            return [template, showLink];
-          };
+
           return (
             <div
               className={cx('listing-item', {
