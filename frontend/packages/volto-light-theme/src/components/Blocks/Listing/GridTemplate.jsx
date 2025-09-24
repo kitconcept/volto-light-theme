@@ -26,7 +26,7 @@ const GridTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
     <>
       <div className="items">
         {items.map((item) => {
-          const ItemBodyTemplate = (props) => {
+          const [ItemBodyTemplate, showLink] = (props) => {
             const CustomItemBodyTemplate = config.getComponent({
               name: 'GridListingItemTemplate',
               dependencies: [item['@type']],
@@ -36,8 +36,9 @@ const GridTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
                 name: 'Summary',
                 dependencies: [item['@type']],
               }).component || DefaultSummary;
+            const showLink = !Summary.hideLink && !isEditMode;
 
-            return CustomItemBodyTemplate ? (
+            const template = CustomItemBodyTemplate ? (
               <CustomItemBodyTemplate item={item} />
             ) : (
               <>
@@ -53,6 +54,7 @@ const GridTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
                 </Card.Summary>
               </>
             );
+            return [template, showLink];
           };
           return (
             <div
@@ -61,7 +63,7 @@ const GridTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
               })}
               key={item['@id']}
             >
-              <Card href={!isEditMode ? item['@id'] : null}>
+              <Card href={showLink ? item['@id'] : null}>
                 <ItemBodyTemplate item={item} />
               </Card>
             </div>
