@@ -79,6 +79,8 @@
       position: relative;
       height: 75px;
       background-color: $secondary-grey;
+      padding-right: $spacing-xlarge;
+      display: block;
 
       .ui.input {
         height: 75px;
