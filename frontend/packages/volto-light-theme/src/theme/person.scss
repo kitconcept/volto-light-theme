@@ -256,15 +256,19 @@ body .block.gridBlock .contained .person-teaser .card-inner {
       }
     }
 
-    .summary-extra-info,
+    .summary-extra-info {
+      justify-content: center;
+    }
     .summary-room-phone {
       display: inline-flex;
-      justify-content: center;
     }
 
     .summary-extra-info.email {
       svg.icon {
         margin-right: 10px;
+      }
+      a {
+        width: auto;
       }
     }
   }
