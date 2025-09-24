@@ -5,6 +5,9 @@
 
 .accordion-block,
 .block-editor-accordion {
+  .block-add-button {
+    display: block !important;
+  }
   .ui.styled.accordion {
     border-top: 1px solid $black;
 
