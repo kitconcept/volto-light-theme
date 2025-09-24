@@ -8,6 +8,10 @@ export type DefaultSummaryProps = {
   hide_description?: boolean;
 };
 
+export type SummaryComponentType = React.ComponentType<DefaultSummaryProps> & {
+  hideLink?: boolean;
+};
+
 const DefaultSummary = (props: DefaultSummaryProps) => {
   const { item, HeadingTag = 'h3', a11yLabelId, hide_description } = props;
   return (
@@ -20,5 +24,6 @@ const DefaultSummary = (props: DefaultSummaryProps) => {
     </>
   );
 };
+DefaultSummary.hideLink = false;
 
 export default DefaultSummary;

@@ -117,3 +117,11 @@ const Summary =
 
 return <Summary item={item} />;
 ```
+
+## Disable links
+
+You can disable showing a link for a particular `Summary` component when it is used.
+
+```jsx
+BlogPostSummary.hideLink = true;
+```
