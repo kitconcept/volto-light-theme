@@ -227,7 +227,29 @@ body .block.gridBlock .contained .person-teaser .card-inner {
       .description {
         margin-bottom: $spacing-small;
       }
+
+      .summary-extra-info.email {
+        a {
+          width: auto;
+        }
+        svg.icon {
+          margin-right: 8px;
+        }
+      }
     }
+  }
+
+  &:not(.grid) .listing-item.person-listing {
+    .summary-room-phone {
+      justify-content: flex-start;
+      gap: 0;
+      .summary-extra-info {
+
+      &:not(:last-child)::after {
+        content: '|';
+        margin: 0 7px 0 10px;
+      }
+    }}
   }
 }
 
