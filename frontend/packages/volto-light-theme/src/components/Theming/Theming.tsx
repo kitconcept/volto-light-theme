@@ -48,7 +48,7 @@ const Theming = ({ content }: { content: Content }) => {
   const addingFromInherited =
     location.pathname.endsWith('/add') &&
     flattenToAppURL(
-      content?.['@components']?.inherit?.['voltolighttheme.theme'].from['@id'],
+      content?.['@components']?.inherit?.['voltolighttheme.theme']?.from['@id'],
     ) === getBaseUrl(location.pathname);
 
   let liveContent;
