@@ -1,6 +1,31 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 7.0.0 (2025-09-25)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Ensure the Refresh Content button correctly loads the preview image when using preview_image_link for Slider block. @iFlameing 
+- Last german literal fix: ALT-Text. @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 7.0.0b7 (2025-09-24)
 
 ### Backend
