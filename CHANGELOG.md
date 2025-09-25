@@ -1,6 +1,36 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 7.0.0b7 (2025-09-24)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Feature
+
+- Make it possible for custom Summary components to disable being linked. @davisagli 
+
+#### Bugfix
+
+- Enable add block button in accordion block @iRohitSingh [#668](https://github.com/kitconcept/volto-light-theme/pull/668)
+- Safely check for `voltolighttheme.theme` behavior on Theming component. @ericof [#671](https://github.com/kitconcept/volto-light-theme/pull/671)
+- Fix styles for person listing in Search block grid variation. @danalvrz 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 7.0.0b6 (2025-09-22)
 
 ### Backend
