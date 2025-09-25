@@ -3,8 +3,8 @@
   transition: box-shadow 0.15s ease;
 }
 
-.card:has(a):hover,
-.card:has(a):focus-within {
+.card:has(> a):hover,
+.card:has(> a):focus-within {
   cursor: pointer;
 }
 

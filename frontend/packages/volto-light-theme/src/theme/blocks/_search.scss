@@ -77,7 +77,9 @@
 
     .search-input {
       position: relative;
+      display: block;
       height: 75px;
+      padding-right: $spacing-xlarge;
       background-color: $secondary-grey;
 
       .ui.input {

@@ -120,6 +120,8 @@ const Summary =
   }).component || DefaultSummary;
 ```
 
+If `Summary.hideLink` is true, you should not pass an `href` to the `Card` component.
+
 VLT has registered a few variations of the `Summary` component (eg. Events, News, etc.).
 
 ### `Card.Actions`
@@ -138,7 +140,7 @@ You can pass any content to this slot.
 
 ```tsx
 <Card
-  href={!isEditMode ? href['@id'] : null}
+  href={(!Summary.hideLink && !isEditMode) ? href['@id'] : null}
   openLinkInNewTab={openLinkInNewTab}
 >
   <Card.Image
