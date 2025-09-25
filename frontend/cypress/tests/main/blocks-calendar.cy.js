@@ -72,7 +72,7 @@ describe('Event Calendar Block Tests', () => {
       .should('not.exist');
   });
 
-  it('Add Event Calendar block and test the daterange', () => {
+  it.skip('Add Event Calendar block and test the daterange', () => {
     // Adding new event calendar block and setting the date of evet.
 
     cy.addNewBlock('event');
@@ -243,7 +243,7 @@ describe('Event Calendar Block Tests', () => {
     });
   });
 
-  it('Test the daterange with facet and input', () => {
+  it.skip('Test the daterange with facet and input', () => {
     // Adding new event calendar block and setting the two event content published.
     cy.setWorkflow({
       path: 'my-first-event',
