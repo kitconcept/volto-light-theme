@@ -426,7 +426,7 @@ describe('Event Calendar Block Tests', () => {
     );
   });
 
-  it.only('Event calendar show single date for same day event and double for different', () => {
+  it('Event calendar show single date for same day event and double for different', () => {
     //add eventCalendar block
     cy.addNewBlock('event');
     cy.get('#toolbar-save').click();
