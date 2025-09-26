@@ -426,7 +426,7 @@ describe('Event Calendar Block Tests', () => {
     );
   });
 
-  it('Event calendar show single date for same day event and double for different', () => {
+  it.only('Event calendar show single date for same day event and double for different', () => {
     //add eventCalendar block
     cy.addNewBlock('event');
     cy.get('#toolbar-save').click();
@@ -436,6 +436,11 @@ describe('Event Calendar Block Tests', () => {
       .next('div.card-inner')
       .find('.date-inset')
       .should('not.have.class', 'has-end-date');
+
+    cy.get('a[href="/my-first-event"]')
+      .next('div.card-inner')
+      .find('.date-inset')
+      .should('have.class', 'has-end-date');
   });
 
   it('Add eventCalendar Block - sort by Order in folder and sort_order:descending', () => {
