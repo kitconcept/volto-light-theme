@@ -8,14 +8,28 @@ describe('Event Calendar Block Tests', () => {
     cy.intercept('PATCH', '/**/my-page').as('save');
 
     const now = new Date();
-    startDate = new Date(now);
-    startDate.setMonth(startDate.getMonth() + 1);
 
-    // End = start + 7 days
-    endDate = new Date(startDate.getTime() + 7 * 24 * 60 * 60 * 1000);
+    // Start = 7th of month
+    startDate = new Date(now.getFullYear(), now.getMonth(), 7);
+
+    // End = 14th of same month
+    endDate = new Date(startDate.getFullYear(), startDate.getMonth(), 14);
+
+    // Always 11th for eventStart
+    const eventStart = new Date(
+      startDate.getFullYear(),
+      startDate.getMonth(),
+      11,
+    );
+
+    // Always 12th for eventEnd
+    const eventEnd = new Date(
+      startDate.getFullYear(),
+      startDate.getMonth(),
+      12,
+    );
+
     const formatDate = (date) => date.toISOString().replace('.000Z', '+00:00');
-    const eventStart = new Date((startDate.getTime() + endDate.getTime()) / 2);
-    const eventEnd = new Date(eventStart.getTime() + 2 * 24 * 60 * 60 * 1000);
 
     // given a logged in editor and a page in edit mode
     cy.autologin();
@@ -48,6 +62,15 @@ describe('Event Calendar Block Tests', () => {
       contentType: 'Event',
       contentId: 'my-second-event',
       contentTitle: 'Second Event',
+      bodyModifier(body) {
+        const baseYear = now.getFullYear();
+        const baseMonth = now.getMonth();
+        const startDate = new Date(baseYear, baseMonth, 16);
+        body.start = formatDate(startDate);
+        body.end = formatDate(new Date(startDate.getTime() + 1000));
+
+        return body;
+      },
     });
     cy.visit('/my-page');
     cy.wait('@content');
@@ -72,7 +95,7 @@ describe('Event Calendar Block Tests', () => {
       .should('not.exist');
   });
 
-  it.skip('Add Event Calendar block and test the daterange', () => {
+  it('Add Event Calendar block and test the daterange', () => {
     // Adding new event calendar block and setting the date of evet.
 
     cy.addNewBlock('event');
@@ -84,7 +107,7 @@ describe('Event Calendar Block Tests', () => {
       .type(startDate.getDate().toString());
     cy.get('.react-aria-Group [slot="start"] [data-type="month"]')
       .focus()
-      .type((startDate.getMonth() + 1).toString());
+      .type((startDate.getMonth() + 1).toString()); // we have to add one here because the month index starts from 0. but above not because formatDate function takes care of that.
 
     cy.get('.react-aria-Group [slot="start"] [data-type="year"]')
       .focus()
@@ -243,7 +266,7 @@ describe('Event Calendar Block Tests', () => {
     });
   });
 
-  it.skip('Test the daterange with facet and input', () => {
+  it('Test the daterange with facet and input', () => {
     // Adding new event calendar block and setting the two event content published.
     cy.setWorkflow({
       path: 'my-first-event',
@@ -409,17 +432,15 @@ describe('Event Calendar Block Tests', () => {
     cy.get('#toolbar-save').click();
     cy.wait('@content');
     cy.url().should('eq', Cypress.config().baseUrl + '/my-page');
-    cy.get('.card-listing')
-      .contains('My First Event')
-      .closest('.card-listing')
-      .find('.image-wrapper .date-inset')
-      .should('have.class', 'has-end-date');
-
-    cy.get('.card-listing')
-      .contains('Second Event')
-      .closest('.card-listing')
-      .find('.image-wrapper .date-inset')
+    cy.get('a[href="/my-second-event"]')
+      .next('div.card-inner')
+      .find('.date-inset')
       .should('not.have.class', 'has-end-date');
+
+    cy.get('a[href="/my-first-event"]')
+      .next('div.card-inner')
+      .find('.date-inset')
+      .should('have.class', 'has-end-date');
   });
 
   it('Add eventCalendar Block - sort by Order in folder and sort_order:descending', () => {
