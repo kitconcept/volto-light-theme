@@ -2,9 +2,10 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Container as SemanticContainer } from 'semantic-ui-react';
 import config from '@plone/registry';
+import { useLiveData } from '@kitconcept/volto-light-theme/helpers/useLiveData';
 
 const Tags = ({ content }) => {
-  const tags = content?.subjects || [];
+  const tags = useLiveData(content, undefined, 'subjects') || [];
   const Container =
     config.getComponent({ name: 'Container' }).component || SemanticContainer;
 
