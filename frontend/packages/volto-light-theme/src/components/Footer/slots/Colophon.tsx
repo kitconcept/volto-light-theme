@@ -18,7 +18,7 @@ const Colophon = ({ content }: { content: Content }) => {
 
   return (
     <Container className="colophon">
-      {footer_colophon_text ? (
+      {footer_colophon_text === null ? null : footer_colophon_text !== undefined ? (
         <>{footer_colophon_text}</>
       ) : (
         <>
