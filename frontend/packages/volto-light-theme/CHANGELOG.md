@@ -8,6 +8,13 @@
 
 <!-- towncrier release notes start -->
 
+## 7.0.0 (2025-09-25)
+
+### Bugfix
+
+- Ensure the Refresh Content button correctly loads the preview image when using preview_image_link for Slider block. @iFlameing 
+- Last german literal fix: ALT-Text. @sneridagh 
+
 ## 7.0.0-beta.7 (2025-09-24)
 
 ### Feature

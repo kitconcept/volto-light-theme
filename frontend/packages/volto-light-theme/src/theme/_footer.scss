@@ -5,9 +5,12 @@
   color: var(--footer-foreground, $black);
   text-align: center;
 
+  // Use #{$var} for Sass fallbacks in CSS vars.
+  // Without interpolation, $var stays literal in output and breaks.
+
   &:has(.main-footer) {
-    --footer-background: var(--primary-color, $white);
-    --footer-foreground: var(--primary-foreground-color, $black);
+    --footer-background: var(--primary-color, #{$white});
+    --footer-foreground: var(--primary-foreground-color, #{$black});
   }
 
   .container {
@@ -20,8 +23,8 @@
 
   .pre-footer {
     &:has(.logos-container) {
-      --footer-background: var(--primary-color, $white);
-      --footer-foreground: var(--primary-foreground-color, $black);
+      --footer-background: var(--primary-color, #{$white});
+      --footer-foreground: var(--primary-foreground-color, #{$black});
     }
 
     background: var(--footer-background, $white);
@@ -29,8 +32,8 @@
   }
 
   .main-footer {
-    --footer-background: var(--secondary-color, $white);
-    --footer-foreground: var(--secondary-foreground-color, $black);
+    --footer-background: var(--secondary-color, #{$white});
+    --footer-foreground: var(--secondary-foreground-color, #{$black});
 
     padding: $spacing-xlarge 2rem;
     background: var(--footer-background);

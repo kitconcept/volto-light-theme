@@ -5,75 +5,73 @@ msgstr ""
 "POT-Creation-Date: 2024-02-08T13:36:14.317Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
-"Language: eu\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
+"Language: eu\n"
+"MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"MIME-Version: 1.0\n"
 "Language-Code: en\n"
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8\n"
 "Domain: volto\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #. Default: "Action"
 #: components/Widgets/schema/headerActionsSchema
 msgid "Action"
-msgstr ""
+msgstr "Akzioa"
 
 #. Default: "Add"
-#: components/Widgets/BlocksObject
-#: components/Widgets/ObjectList
+#: components/Widgets/BlocksObject components/Widgets/ObjectList
 msgid "Add (object list)"
-msgstr ""
+msgstr "Gehitu (objektu zerrenda)"
 
 #. Default: "Add action"
 #: components/Widgets/schema/headerActionsSchema
 msgid "Add action"
-msgstr ""
+msgstr "Gehitu akzioa"
 
 #. Default: "Add item"
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Add item"
-msgstr ""
+msgstr "Gehitu elementua"
 
 #. Default: "Add link"
 #: components/Widgets/schema/footerLinksSchema
 msgid "Add link"
-msgstr ""
+msgstr "Gehitu esteka"
 
 #. Default: "Add logo"
 #: components/Widgets/schema/footerLogosSchema
 msgid "Add logo"
-msgstr ""
+msgstr "Gehitu logoa"
 
 #. Default: "Advanced facet?"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Advanced facet?"
-msgstr ""
+msgstr "Fazeta aurreratua?"
 
 #. Default: "Advanced facets are initially hidden and displayed on demand"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Advanced facets are initially hidden and displayed on demand"
-msgstr ""
+msgstr "Fazeta aurreratuak ezkutatuta daude hasieran eta eskatu ahala erakusten dira"
 
 #. Default: "Alignment"
-#: components/Blocks/Button/schema
-#: components/Blocks/Separator/schema
+#: components/Blocks/Button/schema components/Blocks/Separator/schema
 msgid "Alignment"
-msgstr ""
+msgstr "Alineazioa"
 
 #. Default: "Alt text"
 #: components/Widgets/schema/footerLogosSchema
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Alt text"
-msgstr ""
+msgstr "Testu alternatiboa"
 
 #. Default: "Ascending"
 #: components/Blocks/EventCalendar/Search/components/SortOn
 msgid "Ascending"
-msgstr ""
+msgstr "Goraka"
 
 #. Default: "Back"
 #: components/MobileNavigation/MobileNavigation
@@ -88,11 +86,10 @@ msgstr "Atzeko planoaren kolorea"
 #. Default: "Base search query"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Base search query"
-msgstr ""
+msgstr "Oinarrizko bilaketa"
 
 #. Default: "Block Width"
-#: components/Blocks/Button/schema
-#: components/Blocks/Image/schema
+#: components/Blocks/Button/schema components/Blocks/Image/schema
 #: components/Blocks/Separator/schema
 msgid "Block Width"
 msgstr "Blokearen zabalera"
@@ -110,7 +107,7 @@ msgstr "Botoiaren testua"
 #. Default: "Cancel search"
 #: components/Blocks/EventCalendar/Search/components/SearchInput
 msgid "Cancel search"
-msgstr ""
+msgstr "Utzi bilaketa"
 
 #. Default: "Center"
 #: components/Widgets/BlockAlignment
@@ -124,15 +121,14 @@ msgid "Close menu"
 msgstr "Itxi menua"
 
 #. Default: "Collapse item"
-#: components/Widgets/BlocksObject
-#: components/Widgets/ObjectList
+#: components/Widgets/BlocksObject components/Widgets/ObjectList
 msgid "Collapse item"
-msgstr ""
+msgstr "Ezkutatu elementua"
 
 #. Default: "The color contrast ratio {contrastRatio}:1 might not be accessible for all. WCAG Level: {complianceLevel}"
 #: components/Widgets/ColorContrastChecker
 msgid "ColorContrastCheckerMessage"
-msgstr ""
+msgstr "Baliteke {contrastRatio}:1 kolore kontrastearen ratioa guztientzat irisgarri ez izatea. WCAG maila: {complianceLevel}"
 
 #. Default: "Contact"
 #: components/Blocks/EventMetadata/View
@@ -140,15 +136,14 @@ msgid "Contact"
 msgstr "Kontaktua"
 
 #. Default: "Continue reading"
-#: components/Blocks/Slider/DefaultBody
-#: components/Blocks/Slider/SliderVariants
+#: components/Blocks/Slider/DefaultBody components/Blocks/Slider/SliderVariants
 msgid "Continue reading"
 msgstr "Jarraitu irakurtzen"
 
 #. Default: "Controls"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Controls"
-msgstr ""
+msgstr "Kontrolak"
 
 #. Default: "Copyright"
 #: components/Footer/slots/Copyright
@@ -158,16 +153,15 @@ msgstr "Copyright"
 #. Default: "Default"
 #: components/Widgets/BlockWidth
 msgid "Default"
-msgstr ""
+msgstr "Defektuzkoa"
 
 #. Default: "Descending"
 #: components/Blocks/EventCalendar/Search/components/SortOn
 msgid "Descending"
-msgstr ""
+msgstr "Beheraka"
 
 #. Default: "Description"
-#: components/Blocks/Image/schema
-#: components/Widgets/schema/footerLogosSchema
+#: components/Blocks/Image/schema components/Widgets/schema/footerLogosSchema
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Description"
 msgstr "Deskribapena"
@@ -175,23 +169,22 @@ msgstr "Deskribapena"
 #. Default: "Distributed under the {license}."
 #: components/Footer/slots/Copyright
 msgid "Distributed under the {license}."
-msgstr "{lizentzia} lizentziapean banatua."
+msgstr "{license} lizentziapean banatua."
 
 #. Default: "Download file"
 #: components/Theme/FileView
 msgid "Download file"
-msgstr ""
+msgstr "Deskargatu fitxategia"
 
 #. Default: "E-mail"
 #: components/Summary/PersonSummary
 msgid "E-mail"
-msgstr ""
+msgstr "Eposta"
 
 #. Default: "Empty object list"
-#: components/Widgets/BlocksObject
-#: components/Widgets/ObjectList
+#: components/Widgets/BlocksObject components/Widgets/ObjectList
 msgid "Empty object list"
-msgstr ""
+msgstr "Hustu objektuen zerrenda"
 
 #. Default: "End"
 #: components/Blocks/EventMetadata/View
@@ -201,22 +194,22 @@ msgstr "Amaiera"
 #. Default: "Facet"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Facet"
-msgstr ""
+msgstr "Fazeta"
 
 #. Default: "Facet widget"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Facet widget"
-msgstr ""
+msgstr "Fazetaren widgeta"
 
 #. Default: "Facets"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Facets"
-msgstr ""
+msgstr "Fazetak"
 
 #. Default: "Field"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Field"
-msgstr ""
+msgstr "Eremua"
 
 #. Default: "Align"
 #: components/Blocks/Slider/schema
@@ -226,7 +219,7 @@ msgstr "Alineazioa"
 #. Default: "Follow us:"
 #: components/Footer/slots/FollowUsLogoAndLinks
 msgid "Follow us:"
-msgstr ""
+msgstr "Jarrai gaitzazu"
 
 #. Default: "Full"
 #: components/Widgets/BlockWidth
@@ -241,12 +234,12 @@ msgstr "GNU GPL"
 #. Default: "Headline"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Headline"
-msgstr ""
+msgstr "Goiburukoa"
 
 #. Default: "Hidden facets will still filter the results if proper parameters are passed in URLs"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Hidden facets will still filter the results if proper parameters are passed in URLs"
-msgstr ""
+msgstr "Ezkutatutako fazetek ere emaitzak filtratzen dituzte URLan dagozkien parametroak pasatuz gero"
 
 #. Default: "Hide Button"
 #: components/Blocks/Slider/schema
@@ -256,11 +249,10 @@ msgstr "Ezkutatu botoia"
 #. Default: "Hide facet?"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Hide facet?"
-msgstr ""
+msgstr "Ezkutatu fazeta?"
 
 #. Default: "Home"
-#: components/Breadcrumbs/Breadcrumbs
-#: components/Logo/Logo
+#: components/Breadcrumbs/Breadcrumbs components/Logo/Logo
 #: components/MobileNavigation/MobileNavigation
 msgid "Home"
 msgstr "Hasiera"
@@ -273,7 +265,7 @@ msgstr "Deskargatu ICS fitxategia "
 #. Default: "Icon"
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Icon"
-msgstr ""
+msgstr "Ikonoa"
 
 #. Default: "Image"
 #: components/Blocks/Image/ImageSidebar
@@ -281,35 +273,34 @@ msgid "Image"
 msgstr "Irudia"
 
 #. Default: "Invalid block - Will be removed on saving"
-#: components/Theme/RenderBlocks
-#: components/Theme/RenderBlocksV2
+#: components/Theme/RenderBlocks components/Theme/RenderBlocksV2
 msgid "Invalid Block"
-msgstr ""
+msgstr "Blokea ez da zuzena"
 
 #. Default: "Invalid Slider source"
 #: components/Blocks/Slider/Data
 msgid "Invalid Slider source"
-msgstr ""
+msgstr "Sliderraren jatorria ez da zuzena"
 
 #. Default: "Item"
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Item"
-msgstr ""
+msgstr "Elementua"
 
 #. Default: "Label"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Label"
-msgstr ""
+msgstr "Etiketa"
 
 #. Default: "Large"
 #: components/Widgets/Size
 msgid "Large"
-msgstr ""
+msgstr "Handia"
 
 #. Default: "Layout"
 #: components/Widgets/BlockWidth
 msgid "Layout"
-msgstr ""
+msgstr "Itxura"
 
 #. Default: "Left"
 #: components/Widgets/BlockAlignment
@@ -319,17 +310,17 @@ msgstr "Ezkerrean"
 #. Default: "Link"
 #: components/Widgets/schema/footerLinksSchema
 msgid "Link"
-msgstr ""
+msgstr "Esteka"
 
 #. Default: "List"
 #: index
 msgid "List"
-msgstr ""
+msgstr "Zerrenda"
 
 #. Default: "List with images"
 #: index
 msgid "List with images"
-msgstr ""
+msgstr "Irudidun zerrenda"
 
 #. Default: "Location"
 #: components/Blocks/EventMetadata/View
@@ -344,47 +335,47 @@ msgstr "Sartu"
 #. Default: "Log out"
 #: components/Anontools/Anontools
 msgid "Log out"
-msgstr ""
+msgstr "Irten"
 
 #. Default: "Logo"
 #: components/Widgets/schema/footerLogosSchema
 msgid "Logo"
-msgstr ""
+msgstr "Logoa"
 
 #. Default: "Logo image"
 #: components/Widgets/schema/footerLogosSchema
 msgid "Logo image"
-msgstr ""
+msgstr "Logoaren irudia"
 
 #. Default: "Logo of"
 #: components/Logo/Logo
 msgid "Logo of"
-msgstr ""
+msgstr "Logoa"
 
 #. Default: "Medium"
 #: components/Widgets/Size
 msgid "Medium"
-msgstr ""
+msgstr "Ertaina"
 
 #. Default: "Move down"
 #: components/Blocks/Block/Edit
 msgid "Move down"
-msgstr ""
+msgstr "Mugitu behera"
 
 #. Default: "Move up"
 #: components/Blocks/Block/Edit
 msgid "Move up"
-msgstr ""
+msgstr "Mugitu gora"
 
 #. Default: "Multiple choices?"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Multiple choices?"
-msgstr ""
+msgstr "Aukera anitzak?"
 
 #. Default: "Narrow"
 #: components/Widgets/BlockWidth
 msgid "Narrow"
-msgstr ""
+msgstr "Estua"
 
 #. Default: "Next Page"
 #: components/Blocks/Listing/ListingBody
@@ -404,12 +395,12 @@ msgstr "Ez dago elementurik"
 #. Default: "No selection"
 #: components/Blocks/EventCalendar/Search/components/SortOn
 msgid "No selection"
-msgstr ""
+msgstr "Aukeraketarik ez"
 
 #. Default: "Open configuration"
 #: components/Widgets/ModalJSONEditor
 msgid "Open configuration"
-msgstr ""
+msgstr "Ireki konfigurazioa"
 
 #. Default: "Open in a new tab"
 #: components/Widgets/schema/footerLinksSchema
@@ -417,7 +408,7 @@ msgstr ""
 #: components/Widgets/schema/headerActionsSchema
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Open in a new tab"
-msgstr ""
+msgstr "Ireki fitxa berrian"
 
 #. Default: "Open menu"
 #: components/MobileNavigation/MobileNavigation
@@ -433,24 +424,21 @@ msgstr "Gainbegirada"
 #. Default: "Pagination Navigation"
 #: components/Blocks/Listing/ListingBody
 msgid "Pagination Navigation"
-msgstr ""
+msgstr "Orrialdekako nabigazioa"
 
 #. Default: "Pagination Navigation for {headline}"
 #: components/Blocks/Listing/ListingBody
 msgid "Pagination Navigation for {headline}"
-msgstr ""
+msgstr "{headline}en orrialdekako nabigazioa"
 
 #. Default: "Phone"
-#: components/Blocks/EventMetadata/View
-#: components/Summary/PersonSummary
+#: components/Blocks/EventMetadata/View components/Summary/PersonSummary
 msgid "Phone"
 msgstr "Telefonoa"
 
 #. Default: "Please choose an existing content as source for this element"
-#: components/Blocks/Slider/DefaultBody
-#: components/Blocks/Slider/SliderVariants
-#: components/Blocks/Slider/View
-#: components/Blocks/Teaser/Body
+#: components/Blocks/Slider/DefaultBody components/Blocks/Slider/SliderVariants
+#: components/Blocks/Slider/View components/Blocks/Teaser/Body
 msgid "Please choose an existing content as source for this element"
 msgstr "Aukeratu eduki bat elementu honen iturburu gisa"
 
@@ -477,7 +465,7 @@ msgstr "Aurreko orria"
 #. Default: "Refresh source content"
 #: components/Blocks/Slider/Data
 msgid "Refresh source content"
-msgstr ""
+msgstr "Freskatu jatorrizko edukia"
 
 #. Default: "Register"
 #: components/Anontools/Anontools
@@ -485,15 +473,14 @@ msgid "Register"
 msgstr "Eman izena"
 
 #. Default: "Remove item"
-#: components/Widgets/BlocksObject
-#: components/Widgets/ObjectList
+#: components/Widgets/BlocksObject components/Widgets/ObjectList
 msgid "Remove item"
-msgstr ""
+msgstr "Kendu elementua"
 
 #. Default: "Reset the block"
 #: components/Blocks/Slider/Data
 msgid "Reset the block"
-msgstr ""
+msgstr "Berrezarri blokea"
 
 #. Default: "Result"
 #: components/Blocks/Listing/ListingBody
@@ -508,7 +495,7 @@ msgstr "Eskuman"
 #. Default: "Room"
 #: components/Summary/PersonSummary
 msgid "Room"
-msgstr ""
+msgstr "Gela"
 
 #. Default: "Search"
 #: components/Blocks/EventCalendar/Search/components/SearchInput
@@ -530,12 +517,12 @@ msgstr "Bilatu atarian"
 #. Default: "Search block"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Search block"
-msgstr ""
+msgstr "Bilaketa blokea"
 
 #. Default: "Search button label"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Search button label"
-msgstr ""
+msgstr "Bilaketa botoiaren etiketa"
 
 #. Default: "Search for People, E-Mail Address, Phone Number, ..."
 #: components/SearchWidget/IntranetSearchWidget
@@ -545,7 +532,7 @@ msgstr "Bilatu pertsonak, eposta helbideak, telefono zenbakiak, ..."
 #. Default: "Search input label"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Search input label"
-msgstr ""
+msgstr "Bilaketa botoiaren testua"
 
 #. Default: "Search results"
 #: components/Blocks/Search/components/SearchDetails
@@ -560,43 +547,42 @@ msgstr "Hau bilatu duzu"
 #. Default: "Section title"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Section title"
-msgstr ""
+msgstr "Atalaren izenburua"
 
 #. Default: "Short line"
 #: components/Blocks/Separator/schema
 msgid "Short line"
-msgstr ""
+msgstr "Lerro laburra"
 
 #. Default: "Show item"
-#: components/Widgets/BlocksObject
-#: components/Widgets/ObjectList
+#: components/Widgets/BlocksObject components/Widgets/ObjectList
 msgid "Show item"
-msgstr ""
+msgstr "Erakutsi elementua"
 
 #. Default: "Show search button?"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Show search button?"
-msgstr ""
+msgstr "Erakutsi bilaketa botoia?"
 
 #. Default: "Show search input?"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Show search input?"
-msgstr ""
+msgstr "Erakutsi bilaketa laukia?"
 
 #. Default: "Show sorting?"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Show sorting?"
-msgstr ""
+msgstr "Erakutsi ordenazioa?"
 
 #. Default: "Show total results"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Show total results"
-msgstr ""
+msgstr "Erakutsi emaitza kopurua"
 
 #. Default: "Simple"
 #: index
 msgid "Simple"
-msgstr ""
+msgstr "Sinplea"
 
 #. Default: "Sitemap"
 #: index
@@ -606,22 +592,22 @@ msgstr "Webgunearen mapa"
 #. Default: "Small"
 #: components/Widgets/Size
 msgid "Small"
-msgstr ""
+msgstr "Txikia"
 
 #. Default: "Sort on"
 #: components/Blocks/EventCalendar/Search/components/SortOn
 msgid "Sort on"
-msgstr ""
+msgstr "Ordenazioa"
 
 #. Default: "Sort on options"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Sort on options"
-msgstr ""
+msgstr "Ordenazioaren aukerak"
 
 #. Default: "Sorted on"
 #: components/Blocks/EventCalendar/Search/components/SortOn
 msgid "Sorted on"
-msgstr ""
+msgstr "Honen arabera ordenatuta"
 
 #. Default: "Sorting"
 #: components/Blocks/Search/TopSideFacets
@@ -629,15 +615,14 @@ msgid "Sorting"
 msgstr "Ordenazioa"
 
 #. Default: "Source"
-#: components/Blocks/Slider/DefaultBody
-#: components/Blocks/Slider/SliderVariants
+#: components/Blocks/Slider/DefaultBody components/Blocks/Slider/SliderVariants
 msgid "Source"
 msgstr "Iturburua"
 
 #. Default: "Sponsored by:"
 #: components/Footer/slots/FollowUsLogoAndLinks
 msgid "Sponsored by:"
-msgstr ""
+msgstr "Honek babestuta:"
 
 #. Default: "Start"
 #: components/Blocks/EventMetadata/View
@@ -655,21 +640,20 @@ msgstr "Hona aldatu"
 #: components/Widgets/schema/headerActionsSchema
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Target"
-msgstr ""
+msgstr "Helburua"
 
 #. Default: "The button presence disables the live search, the query is issued when you press ENTER"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "The button presence disables the live search, the query is issued when you press ENTER"
-msgstr ""
+msgstr "Botoia badago, zuzeneko bilaketa desgaituta dago, bilaketa ENTER sakatzean egingo da"
 
 #. Default: "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
 #: components/Footer/slots/Copyright
 msgid "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
-msgstr "{plonecms} {copyright} 2000-{current_year} {plonefoundation} eta lagunek egindakoa"
+msgstr "{plonecms} {copyright} 2000-{current_year} {plonefoundation} eta lagunek egindakoa."
 
 #. Default: "Title"
-#: components/Blocks/Image/schema
-#: components/Widgets/schema/footerLinksSchema
+#: components/Blocks/Image/schema components/Widgets/schema/footerLinksSchema
 #: components/Widgets/schema/footerLogosSchema
 #: components/Widgets/schema/headerActionsSchema
 #: components/Widgets/schema/iconLinkListSchema
@@ -677,11 +661,10 @@ msgid "Title"
 msgstr "Izenburua"
 
 #. Default: "Unknown Block {block}"
-#: components/Blocks/Block/Edit
-#: components/Theme/RenderBlocks
+#: components/Blocks/Block/Edit components/Theme/RenderBlocks
 #: components/Theme/RenderBlocksV2
 msgid "Unknown Block"
-msgstr ""
+msgstr "Bloke ezezaguna"
 
 #. Default: "Website"
 #: components/Blocks/EventMetadata/View
@@ -691,13 +674,12 @@ msgstr "Webgunea"
 #. Default: "Available views"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "availableViews"
-msgstr ""
+msgstr "Bistak"
 
 #. Default: "Delete"
-#: components/Blocks/Block/Edit
-#: components/Blocks/Block/EditBlockWrapper
+#: components/Blocks/Block/Edit components/Blocks/Block/EditBlockWrapper
 msgid "delete"
-msgstr ""
+msgstr "Ezabatu"
 
 #. Default: "Clear image"
 #: components/Blocks/Image/ImageSidebar
@@ -715,8 +697,7 @@ msgid "loading"
 msgstr "Kargatzen"
 
 #. Default: "More info"
-#: components/Blocks/Slider/DefaultBody
-#: components/Blocks/Slider/SliderVariants
+#: components/Blocks/Slider/DefaultBody components/Blocks/Slider/SliderVariants
 msgid "moreInfo"
 msgstr "Informazio gehiago"
 
@@ -728,4 +709,4 @@ msgstr "-"
 #. Default: "Views"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "views"
-msgstr ""
+msgstr "Vistak"
