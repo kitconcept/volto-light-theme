@@ -66,7 +66,6 @@ declare module '@plone/types' {
     themes?: StyleDefinition[];
     allowedBlocks?: string[];
     allowed_headline_tags?: string[][];
-    dataAdapter?: any;
     unwantedButtons?: string[];
     imageScale?: string;
     allowed_headings?: string[][];
@@ -74,6 +73,10 @@ declare module '@plone/types' {
   export interface BlocksFormData {
     headline: string;
     styles: string;
+  }
+
+  export interface SettingsConfig {
+    blockModel?: number;
   }
 }
 
