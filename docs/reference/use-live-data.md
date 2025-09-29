@@ -74,7 +74,7 @@ const Tags = ({ content }) => {
 
 ## Example: Behavior-based Live Data
 
-`useLiveData` also works with fields provided by behaviors.
+`useLiveData` also works with fields provided by inherited behaviors (provided by `@inherit` endpoint).
 For instance, in the `FollowUsPostFooterLogoAndLinks` component, several fields are loaded via behaviors:
 
 ```tsx
