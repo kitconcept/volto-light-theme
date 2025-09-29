@@ -49,6 +49,9 @@ text+button
 image+separator-block
 :   If after an image comes after a separator block, then the vertical spacing between them is `40px`.
 
+first block
+:   The first block of the page has no top padding only in case that the background color is default (eg. `#fff` or `#000`).
+    For any other color, it defaults to `80px` (see first rule).
 
 ## Block model (v2)
 
