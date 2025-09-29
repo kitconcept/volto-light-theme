@@ -1,6 +1,43 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 7.1.0 (2025-09-29)
+
+### Backend
+
+
+#### New features:
+
+- Add Basque translation @erral [#675](https://github.com/kitconcept/volto-light-theme/issues/675)
+
+
+
+### Frontend
+
+#### Feature
+
+- Add Basque translation @erral [#675](https://github.com/kitconcept/volto-light-theme/pull/675)
+
+#### Bugfix
+
+- Fix use Sass interpolation for CSS variable fallbacks @iRohitSingh [#673](https://github.com/kitconcept/volto-light-theme/pull/673)
+- Fix vertical spacing for first block in case that there is a change of color from default. @sneridagh [#676](https://github.com/kitconcept/volto-light-theme/pull/676)
+- Don't show parent tags when adding the child. @iFlameing 
+
+#### Internal
+
+- Fix cypress test for calendar block. @iFlameing [#calendar-cypress](https://github.com/kitconcept/volto-light-theme/pull/calendar-cypress)
+- Misc bugfixes. Upgrade to Volto 18.27.2. @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 7.0.0 (2025-09-25)
 
 ### Backend

@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 7.1.0 (2025-09-29)
+
+
+### New features:
+
+- Add Basque translation @erral [#675](https://github.com/kitconcept/volto-light-theme/issues/675)
+
 ## 7.0.0 (2025-09-25)
 
 No significant changes.
