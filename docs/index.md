@@ -72,4 +72,5 @@ reference/feature-flags
 reference/recommended-addons
 reference/compatibility
 reference/storybook
+reference/use-live-data
 ```
