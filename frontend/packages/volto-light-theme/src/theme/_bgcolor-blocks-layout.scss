@@ -3,7 +3,18 @@
   color: var(--theme-foreground-color);
   @include color-block-change-vertical-spacing();
 
-  &:first-child {
+  // // TODO: investigate why on SSR the whitespace is removed and in client not
+  // // This is a workaround to avoid the two use cases...
+  // &[style*='--theme-color:#fff']:first-child,
+  // &[style*='--theme-color: #fff']:first-child {
+  //   padding-top: 0;
+  // }
+
+  // &:first-child:has(> .previous--has--same--backgroundColor) {
+  //   padding-top: 0;
+  // }
+
+  &:first-child:has(> :first-child.previous--has--same--backgroundColor) {
     padding-top: 0;
   }
 
