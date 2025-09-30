@@ -75,7 +75,8 @@ jobs:
       - name: Install dependencies
         run: make install
 
-      - run: ls -la ./frontend/core/packages/volto/node_modules/.bin/cypress || true
+      - name: Fix DBUS_SESSION_BUS_ADDRESS issue
+        run: unset DBUS_SESSION_BUS_ADDRESS
 
       - name: Install Cypress if not in cache
         if: steps.cache-cypress-binary.outputs.cache-hit != 'true'
