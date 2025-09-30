@@ -1014,6 +1014,7 @@ describe('Listing Block Tests', () => {
     cy.intercept('PATCH', '/**/my-page').as('save');
     cy.intercept('GET', '/**/my-page').as('content');
     cy.intercept('GET', '/**/@types/Document').as('schema');
+    cy.intercept('GET', '/**/@querystring-search*').as('querystring');
 
     cy.createContent({
       contentType: 'Document',
@@ -1107,6 +1108,7 @@ describe('Listing Block Tests', () => {
     cy.isInHTML({ parent: '.listing-item', content: 'My Folder 3' });
     cy.url().should('not.include', '=3');
     cy.go(-1);
+    cy.wait(500);
     cy.isInHTML({ parent: '.listing-item', content: 'My Folder 2' });
     cy.url().should('not.include', '=2');
     cy.url().should('not.include', '=3');
