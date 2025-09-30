@@ -22,6 +22,8 @@ import cx from 'classnames';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import CalendarSVG from '@plone/volto/icons/calendar.svg';
 import ClearSVG from '@plone/volto/icons/clear.svg';
+import LeftArrowSVG from '@plone/volto/icons/left-key.svg';
+import RightArrowSVG from '@plone/volto/icons/right-key.svg';
 
 export interface DateRangePickerProps<T extends DateValue>
   extends RACDateRangePickerProps<T> {
@@ -64,13 +66,17 @@ export function DateRangePicker<T extends DateValue>({
 
       {description && <Text slot="description">{description}</Text>}
       <FieldError>{errorMessage}</FieldError>
-      <Popover>
+      <Popover offset={0}>
         <Dialog>
           <RangeCalendar>
             <header>
-              <Button slot="previous">◀</Button>
+              <Button slot="previous">
+                <Icon name={LeftArrowSVG} />
+              </Button>
               <Heading />
-              <Button slot="next">▶</Button>
+              <Button slot="next">
+                <Icon name={RightArrowSVG} />
+              </Button>
             </header>
             <CalendarGrid>
               {(date) => <CalendarCell date={date} />}
