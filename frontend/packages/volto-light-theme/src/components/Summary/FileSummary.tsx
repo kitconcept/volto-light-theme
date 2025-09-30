@@ -1,5 +1,6 @@
 import FileType from '@kitconcept/volto-light-theme/helpers/Filetype';
 import type { DefaultSummaryProps } from './DefaultSummary';
+import { smartTextRenderer } from '../../helpers/smartText';
 
 const FileSummary = (props: DefaultSummaryProps) => {
   const { item, HeadingTag = 'h3', a11yLabelId, hide_description } = props;
@@ -15,7 +16,9 @@ const FileSummary = (props: DefaultSummaryProps) => {
       <HeadingTag className="title" id={a11yLabelId}>
         {item.title ? item.title : item.id}
       </HeadingTag>
-      {!hide_description && <p className="description">{item.description}</p>}
+      {!hide_description && (
+        <p className="description">{smartTextRenderer(item.description)}</p>
+      )}
     </>
   );
 };
