@@ -4,7 +4,7 @@ import locationSVG from '@plone/volto/icons/map.svg';
 import phoneSVG from '@plone/volto/icons/mobile.svg';
 import type { DefaultSummaryProps } from './DefaultSummary';
 import { defineMessages, useIntl } from 'react-intl';
-import { renderDescription } from './utils';
+import { smartTextRenderer } from '../../helpers/smartText';
 
 const messages = defineMessages({
   phone: {
@@ -32,7 +32,7 @@ const PersonSummary = (props: DefaultSummaryProps) => {
         {item.title ? item.title : item.id}
       </HeadingTag>
       {!hide_description && (
-        <p className="description">{renderDescription(item.description)}</p>
+        <p className="description">{smartTextRenderer(item.description)}</p>
       )}
 
       {item.contact_email && (

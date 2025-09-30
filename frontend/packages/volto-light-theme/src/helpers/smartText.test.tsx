@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import * as React from 'react';
-import { renderDescription } from './utils';
+import { smartTextRenderer } from './smartText';
 
 vi.mock('@plone/volto/components/manage/UniversalLink/UniversalLink', () => ({
   default: ({
@@ -20,15 +20,15 @@ vi.mock('@plone/volto/components/manage/UniversalLink/UniversalLink', () => ({
 const renderWithWrapper = (description: string | null | undefined) =>
   render(
     <div data-testid="description-wrapper">
-      {renderDescription(description)}
+      {smartTextRenderer(description)}
     </div>,
   );
 
-describe('renderDescription', () => {
+describe('smartTextRenderer', () => {
   it('returns null for empty description', () => {
-    expect(renderDescription('')).toBeNull();
-    expect(renderDescription(null)).toBeNull();
-    expect(renderDescription(undefined)).toBeNull();
+    expect(smartTextRenderer('')).toBeNull();
+    expect(smartTextRenderer(null)).toBeNull();
+    expect(smartTextRenderer(undefined)).toBeNull();
   });
 
   it('renders plain text without creating links', () => {
@@ -83,7 +83,7 @@ describe('renderDescription', () => {
 
     rerender(
       <div data-testid="description-wrapper">
-        {renderDescription('Second [Link](/second) call.')}
+        {smartTextRenderer('Second [Link](/second) call.')}
       </div>,
     );
 

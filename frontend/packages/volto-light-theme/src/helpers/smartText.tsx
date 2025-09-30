@@ -3,8 +3,8 @@ import UniversalLink from '@plone/volto/components/manage/UniversalLink/Universa
 
 const linkPattern = /\[([^\]]+)\]\(([^)]+)\)/g;
 
-export const renderDescription = (description) => {
-  if (!description) return null;
+export const smartTextRenderer = (smartText) => {
+  if (!smartText) return null;
 
   linkPattern.lastIndex = 0;
 
@@ -12,9 +12,9 @@ export const renderDescription = (description) => {
   let lastIndex = 0;
   let match;
 
-  while ((match = linkPattern.exec(description)) !== null) {
+  while ((match = linkPattern.exec(smartText)) !== null) {
     if (match.index > lastIndex) {
-      parts.push(description.slice(lastIndex, match.index));
+      parts.push(smartText.slice(lastIndex, match.index));
     }
 
     const [, text, href] = match;
@@ -28,8 +28,8 @@ export const renderDescription = (description) => {
     lastIndex = match.index + match[0].length;
   }
 
-  if (lastIndex < description.length) {
-    parts.push(description.slice(lastIndex));
+  if (lastIndex < smartText.length) {
+    parts.push(smartText.slice(lastIndex));
   }
 
   return parts.map((part, index) => {
