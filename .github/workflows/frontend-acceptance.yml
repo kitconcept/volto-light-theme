@@ -70,7 +70,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.cache/Cypress
-          key: binary-${{ env.NODE_VERSION }}-${{ hashFiles('pnpm-lock.yaml') }}
+          key: binary-${{ env.NODE_VERSION }}-${{ hashFiles('**/pnpm-lock.yaml') }}
 
       - name: Install dependencies
         run: make install
