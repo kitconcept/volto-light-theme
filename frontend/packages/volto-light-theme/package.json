@@ -42,14 +42,17 @@
     "@plone/types": "workspace:*",
     "@storybook/react": "^8.6.12",
     "@testing-library/cypress": "10.0.3",
+    "@testing-library/jest-dom": "^6.8.0",
     "@testing-library/react": "^16.2.0",
     "@types/jest": "^29.5.8",
     "@types/lodash": "^4.14.201",
     "@types/node": "^22",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
-    "typescript": "^5.7.3",
+    "react-intl-redux": "2.3.0",
+    "redux-mock-store": "1.5.4",
     "release-it": "^19.0.3",
+    "typescript": "^5.7.3",
     "vitest": "^3.1.2"
   },
   "dependencies": {
@@ -57,12 +60,12 @@
     "@dnd-kit/sortable": "7.0.2",
     "@dnd-kit/utilities": "3.2.2",
     "@plone/components": "workspace:^",
+    "embla-carousel-autoplay": "^8.0.0",
+    "embla-carousel-react": "^8.0.0",
     "react-animate-height": "^3.2.3",
     "react-aria-components": "^1.7.0",
     "react-colorful": "^5.6.1",
-    "uuid": "^11.0.0",
-    "embla-carousel-autoplay": "^8.0.0",
-    "embla-carousel-react": "^8.0.0"
+    "uuid": "^11.0.0"
   },
   "peerDependencies": {
     "@eeacms/volto-accordion-block": "^10.4.6",
