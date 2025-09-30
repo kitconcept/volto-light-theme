@@ -1,10 +1,10 @@
-import * as React from 'react';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import mailSVG from '@plone/volto/icons/email.svg';
 import locationSVG from '@plone/volto/icons/map.svg';
 import phoneSVG from '@plone/volto/icons/mobile.svg';
 import type { DefaultSummaryProps } from './DefaultSummary';
 import { defineMessages, useIntl } from 'react-intl';
+import { renderDescription } from './utils';
 
 const messages = defineMessages({
   phone: {
@@ -31,7 +31,9 @@ const PersonSummary = (props: DefaultSummaryProps) => {
       <HeadingTag className="title" id={a11yLabelId}>
         {item.title ? item.title : item.id}
       </HeadingTag>
-      {!hide_description && <p className="description">{item.description}</p>}
+      {!hide_description && (
+        <p className="description">{renderDescription(item.description)}</p>
+      )}
 
       {item.contact_email && (
         <div className="summary-extra-info email">

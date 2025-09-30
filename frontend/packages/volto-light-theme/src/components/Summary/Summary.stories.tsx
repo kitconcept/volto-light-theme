@@ -38,6 +38,24 @@ export const Summary: Story = {
   },
 };
 
+export const SummaryWithLink: Story = {
+  render: (args) => (
+    <div style={{ width: '300px' }}>
+      <Wrapper>
+        <DefaultSummary {...args} />
+      </Wrapper>
+    </div>
+  ),
+  args: {
+    item: {
+      title: 'Simple Card with strings',
+      description:
+        '[Lorem ipsum](https://example.com) dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
+      head_title: 'Simple Card',
+    },
+  },
+};
+
 export const SummaryHideDescription: Story = {
   render: (args) => (
     <div style={{ width: '300px' }}>
