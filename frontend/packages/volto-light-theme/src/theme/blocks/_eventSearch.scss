@@ -417,12 +417,20 @@ This is css code of popup of calendar */
   border-radius: unset;
 }
 .react-aria-RangeCalendar {
+  font-size: 24px;
+
+  table .react-aria-CalendarCell {
+    width: 2.75rem;
+  }
+
   header {
     display: flex;
+    margin: 10px 0 20px 0;
   }
 
   //ask victor about this. Font family causing unwanted problems in rendering of icon.
   .react-aria-Button {
+    border: none;
     border-radius: unset;
     font-family: unset;
   }
@@ -431,4 +439,18 @@ This is css code of popup of calendar */
     font-size: 1.375rem;
     text-align: center;
   }
+}
+
+// body:has(.react-aria-Popover[data-trigger='DateRangePicker'])
+//   .react-aria-Group {
+//   border-bottom: none;
+// }
+
+.react-aria-Popover[data-trigger='DateRangePicker'] {
+  min-width: var(--trigger-width);
+  border-top: none;
+}
+
+.react-aria-Dialog:has(.react-aria-RangeCalendar) {
+  padding: 10px;
 }
