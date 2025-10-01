@@ -1,6 +1,39 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 7.2.0 (2025-10-01)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Feature
+
+- Added smartTextRenderer helper for rendering markdown formatted links in plain text. @sneridagh [#679.1](https://github.com/kitconcept/volto-light-theme/pull/679.1)
+- Link support in descriptions in summaries via a custom mardown parser (smartText). @sneridagh [#679.2](https://github.com/kitconcept/volto-light-theme/pull/679.2)
+
+#### Bugfix
+
+- Fixed icons and spacing in calendar event range widget. @sneridagh [#680](https://github.com/kitconcept/volto-light-theme/pull/680)
+- Added card img 100% width for account for small images. @sneridagh [#681](https://github.com/kitconcept/volto-light-theme/pull/681)
+- Fixed regression for contained teasers applying a margin only meant for contained ones. @sneridagh [#683](https://github.com/kitconcept/volto-light-theme/pull/683)
+
+
+
+### Project
+
+
+#### Feature
+
+- Started using Cypress 15 because the visual regression tests were failing with latest Firefox. @sneridagh [#681](https://github.com/kitconcept/volto-light-theme/pull/681)
+
+
+
 ## 7.1.0 (2025-09-29)
 
 ### Backend
