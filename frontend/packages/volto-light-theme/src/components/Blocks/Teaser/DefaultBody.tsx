@@ -24,8 +24,10 @@ const TeaserDefaultTemplate = (props) => {
 
   return (
     <Card
-      href={showLink ? href['@id'] : null}
+      // If we pass down items, then we cannot do this:
+      href={showLink ? (href['@id'] as string) : null}
       openLinkInNewTab={openLinkInNewTab}
+      item={href}
     >
       <Card.Image
         src={url && !image?.image_field ? url : undefined}
