@@ -23,12 +23,7 @@ const TeaserDefaultTemplate = (props) => {
   const { '@id': id, ...filteredData } = data;
 
   return (
-    <Card
-      // If we pass down items, then we cannot do this:
-      href={showLink ? (href['@id'] as string) : null}
-      openLinkInNewTab={openLinkInNewTab}
-      item={href}
-    >
+    <Card item={showLink ? href : null} openLinkInNewTab={openLinkInNewTab}>
       <Card.Image
         src={url && !image?.image_field ? url : undefined}
         item={!data.overwrite ? href : { ...href, ...filteredData }}

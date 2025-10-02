@@ -62,7 +62,7 @@ const Card = (props: CardProps) => {
     }
   };
 
-  const isInteractive = !!href && !hasItem;
+  const isInteractive = !!href || !!hasItem;
 
   const onClick: React.MouseEventHandler<HTMLDivElement> = () => {
     if (isInteractive) triggerNavigation();
