@@ -23,10 +23,7 @@ const TeaserDefaultTemplate = (props) => {
   const { '@id': id, ...filteredData } = data;
 
   return (
-    <Card
-      href={showLink ? href['@id'] : null}
-      openLinkInNewTab={openLinkInNewTab}
-    >
+    <Card item={showLink ? href : null} openLinkInNewTab={openLinkInNewTab}>
       <Card.Image
         src={url && !image?.image_field ? url : undefined}
         item={!data.overwrite ? href : { ...href, ...filteredData }}
