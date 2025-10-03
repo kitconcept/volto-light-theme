@@ -46,9 +46,9 @@ const childrenWithProps = (children, extraProps) => {
 };
 
 const Card = (props: CardProps) => {
-  const hasItem = 'item' in props;
+  const hasItem = !!props.item;
   const item = hasItem ? props.item : undefined;
-  const href = !hasItem && 'href' in props ? props.href : undefined;
+  const href = !hasItem ? props.href : undefined;
   const { className, openLinkInNewTab } = props;
 
   const a11yLabelId = React.useId();
@@ -62,7 +62,7 @@ const Card = (props: CardProps) => {
     }
   };
 
-  const isInteractive = !!href || !!hasItem;
+  const isInteractive = !!props.href || !!props.item;
 
   const onClick: React.MouseEventHandler<HTMLDivElement> = () => {
     if (isInteractive) triggerNavigation();
