@@ -62,7 +62,7 @@ const GridTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
               })}
               key={item['@id']}
             >
-              <Card href={showLink ? item['@id'] : null}>
+              <Card item={showLink ? item : null}>
                 <ItemBodyTemplate item={item} />
               </Card>
             </div>

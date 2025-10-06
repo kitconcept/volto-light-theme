@@ -222,6 +222,7 @@ describe('Test if different forms of Linking content appear in Delete Modal View
     cy.get('.medium > .header').should('be.visible');
     cy.get('li > [href="/document-linked"]');
   });
+
   it('As editor I get a warning on deleting my page when my Image is referenced in the Teaser Block', () => {
     cy.createContent({
       contentType: 'Document',
@@ -286,6 +287,7 @@ describe('Test if different forms of Linking content appear in Delete Modal View
     cy.get('.medium > .header').should('be.visible');
     cy.get('li > [href="/document-linked"]');
   });
+
   it('As editor I get a warning on deleting my Document when my Image is referenced via Image Block', () => {
     cy.createContent({
       contentType: 'Image',
