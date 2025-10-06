@@ -12,7 +12,7 @@ describe('a11y tests', () => {
   // Table of Contents
   it('Table of Contents (/block/toc-block)', () => {
     cy.navigate('/block/toc-block');
-    cy.wait('@content');
+    cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
     cy.configureAxe();
     cy.checkAccessibility();

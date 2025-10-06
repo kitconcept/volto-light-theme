@@ -8,6 +8,23 @@ context('Blocks Acceptance Tests', () => {
       contentId: 'document',
       contentTitle: 'Document',
     });
+    cy.fixture('halfdome2022.jpg', 'base64').then((fileContent) => {
+      cy.createContent({
+        contentType: 'Image',
+        contentId: 'my-image',
+        contentTitle: 'My Image',
+        bodyModifier(body) {
+          body.image = {
+            data: fileContent,
+            encoding: 'base64',
+            filename: 'image.png',
+            'content-type': 'image/png',
+          };
+          return body;
+        },
+      });
+    });
+
     cy.autologin();
     cy.visit('/');
     cy.wait('@content');
@@ -20,7 +37,9 @@ context('Blocks Acceptance Tests', () => {
       contentId: 'blue-orchids',
       contentTitle: 'Blue Orchids',
       contentDescription: 'are growing on the mountain tops',
-      image: true,
+      preview_image_link: {
+        '@id': '/my-image',
+      },
       path: '/document',
     });
     cy.visit('/document/edit');
@@ -92,8 +111,11 @@ context('Blocks Acceptance Tests', () => {
     // Assert the heading, description and image is present
     cy.get('h2.headline').contains('Carousel Block');
     cy.get('.block.teaser .image-wrapper img')
-      .should('have.attr', 'src')
-      .and('include', '/document/blue-orchids/@@images/preview_image-');
+      .should('be.visible')
+      .should(($img) => {
+        expect($img[0].naturalWidth).to.be.greaterThan(0);
+        expect($img[0].naturalHeight).to.be.greaterThan(0);
+      });
     cy.get('.block.teaser .card-summary h2')
       .contains('Blue Orchids')
       .should('be.visible');
