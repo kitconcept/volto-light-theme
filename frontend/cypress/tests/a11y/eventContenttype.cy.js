@@ -12,7 +12,7 @@ describe('a11y tests', () => {
   //Event
   it('Event (/content-types/event)', () => {
     cy.navigate('/content-types/event');
-    cy.wait('@content');
+    cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
     cy.configureAxe();
     cy.checkAccessibility();

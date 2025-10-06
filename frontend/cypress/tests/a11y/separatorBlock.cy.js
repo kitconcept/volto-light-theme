@@ -12,7 +12,7 @@ describe('a11y tests', () => {
   // separator-block
   it('Separator-block (/block/separator-block)', () => {
     cy.navigate('/block/separator-block');
-    cy.wait('@content');
+    cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
     cy.configureAxe();
     cy.checkAccessibility();

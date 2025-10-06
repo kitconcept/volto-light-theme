@@ -12,7 +12,7 @@ describe('a11y tests', () => {
   // Table-block
   it('Table-block (/block/table-block)', () => {
     cy.navigate('/block/table-block');
-    cy.wait('@content');
+    cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
     cy.configureAxe({
       rules: [
