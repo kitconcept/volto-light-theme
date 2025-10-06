@@ -8,6 +8,22 @@ context('Blocks Acceptance Tests', () => {
       contentId: 'document',
       contentTitle: 'Document',
     });
+    cy.fixture('halfdome2022.jpg', 'base64').then((fileContent) => {
+      cy.createContent({
+        contentType: 'Image',
+        contentId: 'my-image',
+        contentTitle: 'My Image',
+        bodyModifier(body) {
+          body.image = {
+            data: fileContent,
+            encoding: 'base64',
+            filename: 'image.png',
+            'content-type': 'image/png',
+          };
+          return body;
+        },
+      });
+    });
     cy.autologin();
     cy.visit('/');
     cy.wait('@content');
@@ -20,7 +36,9 @@ context('Blocks Acceptance Tests', () => {
       contentId: 'blue-orchids',
       contentTitle: 'Blue Orchids',
       contentDescription: 'are growing on the mountain tops',
-      image: true,
+      preview_image_link: {
+        '@id': '/my-image',
+      },
       path: '/document',
     });
     cy.visit('/document/edit');
@@ -44,8 +62,11 @@ context('Blocks Acceptance Tests', () => {
     cy.visit('/document');
     cy.get('.block.teaser').should('have.class', 'has--align--center');
     cy.get('.block.teaser .image-wrapper img')
-      .should('have.attr', 'src')
-      .and('include', '/document/blue-orchids/@@images/preview_image-');
+      .should(($img) => {
+        expect($img[0].naturalWidth).to.be.greaterThan(0);
+        expect($img[0].naturalHeight).to.be.greaterThan(0);
+      })
+      .should('have.attr', 'src');
     cy.get('.block.teaser .card-summary h2').contains('Blue Orchids');
     cy.get('.block.teaser .card-summary p').contains(
       'are growing on the mountain tops',
@@ -59,7 +80,9 @@ context('Blocks Acceptance Tests', () => {
       contentId: 'blue-orchids',
       contentTitle: 'Blue Orchids',
       contentDescription: 'are growing on the mountain tops',
-      image: true,
+      preview_image_link: {
+        '@id': '/my-image',
+      },
       path: '/document',
     });
     cy.navigate('/document/edit');
@@ -103,7 +126,9 @@ context('Blocks Acceptance Tests', () => {
       contentId: 'blue-orchids',
       contentTitle: 'Blue Orchids',
       contentDescription: 'are growing on the mountain tops',
-      image: true,
+      preview_image_link: {
+        '@id': '/my-image',
+      },
       transition: 'publish',
       path: '/document',
     });
@@ -146,7 +171,9 @@ context('Blocks Acceptance Tests', () => {
       contentId: 'blue-orchids',
       contentTitle: 'Blue Orchids',
       contentDescription: 'are growing on the mountain tops',
-      image: true,
+      preview_image_link: {
+        '@id': '/my-image',
+      },
       path: '/document',
     });
     cy.visit('/document/edit');
