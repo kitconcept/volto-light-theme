@@ -33,16 +33,17 @@
     },
     "undefined": {
       "@type": "search",
-      "listingBodyTemplate": "summary",
+      "listingBodyTemplate": "default",
       "query": {
         "b_size": "4",
-        "limit": "4",
         "query": [],
         "sort_order": "ascending"
       },
       "showSearchInput": true,
       "showSortOn": true,
-      "showTotalResults": true
+      "showTotalResults": true,
+      "styles": {},
+      "theme": "default"
     }
   },
   "blocks_layout": {
@@ -72,17 +73,9 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2023-12-28T09:36:10+00:00",
+  "modified": "2025-10-06T20:08:07+00:00",
   "nav_title": null,
-  "preview_caption": null,
-  "preview_image": {
-    "blob_path": "928010d84e5d4df2b2282f3e179d6b1a/preview_image/black-starry-night.jpg",
-    "content-type": "image/jpeg",
-    "filename": "black-starry-night.jpg",
-    "height": 1708,
-    "size": 693013,
-    "width": 2400
-  },
+  "preview_caption_link": null,
   "review_state": "published",
   "rights": "",
   "subjects": [],
