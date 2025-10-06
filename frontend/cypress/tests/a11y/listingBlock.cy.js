@@ -12,7 +12,7 @@ describe('a11y tests', () => {
   // Listing-block
   it('Listing-block (/block/listing-block)', () => {
     cy.navigate('/block/listing-block');
-    cy.wait('@content');
+    cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
     cy.configureAxe({
       // Disabling 'image-alt'
