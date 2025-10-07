@@ -51,7 +51,6 @@ const Card = (props: CardProps) => {
   const href = !hasItem ? props.href : undefined;
   const { className, openLinkInNewTab } = props;
 
-  const a11yLabelId = React.useId();
   const linkRef = React.useRef<HTMLAnchorElement>(null);
 
   const triggerNavigation = () => {
@@ -76,6 +75,24 @@ const Card = (props: CardProps) => {
     }
   };
 
+  const LinkToItem = React.useCallback(
+    ({ children }) => {
+      return (
+        <ConditionalLink
+          className="card-link"
+          condition={isInteractive}
+          href={href}
+          item={item}
+          openLinkInNewTab={openLinkInNewTab}
+          ref={linkRef}
+        >
+          {children}
+        </ConditionalLink>
+      );
+    },
+    [href, item, isInteractive, openLinkInNewTab],
+  );
+
   return (
     <div
       className={cx('card', className)}
@@ -84,17 +101,10 @@ const Card = (props: CardProps) => {
       role={isInteractive ? 'link' : undefined}
       tabIndex={isInteractive ? 0 : undefined}
     >
-      {/* @ts-expect-error since this has no children, should fail */}
-      <ConditionalLink
-        aria-labelledby={a11yLabelId}
-        condition={isInteractive}
-        href={href}
-        item={item}
-        openLinkInNewTab={openLinkInNewTab}
-        ref={linkRef}
-      />
       <div className="card-inner">
-        {childrenWithProps(props.children, { a11yLabelId })}
+        {childrenWithProps(props.children, {
+          LinkToItem,
+        })}
       </div>
     </div>
   );
@@ -144,14 +154,21 @@ const CardImage = (props: CardImageProps) => {
 type CardSummaryProps = {
   /** The ID of the element that labels the card. */
   a11yLabelId?: string;
+  LinkToItem?: React.ElementType;
   children?: React.ReactNode;
 };
 
-const CardSummary = (props: CardSummaryProps) => (
-  <div className="card-summary">
-    {childrenWithProps(props.children, { a11yLabelId: props.a11yLabelId })}
-  </div>
-);
+const CardSummary = (props: CardSummaryProps) => {
+  const { a11yLabelId, LinkToItem } = props;
+  return (
+    <div className="card-summary">
+      {childrenWithProps(props.children, {
+        a11yLabelId,
+        LinkToItem,
+      })}
+    </div>
+  );
+};
 
 const CardActions = (props: any) => (
   <div className="actions-wrapper">{props.children}</div>
