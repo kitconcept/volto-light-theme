@@ -63,7 +63,7 @@ context('Blocks Acceptance Tests', () => {
     ).click();
 
     cy.get('[aria-label="Select Blue Orchids"]').dblclick();
-    cy.get('[id^="field-head_title-1-"]').click().clear().type('Head title');
+    cy.get('[id^="field-head_title-1-"]').click().clear().type('Kicker');
     cy.get('[id^="field-buttonText-5-"]').click().clear().type('Button text');
     // Select the checkbox
     cy.get('[id^="field-hideButton-6-"]')
@@ -117,7 +117,7 @@ context('Blocks Acceptance Tests', () => {
       })
       .should('have.attr', 'src');
 
-    cy.get('.title .supertitle').should('be.visible').contains('Head title');
+    cy.get('.title .supertitle').should('be.visible').contains('Kicker');
     cy.get('.title h2').should('be.visible').contains('Blue Orchids');
     cy.get('p')
       .should('be.visible')
@@ -153,7 +153,7 @@ context('Blocks Acceptance Tests', () => {
     ).click();
 
     cy.get('[aria-label="Select Blue Orchids"]').dblclick();
-    cy.get('[id^="field-head_title-1-"]').click().clear().type('Head title');
+    cy.get('[id^="field-head_title-1-"]').click().clear().type('Kicker');
     cy.get('[id^="field-buttonText-5-"]').click().clear().type('Button text');
     // Select the checkbox
     cy.get('[id^="field-hideButton-6-"]')
