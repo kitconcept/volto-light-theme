@@ -67,6 +67,16 @@ describe('smartTextRenderer', () => {
     expect(link).toHaveAttribute('href', '/space');
   });
 
+  it('renders carriage returns and newlines as line breaks', () => {
+    const { container } = renderWithWrapper('Line 1\r\nLine 2\nLine 3');
+    const brs = container.querySelectorAll('br');
+
+    expect(container).toHaveTextContent('Line 1Line 2Line 3');
+    expect(brs).toHaveLength(2);
+    expect(brs[0].nextSibling?.textContent).toBe('Line 2');
+    expect(brs[1].nextSibling?.textContent).toBe('Line 3');
+  });
+
   it('ignores bracketed text that is not a markdown link', () => {
     const description = 'Keep [this] but not a link.';
     const { container } = renderWithWrapper(description);
