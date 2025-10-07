@@ -34,7 +34,18 @@ export const smartTextRenderer = (smartText) => {
 
   return parts.map((part, index) => {
     if (typeof part === 'string') {
-      return <React.Fragment key={`text-${index}`}>{part}</React.Fragment>;
+      const segments = part.split(/\r\n|\r|\n/);
+
+      return (
+        <React.Fragment key={`text-${index}`}>
+          {segments.map((segment, segmentIndex) => (
+            <React.Fragment key={`text-${index}-${segmentIndex}`}>
+              {segment}
+              {segmentIndex < segments.length - 1 ? <br /> : null}
+            </React.Fragment>
+          ))}
+        </React.Fragment>
+      );
     }
 
     return (
