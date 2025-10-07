@@ -5,15 +5,17 @@ import { smartTextRenderer } from '../../helpers/smartText';
 const FileHeadline = (props: { item: any }) => {
   const { item } = props;
   const headline =
-    item.getObjSize || FileType(item.mime_type) || item.head_title;
+    item.getObjSize || FileType(item.mime_type) || item.head_title || '';
 
-  return headline.length === 0 ? null : (
+  return headline?.length === 0 ? null : (
     <div className="headline">
-      <span className="file-size">{item.getObjSize}</span>
-      {item.getObjSize && item.mime_type && ' | '}
-      <span className="file-type">{FileType(item.mime_type)}</span>
-      {item.mime_type && item.head_title && ' | '}
-      <span className="headline-content">{item.head_title}</span>
+      {item.getObjSize && <span className="file-size">{item.getObjSize}</span>}
+      {FileType(item.mime_type) && (
+        <span className="file-type">{FileType(item.mime_type)}</span>
+      )}
+      {item.head_title && (
+        <span className="headline-content">{item.head_title}</span>
+      )}
     </div>
   );
 };
