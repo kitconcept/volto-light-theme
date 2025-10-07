@@ -8,6 +8,18 @@
 
 <!-- towncrier release notes start -->
 
+## 7.3.0 (2025-10-07)
+
+### Bugfix
+
+- Pass down items to `Card` component, so it can pass it down to `UniversalLink`. @sneridagh [#684](https://github.com/kitconcept/volto-light-theme/pull/684)
+- Added addressable classNames to FileSummary headline. @sneridagh [#686](https://github.com/kitconcept/volto-light-theme/pull/686)
+- Update socialmedia add-on to 2.0.0a10 and Volto to 18.27.3. @sneridagh 
+
+### Internal
+
+- Replace "head title" with "kicker" in example content. @davisagli 
+
 ## 7.2.0 (2025-10-01)
 
 ### Feature

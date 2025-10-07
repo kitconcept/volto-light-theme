@@ -2,6 +2,18 @@
 
 <!-- towncrier release notes start -->
 
+## 7.3.0 (2025-10-07)
+
+
+### Bug fixes:
+
+- Update socialmedia add-on to 2.0.0a10, Plone 6.1.3 and Volto to 18.27.3. @sneridagh 
+
+
+### Internal:
+
+- Replace "head title" with "kicker" in example content. @davisagli 
+
 ## 7.2.0 (2025-10-01)
 
 No significant changes.
