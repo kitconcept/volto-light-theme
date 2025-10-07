@@ -15,7 +15,7 @@ describe('Homepage', () =>
       beforeEach(() => {
         cy.intercept('GET', `/**/*?expand*`).as('content');
         cy.visit('/');
-        cy.wait('@content');
+        cy.wait('@content').its('response.statusCode').should('eq', 200);
         setViewport(cy);
       });
 

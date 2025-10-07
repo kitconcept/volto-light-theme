@@ -12,7 +12,7 @@ describe('a11y tests', () => {
   // Search-block
   it('Search-block (/block/search-block)', () => {
     cy.navigate('/block/search-block');
-    cy.wait('@content');
+    cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
     cy.configureAxe();
     cy.checkAccessibility();
