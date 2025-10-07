@@ -3,14 +3,9 @@
   transition: box-shadow 0.15s ease;
 }
 
-.card:has(> a):hover,
-.card:has(> a):focus-within {
+.card:has(a.card-link):hover,
+.card:has(a.card-link):focus-within {
   cursor: pointer;
-}
-
-.card a {
-  inset: 0; /* top:0 right:0 bottom:0 left:0 */
-  text-decoration: none; /* remove default underline */
 }
 
 .card .card-summary,

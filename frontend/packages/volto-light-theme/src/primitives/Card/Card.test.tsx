@@ -43,10 +43,16 @@ vi.mock(
 
 type SummaryProps = {
   a11yLabelId?: string;
+  LinkToItem?: React.ElementType;
 };
 
-const SummaryContent = ({ a11yLabelId }: SummaryProps) => (
-  <h3 id={a11yLabelId}>Card title</h3>
+const SummaryContent = ({
+  a11yLabelId,
+  LinkToItem = React.Fragment,
+}: SummaryProps) => (
+  <LinkToItem>
+    <h3>Card title</h3>
+  </LinkToItem>
 );
 
 const BodyContent = () => <div>Body content</div>;
