@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 7.3.1 (2025-10-08)
+
+
+### Internal:
+
+- Pin correctly plonegovbr.socialmedia>=2.0.0a10. @sneridagh 
+
 ## 7.3.0 (2025-10-07)
 
 

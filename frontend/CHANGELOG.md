@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 7.3.1 (2025-10-08)
+
+### Bugfix
+
+- Several fixes. Update to use Volto 18.28.0. @sneridagh 
+
 ## 7.3.0 (2025-10-07)
 
 ### Bugfix
