@@ -1,6 +1,32 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 7.3.1 (2025-10-08)
+
+### Backend
+
+
+#### Internal:
+
+- Pin correctly plonegovbr.socialmedia>=2.0.0a10. @sneridagh 
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Several fixes. Update to use Volto 18.28.0. @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 7.3.0 (2025-10-07)
 
 ### Backend
