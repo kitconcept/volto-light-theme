@@ -150,3 +150,8 @@
 #page-edit .block-editor-teaser.has--backgroundColor--grey {
   background-color: $lightgrey;
 }
+
+.file-teaser .headline span:not(:last-child)::after {
+  margin: 0 10px;
+  content: '|';
+}

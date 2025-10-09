@@ -69,18 +69,25 @@
     "96789bf6-953b-4777-a022-0f4cd852be64": {
       "@type": "separator",
       "styles": {
-        "align": "full"
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
+        "shortLine": false
       }
     },
     "aaf7adb1-00b2-4cc2-8729-91c33ea8fe6a": {
       "@type": "slate",
-      "plaintext": "Text Heading H3",
+      "plaintext": "Heading H3",
       "styles": {},
+      "theme": "default",
       "value": [
         {
           "children": [
             {
-              "text": "Text Heading H3"
+              "text": "Heading H3"
             }
           ],
           "type": "h3"
@@ -134,7 +141,13 @@
     "d5fe5f6d-2a9b-4e65-b5bf-2faded6073b7": {
       "@type": "separator",
       "styles": {
-        "align": "left"
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--narrow-container-width)"
+        },
+        "shortLine": true
       }
     },
     "e36a9020-5e7e-4ef5-97f7-862c45fea81c": {
@@ -187,10 +200,9 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2023-12-21T10:38:49+00:00",
+  "modified": "2025-09-16T10:41:40+00:00",
   "nav_title": null,
-  "preview_caption": null,
-  "preview_image": null,
+  "preview_caption_link": null,
   "review_state": "published",
   "rights": "",
   "subjects": [],

@@ -67,7 +67,7 @@ export const SimpleWithoutLink: Story = {
     </Card>
   ),
   args: {
-    href: '/folder/page',
+    href: undefined,
   },
   decorators: [
     (Story) => (

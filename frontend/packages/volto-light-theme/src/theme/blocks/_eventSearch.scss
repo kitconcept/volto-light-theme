@@ -32,7 +32,8 @@
         }
       }
       .react-aria-DateInput[slot='start'] {
-        margin-right: 10px;
+        min-width: 117px;
+        margin-right: 15px;
         outline-color: $black;
         span {
           color: $black;
@@ -42,8 +43,9 @@
         }
       }
       .react-aria-DateInput[slot='end'] {
-        margin-right: $spacing-small;
-        margin-left: 10px;
+        min-width: 117px;
+        margin-right: 5px;
+        margin-left: 15px;
         outline-color: $black;
         span {
           color: $black;
@@ -63,6 +65,23 @@
           position: relative;
           left: -2px;
           min-width: 30px;
+        }
+      }
+
+      .reset-date-range {
+        display: flex;
+        align-items: center;
+        padding: 0;
+        border: none;
+        margin-right: 5px;
+        background: none;
+        cursor: pointer;
+        pointer-events: none;
+        visibility: hidden;
+
+        &.visibility {
+          pointer-events: auto;
+          visibility: visible;
         }
       }
     }
@@ -398,12 +417,20 @@ This is css code of popup of calendar */
   border-radius: unset;
 }
 .react-aria-RangeCalendar {
+  font-size: 24px;
+
+  table .react-aria-CalendarCell {
+    width: 2.75rem;
+  }
+
   header {
     display: flex;
+    margin: 10px 0 20px 0;
   }
 
   //ask victor about this. Font family causing unwanted problems in rendering of icon.
   .react-aria-Button {
+    border: none;
     border-radius: unset;
     font-family: unset;
   }
@@ -412,4 +439,18 @@ This is css code of popup of calendar */
     font-size: 1.375rem;
     text-align: center;
   }
+}
+
+// body:has(.react-aria-Popover[data-trigger='DateRangePicker'])
+//   .react-aria-Group {
+//   border-bottom: none;
+// }
+
+.react-aria-Popover[data-trigger='DateRangePicker'] {
+  min-width: var(--trigger-width);
+  border-top: none;
+}
+
+.react-aria-Dialog:has(.react-aria-RangeCalendar) {
+  padding: 10px;
 }

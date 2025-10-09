@@ -2,6 +2,177 @@
 
 <!-- towncrier release notes start -->
 
+## 7.3.1 (2025-10-08)
+
+
+### Internal:
+
+- Pin correctly plonegovbr.socialmedia>=2.0.0a10. @sneridagh 
+
+## 7.3.0 (2025-10-07)
+
+
+### Bug fixes:
+
+- Update socialmedia add-on to 2.0.0a10, Plone 6.1.3 and Volto to 18.27.3. @sneridagh 
+
+
+### Internal:
+
+- Replace "head title" with "kicker" in example content. @davisagli 
+
+## 7.2.0 (2025-10-01)
+
+No significant changes.
+
+
+## 7.1.0 (2025-09-29)
+
+
+### New features:
+
+- Add Basque translation @erral [#675](https://github.com/kitconcept/volto-light-theme/issues/675)
+
+## 7.0.0 (2025-09-25)
+
+No significant changes.
+
+
+## 7.0.0b7 (2025-09-24)
+
+No significant changes.
+
+
+## 7.0.0b6 (2025-09-22)
+
+
+### Bug fixes:
+
+- Add missing German translation in footer settings. @danalvrz 
+
+## 7.0.0b5 (2025-09-18)
+
+
+### Internal:
+
+- Fix A11y headlines Unique headings in example content @iRohitSingh [#661](https://github.com/kitconcept/volto-light-theme/issues/661)
+
+## 7.0.0b4 (2025-09-16)
+
+
+### Internal:
+
+- Re-release a3 due to a release process problem. @sneridagh 
+
+## 7.0.0b3 (2025-09-16)
+
+No significant changes.
+
+
+## 7.0.0b2 (2025-09-12)
+
+
+### New features:
+
+- Add missing German translations @danalvrz [#648](https://github.com/kitconcept/volto-light-theme/issues/648)
+
+## 7.0.0b1 (2025-09-10)
+
+
+### New features:
+
+- Update pt_BR translations. @ericof 
+
+## 7.0.0a28 (2025-09-08)
+
+No significant changes.
+
+
+## 7.0.0a27 (2025-09-04)
+
+No significant changes.
+
+
+## 7.0.0a26 (2025-09-03)
+
+No significant changes.
+
+
+## 7.0.0a25 (2025-09-01)
+
+
+### Internal:
+
+- Update example content of grid listing @iRohitSingh [#636](https://github.com/kitconcept/volto-light-theme/issues/636)
+
+## 7.0.0a24 (2025-08-26)
+
+No significant changes.
+
+
+## 7.0.0a23 (2025-08-25)
+
+
+### Internal:
+
+- Add Simple Side slider block variation example content @Tishasoumya-02 [#SliderVariationExample](https://github.com/kitconcept/volto-light-theme/issues/SliderVariationExample)
+
+## 7.0.0a22 (2025-08-15)
+
+No significant changes.
+
+
+## 7.0.0a21 (2025-07-31)
+
+
+### Internal:
+
+- Revert the example content of slider block. @iFlameing [#623](https://github.com/kitconcept/volto-light-theme/issues/623)
+
+## 7.0.0a20 (2025-07-29)
+
+
+### Internal:
+
+- Add slider variant example content. @Tishasoumya-02 [#slidervariantexample](https://github.com/kitconcept/volto-light-theme/issues/slidervariantexample)
+
+## 7.0.0a19 (2025-07-25)
+
+No significant changes.
+
+
+## 7.0.0a18 (2025-07-23)
+
+No significant changes.
+
+
+## 7.0.0a17 (2025-07-23)
+
+No significant changes.
+
+
+## 7.0.0a16 (2025-07-23)
+
+
+### New features:
+
+- Update carousel block version, example content and cypress @iRohitSingh [#616](https://github.com/kitconcept/volto-light-theme/issues/616)
+
+## 7.0.0a15 (2025-07-17)
+
+
+### Breaking changes:
+
+- We renamed this three fields in the `kitconcept.footer` behavior. @sneridagh
+  `footer_main_logo_inversed` => `footer_logo`
+  `footer_logo` => `post_footer_logo`
+  `footer_logo_link` => `post_footer_logo_link` 
+
+
+### New features:
+
+- Add Spanish translation [@macagua] [#597](https://github.com/kitconcept/volto-light-theme/issues/597)
+
 ## 7.0.0a14 (2025-07-10)
 
 

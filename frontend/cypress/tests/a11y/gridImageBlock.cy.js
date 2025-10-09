@@ -12,7 +12,7 @@ describe('a11y tests', () => {
   // grid block Image
   it('Grid-Block Image (/block/grid-block/image)', () => {
     cy.navigate('/block/grid-block/image');
-    cy.wait('@content');
+    cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
     cy.configureAxe();
     cy.checkAccessibility();

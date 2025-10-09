@@ -28,6 +28,11 @@ const IconLinkList = (props: IconLinkListProps) => {
               src: '',
               srcAlt: '',
             };
+
+            // If the item has title, always set it
+            itemInfo.title = item
+              ? item?.title || item?.href?.[0]?.['title'] || ''
+              : '';
             if (item?.href?.length > 0) {
               itemInfo.title = item.title || item.href[0]['title'];
               itemInfo.href = flattenToAppURL(item.href[0]['@id']);
@@ -42,7 +47,7 @@ const IconLinkList = (props: IconLinkListProps) => {
               itemInfo.src = `${flattenToAppURL(itemInfo.itemHref)}/@@images/image`;
             }
 
-            if (!itemInfo.src || !itemInfo.href) return null;
+            if (!itemInfo.src) return null;
 
             return (
               <li className="item" key={item['@id']}>
@@ -54,7 +59,7 @@ const IconLinkList = (props: IconLinkListProps) => {
                   openLinkInNewTab={item.openInNewTab}
                 >
                   <div className="image-wrapper">
-                    <img src={itemInfo.src} alt={itemInfo.srcAlt} />
+                    <img src={itemInfo.src} alt={itemInfo.srcAlt || ''} />
                   </div>
                   <span>{itemInfo.title}</span>
                 </ConditionalLink>

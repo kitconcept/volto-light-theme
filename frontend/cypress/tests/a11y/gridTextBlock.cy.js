@@ -12,24 +12,9 @@ describe('a11y tests', () => {
   // grid tex block
   it('Grid-Block text (/block/grid-block/text)', () => {
     cy.navigate('/block/grid-block/text');
-    cy.wait('@content');
+    cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
-    cy.configureAxe({
-      rules: [
-        // there are copies of slate h2,
-        // which have with the same id
-        {
-          id: 'duplicate-id-active',
-          enabled: false,
-        },
-        // there are missing heading of grid-block
-        // because we are using multiple grid block
-        {
-          id: 'empty-heading',
-          enabled: false,
-        },
-      ],
-    });
+    cy.configureAxe();
     cy.checkAccessibility();
   });
 });

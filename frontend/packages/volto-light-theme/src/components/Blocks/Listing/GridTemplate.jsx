@@ -1,14 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
-import Component from '@plone/volto/components/theme/Component/Component';
+import Card from '../../../primitives/Card/Card';
 import { flattenToAppURL, isInternalURL } from '@plone/volto/helpers/Url/Url';
 import config from '@plone/volto/registry';
 import DefaultSummary from '@kitconcept/volto-light-theme/components/Summary/DefaultSummary';
+import cx from 'classnames';
 
 const GridTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
   let link = null;
   let href = linkHref?.[0]?.['@id'] || '';
+  const PreviewImageComponent = config.getComponent('PreviewImage').component;
 
   if (isInternalURL(href)) {
     link = (
@@ -24,42 +26,45 @@ const GridTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
     <>
       <div className="items">
         {items.map((item) => {
-          const ItemBodyTemplate = () => {
-            const CustomItemBodyTemplate = config.getComponent({
-              name: 'GridListingItemTemplate',
+          const CustomItemBodyTemplate = config.getComponent({
+            name: 'GridListingItemTemplate',
+            dependencies: [item['@type']],
+          }).component;
+          const Summary =
+            config.getComponent({
+              name: 'Summary',
               dependencies: [item['@type']],
-            }).component;
-            const Summary =
-              config.getComponent({
-                name: 'Summary',
-                dependencies: [item['@type']],
-              }).component || DefaultSummary;
+            }).component || DefaultSummary;
+          const showLink = !Summary.hideLink && !isEditMode;
 
-            return CustomItemBodyTemplate ? (
+          const ItemBodyTemplate = (props) =>
+            CustomItemBodyTemplate ? (
               <CustomItemBodyTemplate item={item} />
             ) : (
-              <div className="card-container">
+              <>
                 {item.image_field !== '' && (
-                  <Component
-                    componentName="PreviewImage"
-                    item={item}
-                    alt=""
+                  <Card.Image
                     className="item-image"
+                    item={item}
+                    imageComponent={PreviewImageComponent}
                   />
                 )}
-                <div className="item">
-                  <div className="content">
-                    <Summary item={item} HeadingTag="h2" />
-                  </div>
-                </div>
-              </div>
+                <Card.Summary a11yLabelId={props.a11yLabelId}>
+                  <Summary item={item} HeadingTag="h2" />
+                </Card.Summary>
+              </>
             );
-          };
+
           return (
-            <div className="listing-item" key={item['@id']}>
-              <ConditionalLink item={item} condition={!isEditMode}>
+            <div
+              className={cx('listing-item', {
+                [`${item['@type']?.toLowerCase()}-listing`]: item['@type'],
+              })}
+              key={item['@id']}
+            >
+              <Card item={showLink ? item : null}>
                 <ItemBodyTemplate item={item} />
-              </ConditionalLink>
+              </Card>
             </div>
           );
         })}

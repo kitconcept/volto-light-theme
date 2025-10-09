@@ -12,18 +12,9 @@ describe('a11y tests', () => {
   //news-item
   it('news-item (/content-types/news-item)', () => {
     cy.navigate('/content-types/news-item');
-    cy.wait('@content');
+    cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
-    cy.configureAxe({
-      rules: [
-        // there are two copies of slate h3,
-        // which have with the same id
-        {
-          id: 'duplicate-id-active',
-          enabled: false,
-        },
-      ],
-    });
+    cy.configureAxe();
     cy.checkAccessibility();
   });
 });

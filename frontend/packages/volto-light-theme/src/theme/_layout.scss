@@ -239,6 +239,7 @@ External link removal for all the blocks.
   & > .block.listing .image-gallery,
   & > .block.listing.grid,
   & > .block.search.grid,
+  & > .block.rssBlock,
   & > .block.search .searchBlock-container,
   &> .block.eventsearch .search-block-event,
   & > .block h2.headline,
@@ -361,15 +362,17 @@ External link removal for all the blocks.
   .block.heading .heading-wrapper,
   .block-editor-listing .items,
   .block-editor-listing .listing.message,
+  .block-editor-rssBlock .items,
   .block-editor-search .searchBlock-container,
   .block-editor-eventsearch .search-block-event,
   .block.teaser.has--align--center,
   .block.eventMetadata .details-container,
   .block-editor-teaser .teaser-item.default,
-  .block-editor-teaser .card-inner, // deprecate when category is in place
+  .block-editor-teaser:not(.contained) .card-inner, // deprecate when category is in place
   .block-editor-slateTable .block.table,
   .block-editor-highlight .teaser-description-title,
-  .block-editor-toc .table-of-contents {
+  .block-editor-toc .table-of-contents,
+  .block-editor-eventCalendar .search-block-event {
     @include default-container-width();
     @include adjustMarginsToEditContainer($default-container-width);
   }
