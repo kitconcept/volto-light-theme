@@ -142,8 +142,9 @@ span.color-contrast-label {
   .field.inline {
     .add-item-button-wrapper {
       display: flex;
+      align-items: center;
       justify-content: flex-end;
-      padding: 0;
+      padding: 10px 0;
 
       button {
         @include button-style;
@@ -191,4 +192,71 @@ span.color-contrast-label {
   #sidebar-properties &:first-child {
     margin-top: 10px;
   }
+}
+
+.block-config-json-editor.field.inline {
+  .button-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px 0;
+
+    button {
+      @include button-style;
+    }
+  }
+
+  .eight.wide.column:has(.button-wrapper) {
+    padding-right: 0;
+  }
+
+  .form-error-label {
+    text-align: end;
+  }
+}
+
+.block-config-json-editor-modal {
+  width: var(--narrow-block-width, 600px);
+  max-width: 600px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: var(--overlay-background);
+  box-shadow: 0 8px 20px #0000001a;
+  color: var(--text-color);
+  outline: none;
+}
+
+.block-config-json-editor-dialog {
+  display: flex;
+  flex-direction: column;
+
+  button {
+    @include button-style;
+    padding: 20px 10px;
+  }
+  textarea {
+    display: block;
+    width: 100%;
+    height: 500px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: $spacing-small;
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    resize: vertical;
+  }
+}
+
+.block-config-json-editor-error {
+  margin-bottom: $spacing-small;
+  color: #d01157 !important;
+  font-size: 14px;
+}
+
+.field-wrapper-preview_image_link
+  .image-upload-widget-image
+  .image-upload-widget-toolbar
+  .icon.circled:hover {
+  background: $greySnow;
 }

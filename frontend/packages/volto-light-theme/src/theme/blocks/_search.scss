@@ -11,6 +11,12 @@
         padding-bottom: 0;
         border-bottom: none;
       }
+
+      .listing-item {
+        .card {
+          flex-grow: 1;
+        }
+      }
     }
     .items {
       padding: 0 !important;
@@ -71,7 +77,9 @@
 
     .search-input {
       position: relative;
+      display: block;
       height: 75px;
+      padding-right: $spacing-xlarge;
       background-color: $secondary-grey;
 
       .ui.input {

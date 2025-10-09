@@ -1,11 +1,16 @@
 import * as React from 'react';
 import type { ObjectBrowserItem } from '@plone/types';
+import { smartTextRenderer } from '../../helpers/smartText';
 
 export type DefaultSummaryProps = {
   item: Partial<ObjectBrowserItem>;
   HeadingTag?: React.ElementType;
   a11yLabelId?: string;
   hide_description?: boolean;
+};
+
+export type SummaryComponentType = React.ComponentType<DefaultSummaryProps> & {
+  hideLink?: boolean;
 };
 
 const DefaultSummary = (props: DefaultSummaryProps) => {
@@ -16,9 +21,12 @@ const DefaultSummary = (props: DefaultSummaryProps) => {
       <HeadingTag className="title" id={a11yLabelId}>
         {item.title ? item.title : item.id}
       </HeadingTag>
-      {!hide_description && <p className="description">{item.description}</p>}
+      {!hide_description && (
+        <p className="description">{smartTextRenderer(item.description)}</p>
+      )}
     </>
   );
 };
+DefaultSummary.hideLink = false;
 
 export default DefaultSummary;

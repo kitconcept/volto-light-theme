@@ -60,18 +60,18 @@
       height: 100%;
 
       .image-wrapper {
-        margin-bottom: 40px;
+        margin-bottom: $spacing-medium;
 
         img {
           position: relative;
         }
       }
       .content {
-        padding: 0 20px 20px 20px;
+        padding: 0 $spacing-small $spacing-small $spacing-small;
         @include body-text();
 
         .headline {
-          margin-bottom: 20px;
+          margin-bottom: $spacing-small;
           letter-spacing: 1px;
           text-transform: uppercase;
           @include headtitle1();
@@ -79,12 +79,12 @@
 
         h2 {
           padding: 0;
-          margin-bottom: 20px !important;
+          margin-bottom: $spacing-small !important;
           @include text-heading-h3();
         }
 
         p {
-          margin-bottom: 20px;
+          margin-bottom: $spacing-small;
         }
       }
     }
@@ -105,7 +105,7 @@
   }
 
   .slate:not(.inner) {
-    padding: 40px 20px 20px 20px;
+    padding: $spacing-medium $spacing-small $spacing-small $spacing-small;
     margin: 0;
     p {
       padding: 0;
@@ -137,7 +137,7 @@
       margin: 0;
 
       .title {
-        margin: 0 0 20px 0;
+        margin: 0 0 $spacing-small 0;
         color: $white !important;
         letter-spacing: 0;
         @include text-heading-h3();
@@ -184,8 +184,13 @@
     &.previous--has--same--backgroundColor:not(.has--headline) {
       margin-top: 0;
     }
+    .card {
+      .card-inner {
+        background-color: transparent;
+      }
+    }
     h2 {
-      margin-bottom: 40px !important;
+      margin-bottom: $spacing-medium !important;
     }
     &.previous--is--same--block-type.previous--has--same--backgroundColor:not(
         .has--headline
@@ -201,6 +206,64 @@
         &:last-child {
           padding-bottom: 0 !important;
           border-bottom: none !important;
+        }
+      }
+    }
+  }
+  .ui.stackable.stretched.four.column.grid,
+  .ui.stackable.stretched.three.column.grid,
+  .ui.stackable.stretched.two.column.grid,
+  .four.grid-items,
+  .three.grid-items,
+  .two.grid-items {
+    .block.listing.summary {
+      .listing-item {
+        .card-inner {
+          flex-direction: column;
+          .image-wrapper {
+            flex: 1 1 auto !important;
+            img {
+              width: 100%;
+            }
+          }
+          .card-summary {
+            padding-top: $spacing-medium;
+            h3 {
+              margin-bottom: $spacing-small !important;
+            }
+          }
+        }
+      }
+    }
+  }
+  .ui.stackable.stretched.four.column.grid,
+  .ui.stackable.stretched.three.column.grid,
+  .four.grid-items,
+  .three.grid-items {
+    .block.listing {
+      .listing-item {
+        &:last-child {
+          padding-bottom: 0 !important;
+        }
+      }
+      .pagination-wrapper {
+        .ui.pagination.desktop-pagination.menu {
+          display: none;
+        }
+        .ui.pagination.mobile-pagination.menu {
+          display: table-row;
+        }
+        .ui.pagination.menu .item {
+          padding: 6.5px 7px;
+        }
+      }
+    }
+  }
+  .ui.stackable.stretched.two.column.grid {
+    .block.listing {
+      .listing-item {
+        &:last-child {
+          padding-bottom: 0 !important;
         }
       }
     }
@@ -232,14 +295,18 @@
   @media only screen and (min-width: $largest-mobile-screen) {
     .one {
       .block.teaser .teaser-item .content h2 {
-        margin-bottom: 40px !important;
+        margin-bottom: $spacing-medium !important;
         @include text-heading-h2();
       }
 
       .slate {
         h2 {
-          margin-bottom: 40px !important;
+          margin-bottom: $spacing-medium !important;
           @include text-heading-h2();
+        }
+
+        h3 {
+          margin-bottom: $spacing-small !important;
         }
       }
 
@@ -257,7 +324,7 @@
       .teaser {
         .teaser-item .content {
           h2 {
-            margin-bottom: 20px !important;
+            margin-bottom: $spacing-small !important;
             @include text-heading-h3();
           }
         }
@@ -267,7 +334,7 @@
           .title {
             @include text-heading-h3();
             @include word-break();
-            margin: 0 0 20px 0;
+            margin: 0 0 $spacing-small 0;
           }
         }
         figure:after {
@@ -276,8 +343,13 @@
       }
       .slate {
         h2 {
-          margin-bottom: 20px !important;
+          margin-bottom: $spacing-small !important;
           @include text-heading-h3();
+        }
+
+        h3 {
+          margin-bottom: $spacing-small !important;
+          @include text-heading-h4();
         }
       }
     }
@@ -286,14 +358,14 @@
       .teaser {
         .teaser-item {
           .image-wrapper {
-            margin-bottom: 20px !important;
+            margin-bottom: $spacing-small !important;
           }
           .content {
             .headline {
               @include headtitle2();
             }
             h2 {
-              margin-bottom: 20px !important;
+              margin-bottom: $spacing-small !important;
               @include text-heading-h4();
             }
             p {
@@ -319,7 +391,12 @@
 
       .slate {
         h2 {
-          margin-bottom: 20px !important;
+          margin-bottom: $spacing-small !important;
+          @include text-heading-h3();
+        }
+
+        h3 {
+          margin-bottom: $spacing-small !important;
           @include text-heading-h4();
         }
 
@@ -327,7 +404,7 @@
           margin-bottom: 0;
         }
 
-        padding-top: 20px !important;
+        padding-top: $spacing-small !important;
       }
     }
   }
@@ -339,7 +416,7 @@
 }
 
 .block.gridBlock h2.title {
-  margin-bottom: 20px !important;
+  margin-bottom: $spacing-small !important;
 }
 
 // Watch out for the following rule, it is used to override the default
@@ -349,4 +426,14 @@
 // related to selecting and clicking things inside (or prevent some event bubbling)
 .block.gridBlock [class^='block-editor-'].selected .cell-wrapper::before {
   z-index: unset;
+}
+
+/* Listing template inside grid block doesn't need contained colors */
+
+.block.gridBlock .block.listing.contained {
+  .card {
+    .card-inner {
+      background-color: transparent;
+    }
+  }
 }

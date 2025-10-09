@@ -12,7 +12,7 @@ describe('a11y tests', () => {
   // Highlight Block
   it('Highlight-Block (/block/highlight-block)', () => {
     cy.navigate('/block/highlight-block');
-    cy.wait('@content');
+    cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
     cy.configureAxe();
     cy.checkAccessibility();

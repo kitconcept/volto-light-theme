@@ -12,7 +12,7 @@ describe('a11y tests', () => {
   //Button
   it('Event Calendar Block (/block/event-calendar)', () => {
     cy.navigate('/block/event-calendar');
-    cy.wait('@content');
+    cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
     cy.configureAxe();
     cy.checkAccessibility();

@@ -11,6 +11,7 @@ import { headerActionsSchema } from '../components/Widgets/schema/headerActionsS
 import { footerLogosSchema } from '../components/Widgets/schema/footerLogosSchema';
 import { footerLinksSchema } from '../components/Widgets/schema/footerLinksSchema';
 import { iconLinkListSchema } from '../components/Widgets/schema/iconLinkListSchema';
+import ModalJSONEditor from '../components/Widgets/ModalJSONEditor';
 
 declare module '@plone/types' {
   export interface WidgetsConfigById {
@@ -25,6 +26,7 @@ declare module '@plone/types' {
     colorPicker: typeof ColorPicker;
     blocksObject: typeof BlocksObject;
     image: React.ComponentType;
+    modalJSONEditor: typeof ModalJSONEditor;
   }
 }
 
@@ -38,12 +40,15 @@ export default function install(config: ConfigType) {
   // ObjectList widget override - use our own non-semanticUI widget
   // it uses also dnd-kit for drag and drop
   config.widgets.widget.object_list = ObjectList;
+  config.widgets.id.preview_image_link = config.widgets.widget.image;
 
   config.widgets.widget.blockWidth = BlockWidth;
   config.widgets.widget.blockAlignment = BlockAlignment;
   config.widgets.widget.colorPicker = ColorPicker;
   config.widgets.widget.size = Size;
   config.widgets.widget.themeColorSwatch = ThemeColorSwatch;
+
+  config.widgets.widget.modalJSONEditor = ModalJSONEditor;
 
   config.registerUtility({
     name: 'headerActions',

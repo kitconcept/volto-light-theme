@@ -56,7 +56,7 @@ describe('Blocks Tests', () => {
       .contains('Listing')
       .click({ force: true });
     cy.get('.block-editor-listing').first().click().type('{enter}');
-    cy.get('*[class^="block-editor"]')
+    cy.get('*[class*="block-editor-"]')
       .eq(2)
       .within(() => {
         return cy.get('.selected');

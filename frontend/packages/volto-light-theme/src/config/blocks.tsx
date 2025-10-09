@@ -34,6 +34,7 @@ import { searchBlockSchemaEnhancer } from '../components/Blocks/Search/schema';
 import gridSVG from '../icons/block_icn_grid.svg';
 import accordionSVG from '../icons/block_icn_accordion.svg';
 import descriptionSVG from '@plone/volto/icons/description.svg';
+import calendarSVG from '@plone/volto/icons/calendar.svg';
 
 import { tocBlockSchemaEnhancer } from '../components/Blocks/Toc/schema';
 import { mapsBlockSchemaEnhancer } from '../components/Blocks/Maps/schema';
@@ -45,6 +46,8 @@ import SearchBlockViewEvent from '../components/Blocks/EventCalendar/Search/Sear
 import SearchBlockEditEvent from '../components/Blocks/EventCalendar/Search/SearchBlockEdit';
 import SearchBlockSchemaEvent from '../components/Blocks/EventCalendar/Search/schema';
 import EventCalenderTemplate from '../components/Blocks/EventCalendar/Search/components/EventTemplate';
+import SliderVariants from '../components/Blocks/Slider/SliderVariants';
+import DefaultBody from '../customizations/@kitconcept/volto-slider-block/components/DefaultBody';
 
 declare module '@plone/types' {
   export interface BlocksConfigData {
@@ -63,7 +66,6 @@ declare module '@plone/types' {
     themes?: StyleDefinition[];
     allowedBlocks?: string[];
     allowed_headline_tags?: string[][];
-    dataAdapter?: any;
     unwantedButtons?: string[];
     imageScale?: string;
     allowed_headings?: string[][];
@@ -71,6 +73,10 @@ declare module '@plone/types' {
   export interface BlocksFormData {
     headline: string;
     styles: string;
+  }
+
+  export interface SettingsConfig {
+    blockModel?: number;
   }
 }
 
@@ -187,7 +193,7 @@ export default function install(config: ConfigType) {
   config.blocks.blocksConfig.eventCalendar = {
     id: 'eventCalendar',
     title: 'Event Calendar',
-    icon: descriptionSVG,
+    icon: calendarSVG,
     group: 'common',
     view: SearchBlockViewEvent,
     edit: SearchBlockEditEvent,
@@ -274,6 +280,8 @@ export default function install(config: ConfigType) {
   config.blocks.blocksConfig.gridBlock.themes = config.blocks.themes;
   config.blocks.blocksConfig.gridBlock.schemaEnhancer = defaultStylingSchema;
   config.blocks.blocksConfig.gridBlock.icon = gridSVG;
+  config.blocks.blocksConfig.gridBlock.category = 'cards';
+  config.blocks.blocksConfig.gridBlock.blockModel = config.settings.blockModel;
 
   // Grids internal `blocksConfig` amendments
   // Slate in grids must have an extra wrapper with the `slate` className
@@ -302,7 +310,10 @@ export default function install(config: ConfigType) {
 
   config.blocks.blocksConfig.gridBlock.blocksConfig.listing.variations =
     cloneDeep(
-      listingBlockVariations.filter((variation) => variation.id !== 'grid'),
+      listingBlockVariations.filter(
+        (variation) =>
+          variation.id !== 'grid' && variation.id !== 'eventCalendar',
+      ),
     );
 
   config.blocks.blocksConfig.introduction = {
@@ -315,6 +326,14 @@ export default function install(config: ConfigType) {
     ...config.blocks.blocksConfig.slate,
     schemaEnhancer: defaultStylingSchema,
     sidebarTab: 1,
+    blockModel: config.settings.blockModel,
+    category: 'inline',
+  };
+
+  config.blocks.blocksConfig.title = {
+    ...config.blocks.blocksConfig.title,
+    blockModel: config.settings.blockModel,
+    category: 'title',
   };
 
   config.blocks.blocksConfig.teaser = {
@@ -365,6 +384,8 @@ export default function install(config: ConfigType) {
   config.blocks.blocksConfig.__button = {
     ...config.blocks.blocksConfig.__button,
     schemaEnhancer: ButtonStylingSchema,
+    blockModel: config.settings.blockModel,
+    category: 'action',
   };
 
   config.blocks.blocksConfig.eventMetadata = {
@@ -399,6 +420,20 @@ export default function install(config: ConfigType) {
   // Slider Block
   config.blocks.blocksConfig.slider = {
     ...config.blocks.blocksConfig.slider,
+    variations: [
+      {
+        id: 'default',
+        title: 'Default',
+        isDefault: true,
+        view: DefaultBody,
+      },
+
+      {
+        id: 'simple',
+        title: 'Simple',
+        view: SliderVariants,
+      },
+    ],
     schemaEnhancer: sliderBlockSchemaEnhancer,
   };
 

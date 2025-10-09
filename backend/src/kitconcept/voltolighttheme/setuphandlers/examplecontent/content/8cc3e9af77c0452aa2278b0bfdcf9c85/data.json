@@ -6,12 +6,14 @@
   "blocks": {
     "07f0bb3b-a762-4f41-9f02-052921e9fd28": {
       "@type": "slate",
-      "plaintext": "Headline H3",
+      "plaintext": "Text with image (small) aligned left",
+      "styles": {},
+      "theme": "default",
       "value": [
         {
           "children": [
             {
-              "text": "Headline H3 "
+              "text": "Text with image (small) aligned left"
             }
           ],
           "type": "h3"
@@ -20,12 +22,14 @@
     },
     "09891614-7ed6-444c-9925-8589801ca8ea": {
       "@type": "slate",
-      "plaintext": "Headline H3",
+      "plaintext": "Text with image (small) aligned right",
+      "styles": {},
+      "theme": "default",
       "value": [
         {
           "children": [
             {
-              "text": "Headline H3 "
+              "text": "Text with image (small) aligned right"
             }
           ],
           "type": "h3"
@@ -35,7 +39,13 @@
     "0fc24145-c346-4031-adc5-7ad06bd0656a": {
       "@type": "separator",
       "styles": {
-        "align": "left"
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--narrow-container-width)"
+        },
+        "shortLine": true
       }
     },
     "1225bf63-e058-44b2-8834-5cdc29ecbcbd": {
@@ -44,63 +54,9 @@
       "credit": {},
       "description": "Der Inhaltstyp Bild kann verwendet werden um ein Bild in verschiedenen Formate (JPG, GIF, PNG, SVG) hochzuladen. Das hochgeladene Bild sollte dabei immer eine hohe Aufl\u00f6sung haben, damit es flexibel, z.B. auch als Banner-Bild eingesetzt werden kann. Plone liefert die Bilder automatisch in der besten Skalierung aus, so dass es nicht n\u00f6tig ist Bilder manuell herunter zu skalieren.",
       "image_field": "image",
-      "image_scales": {
-        "image": [
-          {
-            "content-type": "image/jpeg",
-            "download": "@@images/image-1126-7b90bd2f737fb08f5e2c5719f2f8bc14.jpeg",
-            "filename": "image-light.jpg",
-            "height": 633,
-            "scales": {
-              "icon": {
-                "download": "@@images/image-32-5de0f24798404cddd70cc1d15b1213ba.jpeg",
-                "height": 17,
-                "width": 32
-              },
-              "large": {
-                "download": "@@images/image-800-728b0edae32e307d8123462b48fafeaa.jpeg",
-                "height": 449,
-                "width": 800
-              },
-              "larger": {
-                "download": "@@images/image-1000-19685fe0e43ca671a6f6a973c7d1f0f5.jpeg",
-                "height": 562,
-                "width": 1000
-              },
-              "mini": {
-                "download": "@@images/image-200-cfd42d570345d1134d9b2d0f5726bb2e.jpeg",
-                "height": 112,
-                "width": 200
-              },
-              "preview": {
-                "download": "@@images/image-400-a35b24fd0dbe867083f962cf69f19c2a.jpeg",
-                "height": 224,
-                "width": 400
-              },
-              "teaser": {
-                "download": "@@images/image-600-702ac2045d4ca6fc61c52749e8c2f24d.jpeg",
-                "height": 337,
-                "width": 600
-              },
-              "thumb": {
-                "download": "@@images/image-128-06fa281eabe3bbba6eea685ce60d08f1.jpeg",
-                "height": 71,
-                "width": 128
-              },
-              "tile": {
-                "download": "@@images/image-64-f0e777433e3a4227dab46fe8cac688a6.jpeg",
-                "height": 35,
-                "width": 64
-              }
-            },
-            "size": 475285,
-            "width": 1126
-          }
-        ]
-      },
       "size": "l",
       "title": "Image - Light",
-      "url": "resolveuid/eec82559bf3242a6be4d43bc2096f399"
+      "url": "../../resolveuid/eec82559bf3242a6be4d43bc2096f399"
     },
     "2220580b-204f-4e6d-822d-7e28f37512a9": {
       "@type": "slate",
@@ -179,63 +135,14 @@
       "credit": {},
       "description": "Der Inhaltstyp Bild kann verwendet werden um ein Bild in verschiedenen Formate (JPG, GIF, PNG, SVG) hochzuladen. Das hochgeladene Bild sollte dabei immer eine hohe Aufl\u00f6sung haben, damit es flexibel, z.B. auch als Banner-Bild eingesetzt werden kann. Plone liefert die Bilder automatisch in der besten Skalierung aus, so dass es nicht n\u00f6tig ist Bilder manuell herunter zu skalieren.",
       "image_field": "image",
-      "image_scales": {
-        "image": [
-          {
-            "content-type": "image/jpeg",
-            "download": "@@images/image-1126-7b90bd2f737fb08f5e2c5719f2f8bc14.jpeg",
-            "filename": "image-light.jpg",
-            "height": 633,
-            "scales": {
-              "icon": {
-                "download": "@@images/image-32-5de0f24798404cddd70cc1d15b1213ba.jpeg",
-                "height": 17,
-                "width": 32
-              },
-              "large": {
-                "download": "@@images/image-800-728b0edae32e307d8123462b48fafeaa.jpeg",
-                "height": 449,
-                "width": 800
-              },
-              "larger": {
-                "download": "@@images/image-1000-19685fe0e43ca671a6f6a973c7d1f0f5.jpeg",
-                "height": 562,
-                "width": 1000
-              },
-              "mini": {
-                "download": "@@images/image-200-cfd42d570345d1134d9b2d0f5726bb2e.jpeg",
-                "height": 112,
-                "width": 200
-              },
-              "preview": {
-                "download": "@@images/image-400-a35b24fd0dbe867083f962cf69f19c2a.jpeg",
-                "height": 224,
-                "width": 400
-              },
-              "teaser": {
-                "download": "@@images/image-600-702ac2045d4ca6fc61c52749e8c2f24d.jpeg",
-                "height": 337,
-                "width": 600
-              },
-              "thumb": {
-                "download": "@@images/image-128-06fa281eabe3bbba6eea685ce60d08f1.jpeg",
-                "height": 71,
-                "width": 128
-              },
-              "tile": {
-                "download": "@@images/image-64-f0e777433e3a4227dab46fe8cac688a6.jpeg",
-                "height": 35,
-                "width": 64
-              }
-            },
-            "size": 475285,
-            "width": 1126
-          }
-        ]
-      },
       "size": "l",
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        }
+      },
       "title": "Image - Light",
-      "url": "resolveuid/eec82559bf3242a6be4d43bc2096f399"
+      "url": "../../resolveuid/eec82559bf3242a6be4d43bc2096f399"
     },
     "38243fe2-81f9-4afe-8abf-e90d38f92cdf": {
       "@type": "slate",
@@ -309,63 +216,14 @@
       "credit": {},
       "description": "Der Inhaltstyp Bild kann verwendet werden um ein Bild in verschiedenen Formate (JPG, GIF, PNG, SVG) hochzuladen. Das hochgeladene Bild sollte dabei immer eine hohe Aufl\u00f6sung haben, damit es flexibel, z.B. auch als Banner-Bild eingesetzt werden kann. Plone liefert die Bilder automatisch in der besten Skalierung aus, so dass es nicht n\u00f6tig ist Bilder manuell herunter zu skalieren.",
       "image_field": "image",
-      "image_scales": {
-        "image": [
-          {
-            "content-type": "image/jpeg",
-            "download": "@@images/image-1126-7b90bd2f737fb08f5e2c5719f2f8bc14.jpeg",
-            "filename": "image-light.jpg",
-            "height": 633,
-            "scales": {
-              "icon": {
-                "download": "@@images/image-32-5de0f24798404cddd70cc1d15b1213ba.jpeg",
-                "height": 17,
-                "width": 32
-              },
-              "large": {
-                "download": "@@images/image-800-728b0edae32e307d8123462b48fafeaa.jpeg",
-                "height": 449,
-                "width": 800
-              },
-              "larger": {
-                "download": "@@images/image-1000-19685fe0e43ca671a6f6a973c7d1f0f5.jpeg",
-                "height": 562,
-                "width": 1000
-              },
-              "mini": {
-                "download": "@@images/image-200-cfd42d570345d1134d9b2d0f5726bb2e.jpeg",
-                "height": 112,
-                "width": 200
-              },
-              "preview": {
-                "download": "@@images/image-400-a35b24fd0dbe867083f962cf69f19c2a.jpeg",
-                "height": 224,
-                "width": 400
-              },
-              "teaser": {
-                "download": "@@images/image-600-702ac2045d4ca6fc61c52749e8c2f24d.jpeg",
-                "height": 337,
-                "width": 600
-              },
-              "thumb": {
-                "download": "@@images/image-128-06fa281eabe3bbba6eea685ce60d08f1.jpeg",
-                "height": 71,
-                "width": 128
-              },
-              "tile": {
-                "download": "@@images/image-64-f0e777433e3a4227dab46fe8cac688a6.jpeg",
-                "height": 35,
-                "width": 64
-              }
-            },
-            "size": 475285,
-            "width": 1126
-          }
-        ]
-      },
       "size": "l",
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "var(--narrow-container-width)"
+        }
+      },
       "title": "Image - Light",
-      "url": "resolveuid/eec82559bf3242a6be4d43bc2096f399"
+      "url": "../../resolveuid/eec82559bf3242a6be4d43bc2096f399"
     },
     "4ad62079-8826-4677-9a53-4bce2ebb0caf": {
       "@type": "introduction",
@@ -405,12 +263,14 @@
     },
     "57903d6a-6ed1-4e65-acef-22ccf51c5530": {
       "@type": "slate",
-      "plaintext": "Headline H3",
+      "plaintext": "Text with image (Medium) aligned left",
+      "styles": {},
+      "theme": "default",
       "value": [
         {
           "children": [
             {
-              "text": "Headline H3 "
+              "text": "Text with image (Medium) aligned left"
             }
           ],
           "type": "h3"
@@ -419,12 +279,14 @@
     },
     "6a19b315-8b57-4c4d-8b2c-486fc7df34b8": {
       "@type": "slate",
-      "plaintext": "Headline H3",
+      "plaintext": "Text with image aligned right",
+      "styles": {},
+      "theme": "default",
       "value": [
         {
           "children": [
             {
-              "text": "Headline H3 "
+              "text": "Text with image aligned right"
             }
           ],
           "type": "h3"
@@ -465,66 +327,12 @@
       "credit": {},
       "description": "Der Inhaltstyp Bild kann verwendet werden um ein Bild in verschiedenen Formate (JPG, GIF, PNG, SVG) hochzuladen. Das hochgeladene Bild sollte dabei immer eine hohe Aufl\u00f6sung haben, damit es flexibel, z.B. auch als Banner-Bild eingesetzt werden kann. Plone liefert die Bilder automatisch in der besten Skalierung aus, so dass es nicht n\u00f6tig ist Bilder manuell herunter zu skalieren.",
       "image_field": "image",
-      "image_scales": {
-        "image": [
-          {
-            "content-type": "image/jpeg",
-            "download": "@@images/image-1126-7b90bd2f737fb08f5e2c5719f2f8bc14.jpeg",
-            "filename": "image-light.jpg",
-            "height": 633,
-            "scales": {
-              "icon": {
-                "download": "@@images/image-32-5de0f24798404cddd70cc1d15b1213ba.jpeg",
-                "height": 17,
-                "width": 32
-              },
-              "large": {
-                "download": "@@images/image-800-728b0edae32e307d8123462b48fafeaa.jpeg",
-                "height": 449,
-                "width": 800
-              },
-              "larger": {
-                "download": "@@images/image-1000-19685fe0e43ca671a6f6a973c7d1f0f5.jpeg",
-                "height": 562,
-                "width": 1000
-              },
-              "mini": {
-                "download": "@@images/image-200-cfd42d570345d1134d9b2d0f5726bb2e.jpeg",
-                "height": 112,
-                "width": 200
-              },
-              "preview": {
-                "download": "@@images/image-400-a35b24fd0dbe867083f962cf69f19c2a.jpeg",
-                "height": 224,
-                "width": 400
-              },
-              "teaser": {
-                "download": "@@images/image-600-702ac2045d4ca6fc61c52749e8c2f24d.jpeg",
-                "height": 337,
-                "width": 600
-              },
-              "thumb": {
-                "download": "@@images/image-128-06fa281eabe3bbba6eea685ce60d08f1.jpeg",
-                "height": 71,
-                "width": 128
-              },
-              "tile": {
-                "download": "@@images/image-64-f0e777433e3a4227dab46fe8cac688a6.jpeg",
-                "height": 35,
-                "width": 64
-              }
-            },
-            "size": 475285,
-            "width": 1126
-          }
-        ]
-      },
       "size": "s",
       "styles": {
         "size:noprefix": "small"
       },
       "title": "Image - Light",
-      "url": "resolveuid/eec82559bf3242a6be4d43bc2096f399"
+      "url": "../../resolveuid/eec82559bf3242a6be4d43bc2096f399"
     },
     "7a4c45bc-f969-4d18-8556-bd2cb955fea8": {
       "@type": "slate",
@@ -544,7 +352,13 @@
     "7d8dcf49-e41f-4253-b217-a0df26511977": {
       "@type": "separator",
       "styles": {
-        "align": "full"
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
+        "shortLine": false
       }
     },
     "7f1c54fe-5061-471d-970d-5d4dca0854fc": {
@@ -596,66 +410,15 @@
       "credit": {},
       "description": "Der Inhaltstyp Bild kann verwendet werden um ein Bild in verschiedenen Formate (JPG, GIF, PNG, SVG) hochzuladen. Das hochgeladene Bild sollte dabei immer eine hohe Aufl\u00f6sung haben, damit es flexibel, z.B. auch als Banner-Bild eingesetzt werden kann. Plone liefert die Bilder automatisch in der besten Skalierung aus, so dass es nicht n\u00f6tig ist Bilder manuell herunter zu skalieren.",
       "image_field": "image",
-      "image_scales": {
-        "image": [
-          {
-            "content-type": "image/jpeg",
-            "download": "@@images/image-1126-7b90bd2f737fb08f5e2c5719f2f8bc14.jpeg",
-            "filename": "image-light.jpg",
-            "height": 633,
-            "scales": {
-              "icon": {
-                "download": "@@images/image-32-5de0f24798404cddd70cc1d15b1213ba.jpeg",
-                "height": 17,
-                "width": 32
-              },
-              "large": {
-                "download": "@@images/image-800-728b0edae32e307d8123462b48fafeaa.jpeg",
-                "height": 449,
-                "width": 800
-              },
-              "larger": {
-                "download": "@@images/image-1000-19685fe0e43ca671a6f6a973c7d1f0f5.jpeg",
-                "height": 562,
-                "width": 1000
-              },
-              "mini": {
-                "download": "@@images/image-200-cfd42d570345d1134d9b2d0f5726bb2e.jpeg",
-                "height": 112,
-                "width": 200
-              },
-              "preview": {
-                "download": "@@images/image-400-a35b24fd0dbe867083f962cf69f19c2a.jpeg",
-                "height": 224,
-                "width": 400
-              },
-              "teaser": {
-                "download": "@@images/image-600-702ac2045d4ca6fc61c52749e8c2f24d.jpeg",
-                "height": 337,
-                "width": 600
-              },
-              "thumb": {
-                "download": "@@images/image-128-06fa281eabe3bbba6eea685ce60d08f1.jpeg",
-                "height": 71,
-                "width": 128
-              },
-              "tile": {
-                "download": "@@images/image-64-f0e777433e3a4227dab46fe8cac688a6.jpeg",
-                "height": 35,
-                "width": 64
-              }
-            },
-            "size": 475285,
-            "width": 1126
-          }
-        ]
-      },
       "size": "m",
       "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
         "size:noprefix": "medium"
       },
       "title": "Image - Light",
-      "url": "resolveuid/eec82559bf3242a6be4d43bc2096f399"
+      "url": "../../resolveuid/eec82559bf3242a6be4d43bc2096f399"
     },
     "83af2a96-6f44-4c03-9178-bd6b3678d524": {
       "@type": "slate",
@@ -685,6 +448,22 @@
         }
       ]
     },
+    "85cd8e7d-e58e-4a7c-97e8-c039b2e070c2": {
+      "@type": "slate",
+      "plaintext": "Text with image aligned left",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Text with image aligned left"
+            }
+          ],
+          "type": "h3"
+        }
+      ]
+    },
     "8fe9052b-d9a4-48dd-ae47-80b256826aca": {
       "@type": "slate",
       "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo  luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu luptatum zzril delenit auguevel eum iriure dolor in hendrerit in. Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem iusto odio dignissim qui blandit praesent ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo  luptatum zzril delenit auguevel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu luptatum zzril delenit auguevel eum iriure dolor in hendrerit in.",
@@ -706,66 +485,12 @@
       "credit": {},
       "description": "Der Inhaltstyp Bild kann verwendet werden um ein Bild in verschiedenen Formate (JPG, GIF, PNG, SVG) hochzuladen. Das hochgeladene Bild sollte dabei immer eine hohe Aufl\u00f6sung haben, damit es flexibel, z.B. auch als Banner-Bild eingesetzt werden kann. Plone liefert die Bilder automatisch in der besten Skalierung aus, so dass es nicht n\u00f6tig ist Bilder manuell herunter zu skalieren.",
       "image_field": "image",
-      "image_scales": {
-        "image": [
-          {
-            "content-type": "image/jpeg",
-            "download": "@@images/image-1126-7b90bd2f737fb08f5e2c5719f2f8bc14.jpeg",
-            "filename": "image-light.jpg",
-            "height": 633,
-            "scales": {
-              "icon": {
-                "download": "@@images/image-32-5de0f24798404cddd70cc1d15b1213ba.jpeg",
-                "height": 17,
-                "width": 32
-              },
-              "large": {
-                "download": "@@images/image-800-728b0edae32e307d8123462b48fafeaa.jpeg",
-                "height": 449,
-                "width": 800
-              },
-              "larger": {
-                "download": "@@images/image-1000-19685fe0e43ca671a6f6a973c7d1f0f5.jpeg",
-                "height": 562,
-                "width": 1000
-              },
-              "mini": {
-                "download": "@@images/image-200-cfd42d570345d1134d9b2d0f5726bb2e.jpeg",
-                "height": 112,
-                "width": 200
-              },
-              "preview": {
-                "download": "@@images/image-400-a35b24fd0dbe867083f962cf69f19c2a.jpeg",
-                "height": 224,
-                "width": 400
-              },
-              "teaser": {
-                "download": "@@images/image-600-702ac2045d4ca6fc61c52749e8c2f24d.jpeg",
-                "height": 337,
-                "width": 600
-              },
-              "thumb": {
-                "download": "@@images/image-128-06fa281eabe3bbba6eea685ce60d08f1.jpeg",
-                "height": 71,
-                "width": 128
-              },
-              "tile": {
-                "download": "@@images/image-64-f0e777433e3a4227dab46fe8cac688a6.jpeg",
-                "height": 35,
-                "width": 64
-              }
-            },
-            "size": 475285,
-            "width": 1126
-          }
-        ]
-      },
       "size": "m",
       "styles": {
         "size:noprefix": "medium"
       },
       "title": "Image - Light",
-      "url": "resolveuid/eec82559bf3242a6be4d43bc2096f399"
+      "url": "../../resolveuid/eec82559bf3242a6be4d43bc2096f399"
     },
     "97070cac-5043-4d42-a782-3fb51f1c4bae": {
       "@type": "slate",
@@ -784,7 +509,13 @@
     "9c1f17e7-4c01-4f6f-8241-7ee47b7f1ce9": {
       "@type": "separator",
       "styles": {
-        "align": "full"
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
+        "shortLine": false
       }
     },
     "a1bf6371-37e8-4054-924d-36c99a5f0f78": {
@@ -804,7 +535,13 @@
     "a91ef2a4-336d-4d4f-90e5-d1d31befcaa8": {
       "@type": "separator",
       "styles": {
-        "align": "left"
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--narrow-container-width)"
+        },
+        "shortLine": true
       }
     },
     "a9807954-cb10-4170-8ebd-e3ba1baa3fde": {
@@ -813,71 +550,39 @@
       "credit": {},
       "description": "Der Inhaltstyp Bild kann verwendet werden um ein Bild in verschiedenen Formate (JPG, GIF, PNG, SVG) hochzuladen. Das hochgeladene Bild sollte dabei immer eine hohe Aufl\u00f6sung haben, damit es flexibel, z.B. auch als Banner-Bild eingesetzt werden kann. Plone liefert die Bilder automatisch in der besten Skalierung aus, so dass es nicht n\u00f6tig ist Bilder manuell herunter zu skalieren.",
       "image_field": "image",
-      "image_scales": {
-        "image": [
-          {
-            "content-type": "image/jpeg",
-            "download": "@@images/image-1126-7b90bd2f737fb08f5e2c5719f2f8bc14.jpeg",
-            "filename": "image-light.jpg",
-            "height": 633,
-            "scales": {
-              "icon": {
-                "download": "@@images/image-32-5de0f24798404cddd70cc1d15b1213ba.jpeg",
-                "height": 17,
-                "width": 32
-              },
-              "large": {
-                "download": "@@images/image-800-728b0edae32e307d8123462b48fafeaa.jpeg",
-                "height": 449,
-                "width": 800
-              },
-              "larger": {
-                "download": "@@images/image-1000-19685fe0e43ca671a6f6a973c7d1f0f5.jpeg",
-                "height": 562,
-                "width": 1000
-              },
-              "mini": {
-                "download": "@@images/image-200-cfd42d570345d1134d9b2d0f5726bb2e.jpeg",
-                "height": 112,
-                "width": 200
-              },
-              "preview": {
-                "download": "@@images/image-400-a35b24fd0dbe867083f962cf69f19c2a.jpeg",
-                "height": 224,
-                "width": 400
-              },
-              "teaser": {
-                "download": "@@images/image-600-702ac2045d4ca6fc61c52749e8c2f24d.jpeg",
-                "height": 337,
-                "width": 600
-              },
-              "thumb": {
-                "download": "@@images/image-128-06fa281eabe3bbba6eea685ce60d08f1.jpeg",
-                "height": 71,
-                "width": 128
-              },
-              "tile": {
-                "download": "@@images/image-64-f0e777433e3a4227dab46fe8cac688a6.jpeg",
-                "height": 35,
-                "width": 64
-              }
-            },
-            "size": 475285,
-            "width": 1126
-          }
-        ]
-      },
       "size": "s",
       "styles": {
         "size:noprefix": "small"
       },
       "title": "Image - Light",
-      "url": "resolveuid/eec82559bf3242a6be4d43bc2096f399"
+      "url": "../../resolveuid/eec82559bf3242a6be4d43bc2096f399"
+    },
+    "b3723f0b-3234-4574-8684-05018fe4dd1f": {
+      "@type": "slate",
+      "plaintext": "Text with image (Medium) aligned right",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Text with image (Medium) aligned right"
+            }
+          ],
+          "type": "h3"
+        }
+      ]
     },
     "b5b151a1-fb13-458a-8232-4a87bb8c2904": {
       "@type": "separator",
       "styles": {
-        "align": "full"
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
+        "shortLine": false
       }
     },
     "bfab529b-06c6-4931-b907-aa0538bb68ae": {
@@ -891,20 +596,6 @@
             }
           ],
           "type": "p"
-        }
-      ]
-    },
-    "c31e4ec0-788b-4988-b193-5ae9ca30c253": {
-      "@type": "slate",
-      "plaintext": "Headline H3",
-      "value": [
-        {
-          "children": [
-            {
-              "text": "Headline H3 "
-            }
-          ],
-          "type": "h3"
         }
       ]
     },
@@ -939,7 +630,7 @@
                 }
               ],
               "data": {
-                "url": "/block/button-block"
+                "url": "../../resolveuid/405582582e70493c96a6c549444a1eaa"
               },
               "type": "link"
             },
@@ -1000,88 +691,41 @@
     "e0950549-5612-483d-a16c-a6481b1f4f83": {
       "@type": "separator",
       "styles": {
-        "align": "full"
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        },
+        "shortLine": false
       }
     },
     "e38d6b59-9c34-44a7-a694-36ad6367b617": {
       "@type": "separator",
       "styles": {
-        "align": "left"
+        "align:noprefix": {
+          "--block-alignment": "var(--align-left)"
+        },
+        "blockWidth:noprefix": {
+          "--block-width": "var(--narrow-container-width)"
+        },
+        "shortLine": true
       }
     },
     "f16a700c-3b02-47aa-9d08-ade7dea4f683": {
       "@type": "image",
-      "align": "wide",
+      "align": "center",
       "credit": {},
       "description": "Der Inhaltstyp Bild kann verwendet werden um ein Bild in verschiedenen Formate (JPG, GIF, PNG, SVG) hochzuladen. Das hochgeladene Bild sollte dabei immer eine hohe Aufl\u00f6sung haben, damit es flexibel, z.B. auch als Banner-Bild eingesetzt werden kann. Plone liefert die Bilder automatisch in der besten Skalierung aus, so dass es nicht n\u00f6tig ist Bilder manuell herunter zu skalieren.",
       "image_field": "image",
-      "image_scales": {
-        "image": [
-          {
-            "content-type": "image/jpeg",
-            "download": "@@images/image-2400-59ba0e28b8fb813be7e18935e5f63a59.jpeg",
-            "filename": "black-starry-night.jpg",
-            "height": 1708,
-            "scales": {
-              "great": {
-                "download": "@@images/image-1200-7cca3b5b9ba61195f9190c32b3a54ec9.jpeg",
-                "height": 854,
-                "width": 1200
-              },
-              "huge": {
-                "download": "@@images/image-1600-6ff92f1800f77515dde1be81b0fdd72a.jpeg",
-                "height": 1138,
-                "width": 1600
-              },
-              "icon": {
-                "download": "@@images/image-32-2a46e7a6b76a8db3a7941215c4de8a01.jpeg",
-                "height": 22,
-                "width": 32
-              },
-              "large": {
-                "download": "@@images/image-800-3a7c82cae430c36e707b83909a496b32.jpeg",
-                "height": 569,
-                "width": 800
-              },
-              "larger": {
-                "download": "@@images/image-1000-f4a4c8b8e8e5ffebfbdbcff0115bfc09.jpeg",
-                "height": 711,
-                "width": 1000
-              },
-              "mini": {
-                "download": "@@images/image-200-3bdc6d1e0c48ce4430f75a4ac55b939e.jpeg",
-                "height": 142,
-                "width": 200
-              },
-              "preview": {
-                "download": "@@images/image-400-71bf22b0c5006001209fc8fadb40b10a.jpeg",
-                "height": 284,
-                "width": 400
-              },
-              "teaser": {
-                "download": "@@images/image-600-75bdd455dcec596851abe1b072dc76fe.jpeg",
-                "height": 427,
-                "width": 600
-              },
-              "thumb": {
-                "download": "@@images/image-128-fc31735ade965dca8ce6946f7746c583.jpeg",
-                "height": 91,
-                "width": 128
-              },
-              "tile": {
-                "download": "@@images/image-64-598079775de66e3ee3d5a51362938e1a.jpeg",
-                "height": 45,
-                "width": 64
-              }
-            },
-            "size": 693013,
-            "width": 2400
-          }
-        ]
-      },
       "size": "l",
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "var(--default-container-width)"
+        }
+      },
       "title": "Inhaltstyp: Image-1",
-      "url": "resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
+      "url": "../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
     },
     "fa56fc9a-574e-4a7f-b6ef-703bccc54667": {
       "@type": "slate",
@@ -1125,7 +769,7 @@
       "3642f388-4b3c-4019-ae58-0c56b3487aef",
       "c5ac2a89-5637-42cb-ac29-4448ca0a54b0",
       "1225bf63-e058-44b2-8834-5cdc29ecbcbd",
-      "c31e4ec0-788b-4988-b193-5ae9ca30c253",
+      "85cd8e7d-e58e-4a7c-97e8-c039b2e070c2",
       "7a4c45bc-f969-4d18-8556-bd2cb955fea8",
       "2a61f06a-9960-4c9c-85eb-bac7a3853fdc",
       "0fc24145-c346-4031-adc5-7ad06bd0656a",
@@ -1133,6 +777,7 @@
       "57903d6a-6ed1-4e65-acef-22ccf51c5530",
       "2220580b-204f-4e6d-822d-7e28f37512a9",
       "80177065-93a8-41b9-b45e-e71154294a82",
+      "b3723f0b-3234-4574-8684-05018fe4dd1f",
       "ca682edf-ea8f-49fc-92ce-c9a2a782a42e",
       "6f2d9fbe-05b4-46db-a6f7-22e57e08eddf",
       "e38d6b59-9c34-44a7-a694-36ad6367b617",
@@ -1149,19 +794,15 @@
   "changeNote": "",
   "contributors": [],
   "created": "2023-07-06T21:35:19+00:00",
-  "creators": [
-    "admin"
-  ],
+  "creators": ["admin"],
   "description": "The News Item content type can be used to display News content on the website.",
   "effective": "2023-01-01T10:42:00+00:00",
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
   "exportimport.conversation": [],
-  "head_title": "Head title",
+  "head_title": "Kicker",
   "id": "news-item",
-  "image": null,
-  "image_caption": null,
   "is_folderish": true,
   "language": "##DEFAULT##",
   "layout": "newsitem_view",
@@ -1169,7 +810,9 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2023-09-22T14:26:55+00:00",
+  "modified": "2025-09-16T10:34:44+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
   "review_state": "published",
   "rights": "",
   "subjects": [],

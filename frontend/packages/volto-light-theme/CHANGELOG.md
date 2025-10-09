@@ -8,6 +8,277 @@
 
 <!-- towncrier release notes start -->
 
+## 7.3.1 (2025-10-08)
+
+### Bugfix
+
+- Several fixes. Update to use Volto 18.28.0. @sneridagh 
+
+## 7.3.0 (2025-10-07)
+
+### Bugfix
+
+- Pass down items to `Card` component, so it can pass it down to `UniversalLink`. @sneridagh [#684](https://github.com/kitconcept/volto-light-theme/pull/684)
+- Added addressable classNames to FileSummary headline. @sneridagh [#686](https://github.com/kitconcept/volto-light-theme/pull/686)
+- Update socialmedia add-on to 2.0.0a10 and Volto to 18.27.3. @sneridagh 
+
+### Internal
+
+- Replace "head title" with "kicker" in example content. @davisagli 
+
+## 7.2.0 (2025-10-01)
+
+### Feature
+
+- Added smartTextRenderer helper for rendering markdown formatted links in plain text. @sneridagh [#679.1](https://github.com/kitconcept/volto-light-theme/pull/679.1)
+- Link support in descriptions in summaries via a custom mardown parser (smartText). @sneridagh [#679.2](https://github.com/kitconcept/volto-light-theme/pull/679.2)
+
+### Bugfix
+
+- Fixed icons and spacing in calendar event range widget. @sneridagh [#680](https://github.com/kitconcept/volto-light-theme/pull/680)
+- Added card img 100% width for account for small images. @sneridagh [#681](https://github.com/kitconcept/volto-light-theme/pull/681)
+- Fixed regression for contained teasers applying a margin only meant for contained ones. @sneridagh [#683](https://github.com/kitconcept/volto-light-theme/pull/683)
+
+## 7.1.0 (2025-09-29)
+
+### Feature
+
+- Add Basque translation @erral [#675](https://github.com/kitconcept/volto-light-theme/pull/675)
+
+### Bugfix
+
+- Fix use Sass interpolation for CSS variable fallbacks @iRohitSingh [#673](https://github.com/kitconcept/volto-light-theme/pull/673)
+- Fix vertical spacing for first block in case that there is a change of color from default. @sneridagh [#676](https://github.com/kitconcept/volto-light-theme/pull/676)
+- Don't show parent tags when adding the child. @iFlameing 
+
+### Internal
+
+- Fix cypress test for calendar block. @iFlameing [#calendar-cypress](https://github.com/kitconcept/volto-light-theme/pull/calendar-cypress)
+- Misc bugfixes. Upgrade to Volto 18.27.2. @sneridagh 
+
+## 7.0.0 (2025-09-25)
+
+### Bugfix
+
+- Ensure the Refresh Content button correctly loads the preview image when using preview_image_link for Slider block. @iFlameing 
+- Last german literal fix: ALT-Text. @sneridagh 
+
+## 7.0.0-beta.7 (2025-09-24)
+
+### Feature
+
+- Make it possible for custom Summary components to disable being linked. @davisagli 
+
+### Bugfix
+
+- Enable add block button in accordion block @iRohitSingh [#668](https://github.com/kitconcept/volto-light-theme/pull/668)
+- Safely check for `voltolighttheme.theme` behavior on Theming component. @ericof [#671](https://github.com/kitconcept/volto-light-theme/pull/671)
+- Fix styles for person listing in Search block grid variation. @danalvrz 
+
+## 7.0.0-beta.6 (2025-09-22)
+
+### Bugfix
+
+- Fix styles for H3 headings in slate grids. @danalvrz 
+
+## 7.0.0-beta.5 (2025-09-18)
+
+### Feature
+
+- Add Refresh Content button for slider block and cypress test for the same @Tishasoumya-02 
+
+### Bugfix
+
+- Fix slider button - Improve button mixing for RAC buttons. @sneridagh [#663](https://github.com/kitconcept/volto-light-theme/pull/663)
+
+### Internal
+
+- Fix A11y headlines Unique headings in example content @iRohitSingh [#661](https://github.com/kitconcept/volto-light-theme/pull/661)
+
+## 7.0.0-beta.4 (2025-09-16)
+
+### Internal
+
+- Re-release a3 due to a release process problem. @sneridagh 
+
+## 7.0.0-beta.3 (2025-09-16)
+
+### Bugfix
+
+- Fix cursor not changing on hover over ICS-Download @iRohitSingh [#659](https://github.com/kitconcept/volto-light-theme/pull/659)
+- Fixed theming colors injection on add/edit view. @sneridagh [#660](https://github.com/kitconcept/volto-light-theme/pull/660)
+
+## 7.0.0-beta.2 (2025-09-12)
+
+### Breaking
+
+- Change image caption title from <h2>to <strong> to improve accessibilty. [#415](https://github.com/kitconcept/volto-light-theme/pull/415)
+
+### Feature
+
+- Add missing German translations @danalvrz [#648](https://github.com/kitconcept/volto-light-theme/pull/648)
+
+### Bugfix
+
+- use listing block headline for aria label of block pagination if available @jackahl [#639](https://github.com/kitconcept/volto-light-theme/pull/639)
+- Add German translation of slider variant "simple" @iRohitSingh [#651](https://github.com/kitconcept/volto-light-theme/pull/651)
+- Change slider block "Flag align" default translation to "Align" and add German translation. @Tishasoumya-02 
+
+## 7.0.0-beta.1 (2025-09-10)
+
+### Feature
+
+- Update pt_BR translations. @ericof 
+
+### Bugfix
+
+- Fix stickyMenu visibility so that it is hidden on non-content routes. @Tishasoumya-02 [#642](https://github.com/kitconcept/volto-light-theme/pull/642)
+- Fix person description text overflow in grid listing and teaser blocks @iRohitSingh [#645](https://github.com/kitconcept/volto-light-theme/pull/645)
+
+## 7.0.0-alpha.28 (2025-09-08)
+
+### Bugfix
+
+- Change the icon for eventCalendar block from description to calendar svg. @iFlameing 
+- Fix alignment bug in simple slider variant @Tishasoumya-02 
+
+## 7.0.0-alpha.27 (2025-09-04)
+
+### Bugfix
+
+- Fix grid listing pagination for grid columns 3 & 4. @iRohitSingh [#640](https://github.com/kitconcept/volto-light-theme/pull/640)
+- Fixed grid person teaser in edit mode. @sneridagh 
+
+## 7.0.0-alpha.26 (2025-09-03)
+
+### Bugfix
+
+- Fix css for cross button on hover @Tishasoumya-02 
+- Remove arrows and fix the background and text colors for slider simple variant @Tishasoumya-02 
+
+## 7.0.0-alpha.25 (2025-09-01)
+
+### Feature
+
+- Fixed missing person grid listing with correct styles. @sneridagh 
+
+### Bugfix
+
+- Fix teaser regression in accordion due to semantic UI title classname leak @iRohitSingh [#634](https://github.com/kitconcept/volto-light-theme/pull/634)
+- Fix Grid listing variant List with Image not showing columns 3 & 4 properly @iRohitSingh [#636](https://github.com/kitconcept/volto-light-theme/pull/636)
+- Fix download link on File content-type if the file has no filename. [@jnptk] 
+- Fixed bug in person teaser standalone centering. @sneridagh 
+- fix the margin-bottom and arrows for simple slider in mobile view @Tishasoumya-02 
+
+## 7.0.0-alpha.24 (2025-08-26)
+
+### Breaking
+
+- Move the `ConfigInjector` code to k.intranet. @sneridagh [#629](https://github.com/kitconcept/volto-light-theme/pull/629)
+
+### Bugfix
+
+- Fixed squared/rounded person image in search block. @sneridagh 
+
+## 7.0.0-alpha.23 (2025-08-25)
+
+### Breaking
+
+- By default, the Person images for teasers and listings are rounded (1:1).
+  Added a body tag classname to change them to be squared and 4/5 aspect ratio. @sneridagh 
+
+### Feature
+
+- Added  Simple Side Slider Variation @Tishasoumya-02 [#sliderVariation](https://github.com/kitconcept/volto-light-theme/pull/sliderVariation)
+
+### Bugfix
+
+- Fix navigation menu misalignment in Intranet mobile view @iRohitSingh [#627](https://github.com/kitconcept/volto-light-theme/pull/627)
+
+## 7.0.0-alpha.22 (2025-08-15)
+
+### Feature
+
+- Add styles for RSS block (note: full functionality requires RSS addon and templates available in kitconcept.intranet). @danalvrz 
+
+### Internal
+
+- Fix Logos SVG size issue. @Tishasoumya-02 
+
+## 7.0.0-alpha.21 (2025-07-31)
+
+### Internal
+
+- Revert the new slider variation. @iFlameing [#623](https://github.com/kitconcept/volto-light-theme/pull/623)
+
+## 7.0.0-alpha.20 (2025-07-29)
+
+### Feature
+
+- Added Slider Variations @Tishasoumya-02 
+
+### Bugfix
+
+- Fix alt tag fallback in IconLinkList @iRohitSingh [#621](https://github.com/kitconcept/volto-light-theme/pull/621)
+
+## 7.0.0-alpha.19 (2025-07-25)
+
+### Bugfix
+
+- Fix the listing body width in grid listing variation. @iFlameing [#618](https://github.com/kitconcept/volto-light-theme/pull/618)
+
+### Internal
+
+- Add cypress test for sort_on, sort_order for eventCalendar block. @iFlameing [#619](https://github.com/kitconcept/volto-light-theme/pull/619)
+- Fix alt tag fallback to title if srcAlt is missing in IconLinkList @iRohitSingh [#620](https://github.com/kitconcept/volto-light-theme/pull/620)
+- Use volto-dsgvo-banner 2.5.1 @sneridagh 
+
+## 7.0.0-alpha.18 (2025-07-23)
+
+### Internal
+
+- Update to latests versions of supported add-ons (as peerDeps). @sneridagh 
+
+## 7.0.0-alpha.17 (2025-07-23)
+
+## 7.0.0-alpha.16 (2025-07-23)
+
+### Feature
+
+- Add query support in eventCalendar Block. @iFlameing [#609](https://github.com/kitconcept/volto-light-theme/pull/609)
+- Added support for the blocks configuration TTW behavior. @sneridagh [#614](https://github.com/kitconcept/volto-light-theme/pull/614)
+- Update carousel block version, example content and cypress @iRohitSingh [#616](https://github.com/kitconcept/volto-light-theme/pull/616)
+
+### Bugfix
+
+- Fixed missing hide_description prop in the Summary component within
+  TeaserDefaultBodyTemplate and add cypress test for carousel block @iRohitSingh [#610](https://github.com/kitconcept/volto-light-theme/pull/610)
+- Fix the layout of eventCalendar block. @iFlameing [#612](https://github.com/kitconcept/volto-light-theme/pull/612)
+- Fix extra request in edit mode of event calendar block. @iFlameing [#613](https://github.com/kitconcept/volto-light-theme/pull/613)
+- Fix extra request in view mode of event calendar block. @iFlameing [#615](https://github.com/kitconcept/volto-light-theme/pull/615)
+
+## 7.0.0-alpha.15 (2025-07-17)
+
+### Breaking
+
+- We renamed this three fields in the `kitconcept.footer` behavior. @sneridagh
+  `footer_main_logo_inversed` => `footer_logo`
+  `footer_logo` => `post_footer_logo`
+  `footer_logo_link` => `post_footer_logo_link` 
+
+### Feature
+
+- Added block model v3 as opt-in. @sneridagh [#532](https://github.com/kitconcept/volto-light-theme/pull/532)
+- Update Spanish translation [@macagua] [#596](https://github.com/kitconcept/volto-light-theme/pull/596)
+
+### Bugfix
+
+- Fixed the use case where the sticky menu item is allowed to not have link. @sneridagh 
+
+### Internal
+
+- Improve listing template of Listing, Search and Grid block with Card Component. @iFlameing [#601](https://github.com/kitconcept/volto-light-theme/pull/601)
+
 ## 7.0.0-alpha.14 (2025-07-10)
 
 ### Feature
