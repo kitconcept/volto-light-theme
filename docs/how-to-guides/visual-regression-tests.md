@@ -11,15 +11,13 @@ Follow these steps to run visual regression tests:
 2. Start the frontend
 
    ```shell
-   cd frontend
-   make acceptance-frontend-prod-start
+   make acceptance-visual-frontend-prod-start
    ```
 
 3. Run Cypress for visual testing
 
    ```shell
-   cd frontend
-   make acceptance-test-visual
+   make acceptance-visual-test
    ```
 
 ---

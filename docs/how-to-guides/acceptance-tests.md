@@ -36,13 +36,11 @@ Follow these steps to run accessibility tests using Cypress:
 2. Start the frontend
 
    ```shell
-   cd frontend
-   make acceptance-frontend-prod-start
+   make acceptance-a11y-frontend-prod-start
    ```
 
 3. Run Cypress for accessibility testing
 
    ```shell
-   cd frontend
    make acceptance-a11y-test
    ```
