@@ -1,6 +1,6 @@
 # How to Run Acceptance Tests
 
-Follow these steps to run the block acceptance tests:
+Follow these steps to run the acceptance tests:
 
 1. Start the backend for acceptance testing
 
