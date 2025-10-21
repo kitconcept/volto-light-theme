@@ -52,9 +52,9 @@
     "mrs-developer": "^2.2.0"
   },
   "dependencies": {
+    "@kitconcept/volto-light-theme": "workspace:*",
     "@plone/registry": "workspace:*",
-    "@plone/volto": "workspace:*",
-    "@kitconcept/volto-light-theme": "workspace:*"
+    "@plone/volto": "workspace:*"
   },
   "pnpm": {
     "overrides": {
@@ -62,7 +62,22 @@
       "react-refresh": "^0.14.2",
       "cypress": "^15.0.3",
       "@testing-library/cypress": "^10.1.0"
-    }
+    },
+    "ignoredBuiltDependencies": [
+      "@parcel/watcher",
+      "why"
+    ],
+    "onlyBuiltDependencies": [
+      "core-js",
+      "core-js-pure",
+      "cypress",
+      "es5-ext",
+      "esbuild",
+      "full-icu",
+      "lightningcss-cli",
+      "sharp",
+      "unrs-resolver"
+    ]
   },
   "packageManager": "pnpm@10.18.3"
 }
