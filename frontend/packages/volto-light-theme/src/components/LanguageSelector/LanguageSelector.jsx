@@ -1,31 +1,27 @@
-/**
- * Language selector component.
- * @module components/LanguageSelector/LanguageSelector
- */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
 import cx from 'classnames';
-import { find, map } from 'lodash';
+import find from 'lodash/find';
+import map from 'lodash/map';
 
 import Helmet from '@plone/volto/helpers/Helmet/Helmet';
 import langmap from '@plone/volto/helpers/LanguageMap/LanguageMap';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { toReactIntlLang } from '@plone/volto/helpers/Utils/Utils';
 
-import config from '@plone/volto/registry';
-
 import { defineMessages, useIntl } from 'react-intl';
 
-const messages = defineMessages({
+// Do not call defineMessages since this is a shadow,
+// and we don't want to override the original translations
+const messages = {
   switchLanguageTo: {
     id: 'Switch to',
     defaultMessage: 'Switch to',
   },
-});
+};
 
 const LanguageSelector = (props) => {
   const intl = useIntl();
@@ -33,13 +29,17 @@ const LanguageSelector = (props) => {
   const translations = useSelector(
     (state) => state.content.data?.['@components']?.translations?.items,
   );
+  const isMultilingual = useSelector(
+    (state) => state.site.data.features?.multilingual,
+  );
+  const availableLanguages = useSelector(
+    (state) => state.site.data?.['plone.available_languages'],
+  );
 
-  const { settings } = config;
-
-  return settings.isMultilingual ? (
+  return isMultilingual ? (
     <div className="language-selector">
-      {map(settings.supportedLanguages, (lang) => {
-        const translation = find(translations, { language: lang });
+      {availableLanguages?.map((lang) => {
+        const translation = translations?.find((t) => t.language === lang);
         return (
           <Link
             aria-label={`${intl.formatMessage(
@@ -60,7 +60,7 @@ const LanguageSelector = (props) => {
     </div>
   ) : (
     <Helmet>
-      <html lang={toReactIntlLang(settings.defaultLanguage)} />
+      <html lang={toReactIntlLang(currentLang)} />
     </Helmet>
   );
 };
