@@ -9,6 +9,23 @@ myst:
 
 # Upgrade guide
 
+## volto-light-theme 8.0.0
+
+### Removed support for Volto 18.x.x
+
+```{versionadded} 8.0.0-alpha.0
+```
+
+VLT 8.0.0 requires at least Volto 19.x.x.
+
+### `@plone/components` minimum version 4.0.0
+
+```{versionadded} 8.0.0-alpha.0
+```
+
+VLT 8.0.0 requires `@plone/components` 4.0.0.
+
+
 ## volto-light-theme 7.0.0
 
 ### The card primitive has been applied to the Teaser block
