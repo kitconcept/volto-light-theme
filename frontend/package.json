@@ -61,7 +61,8 @@
       "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
       "react-refresh": "^0.14.2",
       "cypress": "^15.0.3",
-      "@testing-library/cypress": "^10.1.0"
+      "@testing-library/cypress": "^10.1.0",
+      "@types/node": "^24"
     },
     "ignoredBuiltDependencies": [
       "@parcel/watcher",
