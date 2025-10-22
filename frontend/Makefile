@@ -47,6 +47,11 @@ install: ## Installs the add-on in a development environment
 	pnpm i
 	make build-deps
 
+.PHONY: status
+status:  ## Show status
+	@echo "Show status"
+	python3 ../dirty.py
+
 .PHONY: start
 start: ## Starts Volto, allowing reloading of the add-on during development
 	pnpm start
