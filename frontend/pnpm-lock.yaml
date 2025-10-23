@@ -15,15 +15,54 @@ importers:
 
   .:
     dependencies:
+      '@eeacms/volto-accordion-block':
+        specifier: ^10.4.6
+        version: 10.4.6
+      '@kitconcept/volto-banner-block':
+        specifier: workspace:*
+        version: link:packages/volto-banner-block/packages/volto-banner-block
+      '@kitconcept/volto-bm3-compat':
+        specifier: workspace:*
+        version: link:packages/volto-bm3-compat/packages/volto-bm3-compat
+      '@kitconcept/volto-button-block':
+        specifier: workspace:*
+        version: link:packages/volto-button-block/packages/volto-button-block
+      '@kitconcept/volto-carousel-block':
+        specifier: workspace:*
+        version: link:packages/volto-carousel-block/packages/volto-carousel-block
+      '@kitconcept/volto-dsgvo-banner':
+        specifier: workspace:*
+        version: link:packages/volto-dsgvo-banner/packages/volto-dsgvo-banner
+      '@kitconcept/volto-heading-block':
+        specifier: workspace:*
+        version: link:packages/volto-heading-block/packages/volto-heading-block
+      '@kitconcept/volto-highlight-block':
+        specifier: workspace:*
+        version: link:packages/volto-highlight-block/packages/volto-highlight-block
+      '@kitconcept/volto-introduction-block':
+        specifier: workspace:*
+        version: link:packages/volto-introduction-block/packages/volto-introduction-block
       '@kitconcept/volto-light-theme':
         specifier: workspace:*
         version: link:packages/volto-light-theme
+      '@kitconcept/volto-logos-block':
+        specifier: workspace:*
+        version: link:packages/volto-logos-block/packages/volto-logos-block
+      '@kitconcept/volto-separator-block':
+        specifier: workspace:*
+        version: link:packages/volto-separator-block/packages/volto-separator-block
+      '@kitconcept/volto-slider-block':
+        specifier: workspace:*
+        version: link:packages/volto-slider-block/packages/volto-slider-block
       '@plone/registry':
         specifier: workspace:*
         version: link:core/packages/registry
       '@plone/volto':
         specifier: workspace:*
         version: link:core/packages/volto
+      '@plonegovbr/volto-social-media':
+        specifier: ^2.0.0-alpha.10
+        version: 2.0.0-alpha.10(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.12(prettier@3.2.5))
     devDependencies:
       '@cypress/skip-test':
         specifier: 2.6.1
@@ -1649,48 +1688,9 @@ importers:
       '@dnd-kit/utilities':
         specifier: 3.2.2
         version: 3.2.2(react@18.2.0)
-      '@eeacms/volto-accordion-block':
-        specifier: ^10.4.6
-        version: 10.4.6
-      '@kitconcept/volto-banner-block':
-        specifier: workspace:*
-        version: link:../volto-banner-block/packages/volto-banner-block
-      '@kitconcept/volto-bm3-compat':
-        specifier: workspace:*
-        version: link:../volto-bm3-compat/packages/volto-bm3-compat
-      '@kitconcept/volto-button-block':
-        specifier: workspace:*
-        version: link:../volto-button-block/packages/volto-button-block
-      '@kitconcept/volto-carousel-block':
-        specifier: workspace:*
-        version: link:../volto-carousel-block/packages/volto-carousel-block
-      '@kitconcept/volto-dsgvo-banner':
-        specifier: workspace:*
-        version: link:../volto-dsgvo-banner/packages/volto-dsgvo-banner
-      '@kitconcept/volto-heading-block':
-        specifier: workspace:*
-        version: link:../volto-heading-block/packages/volto-heading-block
-      '@kitconcept/volto-highlight-block':
-        specifier: workspace:*
-        version: link:../volto-highlight-block/packages/volto-highlight-block
-      '@kitconcept/volto-introduction-block':
-        specifier: workspace:*
-        version: link:../volto-introduction-block/packages/volto-introduction-block
-      '@kitconcept/volto-logos-block':
-        specifier: workspace:*
-        version: link:../volto-logos-block/packages/volto-logos-block
-      '@kitconcept/volto-separator-block':
-        specifier: workspace:*
-        version: link:../volto-separator-block/packages/volto-separator-block
-      '@kitconcept/volto-slider-block':
-        specifier: workspace:*
-        version: link:../volto-slider-block/packages/volto-slider-block
       '@plone/components':
         specifier: workspace:^
         version: link:../../core/packages/components
-      '@plonegovbr/volto-social-media':
-        specifier: ^2.0.0-alpha.10
-        version: 2.0.0-alpha.10(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.12(prettier@3.2.5))
       classnames:
         specifier: ^2.5.1
         version: 2.5.1
@@ -21327,7 +21327,7 @@ snapshots:
       sirv: 3.0.1
       tinyglobby: 0.2.13
       tinyrainbow: 1.2.0
-      vitest: 2.1.9(@types/node@24.9.1)(@vitest/ui@2.1.9)(jsdom@21.1.2)(less@3.11.1)(lightningcss@1.30.2)(sass@1.87.0)(terser@5.39.0)
+      vitest: 2.1.9(@types/node@24.9.1)(@vitest/ui@2.1.9)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.30.2)(sass@1.87.0)(terser@5.39.0)
     optional: true
 
   '@vitest/ui@2.1.9(vitest@3.1.2)':
