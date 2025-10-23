@@ -25,6 +25,14 @@ VLT 8.0.0 requires at least Volto 19.x.x.
 
 VLT 8.0.0 requires `@plone/components` 4.0.0.
 
+### The recommended add-ons are _not_ included by default as `peerDependencies` anymore
+
+```{versionadded} 8.0.0-alpha.0
+```
+
+VLT 8.0.0 no longer includes the recommended add-ons as `peerDependencies` in {file}`package.json`.
+You will need to install them manually if you want to use them in your project.
+The recommended add-ons are listed in the {doc}`../reference/recommended-addons` section.
 
 ## volto-light-theme 7.0.0
 
