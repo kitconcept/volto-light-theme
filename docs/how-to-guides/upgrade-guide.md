@@ -18,12 +18,12 @@ myst:
 
 VLT 8.0.0 requires at least Volto 19.x.x.
 
-### `@plone/components` minimum version 4.0.0
+### `@plone/components` minimum version 4.0.0 alpha
 
 ```{versionadded} 8.0.0-alpha.0
 ```
 
-VLT 8.0.0 requires `@plone/components` 4.0.0.
+VLT 8.0.0 requires `@plone/components` 4.0.0 alpha or above.
 
 ### The recommended add-ons are _not_ included by default as `peerDependencies` anymore
 
