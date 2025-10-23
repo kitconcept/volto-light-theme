@@ -75,9 +75,6 @@ jobs:
       - name: Install dependencies
         run: make install
 
-      - name: Fix DBUS_SESSION_BUS_ADDRESS issue
-        run: unset DBUS_SESSION_BUS_ADDRESS
-
       - name: Install Cypress if not in cache
         if: steps.cache-cypress-binary.outputs.cache-hit != 'true'
         working-directory: ./frontend/core/packages/volto
@@ -89,7 +86,7 @@ jobs:
         with:
           run: |
             docker run -i --net=host --rm --name=backend ${{ inputs.image-name-prefix }}-backend-acceptance:${{ inputs.image-tag }} &
-            docker run -i --net=host --rm --name=frontend -e RAZZLE_API_PATH=http://127.0.0.1:55001/plone ${{ inputs.image-name-prefix }}-frontend:${{ inputs.image-tag }} &
+            docker run -i --net=host --rm --name=frontend -e RAZZLE_INTERNAL_API_PATH=http://127.0.0.1:55001/plone ${{ inputs.image-name-prefix }}-frontend:${{ inputs.image-tag }} &
           #  make ci-acceptance-backend-start &
           #  make acceptance-frontend-prod-start &
           # your step-level and job-level environment variables are available to your commands as-is
