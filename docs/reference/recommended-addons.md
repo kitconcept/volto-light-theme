@@ -33,7 +33,7 @@ It also works well with the following add-ons:
 ```
 
 You can find the known good set of versions of the recommended add-ons in the {file}`recommendedAddons.json` in the root of this repository.
-Copy these versions to your project add-on {file}`packages/<name_of_addon>/package.json` to ensure full compatibility with `@kitconcept/volto-light-theme`.
+Copy these versions to your project add-on {file}`packages/<name_of_addon>/package.json` under the `dependencies` key to ensure full compatibility with `@kitconcept/volto-light-theme`.
 
 ```{literalinclude} ../../recommendedAddons.json
 :language: json
