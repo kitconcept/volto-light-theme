@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0a0 (2025-10-24)
+
+
+### Internal:
+
+- Fixed example content for internal link because the exported data was incorrect. @sneridagh [#693](https://github.com/kitconcept/volto-light-theme/issues/693)
+
 ## 7.3.1 (2025-10-08)
 
 
