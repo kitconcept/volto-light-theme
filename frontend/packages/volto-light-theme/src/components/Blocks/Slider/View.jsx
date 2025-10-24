@@ -116,6 +116,7 @@ const SliderView = (props) => {
         {(data.slides?.length === 0 || !data.slides) && isEditMode && (
           <Message>
             <div className="teaser-item default">
+              {/* eslint-disable-next-line no-restricted-syntax */}
               <img src={teaserTemplate} alt="" />
               <p>{intl.formatMessage(messages.PleaseChooseContent)}</p>
             </div>

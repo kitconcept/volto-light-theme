@@ -151,7 +151,7 @@ export class Edit extends Component {
    */
   render() {
     const { blocksConfig = config.blocks.blocksConfig } = this.props;
-    const { editable, type } = this.props;
+    const { editable, type, isContainer: parentIsContainer } = this.props;
     const required = isBoolean(this.props.data.required)
       ? this.props.data.required
       : includes(config.blocks.requiredBlocks, type);
@@ -275,6 +275,7 @@ export class Edit extends Component {
                 selected: this.props.selected || this.props.multiSelected,
                 multiSelected: this.props.multiSelected,
                 hovered: this.props.hovered === this.props.id,
+                error: !!this.props.blocksErrors?.[this.props.id],
               },
             )}
             ref={this.blockNode}
@@ -291,6 +292,7 @@ export class Edit extends Component {
                 {...this.props}
                 blockNode={this.blockNode}
                 data={this.props.data}
+                className={cx({ contained: parentIsContainer })}
               />
             </MaybeWrap>
 
@@ -433,6 +435,7 @@ export class Edit extends Component {
               selected: this.props.selected || this.props.multiSelected,
               multiSelected: this.props.multiSelected,
               hovered: this.props.hovered === this.props.id,
+              error: !!this.props.blocksErrors?.[this.props.id],
             })}
             // END CUSTOMIZATION
             style={{ outline: 'none' }}

@@ -1,7 +1,8 @@
 import FormFieldWrapper from '@plone/volto/components/manage/Widgets/FormFieldWrapper';
 import { HexColorPicker, HexColorInput } from 'react-colorful';
 import { Button, Dialog, DialogTrigger, Popover } from 'react-aria-components';
-import { ColorSwatch, CloseIcon } from '@plone/components';
+import { ColorSwatch } from '@plone/components';
+import { CloseIcon } from '@plone/components/Icons';
 import ColorContrastChecker from './ColorContrastChecker';
 import config from '@plone/volto/registry';
 

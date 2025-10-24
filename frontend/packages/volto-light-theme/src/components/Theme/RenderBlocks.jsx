@@ -80,6 +80,7 @@ const RenderBlocks = (props) => {
                   content={content}
                   data={blockData}
                   blocksConfig={blocksConfig}
+                  isContainer={isContainer}
                 >
                   <Block
                     id={block}

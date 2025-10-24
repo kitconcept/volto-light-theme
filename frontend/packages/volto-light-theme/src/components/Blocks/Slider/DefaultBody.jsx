@@ -30,6 +30,7 @@ const messages = defineMessages({
   },
 });
 
+// eslint-disable-next-line no-restricted-syntax
 const DefaultImage = (props) => <img {...props} alt={props.alt || ''} />;
 
 const SliderBody = ({
@@ -78,7 +79,7 @@ const SliderBody = ({
       {!href && isEditMode && (
         <Message>
           <div className="grid-teaser-item default">
-            <img src={imageBlockSVG} alt="" />
+            <Image src={imageBlockSVG} alt="" />
             <p>{intl.formatMessage(messages.PleaseChooseContent)}</p>
             <div className="toolbar-inner">
               <Button.Group>

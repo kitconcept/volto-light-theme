@@ -11,7 +11,15 @@ import imageSVG from '@plone/volto/icons/image.svg';
 import trashSVG from '@plone/volto/icons/delete.svg';
 
 const ImageSidebar = (props) => {
-  const { blocksConfig, data, block, onChangeBlock } = props;
+  const {
+    blocksConfig,
+    blocksErrors,
+    data,
+    block,
+    onChangeBlock,
+    navRoot,
+    contentType,
+  } = props;
   const intl = useIntl();
   const schema = ImageSchema({ formData: data, intl });
   // START CUSTOMIZATION
@@ -26,6 +34,7 @@ const ImageSidebar = (props) => {
         </h2>
         <Button.Group>
           <Button
+            type="button"
             title={intl.formatMessage(messages.clear)}
             basic
             disabled={!data.url}
@@ -107,6 +116,9 @@ const ImageSidebar = (props) => {
         formData={data}
         block={block}
         blocksConfig={blocksConfig}
+        navRoot={navRoot}
+        contentType={contentType}
+        errors={blocksErrors}
       />
     </>
   );
