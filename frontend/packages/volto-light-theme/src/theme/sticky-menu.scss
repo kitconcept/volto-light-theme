@@ -17,6 +17,7 @@ body.cms-ui .sticky-menu {
 
   ul {
     display: flex;
+    gap: 2px;
     width: 115px;
     flex-direction: column;
     padding: 0;
@@ -34,24 +35,24 @@ body.cms-ui .sticky-menu {
       font-size: 10px;
       font-style: normal;
       font-weight: 700;
-      line-height: 18px; /* 180% */
+      line-height: 12px;
       text-transform: capitalize;
     }
 
     li {
       display: flex;
-      height: 93px;
+      height: 97px;
+      padding: 10px 5px;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      margin-bottom: 2px;
       background: var(--sticky-menu-color, #555);
       color: var(--sticky-menu-foreground-color, #fff);
       font-family: Inter;
       font-size: 10px;
       font-style: normal;
       font-weight: 700;
-      line-height: 18px; /* 180% */
+      line-height: 12px;
       text-transform: capitalize;
     }
 
