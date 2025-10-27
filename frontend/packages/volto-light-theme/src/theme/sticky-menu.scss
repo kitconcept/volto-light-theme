@@ -17,11 +17,11 @@ body.cms-ui .sticky-menu {
 
   ul {
     display: flex;
-    gap: 1px;
     width: 115px;
     flex-direction: column;
     padding: 0;
     margin: 0;
+    gap: 1px;
     list-style: none;
 
     li a {
@@ -42,10 +42,10 @@ body.cms-ui .sticky-menu {
     li {
       display: flex;
       height: 97px;
-      padding: 5px 10px;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      padding: 5px 10px;
       background: var(--sticky-menu-color, #555);
       color: var(--sticky-menu-foreground-color, #fff);
       font-family: Inter;
