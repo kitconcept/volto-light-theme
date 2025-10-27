@@ -38,13 +38,11 @@ module.exports = {
 ## VLT recommended add-ons
 
 `@kitconcept/volto-light-theme` supports all core blocks and it also supports blocks from selected Volto add-ons.
-
-```{versionadded} 8.0.0-alpha.0
-```
-
-VLT 8.0.0 no longer includes the recommended add-ons as `peerDependencies` in {file}`package.json`.
-You will need to install them manually if you want to use them in your project.
 The recommended add-ons are listed in the {doc}`../reference/recommended-addons` section.
+
+### Install add-ons as dependencies
+
+You should install the recommended add-ons as dependencies in your project add-on {file}`packages/<name_of_addon>/package.json`:
 
 ```{code-block} json
 :caption: {file}`packages/<name_of_addon>/package.json`
@@ -71,6 +69,14 @@ The recommended add-ons are listed in the {doc}`../reference/recommended-addons`
 ```{warning}
 The above list might be outdated, please refer to that section for the full list of recommended add-ons and their known good versions.
 ```
+
+```{versionadded} 8.0.0-alpha.0
+```
+
+VLT 8.0.0 no longer includes the recommended add-ons as `peerDependencies` in {file}`package.json`.
+This means that you will need to install them manually if you want to use them in your project.
+
+### Declaring add-ons
 
 Along with the `@kitconcept/volto-light-theme` package, you should also declare them in your setup using the `addons` key in your project add-on {file}`packages/<name_of_addon>/package.json`.:
 
