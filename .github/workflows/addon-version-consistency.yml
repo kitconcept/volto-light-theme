@@ -1,0 +1,28 @@
+name: "CI: Add-on Version Consistency"
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+env:
+  NODE_VERSION: 24.x
+
+jobs:
+  check-addon-versions:
+    name: "Verify recommended add-on versions"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout repository"
+        uses: actions/checkout@v4
+
+      - name: "Setup Node.js"
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: "Compare recommendedAddons.json with frontend/mrs.developer.json"
+        run: node check-recommended-addons.js
