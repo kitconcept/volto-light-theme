@@ -215,8 +215,14 @@ const ObjectListWidget = (props: ObjectListWidgetProps) => {
                 intl,
               });
 
-              onChange(id, [...(value || []), dataWithDefaults]);
-              setActiveObject(value?.length || 0);
+              const newValue = [...(value || []), dataWithDefaults];
+
+              onChange(id, newValue);
+
+              // Set active the new object ensuring the state is updated after adding the new item
+              setTimeout(() => {
+                setActiveObject(newValue.length - 1);
+              }, 0);
             }}
           >
             <Icon name={addSVG} size="18px" />

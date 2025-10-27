@@ -52,6 +52,11 @@ status:  ## Show status
 	@echo "Show status"
 	python3 ../dirty.py
 
+.PHONY: check-versions
+check-versions:  ## Show check-versions
+	@echo "Checking versions"
+	node ../check-recommended-addons.js
+
 .PHONY: start
 start: ## Starts Volto, allowing reloading of the add-on during development
 	pnpm start

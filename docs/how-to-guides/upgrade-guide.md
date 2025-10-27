@@ -34,6 +34,14 @@ VLT 8.0.0 no longer includes the recommended add-ons as `peerDependencies` in {f
 You will need to install them manually if you want to use them in your project.
 The recommended add-ons are listed in the {doc}`../reference/recommended-addons` section.
 
+### Transferred all slider customizations to the `@kitconcept/volto-slider-block` add-on
+
+```{versionadded} 8.0.0-alpha.1
+```
+
+All custom code related to the slider block has been moved to the `@kitconcept/volto-slider-block` add-on.
+If you have customized the slider block in your project, you will need to move your customizations shadows to the `@kitconcept/volto-slider-block` add-on as well.
+
 ## volto-light-theme 7.0.0
 
 ### The card primitive has been applied to the Teaser block
