@@ -46,8 +46,6 @@ import SearchBlockViewEvent from '../components/Blocks/EventCalendar/Search/Sear
 import SearchBlockEditEvent from '../components/Blocks/EventCalendar/Search/SearchBlockEdit';
 import SearchBlockSchemaEvent from '../components/Blocks/EventCalendar/Search/schema';
 import EventCalenderTemplate from '../components/Blocks/EventCalendar/Search/components/EventTemplate';
-import SliderVariants from '../components/Blocks/Slider/SliderVariants';
-import DefaultBody from '../customizations/@kitconcept/volto-slider-block/components/DefaultBody';
 
 declare module '@plone/types' {
   export interface BlocksConfigData {
@@ -418,24 +416,7 @@ export default function install(config: ConfigType) {
   };
 
   // Slider Block
-  config.blocks.blocksConfig.slider = {
-    ...config.blocks.blocksConfig.slider,
-    variations: [
-      {
-        id: 'default',
-        title: 'Default',
-        isDefault: true,
-        view: DefaultBody,
-      },
-
-      {
-        id: 'simple',
-        title: 'Simple',
-        view: SliderVariants,
-      },
-    ],
-    schemaEnhancer: sliderBlockSchemaEnhancer,
-  };
+  config.blocks.blocksConfig.slider.schemaEnhancer = sliderBlockSchemaEnhancer;
 
   return config;
 }
