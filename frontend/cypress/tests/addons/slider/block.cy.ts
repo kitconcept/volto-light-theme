@@ -51,7 +51,7 @@ context('Block Acceptance Tests', () => {
 
     // First slide
     cy.get(
-      '.objectbrowser-field[aria-labelledby="fieldset-default-field-label-href-0-slides-0"] button[aria-label="Open object browser"]',
+      '.objectbrowser-field[aria-labelledby^="fieldset-default-field-label-href-0-"] button[aria-label="Open object browser"]',
     ).click();
     cy.get('aside .breadcrumbs svg.home-icon').click();
     cy.findByLabelText('Select My Page').dblclick();
@@ -60,10 +60,10 @@ context('Block Acceptance Tests', () => {
     cy.findByText('Add item').click();
     // cy.findByLabelText('Show item #2').click();
     cy.get(
-      '.objectbrowser-field[aria-labelledby="fieldset-default-field-label-href-0-slides-1"] button[aria-label="Open object browser"]',
+      '.olw-item-content.active .objectbrowser-field[aria-labelledby^="fieldset-default-field-label-href-0-"] button[aria-label="Open object browser"]',
     ).should('be.visible');
     cy.get(
-      '.objectbrowser-field[aria-labelledby="fieldset-default-field-label-href-0-slides-1"] button[aria-label="Open object browser"]',
+      '.olw-item-content.active .objectbrowser-field[aria-labelledby^="fieldset-default-field-label-href-0-"] button[aria-label="Open object browser"]',
     ).click();
     cy.wait(1000);
     cy.get('aside .breadcrumbs svg.home-icon').click();
@@ -72,7 +72,6 @@ context('Block Acceptance Tests', () => {
     cy.get('#toolbar-save').click();
     cy.wait('@save');
     cy.wait('@content');
-
     cy.get('.highlight-image-wrapper img')
       .should('be.visible')
       .and(($img) => {
@@ -92,7 +91,7 @@ context('Block Acceptance Tests', () => {
 
     // First slide
     cy.get(
-      '.objectbrowser-field[aria-labelledby="fieldset-default-field-label-href-0-slides-0"] button[aria-label="Open object browser"]',
+      '.objectbrowser-field[aria-labelledby^="fieldset-default-field-label-href-0-"] button[aria-label="Open object browser"]',
     ).click();
     cy.get('aside .breadcrumbs svg.home-icon').click();
     cy.findByLabelText('Select My Page').dblclick();
@@ -101,10 +100,10 @@ context('Block Acceptance Tests', () => {
     cy.findByText('Add item').click();
     // cy.findByLabelText('Show item #2').click();
     cy.get(
-      '.objectbrowser-field[aria-labelledby="fieldset-default-field-label-href-0-slides-1"] button[aria-label="Open object browser"]',
+      '.olw-item-content.active .objectbrowser-field[aria-labelledby^="fieldset-default-field-label-href-0-"] button[aria-label="Open object browser"]',
     ).should('be.visible');
     cy.get(
-      '.objectbrowser-field[aria-labelledby="fieldset-default-field-label-href-0-slides-1"] button[aria-label="Open object browser"]',
+      '.olw-item-content.active .objectbrowser-field[aria-labelledby^="fieldset-default-field-label-href-0-"] button[aria-label="Open object browser"]',
     ).click();
     cy.wait(1000);
     cy.get('aside .breadcrumbs svg.home-icon').click();
