@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0-alpha.1 (2025-10-27)
+
+### Breaking
+
+- Transfer all custom code related to slider to the add-on. @sneridagh [#694](https://github.com/kitconcept/volto-light-theme/pull/694)
+
 ## 8.0.0-alpha.0 (2025-10-24)
 
 ### Breaking

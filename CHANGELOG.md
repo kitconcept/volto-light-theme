@@ -1,6 +1,39 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 8.0.0a1 (2025-10-27)
+
+### Backend
+
+
+#### Internal:
+
+- gitignore mxdev control files. @sneridagh [#694](https://github.com/kitconcept/volto-light-theme/issues/694)
+
+
+
+### Frontend
+
+#### Breaking
+
+- Transfer all custom code related to slider to the add-on. @sneridagh [#694](https://github.com/kitconcept/volto-light-theme/pull/694)
+
+
+
+### Project
+
+
+#### Internal
+
+- Added a CI workflow for checking the consistency of the mrs.developer.json versions and the recommendedAddons.json one. @sneridagh [#694](https://github.com/kitconcept/volto-light-theme/pull/694)
+
+
+#### Documentation
+
+- Added documentation for transfering the slider features to the add-on and the corresponding breaking change notice. @sneridagh [#694](https://github.com/kitconcept/volto-light-theme/pull/694)
+
+
+
 ## 8.0.0a0 (2025-10-24)
 
 ### Backend
