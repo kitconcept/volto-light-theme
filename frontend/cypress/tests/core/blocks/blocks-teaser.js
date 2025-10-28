@@ -45,11 +45,7 @@ context('Blocks Acceptance Tests', () => {
     cy.wait('@schema');
 
     // WHEN I create a Teaser block
-    cy.get('.block .slate-editor [contenteditable=true]').click();
-    cy.get('.button .block-add-button').click({ force: true });
-    cy.get('.blocks-chooser .mostUsed .button.teaser')
-      .contains('Teaser')
-      .click({ force: true });
+    cy.addNewBlock('teaser');
     cy.get(
       '.objectbrowser-field[aria-labelledby="fieldset-default-field-label-href"] button[aria-label="Open object browser"]',
     ).click();
@@ -89,20 +85,18 @@ context('Blocks Acceptance Tests', () => {
     });
 
     cy.navigate('/document/edit');
+    cy.wait('@schema');
     // WHEN I create a Teaser block and change the data of the referenced object
-    cy.get('.block .slate-editor [contenteditable=true]').click();
-    cy.get('.button .block-add-button').click({ force: true });
-    cy.get('.blocks-chooser .mostUsed .button.teaser')
-      .contains('Teaser')
-      .click({ force: true });
+    cy.addNewBlock('teaser');
     cy.get(
       '.objectbrowser-field[aria-labelledby="fieldset-default-field-label-href"] button[aria-label="Open object browser"]',
     ).click();
     cy.get('[aria-label="Select Blue Orchids"]').dblclick();
-    cy.wait(500);
     cy.get('#toolbar-save').click();
+    cy.wait('@content');
 
-    cy.visit('/document');
+    cy.navigate('/document');
+    cy.wait('@content');
     cy.get('.block.teaser .card-summary h2').contains('Blue Orchids');
     cy.get('.block.teaser .card-summary p').contains(
       'are growing on the mountain tops',
@@ -118,6 +112,7 @@ context('Blocks Acceptance Tests', () => {
     cy.get('.documentFirstHeading').contains('Blue Orchids and Tulips');
     // THEN I can see the updated content in the teaser
     cy.navigate('/document');
+    cy.wait('@content');
     cy.get('.block.teaser .card-summary h2').contains(
       'Blue Orchids and Tulips',
     );
@@ -140,11 +135,7 @@ context('Blocks Acceptance Tests', () => {
     });
     cy.visit('/document/edit');
     // WHEN I create a Teaser block and change the data of the referenced object
-    cy.get('.block .slate-editor [contenteditable=true]').click();
-    cy.get('.button .block-add-button').click({ force: true });
-    cy.get('.blocks-chooser .mostUsed .button.teaser')
-      .contains('Teaser')
-      .click({ force: true });
+    cy.addNewBlock('teaser');
     cy.get(
       '.objectbrowser-field[aria-labelledby="fieldset-default-field-label-href"] button[aria-label="Open object browser"]',
     ).click();
@@ -185,11 +176,7 @@ context('Blocks Acceptance Tests', () => {
 
     cy.navigate('/document/edit');
     // WHEN I create a Teaser block and change the data of the referenced object
-    cy.get('.block .slate-editor [contenteditable=true]').click();
-    cy.get('.button .block-add-button').click({ force: true });
-    cy.get('.blocks-chooser .mostUsed .button.teaser')
-      .contains('Teaser')
-      .click({ force: true });
+    cy.addNewBlock('teaser');
     cy.get(
       '.objectbrowser-field[aria-labelledby="fieldset-default-field-label-href"] button[aria-label="Open object browser"]',
     ).click();
