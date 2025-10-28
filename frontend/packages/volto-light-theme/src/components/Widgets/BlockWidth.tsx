@@ -9,6 +9,7 @@ import imageFitSVG from '@plone/volto/icons/image-fit.svg';
 import imageNarrowSVG from '@plone/volto/icons/image-narrow.svg';
 import imageWideSVG from '@plone/volto/icons/image-wide.svg';
 import imageFullSVG from '@plone/volto/icons/image-full.svg';
+import type { StyleDefinition } from '@plone/types';
 
 const messages = defineMessages({
   narrow: {
@@ -40,7 +41,7 @@ export const defaultActionsInfo = ({
   full: [imageFullSVG, intl.formatMessage(messages.full)],
 });
 
-const DEFAULT_ACTIONS = [
+const DEFAULT_ACTIONS: StyleDefinition[] = [
   {
     style: {
       '--block-width': 'var(--narrow-container-width)',
@@ -75,14 +76,13 @@ const BlockWidthWidget = (props: ButtonsWidgetProps) => {
   const intl = useIntl();
 
   const { actions = DEFAULT_ACTIONS, actionsInfoMap, filterActions } = props;
-  let filteredActions;
-  if (filterActions) {
-    filteredActions = actions.filter((action) =>
-      filterActions.includes(action.name),
-    );
-  } else {
-    filteredActions = actions;
-  }
+  const filteredActions =
+    filterActions && filterActions.length > 0
+      ? actions.filter((action) => {
+          const actionName = typeof action === 'string' ? action : action.name;
+          return filterActions.includes(actionName);
+        })
+      : actions;
 
   const actionsInfo = {
     ...defaultActionsInfo({ intl }),
