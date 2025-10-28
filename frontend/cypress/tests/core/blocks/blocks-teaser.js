@@ -29,7 +29,7 @@ context('Blocks Acceptance Tests', () => {
     cy.wait('@content');
   });
 
-  it.only('As editor I can add a (standalone) Teaser block', () => {
+  it('As editor I can add a (standalone) Teaser block', () => {
     // GIVEN a Document with the title document and a Document to reference with the title Blue Orchids
     cy.createContent({
       contentType: 'Document',
@@ -55,7 +55,9 @@ context('Blocks Acceptance Tests', () => {
     ).click();
     cy.get('[aria-label="Select Blue Orchids"]').dblclick();
     cy.wait(500);
-    cy.get('.align-buttons .ui.buttons button[aria-label="Center"]').click();
+    cy.get(
+      '[class*="field-wrapper-align-"] .buttons button[aria-label="Center"]',
+    ).click();
     cy.get('#toolbar-save').click();
 
     // THEN I can see the Teaser block
