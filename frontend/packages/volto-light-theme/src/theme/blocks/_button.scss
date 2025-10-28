@@ -42,6 +42,7 @@
 
   .button.container,
   .block-inner-container {
+    a,
     button {
       padding: 8px 20px;
       border: 1px solid $black;
@@ -49,6 +50,8 @@
       margin: 0;
       background: none;
       color: $black;
+      cursor: pointer;
+      text-decoration: none;
 
       @include body-text-bold();
     }
