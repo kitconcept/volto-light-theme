@@ -1550,6 +1550,9 @@ importers:
       '@kitconcept/volto-bm3-compat':
         specifier: 1.0.0-alpha.1
         version: 1.0.0-alpha.1(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@plone/components':
+        specifier: workspace:*
+        version: link:../../../../core/packages/components
       classnames:
         specifier: ^2.5.1
         version: 2.5.1

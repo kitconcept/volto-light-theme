@@ -40,14 +40,17 @@
     }
   }
 
-  .ui.button {
-    padding: 8px 20px;
-    border: 1px solid $black;
-    border-radius: unset;
-    margin: 0;
-    background: none;
-    color: $black;
+  .button.container,
+  .block-inner-container {
+    button {
+      padding: 8px 20px;
+      border: 1px solid $black;
+      border-radius: unset;
+      margin: 0;
+      background: none;
+      color: $black;
 
-    @include body-text-bold();
+      @include body-text-bold();
+    }
   }
 }
