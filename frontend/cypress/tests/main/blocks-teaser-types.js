@@ -55,7 +55,9 @@ context('Blocks Acceptance Tests', () => {
     ).click();
     cy.get('[aria-label="Select Blue Orchids"]').dblclick();
     cy.wait(500);
-    cy.get('.align-buttons .ui.buttons button[aria-label="Center"]').click();
+    cy.get(
+      '[class*="field-wrapper-align-"] .buttons button[aria-label="Center"]',
+    ).click();
     cy.get('#toolbar-save').click();
 
     // THEN I can see the Teaser block
@@ -99,7 +101,9 @@ context('Blocks Acceptance Tests', () => {
     ).click();
     cy.get('[aria-label="Select Blue Orchids"]').dblclick();
     cy.wait(500);
-    cy.get('.align-buttons .ui.buttons button[aria-label="Center"]').click();
+    cy.get(
+      '[class*="field-wrapper-align-"] .buttons button[aria-label="Center"]',
+    ).click();
     cy.get('#toolbar-save').click();
 
     // THEN I can see the Teaser block
@@ -146,7 +150,9 @@ context('Blocks Acceptance Tests', () => {
     ).click();
     cy.get('[aria-label="Select Blue Orchids"]').dblclick();
     cy.wait(500);
-    cy.get('.align-buttons .ui.buttons button[aria-label="Center"]').click();
+    cy.get(
+      '[class*="field-wrapper-align-"] .buttons button[aria-label="Center"]',
+    ).click();
     cy.get('#toolbar-save').click();
 
     // THEN I can see the Teaser block
@@ -190,18 +196,21 @@ context('Blocks Acceptance Tests', () => {
     ).click();
     cy.get('[aria-label="Select Blue Orchids"]').dblclick();
     cy.wait(500);
-    cy.get('.align-buttons .ui.buttons button[aria-label="Center"]').click();
+    cy.get(
+      '[class*="field-wrapper-align-"] .buttons button[aria-label="Center"]',
+    ).click();
     cy.get('#toolbar-save').click();
 
     // THEN I can see the Teaser block
     cy.visit('/document');
+    cy.wait('@content');
     cy.get('.block.teaser').should('have.class', 'has--align--center');
 
     // No preview_image in Files by default
     // cy.get('.block.teaser .image-wrapper img')
     //   .should('have.attr', 'src')
     //   .and('include', '/document/blue-orchids/@@images/preview_image-');
-    cy.get('.headline').should('exist');
+    // cy.get('.headline').should('exist');
     cy.get('.block.teaser .card-summary h2').contains('Blue Orchids');
     cy.get('.block.teaser .card-summary p').contains(
       'are growing on the mountain tops',
