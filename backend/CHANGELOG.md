@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 7.4.0 (2025-10-28)
+
+
+### Internal:
+
+- Added mxdev artifact to the list of gitignore. @sneridagh [#696](https://github.com/kitconcept/volto-light-theme/issues/696)
+
 ## 7.3.1 (2025-10-08)
 
 

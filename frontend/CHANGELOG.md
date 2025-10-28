@@ -8,6 +8,16 @@
 
 <!-- towncrier release notes start -->
 
+## 7.4.0 (2025-10-28)
+
+### Feature
+
+- To reduce the size of the main VLT repository, snapshots for visual regression testing are now stored in a separate repository (kitconcept/vlt-visual-regression). @sneridagh [#690](https://github.com/kitconcept/volto-light-theme/pull/690)
+
+### Bugfix
+
+- Fixed corner case when creating an element in the ObjectList widget the element was not being syncronized with the view part. @sneridagh [#696](https://github.com/kitconcept/volto-light-theme/pull/696)
+
 ## 7.3.1 (2025-10-08)
 
 ### Bugfix

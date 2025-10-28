@@ -1,6 +1,38 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 7.4.0 (2025-10-28)
+
+### Backend
+
+
+#### Internal:
+
+- Added mxdev artifact to the list of gitignore. @sneridagh [#696](https://github.com/kitconcept/volto-light-theme/issues/696)
+
+
+
+### Frontend
+
+#### Feature
+
+- To reduce the size of the main VLT repository, snapshots for visual regression testing are now stored in a separate repository (kitconcept/vlt-visual-regression). @sneridagh [#690](https://github.com/kitconcept/volto-light-theme/pull/690)
+
+#### Bugfix
+
+- Fixed corner case when creating an element in the ObjectList widget the element was not being syncronized with the view part. @sneridagh [#696](https://github.com/kitconcept/volto-light-theme/pull/696)
+
+
+
+### Project
+
+
+#### Documentation
+
+- Added documentation for acceptance, a11y, and visual regression tests. @sneridagh [#690](https://github.com/kitconcept/volto-light-theme/pull/690)
+
+
+
 ## 7.3.1 (2025-10-08)
 
 ### Backend
