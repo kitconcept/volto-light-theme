@@ -6,21 +6,22 @@
 #sidebar-properties,
 #sidebar-metadata {
   .field.widget {
-    .buttons {
+    .buttons-widget {
       display: flex;
       align-items: center;
+      gap: 4px;
 
-      button {
+      .buttons-widget-option {
         padding: 5px;
         border-radius: 3px;
-        margin-right: 3px;
         aspect-ratio: 1/1;
         font-size: 1em;
         line-height: initial;
+
         &[data-hovered='true'] {
           box-shadow: inset 0 0 0 1px var(--border-color-pressed, #2996da);
         }
-        &.active {
+        &[data-selected='true'] {
           box-shadow: inset 0 0 0 1px var(--border-color-pressed, #2996da);
         }
 
@@ -134,12 +135,10 @@ span.color-contrast-label {
   background-color: var(--theme-color);
 }
 
-.buttons-widget {
-  button {
-    &[data-disabled] {
-      border-color: var(--border-color-disabled);
-      color: var(--text-color-disabled);
-    }
+.buttons-widget-option {
+  &[data-disabled] {
+    border-color: var(--border-color-disabled);
+    color: var(--text-color-disabled);
   }
 }
 
