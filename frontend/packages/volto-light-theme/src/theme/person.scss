@@ -325,6 +325,29 @@ body.person-squared-images,
     }
   }
 }
+
+//person with Four columns : edit mode
+.block.gridBlock {
+  .four.grid-items {
+    .person-teaser {
+      .card-summary {
+        .summary-extra-info {
+          &.email {
+            min-width: 0;
+
+            a {
+              display: block;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 // person with Four columns
 .ui.stackable.stretched.four.column.grid {
   .card-summary {
