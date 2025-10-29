@@ -347,25 +347,33 @@ body.person-squared-images,
     }
   }
 }
+// person with Four columns (edit mode and view mode)
+.block.gridBlock .four.grid-items .person-teaser .card-summary,
+.ui.stackable.stretched.four.column.grid .card-summary {
+  .summary-extra-info {
+    &.email {
+      min-width: 0;
 
-// person with Four columns
-.ui.stackable.stretched.four.column.grid {
-  .card-summary {
-    display: grid;
-    .summary-extra-info {
-      gap: 5px;
-      &.email {
-        min-width: 0;
-
-        a {
-          display: block;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-        }
+      a {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
     }
   }
+}
+
+// Additional styles for view mode only
+.ui.stackable.stretched.four.column.grid {
+  .card-summary {
+    display: grid;
+
+    .summary-extra-info {
+      gap: 5px;
+    }
+  }
+
   .block.listing,
   .block.search {
     .listing-item.person-listing .card-summary {
