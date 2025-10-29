@@ -38,24 +38,64 @@ module.exports = {
 ## VLT recommended add-ons
 
 `@kitconcept/volto-light-theme` supports all core blocks and it also supports blocks from selected Volto add-ons.
-VLT declares them as `peerDependencies`.
-As such, the theme won't force you to use any specific add-on version, and avoids package hoisting issues.
-`pnpm` installs all `peerDependencies` by default.
-Cookieplone does this for you.
+The recommended add-ons are listed in the {doc}`../reference/recommended-addons` section.
 
-Along with the `@kitconcept/volto-light-theme` package, you should also declare your `peerDependencies` in your setup using the `addons` key in your project add-on {file}`packages/<name_of_your_project_addon>/package.json`.:
+### Install add-ons as dependencies
+
+You should install the recommended add-ons as dependencies in your project add-on {file}`packages/<name_of_addon>/package.json`:
+
+```{code-block} json
+:caption: {file}`packages/<name_of_addon>/package.json`
+{
+  "dependencies": {
+    "@eeacms/volto-accordion-block": "^10.4.6",
+    "@kitconcept/volto-banner-block": "^1.1.0",
+    "@kitconcept/volto-bm3-compat": "^1.0.0-alpha.1",
+    "@kitconcept/volto-button-block": "^4.0.0-alpha.0",
+    "@kitconcept/volto-carousel-block": "^2.0.0-alpha.3",
+    "@kitconcept/volto-dsgvo-banner": "^2.5.1",
+    "@kitconcept/volto-heading-block": "^2.5.0",
+    "@kitconcept/volto-highlight-block": "^4.4.0",
+    "@kitconcept/volto-introduction-block": "^1.1.0",
+    "@kitconcept/volto-logos-block": "^3.0.0-alpha.1",
+    "@kitconcept/volto-separator-block": "^4.2.1",
+    "@kitconcept/volto-slider-block": "^6.4.0",
+    "@plonegovbr/volto-social-media": "^2.0.0-alpha.10"
+    // other dependencies
+  }
+}
+```
+
+```{warning}
+The above list might be outdated, please refer to that section for the full list of recommended add-ons and their known good versions.
+```
+
+```{versionadded} 8.0.0-alpha.0
+```
+
+VLT 8.0.0 no longer includes the recommended add-ons as `peerDependencies` in {file}`package.json`.
+This means that you will need to install them manually if you want to use them in your project.
+
+### Declaring add-ons
+
+Along with the `@kitconcept/volto-light-theme` package, you should also declare them in your setup using the `addons` key in your project add-on {file}`packages/<name_of_addon>/package.json`.:
 
 ```json
   "addons": [
     // other add-ons installed
     "@eeacms/volto-accordion-block",
+    "@kitconcept/volto-banner-block",
+    "@kitconcept/volto-bm3-compat",
     "@kitconcept/volto-button-block",
+    "@kitconcept/volto-carousel-block",
     "@kitconcept/volto-dsgvo-banner",
     "@kitconcept/volto-heading-block",
-    "@kitconcept/volto-introduction-block",
     "@kitconcept/volto-highlight-block",
+    "@kitconcept/volto-introduction-block",
+    "@kitconcept/volto-logos-block",
     "@kitconcept/volto-separator-block",
     "@kitconcept/volto-slider-block",
+    "@plonegovbr/volto-social-media",
     "@kitconcept/volto-light-theme",
   ],
 ```
@@ -65,4 +105,3 @@ Find the full list of the {doc}`../reference/recommended-addons`.
 ```{note}
 If you don't want to use any of the recommended add-ons, then remove them and don't declare them as add-ons in your project, leaving only those that you want.
 ```
-

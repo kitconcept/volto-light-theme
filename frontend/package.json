@@ -1,6 +1,6 @@
 {
   "name": "@kitconcept/volto-light-theme-dev",
-  "version": "7.3.1",
+  "version": "8.0.0-alpha.2",
   "description": "Volto Light Theme by kitconcept",
   "main": "src/index.js",
   "types": "src/types/index.d.ts",
@@ -54,15 +54,44 @@
   "dependencies": {
     "@plone/registry": "workspace:*",
     "@plone/volto": "workspace:*",
-    "@kitconcept/volto-light-theme": "workspace:*"
+    "@kitconcept/volto-light-theme": "workspace:*",
+    "@eeacms/volto-accordion-block": "^10.4.6",
+    "@kitconcept/volto-banner-block": "workspace:*",
+    "@kitconcept/volto-bm3-compat": "workspace:*",
+    "@kitconcept/volto-button-block": "workspace:*",
+    "@kitconcept/volto-carousel-block": "workspace:*",
+    "@kitconcept/volto-dsgvo-banner": "workspace:*",
+    "@kitconcept/volto-heading-block": "workspace:*",
+    "@kitconcept/volto-highlight-block": "workspace:*",
+    "@kitconcept/volto-introduction-block": "workspace:*",
+    "@kitconcept/volto-logos-block": "workspace:*",
+    "@kitconcept/volto-separator-block": "workspace:*",
+    "@kitconcept/volto-slider-block": "workspace:*",
+    "@plonegovbr/volto-social-media": "^2.0.0-alpha.10"
   },
   "pnpm": {
     "overrides": {
       "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
       "react-refresh": "^0.14.2",
       "cypress": "^15.0.3",
-      "@testing-library/cypress": "^10.1.0"
-    }
+      "@testing-library/cypress": "^10.1.0",
+      "@types/node": "^24"
+    },
+    "ignoredBuiltDependencies": [
+      "@parcel/watcher",
+      "why"
+    ],
+    "onlyBuiltDependencies": [
+      "core-js",
+      "core-js-pure",
+      "cypress",
+      "es5-ext",
+      "esbuild",
+      "full-icu",
+      "lightningcss-cli",
+      "sharp",
+      "unrs-resolver"
+    ]
   },
-  "packageManager": "pnpm@9.14.1"
+  "packageManager": "pnpm@10.18.3"
 }

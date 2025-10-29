@@ -47,6 +47,16 @@ install: ## Installs the add-on in a development environment
 	pnpm i
 	make build-deps
 
+.PHONY: status
+status:  ## Show status
+	@echo "Show status"
+	python3 ../dirty.py
+
+.PHONY: check-versions
+check-versions:  ## Show check-versions
+	@echo "Checking versions"
+	node ../check-recommended-addons.js
+
 .PHONY: start
 start: ## Starts Volto, allowing reloading of the add-on during development
 	pnpm start
@@ -125,11 +135,11 @@ storybook-build: ## Build Storybook
 ## Acceptance
 .PHONY: acceptance-frontend-dev-start
 acceptance-frontend-dev-start: ## Start acceptance frontend in development mode
-	RAZZLE_API_PATH=http://127.0.0.1:55001/plone NODE_OPTIONS=--dns-result-order=ipv4first pnpm start
+	RAZZLE_INTERNAL_API_PATH=http://127.0.0.1:55001/plone NODE_OPTIONS=--dns-result-order=ipv4first pnpm start
 
 .PHONY: acceptance-frontend-prod-start
 acceptance-frontend-prod-start: ## Start acceptance frontend in production mode
-	RAZZLE_API_PATH=http://127.0.0.1:55001/plone pnpm build && pnpm start:prod
+	RAZZLE_INTERNAL_API_PATH=http://127.0.0.1:55001/plone pnpm build && pnpm start:prod
 
 .PHONY: acceptance-backend-start
 acceptance-backend-start: ## Start backend acceptance server

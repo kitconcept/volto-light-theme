@@ -1,26 +1,17 @@
 import React from 'react';
 import FormFieldWrapper from '@plone/volto/components/manage/Widgets/FormFieldWrapper';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
-import { Button } from '@plone/components';
+import { RadioGroup } from '@plone/components';
+import { Radio } from 'react-aria-components';
 import isEqual from 'lodash/isEqual';
-import find from 'lodash/find';
-
-export type Actions =
-  | {
-      name: string;
-      label: string;
-      style: Record<`--${string}`, string>;
-    }
-  | {
-      name: string;
-      label: string;
-      style: undefined;
-    };
+import type { StyleDefinition } from '@plone/types';
 
 /**
  * A tuple that has an icon in the first element and a i18n string in the second.
  */
 export type ActionInfo = [React.ReactElement<any>, string] | [string, string];
+
+type ActionValue = string | Record<`--${string}`, string>;
 
 export type ButtonsWidgetProps = {
   /**
@@ -31,85 +22,144 @@ export type ButtonsWidgetProps = {
   /**
    * Callback function to handle changes.
    */
-  onChange: Function;
+  onChange: (id: string, value: ActionValue) => void;
 
   /**
    * List of actions available for the widget.
    */
-  actions: Actions[];
+  actions?: Array<StyleDefinition | string>;
 
   /**
    * Map containing additional the information (icon and i18n string) for each action.
    */
-  actionsInfoMap: Record<string, ActionInfo>;
+  actionsInfoMap?: Record<string, ActionInfo>;
 
   /**
    * List of actions to be filtered out. In case that we don't want the default ones
    * we can filter them out.
    */
-  filterActions: string[];
+  filterActions?: string[];
 
   /**
    * Current value of the widget.
    */
-  value: string;
+  value?: ActionValue;
 
   /**
    * Default value of the widget.
    */
-  default: string;
+  default?: ActionValue;
 
   /**
    * Indicates if the widget is disabled.
    */
-  disabled: boolean;
+  disabled?: boolean;
 
   /**
    * Indicates if the widget is disabled (alternative flag for compatibility reasons).
    */
-  isDisabled: boolean;
+  isDisabled?: boolean;
+  [key: string]: any;
+};
+
+type NormalizedAction = {
+  name: string;
+  value: ActionValue;
 };
 
 const ButtonsWidget = (props: ButtonsWidgetProps) => {
-  const { disabled, id, onChange, actions, actionsInfoMap, value, isDisabled } =
-    props;
+  const {
+    disabled,
+    id,
+    onChange,
+    actions = [],
+    actionsInfoMap,
+    value,
+    isDisabled,
+    default: defaultValue,
+  } = props;
+  const normalizedActions = React.useMemo<NormalizedAction[]>(
+    () =>
+      actions.map((action) =>
+        typeof action === 'string'
+          ? { name: action, value: action }
+          : {
+              name: action.name,
+              value: action.style ?? action.name,
+            },
+      ),
+    [actions],
+  );
+
+  const selectedActionName = React.useMemo(
+    () =>
+      normalizedActions.find((action) => isEqual(value, action.value))?.name,
+    [normalizedActions, value],
+  );
+
+  const handleChange = React.useCallback(
+    (selectedName: string) => {
+      const selectedAction = normalizedActions.find(
+        ({ name }) => name === selectedName,
+      );
+
+      if (selectedAction) {
+        onChange(id, selectedAction.value);
+      }
+    },
+    [id, normalizedActions, onChange],
+  );
 
   React.useEffect(() => {
-    if (!props.value && props.default) {
-      props.onChange(
-        props.id,
-        find(actions, { name: props.default })?.style || props.default,
-      );
+    if (!value && defaultValue) {
+      const nextValue =
+        typeof defaultValue === 'string'
+          ? normalizedActions.find(({ name }) => name === defaultValue)
+              ?.value ?? defaultValue
+          : defaultValue;
+
+      onChange(id, nextValue);
     }
-  });
+  }, [defaultValue, id, normalizedActions, onChange, value]);
 
   return (
     <FormFieldWrapper {...props} className="widget">
-      <div className="buttons buttons-widget">
-        {actions.map((action) => (
-          <Button
-            key={action.name}
-            aria-label={actionsInfoMap[action.name][1]}
-            onPress={() => onChange(id, action.style || action.name)}
-            className={
-              isEqual(value, action.style || action.name) ? 'active' : null
-            }
-            isDisabled={disabled || isDisabled}
-          >
-            {typeof actionsInfoMap[action.name][0] === 'string' ? (
-              <div className="image-sizes-text">
-                {actionsInfoMap[action.name][0]}
-              </div>
-            ) : (
-              <Icon
-                name={actionsInfoMap[action.name][0]}
-                title={actionsInfoMap[action.name][1] || action.name}
-                size="24px"
-              />
-            )}
-          </Button>
-        ))}
-      </div>
+      <RadioGroup
+        aria-label={props.title || props.label || id}
+        orientation="horizontal"
+        value={selectedActionName}
+        onChange={handleChange}
+        isDisabled={disabled || isDisabled}
+        className="buttons buttons-widget"
+      >
+        {normalizedActions.map((action) => {
+          const actionInfo = actionsInfoMap?.[action.name];
+          const [iconOrText, ariaLabel] = actionInfo ?? [
+            action.name,
+            action.name,
+          ];
+
+          return (
+            <Radio
+              key={action.name}
+              aria-label={ariaLabel}
+              value={action.name}
+              className="buttons-widget-option"
+            >
+              {typeof iconOrText === 'string' ? (
+                <div className="image-sizes-text">{iconOrText}</div>
+              ) : (
+                <Icon
+                  name={iconOrText}
+                  title={ariaLabel || action.name}
+                  size="24px"
+                  ariaHidden={true}
+                />
+              )}
+            </Radio>
+          );
+        })}
+      </RadioGroup>
     </FormFieldWrapper>
   );
 };

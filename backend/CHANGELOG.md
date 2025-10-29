@@ -2,6 +2,25 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0a2 (2025-10-29)
+
+No significant changes.
+
+
+## 8.0.0a1 (2025-10-27)
+
+
+### Internal:
+
+- gitignore mxdev control files. @sneridagh [#694](https://github.com/kitconcept/volto-light-theme/issues/694)
+
+## 8.0.0a0 (2025-10-24)
+
+
+### Internal:
+
+- Fixed example content for internal link because the exported data was incorrect. @sneridagh [#693](https://github.com/kitconcept/volto-light-theme/issues/693)
+
 ## 7.3.1 (2025-10-08)
 
 

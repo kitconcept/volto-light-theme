@@ -41,7 +41,7 @@ It uses the {file}`/src/components/widgets/ColorPicker` component.
 
 ## `ColorContrastChecker` component
 
-The `ColorContrastChecker` is a component that helps ensure text accessibility by calculating the contrast ratio between two colors. It is based on WCAG (Web Content Accessibility Guidelines) accessibility standards. It can be added in a widget following a color input field to let the user know in real-time of insufficient contrast. It can be found at {file}`/src/components/widgets/ColorContrastChecker`. 
+The `ColorContrastChecker` is a component that helps ensure text accessibility by calculating the contrast ratio between two colors. It is based on WCAG (Web Content Accessibility Guidelines) accessibility standards. It can be added in a widget following a color input field to let the user know in real-time of insufficient contrast. It can be found at {file}`/src/components/widgets/ColorContrastChecker`.
 
 
 ```{image} /_static/colorContrastChecker.png
@@ -89,13 +89,13 @@ The component accepts hex color codes (e.g., #FF0000) and compares the field's v
       colorPair: 'secondary_color',
       default: '#000000',
     },
-    accent_color: { 
-      colorPair: 'accent_foreground_color', 
-      default: '#ecebeb' 
+    accent_color: {
+      colorPair: 'accent_foreground_color',
+      default: '#ecebeb'
     },
-    accent_foreground_color: { 
-      colorPair: 'accent_color', 
-      default: '#ffffff' 
+    accent_foreground_color: {
+      colorPair: 'accent_color',
+      default: '#ffffff'
     },
   };
 ```
@@ -128,8 +128,6 @@ It uses `@plone/components`.
 :alt: blocksObject
 ```
 
-This widget saves its contents in Volto's standard blocks format, using the `blocks_layout` and `blocks` keys.
-This allows the standard serializers and deserializers to work with the object schema fields.
 The shape of the objects it contains is defined by either the `schema` or `schemaName` props.
 
 If `schemaName` is provided, you should register a schema as a utility in the following form.

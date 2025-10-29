@@ -1,0 +1,27 @@
+name: "Cypress check for .only in tests"
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  check-cypress-only:
+    name: "Verify no focused Cypress tests"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout repository"
+        uses: actions/checkout@v4
+
+      - name: "Fail if Cypress tests contain .only"
+        run: |
+          set -euo pipefail
+          matches=$(rg --line-number --color=never --glob '*.cy.*' --glob '*.spec.*' --fixed-strings '.only' frontend/cypress/tests || true)
+          if [ -n "$matches" ]; then
+            echo "Found focused Cypress tests (.only) in frontend/cypress/tests:"
+            echo "$matches"
+            exit 1
+          fi

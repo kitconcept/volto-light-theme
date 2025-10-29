@@ -1,6 +1,108 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 8.0.0a2 (2025-10-29)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Feature
+
+- Refactor `volto-button-block`, transfer all the customizations to the block. @sneridagh [#697](https://github.com/kitconcept/volto-light-theme/pull/697)
+- Refactor `volto-separator-block`, transfer all the customizations to the block. @sneridagh [#698](https://github.com/kitconcept/volto-light-theme/pull/698)
+
+
+
+### Project
+
+
+#### Internal
+
+- Added CI job for checking if there's a `.only` in Cypress tests. @sneridagh [#697](https://github.com/kitconcept/volto-light-theme/pull/697)
+
+
+#### Documentation
+
+- Improve the recommended addons paragraphs. @sneridagh 
+
+
+
+## 8.0.0a1 (2025-10-27)
+
+### Backend
+
+
+#### Internal:
+
+- gitignore mxdev control files. @sneridagh [#694](https://github.com/kitconcept/volto-light-theme/issues/694)
+
+
+
+### Frontend
+
+#### Breaking
+
+- Transfer all custom code related to slider to the add-on. @sneridagh [#694](https://github.com/kitconcept/volto-light-theme/pull/694)
+
+
+
+### Project
+
+
+#### Internal
+
+- Added a CI workflow for checking the consistency of the mrs.developer.json versions and the recommendedAddons.json one. @sneridagh [#694](https://github.com/kitconcept/volto-light-theme/pull/694)
+
+
+#### Documentation
+
+- Added documentation for transfering the slider features to the add-on and the corresponding breaking change notice. @sneridagh [#694](https://github.com/kitconcept/volto-light-theme/pull/694)
+
+
+
+## 8.0.0a0 (2025-10-24)
+
+### Backend
+
+
+#### Internal:
+
+- Fixed example content for internal link because the exported data was incorrect. @sneridagh [#693](https://github.com/kitconcept/volto-light-theme/issues/693)
+
+
+
+### Frontend
+
+#### Breaking
+
+- Use Volto 19a9. @sneridagh
+  Use `@plone/components` 4.0.0 alpha.
+  Recommended add-ons are not included by default as `peerDependencies`.
+
+  Breaking change: Please, check the [upgrade guide](https://volto-light-theme.readthedocs.io/how-to-guides/upgrade-guide.html) for more information. [#693](https://github.com/kitconcept/volto-light-theme/pull/693)
+
+#### Feature
+
+- To reduce the size of the main VLT repository, snapshots for visual regression testing are now stored in a separate repository (kitconcept/vlt-visual-regression). @sneridagh [#690](https://github.com/kitconcept/volto-light-theme/pull/690)
+
+
+
+### Project
+
+
+#### Documentation
+
+- Added documentation for acceptance, a11y, and visual regression tests. @sneridagh [#690](https://github.com/kitconcept/volto-light-theme/pull/690)
+- Added several breaking change notices for VLT 8. @sneridagh [#693](https://github.com/kitconcept/volto-light-theme/pull/693)
+
+
+
 ## 7.3.1 (2025-10-08)
 
 ### Backend

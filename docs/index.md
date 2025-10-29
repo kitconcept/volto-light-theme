@@ -46,6 +46,7 @@ how-to-guides/social-media
 how-to-guides/acceptance-tests
 how-to-guides/visual-regression-tests
 how-to-guides/contributing
+how-to-guides/develop-add-ons
 how-to-guides/releases
 how-to-guides/upgrade-guide
 ```

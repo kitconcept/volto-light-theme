@@ -5,30 +5,14 @@ import ColorSwatch from '../components/Widgets/ColorSwatch';
 import Size from '../components/Widgets/Size';
 import ColorPicker from '../components/Widgets/ColorPicker';
 import ThemeColorSwatch from '../components/Widgets/ThemeColorSwatch';
-import BlocksObject from '../components/Widgets/BlocksObject';
+// import BlocksObject from '../components/Widgets/BlocksObject';
 import ObjectList from '../components/Widgets/ObjectList';
 import { headerActionsSchema } from '../components/Widgets/schema/headerActionsSchema';
 import { footerLogosSchema } from '../components/Widgets/schema/footerLogosSchema';
 import { footerLinksSchema } from '../components/Widgets/schema/footerLinksSchema';
 import { iconLinkListSchema } from '../components/Widgets/schema/iconLinkListSchema';
 import ModalJSONEditor from '../components/Widgets/ModalJSONEditor';
-
-declare module '@plone/types' {
-  export interface WidgetsConfigById {
-    preview_image_link: React.ComponentType;
-  }
-
-  export interface WidgetsConfigByWidget {
-    themeColorSwatch: typeof ColorSwatch;
-    blockWidth: typeof BlockWidth;
-    blockAlignment: typeof BlockAlignment;
-    size: typeof Size;
-    colorPicker: typeof ColorPicker;
-    blocksObject: typeof BlocksObject;
-    image: React.ComponentType;
-    modalJSONEditor: typeof ModalJSONEditor;
-  }
-}
+import AlignWidget from '../components/Widgets/AlignWidget';
 
 export default function install(config: ConfigType) {
   // Color picker widget override - use our own non-semanticUI widget
@@ -40,6 +24,10 @@ export default function install(config: ConfigType) {
   // ObjectList widget override - use our own non-semanticUI widget
   // it uses also dnd-kit for drag and drop
   config.widgets.widget.object_list = ObjectList;
+
+  config.widgets.widget.align = AlignWidget;
+
+  // Force Preview image link widget to the image widget
   config.widgets.id.preview_image_link = config.widgets.widget.image;
 
   config.widgets.widget.blockWidth = BlockWidth;

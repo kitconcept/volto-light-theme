@@ -63,8 +63,8 @@ const defaultRazzleOptions = {
 
 module.exports = {
   stories: [
-    '../packages/**/*.mdx',
-    '../packages/**/*.stories.@(js|jsx|ts|tsx)',
+    '../packages/volto-light-theme/src/**/*.mdx',
+    '../packages/volto-light-theme/src/**/*.stories.@(js|jsx|ts|tsx)',
   ],
   addons: [
     '@storybook/addon-links',

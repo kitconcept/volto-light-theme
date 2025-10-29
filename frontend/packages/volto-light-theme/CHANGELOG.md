@@ -8,6 +8,33 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0-alpha.2 (2025-10-29)
+
+### Feature
+
+- Refactor `volto-button-block`, transfer all the customizations to the block. @sneridagh [#697](https://github.com/kitconcept/volto-light-theme/pull/697)
+- Refactor `volto-separator-block`, transfer all the customizations to the block. @sneridagh [#698](https://github.com/kitconcept/volto-light-theme/pull/698)
+
+## 8.0.0-alpha.1 (2025-10-27)
+
+### Breaking
+
+- Transfer all custom code related to slider to the add-on. @sneridagh [#694](https://github.com/kitconcept/volto-light-theme/pull/694)
+
+## 8.0.0-alpha.0 (2025-10-24)
+
+### Breaking
+
+- Use Volto 19a9. @sneridagh
+  Use `@plone/components` 4.0.0 alpha.
+  Recommended add-ons are not included by default as `peerDependencies`.
+
+  Breaking change: Please, check the [upgrade guide](https://volto-light-theme.readthedocs.io/how-to-guides/upgrade-guide.html) for more information. [#693](https://github.com/kitconcept/volto-light-theme/pull/693)
+
+### Feature
+
+- To reduce the size of the main VLT repository, snapshots for visual regression testing are now stored in a separate repository (kitconcept/vlt-visual-regression). @sneridagh [#690](https://github.com/kitconcept/volto-light-theme/pull/690)
+
 ## 7.3.1 (2025-10-08)
 
 ### Bugfix
