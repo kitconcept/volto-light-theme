@@ -401,10 +401,10 @@ export default function install(config: ConfigType) {
 
   // Check if the separator is present before enhancing it
   if (config.blocks.blocksConfig?.separator?.id) {
-    config.blocks.blocksConfig.separator = {
-      ...config.blocks.blocksConfig.separator,
-      schemaEnhancer: SeparatorStylingSchema,
-    };
+    config.blocks.blocksConfig.separator.schemaEnhancer = composeSchema(
+      config.blocks.blocksConfig.separator.schemaEnhancer,
+      SeparatorStylingSchema,
+    );
   }
 
   // TOC Block
