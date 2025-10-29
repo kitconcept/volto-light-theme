@@ -38,5 +38,6 @@ namespace Cypress {
       skipFailures?: boolean,
     ): Chainable<JQuery<HTMLElement>>;
     checkAccessibility(): Chainable<JQuery<HTMLElement>>;
+    getSlate(): Chainable<JQuery<HTMLElement>>;
   }
 }
