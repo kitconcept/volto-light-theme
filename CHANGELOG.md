@@ -1,6 +1,38 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 8.0.0a2 (2025-10-29)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Feature
+
+- Refactor `volto-button-block`, transfer all the customizations to the block. @sneridagh [#697](https://github.com/kitconcept/volto-light-theme/pull/697)
+- Refactor `volto-separator-block`, transfer all the customizations to the block. @sneridagh [#698](https://github.com/kitconcept/volto-light-theme/pull/698)
+
+
+
+### Project
+
+
+#### Internal
+
+- Added CI job for checking if there's a `.only` in Cypress tests. @sneridagh [#697](https://github.com/kitconcept/volto-light-theme/pull/697)
+
+
+#### Documentation
+
+- Improve the recommended addons paragraphs. @sneridagh 
+
+
+
 ## 8.0.0a1 (2025-10-27)
 
 ### Backend

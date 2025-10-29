@@ -8,6 +8,13 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0-alpha.2 (2025-10-29)
+
+### Feature
+
+- Refactor `volto-button-block`, transfer all the customizations to the block. @sneridagh [#697](https://github.com/kitconcept/volto-light-theme/pull/697)
+- Refactor `volto-separator-block`, transfer all the customizations to the block. @sneridagh [#698](https://github.com/kitconcept/volto-light-theme/pull/698)
+
 ## 8.0.0-alpha.1 (2025-10-27)
 
 ### Breaking
