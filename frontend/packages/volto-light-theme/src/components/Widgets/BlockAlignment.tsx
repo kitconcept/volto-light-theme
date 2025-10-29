@@ -8,6 +8,7 @@ import imageFitSVG from '@plone/volto/icons/image-fit.svg';
 import imageLeftSVG from '@plone/volto/icons/image-left.svg';
 import imageRightSVG from '@plone/volto/icons/image-right.svg';
 import type { IntlShape } from 'react-intl';
+import type { StyleDefinition } from '@plone/types';
 
 const messages = defineMessages({
   left: {
@@ -34,7 +35,7 @@ export const defaultActionsInfo = ({
   center: [imageFitSVG, intl.formatMessage(messages.center)],
 });
 
-const DEFAULT_ACTIONS = [
+const DEFAULT_ACTIONS: StyleDefinition[] = [
   {
     style: {
       '--block-alignment': 'var(--align-left)',
@@ -62,14 +63,13 @@ const BlockAlignmentWidget = (props: ButtonsWidgetProps) => {
   const intl = useIntl();
 
   const { actions = DEFAULT_ACTIONS, actionsInfoMap, filterActions } = props;
-  let filteredActions;
-  if (filterActions) {
-    filteredActions = actions.filter((action) =>
-      filterActions.includes(action.name),
-    );
-  } else {
-    filteredActions = actions;
-  }
+  const filteredActions =
+    filterActions && filterActions.length > 0
+      ? actions.filter((action) => {
+          const actionName = typeof action === 'string' ? action : action.name;
+          return filterActions.includes(actionName);
+        })
+      : actions;
 
   const actionsInfo = {
     ...defaultActionsInfo({ intl }),

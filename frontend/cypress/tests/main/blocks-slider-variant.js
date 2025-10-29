@@ -74,8 +74,12 @@ context('Blocks Acceptance Tests', () => {
       .uncheck({ force: true })
       .should('not.be.checked');
 
-    cy.get('.align-buttons button[aria-label="Right"]').click();
-    cy.get('.align-buttons button[aria-label="Left"]').click();
+    cy.get(
+      '[class*="field-wrapper-flagAlign-"] .buttons button[aria-label="Right"]',
+    ).click();
+    cy.get(
+      '[class*="field-wrapper-flagAlign-"] .buttons button[aria-label="Left"]',
+    ).click();
 
     // add 2nd slider block Override Title, Description Image.
     cy.get('.add-item-button-wrapper button').click();
@@ -164,8 +168,12 @@ context('Blocks Acceptance Tests', () => {
       .uncheck({ force: true })
       .should('not.be.checked');
 
-    cy.get('.align-buttons button[aria-label="Right"]').click();
-    cy.get('.align-buttons button[aria-label="Left"]').click();
+    cy.get(
+      '[class*="field-wrapper-flagAlign-"] .buttons button[aria-label="Right"]',
+    ).click();
+    cy.get(
+      '[class*="field-wrapper-flagAlign-"] .buttons button[aria-label="Left"]',
+    ).click();
 
     // add 2nd slider block Override Title, Description Image.
     cy.get('.add-item-button-wrapper button').click();

@@ -4,6 +4,7 @@ import ButtonsWidget, {
   type ButtonsWidgetProps,
 } from './Buttons';
 import type { IntlShape } from 'react-intl';
+import type { StyleDefinition } from '@plone/types';
 
 const messages = defineMessages({
   s: {
@@ -30,18 +31,21 @@ export const defaultActionsInfo = ({
   l: ['L', intl.formatMessage(messages.l)],
 });
 
-const DEFAULT_ACTIONS = [
+const DEFAULT_ACTIONS: StyleDefinition[] = [
   {
     name: 's',
     label: 'Small',
+    style: undefined,
   },
   {
     name: 'm',
     label: 'Medium',
+    style: undefined,
   },
   {
     name: 'l',
     label: 'Large',
+    style: undefined,
   },
 ];
 
@@ -49,14 +53,13 @@ const SizeWidget = (props: ButtonsWidgetProps) => {
   const intl = useIntl();
 
   const { actions = DEFAULT_ACTIONS, actionsInfoMap, filterActions } = props;
-  let filteredActions;
-  if (filterActions) {
-    filteredActions = actions.filter((action) =>
-      filterActions.includes(action.name),
-    );
-  } else {
-    filteredActions = actions;
-  }
+  const filteredActions =
+    filterActions && filterActions.length > 0
+      ? actions.filter((action) => {
+          const actionName = typeof action === 'string' ? action : action.name;
+          return filterActions.includes(actionName);
+        })
+      : actions;
 
   const actionsInfo = {
     ...defaultActionsInfo({ intl }),
