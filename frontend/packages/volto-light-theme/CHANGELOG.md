@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 7.5.0 (2025-10-31)
+
+### Internal
+
+- Better pinned versions. Use volto-button-block 4.0.0 final. @sneridagh 
+
 ## 7.4.0 (2025-10-28)
 
 ### Feature
