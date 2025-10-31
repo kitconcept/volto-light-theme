@@ -75,11 +75,11 @@ context('Blocks Acceptance Tests', () => {
       .should('not.be.checked');
 
     cy.get(
-      '[class*="field-wrapper-flagAlign-"] .buttons button[aria-label="Right"]',
-    ).click();
+      '[class*="field-wrapper-flagAlign-"] .buttons input[aria-label="Right"]',
+    ).click({ force: true });
     cy.get(
-      '[class*="field-wrapper-flagAlign-"] .buttons button[aria-label="Left"]',
-    ).click();
+      '[class*="field-wrapper-flagAlign-"] .buttons input[aria-label="Left"]',
+    ).click({ force: true });
 
     // add 2nd slider block Override Title, Description Image.
     cy.get('.add-item-button-wrapper button').click();
@@ -169,11 +169,11 @@ context('Blocks Acceptance Tests', () => {
       .should('not.be.checked');
 
     cy.get(
-      '[class*="field-wrapper-flagAlign-"] .buttons button[aria-label="Right"]',
-    ).click();
+      '[class*="field-wrapper-flagAlign-"] .buttons input[aria-label="Right"]',
+    ).click({ force: true });
     cy.get(
-      '[class*="field-wrapper-flagAlign-"] .buttons button[aria-label="Left"]',
-    ).click();
+      '[class*="field-wrapper-flagAlign-"] .buttons input[aria-label="Left"]',
+    ).click({ force: true });
 
     // add 2nd slider block Override Title, Description Image.
     cy.get('.add-item-button-wrapper button').click();

@@ -1,4 +1,4 @@
-context('Block Acceptance Tests', () => {
+context('Slider Block Acceptance Tests', () => {
   beforeEach(() => {
     cy.visit('/');
     cy.viewport('macbook-16');
