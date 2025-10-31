@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 7.5.1 (2025-10-31)
+
+### Bugfix
+
+-  [#705](https://github.com/kitconcept/volto-light-theme/pull/705)
+
 ## 7.5.0 (2025-10-31)
 
 ### Internal
