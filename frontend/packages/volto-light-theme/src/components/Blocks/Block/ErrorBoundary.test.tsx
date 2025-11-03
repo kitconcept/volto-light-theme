@@ -21,12 +21,22 @@ describe('Error boundary', () => {
       throw new Error('Test');
     };
 
-    render(
-      <ErrorBoundary name="test" blocks={null} blocksLayout={null} title={null}>
+    const { container } = render(
+      <ErrorBoundary
+        name="test"
+        block="123"
+        type="hero"
+        blocks={null}
+        blocksLayout={null}
+        title={null}
+      >
         <ThrowError />
       </ErrorBoundary>,
     );
 
-    expect(screen.getByText('<error: test>')).toBeInTheDocument();
+    expect(screen.getByText('Block error:')).toBeInTheDocument();
+    expect(
+      container.querySelector('.block-error-boundary .title'),
+    ).toBeInTheDocument();
   });
 });
