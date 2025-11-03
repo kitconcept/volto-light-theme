@@ -85,8 +85,7 @@ const mapStateToProps = (state: ReduxState): StateProps => ({
   blocksLayout: state.form?.global?.blocks_layout ?? null,
   // Title is used for demonstration purposes
   // If we want to use it in metadata sources, we should connect it to the full state
-  // which I am reluctant to do so because of the cost of the comparisons and the
-  // update frequency
+  // which I am reluctant to do because nowadays the form state can be quite large
   title: state.form?.global?.title ?? null,
 });
 
