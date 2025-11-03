@@ -1,7 +1,6 @@
 import React, { type FC } from 'react';
 import { render, screen } from '@testing-library/react';
 import { afterAll, afterEach, describe, expect, it, vi } from 'vitest';
-import { IntlProvider } from 'react-intl';
 import { ErrorBoundary } from './ErrorBoundary';
 
 describe('Error boundary', () => {
@@ -23,11 +22,16 @@ describe('Error boundary', () => {
     };
 
     const { container } = render(
-      <IntlProvider locale="en" messages={{}}>
-        <ErrorBoundary name="test" block="123" type="hero" properties={null}>
-          <ThrowError />
-        </ErrorBoundary>
-      </IntlProvider>,
+      <ErrorBoundary
+        name="test"
+        block="123"
+        type="hero"
+        blocks={null}
+        blocksLayout={null}
+        title={null}
+      >
+        <ThrowError />
+      </ErrorBoundary>,
     );
 
     expect(screen.getByText('Block error:')).toBeInTheDocument();

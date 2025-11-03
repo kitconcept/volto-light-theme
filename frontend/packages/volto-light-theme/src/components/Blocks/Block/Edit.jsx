@@ -293,7 +293,6 @@ export class Edit extends Component {
                 name={`blockId-${this.props.id}-type-${type}`}
                 block={this.props.block}
                 type={type}
-                properties={this.props.properties}
                 isEdit
               >
                 <Block
