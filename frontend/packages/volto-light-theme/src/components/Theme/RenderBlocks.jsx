@@ -12,6 +12,7 @@ import config from '@plone/volto/registry';
 import ViewDefaultBlock from '@plone/volto/components/manage/Blocks/Block/DefaultView';
 import MaybeWrap from '@plone/volto/components/manage/MaybeWrap/MaybeWrap';
 import RenderEmptyBlock from '@plone/volto/components/theme/View/RenderEmptyBlock';
+import ErrorBoundary from '../Blocks/Block/ErrorBoundary';
 
 import StyleWrapperV3 from './StyleWrapperV3';
 import RenderBlocksV2 from './RenderBlocksV2';
@@ -69,47 +70,55 @@ const RenderBlocks = (props) => {
 
         if (Block) {
           return (
-            <MaybeWrap
-              key={block}
-              condition={blockWrapperTag}
-              as={blockWrapperTag}
+            <ErrorBoundary
+              key={`error-boundary-block-${block}`}
+              name={`blockId-${block}-type-${content[blocksFieldname]?.[block]?.['@type']}`}
+              block={block}
+              type={content[blocksFieldname]?.[block]?.['@type']}
             >
-              {currentBlockModel === 3 ? (
-                <StyleWrapperV3
-                  block={block}
-                  content={content}
-                  data={blockData}
-                  blocksConfig={blocksConfig}
-                >
-                  <Block
-                    id={block}
-                    metadata={metadata}
-                    properties={content}
+              <MaybeWrap
+                key={block}
+                condition={blockWrapperTag}
+                as={blockWrapperTag}
+              >
+                {currentBlockModel === 3 ? (
+                  <StyleWrapperV3
+                    block={block}
+                    content={content}
                     data={blockData}
-                    path={getBaseUrl(location?.pathname || '')}
                     blocksConfig={blocksConfig}
-                  />
-                </StyleWrapperV3>
-              ) : (
-                <StyleWrapper
-                  key={block}
-                  {...props}
-                  id={block}
-                  block={block}
-                  data={blockData}
-                  isContainer={isContainer}
-                >
-                  <Block
+                    isContainer={isContainer}
+                  >
+                    <Block
+                      id={block}
+                      metadata={metadata}
+                      properties={content}
+                      data={blockData}
+                      path={getBaseUrl(location?.pathname || '')}
+                      blocksConfig={blocksConfig}
+                    />
+                  </StyleWrapperV3>
+                ) : (
+                  <StyleWrapper
+                    key={block}
+                    {...props}
                     id={block}
-                    metadata={metadata}
-                    properties={content}
+                    block={block}
                     data={blockData}
-                    path={getBaseUrl(location?.pathname || '')}
-                    blocksConfig={blocksConfig}
-                  />
-                </StyleWrapper>
-              )}
-            </MaybeWrap>
+                    isContainer={isContainer}
+                  >
+                    <Block
+                      id={block}
+                      metadata={metadata}
+                      properties={content}
+                      data={blockData}
+                      path={getBaseUrl(location?.pathname || '')}
+                      blocksConfig={blocksConfig}
+                    />
+                  </StyleWrapper>
+                )}
+              </MaybeWrap>
+            </ErrorBoundary>
           );
         }
 

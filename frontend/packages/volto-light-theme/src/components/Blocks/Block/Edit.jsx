@@ -35,6 +35,7 @@ import {
   buildStyleClassNamesExtenders,
 } from '@plone/volto/helpers/Blocks/Blocks';
 import MaybeWrap from '@plone/volto/components/manage/MaybeWrap/MaybeWrap';
+import ErrorBoundary from './ErrorBoundary';
 
 const messages = defineMessages({
   unknownBlock: {
@@ -287,11 +288,18 @@ export class Edit extends Component {
               as={'div'}
               className="block-inner-container"
             >
-              <Block
-                {...this.props}
-                blockNode={this.blockNode}
-                data={this.props.data}
-              />
+              <ErrorBoundary
+                name={`blockId-${this.props.id}-type-${type}`}
+                block={this.props.block}
+                type={type}
+                isEdit
+              >
+                <Block
+                  {...this.props}
+                  blockNode={this.blockNode}
+                  data={this.props.data}
+                />
+              </ErrorBoundary>
             </MaybeWrap>
 
             {blocksConfig?.[type]?.blockModel === 3 && (
