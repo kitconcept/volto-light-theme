@@ -1,9 +1,10 @@
 import React, { type FC } from 'react';
 import { render, screen } from '@testing-library/react';
+import { afterAll, afterEach, describe, expect, it, vi } from 'vitest';
 import { ErrorBoundary } from './ErrorBoundary';
 
 describe('Error boundary', () => {
-  const consoleErrorSpy = jest
+  const consoleErrorSpy = vi
     .spyOn(console, 'error')
     .mockImplementation(() => undefined);
 
