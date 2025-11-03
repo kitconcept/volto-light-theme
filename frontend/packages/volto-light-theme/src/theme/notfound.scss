@@ -1,0 +1,25 @@
+.page-not-found {
+  .content-area {
+    @include default-container-width();
+    @include adjustMarginsToContainer($default-container-width);
+    .view-wrapper {
+      padding-top: $spacing-xlarge;
+      padding-bottom: $spacing-xlarge;
+    }
+    h1 {
+      margin-bottom: $spacing-large;
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 56px;
+    }
+    p,
+    a {
+      font-size: 24px;
+      font-weight: 300;
+      line-height: 33px;
+    }
+    a {
+      color: $black;
+    }
+  }
+}
