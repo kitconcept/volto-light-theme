@@ -15,7 +15,7 @@ const messages = defineMessages({
   description: {
     id: 'blockErrorBoundaryDescription',
     defaultMessage:
-      'The {type} block with the id {block} has encountered an error.{lineBreak}You can try to undo your changes (via the undo toolbar or pressing {shortcut}), or try to delete the block and add it again.',
+      'The {type} block with the id {block} has encountered an error.{lineBreak}You can try to undo your changes (via the undo toolbar or pressing {shortcut}), or try to delete the block and recreate it again.',
   },
   viewDescription: {
     id: 'blockErrorBoundaryViewDescription',
