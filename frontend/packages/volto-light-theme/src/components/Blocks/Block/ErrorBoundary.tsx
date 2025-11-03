@@ -8,6 +8,7 @@ type OwnProps = {
   name?: string;
   block?: string;
   type?: string;
+  isEdit?: boolean;
   children?: ReactNode;
 };
 
@@ -55,12 +56,12 @@ export class ErrorBoundary extends React.Component<
 
   render(): ReactNode {
     if (this.state.hasError) {
-      // You can render any custom fallback UI
       return (
         <ErrorBoundaryMessage
           name={this.props.name}
           block={this.props.block}
           type={this.props.type}
+          isEdit={this.props.isEdit}
         />
       );
     }
