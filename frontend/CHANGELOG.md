@@ -8,6 +8,22 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0-alpha.3 (2025-11-04)
+
+### Feature
+
+- Recoverable Block Error Boundaries. @sneridagh [#708](https://github.com/kitconcept/volto-light-theme/pull/708)
+- Update `Buttons` widget to the one proposed for the Volto PR: #7555 @sneridagh 
+
+### Bugfix
+
+-  [#705](https://github.com/kitconcept/volto-light-theme/pull/705)
+- Fix Teaser Blocks for Person type email spacing in 4 columns gridBlock @Tishasoumya-02 
+
+### Internal
+
+- Add css for NotFound Page @Tishasoumya-02 
+
 ## 8.0.0-alpha.2 (2025-10-29)
 
 ### Feature
