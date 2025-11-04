@@ -35,14 +35,41 @@ module.exports = {
 };
 ```
 
+```{versionadded} 18.29.1
+```
+```{versionadded} 19.0.0-alpha.10
+```
+
+If you have these versions or later, you can declare it in the `package.json` file of your add-on.
+
+```{code-block} json
+:caption: {file}`packages/<name_of_addon>/package.json`
+{
+  "addons": [
+    // other add-ons installed above the declaration of VLT
+    // VLT _must_ be the last one declared
+    "@kitconcept/volto-light-theme",
+  ],
+  "theme": "@kitconcept/volto-light-theme",
+  //... other configuration ...
+}
+```
+
 ## VLT recommended add-ons
 
 `@kitconcept/volto-light-theme` supports all core blocks and it also supports blocks from selected Volto add-ons.
 The recommended add-ons are listed in the {doc}`../reference/recommended-addons` section.
 
-### Install add-ons as dependencies
+### Install add-ons as dependencies (VLT 8.0.0 and later)
 
-You should install the recommended add-ons as dependencies in your project add-on {file}`packages/<name_of_addon>/package.json`:
+```{versionadded} 8.0.0-alpha.0
+```
+
+VLT 8.0.0 no longer includes the recommended add-ons as `peerDependencies` in {file}`package.json`.
+This means that you will need to install them manually if you want to use them in your project.
+
+You should install the recommended add-ons as dependencies in your project add-on {file}`packages/<name_of_addon>/package.json`.
+Nevertheless, you can choose to install only those you want to use.
 
 ```{code-block} json
 :caption: {file}`packages/<name_of_addon>/package.json`
@@ -69,12 +96,6 @@ You should install the recommended add-ons as dependencies in your project add-o
 ```{warning}
 The above list might be outdated, please refer to that section for the full list of recommended add-ons and their known good versions.
 ```
-
-```{versionadded} 8.0.0-alpha.0
-```
-
-VLT 8.0.0 no longer includes the recommended add-ons as `peerDependencies` in {file}`package.json`.
-This means that you will need to install them manually if you want to use them in your project.
 
 ### Declaring add-ons
 
