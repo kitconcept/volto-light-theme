@@ -8,6 +8,21 @@
 
 <!-- towncrier release notes start -->
 
+## 7.6.0 (2025-11-04)
+
+### Feature
+
+- Recoverable Block Error Boundaries. @sneridagh [#708](https://github.com/kitconcept/volto-light-theme/pull/708)
+
+### Bugfix
+
+- Fix Teaser Blocks for Person type email spacing in 4 columns gridBlock @Tishasoumya-02 
+
+### Internal
+
+- Add css for NotFound Page @Tishasoumya-02 
+- Use Volto 18.29.1. @sneridagh 
+
 ## 7.5.1 (2025-10-31)
 
 ### Bugfix
