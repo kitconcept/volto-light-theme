@@ -416,7 +416,10 @@ export default function install(config: ConfigType) {
   };
 
   // Slider Block
-  config.blocks.blocksConfig.slider.schemaEnhancer = sliderBlockSchemaEnhancer;
+  config.blocks.blocksConfig.slider = {
+    ...config.blocks.blocksConfig.slider,
+    schemaEnhancer: sliderBlockSchemaEnhancer,
+  };
 
   return config;
 }
