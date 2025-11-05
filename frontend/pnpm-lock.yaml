@@ -1619,20 +1619,38 @@ importers:
         version: 18.2.0(react@18.2.0)
     devDependencies:
       '@plone/scripts':
-        specifier: ^3.6.1
-        version: 3.9.0
+        specifier: ^3.10.3
+        version: 3.10.3
       '@plone/types':
         specifier: workspace:*
         version: link:../../../../core/packages/types
+      '@testing-library/cypress':
+        specifier: ^10.1.0
+        version: 10.1.0(cypress@15.3.0)
+      '@testing-library/jest-dom':
+        specifier: ^6.8.0
+        version: 6.8.0
+      '@testing-library/react':
+        specifier: ^16.2.0
+        version: 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@18.3.7(@types/react@18.3.20))(@types/react@18.3.20)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@types/node':
+        specifier: ^24
+        version: 24.9.1
       '@types/react':
-        specifier: ^18.3.12
+        specifier: ^18
         version: 18.3.20
       '@types/react-dom':
-        specifier: ^18.3.1
+        specifier: ^18
         version: 18.3.7(@types/react@18.3.20)
       release-it:
-        specifier: ^19.0.2
+        specifier: ^19.0.3
         version: 19.0.5(@types/node@24.9.1)(magicast@0.3.5)
+      typescript:
+        specifier: ^5.7.3
+        version: 5.9.3
+      vitest:
+        specifier: ^3.1.2
+        version: 3.2.4(@types/debug@4.1.12)(@types/node@24.9.1)(jiti@2.6.1)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.30.2)(sass@1.87.0)(terser@5.39.0)(yaml@2.7.1)
 
   packages/volto-dsgvo-banner/packages/volto-dsgvo-banner:
     dependencies:
@@ -1815,9 +1833,6 @@ importers:
       '@kitconcept/volto-light-theme':
         specifier: workspace:*
         version: link:../../../volto-light-theme
-      '@plone/components':
-        specifier: workspace:*
-        version: link:../../../../core/packages/components
       classnames:
         specifier: 2.5.1
         version: 2.5.1
@@ -1832,22 +1847,43 @@ importers:
         version: 3.12.1(react@18.2.0)
     devDependencies:
       '@plone/scripts':
-        specifier: ^3.6.1
-        version: 3.9.0
+        specifier: ^3.10.3
+        version: 3.10.3
       '@plone/types':
         specifier: workspace:*
         version: link:../../../../core/packages/types
+      '@testing-library/cypress':
+        specifier: ^10.1.0
+        version: 10.1.0(cypress@15.3.0)
+      '@testing-library/jest-dom':
+        specifier: ^6.8.0
+        version: 6.8.0
+      '@testing-library/react':
+        specifier: ^16.2.0
+        version: 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@18.3.7(@types/react@18.3.20))(@types/react@18.3.20)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@types/node':
+        specifier: ^24
+        version: 24.9.1
       '@types/react':
-        specifier: ^18.3.12
+        specifier: ^18
         version: 18.3.20
       '@types/react-dom':
-        specifier: ^18.3.1
+        specifier: ^18
         version: 18.3.7(@types/react@18.3.20)
+      lodash:
+        specifier: 4.17.21
+        version: 4.17.21
+      react-redux:
+        specifier: 8.1.2
+        version: 8.1.2(@types/react-dom@18.3.7(@types/react@18.3.20))(@types/react@18.3.20)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
       release-it:
-        specifier: ^19.0.2
+        specifier: ^19.0.3
         version: 19.0.5(@types/node@24.9.1)(magicast@0.3.5)
+      typescript:
+        specifier: ^5.7.3
+        version: 5.9.3
       vitest:
-        specifier: ^3.2.4
+        specifier: ^3.1.2
         version: 3.2.4(@types/debug@4.1.12)(@types/node@24.9.1)(jiti@2.6.1)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.30.2)(sass@1.87.0)(terser@5.39.0)(yaml@2.7.1)
 
   packages/volto-separator-block/packages/volto-separator-block:
