@@ -8,6 +8,16 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0-alpha.4 (2025-11-05)
+
+### Bugfix
+
+- Fixed slider config, in case slider is not present. @sneridagh 
+
+### Internal
+
+- Updated volto-dsgvo-banner baseline to latest (3.x series). @sneridagh 
+
 ## 8.0.0-alpha.3 (2025-11-04)
 
 ### Feature

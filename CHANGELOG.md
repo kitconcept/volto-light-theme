@@ -1,6 +1,36 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 8.0.0a4 (2025-11-05)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Fixed slider config, in case slider is not present. @sneridagh 
+
+#### Internal
+
+- Updated volto-dsgvo-banner baseline to latest (3.x series). @sneridagh 
+
+
+
+### Project
+
+
+#### Documentation
+
+- Better install section. @sneridagh 
+
+
+
 ## 8.0.0a3 (2025-11-04)
 
 ### Backend
