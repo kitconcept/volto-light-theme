@@ -1290,8 +1290,8 @@ importers:
         specifier: ^4.0.0
         version: 4.0.0(classnames@2.2.6)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)
       '@kitconcept/volto-carousel-block':
-        specifier: ^2.0.0-alpha.3
-        version: 2.0.0-alpha.3(classnames@2.2.6)(embla-carousel@8.6.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: ^2.0.0
+        version: 2.0.0(classnames@2.2.6)(embla-carousel@8.6.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@kitconcept/volto-dsgvo-banner':
         specifier: ^3.0.1
         version: 3.0.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -1306,7 +1306,7 @@ importers:
         version: 1.1.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@kitconcept/volto-logos-block':
         specifier: ^3.0.0
-        version: 3.0.0(3r7grf77irttwhovrdopfywmyi)
+        version: 3.0.0(4n6dimu3u2jnvxgfe2kybrunsm)
       '@kitconcept/volto-separator-block':
         specifier: ^4.2.1
         version: 4.2.1(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(storybook@8.6.12(prettier@3.2.5))
@@ -3145,8 +3145,8 @@ packages:
       react-dom: 18.2.0
       react-intl: ^3.12.1
 
-  '@kitconcept/volto-carousel-block@2.0.0-alpha.3':
-    resolution: {integrity: sha512-z6D4yK5R3CJDn3NQ0qPD/tciFTyr8CtL+ls0qWR7Kfl2iaSaftiQLF4+OVbUQXcaVCf1lowyeg/2A7aPO5cg/g==}
+  '@kitconcept/volto-carousel-block@2.0.0':
+    resolution: {integrity: sha512-J+2ArHeMRGEgfk5ZLwEDVHEQT5V1t+WBBv5M5hrQnav0yfRFtCw5l49aBR4qUSFZQOCcuUTTjj8Zlt2e2SA0fw==}
     peerDependencies:
       react: 18.2.0
       react-dom: 18.2.0
@@ -17222,7 +17222,7 @@ snapshots:
       react-dom: 18.2.0(react@18.2.0)
       react-intl: 3.12.1(react@18.2.0)
 
-  '@kitconcept/volto-carousel-block@2.0.0-alpha.3(classnames@2.2.6)(embla-carousel@8.6.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@kitconcept/volto-carousel-block@2.0.0(classnames@2.2.6)(embla-carousel@8.6.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       '@kitconcept/volto-bm3-compat': 1.0.0-alpha.1(classnames@2.2.6)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       embla-carousel-autoplay: 8.5.2(embla-carousel@8.6.0)
@@ -17256,7 +17256,7 @@ snapshots:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
-  '@kitconcept/volto-light-theme@7.6.0(ulhstbqkyth53yl2gkx2wcvfeu)':
+  '@kitconcept/volto-light-theme@7.6.0(zfy4tt2fcvgsri4nrjxxrwawcu)':
     dependencies:
       '@dnd-kit/core': 6.0.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@dnd-kit/sortable': 7.0.2(@dnd-kit/core@6.0.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)
@@ -17265,12 +17265,12 @@ snapshots:
       '@kitconcept/volto-banner-block': 1.1.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@kitconcept/volto-bm3-compat': 1.0.0-alpha.1(classnames@2.2.6)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@kitconcept/volto-button-block': 4.0.0(classnames@2.2.6)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)
-      '@kitconcept/volto-carousel-block': 2.0.0-alpha.3(classnames@2.2.6)(embla-carousel@8.6.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@kitconcept/volto-carousel-block': 2.0.0(classnames@2.2.6)(embla-carousel@8.6.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@kitconcept/volto-dsgvo-banner': 3.0.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@kitconcept/volto-heading-block': 2.5.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@kitconcept/volto-highlight-block': 4.5.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@kitconcept/volto-introduction-block': 1.1.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@kitconcept/volto-logos-block': 3.0.0(3r7grf77irttwhovrdopfywmyi)
+      '@kitconcept/volto-logos-block': 3.0.0(4n6dimu3u2jnvxgfe2kybrunsm)
       '@kitconcept/volto-separator-block': 4.2.1(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(storybook@8.6.12(prettier@3.2.5))
       '@kitconcept/volto-slider-block': 6.4.1(embla-carousel@8.6.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone/components': 3.0.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.12(prettier@3.2.5))
@@ -17292,9 +17292,9 @@ snapshots:
       - embla-carousel
       - storybook
 
-  '@kitconcept/volto-logos-block@3.0.0(3r7grf77irttwhovrdopfywmyi)':
+  '@kitconcept/volto-logos-block@3.0.0(4n6dimu3u2jnvxgfe2kybrunsm)':
     dependencies:
-      '@kitconcept/volto-light-theme': 7.6.0(ulhstbqkyth53yl2gkx2wcvfeu)
+      '@kitconcept/volto-light-theme': 7.6.0(zfy4tt2fcvgsri4nrjxxrwawcu)
       '@plone/components': 3.0.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.12(prettier@3.2.5))
       classnames: 2.2.6
       react: 18.2.0
