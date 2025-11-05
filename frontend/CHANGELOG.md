@@ -8,6 +8,13 @@
 
 <!-- towncrier release notes start -->
 
+## 7.6.1 (2025-11-05)
+
+### Internal
+
+- Use volto-dsgvo-banner series 3.x
+  Use volto-logos0-block series 3.x final. @sneridagh 
+
 ## 7.6.0 (2025-11-04)
 
 ### Feature

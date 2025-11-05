@@ -1,6 +1,31 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 7.6.1 (2025-11-05)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Internal
+
+- Use volto-dsgvo-banner series 3.x
+  Use volto-logos0-block series 3.x final. @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 7.6.0 (2025-11-04)
 
 ### Backend
