@@ -40,7 +40,12 @@ module.exports = {
 ```{versionadded} 19.0.0-alpha.10
 ```
 
-If you have these versions or later, you can declare it in the `package.json` file of your add-on.
+You can declare the `@kitconcept/volto-light-theme` add-on in the {file}`package.json` file of your add-on for either of the respective major version lines in Volto:
+
+- 18.29.1 or later
+- 19.0.0-alpha.10 or later
+
+The following snippet shows example configuration.
 
 ```{code-block} json
 :caption: {file}`packages/<name_of_addon>/package.json`
@@ -62,13 +67,13 @@ The recommended add-ons are listed in the {doc}`../reference/recommended-addons`
 
 ### Install add-ons as dependencies (VLT 8.0.0 and later)
 
-```{versionadded} 8.0.0-alpha.0
+```{versionremoved} 8.0.0-alpha.0
 ```
 
 VLT 8.0.0 no longer includes the recommended add-ons as `peerDependencies` in {file}`package.json`.
 This means that you will need to install them manually if you want to use them in your project.
 
-You should install the recommended add-ons as dependencies in your project add-on {file}`packages/<name_of_addon>/package.json`.
+You should install the recommended add-ons as dependencies in your project's add-on {file}`packages/<name_of_addon>/package.json`.
 Nevertheless, you can choose to install only those you want to use.
 
 ```{code-block} json
