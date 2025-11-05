@@ -40,7 +40,7 @@ module.exports = {
 ```{versionadded} 19.0.0-alpha.10
 ```
 
-You can declare the `@kitconcept/volto-light-theme` add-on in the {file}`package.json` file of your add-on for either of the respective major version lines in Volto:
+You can declare the `@kitconcept/volto-light-theme` as a theme add-on in the {file}`package.json` file of your add-on for either of the respective major version lines in Volto:
 
 - 18.29.1 or later
 - 19.0.0-alpha.10 or later
