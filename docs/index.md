@@ -71,6 +71,7 @@ reference/widgets
 reference/slots
 reference/image-aspect-ratio
 reference/helpers
+reference/card
 reference/feature-flags
 reference/recommended-addons
 reference/compatibility

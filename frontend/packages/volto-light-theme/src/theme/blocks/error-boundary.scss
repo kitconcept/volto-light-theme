@@ -1,0 +1,11 @@
+.block-error-boundary {
+  padding: 10px;
+  border: 2px dashed red;
+  background-color: #ffe6e6;
+}
+
+.block-error-boundary .title {
+  margin-bottom: 5px;
+  color: red;
+  font-weight: bold;
+}

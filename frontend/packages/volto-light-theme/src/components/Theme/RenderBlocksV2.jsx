@@ -15,6 +15,7 @@ import MaybeWrap from '@plone/volto/components/manage/MaybeWrap/MaybeWrap';
 import RenderEmptyBlock from '@plone/volto/components/theme/View/RenderEmptyBlock';
 import cx from 'classnames';
 import { groupByBGColor } from '../../helpers/grouping';
+import ErrorBoundary from '../Blocks/Block/ErrorBoundary';
 
 const messages = defineMessages({
   unknownBlock: {
@@ -92,29 +93,36 @@ const RenderBlocks = (props) => {
 
               if (Block) {
                 return (
-                  <MaybeWrap
-                    key={block}
-                    condition={blockWrapperTag}
-                    as={blockWrapperTag}
+                  <ErrorBoundary
+                    key={`error-boundary-block-${block}`}
+                    name={`blockId-${block}-type-${content[blocksFieldname]?.[block]?.['@type']}`}
+                    block={block}
+                    type={content[blocksFieldname]?.[block]?.['@type']}
                   >
-                    <StyleWrapper
+                    <MaybeWrap
                       key={block}
-                      {...props}
-                      id={block}
-                      block={block}
-                      data={blockData}
-                      isContainer={isContainer}
+                      condition={blockWrapperTag}
+                      as={blockWrapperTag}
                     >
-                      <Block
+                      <StyleWrapper
+                        key={block}
+                        {...props}
                         id={block}
-                        metadata={metadata}
-                        properties={content}
+                        block={block}
                         data={blockData}
-                        path={getBaseUrl(location?.pathname || '')}
-                        blocksConfig={blocksConfig}
-                      />
-                    </StyleWrapper>
-                  </MaybeWrap>
+                        isContainer={isContainer}
+                      >
+                        <Block
+                          id={block}
+                          metadata={metadata}
+                          properties={content}
+                          data={blockData}
+                          path={getBaseUrl(location?.pathname || '')}
+                          blocksConfig={blocksConfig}
+                        />
+                      </StyleWrapper>
+                    </MaybeWrap>
+                  </ErrorBoundary>
                 );
               }
 
