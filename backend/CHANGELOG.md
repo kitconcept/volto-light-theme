@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0a5 (2025-11-11)
+
+
+### New features:
+
+- Move to native namespaces. @sneridagh 
+
 ## 8.0.0a4 (2025-11-05)
 
 No significant changes.

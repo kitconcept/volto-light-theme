@@ -1,6 +1,41 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 8.0.0a5 (2025-11-11)
+
+### Backend
+
+
+#### New features:
+
+- Move to native namespaces. @sneridagh 
+
+
+
+### Frontend
+
+#### Feature
+
+- Registry color definitions support for ColorSwatch widget. @sneridagh [#723](https://github.com/kitconcept/volto-light-theme/pull/723)
+
+#### Bugfix
+
+- Fixes text in the sticky menu if the text was long enough to wrap. @jnptk [#691](https://github.com/kitconcept/volto-light-theme/pull/691)
+- Identify intranet header with a className in `header header-intranet` div. @sneridagh 
+
+#### Internal
+
+- Normalize all remaining add-ons to be "alpha" versions exclusively for vlt8. @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 8.0.0a4 (2025-11-05)
 
 ### Backend
