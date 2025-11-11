@@ -16,6 +16,7 @@ export default function install(config: ConfigType) {
   // `color_picker` is a terrible name for this widget, it should be `colorSwatch`
   // ToDo: Rename it in Volto 19
   config.widgets.widget.color_picker = ColorSwatch;
+  config.widgets.widget.colorSwatch = ColorSwatch;
 
   // ObjectList widget override - use our own non-semanticUI widget
   // it uses also dnd-kit for drag and drop
