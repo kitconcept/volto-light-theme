@@ -162,7 +162,7 @@ const IntranetHeader = ({ pathname, content }) => {
 
   return (
     <>
-      <div className="header">
+      <div className="header header-intranet">
         <div className="tools-wrapper">
           <LanguageSelector />
 
