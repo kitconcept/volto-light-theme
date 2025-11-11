@@ -1,8 +1,5 @@
 import type { ConfigType } from '@plone/registry';
-import BlockWidth from '../components/Widgets/BlockWidth';
-import BlockAlignment from '../components/Widgets/BlockAlignment';
 import ColorSwatch from '../components/Widgets/ColorSwatch';
-import Size from '../components/Widgets/Size';
 import ColorPicker from '../components/Widgets/ColorPicker';
 import ThemeColorSwatch from '../components/Widgets/ThemeColorSwatch';
 // import BlocksObject from '../components/Widgets/BlocksObject';
@@ -12,7 +9,6 @@ import { footerLogosSchema } from '../components/Widgets/schema/footerLogosSchem
 import { footerLinksSchema } from '../components/Widgets/schema/footerLinksSchema';
 import { iconLinkListSchema } from '../components/Widgets/schema/iconLinkListSchema';
 import ModalJSONEditor from '../components/Widgets/ModalJSONEditor';
-import AlignWidget from '../components/Widgets/AlignWidget';
 
 export default function install(config: ConfigType) {
   // Color picker widget override - use our own non-semanticUI widget
@@ -25,15 +21,10 @@ export default function install(config: ConfigType) {
   // it uses also dnd-kit for drag and drop
   config.widgets.widget.object_list = ObjectList;
 
-  config.widgets.widget.align = AlignWidget;
-
   // Force Preview image link widget to the image widget
   config.widgets.id.preview_image_link = config.widgets.widget.image;
 
-  config.widgets.widget.blockWidth = BlockWidth;
-  config.widgets.widget.blockAlignment = BlockAlignment;
   config.widgets.widget.colorPicker = ColorPicker;
-  config.widgets.widget.size = Size;
   config.widgets.widget.themeColorSwatch = ThemeColorSwatch;
 
   config.widgets.widget.modalJSONEditor = ModalJSONEditor;

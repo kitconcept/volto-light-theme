@@ -89,20 +89,18 @@ span.color-contrast-label {
 }
 
 .color-swatch-widget {
-  .buttons {
-    flex: 1 1 100%;
-    margin: 1rem 0 0.5rem;
-    text-align: center;
+  .react-aria-RadioGroup {
+    gap: 5px;
   }
 
-  button {
+  .color-swatch-option-handler {
     position: relative;
     width: 32px;
     height: 32px;
     padding: 1rem;
     border: 2px solid #ccc;
     border-radius: 100%;
-    margin-right: 0.25rem;
+    cursor: pointer;
 
     &.active {
       border: 2px solid red;
@@ -121,18 +119,9 @@ span.color-contrast-label {
   }
 }
 
-.color-swatch-widget button {
+.color-swatch-widget .color-swatch-option-handler {
   background-color: var(--theme-color);
-}
-
-.color-swatch-widget .button.grey,
-.color-swatch-widget .button.grey.active,
-.color-swatch-widget .ui.grey.button:hover {
-  background-color: var(--theme-color);
-}
-.color-swatch-widget .button.active,
-.color-swatch-widget .button.active:hover {
-  background-color: var(--theme-color);
+  color: var(--theme-foreground-color);
 }
 
 .buttons-widget-option {
