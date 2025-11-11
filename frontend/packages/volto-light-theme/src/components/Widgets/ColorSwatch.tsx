@@ -1,58 +1,96 @@
 import FormFieldWrapper from '@plone/volto/components/manage/Widgets/FormFieldWrapper';
-import { Button } from '@plone/components';
+import { Radio, RadioGroup, Tooltip } from '@plone/components';
 import cx from 'classnames';
+import { Focusable, TooltipTrigger } from 'react-aria-components';
+import type { StyleDefinition } from '@plone/types';
 
-export type Color =
-  | {
-      name: string;
-      label: string;
-      style: Record<`--${string}`, string>;
-    }
-  | {
-      name: string;
-      label: string;
-      style: undefined;
-    };
-
-export type ColorSwatchProps = {
+type BaseColorSwatchProps = {
   id: string;
   title: string;
+  label: string;
   value?: string;
-  default?: string | object;
+  default?: string;
   required?: boolean;
-  missing_value?: unknown;
   className?: string;
   onChange: (id: string, value: any) => void;
-  colors: Color[];
-  themes: Color[];
+  disabled?: boolean;
+  isDisabled?: boolean;
 };
 
+type ColorsOnly = { colors: StyleDefinition[]; themes?: undefined };
+type ThemesOnly = { themes: StyleDefinition[]; colors?: undefined };
+
+export type ColorSwatchProps = BaseColorSwatchProps & (ColorsOnly | ThemesOnly);
+
 const ColorSwatch = (props: ColorSwatchProps) => {
-  const { id, value, onChange } = props;
+  const {
+    id,
+    label,
+    title,
+    value,
+    onChange,
+    disabled,
+    isDisabled,
+    default: defaultValue,
+  } = props;
   const colors = props.themes || props.colors || [];
+
+  const selectedColorName = colors.find(({ name }) => name === value)?.name;
+  const defaultSelectedColorName =
+    !selectedColorName && typeof defaultValue === 'string'
+      ? colors.find(({ name }) => name === defaultValue)?.name
+      : undefined;
+
+  const fallbackColorName =
+    !selectedColorName && !defaultSelectedColorName
+      ? colors.find(({ name }) => name === 'default')?.name || colors[0]?.name
+      : undefined;
+
+  const radioGroupValueProps: {
+    value?: string;
+    defaultValue?: string;
+  } = selectedColorName
+    ? { value: selectedColorName }
+    : defaultSelectedColorName
+      ? { defaultValue: defaultSelectedColorName }
+      : fallbackColorName
+        ? { defaultValue: fallbackColorName }
+        : {};
+
+  const currentColorName =
+    selectedColorName ?? defaultSelectedColorName ?? fallbackColorName;
 
   return colors.length > 0 ? (
     <FormFieldWrapper {...props} className="color-swatch-widget">
-      <div className="buttons">
-        {colors.map((color) => {
-          const colorName = color.name;
-          return (
-            <Button
-              key={id + colorName}
-              className={cx(colorName, { active: value === colorName })}
-              onPress={(e) => {
-                onChange(
-                  id,
-                  colorName === value ? props.missing_value : colorName,
-                );
-              }}
-              value={value}
-              style={color.style}
-              aria-label={color.label}
-            />
-          );
-        })}
-      </div>
+      <RadioGroup
+        aria-label={title || label || id}
+        orientation="horizontal"
+        {...radioGroupValueProps}
+        onChange={(value) => onChange(id, value)}
+        isDisabled={disabled || isDisabled}
+      >
+        {colors.map((color) => (
+          <Radio
+            aria-label={color.label}
+            value={color.name}
+            className="color-swatch-option-wrapper"
+            key={color.name}
+          >
+            <TooltipTrigger delay={120} closeDelay={80} trigger="hover">
+              <Focusable>
+                <div
+                  role="img"
+                  className={cx('color-swatch-option-handler', color.name, {
+                    active: currentColorName === color.name,
+                  })}
+                  style={color.style}
+                ></div>
+              </Focusable>
+              <Tooltip>{color.label}</Tooltip>
+            </TooltipTrigger>
+          </Radio>
+        ))}
+      </RadioGroup>
     </FormFieldWrapper>
   ) : null;
 };

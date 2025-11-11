@@ -4,8 +4,12 @@ import type { StyleDefinition } from '@plone/types';
 import cloneDeep from 'lodash/cloneDeep';
 
 import { composeSchema } from '@plone/volto/helpers/Extensions';
-import { findStyleByName } from '@plone/volto/helpers/Blocks/Blocks';
 import { defaultStylingSchema } from '../components/Blocks/schema';
+import {
+  blockThemesEnhancer,
+  styleDefinitionsEnhancer,
+} from '../helpers/styleDefinitions';
+
 import {
   gridTeaserDisableStylingSchema,
   teaserSchemaEnhancer,
@@ -40,7 +44,6 @@ import { tocBlockSchemaEnhancer } from '../components/Blocks/Toc/schema';
 import { mapsBlockSchemaEnhancer } from '../components/Blocks/Maps/schema';
 import { sliderBlockSchemaEnhancer } from '../components/Blocks/Slider/schema';
 import EventMetadataView from '../components/Blocks/EventMetadata/View';
-import isEmpty from 'lodash/isEmpty';
 
 import SearchBlockViewEvent from '../components/Blocks/EventCalendar/Search/SearchBlockView';
 import SearchBlockEditEvent from '../components/Blocks/EventCalendar/Search/SearchBlockEdit';
@@ -142,36 +145,16 @@ export default function install(config: ConfigType) {
     },
   ];
 
-  function blockThemesEnhancer({ data, container }) {
-    if (!data['@type']) return {};
-    const blockConfig = config.blocks.blocksConfig[data['@type']];
-    if (!blockConfig) return {};
-    const blockStyleDefinitions =
-      // We look up for the blockThemes in the block's config, then in the global config
-      // We keep `colors` for BBB, but `themes` should be used
-      blockConfig.themes || blockConfig.colors || config.blocks.themes || [];
-
-    if (
-      !isEmpty(container) &&
-      container.theme &&
-      (!data.theme || data.theme === 'default')
-    ) {
-      return findStyleByName(blockStyleDefinitions, container.theme);
-    }
-    if (data.theme) {
-      return data.theme
-        ? findStyleByName(blockStyleDefinitions, data.theme)
-        : {};
-    } else {
-      // No theme, return default color
-      return findStyleByName(config.blocks.themes, 'default');
-    }
-  }
-
   config.registerUtility({
     name: 'blockThemesEnhancer',
     type: 'styleWrapperStyleObjectEnhancer',
     method: blockThemesEnhancer,
+  });
+
+  config.registerUtility({
+    name: 'styleDefinitionsEnhancer',
+    type: 'styleWrapperStyleObjectEnhancer',
+    method: styleDefinitionsEnhancer,
   });
 
   // No required blocks except eventMetadata
