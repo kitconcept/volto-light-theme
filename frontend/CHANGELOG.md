@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0-alpha.6 (2025-11-13)
+
+### Bugfix
+
+- Missing @kitconcept/volto-bm3-compat as dep. @sneridagh [#726](https://github.com/kitconcept/volto-light-theme/pull/726)
+
 ## 8.0.0-alpha.5 (2025-11-11)
 
 ### Feature
