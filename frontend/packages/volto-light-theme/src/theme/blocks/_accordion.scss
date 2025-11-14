@@ -26,8 +26,8 @@
       & > span,
       .input-accordion-title {
         @include introduction();
-        color: $darkGrey;
         max-width: calc(100% - 50px); // 100% - svg height
+        color: $darkGrey;
       }
 
       &.active > span {
