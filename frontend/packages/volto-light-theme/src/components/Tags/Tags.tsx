@@ -1,11 +1,17 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import { Container as SemanticContainer } from 'semantic-ui-react';
 import config from '@plone/registry';
 import { useLiveData } from '@kitconcept/volto-light-theme/helpers/useLiveData';
+import type { Content } from '@plone/types';
 
-const Tags = ({ content }) => {
-  const tags = useLiveData(content, undefined, 'subjects') || [];
+type TagsProps = {
+  content?: Content;
+};
+
+const Tags: React.FC<TagsProps> = ({ content }) => {
+  const safeContent = content ?? ({ subjects: [] } as Content);
+  const tags = useLiveData<string[]>(safeContent, undefined, 'subjects') || [];
   const Container =
     config.getComponent({ name: 'Container' }).component || SemanticContainer;
 
@@ -20,28 +26,6 @@ const Tags = ({ content }) => {
       ))}
     </Container>
   );
-};
-
-/**
- * Property types.
- * @property {Object} propTypes Property types.
- * @static
- */
-Tags.propTypes = {
-  content: PropTypes.shape({
-    subjects: PropTypes.arrayOf(PropTypes.string),
-  }),
-};
-
-/**
- * Default properties.
- * @property {Object} defaultProps Default properties.
- * @static
- */
-Tags.defaultProps = {
-  content: {
-    subjects: [],
-  },
 };
 
 export default Tags;
