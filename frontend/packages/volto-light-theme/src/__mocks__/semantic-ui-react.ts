@@ -18,6 +18,7 @@ export const Pagination = createComponent('div');
 export const Dimmer = createComponent('div');
 export const Loader = createComponent('div');
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   Container,
   Segment,
