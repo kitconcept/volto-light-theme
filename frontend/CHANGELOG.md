@@ -8,6 +8,18 @@
 
 <!-- towncrier release notes start -->
 
+## 7.6.2 (2025-11-17)
+
+### Bugfix
+
+- Fixed Accordion arrow/buttons no longer shrink when the title text becomes too long. @jnptk 
+- Fixes text in the sticky menu if the text was long enough to wrap. @jnptk 
+- Identify intranet header with a className in `header header-intranet` div. @sneridagh 
+
+### Internal
+
+- Use `volto-carousel-block` latest version. @sneridagh 
+
 ## 7.6.1 (2025-11-05)
 
 ### Internal
