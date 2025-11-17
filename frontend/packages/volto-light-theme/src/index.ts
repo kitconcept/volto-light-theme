@@ -46,6 +46,10 @@ defineMessages({
     id: 'Simple',
     defaultMessage: 'Simple',
   },
+  EventCalendar: {
+    id: 'Event Calendar',
+    defaultMessage: 'Event Calendar',
+  },
 });
 
 declare module '@plone/types' {

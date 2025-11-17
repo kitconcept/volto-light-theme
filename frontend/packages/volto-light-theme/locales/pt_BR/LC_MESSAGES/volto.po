@@ -52,12 +52,6 @@ msgstr "Facetas avançadas?"
 msgid "Advanced facets are initially hidden and displayed on demand"
 msgstr "Facetas avançadas são inicialmente ocultas e exibidas sob demanda."
 
-#. Default: "Alignment"
-#: components/Blocks/Button/schema
-#: components/Blocks/Separator/schema
-msgid "Alignment"
-msgstr "Alinhamento"
-
 #. Default: "Alt text"
 #: components/Widgets/schema/footerLogosSchema
 #: components/Widgets/schema/iconLinkListSchema
@@ -85,9 +79,7 @@ msgid "Base search query"
 msgstr "Consulta base de busca"
 
 #. Default: "Block Width"
-#: components/Blocks/Button/schema
 #: components/Blocks/Image/schema
-#: components/Blocks/Separator/schema
 msgid "Block Width"
 msgstr "Largura do bloco"
 
@@ -96,20 +88,10 @@ msgstr "Largura do bloco"
 msgid "Breadcrumbs"
 msgstr "Migalhas"
 
-#. Default: "Button text"
-#: components/Blocks/Slider/schema
-msgid "Button text"
-msgstr "Texto do botão"
-
 #. Default: "Cancel search"
 #: components/Blocks/EventCalendar/Search/components/SearchInput
 msgid "Cancel search"
 msgstr "Cancelar busca"
-
-#. Default: "Center"
-#: components/Widgets/BlockAlignment
-msgid "Center"
-msgstr "Centralizado"
 
 #. Default: "Close menu"
 #: components/MobileNavigation/MobileNavigation
@@ -133,12 +115,6 @@ msgstr "A razão de contraste de cor {contrastRatio}:1 pode não ser acessível 
 msgid "Contact"
 msgstr "Contato"
 
-#. Default: "Continue reading"
-#: components/Blocks/Slider/DefaultBody
-#: components/Blocks/Slider/SliderVariants
-msgid "Continue reading"
-msgstr "Continue lendo"
-
 #. Default: "Controls"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Controls"
@@ -148,11 +124,6 @@ msgstr "Controles"
 #: components/Footer/slots/Copyright
 msgid "Copyright"
 msgstr "Copyright"
-
-#. Default: "Default"
-#: components/Widgets/BlockWidth
-msgid "Default"
-msgstr "Padrão"
 
 #. Default: "Descending"
 #: components/Blocks/EventCalendar/Search/components/SortOn
@@ -192,6 +163,11 @@ msgstr "Lista de objetos vazia"
 msgid "End"
 msgstr "Término"
 
+#. Default: "Event Calendar"
+#: index
+msgid "Event Calendar"
+msgstr ""
+
 #. Default: "Facet"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Facet"
@@ -212,20 +188,10 @@ msgstr "Facetas"
 msgid "Field"
 msgstr "Campo"
 
-#. Default: "Align"
-#: components/Blocks/Slider/schema
-msgid "Flag align"
-msgstr "Alinhar"
-
 #. Default: "Follow us:"
 #: components/Footer/slots/FollowUsLogoAndLinks
 msgid "Follow us:"
 msgstr "Acompanhe-nos:"
-
-#. Default: "Full"
-#: components/Widgets/BlockWidth
-msgid "Full"
-msgstr "Completo"
 
 #. Default: "GNU GPL v2 license"
 #: components/Footer/slots/Copyright
@@ -241,11 +207,6 @@ msgstr "Chamada"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Hidden facets will still filter the results if proper parameters are passed in URLs"
 msgstr "Facetas ocultas ainda filtrarão os resultados se parâmetros adequados forem passados nas URLs."
-
-#. Default: "Hide Button"
-#: components/Blocks/Slider/schema
-msgid "Hide Button"
-msgstr "Ocultar botão"
 
 #. Default: "Hide facet?"
 #: components/Blocks/EventCalendar/Search/schema
@@ -280,11 +241,6 @@ msgstr "Imagem"
 msgid "Invalid Block"
 msgstr "Bloco inválido"
 
-#. Default: "Invalid Slider source"
-#: components/Blocks/Slider/Data
-msgid "Invalid Slider source"
-msgstr ""
-
 #. Default: "Item"
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Item"
@@ -294,21 +250,6 @@ msgstr "Item"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Label"
 msgstr "Rótulo"
-
-#. Default: "Large"
-#: components/Widgets/Size
-msgid "Large"
-msgstr "Grande"
-
-#. Default: "Layout"
-#: components/Widgets/BlockWidth
-msgid "Layout"
-msgstr "Layout"
-
-#. Default: "Left"
-#: components/Widgets/BlockAlignment
-msgid "Left"
-msgstr "Esquerda"
 
 #. Default: "Link"
 #: components/Widgets/schema/footerLinksSchema
@@ -355,11 +296,6 @@ msgstr "Imagem da logo"
 msgid "Logo of"
 msgstr "Logo de"
 
-#. Default: "Medium"
-#: components/Widgets/Size
-msgid "Medium"
-msgstr "Médio"
-
 #. Default: "Move down"
 #: components/Blocks/Block/Edit
 msgid "Move down"
@@ -374,11 +310,6 @@ msgstr "Mover para cima"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Multiple choices?"
 msgstr ""
-
-#. Default: "Narrow"
-#: components/Widgets/BlockWidth
-msgid "Narrow"
-msgstr "Estreito"
 
 #. Default: "Next Page"
 #: components/Blocks/Listing/ListingBody
@@ -441,9 +372,6 @@ msgid "Phone"
 msgstr "Telefone"
 
 #. Default: "Please choose an existing content as source for this element"
-#: components/Blocks/Slider/DefaultBody
-#: components/Blocks/Slider/SliderVariants
-#: components/Blocks/Slider/View
 #: components/Blocks/Teaser/Body
 msgid "Please choose an existing content as source for this element"
 msgstr "Por favor, escolha um conteúdo existente como fonte para esse elemento"
@@ -468,11 +396,6 @@ msgstr "Imprensa"
 msgid "Previous Page"
 msgstr "Página anterior"
 
-#. Default: "Refresh source content"
-#: components/Blocks/Slider/Data
-msgid "Refresh source content"
-msgstr ""
-
 #. Default: "Register"
 #: components/Anontools/Anontools
 msgid "Register"
@@ -484,20 +407,10 @@ msgstr "Criar conta"
 msgid "Remove item"
 msgstr "Remover item"
 
-#. Default: "Reset the block"
-#: components/Blocks/Slider/Data
-msgid "Reset the block"
-msgstr ""
-
 #. Default: "Result"
 #: components/Blocks/Listing/ListingBody
 msgid "Result"
 msgstr "Resultado"
-
-#. Default: "Right"
-#: components/Widgets/BlockAlignment
-msgid "Right"
-msgstr "Direita"
 
 #. Default: "Room"
 #: components/Summary/PersonSummary
@@ -556,11 +469,6 @@ msgstr "Busca por"
 msgid "Section title"
 msgstr "Título da seção"
 
-#. Default: "Short line"
-#: components/Blocks/Separator/schema
-msgid "Short line"
-msgstr "Linha curta"
-
 #. Default: "Show item"
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
@@ -597,11 +505,6 @@ msgstr ""
 msgid "Sitemap"
 msgstr "Mapa do Site"
 
-#. Default: "Small"
-#: components/Widgets/Size
-msgid "Small"
-msgstr "Pequeno"
-
 #. Default: "Sort on"
 #: components/Blocks/EventCalendar/Search/components/SortOn
 msgid "Sort on"
@@ -622,12 +525,6 @@ msgstr "Ordenado por"
 msgid "Sorting"
 msgstr "Ordenação"
 
-#. Default: "Source"
-#: components/Blocks/Slider/DefaultBody
-#: components/Blocks/Slider/SliderVariants
-msgid "Source"
-msgstr "Fonte"
-
 #. Default: "Sponsored by:"
 #: components/Footer/slots/FollowUsLogoAndLinks
 msgid "Sponsored by:"
@@ -637,11 +534,6 @@ msgstr "Apoiado por:"
 #: components/Blocks/EventMetadata/View
 msgid "Start"
 msgstr "Início"
-
-#. Default: "Switch to"
-#: components/LanguageSelector/LanguageSelector
-msgid "Switch to"
-msgstr "Alternar para"
 
 #. Default: "Target"
 #: components/Widgets/schema/footerLinksSchema
@@ -687,11 +579,35 @@ msgstr "Site"
 msgid "availableViews"
 msgstr "Visões disponíveis"
 
+#. Default: "The {type} block with the id {block} has encountered an error.{lineBreak}You can try to undo your changes (via the undo toolbar or pressing {shortcut}), or try to delete the block and recreate it again."
+#: components/Blocks/Block/ErrorBoundaryMessage
+msgid "blockErrorBoundaryDescription"
+msgstr ""
+
+#. Default: "Block error:"
+#: components/Blocks/Block/ErrorBoundaryMessage
+msgid "blockErrorBoundaryTitle"
+msgstr ""
+
+#. Default: "The {type} block with the id {block} errored and cannot be displayed.{lineBreak}Please contact the site administrator for further assistance."
+#: components/Blocks/Block/ErrorBoundaryMessage
+msgid "blockErrorBoundaryViewDescription"
+msgstr ""
+
 #. Default: "Delete"
 #: components/Blocks/Block/Edit
-#: components/Blocks/Block/EditBlockWrapper
 msgid "delete"
 msgstr "Excluir"
+
+#. Default: "delete {type} block"
+#: components/Blocks/Block/EditBlockWrapper
+msgid "delete_block"
+msgstr ""
+
+#. Default: "drag {type} block"
+#: components/Blocks/Block/EditBlockWrapper
+msgid "drag_block"
+msgstr ""
 
 #. Default: "Clear image"
 #: components/Blocks/Image/ImageSidebar
@@ -707,12 +623,6 @@ msgstr "Preview da imagem"
 #: components/Blocks/Listing/ListingBody
 msgid "loading"
 msgstr "carregando"
-
-#. Default: "More info"
-#: components/Blocks/Slider/DefaultBody
-#: components/Blocks/Slider/SliderVariants
-msgid "moreInfo"
-msgstr "Mais informações"
 
 #. Default: "of"
 #: components/Blocks/Listing/ListingBody
