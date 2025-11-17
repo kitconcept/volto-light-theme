@@ -65,6 +65,7 @@ declare module '@plone/types' {
   }
   export interface BlockConfigBase {
     themes?: StyleDefinition[];
+    defaultTheme: string;
     allowedBlocks?: string[];
     allowed_headline_tags?: string[][];
     unwantedButtons?: string[];
