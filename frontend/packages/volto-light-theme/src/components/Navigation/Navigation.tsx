@@ -1,12 +1,9 @@
-// SemanticUI-free pre-@plone/components
-
 import React, { useState, useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
 import isEmpty from 'lodash/isEmpty';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import doesNodeContainClick from '../../helpers/doesNodeContainClick';
-import { useIntl, defineMessages, injectIntl } from 'react-intl';
+import { useIntl, defineMessages } from 'react-intl';
 import cx from 'classnames';
 import { getBaseUrl } from '@plone/volto/helpers/Url/Url';
 import { hasApiExpander } from '@plone/volto/helpers/Utils/Utils';
@@ -28,31 +25,87 @@ const messages = defineMessages({
   },
 });
 
-const Navigation = ({ pathname }) => {
-  const [desktopMenuOpen, setDesktopMenuOpen] = useState(null);
-  const [currentOpenIndex, setCurrentOpenIndex] = useState(null);
-  const navigation = useRef(null);
+type NavigationItem = {
+  title: string;
+  nav_title?: string;
+  url: string;
+  items?: NavigationItem[];
+};
+
+type NavigationProps = {
+  pathname: string;
+};
+
+type HeaderSettings = {
+  has_fat_menu?: boolean;
+};
+
+type RootState = {
+  content: {
+    data?: {
+      '@components'?: {
+        inherit?: {
+          'voltolighttheme.header'?: {
+            data?: HeaderSettings;
+          };
+        };
+      };
+    };
+  };
+  form: {
+    global?: {
+      has_fat_menu?: boolean;
+      [key: string]: unknown;
+    };
+  };
+  intl: {
+    locale: string;
+  };
+  userSession: {
+    token?: string | null;
+  };
+  navigation: {
+    items: NavigationItem[];
+  };
+};
+
+const Navigation = ({ pathname }: NavigationProps) => {
+  const [desktopMenuOpen, setDesktopMenuOpen] = useState<number | null>(null);
+  const [currentOpenIndex, setCurrentOpenIndex] = useState<number | null>(null);
+  const navigation = useRef<HTMLElement | null>(null);
   const dispatch = useDispatch();
   const intl = useIntl();
   const headerSettings = useSelector(
-    (state) =>
+    (state: RootState) =>
       state.content.data?.['@components']?.inherit?.['voltolighttheme.header']
         ?.data,
   );
-  const formData = useSelector((state) => state.form.global);
+  const formData = useSelector((state: RootState) => state.form.global);
 
-  const has_fat_menu =
-    !isEmpty(formData) && formData?.has_fat_menu
+  const hasFatMenuSetting =
+    !isEmpty(formData) && formData?.has_fat_menu !== undefined
       ? formData.has_fat_menu
       : headerSettings?.has_fat_menu;
+  const hasFatMenu = hasFatMenuSetting ?? false;
 
-  const lang = useSelector((state) => state.intl.locale);
-  const token = useSelector((state) => state.userSession.token, shallowEqual);
-  const items = useSelector((state) => state.navigation.items, shallowEqual);
+  const lang = useSelector((state: RootState) => state.intl.locale);
+  const token = useSelector(
+    (state: RootState) => state.userSession.token,
+    shallowEqual,
+  );
+  const items = useSelector(
+    (state: RootState) => state.navigation.items,
+    shallowEqual,
+  );
+
+  const closeMenu = () => {
+    setDesktopMenuOpen(null);
+    setCurrentOpenIndex(null);
+  };
 
   useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (navigation.current && doesNodeContainClick(navigation.current, e))
+    const handleClickOutside = (event: MouseEvent) => {
+      if (navigation.current && doesNodeContainClick(navigation.current, event))
         return;
       closeMenu();
     };
@@ -70,11 +123,11 @@ const Navigation = ({ pathname }) => {
     }
   }, [pathname, token, dispatch]);
 
-  const isActive = (url) => {
+  const isActive = (url: string) => {
     return (url === '' && pathname === '/') || (url !== '' && pathname === url);
   };
 
-  const openMenu = (index) => {
+  const openMenu = (index: number) => {
     if (index === currentOpenIndex) {
       setDesktopMenuOpen(null);
       setCurrentOpenIndex(null);
@@ -84,14 +137,9 @@ const Navigation = ({ pathname }) => {
     }
   };
 
-  const closeMenu = (index) => {
-    setDesktopMenuOpen(null);
-    setCurrentOpenIndex(null);
-  };
-
   useEffect(() => {
-    const handleEsc = (event) => {
-      if (event.keyCode === 27) {
+    const handleEsc = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' || event.keyCode === 27) {
         closeMenu();
       }
     };
@@ -113,7 +161,7 @@ const Navigation = ({ pathname }) => {
         <ul className="desktop-menu">
           {items.map((item, index) => (
             <li key={item.url}>
-              {has_fat_menu ? (
+              {hasFatMenu ? (
                 <>
                   <button
                     onClick={() => openMenu(index)}
@@ -123,7 +171,7 @@ const Navigation = ({ pathname }) => {
                         (!desktopMenuOpen && pathname === item.url),
                     })}
                     aria-label={intl.formatMessage(messages.openFatMenu)}
-                    aria-expanded={desktopMenuOpen === index ? true : false}
+                    aria-expanded={desktopMenuOpen === index}
                   >
                     {item.title}
                   </button>
@@ -212,12 +260,4 @@ const Navigation = ({ pathname }) => {
   );
 };
 
-Navigation.propTypes = {
-  pathname: PropTypes.string.isRequired,
-};
-
-Navigation.defaultProps = {
-  token: null,
-};
-
-export default injectIntl(Navigation);
+export default Navigation;
