@@ -1,9 +1,9 @@
-/**
- * Image/video caption component.
- * @module components/Image/Caption
- */
-import React from 'react';
-import PropTypes from 'prop-types';
+type CaptionProps = {
+  as?: keyof JSX.IntrinsicElements;
+  title?: string;
+  description?: string;
+  credit?: string;
+};
 
 /**
  * Image/video caption component class.
@@ -14,10 +14,14 @@ import PropTypes from 'prop-types';
  * @params {object} credit Credit text.
  * @returns {string} Markup of the component.
  */
-const Caption = ({ as = 'figcaption', title, description, credit }) => {
-  const As = as;
+const Caption = ({
+  as: Tag = 'figcaption',
+  title,
+  description,
+  credit,
+}: CaptionProps) => {
   return (
-    <As>
+    <Tag>
       {title && <strong className="title">{title}</strong>}
       {description && (
         <div className="description">
@@ -27,19 +31,8 @@ const Caption = ({ as = 'figcaption', title, description, credit }) => {
         </div>
       )}
       {credit && <p className="credits">{credit}</p>}
-    </As>
+    </Tag>
   );
-};
-
-/**
- * Property types.
- * @property {Object} propTypes Property types.
- * @static
- */
-Caption.propTypes = {
-  credit: PropTypes.string,
-  title: PropTypes.string,
-  description: PropTypes.string,
 };
 
 export default Caption;

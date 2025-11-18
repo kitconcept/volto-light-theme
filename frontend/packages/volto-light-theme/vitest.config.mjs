@@ -10,6 +10,10 @@ export default defineConfig({
       // Alias for absolute imports
       '@kitconcept/volto-light-theme': path.resolve(__dirname, './src'),
       '@kitconcept/volto-light-theme/': path.resolve(__dirname, './src/'),
+      'semantic-ui-react': path.resolve(
+        __dirname,
+        './src/__mocks__/semantic-ui-react.ts',
+      ),
     },
   },
   server: {
