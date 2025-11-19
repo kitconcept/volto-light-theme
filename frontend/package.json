@@ -78,8 +78,7 @@
       "@types/node": "^24"
     },
     "ignoredBuiltDependencies": [
-      "@parcel/watcher",
-      "why"
+      "@parcel/watcher"
     ],
     "onlyBuiltDependencies": [
       "core-js",
