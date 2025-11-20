@@ -11,6 +11,7 @@ const addons = [
   '@kitconcept/volto-separator-block',
   '@kitconcept/volto-slider-block',
   '@kitconcept/volto-banner-block',
+  'volto-calendar-block',
   '@kitconcept/volto-light-theme',
 ];
 const theme = '@kitconcept/volto-light-theme';

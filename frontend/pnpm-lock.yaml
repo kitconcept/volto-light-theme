@@ -63,6 +63,9 @@ importers:
       '@plonegovbr/volto-social-media':
         specifier: ^2.0.0-alpha.10
         version: 2.0.0-alpha.10(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.12(prettier@3.2.5))
+      volto-calendar-block:
+        specifier: ^1.0.0-alpha.1
+        version: 1.0.0-alpha.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
     devDependencies:
       '@cypress/skip-test':
         specifier: 2.6.1
@@ -4203,6 +4206,15 @@ packages:
 
   '@plone/components@3.0.2':
     resolution: {integrity: sha512-BLxq4HMcmGux+CD6nOyl0YOqpTiB4yz/h4y/dcGSH3EwhxB3vaEq/Vcoss4qlzHJFfguemNPehJPGP8tq/Z6ww==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+
+  '@plone/components@4.0.0-alpha.4':
+    resolution: {integrity: sha512-uJNGveBjTDgSqaUX2Az8S8OVzG6Aeh3mSF9PMpkqRp87GRV8Hq3WXuVS0ZY0SLSBm0GIXDDZm4HXKDLMRUc+MQ==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -14986,6 +14998,12 @@ packages:
       jsdom:
         optional: true
 
+  volto-calendar-block@1.0.0-alpha.1:
+    resolution: {integrity: sha512-h6inay3E17lSW0b2SwET472Z5lQeuwzGu9WL/GpiLFeB4DjYo3vdeFJ+dK2E8PSRIZGZacIfPXkmUns/DkxDzg==}
+    peerDependencies:
+      react: ^18.2.0
+      react-dom: ^18.2.0
+
   vue-template-compiler@2.7.16:
     resolution: {integrity: sha512-AYbUWAJHLGGQM7+cNTELw+KsOG9nl2CnSv467WobS5Cv9uk3wFcnr1Etsz2sEIHEZvw1U+o9mRlEO6QbZvUPGQ==}
 
@@ -18012,6 +18030,23 @@ snapshots:
       react-dom: 18.2.0(react@18.2.0)
     transitivePeerDependencies:
       - storybook
+
+  '@plone/components@4.0.0-alpha.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+    dependencies:
+      '@internationalized/date': 3.10.0
+      '@react-aria/utils': 3.31.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@react-spectrum/utils': 3.12.9(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      clsx: 2.1.1
+      react: 18.2.0
+      react-aria: 3.44.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      react-aria-components: 1.13.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      react-stately: 3.42.0(react@18.2.0)
+      tailwind-merge: 3.3.1
+      tailwind-variants: 1.0.0(tailwindcss@4.1.15)
+      tailwindcss: 4.1.15
+      tailwindcss-animate: 1.0.7(tailwindcss@4.1.15)
+    optionalDependencies:
+      react-dom: 18.2.0(react@18.2.0)
 
   '@plone/scripts@3.10.3':
     dependencies:
@@ -32134,6 +32169,13 @@ snapshots:
       - terser
       - tsx
       - yaml
+
+  volto-calendar-block@1.0.0-alpha.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+    dependencies:
+      '@plone/components': 4.0.0-alpha.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      react: 18.2.0
+      react-aria-components: 1.13.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      react-dom: 18.2.0(react@18.2.0)
 
   vue-template-compiler@2.7.16:
     dependencies:
