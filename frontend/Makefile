@@ -55,7 +55,7 @@ status:  ## Show status
 .PHONY: check-versions
 check-versions:  ## Show check-versions
 	@echo "Checking versions"
-	node ../check-recommended-addons.js
+	cd packages/volto-light-theme && pnpm exec vitest run src/internalChecks.test.ts
 
 .PHONY: start
 start: ## Starts Volto, allowing reloading of the add-on during development
