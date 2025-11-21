@@ -67,7 +67,7 @@
     "@kitconcept/volto-logos-block": "workspace:*",
     "@kitconcept/volto-separator-block": "workspace:*",
     "@kitconcept/volto-slider-block": "workspace:*",
-    "@plonegovbr/volto-social-media": "^2.0.0-alpha.10"
+    "@plonegovbr/volto-social-media": "^3.0.0-alpha.0"
   },
   "pnpm": {
     "overrides": {
@@ -78,8 +78,7 @@
       "@types/node": "^24"
     },
     "ignoredBuiltDependencies": [
-      "@parcel/watcher",
-      "why"
+      "@parcel/watcher"
     ],
     "onlyBuiltDependencies": [
       "core-js",
