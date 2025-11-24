@@ -34,7 +34,7 @@ const SummaryTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
               name: 'Summary',
               dependencies: [item['@type']],
             }).component || DefaultSummary;
-
+          const showLink = !Summary.hideLink && !isEditMode;
           const ItemBodyTemplate = (props) =>
             CustomItemBodyTemplate ? (
               <CustomItemBodyTemplate item={item} />
@@ -58,7 +58,7 @@ const SummaryTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
               })}
               key={item['@id']}
             >
-              <Card href={!isEditMode ? item['@id'] : null}>
+              <Card item={showLink ? item : null}>
                 <ItemBodyTemplate item={item} />
               </Card>
             </div>

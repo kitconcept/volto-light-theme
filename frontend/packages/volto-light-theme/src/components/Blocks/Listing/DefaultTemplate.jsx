@@ -31,6 +31,7 @@ const DefaultTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
               name: 'Summary',
               dependencies: [item['@type']],
             }).component || DefaultSummary;
+          const showLink = !Summary.hideLink && !isEditMode;
           return (
             <div
               className={cx('listing-item', {
@@ -38,7 +39,7 @@ const DefaultTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
               })}
               key={item['@id']}
             >
-              <Card href={!isEditMode ? item['@id'] : null}>
+              <Card item={showLink ? item : null}>
                 <Card.Summary>
                   <Summary item={item} HeadingTag="h2" />
                 </Card.Summary>

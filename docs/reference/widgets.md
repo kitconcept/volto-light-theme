@@ -11,23 +11,133 @@ myst:
 
 Volto Light Theme provides a set of widgets that provide structural features.
 
+## `colorSwatch`
+
+`colorSwatch` lets editors pick from a curated palette instead of entering free-form values.
+It renders the {file}`/src/components/widgets/ColorSwatch` component and expects a `colors` prop with the available swatches.
+Each entry follows the `StyleDefinition` type from `@plone/types`:
+
+```ts
+export type StyleDefinition =
+  | {
+      name: string;
+      label: string;
+      style: Record<`--${string}`, string>;
+    }
+  | {
+      name: string;
+      label: string;
+      style: undefined;
+    };
+```
+
+Always provide a `default` option so the field has a predictable fallback.
+Here is a schema snippet that wires the widget to a styling field:
+
+```ts
+export const ButtonStylingSchema = ({ schema, formData, intl }) => {
+  const colors = [
+    {
+      style: {
+        '--theme-color': '#fff',
+        '--theme-high-contrast-color': '#ecebeb',
+        '--theme-foreground-color': '#000',
+        '--theme-low-contrast-foreground-color': '#555555',
+      },
+      name: 'default',
+      label: 'Default',
+    },
+    {
+      style: {
+        '--theme-color': '#ecebeb',
+        '--theme-high-contrast-color': '#fff',
+        '--theme-foreground-color': '#000',
+        '--theme-low-contrast-foreground-color': '#555555',
+      },
+      name: 'grey',
+      label: 'Grey',
+    },
+  ];
+
+  schema.properties.styles.schema.properties.myColorField = {
+    title: 'Background color',
+    description: 'Select the background color for the block',
+    widget: 'colorSwatch',
+    default: 'default',
+    colors
+  }
+
+  return schema;
+}
+```
+
+```{image} /_static/colorSwatch.png
+:alt: colorSwatch widget
+```
+
+The widget stores the chosen color's `name` (token).
+`StyleWrapper` adds that token as a CSS class on the block, so you can target it in stylesheets.
+If you also want the corresponding CSS custom properties injected inline, register a `styleFieldDefinition` utility for the field name used in the schema:
+
+```ts
+  const colors = [
+    {
+      style: {
+        '--theme-color': '#fff',
+        '--theme-high-contrast-color': '#ecebeb',
+        '--theme-foreground-color': '#000',
+        '--theme-low-contrast-foreground-color': '#555555',
+      },
+      name: 'default',
+      label: 'Default',
+    },
+    {
+      style: {
+        '--theme-color': '#ecebeb',
+        '--theme-high-contrast-color': '#fff',
+        '--theme-foreground-color': '#000',
+        '--theme-low-contrast-foreground-color': '#555555',
+      },
+      name: 'grey',
+      label: 'Grey',
+    },
+  ];
+
+  config.registerUtility({
+    name: 'myColorField',
+    type: 'styleFieldDefinition',
+    method: (props: { data: any; container: any }) => colors
+  });
+```
+
+```{note}
+This is the recommended way to use this widget, as it allows you to decouple the styles from the CSS and have a single source of truth for the color definitions.
+```
+
 ## `themeColorSwatch`
 
 The `themeColorSwatch` widget is used for choosing a configured theme color, which is stored in `config.blocks.themes`.
-It uses the {file}`/src/components/widgets/ThemeColorSwatch` component.
+It uses the {file}`/src/components/widgets/ThemeColorSwatch` component which is a wrapper around the `ColorSwatch` component.
 
 ```{image} /_static/themeColorSwatch.png
 :alt: themeColorSwatch
 ```
 
+```{note}
+This widget is a specialized version of the `colorSwatch` widget that automatically pulls the color definitions from the global theme configuration.
+It is not supposed to be used in other contexts.
+It can be useful for non-VLT-based projects that want to have a consistent set of theme colors across multiple blocks or components.
+```
+
 ## `color_picker` (Volto widget override)
 
-The `color_picker` widget is a Semantic UI-free version that overrides the Volto `color_picker` widget.
+The `color_picker` widget is drop-in replacement, Semantic UI-free version that overrides Volto's `color_picker` widget.
 Given an array of color definitions, it displays colors that editors can choose.
 It uses the {file}`/src/components/widgets/ColorSwatch` component.
 
-```{image} /_static/color_picker.png
-:alt: color_picker
+```{note}
+This widget name is misleading, as it does not provide a color picker functionality, but rather a color swatch selection.
+It might be renamed to `colorSwatch` in future versions of Volto.
 ```
 
 ## `colorPicker`
@@ -41,7 +151,7 @@ It uses the {file}`/src/components/widgets/ColorPicker` component.
 
 ## `ColorContrastChecker` component
 
-The `ColorContrastChecker` is a component that helps ensure text accessibility by calculating the contrast ratio between two colors. It is based on WCAG (Web Content Accessibility Guidelines) accessibility standards. It can be added in a widget following a color input field to let the user know in real-time of insufficient contrast. It can be found at {file}`/src/components/widgets/ColorContrastChecker`. 
+The `ColorContrastChecker` is a component that helps ensure text accessibility by calculating the contrast ratio between two colors. It is based on WCAG (Web Content Accessibility Guidelines) accessibility standards. It can be added in a widget following a color input field to let the user know in real-time of insufficient contrast. It can be found at {file}`/src/components/widgets/ColorContrastChecker`.
 
 
 ```{image} /_static/colorContrastChecker.png
@@ -89,13 +199,13 @@ The component accepts hex color codes (e.g., #FF0000) and compares the field's v
       colorPair: 'secondary_color',
       default: '#000000',
     },
-    accent_color: { 
-      colorPair: 'accent_foreground_color', 
-      default: '#ecebeb' 
+    accent_color: {
+      colorPair: 'accent_foreground_color',
+      default: '#ecebeb'
     },
-    accent_foreground_color: { 
-      colorPair: 'accent_color', 
-      default: '#ffffff' 
+    accent_foreground_color: {
+      colorPair: 'accent_color',
+      default: '#ffffff'
     },
   };
 ```
@@ -128,8 +238,6 @@ It uses `@plone/components`.
 :alt: blocksObject
 ```
 
-This widget saves its contents in Volto's standard blocks format, using the `blocks_layout` and `blocks` keys.
-This allows the standard serializers and deserializers to work with the object schema fields.
 The shape of the objects it contains is defined by either the `schema` or `schemaName` props.
 
 If `schemaName` is provided, you should register a schema as a utility in the following form.
@@ -235,6 +343,11 @@ export type BlocksObjectWidgetProps = {
 It's worth mentioning that the `activeObject` and `setActiveObject` props allow you to set and synchronize the active and uncollapsed object of the widget from the outside.
 
 ## Buttons component
+
+```{versionremoved} VLT 8.0.0-alpha.5
+These components have been moved to the Volto core package.
+Use them instead of the ones provided by Volto Light Theme if you are using Volto 19.0.0-alpha.12 or later.
+```
 
 This component is a helper for building widgets that have a list of buttons that can be toggled in order to select a single value.
 It is not a widget on itself, but it allows other widgets to build up using its base functionality.

@@ -47,6 +47,16 @@ install: ## Installs the add-on in a development environment
 	pnpm i
 	make build-deps
 
+.PHONY: status
+status:  ## Show status
+	@echo "Show status"
+	python3 ../dirty.py
+
+.PHONY: check-versions
+check-versions:  ## Show check-versions
+	@echo "Checking versions"
+	cd packages/volto-light-theme && pnpm exec vitest run src/internalChecks.test.ts
+
 .PHONY: start
 start: ## Starts Volto, allowing reloading of the add-on during development
 	pnpm start
@@ -125,11 +135,11 @@ storybook-build: ## Build Storybook
 ## Acceptance
 .PHONY: acceptance-frontend-dev-start
 acceptance-frontend-dev-start: ## Start acceptance frontend in development mode
-	RAZZLE_API_PATH=http://127.0.0.1:55001/plone NODE_OPTIONS=--dns-result-order=ipv4first pnpm start
+	RAZZLE_INTERNAL_API_PATH=http://127.0.0.1:55001/plone NODE_OPTIONS=--dns-result-order=ipv4first pnpm start
 
 .PHONY: acceptance-frontend-prod-start
 acceptance-frontend-prod-start: ## Start acceptance frontend in production mode
-	RAZZLE_API_PATH=http://127.0.0.1:55001/plone pnpm build && pnpm start:prod
+	RAZZLE_INTERNAL_API_PATH=http://127.0.0.1:55001/plone pnpm build && pnpm start:prod
 
 .PHONY: acceptance-backend-start
 acceptance-backend-start: ## Start backend acceptance server
@@ -182,12 +192,27 @@ ci-acceptance-a11y-test: ## Run a11y cypress tests in headless mode for CI
 #
 #
 
+# Keep local snapshots aligned with the shared visual regression repository.
+.PHONY: sync-visual-regression-snapshots
+sync-visual-regression-snapshots:
+	@if [ -d cypress/__image_snapshots__/.git ]; then \
+		if git -C cypress/__image_snapshots__ status --porcelain | grep -q .; then \
+			echo "Skipping snapshot sync: local changes detected"; \
+		else \
+			git -C cypress/__image_snapshots__ fetch origin main; \
+			git -C cypress/__image_snapshots__ reset --hard origin/main; \
+		fi; \
+	else \
+		rm -rf cypress/__image_snapshots__; \
+		git clone --branch main git@github.com:kitconcept/vlt-visual-regression.git cypress/__image_snapshots__; \
+	fi
+
 .PHONY: acceptance-test-visual
-acceptance-test-visual: ## Start visual Cypress Acceptance Tests
+acceptance-test-visual: sync-visual-regression-snapshots ## Start visual Cypress Acceptance Tests
 	NODE_ENV=production $(NODEBIN)/cypress open --config-file cypress/config/cypress.visual.config.js --config specPattern='$(SPEC)'
 
 .PHONY: acceptance-test-visual-storybook
-acceptance-test-visual-storybook: ## Start visual Cypress Acceptance Tests for Storybook
+acceptance-test-visual-storybook: sync-visual-regression-snapshots ## Start visual Cypress Acceptance Tests for Storybook
 	NODE_ENV=production $(NODEBIN)/cypress open --config-file cypress/config/cypress.visual.config.storybook.js --config specPattern='$(SPEC)'
 
 # Running the visual tests in headless, cumulative mode will SKIP tests that have run previously, and
@@ -195,7 +220,7 @@ acceptance-test-visual-storybook: ## Start visual Cypress Acceptance Tests for S
 # inherent limitations of Cypress. But if you run the tests in cumulative headless mode first,
 # then this command can be used to run ONLY the failing tests in interactive mode.
 .PHONY: acceptance-test-visual-cumulative
-acceptance-test-visual-cumulative: ## Start visual Cypress Acceptance Tests with cumulative filtering
+acceptance-test-visual-cumulative: sync-visual-regression-snapshots ## Start visual Cypress Acceptance Tests with cumulative filtering
 	@echo WARNING: cumulative results are NOT collected in interactive mode, use headless mode for collection
 	NODE_ENV=production cypress_enableCumulative=true $(NODEBIN)/cypress open --config-file cypress/config/cypress.visual.config.js
 
@@ -228,10 +253,3 @@ ci-acceptance-test-visual-update-cumulative: ## Start visual Cypress Acceptance 
 .PHONY: summarize-cumulative-state
 summarize-cumulative-state: ## Summarize cumulative state into ...-summary.report
 	pnpm summarize-cumulative-state
-
-
-.PHONY: ci-acceptance-server-visual-start
-ci-acceptance-server-visual-start: ci-acceptance-a11y-backend-start
-
-.PHONY: ci-acceptance-frontend-visual-start
-ci-acceptance-frontend-visual-start: acceptance-a11y-frontend-prod-start

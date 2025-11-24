@@ -29,7 +29,7 @@ export function visualTestBase(public_pages, private_pages) {
       const testPath = (path) => () => {
         setViewport(cy);
         cy.navigate(path);
-        cy.wait('@content');
+        cy.wait('@content').its('response.statusCode').should('eq', 200);
         cy.wait(1000);
         cy.matchImage();
       };
@@ -76,7 +76,7 @@ export function visualTestBase(public_pages, private_pages) {
       const testPath = (path) => () => {
         setViewport(cy);
         cy.navigate(path);
-        cy.wait('@content');
+        cy.wait('@content').its('response.statusCode').should('eq', 200);
         cy.matchImage();
       };
 

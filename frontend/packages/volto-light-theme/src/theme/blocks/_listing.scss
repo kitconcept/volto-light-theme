@@ -471,3 +471,8 @@
     }
   }
 }
+
+.listing-item .headline span:not(:last-child)::after {
+  margin: 0 10px;
+  content: '|';
+}

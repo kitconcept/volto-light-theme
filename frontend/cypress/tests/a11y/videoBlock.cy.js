@@ -12,7 +12,7 @@ describe('a11y tests', () => {
   // Video Block
   it('Video Block (/block/video-block)', () => {
     cy.navigate('/block/video-block');
-    cy.wait('@content');
+    cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
     cy.configureAxe({
       // Disabling 'image-alt'

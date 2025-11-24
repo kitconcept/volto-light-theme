@@ -136,8 +136,12 @@ jobs:
             short-name: core/basic
           - name: "Core - Blocks"
             short-name: core/blocks
+          - name: "Core - Blocks - Listing"
+            short-name: core/blocks-listing
           - name: "Core - Content"
             short-name: core/content
+          - name: "Add-ons"
+            short-name: addons
           - name: "a11y"
             short-name: a11y
             a11y: true

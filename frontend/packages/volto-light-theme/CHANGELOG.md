@@ -8,6 +8,166 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0-alpha.7 (2025-11-24)
+
+### Bugfix
+
+- Fix css of unauthorized Page @iRohitSingh [#unauthorizedpageCss](https://github.com/kitconcept/volto-light-theme/pull/unauthorizedpageCss)
+- Fixed Accordion arrow/buttons no longer shrink when the title text becomes too long. @jnptk 
+
+### Internal
+
+- Refactoring to TS some components. @sneridagh [#731](https://github.com/kitconcept/volto-light-theme/pull/731)
+- Update to latest RAC to match the @plone/components one. @sneridagh 
+- Use forked Razzle. Update to use Volto 19a14. @sneridagh 
+
+## 8.0.0-alpha.6 (2025-11-13)
+
+### Bugfix
+
+- Missing @kitconcept/volto-bm3-compat as dep. @sneridagh [#726](https://github.com/kitconcept/volto-light-theme/pull/726)
+
+## 8.0.0-alpha.5 (2025-11-11)
+
+### Feature
+
+- Registry color definitions support for ColorSwatch widget. @sneridagh [#723](https://github.com/kitconcept/volto-light-theme/pull/723)
+
+### Bugfix
+
+- Fixes text in the sticky menu if the text was long enough to wrap. @jnptk [#691](https://github.com/kitconcept/volto-light-theme/pull/691)
+- Identify intranet header with a className in `header header-intranet` div. @sneridagh 
+
+### Internal
+
+- Normalize all remaining add-ons to be "alpha" versions exclusively for vlt8. @sneridagh 
+
+## 8.0.0-alpha.4 (2025-11-05)
+
+### Bugfix
+
+- Fixed slider config, in case slider is not present. @sneridagh 
+
+### Internal
+
+- Updated volto-dsgvo-banner baseline to latest (3.x series). @sneridagh 
+
+## 8.0.0-alpha.3 (2025-11-04)
+
+### Feature
+
+- Recoverable Block Error Boundaries. @sneridagh [#708](https://github.com/kitconcept/volto-light-theme/pull/708)
+- Update `Buttons` widget to the one proposed for the Volto PR: #7555 @sneridagh 
+
+### Bugfix
+
+-  [#705](https://github.com/kitconcept/volto-light-theme/pull/705)
+- Fix Teaser Blocks for Person type email spacing in 4 columns gridBlock @Tishasoumya-02 
+
+### Internal
+
+- Add css for NotFound Page @Tishasoumya-02 
+
+## 8.0.0-alpha.2 (2025-10-29)
+
+### Feature
+
+- Refactor `volto-button-block`, transfer all the customizations to the block. @sneridagh [#697](https://github.com/kitconcept/volto-light-theme/pull/697)
+- Refactor `volto-separator-block`, transfer all the customizations to the block. @sneridagh [#698](https://github.com/kitconcept/volto-light-theme/pull/698)
+
+## 8.0.0-alpha.1 (2025-10-27)
+
+### Breaking
+
+- Transfer all custom code related to slider to the add-on. @sneridagh [#694](https://github.com/kitconcept/volto-light-theme/pull/694)
+
+## 8.0.0-alpha.0 (2025-10-24)
+
+### Breaking
+
+- Use Volto 19a9. @sneridagh
+  Use `@plone/components` 4.0.0 alpha.
+  Recommended add-ons are not included by default as `peerDependencies`.
+
+  Breaking change: Please, check the [upgrade guide](https://volto-light-theme.readthedocs.io/how-to-guides/upgrade-guide.html) for more information. [#693](https://github.com/kitconcept/volto-light-theme/pull/693)
+
+### Feature
+
+- To reduce the size of the main VLT repository, snapshots for visual regression testing are now stored in a separate repository (kitconcept/vlt-visual-regression). @sneridagh [#690](https://github.com/kitconcept/volto-light-theme/pull/690)
+
+## 7.3.1 (2025-10-08)
+
+### Bugfix
+
+- Several fixes. Update to use Volto 18.28.0. @sneridagh 
+
+## 7.3.0 (2025-10-07)
+
+### Bugfix
+
+- Pass down items to `Card` component, so it can pass it down to `UniversalLink`. @sneridagh [#684](https://github.com/kitconcept/volto-light-theme/pull/684)
+- Added addressable classNames to FileSummary headline. @sneridagh [#686](https://github.com/kitconcept/volto-light-theme/pull/686)
+- Update socialmedia add-on to 2.0.0a10 and Volto to 18.27.3. @sneridagh 
+
+### Internal
+
+- Replace "head title" with "kicker" in example content. @davisagli 
+
+## 7.2.0 (2025-10-01)
+
+### Feature
+
+- Added smartTextRenderer helper for rendering markdown formatted links in plain text. @sneridagh [#679.1](https://github.com/kitconcept/volto-light-theme/pull/679.1)
+- Link support in descriptions in summaries via a custom mardown parser (smartText). @sneridagh [#679.2](https://github.com/kitconcept/volto-light-theme/pull/679.2)
+
+### Bugfix
+
+- Fixed icons and spacing in calendar event range widget. @sneridagh [#680](https://github.com/kitconcept/volto-light-theme/pull/680)
+- Added card img 100% width for account for small images. @sneridagh [#681](https://github.com/kitconcept/volto-light-theme/pull/681)
+- Fixed regression for contained teasers applying a margin only meant for contained ones. @sneridagh [#683](https://github.com/kitconcept/volto-light-theme/pull/683)
+
+## 7.1.0 (2025-09-29)
+
+### Feature
+
+- Add Basque translation @erral [#675](https://github.com/kitconcept/volto-light-theme/pull/675)
+
+### Bugfix
+
+- Fix use Sass interpolation for CSS variable fallbacks @iRohitSingh [#673](https://github.com/kitconcept/volto-light-theme/pull/673)
+- Fix vertical spacing for first block in case that there is a change of color from default. @sneridagh [#676](https://github.com/kitconcept/volto-light-theme/pull/676)
+- Don't show parent tags when adding the child. @iFlameing 
+
+### Internal
+
+- Fix cypress test for calendar block. @iFlameing [#calendar-cypress](https://github.com/kitconcept/volto-light-theme/pull/calendar-cypress)
+- Misc bugfixes. Upgrade to Volto 18.27.2. @sneridagh 
+
+## 7.0.0 (2025-09-25)
+
+### Bugfix
+
+- Ensure the Refresh Content button correctly loads the preview image when using preview_image_link for Slider block. @iFlameing 
+- Last german literal fix: ALT-Text. @sneridagh 
+
+## 7.0.0-beta.7 (2025-09-24)
+
+### Feature
+
+- Make it possible for custom Summary components to disable being linked. @davisagli 
+
+### Bugfix
+
+- Enable add block button in accordion block @iRohitSingh [#668](https://github.com/kitconcept/volto-light-theme/pull/668)
+- Safely check for `voltolighttheme.theme` behavior on Theming component. @ericof [#671](https://github.com/kitconcept/volto-light-theme/pull/671)
+- Fix styles for person listing in Search block grid variation. @danalvrz 
+
+## 7.0.0-beta.6 (2025-09-22)
+
+### Bugfix
+
+- Fix styles for H3 headings in slate grids. @danalvrz 
+
 ## 7.0.0-beta.5 (2025-09-18)
 
 ### Feature

@@ -3,7 +3,9 @@
   color: var(--theme-foreground-color);
   @include color-block-change-vertical-spacing();
 
-  &:first-child {
+  // First block of the page has no top padding, only if previous block has same background color
+  // eg: when it's different than default.
+  &:first-child:has(> :first-child.previous--has--same--backgroundColor) {
     padding-top: 0;
   }
 
@@ -437,7 +439,7 @@
     &.__button {
       & > .button.container,
       & > .block-inner-container {
-        & .ui.button {
+        & button {
           border-color: var(--theme-foreground-color);
           background-color: var(--theme-color);
 

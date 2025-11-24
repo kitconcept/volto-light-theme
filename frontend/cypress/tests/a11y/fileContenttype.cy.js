@@ -12,7 +12,7 @@ describe('a11y tests', () => {
   //File
   it('File (/content-types/file)', () => {
     cy.navigate('/content-types/file');
-    cy.wait('@content');
+    cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
     cy.configureAxe();
     cy.checkAccessibility();

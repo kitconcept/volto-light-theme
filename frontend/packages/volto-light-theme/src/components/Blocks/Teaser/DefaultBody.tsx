@@ -1,5 +1,6 @@
 import { isInternalURL } from '@plone/volto/helpers/Url/Url';
 import DefaultSummary from '@kitconcept/volto-light-theme/components/Summary/DefaultSummary';
+import type { SummaryComponentType } from '@kitconcept/volto-light-theme/components/Summary/DefaultSummary';
 import Card from '../../../primitives/Card/Card';
 import config from '@plone/volto/registry';
 
@@ -10,11 +11,11 @@ const TeaserDefaultTemplate = (props) => {
   const url = data.preview_image?.[0]?.['@id'];
 
   const Image = config.getComponent('Image').component;
-  const Summary =
-    config.getComponent({
-      name: 'Summary',
-      dependencies: [href['@type']],
-    }).component || DefaultSummary;
+  const Summary = (config.getComponent({
+    name: 'Summary',
+    dependencies: [href['@type']],
+  }).component || DefaultSummary) as SummaryComponentType;
+  const showLink = !Summary.hideLink && !isEditMode;
   const { openExternalLinkInNewTab } = config.settings;
   const openLinkInNewTab =
     data.openLinkInNewTab ||
@@ -22,10 +23,7 @@ const TeaserDefaultTemplate = (props) => {
   const { '@id': id, ...filteredData } = data;
 
   return (
-    <Card
-      href={!isEditMode ? href['@id'] : null}
-      openLinkInNewTab={openLinkInNewTab}
-    >
+    <Card item={showLink ? href : null} openLinkInNewTab={openLinkInNewTab}>
       <Card.Image
         src={url && !image?.image_field ? url : undefined}
         item={!data.overwrite ? href : { ...href, ...filteredData }}

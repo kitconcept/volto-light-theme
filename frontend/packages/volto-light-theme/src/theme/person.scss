@@ -227,37 +227,72 @@ body .block.gridBlock .contained .person-teaser .card-inner {
       .description {
         margin-bottom: $spacing-small;
       }
+
+      .summary-extra-info.email {
+        a {
+          width: auto;
+        }
+        svg.icon {
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+
+  &:not(.grid) .listing-item.person-listing {
+    .summary-room-phone {
+      justify-content: flex-start;
+      gap: 0;
+      .summary-extra-info {
+        &:not(:last-child)::after {
+          margin: 0 7px 0 10px;
+          content: '|';
+        }
+      }
     }
   }
 }
 
-.block.listing.grid .listing-item.person-listing {
-  .card {
-    background: var(--theme-color);
-  }
-  .image-wrapper {
-    margin: 0 auto;
-  }
-  .listing-item {
-    &,
-    & a {
-      align-items: inherit;
+.block.listing.grid,
+.block.search.grid {
+  .listing-item.person-listing {
+    .card {
+      background: var(--theme-color);
     }
-  }
-  .card-summary {
-    padding-right: 0px !important;
-    padding-left: 0px !important;
-    text-align: center;
-
-    .description {
-      margin-bottom: $spacing-small !important;
+    .image-wrapper {
+      margin: 0 auto;
     }
-  }
+    .listing-item {
+      &,
+      & a {
+        align-items: inherit;
+      }
+    }
+    .card-summary {
+      padding-right: 0px !important;
+      padding-left: 0px !important;
+      text-align: center;
 
-  .summary-extra-info,
-  .summary-room-phone {
-    display: inline-flex;
-    justify-content: center;
+      .description {
+        margin-bottom: $spacing-small !important;
+      }
+    }
+
+    .summary-extra-info {
+      justify-content: center;
+    }
+    .summary-room-phone {
+      display: inline-flex;
+    }
+
+    .summary-extra-info.email {
+      svg.icon {
+        margin-right: 10px;
+      }
+      a {
+        width: auto;
+      }
+    }
   }
 }
 
@@ -290,28 +325,41 @@ body.person-squared-images,
     }
   }
 }
-// person with Four columns
-.ui.stackable.stretched.four.column.grid {
-  .card-summary {
-    display: grid;
-    .summary-extra-info {
-      gap: 5px;
-      &.email {
-        min-width: 0;
 
-        a {
-          display: block;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-        }
+// person with Four columns (edit mode and view mode)
+.block.gridBlock .four.grid-items .person-teaser .card-summary,
+.ui.stackable.stretched.four.column.grid .card-summary {
+  .summary-extra-info {
+    &.email {
+      min-width: 0;
+
+      a {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
     }
   }
-  .block.listing .listing-item.person-listing .card-summary {
-    .summary-room-phone {
-      flex-direction: column;
-      gap: 0;
+}
+
+// Additional styles for view mode only
+.ui.stackable.stretched.four.column.grid {
+  .card-summary {
+    display: grid;
+
+    .summary-extra-info {
+      gap: 5px;
+    }
+  }
+
+  .block.listing,
+  .block.search {
+    .listing-item.person-listing .card-summary {
+      .summary-room-phone {
+        flex-direction: column;
+        gap: 0;
+      }
     }
   }
 }

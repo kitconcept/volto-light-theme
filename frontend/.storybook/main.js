@@ -5,9 +5,8 @@ const path = require('path');
 const projectRootPath = path.resolve('.');
 const lessPlugin = require('@plone/volto/webpack-plugins/webpack-less-plugin');
 const RelativeResolverPlugin = require('@plone/volto/webpack-plugins/webpack-relative-resolver');
-const scssPlugin = require('razzle-plugin-scss');
-
-const createConfig = require('razzle/config/createConfigAsync.js');
+const scssPlugin = require('@plone/volto/webpack-plugins/webpack-scss-plugin');
+const createConfig = require('@plone/razzle/config/createConfigAsync.js');
 const razzleConfig = require(path.join(projectRootPath, 'razzle.config.js'));
 
 const SVGLOADER = {
@@ -63,8 +62,8 @@ const defaultRazzleOptions = {
 
 module.exports = {
   stories: [
-    '../packages/**/*.mdx',
-    '../packages/**/*.stories.@(js|jsx|ts|tsx)',
+    '../packages/volto-light-theme/src/**/*.mdx',
+    '../packages/volto-light-theme/src/**/*.stories.@(js|jsx|ts|tsx)',
   ],
   addons: [
     '@storybook/addon-links',

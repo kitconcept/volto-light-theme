@@ -14,13 +14,30 @@ namespace Cypress {
       contentId,
       contentTitle,
       path,
+      bodyModifier,
+      preview_image_link,
     }: {
       contentType: string;
       contentId: string;
       contentTitle: string;
       path?: string;
+      bodyModifier?: (body: any) => any;
+      preview_image_link?: { '@id': string };
     }): Chainable<JQuery<HTMLElement>>;
     addNewBlock(value: string): Chainable<JQuery<HTMLElement>>;
     matchImage(): Chainable<JQuery<HTMLElement>>;
+    injectAxe({
+      axeCorePath,
+    }: {
+      axeCorePath: string;
+    }): Chainable<JQuery<HTMLElement>>;
+    checkA11y(
+      context?: Object | string,
+      options?: Object,
+      violationCallback?: (violations: any[]) => void,
+      skipFailures?: boolean,
+    ): Chainable<JQuery<HTMLElement>>;
+    checkAccessibility(): Chainable<JQuery<HTMLElement>>;
+    getSlate(): Chainable<JQuery<HTMLElement>>;
   }
 }
