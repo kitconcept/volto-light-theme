@@ -1,6 +1,39 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 8.0.0a7 (2025-11-24)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Fix css of unauthorized Page @iRohitSingh [#unauthorizedpageCss](https://github.com/kitconcept/volto-light-theme/pull/unauthorizedpageCss)
+- Fixed Accordion arrow/buttons no longer shrink when the title text becomes too long. @jnptk 
+
+#### Internal
+
+- Refactoring to TS some components. @sneridagh [#731](https://github.com/kitconcept/volto-light-theme/pull/731)
+- Update to latest RAC to match the @plone/components one. @sneridagh 
+- Use forked Razzle. Update to use Volto 19a14. @sneridagh 
+
+
+
+### Project
+
+
+#### Internal
+
+- Moved check-recommended-addons check to a unit test. @sneridagh 
+
+
+
 ## 8.0.0a6 (2025-11-13)
 
 ### Backend
