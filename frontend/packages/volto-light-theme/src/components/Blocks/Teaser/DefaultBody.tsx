@@ -3,7 +3,6 @@ import DefaultSummary from '@kitconcept/volto-light-theme/components/Summary/Def
 import type { SummaryComponentType } from '@kitconcept/volto-light-theme/components/Summary/DefaultSummary';
 import Card from '../../../primitives/Card/Card';
 import config from '@plone/volto/registry';
-import { buildTeaserItem } from './helpers';
 
 const TeaserDefaultTemplate = (props) => {
   const { data, isEditMode } = props;
@@ -21,19 +20,27 @@ const TeaserDefaultTemplate = (props) => {
   const openLinkInNewTab =
     data.openLinkInNewTab ||
     (openExternalLinkInNewTab && !isInternalURL(href['@id']));
-  const mergedItem = buildTeaserItem(data, href);
+
+  // Ensures that overridden fields are used when "overwrite" is true
+  // and fallbacks to empty strings if they are not provided to ensure no undefined
+  // values are passed
+  const localOverrides = {
+    title: data.title || '',
+    description: data.description || '',
+    head_title: data.head_title || '',
+  };
 
   return (
     <Card item={showLink ? href : null} openLinkInNewTab={openLinkInNewTab}>
       <Card.Image
         src={url && !image?.image_field ? url : undefined}
-        item={mergedItem}
+        item={!data.overwrite ? href : { ...href, ...localOverrides }}
         image={data.overwrite ? image : undefined}
         imageComponent={Image}
       />
       <Card.Summary>
         <Summary
-          item={mergedItem}
+          item={!data.overwrite ? href : { ...href, ...localOverrides }}
           HeadingTag="h2"
           hide_description={props.data?.hide_description}
         />
