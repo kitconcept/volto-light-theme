@@ -3,6 +3,7 @@ import DefaultSummary from '@kitconcept/volto-light-theme/components/Summary/Def
 import type { SummaryComponentType } from '@kitconcept/volto-light-theme/components/Summary/DefaultSummary';
 import Card from '../../../primitives/Card/Card';
 import config from '@plone/volto/registry';
+import { buildTeaserItem } from './helpers';
 
 const TeaserDefaultTemplate = (props) => {
   const { data, isEditMode } = props;
@@ -20,19 +21,19 @@ const TeaserDefaultTemplate = (props) => {
   const openLinkInNewTab =
     data.openLinkInNewTab ||
     (openExternalLinkInNewTab && !isInternalURL(href['@id']));
-  const { '@id': id, ...filteredData } = data;
+  const mergedItem = buildTeaserItem(data, href);
 
   return (
     <Card item={showLink ? href : null} openLinkInNewTab={openLinkInNewTab}>
       <Card.Image
         src={url && !image?.image_field ? url : undefined}
-        item={!data.overwrite ? href : { ...href, ...filteredData }}
+        item={mergedItem}
         image={data.overwrite ? image : undefined}
         imageComponent={Image}
       />
       <Card.Summary>
         <Summary
-          item={!data.overwrite ? href : { ...href, ...filteredData }}
+          item={mergedItem}
           HeadingTag="h2"
           hide_description={props.data?.hide_description}
         />
