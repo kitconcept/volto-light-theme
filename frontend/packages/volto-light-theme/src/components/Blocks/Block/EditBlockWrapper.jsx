@@ -86,19 +86,10 @@ const EditBlockWrapper = (props) => {
 
   if (blocksConfig?.[type]?.blockModel === 3) {
     // We still need to attach the draggable props/ref so RBD stays happy,
-    // but we skip rendering the drag handle and the rest of the block editor UI
-    // TODO: We should move the new handlers here too
-    return (
-      <div
-        ref={draginfo.innerRef}
-        {...styleMergedWithDragProps}
-        className={cx(classNames, `block-editor-${data['@type']}`, {
-          [data.align]: data.align,
-        })}
-      >
-        {children}
-      </div>
-    );
+    // but we skip rendering the drag handle and friends
+    // consider removing the whole EditBlockWrapper for BlockModelv3 blocks in the future
+    // or moving the handlers here.
+    return <>{children}</>;
   }
 
   return (
