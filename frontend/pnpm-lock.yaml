@@ -1306,7 +1306,7 @@ importers:
         version: 1.1.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@kitconcept/volto-logos-block':
         specifier: ^3.0.0
-        version: 3.0.0(4n6dimu3u2jnvxgfe2kybrunsm)
+        version: 3.0.0(n6xtr3cr6gkbj4dwieivnwuywm)
       '@kitconcept/volto-separator-block':
         specifier: ^4.2.1
         version: 4.2.1(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(storybook@8.6.12(prettier@3.2.5))
@@ -1317,8 +1317,8 @@ importers:
         specifier: ^3.0.2
         version: 3.0.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.12(prettier@3.2.5))
       '@plonegovbr/volto-social-media':
-        specifier: ^2.0.0-alpha.10
-        version: 2.0.0-alpha.10(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.12(prettier@3.2.5))
+        specifier: ^2.0.0
+        version: 2.0.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.12(prettier@3.2.5))
       classnames:
         specifier: ^2.2.6
         version: 2.2.6
@@ -3763,8 +3763,8 @@ packages:
     resolution: {integrity: sha512-DbG4TJ09s4An8491aQVJc32XVc4hAaamIE2ymlt27bIVk/Z+Ayx2aFg0M12ykJqSMR1oUYP7/y4vFvopyCObRQ==}
     hasBin: true
 
-  '@plonegovbr/volto-social-media@2.0.0-alpha.10':
-    resolution: {integrity: sha512-pg/yq+ifOah5TIwHeSwOi19njzTipqfOl0tVMOiO2nNcoDwFu1RE9/KyaRMAnIUMMjMpeu6Y8E4pkVJRSYKasg==}
+  '@plonegovbr/volto-social-media@2.0.0':
+    resolution: {integrity: sha512-sfpst/EQJaxIE0YH3HYT4sfnqIVTJNwtWModMqJwqJTLmyc3C/gAdLEmsWH6aExrpnJ/ne3Vutpa0dYJU36KaQ==}
     peerDependencies:
       react: 18.2.0
       react-dom: 18.2.0
@@ -17256,7 +17256,7 @@ snapshots:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
-  '@kitconcept/volto-light-theme@7.6.0(zfy4tt2fcvgsri4nrjxxrwawcu)':
+  '@kitconcept/volto-light-theme@7.6.0(k2gvexklstz64zau3gjbwoqfra)':
     dependencies:
       '@dnd-kit/core': 6.0.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@dnd-kit/sortable': 7.0.2(@dnd-kit/core@6.0.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)
@@ -17270,11 +17270,11 @@ snapshots:
       '@kitconcept/volto-heading-block': 2.5.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@kitconcept/volto-highlight-block': 4.5.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@kitconcept/volto-introduction-block': 1.1.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@kitconcept/volto-logos-block': 3.0.0(4n6dimu3u2jnvxgfe2kybrunsm)
+      '@kitconcept/volto-logos-block': 3.0.0(n6xtr3cr6gkbj4dwieivnwuywm)
       '@kitconcept/volto-separator-block': 4.2.1(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(storybook@8.6.12(prettier@3.2.5))
       '@kitconcept/volto-slider-block': 6.4.1(embla-carousel@8.6.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone/components': 3.0.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.12(prettier@3.2.5))
-      '@plonegovbr/volto-social-media': 2.0.0-alpha.10(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.12(prettier@3.2.5))
+      '@plonegovbr/volto-social-media': 2.0.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.12(prettier@3.2.5))
       classnames: 2.2.6
       embla-carousel-autoplay: 8.6.0(embla-carousel@8.6.0)
       embla-carousel-react: 8.6.0(react@18.2.0)
@@ -17292,9 +17292,9 @@ snapshots:
       - embla-carousel
       - storybook
 
-  '@kitconcept/volto-logos-block@3.0.0(4n6dimu3u2jnvxgfe2kybrunsm)':
+  '@kitconcept/volto-logos-block@3.0.0(n6xtr3cr6gkbj4dwieivnwuywm)':
     dependencies:
-      '@kitconcept/volto-light-theme': 7.6.0(zfy4tt2fcvgsri4nrjxxrwawcu)
+      '@kitconcept/volto-light-theme': 7.6.0(k2gvexklstz64zau3gjbwoqfra)
       '@plone/components': 3.0.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.12(prettier@3.2.5))
       classnames: 2.2.6
       react: 18.2.0
@@ -18071,7 +18071,7 @@ snapshots:
       - debug
       - supports-color
 
-  '@plonegovbr/volto-social-media@2.0.0-alpha.10(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.12(prettier@3.2.5))':
+  '@plonegovbr/volto-social-media@2.0.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.12(prettier@3.2.5))':
     dependencies:
       '@plone/components': 3.0.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.12(prettier@3.2.5))
       react: 18.2.0

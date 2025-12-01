@@ -20,19 +20,27 @@ const TeaserDefaultTemplate = (props) => {
   const openLinkInNewTab =
     data.openLinkInNewTab ||
     (openExternalLinkInNewTab && !isInternalURL(href['@id']));
-  const { '@id': id, ...filteredData } = data;
+
+  // Ensures that overridden fields are used when "overwrite" is true
+  // and fallbacks to empty strings if they are not provided to ensure no undefined
+  // values are passed
+  const localOverrides = {
+    title: data.title || '',
+    description: data.description || '',
+    head_title: data.head_title || '',
+  };
 
   return (
     <Card item={showLink ? href : null} openLinkInNewTab={openLinkInNewTab}>
       <Card.Image
         src={url && !image?.image_field ? url : undefined}
-        item={!data.overwrite ? href : { ...href, ...filteredData }}
+        item={!data.overwrite ? href : { ...href, ...localOverrides }}
         image={data.overwrite ? image : undefined}
         imageComponent={Image}
       />
       <Card.Summary>
         <Summary
-          item={!data.overwrite ? href : { ...href, ...filteredData }}
+          item={!data.overwrite ? href : { ...href, ...localOverrides }}
           HeadingTag="h2"
           hide_description={props.data?.hide_description}
         />
