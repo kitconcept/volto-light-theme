@@ -8,6 +8,14 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0-alpha.8 (2025-12-01)
+
+### Bugfix
+
+- Improve block model 3 support across views. Fixed nasty BDandD console error. @sneridagh [#740](https://github.com/kitconcept/volto-light-theme/pull/740)
+- Fixed problem with the description not showing in rendering if the description was undefined. @sneridagh 
+- Hide complementary logo in mobile devices @Tishasoumya-02 
+
 ## 8.0.0-alpha.7 (2025-11-24)
 
 ### Bugfix

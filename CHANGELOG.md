@@ -1,6 +1,32 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 8.0.0a8 (2025-12-01)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Improve block model 3 support across views. Fixed nasty BDandD console error. @sneridagh [#740](https://github.com/kitconcept/volto-light-theme/pull/740)
+- Fixed problem with the description not showing in rendering if the description was undefined. @sneridagh 
+- Hide complementary logo in mobile devices @Tishasoumya-02 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 8.0.0a7 (2025-11-24)
 
 ### Backend
