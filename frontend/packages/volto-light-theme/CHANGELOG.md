@@ -8,6 +8,13 @@
 
 <!-- towncrier release notes start -->
 
+## 7.6.3 (2025-12-01)
+
+### Bugfix
+
+- Fix css of unauthorized Page @iRohitSingh [#736](https://github.com/kitconcept/volto-light-theme/pull/736)
+- Hide complementary logo in mobile devices @Tishasoumya-02 
+
 ## 7.6.2 (2025-11-17)
 
 ### Bugfix

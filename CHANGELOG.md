@@ -1,6 +1,31 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 7.6.3 (2025-12-01)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Fix css of unauthorized Page @iRohitSingh [#736](https://github.com/kitconcept/volto-light-theme/pull/736)
+- Hide complementary logo in mobile devices @Tishasoumya-02 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 7.6.2 (2025-11-17)
 
 ### Backend
