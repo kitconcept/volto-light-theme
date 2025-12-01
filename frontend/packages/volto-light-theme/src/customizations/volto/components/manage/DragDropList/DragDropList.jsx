@@ -10,6 +10,7 @@ import React, { useRef } from 'react';
 import isEmpty from 'lodash/isEmpty';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 import { v4 as uuid } from 'uuid';
+import config from '@plone/volto/registry';
 
 const getVerticalPlaceholder = (
   draggedDOM,
@@ -95,7 +96,6 @@ const DragDropList = (props) => {
     style,
     forwardedAriaLabelledBy,
     reactBeautifulDnd,
-    isDragDisabled,
   } = props; //renderChild
   const { DragDropContext, Draggable, Droppable } = reactBeautifulDnd;
   const [placeholderProps, setPlaceholderProps] = React.useState({});
@@ -203,15 +203,12 @@ const DragDropList = (props) => {
             style={{ ...style, position: 'relative' }}
             aria-labelledby={forwardedAriaLabelledBy}
           >
-            {/* Start Customization */}
             {childList
               .filter(([id, child]) => id && child) // beware numbers!
               .map(([childId, child], index) => {
                 const dragDisabled =
-                  typeof isDragDisabled === 'function'
-                    ? isDragDisabled({ child, childId, index })
-                    : isDragDisabled;
-
+                  config.blocks.blocksConfig?.[child?.['@type']]?.blockModel ===
+                  3;
                 if (!dragDisabled) {
                   return (
                     <Draggable
@@ -229,15 +226,18 @@ const DragDropList = (props) => {
                     </Draggable>
                   );
                 } else {
-                  return children({
-                    child,
-                    childId,
-                    index,
-                    draginfo: { draggableProps: {} },
-                  });
+                  return (
+                    <React.Fragment key={childId}>
+                      {children({
+                        child,
+                        childId,
+                        index,
+                        draginfo: { draggableProps: {} },
+                      })}
+                    </React.Fragment>
+                  );
                 }
               })}
-            {/* End Customization */}
             {provided.placeholder}
             {!isEmpty(placeholderProps) && snapshot.isDraggingOver && (
               <div
