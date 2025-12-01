@@ -212,21 +212,30 @@ const DragDropList = (props) => {
                     ? isDragDisabled({ child, childId, index })
                     : isDragDisabled;
 
-                return (
-                  <Draggable
-                    draggableId={childId.toString()}
-                    index={index}
-                    key={childId}
-                    isDragDisabled={!!dragDisabled}
-                    style={{
-                      userSelect: 'none',
-                    }}
-                  >
-                    {(draginfo) =>
-                      children({ child, childId, index, draginfo })
-                    }
-                  </Draggable>
-                );
+                if (!dragDisabled) {
+                  return (
+                    <Draggable
+                      draggableId={childId.toString()}
+                      index={index}
+                      key={childId}
+                      isDragDisabled={!!dragDisabled}
+                      style={{
+                        userSelect: 'none',
+                      }}
+                    >
+                      {(draginfo) =>
+                        children({ child, childId, index, draginfo })
+                      }
+                    </Draggable>
+                  );
+                } else {
+                  return children({
+                    child,
+                    childId,
+                    index,
+                    draginfo: { draggableProps: {} },
+                  });
+                }
               })}
             {/* End Customization */}
             {provided.placeholder}
