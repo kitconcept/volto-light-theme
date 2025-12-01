@@ -418,6 +418,10 @@
       flex: 1 1 auto;
       flex-direction: row-reverse;
 
+      @media only screen and (max-width: $largest-mobile-screen) {
+        display: none;
+      }
+
       @media only screen and (max-width: $computer-breakpoint) {
         flex: 0 1 55px;
       }
