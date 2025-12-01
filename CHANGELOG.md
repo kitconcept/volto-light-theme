@@ -1,6 +1,30 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 7.6.4 (2025-12-01)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Fixed problem with the description not showing in rendering if the description was undefined. @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 7.6.3 (2025-12-01)
 
 ### Backend

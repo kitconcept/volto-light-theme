@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 7.6.4 (2025-12-01)
+
+### Bugfix
+
+- Fixed problem with the description not showing in rendering if the description was undefined. @sneridagh 
+
 ## 7.6.3 (2025-12-01)
 
 ### Bugfix
