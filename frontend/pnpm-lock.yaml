@@ -27,6 +27,9 @@ importers:
       '@kitconcept/volto-button-block':
         specifier: workspace:*
         version: link:packages/volto-button-block/packages/volto-button-block
+      '@kitconcept/volto-calendar-block':
+        specifier: ^1.0.0-alpha.1
+        version: 1.0.0-alpha.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@kitconcept/volto-carousel-block':
         specifier: workspace:*
         version: link:packages/volto-carousel-block/packages/volto-carousel-block
@@ -63,9 +66,6 @@ importers:
       '@plonegovbr/volto-social-media':
         specifier: ^3.0.0-alpha.0
         version: 3.0.0-alpha.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      volto-calendar-block:
-        specifier: ^1.0.0-alpha.1
-        version: 1.0.0-alpha.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
     devDependencies:
       '@cypress/skip-test':
         specifier: 2.6.1
@@ -1761,6 +1761,37 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^3.2.4
+        version: 3.2.4(@types/debug@4.1.12)(@types/node@24.10.1)(jiti@2.6.1)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.30.2)(sass@1.58.0)(terser@5.44.1)(yaml@2.8.1)
+
+  packages/volto-calendar-block/packages/volto-calendar-block:
+    dependencies:
+      '@plone/components':
+        specifier: workspace:^
+        version: link:../../../../core/packages/components
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-aria-components:
+        specifier: ^1.13.0
+        version: 1.13.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
+    devDependencies:
+      '@plone/registry':
+        specifier: workspace:*
+        version: link:../../../../core/packages/registry
+      '@plone/scripts':
+        specifier: workspace:*
+        version: link:../../../../core/packages/scripts
+      '@plone/types':
+        specifier: workspace:*
+        version: link:../../../../core/packages/types
+      release-it:
+        specifier: ^19.0.5
+        version: 19.0.6(@types/node@24.10.1)(magicast@0.3.5)
+      vitest:
+        specifier: ^3.1.2
         version: 3.2.4(@types/debug@4.1.12)(@types/node@24.10.1)(jiti@2.6.1)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.30.2)(sass@1.58.0)(terser@5.44.1)(yaml@2.8.1)
 
   packages/volto-carousel-block/packages/volto-carousel-block:
@@ -3871,6 +3902,12 @@ packages:
       classnames: ^2.2.6
       react: 18.2.0
       react-dom: 18.2.0
+
+  '@kitconcept/volto-calendar-block@1.0.0-alpha.3':
+    resolution: {integrity: sha512-DURT7/BtdUNtG1q2cdxcc5+a4kYgLDLLmLJ2qdp6G26jC69qSzpWNEdSVk7iWdFAVJwx4a7apx2mpfg6DxXjMw==}
+    peerDependencies:
+      react: ^18.2.0
+      react-dom: ^18.2.0
 
   '@kwsites/file-exists@1.1.1':
     resolution: {integrity: sha512-m9/5YGR18lIwxSFDwfE3oA7bWuq9kdau6ugN4H2rJeyhFQZcG9AgSHkQtSD15a8WvTgfz9aikZMrKPHvbpqFiw==}
@@ -14040,12 +14077,6 @@ packages:
       jsdom:
         optional: true
 
-  volto-calendar-block@1.0.0-alpha.1:
-    resolution: {integrity: sha512-h6inay3E17lSW0b2SwET472Z5lQeuwzGu9WL/GpiLFeB4DjYo3vdeFJ+dK2E8PSRIZGZacIfPXkmUns/DkxDzg==}
-    peerDependencies:
-      react: ^18.2.0
-      react-dom: ^18.2.0
-
   w3c-hr-time@1.0.2:
     resolution: {integrity: sha512-z8P5DvDNjKDoFIHK7q8r8lackT6l+jo/Ye3HOle7l9nICP9lf1Ci25fy9vHd0JOWewkIFzXIEig3TdKT7JQ5fQ==}
     deprecated: Use your platform's native performance.now() and performance.timeOrigin.
@@ -16192,6 +16223,13 @@ snapshots:
     dependencies:
       classnames: 2.5.1
       react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+
+  '@kitconcept/volto-calendar-block@1.0.0-alpha.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+    dependencies:
+      '@plone/components': 4.0.0-alpha.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      react: 18.2.0
+      react-aria-components: 1.13.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react-dom: 18.2.0(react@18.2.0)
 
   '@kwsites/file-exists@1.1.1':
@@ -29132,13 +29170,6 @@ snapshots:
       - terser
       - tsx
       - yaml
-
-  volto-calendar-block@1.0.0-alpha.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
-    dependencies:
-      '@plone/components': 4.0.0-alpha.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      react: 18.2.0
-      react-aria-components: 1.13.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      react-dom: 18.2.0(react@18.2.0)
 
   w3c-hr-time@1.0.2:
     dependencies:

@@ -31,6 +31,14 @@
     "https": "https://github.com/kitconcept/volto-button-block.git",
     "tag": "5.0.0-alpha.0"
   },
+  "volto-calendar-block": {
+    "develop": true,
+    "output": "packages",
+    "package": "@kitconcept/volto-calendar-block",
+    "url": "git@github.com:kitconcept/volto-calendar-block.git",
+    "https": "https://github.com/kitconcept/volto-calendar-block.git",
+    "tag": "1.0.0-alpha.3"
+  },
   "volto-carousel-block": {
     "develop": true,
     "output": "packages",
@@ -94,14 +102,6 @@
     "url": "git@github.com:kitconcept/volto-slider-block.git",
     "https": "https://github.com/kitconcept/volto-slider-block.git",
     "tag": "7.0.0-alpha.0"
-  },
-  "volto-calendar-block": {
-    "develop": false,
-    "output": "packages",
-    "package": "volto-calendar-block",
-    "url": "git@github.com:collective/volto-calendar-block.git",
-    "https": "https://github.com/collective/volto-calendar-block.git",
-    "tag": "1.0.0-alpha.1"
   },
   "volto-social-media": {
     "develop": false,

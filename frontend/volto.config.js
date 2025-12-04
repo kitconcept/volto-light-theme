@@ -3,6 +3,7 @@ const addons = [
   '@eeacms/volto-accordion-block',
   '@kitconcept/volto-banner-block',
   '@kitconcept/volto-button-block',
+  '@kitconcept/volto-calendar-block',
   '@kitconcept/volto-carousel-block',
   '@kitconcept/volto-heading-block',
   '@kitconcept/volto-highlight-block',
@@ -11,7 +12,6 @@ const addons = [
   '@kitconcept/volto-separator-block',
   '@kitconcept/volto-slider-block',
   '@kitconcept/volto-banner-block',
-  'volto-calendar-block',
   '@kitconcept/volto-light-theme',
 ];
 const theme = '@kitconcept/volto-light-theme';
