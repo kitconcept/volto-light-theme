@@ -984,6 +984,9 @@ importers:
       eslint-plugin-jsx-a11y:
         specifier: ^6.7.1
         version: 6.10.2(eslint@8.57.1)
+      eslint-plugin-no-only-tests:
+        specifier: ^3.3.0
+        version: 3.3.0
       eslint-plugin-prettier:
         specifier: ^5.1.3
         version: 5.3.1(@types/eslint@9.6.1)(eslint-config-prettier@9.1.2(eslint@8.57.1))(eslint@8.57.1)(prettier@3.2.5)
@@ -1299,14 +1302,14 @@ importers:
         specifier: ^2.5.0
         version: 2.5.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@kitconcept/volto-highlight-block':
-        specifier: ^4.5.0
-        version: 4.5.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: ^4.5.1
+        version: 4.5.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@kitconcept/volto-introduction-block':
         specifier: ^1.1.0
         version: 1.1.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@kitconcept/volto-logos-block':
         specifier: ^3.0.0
-        version: 3.0.0(n6xtr3cr6gkbj4dwieivnwuywm)
+        version: 3.0.0(7kcfq32gjusqgcjvgbkigszhx4)
       '@kitconcept/volto-separator-block':
         specifier: ^4.2.1
         version: 4.2.1(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(storybook@8.6.12(prettier@3.2.5))
@@ -3163,11 +3166,11 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0
 
-  '@kitconcept/volto-highlight-block@4.5.0':
-    resolution: {integrity: sha512-W3WzY/gQtCs5ZKF364E5maJ88NlmP2mT76nKKCsb34e6pEAb3v/4POl9FU9PeCpQGHvng7Cm0uUXtfSF9TmeTQ==}
+  '@kitconcept/volto-highlight-block@4.5.1':
+    resolution: {integrity: sha512-xDVGdUTFyCuR7uHb9/eyZ94NbreHABU8zwsZapiGuquKQDP61rEkCcNdU66O0fw7dpj5x1r9YeXoVFWmfX0UaA==}
     peerDependencies:
-      react: 18.2.0
-      react-dom: 18.2.0
+      react: ^18.2.0
+      react-dom: ^18.2.0
 
   '@kitconcept/volto-introduction-block@1.1.0':
     resolution: {integrity: sha512-6TUwX+wS5wRIjvRew2oPl39L6uU8izfel4dV7t87bbsmbimPItqMel8hi9i7v6zwSwLj7PMjOgNvZijubcLFFg==}
@@ -8041,6 +8044,10 @@ packages:
     engines: {node: '>=4.0'}
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9
+
+  eslint-plugin-no-only-tests@3.3.0:
+    resolution: {integrity: sha512-brcKcxGnISN2CcVhXJ/kEQlNa0MEfGRtwKtWA16SkqXHKitaKIMrfemJKLKX1YqDU5C/5JY3PvZXd5jEW04e0Q==}
+    engines: {node: '>=5.0.0'}
 
   eslint-plugin-prettier@5.3.1:
     resolution: {integrity: sha512-vad9VWgEm9xaVXRNmb4aeOt0PWDc61IAdzghkbYQ2wavgax148iKoX1rNJcgkBGCipzLzOnHYVgL7xudM9yccQ==}
@@ -17246,7 +17253,7 @@ snapshots:
       react-contenteditable: 3.3.6(react@18.2.0)
       react-dom: 18.2.0(react@18.2.0)
 
-  '@kitconcept/volto-highlight-block@4.5.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@kitconcept/volto-highlight-block@4.5.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -17256,7 +17263,7 @@ snapshots:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
-  '@kitconcept/volto-light-theme@7.6.0(k2gvexklstz64zau3gjbwoqfra)':
+  '@kitconcept/volto-light-theme@7.6.0(mhp55xf3keqdrxkug55qb7rxua)':
     dependencies:
       '@dnd-kit/core': 6.0.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@dnd-kit/sortable': 7.0.2(@dnd-kit/core@6.0.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)
@@ -17268,9 +17275,9 @@ snapshots:
       '@kitconcept/volto-carousel-block': 2.0.0(classnames@2.2.6)(embla-carousel@8.6.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@kitconcept/volto-dsgvo-banner': 3.0.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@kitconcept/volto-heading-block': 2.5.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@kitconcept/volto-highlight-block': 4.5.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@kitconcept/volto-highlight-block': 4.5.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@kitconcept/volto-introduction-block': 1.1.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@kitconcept/volto-logos-block': 3.0.0(n6xtr3cr6gkbj4dwieivnwuywm)
+      '@kitconcept/volto-logos-block': 3.0.0(7kcfq32gjusqgcjvgbkigszhx4)
       '@kitconcept/volto-separator-block': 4.2.1(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(react@18.2.0))(react@18.2.0)(storybook@8.6.12(prettier@3.2.5))
       '@kitconcept/volto-slider-block': 6.4.1(embla-carousel@8.6.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@plone/components': 3.0.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.12(prettier@3.2.5))
@@ -17292,9 +17299,9 @@ snapshots:
       - embla-carousel
       - storybook
 
-  '@kitconcept/volto-logos-block@3.0.0(n6xtr3cr6gkbj4dwieivnwuywm)':
+  '@kitconcept/volto-logos-block@3.0.0(7kcfq32gjusqgcjvgbkigszhx4)':
     dependencies:
-      '@kitconcept/volto-light-theme': 7.6.0(k2gvexklstz64zau3gjbwoqfra)
+      '@kitconcept/volto-light-theme': 7.6.0(mhp55xf3keqdrxkug55qb7rxua)
       '@plone/components': 3.0.2(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(storybook@8.6.12(prettier@3.2.5))
       classnames: 2.2.6
       react: 18.2.0
@@ -23658,6 +23665,8 @@ snapshots:
       object.fromentries: 2.0.8
       safe-regex-test: 1.1.0
       string.prototype.includes: 2.0.1
+
+  eslint-plugin-no-only-tests@3.3.0: {}
 
   eslint-plugin-prettier@5.3.1(@types/eslint@9.6.1)(eslint-config-prettier@9.1.2(eslint@8.57.1))(eslint@8.57.1)(prettier@3.2.5):
     dependencies:
