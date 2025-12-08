@@ -28,8 +28,8 @@ importers:
         specifier: workspace:*
         version: link:packages/volto-button-block/packages/volto-button-block
       '@kitconcept/volto-calendar-block':
-        specifier: ^1.0.0-alpha.1
-        version: 1.0.0-alpha.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: workspace:*
+        version: link:packages/volto-calendar-block/packages/volto-calendar-block
       '@kitconcept/volto-carousel-block':
         specifier: workspace:*
         version: link:packages/volto-carousel-block/packages/volto-carousel-block
@@ -1909,18 +1909,21 @@ importers:
   packages/volto-introduction-block/packages/volto-introduction-block:
     dependencies:
       react:
-        specifier: 18.2.0
+        specifier: ^18.2.0
         version: 18.2.0
       react-dom:
-        specifier: 18.2.0
+        specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
     devDependencies:
       '@plone/scripts':
         specifier: ^3.6.1
         version: 3.10.3
       release-it:
-        specifier: ^17.1.1
-        version: 17.1.1(typescript@5.9.3)
+        specifier: ^19.0.5
+        version: 19.0.6(@types/node@24.10.1)(magicast@0.3.5)
+      vitest:
+        specifier: ^3.2.4
+        version: 3.2.4(@types/debug@4.1.12)(@types/node@24.10.1)(jiti@2.6.1)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.30.2)(sass@1.58.0)(terser@5.44.1)(yaml@2.8.1)
 
   packages/volto-light-theme:
     dependencies:
@@ -3906,12 +3909,6 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0
 
-  '@kitconcept/volto-calendar-block@1.0.0-alpha.3':
-    resolution: {integrity: sha512-DURT7/BtdUNtG1q2cdxcc5+a4kYgLDLLmLJ2qdp6G26jC69qSzpWNEdSVk7iWdFAVJwx4a7apx2mpfg6DxXjMw==}
-    peerDependencies:
-      react: ^18.2.0
-      react-dom: ^18.2.0
-
   '@kwsites/file-exists@1.1.1':
     resolution: {integrity: sha512-m9/5YGR18lIwxSFDwfE3oA7bWuq9kdau6ugN4H2rJeyhFQZcG9AgSHkQtSD15a8WvTgfz9aikZMrKPHvbpqFiw==}
 
@@ -4176,15 +4173,6 @@ packages:
 
   '@plone/components@4.0.0-alpha.1':
     resolution: {integrity: sha512-VZiE/kj6A7PVXcJwMCralMOC2VnsjIjX+T6LTQXWz9+1M9DrFuse5sNMw7ryZqFWRvY+E06BPhHgeNuKOKM2Hw==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
-      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
-    peerDependenciesMeta:
-      react-dom:
-        optional: true
-
-  '@plone/components@4.0.0-alpha.4':
-    resolution: {integrity: sha512-uJNGveBjTDgSqaUX2Az8S8OVzG6Aeh3mSF9PMpkqRp87GRV8Hq3WXuVS0ZY0SLSBm0GIXDDZm4HXKDLMRUc+MQ==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -16228,13 +16216,6 @@ snapshots:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
-  '@kitconcept/volto-calendar-block@1.0.0-alpha.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
-    dependencies:
-      '@plone/components': 4.0.0-alpha.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      react: 18.2.0
-      react-aria-components: 1.13.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      react-dom: 18.2.0(react@18.2.0)
-
   '@kwsites/file-exists@1.1.1':
     dependencies:
       debug: 4.3.4(supports-color@8.1.1)
@@ -16543,23 +16524,6 @@ snapshots:
   '@pkgr/core@0.2.9': {}
 
   '@plone/components@4.0.0-alpha.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
-    dependencies:
-      '@internationalized/date': 3.10.0
-      '@react-aria/utils': 3.31.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      '@react-spectrum/utils': 3.12.9(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      clsx: 2.1.1
-      react: 18.2.0
-      react-aria: 3.44.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      react-aria-components: 1.13.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
-      react-stately: 3.42.0(react@18.2.0)
-      tailwind-merge: 3.4.0
-      tailwind-variants: 1.0.0(tailwindcss@4.1.17)
-      tailwindcss: 4.1.17
-      tailwindcss-animate: 1.0.7(tailwindcss@4.1.17)
-    optionalDependencies:
-      react-dom: 18.2.0(react@18.2.0)
-
-  '@plone/components@4.0.0-alpha.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       '@internationalized/date': 3.10.0
       '@react-aria/utils': 3.31.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
