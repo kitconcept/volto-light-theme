@@ -8,6 +8,14 @@
 
 <!-- towncrier release notes start -->
 
+## 7.6.5 (2025-12-08)
+
+### Bugfix
+
+- Add classname for unauthorized page. Update Volto 18.30.1. @sneridagh 
+- Cross language support for blocks chooser search. Fixed highlight block ENTER, create a new block consistently. Update highlight block to 4.5.1. Update Volto 18.30.0. @sneridagh 
+- Fixed error on pressing ENTER in introduction block. Update add-on to 1.2.0. @sneridagh 
+
 ## 7.6.4 (2025-12-01)
 
 ### Bugfix
