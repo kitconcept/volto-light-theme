@@ -8,6 +8,21 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0-alpha.9 (2025-12-08)
+
+### Feature
+
+- Add volto-calendar-block @iRohitSingh 
+- Added cross language support for blocks chooser search @Tishasoumya-02 [#7657](https://github.com/plone/volto/issues/7657)
+  Added support for selecting Path and Depth in the Listing Block’s Location criteria using the ObjectBrowserWidget and NumberWidget. @iFlameing @giuliaghisini [#7661](https://github.com/plone/volto/issues/7661)
+  Added feature of drag and drop files in folder contents. @Tishasoumya-02
+  (Update to Volto 19a9) @sneridagh 
+
+### Bugfix
+
+- Fixed highlight block ENTER, create a new block consistently. Update highlight block to 4.5.1. @sneridagh 
+- Fixed introduction block error on pressing ENTER. Update add-on to 1.2.0. @sneridagh 
+
 ## 8.0.0-alpha.8 (2025-12-01)
 
 ### Bugfix
