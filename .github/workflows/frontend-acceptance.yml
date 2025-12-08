@@ -37,6 +37,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Set artifact name
+        run: |
+          ARTIFACT_NAME=$(echo "${{ inputs.short-name }}" | sed 's/\//-/g')
+          echo "ARTIFACT_NAME=$ARTIFACT_NAME" >> $GITHUB_ENV
+
       - name: Load images
         run: |
           docker pull ${{ inputs.image-name-prefix }}-backend-acceptance:${{ inputs.image-tag }}
@@ -140,12 +145,12 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-screenshots-acceptance-${{ inputs.short-name }}
+          name: cypress-screenshots-acceptance-${{ env.ARTIFACT_NAME }}
           path: frontend/cypress/screenshots
 
       # Upload Cypress videos
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
-          name: cypress-videos-acceptance-${{ inputs.short-name }}
+          name: cypress-videos-acceptance-${{ env.ARTIFACT_NAME }}
           path: frontend/cypress/videos

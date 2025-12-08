@@ -133,13 +133,13 @@ jobs:
           - name: "Main"
             short-name: main
           - name: "Core - Basic"
-            short-name: core-basic
+            short-name: core/basic
           - name: "Core - Blocks"
-            short-name: core-blocks
+            short-name: core/blocks
           - name: "Core - Blocks - Listing"
-            short-name: core-blocks-listing
+            short-name: core/blocks-listing
           - name: "Core - Content"
-            short-name: core-content
+            short-name: core/content
           - name: "Add-ons"
             short-name: addons
           - name: "a11y"
