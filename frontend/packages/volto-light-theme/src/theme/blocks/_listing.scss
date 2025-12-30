@@ -50,6 +50,10 @@
     img {
       object-fit: cover;
     }
+
+    p.description > a {
+      display: inline;
+    }
   }
 
   h2.headline {
