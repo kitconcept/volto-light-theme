@@ -2,7 +2,7 @@
  * OVERRIDE TextareaWidget.jsx
  * REASON: Add softMaxLength warning for TextareaWidget.
  * FILE: https://github.com/plone/volto/blob/ede0335834445988dd0639ab2361180251c97e4e/packages/volto/src/components/manage/Widgets/TextareaWidget.jsx
- * FILE VERSION: Volto 17.23.0
+ * FILE VERSION: Volto 19.0.0-alpha.20
  * DATE: 2025-12-16
  * DEVELOPER: @Tishasoumya-02
  */
