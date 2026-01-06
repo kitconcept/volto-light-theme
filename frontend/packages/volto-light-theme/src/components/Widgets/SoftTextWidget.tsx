@@ -11,7 +11,7 @@ import PropTypes from 'prop-types';
 import { Input, Label } from 'semantic-ui-react';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import FormFieldWrapper from '@plone/volto/components/manage/Widgets/FormFieldWrapper';
-const TextWidget = (props) => {
+const SoftTextWidget = (props) => {
   const {
     id,
     value,
@@ -87,8 +87,8 @@ const TextWidget = (props) => {
     </FormFieldWrapper>
   );
 };
-export default TextWidget;
-TextWidget.propTypes = {
+export default SoftTextWidget;
+SoftTextWidget.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
@@ -115,7 +115,7 @@ TextWidget.propTypes = {
   wrapped: PropTypes.bool,
   placeholder: PropTypes.string,
 };
-TextWidget.defaultProps = {
+SoftTextWidget.defaultProps = {
   description: null,
   required: false,
   error: [],

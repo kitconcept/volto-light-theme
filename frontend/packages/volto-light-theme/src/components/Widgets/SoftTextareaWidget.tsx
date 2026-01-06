@@ -23,7 +23,7 @@ import FormFieldWrapper from '@plone/volto/components/manage/Widgets/FormFieldWr
  * }
  * ```
  */
-const TextareaWidget = (props) => {
+const SoftTextareaWidget = (props) => {
   const {
     id,
     maxLength,
@@ -92,7 +92,7 @@ const TextareaWidget = (props) => {
  * @property {Object} propTypes Property types.
  * @static
  */
-TextareaWidget.propTypes = {
+SoftTextareaWidget.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
@@ -112,7 +112,7 @@ TextareaWidget.propTypes = {
  * @property {Object} defaultProps Default properties.
  * @static
  */
-TextareaWidget.defaultProps = {
+SoftTextareaWidget.defaultProps = {
   description: null,
   maxLength: null,
   softMaxLength: null,
@@ -123,4 +123,4 @@ TextareaWidget.defaultProps = {
   onEdit: null,
   onDelete: null,
 };
-export default injectIntl(TextareaWidget);
+export default injectIntl(SoftTextareaWidget);
