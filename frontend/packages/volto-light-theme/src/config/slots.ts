@@ -5,6 +5,7 @@ import FollowUsLogoAndLinks from '../components/Footer/slots/FollowUsLogoAndLink
 import Colophon from '../components/Footer/slots/Colophon';
 import CoreFooter from '../components/Footer/slots/CoreFooter';
 import StickyMenu from '../components/StickyMenu/StickyMenu';
+import MobileStickyMenu from '../components/StickyMenu/MobileStickyMenu';
 import Anontools from '../components/Anontools/Anontools';
 import type { Content } from '@plone/types';
 
@@ -55,6 +56,12 @@ export default function install(config: ConfigType) {
     name: 'Colophon',
     slot: 'postFooter',
     component: Colophon,
+  });
+
+  config.registerSlotComponent({
+    name: 'MobileStickyMenu',
+    slot: 'preFooter',
+    component: MobileStickyMenu,
   });
 
   return config;
