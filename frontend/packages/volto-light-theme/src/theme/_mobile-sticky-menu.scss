@@ -18,6 +18,7 @@
     position: relative;
     --slide-size: 33%;
     .embla__viewport {
+      position: relative;
       z-index: 2; /* higher than embla__button */
       display: inline-block;
       overflow: hidden;

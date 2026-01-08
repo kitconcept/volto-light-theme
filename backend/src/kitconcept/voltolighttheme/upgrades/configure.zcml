@@ -14,14 +14,4 @@
         />
   </genericsetup:upgradeSteps>
 
-  <genericsetup:upgradeSteps
-      profile="kitconcept.voltolighttheme:default"
-      source="20250321001"
-      destination="20260106001"
-      >
-    <genericsetup:upgradeDepends
-        title="Add enable mobile sticky menu field"
-        import_steps="typeinfo"
-        />
-  </genericsetup:upgradeSteps>
 </configure>
