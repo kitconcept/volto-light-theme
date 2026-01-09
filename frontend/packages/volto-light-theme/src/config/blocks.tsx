@@ -31,6 +31,8 @@ import { AccordionSchemaEnhancer } from '../components/Blocks/Accordion/schema';
 
 import { searchBlockSchemaEnhancer } from '../components/Blocks/Search/schema';
 
+import { BannerStylingSchema } from '../components/Blocks/Banner/schema';
+
 import gridSVG from '../icons/block_icn_grid.svg';
 import accordionSVG from '../icons/block_icn_accordion.svg';
 import descriptionSVG from '@plone/volto/icons/description.svg';
@@ -61,6 +63,7 @@ declare module '@plone/types' {
     hero: BlockConfigBase;
     slateTable: BlockConfigBase;
     eventCalendar: BlockConfigBase;
+    banner: BlockConfigBase;
   }
   export interface BlockConfigBase {
     themes?: StyleDefinition[];
@@ -363,6 +366,11 @@ export default function install(config: ConfigType) {
     sidebarTab: 0,
     allowed_headings: [['h2', 'h2']],
     schemaEnhancer: defaultStylingSchema,
+  };
+
+  config.blocks.blocksConfig.banner = {
+    ...config.blocks.blocksConfig.banner,
+    schemaEnhancer: BannerStylingSchema,
   };
 
   config.blocks.blocksConfig.search = {
