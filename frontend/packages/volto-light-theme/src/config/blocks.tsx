@@ -49,9 +49,11 @@ import SearchBlockViewEvent from '../components/Blocks/EventCalendar/Search/Sear
 import SearchBlockEditEvent from '../components/Blocks/EventCalendar/Search/SearchBlockEdit';
 import SearchBlockSchemaEvent from '../components/Blocks/EventCalendar/Search/schema';
 import EventCalenderTemplate from '../components/Blocks/EventCalendar/Search/components/EventTemplate';
+import { BannerStylingSchema } from '../components/Blocks/Banner/schema';
 
 declare module '@plone/types' {
   export interface BlocksConfigData {
+    banner: BlockConfigBase;
     introduction: BlockConfigBase;
     heading: BlockConfigBase;
     __button: BlockConfigBase;
@@ -345,6 +347,11 @@ export default function install(config: ConfigType) {
     sidebarTab: 0,
     allowed_headings: [['h2', 'h2']],
     schemaEnhancer: defaultStylingSchema,
+  };
+
+  config.blocks.blocksConfig.banner = {
+    ...config.blocks.blocksConfig.banner,
+    schemaEnhancer: BannerStylingSchema,
   };
 
   config.blocks.blocksConfig.search = {
