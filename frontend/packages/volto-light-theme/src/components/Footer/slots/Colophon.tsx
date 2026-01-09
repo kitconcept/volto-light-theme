@@ -4,6 +4,7 @@ import Logo from '../../Logo/Logo';
 import type { Content } from '@plone/types';
 import { useLiveData } from '@kitconcept/volto-light-theme/helpers/useLiveData';
 import type { SiteFooterSettings, SiteHeaderSettings } from '../../../types';
+import config from '@plone/volto/registry';
 
 const Colophon = ({ content }: { content: Content }) => {
   const logo = useLiveData<SiteHeaderSettings['logo']>(
@@ -15,11 +16,12 @@ const Colophon = ({ content }: { content: Content }) => {
   const footer_colophon_text = useLiveData<
     SiteFooterSettings['footer_colophon_text']
   >(content, 'voltolighttheme.footer', 'footer_colophon_text');
+  const RenderSlateToHtml = config.widgets.views.widget.slate_richtext;
 
   return (
     <Container className="colophon">
       {footer_colophon_text ? (
-        <>{footer_colophon_text}</>
+        <RenderSlateToHtml value={footer_colophon_text} />
       ) : (
         <>
           <div className="powered-by">

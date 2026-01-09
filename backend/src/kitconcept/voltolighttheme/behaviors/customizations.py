@@ -254,12 +254,19 @@ class ISiteFooterCustomizationSettings(model.Schema):
         required=False,
         widget="",
     )
+    directives.widget(
+        "footer_colophon_text",
+        frontendOptions={
+            "widget": "slate_richtext",
+        },
+    )
 
-    footer_colophon_text = TextLine(
+    footer_colophon_text = JSONField(
         title=_("Footer colophon text"),
         description=_(
             "help_footer_colophon_text",
             default="The text that shows in the footer colophon.",
         ),
+        schema=OBJECT_LIST,
         required=False,
     )
