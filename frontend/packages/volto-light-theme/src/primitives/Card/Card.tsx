@@ -64,8 +64,14 @@ const Card = (props: CardProps) => {
 
   const isInteractive = !!props.href || !!props.item;
 
-  const onClick: React.MouseEventHandler<HTMLDivElement> = () => {
-    if (isInteractive) triggerNavigation();
+  const onClick: React.MouseEventHandler<HTMLDivElement> = (e) => {
+    if (!isInteractive) return;
+    if (e.defaultPrevented) return;
+    if (e.target instanceof Element) {
+      const anchor = e.target.closest('a');
+      if (anchor && anchor !== linkRef.current) return;
+    }
+    triggerNavigation();
   };
 
   const onKeyDown: React.KeyboardEventHandler<HTMLDivElement> = (e) => {
