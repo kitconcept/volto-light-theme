@@ -1,6 +1,31 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 7.6.6 (2026-01-13)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Fix sticky menu cut off at the bottom on smaller screens @iRohitSingh 
+- Fixed double navigation in cards that contains inner links in its body. @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 7.6.5 (2025-12-08)
 
 ### Backend
