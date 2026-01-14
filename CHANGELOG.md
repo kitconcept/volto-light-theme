@@ -1,6 +1,36 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 8.0.0a10 (2026-01-14)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Fix sticky menu cut off at the bottom on smaller screens @iRohitSingh 
+- Fixed double navigation in cards that contains inner links in its body. @sneridagh 
+- Fixed rearrangement of files in drag-and-drop of folderish content. @Tishasoumya-02 
+
+#### Internal
+
+- Add Cypress tests for Enter key behavior on focused blocks @iRohitSingh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 8.0.0a9 (2025-12-08)
 
 ### Backend
