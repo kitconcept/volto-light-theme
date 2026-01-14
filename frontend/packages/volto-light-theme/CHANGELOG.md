@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0-alpha.11 (2026-01-14)
+
+### Internal
+
+- Sync RAC VLT version to use the Volto 19a21 one (1.14.1) @sneridagh 
+
 ## 8.0.0-alpha.10 (2026-01-14)
 
 ### Bugfix

@@ -1,6 +1,30 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 8.0.0a11 (2026-01-14)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Internal
+
+- Sync RAC VLT version to use the Volto 19a21 one (1.14.1) @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 8.0.0a10 (2026-01-14)
 
 ### Backend
