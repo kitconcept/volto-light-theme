@@ -1,6 +1,31 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 8.0.0a12 (2026-01-15)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- - fix bug where markdown inline links in descriptions are rendered as a separate paragraph [#751](https://github.com/kitconcept/volto-light-theme/pull/751)
+- Use the CSS prop --breadcrumbs-foregound for breadcrumbs links as default, with --link-foreground-color as fallback. @danalvrz 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 8.0.0a11 (2026-01-14)
 
 ### Backend
