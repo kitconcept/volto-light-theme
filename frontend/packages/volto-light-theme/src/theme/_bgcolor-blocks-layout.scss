@@ -1426,12 +1426,12 @@
     }
 
     a.section {
-      color: var(--link-foreground-color, --breadcrumbs-foreground);
+      color: var(--breadcrumbs-foreground, --link-foreground-color);
     }
 
     a.home {
       svg {
-        fill: var(--link-foreground-color, --breadcrumbs-foreground) !important;
+        fill: var(--breadcrumbs-foreground, --link-foreground-color) !important;
       }
     }
   }
