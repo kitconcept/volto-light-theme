@@ -13,7 +13,7 @@ import Caption from '../../Caption/Caption';
 function Edit(props) {
   const { data } = props;
   const Image = config.getComponent({ name: 'Image' }).component;
-  
+
   const shouldRenderCaption =
     data.title ||
     data.description ||
