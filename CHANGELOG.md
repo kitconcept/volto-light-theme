@@ -1,6 +1,30 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 7.6.7 (2026-01-15)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- - fix bug where markdown inline links in descriptions are rendered as a separate paragraph [#751](https://github.com/kitconcept/volto-light-theme/pull/751)
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 7.6.6 (2026-01-13)
 
 ### Backend
