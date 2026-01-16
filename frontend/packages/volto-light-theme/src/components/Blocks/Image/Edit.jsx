@@ -13,7 +13,6 @@ import Caption from '../../Caption/Caption';
 function Edit(props) {
   const { data } = props;
   const Image = config.getComponent({ name: 'Image' }).component;
-
   const shouldRenderCaption =
     data.title ||
     data.description ||
@@ -65,82 +64,71 @@ function Edit(props) {
         )}
       >
         {data.url ? (
-          (() => {
-            const imageComponent = (
-              <Image
-                // START CUSTOMIZATION - Moved to the figure
-                // className={cx({
-                //   'full-width': data.align === 'full',
-                //   large: data.size === 'l',
-                //   medium: data.size === 'm',
-                //   small: data.size === 's',
-                // })}
+          <figure
+            className={cx(
+              'figure',
+              {
+                center: !Boolean(data.align),
+                'has-caption': shouldRenderCaption,
+              },
+              data.align,
+              {
+                // START CUSTOMIZATION
+                // 'full-width': data.align === 'full',
                 // END CUSTOMIZATION
-                item={
-                  data.image_scales
-                    ? {
-                        '@id': data.url,
-                        image_field: data.image_field,
-                        image_scales: data.image_scales,
-                      }
-                    : undefined
-                }
-                src={
-                  data.image_scales
-                    ? undefined
-                    : isInternalURL(data.url)
-                      ? // Backwards compat in the case that the block is storing the full server URL
-                        (() => {
-                          if (data.size === 'l')
-                            return `${flattenToAppURL(data.url)}/@@images/image`;
-                          if (data.size === 'm')
-                            return `${flattenToAppURL(
-                              data.url,
-                            )}/@@images/image/preview`;
-                          if (data.size === 's')
-                            return `${flattenToAppURL(
-                              data.url,
-                            )}/@@images/image/mini`;
+                large: data.size === 'l',
+                medium: data.size === 'm' || !data.size,
+                small: data.size === 's',
+              },
+            )}
+          >
+            <Image
+              // START CUSTOMIZATION - Moved to the figure
+              // className={cx({
+              //   'full-width': data.align === 'full',
+              //   large: data.size === 'l',
+              //   medium: data.size === 'm',
+              //   small: data.size === 's',
+              // })}
+              // END CUSTOMIZATION
+              item={
+                data.image_scales
+                  ? {
+                      '@id': data.url,
+                      image_field: data.image_field,
+                      image_scales: data.image_scales,
+                    }
+                  : undefined
+              }
+              src={
+                data.image_scales
+                  ? undefined
+                  : isInternalURL(data.url)
+                    ? // Backwards compat in the case that the block is storing the full server URL
+                      (() => {
+                        if (data.size === 'l')
                           return `${flattenToAppURL(data.url)}/@@images/image`;
-                        })()
-                      : data.url
-                }
-                sizes={config.blocks.blocksConfig.image.getSizes(data)}
-                alt={data.alt || ''}
-                loading="lazy"
-                responsive={true}
-              />
-            );
-
-            return shouldRenderCaption ? (
-              <figure
-                className={cx(
-                  'figure',
-                  {
-                    center: !Boolean(data.align),
-                  },
-                  data.align,
-                  {
-                    // START CUSTOMIZATION
-                    // 'full-width': data.align === 'full',
-                    // END CUSTOMIZATION
-                    large: data.size === 'l',
-                    medium: data.size === 'm' || !data.size,
-                    small: data.size === 's',
-                  },
-                )}
-              >
-                {imageComponent}
-                <Caption
-                  title={data.title}
-                  description={data.description}
-                  credit={data?.copyright_and_sources ?? data.credit?.data}
-                />
-              </figure>
-            ) : (
-              imageComponent
-            );
-          })()
+                        if (data.size === 'm')
+                          return `${flattenToAppURL(
+                            data.url,
+                          )}/@@images/image/preview`;
+                        if (data.size === 's')
+                          return `${flattenToAppURL(data.url)}/@@images/image/mini`;
+                        return `${flattenToAppURL(data.url)}/@@images/image`;
+                      })()
+                    : data.url
+              }
+              sizes={config.blocks.blocksConfig.image.getSizes(data)}
+              alt={data.alt || ''}
+              loading="lazy"
+              responsive={true}
+            />
+            <Caption
+              title={data.title}
+              description={data.description}
+              credit={data?.copyright_and_sources ?? data.credit?.data}
+            />
+          </figure>
         ) : (
           <ImageInput
             onChange={handleChange}
