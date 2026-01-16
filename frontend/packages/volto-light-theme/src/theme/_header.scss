@@ -583,6 +583,7 @@ body.has-toolbar.has-sidebar {
     }
     & > li > a {
       display: block;
+      color: var(--header-foreground);
 
       &.item {
         &.active::before,
