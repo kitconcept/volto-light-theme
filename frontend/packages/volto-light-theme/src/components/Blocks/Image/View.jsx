@@ -57,6 +57,7 @@ export const ImageView = ({ className, data, detached, properties, style }) => {
                   {
                     center: !Boolean(data.align),
                     detached,
+                    'has-caption': shouldRenderCaption,
                   },
                   data.align,
                   {

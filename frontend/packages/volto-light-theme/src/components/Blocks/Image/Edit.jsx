@@ -13,6 +13,11 @@ import Caption from '../../Caption/Caption';
 function Edit(props) {
   const { data } = props;
   const Image = config.getComponent({ name: 'Image' }).component;
+  const shouldRenderCaption =
+    data.title ||
+    data.description ||
+    (data?.copyright_and_sources ?? data.credit?.data);
+
   const onSelectItem = React.useCallback(
     (url, item) => {
       const dataAdapter = props.blocksConfig[props.data['@type']].dataAdapter;
@@ -64,6 +69,7 @@ function Edit(props) {
               'figure',
               {
                 center: !Boolean(data.align),
+                'has-caption': shouldRenderCaption,
               },
               data.align,
               {
