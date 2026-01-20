@@ -87,7 +87,7 @@ jobs:
         run: pnpm exec playwright install --with-deps chromium
 
       - name: Run visual tests
-        run: pnpm test:visual
+        run: pnpm --filter @kitconcept/volto-light-theme run test:visual
 
       - name: Upload Playwright artifacts
         if: failure()
