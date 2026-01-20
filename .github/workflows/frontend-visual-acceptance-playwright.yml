@@ -79,8 +79,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
 
-      # - name: Install dependencies
-      #   run: make install
+      - name: Install dependencies
+        run: make install
 
       - name: Install Playwright browsers
         working-directory: frontend/packages/volto-light-theme
