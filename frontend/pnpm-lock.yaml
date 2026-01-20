@@ -16,8 +16,8 @@ importers:
   .:
     dependencies:
       '@eeacms/volto-accordion-block':
-        specifier: ^10.4.6
-        version: 10.4.6
+        specifier: ^12.0.0
+        version: 12.0.0
       '@kitconcept/volto-banner-block':
         specifier: workspace:*
         version: link:packages/volto-banner-block/packages/volto-banner-block
@@ -3065,8 +3065,8 @@ packages:
   '@dual-bundle/import-meta-resolve@4.2.1':
     resolution: {integrity: sha512-id+7YRUgoUX6CgV0DtuhirQWodeeA7Lf4i2x71JS/vtA5pRb/hIGWlw+G6MeXvsM+MXrz0VAydTGElX1rAfgPg==}
 
-  '@eeacms/volto-accordion-block@10.4.6':
-    resolution: {integrity: sha512-IZfAg8By1dZA2SSr4MNu2gFCs0F67/ZMAlpdqkevSMvkBREjny97cEFtMjkhGyOc3MBTp1vd0TtqvL3cN1GehQ==}
+  '@eeacms/volto-accordion-block@12.0.0':
+    resolution: {integrity: sha512-YaYyIt7ejz/1fOK7kLUUXXSWaU4viNRn58xE3qjpZOPBV8F3cxo2vbo+SdgC5hRuVr1bzq2V/u3km+HaHb80jA==}
 
   '@eeacms/volto-widget-theme-picker@2.0.0':
     resolution: {integrity: sha512-f3+B7ATw0EoehO2rqU9NZoJABBtFUGy+zDGynm7MCSsfWcy6yafmCsOw2MKssBFXkgBicfpLLdE8ESEEITy6aA==}
@@ -15693,7 +15693,7 @@ snapshots:
 
   '@dual-bundle/import-meta-resolve@4.2.1': {}
 
-  '@eeacms/volto-accordion-block@10.4.6':
+  '@eeacms/volto-accordion-block@12.0.0':
     dependencies:
       '@eeacms/volto-widget-theme-picker': 2.0.0
 
