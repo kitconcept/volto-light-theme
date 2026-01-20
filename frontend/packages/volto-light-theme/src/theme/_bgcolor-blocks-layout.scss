@@ -502,6 +502,12 @@
         color: var(--theme-foreground-color);
       }
 
+      .results-disclaimer-container {
+        p.disclaimer {
+          color: var(--theme-low-contrast-foreground-color);
+        }
+      }
+
       .listing-item {
         border-bottom-color: var(--theme-foreground-color) !important;
 
