@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-09-12 20:20+0000\n"
+"POT-Creation-Date: 2026-01-20 10:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,40 +14,11 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: kitconcept.voltolighttheme\n"
 
-#: kitconcept/voltolighttheme/behaviors/footer.py:58
-msgid "Footer address"
-msgstr "Rodapé: Endereço"
-
 #: kitconcept/voltolighttheme/behaviors/customizations.py:259
 msgid "Footer colophon text"
 msgstr "Rodapé: Colofão"
 
-#: kitconcept/voltolighttheme/behaviors/footer.py:79
-msgid "Footer column left"
-msgstr "Rodapé: Coluna da esquerda"
-
-#: kitconcept/voltolighttheme/behaviors/footer.py:67
-msgid "Footer column left header"
-msgstr "Rodapé: Cabeçalho da coluna da esquerda"
-
-#: kitconcept/voltolighttheme/behaviors/footer.py:103
-msgid "Footer column middle"
-msgstr "Rodapé: Coluna do meio"
-
-#: kitconcept/voltolighttheme/behaviors/footer.py:91
-msgid "Footer column middle header"
-msgstr "Rodapé: Cabeçalho da coluna do meio"
-
-#: kitconcept/voltolighttheme/behaviors/footer.py:127
-msgid "Footer column right"
-msgstr "Rodapé: Coluna da direita"
-
-#: kitconcept/voltolighttheme/behaviors/footer.py:115
-msgid "Footer column right header"
-msgstr "Rodapé: Cabeçalho da coluna da direita"
-
 #: kitconcept/voltolighttheme/behaviors/customizations.py:180
-#: kitconcept/voltolighttheme/behaviors/footer.py:30
 msgid "Footer customizations"
 msgstr "Rodapé: Personalizações"
 
@@ -86,22 +57,6 @@ msgstr "Pacote para instalar os comportamentos disponíveis no Volto Light Theme
 #: kitconcept/voltolighttheme/behaviors/customizations.py:97
 msgid "Site Actions"
 msgstr "Ações do site"
-
-#: kitconcept/voltolighttheme/behaviors/footer.py:59
-msgid "The footer address that appears below the footer logo in the first footer column."
-msgstr "O endereço do rodapé que aparece abaixo do logo do rodapé na primeira coluna do rodapé."
-
-#: kitconcept/voltolighttheme/behaviors/footer.py:80
-msgid "The left-most column appearing after the address column. It can contain a list of links."
-msgstr "A coluna mais à esquerda que aparece após a coluna de endereço. Pode conter uma lista de links."
-
-#: kitconcept/voltolighttheme/behaviors/footer.py:104
-msgid "The middle column appearing between the left and the right columns. It can contain a list of links."
-msgstr "A coluna do meio que aparece entre as colunas esquerda e direita. Pode conter uma lista de links."
-
-#: kitconcept/voltolighttheme/behaviors/footer.py:128
-msgid "The right-most column appearing after the middle column. It can contain a list of links."
-msgstr "A coluna mais à direita que aparece após a coluna do meio. Pode conter uma lista de links."
 
 #: kitconcept/voltolighttheme/behaviors/customizations.py:116
 msgid "Theming"
@@ -147,11 +102,6 @@ msgstr "Caso ativado, o menu expandido será exibido."
 msgid "help_footer_colophon_text"
 msgstr "O texto que é exibido no colofão do rodapé."
 
-#. Default: "The footer has a main logo located in the lower left side, above the address. In case that the footer has a dark  background, you can set this inversed logo to ensure it plays well with the background color. If not set, the main site logo will be used."
-#: kitconcept/voltolighttheme/behaviors/footer.py:47
-msgid "help_footer_logo"
-msgstr "O rodapé pode ter um logo proeminente localizado no lado inferior direito. Normalmente é usado para exibir o logo do patrocinador do site."
-
 #. Default: "If enabled, the intranet header will be shown."
 #: kitconcept/voltolighttheme/behaviors/customizations.py:72
 msgid "help_has_intranet_header"
@@ -166,16 +116,6 @@ msgstr "As ações do site são os links que aparecem no lado direito do cabeça
 #: kitconcept/voltolighttheme/behaviors/customizations.py:82
 msgid "help_intranet_flag"
 msgstr "Um etiqueta colorida no canto superior esquerdo do cabeçalho."
-
-#. Default: "The post footer can have a prominent logo located in the lower right side. It is normally used for displaying the logo of the site sponsor."
-#: kitconcept/voltolighttheme/behaviors/footer.py:140
-msgid "help_post_footer_logo"
-msgstr "O espaço após o rodapé pode ter um logo proeminente localizado no lado inferior direito. Normalmente é usado para exibir o logo do patrocinador do site."
-
-#. Default: "The post footer logo can be linked to a URL."
-#: kitconcept/voltolighttheme/behaviors/footer.py:157
-msgid "help_post_footer_logo_link"
-msgstr "O logo do rodapé pode ser vinculado a uma URL."
 
 #. Default: "If the site or subsite has a logo, please upload it here."
 #: kitconcept/voltolighttheme/behaviors/customizations.py:43
@@ -208,11 +148,6 @@ msgstr "Logo complementar"
 msgid "label_enable_fat_menu"
 msgstr "Habilitar menu expandido"
 
-#. Default: "Footer Logo"
-#: kitconcept/voltolighttheme/behaviors/footer.py:46
-msgid "label_footer_logo"
-msgstr "Rodapé: Logo"
-
 #. Default: "Enable Intranet Header"
 #: kitconcept/voltolighttheme/behaviors/customizations.py:71
 msgid "label_has_intranet_header"
@@ -222,16 +157,6 @@ msgstr "Habilitar cabeçalho de intranet"
 #: kitconcept/voltolighttheme/behaviors/customizations.py:81
 msgid "label_intranet_flag"
 msgstr "Indicação do site"
-
-#. Default: "Post Footer Logo"
-#: kitconcept/voltolighttheme/behaviors/footer.py:139
-msgid "label_post_footer_logo"
-msgstr "Logo do espaço após o rodapé"
-
-#. Default: "Post Footer Logo Link"
-#: kitconcept/voltolighttheme/behaviors/footer.py:156
-msgid "label_post_footer_logo_link"
-msgstr "Link do logo do espaço após o rodapé"
 
 #. Default: "Navigation Text Color"
 #: kitconcept/voltolighttheme/behaviors/customizations.py:148

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-09-12 20:20+0000\n"
+"POT-Creation-Date: 2026-01-20 10:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,40 +14,11 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: kitconcept.voltolighttheme\n"
 
-#: kitconcept/voltolighttheme/behaviors/footer.py:58
-msgid "Footer address"
-msgstr ""
-
 #: kitconcept/voltolighttheme/behaviors/customizations.py:259
 msgid "Footer colophon text"
 msgstr ""
 
-#: kitconcept/voltolighttheme/behaviors/footer.py:79
-msgid "Footer column left"
-msgstr ""
-
-#: kitconcept/voltolighttheme/behaviors/footer.py:67
-msgid "Footer column left header"
-msgstr ""
-
-#: kitconcept/voltolighttheme/behaviors/footer.py:103
-msgid "Footer column middle"
-msgstr ""
-
-#: kitconcept/voltolighttheme/behaviors/footer.py:91
-msgid "Footer column middle header"
-msgstr ""
-
-#: kitconcept/voltolighttheme/behaviors/footer.py:127
-msgid "Footer column right"
-msgstr ""
-
-#: kitconcept/voltolighttheme/behaviors/footer.py:115
-msgid "Footer column right header"
-msgstr ""
-
 #: kitconcept/voltolighttheme/behaviors/customizations.py:180
-#: kitconcept/voltolighttheme/behaviors/footer.py:30
 msgid "Footer customizations"
 msgstr ""
 
@@ -85,22 +56,6 @@ msgstr ""
 
 #: kitconcept/voltolighttheme/behaviors/customizations.py:97
 msgid "Site Actions"
-msgstr ""
-
-#: kitconcept/voltolighttheme/behaviors/footer.py:59
-msgid "The footer address that appears below the footer logo in the first footer column."
-msgstr ""
-
-#: kitconcept/voltolighttheme/behaviors/footer.py:80
-msgid "The left-most column appearing after the address column. It can contain a list of links."
-msgstr ""
-
-#: kitconcept/voltolighttheme/behaviors/footer.py:104
-msgid "The middle column appearing between the left and the right columns. It can contain a list of links."
-msgstr ""
-
-#: kitconcept/voltolighttheme/behaviors/footer.py:128
-msgid "The right-most column appearing after the middle column. It can contain a list of links."
 msgstr ""
 
 #: kitconcept/voltolighttheme/behaviors/customizations.py:116
@@ -147,11 +102,6 @@ msgstr ""
 msgid "help_footer_colophon_text"
 msgstr ""
 
-#. Default: "The footer has a main logo located in the lower left side, above the address. In case that the footer has a dark  background, you can set this inversed logo to ensure it plays well with the background color. If not set, the main site logo will be used."
-#: kitconcept/voltolighttheme/behaviors/footer.py:47
-msgid "help_footer_logo"
-msgstr ""
-
 #. Default: "If enabled, the intranet header will be shown."
 #: kitconcept/voltolighttheme/behaviors/customizations.py:72
 msgid "help_has_intranet_header"
@@ -165,16 +115,6 @@ msgstr ""
 #. Default: "The colored pill at the top left of the header."
 #: kitconcept/voltolighttheme/behaviors/customizations.py:82
 msgid "help_intranet_flag"
-msgstr ""
-
-#. Default: "The post footer can have a prominent logo located in the lower right side. It is normally used for displaying the logo of the site sponsor."
-#: kitconcept/voltolighttheme/behaviors/footer.py:140
-msgid "help_post_footer_logo"
-msgstr ""
-
-#. Default: "The post footer logo can be linked to a URL."
-#: kitconcept/voltolighttheme/behaviors/footer.py:157
-msgid "help_post_footer_logo_link"
 msgstr ""
 
 #. Default: "If the site or subsite has a logo, please upload it here."
@@ -207,11 +147,6 @@ msgstr ""
 msgid "label_enable_fat_menu"
 msgstr ""
 
-#. Default: "Footer Logo"
-#: kitconcept/voltolighttheme/behaviors/footer.py:46
-msgid "label_footer_logo"
-msgstr ""
-
 #. Default: "Enable Intranet Header"
 #: kitconcept/voltolighttheme/behaviors/customizations.py:71
 msgid "label_has_intranet_header"
@@ -220,16 +155,6 @@ msgstr ""
 #. Default: "Site Flag"
 #: kitconcept/voltolighttheme/behaviors/customizations.py:81
 msgid "label_intranet_flag"
-msgstr ""
-
-#. Default: "Post Footer Logo"
-#: kitconcept/voltolighttheme/behaviors/footer.py:139
-msgid "label_post_footer_logo"
-msgstr ""
-
-#. Default: "Post Footer Logo Link"
-#: kitconcept/voltolighttheme/behaviors/footer.py:156
-msgid "label_post_footer_logo_link"
 msgstr ""
 
 #. Default: "Navigation Text Color"
