@@ -28,6 +28,8 @@
   },
   "scripts": {
     "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
+    "test:visual": "playwright test",
+    "test:visual:open": "playwright test --ui",
     "dry-release": "release-it --dry-run",
     "release": "release-it",
     "release-major-alpha": "release-it major --preRelease=alpha",
@@ -49,6 +51,8 @@
     "@types/node": "^22",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
+    "@playwright/test": "^1.55.0",
+    "playwright": "^1.55.0",
     "react-intl-redux": "2.3.0",
     "redux-mock-store": "1.5.4",
     "release-it": "^19.0.3",

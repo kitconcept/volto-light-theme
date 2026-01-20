@@ -162,6 +162,13 @@ jobs:
       - backend-build
       - frontend-build
 
+  visual-acceptance-playwright:
+    name: "Visual Acceptance playwright: ${{ matrix.name }}"
+    if: ${{ needs.config.outputs.acceptance == 'true' && (always() && !contains(needs.*.result, 'failure'))}}
+    uses: ./.github/workflows/frontend-visual-acceptance-playwright.yml
+    needs:
+      - config
+
   visual-acceptance:
     name: "Visual Acceptance: ${{ matrix.name }}"
     if: ${{ needs.config.outputs.acceptance == 'true' && (always() && !contains(needs.*.result, 'failure'))}}

@@ -1,0 +1,226 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - navigation "Toolbar"
+  - generic [ref=e2]:
+    - complementary "Skiplinks" [ref=e3]:
+      - link "Skip to main content" [ref=e4] [cursor=pointer]:
+        - /url: "#view"
+      - link "Skip to navigation" [ref=e5] [cursor=pointer]:
+        - /url: "#navigation"
+      - link "Skip to footer" [ref=e6] [cursor=pointer]:
+        - /url: "#footer"
+    - navigation "Sticky menu":
+      - list
+    - banner [ref=e7]:
+      - generic [ref=e9]:
+        - generic [ref=e11]:
+          - link "Documentation|" [ref=e12] [cursor=pointer]:
+            - /url: https://volto-light-theme.readthedocs.io/
+          - link "Github" [ref=e13] [cursor=pointer]:
+            - /url: https://github.com/kitconcept/volto-light-theme
+        - generic [ref=e14]:
+          - link "Home" [ref=e16] [cursor=pointer]:
+            - /url: /
+            - img "Logo of Plone" [ref=e17]
+          - navigation "navigation" [ref=e18]:
+            - list [ref=e20]:
+              - listitem [ref=e21]:
+                - button "Open menu" [ref=e22] [cursor=pointer]: Blocks
+              - listitem [ref=e23]:
+                - button "Open menu" [ref=e24] [cursor=pointer]: Content Types
+              - listitem [ref=e25]:
+                - button "Open menu" [ref=e26] [cursor=pointer]: Typography
+              - listitem [ref=e27]:
+                - button "Open menu" [ref=e28] [cursor=pointer]: Vertical Spacing
+          - generic [ref=e30]:
+            - generic [ref=e34]:
+              - textbox "Search" [ref=e35]:
+                - /placeholder: Search Site
+              - button "Search" [ref=e36]:
+                - img [ref=e37]
+            - button "Search" [ref=e40]:
+              - img [ref=e41]
+    - navigation "Breadcrumbs" [ref=e43]:
+      - generic [ref=e45]:
+        - link "Home" [ref=e46] [cursor=pointer]:
+          - /url: /
+          - img [ref=e47]
+        - generic [ref=e50]: ▲
+        - generic [ref=e51]: Blocks
+    - main [ref=e53]:
+      - generic [ref=e54]:
+        - generic [ref=e56]:
+          - heading "Blocks" [level=1] [ref=e57]
+          - generic [ref=e60]:
+            - link "Heading The heading block allows you to display headings to group multiple blocks under one topic." [ref=e62]:
+              - link "Heading":
+                - /url: /block/heading-block
+              - generic [ref=e64]:
+                - heading "Heading" [level=2] [ref=e65]
+                - paragraph [ref=e66]: The heading block allows you to display headings to group multiple blocks under one topic.
+            - link "Button The button block shows a button for which a link (internal or external) can be stored. The button can be displayed left, right or center and have a background color." [ref=e68]:
+              - link "Button":
+                - /url: /block/button-block
+              - generic [ref=e70]:
+                - heading "Button" [level=2] [ref=e71]
+                - paragraph [ref=e72]: The button block shows a button for which a link (internal or external) can be stored. The button can be displayed left, right or center and have a background color.
+            - link "Grid The Grid block allows adding multi-column blocks. A grid block can contain between one and four columns of different blocks. Teasers and images can be added in a grid block." [ref=e74]:
+              - link "Grid":
+                - /url: /block/grid-block
+              - generic [ref=e76]:
+                - heading "Grid" [level=2] [ref=e77]
+                - paragraph [ref=e78]: The Grid block allows adding multi-column blocks. A grid block can contain between one and four columns of different blocks. Teasers and images can be added in a grid block.
+            - link "Highlight The highlight block allows you to highlight and tease a single piece of content. The content is displayed with a large image and a title and description in a banderole." [ref=e80]:
+              - link "Highlight":
+                - /url: /block/highlight-block
+              - generic [ref=e82]:
+                - heading "Highlight" [level=2] [ref=e83]
+                - paragraph [ref=e84]: The highlight block allows you to highlight and tease a single piece of content. The content is displayed with a large image and a title and description in a banderole.
+            - link "Teaser The teaser block allows you to add an element that teases existing website content with an image, a title and a description." [ref=e86]:
+              - link "Teaser":
+                - /url: /block/teaser-block
+              - generic [ref=e88]:
+                - heading "Teaser" [level=2] [ref=e89]
+                - paragraph [ref=e90]: The teaser block allows you to add an element that teases existing website content with an image, a title and a description.
+            - link "Image The image block allows images to be embedded in various display formats. Images can be displayed in different sizes (100%, L, M, S) and aligned left, right or center of the text flow." [ref=e92]:
+              - link "Image":
+                - /url: /block/image-block
+              - generic [ref=e94]:
+                - heading "Image" [level=2] [ref=e95]
+                - paragraph [ref=e96]: The image block allows images to be embedded in various display formats. Images can be displayed in different sizes (100%, L, M, S) and aligned left, right or center of the text flow.
+            - link "Listing The listing block allows the display of various listings of content. Editors can configure a number of criteria for listing content (e.g. all news from 2022 with the keyword 'research')." [ref=e98]:
+              - link "Listing":
+                - /url: /block/listing-block
+              - generic [ref=e100]:
+                - heading "Listing" [level=2] [ref=e101]
+                - paragraph [ref=e102]: The listing block allows the display of various listings of content. Editors can configure a number of criteria for listing content (e.g. all news from 2022 with the keyword 'research').
+            - link "Video The video block can contain videos from YouTube." [ref=e104]:
+              - link "Video":
+                - /url: /block/video-block
+              - generic [ref=e106]:
+                - heading "Video" [level=2] [ref=e107]
+                - paragraph [ref=e108]: The video block can contain videos from YouTube.
+            - link "Search The search block allows the content of the website to be listed. Users can use so-called facets to select certain properties of the listed content in order to filter them (e.g. filtering the news of 2022)." [ref=e110]:
+              - link "Search":
+                - /url: /block/search-block
+              - generic [ref=e112]:
+                - heading "Search" [level=2] [ref=e113]
+                - paragraph [ref=e114]: The search block allows the content of the website to be listed. Users can use so-called facets to select certain properties of the listed content in order to filter them (e.g. filtering the news of 2022).
+            - link "Separator The separator block allows blocks or groups of blocks to be visually separated by a horizontal line." [ref=e116]:
+              - link "Separator":
+                - /url: /block/separator-block
+              - generic [ref=e118]:
+                - heading "Separator" [level=2] [ref=e119]
+                - paragraph [ref=e120]: The separator block allows blocks or groups of blocks to be visually separated by a horizontal line.
+            - link "Introduction The introductory block allows the display of an introductory text, which is displayed larger than normal continuous text." [ref=e122]:
+              - link "Introduction":
+                - /url: /block/introduction-block
+              - generic [ref=e124]:
+                - heading "Introduction" [level=2] [ref=e125]
+                - paragraph [ref=e126]: The introductory block allows the display of an introductory text, which is displayed larger than normal continuous text.
+            - link "Table The Table block allows you to add a table to a page." [ref=e128]:
+              - link "Table":
+                - /url: /block/table-block
+              - generic [ref=e130]:
+                - heading "Table" [level=2] [ref=e131]
+                - paragraph [ref=e132]: The Table block allows you to add a table to a page.
+            - link "Text The Text Block allows you to add text to a web page. The text can be formatted and structured in different ways (bold, headings, etc.)." [ref=e134]:
+              - link "Text":
+                - /url: /block/text-block
+              - generic [ref=e136]:
+                - heading "Text" [level=2] [ref=e137]
+                - paragraph [ref=e138]: The Text Block allows you to add text to a web page. The text can be formatted and structured in different ways (bold, headings, etc.).
+            - link "Table of Contents The table of contents block automatically generates a table of contents with links to the corresponding positions on the page from the headings used." [ref=e140]:
+              - link "Table of Contents":
+                - /url: /block/toc-block
+              - generic [ref=e142]:
+                - heading "Table of Contents" [level=2] [ref=e143]
+                - paragraph [ref=e144]: The table of contents block automatically generates a table of contents with links to the corresponding positions on the page from the headings used.
+            - link "Accordion The accordion contains other blocks in an accordion behavior layout." [ref=e146]:
+              - link "Accordion":
+                - /url: /block/block-accordion
+              - generic [ref=e148]:
+                - heading "Accordion" [level=2] [ref=e149]
+                - paragraph [ref=e150]: The accordion contains other blocks in an accordion behavior layout.
+            - link "Maps The maps block can have embeded a Map (Google Maps, OpenMaps, etc)." [ref=e152]:
+              - link "Maps":
+                - /url: /block/maps-block
+              - generic [ref=e154]:
+                - heading "Maps" [level=2] [ref=e155]
+                - paragraph [ref=e156]: The maps block can have embeded a Map (Google Maps, OpenMaps, etc).
+            - link "Slider The Slider block allows you to add a slider to a page. A slider can display and tease multiple content on the website. Each piece of content is represented with an image containing the title, description and a button that leads to the linked content." [ref=e158]:
+              - link "Slider":
+                - /url: /block/slider
+              - generic [ref=e160]:
+                - heading "Slider" [level=2] [ref=e161]
+                - paragraph [ref=e162]: The Slider block allows you to add a slider to a page. A slider can display and tease multiple content on the website. Each piece of content is represented with an image containing the title, description and a button that leads to the linked content.
+            - link "Carousel" [ref=e164]:
+              - link "Carousel":
+                - /url: /block/carousel-block
+              - heading "Carousel" [level=2] [ref=e167]
+            - link "Event Calendar" [ref=e169]:
+              - link "Event Calendar":
+                - /url: /block/event-calendar
+              - heading "Event Calendar" [level=2] [ref=e172]
+          - paragraph
+        - link "main folder" [ref=e174] [cursor=pointer]:
+          - /url: /search?Subject=main folder
+    - alert [ref=e175]
+    - contentinfo [ref=e176]:
+      - generic [ref=e177]:
+        - generic [ref=e179]:
+          - generic [ref=e180]:
+            - generic [ref=e181]: "Follow us:"
+            - list [ref=e182]:
+              - listitem [ref=e183]:
+                - link "facebook" [ref=e184] [cursor=pointer]:
+                  - /url: https://facebook.com
+                  - img "facebook" [ref=e185]
+              - listitem [ref=e187]:
+                - link "x" [ref=e188] [cursor=pointer]:
+                  - /url: https://x.com
+                  - img "x" [ref=e189]
+              - listitem [ref=e191]:
+                - link "BlueSky" [ref=e192] [cursor=pointer]:
+                  - /url: https://bluesky.com
+                  - img "BlueSky" [ref=e193]
+              - listitem [ref=e195]:
+                - link "Mastodon" [ref=e196] [cursor=pointer]:
+                  - /url: https://mastodon.social/
+                  - img "Mastodon" [ref=e197]
+              - listitem [ref=e199]:
+                - link "Discord" [ref=e200] [cursor=pointer]:
+                  - /url: https://discord.com
+                  - img "Discord" [ref=e201]
+          - list [ref=e204]:
+            - listitem [ref=e205]:
+              - link "imprint" [ref=e206] [cursor=pointer]:
+                - /url: /imprint
+              - text: "|"
+            - listitem [ref=e207]:
+              - link "accessibility" [ref=e208] [cursor=pointer]:
+                - /url: /accessibility
+              - text: "|"
+            - listitem [ref=e209]:
+              - link "privacy policy" [ref=e210] [cursor=pointer]:
+                - /url: /legal
+        - generic [ref=e211]:
+          - generic [ref=e212]: Powered by Plone and Volto Light Theme
+          - generic [ref=e214]:
+            - text: The Plone
+            - superscript [ref=e215]: ®
+            - text: Open Source CMS/WCM is © 2000-2026 by the
+            - link "Plone Foundation" [ref=e216] [cursor=pointer]:
+              - /url: https://plone.org/foundation
+            - text: and friends.
+            - text: Distributed under the
+            - link "GNU GPL v2 license" [ref=e217] [cursor=pointer]:
+              - /url: https://www.gnu.org/licenses/old-licenses/lgpl-2.0.html
+            - text: .
+          - link "Home" [ref=e218] [cursor=pointer]:
+            - /url: /
+            - img "Logo of Plone" [ref=e219]
+  - complementary "Sidebar"
+```
