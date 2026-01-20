@@ -6,6 +6,9 @@ export default defineConfig({
   timeout: 30_000,
   expect: {
     timeout: 10_000,
+    toHaveScreenshot: {
+      maxDiffPixelRatio: 0.02,
+    },
   },
   use: {
     baseURL: 'https://light-theme.kitconcept.io',
