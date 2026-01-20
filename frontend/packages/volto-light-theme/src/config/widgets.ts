@@ -29,8 +29,8 @@ export default function install(config: ConfigType) {
 
   config.widgets.widget.colorPicker = ColorPicker;
   config.widgets.widget.themeColorSwatch = ThemeColorSwatch;
-  config.widgets.widget.soft_text_widget = SoftTextWidget;
-  config.widgets.widget.soft_text_area_widget = SoftTextareaWidget;
+  config.widgets.widget.softTextWidget = SoftTextWidget;
+  config.widgets.widget.softTextareaWidget = SoftTextareaWidget;
 
   config.widgets.widget.modalJSONEditor = ModalJSONEditor;
 

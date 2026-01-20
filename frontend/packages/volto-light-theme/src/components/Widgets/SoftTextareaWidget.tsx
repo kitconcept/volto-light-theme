@@ -1,11 +1,3 @@
-/**
- * OVERRIDE TextareaWidget.jsx
- * REASON: Add softMaxLength warning for TextareaWidget.
- * FILE: https://github.com/plone/volto/blob/ede0335834445988dd0639ab2361180251c97e4e/packages/volto/src/components/manage/Widgets/TextareaWidget.jsx
- * FILE VERSION: Volto 19.0.0-alpha.20
- * DATE: 2025-12-16
- * DEVELOPER: @Tishasoumya-02
- */
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Label, TextArea } from 'semantic-ui-react';

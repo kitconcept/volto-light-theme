@@ -1,16 +1,9 @@
-/**
- * OVERRIDE TextWidget.jsx
- * REASON: Add softMaxLength warning for TextWidget.
- * FILE: https://github.com/plone/volto/blob/ede0335834445988dd0639ab2361180251c97e4e/packages/volto/src/components/manage/Widgets/TextWidget.jsx
- * FILE VERSION: Volto 19.0.0-alpha.20
- * DATE: 2025-12-16
- * DEVELOPER: @Tishasoumya-02
- */
 import { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Input, Label } from 'semantic-ui-react';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import FormFieldWrapper from '@plone/volto/components/manage/Widgets/FormFieldWrapper';
+
 const SoftTextWidget = (props) => {
   const {
     id,
