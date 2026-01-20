@@ -168,6 +168,19 @@ jobs:
     uses: ./.github/workflows/frontend-visual-acceptance-playwright.yml
     needs:
       - config
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: "Homepage"
+            short-name: homepage
+    with:
+      name: ${{ matrix.name }}
+      short-name: ${{ matrix.short-name }}
+      storybook: ${{ matrix.storybook || false }}
+      node-version: ${{ needs.config.outputs.node-version }}
+      image-name-prefix: ${{ needs.config.outputs.image-name-prefix }}
+      image-tag: ${{ needs.config.outputs.base-tag }}
 
   visual-acceptance:
     name: "Visual Acceptance: ${{ matrix.name }}"
