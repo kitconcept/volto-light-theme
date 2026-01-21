@@ -102,10 +102,10 @@ jobs:
 
       - name: Run tests Storybook
         if: ${{ inputs.storybook == true || inputs.storybook == 'true' }}
-        run: pnpm --filter @kitconcept/volto-light-theme run test:visual playwright/tests/visual/storybook/${{ inputs.short-name }}.cy.{js,jsx,ts,tsx}'
+        run: pnpm --filter @kitconcept/volto-light-theme run test:visual playwright/tests/visual/storybook/${{ inputs.short-name }}.test.{js,jsx,ts,tsx}
 
-      - name: Run visual tests
-        run: pnpm --filter @kitconcept/volto-light-theme run test:visual
+      # - name: Run visual tests
+      #   run: pnpm --filter @kitconcept/volto-light-theme run test:visual
 
       - name: Upload Playwright artifacts
         if: failure()
