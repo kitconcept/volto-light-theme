@@ -82,6 +82,13 @@ jobs:
         run: pnpm --filter @kitconcept/volto-light-theme run test:visual --update-snapshots
 
       # check what changed
+      - name: Check for changes log
+        working-directory: frontend/playwright/__screenshots__
+        run: |
+          ls -latr
+          git status --porcelain
+
+      # check what changed
       - name: Check for changes
         id: check_changes
         working-directory: frontend/playwright/__screenshots__
