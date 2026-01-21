@@ -20,7 +20,7 @@ jobs:
       - name: Build Storybook
         run: make storybook-build
 
-      - name: ls - it seems that upload-artifact does not work with hidden directories
+      - name: Rename directory - it seems that upload-artifact does not work with hidden directories
         run: cp -r .storybook-build storybook-build
 
       # Upload Storybook build
