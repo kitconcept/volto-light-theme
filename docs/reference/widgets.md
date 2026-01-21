@@ -448,3 +448,53 @@ It uses the {file}`/src/components/widgets/Size` component.
 ```{image} /_static/size.png
 :alt: size
 ```
+
+## `SoftTextWidget` and `SoftTextAreaWidget`
+
+`SoftTextWidget` and `SoftTextAreaWidget` is a widget similar to text/textarea widget , it shows a yellow notice , giving real-time character counter feedback when the character limit exceeds the `SoftMaxLength`, but allows saving incase editors finds it necessary to exceed the limit. It uses `/src/components/Widgets/SoftTextWidget.tsx` and `/src/components/Widgets/SoftTextareaWidget.tsx` component.
+
+```{image} /_static/seoWidgets.png
+:alt: SEO widgets softTextWidget/SoftTextAreaWidget
+```
+
+To use these widgets , we can configure them in backend using `directives.widget` with `frontendOptions` and adding recommeded character limit to `SoftMaxLength` :
+
+```python
+
+ model.fieldset(
+        "seo",
+        label="SEO",
+        fields=["seo_title", "seo_description"],
+    )
+    
+    directives.widget(
+        "seo_title",
+        frontendOptions={
+            "widget": "softTextWidget",
+            "widgetProps": {"softMaxLength": "55"},
+        },
+    )
+    seo_title = schema.TextLine(
+        title="SEO Title",
+        description=(
+            "Override the meta title. When empty the default title will "
+            "be used. Use maximum 55 characters."
+        ),
+        required=False,
+    )
+    directives.widget(
+        "seo_description",
+        frontendOptions={
+            "widget": "softTextareaWidget",
+            "widgetProps": {"softMaxLength": "155"},
+        },
+    )
+    seo_description = schema.Text(
+        title="SEO Description",
+        description=(
+            "Override the meta description. When empty the default "
+            "description will be used. Use maximum 155 characters."
+        ),
+        required=False,
+    )
+```
