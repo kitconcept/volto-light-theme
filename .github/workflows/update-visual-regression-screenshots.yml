@@ -4,6 +4,7 @@ on:
   workflow_dispatch: # manual trigger only
 
 env:
+  NODE_VERSION: '24.x'
   AUTHOR_NAME: 'github-actions[bot]'
   AUTHOR_EMAIL: '41898282+github-actions[bot]@users.noreply.github.com'
   COMMIT_MESSAGE: |
@@ -40,10 +41,10 @@ jobs:
           git config --global user.email "${{ env.AUTHOR_EMAIL }}"
 
       # your setup steps here (node, pnpm, whatever)
-      - name: Use Node.js ${{ inputs.node-version }}
+      - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ inputs.node-version }}
+          node-version: ${{ env.NODE_VERSION }}
 
       - name: Enable corepack
         run: npm i -g corepack@latest && corepack enable
