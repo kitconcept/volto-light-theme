@@ -98,7 +98,7 @@ jobs:
         with:
           run: |
             docker run -i --net=host --rm --name=backend ${{ needs.config.outputs.image-name-prefix }}-backend:${{ needs.config.outputs.base-tag }} &
-            docker run -i --net=host --rm --name=frontend ${{ needs.config.outputs.image-name-prefix }}-frontend:${{ needs.config.outputs.base-tag }} &
+            docker run -i --net=host --rm --name=frontend -e RAZZLE_INTERNAL_API_PATH=http://localhost:8080/Plone ${{ needs.config.outputs.image-name-prefix }}-frontend:${{ needs.config.outputs.base-tag }} &
 
           wait-on: |
             http-get://localhost:8080/Plone
@@ -152,6 +152,13 @@ jobs:
         if: steps.check_changes.outputs.changes == 'true'
         working-directory: frontend/playwright/__screenshots__
         run: git push origin
+
+      - name: Upload Playwright artifacts
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: frontend/playwright/results
 
       # pretty summary for humans
       - name: Summary
