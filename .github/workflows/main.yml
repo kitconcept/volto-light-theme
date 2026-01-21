@@ -168,12 +168,14 @@ jobs:
     uses: ./.github/workflows/frontend-visual-acceptance-playwright.yml
     needs:
       - config
+      - storybook
     strategy:
       fail-fast: false
       matrix:
         include:
-          - name: "Homepage"
-            short-name: homepage
+          - name: "Storybook"
+            short-name: '*' # all stories for now
+            storybook: true
     with:
       name: ${{ matrix.name }}
       short-name: ${{ matrix.short-name }}
@@ -211,21 +213,21 @@ jobs:
             short-name: vertical-spacing
           - name: "Typography"
             short-name: typography
-          - name: "Storybook - Card"
-            short-name: card
-            storybook: true
-          - name: "Storybook - Grid"
-            short-name: grid
-            storybook: true
-          - name: "Storybook - Listing"
-            short-name: listing
-            storybook: true
-          - name: "Storybook - Teaser"
-            short-name: teaser
-            storybook: true
-          - name: "Storybook - Summary"
-            short-name: summary
-            storybook: true
+          # - name: "Storybook - Card"
+          #   short-name: card
+          #   storybook: true
+          # - name: "Storybook - Grid"
+          #   short-name: grid
+          #   storybook: true
+          # - name: "Storybook - Listing"
+          #   short-name: listing
+          #   storybook: true
+          # - name: "Storybook - Teaser"
+          #   short-name: teaser
+          #   storybook: true
+          # - name: "Storybook - Summary"
+          #   short-name: summary
+          #   storybook: true
 
     with:
       name: ${{ matrix.name }}

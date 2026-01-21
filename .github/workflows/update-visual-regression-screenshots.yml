@@ -2,6 +2,17 @@ name: Update Visual Regression Screenshots
 
 on:
   workflow_dispatch: # manual trigger only
+    inputs:
+      storybook:
+        description: 'Whether to build Storybook and use it as the base for visual regression tests'
+        required: true
+        default: false
+        type: boolean
+      short-name:
+        description: 'Short name of the storybook stories to test (e.g., "listing" for all listing stories)'
+        required: true
+        default: '*'
+        type: string
 
 defaults:
   run:
@@ -17,11 +28,18 @@ env:
     Co-authored-by: ${{ github.actor }} <${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com>
 
 jobs:
+  storybook:
+    name: "Storybook"
+    if: ${{ inputs.storybook == true || inputs.storybook == 'true' }}
+    uses: ./.github/workflows/frontend-storybook.yml
+
   update-screenshots:
     runs-on: ubuntu-latest
 
     # safety first: don't run on main
     if: github.ref_name != github.event.repository.default_branch
+    needs:
+      - storybook
 
     # one at a time per branch
     concurrency:
@@ -70,6 +88,26 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
 
+      - uses: actions/download-artifact@v4
+        if: ${{ inputs.storybook == true || inputs.storybook == 'true' }}
+        with:
+          name: storybook-build
+          path: frontend/storybook-build
+
+      - name: Start Servers - Storybook
+        uses: JarvusInnovations/background-action@v1
+        if: ${{ inputs.storybook == true || inputs.storybook == 'true' }}
+        with:
+          run: |
+            python3 -m http.server 6006 -d frontend/storybook-build &
+          wait-on: |
+            http://localhost:6006
+          tail: true # true = stderr,stdout
+          log-output-resume: stderr
+          wait-for: 10m
+          log-output: stderr,stdout # same as true
+          log-output-if: failure
+
       - name: Install dependencies
         run: make install
 
@@ -78,8 +116,9 @@ jobs:
         run: pnpm exec playwright install --with-deps chromium
 
       # the magic happens below 🪄
-      - name: Update Visual Regression Screenshots
-        run: pnpm --filter @kitconcept/volto-light-theme run test:visual --update-snapshots
+      - name: Update Visual Regression Screenshots - Storybook
+        if: ${{ inputs.storybook == true || inputs.storybook == 'true' }}
+        run: pnpm --filter @kitconcept/volto-light-theme run test:visual playwright/tests/visual/storybook/${{ inputs.short-name }}.cy.{js,jsx,ts,tsx}' --update-snapshots
 
       # check what changed
       - name: Check for changes

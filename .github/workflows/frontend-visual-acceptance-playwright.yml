@@ -52,11 +52,11 @@ jobs:
       #     docker pull ${{ inputs.image-name-prefix }}-frontend:${{ inputs.image-tag }}
       #     docker image ls -a
 
-      # - uses: actions/download-artifact@v4
-      #   if: ${{ inputs.storybook == true || inputs.storybook == 'true' }}
-      #   with:
-      #     name: storybook-build
-      #     path: frontend/storybook-build
+      - uses: actions/download-artifact@v4
+        if: ${{ inputs.storybook == true || inputs.storybook == 'true' }}
+        with:
+          name: storybook-build
+          path: frontend/storybook-build
 
       - name: Use Node.js ${{ inputs.node-version }}
         uses: actions/setup-node@v4
@@ -85,6 +85,24 @@ jobs:
       - name: Install Playwright browsers
         working-directory: frontend/packages/volto-light-theme
         run: pnpm exec playwright install --with-deps chromium
+
+      - name: Start Servers - Storybook
+        uses: JarvusInnovations/background-action@v1
+        if: ${{ inputs.storybook == true || inputs.storybook == 'true' }}
+        with:
+          run: |
+            python3 -m http.server 6006 -d frontend/storybook-build &
+          wait-on: |
+            http://localhost:6006
+          tail: true # true = stderr,stdout
+          log-output-resume: stderr
+          wait-for: 10m
+          log-output: stderr,stdout # same as true
+          log-output-if: failure
+
+      - name: Run tests Storybook
+        if: ${{ inputs.storybook == true || inputs.storybook == 'true' }}
+        run: pnpm --filter @kitconcept/volto-light-theme run test:visual playwright/tests/visual/storybook/${{ inputs.short-name }}.cy.{js,jsx,ts,tsx}'
 
       - name: Run visual tests
         run: pnpm --filter @kitconcept/volto-light-theme run test:visual
