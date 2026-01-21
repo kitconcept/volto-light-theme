@@ -15,11 +15,33 @@
   .embla {
     position: relative;
     --slide-size: 33%;
+
+    .embla__button {
+      display: flex;
+      height: 100px;
+      align-items: center;
+      padding: 0px;
+      border: none;
+      background-color: transparent;
+      color: #fff;
+      cursor: pointer;
+      font-size: 30px;
+    }
+    .embla__button--prev {
+      position: absolute;
+      top: 0px;
+      left: -5px;
+    }
+    .embla__button--next {
+      position: absolute;
+      top: 0px;
+      right: -5px;
+    }
     .embla__viewport {
       position: relative;
-      z-index: 2; /* higher than embla__button */
       display: inline-block;
       overflow: hidden;
+      width: 85%;
 
       .embla__container {
         display: flex;
@@ -51,7 +73,7 @@
 
           span {
             display: block;
-            color: #000000;
+            color: #fff;
             font-size: 10px;
             font-weight: 700;
             line-height: 12px;
@@ -64,40 +86,6 @@
             padding: 5px 10px 15px 10px;
           }
         }
-      }
-    }
-  }
-
-  .embla__controls {
-    position: absolute;
-    top: 0;
-    top: 50%;
-    display: block;
-    width: 100%;
-    transform: translateY(-50%);
-    .embla__buttons {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.6rem;
-
-      .embla__button {
-        z-index: 1;
-        display: inline-flex;
-        width: 3.6rem;
-        height: 3.6rem;
-        align-items: center;
-        justify-content: center;
-        padding: 0;
-        border: 0;
-        border-radius: 50%;
-        margin: 0;
-        -webkit-appearance: none;
-        appearance: none;
-        background-color: transparent;
-        cursor: pointer;
-        text-decoration: none;
-        touch-action: manipulation;
       }
     }
   }
