@@ -168,6 +168,8 @@ jobs:
     uses: ./.github/workflows/frontend-visual-acceptance-playwright.yml
     needs:
       - config
+      - backend-build
+      - frontend-build
       - storybook
     strategy:
       fail-fast: false
