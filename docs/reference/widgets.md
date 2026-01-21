@@ -449,12 +449,12 @@ It uses the {file}`/src/components/widgets/Size` component.
 :alt: size
 ```
 
-## `SoftTextWidget` and `SoftTextAreaWidget`
+## `SoftTextWidget` and `SoftTextareaWidget`
 
-`SoftTextWidget` and `SoftTextAreaWidget` is a widget similar to text/textarea widget , it shows a yellow notice , giving real-time character counter feedback when the character limit exceeds the `SoftMaxLength`, but allows saving incase editors finds it necessary to exceed the limit. It uses `/src/components/Widgets/SoftTextWidget.tsx` and `/src/components/Widgets/SoftTextareaWidget.tsx` component.
+`SoftTextWidget` and `SoftTextareaWidget` is a widget similar to text/textarea widget , it shows a yellow notice , giving real-time character counter feedback when the character limit exceeds the `SoftMaxLength`, but allows saving incase editors finds it necessary to exceed the limit. It uses `/src/components/Widgets/SoftTextWidget.tsx` and `/src/components/Widgets/SoftTextareaWidget.tsx` component.
 
 ```{image} /_static/seoWidgets.png
-:alt: SEO widgets softTextWidget/SoftTextAreaWidget
+:alt: SEO widgets softTextWidget/SoftTextareaWidget
 ```
 
 To use these widgets , we can configure them in backend using `directives.widget` with `frontendOptions` and adding recommeded character limit to `SoftMaxLength` :
