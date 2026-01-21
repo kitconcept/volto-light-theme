@@ -79,7 +79,7 @@ jobs:
 
       # the magic happens below 🪄
       - name: Update Visual Regression Screenshots
-        run: pnpm --filter @kitconcept/volto-light-theme run test:visual -- --update
+        run: pnpm --filter @kitconcept/volto-light-theme run test:visual --update-snapshots
 
       # check what changed
       - name: Check for changes
