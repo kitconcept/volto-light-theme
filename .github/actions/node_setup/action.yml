@@ -27,6 +27,7 @@ runs:
           ${{ runner.os }}-pnpm-store-
 
     - name: Install dependencies
+      working-directory: ${{ inputs.working-directory }}
       shell: bash
       run: make install
 
@@ -35,3 +36,7 @@ inputs:
     description: 'Node.js version'
     required: false
     default: '24.x'
+  working-directory:
+    description: 'Working directory to run commands in'
+    required: false
+    default: './frontend'
