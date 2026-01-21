@@ -3,6 +3,10 @@ name: Update Visual Regression Screenshots
 on:
   workflow_dispatch: # manual trigger only
 
+defaults:
+  run:
+    working-directory: ./frontend
+
 env:
   NODE_VERSION: '24.x'
   AUTHOR_NAME: 'github-actions[bot]'
