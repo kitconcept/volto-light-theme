@@ -15,6 +15,7 @@ export default defineConfig({
     browserName: 'chromium',
     viewport: { width: 1280, height: 720 },
     trace: 'retain-on-failure',
+    video: 'retain-on-failure',
   },
   projects: [
     {
