@@ -28,11 +28,15 @@ jobs:
       contents: write # needs to push changes
 
     steps:
-      - name: Checkout selected branch
+      - uses: actions/checkout@v4
+
+      - name: Checkout visual regression assets
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.ref_name }}
-          # use PAT if triggering other workflows
+          repository: kitconcept/vlt-visual-regression
+          ref: playwright
+          path: frontend/playwright/__screenshots__
+          fetch-depth: 0
           token: ${{ secrets.VRT_GITHUB_TOKEN }}
 
       - name: Configure Git
@@ -76,6 +80,7 @@ jobs:
       # check what changed
       - name: Check for changes
         id: check_changes
+        working-directory: frontend/playwright/__screenshots__
         run: |
           CHANGED_FILES=$(git status --porcelain | awk '{print $2}')
           if [ "${CHANGED_FILES:+x}" ]; then
@@ -95,12 +100,14 @@ jobs:
       # commit if there are changes
       - name: Commit changes
         if: steps.check_changes.outputs.changes == 'true'
+        working-directory: frontend/playwright/__screenshots__
         run: |
           git add -A
           git commit -m "${{ env.COMMIT_MESSAGE }}"
 
       - name: Push changes
         if: steps.check_changes.outputs.changes == 'true'
+        working-directory: frontend/playwright/__screenshots__
         run: git push origin ${{ github.ref_name }}
 
       # pretty summary for humans
