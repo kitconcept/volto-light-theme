@@ -195,16 +195,16 @@ ci-acceptance-a11y-test: ## Run a11y cypress tests in headless mode for CI
 # Keep local snapshots aligned with the shared visual regression repository.
 .PHONY: sync-visual-regression-snapshots
 sync-visual-regression-snapshots:
-	@if [ -d cypress/__image_snapshots__/.git ]; then \
-		if git -C cypress/__image_snapshots__ status --porcelain | grep -q .; then \
+	@if [ -d playwright/__screenshots__/.git ]; then \
+		if git -C playwright/__screenshots__ status --porcelain | grep -q .; then \
 			echo "Skipping snapshot sync: local changes detected"; \
 		else \
-			git -C cypress/__image_snapshots__ fetch origin main; \
-			git -C cypress/__image_snapshots__ reset --hard origin/main; \
+			git -C playwright/__screenshots__ fetch origin playwright; \
+			git -C playwright/__screenshots__ reset --hard origin/playwright; \
 		fi; \
 	else \
-		rm -rf cypress/__image_snapshots__; \
-		git clone --branch main git@github.com:kitconcept/vlt-visual-regression.git cypress/__image_snapshots__; \
+		rm -rf playwright/__screenshots__; \
+		git clone --branch playwright git@github.com:kitconcept/vlt-visual-regression.git playwright/__screenshots__; \
 	fi
 
 .PHONY: acceptance-test-visual
