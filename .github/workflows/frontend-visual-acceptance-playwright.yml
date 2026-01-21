@@ -37,13 +37,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # - name: Checkout visual regression assets
-      #   uses: actions/checkout@v4
-      #   with:
-      #     repository: kitconcept/vlt-visual-regression
-      #     ref: main
-      #     path: frontend/cypress/__image_snapshots__
-      #     fetch-depth: 0
+      - name: Checkout visual regression assets
+        uses: actions/checkout@v4
+        with:
+          repository: kitconcept/vlt-visual-regression
+          ref: playwright
+          path: frontend/playwright/__screenshots__
+          fetch-depth: 0
 
       # - name: Load images
       #   if: ${{ inputs.storybook == false || inputs.storybook == 'false' || inputs.storybook == null }}
