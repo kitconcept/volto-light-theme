@@ -8,6 +8,31 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0-alpha.12 (2026-01-15)
+
+### Bugfix
+
+- - fix bug where markdown inline links in descriptions are rendered as a separate paragraph [#751](https://github.com/kitconcept/volto-light-theme/pull/751)
+- Use the CSS prop --breadcrumbs-foregound for breadcrumbs links as default, with --link-foreground-color as fallback. @danalvrz 
+
+## 8.0.0-alpha.11 (2026-01-14)
+
+### Internal
+
+- Sync RAC VLT version to use the Volto 19a21 one (1.14.1) @sneridagh 
+
+## 8.0.0-alpha.10 (2026-01-14)
+
+### Bugfix
+
+- Fix sticky menu cut off at the bottom on smaller screens @iRohitSingh 
+- Fixed double navigation in cards that contains inner links in its body. @sneridagh 
+- Fixed rearrangement of files in drag-and-drop of folderish content. @Tishasoumya-02 
+
+### Internal
+
+- Add Cypress tests for Enter key behavior on focused blocks @iRohitSingh 
+
 ## 8.0.0-alpha.9 (2025-12-08)
 
 ### Feature

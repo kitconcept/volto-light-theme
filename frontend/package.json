@@ -1,6 +1,6 @@
 {
   "name": "@kitconcept/volto-light-theme-dev",
-  "version": "8.0.0-alpha.9",
+  "version": "8.0.0-alpha.12",
   "description": "Volto Light Theme by kitconcept",
   "main": "src/index.js",
   "types": "src/types/index.d.ts",
@@ -55,7 +55,7 @@
     "@plone/registry": "workspace:*",
     "@plone/volto": "workspace:*",
     "@kitconcept/volto-light-theme": "workspace:*",
-    "@eeacms/volto-accordion-block": "^10.4.6",
+    "@eeacms/volto-accordion-block": "^12.0.0",
     "@kitconcept/volto-banner-block": "workspace:*",
     "@kitconcept/volto-bm3-compat": "workspace:*",
     "@kitconcept/volto-button-block": "workspace:*",
