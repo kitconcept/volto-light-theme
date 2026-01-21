@@ -23,7 +23,7 @@
       padding: 0px;
       border: none;
       background-color: transparent;
-      color: #fff;
+      color: $white;
       cursor: pointer;
       font-size: 30px;
     }
@@ -73,7 +73,7 @@
 
           span {
             display: block;
-            color: #fff;
+            color: $white;
             font-size: 10px;
             font-weight: 700;
             line-height: 12px;
