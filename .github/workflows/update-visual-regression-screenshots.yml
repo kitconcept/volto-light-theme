@@ -86,6 +86,7 @@ jobs:
         working-directory: frontend/playwright/__screenshots__
         run: |
           ls -latr
+          git config --list
           git status --porcelain
 
       # check what changed
