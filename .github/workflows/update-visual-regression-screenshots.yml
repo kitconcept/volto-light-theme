@@ -82,14 +82,6 @@ jobs:
         run: pnpm --filter @kitconcept/volto-light-theme run test:visual --update-snapshots
 
       # check what changed
-      - name: Check for changes log
-        working-directory: frontend/playwright/__screenshots__
-        run: |
-          ls -latr
-          git config --list
-          git status --porcelain
-
-      # check what changed
       - name: Check for changes
         id: check_changes
         working-directory: frontend/playwright/__screenshots__
@@ -120,7 +112,7 @@ jobs:
       - name: Push changes
         if: steps.check_changes.outputs.changes == 'true'
         working-directory: frontend/playwright/__screenshots__
-        run: git push origin ${{ github.ref_name }}
+        run: git push origin
 
       # pretty summary for humans
       - name: Summary
