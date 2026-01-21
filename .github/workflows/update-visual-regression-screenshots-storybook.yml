@@ -1,4 +1,4 @@
-name: Update VRT Screenshots
+name: Update Storybook VRT Screenshots
 
 on:
   workflow_dispatch: # manual trigger only
@@ -23,9 +23,9 @@ env:
     Co-authored-by: ${{ github.actor }} <${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com>
 
 jobs:
-  config:
-    name: "Config: Compute values used in workflow"
-    uses: ./.github/workflows/config.yml
+  storybook:
+    name: "Storybook"
+    uses: ./.github/workflows/frontend-storybook.yml
 
   update-screenshots:
     runs-on: ubuntu-latest
@@ -33,7 +33,7 @@ jobs:
     # safety first: don't run on main
     if: github.ref_name != github.event.repository.default_branch
     needs:
-      - config
+      - storybook
 
     # one at a time per branch
     concurrency:
@@ -45,11 +45,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
-      - name: Load images
-        run: |
-          docker pull ${{ needs.config.outputs.image-name-prefix }}-backend:${{ needs.config.outputs.base-tag }}
-          docker pull ${{ needs.config.outputs.image-name-prefix }}-frontend:${{ needs.config.outputs.base-tag }}
 
       - name: Checkout visual regression assets
         uses: actions/checkout@v4
@@ -87,6 +82,24 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
 
+      - uses: actions/download-artifact@v4
+        with:
+          name: storybook-build
+          path: frontend/storybook-build
+
+      - name: Start Servers - Storybook
+        uses: JarvusInnovations/background-action@v1
+        with:
+          run: |
+            python3 -m http.server 6006 -d frontend/storybook-build &
+          wait-on: |
+            http://localhost:6006
+          tail: true # true = stderr,stdout
+          log-output-resume: stderr
+          wait-for: 10m
+          log-output: stderr,stdout # same as true
+          log-output-if: failure
+
       - name: Install dependencies
         run: make install
 
@@ -94,30 +107,9 @@ jobs:
         working-directory: frontend/packages/volto-light-theme
         run: pnpm exec playwright install --with-deps chromium
 
-      - uses: JarvusInnovations/background-action@v1
-        name: Start Servers - Volto and Plone
-        with:
-          run: |
-            docker run -i --net=host --rm --name=backend ${{ needs.config.outputs.image-name-prefix }}-backend:${{ needs.config.outputs.base-tag }} &
-            docker run -i --net=host --rm --name=frontend ${{ needs.config.outputs.image-name-prefix }}-frontend:${{ needs.config.outputs.base-tag }} &
-
-          wait-on: |
-            http-get://localhost:8080/Plone
-            http://localhost:3000
-
-          tail: true # true = stderr,stdout
-
-          log-output-resume: stderr
-
-          wait-for: 10m
-
-          log-output: stderr,stdout # same as true
-
-          log-output-if: failure
-
       # the magic happens below 🪄
       - name: Update Visual Regression Screenshots - Storybook
-        run: pnpm --filter @kitconcept/volto-light-theme run test:visual playwright/tests/visual/${{ inputs.short-name }}.test.{js,jsx,ts,tsx} --update-snapshots
+        run: pnpm --filter @kitconcept/volto-light-theme run test:visual playwright/tests/visual/storybook/${{ inputs.short-name }}.test.{js,jsx,ts,tsx} --update-snapshots
 
       # check what changed
       - name: Check for changes

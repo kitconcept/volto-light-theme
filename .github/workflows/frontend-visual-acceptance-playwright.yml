@@ -45,12 +45,12 @@ jobs:
           path: frontend/playwright/__screenshots__
           fetch-depth: 0
 
-      # - name: Load images
-      #   if: ${{ inputs.storybook == false || inputs.storybook == 'false' || inputs.storybook == null }}
-      #   run: |
-      #     docker pull ${{ inputs.image-name-prefix }}-backend:${{ inputs.image-tag }}
-      #     docker pull ${{ inputs.image-name-prefix }}-frontend:${{ inputs.image-tag }}
-      #     docker image ls -a
+      - name: Load images
+        if: ${{ inputs.storybook == false || inputs.storybook == 'false' || inputs.storybook == null }}
+        run: |
+          docker pull ${{ inputs.image-name-prefix }}-backend:${{ inputs.image-tag }}
+          docker pull ${{ inputs.image-name-prefix }}-frontend:${{ inputs.image-tag }}
+          docker image ls -a
 
       - uses: actions/download-artifact@v4
         if: ${{ inputs.storybook == true || inputs.storybook == 'true' }}
@@ -86,6 +86,7 @@ jobs:
         working-directory: frontend/packages/volto-light-theme
         run: pnpm exec playwright install --with-deps chromium
 
+      # STORYBOOK TESTS
       - name: Start Servers - Storybook
         uses: JarvusInnovations/background-action@v1
         if: ${{ inputs.storybook == true || inputs.storybook == 'true' }}
@@ -100,12 +101,36 @@ jobs:
           log-output: stderr,stdout # same as true
           log-output-if: failure
 
-      - name: Run tests Storybook
+      - name: Run visualtests Storybook
         if: ${{ inputs.storybook == true || inputs.storybook == 'true' }}
         run: pnpm --filter @kitconcept/volto-light-theme run test:visual playwright/tests/visual/storybook/${{ inputs.short-name }}.test.{js,jsx,ts,tsx}
 
-      # - name: Run visual tests
-      #   run: pnpm --filter @kitconcept/volto-light-theme run test:visual
+      # Volto TESTS
+      - uses: JarvusInnovations/background-action@v1
+        if: ${{ inputs.storybook == false || inputs.storybook == 'false' || inputs.storybook == null }}
+        name: Start Servers - Volto and Plone
+        with:
+          run: |
+            docker run -i --net=host --rm --name=backend ${{ inputs.image-name-prefix }}-backend:${{ inputs.image-tag }} &
+            docker run -i --net=host --rm --name=frontend ${{ inputs.image-name-prefix }}-frontend:${{ inputs.image-tag }} &
+
+          wait-on: |
+            http-get://localhost:8080/Plone
+            http://localhost:3000
+
+          tail: true # true = stderr,stdout
+
+          log-output-resume: stderr
+
+          wait-for: 10m
+
+          log-output: stderr,stdout # same as true
+
+          log-output-if: failure
+
+      - name: Run visual tests
+        if: ${{ inputs.storybook == false || inputs.storybook == 'false' || inputs.storybook == null }}
+        run: pnpm --filter @kitconcept/volto-light-theme run test:visual playwright/tests/visual/${{ inputs.short-name }}.test.{js,jsx,ts,tsx}
 
       - name: Upload Playwright artifacts
         if: failure()

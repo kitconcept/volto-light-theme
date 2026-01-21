@@ -176,6 +176,8 @@ jobs:
           - name: "Storybook"
             short-name: '*' # all stories for now
             storybook: true
+          - name: "Typography"
+            short-name: typography
     with:
       name: ${{ matrix.name }}
       short-name: ${{ matrix.short-name }}
@@ -211,8 +213,8 @@ jobs:
             short-name: blocks-listingsandsearch
           - name: "Vertical Spacing"
             short-name: vertical-spacing
-          - name: "Typography"
-            short-name: typography
+          # - name: "Typography"
+          #   short-name: typography
           # - name: "Storybook - Card"
           #   short-name: card
           #   storybook: true
