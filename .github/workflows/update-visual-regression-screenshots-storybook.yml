@@ -60,7 +60,6 @@ jobs:
           git config --global user.name "${{ env.AUTHOR_NAME }}"
           git config --global user.email "${{ env.AUTHOR_EMAIL }}"
 
-      # your setup steps here (node, pnpm, whatever)
       - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v4
         with:
@@ -107,9 +106,8 @@ jobs:
         working-directory: frontend/packages/volto-light-theme
         run: pnpm exec playwright install --with-deps chromium
 
-      # the magic happens below 🪄
       - name: Update Visual Regression Screenshots - Storybook
-        run: pnpm --filter @kitconcept/volto-light-theme run test:visual playwright/tests/visual/storybook/${{ inputs.short-name }}.test.{js,jsx,ts,tsx} --update-snapshots
+        run: pnpm exec playwright test playwright/tests/visual/storybook/${{ inputs.short-name }}.test.{js,jsx,ts,tsx} --update-snapshots
 
       # check what changed
       - name: Check for changes

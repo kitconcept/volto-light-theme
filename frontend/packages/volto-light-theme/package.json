@@ -28,8 +28,6 @@
   },
   "scripts": {
     "i18n": "rm -rf build/messages && NODE_ENV=production i18n --addon",
-    "test:visual": "playwright test",
-    "test:visual:open": "playwright test --ui",
     "dry-release": "release-it --dry-run",
     "release": "release-it",
     "release-major-alpha": "release-it major --preRelease=alpha",

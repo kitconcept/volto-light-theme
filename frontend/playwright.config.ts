@@ -3,8 +3,8 @@ import { defineConfig, devices } from '@playwright/test';
 const isCI = !!process.env.CI || !!process.env.GITHUB_ACTIONS;
 
 export default defineConfig({
-  testDir: '../../playwright/tests/visual',
-  outputDir: '../../playwright/results',
+  testDir: 'playwright/tests/visual',
+  outputDir: 'playwright/results',
   timeout: 30_000,
   expect: {
     timeout: 10_000,

@@ -1,4 +1,5 @@
-name: Visual acceptance tests - Playwright
+name: Visual Regression Tests
+
 on:
   workflow_call:
     inputs:
@@ -30,7 +31,7 @@ env:
 
 jobs:
 
-  visual-acceptance-tests:
+  visual-regression-tests:
     name: ${{ inputs.name }}
     runs-on: ubuntu-latest
 
@@ -101,9 +102,9 @@ jobs:
           log-output: stderr,stdout # same as true
           log-output-if: failure
 
-      - name: Run visualtests Storybook
+      - name: Run visual regression tests Storybook
         if: ${{ inputs.storybook == true || inputs.storybook == 'true' }}
-        run: pnpm --filter @kitconcept/volto-light-theme run test:visual playwright/tests/visual/storybook/${{ inputs.short-name }}.test.{js,jsx,ts,tsx}
+        run: pnpm exec playwright test playwright/tests/visual/storybook/${{ inputs.short-name }}.test.{js,jsx,ts,tsx}
 
       # Volto TESTS
       - uses: JarvusInnovations/background-action@v1
@@ -128,9 +129,9 @@ jobs:
 
           log-output-if: failure
 
-      - name: Run visual tests
+      - name: Run visual regression tests - Volto
         if: ${{ inputs.storybook == false || inputs.storybook == 'false' || inputs.storybook == null }}
-        run: pnpm --filter @kitconcept/volto-light-theme run test:visual playwright/tests/visual/${{ inputs.short-name }}.test.{js,jsx,ts,tsx}
+        run: pnpm exec playwright test playwright/tests/visual/main/${{ inputs.short-name }}.test.{js,jsx,ts,tsx}
 
       - name: Upload Playwright artifacts
         if: failure()

@@ -162,10 +162,10 @@ jobs:
       - backend-build
       - frontend-build
 
-  visual-acceptance-playwright:
-    name: "Visual Acceptance playwright: ${{ matrix.name }}"
+  visual-regression:
+    name: "Visual Regression Tests"
     if: ${{ needs.config.outputs.acceptance == 'true' && (always() && !contains(needs.*.result, 'failure'))}}
-    uses: ./.github/workflows/frontend-visual-acceptance-playwright.yml
+    uses: ./.github/workflows/frontend-visual-regression.yml
     needs:
       - config
       - backend-build
@@ -178,8 +178,8 @@ jobs:
           - name: "Storybook"
             short-name: '*' # all stories for now
             storybook: true
-          - name: "Typography"
-            short-name: typography
+          - name: "Volto"
+            short-name: '*' # all for now
     with:
       name: ${{ matrix.name }}
       short-name: ${{ matrix.short-name }}
@@ -203,18 +203,18 @@ jobs:
         include:
           - name: "Homepage"
             short-name: homepage
-          - name: "Content"
-            short-name: content
-          - name: "Blocks A"
-            short-name: blocks-A
-          - name: "Blocks B"
-            short-name: blocks-B
-          - name: "Blocks Grid"
-            short-name: blocks-grid
-          - name: "Blocks Listing"
-            short-name: blocks-listingsandsearch
-          - name: "Vertical Spacing"
-            short-name: vertical-spacing
+          # - name: "Content"
+          #   short-name: content
+          # - name: "Blocks A"
+          #   short-name: blocks-A
+          # - name: "Blocks B"
+          #   short-name: blocks-B
+          # - name: "Blocks Grid"
+          #   short-name: blocks-grid
+          # - name: "Blocks Listing"
+          #   short-name: blocks-listingsandsearch
+          # - name: "Vertical Spacing"
+          #   short-name: vertical-spacing
           # - name: "Typography"
           #   short-name: typography
           # - name: "Storybook - Card"
