@@ -173,10 +173,10 @@
       content: '';
       opacity: 0.75;
     }
-    figure:not(.has-caption) figcaption {
+    figure figcaption:not(:has(strong.title)) {
       display: none;
     }
-    figure:not(.has-caption):after {
+    figure:not(:has(figcaption strong.title)):after {
       display: none;
     }
   }

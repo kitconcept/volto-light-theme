@@ -69,7 +69,6 @@ function Edit(props) {
               'figure',
               {
                 center: !Boolean(data.align),
-                'has-caption': shouldRenderCaption,
               },
               data.align,
               {
