@@ -458,7 +458,6 @@ However, it allows the editor to save the content, if it's necessary to exceed t
 
 It uses {file}`/src/components/Widgets/SoftTextWidget.tsx` and {file}`/src/components/Widgets/SoftTextareaWidget.tsx` components.
 
-
 ```{image} /_static/seoWidget.png
 :alt: SEO widgets softTextWidget/SoftTextareaWidget
 ```
