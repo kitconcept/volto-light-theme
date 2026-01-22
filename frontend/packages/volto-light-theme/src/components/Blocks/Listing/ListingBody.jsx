@@ -101,11 +101,7 @@ export const ListingBody = (props) => {
           isEditMode={isEditMode}
         />
       )}
-      <SlotRenderer
-        name="aboveListingBlockItems"
-        content={content}
-        data={data}
-      />
+      <SlotRenderer name="aboveListingItems" content={content} data={data} />
       {listingItems?.length > 0 ? (
         <div ref={listingRef}>
           <ListingBodyTemplate
