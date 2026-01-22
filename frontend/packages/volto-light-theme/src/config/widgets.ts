@@ -9,6 +9,8 @@ import { footerLogosSchema } from '../components/Widgets/schema/footerLogosSchem
 import { footerLinksSchema } from '../components/Widgets/schema/footerLinksSchema';
 import { iconLinkListSchema } from '../components/Widgets/schema/iconLinkListSchema';
 import ModalJSONEditor from '../components/Widgets/ModalJSONEditor';
+import SoftTextWidget from '../components/Widgets/SoftTextWidget';
+import SoftTextareaWidget from '../components/Widgets/SoftTextareaWidget';
 
 export default function install(config: ConfigType) {
   // Color picker widget override - use our own non-semanticUI widget
@@ -27,6 +29,8 @@ export default function install(config: ConfigType) {
 
   config.widgets.widget.colorPicker = ColorPicker;
   config.widgets.widget.themeColorSwatch = ThemeColorSwatch;
+  config.widgets.widget.softTextWidget = SoftTextWidget;
+  config.widgets.widget.softTextareaWidget = SoftTextareaWidget;
 
   config.widgets.widget.modalJSONEditor = ModalJSONEditor;
 
