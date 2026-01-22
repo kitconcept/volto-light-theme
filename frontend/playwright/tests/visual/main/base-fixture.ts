@@ -6,6 +6,13 @@ type Fixtures = {
   };
 };
 
+export const VIEWPORTS = [
+  { name: 'mobile', width: 375, height: 667 },
+  { name: 'tablet', width: 768, height: 1024 },
+  { name: 'desktop', width: 1280, height: 720 },
+  { name: 'bigdesktop', width: 1536, height: 960 },
+] as const;
+
 export const test = base.extend<Fixtures>({
   page: async ({ page }, use) => {
     page.hideStickyMenu = async () => {

@@ -1,3 +1,10 @@
+// Note: The fixture is not using this file.
+// In order to use it, you need to setup the supportFile in cypress.config.js:
+// e2e: {
+//   ...
+//   supportFile: 'cypress/support/e2e.js',
+// },
+
 import 'cypress-axe';
 import 'cypress-file-upload';
 import './commands';
