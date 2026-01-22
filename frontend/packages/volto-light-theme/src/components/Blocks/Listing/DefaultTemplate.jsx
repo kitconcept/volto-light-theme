@@ -12,7 +12,7 @@ import cx from 'classnames';
 const DefaultTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
   let link = null;
   let href = linkHref?.[0]?.['@id'] || '';
-  const site = useSelector((state) => state.site.data);
+  const site = useSelector((state) => state.site?.data);
   const hideProfileLinks = site?.['kitconcept.disable_profile_links'];
 
   if (isInternalURL(href)) {

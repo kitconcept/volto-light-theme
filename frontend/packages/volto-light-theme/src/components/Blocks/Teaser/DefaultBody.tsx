@@ -12,7 +12,7 @@ type FormState = {
 
 const TeaserDefaultTemplate = (props) => {
   const site = useSelector<FormState, GetSiteResponse>(
-    (state) => state.site.data,
+    (state) => state.site?.data,
   );
   const hideProfileLinks = site?.['kitconcept.disable_profile_links'];
   const { data, isEditMode } = props;

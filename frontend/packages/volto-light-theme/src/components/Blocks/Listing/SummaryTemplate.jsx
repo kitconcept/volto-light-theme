@@ -9,7 +9,7 @@ import DefaultSummary from '@kitconcept/volto-light-theme/components/Summary/Def
 import cx from 'classnames';
 
 const SummaryTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
-  const site = useSelector((state) => state.site.data);
+  const site = useSelector((state) => state.site?.data);
   const hideProfileLinks = site?.['kitconcept.disable_profile_links'];
   let link = null;
   let href = linkHref?.[0]?.['@id'] || '';
