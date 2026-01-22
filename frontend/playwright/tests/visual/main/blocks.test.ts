@@ -10,7 +10,6 @@ const URLs = [
   '/block/video-block',
   '/block/toc-block',
   '/block/block-accordion',
-  '/block/maps-block',
   '/block/heading-block',
   '/block/button-block',
   '/block/highlight-block',
