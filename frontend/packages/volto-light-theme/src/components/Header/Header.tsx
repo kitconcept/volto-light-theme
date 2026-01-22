@@ -79,10 +79,10 @@ const InternetHeader = ({ pathname, content }) => {
 
             {header_actions &&
               Array.isArray(header_actions) &&
-              header_actions.map((item) => (
+              header_actions?.map((item) => (
                 <UniversalLink
                   key={item['@id']}
-                  href={item.href?.[0]['@id']}
+                  href={item.href?.[0]?.['@id']}
                   openLinkInNewTab={item.openInNewTab}
                 >
                   {item.title}
