@@ -1,10 +1,20 @@
+import { useSelector } from 'react-redux';
+import type { GetSiteResponse } from '@plone/types';
 import { isInternalURL } from '@plone/volto/helpers/Url/Url';
 import DefaultSummary from '@kitconcept/volto-light-theme/components/Summary/DefaultSummary';
 import type { SummaryComponentType } from '@kitconcept/volto-light-theme/components/Summary/DefaultSummary';
 import Card from '../../../primitives/Card/Card';
 import config from '@plone/volto/registry';
 
+type FormState = {
+  site: { data: GetSiteResponse };
+};
+
 const TeaserDefaultTemplate = (props) => {
+  const site = useSelector<FormState, GetSiteResponse>(
+    (state) => state.site.data,
+  );
+  const hideProfileLinks = site?.['kitconcept.disable_profile_links'];
   const { data, isEditMode } = props;
   const href = data.href?.[0] || {};
   const image = data.preview_image?.[0];
@@ -15,7 +25,10 @@ const TeaserDefaultTemplate = (props) => {
     name: 'Summary',
     dependencies: [href['@type']],
   }).component || DefaultSummary) as SummaryComponentType;
-  const showLink = !Summary.hideLink && !isEditMode;
+  let showLink = !Summary.hideLink && !isEditMode;
+  if (href['@type'] === 'Person' && hideProfileLinks !== undefined) {
+    showLink = !hideProfileLinks && !isEditMode;
+  }
   const { openExternalLinkInNewTab } = config.settings;
   const openLinkInNewTab =
     data.openLinkInNewTab ||

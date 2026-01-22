@@ -1,4 +1,5 @@
 // See Customization for more info
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
 import Card from '../../../primitives/Card/Card';
@@ -11,6 +12,8 @@ import cx from 'classnames';
 const DefaultTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
   let link = null;
   let href = linkHref?.[0]?.['@id'] || '';
+  const site = useSelector((state) => state.site.data);
+  const hideProfileLinks = site?.['kitconcept.disable_profile_links'];
 
   if (isInternalURL(href)) {
     link = (
@@ -31,7 +34,10 @@ const DefaultTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
               name: 'Summary',
               dependencies: [item['@type']],
             }).component || DefaultSummary;
-          const showLink = !Summary.hideLink && !isEditMode;
+          let showLink = !Summary.hideLink && !isEditMode;
+          if (item['@type'] === 'Person' && hideProfileLinks !== undefined) {
+            showLink = !hideProfileLinks && !isEditMode;
+          }
           return (
             <div
               className={cx('listing-item', {
