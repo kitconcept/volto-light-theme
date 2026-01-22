@@ -112,8 +112,8 @@ jobs:
         name: Start Servers - Volto and Plone
         with:
           run: |
-            docker run -i --net=host --rm --name=backend ${{ inputs.image-name-prefix }}-backend:${{ inputs.image-tag }} &
-            docker run -i --net=host --rm --name=frontend ${{ inputs.image-name-prefix }}-frontend:${{ inputs.image-tag }} &
+            docker run -i --net=host --rm --name=backend ${{ needs.config.outputs.image-name-prefix }}-backend:${{ needs.config.outputs.base-tag }} &
+            docker run -i --net=host --rm --name=frontend -e RAZZLE_INTERNAL_API_PATH=http://localhost:8080/Plone ${{ needs.config.outputs.image-name-prefix }}-frontend:${{ needs.config.outputs.base-tag }} &
 
           wait-on: |
             http-get://localhost:8080/Plone
