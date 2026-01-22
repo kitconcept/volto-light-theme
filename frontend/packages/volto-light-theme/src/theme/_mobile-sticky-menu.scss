@@ -7,7 +7,7 @@
   width: 100%;
   height: 100px;
   flex-direction: column;
-  background-color: rgba(106, 106, 106);
+  background-color: var(--sticky-menu-color, #555);
   @media only screen and (max-width: $narrow-container-width) {
     display: block;
   }
@@ -23,7 +23,7 @@
       padding: 0px;
       border: none;
       background-color: transparent;
-      color: #c0a857;
+      color: var(--sticky-menu-foreground-color, #fff);
       cursor: pointer;
       font-size: 30px;
     }
@@ -73,7 +73,7 @@
 
           span {
             display: block;
-            color: $white;
+            color: var(--sticky-menu-foreground-color, #fff);
             font-size: 10px;
             font-weight: 700;
             line-height: 12px;
