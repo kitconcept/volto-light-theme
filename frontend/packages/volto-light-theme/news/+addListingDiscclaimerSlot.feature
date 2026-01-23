@@ -1,1 +1,1 @@
-Add slot and styles for listing disclaimers in ListingBody component. @danalvrz
+Add slot for listing disclaimers in ListingBody component. @danalvrz
