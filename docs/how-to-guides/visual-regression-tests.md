@@ -1,6 +1,9 @@
-# How to run Visual Regression Tests
+# Visual regression tests
 
-### Visual Regression Tests Workflow
+This chapter describes how to run visual regression tests with Playwright.
+
+
+## Workflow
 
 VLT has a set of visual regression tests implemented using [Playwright](https://playwright.dev/).
 We use these tests to ensure that visual aspects of the application remain consistent over time and that the UI is resilient to regressions caused by unintended changes while developing new features or fixing bugs.
