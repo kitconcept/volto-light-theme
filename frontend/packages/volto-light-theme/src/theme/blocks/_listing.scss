@@ -30,18 +30,6 @@
     }
   }
 
-  .results-disclaimer-container {
-    margin-bottom: $spacing-medium;
-
-    p.disclaimer {
-      font-style: italic;
-    }
-
-    @container (max-width: #{$largest-mobile-screen}) {
-      margin-bottom: $spacing-small;
-    }
-  }
-
   .listing-item {
     padding-bottom: 40px !important;
     border-bottom: 1px solid $black;
