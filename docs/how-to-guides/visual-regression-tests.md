@@ -53,7 +53,14 @@ A video is also available in the artifact to see how the test ran in CI.
 
 3. This will open a window, where you can review the trace results and check the visual differences inside the Playwright Test Runner UI.
 
-![Visual Regression Test Test](../_static/vrt-main.png)
+````{card}
+```{image} ../_static/vrt-main.png
+:alt: Visual regression test
+:target: ../_static/vrt-main.png
+```
++++
+_Visual regression test_
+````
 
 At the top left, you can see the metadata of the test run.
 In the center, there's the screenshot taken during the test run.
@@ -81,7 +88,8 @@ If you've reviewed the visual differences and determined that the new screenshot
 To do this, follow these steps:
 
 1. Go to the [GitHub Actions](https://github.com/kitconcept/volto-light-theme/actions) tab in the VLT repository.
-2. Use the workflow `Update VRT Screenshots` or `Update VRT Screenshots Storybook` depending on which screenshots you want to update.
+2. Use the workflow {guilabel}`Update VRT Screenshots` or {guilabel}`Update VRT Screenshots Storybook` depending on which screenshots you want to update.
+   You might need to click {guilabel}`Show more workflows...` to reveal these options.
 3. Click on the {guilabel}`Run workflow` dropdown and select the {guilabel}`main` branch.
 4. Click the green {guilabel}`Run workflow` button.
 
