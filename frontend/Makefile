@@ -175,81 +175,25 @@ ci-acceptance-a11y-test: ## Run a11y cypress tests in headless mode for CI
 	CYPRESS_a11y=1 CYPRESS_API_PATH=http://localhost:8080/Plone pnpm exec cypress run --config specPattern='$(SPEC)'
 
 ### Visual acceptance tests ###
-#
-# Useful env vars:
-#
-# cypress_cumulativeReport: cumulative report file, by default `cumulative.report`
-# cypress_cumulativeSummaryReport: cumulative summary report file, by default adding `-summary.report`
-#                                  to the end of the cumulative file
-#                                  They are placed into `frontend/cypress/config` and
-#                                  cannot be outside
-#                                  of Cypress due to its virtual filesystem.
-#
-# Env vars in support of CI runs:
-#
-# cypress_baseUrl: url of server to run the test against
-#                  e.g. cypress_baseUrl=https://plone-redaktion.de
-#
-#
-
 # Keep local snapshots aligned with the shared visual regression repository.
 .PHONY: sync-visual-regression-snapshots
 sync-visual-regression-snapshots:
-	@if [ -d cypress/__image_snapshots__/.git ]; then \
-		if git -C cypress/__image_snapshots__ status --porcelain | grep -q .; then \
+	@if [ -d playwright/__screenshots__/.git ]; then \
+		if git -C playwright/__screenshots__ status --porcelain | grep -q .; then \
 			echo "Skipping snapshot sync: local changes detected"; \
 		else \
-			git -C cypress/__image_snapshots__ fetch origin main; \
-			git -C cypress/__image_snapshots__ reset --hard origin/main; \
+			git -C playwright/__screenshots__ fetch origin main; \
+			git -C playwright/__screenshots__ reset --hard origin/main; \
 		fi; \
 	else \
-		rm -rf cypress/__image_snapshots__; \
-		git clone --branch main git@github.com:kitconcept/vlt-visual-regression.git cypress/__image_snapshots__; \
+		rm -rf playwright/__screenshots__; \
+		git clone --branch main git@github.com:kitconcept/vlt-visual-regression.git playwright/__screenshots__; \
 	fi
 
-.PHONY: acceptance-test-visual
-acceptance-test-visual: sync-visual-regression-snapshots ## Start visual Cypress Acceptance Tests
-	NODE_ENV=production $(NODEBIN)/cypress open --config-file cypress/config/cypress.visual.config.js --config specPattern='$(SPEC)'
+.PHONY: acceptance-visual-test
+acceptance-visual-test: sync-visual-regression-snapshots ## Start visual Cypress Acceptance Tests
+	pnpm exec playwright test playwright/tests/visual/main --ui
 
-.PHONY: acceptance-test-visual-storybook
-acceptance-test-visual-storybook: sync-visual-regression-snapshots ## Start visual Cypress Acceptance Tests for Storybook
-	NODE_ENV=production $(NODEBIN)/cypress open --config-file cypress/config/cypress.visual.config.storybook.js --config specPattern='$(SPEC)'
-
-# Running the visual tests in headless, cumulative mode will SKIP tests that have run previously, and
-# only run the still failing tests HOWEVER the results are not collected in interactive mode due to
-# inherent limitations of Cypress. But if you run the tests in cumulative headless mode first,
-# then this command can be used to run ONLY the failing tests in interactive mode.
-.PHONY: acceptance-test-visual-cumulative
-acceptance-test-visual-cumulative: sync-visual-regression-snapshots ## Start visual Cypress Acceptance Tests with cumulative filtering
-	@echo WARNING: cumulative results are NOT collected in interactive mode, use headless mode for collection
-	NODE_ENV=production cypress_enableCumulative=true $(NODEBIN)/cypress open --config-file cypress/config/cypress.visual.config.js
-
-.PHONY: ci-acceptance-test-visual
-ci-acceptance-test-visual: ## Start visual Cypress Acceptance Tests in headless mode
-	NODE_ENV=production $(NODEBIN)/cypress run --browser firefox --config-file cypress/config/cypress.visual.config.js --config specPattern='$(SPEC)'
-
-.PHONY: ci-acceptance-test-visual-storybook
-ci-acceptance-test-visual-storybook: ## Start visual Cypress Acceptance Tests in headless mode for Storybook
-	NODE_ENV=production $(NODEBIN)/cypress run --browser firefox --config-file cypress/config/cypress.visual.config.storybook.js --config specPattern='$(SPEC)'
-
-# Running the visual tests in headless, cumulative mode will SKIP tests that have run previously, and
-# only run the still failing tests.
-.PHONY: ci-acceptance-test-visual-cumulative
-ci-acceptance-test-visual-cumulative: ## Start visual Cypress Acceptance Tests in headless mode
-	NODE_ENV=production cypress_enableCumulative=true $(NODEBIN)/cypress run --browser firefox --config-file cypress/config/cypress.visual.config.js
-
-# Automatically update all changed visual snapshots
-.PHONY: ci-acceptance-test-visual-update
-ci-acceptance-test-visual-update: ## Start visual Cypress Acceptance Tests in headless mode, always pass and update images
-	NODE_ENV=production cypress_pluginVisualRegressionUpdateImages=true $(NODEBIN)/cypress run --browser firefox --config-file cypress/config/cypress.visual.config.js
-
-# Automatically update all changed visual snapshots, and
-# running the visual tests in headless, cumulative mode will SKIP tests that have run previously, and
-# only run the still failing tests
-.PHONY: ci-acceptance-test-visual-update-cumulative
-ci-acceptance-test-visual-update-cumulative: ## Start visual Cypress Acceptance Tests in headless mode, always pass and update images, with cumulative results
-	NODE_ENV=production cypress_enableCumulative=true cypress_pluginVisualRegressionUpdateImages=true $(NODEBIN)/cypress run --browser firefox --config-file cypress/config/cypress.visual.config.js
-
-.PHONY: summarize-cumulative-state
-summarize-cumulative-state: ## Summarize cumulative state into ...-summary.report
-	pnpm summarize-cumulative-state
+.PHONY: acceptance-visual-test-storybook
+acceptance-visual-test-storybook: sync-visual-regression-snapshots ## Start visual Cypress Acceptance Tests for Storybook
+	pnpm exec playwright test playwright/tests/visual/storybook --ui

@@ -1,6 +1,6 @@
-/// <reference types="cypress" />
+import { expect, test } from '@playwright/test';
 
-describe('Storybook - Primitives Card -', () => {
+test.describe('Storybook - Primitives Card', () => {
   const storiesUnderTest = [
     { name: 'Simple', id: 'primitives-card--simple' },
     { name: 'Simple without link', id: 'primitives-card--simple-without-link' },
@@ -18,10 +18,12 @@ describe('Storybook - Primitives Card -', () => {
   ];
 
   storiesUnderTest.forEach((story) => {
-    it(`${story.name}`, () => {
+    test(`${story.name}`, async ({ page }) => {
       const storyUrl = `http://localhost:6006/iframe.html?viewMode=story&id=${story.id}&globals=&args=`;
-      cy.visit(storyUrl);
-      cy.get('.volto-storybook-container').matchImage();
+      await page.goto(storyUrl, { waitUntil: 'networkidle' });
+      await expect(page.locator('.volto-storybook-container')).toHaveScreenshot(
+        `${story.id}.png`,
+      );
     });
   });
 });
