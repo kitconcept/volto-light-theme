@@ -50,7 +50,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: kitconcept/vlt-visual-regression
-          ref: playwright
+          ref: main
           path: frontend/playwright/__screenshots__
           fetch-depth: 0
           token: ${{ secrets.VRT_GITHUB_TOKEN }}
@@ -141,6 +141,13 @@ jobs:
         if: steps.check_changes.outputs.changes == 'true'
         working-directory: frontend/playwright/__screenshots__
         run: git push origin
+
+      - name: Upload Playwright artifacts
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-regression-results
+          path: frontend/playwright/results
 
       # pretty summary for humans
       - name: Summary

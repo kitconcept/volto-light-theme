@@ -55,7 +55,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: kitconcept/vlt-visual-regression
-          ref: playwright
+          ref: main
           path: frontend/playwright/__screenshots__
           fetch-depth: 0
           token: ${{ secrets.VRT_GITHUB_TOKEN }}
@@ -154,7 +154,7 @@ jobs:
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: playwright-report
+          name: visual-regression-results
           path: frontend/playwright/results
 
       # pretty summary for humans

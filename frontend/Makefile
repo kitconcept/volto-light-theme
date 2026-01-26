@@ -182,12 +182,12 @@ sync-visual-regression-snapshots:
 		if git -C playwright/__screenshots__ status --porcelain | grep -q .; then \
 			echo "Skipping snapshot sync: local changes detected"; \
 		else \
-			git -C playwright/__screenshots__ fetch origin playwright; \
-			git -C playwright/__screenshots__ reset --hard origin/playwright; \
+			git -C playwright/__screenshots__ fetch origin main; \
+			git -C playwright/__screenshots__ reset --hard origin/main; \
 		fi; \
 	else \
 		rm -rf playwright/__screenshots__; \
-		git clone --branch playwright git@github.com:kitconcept/vlt-visual-regression.git playwright/__screenshots__; \
+		git clone --branch main git@github.com:kitconcept/vlt-visual-regression.git playwright/__screenshots__; \
 	fi
 
 .PHONY: acceptance-visual-test
