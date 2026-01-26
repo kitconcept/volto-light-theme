@@ -1,1 +1,0 @@
-Remove the black overlay when no caption for images in grid @Tishasoumya-02

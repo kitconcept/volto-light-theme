@@ -8,6 +8,27 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0-alpha.13 (2026-01-26)
+
+### Feature
+
+- Remove the black overlay when no caption for images in grid @Tishasoumya-02 [#767](https://github.com/kitconcept/volto-light-theme/pull/767)
+- Add mail-icon next to mailto links @Tishasoumya-02 [#774](https://github.com/kitconcept/volto-light-theme/pull/774)
+- Add slot for listing disclaimers in ListingBody component. @danalvrz 
+- Add soft_max_length warnings for text/textarea widget @Tishasoumya-02 
+- Hide profile links based on intranet controlpanel settings. @iFlameing 
+
+### Bugfix
+
+- Fix header_actions results into undefined when deleting the target @Tishasoumya-02 [#775](https://github.com/kitconcept/volto-light-theme/pull/775)
+- Change footer colophon widget from Input to Richtext. @iFlameing 
+- Fixed accordion does not work with the "Order" tab. Use `@eea/volto-accordion-block` 12.0.0. @sneridagh 
+- Fixed issue with navigation items custom color not changing without the fat menu enabled. @TimoBroeskamp 
+
+### Internal
+
+- New visual regression tests. @sneridagh 
+
 ## 8.0.0-alpha.12 (2026-01-15)
 
 ### Bugfix

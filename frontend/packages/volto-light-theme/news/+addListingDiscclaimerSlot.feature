@@ -1,1 +1,0 @@
-Add slot for listing disclaimers in ListingBody component. @danalvrz
