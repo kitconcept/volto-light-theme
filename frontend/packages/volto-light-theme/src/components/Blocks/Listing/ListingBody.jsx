@@ -6,6 +6,7 @@ import Slugger from 'github-slugger';
 import { renderLinkElement } from '@plone/volto-slate/editor/render';
 import config from '@plone/volto/registry';
 import withQuerystringResults from '@plone/volto/components/manage/Blocks/Listing/withQuerystringResults';
+import SlotRenderer from '@plone/volto/components/theme/SlotRenderer/SlotRenderer';
 
 const messages = defineMessages({
   PaginationNavigationFor: {
@@ -63,6 +64,7 @@ export const ListingBody = (props) => {
     id,
     total,
     properties,
+    content,
   } = props;
 
   let ListingBodyTemplate;
@@ -99,6 +101,7 @@ export const ListingBody = (props) => {
           isEditMode={isEditMode}
         />
       )}
+      <SlotRenderer name="aboveListingItems" content={content} data={data} />
       {listingItems?.length > 0 ? (
         <div ref={listingRef}>
           <ListingBodyTemplate
