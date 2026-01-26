@@ -1,0 +1,1 @@
+Hide profile links based on intranet controlpanel settings. @iFlameing

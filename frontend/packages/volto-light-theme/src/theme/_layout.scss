@@ -146,15 +146,20 @@ footer {
   @include default-container-width();
   @include adjustMarginsToContainer($default-container-width);
 }
-// External link Styling
+// External & Mail link Styling
 
-// Slate Style External Links
+// Slate Style External & Mail Links
 .content-area .ui.container,
 .content-area .q.container,
 .content-area .a.container {
   a.external:after,
   a.external:after {
     @include external-link-icon();
+    margin-top: -25px;
+    margin-left: 3px;
+  }
+  a[href^='mailto:']:after {
+    @include mail-link-icon();
     margin-top: -25px;
     margin-left: 3px;
   }
@@ -168,10 +173,15 @@ footer {
     margin-top: -25px;
     margin-left: 3px;
   }
+  a[href^='mailto:']:after {
+    @include mail-link-icon();
+    margin-top: -25px;
+    margin-left: 3px;
+  }
 }
 
 /*
-External link removal for all the blocks.
+External & Mail link removal for all the blocks.
 */
 .content-area #page-edit .ui.container,
 .content-area .q.container,
@@ -182,6 +192,9 @@ External link removal for all the blocks.
   .block.teaser {
     a.external:after,
     a.external:after {
+      display: none;
+    }
+    a[href^='mailto:']:after {
       display: none;
     }
   }

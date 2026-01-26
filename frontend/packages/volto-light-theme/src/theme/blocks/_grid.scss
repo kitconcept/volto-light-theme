@@ -173,6 +173,12 @@
       content: '';
       opacity: 0.75;
     }
+    figure figcaption:not(:has(strong.title)) {
+      display: none;
+    }
+    figure:not(:has(figcaption strong.title)):after {
+      display: none;
+    }
   }
 
   .block-editor-image {
