@@ -1,6 +1,8 @@
-/// <reference types="cypress" />
+import { expect, test } from '@playwright/test';
 
-describe('Storybook - Block Listing -', () => {
+const storybookBaseUrl = 'http://localhost:6006/iframe.html?viewMode=story';
+
+test.describe('Storybook - Block Listing', () => {
   const storiesUnderTest = [
     { name: 'Person', id: 'blocks-listing--person' },
     { name: 'Person Summary', id: 'blocks-listing--person-summary' },
@@ -18,11 +20,11 @@ describe('Storybook - Block Listing -', () => {
     },
   ];
 
-  storiesUnderTest.forEach((story) => {
-    it(`${story.name}`, () => {
-      const storyUrl = `http://localhost:6006/iframe.html?viewMode=story&id=${story.id}&globals=&args=`;
-      cy.visit(storyUrl);
-      cy.get('.volto-storybook-container').matchImage();
+  for (const story of storiesUnderTest) {
+    test(story.name, async ({ page }) => {
+      await page.goto(`${storybookBaseUrl}&id=${story.id}&globals=&args=`);
+      const container = page.locator('.volto-storybook-container');
+      await expect(container).toHaveScreenshot(`${story.id}.png`);
     });
-  });
+  }
 });

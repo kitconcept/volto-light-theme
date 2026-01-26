@@ -262,8 +262,14 @@ acceptance-a11y-test:
 # Visual Regression Tests
 ###########################################
 
+sync-visual-regression-snapshots:
+	$(MAKE) -C frontend sync-visual-regression-snapshots
+
 acceptance-visual-frontend-prod-start:
 	$(MAKE) -C frontend acceptance-a11y-frontend-prod-start
 
 acceptance-visual-test:
-	$(MAKE) -C frontend acceptance-test-visual
+	$(MAKE) -C frontend acceptance-visual-test
+
+acceptance-visual-test-storybook:
+	$(MAKE) -C frontend acceptance-visual-test-storybook
