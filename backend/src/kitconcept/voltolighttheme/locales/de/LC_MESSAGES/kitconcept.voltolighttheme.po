@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-09-12 20:20+0000\n"
+"POT-Creation-Date: 2026-01-20 10:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,40 +14,11 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: kitconcept.voltolighttheme\n"
 
-#: kitconcept/voltolighttheme/behaviors/footer.py:58
-msgid "Footer address"
-msgstr "Footer Adresse"
-
 #: kitconcept/voltolighttheme/behaviors/customizations.py:259
 msgid "Footer colophon text"
 msgstr "Footer-Impressum Text"
 
-#: kitconcept/voltolighttheme/behaviors/footer.py:79
-msgid "Footer column left"
-msgstr "Footer Spalte 1"
-
-#: kitconcept/voltolighttheme/behaviors/footer.py:67
-msgid "Footer column left header"
-msgstr "Footer Spalte 1 Überschrift"
-
-#: kitconcept/voltolighttheme/behaviors/footer.py:103
-msgid "Footer column middle"
-msgstr "Footer Spalte 2"
-
-#: kitconcept/voltolighttheme/behaviors/footer.py:91
-msgid "Footer column middle header"
-msgstr "Footer Spalte 2 Überschrift"
-
-#: kitconcept/voltolighttheme/behaviors/footer.py:127
-msgid "Footer column right"
-msgstr "Footer Spalte 3"
-
-#: kitconcept/voltolighttheme/behaviors/footer.py:115
-msgid "Footer column right header"
-msgstr "Footer Spalte 3 Überschrift"
-
 #: kitconcept/voltolighttheme/behaviors/customizations.py:180
-#: kitconcept/voltolighttheme/behaviors/footer.py:30
 msgid "Footer customizations"
 msgstr "Footer Anpassungen"
 
@@ -86,22 +57,6 @@ msgstr ""
 #: kitconcept/voltolighttheme/behaviors/customizations.py:97
 msgid "Site Actions"
 msgstr "Aktionsmenu"
-
-#: kitconcept/voltolighttheme/behaviors/footer.py:59
-msgid "The footer address that appears below the footer logo in the first footer column."
-msgstr "Die Adresse wird auf der linken Seite im Footer unterhalb des Footer Logos angezeigt."
-
-#: kitconcept/voltolighttheme/behaviors/footer.py:80
-msgid "The left-most column appearing after the address column. It can contain a list of links."
-msgstr "Die linke Spalte, die nach der Adressspalte erscheint. Sie kann eine Liste von Links enthalten."
-
-#: kitconcept/voltolighttheme/behaviors/footer.py:104
-msgid "The middle column appearing between the left and the right columns. It can contain a list of links."
-msgstr "Die mittlere Spalte, die zwischen der linken und der rechten Spalte erscheint. Sie kann eine Liste von Links enthalten."
-
-#: kitconcept/voltolighttheme/behaviors/footer.py:128
-msgid "The right-most column appearing after the middle column. It can contain a list of links."
-msgstr "Die rechte Spalte, die nach der mittleren Spalte erscheint. Sie kann eine Liste von Links enthalten."
 
 #: kitconcept/voltolighttheme/behaviors/customizations.py:116
 msgid "Theming"
@@ -147,11 +102,6 @@ msgstr "Wenn Sie diese Option wählen, wird ein Fat Menu angezeigt wenn Sie auf 
 msgid "help_footer_colophon_text"
 msgstr "Der Text, der im Footer-Kolophon angezeigt wird."
 
-#. Default: "The footer has a main logo located in the lower left side, above the address. In case that the footer has a dark  background, you can set this inversed logo to ensure it plays well with the background color. If not set, the main site logo will be used."
-#: kitconcept/voltolighttheme/behaviors/footer.py:47
-msgid "help_footer_logo"
-msgstr "Der Footer zeigt ein Logo in der unteren linken Ecke, direkt über der Adresse. Falls der Footer eine dunkle Hintergrundfarbe hat, können Sie ein invertiertes Logo verwenden, um sicherzustellen, dass es mit dem Hintergrund funktioniert. Wenn Sie dieses Feld nicht füllen, wird das Hauptlogo der Seite im Footer verwendet."
-
 #. Default: "If enabled, the intranet header will be shown."
 #: kitconcept/voltolighttheme/behaviors/customizations.py:72
 msgid "help_has_intranet_header"
@@ -166,16 +116,6 @@ msgstr "Zeigt ein Menü in der oberen rechten Ecke mit wichtigen Aktionen wie Lo
 #: kitconcept/voltolighttheme/behaviors/customizations.py:82
 msgid "help_intranet_flag"
 msgstr "Zeigt einen Reiter am oberen Rand der Website an, um den Bereich zu kennzeichnen (z.B. 'Intranet', 'Staging')."
-
-#. Default: "The post footer can have a prominent logo located in the lower right side. It is normally used for displaying the logo of the site sponsor."
-#: kitconcept/voltolighttheme/behaviors/footer.py:140
-msgid "help_post_footer_logo"
-msgstr "Zeigt das Logo einer Organisation an, die das Projekt oder die Website fördert oder finanziert. Wird unterhalb des Footers platziert, um Fördergeber und Träger zu würdigen."
-
-#. Default: "The post footer logo can be linked to a URL."
-#: kitconcept/voltolighttheme/behaviors/footer.py:157
-msgid "help_post_footer_logo_link"
-msgstr "Verknüpfung des Förderlogos mit der Website der fördernden Organisation."
 
 #. Default: "If the site or subsite has a logo, please upload it here."
 #: kitconcept/voltolighttheme/behaviors/customizations.py:43
@@ -207,11 +147,6 @@ msgstr "Zusatzlogo"
 msgid "label_enable_fat_menu"
 msgstr "Fat Menu einschalten"
 
-#. Default: "Footer Logo"
-#: kitconcept/voltolighttheme/behaviors/footer.py:46
-msgid "label_footer_logo"
-msgstr "Footer Logo"
-
 #. Default: "Enable Intranet Header"
 #: kitconcept/voltolighttheme/behaviors/customizations.py:71
 msgid "label_has_intranet_header"
@@ -221,16 +156,6 @@ msgstr "Intranet Header einschalten"
 #: kitconcept/voltolighttheme/behaviors/customizations.py:81
 msgid "label_intranet_flag"
 msgstr "Reiter"
-
-#. Default: "Post Footer Logo"
-#: kitconcept/voltolighttheme/behaviors/footer.py:139
-msgid "label_post_footer_logo"
-msgstr "Partnerlogo/Förderlogo"
-
-#. Default: "Post Footer Logo Link"
-#: kitconcept/voltolighttheme/behaviors/footer.py:156
-msgid "label_post_footer_logo_link"
-msgstr "Partnerlogo/Förderlogo Link"
 
 #. Default: "Navigation Text Color"
 #: kitconcept/voltolighttheme/behaviors/customizations.py:148
