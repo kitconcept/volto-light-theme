@@ -1,6 +1,6 @@
 {
   "name": "@kitconcept/volto-light-theme-dev",
-  "version": "8.0.0-alpha.12",
+  "version": "8.0.0-alpha.13",
   "description": "Volto Light Theme by kitconcept",
   "main": "src/index.js",
   "types": "src/types/index.d.ts",
@@ -44,11 +44,12 @@
     "release-major-alpha": "pnpm --filter @kitconcept/volto-light-theme run release-major-alpha",
     "release-alpha": "pnpm --filter @kitconcept/volto-light-theme run release-alpha",
     "storybook": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto storybook dev -p 6006 -c $(pwd)/.storybook",
-    "storybook-build": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto build-storybook -c $(pwd)/.storybook"
+    "storybook-build": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto build-storybook -c $(pwd)/.storybook",
+    "test:visual": "playwright test playwright/tests/visual/main/*.test.{ts,tsx}",
+    "test:visual:ui": "playwright test --ui"
   },
   "devDependencies": {
     "@cypress/skip-test": "2.6.1",
-    "@frsource/cypress-plugin-visual-regression-diff": "3.2.8",
     "mrs-developer": "^2.2.0"
   },
   "dependencies": {

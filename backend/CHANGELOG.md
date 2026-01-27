@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0a13 (2026-01-26)
+
+
+### Bug fixes:
+
+- Change footer colophon widget from Input to Richtext. @iFlameing 
+
 ## 8.0.0a12 (2026-01-15)
 
 No significant changes.
