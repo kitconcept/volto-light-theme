@@ -158,7 +158,7 @@ footer {
     margin-top: -25px;
     margin-left: 3px;
   }
-  a[href^='mailto:']:after {
+  p a[href^='mailto:']:after {
     @include mail-link-icon();
     margin-top: -25px;
     margin-left: 3px;
@@ -173,7 +173,7 @@ footer {
     margin-top: -25px;
     margin-left: 3px;
   }
-  a[href^='mailto:']:after {
+  p a[href^='mailto:']:after {
     @include mail-link-icon();
     margin-top: -25px;
     margin-left: 3px;
@@ -194,7 +194,7 @@ External & Mail link removal for all the blocks.
     a.external:after {
       display: none;
     }
-    a[href^='mailto:']:after {
+    p a[href^='mailto:']:after {
       display: none;
     }
   }
