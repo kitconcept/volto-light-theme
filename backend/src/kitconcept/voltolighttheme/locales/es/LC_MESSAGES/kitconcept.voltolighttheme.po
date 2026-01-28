@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kitconcept.voltolighttheme\n"
-"POT-Creation-Date: 2025-09-12 20:20+0000\n"
+"POT-Creation-Date: 2025-12-22 10:37+0000\n"
 "PO-Revision-Date: 2025-07-07 17:16+0200\n"
 "Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
@@ -133,7 +133,7 @@ msgid "Volto Light Theme: Uninstall"
 msgstr "Volto Light Theme: Desinstalación"
 
 #. Default: "Sticky menu"
-#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:28
+#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:29
 msgid "fieldset_sticky_menu"
 msgstr ""
 
@@ -172,6 +172,11 @@ msgstr "Las acciones del sitio son los enlaces que aparecen en la parte superior
 msgid "help_intranet_flag"
 msgstr "La pastilla de color en la parte superior izquierda del encabezado."
 
+#. Default: "If enabled, a sticky menu will be shown at the bottom of the screen."
+#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:43
+msgid "help_mobile_sticky_menu_enabled"
+msgstr ""
+
 #. Default: "The post footer can have a prominent logo located in the lower right side. It is normally used for displaying the logo of the site sponsor."
 #: kitconcept/voltolighttheme/behaviors/footer.py:140
 msgid "help_post_footer_logo"
@@ -188,7 +193,7 @@ msgid "help_site_logo"
 msgstr "Si el sitio o sub-sitio tiene un logotipo, cárguelo aquí."
 
 #. Default: "The sticky menu is composed by links with icons that show in a  fixed position in the right side of the screen."
-#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:63
+#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:78
 msgid "help_sticky_menu"
 msgstr "El menú adhesivo está compuesto por enlaces con iconos que se muestran en una posición fija en la parte derecha de la pantalla."
 
@@ -228,6 +233,11 @@ msgstr "Activar encabezado de Intranet"
 msgid "label_intranet_flag"
 msgstr "Bandera del sitio"
 
+#. Default: "Enable Mobile sticky menu"
+#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:39
+msgid "label_mobile_sticky_menu_enabled"
+msgstr ""
+
 #. Default: "Post Footer Logo"
 #: kitconcept/voltolighttheme/behaviors/footer.py:139
 msgid "label_post_footer_logo"
@@ -259,16 +269,16 @@ msgid "label_site_logo"
 msgstr "Logotipo del sitio"
 
 #. Default: "Sticky menu"
-#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:62
+#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:77
 msgid "label_sticky_menu"
 msgstr ""
 
 #. Default: "Sticky menu background color"
-#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:38
+#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:53
 msgid "label_sticky_menu_color"
 msgstr "Color de fondo del menú adhesivo"
 
 #. Default: "Sticky menu text color"
-#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:47
+#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:62
 msgid "label_sticky_menu_foreground_color"
 msgstr "Color de texto del menú adhesivo"
