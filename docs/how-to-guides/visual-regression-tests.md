@@ -65,7 +65,9 @@ _Visual regression test_
 At the top left, you can see the metadata of the test run.
 In the center, there's the screenshot taken during the test run.
 At the bottom, there's a menu where you can select the different tabs from the browser, and other specific data.
-At the very bottom, you can see a list of tabs for selecting the different screenshots taken during the test run, and specifically:
+
+4. Click on the {guilabel}`attachments` tab.
+You can see a list of tabs for selecting the different screenshots taken during the test run, and specifically:
 
 Diff
 :   Shows the differences between the baseline and the new screenshot.
