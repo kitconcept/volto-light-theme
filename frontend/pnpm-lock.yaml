@@ -1367,6 +1367,9 @@ importers:
 
   packages/volto-banner-block/packages/volto-banner-block:
     dependencies:
+      '@kitconcept/volto-bm3-compat':
+        specifier: 1.0.0-alpha.1
+        version: 1.0.0-alpha.1(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react:
         specifier: ^18.2.0
         version: 18.2.0

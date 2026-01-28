@@ -308,7 +308,7 @@ External & Mail link removal for all the blocks.
       @include adjustMarginsToContainer($default-container-width);
     }
 
-    &:not(.banner).has--block-width--layout {
+    &.has--block-width--layout {
       @include adjustMarginsToContainer($layout-container-width);
     }
   }
