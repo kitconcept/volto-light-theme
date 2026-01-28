@@ -203,7 +203,12 @@ For example:
 ````
 
 When you create a new visual regression test, the screenshot won't exist in the baseline screenshots repository.
-Therefore, the first time you run the test, it will fail, indicating that the screenshot is missing.
+Therefore, the first time you run the test, it will fail, indicating that the screenshot is missing with a message like this:
+
+```
+ Error: A snapshot doesn't exist at: path/to/screenshot.png
+```
+
 You have to run the Github CI workflow {guilabel}`Update VRT Screenshots` or {guilabel}`Update VRT Screenshots Storybook` depending on which screenshots you want to update in order to generate and store the new baseline screenshot.
 See {ref}`update-baseline-screenshots` for more details on how to update the baseline screenshots.
 After updating the baseline screenshots, run the visual regression tests again to ensure that the new test passes with the newly created baseline screenshot.
