@@ -1,6 +1,7 @@
 from kitconcept.voltolighttheme import _
 from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
+from plone.schema import Bool
 from plone.schema import JSONField
 from plone.schema import TextLine
 from plone.supermodel import model
@@ -27,10 +28,24 @@ class IStickyMenuSettings(model.Schema):
         "sticky_menu",
         label=_("fieldset_sticky_menu", default="Sticky menu"),
         fields=[
+            "enable_mobile_sticky_menu",
             "sticky_menu",
             "sticky_menu_color",
             "sticky_menu_foreground_color",
         ],
+    )
+
+    enable_mobile_sticky_menu = Bool(
+        title=_(
+            "label_mobile_sticky_menu_enabled",
+            default="Enable Mobile sticky menu",
+        ),
+        description=_(
+            "help_mobile_sticky_menu_enabled",
+            default="If enabled, a sticky menu will be shown at the bottom of the screen.",
+        ),
+        required=False,
+        default=False,
     )
 
     directives.widget("sticky_menu_color", frontendOptions={"widget": "colorPicker"})
