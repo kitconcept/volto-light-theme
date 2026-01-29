@@ -65,7 +65,9 @@ _Visual regression test_
 At the top left, you can see the metadata of the test run.
 In the center, there's the screenshot taken during the test run.
 At the bottom, there's a menu where you can select the different tabs from the browser, and other specific data.
-At the very bottom, you can see a list of tabs for selecting the different screenshots taken during the test run, and specifically:
+
+4. Click on the {guilabel}`attachments` tab.
+You can see a list of tabs for selecting the different screenshots taken during the test run, and specifically:
 
 Diff
 :   Shows the differences between the baseline and the new screenshot.
@@ -81,6 +83,8 @@ Side by side
 
 Slider
 :   Shows both screenshots with a slider to compare them interactively by dragging the slider left and right.
+
+(update-baseline-screenshots)=
 
 ### Update baseline screenshots
 
@@ -168,8 +172,43 @@ You can also run visual regression tests for Storybook:
    make acceptance-visual-test-storybook
    ```
 
-### Screencast
+## Create new visual regression tests
 
-Watch the screencast to learn how to compare and update visual tests:
+To create new visual regression tests, you can follow the existing test files as examples as references.
+Visual regression tests are located in the {file}`frontend/playwright/tests/visual` directory.
+You can create new test files or add new test cases to existing files, depending on your needs.
 
-<video controls="True" preload="auto"><source src="../_static/visual.mp4" type="video/mp4">Visual Regression Tests Screencast</video>
+This is a basic example of a visual regression test:
+
+```typescript
+import { expect, test } from '@playwright/test';
+
+test('Homepage', async ({ page }) => {
+  await page.goto('/', { waitUntil: 'networkidle' });
+  await expect(page).toHaveScreenshot('homepage.png', { fullPage: true });
+});
+```
+In this example, the test navigates to the homepage and captures a (fullscreen) screenshot named {file}`homepage.png`.
+
+````{tip}
+Usually, it is better to capture screenshots of specific components or sections of the page rather than the entire page.
+This approach helps to reduce noise in the screenshots and makes it easier to identify visual changes.
+You can achieve this by using Playwright's {guilabel}`locator` method to target specific elements on the page.
+For example:
+
+   ```typescript
+   const header = page.locator('header');
+   await expect(header).toHaveScreenshot('header.png');
+   ```
+````
+
+When you create a new visual regression test, the screenshot won't exist in the baseline screenshots repository.
+Therefore, the first time you run the test, it will fail, indicating that the screenshot is missing with a message like this:
+
+```
+ Error: A snapshot doesn't exist at: path/to/screenshot.png
+```
+
+You have to run the Github CI workflow {guilabel}`Update VRT Screenshots` or {guilabel}`Update VRT Screenshots Storybook` depending on which screenshots you want to update in order to generate and store the new baseline screenshot.
+See {ref}`update-baseline-screenshots` for more details on how to update the baseline screenshots.
+After updating the baseline screenshots, run the visual regression tests again to ensure that the new test passes with the newly created baseline screenshot.

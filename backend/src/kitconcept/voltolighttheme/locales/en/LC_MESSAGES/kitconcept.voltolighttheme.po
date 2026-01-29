@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-09-12 20:20+0000\n"
+"POT-Creation-Date: 2025-12-22 10:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -128,7 +128,7 @@ msgid "Volto Light Theme: Uninstall"
 msgstr ""
 
 #. Default: "Sticky menu"
-#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:28
+#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:29
 msgid "fieldset_sticky_menu"
 msgstr ""
 
@@ -167,6 +167,11 @@ msgstr ""
 msgid "help_intranet_flag"
 msgstr ""
 
+#. Default: "If enabled, a sticky menu will be shown at the bottom of the screen."
+#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:43
+msgid "help_mobile_sticky_menu_enabled"
+msgstr ""
+
 #. Default: "The post footer can have a prominent logo located in the lower right side. It is normally used for displaying the logo of the site sponsor."
 #: kitconcept/voltolighttheme/behaviors/footer.py:140
 msgid "help_post_footer_logo"
@@ -183,7 +188,7 @@ msgid "help_site_logo"
 msgstr ""
 
 #. Default: "The sticky menu is composed by links with icons that show in a  fixed position in the right side of the screen."
-#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:63
+#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:78
 msgid "help_sticky_menu"
 msgstr ""
 
@@ -222,6 +227,11 @@ msgstr ""
 msgid "label_intranet_flag"
 msgstr ""
 
+#. Default: "Enable Mobile sticky menu"
+#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:39
+msgid "label_mobile_sticky_menu_enabled"
+msgstr ""
+
 #. Default: "Post Footer Logo"
 #: kitconcept/voltolighttheme/behaviors/footer.py:139
 msgid "label_post_footer_logo"
@@ -253,16 +263,16 @@ msgid "label_site_logo"
 msgstr ""
 
 #. Default: "Sticky menu"
-#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:62
+#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:77
 msgid "label_sticky_menu"
 msgstr ""
 
 #. Default: "Sticky menu background color"
-#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:38
+#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:53
 msgid "label_sticky_menu_color"
 msgstr ""
 
 #. Default: "Sticky menu text color"
-#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:47
+#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:62
 msgid "label_sticky_menu_foreground_color"
 msgstr ""
