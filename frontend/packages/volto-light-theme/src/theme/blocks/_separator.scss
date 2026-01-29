@@ -14,7 +14,7 @@
 
   .line {
     display: grid;
-    max-width: var(--block-width) !important;
+    max-width: var(--block-width, #{$default-container-width}) !important;
     justify-content: var(--block-alignment);
     @include variable-container-width();
 
