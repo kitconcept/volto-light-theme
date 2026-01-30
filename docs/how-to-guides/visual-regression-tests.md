@@ -188,27 +188,28 @@ test('Homepage', async ({ page }) => {
   await expect(page).toHaveScreenshot('homepage.png', { fullPage: true });
 });
 ```
-In this example, the test navigates to the homepage and captures a (fullscreen) screenshot named {file}`homepage.png`.
+
+In this example, the test navigates to the home page and captures a full screen screenshot named {file}`homepage.png`.
 
 ````{tip}
-Usually, it is better to capture screenshots of specific components or sections of the page rather than the entire page.
+Usually, it is better to capture screenshots of specific components or sections of the page, rather than the entire page.
 This approach helps to reduce noise in the screenshots and makes it easier to identify visual changes.
 You can achieve this by using Playwright's {guilabel}`locator` method to target specific elements on the page.
 For example:
 
-   ```typescript
-   const header = page.locator('header');
-   await expect(header).toHaveScreenshot('header.png');
-   ```
+```typescript
+const header = page.locator('header');
+await expect(header).toHaveScreenshot('header.png');
+```
 ````
 
 When you create a new visual regression test, the screenshot won't exist in the baseline screenshots repository.
 Therefore, the first time you run the test, it will fail, indicating that the screenshot is missing with a message like this:
 
 ```
- Error: A snapshot doesn't exist at: path/to/screenshot.png
+Error: A snapshot doesn't exist at: path/to/screenshot.png
 ```
 
-You have to run the Github CI workflow {guilabel}`Update VRT Screenshots` or {guilabel}`Update VRT Screenshots Storybook` depending on which screenshots you want to update in order to generate and store the new baseline screenshot.
+You have to run the GitHub CI workflow {guilabel}`Update VRT Screenshots` or {guilabel}`Update VRT Screenshots Storybook` depending on which screenshots you want to update in order to generate and store the new baseline screenshot.
 See {ref}`update-baseline-screenshots` for more details on how to update the baseline screenshots.
 After updating the baseline screenshots, run the visual regression tests again to ensure that the new test passes with the newly created baseline screenshot.
