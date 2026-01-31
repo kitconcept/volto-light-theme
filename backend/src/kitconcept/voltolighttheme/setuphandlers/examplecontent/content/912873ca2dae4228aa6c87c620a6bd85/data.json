@@ -4,10 +4,28 @@
   "UID": "912873ca2dae4228aa6c87c620a6bd85",
   "allow_discussion": null,
   "blocks": {
+    "517a844e-983d-4ce1-969b-ecc813d36cf6": {
+      "@type": "banner",
+      "additionalText": "Test line nao. 2 Lorem ipsum is a dummy or placeholder text commonly used in graphic design, publishing, and web development.",
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "100%"
+        }
+      },
+      "text": "Test line no. 1",
+      "theme": "default",
+      "url": "../../resolveuid/eec82559bf3242a6be4d43bc2096f399"
+    },
     "619a853d-8f33-4c54-9059-e080aadba1d2": {
       "@type": "banner",
-      "additionalText": "Test line no. 2 Lorem ipsum is a dummy or placeholder text commonly used in graphic design, publishing, and web development.",
+      "additionalText": "Test line nao. 2 Lorem ipsum is a dummy or placeholder text commonly used in graphic design, publishing, and web development.",
+      "styles": {
+        "blockWidth:noprefix": {
+          "--block-width": "var(--layout-container-width)"
+        }
+      },
       "text": "Test line no. 1",
+      "theme": "default",
       "url": "../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
     },
     "879e7fd7-ef4b-47dd-a8ae-8b7b72a2255a": {
@@ -21,6 +39,7 @@
     "items": [
       "879e7fd7-ef4b-47dd-a8ae-8b7b72a2255a",
       "619a853d-8f33-4c54-9059-e080aadba1d2",
+      "517a844e-983d-4ce1-969b-ecc813d36cf6",
       "9e02b7c4-c50b-40e0-99f4-65cea53ff2ac"
     ]
   },
@@ -44,7 +63,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-06-09T14:37:17+00:00",
+  "modified": "2026-01-30T13:49:04+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "review_state": "private",

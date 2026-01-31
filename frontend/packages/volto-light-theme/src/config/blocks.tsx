@@ -54,6 +54,7 @@ declare module '@plone/types' {
   export interface BlocksConfigData {
     introduction: BlockConfigBase;
     heading: BlockConfigBase;
+    banner: BlockConfigBase;
     __button: BlockConfigBase;
     separator: BlockConfigBase;
     slider: BlockConfigBase;
@@ -298,6 +299,10 @@ export default function install(config: ConfigType) {
       ),
     );
 
+  config.blocks.blocksConfig.banner = {
+    ...config.blocks.blocksConfig.banner,
+    schemaEnhancer: defaultStylingSchema,
+  };
   config.blocks.blocksConfig.introduction = {
     ...config.blocks.blocksConfig.introduction,
     unwantedButtons: ['heading-three', 'blockquote'],
