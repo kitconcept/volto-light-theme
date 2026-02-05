@@ -44,19 +44,6 @@ describe('Blocks Enter Key Tests - Special Cases', () => {
     cy.get('.block-editor-slate').should('have.length', 3);
   });
 
-  it('Pressing Enter on a focused Introduction block opens Slate editor or block chooser', () => {
-    // Add Introduction block
-    cy.get('.button .block-add-button').click({ force: true });
-    cy.get('.blocks-chooser .mostUsed .button.introduction')
-      .contains('Introduction')
-      .click({ force: true });
-    cy.wait(500);
-
-    cy.focused().type('{enter}');
-    // Now we can see two slate editor
-    cy.get('.block-editor-slate').should('have.length', 2);
-  });
-
   it('Pressing Enter on a focused Highlight block opens Slate editor or block chooser', () => {
     // Add Highlight block
     cy.get('.button .block-add-button').click({ force: true });
@@ -68,5 +55,14 @@ describe('Blocks Enter Key Tests - Special Cases', () => {
     cy.focused().type('{enter}');
     // Now we can see two slate editor
     cy.get('.block-editor-slate').should('have.length', 2);
+  });
+  it('Pressing Enter on a focused Introduction Block opens new Introduction Block', () => {
+    cy.get('.button .block-add-button').click({ force: true });
+    cy.get('.blocks-chooser .mostUsed .button.introduction')
+      .contains('Introduction')
+      .click();
+
+    cy.focused().type('{enter}');
+    cy.get('.block.introduction .slate-editor').should('have.length', 2);
   });
 });
