@@ -1475,6 +1475,9 @@ importers:
 
   packages/volto-calendar-block/packages/volto-calendar-block:
     dependencies:
+      '@kitconcept/volto-light-theme':
+        specifier: workspace:*
+        version: link:../../../volto-light-theme
       '@plone/components':
         specifier: workspace:^
         version: link:../../../../core/packages/components
@@ -1501,7 +1504,7 @@ importers:
         specifier: ^19.0.5
         version: 19.0.6(@types/node@24.10.1)(magicast@0.3.5)
       vitest:
-        specifier: ^3.1.2
+        specifier: ^3.2.4
         version: 3.2.4(@types/debug@4.1.12)(@types/node@24.10.1)(jiti@2.6.1)(jsdom@22.1.0)(less@3.11.1)(lightningcss@1.30.2)(sass@1.58.0)(terser@5.44.1)(yaml@2.8.1)
 
   packages/volto-carousel-block/packages/volto-carousel-block:
