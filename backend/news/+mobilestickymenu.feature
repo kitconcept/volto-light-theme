@@ -1,1 +1,0 @@
-Add a boolean field to enable or disable the mobile sticky menu. @iFlameing

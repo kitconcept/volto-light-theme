@@ -1,1 +1,0 @@
-Add sticky menu in mobile view. @iFlameing
