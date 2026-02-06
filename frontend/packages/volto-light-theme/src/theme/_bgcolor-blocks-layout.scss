@@ -439,7 +439,8 @@
     &.__button {
       & > .button.container,
       & > .block-inner-container {
-        & button {
+        & button,
+        a {
           border-color: var(--theme-foreground-color);
           background-color: var(--theme-color);
 
