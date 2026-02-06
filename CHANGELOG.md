@@ -1,6 +1,30 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 8.0.0a15 (2026-02-06)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Make button anchor (a) (from a button if it's a navigation element for a11y purposes) has the same styling as a button. @sneridagh [#786](https://github.com/kitconcept/volto-light-theme/pull/786)
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 8.0.0a14 (2026-02-05)
 
 ### Backend
