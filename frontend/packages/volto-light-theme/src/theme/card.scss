@@ -22,6 +22,10 @@
   .image-wrapper {
     width: 100%;
 
+    &:hover .link-icon-summary,
+    &:focus-within .link-icon-summary {
+      opacity: 1;
+    }
     img {
       display: block;
       // Beware of this, it can cause issues with some images, added back on 2025-09-30 @sneridagh
@@ -32,6 +36,7 @@
   }
 
   .card-summary {
+    position: relative;
     padding-top: 40px;
     padding-bottom: 40px;
 
@@ -54,6 +59,29 @@
       margin: 0;
       @include body-text();
     }
+  }
+
+  // Common styles for link icon overlay
+  .card-link-icon {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 10;
+    filter: drop-shadow(3px 3px 12px rgba(0, 0, 0, 0.5));
+    opacity: 0;
+    transition: opacity 0.2s ease;
+
+    button {
+      border: none;
+      border-radius: 50%;
+      background: rgba(236, 235, 235, 0.75);
+      cursor: pointer;
+    }
+  }
+
+  &:hover .card-link-icon,
+  &:focus-visible .card-link-icon {
+    opacity: 1;
   }
 }
 
@@ -166,4 +194,24 @@
       padding: 0;
     }
   }
+}
+
+
+
+.block.teaser .card .image-wrapper .card-link-icon {
+  display: none;
+}
+
+.gridBlock .teaser .card {
+  .image-wrapper .card-link-icon {
+    display: block;
+  }
+  .card-summary .card-link-icon {
+    display: none;
+  }
+}
+
+.block.listing.grid .card .card-summary .card-link-icon,
+.block.listing.summary .card .card-summary .card-link-icon {
+  display: none;
 }

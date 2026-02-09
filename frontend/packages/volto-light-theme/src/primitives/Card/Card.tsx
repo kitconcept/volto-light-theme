@@ -2,6 +2,11 @@ import * as React from 'react';
 import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
 import cx from 'classnames';
 import type { ObjectBrowserItem } from '@plone/types';
+import linkSVG from '@plone/volto/icons/link.svg';
+import Icon from '@plone/volto/components/theme/Icon/Icon';
+import { Button } from '@plone/components';
+import { flattenToAppURL } from '@plone/volto/helpers';
+import { useLocation, useHistory, Link } from 'react-router-dom';
 
 type BaseCardProps = {
   /** Optional additional CSS class names to apply to the card. */
@@ -100,7 +105,7 @@ const Card = (props: CardProps) => {
         ref={linkRef}
       />
       <div className="card-inner">
-        {childrenWithProps(props.children, { a11yLabelId })}
+        {childrenWithProps(props.children, { a11yLabelId, item })}
       </div>
     </div>
   );
@@ -121,10 +126,35 @@ type CardImageProps = {
 
 const CardImage = (props: CardImageProps) => {
   const { src, item, image, imageComponent, showPlaceholderImage } = props;
+  const location = useLocation();
+  const history = useHistory();
+
+  const handleLinkIconClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const targetUrl = item?.['@id'];
+    if (targetUrl) {
+      const flattenedTargetUrl = flattenToAppURL(targetUrl);
+      const searchParams = new URLSearchParams();
+      searchParams.set('return_to', location.pathname);
+
+      history.push({
+        pathname: flattenedTargetUrl,
+        search: searchParams.toString(),
+      });
+    }
+  };
+
   const Image = imageComponent || DefaultImage;
 
   return (
     <div className="image-wrapper">
+      <div className="card-link-icon">
+        <Button aria-label="link" onClick={handleLinkIconClick}>
+          <Icon name={linkSVG} size="33px" />
+        </Button>
+      </div>
       {src ? (
         <Image src={src} alt="" loading="lazy" responsive={true} />
       ) : item || image ? (
@@ -150,14 +180,47 @@ const CardImage = (props: CardImageProps) => {
 type CardSummaryProps = {
   /** The ID of the element that labels the card. */
   a11yLabelId?: string;
+  item?: Partial<ObjectBrowserItem>;
   children?: React.ReactNode;
 };
 
-const CardSummary = (props: CardSummaryProps) => (
-  <div className="card-summary">
-    {childrenWithProps(props.children, { a11yLabelId: props.a11yLabelId })}
-  </div>
-);
+const CardSummary = (props: CardSummaryProps) => {
+  const { children, a11yLabelId, item } = props;
+  const location = useLocation();
+  const history = useHistory();
+
+  const handleLinkIconClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const targetUrl = item?.['@id'];
+    if (targetUrl) {
+      if (targetUrl) {
+        const flattenedTargetUrl = flattenToAppURL(targetUrl);
+        const searchParams = new URLSearchParams();
+        searchParams.set('return_to', location.pathname);
+
+        history.push({
+          pathname: flattenedTargetUrl,
+          search: searchParams.toString(),
+        });
+      }
+    }
+  };
+
+  return (
+    <div className="card-summary">
+      <div className="card-link-icon">
+        <Button aria-label="link" onClick={handleLinkIconClick}>
+          <Icon name={linkSVG} size="33px" />
+        </Button>
+      </div>
+      {childrenWithProps(children, {
+        a11yLabelId: a11yLabelId,
+      })}
+    </div>
+  );
+};
 
 const CardActions = (props: any) => (
   <div className="actions-wrapper">{props.children}</div>
