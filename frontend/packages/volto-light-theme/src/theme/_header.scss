@@ -239,7 +239,6 @@
   .tools-wrapper {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-between;
     padding-top: 16px;
 
     .intranet-flag {
@@ -273,6 +272,7 @@
     }
 
     .language-selector a {
+      color: $black;
       text-transform: uppercase;
     }
 
