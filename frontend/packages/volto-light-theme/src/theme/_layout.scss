@@ -264,7 +264,7 @@ External & Mail link removal for all the blocks.
   & > .table-of-contents,
   & > .accordion-block,
   & > .slate blockquote,
-  & > .has--block-width--layout .banner-inner-container .text {
+  & > .block.banner.has--block-width--layout .banner-inner-container .text {
     @include default-container-width();
     @include adjustMarginsToContainer($default-container-width);
   }
