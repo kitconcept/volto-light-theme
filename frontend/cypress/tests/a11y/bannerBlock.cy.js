@@ -9,8 +9,8 @@ describe('a11y tests', () => {
     cy.wait('@content');
   });
 
-  // Teaser-block
-  it('Teaser-block (/block/banner-block)', () => {
+  // Banner-block
+  it('Banner-block (/block/banner-block)', () => {
     cy.navigate('/block/banner-block');
     cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
