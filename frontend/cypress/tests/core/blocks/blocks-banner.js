@@ -14,7 +14,6 @@ context('Blocks Acceptance Tests', () => {
   });
 
   it('As editor I can add a (Layout width) Banner block', () => {
-    // GIVEN a Document with the title document and a Document to reference with the title Blue Orchids
     cy.createContent({
       contentType: 'Document',
       contentId: 'blue-orchids',
@@ -29,7 +28,7 @@ context('Blocks Acceptance Tests', () => {
     cy.addNewBlock('banner');
     cy.get('input[type="file"]').attachFile('halfdome2022.jpg', {
       subjectType: 'input',
-      encoding: 'utf8',
+      encoding: 'base64',
     });
 
     cy.wait(500);
@@ -70,7 +69,7 @@ context('Blocks Acceptance Tests', () => {
     cy.addNewBlock('banner');
     cy.get('input[type="file"]').attachFile('halfdome2022.jpg', {
       subjectType: 'input',
-      encoding: 'utf8',
+      encoding: 'base64',
     });
 
     cy.wait(500);
