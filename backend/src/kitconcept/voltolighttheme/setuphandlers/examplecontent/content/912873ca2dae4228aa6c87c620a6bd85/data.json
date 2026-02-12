@@ -4,6 +4,12 @@
   "UID": "912873ca2dae4228aa6c87c620a6bd85",
   "allow_discussion": null,
   "blocks": {
+    "0bd74992-e471-43f8-823e-32eb002969f3": {
+      "@type": "heading",
+      "heading": "\u00a0Full Width",
+      "styles": {},
+      "theme": "default"
+    },
     "517a844e-983d-4ce1-969b-ecc813d36cf6": {
       "@type": "banner",
       "additionalText": "Test line nao. 2 Lorem ipsum is a dummy or placeholder text commonly used in graphic design, publishing, and web development.",
@@ -28,6 +34,12 @@
       "theme": "default",
       "url": "../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2"
     },
+    "6cd1475b-9778-4874-b95f-5bcf3f50d01a": {
+      "@type": "heading",
+      "heading": "Layout Width",
+      "styles": {},
+      "theme": "default"
+    },
     "879e7fd7-ef4b-47dd-a8ae-8b7b72a2255a": {
       "@type": "title"
     },
@@ -38,7 +50,9 @@
   "blocks_layout": {
     "items": [
       "879e7fd7-ef4b-47dd-a8ae-8b7b72a2255a",
+      "6cd1475b-9778-4874-b95f-5bcf3f50d01a",
       "619a853d-8f33-4c54-9059-e080aadba1d2",
+      "0bd74992-e471-43f8-823e-32eb002969f3",
       "517a844e-983d-4ce1-969b-ecc813d36cf6",
       "9e02b7c4-c50b-40e0-99f4-65cea53ff2ac"
     ]
@@ -50,7 +64,7 @@
     "admin"
   ],
   "description": "",
-  "effective": "2026-02-11T14:24:26+00:00",
+  "effective": "2026-02-11T14:24:00+00:00",
   "exclude_from_nav": false,
   "expires": null,
   "exportimport.constrains": {},
@@ -63,7 +77,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2026-02-11T14:24:26+00:00",
+  "modified": "2026-02-12T08:51:43+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "review_state": "published",
