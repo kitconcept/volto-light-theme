@@ -115,7 +115,7 @@ class ISiteThemeCustomizationSettings(model.Schema):
         "theming",
         label=_("Theming"),
         fields=[
-            "primary_foreground_color",
+            "header_foreground_color",
             "accent_foreground_color",
             "accent_color",
             # "primary_color", # Not used in PiK
@@ -142,11 +142,11 @@ class ISiteThemeCustomizationSettings(model.Schema):
     )
 
     directives.widget(
-        "primary_foreground_color", frontendOptions={"widget": "colorPicker"}
+        "header_foreground_color", frontendOptions={"widget": "colorPicker"}
     )
-    primary_foreground_color = TextLine(
+    header_foreground_color = TextLine(
         title=_(
-            "label_primary_foreground_color",
+            "label_header_foreground_color",
             default="Navigation Text Color",
         ),
         required=False,

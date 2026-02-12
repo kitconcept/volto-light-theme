@@ -2,18 +2,14 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     >
-
   <genericsetup:upgradeSteps
       profile="kitconcept.voltolighttheme:default"
-      source="1000"
-      destination="20250321001"
+      source="20250321001"
+      destination="20260212001"
       >
     <genericsetup:upgradeStep
-        title="Update data structure for site customizations fields"
-        handler=".v20250321001.update_site_customizations_fields_data"
+        title="Move primary_foreground_color value to header_foreground_color"
+        handler=".migrate_primary_to_header_foreground"
         />
   </genericsetup:upgradeSteps>
-
-  <include package=".v20260212001" />
-
 </configure>
