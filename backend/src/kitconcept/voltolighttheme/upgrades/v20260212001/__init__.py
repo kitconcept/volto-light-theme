@@ -12,7 +12,6 @@ def migrate_primary_to_header_foreground(context):
     )
     for brain in brains:
         obj = brain.getObject()
-        print(f"Processing {obj.absolute_url()}")
         primary_foreground_color = getattr(obj, OLD_FIELD, None)
         if primary_foreground_color is not None:
             setattr(obj, NEW_FIELD, primary_foreground_color)
