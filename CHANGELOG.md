@@ -1,6 +1,32 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 7.7.0 (2026-01-29)
+
+### Backend
+
+
+#### New features:
+
+- Add a boolean field to enable or disable the mobile sticky menu. @iFlameing 
+
+
+
+### Frontend
+
+#### Feature
+
+- Add sticky menu in mobile view. @iFlameing 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 7.6.7 (2026-01-15)
 
 ### Backend
