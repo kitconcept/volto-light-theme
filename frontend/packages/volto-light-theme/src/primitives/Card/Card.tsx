@@ -5,8 +5,8 @@ import type { ObjectBrowserItem } from '@plone/types';
 import linkSVG from '@plone/volto/icons/link.svg';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import { Button } from '@plone/components';
-import { flattenToAppURL } from '@plone/volto/helpers';
-import { useLocation, useHistory, Link } from 'react-router-dom';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
+import { useLocation, useHistory } from 'react-router-dom';
 
 type BaseCardProps = {
   /** Optional additional CSS class names to apply to the card. */
