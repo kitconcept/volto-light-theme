@@ -64,9 +64,9 @@
   // Common styles for link icon overlay
   .card-link-icon {
     position: absolute;
+    z-index: 10;
     top: 0px;
     right: 0px;
-    z-index: 10;
     filter: drop-shadow(3px 3px 12px rgba(0, 0, 0, 0.5));
     opacity: 0;
     transition: opacity 0.2s ease;
