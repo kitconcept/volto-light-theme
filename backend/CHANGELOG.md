@@ -2,6 +2,18 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0a15 (2026-02-06)
+
+No significant changes.
+
+
+## 8.0.0a14 (2026-02-05)
+
+
+### New features:
+
+- Add a boolean field to enable or disable the mobile sticky menu. @iFlameing 
+
 ## 8.0.0a13 (2026-01-26)
 
 

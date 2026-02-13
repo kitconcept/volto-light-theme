@@ -158,7 +158,7 @@ footer {
     margin-top: -25px;
     margin-left: 3px;
   }
-  a[href^='mailto:']:after {
+  p a[href^='mailto:']:after {
     @include mail-link-icon();
     margin-top: -25px;
     margin-left: 3px;
@@ -173,7 +173,7 @@ footer {
     margin-top: -25px;
     margin-left: 3px;
   }
-  a[href^='mailto:']:after {
+  p a[href^='mailto:']:after {
     @include mail-link-icon();
     margin-top: -25px;
     margin-left: 3px;
@@ -194,7 +194,7 @@ External & Mail link removal for all the blocks.
     a.external:after {
       display: none;
     }
-    a[href^='mailto:']:after {
+    p a[href^='mailto:']:after {
       display: none;
     }
   }
@@ -263,7 +263,8 @@ External & Mail link removal for all the blocks.
   & > table,
   & > .table-of-contents,
   & > .accordion-block,
-  & > .slate blockquote {
+  & > .slate blockquote,
+  & > .block.banner.has--block-width--layout .banner-inner-container .text {
     @include default-container-width();
     @include adjustMarginsToContainer($default-container-width);
   }
@@ -308,7 +309,7 @@ External & Mail link removal for all the blocks.
       @include adjustMarginsToContainer($default-container-width);
     }
 
-    &.has--block-width--layout {
+    &:not(.banner).has--block-width--layout {
       @include adjustMarginsToContainer($layout-container-width);
     }
   }

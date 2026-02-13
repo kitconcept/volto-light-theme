@@ -8,6 +8,26 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0-alpha.15 (2026-02-06)
+
+### Bugfix
+
+- Make button anchor (a) (from a button if it's a navigation element for a11y purposes) has the same styling as a button. @sneridagh [#786](https://github.com/kitconcept/volto-light-theme/pull/786)
+
+## 8.0.0-alpha.14 (2026-02-05)
+
+### Feature
+
+- Create Introduction block on pressing Enter instead of default text block @iRohitSingh [#780](https://github.com/kitconcept/volto-light-theme/pull/780)
+- Add sticky menu in mobile view. @iFlameing 
+
+### Bugfix
+
+- Fix mail icon appearing near share icon in engagement-section @Tishasoumya-02 [#777](https://github.com/kitconcept/volto-light-theme/pull/777)
+- Fix actions menu going undefined on intranet header @Tishasoumya-02 [#778](https://github.com/kitconcept/volto-light-theme/pull/778)
+- Fixed defaults in `Button` widgets. @iFlameing 
+- Update `volto-calendar-block` to 1.0.6. @sneridagh 
+
 ## 8.0.0-alpha.13 (2026-01-26)
 
 ### Feature
