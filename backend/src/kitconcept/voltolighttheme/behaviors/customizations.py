@@ -141,9 +141,7 @@ class ISiteThemeCustomizationSettings(model.Schema):
         required=False,
     )
 
-    directives.widget(
-        "header_foreground", frontendOptions={"widget": "colorPicker"}
-    )
+    directives.widget("header_foreground", frontendOptions={"widget": "colorPicker"})
     header_foreground = TextLine(
         title=_(
             "label_header_foreground",
