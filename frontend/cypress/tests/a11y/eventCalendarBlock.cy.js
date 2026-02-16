@@ -42,6 +42,8 @@ describe('a11y tests', () => {
     cy.wait('@querystringSearchRequest')
       .its('response.statusCode')
       .should('eq', 200);
+
+    cy.wait(5000);
     cy.injectAxe();
     cy.configureAxe();
     cy.checkA11y(null, null, printDetailedAccessibilityViolations);
