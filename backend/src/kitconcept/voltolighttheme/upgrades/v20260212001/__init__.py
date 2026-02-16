@@ -2,7 +2,7 @@ from plone import api
 
 
 OLD_FIELD = "primary_foreground_color"
-NEW_FIELD = "header_foreground_color"
+NEW_FIELD = "header_foreground"
 
 
 def migrate_primary_to_header_foreground(context):

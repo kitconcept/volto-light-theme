@@ -90,12 +90,6 @@ $secondary-grey: #ececec !default;
   syntax: '<color>';
 }
 
-@property --header-foreground-color {
-  inherits: true;
-  initial-value: #000;
-  syntax: '<color>';
-}
-
 @property --secondary-color {
   inherits: true;
   initial-value: #ecebeb;
@@ -132,7 +126,7 @@ $secondary-grey: #ececec !default;
 
   // Header
   --header-background: var(--primary-color);
-  --header-foreground: var(--header-foreground-color);
+  --header-foreground: var(--primary-foreground-color);
 
   //Footer
   --footer-background: var(--secondary-color);
