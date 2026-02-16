@@ -75,7 +75,7 @@ const LanguageSelector = ({
             key={`language-selector-${lang}`}
           >
             {/* START CUSTOMIZATION */}
-            {langmap[langKey]?.nativeName.slice(0, 2) || langKey}
+            {langKey.slice(0, 2)}
             {/*  END CUSTOMIZATION} */}
           </Link>
         );
