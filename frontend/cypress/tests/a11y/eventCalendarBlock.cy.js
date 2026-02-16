@@ -1,4 +1,25 @@
 describe('a11y tests', () => {
+  const printDetailedAccessibilityViolations = (violations) => {
+    const summary = violations.map(({ id, impact, description, nodes }) => ({
+      id,
+      impact,
+      description,
+      nodes: nodes.length,
+    }));
+
+    const details = violations.flatMap(({ id, nodes }) =>
+      nodes.map((node) => ({
+        rule: id,
+        target: node.target.join(' | '),
+        html: node.html,
+        failureSummary: node.failureSummary,
+      })),
+    );
+
+    cy.task('table', summary);
+    cy.task('table', details);
+  };
+
   beforeEach(() => {
     cy.intercept('GET', `/**/*?expand*`).as('content');
     cy.intercept('GET', '**/@querystring').as('querystringRequest');
@@ -23,6 +44,6 @@ describe('a11y tests', () => {
       .should('eq', 200);
     cy.injectAxe();
     cy.configureAxe();
-    cy.checkAccessibility();
+    cy.checkA11y(null, null, printDetailedAccessibilityViolations);
   });
 });
