@@ -80,7 +80,7 @@
   }
 
   &:hover .card-link-icon,
-  &:focus-visible .card-link-icon {
+  &:focus .card-link-icon {
     opacity: 1;
   }
 }
@@ -196,6 +196,7 @@
   }
 }
 
+// Link Icon visibility
 .block.teaser .card .image-wrapper .card-link-icon {
   display: none;
 }
