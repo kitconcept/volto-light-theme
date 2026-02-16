@@ -22,7 +22,6 @@ describe('a11y tests', () => {
       .its('response.statusCode')
       .should('eq', 200);
 
-    cy.wait(5000);
     cy.injectAxe();
     cy.configureAxe();
     cy.checkAccessibility();

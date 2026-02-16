@@ -47,15 +47,30 @@ export function DateRangePicker<T extends DateValue>({
       <Label>{label}</Label>
       <Group>
         <DateInput slot="start">
-          {(segment) => <DateSegment segment={segment} />}
+          {(segment) => (
+            <DateSegment
+              segment={segment}
+              {...(segment.isPlaceholder && {
+                'aria-valuenow': 0,
+              })}
+            />
+          )}
         </DateInput>
         <span aria-hidden="true">–</span>
         <DateInput slot="end">
-          {(segment) => <DateSegment segment={segment} />}
+          {(segment) => (
+            <DateSegment
+              segment={segment}
+              {...(segment.isPlaceholder && {
+                'aria-valuenow': 0,
+              })}
+            />
+          )}
         </DateInput>
         <button
           className={cx('reset-date-range', { visibility: dateRange?.start })}
           onClick={onResetDateRange}
+          aria-label="Clear date range"
         >
           <Icon name={ClearSVG} color="#000" size="30px" />
         </button>
