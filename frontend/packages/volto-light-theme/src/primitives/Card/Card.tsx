@@ -49,7 +49,39 @@ const childrenWithProps = (children, extraProps) => {
     return child;
   });
 };
+const useLinkIconNavigation = (item?: Partial<ObjectBrowserItem>) => {
+  const location = useLocation();
+  const history = useHistory();
 
+  const handleLinkIconClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const targetUrl = item?.['@id'];
+    if (targetUrl) {
+      const flattenedTargetUrl = flattenToAppURL(targetUrl);
+      const searchParams = new URLSearchParams();
+      searchParams.set('return_to', location.pathname);
+
+      history.push({
+        pathname: flattenedTargetUrl,
+        search: searchParams.toString(),
+      });
+    }
+  };
+  return handleLinkIconClick;
+};
+
+const LinkIconButton = ({ item }: { item?: Partial<ObjectBrowserItem> }) => {
+  const handleLinkIconClick = useLinkIconNavigation(item);
+  return (
+    <div className="card-link-icon">
+      <Button aria-label="link" onClick={handleLinkIconClick}>
+        <Icon name={linkSVG} size="33px" />
+      </Button>
+    </div>
+  );
+};
 const Card = (props: CardProps) => {
   const hasItem = !!props.item;
   const item = hasItem ? props.item : undefined;
@@ -126,34 +158,13 @@ type CardImageProps = {
 
 const CardImage = (props: CardImageProps) => {
   const { src, item, image, imageComponent, showPlaceholderImage } = props;
-  const location = useLocation();
-  const history = useHistory();
-
-  const handleLinkIconClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    e.stopPropagation();
-
-    const targetUrl = item?.['@id'];
-    if (targetUrl) {
-      const flattenedTargetUrl = flattenToAppURL(targetUrl);
-      const searchParams = new URLSearchParams();
-      searchParams.set('return_to', location.pathname);
-
-      history.push({
-        pathname: flattenedTargetUrl,
-        search: searchParams.toString(),
-      });
-    }
-  };
 
   const Image = imageComponent || DefaultImage;
 
   return (
     <div className="image-wrapper">
       <div className="card-link-icon">
-        <Button aria-label="link" onClick={handleLinkIconClick}>
-          <Icon name={linkSVG} size="33px" />
-        </Button>
+        <LinkIconButton item={item} />
       </div>
       {src ? (
         <Image src={src} alt="" loading="lazy" responsive={true} />
@@ -186,34 +197,11 @@ type CardSummaryProps = {
 
 const CardSummary = (props: CardSummaryProps) => {
   const { children, a11yLabelId, item } = props;
-  const location = useLocation();
-  const history = useHistory();
-
-  const handleLinkIconClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    e.stopPropagation();
-
-    const targetUrl = item?.['@id'];
-    if (targetUrl) {
-      if (targetUrl) {
-        const flattenedTargetUrl = flattenToAppURL(targetUrl);
-        const searchParams = new URLSearchParams();
-        searchParams.set('return_to', location.pathname);
-
-        history.push({
-          pathname: flattenedTargetUrl,
-          search: searchParams.toString(),
-        });
-      }
-    }
-  };
 
   return (
     <div className="card-summary">
       <div className="card-link-icon">
-        <Button aria-label="link" onClick={handleLinkIconClick}>
-          <Icon name={linkSVG} size="33px" />
-        </Button>
+        <LinkIconButton item={item} />
       </div>
       {childrenWithProps(children, {
         a11yLabelId: a11yLabelId,
