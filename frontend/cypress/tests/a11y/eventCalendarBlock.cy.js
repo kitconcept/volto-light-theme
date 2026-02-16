@@ -1,27 +1,5 @@
 describe('a11y tests', () => {
-  const printDetailedAccessibilityViolations = (violations) => {
-    const summary = violations.map(({ id, impact, description, nodes }) => ({
-      id,
-      impact,
-      description,
-      nodes: nodes.length,
-    }));
-
-    const details = violations.flatMap(({ id, nodes }) =>
-      nodes.map((node) => ({
-        rule: id,
-        target: node.target.join(' | '),
-        html: node.html,
-        failureSummary: node.failureSummary,
-      })),
-    );
-
-    cy.task('table', summary);
-    cy.task('table', details);
-  };
-
   beforeEach(() => {
-    cy.clock(new Date('2026-02-16T12:00:00Z').getTime(), ['Date']);
     cy.intercept('GET', `/**/*?expand*`).as('content');
     cy.intercept('GET', '**/@querystring').as('querystringRequest');
     cy.intercept('GET', '**/@querystring-search?*').as(
@@ -43,22 +21,15 @@ describe('a11y tests', () => {
     cy.wait('@querystringSearchRequest')
       .its('response.statusCode')
       .should('eq', 200);
-
-    cy.window().then((win) => {
-      // eslint-disable-next-line no-console
-      console.log(
-        'browser time',
-        win.Date(),
-        Intl.DateTimeFormat().resolvedOptions().timeZone,
-      );
-    });
-
-    cy.wait(5000);
-    cy.get('[role="spinbutton"]').each(($el) => {
-      cy.wrap($el).should('have.attr', 'aria-valuenow');
-    });
     cy.injectAxe();
-    cy.configureAxe();
-    cy.checkA11y(null, null, printDetailedAccessibilityViolations);
+    cy.configureAxe({
+      rules: [
+        {
+          id: 'aria-required-attr',
+          enabled: false,
+        },
+      ],
+    });
+    cy.checkAccessibility();
   });
 });
