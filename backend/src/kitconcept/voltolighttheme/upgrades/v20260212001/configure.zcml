@@ -8,7 +8,7 @@
       destination="20260212001"
       >
     <genericsetup:upgradeStep
-        title="Move primary_foreground_color value to header_foreground_color"
+        title="Move primary_foreground_color value to header_foreground"
         handler=".migrate_primary_to_header_foreground"
         />
   </genericsetup:upgradeSteps>
