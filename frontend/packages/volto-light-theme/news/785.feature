@@ -1,1 +1,0 @@
-Show only two letters of the native language name @iRohitSingh
