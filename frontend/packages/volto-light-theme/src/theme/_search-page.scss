@@ -7,18 +7,20 @@
     .total-bar {
       margin-bottom: 75px;
       h2 {
+        margin-top: $spacing-medium;
         font-size: 48px;
         font-weight: 700 !important;
         line-height: 60px; /* 125% */
-        margin-top: $spacing-medium;
       }
     }
     .searchTabs.ui.top.attached.tabular.menu {
       --solr-search-facet-tab-inactive-color: var(--accent-color);
       border-radius: 0;
       .searchTab {
-        margin-bottom: 0;
         padding: $spacing-small 10px;
+        border: 1px solid var(--accent-color) !important;
+        border-radius: 0 !important;
+        margin-bottom: 0;
         span {
           font-size: 10px;
           font-weight: 700;
@@ -32,20 +34,16 @@
             font-weight: 400;
           }
         }
-        border-radius: 0 !important;
-          border: 1px solid var(--accent-color) !important;
-      
-        &.active {
-          
 
+        &.active {
           .searchCounter.circular.label {
             background-color: var(--primary-foreground-color) !important;
             color: var(--primary-background-color, #fff) !important;
           }
         }
         svg {
-          vertical-align: bottom;
           margin-right: 5px;
+          vertical-align: bottom;
         }
       }
     }
@@ -70,35 +68,35 @@
                 }
               }
               .itemContent {
-                padding-right: $spacing-medium;
                 max-width: 90%;
+                padding-right: $spacing-medium;
                 .tileHeadline {
+                  margin: 10px 0 15px 0;
                   font-size: 18px;
                   line-height: 24px; /* 133.333% */
-                  margin: 10px 0 15px 0;
                 }
                 .jobTitle {
+                  margin-bottom: 15px;
                   color: var(--primary-foreground-color);
                   font-size: 18px;
                   line-height: 24px; /* 133.333% */
-                  margin-bottom: 15px;
                 }
                 .tileFooter {
                   * {
                     vertical-align: unset;
                   }
                   .itemField {
-                    margin-bottom: 5px;
+                    display: block;
                     padding: 0;
                     border: none;
-                    display: block;
+                    margin-bottom: 5px;
 
                     font-size: 18px;
 
                     line-height: 24px; /* 133.333% */
                     svg.icon {
-                      margin-right: 10px;
                       width: 20px !important;
+                      margin-right: 10px;
                       vertical-align: text-bottom;
                     }
                   }
@@ -112,15 +110,15 @@
           .tileItem.personResultItem {
             .jobTitle {
               margin: 15px 0;
+              margin-bottom: 15px;
               color: var(--primary-foreground-color);
               font-size: 18px;
               line-height: 24px; /* 133.333% */
-              margin-bottom: 15px;
             }
             .tileFooter {
               svg.icon {
-                margin-right: 10px;
                 width: 20px !important;
+                margin-right: 10px;
                 vertical-align: text-bottom;
               }
             }
@@ -136,8 +134,8 @@
             color: var(--accent-foreground-color);
 
             &.active {
-              color: var(--accent-color) !important;
               background: var(--accent-foreground-color) !important;
+              color: var(--accent-color) !important;
             }
 
             &.disabled {
@@ -156,14 +154,14 @@
           .searchConditionsFieldSearch {
             margin-top: $spacing-small;
             input {
+              height: 60px;
+              padding-top: 10px;
+              padding-bottom: 10px;
+              padding-left: 10px;
               border: none;
               border-radius: 0;
-              height: 60px;
               font-size: 18px;
               line-height: 24px; /* 133.333% */
-              padding-left: 10px;
-              padding-bottom: 10px;
-              padding-top: 10px;
             }
             i.search.icon {
               opacity: 1;
