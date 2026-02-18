@@ -126,7 +126,7 @@ jobs:
         with:
           run: |
             docker run -i --net=host --rm --name=backend ${{ inputs.image-name-prefix }}-backend:${{ inputs.image-tag }} &
-            docker run -i --net=host --rm --name=frontend ${{ inputs.image-name-prefix }}-frontend:${{ inputs.image-tag }} &
+            docker run -i --net=host --rm --name=frontend -e RAZZLE_INTERNAL_API_PATH=http://127.0.0.1:8080/Plone ${{ inputs.image-name-prefix }}-frontend:${{ inputs.image-tag }} &
           wait-on: |
             http-get://localhost:8080/Plone
             http://localhost:3000

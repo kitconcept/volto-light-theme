@@ -8,6 +8,29 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0-alpha.16 (2026-02-16)
+
+### Feature
+
+- Show only two letters of the native language name @iRohitSingh [#785](https://github.com/kitconcept/volto-light-theme/pull/785), [#795](https://github.com/kitconcept/volto-light-theme/pull/795)
+
+### Bugfix
+
+- See https://github.com/plone/volto/releases/tag/19.0.0-alpha.24
+  https://github.com/plone/volto/releases/tag/19.0.0-alpha.25 @sneridagh [#volto19a24](https://github.com/kitconcept/volto-light-theme/pull/volto19a24)
+- Fix social icons color in post-footer. @danalvrz 
+- Move the head title after the date in NewsView and EventView, making it consistent with the listing view. @iFlameing 
+
+### Internal
+
+- Remove space after banner block when bg color is not white @Tishasoumya-02 [#761](https://github.com/kitconcept/volto-light-theme/pull/761)
+
+## 8.0.0-alpha.15 (2026-02-06)
+
+### Bugfix
+
+- Make button anchor (a) (from a button if it's a navigation element for a11y purposes) has the same styling as a button. @sneridagh [#786](https://github.com/kitconcept/volto-light-theme/pull/786)
+
 ## 8.0.0-alpha.14 (2026-02-05)
 
 ### Feature

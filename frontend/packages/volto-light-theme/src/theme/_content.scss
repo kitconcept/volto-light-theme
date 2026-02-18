@@ -1,3 +1,12 @@
+@mixin day-with-head-title-separator {
+  .day:has(+ .head-title) {
+    &::after {
+      margin-left: 8px;
+      content: '|';
+    }
+  }
+}
+
 .ui.basic.segment.content-area {
   // We cancel the padding and margin from the segment
   // allowing the content elements to be the ones that push for
@@ -18,6 +27,8 @@
   #page-document .dates {
     @include default-container-width();
     @include adjustMarginsToContainer($default-container-width);
+    @include day-with-head-title-separator();
+
     margin-top: $spacing-medium;
     margin-bottom: $spacing-medium;
     color: var(--primary-foreground-color);
@@ -25,13 +36,6 @@
       @include body-text-bold();
       letter-spacing: 1px;
       text-transform: uppercase;
-    }
-
-    .head-title:has(+ .day) {
-      &::after {
-        margin-left: 8px;
-        content: '|';
-      }
     }
 
     @container (max-width: #{$tablet-breakpoint} ) {
@@ -91,6 +95,7 @@
     }
   }
   .dates {
+    @include day-with-head-title-separator();
     margin-top: $spacing-medium;
     margin-bottom: $spacing-medium;
     color: var(--primary-foreground-color);
@@ -102,12 +107,6 @@
       @include body-text-bold();
       letter-spacing: 1px;
       text-transform: uppercase;
-    }
-    .head-title {
-      &::after {
-        margin-left: 8px;
-        content: '|';
-      }
     }
     @container (max-width: #{$tablet-breakpoint} ) {
       .day,
