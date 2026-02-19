@@ -1,6 +1,7 @@
 import React from 'react';
 import { describe, it, expect, vi } from 'vitest';
 import { render, fireEvent } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import Card from './Card';
 
 vi.mock(
@@ -54,12 +55,14 @@ const BodyContent = () => <div>Body content</div>;
 describe('Card', () => {
   const renderCard = (props: React.ComponentProps<typeof Card>) =>
     render(
-      <Card {...props}>
-        <Card.Summary>
-          <SummaryContent />
-        </Card.Summary>
-        <BodyContent />
-      </Card>,
+      <MemoryRouter>
+        <Card {...props}>
+          <Card.Summary>
+            <SummaryContent />
+          </Card.Summary>
+          <BodyContent />
+        </Card>
+      </MemoryRouter>,
     );
 
   it('is interactive when an href is provided', () => {
