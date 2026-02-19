@@ -1,9 +1,11 @@
 // Styles for kitconcept.solr search page
-#page-search {
-  .ui.container {
+.section-search #page-search {
+  & > .ui.container {
     max-width: var(--default-container-width) !important;
     padding: 0 !important;
   }
+}
+#page-search {
   .total-bar {
     margin-bottom: 75px;
     h2 {
@@ -178,6 +180,41 @@
             opacity: 1;
             &::before {
               transform: scale(2) scaleX(-1);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Basic mobile styles
+@media only screen and (max-width: $largest-mobile-screen) {
+  #page-search {
+    #content {
+      .searchContentWrapper {
+        flex-direction: column;
+      }
+      .searchConditions.ui {
+        width: 100%;
+        margin-right: 0;
+      }
+      #content-core {
+        .search-items {
+          grid-template-columns: 100%;
+        }
+        &.layout-list,
+        &.layout-grid {
+          .tileItem {
+            .itemContent {
+              min-width: 0;
+            }
+            .tileFooter {
+              .itemField {
+                display: block;
+                overflow-wrap: break-word;
+                border: none;
+              }
             }
           }
         }
