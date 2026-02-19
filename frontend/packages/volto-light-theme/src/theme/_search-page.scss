@@ -103,7 +103,7 @@
                   svg.icon {
                     width: 20px !important;
                     margin-right: 10px;
-                    vertical-align: text-bottom;
+                    vertical-align: text-top;
                   }
                 }
               }
@@ -114,6 +114,11 @@
       &.layout-list {
         // Person results
         .tileItem.personResultItem {
+          .tileHeadline {
+            font-size: 18px;
+            line-height: 24px;
+            margin-top: 10px;
+          }
           .jobTitle {
             margin: 15px 0;
             margin-bottom: 15px;
@@ -125,7 +130,7 @@
             svg.icon {
               width: 20px !important;
               margin-right: 10px;
-              vertical-align: text-bottom;
+              vertical-align: text-top;
             }
           }
         }
