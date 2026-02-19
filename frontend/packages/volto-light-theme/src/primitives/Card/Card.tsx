@@ -117,10 +117,12 @@ type CardImageProps = {
   imageComponent?: React.ComponentType<any>;
   children?: React.ReactNode;
   showPlaceholderImage?: boolean;
+  sizes?: string;
 };
 
 const CardImage = (props: CardImageProps) => {
-  const { src, item, image, imageComponent, showPlaceholderImage } = props;
+  const { src, item, image, imageComponent, showPlaceholderImage, sizes } =
+    props;
   const Image = imageComponent || DefaultImage;
 
   return (
@@ -138,6 +140,7 @@ const CardImage = (props: CardImageProps) => {
             alt=""
             loading="lazy"
             responsive={true}
+            sizes={sizes}
           />
         )
       ) : (
