@@ -94,7 +94,7 @@ To do this, follow these steps:
 1. Go to the [GitHub Actions](https://github.com/kitconcept/volto-light-theme/actions) tab in the VLT repository.
 2. Use the workflow {guilabel}`Update VRT Screenshots` or {guilabel}`Update VRT Screenshots Storybook` depending on which screenshots you want to update.
    You might need to click {guilabel}`Show more workflows...` to reveal these options.
-3. Click on the {guilabel}`Run workflow` dropdown and select the {guilabel}`main` branch.
+3. Click on the {guilabel}`Run workflow` dropdown and select {guilabel}`your branch`.
 4. Click the green {guilabel}`Run workflow` button.
 
 The workflow will run and update the screenshots repository with the new baseline screenshots.
