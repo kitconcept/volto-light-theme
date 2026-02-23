@@ -36,7 +36,7 @@ describe('Blocks Tests', () => {
       .should('exist')
       .focus()
       .should('have.focus');
-    cy.findByLabelText('Enter a URL to an image').click();
+    cy.findAllByLabelText('Enter a URL to an image').filter(':visible').click();
     cy.get('.ui.input.editor-link.input-anchorlink-theme input').type(
       `https://github.com/plone/volto/raw/main/logos/volto-colorful.png{enter}`,
     );

@@ -4,11 +4,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2025-09-12 20:20+0000\n"
+"POT-Creation-Date: 2026-02-16 14:21+0000\n"
 "PO-Revision-Date: 2025-09-27 22:53+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,13 +16,14 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: kitconcept.voltolighttheme\n"
+"Language: eu\n"
 "X-Generator: Poedit 3.4.2\n"
 
 #: kitconcept/voltolighttheme/behaviors/footer.py:58
 msgid "Footer address"
 msgstr "Orri oineko helbidea"
 
-#: kitconcept/voltolighttheme/behaviors/customizations.py:259
+#: kitconcept/voltolighttheme/behaviors/customizations.py:263
 msgid "Footer colophon text"
 msgstr "Orri oineko testua"
 
@@ -51,24 +51,24 @@ msgstr "Orri oineko eskumako zutabea"
 msgid "Footer column right header"
 msgstr "Orri oineko eskumako zutabearen goiburukoa"
 
-#: kitconcept/voltolighttheme/behaviors/customizations.py:180
+#: kitconcept/voltolighttheme/behaviors/customizations.py:178
 #: kitconcept/voltolighttheme/behaviors/footer.py:30
 msgid "Footer customizations"
 msgstr "Orri oinaren pertsonalizazioak"
 
-#: kitconcept/voltolighttheme/behaviors/customizations.py:251
+#: kitconcept/voltolighttheme/behaviors/customizations.py:249
 msgid "Footer links"
 msgstr "Orri oineko estekak"
 
-#: kitconcept/voltolighttheme/behaviors/customizations.py:198
+#: kitconcept/voltolighttheme/behaviors/customizations.py:196
 msgid "Footer logos"
 msgstr "Orri oineko logoak"
 
-#: kitconcept/voltolighttheme/behaviors/customizations.py:225
+#: kitconcept/voltolighttheme/behaviors/customizations.py:223
 msgid "Footer logos container width"
 msgstr "Orri oineko logoen edukiontziaren zabalera"
 
-#: kitconcept/voltolighttheme/behaviors/customizations.py:238
+#: kitconcept/voltolighttheme/behaviors/customizations.py:236
 msgid "Footer logos size"
 msgstr "Orri oineko logoen tamaina"
 
@@ -133,7 +133,7 @@ msgid "Volto Light Theme: Uninstall"
 msgstr "Volto Light Theme: desinstalatu"
 
 #. Default: "Sticky menu"
-#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:28
+#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:29
 msgid "fieldset_sticky_menu"
 msgstr "Menu itsaskorra"
 
@@ -148,7 +148,7 @@ msgid "help_enable_fat_menu"
 msgstr "Aktibatuta badago, menu lodia agertuko da."
 
 #. Default: "The text that shows in the footer colophon."
-#: kitconcept/voltolighttheme/behaviors/customizations.py:260
+#: kitconcept/voltolighttheme/behaviors/customizations.py:264
 msgid "help_footer_colophon_text"
 msgstr "Orri oineko testuaren ostean agertzen den testua"
 
@@ -172,6 +172,11 @@ msgstr "Atariaren akzioak goiburukoaren gainean eskuman erakutsiko diren estekak
 msgid "help_intranet_flag"
 msgstr "Goiburukoaren ezkerraldean agertuko den koloreztatutako pilula."
 
+#. Default: "If enabled, a sticky menu will be shown at the bottom of the screen."
+#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:43
+msgid "help_mobile_sticky_menu_enabled"
+msgstr ""
+
 #. Default: "The post footer can have a prominent logo located in the lower right side. It is normally used for displaying the logo of the site sponsor."
 #: kitconcept/voltolighttheme/behaviors/footer.py:140
 msgid "help_post_footer_logo"
@@ -188,7 +193,7 @@ msgid "help_site_logo"
 msgstr "Atariak edo azpiatariak logoa badu, gehitu hemen."
 
 #. Default: "The sticky menu is composed by links with icons that show in a  fixed position in the right side of the screen."
-#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:63
+#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:78
 msgid "help_sticky_menu"
 msgstr "Menu itsaskorrak ikonodun estekak ditu eta pantailaren eskuman toki finkoan erakusten da."
 
@@ -222,10 +227,20 @@ msgstr "Orri oineko logoa"
 msgid "label_has_intranet_header"
 msgstr "Aktibatu Intranetaren goiburukoa"
 
+#. Default: "Navigation Text Color"
+#: kitconcept/voltolighttheme/behaviors/customizations.py:146
+msgid "label_header_foreground"
+msgstr ""
+
 #. Default: "Site Flag"
 #: kitconcept/voltolighttheme/behaviors/customizations.py:81
 msgid "label_intranet_flag"
 msgstr "Atariaren ikurra"
+
+#. Default: "Enable Mobile sticky menu"
+#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:39
+msgid "label_mobile_sticky_menu_enabled"
+msgstr ""
 
 #. Default: "Post Footer Logo"
 #: kitconcept/voltolighttheme/behaviors/footer.py:139
@@ -237,18 +252,13 @@ msgstr "Orri oinaren osteko logoa"
 msgid "label_post_footer_logo_link"
 msgstr "Orri oinaren osteko logoaren esteka"
 
-#. Default: "Navigation Text Color"
-#: kitconcept/voltolighttheme/behaviors/customizations.py:148
-msgid "label_primary_foreground_color"
-msgstr "Nabigazioaren testuaren kolorea"
-
 #. Default: "Footer Background Color"
-#: kitconcept/voltolighttheme/behaviors/customizations.py:157
+#: kitconcept/voltolighttheme/behaviors/customizations.py:155
 msgid "label_secondary_color"
 msgstr "Orri oinaren hondoko kolorea"
 
 #. Default: "Footer Font Color"
-#: kitconcept/voltolighttheme/behaviors/customizations.py:166
+#: kitconcept/voltolighttheme/behaviors/customizations.py:164
 msgid "label_secondary_foreground_color"
 msgstr "Orri oinaren testuaren kolorea"
 
@@ -258,16 +268,16 @@ msgid "label_site_logo"
 msgstr "Atariaren logoa"
 
 #. Default: "Sticky menu"
-#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:62
+#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:77
 msgid "label_sticky_menu"
 msgstr "Menu itsaskorra"
 
 #. Default: "Sticky menu background color"
-#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:38
+#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:53
 msgid "label_sticky_menu_color"
 msgstr "Menu itsaskorraren hondoko kolorea"
 
 #. Default: "Sticky menu text color"
-#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:47
+#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:62
 msgid "label_sticky_menu_foreground_color"
 msgstr "Menu itsaskorraren testuaren kolorea"

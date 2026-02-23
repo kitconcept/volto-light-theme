@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+  <genericsetup:upgradeSteps
+      profile="kitconcept.voltolighttheme:default"
+      source="20250321001"
+      destination="20260212001"
+      >
+    <genericsetup:upgradeStep
+        title="Move primary_foreground_color value to header_foreground"
+        handler=".migrate_primary_to_header_foreground"
+        />
+  </genericsetup:upgradeSteps>
+</configure>

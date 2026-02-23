@@ -343,6 +343,7 @@
   .main-footer + .post-footer {
     background-color: var(--primary-color, $white);
     color: var(--primary-foreground-color, $black);
+    --social-network-icon-color-main: var(--primary-foreground-color, $black);
   }
 }
 

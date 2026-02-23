@@ -27,6 +27,10 @@ li::marker {
   line-height: 32px;
 }
 
+header .navigation .item {
+  font-family: $page-font;
+}
+
 .content-area,
 .breadcrumbs {
   p > a,

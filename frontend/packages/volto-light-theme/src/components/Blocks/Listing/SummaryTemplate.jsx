@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
 import Card from '../../../primitives/Card/Card';
 import { flattenToAppURL, isInternalURL } from '@plone/volto/helpers/Url/Url';
@@ -8,6 +9,8 @@ import DefaultSummary from '@kitconcept/volto-light-theme/components/Summary/Def
 import cx from 'classnames';
 
 const SummaryTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
+  const site = useSelector((state) => state.site?.data);
+  const hideProfileLinks = site?.['kitconcept.disable_profile_links'];
   let link = null;
   let href = linkHref?.[0]?.['@id'] || '';
   const PreviewImageComponent = config.getComponent('PreviewImage').component;
@@ -34,7 +37,10 @@ const SummaryTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
               name: 'Summary',
               dependencies: [item['@type']],
             }).component || DefaultSummary;
-          const showLink = !Summary.hideLink && !isEditMode;
+          let showLink = !Summary.hideLink && !isEditMode;
+          if (item['@type'] === 'Person' && hideProfileLinks !== undefined) {
+            showLink = !hideProfileLinks && !isEditMode;
+          }
           const ItemBodyTemplate = (props) =>
             CustomItemBodyTemplate ? (
               <CustomItemBodyTemplate item={item} />
@@ -57,7 +63,7 @@ const SummaryTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
               })}
               key={item['@id']}
             >
-              <Card href={showLink ? item['@id'] : null}>
+              <Card item={showLink ? item : null}>
                 <ItemBodyTemplate item={item} />
               </Card>
             </div>

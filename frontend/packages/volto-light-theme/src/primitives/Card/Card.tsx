@@ -3,15 +3,26 @@ import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/Cond
 import cx from 'classnames';
 import type { ObjectBrowserItem } from '@plone/types';
 
-type CardProps = {
+type BaseCardProps = {
   /** Optional additional CSS class names to apply to the card. */
   className?: string;
-  /** Optional URL to make the card clickable as a link. */
-  href?: string;
-  /** If true and `href` is provided, opens the link in a new browser tab. */
   openLinkInNewTab?: boolean;
   children?: React.ReactNode;
 };
+
+type CardPropsWithItem = BaseCardProps & {
+  /** List of items rendered within the card. Mutually exclusive with `href`. */
+  href?: never;
+  item: Partial<ObjectBrowserItem>;
+};
+
+type CardPropsWithoutItem = BaseCardProps & {
+  /** Optional URL to make the card clickable as a link. */
+  href?: string | undefined | null;
+  item?: never;
+};
+
+type CardProps = CardPropsWithItem | CardPropsWithoutItem;
 
 const DefaultImage = (props: any) => {
   const { src, item, imageField, alt, loading, responsive } = props;
@@ -35,7 +46,10 @@ const childrenWithProps = (children, extraProps) => {
 };
 
 const Card = (props: CardProps) => {
-  const { className, href, openLinkInNewTab } = props;
+  const hasItem = !!props.item;
+  const item = hasItem ? props.item : undefined;
+  const href = !hasItem ? props.href : undefined;
+  const { className, openLinkInNewTab } = props;
 
   const a11yLabelId = React.useId();
   const linkRef = React.useRef<HTMLAnchorElement>(null);
@@ -48,12 +62,20 @@ const Card = (props: CardProps) => {
     }
   };
 
-  const onClick: React.MouseEventHandler<HTMLDivElement> = () => {
-    if (href) triggerNavigation();
+  const isInteractive = !!props.href || !!props.item;
+
+  const onClick: React.MouseEventHandler<HTMLDivElement> = (e) => {
+    if (!isInteractive) return;
+    if (e.defaultPrevented) return;
+    if (e.target instanceof Element) {
+      const anchor = e.target.closest('a');
+      if (anchor && anchor !== linkRef.current) return;
+    }
+    triggerNavigation();
   };
 
   const onKeyDown: React.KeyboardEventHandler<HTMLDivElement> = (e) => {
-    if (!href) return;
+    if (!isInteractive) return;
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
       triggerNavigation();
@@ -63,16 +85,17 @@ const Card = (props: CardProps) => {
   return (
     <div
       className={cx('card', className)}
-      onClick={onClick}
-      onKeyDown={onKeyDown}
-      role={href ? 'link' : undefined}
-      tabIndex={href ? 0 : undefined}
+      onClick={isInteractive ? onClick : undefined}
+      onKeyDown={isInteractive ? onKeyDown : undefined}
+      role={isInteractive ? 'link' : undefined}
+      tabIndex={isInteractive ? 0 : undefined}
     >
       {/* @ts-expect-error since this has no children, should fail */}
       <ConditionalLink
         aria-labelledby={a11yLabelId}
-        condition={!!href}
+        condition={isInteractive}
         href={href}
+        item={item}
         openLinkInNewTab={openLinkInNewTab}
         ref={linkRef}
       />

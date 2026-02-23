@@ -146,15 +146,20 @@ footer {
   @include default-container-width();
   @include adjustMarginsToContainer($default-container-width);
 }
-// External link Styling
+// External & Mail link Styling
 
-// Slate Style External Links
+// Slate Style External & Mail Links
 .content-area .ui.container,
 .content-area .q.container,
 .content-area .a.container {
   a.external:after,
   a.external:after {
     @include external-link-icon();
+    margin-top: -25px;
+    margin-left: 3px;
+  }
+  p a[href^='mailto:']:after {
+    @include mail-link-icon();
     margin-top: -25px;
     margin-left: 3px;
   }
@@ -168,10 +173,15 @@ footer {
     margin-top: -25px;
     margin-left: 3px;
   }
+  p a[href^='mailto:']:after {
+    @include mail-link-icon();
+    margin-top: -25px;
+    margin-left: 3px;
+  }
 }
 
 /*
-External link removal for all the blocks.
+External & Mail link removal for all the blocks.
 */
 .content-area #page-edit .ui.container,
 .content-area .q.container,
@@ -182,6 +192,9 @@ External link removal for all the blocks.
   .block.teaser {
     a.external:after,
     a.external:after {
+      display: none;
+    }
+    p a[href^='mailto:']:after {
       display: none;
     }
   }
@@ -250,7 +263,8 @@ External link removal for all the blocks.
   & > table,
   & > .table-of-contents,
   & > .accordion-block,
-  & > .slate blockquote {
+  & > .slate blockquote,
+  & > .block.banner.has--block-width--layout .banner-inner-container .text {
     @include default-container-width();
     @include adjustMarginsToContainer($default-container-width);
   }
@@ -295,7 +309,7 @@ External link removal for all the blocks.
       @include adjustMarginsToContainer($default-container-width);
     }
 
-    &.has--block-width--layout {
+    &:not(.banner).has--block-width--layout {
       @include adjustMarginsToContainer($layout-container-width);
     }
   }
@@ -368,7 +382,7 @@ External link removal for all the blocks.
   .block.teaser.has--align--center,
   .block.eventMetadata .details-container,
   .block-editor-teaser .teaser-item.default,
-  .block-editor-teaser .card-inner, // deprecate when category is in place
+  .block-editor-teaser:not(.contained) .card-inner, // deprecate when category is in place
   .block-editor-slateTable .block.table,
   .block-editor-highlight .teaser-description-title,
   .block-editor-toc .table-of-contents,

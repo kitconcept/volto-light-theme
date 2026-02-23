@@ -14,4 +14,6 @@
         />
   </genericsetup:upgradeSteps>
 
+  <include package=".v20260212001" />
+
 </configure>

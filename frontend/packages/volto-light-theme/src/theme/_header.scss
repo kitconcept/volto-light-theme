@@ -15,13 +15,14 @@
       max-height: 80px;
       flex: 1 1 0;
       align-self: center;
-
       a {
         display: block;
 
         img {
+          width: auto;
           max-width: 100%;
           height: auto;
+          max-height: 80px;
         }
       }
     }
@@ -238,7 +239,6 @@
   .tools-wrapper {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-between;
     padding-top: 16px;
 
     .intranet-flag {
@@ -272,6 +272,7 @@
     }
 
     .language-selector a {
+      color: $black;
       text-transform: uppercase;
     }
 
@@ -417,6 +418,10 @@
       max-width: 200px;
       flex: 1 1 auto;
       flex-direction: row-reverse;
+
+      @media only screen and (max-width: $largest-mobile-screen) {
+        display: none;
+      }
 
       @media only screen and (max-width: $computer-breakpoint) {
         flex: 0 1 55px;
@@ -587,7 +592,7 @@ body.has-toolbar.has-sidebar {
       }
     }
 
-    & > li:first-child > button {
+    & > li:first-child > .item {
       margin-left: 0;
     }
 

@@ -10,7 +10,7 @@ body.cms-ui .sticky-menu {
   transform: translateY(-50%);
   transition: all 0.2s linear;
 
-  @media (min-height: 920px) {
+  @media (min-height: 969px) {
     top: 373px;
     transform: none;
   }
@@ -21,7 +21,9 @@ body.cms-ui .sticky-menu {
     flex-direction: column;
     padding: 0;
     margin: 0;
+    gap: 1px;
     list-style: none;
+    text-align: center;
 
     li a {
       display: flex;
@@ -34,24 +36,24 @@ body.cms-ui .sticky-menu {
       font-size: 10px;
       font-style: normal;
       font-weight: 700;
-      line-height: 18px; /* 180% */
+      line-height: 12px;
       text-transform: capitalize;
     }
 
     li {
       display: flex;
-      height: 93px;
+      min-height: 97px;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      margin-bottom: 2px;
+      padding: 5px 10px;
       background: var(--sticky-menu-color, #555);
       color: var(--sticky-menu-foreground-color, #fff);
       font-family: Inter;
       font-size: 10px;
       font-style: normal;
       font-weight: 700;
-      line-height: 18px; /* 180% */
+      line-height: 12px;
       text-transform: capitalize;
     }
 

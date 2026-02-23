@@ -50,6 +50,10 @@
     img {
       object-fit: cover;
     }
+
+    .card-inner a {
+      display: inline;
+    }
   }
 
   h2.headline {
@@ -470,4 +474,9 @@
       }
     }
   }
+}
+
+.listing-item .headline span:not(:last-child)::after {
+  margin: 0 10px;
+  content: '|';
 }

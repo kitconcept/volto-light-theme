@@ -43,7 +43,10 @@ how-to-guides/install
 how-to-guides/summary
 how-to-guides/remove-colophon
 how-to-guides/social-media
+how-to-guides/acceptance-tests
+how-to-guides/visual-regression-tests
 how-to-guides/contributing
+how-to-guides/develop-add-ons
 how-to-guides/releases
 how-to-guides/upgrade-guide
 ```
@@ -68,6 +71,7 @@ reference/widgets
 reference/slots
 reference/image-aspect-ratio
 reference/helpers
+reference/card
 reference/feature-flags
 reference/recommended-addons
 reference/compatibility

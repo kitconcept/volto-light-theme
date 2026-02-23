@@ -4,8 +4,12 @@ import type { StyleDefinition } from '@plone/types';
 import cloneDeep from 'lodash/cloneDeep';
 
 import { composeSchema } from '@plone/volto/helpers/Extensions';
-import { findStyleByName } from '@plone/volto/helpers/Blocks/Blocks';
 import { defaultStylingSchema } from '../components/Blocks/schema';
+import {
+  blockThemesEnhancer,
+  styleDefinitionsEnhancer,
+} from '../helpers/styleDefinitions';
+
 import {
   gridTeaserDisableStylingSchema,
   teaserSchemaEnhancer,
@@ -40,19 +44,17 @@ import { tocBlockSchemaEnhancer } from '../components/Blocks/Toc/schema';
 import { mapsBlockSchemaEnhancer } from '../components/Blocks/Maps/schema';
 import { sliderBlockSchemaEnhancer } from '../components/Blocks/Slider/schema';
 import EventMetadataView from '../components/Blocks/EventMetadata/View';
-import isEmpty from 'lodash/isEmpty';
 
 import SearchBlockViewEvent from '../components/Blocks/EventCalendar/Search/SearchBlockView';
 import SearchBlockEditEvent from '../components/Blocks/EventCalendar/Search/SearchBlockEdit';
 import SearchBlockSchemaEvent from '../components/Blocks/EventCalendar/Search/schema';
 import EventCalenderTemplate from '../components/Blocks/EventCalendar/Search/components/EventTemplate';
-import SliderVariants from '../components/Blocks/Slider/SliderVariants';
-import DefaultBody from '../customizations/@kitconcept/volto-slider-block/components/DefaultBody';
 
 declare module '@plone/types' {
   export interface BlocksConfigData {
     introduction: BlockConfigBase;
     heading: BlockConfigBase;
+    banner: BlockConfigBase;
     __button: BlockConfigBase;
     separator: BlockConfigBase;
     slider: BlockConfigBase;
@@ -64,6 +66,7 @@ declare module '@plone/types' {
   }
   export interface BlockConfigBase {
     themes?: StyleDefinition[];
+    defaultTheme: string;
     allowedBlocks?: string[];
     allowed_headline_tags?: string[][];
     unwantedButtons?: string[];
@@ -144,36 +147,16 @@ export default function install(config: ConfigType) {
     },
   ];
 
-  function blockThemesEnhancer({ data, container }) {
-    if (!data['@type']) return {};
-    const blockConfig = config.blocks.blocksConfig[data['@type']];
-    if (!blockConfig) return {};
-    const blockStyleDefinitions =
-      // We look up for the blockThemes in the block's config, then in the global config
-      // We keep `colors` for BBB, but `themes` should be used
-      blockConfig.themes || blockConfig.colors || config.blocks.themes || [];
-
-    if (
-      !isEmpty(container) &&
-      container.theme &&
-      (!data.theme || data.theme === 'default')
-    ) {
-      return findStyleByName(blockStyleDefinitions, container.theme);
-    }
-    if (data.theme) {
-      return data.theme
-        ? findStyleByName(blockStyleDefinitions, data.theme)
-        : {};
-    } else {
-      // No theme, return default color
-      return findStyleByName(config.blocks.themes, 'default');
-    }
-  }
-
   config.registerUtility({
     name: 'blockThemesEnhancer',
     type: 'styleWrapperStyleObjectEnhancer',
     method: blockThemesEnhancer,
+  });
+
+  config.registerUtility({
+    name: 'styleDefinitionsEnhancer',
+    type: 'styleWrapperStyleObjectEnhancer',
+    method: styleDefinitionsEnhancer,
   });
 
   // No required blocks except eventMetadata
@@ -316,6 +299,10 @@ export default function install(config: ConfigType) {
       ),
     );
 
+  config.blocks.blocksConfig.banner = {
+    ...config.blocks.blocksConfig.banner,
+    schemaEnhancer: defaultStylingSchema,
+  };
   config.blocks.blocksConfig.introduction = {
     ...config.blocks.blocksConfig.introduction,
     unwantedButtons: ['heading-three', 'blockquote'],
@@ -403,10 +390,10 @@ export default function install(config: ConfigType) {
 
   // Check if the separator is present before enhancing it
   if (config.blocks.blocksConfig?.separator?.id) {
-    config.blocks.blocksConfig.separator = {
-      ...config.blocks.blocksConfig.separator,
-      schemaEnhancer: SeparatorStylingSchema,
-    };
+    config.blocks.blocksConfig.separator.schemaEnhancer = composeSchema(
+      config.blocks.blocksConfig.separator.schemaEnhancer,
+      SeparatorStylingSchema,
+    );
   }
 
   // TOC Block
@@ -420,20 +407,6 @@ export default function install(config: ConfigType) {
   // Slider Block
   config.blocks.blocksConfig.slider = {
     ...config.blocks.blocksConfig.slider,
-    variations: [
-      {
-        id: 'default',
-        title: 'Default',
-        isDefault: true,
-        view: DefaultBody,
-      },
-
-      {
-        id: 'simple',
-        title: 'Simple',
-        view: SliderVariants,
-      },
-    ],
     schemaEnhancer: sliderBlockSchemaEnhancer,
   };
 

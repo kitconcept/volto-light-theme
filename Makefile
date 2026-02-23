@@ -185,8 +185,9 @@ stack-rm:  ## Local Stack: Remove Services and Volumes
 	@docker compose -f docker-compose-dev.yml down
 
 ###########################################
-# Acceptance
+# Acceptance Tests
 ###########################################
+
 .PHONY: acceptance-backend-dev-start
 acceptance-backend-dev-start:
 	@echo "Start acceptance backend"
@@ -247,11 +248,28 @@ ci-acceptance-test:
 	$(MAKE) -C "./frontend/" ci-acceptance-test
 	$(MAKE) acceptance-containers-stop
 
-.PHONY: ci-acceptance-server-visual-start
-ci-acceptance-server-visual-start: backend-install
-	@echo "Starting backend server"
-	$(MAKE) backend-start
+###########################################
+# A11y Tests
+###########################################
 
-.PHONY: ci-acceptance-frontend-visual-start
-ci-acceptance-frontend-visual-start:
-	$(MAKE) -C "./frontend/" acceptance-a11y-frontend-prod-start
+acceptance-a11y-frontend-prod-start:
+	$(MAKE) -C frontend acceptance-a11y-frontend-prod-start
+
+acceptance-a11y-test:
+	$(MAKE) -C frontend acceptance-a11y-test
+
+###########################################
+# Visual Regression Tests
+###########################################
+
+sync-visual-regression-snapshots:
+	$(MAKE) -C frontend sync-visual-regression-snapshots
+
+acceptance-visual-frontend-prod-start:
+	$(MAKE) -C frontend acceptance-a11y-frontend-prod-start
+
+acceptance-visual-test:
+	$(MAKE) -C frontend acceptance-visual-test
+
+acceptance-visual-test-storybook:
+	$(MAKE) -C frontend acceptance-visual-test-storybook

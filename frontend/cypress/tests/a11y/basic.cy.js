@@ -6,7 +6,7 @@ describe('a11y tests', () => {
     // Since we want to visit the same URL at the start of all our tests,
     // we include it in our beforeEach function so that it runs before each test
     cy.visit('/');
-    cy.wait('@content');
+    cy.wait('@content').its('response.statusCode').should('eq', 200);
   });
 
   it('Home page (/)', () => {

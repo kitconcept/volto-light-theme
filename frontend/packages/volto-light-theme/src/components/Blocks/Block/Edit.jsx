@@ -35,6 +35,7 @@ import {
   buildStyleClassNamesExtenders,
 } from '@plone/volto/helpers/Blocks/Blocks';
 import MaybeWrap from '@plone/volto/components/manage/MaybeWrap/MaybeWrap';
+import ErrorBoundary from './ErrorBoundary';
 
 const messages = defineMessages({
   unknownBlock: {
@@ -151,7 +152,7 @@ export class Edit extends Component {
    */
   render() {
     const { blocksConfig = config.blocks.blocksConfig } = this.props;
-    const { editable, type } = this.props;
+    const { editable, type, isContainer: parentIsContainer } = this.props;
     const required = isBoolean(this.props.data.required)
       ? this.props.data.required
       : includes(config.blocks.requiredBlocks, type);
@@ -275,6 +276,7 @@ export class Edit extends Component {
                 selected: this.props.selected || this.props.multiSelected,
                 multiSelected: this.props.multiSelected,
                 hovered: this.props.hovered === this.props.id,
+                error: !!this.props.blocksErrors?.[this.props.id],
               },
             )}
             ref={this.blockNode}
@@ -287,11 +289,19 @@ export class Edit extends Component {
               as={'div'}
               className="block-inner-container"
             >
-              <Block
-                {...this.props}
-                blockNode={this.blockNode}
-                data={this.props.data}
-              />
+              <ErrorBoundary
+                name={`blockId-${this.props.id}-type-${type}`}
+                block={this.props.block}
+                type={type}
+                isEdit
+              >
+                <Block
+                  {...this.props}
+                  blockNode={this.blockNode}
+                  data={this.props.data}
+                  className={cx({ contained: parentIsContainer })}
+                />
+              </ErrorBoundary>
             </MaybeWrap>
 
             {blocksConfig?.[type]?.blockModel === 3 && (
@@ -433,6 +443,7 @@ export class Edit extends Component {
               selected: this.props.selected || this.props.multiSelected,
               multiSelected: this.props.multiSelected,
               hovered: this.props.hovered === this.props.id,
+              error: !!this.props.blocksErrors?.[this.props.id],
             })}
             // END CUSTOMIZATION
             style={{ outline: 'none' }}

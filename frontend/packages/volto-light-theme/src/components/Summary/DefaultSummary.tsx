@@ -1,5 +1,6 @@
 import * as React from 'react';
 import type { ObjectBrowserItem } from '@plone/types';
+import { smartTextRenderer } from '../../helpers/smartText';
 
 export type DefaultSummaryProps = {
   item: Partial<ObjectBrowserItem>;
@@ -20,7 +21,9 @@ const DefaultSummary = (props: DefaultSummaryProps) => {
       <HeadingTag className="title" id={a11yLabelId}>
         {item.title ? item.title : item.id}
       </HeadingTag>
-      {!hide_description && <p className="description">{item.description}</p>}
+      {!hide_description && (
+        <p className="description">{smartTextRenderer(item.description)}</p>
+      )}
     </>
   );
 };

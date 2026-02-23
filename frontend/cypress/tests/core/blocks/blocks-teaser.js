@@ -8,6 +8,22 @@ context('Blocks Acceptance Tests', () => {
       contentId: 'document',
       contentTitle: 'Document',
     });
+    cy.fixture('halfdome2022.jpg', 'base64').then((fileContent) => {
+      cy.createContent({
+        contentType: 'Image',
+        contentId: 'my-image',
+        contentTitle: 'My Image',
+        bodyModifier(body) {
+          body.image = {
+            data: fileContent,
+            encoding: 'base64',
+            filename: 'image.png',
+            'content-type': 'image/png',
+          };
+          return body;
+        },
+      });
+    });
     cy.autologin();
     cy.visit('/');
     cy.wait('@content');
@@ -20,32 +36,35 @@ context('Blocks Acceptance Tests', () => {
       contentId: 'blue-orchids',
       contentTitle: 'Blue Orchids',
       contentDescription: 'are growing on the mountain tops',
-      image: true,
+      preview_image_link: {
+        '@id': '/my-image',
+      },
       path: '/document',
     });
     cy.visit('/document/edit');
     cy.wait('@schema');
 
     // WHEN I create a Teaser block
-    cy.get('.block .slate-editor [contenteditable=true]').click();
-    cy.get('.button .block-add-button').click({ force: true });
-    cy.get('.blocks-chooser .mostUsed .button.teaser')
-      .contains('Teaser')
-      .click({ force: true });
+    cy.addNewBlock('teaser');
     cy.get(
       '.objectbrowser-field[aria-labelledby="fieldset-default-field-label-href"] button[aria-label="Open object browser"]',
     ).click();
     cy.get('[aria-label="Select Blue Orchids"]').dblclick();
     cy.wait(500);
-    cy.get('.align-buttons .ui.buttons button[aria-label="Center"]').click();
+    cy.get(
+      '[class*="field-wrapper-align-"] .buttons input[aria-label="Center"]',
+    ).click({ force: true });
     cy.get('#toolbar-save').click();
 
     // THEN I can see the Teaser block
     cy.visit('/document');
     cy.get('.block.teaser').should('have.class', 'has--align--center');
     cy.get('.block.teaser .image-wrapper img')
-      .should('have.attr', 'src')
-      .and('include', '/document/blue-orchids/@@images/preview_image-');
+      .should(($img) => {
+        expect($img[0].naturalWidth).to.be.greaterThan(0);
+        expect($img[0].naturalHeight).to.be.greaterThan(0);
+      })
+      .should('have.attr', 'src');
     cy.get('.block.teaser .card-summary h2').contains('Blue Orchids');
     cy.get('.block.teaser .card-summary p').contains(
       'are growing on the mountain tops',
@@ -59,25 +78,25 @@ context('Blocks Acceptance Tests', () => {
       contentId: 'blue-orchids',
       contentTitle: 'Blue Orchids',
       contentDescription: 'are growing on the mountain tops',
-      image: true,
+      preview_image_link: {
+        '@id': '/my-image',
+      },
       path: '/document',
     });
 
     cy.navigate('/document/edit');
+    cy.wait('@schema');
     // WHEN I create a Teaser block and change the data of the referenced object
-    cy.get('.block .slate-editor [contenteditable=true]').click();
-    cy.get('.button .block-add-button').click({ force: true });
-    cy.get('.blocks-chooser .mostUsed .button.teaser')
-      .contains('Teaser')
-      .click({ force: true });
+    cy.addNewBlock('teaser');
     cy.get(
       '.objectbrowser-field[aria-labelledby="fieldset-default-field-label-href"] button[aria-label="Open object browser"]',
     ).click();
     cy.get('[aria-label="Select Blue Orchids"]').dblclick();
-    cy.wait(500);
     cy.get('#toolbar-save').click();
+    cy.wait('@content');
 
-    cy.visit('/document');
+    cy.navigate('/document');
+    cy.wait('@content');
     cy.get('.block.teaser .card-summary h2').contains('Blue Orchids');
     cy.get('.block.teaser .card-summary p').contains(
       'are growing on the mountain tops',
@@ -93,6 +112,7 @@ context('Blocks Acceptance Tests', () => {
     cy.get('.documentFirstHeading').contains('Blue Orchids and Tulips');
     // THEN I can see the updated content in the teaser
     cy.navigate('/document');
+    cy.wait('@content');
     cy.get('.block.teaser .card-summary h2').contains(
       'Blue Orchids and Tulips',
     );
@@ -108,16 +128,14 @@ context('Blocks Acceptance Tests', () => {
       contentId: 'blue-orchids',
       contentTitle: 'Blue Orchids',
       contentDescription: 'are growing on the mountain tops',
-      image: true,
+      preview_image_link: {
+        '@id': '/my-image',
+      },
       path: '/document',
     });
     cy.visit('/document/edit');
     // WHEN I create a Teaser block and change the data of the referenced object
-    cy.get('.block .slate-editor [contenteditable=true]').click();
-    cy.get('.button .block-add-button').click({ force: true });
-    cy.get('.blocks-chooser .mostUsed .button.teaser')
-      .contains('Teaser')
-      .click({ force: true });
+    cy.addNewBlock('teaser');
     cy.get(
       '.objectbrowser-field[aria-labelledby="fieldset-default-field-label-href"] button[aria-label="Open object browser"]',
     ).click();
@@ -150,17 +168,15 @@ context('Blocks Acceptance Tests', () => {
       contentId: 'blue-orchids',
       contentTitle: 'Blue Orchids',
       contentDescription: 'are growing on the mountain tops',
-      image: true,
+      preview_image_link: {
+        '@id': '/my-image',
+      },
       path: '/document',
     });
 
     cy.navigate('/document/edit');
     // WHEN I create a Teaser block and change the data of the referenced object
-    cy.get('.block .slate-editor [contenteditable=true]').click();
-    cy.get('.button .block-add-button').click({ force: true });
-    cy.get('.blocks-chooser .mostUsed .button.teaser')
-      .contains('Teaser')
-      .click({ force: true });
+    cy.addNewBlock('teaser');
     cy.get(
       '.objectbrowser-field[aria-labelledby="fieldset-default-field-label-href"] button[aria-label="Open object browser"]',
     ).click();

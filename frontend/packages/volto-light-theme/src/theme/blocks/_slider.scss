@@ -113,7 +113,7 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
     position: relative;
   }
 
-  .ui.button {
+  .teaser-item button {
     display: initial;
     padding: 8px 20px;
     border: 1px solid currentColor;
@@ -189,7 +189,7 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
           padding: 60px 20px;
           background: var(--theme-color);
           color: var(--theme-foreground-color);
-          .ui.button,
+          button,
           .title > h2,
           p.slider-description {
             color: var(--theme-foreground-color) !important;
@@ -238,23 +238,8 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         display: none;
       }
     }
-    .ui.button {
+    button {
       color: var(--theme-foreground-color);
     }
-  }
-}
-
-.ui.buttons.refresh.slider button {
-  display: flex;
-  align-items: center;
-  padding: 0.5833em 0.833em;
-  background-color: #e8e8e8 !important;
-  color: rgba(0, 0, 0, 0.6) !important;
-  font-size: 0.85714286rem;
-  font-weight: bold;
-
-  svg {
-    padding: 0 0 0 0.5em;
-    margin-right: 0;
   }
 }

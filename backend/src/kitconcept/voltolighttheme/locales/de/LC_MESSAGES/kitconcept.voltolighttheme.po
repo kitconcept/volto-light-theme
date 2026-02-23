@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-09-12 20:20+0000\n"
+"POT-Creation-Date: 2026-02-16 14:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 msgid "Footer address"
 msgstr "Footer Adresse"
 
-#: kitconcept/voltolighttheme/behaviors/customizations.py:259
+#: kitconcept/voltolighttheme/behaviors/customizations.py:263
 msgid "Footer colophon text"
 msgstr "Footer-Impressum Text"
 
@@ -46,24 +46,24 @@ msgstr "Footer Spalte 3"
 msgid "Footer column right header"
 msgstr "Footer Spalte 3 Überschrift"
 
-#: kitconcept/voltolighttheme/behaviors/customizations.py:180
+#: kitconcept/voltolighttheme/behaviors/customizations.py:178
 #: kitconcept/voltolighttheme/behaviors/footer.py:30
 msgid "Footer customizations"
 msgstr "Footer Anpassungen"
 
-#: kitconcept/voltolighttheme/behaviors/customizations.py:251
+#: kitconcept/voltolighttheme/behaviors/customizations.py:249
 msgid "Footer links"
 msgstr "Footer Links"
 
-#: kitconcept/voltolighttheme/behaviors/customizations.py:198
+#: kitconcept/voltolighttheme/behaviors/customizations.py:196
 msgid "Footer logos"
 msgstr "Footer Logos"
 
-#: kitconcept/voltolighttheme/behaviors/customizations.py:225
+#: kitconcept/voltolighttheme/behaviors/customizations.py:223
 msgid "Footer logos container width"
 msgstr "Breite Footer Logo"
 
-#: kitconcept/voltolighttheme/behaviors/customizations.py:238
+#: kitconcept/voltolighttheme/behaviors/customizations.py:236
 msgid "Footer logos size"
 msgstr "Größe Footer Logo"
 
@@ -128,7 +128,7 @@ msgid "Volto Light Theme: Uninstall"
 msgstr ""
 
 #. Default: "Sticky menu"
-#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:28
+#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:29
 msgid "fieldset_sticky_menu"
 msgstr "Sticky Menu (fixiertes Menu)"
 
@@ -143,7 +143,7 @@ msgid "help_enable_fat_menu"
 msgstr "Wenn Sie diese Option wählen, wird ein Fat Menu angezeigt wenn Sie auf ein Element der Hauptnavigation klicken."
 
 #. Default: "The text that shows in the footer colophon."
-#: kitconcept/voltolighttheme/behaviors/customizations.py:260
+#: kitconcept/voltolighttheme/behaviors/customizations.py:264
 msgid "help_footer_colophon_text"
 msgstr "Der Text, der im Footer-Kolophon angezeigt wird."
 
@@ -167,6 +167,11 @@ msgstr "Zeigt ein Menü in der oberen rechten Ecke mit wichtigen Aktionen wie Lo
 msgid "help_intranet_flag"
 msgstr "Zeigt einen Reiter am oberen Rand der Website an, um den Bereich zu kennzeichnen (z.B. 'Intranet', 'Staging')."
 
+#. Default: "If enabled, a sticky menu will be shown at the bottom of the screen."
+#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:43
+msgid "help_mobile_sticky_menu_enabled"
+msgstr "Wenn diese Option aktiviert ist, wird am unteren Bildschirmrand ein Sticky-Menü angezeigt."
+
 #. Default: "The post footer can have a prominent logo located in the lower right side. It is normally used for displaying the logo of the site sponsor."
 #: kitconcept/voltolighttheme/behaviors/footer.py:140
 msgid "help_post_footer_logo"
@@ -183,7 +188,7 @@ msgid "help_site_logo"
 msgstr "Laden Sie hier ihr eigenes Website Logo hoch. Das Logo wird dann links oben im Header erscheinen."
 
 #. Default: "The sticky menu is composed by links with icons that show in a  fixed position in the right side of the screen."
-#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:63
+#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:78
 msgid "help_sticky_menu"
 msgstr "Aktiviert ein Menü, das beim Scrollen am rechten Bildschirmrand fixiert bleibt und dauerhaft zugänglich ist."
 
@@ -217,10 +222,20 @@ msgstr "Footer Logo"
 msgid "label_has_intranet_header"
 msgstr "Intranet Header einschalten"
 
+#. Default: "Navigation Text Color"
+#: kitconcept/voltolighttheme/behaviors/customizations.py:146
+msgid "label_header_foreground"
+msgstr "Farbe des Navigationstextes"
+
 #. Default: "Site Flag"
 #: kitconcept/voltolighttheme/behaviors/customizations.py:81
 msgid "label_intranet_flag"
 msgstr "Reiter"
+
+#. Default: "Enable Mobile sticky menu"
+#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:39
+msgid "label_mobile_sticky_menu_enabled"
+msgstr "Mobiles Sticky-Menü aktivieren"
 
 #. Default: "Post Footer Logo"
 #: kitconcept/voltolighttheme/behaviors/footer.py:139
@@ -232,18 +247,13 @@ msgstr "Partnerlogo/Förderlogo"
 msgid "label_post_footer_logo_link"
 msgstr "Partnerlogo/Förderlogo Link"
 
-#. Default: "Navigation Text Color"
-#: kitconcept/voltolighttheme/behaviors/customizations.py:148
-msgid "label_primary_foreground_color"
-msgstr "Textfarbe Navigation"
-
 #. Default: "Footer Background Color"
-#: kitconcept/voltolighttheme/behaviors/customizations.py:157
+#: kitconcept/voltolighttheme/behaviors/customizations.py:155
 msgid "label_secondary_color"
 msgstr "Hintergrundfarbe Footer"
 
 #. Default: "Footer Font Color"
-#: kitconcept/voltolighttheme/behaviors/customizations.py:166
+#: kitconcept/voltolighttheme/behaviors/customizations.py:164
 msgid "label_secondary_foreground_color"
 msgstr "Textfarbe Footer"
 
@@ -253,16 +263,16 @@ msgid "label_site_logo"
 msgstr "Website Logo"
 
 #. Default: "Sticky menu"
-#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:62
+#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:77
 msgid "label_sticky_menu"
 msgstr "Sticky Menu"
 
 #. Default: "Sticky menu background color"
-#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:38
+#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:53
 msgid "label_sticky_menu_color"
 msgstr "Hintergrundfarbe Sticky Menu"
 
 #. Default: "Sticky menu text color"
-#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:47
+#: kitconcept/voltolighttheme/behaviors/sticky_menu.py:62
 msgid "label_sticky_menu_foreground_color"
 msgstr "Textfarbe Sticky Menu"

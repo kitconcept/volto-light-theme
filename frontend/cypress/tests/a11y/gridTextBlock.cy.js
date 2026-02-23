@@ -12,7 +12,7 @@ describe('a11y tests', () => {
   // grid tex block
   it('Grid-Block text (/block/grid-block/text)', () => {
     cy.navigate('/block/grid-block/text');
-    cy.wait('@content');
+    cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
     cy.configureAxe();
     cy.checkAccessibility();

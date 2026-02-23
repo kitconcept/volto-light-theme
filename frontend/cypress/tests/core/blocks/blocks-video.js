@@ -25,6 +25,7 @@ describe('Blocks Tests', () => {
     cy.get('.ui.basic.icon.button.block-add-button').click();
     cy.get('.ui.basic.icon.button.video').contains('Video').click();
     cy.get('.toolbar-inner > .ui > input')
+      .filter(':visible')
       .click()
       .type('https://youtu.be/T6J3d35oIAY')
       .type('{enter}');
@@ -47,6 +48,7 @@ describe('Blocks Tests', () => {
     cy.get('.ui.basic.icon.button.block-add-button').click();
     cy.get('.ui.basic.icon.button.video').contains('Video').click();
     cy.get('.toolbar-inner > .ui > input')
+      .filter(':visible')
       .click()
       .type('https://youtu.be/T6J3d35oIAY')
       .type('{enter}');
@@ -76,6 +78,7 @@ describe('Blocks Tests', () => {
     cy.get('.ui.basic.icon.button.block-add-button').click();
     cy.get('.ui.basic.icon.button.video').contains('Video').click();
     cy.get('.toolbar-inner > .ui > input')
+      .filter(':visible')
       .click()
       .type('https://vimeo.com/85804536')
       .type('{enter}');
@@ -98,6 +101,7 @@ describe('Blocks Tests', () => {
     cy.get('.ui.basic.icon.button.block-add-button').click();
     cy.get('.ui.basic.icon.button.video').contains('Video').click();
     cy.get('.toolbar-inner > .ui > input')
+      .filter(':visible')
       .click()
       .type('https://1.videolyser.de/videos/1714848/11745228_hd.mp4')
       .type('{enter}');

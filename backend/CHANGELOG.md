@@ -2,6 +2,127 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0a16 (2026-02-16)
+
+
+### Internal:
+
+- Update Banner Block Example Content @Tishasoumya-02 
+
+## 8.0.0a15 (2026-02-06)
+
+No significant changes.
+
+
+## 8.0.0a14 (2026-02-05)
+
+
+### New features:
+
+- Add a boolean field to enable or disable the mobile sticky menu. @iFlameing 
+
+## 8.0.0a13 (2026-01-26)
+
+
+### Bug fixes:
+
+- Change footer colophon widget from Input to Richtext. @iFlameing 
+
+## 8.0.0a12 (2026-01-15)
+
+No significant changes.
+
+
+## 8.0.0a11 (2026-01-14)
+
+No significant changes.
+
+
+## 8.0.0a10 (2026-01-14)
+
+No significant changes.
+
+
+## 8.0.0a9 (2025-12-08)
+
+No significant changes.
+
+
+## 8.0.0a8 (2025-12-01)
+
+No significant changes.
+
+
+## 8.0.0a7 (2025-11-24)
+
+No significant changes.
+
+
+## 8.0.0a6 (2025-11-13)
+
+No significant changes.
+
+
+## 8.0.0a5 (2025-11-11)
+
+
+### New features:
+
+- Move to native namespaces. @sneridagh 
+
+## 8.0.0a4 (2025-11-05)
+
+No significant changes.
+
+
+## 8.0.0a3 (2025-11-04)
+
+No significant changes.
+
+
+## 8.0.0a2 (2025-10-29)
+
+No significant changes.
+
+
+## 8.0.0a1 (2025-10-27)
+
+
+### Internal:
+
+- gitignore mxdev control files. @sneridagh [#694](https://github.com/kitconcept/volto-light-theme/issues/694)
+
+## 8.0.0a0 (2025-10-24)
+
+
+### Internal:
+
+- Fixed example content for internal link because the exported data was incorrect. @sneridagh [#693](https://github.com/kitconcept/volto-light-theme/issues/693)
+
+## 7.3.1 (2025-10-08)
+
+
+### Internal:
+
+- Pin correctly plonegovbr.socialmedia>=2.0.0a10. @sneridagh 
+
+## 7.3.0 (2025-10-07)
+
+
+### Bug fixes:
+
+- Update socialmedia add-on to 2.0.0a10, Plone 6.1.3 and Volto to 18.27.3. @sneridagh 
+
+
+### Internal:
+
+- Replace "head title" with "kicker" in example content. @davisagli 
+
+## 7.2.0 (2025-10-01)
+
+No significant changes.
+
+
 ## 7.1.0 (2025-09-29)
 
 

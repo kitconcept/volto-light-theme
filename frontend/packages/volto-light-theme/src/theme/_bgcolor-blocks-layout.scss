@@ -3,17 +3,8 @@
   color: var(--theme-foreground-color);
   @include color-block-change-vertical-spacing();
 
-  // // TODO: investigate why on SSR the whitespace is removed and in client not
-  // // This is a workaround to avoid the two use cases...
-  // &[style*='--theme-color:#fff']:first-child,
-  // &[style*='--theme-color: #fff']:first-child {
-  //   padding-top: 0;
-  // }
-
-  // &:first-child:has(> .previous--has--same--backgroundColor) {
-  //   padding-top: 0;
-  // }
-
+  // First block of the page has no top padding, only if previous block has same background color
+  // eg: when it's different than default.
   &:first-child:has(> :first-child.previous--has--same--backgroundColor) {
     padding-top: 0;
   }
@@ -416,6 +407,14 @@
   }
 }
 
+// Banner block, if next block has different bgcolor it snaps to the bottom
+#page-document
+  .blocks-group-wrapper:has(
+    :last-child.banner.next--has--different--backgroundColor
+  ) {
+  padding-bottom: 0;
+}
+
 // Color map
 @mixin use-theme-colors() {
   #page-document {
@@ -448,7 +447,8 @@
     &.__button {
       & > .button.container,
       & > .block-inner-container {
-        & .ui.button {
+        & button,
+        a {
           border-color: var(--theme-foreground-color);
           background-color: var(--theme-color);
 
@@ -1278,11 +1278,14 @@
             color: var(--header-foreground);
           }
         }
+        .language-selector a {
+          color: var(--header-foreground);
+        }
       }
 
       // Navigation
       nav.navigation {
-        button.item {
+        .item {
           color: var(--header-foreground);
         }
         .submenu-wrapper {
@@ -1435,12 +1438,12 @@
     }
 
     a.section {
-      color: var(--link-foreground-color, --breadcrumbs-foreground);
+      color: var(--breadcrumbs-foreground, --link-foreground-color);
     }
 
     a.home {
       svg {
-        fill: var(--link-foreground-color, --breadcrumbs-foreground) !important;
+        fill: var(--breadcrumbs-foreground, --link-foreground-color) !important;
       }
     }
   }

@@ -12,7 +12,7 @@ describe('a11y tests', () => {
   // Introduction-Block
   it('Introduction-Block (/block/introduction-block)', () => {
     cy.navigate('/block/introduction-block');
-    cy.wait('@content');
+    cy.wait('@content').its('response.statusCode').should('eq', 200);
     cy.injectAxe();
     cy.configureAxe();
     cy.checkAccessibility();

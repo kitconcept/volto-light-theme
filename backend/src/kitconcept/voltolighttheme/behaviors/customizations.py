@@ -115,7 +115,7 @@ class ISiteThemeCustomizationSettings(model.Schema):
         "theming",
         label=_("Theming"),
         fields=[
-            "primary_foreground_color",
+            "header_foreground",
             "accent_foreground_color",
             "accent_color",
             # "primary_color", # Not used in PiK
@@ -141,12 +141,10 @@ class ISiteThemeCustomizationSettings(model.Schema):
         required=False,
     )
 
-    directives.widget(
-        "primary_foreground_color", frontendOptions={"widget": "colorPicker"}
-    )
-    primary_foreground_color = TextLine(
+    directives.widget("header_foreground", frontendOptions={"widget": "colorPicker"})
+    header_foreground = TextLine(
         title=_(
-            "label_primary_foreground_color",
+            "label_header_foreground",
             default="Navigation Text Color",
         ),
         required=False,
@@ -254,12 +252,19 @@ class ISiteFooterCustomizationSettings(model.Schema):
         required=False,
         widget="",
     )
+    directives.widget(
+        "footer_colophon_text",
+        frontendOptions={
+            "widget": "slate_richtext",
+        },
+    )
 
-    footer_colophon_text = TextLine(
+    footer_colophon_text = JSONField(
         title=_("Footer colophon text"),
         description=_(
             "help_footer_colophon_text",
             default="The text that shows in the footer colophon.",
         ),
+        schema=OBJECT_LIST,
         required=False,
     )

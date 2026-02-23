@@ -24,6 +24,9 @@
 
     img {
       display: block;
+      // Beware of this, it can cause issues with some images, added back on 2025-09-30 @sneridagh
+      // Small images will be pixelated though
+      width: 100%;
       aspect-ratio: var(--image-aspect-ratio, $aspect-ratio) !important;
     }
   }

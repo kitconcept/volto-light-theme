@@ -82,7 +82,7 @@ const InternetHeader = ({ pathname, content }) => {
               header_actions.map((item) => (
                 <UniversalLink
                   key={item['@id']}
-                  href={item.href?.[0]['@id']}
+                  href={item.href?.[0]?.['@id']}
                   openLinkInNewTab={item.openInNewTab}
                 >
                   {item.title}
@@ -162,7 +162,7 @@ const IntranetHeader = ({ pathname, content }) => {
 
   return (
     <>
-      <div className="header">
+      <div className="header header-intranet">
         <div className="tools-wrapper">
           <LanguageSelector />
 
@@ -174,7 +174,7 @@ const IntranetHeader = ({ pathname, content }) => {
               header_actions.map((item) => (
                 <UniversalLink
                   key={item['@id']}
-                  href={item.href?.[0]['@id']}
+                  href={item.href?.[0]?.['@id']}
                   openLinkInNewTab={item.openInNewTab}
                 >
                   {item.title}

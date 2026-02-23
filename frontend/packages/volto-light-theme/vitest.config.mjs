@@ -4,11 +4,22 @@ import path from 'path';
 
 export default defineConfig({
   ...voltoVitestConfig,
+  resolve: {
+    alias: {
+      ...voltoVitestConfig.resolve.alias,
+      // Alias for absolute imports
+      '@kitconcept/volto-light-theme': path.resolve(__dirname, './src'),
+      '@kitconcept/volto-light-theme/': path.resolve(__dirname, './src/'),
+      'semantic-ui-react': path.resolve(
+        __dirname,
+        './src/__mocks__/semantic-ui-react.ts',
+      ),
+    },
+  },
   server: {
     fs: {
       allow: [
-        // Allow vite/vitest to access these folders
-        '..', // allow going up from frontend/
+        '..',
         path.resolve(__dirname, '../../../../../core/packages/volto'),
       ],
     },

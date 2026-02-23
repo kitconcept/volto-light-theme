@@ -1,10 +1,20 @@
+import { useSelector } from 'react-redux';
+import type { GetSiteResponse } from '@plone/types';
 import { isInternalURL } from '@plone/volto/helpers/Url/Url';
 import DefaultSummary from '@kitconcept/volto-light-theme/components/Summary/DefaultSummary';
 import type { SummaryComponentType } from '@kitconcept/volto-light-theme/components/Summary/DefaultSummary';
 import Card from '../../../primitives/Card/Card';
 import config from '@plone/volto/registry';
 
+type FormState = {
+  site: { data: GetSiteResponse };
+};
+
 const TeaserDefaultTemplate = (props) => {
+  const site = useSelector<FormState, GetSiteResponse>(
+    (state) => state.site?.data,
+  );
+  const hideProfileLinks = site?.['kitconcept.disable_profile_links'];
   const { data, isEditMode } = props;
   const href = data.href?.[0] || {};
   const image = data.preview_image?.[0];
@@ -15,27 +25,35 @@ const TeaserDefaultTemplate = (props) => {
     name: 'Summary',
     dependencies: [href['@type']],
   }).component || DefaultSummary) as SummaryComponentType;
-  const showLink = !Summary.hideLink && !isEditMode;
+  let showLink = !Summary.hideLink && !isEditMode;
+  if (href['@type'] === 'Person' && hideProfileLinks !== undefined) {
+    showLink = !hideProfileLinks && !isEditMode;
+  }
   const { openExternalLinkInNewTab } = config.settings;
   const openLinkInNewTab =
     data.openLinkInNewTab ||
     (openExternalLinkInNewTab && !isInternalURL(href['@id']));
-  const { '@id': id, ...filteredData } = data;
+
+  // Ensures that overridden fields are used when "overwrite" is true
+  // and fallbacks to empty strings if they are not provided to ensure no undefined
+  // values are passed
+  const localOverrides = {
+    title: data.title || '',
+    description: data.description || '',
+    head_title: data.head_title || '',
+  };
 
   return (
-    <Card
-      href={showLink ? href['@id'] : null}
-      openLinkInNewTab={openLinkInNewTab}
-    >
+    <Card item={showLink ? href : null} openLinkInNewTab={openLinkInNewTab}>
       <Card.Image
         src={url && !image?.image_field ? url : undefined}
-        item={!data.overwrite ? href : { ...href, ...filteredData }}
+        item={!data.overwrite ? href : { ...href, ...localOverrides }}
         image={data.overwrite ? image : undefined}
         imageComponent={Image}
       />
       <Card.Summary>
         <Summary
-          item={!data.overwrite ? href : { ...href, ...filteredData }}
+          item={!data.overwrite ? href : { ...href, ...localOverrides }}
           HeadingTag="h2"
           hide_description={props.data?.hide_description}
         />

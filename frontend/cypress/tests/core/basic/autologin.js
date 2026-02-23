@@ -11,7 +11,9 @@ describe('Autologin Tests', () => {
       url: `${api_url}/@login`,
       headers: { Accept: 'application/json' },
       body: { login: user, password: password },
-    }).then((response) => cy.setCookie('auth_token', response.body.token));
+    }).then((response) =>
+      cy.setCookie('auth_token', response.body.token, { sameSite: 'lax' }),
+    );
 
     cy.visit('/');
     cy.get('#toolbar-personal').click();

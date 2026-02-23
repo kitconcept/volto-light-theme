@@ -11,4 +11,6 @@ pyvenv.cfg
 docs/_build
 cypress/downloads/
 
-packages/volto-social-media/
+packages/*
+!packages/volto-light-theme
+/.storybook-build

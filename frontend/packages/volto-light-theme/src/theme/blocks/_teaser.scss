@@ -131,6 +131,7 @@
       border-bottom: none;
     }
     &.next--is--__button {
+      margin-bottom: 0 !important;
       .card-inner,
       .teaser-item.default {
         padding-bottom: 40px;
@@ -149,4 +150,9 @@
 
 #page-edit .block-editor-teaser.has--backgroundColor--grey {
   background-color: $lightgrey;
+}
+
+.file-teaser .headline span:not(:last-child)::after {
+  margin: 0 10px;
+  content: '|';
 }

@@ -1,11 +1,17 @@
 const { defineConfig } = require('cypress');
-const {
-  initPlugin: initVisualRegressionPlugin,
-} = require('@frsource/cypress-plugin-visual-regression-diff/dist/plugins');
+const path = require('path');
+
+const currentDir = path.dirname(__filename);
 
 module.exports = defineConfig({
   viewportWidth: 1280,
   viewportHeight: 1280,
+  retries: {
+    runMode: 3,
+  },
+  screenshotsFolder: `${currentDir}/cypress/screenshots`,
+  videosFolder: `${currentDir}/cypress/videos`,
+  video: true,
   e2e: {
     baseUrl: 'http://localhost:3000',
     specPattern: 'cypress/tests/**/*.cy.{js,jsx,ts,tsx}',
@@ -13,9 +19,6 @@ module.exports = defineConfig({
       runMode: 2,
     },
     setupNodeEvents(on, config) {
-      // visual regression testing must be initialized
-      // when the plugin is installed
-      initVisualRegressionPlugin(on, config);
       on('task', {
         table(message) {
           console.table(message);
