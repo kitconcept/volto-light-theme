@@ -1,5 +1,10 @@
 const plugins = (defaultPlugins) => {
-  const newPlugins = defaultPlugins.filter((plugin) => plugin !== 'scss');
+  const newPlugins = defaultPlugins.filter((plugin) => {
+    if (typeof plugin === 'string') return plugin !== 'scss';
+    if (typeof plugin === 'object' && plugin !== null && plugin.name === 'scss')
+      return false;
+    return true;
+  });
   newPlugins.push({
     name: 'scss',
     options: {
