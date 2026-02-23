@@ -131,6 +131,7 @@
       border-bottom: none;
     }
     &.next--is--__button {
+      margin-bottom: 0 !important;
       .card-inner,
       .teaser-item.default {
         padding-bottom: 40px;
