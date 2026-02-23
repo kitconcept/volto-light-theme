@@ -317,12 +317,13 @@
   }
 
   .colophon {
+    .slate.widget * {
     @include add(size, xs);
     @include add(height, s);
+    }
+
 
     a {
-      @include add(size, xs);
-      @include add(height, s);
       color: var(--footer-foreground);
       text-decoration: underline;
     }
@@ -337,6 +338,9 @@
       border-top: 1px solid var(--footer-foreground, $black);
       content: '';
       @include default-container-width();
+    }
+    &:has(.slate p:only-child:empty) {
+      display: none;
     }
   }
 
