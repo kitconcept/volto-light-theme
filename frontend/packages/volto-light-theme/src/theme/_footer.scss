@@ -318,10 +318,9 @@
 
   .colophon {
     .slate.widget * {
-    @include add(size, xs);
-    @include add(height, s);
+      @include add(size, xs);
+      @include add(height, s);
     }
-
 
     a {
       color: var(--footer-foreground);
