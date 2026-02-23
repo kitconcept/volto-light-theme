@@ -8,6 +8,19 @@
 
 <!-- towncrier release notes start -->
 
+## 7.8.0 (2026-02-23)
+
+### Feature
+
+- Remove empty space  when next element has a grey background color and add blockWidth widget @Tishasoumya-02 [#758](https://github.com/kitconcept/volto-light-theme/pull/758)
+
+### Bugfix
+
+- Fix color for social icons in post footer. @danalvrz 
+- Fix color in language selector, and remove extra margin between Teaser and Button blocks. @danalvrz 
+- Fix sticky menu not clickable at default zoom setting @Tishasoumya-02 
+- Move the head title after the date in NewsView and EventView, making it consistent with the listing view. @iFlameing 
+
 ## 7.7.0 (2026-01-29)
 
 ### Feature

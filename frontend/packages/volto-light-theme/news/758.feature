@@ -1,1 +1,0 @@
-Remove empty space  when next element has a grey background color and add blockWidth widget @Tishasoumya-02
