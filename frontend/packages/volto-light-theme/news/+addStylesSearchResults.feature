@@ -1,0 +1,1 @@
+Improve styles for search results page. @danalvrz
