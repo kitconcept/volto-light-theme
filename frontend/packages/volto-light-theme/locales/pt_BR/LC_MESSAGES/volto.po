@@ -150,7 +150,7 @@ msgstr "Baixar arquivo"
 #. Default: "E-mail"
 #: components/Summary/PersonSummary
 msgid "E-mail"
-msgstr ""
+msgstr "E-mail"
 
 #. Default: "Empty object list"
 #: components/Widgets/BlocksObject
@@ -223,7 +223,7 @@ msgstr "Baixar ICS"
 #. Default: "Icon"
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Icon"
-msgstr ""
+msgstr "Ícone"
 
 #. Default: "Image"
 #: components/Blocks/Image/ImageSidebar
@@ -304,7 +304,7 @@ msgstr "Mover para cima"
 #. Default: "Multiple choices?"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Multiple choices?"
-msgstr ""
+msgstr "Múltiplas escolhas?"
 
 #. Default: "Next Page"
 #: components/Blocks/Listing/ListingBody
@@ -329,7 +329,7 @@ msgstr "Nenhuma seleção"
 #. Default: "Open configuration"
 #: components/Widgets/ModalJSONEditor
 msgid "Open configuration"
-msgstr ""
+msgstr "Abrir configuração"
 
 #. Default: "Open in a new tab"
 #: components/Widgets/schema/footerLinksSchema
@@ -353,12 +353,12 @@ msgstr "Geral"
 #. Default: "Pagination Navigation"
 #: components/Blocks/Listing/ListingBody
 msgid "Pagination Navigation"
-msgstr ""
+msgstr "Navegação por página"
 
 #. Default: "Pagination Navigation for {headline}"
 #: components/Blocks/Listing/ListingBody
 msgid "Pagination Navigation for {headline}"
-msgstr ""
+msgstr "Navegação por página para {headline}"
 
 #. Default: "Phone"
 #: components/Blocks/EventMetadata/View
@@ -493,12 +493,12 @@ msgstr "Exibir total de resultados"
 #. Default: "Simple"
 #: index
 msgid "Simple"
-msgstr ""
+msgstr "Simples"
 
 #. Default: "Site Setup"
 #: components/Breadcrumbs/Breadcrumbs
 msgid "Site Setup"
-msgstr ""
+msgstr "Configurações do site"
 
 #. Default: "Sitemap"
 #: index
@@ -538,7 +538,7 @@ msgstr "Início"
 #. Default: "Switch to"
 #: components/LanguageSelector/LanguageSelector
 msgid "Switch to"
-msgstr ""
+msgstr "Mudar para"
 
 #. Default: "Target"
 #: components/Widgets/schema/footerLinksSchema
@@ -587,17 +587,17 @@ msgstr "Visões disponíveis"
 #. Default: "The {type} block with the id {block} has encountered an error.{lineBreak}You can try to undo your changes (via the undo toolbar or pressing {shortcut}), or try to delete the block and recreate it again."
 #: components/Blocks/Block/ErrorBoundaryMessage
 msgid "blockErrorBoundaryDescription"
-msgstr ""
+msgstr "O bloco {type} com o id {block} encontrou um erro.{lineBreak}Você pode tentar desfazer suas alterações (via barra de desfazer ou pressionando {shortcut}), ou tente excluir o bloco e recriá-lo novamente."
 
 #. Default: "Block error:"
 #: components/Blocks/Block/ErrorBoundaryMessage
 msgid "blockErrorBoundaryTitle"
-msgstr ""
+msgstr "Erro no bloco:"
 
 #. Default: "The {type} block with the id {block} errored and cannot be displayed.{lineBreak}Please contact the site administrator for further assistance."
 #: components/Blocks/Block/ErrorBoundaryMessage
 msgid "blockErrorBoundaryViewDescription"
-msgstr ""
+msgstr "O bloco {type} com o id {block} encontrou um erro e não pode ser exibido.{lineBreak}Por favor, entre em contato com o administrador do site para mais assistência."
 
 #. Default: "Delete"
 #: components/Blocks/Block/Edit
@@ -607,12 +607,12 @@ msgstr "Excluir"
 #. Default: "delete {type} block"
 #: components/Blocks/Block/EditBlockWrapper
 msgid "delete_block"
-msgstr ""
+msgstr "Excluir bloco {type}"
 
 #. Default: "drag {type} block"
 #: components/Blocks/Block/EditBlockWrapper
 msgid "drag_block"
-msgstr ""
+msgstr "Arrastar bloco {type}"
 
 #. Default: "Clear image"
 #: components/Blocks/Image/ImageSidebar
