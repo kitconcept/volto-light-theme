@@ -317,12 +317,16 @@
   }
 
   .colophon {
+    @include add(size, xs);
+    @include add(height, s);
     .slate.widget * {
       @include add(size, xs);
       @include add(height, s);
     }
 
     a {
+      @include add(size, xs);
+      @include add(height, s);
       color: var(--footer-foreground);
       text-decoration: underline;
     }
