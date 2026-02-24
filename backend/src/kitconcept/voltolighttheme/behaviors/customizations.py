@@ -257,6 +257,15 @@ class ISiteFooterCustomizationSettings(model.Schema):
         frontendOptions={
             "widget": "slate_richtext",
         },
+    )
+
+    footer_colophon_text = JSONField(
+        title=_("Footer colophon text"),
+        description=_(
+            "help_footer_colophon_text",
+            default="The text that shows in the footer colophon.",
+        ),
+        schema=OBJECT_LIST,
         default=[
             {
                 "children": [
@@ -281,14 +290,5 @@ class ISiteFooterCustomizationSettings(model.Schema):
                 "type": "p",
             }
         ],
-    )
-
-    footer_colophon_text = JSONField(
-        title=_("Footer colophon text"),
-        description=_(
-            "help_footer_colophon_text",
-            default="The text that shows in the footer colophon.",
-        ),
-        schema=OBJECT_LIST,
         required=False,
     )
