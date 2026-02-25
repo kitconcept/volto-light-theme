@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 7.8.1 (2026-02-25)
+
+### Bugfix
+
+- Fix SCSS compilation when used with Volto 19. @mpalomaki @sneridagh [#801](https://github.com/kitconcept/volto-light-theme/pull/801)
+
 ## 7.8.0 (2026-02-23)
 
 ### Feature
