@@ -50,6 +50,7 @@ const TeaserDefaultTemplate = (props) => {
         item={!data.overwrite ? href : { ...href, ...localOverrides }}
         image={data.overwrite ? image : undefined}
         imageComponent={Image}
+        sizes="auto, (max-width: 940px) 100w, 940px"
       />
       <Card.Summary>
         <Summary
