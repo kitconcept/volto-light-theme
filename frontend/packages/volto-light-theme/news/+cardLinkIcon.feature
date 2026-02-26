@@ -1,0 +1,1 @@
+Add link icon to Card component @Tishasoumya-02
