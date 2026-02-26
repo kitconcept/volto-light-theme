@@ -42,7 +42,7 @@
           "head_title": "Teaser Headtitle (DIV, 14/18px)",
           "href": [
             {
-              "@id": "http://host.docker.internal:8080/Plone/content-types",
+              "@id": "/content-types",
               "@type": "Document",
               "Description": "This section has a sample of content types available in this site.",
               "Title": "Content Types",
@@ -63,7 +63,7 @@
           "head_title": "Teaser Headtitle (DIV, 14/18px)",
           "href": [
             {
-              "@id": "http://host.docker.internal:8080/Plone/content-types",
+              "@id": "/content-types",
               "@type": "Document",
               "Description": "This section has a sample of content types available in this site.",
               "Title": "Content Types",
@@ -514,7 +514,7 @@
       "image_field": "image",
       "size": "l",
       "title": "Caption Title (14/18px). Image",
-      "url": "http://host.docker.internal:8080/Plone/content-types/image"
+      "url": "/content-types/image"
     },
     "f5858bf7-5485-479c-b0b2-10eee0dc937c": {
       "@type": "slate",

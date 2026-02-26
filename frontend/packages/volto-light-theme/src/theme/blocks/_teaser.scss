@@ -19,9 +19,10 @@
     }
   }
 
-  a.external {
+  a.external + .card-inner {
     .card-summary h2:after {
       @include external-link-icon();
+      margin-left: 3px;
     }
   }
 
