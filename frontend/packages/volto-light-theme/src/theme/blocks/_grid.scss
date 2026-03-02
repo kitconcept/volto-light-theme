@@ -178,6 +178,9 @@
   .block-editor-image {
     padding: 0;
     margin: 0.5rem !important;
+    figure {
+      max-width: unset;
+    }
   }
 
   .block.listing {
