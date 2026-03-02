@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-02-16 14:21+0000\n"
+"POT-Creation-Date: 2026-02-24 17:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -113,7 +113,7 @@ msgstr "Desinstalar a configuração do Volto Light Theme."
 
 #: kitconcept/voltolighttheme/profiles.zcml:33
 msgid "Volto Light Theme: Acceptance"
-msgstr "Volto Light Theme: Acceptance"
+msgstr "Volto Light Theme: Aceitação"
 
 #: kitconcept/voltolighttheme/profiles.zcml:24
 msgid "Volto Light Theme: Demo"
@@ -130,7 +130,7 @@ msgstr "Volto Light Theme: Desinstalação"
 #. Default: "Sticky menu"
 #: kitconcept/voltolighttheme/behaviors/sticky_menu.py:29
 msgid "fieldset_sticky_menu"
-msgstr ""
+msgstr "Menu fixo"
 
 #. Default: "If your site has an intranet header, it will show in the right side of the header."
 #: kitconcept/voltolighttheme/behaviors/customizations.py:52
@@ -170,7 +170,7 @@ msgstr "Um etiqueta colorida no canto superior esquerdo do cabeçalho."
 #. Default: "If enabled, a sticky menu will be shown at the bottom of the screen."
 #: kitconcept/voltolighttheme/behaviors/sticky_menu.py:43
 msgid "help_mobile_sticky_menu_enabled"
-msgstr ""
+msgstr "Caso ativado, um menu fixo será exibido na parte inferior da tela."
 
 #. Default: "The post footer can have a prominent logo located in the lower right side. It is normally used for displaying the logo of the site sponsor."
 #: kitconcept/voltolighttheme/behaviors/footer.py:140
@@ -226,7 +226,7 @@ msgstr "Habilitar cabeçalho de intranet"
 #. Default: "Navigation Text Color"
 #: kitconcept/voltolighttheme/behaviors/customizations.py:146
 msgid "label_header_foreground"
-msgstr ""
+msgstr "Cor do texto de navegação"
 
 #. Default: "Site Flag"
 #: kitconcept/voltolighttheme/behaviors/customizations.py:81
@@ -236,7 +236,7 @@ msgstr "Indicação do site"
 #. Default: "Enable Mobile sticky menu"
 #: kitconcept/voltolighttheme/behaviors/sticky_menu.py:39
 msgid "label_mobile_sticky_menu_enabled"
-msgstr ""
+msgstr "Menu fixo do Mobile ativado"
 
 #. Default: "Post Footer Logo"
 #: kitconcept/voltolighttheme/behaviors/footer.py:139
@@ -266,7 +266,7 @@ msgstr "Logo do site"
 #. Default: "Sticky menu"
 #: kitconcept/voltolighttheme/behaviors/sticky_menu.py:77
 msgid "label_sticky_menu"
-msgstr ""
+msgstr "Menu Fixo"
 
 #. Default: "Sticky menu background color"
 #: kitconcept/voltolighttheme/behaviors/sticky_menu.py:53
