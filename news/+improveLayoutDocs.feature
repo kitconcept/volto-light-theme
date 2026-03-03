@@ -1,0 +1,1 @@
+Improve documentation on VLT Layout concepts. @danalvrz
