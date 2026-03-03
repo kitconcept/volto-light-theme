@@ -263,8 +263,7 @@ External & Mail link removal for all the blocks.
   &> .block.eventsearch .search-block-event,
   & > .block h2.headline,
   & > .block.heading .heading-wrapper,
-  & > .block.teaser .teaser-item.default,
-  & > .block.teaser .card-inner, // deprecate when category is in place
+  & > .block.teaser,
   & > .block.highlight .teaser-description-title,
   & > table,
   & > .table-of-contents,
@@ -275,7 +274,6 @@ External & Mail link removal for all the blocks.
     @include adjustMarginsToContainer($default-container-width);
   }
 
-  & > .block.teaser,
   & > .block.image.align.full,
   & > .block.video.align.full,
   & > .block.maps.align.full {

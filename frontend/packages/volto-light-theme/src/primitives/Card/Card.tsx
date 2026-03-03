@@ -1,5 +1,4 @@
 import * as React from 'react';
-import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
 import cx from 'classnames';
 import type { ObjectBrowserItem } from '@plone/types';
 
@@ -53,54 +52,43 @@ const Card = (props: CardProps) => {
 
   const a11yLabelId = React.useId();
   const linkRef = React.useRef<HTMLAnchorElement>(null);
-
-  const triggerNavigation = () => {
-    // Only navigate if there is *no* text selection
-    const hasSelection = !!window.getSelection()?.toString();
-    if (!hasSelection) {
-      linkRef.current?.click();
-    }
-  };
+  const downTimeRef = React.useRef<number>(0);
 
   const isInteractive = !!props.href || !!props.item;
 
-  const onClick: React.MouseEventHandler<HTMLDivElement> = (e) => {
-    if (!isInteractive) return;
-    if (e.defaultPrevented) return;
-    if (e.target instanceof Element) {
-      const anchor = e.target.closest('a');
-      if (anchor && anchor !== linkRef.current) return;
-    }
-    triggerNavigation();
+  const onMouseDown: React.MouseEventHandler<HTMLDivElement> = () => {
+    downTimeRef.current = Date.now();
   };
 
-  const onKeyDown: React.KeyboardEventHandler<HTMLDivElement> = (e) => {
-    if (!isInteractive) return;
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      triggerNavigation();
+  const onMouseUp: React.MouseEventHandler<HTMLDivElement> = (e) => {
+    // Native links handle their own clicks
+    if (e.target instanceof Element && e.target.closest('a')) return;
+    // Only navigate on quick clicks without text selection
+    const timeElapsed = Date.now() - downTimeRef.current;
+    if (timeElapsed < 200) {
+      const hasSelection = !!window.getSelection()?.toString();
+      if (!hasSelection) {
+        linkRef.current?.click();
+      }
     }
   };
 
   return (
+    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
       className={cx('card', className)}
-      onClick={isInteractive ? onClick : undefined}
-      onKeyDown={isInteractive ? onKeyDown : undefined}
-      role={isInteractive ? 'link' : undefined}
-      tabIndex={isInteractive ? 0 : undefined}
+      onMouseDown={isInteractive ? onMouseDown : undefined}
+      onMouseUp={isInteractive ? onMouseUp : undefined}
     >
-      {/* @ts-expect-error since this has no children, should fail */}
-      <ConditionalLink
-        aria-labelledby={a11yLabelId}
-        condition={isInteractive}
-        href={href}
-        item={item}
-        openLinkInNewTab={openLinkInNewTab}
-        ref={linkRef}
-      />
       <div className="card-inner">
-        {childrenWithProps(props.children, { a11yLabelId })}
+        {childrenWithProps(props.children, {
+          a11yLabelId,
+          cardHref: href,
+          cardItem: item,
+          cardOpenLinkInNewTab: openLinkInNewTab,
+          cardIsInteractive: isInteractive,
+          cardPrimaryLinkRef: linkRef,
+        })}
       </div>
     </div>
   );
@@ -151,11 +139,23 @@ type CardSummaryProps = {
   /** The ID of the element that labels the card. */
   a11yLabelId?: string;
   children?: React.ReactNode;
+  cardHref?: string;
+  cardItem?: Partial<ObjectBrowserItem>;
+  cardOpenLinkInNewTab?: boolean;
+  cardIsInteractive?: boolean;
+  cardPrimaryLinkRef?: React.RefObject<HTMLAnchorElement | null>;
 };
 
 const CardSummary = (props: CardSummaryProps) => (
   <div className="card-summary">
-    {childrenWithProps(props.children, { a11yLabelId: props.a11yLabelId })}
+    {childrenWithProps(props.children, {
+      a11yLabelId: props.a11yLabelId,
+      cardHref: props.cardHref,
+      cardItem: props.cardItem,
+      cardOpenLinkInNewTab: props.cardOpenLinkInNewTab,
+      cardIsInteractive: props.cardIsInteractive,
+      cardPrimaryLinkRef: props.cardPrimaryLinkRef,
+    })}
   </div>
 );
 

@@ -27,6 +27,7 @@
 
   :not(.teaser-item)
     > a:not(.item):not(
+      .card-primary-link,
       :has(> .teaser-item),
       :has(> .listing-body),
       :has(> .card-container)

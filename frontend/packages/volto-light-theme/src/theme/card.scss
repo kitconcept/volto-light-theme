@@ -3,16 +3,28 @@
   transition: box-shadow 0.15s ease;
 }
 
-.card:has(> a):hover,
-.card:has(> a):focus-within {
+// Primary card link stretched via ::after pseudo-element
+.card .card-summary .card-primary-link {
+  color: inherit;
+  font: inherit;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+}
+
+.card:has(.card-primary-link) {
   cursor: pointer;
 }
 
-.card a {
-  inset: 0; /* top:0 right:0 bottom:0 left:0 */
-  text-decoration: none; /* remove default underline */
+// increase z-index on card-summary content above the stretched pseudo-element
+.card .card-summary :not(a, .title) {
+  position: relative;
+  z-index: 1;
 }
-
 .card .card-summary,
 .card .card-summary * {
   user-select: text; /* explicit for clarity */
