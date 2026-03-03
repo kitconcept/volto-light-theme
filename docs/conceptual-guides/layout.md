@@ -10,7 +10,7 @@ myst:
 # Layout
 
 This chapter describes the layout concepts used in Volto Light Theme.
-It covers container widths, block widths, and breakpoints.
+It covers container widths, block widths, breakpoints, and media queries.
 
 ## Containers
 
@@ -104,3 +104,11 @@ VLT defines the following breakpoints in {file}`_variables.scss`.
 | `$computer-breakpoint`       | `941px`  | Large desktop threshold             |
 | `$large-monitor-width`       | `1440px` | Large monitor width                 |
 | `$large-monitor-breakpoint`  | `1441px` | Extra large monitor threshold       |
+
+## Media queries vs. container queries
+
+The layout uses container queries when both the styles are applied in edit mode and the content area should behave exactly as the view mode.
+
+This is because the container queries abstract the width from the sidebar and toolbar in edit mode, showing the content area as it will be in that size, in view mode.
+Containers are set to `container-type: inline-size` (in {file}`_container.scss`), so container queries measure the actual content area width rather than the viewport.
+This is especially useful in edit mode, where the sidebar and toolbar reduce the available space.
