@@ -14,7 +14,7 @@ import arrowRightSVG from '@plone/volto/icons/right-key.svg';
 import arrowLeftSVG from '@plone/volto/icons/left-key.svg';
 import { MobileNavigationToggler } from './MobileNavigationToggler';
 import { MobileToolsFooter } from './MobileToolsFooter';
-
+import { useClient } from '@plone/volto/hooks/client/useClient';
 const messages = defineMessages({
   closeMobileMenu: {
     id: 'Close menu',
@@ -43,7 +43,7 @@ const MenuItem = ({
   pathname,
 }) => {
   const [isSubMenuOpen, setSubMenuOpen] = useState(false);
-
+  const isClient = useClient();
   const openSubMenu = useCallback((e) => {
     e.stopPropagation();
     setSubMenuOpen(true);
@@ -68,9 +68,10 @@ const MenuItem = ({
   );
   const formData = useSelector((state) => state.form.global);
 
-  const has_intranet_header = !isEmpty(formData)
-    ? formData.has_intranet_header
-    : headerSettings?.has_intranet_header;
+  const has_intranet_header =
+    isClient && !isEmpty(formData)
+      ? formData.has_intranet_header
+      : headerSettings?.has_intranet_header;
 
   return (
     <li className={section.url === pathname ? 'current' : ''}>
@@ -154,16 +155,17 @@ const MobileNavigation = (props) => {
   const currentLang = useSelector((state) => state.intl.locale);
   const items = useSelector((state) => state.navigation.items || []);
   const history = useHistory();
-
+  const isClient = useClient();
   const headerSettings = useSelector(
     (state) =>
       state.content.data?.['@components']?.inherit?.['voltolighttheme.header']
         ?.data,
   );
   const formData = useSelector((state) => state.form.global);
-  const has_intranet_header = !isEmpty(formData)
-    ? formData.has_intranet_header
-    : headerSettings?.has_intranet_header;
+  const has_intranet_header =
+    isClient && !isEmpty(formData)
+      ? formData.has_intranet_header
+      : headerSettings?.has_intranet_header;
 
   const Footer = props.MobileToolsFooter || MobileToolsFooter;
 

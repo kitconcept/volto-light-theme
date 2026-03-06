@@ -1,0 +1,224 @@
+// Styles for kitconcept.solr search page
+.section-search #page-search {
+  & > .ui.container {
+    max-width: var(--default-container-width) !important;
+    padding: 0 !important;
+  }
+}
+#page-search {
+  .total-bar {
+    margin-bottom: 75px;
+    h2 {
+      margin-top: $spacing-medium;
+      font-size: 48px;
+      font-weight: 700 !important;
+      line-height: 60px; /* 125% */
+    }
+  }
+  .searchTabs.ui.top.attached.tabular.menu {
+    --solr-search-facet-tab-inactive-color: var(--accent-color);
+
+    border-radius: 0;
+    .searchTab {
+      padding: $spacing-small 10px;
+      border: 1px solid var(--accent-color) !important;
+      border-radius: 0 !important;
+      margin-bottom: 0;
+      span {
+        font-size: 10px;
+        font-weight: 700;
+        line-height: 12px; /* 120% */
+        text-transform: capitalize;
+
+        .searchCounter.circular.label {
+          min-width: 22px;
+          background: color-mix(
+            in srgb,
+            var(--accent-color) 50%,
+            var(--accent-foreground-color)
+          );
+          color: var(--primary-color, #fff);
+          font-weight: 400;
+        }
+      }
+
+      &.active {
+        .searchCounter.circular.label {
+          background-color: var(--primary-foreground-color) !important;
+          color: var(--primary-color, #fff) !important;
+        }
+      }
+      svg {
+        margin-right: 5px;
+        vertical-align: bottom;
+      }
+    }
+  }
+  #content {
+    #content-core {
+      max-width: var(--default-container-width);
+      &.layout-grid {
+        // Person results
+        .tileItem.personResultItem {
+          .itemWrapper {
+            flex-direction: column;
+            .itemImageWrapper {
+              width: 125px;
+              height: 125px;
+              margin-bottom: $spacing-small;
+              svg:has(+ img.profileImage) {
+                display: none;
+              }
+              img.profileImage,
+              svg.icon {
+                width: 125px !important;
+                height: 125px !important;
+              }
+            }
+            .itemContent {
+              max-width: 90%;
+              padding-right: $spacing-medium;
+              .tileHeadline {
+                margin: 10px 0 15px 0;
+                font-size: 18px;
+                line-height: 24px; /* 133.333% */
+              }
+              .jobTitle {
+                margin-bottom: 15px;
+                color: var(--primary-foreground-color);
+                font-size: 18px;
+                line-height: 24px; /* 133.333% */
+              }
+              .tileFooter {
+                * {
+                  vertical-align: unset;
+                }
+                .itemField {
+                  display: block;
+                  padding: 0;
+                  border: none;
+                  margin-bottom: 5px;
+
+                  font-size: 18px;
+
+                  line-height: 24px; /* 133.333% */
+                  svg.icon {
+                    width: 20px !important;
+                    margin-right: 10px;
+                    vertical-align: text-top;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      &.layout-list {
+        // Person results
+        .tileItem.personResultItem {
+          .tileHeadline {
+            margin-top: 10px;
+            font-size: 18px;
+            line-height: 24px;
+          }
+          .jobTitle {
+            margin: 15px 0;
+            margin-bottom: 15px;
+            color: var(--primary-foreground-color);
+            font-size: 18px;
+            line-height: 24px; /* 133.333% */
+          }
+          .tileFooter {
+            svg.icon {
+              width: 20px !important;
+              margin-right: 10px;
+              vertical-align: text-top;
+            }
+          }
+        }
+      }
+
+      .pagination.menu {
+        border-radius: 0;
+        background: var(--accent-color);
+        --link-foreground-color: var(--accent-foreground-color);
+
+        a.item {
+          color: var(--accent-foreground-color);
+
+          &.active {
+            background: var(--accent-foreground-color) !important;
+            color: var(--accent-color) !important;
+          }
+
+          &.disabled {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+
+    .searchConditions.ui {
+      width: 265px;
+      margin-right: $spacing-medium;
+      .searchConditionsFieldHeader {
+        font-size: 18px;
+        line-height: 24px; /* 133.333% */
+        .searchConditionsFieldSearch {
+          margin-top: $spacing-small;
+          input {
+            height: 60px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            border: none;
+            border-radius: 0;
+            font-size: 18px;
+            line-height: 24px; /* 133.333% */
+          }
+          i.search.icon {
+            opacity: 1;
+            &::before {
+              transform: scale(2) scaleX(-1);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Basic mobile styles
+@media only screen and (max-width: $largest-mobile-screen) {
+  #page-search {
+    #content {
+      .searchContentWrapper {
+        flex-direction: column;
+      }
+      .searchConditions.ui {
+        width: 100%;
+        margin-right: 0;
+      }
+      #content-core {
+        .search-items {
+          grid-template-columns: 100%;
+        }
+        &.layout-list,
+        &.layout-grid {
+          .tileItem {
+            .itemContent {
+              min-width: 0;
+            }
+            .tileFooter {
+              .itemField {
+                display: block;
+                border: none;
+                overflow-wrap: break-word;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

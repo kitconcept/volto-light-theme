@@ -2,6 +2,19 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0a17 (2026-03-03)
+
+
+### Bug fixes:
+
+- Move primary_foreground_color value to header_foreground @iFlameing 
+
+
+### Internal:
+
+- Add missing pt_br translations. [#804](https://github.com/kitconcept/volto-light-theme/issues/804)
+- Updated to use Plone 6.1.4. @sneridagh 
+
 ## 8.0.0a16 (2026-02-16)
 
 

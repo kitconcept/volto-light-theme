@@ -8,7 +8,7 @@
   height: 100px;
   flex-direction: column;
   background-color: var(--sticky-menu-color, #555);
-  @media only screen and (max-width: $narrow-container-width) {
+  @media only screen and (max-width: $largest-mobile-screen) {
     display: block;
   }
 

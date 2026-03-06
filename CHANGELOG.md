@@ -1,6 +1,61 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 8.0.0a17 (2026-03-03)
+
+### Backend
+
+
+#### Bug fixes:
+
+- Move primary_foreground_color value to header_foreground @iFlameing 
+
+
+#### Internal:
+
+- Add missing pt_br translations. [#804](https://github.com/kitconcept/volto-light-theme/issues/804)
+- Updated to use Plone 6.1.4. @sneridagh 
+
+
+
+### Frontend
+
+#### Feature
+
+- Improve styles for search results page. @danalvrz 
+- Updated several add-ons, for more information:
+
+  https://github.com/kitconcept/volto-calendar-block/releases/tag/1.0.0-alpha.7
+  https://github.com/kitconcept/volto-button-block/releases/tag/5.0.0-alpha.1
+  https://github.com/kitconcept/volto-logos-block/releases/tag/4.0.0-alpha.1
+  https://github.com/kitconcept/volto-iframe-block/releases/tag/2.4.0
+  https://github.com/kitconcept/volto-introduction-block/releases/tag/1.4.0
+  https://github.com/kitconcept/volto-carousel-block/releases/tag/3.0.0-alpha.1
+  https://github.com/kitconcept/volto-slider-block/releases/tag/7.0.0-alpha.1 
+
+#### Bugfix
+
+- Fix color in language selector, and remove extra margin between Teaser and Button blocks. @danalvrz 
+- Fix hydration errors in mobile navigation. @Tishasoumya-02 
+- Fix image size grid-block in editmode. @TimoBroeskamp 
+- Fix mobile sticky menu not showing from 768 to 620px. @iFlameing 
+
+#### Internal
+
+- Add missing pt_br translations. @humanaice [#804](https://github.com/kitconcept/volto-light-theme/pull/804)
+- Update translation. @iFlameing 
+
+
+
+### Project
+
+
+#### Feature
+
+- Improve documentation on VLT Layout concepts. @danalvrz 
+
+
+
 ## 8.0.0a16 (2026-02-16)
 
 ### Backend
