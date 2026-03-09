@@ -9,21 +9,20 @@
 
     @container (max-width: #{$computer-breakpoint}) {
       grid-template-columns: 1fr;
-      
     }
     .grid-column {
-      border: 1px solid var(--primary-foreground-color);
-      padding: $spacing-small;
-      height: 250px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: $spacing-small;
 
       position: relative;
+      display: flex;
+      height: 250px;
+      flex-wrap: wrap;
+      padding: $spacing-small;
+      border: 1px solid var(--primary-foreground-color);
+      gap: $spacing-small;
 
       h2 {
-        margin: 0;
         width: 100%;
+        margin: 0;
         @include text-heading-h3();
       }
 
@@ -33,8 +32,8 @@
         right: $spacing-small;
 
         svg {
-          height: 30px;
           width: auto;
+          height: 30px;
         }
       }
 
@@ -46,15 +45,16 @@
           position: absolute;
           bottom: 100%;
           left: 0;
+          margin-bottom: $spacing-small;
           font-size: 18px;
           font-weight: 300;
           line-height: 24px;
           white-space: nowrap;
-          margin-bottom: $spacing-small;
         }
       }
 
       button {
+        align-self: end;
         padding: 8px 20px;
         border: 1px solid var(--primary-foreground-color);
         border-radius: unset;
@@ -63,7 +63,6 @@
         color: var(--primary-foreground-color);
         cursor: pointer;
         text-decoration: none;
-        align-self: end;
 
         @include body-text-bold();
 
