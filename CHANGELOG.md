@@ -1,6 +1,31 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 7.8.2 (2026-03-09)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Fix image size grid-block in editmode. @TimoBroeskamp 
+- Fix mobile sticky menu not showing from 768 to 620px. @iFlameing 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 7.8.1 (2026-02-25)
 
 ### Backend

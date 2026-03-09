@@ -8,6 +8,13 @@
 
 <!-- towncrier release notes start -->
 
+## 7.8.2 (2026-03-09)
+
+### Bugfix
+
+- Fix image size grid-block in editmode. @TimoBroeskamp 
+- Fix mobile sticky menu not showing from 768 to 620px. @iFlameing 
+
 ## 7.8.1 (2026-02-25)
 
 ### Bugfix
