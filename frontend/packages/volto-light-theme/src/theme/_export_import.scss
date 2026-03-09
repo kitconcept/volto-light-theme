@@ -1,0 +1,96 @@
+#page-controlpanel-content-transfer .container {
+  .grid-container {
+    @include default-container-width();
+    @include adjustMarginsToContainer($default-container-width);
+    padding-top: $spacing-medium;
+    padding-bottom: $spacing-large;
+    gap: $spacing-small;
+    grid-template-columns: 1fr 1fr;
+
+    @container (max-width: #{$computer-breakpoint}) {
+      grid-template-columns: 1fr;
+      
+    }
+    .grid-column {
+      border: 1px solid var(--primary-foreground-color);
+      padding: $spacing-small;
+      height: 250px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: $spacing-small;
+
+      position: relative;
+
+      h2 {
+        margin: 0;
+        width: 100%;
+        @include text-heading-h3();
+      }
+
+      & > span {
+        position: absolute;
+        top: $spacing-small;
+        right: $spacing-small;
+
+        svg {
+          height: 30px;
+          width: auto;
+        }
+      }
+
+      .file-input-wrapper {
+        position: relative;
+        margin-top: auto;
+
+        .file-input-name {
+          position: absolute;
+          bottom: 100%;
+          left: 0;
+          font-size: 18px;
+          font-weight: 300;
+          line-height: 24px;
+          white-space: nowrap;
+          margin-bottom: $spacing-small;
+        }
+      }
+
+      button {
+        padding: 8px 20px;
+        border: 1px solid var(--primary-foreground-color);
+        border-radius: unset;
+        margin: 0;
+        background: none;
+        color: var(--primary-foreground-color);
+        cursor: pointer;
+        text-decoration: none;
+        align-self: end;
+
+        @include body-text-bold();
+
+        &:hover,
+        &:active,
+        &:focus {
+          border-color: var(--primary-foreground-color);
+          background-color: var(--primary-foreground-color);
+          color: var(--primary-color);
+        }
+
+        &[data-disabled='true'],
+        &[data-disabled='true']:hover {
+          border-color: color-mix(
+            in srgb,
+            var(--primary-color) 50%,
+            var(--primary-foreground-color)
+          );
+          background-color: var(--primary-color);
+          color: color-mix(
+            in srgb,
+            var(--primary-color) 50%,
+            var(--primary-foreground-color)
+          );
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+}
