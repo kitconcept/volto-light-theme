@@ -54,6 +54,12 @@
   }
 }
 
+@mixin adjustEditContainerFullWidth() {
+  max-width: calc(100% - 2 * $spacing-medium);
+  margin-right: auto;
+  margin-left: auto;
+}
+
 // Container adjustments for dealing correctly with absolute positioned elements
 @mixin container-preference-order($zindex) {
   position: relative;
@@ -328,6 +334,9 @@ External & Mail link removal for all the blocks.
   [class*='block-editor-']:not(.contained) {
     @include layout-container-width();
     @include adjustMarginsToEditContainer($layout-container-width);
+    &.has--block-width--full {
+      @include adjustEditContainerFullWidth();
+    }
   }
 }
 
