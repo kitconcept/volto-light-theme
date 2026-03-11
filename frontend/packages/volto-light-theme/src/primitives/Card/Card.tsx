@@ -52,34 +52,10 @@ const Card = (props: CardProps) => {
 
   const a11yLabelId = React.useId();
   const linkRef = React.useRef<HTMLAnchorElement>(null);
-  const downTimeRef = React.useRef<number>(0);
-
   const isInteractive = !!props.href || !!props.item;
 
-  const onMouseDown: React.MouseEventHandler<HTMLDivElement> = () => {
-    downTimeRef.current = Date.now();
-  };
-
-  const onMouseUp: React.MouseEventHandler<HTMLDivElement> = (e) => {
-    // Native links handle their own clicks
-    if (e.target instanceof Element && e.target.closest('a')) return;
-    // Only navigate on quick clicks without text selection
-    const timeElapsed = Date.now() - downTimeRef.current;
-    if (timeElapsed < 200) {
-      const hasSelection = !!window.getSelection()?.toString();
-      if (!hasSelection) {
-        linkRef.current?.click();
-      }
-    }
-  };
-
   return (
-    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
-    <div
-      className={cx('card', className)}
-      onMouseDown={isInteractive ? onMouseDown : undefined}
-      onMouseUp={isInteractive ? onMouseUp : undefined}
-    >
+    <div className={cx('card', className)}>
       <div className="card-inner">
         {childrenWithProps(props.children, {
           a11yLabelId,
