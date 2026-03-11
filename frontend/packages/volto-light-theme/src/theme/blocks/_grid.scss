@@ -38,9 +38,10 @@
     margin-bottom: 0;
 
     // External link icon
-    a.external {
+    a.external + .card-inner {
       .card-summary h2:after {
         @include external-link-icon();
+        margin-left: 3px;
       }
     }
 
@@ -184,6 +185,9 @@
   .block-editor-image {
     padding: 0;
     margin: 0.5rem !important;
+    figure {
+      max-width: unset;
+    }
   }
 
   .block.listing {
