@@ -55,7 +55,14 @@ const GridTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
                     imageComponent={PreviewImageComponent}
                   />
                 )}
-                <Card.Summary a11yLabelId={props.a11yLabelId}>
+                <Card.Summary
+                  a11yLabelId={props.a11yLabelId}
+                  cardHref={props.cardHref}
+                  cardItem={props.cardItem}
+                  cardOpenLinkInNewTab={props.cardOpenLinkInNewTab}
+                  cardIsInteractive={props.cardIsInteractive}
+                  cardPrimaryLinkRef={props.cardPrimaryLinkRef}
+                >
                   <Summary item={item} HeadingTag="h2" />
                 </Card.Summary>
               </>
