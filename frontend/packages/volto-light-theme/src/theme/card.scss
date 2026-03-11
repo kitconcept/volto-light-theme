@@ -13,10 +13,10 @@
     font: inherit;
 
     &::after {
-      content: '';
       position: absolute;
-      inset: 0;
       z-index: 0;
+      content: '';
+      inset: 0;
     }
   }
 
