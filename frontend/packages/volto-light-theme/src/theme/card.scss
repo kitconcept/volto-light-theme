@@ -102,7 +102,7 @@
 
   .has--align--left:not(.contained) & {
     .image-wrapper {
-      margin-right: $spacing-medium;
+      margin-right: $spacing-small;
     }
   }
 
@@ -113,7 +113,7 @@
 
     .image-wrapper {
       margin-right: 0;
-      margin-left: $spacing-medium;
+      margin-left: $spacing-small;
     }
   }
 
