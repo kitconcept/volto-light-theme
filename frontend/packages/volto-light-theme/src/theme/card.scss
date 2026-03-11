@@ -63,10 +63,10 @@
   }
   // Additional links within the card
   a:not(.card-primary-link) {
-      position: relative;
-      z-index: 1;
-      cursor: pointer;
-    }
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+  }
 
   // Contained
   .contained & .card-inner {
