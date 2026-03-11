@@ -5,18 +5,18 @@
 
   &:has(.card-primary-link) {
     cursor: pointer;
-  }
 
-  // Primary card link stretched via ::after pseudo-element
-  .card-summary .card-primary-link {
-    color: inherit;
-    font: inherit;
+    // Primary card link stretched via ::after pseudo-element
+    .card-summary .card-primary-link {
+      color: inherit;
+      font: inherit;
 
-    &::after {
-      position: absolute;
-      z-index: 0;
-      content: '';
-      inset: 0;
+      &::after {
+        position: absolute;
+        z-index: 0;
+        content: '';
+        inset: 0;
+      }
     }
   }
 
@@ -169,6 +169,9 @@
       .four & {
         padding-top: $spacing-small;
         padding-bottom: $spacing-small;
+        .headline {
+          @include headtitle2();
+        }
         h2 {
           @include text-heading-h4();
         }

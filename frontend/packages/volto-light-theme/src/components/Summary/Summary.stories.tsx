@@ -22,7 +22,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Summary: Story = {
   render: (args) => (
-    <div style={{ width: '300px' }}>
+    <div className="card" style={{ width: '300px' }}>
       <Wrapper>
         <DefaultSummary {...args} />
       </Wrapper>
@@ -40,7 +40,7 @@ export const Summary: Story = {
 
 export const SummaryWithLink: Story = {
   render: (args) => (
-    <div style={{ width: '300px' }}>
+    <div className="card" style={{ width: '300px' }}>
       <Wrapper>
         <DefaultSummary {...args} />
       </Wrapper>
@@ -58,7 +58,7 @@ export const SummaryWithLink: Story = {
 
 export const SummaryHideDescription: Story = {
   render: (args) => (
-    <div style={{ width: '300px' }}>
+    <div className="card" style={{ width: '300px' }}>
       <Wrapper>
         <DefaultSummary {...args} />
       </Wrapper>
@@ -77,7 +77,7 @@ export const SummaryHideDescription: Story = {
 
 export const NewsItemSummary: Story = {
   render: (args) => (
-    <div style={{ width: '300px' }}>
+    <div className="card" style={{ width: '300px' }}>
       <Wrapper>
         <NewsItemSummaryComponent {...args} />
       </Wrapper>
@@ -98,7 +98,7 @@ export const NewsItemSummary: Story = {
 
 export const EventSummary: Story = {
   render: (args) => (
-    <div style={{ width: '300px' }}>
+    <div className="card" style={{ width: '300px' }}>
       <Wrapper>
         <EventSummaryComponent {...args} />
       </Wrapper>
@@ -119,7 +119,7 @@ export const EventSummary: Story = {
 
 export const FileSummary: Story = {
   render: (args) => (
-    <div style={{ width: '300px' }}>
+    <div className="card" style={{ width: '300px' }}>
       <Wrapper>
         <FileSummaryComponent {...args} />
       </Wrapper>
