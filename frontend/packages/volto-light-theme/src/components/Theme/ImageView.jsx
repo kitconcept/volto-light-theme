@@ -30,7 +30,13 @@ const ImageView = ({ content }) => {
       <h1 className="documentFirstHeading">{content.title}</h1>
       {content?.image?.download && (
         <figure>
-          <Image item={content} imageField="image" alt="" responsive={true} />
+          <Image
+            item={content}
+            imageField="image"
+            alt=""
+            responsive={true}
+            sizes="(max-width: 940px) 100vw, 940px"
+          />
           <Caption
             title={content.title}
             description={content.description}

@@ -50,6 +50,7 @@ const SummaryTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
                   item={item}
                   showPlaceholderImage={true}
                   imageComponent={PreviewImageComponent}
+                  sizes="auto, (max-width: 768px) 100vw, 220px"
                 />
                 <Card.Summary a11yLabelId={props.a11yLabelId}>
                   <Summary item={item} HeadingTag="h3" />
