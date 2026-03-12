@@ -5,7 +5,6 @@ import DefaultSummary from '@kitconcept/volto-light-theme/components/Summary/Def
 import type { SummaryComponentType } from '@kitconcept/volto-light-theme/components/Summary/DefaultSummary';
 import Card from '../../../primitives/Card/Card';
 import config from '@plone/volto/registry';
-import { MemoryRouter } from 'react-router-dom';
 
 type FormState = {
   site: { data: GetSiteResponse };
