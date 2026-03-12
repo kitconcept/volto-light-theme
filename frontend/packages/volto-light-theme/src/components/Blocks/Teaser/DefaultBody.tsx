@@ -44,7 +44,7 @@ const TeaserDefaultTemplate = (props) => {
   };
 
   return (
-    <Card item={showLink ? href : null} openLinkInNewTab={openLinkInNewTab}>
+    <Card item={href} showLink={showLink} openLinkInNewTab={openLinkInNewTab}>
       <Card.Image
         src={url && !image?.image_field ? url : undefined}
         item={!data.overwrite ? href : { ...href, ...localOverrides }}

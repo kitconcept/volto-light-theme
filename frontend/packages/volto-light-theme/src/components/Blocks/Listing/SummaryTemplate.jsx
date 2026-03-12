@@ -63,7 +63,7 @@ const SummaryTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
               })}
               key={item['@id']}
             >
-              <Card item={showLink ? item : null}>
+              <Card item={item} showLink={showLink}>
                 <ItemBodyTemplate item={item} />
               </Card>
             </div>
