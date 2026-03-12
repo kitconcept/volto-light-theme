@@ -1142,7 +1142,9 @@
     th {
       background-color: var(--theme-high-contrast-color) !important;
 
-      p {
+      p,
+      h2,
+      h3 {
         color: var(--theme-low-contrast-foreground-color) !important;
       }
     }
