@@ -214,3 +214,8 @@
 .block.listing.summary .card .card-summary .card-link-icon {
   display: none;
 }
+
+// Hides the link icon in edit page
+#page-edit .card-link-icon {
+  display: none;
+}

@@ -1,6 +1,8 @@
 import React from 'react';
 import { describe, it, expect, vi } from 'vitest';
 import { render, fireEvent } from '@testing-library/react';
+import configureStore from 'redux-mock-store';
+import { Provider } from 'react-intl-redux';
 import { MemoryRouter } from 'react-router-dom';
 import Card from './Card';
 
@@ -51,22 +53,45 @@ const SummaryContent = ({ a11yLabelId }: SummaryProps) => (
 );
 
 const BodyContent = () => <div>Body content</div>;
+const mockStore = configureStore();
 
 describe('Card', () => {
-  const renderCard = (props: React.ComponentProps<typeof Card>) =>
-    render(
-      <MemoryRouter>
-        <Card {...props}>
-          <Card.Summary>
-            <SummaryContent />
-          </Card.Summary>
-          <BodyContent />
-        </Card>
-      </MemoryRouter>,
+  const renderCard = (props: React.ComponentProps<typeof Card>) => {
+    const store = mockStore({
+      intl: {
+        locale: 'en',
+        messages: {},
+      },
+      userSession: {
+        token: null,
+      },
+      site: {
+        data: {
+          'kitconcept.disable_profile_links': false,
+        },
+      },
+    });
+
+    return render(
+      <Provider store={store}>
+        <MemoryRouter>
+          <Card {...props}>
+            <Card.Summary>
+              <SummaryContent />
+            </Card.Summary>
+            <BodyContent />
+          </Card>
+        </MemoryRouter>
+      </Provider>,
     );
+  };
 
   it('is interactive when an href is provided', () => {
-    const { container } = renderCard({ href: '/target', className: 'custom' });
+    const { container } = renderCard({
+      href: '/target',
+      className: 'custom',
+      showLink: true,
+    });
     const card = container.querySelector('.card') as HTMLElement;
 
     expect(card).toHaveAttribute('role', 'link');
@@ -78,7 +103,10 @@ describe('Card', () => {
   });
 
   it('is interactive when an item is provided', () => {
-    const { container } = renderCard({ item: { '@id': '/item-target' } });
+    const { container } = renderCard({
+      item: { '@id': '/item-target' },
+      showLink: true,
+    });
     const card = container.querySelector('.card') as HTMLElement;
 
     expect(card).toHaveAttribute('role', 'link');
@@ -124,7 +152,7 @@ describe('Card', () => {
       .spyOn(window, 'getSelection')
       .mockReturnValue({ toString: () => '' } as unknown as Selection);
 
-    const { container } = renderCard({ href: '/target' });
+    const { container } = renderCard({ href: '/target', showLink: true });
     const card = container.querySelector('.card') as HTMLElement;
 
     fireEvent.click(card);
