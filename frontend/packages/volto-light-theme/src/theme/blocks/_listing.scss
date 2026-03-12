@@ -35,9 +35,10 @@
     border-bottom: 1px solid $black;
     margin-bottom: 40px;
 
-    a.external {
+    a.external + .card-inner {
       .listing-body h2:after {
         @include external-link-icon();
+        margin-left: 3px;
       }
     }
 
