@@ -174,9 +174,7 @@ const CardImage = (props: CardImageProps) => {
 
   return (
     <div className="image-wrapper">
-      <div className="card-link-icon">
-        <LinkIconButton item={item} />
-      </div>
+      <LinkIconButton item={item} />
       {src ? (
         <Image src={src} alt="" loading="lazy" responsive={true} />
       ) : item || image ? (
@@ -211,9 +209,7 @@ const CardSummary = (props: CardSummaryProps) => {
 
   return (
     <div className="card-summary">
-      <div className="card-link-icon">
-        <LinkIconButton item={item} />
-      </div>
+      <LinkIconButton item={item} />
       {childrenWithProps(children, {
         a11yLabelId: a11yLabelId,
       })}
