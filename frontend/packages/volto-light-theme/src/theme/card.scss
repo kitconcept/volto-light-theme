@@ -215,7 +215,8 @@
   display: none;
 }
 
-// Hides the link icon in edit page
-#page-edit .card-link-icon {
+// Hides the link icon in edit and add page
+#page-edit,
+#page-add .card-link-icon {
   display: none;
 }
