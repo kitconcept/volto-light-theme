@@ -24,6 +24,7 @@
       border: 1px solid var(--accent-color) !important;
       border-radius: 0 !important;
       margin-bottom: 0;
+      cursor: pointer;
       span {
         font-size: 10px;
         font-weight: 700;
@@ -46,6 +47,30 @@
         .searchCounter.circular.label {
           background-color: var(--primary-foreground-color) !important;
           color: var(--primary-color, #fff) !important;
+        }
+        cursor: auto;
+      }
+      &:not(.active) {
+        color: var(--accent-foreground-color);
+
+        svg {
+          color: var(--accent-foreground-color);
+        }
+
+        &:hover {
+          color: color-mix(
+            in srgb,
+            var(--accent-color) 20%,
+            var(--accent-foreground-color)
+          );
+
+          svg {
+            color: color-mix(
+              in srgb,
+              var(--accent-color) 20%,
+              var(--accent-foreground-color)
+            );
+          }
         }
       }
       svg {
