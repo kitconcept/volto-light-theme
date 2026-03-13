@@ -1,4 +1,5 @@
 import * as React from 'react';
+import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
 import cx from 'classnames';
 import type { ObjectBrowserItem } from '@plone/types';
 
@@ -51,19 +52,31 @@ const Card = (props: CardProps) => {
   const { className, openLinkInNewTab } = props;
 
   const a11yLabelId = React.useId();
-  const linkRef = React.useRef<HTMLAnchorElement>(null);
   const isInteractive = !!props.href || !!props.item;
+
+  const LinkToItem = React.useCallback(
+    ({ children }: { children: React.ReactNode }) => {
+      return (
+        <ConditionalLink
+          className="card-primary-link"
+          condition={isInteractive}
+          href={href}
+          item={item}
+          openLinkInNewTab={openLinkInNewTab}
+        >
+          {children}
+        </ConditionalLink>
+      );
+    },
+    [href, item, isInteractive, openLinkInNewTab],
+  );
 
   return (
     <div className={cx('card', className)}>
       <div className="card-inner">
         {childrenWithProps(props.children, {
           a11yLabelId,
-          cardHref: href,
-          cardItem: item,
-          cardOpenLinkInNewTab: openLinkInNewTab,
-          cardIsInteractive: isInteractive,
-          cardPrimaryLinkRef: linkRef,
+          LinkToItem,
         })}
       </div>
     </div>
@@ -114,26 +127,21 @@ const CardImage = (props: CardImageProps) => {
 type CardSummaryProps = {
   /** The ID of the element that labels the card. */
   a11yLabelId?: string;
+  LinkToItem?: React.ElementType;
   children?: React.ReactNode;
-  cardHref?: string;
-  cardItem?: Partial<ObjectBrowserItem>;
-  cardOpenLinkInNewTab?: boolean;
-  cardIsInteractive?: boolean;
-  cardPrimaryLinkRef?: React.RefObject<HTMLAnchorElement | null>;
 };
 
-const CardSummary = (props: CardSummaryProps) => (
-  <div className="card-summary">
-    {childrenWithProps(props.children, {
-      a11yLabelId: props.a11yLabelId,
-      cardHref: props.cardHref,
-      cardItem: props.cardItem,
-      cardOpenLinkInNewTab: props.cardOpenLinkInNewTab,
-      cardIsInteractive: props.cardIsInteractive,
-      cardPrimaryLinkRef: props.cardPrimaryLinkRef,
-    })}
-  </div>
-);
+const CardSummary = (props: CardSummaryProps) => {
+  const { a11yLabelId, LinkToItem } = props;
+  return (
+    <div className="card-summary">
+      {childrenWithProps(props.children, {
+        a11yLabelId,
+        LinkToItem,
+      })}
+    </div>
+  );
+};
 
 const CardActions = (props: any) => (
   <div className="actions-wrapper">{props.children}</div>

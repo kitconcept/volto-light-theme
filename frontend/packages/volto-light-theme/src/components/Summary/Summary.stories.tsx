@@ -35,7 +35,6 @@ export const Summary: Story = {
         'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
       head_title: 'Simple Card',
     },
-    cardIsInteractive: false,
   },
 };
 
@@ -54,7 +53,6 @@ export const SummaryWithLink: Story = {
         '[Lorem ipsum](https://example.com) dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
       head_title: 'Simple Card',
     },
-    cardIsInteractive: false,
   },
 };
 
@@ -74,7 +72,6 @@ export const SummaryHideDescription: Story = {
       head_title: 'Simple Card',
     },
     hide_description: true,
-    cardIsInteractive: false,
   },
 };
 
@@ -96,7 +93,6 @@ export const NewsItemSummary: Story = {
       end: '2023-12-31T12:00:00+00:00',
       effective: '2023-07-06T18:35:00+00:00',
     },
-    cardIsInteractive: false,
   },
 };
 
@@ -118,7 +114,6 @@ export const EventSummary: Story = {
       end: '2023-12-31T12:00:00+00:00',
       effective: '2023-07-06T18:35:00+00:00',
     },
-    cardIsInteractive: false,
   },
 };
 
@@ -140,6 +135,5 @@ export const FileSummary: Story = {
       end: '2023-12-31T12:00:00+00:00',
       effective: '2023-07-06T18:35:00+00:00',
     },
-    cardIsInteractive: false,
   },
 };

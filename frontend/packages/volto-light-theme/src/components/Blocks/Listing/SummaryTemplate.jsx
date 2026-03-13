@@ -53,11 +53,7 @@ const SummaryTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
                 />
                 <Card.Summary
                   a11yLabelId={props.a11yLabelId}
-                  cardHref={props.cardHref}
-                  cardItem={props.cardItem}
-                  cardOpenLinkInNewTab={props.cardOpenLinkInNewTab}
-                  cardIsInteractive={props.cardIsInteractive}
-                  cardPrimaryLinkRef={props.cardPrimaryLinkRef}
+                  LinkToItem={props.LinkToItem}
                 >
                   <Summary item={item} HeadingTag="h3" />
                 </Card.Summary>

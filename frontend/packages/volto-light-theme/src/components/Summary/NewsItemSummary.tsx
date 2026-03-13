@@ -1,5 +1,5 @@
+import * as React from 'react';
 import { parseDateFromCatalog } from '@kitconcept/volto-light-theme/helpers/dates';
-import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
 import FormattedDate from '@plone/volto/components/theme/FormattedDate/FormattedDate';
 import type { DefaultSummaryProps } from './DefaultSummary';
 import { smartTextRenderer } from '../../helpers/smartText';
@@ -7,14 +7,10 @@ import { smartTextRenderer } from '../../helpers/smartText';
 const NewsItemSummary = (props: DefaultSummaryProps) => {
   const {
     item,
+    LinkToItem = React.Fragment,
     HeadingTag = 'h3',
     a11yLabelId,
     hide_description,
-    cardHref,
-    cardItem,
-    cardOpenLinkInNewTab,
-    cardIsInteractive,
-    cardPrimaryLinkRef,
   } = props;
 
   const effective = parseDateFromCatalog(item.effective);
@@ -42,16 +38,7 @@ const NewsItemSummary = (props: DefaultSummaryProps) => {
     <>
       {headline.length ? <div className="headline">{headline}</div> : null}
       <HeadingTag className="title" id={a11yLabelId}>
-        <ConditionalLink
-          className="card-primary-link"
-          condition={cardIsInteractive}
-          href={cardHref}
-          item={cardItem}
-          openLinkInNewTab={cardOpenLinkInNewTab}
-          ref={cardPrimaryLinkRef}
-        >
-          {item.title ? item.title : item.id}
-        </ConditionalLink>
+        <LinkToItem>{item.title ? item.title : item.id}</LinkToItem>
       </HeadingTag>
       {!hide_description && (
         <p className="description">{smartTextRenderer(item.description)}</p>

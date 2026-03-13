@@ -1,0 +1,1 @@
+Update docs on Card and Summary components. @danalvrz

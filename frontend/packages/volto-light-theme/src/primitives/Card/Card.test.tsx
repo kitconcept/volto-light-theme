@@ -2,7 +2,6 @@ import React from 'react';
 import { describe, it, expect, vi } from 'vitest';
 import { render } from '@testing-library/react';
 import Card from './Card';
-import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
 
 vi.mock(
   '@plone/volto/components/manage/ConditionalLink/ConditionalLink',
@@ -44,32 +43,15 @@ vi.mock(
 
 type SummaryProps = {
   a11yLabelId?: string;
-  cardHref?: string;
-  cardItem?: { ['@id']?: string };
-  cardOpenLinkInNewTab?: boolean;
-  cardIsInteractive?: boolean;
-  cardPrimaryLinkRef?: React.RefObject<HTMLAnchorElement | null>;
+  LinkToItem?: React.ElementType;
 };
 
 const SummaryContent = ({
   a11yLabelId,
-  cardHref,
-  cardItem,
-  cardOpenLinkInNewTab,
-  cardIsInteractive,
-  cardPrimaryLinkRef,
+  LinkToItem = React.Fragment,
 }: SummaryProps) => (
   <h3 id={a11yLabelId}>
-    <ConditionalLink
-      className="card-primary-link"
-      condition={cardIsInteractive}
-      href={cardHref}
-      item={cardItem}
-      openLinkInNewTab={cardOpenLinkInNewTab}
-      ref={cardPrimaryLinkRef}
-    >
-      Card title
-    </ConditionalLink>
+    <LinkToItem>Card title</LinkToItem>
   </h3>
 );
 

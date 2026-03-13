@@ -1,4 +1,4 @@
-import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
+import * as React from 'react';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import mailSVG from '@plone/volto/icons/email.svg';
 import locationSVG from '@plone/volto/icons/map.svg';
@@ -25,14 +25,10 @@ const messages = defineMessages({
 const PersonSummary = (props: DefaultSummaryProps) => {
   const {
     item,
+    LinkToItem = React.Fragment,
     HeadingTag = 'h3',
     a11yLabelId,
     hide_description,
-    cardHref,
-    cardItem,
-    cardOpenLinkInNewTab,
-    cardIsInteractive,
-    cardPrimaryLinkRef,
   } = props;
   const intl = useIntl();
 
@@ -40,16 +36,7 @@ const PersonSummary = (props: DefaultSummaryProps) => {
     <>
       {item?.head_title && <div className="headline">{item.head_title}</div>}
       <HeadingTag className="title" id={a11yLabelId}>
-        <ConditionalLink
-          className="card-primary-link"
-          condition={cardIsInteractive}
-          href={cardHref}
-          item={cardItem}
-          openLinkInNewTab={cardOpenLinkInNewTab}
-          ref={cardPrimaryLinkRef}
-        >
-          {item.title ? item.title : item.id}
-        </ConditionalLink>
+        <LinkToItem>{item.title ? item.title : item.id}</LinkToItem>
       </HeadingTag>
       {!hide_description && (
         <p className="description">{smartTextRenderer(item.description)}</p>
