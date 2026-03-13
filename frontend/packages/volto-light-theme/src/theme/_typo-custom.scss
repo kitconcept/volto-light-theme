@@ -175,3 +175,11 @@ h4 {
     user-select: none;
   }
 }
+
+// Control panel view
+body.view-controlpanelview {
+  h3.ui.icon.header {
+    @include add(size, s);
+    @include add(height, m);
+  }
+}
