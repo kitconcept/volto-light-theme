@@ -304,7 +304,7 @@
 #page-add .block-editor-gridBlock .block.gridBlock {
   @media only screen and (min-width: $largest-mobile-screen) {
     .one {
-      .block.teaser .teaser-item .content h2 {
+      .block.teaser .card-summary h2 {
         margin-bottom: $spacing-medium !important;
         @include text-heading-h2();
       }
@@ -331,13 +331,9 @@
 
     .two,
     .three {
-      .teaser {
-        .teaser-item .content {
-          h2 {
-            margin-bottom: $spacing-small !important;
-            @include text-heading-h3();
-          }
-        }
+      .block.teaser .card-summary h2 {
+        margin-bottom: $spacing-small !important;
+        @include text-heading-h3();
       }
       .image {
         figcaption {
@@ -365,23 +361,13 @@
     }
 
     .four {
-      .teaser {
-        .teaser-item {
-          .image-wrapper {
-            margin-bottom: $spacing-small !important;
-          }
-          .content {
-            .headline {
-              @include headtitle2();
-            }
-            h2 {
-              margin-bottom: $spacing-small !important;
-              @include text-heading-h4();
-            }
-            p {
-              margin-bottom: 0;
-            }
-          }
+      .block.teaser .card-summary {
+        .headline {
+          @include headtitle2();
+        }
+        h2 {
+          margin-bottom: $spacing-small !important;
+          @include text-heading-h4();
         }
       }
 
