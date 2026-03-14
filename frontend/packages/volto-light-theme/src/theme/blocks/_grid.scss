@@ -411,6 +411,19 @@
       }
     }
   }
+
+  .four {
+    .teaser {
+      .card {
+        .card-summary {
+          padding-top: $spacing-small;
+          h2.title:last-child {
+            margin-bottom: 0 !important;
+          }
+        }
+      }
+    }
+  }
 }
 
 // Teasers in grids specific
