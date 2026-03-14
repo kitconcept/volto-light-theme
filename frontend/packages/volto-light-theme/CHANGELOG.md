@@ -8,6 +8,19 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0-alpha.18 (2026-03-14)
+
+### Feature
+
+- Improve layout for full-width blocks when in Edit mode. @danalvrz 
+
+### Bugfix
+
+- Fix font size for control panel view headers. @danalvrz [#fixControlPanelFontSize](https://github.com/kitconcept/volto-light-theme/pull/fixControlPanelFontSize)
+- Fix css of External link icon indicator for teaser and grid-teaser @iRohitSingh [#797](https://github.com/kitconcept/volto-light-theme/pull/797)
+- Fix undefined error when pressing enter in footer site colophon input. @iFlameing 
+- Improve styles for Export Import control panel & several color fixes. @danalvrz 
+
 ## 8.0.0-alpha.17 (2026-03-03)
 
 ### Feature

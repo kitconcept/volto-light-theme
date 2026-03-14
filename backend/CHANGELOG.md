@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0a18 (2026-03-14)
+
+
+### Internal:
+
+- Fix css of External link icon indicator for teaser and grid-teaser @iRohitSingh [#797](https://github.com/kitconcept/volto-light-theme/issues/797)
+
 ## 8.0.0a17 (2026-03-03)
 
 

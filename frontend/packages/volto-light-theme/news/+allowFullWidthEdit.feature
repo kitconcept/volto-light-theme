@@ -1,1 +1,0 @@
-Improve layout for full-width blocks when in Edit mode. @danalvrz
