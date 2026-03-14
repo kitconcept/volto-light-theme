@@ -108,6 +108,10 @@ It is recommended that you use the VLT `Summary` component in this slot.
 
 This will ensure that the summary is displayed correctly and is accessible using VLT styles.
 
+When a `Card` receives an `href` or `item` prop, it creates a `LinkToItem` component internally and passes it down through `Card.Summary` to the `Summary` component.
+The `Summary` component wraps its title with `LinkToItem`, which renders a `ConditionalLink` with all link-related props pre-configured.
+When a `Summary` is used outside of a `Card`, `LinkToItem` defaults to `React.Fragment`, rendering the title as plain text.
+
 The `Summary` component can be retrieved from the component registry, depending on the current item type.
 
 ```tsx

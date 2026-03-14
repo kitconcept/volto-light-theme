@@ -1,3 +1,4 @@
+import * as React from 'react';
 import {
   parseDateFromCatalog,
   formatDateRange,
@@ -7,7 +8,13 @@ import type { DefaultSummaryProps } from './DefaultSummary';
 import { smartTextRenderer } from '../../helpers/smartText';
 
 const EventSummary = (props: DefaultSummaryProps) => {
-  const { item, HeadingTag = 'h3', a11yLabelId, hide_description } = props;
+  const {
+    item,
+    LinkToItem = React.Fragment,
+    HeadingTag = 'h3',
+    a11yLabelId,
+    hide_description,
+  } = props;
   const start = parseDateFromCatalog(item.start);
   const end = parseDateFromCatalog(item.end);
   const headline = [
@@ -29,7 +36,7 @@ const EventSummary = (props: DefaultSummaryProps) => {
     <>
       {headline.length ? <div className="headline">{headline}</div> : null}
       <HeadingTag className="title" id={a11yLabelId}>
-        {item.title ? item.title : item.id}
+        <LinkToItem>{item.title ? item.title : item.id}</LinkToItem>
       </HeadingTag>
       {!hide_description && (
         <p className="description">{smartTextRenderer(item.description)}</p>

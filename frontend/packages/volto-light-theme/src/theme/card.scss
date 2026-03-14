@@ -1,24 +1,26 @@
 .card {
+  // Base
   position: relative;
   transition: box-shadow 0.15s ease;
-}
 
-.card:has(> a):hover,
-.card:has(> a):focus-within {
-  cursor: pointer;
-}
+  &:has(.card-primary-link) {
+    cursor: pointer;
 
-.card a {
-  inset: 0; /* top:0 right:0 bottom:0 left:0 */
-  text-decoration: none; /* remove default underline */
-}
+    // Primary card link stretched via ::after pseudo-element
+    .card-summary .card-primary-link {
+      color: inherit;
+      font: inherit;
 
-.card .card-summary,
-.card .card-summary * {
-  user-select: text; /* explicit for clarity */
-}
+      &::after {
+        position: absolute;
+        z-index: 0;
+        content: '';
+        inset: 0;
+      }
+    }
+  }
 
-.card {
+  // Image
   .image-wrapper {
     width: 100%;
 
@@ -31,47 +33,52 @@
     }
   }
 
+  // Summary
   .card-summary {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: $spacing-medium;
+    padding-bottom: $spacing-medium;
 
     .headline {
-      margin-bottom: 20px;
+      margin-bottom: $spacing-small;
       letter-spacing: 1px;
       text-transform: uppercase;
       @include headtitle1();
     }
+
     h2 {
       margin-top: 0;
-      margin-bottom: 20px;
+      margin-bottom: $spacing-small;
       @include text-heading-h2();
+
       @container (max-width: #{$largest-mobile-screen}) {
         @include text-heading-h3();
-        margin-bottom: 20px;
+        margin-bottom: $spacing-small;
       }
     }
+
     p {
       margin: 0;
       @include body-text();
     }
   }
-}
+  // Additional links within the card
+  a:not(.card-primary-link) {
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+  }
 
-// Variants
-// // Contained
-.card {
+  // Contained
   .contained & .card-inner {
     background: var(--theme-high-contrast-color);
   }
 
   .contained & .card-summary {
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: $spacing-small;
+    padding-left: $spacing-small;
   }
-}
 
-// // Side-aligned
-.card {
+  // Side-aligned
   .has--align--left:not(.contained) &,
   .has--align--right:not(.contained) & {
     .card-inner {
@@ -80,14 +87,13 @@
       .image-wrapper {
         flex: 1 1 50%;
 
-        @media only screen and (max-width: $largest-mobile-screen) {
+        @container (max-width: #{$largest-mobile-screen}) {
           margin-right: 0;
-          margin-bottom: 26px;
+          margin-bottom: $spacing-small;
         }
       }
 
       .card-summary {
-        // width: 50%;
         flex: 1 1 50%;
         padding: 0;
       }
@@ -96,33 +102,52 @@
 
   .has--align--left:not(.contained) & {
     .image-wrapper {
-      margin-right: 20px;
+      margin-right: $spacing-small;
     }
   }
 
-  .has--align--right & {
+  .has--align--right:not(.contained) & {
     .card-inner {
       flex-direction: row-reverse;
     }
 
     .image-wrapper {
-      margin-right: 0px;
-      margin-left: 20px;
+      margin-right: 0;
+      margin-left: $spacing-small;
     }
   }
-}
 
-@container (max-width: #{$largest-mobile-screen}) {
-  .card {
+  @container (max-width: #{$largest-mobile-screen}) {
     .has--align--left:not(.contained) &,
     .has--align--right:not(.contained) & {
       .card-inner {
         display: block;
       }
+
       .image-wrapper {
         margin-right: 0;
         margin-left: 0;
       }
+    }
+  }
+
+  // Listing
+  .card-listing & .card-inner {
+    display: flex;
+
+    .image-wrapper {
+      flex: 0 1 var(--card-listing-image-size, 220px);
+      margin-right: $spacing-small;
+
+      @container (max-width: #{$largest-mobile-screen}) {
+        margin-right: 0;
+        margin-bottom: $spacing-small;
+      }
+    }
+
+    .card-summary {
+      flex: 1 1 50%;
+      padding: 0;
     }
   }
 }
@@ -132,38 +157,25 @@
   .card {
     .card-summary {
       .one & h2 {
-        margin-bottom: 40px !important;
+        margin-bottom: $spacing-medium !important;
         @include text-heading-h2();
       }
+
       .two & h2,
       .three & h2 {
         @include text-heading-h3();
       }
-      .four & h2 {
-        @include text-heading-h4();
+
+      .four & {
+        padding-top: $spacing-small;
+        padding-bottom: $spacing-small;
+        .headline {
+          @include headtitle2();
+        }
+        h2 {
+          @include text-heading-h4();
+        }
       }
-    }
-  }
-}
-
-// Listing
-.card {
-  .card-listing & .card-inner {
-    display: flex;
-
-    .image-wrapper {
-      flex: 0 1 var(--card-listing-image-size, 220px);
-      margin-right: 20px;
-
-      @media only screen and (max-width: $largest-mobile-screen) {
-        margin-right: 0;
-        margin-bottom: 26px;
-      }
-    }
-
-    .card-summary {
-      flex: 1 1 50%;
-      padding: 0;
     }
   }
 }

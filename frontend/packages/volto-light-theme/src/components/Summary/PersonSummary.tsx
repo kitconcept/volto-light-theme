@@ -1,3 +1,4 @@
+import * as React from 'react';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import mailSVG from '@plone/volto/icons/email.svg';
 import locationSVG from '@plone/volto/icons/map.svg';
@@ -22,14 +23,20 @@ const messages = defineMessages({
 });
 
 const PersonSummary = (props: DefaultSummaryProps) => {
-  const { item, HeadingTag = 'h3', a11yLabelId, hide_description } = props;
+  const {
+    item,
+    LinkToItem = React.Fragment,
+    HeadingTag = 'h3',
+    a11yLabelId,
+    hide_description,
+  } = props;
   const intl = useIntl();
 
   return (
     <>
       {item?.head_title && <div className="headline">{item.head_title}</div>}
       <HeadingTag className="title" id={a11yLabelId}>
-        {item.title ? item.title : item.id}
+        <LinkToItem>{item.title ? item.title : item.id}</LinkToItem>
       </HeadingTag>
       {!hide_description && (
         <p className="description">{smartTextRenderer(item.description)}</p>

@@ -1,3 +1,4 @@
+import * as React from 'react';
 import FileType from '@kitconcept/volto-light-theme/helpers/Filetype';
 import type { DefaultSummaryProps } from './DefaultSummary';
 import { smartTextRenderer } from '../../helpers/smartText';
@@ -21,13 +22,19 @@ const FileHeadline = (props: { item: any }) => {
 };
 
 const FileSummary = (props: DefaultSummaryProps) => {
-  const { item, HeadingTag = 'h3', a11yLabelId, hide_description } = props;
+  const {
+    item,
+    LinkToItem = React.Fragment,
+    HeadingTag = 'h3',
+    a11yLabelId,
+    hide_description,
+  } = props;
 
   return (
     <>
       <FileHeadline item={item} />
       <HeadingTag className="title" id={a11yLabelId}>
-        {item.title ? item.title : item.id}
+        <LinkToItem>{item.title ? item.title : item.id}</LinkToItem>
       </HeadingTag>
       {!hide_description && (
         <p className="description">{smartTextRenderer(item.description)}</p>
