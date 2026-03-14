@@ -266,5 +266,29 @@ class ISiteFooterCustomizationSettings(model.Schema):
             default="The text that shows in the footer colophon.",
         ),
         schema=OBJECT_LIST,
+        default=[
+            {
+                "children": [
+                    {
+                        "text": "Powered by Plone and Volto Light Theme\nThe Plone® Open Source CMS/WCM is © 2000-2026 by the "
+                    },
+                    {
+                        "children": [{"text": "Plone Foundation"}],
+                        "data": {"url": "http://plone.org"},
+                        "type": "link",
+                    },
+                    {"text": " and friends.\nDistributed under the "},
+                    {
+                        "children": [{"text": "GNU GPL v2 license"}],
+                        "data": {
+                            "url": "https://www.gnu.org/licenses/old-licenses/lgpl-2.0.html"
+                        },
+                        "type": "link",
+                    },
+                    {"text": "."},
+                ],
+                "type": "p",
+            }
+        ],
         required=False,
     )

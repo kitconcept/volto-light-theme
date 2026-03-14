@@ -1,0 +1,1 @@
+Add default colophon text. @danalvrz
