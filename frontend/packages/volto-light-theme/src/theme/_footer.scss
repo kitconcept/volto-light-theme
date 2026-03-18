@@ -320,6 +320,11 @@
     @include add(size, xs);
     @include add(height, s);
 
+    p {
+      @include add(size, xs);
+      @include add(height, s);
+    }
+
     a {
       @include add(size, xs);
       @include add(height, s);
