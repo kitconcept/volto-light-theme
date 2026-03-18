@@ -31,18 +31,18 @@
   }
 
   .listing-item {
-    padding-bottom: 40px !important;
+    // padding-bottom: 40px !important;
     border-bottom: 1px solid $black;
     margin-bottom: 40px;
 
-    a.external + .card-inner {
-      .listing-body h2:after {
-        @include external-link-icon();
-        margin-left: 3px;
-      }
-    }
+    // a.external + .card-inner {
+    //   .listing-body h2:after {
+    //     @include external-link-icon();
+    //     margin-left: 3px;
+    //   }
+    // }
 
-    &:last-child {
+    .items:not(:has(+ .pagination-wrapper)) > &:last-child {
       padding-bottom: 0 !important;
       border-bottom: none !important;
       margin-bottom: 0;
@@ -215,8 +215,7 @@
             }
           }
           .card-summary {
-            padding: 0 $spacing-small $spacing-medium $spacing-small;
-            margin-top: $spacing-medium;
+            padding: $spacing-medium $spacing-small 0 $spacing-small;
 
             .headline {
               padding: 0 !important;
