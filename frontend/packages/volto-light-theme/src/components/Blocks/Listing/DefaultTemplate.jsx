@@ -47,7 +47,7 @@ const DefaultTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
             >
               <Card item={showLink ? item : null}>
                 <Card.Summary>
-                  <Summary item={item} HeadingTag="h2" />
+                  <Summary item={item} HeadingTag="h3" />
                 </Card.Summary>
               </Card>
             </div>

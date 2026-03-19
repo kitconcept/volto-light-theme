@@ -82,6 +82,10 @@
     p {
       margin: 0;
       @include body-text();
+
+      &:empty {
+        display: none;
+      }
     }
   }
   // Additional links within the card

@@ -31,16 +31,8 @@
   }
 
   .listing-item {
-    // padding-bottom: 40px !important;
     border-bottom: 1px solid $black;
     margin-bottom: 40px;
-
-    // a.external + .card-inner {
-    //   .listing-body h2:after {
-    //     @include external-link-icon();
-    //     margin-left: 3px;
-    //   }
-    // }
 
     .items:not(:has(+ .pagination-wrapper)) > &:last-child {
       padding-bottom: 0 !important;
@@ -55,41 +47,25 @@
     .card-inner a {
       display: inline;
     }
-  }
 
-  h2.headline {
-    @container (max-width: #{$default-container-width + 2 * 20px}) {
-      margin-right: 20px !important;
-      margin-left: 20px !important;
+    .title {
+      margin-top: 0;
+      margin-bottom: $spacing-medium;
+      @include text-heading-h2();
+      @container (max-width: #{$largest-mobile-screen}) {
+        @include text-heading-h3();
+        margin-bottom: $spacing-small;
+      }
     }
   }
 
   // Default variation
   &.default,
   & .default-variation {
-    .headline {
-      @include block-title();
-    }
-
     .listing-item {
       .card-summary {
         padding-top: unset;
         padding-bottom: unset;
-      }
-      .headline {
-        margin-bottom: 20px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        @include headtitle1();
-      }
-      h2 {
-        margin-top: 0;
-        margin-bottom: $spacing-medium;
-        @include text-heading-h2();
-      }
-      p {
-        margin-bottom: 0;
-        @include body-text();
       }
       p:empty {
         display: none;
@@ -101,42 +77,19 @@
   &.summary,
   & .summary-variation {
     .listing-item {
-      padding-top: 0 !important;
-
       .card {
-        width: 100%;
         .card-inner .image-wrapper {
           flex: 0 0 220px;
           img {
             max-width: 100%;
+            width: 220px;
+            height: min-content;
+            @container (max-width: #{$largest-mobile-screen}) {
+              width: 100%;
+              min-width: 335px;
+              margin-bottom: $spacing-small;
+            }
           }
-        }
-      }
-
-      img {
-        width: 220px;
-        height: min-content;
-        aspect-ratio: var(--image-aspect-ratio, $aspect-ratio) !important;
-        @container (max-width: #{$largest-mobile-screen}) {
-          width: 100%;
-          min-width: 335px;
-          margin-bottom: 20px;
-        }
-      }
-      .headline {
-        margin-bottom: 20px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        @include headtitle1();
-      }
-      h3 {
-        margin-top: 0 !important;
-        margin-bottom: 40px !important;
-        color: $black;
-        @include text-heading-h2();
-        @container (max-width: #{$largest-mobile-screen}) {
-          @include text-heading-h3();
-          margin-bottom: 20px !important;
         }
       }
     }
@@ -160,14 +113,9 @@
         flex-direction: column;
 
         .listing-item {
-          padding-bottom: 20px !important;
+          padding-bottom: $spacing-small !important;
         }
       }
-    }
-    .headline {
-      @include block-title();
-      margin-right: 0 !important;
-      margin-left: 0 !important;
     }
     .listing-item {
       align-items: normal;
@@ -209,9 +157,7 @@
         .card-inner {
           .image-wrapper {
             img {
-              width: 100%;
               margin: 0;
-              aspect-ratio: var(--image-aspect-ratio, $aspect-ratio) !important;
             }
           }
           .card-summary {
@@ -229,10 +175,6 @@
             h2 {
               margin: 0 0 $spacing-small 0;
               @include text-heading-h3();
-            }
-            p {
-              margin-bottom: 0;
-              @include body-text();
             }
             p:empty {
               display: none;
@@ -459,21 +401,6 @@
 #page-edit .block-editor-listing.has--backgroundColor--grey,
 .block.listing.has--backgroundColor--grey {
   background-color: $lightgrey;
-
-  &.grid {
-    .listing-item {
-      .card-container {
-        background-color: $white;
-      }
-    }
-  }
-  .block.listing.grid {
-    .listing-item {
-      .card-container {
-        background-color: $white;
-      }
-    }
-  }
 }
 
 .listing-item .headline span:not(:last-child)::after {
