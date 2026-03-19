@@ -81,8 +81,8 @@
         .card-inner .image-wrapper {
           flex: 0 0 220px;
           img {
-            max-width: 100%;
             width: 220px;
+            max-width: 100%;
             height: min-content;
             @container (max-width: #{$largest-mobile-screen}) {
               width: 100%;

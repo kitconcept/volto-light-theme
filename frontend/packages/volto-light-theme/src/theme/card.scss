@@ -1,8 +1,8 @@
 .card {
   // Base
   position: relative;
-  transition: box-shadow 0.15s ease;
   width: 100%;
+  transition: box-shadow 0.15s ease;
 
   &:has(.card-primary-link) {
     cursor: pointer;
