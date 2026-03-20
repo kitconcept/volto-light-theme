@@ -42,6 +42,13 @@
   .listing-item {
     border-bottom: 1px solid $black;
     margin-bottom: 40px;
+    .card-summary {
+      padding: 0;
+
+      p:empty {
+        display: none;
+      }
+    }
 
     img {
       object-fit: cover;
@@ -53,7 +60,7 @@
 
     .title {
       margin-top: 0;
-      margin-bottom: $spacing-medium;
+      margin-bottom: $spacing-medium !important;
       @include text-heading-h2();
       @container (max-width: #{$largest-mobile-screen}) {
         @include text-heading-h3();
@@ -62,19 +69,6 @@
     }
   }
 
-  // Default variation
-  &.default,
-  & .default-variation {
-    .listing-item {
-      .card-summary {
-        padding-top: unset;
-        padding-bottom: unset;
-      }
-      p:empty {
-        display: none;
-      }
-    }
-  }
 
   // Summary variation
   &.summary,
@@ -166,21 +160,10 @@
           .card-summary {
             padding: $spacing-medium $spacing-small 0 $spacing-small;
 
-            .headline {
-              padding: 0 !important;
-              margin-bottom: $spacing-small;
-              letter-spacing: 1px;
-              text-transform: uppercase;
-              @include headtitle1();
-              @include word-break();
-            }
 
             h2 {
               margin: 0 0 $spacing-small 0;
               @include text-heading-h3();
-            }
-            p:empty {
-              display: none;
             }
           }
         }
