@@ -17,10 +17,13 @@
 .block-editor-rssBlock {
   &.next--has--same--backgroundColor.next--is--same--block-type,
   &.next--is--__button {
-    .listing-item:last-child {
-      padding-bottom: 40px !important;
-      border-bottom: 1px solid vas(--theme-font-color, black);
+    .items .listing-item:last-child {
+      padding-bottom: $spacing-medium !important;
+      border-bottom: 1px solid var(--theme-font-color, black) !important;
     }
+  }
+  &.next--is--__button {
+    margin-bottom: 0 !important;
   }
 
   .items {
@@ -32,9 +35,13 @@
     }
     &:not(:has(+ .pagination-wrapper)) {
       .listing-item:last-child {
-        padding-bottom: 0 !important;
-        border-bottom: none !important;
+        padding-bottom: 0;
+        border-bottom: none;
         margin-bottom: 0;
+
+        .card-inner {
+          padding-bottom: 0;
+        }
       }
     }
   }
