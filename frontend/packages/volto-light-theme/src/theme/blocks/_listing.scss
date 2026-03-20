@@ -15,7 +15,9 @@
 .block-editor-search,
 .block.rssBlock,
 .block-editor-rssBlock {
-  &.next--has--same--backgroundColor.next--is--same--block-type:not(:last-child),
+  &.next--has--same--backgroundColor.next--is--same--block-type:not(
+      :last-child
+    ),
   &.next--is--__button {
     .items .listing-item:last-child {
       padding-bottom: $spacing-medium !important;
