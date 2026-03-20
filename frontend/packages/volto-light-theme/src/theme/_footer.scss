@@ -319,14 +319,23 @@
   .colophon {
     @include add(size, xs);
     @include add(height, s);
-    .slate.widget * {
-      @include add(size, xs);
-      @include add(height, s);
+
+    .slate.widget {
+      width: fit-content;
+      margin-right: auto;
+      margin-left: auto;
+      ul,
+      ol,
+      li,
+      p,
+      a {
+        @include add(size, xs);
+        @include add(height, s);
+      }
     }
 
     a {
-      @include add(size, xs);
-      @include add(height, s);
+      font: inherit;
       color: var(--footer-foreground);
       text-decoration: underline;
     }
