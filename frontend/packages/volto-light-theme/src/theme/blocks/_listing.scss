@@ -15,7 +15,7 @@
 .block-editor-search,
 .block.rssBlock,
 .block-editor-rssBlock {
-  &.next--has--same--backgroundColor.next--is--same--block-type,
+  &.next--has--same--backgroundColor.next--is--same--block-type:not(:last-child),
   &.next--is--__button {
     .items .listing-item:last-child {
       padding-bottom: $spacing-medium !important;
@@ -86,7 +86,7 @@
           img {
             width: 220px;
             max-width: 100%;
-            height: min-content;
+            height: 100%;
             @container (max-width: #{$largest-mobile-screen}) {
               width: 100%;
               min-width: 335px;
