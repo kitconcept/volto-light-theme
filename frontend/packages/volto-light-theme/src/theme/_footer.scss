@@ -320,14 +320,21 @@
     @include add(size, xs);
     @include add(height, s);
 
-    p {
-      @include add(size, xs);
-      @include add(height, s);
+    .slate.widget {
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+      ul,
+      ol,
+      li,
+      p,
+      a {
+        @include add(size, xs);
+        @include add(height, s);
+      }
     }
 
     a {
-      @include add(size, xs);
-      @include add(height, s);
       color: var(--footer-foreground);
       text-decoration: underline;
     }
