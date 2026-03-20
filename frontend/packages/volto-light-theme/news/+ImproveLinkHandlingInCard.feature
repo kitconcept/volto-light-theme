@@ -1,1 +1,1 @@
-Improve Card component link handling by using a CSS stretched-link pattern. @danalvrz
+Improve Card component link handling by using a CSS stretched-link pattern & other minor style fixes for consistency. @danalvrz

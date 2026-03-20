@@ -166,11 +166,17 @@ body .block.gridBlock .contained .person-teaser .card-inner {
   display: flex;
   align-items: center;
   margin-bottom: $spacing-small;
+  svg {
+    margin-right: 0.25em;
+  }
 }
 
 .summary-room-phone {
   display: flex;
   gap: $spacing-small;
+  svg {
+    margin-right: 0.25em;
+  }
 }
 
 // One person teaser in Grid, edit mode
