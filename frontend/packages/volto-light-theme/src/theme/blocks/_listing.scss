@@ -15,19 +15,6 @@
 .block-editor-search,
 .block.rssBlock,
 .block-editor-rssBlock {
-  &.next--has--same--backgroundColor.next--is--same--block-type:not(
-      :last-child
-    ),
-  &.next--is--__button {
-    .items .listing-item:last-child {
-      padding-bottom: $spacing-medium !important;
-      border-bottom: 1px solid var(--theme-font-color, black) !important;
-    }
-  }
-  &.next--is--__button {
-    margin-bottom: 0 !important;
-  }
-
   .items {
     & + .pagination-wrapper {
       margin-top: $spacing-xlarge;
@@ -46,6 +33,19 @@
         }
       }
     }
+  }
+
+  &.next--has--same--backgroundColor.next--is--same--block-type:not(
+      :last-child
+    ),
+  &.next--is--__button {
+    .items > .listing-item:last-child {
+      padding-bottom: $spacing-medium !important;
+      border-bottom: 1px solid var(--theme-font-color, black);
+    }
+  }
+  &.next--is--__button {
+    margin-bottom: 0 !important;
   }
 
   .listing-item {
@@ -88,7 +88,7 @@
           img {
             width: 220px;
             max-width: 100%;
-            height: 100%;
+            height: min-content;
             @container (max-width: #{$largest-mobile-screen}) {
               width: 100%;
               min-width: 335px;
