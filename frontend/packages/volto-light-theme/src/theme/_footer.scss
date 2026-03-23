@@ -329,6 +329,7 @@
       li,
       p,
       a {
+        margin-bottom: 0;
         @include add(size, xs);
         @include add(height, s);
       }
