@@ -27,7 +27,7 @@ const DefaultTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
 
   return (
     <>
-      <div className="items">
+      <ul className="items">
         {items.map((item) => {
           const Summary =
             config.getComponent({
@@ -39,7 +39,7 @@ const DefaultTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
             showLink = !hideProfileLinks && !isEditMode;
           }
           return (
-            <div
+            <li
               className={cx('listing-item', {
                 [`${item['@type']?.toLowerCase()}-listing`]: item['@type'],
               })}
@@ -47,13 +47,13 @@ const DefaultTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
             >
               <Card item={showLink ? item : null}>
                 <Card.Summary>
-                  <Summary item={item} HeadingTag="h3" />
+                  <Summary item={item} />
                 </Card.Summary>
               </Card>
-            </div>
+            </li>
           );
         })}
-      </div>
+      </ul>
 
       {link && <div className="footer">{link}</div>}
     </>

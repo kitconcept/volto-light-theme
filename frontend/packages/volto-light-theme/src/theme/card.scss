@@ -59,7 +59,8 @@
       @include headtitle1();
     }
 
-    h2.title {
+    .title {
+      display: block;
       margin-top: 0;
       margin-bottom: $spacing-small !important; // Override margin from volto
       @include text-heading-h2();
@@ -177,7 +178,7 @@
         .card-summary {
           padding-top: $spacing-medium;
         }
-        h2 {
+        .title {
           margin-bottom: $spacing-medium !important; // Override margin from volto
           @include text-heading-h2();
         }
@@ -188,7 +189,7 @@
         .card-summary {
           padding-top: $spacing-medium;
         }
-        h2 {
+        .title {
           @include text-heading-h3();
         }
       }
@@ -201,7 +202,7 @@
         .headline {
           @include headtitle2();
         }
-        h2 {
+        .title {
           @include text-heading-h4();
         }
       }

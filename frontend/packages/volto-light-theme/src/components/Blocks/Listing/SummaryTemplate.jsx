@@ -26,7 +26,7 @@ const SummaryTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
 
   return (
     <>
-      <div className="items">
+      <ul className="items">
         {items.map((item) => {
           const CustomItemBodyTemplate = config.getComponent({
             name: 'SummaryListingItemTemplate',
@@ -55,12 +55,12 @@ const SummaryTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
                   a11yLabelId={props.a11yLabelId}
                   LinkToItem={props.LinkToItem}
                 >
-                  <Summary item={item} HeadingTag="h3" />
+                  <Summary item={item} />
                 </Card.Summary>
               </>
             );
           return (
-            <div
+            <li
               className={cx('listing-item has--align--left', {
                 [`${item['@type']?.toLowerCase()}-listing`]: item['@type'],
               })}
@@ -69,10 +69,10 @@ const SummaryTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
               <Card item={showLink ? item : null}>
                 <ItemBodyTemplate item={item} />
               </Card>
-            </div>
+            </li>
           );
         })}
-      </div>
+      </ul>
 
       {link && <div className="footer">{link}</div>}
     </>

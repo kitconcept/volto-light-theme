@@ -16,6 +16,8 @@
 .block.rssBlock,
 .block-editor-rssBlock {
   .items {
+    padding: 0;
+    margin: 0;
     & + .pagination-wrapper {
       margin-top: $spacing-xlarge;
       @container (max-width: #{$largest-mobile-screen}) {
@@ -68,6 +70,7 @@
     }
 
     .title {
+      display: block;
       margin-top: 0;
       margin-bottom: $spacing-medium !important;
       @include text-heading-h2();
