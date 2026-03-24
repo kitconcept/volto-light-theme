@@ -42,6 +42,40 @@ const EventTextfieldView = ({ content }) => {
   );
 };
 
+const formatDayTime = ({
+  isOpenEnd,
+  wholeDay,
+  formatter,
+  Dateformatter,
+  TimeFormatter,
+  hasDailyFrequency,
+  start,
+  end,
+}) => {
+  // Case 1: Single Day, no time (open end + whole day)
+  if (isOpenEnd && wholeDay) {
+    return Dateformatter.format(start);
+  }
+  // Case 2: Single Day, start time only (open end, not whole day)
+  if (isOpenEnd && !wholeDay) {
+    return `${Dateformatter.format(start)} · from  ${TimeFormatter.format(start)}`;
+  }
+  // Case 4,9: Multi Day , no Time
+  if (!isOpenEnd && wholeDay) {
+    return Dateformatter.formatRange(start, end);
+  }
+  // Case 3: Single day, start-end time with dot separator
+  if (Dateformatter.format(start) === Dateformatter.format(end)) {
+    return `${Dateformatter.format(start)} · ${TimeFormatter.format(start)}–${TimeFormatter.format(end)}`;
+  }
+  // Case 7: Daily frequency, with start and end time
+  if (hasDailyFrequency) {
+    return `${Dateformatter.formatRange(start, end)} · daily ${TimeFormatter.format(start)}–${TimeFormatter.format(end)}`;
+  }
+  // Case 6,10 : Multi day, with start and end time (normal)
+  return formatter.formatRange(start, end);
+};
+
 /**
  * EventView view component class.
  * @function EventView
@@ -50,32 +84,56 @@ const EventTextfieldView = ({ content }) => {
  */
 const EventView = (props) => {
   const { content } = props;
+
   const Container =
     config.getComponent({ name: 'Container' }).component || SemanticContainer;
-
   const language = content.language?.token || 'default';
   const start = content.start ? new Date(content.start) : null;
   const end = content.end ? new Date(content.end) : null;
   const isOpenEnd = !!content.open_end;
+  const wholeDay = !!content.whole_day;
+  const hasDailyFrequency =
+    typeof content.recurrence === 'string' &&
+    content.recurrence.toUpperCase().includes('FREQ=DAILY');
 
   const formatter = new Intl.DateTimeFormat(language, {
     year: 'numeric',
-    month: 'long',
+    month: 'short',
     day: 'numeric',
     hour: 'numeric',
     minute: 'numeric',
+    hour12: false,
   });
-  const formattedDate =
-    !end || isOpenEnd
-      ? formatter.format(start)
-      : formatter.formatRange(start, end);
+
+  const Dateformatter = new Intl.DateTimeFormat(language, {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  });
+
+  const TimeFormatter = new Intl.DateTimeFormat(language, {
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false,
+  });
+
+  const DayTimeFormatted = formatDayTime({
+    isOpenEnd,
+    wholeDay,
+    TimeFormatter,
+    Dateformatter,
+    hasDailyFrequency,
+    formatter,
+    start,
+    end,
+  });
 
   return (
     <Container id="page-document" className="view-wrapper event-view">
       <div className="dates">
-        {formattedDate ? (
+        {DayTimeFormatted ? (
           <span className="day" suppressHydrationWarning>
-            {formattedDate}
+            {DayTimeFormatted}
           </span>
         ) : null}{' '}
         {content?.head_title && (
