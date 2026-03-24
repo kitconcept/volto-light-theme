@@ -42,12 +42,14 @@
     ),
   &.next--is--__button {
     .items > .listing-item:last-child {
-      padding-bottom: $spacing-medium !important;
       border-bottom: 1px solid var(--theme-font-color, black);
     }
   }
   &.next--is--__button {
     margin-bottom: 0 !important;
+    .listing-item:last-child {
+      padding-bottom: $spacing-medium !important;
+    }
   }
 
   .listing-item {

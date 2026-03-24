@@ -2,6 +2,9 @@
 #page-add,
 #page-edit {
   .block.search {
+    &.next--has--same--backgroundColor.next--is--same--block-type {
+      margin-bottom: $spacing-xlarge;
+    }
     &.grid {
       .listing-item:last-child {
         padding-bottom: 0;
