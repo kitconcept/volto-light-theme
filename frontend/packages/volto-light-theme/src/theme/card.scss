@@ -60,7 +60,6 @@
     }
 
     .title {
-      display: block;
       margin-top: 0;
       margin-bottom: $spacing-small !important; // Override margin from volto
       @include text-heading-h2();

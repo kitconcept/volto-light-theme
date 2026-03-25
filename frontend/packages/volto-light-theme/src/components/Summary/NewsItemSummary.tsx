@@ -8,7 +8,7 @@ const NewsItemSummary = (props: DefaultSummaryProps) => {
   const {
     item,
     LinkToItem = React.Fragment,
-    HeadingTag = 'span',
+    HeadingTag = 'div',
     a11yLabelId,
     hide_description,
   } = props;

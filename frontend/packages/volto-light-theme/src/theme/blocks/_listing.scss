@@ -173,8 +173,8 @@
           .card-summary {
             padding: $spacing-medium $spacing-small 0 $spacing-small;
 
-            h2 {
-              margin: 0 0 $spacing-small 0;
+            .title {
+              margin: 0 0 $spacing-small 0 !important;
               @include text-heading-h3();
             }
           }
