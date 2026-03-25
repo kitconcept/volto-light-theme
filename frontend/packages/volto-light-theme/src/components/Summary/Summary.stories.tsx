@@ -32,7 +32,7 @@ export const Summary: Story = {
   ),
   args: {
     item: {
-      title: 'Simple Card with strings',
+      title: 'Summary',
       description:
         'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
       head_title: 'Simple Card',
@@ -52,7 +52,7 @@ export const SummaryWithLink: Story = {
   ),
   args: {
     item: {
-      title: 'Simple Card with strings',
+      title: 'Summary',
       description:
         '[Lorem ipsum](https://example.com) dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
       head_title: 'Simple Card',
@@ -72,7 +72,7 @@ export const SummaryHideDescription: Story = {
   ),
   args: {
     item: {
-      title: 'Simple Card with strings',
+      title: 'Summary',
       description:
         'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
       head_title: 'Simple Card',
@@ -93,7 +93,7 @@ export const NewsItemSummary: Story = {
   ),
   args: {
     item: {
-      title: 'Simple Card with strings',
+      title: 'Summary',
       description:
         'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
       head_title: 'Simple Card',
@@ -116,7 +116,7 @@ export const EventSummary: Story = {
   ),
   args: {
     item: {
-      title: 'Simple Card with strings',
+      title: 'Summary',
       description:
         'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
       head_title: 'Simple Card',
@@ -141,7 +141,7 @@ export const FileSummary: Story = {
   ),
   args: {
     item: {
-      title: 'Simple Card with strings',
+      title: 'Summary',
       description:
         'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
       getObjSize: '72.7 KB',
