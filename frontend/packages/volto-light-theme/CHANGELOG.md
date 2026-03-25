@@ -8,6 +8,13 @@
 
 <!-- towncrier release notes start -->
 
+## 7.8.3 (2026-03-25)
+
+### Bugfix
+
+- Fix image size grid-block in editmode. @TimoBroeskamp 
+- Fix spacing for Teasers in Grid and navigation ntems when using the Intranet header. @danlavrz 
+
 ## 7.8.2 (2026-03-09)
 
 ### Bugfix
