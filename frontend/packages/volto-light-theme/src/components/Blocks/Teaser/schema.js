@@ -3,6 +3,8 @@ export const teaserSchemaEnhancer = ({ schema, formData, intl }) => {
   schema.properties.href.selectedItemAttrs.push('effective');
   schema.properties.href.selectedItemAttrs.push('start');
   schema.properties.href.selectedItemAttrs.push('end');
+  schema.properties.href.selectedItemAttrs.push('open_end');
+  schema.properties.href.selectedItemAttrs.push('whole_day');
   schema.properties.href.selectedItemAttrs.push('description');
   schema.properties.href.selectedItemAttrs.push('contact_email');
   schema.properties.href.selectedItemAttrs.push('contact_phone');

@@ -13,6 +13,26 @@ import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 import config from '@plone/volto/registry';
 import { injectIntl } from 'react-intl';
 
+export const createEventFormatters = (language = 'default') => ({
+  formatter: new Intl.DateTimeFormat(language, {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    hour12: false,
+  }),
+  Dateformatter: new Intl.DateTimeFormat(language, {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  }),
+  TimeFormatter: new Intl.DateTimeFormat(language, {
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false,
+  }),
+});
 const EventTextfieldView = ({ content }) => {
   const Image = config.getComponent({ name: 'Image' }).component;
   return (
@@ -42,6 +62,35 @@ const EventTextfieldView = ({ content }) => {
   );
 };
 
+export const formatDayTime = ({
+  isOpenEnd,
+  wholeDay,
+  formatter,
+  Dateformatter,
+  TimeFormatter,
+  start,
+  end,
+}) => {
+  // Case 1: Single Day, no time (open end + whole day)
+  if (isOpenEnd && wholeDay) {
+    return Dateformatter.format(start);
+  }
+  // Case 2: Single Day, start time only (open end, not whole day)
+  if (isOpenEnd && !wholeDay) {
+    return `${Dateformatter.format(start)} · from  ${TimeFormatter.format(start)}`;
+  }
+  // Case 4,9: Multi Day , no Time
+  if (!isOpenEnd && wholeDay) {
+    return Dateformatter.formatRange(start, end);
+  }
+  // Case 3: Single day, start-end time with dot separator
+  if (Dateformatter.format(start) === Dateformatter.format(end)) {
+    return `${Dateformatter.format(start)} · ${TimeFormatter.format(start)}–${TimeFormatter.format(end)}`;
+  }
+  // Case 6,10 : Multi day, with start and end time (normal)
+  return formatter.formatRange(start, end);
+};
+
 /**
  * EventView view component class.
  * @function EventView
@@ -50,32 +99,33 @@ const EventTextfieldView = ({ content }) => {
  */
 const EventView = (props) => {
   const { content } = props;
+
   const Container =
     config.getComponent({ name: 'Container' }).component || SemanticContainer;
-
   const language = content.language?.token || 'default';
   const start = content.start ? new Date(content.start) : null;
   const end = content.end ? new Date(content.end) : null;
   const isOpenEnd = !!content.open_end;
+  const wholeDay = !!content.whole_day;
+  const { formatter, Dateformatter, TimeFormatter } =
+    createEventFormatters(language);
 
-  const formatter = new Intl.DateTimeFormat(language, {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    hour: 'numeric',
-    minute: 'numeric',
+  const DayTimeFormatted = formatDayTime({
+    isOpenEnd,
+    wholeDay,
+    TimeFormatter,
+    Dateformatter,
+    formatter,
+    start,
+    end,
   });
-  const formattedDate =
-    !end || isOpenEnd
-      ? formatter.format(start)
-      : formatter.formatRange(start, end);
 
   return (
     <Container id="page-document" className="view-wrapper event-view">
       <div className="dates">
-        {formattedDate ? (
+        {DayTimeFormatted ? (
           <span className="day" suppressHydrationWarning>
-            {formattedDate}
+            {DayTimeFormatted}
           </span>
         ) : null}{' '}
         {content?.head_title && (
