@@ -13,6 +13,26 @@ import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 import config from '@plone/volto/registry';
 import { injectIntl } from 'react-intl';
 
+export const createEventFormatters = (language = 'default') => ({
+  formatter: new Intl.DateTimeFormat(language, {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    hour12: false,
+  }),
+  Dateformatter: new Intl.DateTimeFormat(language, {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  }),
+  TimeFormatter: new Intl.DateTimeFormat(language, {
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false,
+  }),
+});
 const EventTextfieldView = ({ content }) => {
   const Image = config.getComponent({ name: 'Image' }).component;
   return (
@@ -42,13 +62,12 @@ const EventTextfieldView = ({ content }) => {
   );
 };
 
-const formatDayTime = ({
+export const formatDayTime = ({
   isOpenEnd,
   wholeDay,
   formatter,
   Dateformatter,
   TimeFormatter,
-  hasDailyFrequency,
   start,
   end,
 }) => {
@@ -67,10 +86,6 @@ const formatDayTime = ({
   // Case 3: Single day, start-end time with dot separator
   if (Dateformatter.format(start) === Dateformatter.format(end)) {
     return `${Dateformatter.format(start)} · ${TimeFormatter.format(start)}–${TimeFormatter.format(end)}`;
-  }
-  // Case 7: Daily frequency, with start and end time
-  if (hasDailyFrequency) {
-    return `${Dateformatter.formatRange(start, end)} · daily ${TimeFormatter.format(start)}–${TimeFormatter.format(end)}`;
   }
   // Case 6,10 : Multi day, with start and end time (normal)
   return formatter.formatRange(start, end);
@@ -92,37 +107,14 @@ const EventView = (props) => {
   const end = content.end ? new Date(content.end) : null;
   const isOpenEnd = !!content.open_end;
   const wholeDay = !!content.whole_day;
-  const hasDailyFrequency =
-    typeof content.recurrence === 'string' &&
-    content.recurrence.toUpperCase().includes('FREQ=DAILY');
-
-  const formatter = new Intl.DateTimeFormat(language, {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-    hour: 'numeric',
-    minute: 'numeric',
-    hour12: false,
-  });
-
-  const Dateformatter = new Intl.DateTimeFormat(language, {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-  });
-
-  const TimeFormatter = new Intl.DateTimeFormat(language, {
-    hour: '2-digit',
-    minute: '2-digit',
-    hour12: false,
-  });
+  const { formatter, Dateformatter, TimeFormatter } =
+    createEventFormatters(language);
 
   const DayTimeFormatted = formatDayTime({
     isOpenEnd,
     wholeDay,
     TimeFormatter,
     Dateformatter,
-    hasDailyFrequency,
     formatter,
     start,
     end,
