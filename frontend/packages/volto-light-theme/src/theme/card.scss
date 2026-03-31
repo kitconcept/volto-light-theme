@@ -87,10 +87,6 @@
   }
 
   // Contained
-  .contained & .card-inner {
-    background: var(--theme-high-contrast-color);
-  }
-
   .contained & .card-summary {
     padding-right: $spacing-small;
     padding-left: $spacing-small;
