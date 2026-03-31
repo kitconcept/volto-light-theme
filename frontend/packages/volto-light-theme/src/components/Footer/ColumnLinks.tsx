@@ -14,8 +14,8 @@ const ColumnLinks = (props: ColumnLinksProps) => {
         ? links.map((link) => {
             if (isEmpty(link) || !link.href) return null;
 
-            const title = link.title || link.href[0]['title'];
-            const href = flattenToAppURL(link.href[0]?.['@id']);
+            const title = link?.title || link?.href[0]?.['title'];
+            const href = flattenToAppURL(link?.href[0]?.['@id']);
 
             if (!href) return null;
 

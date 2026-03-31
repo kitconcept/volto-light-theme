@@ -94,13 +94,14 @@
 
     .logo {
       display: flex;
-      justify-content: center;
       margin: 5rem 0 1.8rem 0;
-
+      max-width: 300px;
+      max-height: 90px;
+      flex: 1 1 0;
+    
       a {
         display: block;
-        max-width: 200px;
-        max-height: 80px;
+        max-width: 100%;
 
         img {
           max-width: 100%;
@@ -143,6 +144,14 @@
 
         img {
           margin-bottom: 38px;
+        }
+      }
+
+      .column-left,
+      .column-middle,
+      .column-right {
+        &:has(ul:empty):not(:has(h2)) {
+          display: none;
         }
       }
 
