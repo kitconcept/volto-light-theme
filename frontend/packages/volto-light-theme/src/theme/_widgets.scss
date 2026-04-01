@@ -247,6 +247,44 @@ span.color-contrast-label {
   font-size: 14px;
 }
 
+.google-search-preview {
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+
+  .preview-heading {
+    font-size: 16px;
+    font-weight: 500;
+    color: $darkGrey;
+  }
+  .preview-breadcrumb {
+    color: $darkGrey;
+    font-size: 16px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .preview-title {
+    margin: 0 0 3px;
+    overflow: hidden;
+    color: #1a0dab;
+    font-size: 18px;
+    font-weight: 400;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .preview-description {
+    display: -webkit-box;
+    overflow: hidden;
+    color: $darkGrey;
+    font-size: 16px;
+    -webkit-box-orient: vertical;
+    line-clamp: 3;
+    -webkit-line-clamp: 3;
+    text-overflow: ellipsis;
+  }
+}
+
 .field-wrapper-preview_image_link
   .image-upload-widget-image
   .image-upload-widget-toolbar

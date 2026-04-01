@@ -11,6 +11,7 @@ import { iconLinkListSchema } from '../components/Widgets/schema/iconLinkListSch
 import ModalJSONEditor from '../components/Widgets/ModalJSONEditor';
 import SoftTextWidget from '../components/Widgets/SoftTextWidget';
 import SoftTextareaWidget from '../components/Widgets/SoftTextareaWidget';
+import GoogleSearchPreviewWidget from '../components/Widgets/GoogleSearchPreviewWidget';
 
 export default function install(config: ConfigType) {
   // Color picker widget override - use our own non-semanticUI widget
@@ -31,6 +32,7 @@ export default function install(config: ConfigType) {
   config.widgets.widget.themeColorSwatch = ThemeColorSwatch;
   config.widgets.widget.softTextWidget = SoftTextWidget;
   config.widgets.widget.softTextareaWidget = SoftTextareaWidget;
+  config.widgets.widget.googleSearchPreviewWidget = GoogleSearchPreviewWidget;
 
   config.widgets.widget.modalJSONEditor = ModalJSONEditor;
 
