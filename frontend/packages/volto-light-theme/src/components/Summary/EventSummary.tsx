@@ -38,7 +38,7 @@ const EventSummary = (props: DefaultSummaryProps) => {
       <HeadingTag className="title" id={a11yLabelId}>
         <LinkToItem>{item.title ? item.title : item.id}</LinkToItem>
       </HeadingTag>
-      {!hide_description && (
+      {!hide_description && item?.description !== '' && (
         <p className="description">{smartTextRenderer(item.description)}</p>
       )}
     </>
