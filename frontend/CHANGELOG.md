@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 7.8.4 (2026-04-02)
+
+### Bugfix
+
+- Reduce sticky menu z-index to prevent overlap issues with mobile navigation. @jackahl 
+
 ## 7.8.3 (2026-03-25)
 
 ### Bugfix

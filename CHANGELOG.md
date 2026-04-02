@@ -1,6 +1,30 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 7.8.4 (2026-04-02)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Reduce sticky menu z-index to prevent overlap issues with mobile navigation. @jackahl 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 7.8.3 (2026-03-25)
 
 ### Backend
