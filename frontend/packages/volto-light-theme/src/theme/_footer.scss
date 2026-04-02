@@ -318,6 +318,17 @@
   }
 
   .colophon {
+    @include add(size, xs);
+    @include add(height, s);
+
+    a {
+      @include add(size, xs);
+      @include add(height, s);
+      color: var(--footer-foreground);
+      font: inherit;
+      text-decoration: underline;
+    }
+
     p {
       @include add(size, xs);
       @include add(height, s);
@@ -334,22 +345,19 @@
         @include add(size, xs);
         @include add(height, s);
         color: var(--footer-foreground);
-        font-style: inherit;
-        font-weight: inherit;
+        font: inherit;
         text-decoration: underline;
       }
+    }
 
-      img {
-        margin-top: 25px;
-      }
+    img {
+      margin-top: 25px;
     }
 
     h2 {
       a {
         color: var(--footer-foreground);
-        font-size: inherit;
-        font-style: inherit;
-        font-weight: inherit;
+        font: inherit;
         line-height: inherit;
         text-decoration: underline;
       }
@@ -358,9 +366,7 @@
       a {
         color: var(--footer-foreground);
 
-        font-size: inherit;
-        font-style: inherit;
-        font-weight: inherit;
+        font: inherit;
         line-height: inherit;
         text-decoration: underline;
       }
