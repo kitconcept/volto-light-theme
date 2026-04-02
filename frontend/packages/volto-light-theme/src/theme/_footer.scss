@@ -293,6 +293,7 @@
         @include add(size, xs);
         @include add(height, s);
         color: var(--footer-foreground);
+        text-decoration: underline;
       }
     }
   }
@@ -317,18 +318,52 @@
   }
 
   .colophon {
-    @include add(size, xs);
-    @include add(height, s);
-
-    a {
+    p {
       @include add(size, xs);
       @include add(height, s);
-      color: var(--footer-foreground);
-      text-decoration: underline;
+      margin-bottom: 0px;
+
+      strong {
+        font-weight: 700;
+      }
+      em {
+        font-style: italic;
+      }
+
+      a {
+        @include add(size, xs);
+        @include add(height, s);
+        color: var(--footer-foreground);
+        font-style: inherit;
+        font-weight: inherit;
+        text-decoration: underline;
+      }
+
+      img {
+        margin-top: 25px;
+      }
     }
 
-    img {
-      margin-top: 25px;
+    h2 {
+      a {
+        color: var(--footer-foreground);
+        font-size: inherit;
+        font-style: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+        text-decoration: underline;
+      }
+    }
+    h3 {
+      a {
+        color: var(--footer-foreground);
+
+        font-size: inherit;
+        font-style: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+        text-decoration: underline;
+      }
     }
 
     &:before {
