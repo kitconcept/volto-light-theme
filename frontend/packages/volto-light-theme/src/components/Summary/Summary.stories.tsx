@@ -22,15 +22,17 @@ type Story = StoryObj<typeof meta>;
 
 export const Summary: Story = {
   render: (args) => (
-    <div style={{ width: '300px' }}>
-      <Wrapper>
-        <DefaultSummary {...args} />
-      </Wrapper>
+    <div className="card" style={{ width: '300px' }}>
+      <div className="card-summary">
+        <Wrapper>
+          <DefaultSummary {...args} />
+        </Wrapper>
+      </div>
     </div>
   ),
   args: {
     item: {
-      title: 'Simple Card with strings',
+      title: 'Summary',
       description:
         'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
       head_title: 'Simple Card',
@@ -40,15 +42,17 @@ export const Summary: Story = {
 
 export const SummaryWithLink: Story = {
   render: (args) => (
-    <div style={{ width: '300px' }}>
-      <Wrapper>
-        <DefaultSummary {...args} />
-      </Wrapper>
+    <div className="card" style={{ width: '300px' }}>
+      <div className="card-summary">
+        <Wrapper>
+          <DefaultSummary {...args} />
+        </Wrapper>
+      </div>
     </div>
   ),
   args: {
     item: {
-      title: 'Simple Card with strings',
+      title: 'Summary',
       description:
         '[Lorem ipsum](https://example.com) dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
       head_title: 'Simple Card',
@@ -58,15 +62,17 @@ export const SummaryWithLink: Story = {
 
 export const SummaryHideDescription: Story = {
   render: (args) => (
-    <div style={{ width: '300px' }}>
-      <Wrapper>
-        <DefaultSummary {...args} />
-      </Wrapper>
+    <div className="card" style={{ width: '300px' }}>
+      <div className="card-summary">
+        <Wrapper>
+          <DefaultSummary {...args} />
+        </Wrapper>
+      </div>
     </div>
   ),
   args: {
     item: {
-      title: 'Simple Card with strings',
+      title: 'Summary',
       description:
         'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
       head_title: 'Simple Card',
@@ -77,15 +83,17 @@ export const SummaryHideDescription: Story = {
 
 export const NewsItemSummary: Story = {
   render: (args) => (
-    <div style={{ width: '300px' }}>
-      <Wrapper>
-        <NewsItemSummaryComponent {...args} />
-      </Wrapper>
+    <div className="card" style={{ width: '300px' }}>
+      <div className="card-summary">
+        <Wrapper>
+          <NewsItemSummaryComponent {...args} />
+        </Wrapper>
+      </div>
     </div>
   ),
   args: {
     item: {
-      title: 'Simple Card with strings',
+      title: 'Summary',
       description:
         'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
       head_title: 'Simple Card',
@@ -98,15 +106,17 @@ export const NewsItemSummary: Story = {
 
 export const EventSummary: Story = {
   render: (args) => (
-    <div style={{ width: '300px' }}>
-      <Wrapper>
-        <EventSummaryComponent {...args} />
-      </Wrapper>
+    <div className="card" style={{ width: '300px' }}>
+      <div className="card-summary">
+        <Wrapper>
+          <EventSummaryComponent {...args} />
+        </Wrapper>
+      </div>
     </div>
   ),
   args: {
     item: {
-      title: 'Simple Card with strings',
+      title: 'Summary',
       description:
         'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
       head_title: 'Simple Card',
@@ -119,17 +129,23 @@ export const EventSummary: Story = {
 
 export const FileSummary: Story = {
   render: (args) => (
-    <div style={{ width: '300px' }}>
-      <Wrapper>
-        <FileSummaryComponent {...args} />
-      </Wrapper>
+    <div className="card" style={{ width: '300px' }}>
+      <div className="card-summary">
+        <Wrapper>
+          <div className="file-teaser">
+            <FileSummaryComponent {...args} />
+          </div>
+        </Wrapper>
+      </div>
     </div>
   ),
   args: {
     item: {
-      title: 'Simple Card with strings',
+      title: 'Summary',
       description:
         'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
+      getObjSize: '72.7 KB',
+      mime_type: 'application/pdf',
       head_title: 'Simple Card',
       start: '2023-01-01T11:00:00+00:00',
       end: '2023-12-31T12:00:00+00:00',
