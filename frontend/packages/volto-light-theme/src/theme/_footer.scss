@@ -293,6 +293,7 @@
         @include add(size, xs);
         @include add(height, s);
         color: var(--footer-foreground);
+        text-decoration: underline;
       }
     }
   }
@@ -324,14 +325,16 @@
       width: fit-content;
       margin-right: auto;
       margin-left: auto;
+      @include add(size, xs);
+      @include add(height, s);
       ul,
       ol,
       li,
       p,
       a {
         margin-bottom: 0;
-        @include add(size, xs);
-        @include add(height, s);
+        font: inherit;
+        line-height: inherit;
       }
     }
 
@@ -339,6 +342,12 @@
       color: var(--footer-foreground);
       font: inherit;
       text-decoration: underline;
+    }
+
+    p {
+      @include add(size, xs);
+      @include add(height, s);
+      margin-bottom: 0;
     }
 
     img {
