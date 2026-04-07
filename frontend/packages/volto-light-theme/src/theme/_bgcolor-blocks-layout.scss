@@ -1108,7 +1108,7 @@
     }
   }
 
-  table.ui.table.slate-table-block {
+  table.ui.celled.table.slate-table-block {
     border-color: var(--theme-low-contrast-foreground-color);
 
     tr td,
@@ -1118,11 +1118,10 @@
 
     th {
       background-color: var(--theme-high-contrast-color) !important;
+      color: var(--theme-low-contrast-foreground-color);
 
-      p,
-      h2,
-      h3 {
-        color: var(--theme-low-contrast-foreground-color) !important;
+      * {
+        color: inherit;
       }
     }
 
