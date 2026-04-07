@@ -1109,11 +1109,19 @@
   }
 
   table.ui.celled.table.slate-table-block {
-    border-color: color-mix(in srgb, var(--theme-color) 75%, var(--theme-foreground-color));
+    border-color: color-mix(
+      in srgb,
+      var(--theme-color) 75%,
+      var(--theme-foreground-color)
+    );
 
     tr td,
     th {
-      border-color: color-mix(in srgb, var(--theme-color) 75%, var(--theme-foreground-color));
+      border-color: color-mix(
+        in srgb,
+        var(--theme-color) 75%,
+        var(--theme-foreground-color)
+      );
     }
 
     th {
