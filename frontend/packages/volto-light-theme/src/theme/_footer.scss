@@ -325,14 +325,16 @@
       width: fit-content;
       margin-right: auto;
       margin-left: auto;
+      @include add(size, xs);
+      @include add(height, s);
       ul,
       ol,
       li,
       p,
       a {
         margin-bottom: 0;
-        @include add(size, xs);
-        @include add(height, s);
+        font: inherit;
+        line-height: inherit;
       }
     }
 
@@ -345,44 +347,11 @@
     p {
       @include add(size, xs);
       @include add(height, s);
-      margin-bottom: 0px;
-
-      strong {
-        font-weight: 700;
-      }
-      em {
-        font-style: italic;
-      }
-
-      a {
-        @include add(size, xs);
-        @include add(height, s);
-        color: var(--footer-foreground);
-        font: inherit;
-        text-decoration: underline;
-      }
+      margin-bottom: 0;
     }
 
     img {
       margin-top: 25px;
-    }
-
-    h2 {
-      a {
-        color: var(--footer-foreground);
-        font: inherit;
-        line-height: inherit;
-        text-decoration: underline;
-      }
-    }
-    h3 {
-      a {
-        color: var(--footer-foreground);
-
-        font: inherit;
-        line-height: inherit;
-        text-decoration: underline;
-      }
     }
 
     &:before {
