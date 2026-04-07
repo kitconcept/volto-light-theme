@@ -17,22 +17,12 @@
   & > strong,
   & > em,
   & > figcaption,
-  & > a:not(.item),
+  & > a,
   & > blockquote,
   & > h2,
   & > h3,
   & > h1 {
     color: var(--theme-foreground-color);
-  }
-
-  :not(.teaser-item)
-    > a:not(.item):not(
-      :has(> .teaser-item),
-      :has(> .listing-body),
-      :has(> .card-container)
-    ) {
-    color: var(--link-foreground-color, --theme-foreground-color);
-    text-decoration: underline;
   }
 
   &:first-child:has(> .documentFirstHeading) {
@@ -503,7 +493,8 @@
     &.listing,
     &.search,
     &.rssBlock {
-      h2.headline {
+      h2.headline,
+      h2.block-title {
         color: var(--theme-foreground-color);
       }
 
@@ -514,40 +505,26 @@
       .listing-item {
         border-bottom-color: var(--theme-foreground-color) !important;
 
-        a > .listing-body {
-          .headline,
-          h3,
-          h2,
-          a,
-          p,
-          span {
-            color: var(--theme-foreground-color);
-          }
+        .headline,
+        h3,
+        h2,
+        a,
+        p,
+        span {
+          color: var(--theme-foreground-color);
         }
 
         .head-title span,
         .head-title {
           color: var(--theme-foreground-color);
         }
-
-        .card-container {
-          background-color: var(--theme-high-contrast-color);
-
-          .content,
-          .content p {
-            color: var(--theme-foreground-color);
-          }
-        }
       }
-      /* I have removed the .card-container className that's why I have to write this css
-       * I will remove all the .card-container className from repo.
-      */
       &.grid .card,
       & .grid-variation .card {
         background-color: var(--theme-high-contrast-color);
 
-        .content,
-        .content p {
+        .card-summary,
+        .card-summary p {
           color: var(--theme-foreground-color);
         }
       }

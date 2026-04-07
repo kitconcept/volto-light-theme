@@ -1,0 +1,1 @@
+Improve Card component link handling by using a CSS stretched-link pattern & other minor style fixes for consistency. Breaking: custom `Summary` components must now accept and use the `LinkToItem` prop; category labels changed from heading tags to `<ul>` elements. See the upgrade guide for migration steps. @danalvrz
