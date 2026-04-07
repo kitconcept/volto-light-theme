@@ -158,8 +158,7 @@ footer {
 .content-area .ui.container,
 .content-area .q.container,
 .content-area .a.container {
-  a.external:after,
-  a.external:after {
+  a.external:not(.card-primary-link):after {
     @include external-link-icon();
     margin-top: -25px;
     margin-left: 3px;
@@ -173,8 +172,7 @@ footer {
 .content-area #page-edit .ui.container,
 .content-area .q.container,
 .content-area .a.container {
-  a.external:after,
-  a.external:after {
+  a.external:not(.card-primary-link):after {
     @include external-link-icon();
     margin-top: -25px;
     margin-left: 3px;
@@ -196,8 +194,7 @@ External & Mail link removal for all the blocks.
   .block.listing,
   .block.image,
   .block.teaser {
-    a.external:after,
-    a.external:after {
+    a.external:not(.card-primary-link):after {
       display: none;
     }
     p a[href^='mailto:']:after {
@@ -260,11 +257,11 @@ External & Mail link removal for all the blocks.
   & > .block.search.grid,
   & > .block.rssBlock,
   & > .block.search .searchBlock-container,
-  &> .block.eventsearch .search-block-event,
+  & > .block.eventsearch .search-block-event,
+  & > .block h2.block-title,
   & > .block h2.headline,
   & > .block.heading .heading-wrapper,
-  & > .block.teaser .teaser-item.default,
-  & > .block.teaser .card-inner, // deprecate when category is in place
+  & > .block.teaser,
   & > .block.highlight .teaser-description-title,
   & > table,
   & > .table-of-contents,
@@ -275,7 +272,6 @@ External & Mail link removal for all the blocks.
     @include adjustMarginsToContainer($default-container-width);
   }
 
-  & > .block.teaser,
   & > .block.image.align.full,
   & > .block.video.align.full,
   & > .block.maps.align.full {

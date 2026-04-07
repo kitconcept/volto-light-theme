@@ -116,7 +116,7 @@ context('Blocks Acceptance Tests', () => {
         expect($img[0].naturalWidth).to.be.greaterThan(0);
         expect($img[0].naturalHeight).to.be.greaterThan(0);
       });
-    cy.get('.block.teaser .card-summary h2')
+    cy.get('.block.teaser .card-summary .title')
       .contains('Blue Orchids')
       .should('be.visible');
     cy.get('.block.teaser .card-summary p')
@@ -129,7 +129,7 @@ context('Blocks Acceptance Tests', () => {
     cy.get('#field-hide_description')
       .check({ force: true })
       .should('be.checked');
-    cy.get('.block.teaser:first .card-summary h2').contains('Blue Orchids');
+    cy.get('.block.teaser:first .card-summary .title').contains('Blue Orchids');
     cy.get('.block.teaser:first .card-inner .card-summary')
       .should('be.visible')
       .should('not.contain', 'are growing on the mountain tops');

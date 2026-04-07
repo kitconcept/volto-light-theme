@@ -39,7 +39,7 @@ const Headline = ({
       mode={!isEditMode && 'view'}
       children={data.headline}
       attributes={attr}
-      className={cx('headline', {
+      className={cx('headline block-title', {
         emptyListing: !listingItems?.length > 0,
       })}
       style={style}

@@ -1,8 +1,3 @@
-// Override the Image component `aspect-ratio`
-.teaser-item .image-wrapper img {
-  aspect-ratio: var(--image-aspect-ratio, $aspect-ratio) !important;
-}
-
 // Block Teaser Standalone
 #page-document .block.teaser {
   @include vertical-space-teaser();
@@ -19,125 +14,18 @@
     }
   }
 
-  a.external + .card-inner {
-    .card-summary h2:after {
-      @include external-link-icon();
-      margin-left: 3px;
-    }
-  }
-
-  .teaser-item:not(.placeholder) {
-    align-items: start;
-    padding-bottom: 40px; // same as vertical spacing in margin-bottom
-    border-bottom: 1px solid $black;
-  }
-
-  .image-wrapper {
-    width: 100%;
-  }
-
-  &.has--align--left,
-  &.has--align--right {
-    .card-inner {
-      padding-bottom: 40px;
-    }
-
-    .teaser-item.default {
-      display: flex;
-
-      .image-wrapper {
-        align-self: flex-start;
-      }
-
-      @media only screen and (max-width: $largest-mobile-screen) {
-        flex-direction: column !important;
-      }
-    }
-  }
-
-  &.has--align--left {
-    .teaser-item.default {
-      flex-direction: row;
-
-      .image-wrapper {
-        margin-right: 20px;
-
-        @media only screen and (max-width: $largest-mobile-screen) {
-          margin-right: 0;
-          margin-bottom: 26px;
-        }
-      }
-    }
-  }
-
-  &.has--align--right {
-    .teaser-item.default {
-      flex-direction: row-reverse;
-
-      .image-wrapper {
-        margin-right: 0px;
-        margin-left: 20px;
-
-        @media only screen and (max-width: $largest-mobile-screen) {
-          margin-bottom: 26px;
-          margin-left: 0;
-        }
-      }
-    }
-  }
-
-  &.has--align--center {
-    .teaser-item.default {
-      display: block;
-      a {
-        display: block;
-      }
-
-      .image-wrapper {
-        margin-bottom: 26px;
-        @container (max-width: #{$largest-mobile-screen}) {
-          margin: 0 0 20px 0 !important;
-        }
-      }
-    }
-  }
-
-  .card-summary {
-    .headline {
-      margin-bottom: 20px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      @include headtitle1();
-    }
-    h2 {
-      margin-top: 0;
-      margin-bottom: 20px;
-      @include text-heading-h2();
-      @container (max-width: #{$largest-mobile-screen}) {
-        @include text-heading-h3();
-        margin-bottom: 20px;
-      }
-    }
-    p {
-      margin: 0;
-      @include body-text();
-    }
-  }
-
   &.is--last--of--block-type,
   &.next--has--different--backgroundColor {
-    .card-inner,
-    .teaser-item.default {
+    .card-inner {
       padding-bottom: 0;
       border-bottom: none;
     }
-    &.next--is--__button {
-      margin-bottom: 0 !important;
-      .card-inner,
-      .teaser-item.default {
-        padding-bottom: 40px;
-        border-bottom: 1px solid;
-      }
+  }
+  &.next--is--__button {
+    margin-bottom: 0 !important;
+    .card-inner {
+      padding-bottom: $spacing-medium;
+      border-bottom: 1px solid;
     }
   }
 }
