@@ -37,14 +37,6 @@
     padding-top: 0;
     margin-bottom: 0;
 
-    // External link icon
-    a.external + .card-inner {
-      .card-summary h2:after {
-        @include external-link-icon();
-        margin-left: 3px;
-      }
-    }
-
     a {
       text-decoration: none;
     }
@@ -54,39 +46,6 @@
           --file-image-aspect-ratio,
           $aspect-ratio-A4
         ) !important;
-      }
-    }
-
-    .teaser-item {
-      height: 100%;
-
-      .image-wrapper {
-        margin-bottom: $spacing-medium;
-
-        img {
-          position: relative;
-        }
-      }
-      .content {
-        padding: 0 $spacing-small $spacing-small $spacing-small;
-        @include body-text();
-
-        .headline {
-          margin-bottom: $spacing-small;
-          letter-spacing: 1px;
-          text-transform: uppercase;
-          @include headtitle1();
-        }
-
-        h2 {
-          padding: 0;
-          margin-bottom: $spacing-small !important;
-          @include text-heading-h3();
-        }
-
-        p {
-          margin-bottom: $spacing-small;
-        }
       }
     }
   }
@@ -304,11 +263,6 @@
 #page-add .block-editor-gridBlock .block.gridBlock {
   @media only screen and (min-width: $largest-mobile-screen) {
     .one {
-      .block.teaser .teaser-item .content h2 {
-        margin-bottom: $spacing-medium !important;
-        @include text-heading-h2();
-      }
-
       .slate {
         h2 {
           margin-bottom: $spacing-medium !important;
@@ -331,14 +285,6 @@
 
     .two,
     .three {
-      .teaser {
-        .teaser-item .content {
-          h2 {
-            margin-bottom: $spacing-small !important;
-            @include text-heading-h3();
-          }
-        }
-      }
       .image {
         figcaption {
           .title {
@@ -365,26 +311,6 @@
     }
 
     .four {
-      .teaser {
-        .teaser-item {
-          .image-wrapper {
-            margin-bottom: $spacing-small !important;
-          }
-          .content {
-            .headline {
-              @include headtitle2();
-            }
-            h2 {
-              margin-bottom: $spacing-small !important;
-              @include text-heading-h4();
-            }
-            p {
-              margin-bottom: 0;
-            }
-          }
-        }
-      }
-
       .image {
         figcaption {
           .title {
@@ -435,10 +361,6 @@
 // Teasers in grids specific
 #page-document .block.gridBlock .block.teaser {
   margin-bottom: 0;
-}
-
-.block.gridBlock h2.title {
-  margin-bottom: $spacing-small !important;
 }
 
 // Watch out for the following rule, it is used to override the default

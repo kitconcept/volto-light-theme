@@ -293,6 +293,7 @@
         @include add(size, xs);
         @include add(height, s);
         color: var(--footer-foreground);
+        text-decoration: underline;
       }
     }
   }
@@ -320,11 +321,33 @@
     @include add(size, xs);
     @include add(height, s);
 
-    a {
+    .slate.widget {
+      width: fit-content;
+      margin-right: auto;
+      margin-left: auto;
       @include add(size, xs);
       @include add(height, s);
+      ul,
+      ol,
+      li,
+      p,
+      a {
+        margin-bottom: 0;
+        font: inherit;
+        line-height: inherit;
+      }
+    }
+
+    a {
       color: var(--footer-foreground);
+      font: inherit;
       text-decoration: underline;
+    }
+
+    p {
+      @include add(size, xs);
+      @include add(height, s);
+      margin-bottom: 0;
     }
 
     img {
@@ -337,6 +360,9 @@
       border-top: 1px solid var(--footer-foreground, $black);
       content: '';
       @include default-container-width();
+    }
+    &:has(.slate p:only-child:empty) {
+      display: none;
     }
   }
 

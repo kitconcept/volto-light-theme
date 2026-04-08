@@ -33,10 +33,8 @@ header .navigation .item {
 
 .content-area,
 .breadcrumbs {
-  p > a,
-  li > a,
-  .breadcrumb a {
-    color: $blue-for-grey-contrast;
+  a:not(.card-primary-link, .label) {
+    color: var(--link-foreground-color, var(--theme-foreground-color));
     text-decoration: underline;
   }
 }
@@ -95,7 +93,8 @@ h1.documentFirstHeading:last-child {
 }
 
 // Block Title
-.block h2.headline {
+.block h2.headline,
+.block h2.block-title {
   @include block-title();
   @include vertical-space-block-title();
 }
@@ -173,5 +172,13 @@ h4 {
   .head-title,
   .head-title span {
     user-select: none;
+  }
+}
+
+// Control panel view
+body.view-controlpanelview {
+  h3.ui.icon.header {
+    @include add(size, s);
+    @include add(height, m);
   }
 }
