@@ -103,10 +103,21 @@ const Navigation = ({ pathname }: NavigationProps) => {
     setCurrentOpenIndex(null);
   };
 
+  const doesScrollbarContainClick = (
+    element: Element,
+    event: MouseEvent,
+  ): boolean => {
+    const rect = element.getBoundingClientRect();
+    return event.clientX > rect.left + element.clientWidth;
+  };
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (navigation.current && doesNodeContainClick(navigation.current, event))
         return;
+      // check if scrollbar is clicked
+      if (doesScrollbarContainClick(navigation.current!, event)) return;
+
       closeMenu();
     };
 
