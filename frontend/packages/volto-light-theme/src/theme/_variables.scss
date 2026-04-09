@@ -456,8 +456,17 @@ $line-heights: (
   white-space: nowrap;
 }
 
-@mixin floating-image($size: 'l') {
+@mixin floating-image($size: 'l', $align: 'left') {
   height: auto;
+  margin-bottom: 20px !important;
+
+  @if $align == 'right' {
+    margin-left: 20px !important;
+    float: right;
+  } @else if $align == 'left' {
+    margin-right: 20px !important;
+    float: left;
+  }
 
   @if $size == 's' {
     width: calc(37.1% - 10px);

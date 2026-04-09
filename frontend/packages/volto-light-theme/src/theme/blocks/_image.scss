@@ -72,18 +72,30 @@ figure {
       }
     }
 
-    &.left,
-    &.right {
+    &.left {
       &.large {
-        @include floating-image('l');
+        @include floating-image('l', 'left');
       }
 
       &.medium {
-        @include floating-image('m');
+        @include floating-image('m', 'left');
       }
 
       &.small {
-        @include floating-image('s');
+        @include floating-image('s', 'left');
+      }
+    }
+    &.right {
+      &.large {
+        @include floating-image('l', 'right');
+      }
+
+      &.medium {
+        @include floating-image('m', 'right');
+      }
+
+      &.small {
+        @include floating-image('s', 'right');
       }
     }
 
@@ -216,8 +228,6 @@ figcaption {
     margin-bottom: 0 !important;
 
     .video-inner {
-      margin-bottom: 20px !important;
-      @include floating-image('l');
       @media only screen and (max-width: $tablet-breakpoint) {
         width: 100%;
       }
@@ -232,11 +242,11 @@ figcaption {
   }
 
   &.align.left .video-inner {
-    margin-right: 20px !important;
+    @include floating-image('l', 'left');
   }
 
   &.align.right .video-inner {
-    margin-left: 20px !important;
+    @include floating-image('l', 'right');
   }
 }
 
