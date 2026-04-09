@@ -103,14 +103,6 @@ const Navigation = ({ pathname }: NavigationProps) => {
     setCurrentOpenIndex(null);
   };
 
-  const doesVerticalScrollbarContainClick = (
-    element: Element,
-    event: MouseEvent,
-  ): boolean => {
-    const rect = element.getBoundingClientRect();
-    return event.clientX > rect.left + element.clientWidth;
-  };
-
   const doesScrollbarContainClick = (
     element: Element,
     event: MouseEvent,
