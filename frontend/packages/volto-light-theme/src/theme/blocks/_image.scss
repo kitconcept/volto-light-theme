@@ -31,6 +31,8 @@ figure {
   }
 
   figure {
+    width: 50%;
+
     img {
       width: 100% !important;
       height: auto;
@@ -73,28 +75,15 @@ figure {
     &.left,
     &.right {
       &.large {
-        width: 50%;
-        height: auto;
-
-        @media only screen and (max-width: 768px) {
-          width: 100%;
-        }
+        @include floating-image('l');
       }
 
       &.medium {
-        width: 50%;
-        height: auto;
-        @media only screen and (max-width: 768px) {
-          width: 100%;
-        }
+        @include floating-image('m');
       }
 
       &.small {
-        width: 25%;
-        height: auto;
-        @media only screen and (max-width: 768px) {
-          width: 100%;
-        }
+        @include floating-image('s');
       }
     }
 
@@ -228,6 +217,7 @@ figcaption {
 
     .video-inner {
       margin-bottom: 20px !important;
+      @include floating-image('l');
       @media only screen and (max-width: $tablet-breakpoint) {
         width: 100%;
       }

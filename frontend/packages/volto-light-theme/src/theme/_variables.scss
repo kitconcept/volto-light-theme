@@ -449,3 +449,22 @@ $line-heights: (
     no-repeat center;
   white-space: nowrap;
 }
+
+@mixin floating-image($size: 'l') {
+  height: auto;
+
+  @if $size == 's' {
+    width: calc(37.1% - 10px);
+    // border: red 5px dotted;
+  } @else if $size == 'm' {
+    width: calc(50% - 10px);
+    // border: green 5px dotted;
+  } @else {
+    width: calc(50% - 10px);
+    // border: blue 5px dotted;
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
+}
