@@ -1,0 +1,1 @@
+Updated css for floating blocks like image, map and video blocks according to new figma specs. @TimoBroeskamp
