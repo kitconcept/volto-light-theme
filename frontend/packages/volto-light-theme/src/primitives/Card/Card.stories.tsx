@@ -165,7 +165,10 @@ export const CustomImage: Story = {
   render: (args) => (
     <div
       className="card-listing"
-      style={{ width: 'var(--default-container-width)' }}
+      style={{
+        width: 'var(--default-container-width)',
+        '--theme-high-contrast-color': '#ecebeb',
+      }}
     >
       <Card href={args.href}>
         <Card.Image>

@@ -38,15 +38,19 @@ Volto Light Theme includes the following summary implementations for core conten
 
 You can create a custom summary implementation and register it for a content type.
 
-The summary component must accept `item` and `HeadingTag` as props.
+The summary component must accept `item`, `HeadingTag`, and `LinkToItem` as props.
+`LinkToItem` is a component passed down from the `Card` primitive that wraps the title in a link.
+It defaults to `React.Fragment` when the summary is used outside of a `Card`, so the title renders as plain text.
+
 Here is an example which renders the publication date for a `Blog Post` content type:
 
 ```jsx
+import React from 'react';
 import { parseDateFromCatalog } from '@kitconcept/volto-light-theme/helpers/dates';
 import FormattedDate from '@plone/volto/components/theme/FormattedDate/FormattedDate';
 
 const BlogPostSummary = (props) => {
-  const { item, HeadingTag = 'h3' } = props;
+  const { item, LinkToItem = React.Fragment, HeadingTag = 'h3' } = props;
 
   const effective = parseDateFromCatalog(item.effective);
   const headline = [
@@ -72,7 +76,7 @@ const BlogPostSummary = (props) => {
     <>
       {headline.length ? <div className="headline">{headline}</div> : null}
       <HeadingTag className="title">
-        {item.title ? item.title : item.id}
+        <LinkToItem>{item.title ? item.title : item.id}</LinkToItem>
       </HeadingTag>
       {!item.hide_description && (
         <p className="description">{item.description}</p>
