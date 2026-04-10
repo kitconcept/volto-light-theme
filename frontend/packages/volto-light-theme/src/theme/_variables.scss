@@ -456,27 +456,24 @@ $line-heights: (
   white-space: nowrap;
 }
 
-@mixin floating-image($size: 'l', $align: 'left') {
+@mixin floated-figure($align: 'left', $size: 'l') {
   height: auto;
-  margin-bottom: 20px !important;
+  margin-bottom: $spacing-small;
 
   @if $align == 'right' {
-    margin-left: 20px !important;
+    margin-left: $spacing-small !important;
     float: right;
   } @else if $align == 'left' {
-    margin-right: 20px !important;
+    margin-right: $spacing-small !important;
     float: left;
   }
 
   @if $size == 's' {
-    width: calc(37.1% - 10px);
-    // border: red 5px dotted;
+    width: calc(38% - 15px); // to match 4 column Grid images' width and spacing
   } @else if $size == 'm' {
     width: calc(50% - 10px);
-    // border: green 5px dotted;
   } @else {
     width: calc(50% - 10px);
-    // border: blue 5px dotted;
   }
 
   @media only screen and (max-width: 768px) {

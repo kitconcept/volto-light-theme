@@ -31,7 +31,6 @@ figure {
   }
 
   figure {
-    width: 50%;
 
     img {
       width: 100% !important;
@@ -74,28 +73,28 @@ figure {
 
     &.left {
       &.large {
-        @include floating-image('l', 'left');
+        @include floated-figure('left');
       }
 
       &.medium {
-        @include floating-image('m', 'left');
+        @include floated-figure('left', 'm');
       }
 
       &.small {
-        @include floating-image('s', 'left');
+        @include floated-figure('left', 's');
       }
     }
     &.right {
       &.large {
-        @include floating-image('l', 'right');
+        @include floated-figure('right');
       }
 
       &.medium {
-        @include floating-image('m', 'right');
+        @include floated-figure('right', 'm');
       }
 
       &.small {
-        @include floating-image('s', 'right');
+        @include floated-figure('right', 's');
       }
     }
 
@@ -242,11 +241,11 @@ figcaption {
   }
 
   &.align.left .video-inner {
-    @include floating-image('l', 'left');
+    @include floated-figure('left');
   }
 
   &.align.right .video-inner {
-    @include floating-image('l', 'right');
+    @include floated-figure('right');
   }
 }
 

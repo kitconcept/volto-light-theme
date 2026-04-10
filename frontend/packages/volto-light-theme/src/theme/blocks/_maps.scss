@@ -5,7 +5,7 @@
   }
   &.align.left {
     iframe {
-      @include floating-image('l', 'left');
+      @include floated-figure('left');
       height: unset;
       aspect-ratio: var(--image-aspect-ratio, $aspect-ratio);
       @container (max-width: #{$largest-mobile-screen}) {
@@ -17,7 +17,7 @@
   }
   &.align.right {
     iframe {
-      @include floating-image('l', 'right');
+      @include floated-figure('right');
       height: unset;
       aspect-ratio: var(--image-aspect-ratio, $aspect-ratio);
       @container (max-width: #{$largest-mobile-screen}) {

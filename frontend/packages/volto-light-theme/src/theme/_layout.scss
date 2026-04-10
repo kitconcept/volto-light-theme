@@ -366,8 +366,8 @@ External & Mail link removal for all the blocks.
   }
 
   .block-editor-title h1,
-  .block-editor-image.left.large,
-  .block-editor-image.right.large,
+  .block-editor-image.left,
+  .block-editor-image.right,
   .block-editor-video.align.left,
   .block-editor-video.align.right,
   .block.maps.align.left,
@@ -395,7 +395,7 @@ External & Mail link removal for all the blocks.
   }
 
   .block-editor-slate,
-  .block-editor-image.has--block-width--layout,
+  .block-editor-image,
   .block-editor-slider,
   .block-editor-teaser,
   .block-editor-separator.has--align--left {
