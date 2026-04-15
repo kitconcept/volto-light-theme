@@ -103,14 +103,17 @@ const Navigation = ({ pathname }: NavigationProps) => {
     setCurrentOpenIndex(null);
   };
 
-  const doesScrollbarContainClick = (
-    element: Element,
-    event: MouseEvent,
-  ): boolean => {
-    const rect = element.getBoundingClientRect();
-    if (event.clientY > rect.top + element.clientHeight) return true;
-    else if (event.clientX > rect.left + element.clientWidth) return true;
-    return false;
+  // this function doesn't close the navigation when clicking the scrollbar
+  const doesScrollbarContainClick = (event: MouseEvent): boolean => {
+    const clickedVerticalScrollbar =
+      event.clientX >= document.documentElement.clientWidth &&
+      event.clientX <= window.innerWidth;
+
+    const clickedHorizontalScrollbar =
+      event.clientY >= document.documentElement.clientHeight &&
+      event.clientY <= window.innerHeight;
+
+    return clickedVerticalScrollbar || clickedHorizontalScrollbar;
   };
 
   useEffect(() => {
@@ -118,7 +121,7 @@ const Navigation = ({ pathname }: NavigationProps) => {
       if (navigation.current && doesNodeContainClick(navigation.current, event))
         return;
       // check if scrollbar is clicked
-      if (doesScrollbarContainClick(navigation.current!, event)) return;
+      if (doesScrollbarContainClick(event)) return;
 
       closeMenu();
     };
