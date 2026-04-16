@@ -252,7 +252,6 @@ External & Mail link removal for all the blocks.
     @include adjustMarginsToContainer($default-container-width);
   }
 
-
   /* Styling align left and right in mobile view */
 
   & > h1.documentFirstHeading {
@@ -351,7 +350,6 @@ External & Mail link removal for all the blocks.
     @include layout-container-width();
     @include adjustMarginsToEditContainer($layout-container-width);
   }
-
 }
 
 // Grids adjustments (has to be paired with collections/grid.variables)

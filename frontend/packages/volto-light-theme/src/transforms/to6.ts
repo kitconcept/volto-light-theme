@@ -133,6 +133,5 @@ export function migrateToVLT6ColorAndWidthModel(data: BlocksFormData) {
 
       delete block.align;
     }
-    
   }
 }

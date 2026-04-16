@@ -20,7 +20,7 @@ const View = (props) => {
   return (
     // START CUSTOMIZATION
     <div className={cx('block video', className)} style={style}>
-    {/* // END CUSTOMIZATION */}
+      {/* // END CUSTOMIZATION */}
       <Body data={data} />
     </div>
   );
