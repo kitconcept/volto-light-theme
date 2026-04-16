@@ -121,6 +121,10 @@ figcaption {
   margin-top: $spacing-large;
   .video-inner {
     @include variable-container-width();
+
+    .placeholder {
+      width: 100% !important;
+    }
   }
   &.has--block-alignment--left {
     .video-inner {
