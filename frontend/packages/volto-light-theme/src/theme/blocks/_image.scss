@@ -118,6 +118,7 @@ figcaption {
 
 .block.video,
 .block-editor-video {
+  margin-top: $spacing-large;
   .video-inner {
     @include variable-container-width();
   }
