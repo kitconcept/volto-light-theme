@@ -37,12 +37,10 @@ export const ImageView = ({ className, data, detached, properties, style }) => {
   return (
     <div
       className={cx(
-        'block image align',
+        'block image',
         {
-          center: !Boolean(data.align),
           detached,
         },
-        data.align,
         className,
       )}
       style={style}
@@ -55,16 +53,14 @@ export const ImageView = ({ className, data, detached, properties, style }) => {
                 className={cx(
                   'figure',
                   {
-                    center: !Boolean(data.align),
                     detached,
                   },
-                  data.align,
                   {
                     // START CUSTOMIZATION
                     // 'full-width': data.align === 'full',
                     // END CUSTOMIZATION
-                    large: data.size === 'l',
-                    medium: data.size === 'm' || !data.size,
+                    large: data.size === 'l' || !data.size,
+                    medium: data.size === 'm',
                     small: data.size === 's',
                   },
                 )}

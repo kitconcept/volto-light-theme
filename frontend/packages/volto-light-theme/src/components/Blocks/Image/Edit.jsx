@@ -50,32 +50,17 @@ function Edit(props) {
 
   return (
     <>
-      <div
-        className={cx(
-          'block image align',
-          {
-            center: !Boolean(data.align),
-          },
-          data.align,
-        )}
-      >
+      <div className={cx('block image')}>
         {data.url ? (
           <figure
-            className={cx(
-              'figure',
-              {
-                center: !Boolean(data.align),
-              },
-              data.align,
-              {
-                // START CUSTOMIZATION
-                // 'full-width': data.align === 'full',
-                // END CUSTOMIZATION
-                large: data.size === 'l',
-                medium: data.size === 'm' || !data.size,
-                small: data.size === 's',
-              },
-            )}
+            className={cx('figure', {
+              // START CUSTOMIZATION
+              // 'full-width': data.align === 'full',
+              // END CUSTOMIZATION
+              large: data.size === 'l' || !data.size,
+              medium: data.size === 'm',
+              small: data.size === 's',
+            })}
           >
             <Image
               // START CUSTOMIZATION - Moved to the figure

@@ -83,6 +83,27 @@ export default function install(config: ConfigType) {
     },
   );
 
+  // Blocks alignment convenience classes injection
+  const alignmentDefinitions = [
+    { style: { '--block-alignment': 'var(--align-left)' }, name: 'left' },
+    { style: { '--block-alignment': 'var(--align-center)' }, name: 'center' },
+    { style: { '--block-alignment': 'var(--align-right)' }, name: 'right' },
+  ];
+  config.settings.styleClassNameExtenders.push(
+    ({ data, classNames }: { data: any; classNames: Array<string> }) => {
+      const currentBlockAlignment =
+        getCurrentStyleByName(alignmentDefinitions, 'align:noprefix', data) ||
+        'center';
+      if (currentBlockAlignment) {
+        return [
+          ...classNames,
+          `has--block-alignment--${currentBlockAlignment}`,
+        ];
+      }
+      return classNames;
+    },
+  );
+
   config.settings.styleClassNameExtenders.push(
     ({ data, classNames }: { data: any; classNames: Array<string> }) => {
       const currentBlockBackgroundColor = data?.theme || 'default';

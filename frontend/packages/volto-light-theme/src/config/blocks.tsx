@@ -30,6 +30,8 @@ import {
   standAloneImageBlockSchemaEnhancer,
 } from '../components/Blocks/Image/schema';
 import { ImageBlockDataAdapter } from '../components/Blocks/Image/adapter';
+import { VideoBlockDataAdapter } from '../components/Blocks/Video/adapter';
+import { MapsBlockDataAdapter } from '../components/Blocks/Maps/adapter';
 
 import { AccordionSchemaEnhancer } from '../components/Blocks/Accordion/schema';
 
@@ -332,6 +334,7 @@ export default function install(config: ConfigType) {
 
   config.blocks.blocksConfig.video = {
     ...config.blocks.blocksConfig.video,
+    dataAdapter: VideoBlockDataAdapter,
     schemaEnhancer: composeSchema(
       defaultStylingSchema,
       videoBlockSchemaEnhancer,
@@ -339,6 +342,7 @@ export default function install(config: ConfigType) {
   };
   config.blocks.blocksConfig.maps = {
     ...config.blocks.blocksConfig.maps,
+    dataAdapter: MapsBlockDataAdapter,
     schemaEnhancer: composeSchema(
       defaultStylingSchema,
       mapsBlockSchemaEnhancer,

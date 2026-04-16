@@ -71,24 +71,68 @@ export function migrateToVLT6ColorAndWidthModel(data: BlocksFormData) {
       delete block.styles.align;
     }
 
-    if (
-      block['@type'] === 'image' &&
-      !['left', 'right'].includes(block?.align)
-    ) {
+    if (block['@type'] === 'image') {
+      const align = block?.align;
+      const alignmentValue =
+        align === 'left'
+          ? 'var(--align-left)'
+          : align === 'right'
+            ? 'var(--align-right)'
+            : 'var(--align-center)';
+
+      const isFloating = align === 'left' || align === 'right';
+      const isFloatingLarge =
+        isFloating &&
+        (block?.styles?.['size:noprefix'] === 'var(--size-large)' ||
+          block?.size === 'l');
+
+      const blockWidthValue =
+        align === 'wide' || isFloatingLarge
+          ? { '--block-width': 'var(--default-container-width)' }
+          : align === 'full'
+            ? { '--block-width': '100%' }
+            : { '--block-width': 'var(--narrow-container-width)' };
+
       block.styles = {
-        ...block.styles,
-        'blockWidth:noprefix':
-          block.styles?.['blockWidth:noprefix'] ??
-          findStyleByName(
-            NORMALIZED_WIDTHS,
-            block?.align === 'wide'
-              ? 'default'
-              : block?.align === 'center'
-                ? 'narrow'
-                : block.align,
-          ),
+        ...block?.styles,
+        'align:noprefix': block?.styles?.['align:noprefix'] ?? {
+          '--block-alignment': alignmentValue,
+        },
+        'blockWidth:noprefix': isFloating
+          ? blockWidthValue
+          : block?.styles?.['blockWidth:noprefix'] ?? blockWidthValue,
       };
-      block.align = 'center';
+
+      delete block.align;
     }
+
+    if (block['@type'] === 'video' || block['@type'] === 'maps') {
+      const align = block?.align;
+      const isFloating = align === 'left' || align === 'right';
+
+      const alignmentValue = isFloating
+        ? align === 'left'
+          ? 'var(--align-left)'
+          : 'var(--align-right)'
+        : 'var(--align-center)';
+
+      const blockWidthValue =
+        isFloating || align === 'wide'
+          ? { '--block-width': 'var(--default-container-width)' }
+          : align === 'full'
+            ? { '--block-width': '100%' }
+            : { '--block-width': 'var(--narrow-container-width)' };
+
+      block.styles = {
+        ...block?.styles,
+        'align:noprefix': block?.styles?.['align:noprefix'] ?? {
+          '--block-alignment': alignmentValue,
+        },
+        'blockWidth:noprefix': blockWidthValue,
+      };
+
+      delete block.align;
+    }
+    
   }
 }

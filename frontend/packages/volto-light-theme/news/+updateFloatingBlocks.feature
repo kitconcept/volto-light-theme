@@ -1,1 +1,1 @@
-Updated css for floating blocks like image, map and video blocks according to new figma specs. @TimoBroeskamp
+Unify css and alignment/width data handling for floating image, map and video blocks. @TimoBroeskamp @danalvrz

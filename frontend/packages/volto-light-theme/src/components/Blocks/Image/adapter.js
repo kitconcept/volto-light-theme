@@ -17,25 +17,45 @@ export const ImageBlockDataAdapter = ({
     [id]: value,
   };
 
-  if (id === 'align' && !(value === 'left' || value === 'right')) {
-    if (data.size !== 'l') {
-      dataSaved = {
-        ...dataSaved,
-        size: 'l',
-        styles: {
-          ...dataSaved.styles,
-          'size:noprefix': SIZEMAP['l'],
-        },
-      };
-    }
-  }
+  const alignStyle =
+    dataSaved.styles?.['align:noprefix']?.['--block-alignment'];
+  const isFloating =
+    alignStyle === 'var(--align-left)' || alignStyle === 'var(--align-right)';
+  const isLarge =
+    dataSaved.size === 'l' ||
+    dataSaved.styles?.['size:noprefix'] === 'var(--size-large)';
 
-  if (id === 'size') {
+  if (!isFloating) {
+    dataSaved = {
+      ...dataSaved,
+      size: 'l',
+      styles: {
+        ...dataSaved.styles,
+        'size:noprefix': SIZEMAP['l'],
+      },
+    };
+  }
+  if (!isLarge && isFloating) {
     dataSaved = {
       ...dataSaved,
       styles: {
         ...dataSaved.styles,
-        'size:noprefix': SIZEMAP[value],
+        'size:noprefix': SIZEMAP[dataSaved.size] || 'large',
+        'blockWidth:noprefix': {
+          '--block-width': 'var(--narrow-container-width)',
+        },
+      },
+    };
+  }
+  if (isLarge && isFloating) {
+    dataSaved = {
+      ...dataSaved,
+      styles: {
+        ...dataSaved.styles,
+        'size:noprefix': SIZEMAP['l'],
+        'blockWidth:noprefix': {
+          '--block-width': 'var(--default-container-width)',
+        },
       },
     };
   }

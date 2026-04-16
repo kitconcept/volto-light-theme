@@ -16,6 +16,10 @@ const messages = defineMessages({
     id: 'Block Width',
     defaultMessage: 'Block Width',
   },
+  Alignment: {
+    id: 'Alignment',
+    defaultMessage: 'Alignment',
+  },
 });
 
 export const imageBlockSchemaEnhancer = ({ formData, schema, intl }) => {
@@ -49,15 +53,27 @@ export const standAloneImageBlockSchemaEnhancer = ({
   intl,
 }) => {
   if (formData.url) {
-    schema.properties.align.default = 'center';
-    schema.properties.align.actions = ['left', 'right', 'center'];
+    schema.fieldsets[0].fields = schema.fieldsets[0].fields.filter(
+      (f) => f !== 'align',
+    );
+
+    const alignStyle =
+      formData.styles?.['align:noprefix']?.['--block-alignment'];
+    const isFloating =
+      alignStyle === 'var(--align-left)' || alignStyle === 'var(--align-right)';
 
     schema.properties.size.default = 'l';
-    schema.properties.size.disabled = formData.align === 'center';
     schema.properties.styles.schema.fieldsets[0].fields = [
+      'align:noprefix',
       'blockWidth:noprefix',
       ...schema.properties.styles.schema.fieldsets[0].fields,
     ];
+
+    schema.properties.styles.schema.properties['align:noprefix'] = {
+      widget: 'blockAlignment',
+      title: intl.formatMessage(messages.Alignment),
+      default: 'center',
+    };
 
     schema.properties.styles.schema.properties['blockWidth:noprefix'] = {
       widget: 'blockWidth',
@@ -68,9 +84,9 @@ export const standAloneImageBlockSchemaEnhancer = ({
     };
 
     schema.properties.styles.schema.properties['blockWidth:noprefix'].disabled =
-      formData.align === 'left' || formData.align === 'right';
+      isFloating;
+    schema.properties.size.disabled = !isFloating;
   }
-
   return schema;
 };
 
