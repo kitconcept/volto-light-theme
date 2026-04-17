@@ -15,6 +15,12 @@ function* visitBlocks(blocks) {
   }
 }
 
+function getAlignmentValue(align: string | undefined): string {
+  if (align === 'left') return 'var(--align-left)';
+  if (align === 'right') return 'var(--align-right)';
+  return 'var(--align-center)';
+}
+
 export function migrateToVLT6ColorAndWidthModel(data: BlocksFormData) {
   const NORMALIZED_WIDTHS = [
     ...config.blocks.widths,
@@ -54,9 +60,7 @@ export function migrateToVLT6ColorAndWidthModel(data: BlocksFormData) {
       block.styles = {
         ...block.styles,
         shortLine:
-          block.styles?.['shortLine'] ?? block?.styles?.align === 'left'
-            ? true
-            : false,
+          block.styles?.['shortLine'] ?? block?.styles?.align === 'left',
         'align:noprefix': block.styles?.['align:noprefix'] ?? {
           '--block-alignment': 'var(--align-left)',
         },
@@ -73,14 +77,9 @@ export function migrateToVLT6ColorAndWidthModel(data: BlocksFormData) {
 
     if (block['@type'] === 'image') {
       const align = block?.align;
-      const alignmentValue =
-        align === 'left'
-          ? 'var(--align-left)'
-          : align === 'right'
-            ? 'var(--align-right)'
-            : 'var(--align-center)';
-
       const isFloating = align === 'left' || align === 'right';
+      const alignmentValue = getAlignmentValue(align);
+
       const isFloatingLarge =
         isFloating &&
         (block?.styles?.['size:noprefix'] === 'var(--size-large)' ||
@@ -109,12 +108,7 @@ export function migrateToVLT6ColorAndWidthModel(data: BlocksFormData) {
     if (block['@type'] === 'video' || block['@type'] === 'maps') {
       const align = block?.align;
       const isFloating = align === 'left' || align === 'right';
-
-      const alignmentValue = isFloating
-        ? align === 'left'
-          ? 'var(--align-left)'
-          : 'var(--align-right)'
-        : 'var(--align-center)';
+      const alignmentValue = getAlignmentValue(align);
 
       const blockWidthValue =
         isFloating || align === 'wide'
@@ -128,7 +122,9 @@ export function migrateToVLT6ColorAndWidthModel(data: BlocksFormData) {
         'align:noprefix': block?.styles?.['align:noprefix'] ?? {
           '--block-alignment': alignmentValue,
         },
-        'blockWidth:noprefix': blockWidthValue,
+        'blockWidth:noprefix': isFloating
+          ? blockWidthValue
+          : block?.styles?.['blockWidth:noprefix'] ?? blockWidthValue,
       };
 
       delete block.align;
