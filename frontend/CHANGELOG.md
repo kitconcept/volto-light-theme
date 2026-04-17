@@ -8,6 +8,20 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0-alpha.19 (2026-04-17)
+
+### Breaking
+
+- Improve Card component link handling by using a CSS stretched-link pattern & other minor style fixes for consistency. Breaking: custom `Summary` components must now accept and use the `LinkToItem` prop; category labels changed from heading tags to `<ul>` elements. See the upgrade guide for migration steps. @danalvrz 
+
+### Bugfix
+
+- Fixed the font-color in the table block with h2 or h3 font-size. @TimoBroeskamp [#820](https://github.com/kitconcept/volto-light-theme/pull/820)
+- + display footer links with an underline, remove gap between seperate lines in footer colophon text and fixed richtext-editor combinations to work together. @TimoBroeskamp 
+- Fix navigation text color not loading on hard reload. @iFlameing 
+- Fix spacings for navigation items when using the Intranet header. @danlavrz 
+- Fix styles for text in colophon. @danalvrz 
+
 ## 8.0.0-alpha.18 (2026-03-14)
 
 ### Feature
