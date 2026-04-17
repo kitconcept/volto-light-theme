@@ -1272,7 +1272,7 @@
       // Navigation
       nav.navigation {
         .item {
-          color: var(--header-foreground);
+          color: var(--header-foreground, var(--primary-foreground-color));
         }
         .submenu-wrapper {
           .submenu.active {
