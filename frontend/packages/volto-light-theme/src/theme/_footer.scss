@@ -96,6 +96,7 @@
       display: flex;
       max-width: 300px;
       max-height: 90px;
+      margin-bottom: $spacing-large;
       a {
         display: block;
         max-width: 100%;
@@ -110,7 +111,7 @@
     .footer-grid {
       display: grid;
       gap: 1rem;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: auto repeat(3, 1fr);
       text-align: left;
 
       h2 {
@@ -126,8 +127,8 @@
         list-style: none;
 
         li {
-          padding: 0 7px;
           font-size: 18px;
+          line-height: 30px;
 
           a {
             text-decoration: underline;
@@ -139,35 +140,38 @@
         justify-self: start;
         @include body-text();
 
-        img {
-          margin-bottom: 38px;
+        &:has(~ div li),
+        &:has(~ div h2) {
+          max-width: 300px;
         }
       }
 
       .column-left,
       .column-middle,
       .column-right {
+        justify-self: end;
         &:has(ul:empty):not(:has(h2)) {
           display: none;
         }
       }
 
       @media only screen and (max-width: $largest-mobile-screen) {
-        gap: $spacing-xlarge;
-
-        text-align: center;
+        gap: $spacing-medium;
+        grid-template-columns: 1fr;
 
         .address-column {
           display: flex;
+          max-width: unset !important;
           flex-direction: column;
-          align-items: center;
+          align-items: flex-start;
+          margin-bottom: $spacing-xlarge;
         }
 
         .address-column,
         .column-left,
         .column-middle,
         .column-right {
-          justify-self: center;
+          justify-self: start;
         }
       }
     }
