@@ -137,5 +137,5 @@ jobs:
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: visual-regression-results
+          name: ${{ (inputs.storybook == true || inputs.storybook == 'true') && 'visual-regression-results-storybook' || 'visual-regression-results' }}
           path: frontend/playwright/results

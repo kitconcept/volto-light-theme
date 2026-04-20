@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0a19 (2026-04-17)
+
+
+### New features:
+
+- Add default colophon text. @danalvrz 
+
 ## 8.0.0a18 (2026-03-14)
 
 
