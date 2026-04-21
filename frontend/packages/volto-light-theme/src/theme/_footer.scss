@@ -186,7 +186,7 @@
   }
 
   .post-footer {
-    padding: $spacing-xlarge 2rem;
+    padding: $spacing-xlarge $spacing-small;
     background: var(--footer-background);
     color: var(--footer-foreground, $black);
     font-size: 18px;
