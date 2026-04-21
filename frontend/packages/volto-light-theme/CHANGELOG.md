@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0-alpha.20 (2026-04-21)
+
+### Bugfix
+
+- Allow address in Footer to take all available space based on number of links columns. @danalvrz 
+
 ## 8.0.0-alpha.19 (2026-04-17)
 
 ### Breaking
