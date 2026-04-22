@@ -13,8 +13,11 @@
     --footer-foreground: var(--primary-foreground-color, #{$black});
   }
 
-  .container:not(:has(.container)) {
-    padding: 0;
+  & > .container {
+    padding: $spacing-xlarge 0;
+    .container {
+      @include adjustMarginsToContainer($default-container-width);
+    }
   }
 
   & > :first-child:not(:empty) {
@@ -35,10 +38,6 @@
     --footer-background: var(--secondary-color, #{$white});
     --footer-foreground: var(--secondary-foreground-color, #{$black});
 
-    padding: $spacing-xlarge 2rem 100px 2rem;
-    @media only screen and (max-width: $largest-mobile-screen) {
-      padding: $spacing-xlarge $spacing-small;
-    }
     background: var(--footer-background);
     color: var(--footer-foreground, $black);
 
@@ -186,7 +185,6 @@
   }
 
   .post-footer {
-    padding: $spacing-xlarge $spacing-small;
     background: var(--footer-background);
     color: var(--footer-foreground, $black);
     font-size: 18px;
@@ -398,7 +396,6 @@ ul.logos-container {
   padding: $pre-footer-vertical-spacing 0;
   padding-left: 0;
   margin-top: 0;
-  margin-bottom: $spacing-medium;
   gap: 60px 20px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   list-style: none;
