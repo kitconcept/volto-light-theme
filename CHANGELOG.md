@@ -1,6 +1,58 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 8.0.0a21 (2026-04-22)
+
+### Backend
+
+
+#### Internal:
+
+- Re-release of 8a20. @sneridagh 
+
+
+
+### Frontend
+
+#### Internal
+
+- Re-release of 8a20. @sneridagh 
+
+
+
+### Project
+
+
+#### Internal
+
+- Re-release of 8a20. @sneridagh 
+
+
+
+## 8.0.0a20 (2026-04-21)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Allow address in Footer to take all available space based on number of links columns. @danalvrz 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 8.0.0a19 (2026-04-17)
 
 ### Backend
