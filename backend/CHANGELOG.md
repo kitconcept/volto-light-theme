@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0a21 (2026-04-22)
+
+
+### Internal:
+
+- Re-release of 8a20. @sneridagh 
+
 ## 8.0.0a20 (2026-04-21)
 
 No significant changes.
