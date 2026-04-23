@@ -9,27 +9,6 @@ myst:
 
 # Releases
 
-The releases follow a semantic versioning model.
+See the release reference at {doc}`../reference/release`.
 
-## Definition of breaking change
-
-In general, the same definitions and rules of a breaking change in Volto releases apply to VLT.
-However, in VLT we add an extra exception.
-The vertical spacing is carefully curated and considered an important feature of the theme.
-Because of that, changes and improvements in the vertical spacing are _not_ considered breaking changes.
-They will be noted properly in the change log.
-
-
-## Release process
-
-To release a full version, run the following command.
-
-```shell
-make release
-```
-
-To release a release candidate (rc) version, run the following command.
-
-```shell
-make release-rc
-```
+That page contains the current release prerequisites, versioning notes, and release command for this repository.

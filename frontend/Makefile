@@ -94,14 +94,6 @@ lint: ## Lint, or catch and remove problems, in code base
 	pnpm prettier
 	pnpm stylelint --allow-empty-input
 
-.PHONY: release
-release: ## Release the add-on on npmjs.org
-	pnpm release
-
-.PHONY: release-dry-run
-release-dry-run: ## Dry-run the release of the add-on on npmjs.org
-	pnpm release
-
 .PHONY: test
 test: ## Run unit tests
 	pnpm test
