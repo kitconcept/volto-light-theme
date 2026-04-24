@@ -35,9 +35,7 @@ header .navigation .item {
 .breadcrumbs {
   a:not(.card-primary-link, .label) {
     color: var(--link-foreground-color, var(--theme-foreground-color));
-    font-size: inherit;
-    font-style: inherit;
-    font-weight: inherit;
+    font: inherit;
     line-height: inherit;
     text-decoration: underline;
   }
