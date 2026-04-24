@@ -47,7 +47,7 @@ how-to-guides/acceptance-tests
 how-to-guides/visual-regression-tests
 how-to-guides/contributing
 how-to-guides/develop-add-ons
-how-to-guides/releases
+how-to-guides/release
 how-to-guides/upgrade-guide
 ```
 
@@ -72,7 +72,6 @@ reference/slots
 reference/image-aspect-ratio
 reference/helpers
 reference/card
-reference/release
 reference/feature-flags
 reference/recommended-addons
 reference/compatibility

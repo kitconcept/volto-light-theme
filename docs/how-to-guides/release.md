@@ -1,13 +1,13 @@
 ---
 myst:
   html_meta:
-    "description": "Volto Light Theme release reference"
-    "property=og:description": "Volto Light Theme release reference"
-    "property=og:title": "Release"
+    "description": "Volto Light Theme release process and guidelines"
+    "property=og:description": "Volto Light Theme release process and guidelines"
+    "property=og:title": "How to release Volto Light Theme"
     "keywords": "Volto Light Theme, release"
 ---
 
-# Release
+# How to release Volto Light Theme
 
 Volto Light Theme is released on both PyPI and npm. The repository uses `repoplone` so the backend and frontend packages are released together with the same version number.
 
