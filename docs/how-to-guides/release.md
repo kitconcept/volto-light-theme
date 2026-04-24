@@ -29,7 +29,7 @@ To start a release, you must fulfill the following requirements:
 
 - Have permission to push to `main`
 - Have permission in the [`@kitconcept` organization on npm](https://www.npmjs.com/org/kitconcept)
-- Have an environment variable `GITHUB_TOKEN` with a GitHub personal token with permissions to write releases on GitHub
+- Have an environment variable `GITHUB_TOKEN` with a GitHub personal access token with permissions to write releases on GitHub
 - Install [`uv`](https://docs.astral.sh/uv/) in your system so `uvx` is available
 
 To request these permissions, contact the maintainers of this repository.
