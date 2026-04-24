@@ -34,6 +34,13 @@
       font-style: italic;
     }
   }
+  .block-container sup a,
+  .block-container sub a,
+  .slate-editor sup a,
+  .slate-editor sub a {
+    font-size: 18px;
+    line-height: 0;
+  }
 
   .block-container p:empty {
     margin-bottom: $block-vertical-space;
