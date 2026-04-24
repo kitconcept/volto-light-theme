@@ -80,7 +80,7 @@ make frontend-start
 
 ## Release 🚀
 
-See the release reference at https://volto-light-theme.readthedocs.io/reference/release.html.
+See the release reference at https://volto-light-theme.readthedocs.io/how-to-guides/release.html.
 
 
 ## Trying Volto Light Theme with Docker 📦
