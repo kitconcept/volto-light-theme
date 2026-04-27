@@ -7,8 +7,7 @@
     flex-direction: row;
     align-items: baseline;
     justify-content: space-between;
-    padding-top: 25px;
-    padding-bottom: 35px;
+    padding: 25px 1em 35px;
 
     .logo {
       max-width: 200px;
@@ -184,6 +183,7 @@
               padding-bottom: 0.5rem;
               border-bottom: 2px solid $black;
               border-left: none;
+      
 
               @media only screen and (max-width: $tablet-breakpoint) {
                 padding-top: 2rem;
@@ -238,7 +238,7 @@
   .tools-wrapper {
     display: flex;
     flex-direction: row-reverse;
-    padding-top: 16px;
+    padding: 16px 1em;
 
     .intranet-flag {
       padding: 10px $spacing-small;
