@@ -87,9 +87,11 @@ body {
 
 // We expect initially three main containers
 .header-wrapper {
-  // This is the pusher for the header under 1440px so over that is tight to the border
-  padding: 0 1em;
-
+  & .logo-nav-wrapper,
+  & .tools-wrapper {
+    // This is the pusher for the header under 1440px so over that is tight to the border
+    padding: 0 1em;
+  }
   .q.container,
   .a.container {
     @include container-preference-order(12);
