@@ -88,12 +88,18 @@ body {
 // We expect initially three main containers
 .header-wrapper {
   // This is the pusher for the header under 1440px so over that is tight to the border
-
   padding: 0 1em;
 
-  // This is to remove the padding when the search is present, we add padding to individual elements inside header-wrapper
-  &:not(.intranet-header):has(.search-wrapper) {
-    padding: 0;
+  //Adjusting for search in header in smaller viewports
+  @media only screen and (max-width: $large-monitor-width) {
+    &:not(.intranet-header):has(.search-wrapper) {
+      padding: 0;
+      .logo-nav-wrapper,
+      .tools-wrapper {
+        padding-left: 1em;
+        padding-right: 1em;
+      }
+    }
   }
   .q.container,
   .a.container {
