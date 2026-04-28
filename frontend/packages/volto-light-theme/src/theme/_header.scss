@@ -158,7 +158,7 @@
           height 600ms ease-in-out;
         transition-property: top, height;
 
-        @media only screen and (max-width: ($large-monitor-width + $font-size*2)) {
+        @media only screen and (max-width: ($large-monitor-width + 36px)) {
           left: -1em;
           width: calc(100% + 2em);
         }
