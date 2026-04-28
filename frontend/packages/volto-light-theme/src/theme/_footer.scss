@@ -13,7 +13,7 @@
     --footer-foreground: var(--primary-foreground-color, #{$black});
   }
 
-  & > .container {
+  & > .container:not(:empty) {
     padding: $spacing-xlarge 0;
     .container {
       @include adjustMarginsToContainer($default-container-width);
