@@ -1,6 +1,36 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 8.0.0a22 (2026-04-29)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Added translation for the social media section in the footer. @jnptk 
+
+#### Documentation
+
+- Updated docs on how to release the packages. @sneridagh [#842](https://github.com/kitconcept/volto-light-theme/pull/842)
+
+
+
+### Project
+
+
+#### Documentation
+
+- Updated docs on how to release the packages. @sneridagh [#842](https://github.com/kitconcept/volto-light-theme/pull/842)
+
+
+
 ## 8.0.0a21 (2026-04-22)
 
 ### Backend
