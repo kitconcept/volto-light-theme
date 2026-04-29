@@ -8,6 +8,16 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0-alpha.22 (2026-04-29)
+
+### Bugfix
+
+- Added translation for the social media section in the footer. @jnptk 
+
+### Documentation
+
+- Updated docs on how to release the packages. @sneridagh [#842](https://github.com/kitconcept/volto-light-theme/pull/842)
+
 ## 8.0.0-alpha.21 (2026-04-22)
 
 ### Internal
