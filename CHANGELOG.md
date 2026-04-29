@@ -1,6 +1,31 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 8.0.0a23 (2026-04-29)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Breaking
+
+- Upgrade to Volto 19a31.
+  Forces `react-aria-components` from the catalog in Volto so projects using it have to be updated to at least this Volto version. @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 8.0.0a22 (2026-04-29)
 
 ### Backend
