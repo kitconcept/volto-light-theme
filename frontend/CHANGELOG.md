@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0-alpha.24 (2026-04-30)
+
+### Bugfix
+
+- Remove the padding added by header-wrapper for search-wrapper and center ther search. @Tishasoumya-02 [#846](https://github.com/kitconcept/volto-light-theme/pull/846)
+
 ## 8.0.0-alpha.23 (2026-04-29)
 
 ### Breaking

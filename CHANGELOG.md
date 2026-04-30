@@ -1,6 +1,30 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 8.0.0a24 (2026-04-30)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Remove the padding added by header-wrapper for search-wrapper and center ther search. @Tishasoumya-02 [#846](https://github.com/kitconcept/volto-light-theme/pull/846)
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 8.0.0a23 (2026-04-29)
 
 ### Backend
