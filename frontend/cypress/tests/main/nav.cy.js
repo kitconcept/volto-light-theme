@@ -61,5 +61,6 @@ context('Navigation Acceptance Tests', () => {
   it('Open destination page if no subitems', function () {
     cy.wait('@content');
     cy.get('ul.desktop-menu a').contains('Just a page').click();
+    cy.get('.documentFirstHeading').should('have.text', 'Just a page');
   });
 });
