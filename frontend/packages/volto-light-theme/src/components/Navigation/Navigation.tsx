@@ -159,101 +159,109 @@ const Navigation = ({ pathname }: NavigationProps) => {
     >
       <div className={'computer large screen widescreen only'}>
         <ul className="desktop-menu">
-          {items.map((item, index) => (
-            <li key={item.url}>
-              {hasFatMenu ? (
-                <>
-                  <button
-                    onClick={() => openMenu(index)}
-                    className={cx('item', {
-                      active:
-                        desktopMenuOpen === index ||
-                        (!desktopMenuOpen && pathname === item.url),
-                    })}
-                    aria-label={intl.formatMessage(messages.openFatMenu)}
-                    aria-expanded={desktopMenuOpen === index}
-                  >
-                    {item.title}
-                  </button>
-
-                  <div className="submenu-wrapper">
-                    <div
-                      className={cx('submenu', {
-                        active: desktopMenuOpen === index,
+          {items.map((item, index) => {
+            const hasItems = item.items && item.items.length > 0;
+            return (
+              <li key={item.url}>
+                {hasFatMenu && hasItems ? (
+                  <>
+                    <button
+                      onClick={() => openMenu(index)}
+                      className={cx('item', {
+                        active:
+                          desktopMenuOpen === index ||
+                          (!desktopMenuOpen && pathname === item.url),
                       })}
+                      aria-label={intl.formatMessage(messages.openFatMenu)}
+                      aria-expanded={desktopMenuOpen === index}
                     >
-                      <div className="submenu-inner">
-                        <NavLink
-                          to={item.url === '' ? '/' : item.url}
-                          onClick={() => closeMenu()}
-                          className="submenu-header"
-                        >
-                          <h2>{item.nav_title ?? item.title}</h2>
-                        </NavLink>
-                        <button
-                          className="close"
-                          onClick={closeMenu}
-                          aria-label={intl.formatMessage(messages.closeMenu)}
-                        >
-                          <Icon name={clearSVG} size="48px" />
-                        </button>
-                        <ul>
-                          {item.items &&
-                            item.items.length > 0 &&
-                            item.items.map((subitem) => (
-                              <li className="subitem-wrapper" key={subitem.url}>
-                                <NavLink
-                                  to={subitem.url}
-                                  onClick={() => closeMenu()}
-                                  className={cx({
-                                    current: isActive(subitem.url),
-                                  })}
+                      {item.title}
+                    </button>
+
+                    <div className="submenu-wrapper">
+                      <div
+                        className={cx('submenu', {
+                          active: desktopMenuOpen === index,
+                        })}
+                      >
+                        <div className="submenu-inner">
+                          <NavLink
+                            to={item.url === '' ? '/' : item.url}
+                            onClick={() => closeMenu()}
+                            className="submenu-header"
+                          >
+                            <h2>{item.nav_title ?? item.title}</h2>
+                          </NavLink>
+                          <button
+                            className="close"
+                            onClick={closeMenu}
+                            aria-label={intl.formatMessage(messages.closeMenu)}
+                          >
+                            <Icon name={clearSVG} size="48px" />
+                          </button>
+                          <ul>
+                            {item.items &&
+                              item.items.length > 0 &&
+                              item.items.map((subitem) => (
+                                <li
+                                  className="subitem-wrapper"
+                                  key={subitem.url}
                                 >
-                                  <span className="left-arrow">&#8212;</span>
-                                  <span>
-                                    {subitem.nav_title || subitem.title}
-                                  </span>
-                                </NavLink>
-                                <div className="sub-submenu">
-                                  <ul>
-                                    {subitem.items &&
-                                      subitem.items.length > 0 &&
-                                      subitem.items.map((subsubitem) => (
-                                        <li
-                                          className="subsubitem-wrapper"
-                                          key={subsubitem.url}
-                                        >
-                                          <NavLink
-                                            to={subsubitem.url}
-                                            onClick={() => closeMenu()}
-                                            className={cx({
-                                              current: isActive(subsubitem.url),
-                                            })}
+                                  <NavLink
+                                    to={subitem.url}
+                                    onClick={() => closeMenu()}
+                                    className={cx({
+                                      current: isActive(subitem.url),
+                                    })}
+                                  >
+                                    <span className="left-arrow">&#8212;</span>
+                                    <span>
+                                      {subitem.nav_title || subitem.title}
+                                    </span>
+                                  </NavLink>
+                                  <div className="sub-submenu">
+                                    <ul>
+                                      {subitem.items &&
+                                        subitem.items.length > 0 &&
+                                        subitem.items.map((subsubitem) => (
+                                          <li
+                                            className="subsubitem-wrapper"
+                                            key={subsubitem.url}
                                           >
-                                            <span className="left-arrow">
-                                              &#8212;
-                                            </span>
-                                            <span>
-                                              {subsubitem.nav_title ||
-                                                subsubitem.title}
-                                            </span>
-                                          </NavLink>
-                                        </li>
-                                      ))}
-                                  </ul>
-                                </div>
-                              </li>
-                            ))}
-                        </ul>
+                                            <NavLink
+                                              to={subsubitem.url}
+                                              onClick={() => closeMenu()}
+                                              className={cx({
+                                                current: isActive(
+                                                  subsubitem.url,
+                                                ),
+                                              })}
+                                            >
+                                              <span className="left-arrow">
+                                                &#8212;
+                                              </span>
+                                              <span>
+                                                {subsubitem.nav_title ||
+                                                  subsubitem.title}
+                                              </span>
+                                            </NavLink>
+                                          </li>
+                                        ))}
+                                    </ul>
+                                  </div>
+                                </li>
+                              ))}
+                          </ul>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </>
-              ) : (
-                <NavItem item={item} lang={lang} key={item.url} />
-              )}
-            </li>
-          ))}
+                  </>
+                ) : (
+                  <NavItem item={item} lang={lang} key={item.url} />
+                )}
+              </li>
+            );
+          })}
         </ul>
       </div>
     </nav>

@@ -26,6 +26,12 @@ context('Navigation Acceptance Tests', () => {
       contentTitle: 'Level 3',
       path: '/level-1/level-2',
     });
+    cy.createContent({
+      contentType: 'Document',
+      contentId: 'a-page',
+      contentTitle: 'Just a page',
+      path: '/',
+    });
 
     cy.visit('/');
     cy.viewport('macbook-16');
@@ -50,5 +56,10 @@ context('Navigation Acceptance Tests', () => {
     cy.get('ul.desktop-menu button').contains('Level 1').click();
     cy.get('.subsubitem-wrapper').findByText('Level 3').click();
     cy.get('.documentFirstHeading').should('have.text', 'Level 3');
+  });
+
+  it('Open destination page if no subitems', function () {
+    cy.wait('@content');
+    cy.get('ul.desktop-menu a').contains('Just a page').click();
   });
 });
