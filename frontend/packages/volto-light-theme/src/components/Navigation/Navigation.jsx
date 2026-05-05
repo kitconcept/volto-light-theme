@@ -50,10 +50,24 @@ const Navigation = ({ pathname }) => {
   const token = useSelector((state) => state.userSession.token, shallowEqual);
   const items = useSelector((state) => state.navigation.items, shallowEqual);
 
+  // this function doesn't close the navigation when clicking the scrollbar
+  const doesScrollbarContainClick = (e) => {
+    const clickedVerticalScrollbar =
+      e.clientX >= document.documentElement.clientWidth &&
+      e.clientX <= window.innerWidth;
+
+    const clickedHorizontalScrollbar =
+      e.clientY >= document.documentElement.clientHeight &&
+      e.clientY <= window.innerHeight;
+
+    return clickedVerticalScrollbar || clickedHorizontalScrollbar;
+  };
+
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (navigation.current && doesNodeContainClick(navigation.current, e))
         return;
+      if (doesScrollbarContainClick(e)) return;
       closeMenu();
     };
 
