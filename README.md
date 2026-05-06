@@ -78,6 +78,11 @@ make frontend-start
 
 🎉 Your Plone development environment is now live!
 
+## Release 🚀
+
+See the release reference at https://volto-light-theme.readthedocs.io/how-to-guides/release.html.
+
+
 ## Trying Volto Light Theme with Docker 📦
 
 This setup includes:

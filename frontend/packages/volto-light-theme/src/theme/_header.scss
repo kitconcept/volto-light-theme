@@ -158,6 +158,10 @@
           height 600ms ease-in-out;
         transition-property: top, height;
 
+        @media only screen and (max-width: ($large-monitor-width + 36px)) {
+          left: -1em;
+          width: calc(100% + 2em);
+        }
         &.active {
           top: 0;
           height: 188px;
@@ -184,7 +188,6 @@
               padding-bottom: 0.5rem;
               border-bottom: 2px solid $black;
               border-left: none;
-              margin-left: 12.6rem;
 
               @media only screen and (max-width: $tablet-breakpoint) {
                 padding-top: 2rem;
