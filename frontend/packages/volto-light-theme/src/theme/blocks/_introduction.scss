@@ -50,11 +50,17 @@
     @include default-container-width();
   }
 
-  h2 {
-    @include highlight-title();
-    margin-bottom: $spacing-large;
-    @media only screen and (max-width: $largest-mobile-screen) {
-      margin-bottom: $spacing-medium;
+  .block-container,
+  .slate-editor {
+    h2 {
+      @include highlight-title();
+      margin-bottom: $spacing-large;
+      @media only screen and (max-width: $largest-mobile-screen) {
+        margin-bottom: $spacing-medium;
+      }
+      a {
+        font: inherit;
+      }
     }
   }
 }
