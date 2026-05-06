@@ -8,6 +8,29 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0-alpha.24 (2026-04-30)
+
+### Bugfix
+
+- Remove the padding added by header-wrapper for search-wrapper and center ther search. @Tishasoumya-02 [#846](https://github.com/kitconcept/volto-light-theme/pull/846)
+
+## 8.0.0-alpha.23 (2026-04-29)
+
+### Breaking
+
+- Upgrade to Volto 19a31.
+  Forces `react-aria-components` from the catalog in Volto so projects using it have to be updated to at least this Volto version. @sneridagh 
+
+## 8.0.0-alpha.22 (2026-04-29)
+
+### Bugfix
+
+- Added translation for the social media section in the footer. @jnptk 
+
+### Documentation
+
+- Updated docs on how to release the packages. @sneridagh [#842](https://github.com/kitconcept/volto-light-theme/pull/842)
+
 ## 8.0.0-alpha.21 (2026-04-22)
 
 ### Internal
