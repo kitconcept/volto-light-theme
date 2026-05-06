@@ -31,13 +31,16 @@ header .navigation .item {
   font-family: $page-font;
 }
 
-.content-area,
-.breadcrumbs {
-  a:not(.card-primary-link, .label) {
-    color: var(--link-foreground-color, var(--theme-foreground-color));
-    font: inherit;
-    line-height: inherit;
-    text-decoration: underline;
+.public-ui,
+.cms-ui.view-editview {
+  .content-area,
+  .breadcrumbs {
+    a:not(.card-primary-link, .label, .item) {
+      color: var(--link-foreground-color, var(--theme-foreground-color));
+      font: inherit;
+      line-height: inherit;
+      text-decoration: underline;
+    }
   }
 }
 
