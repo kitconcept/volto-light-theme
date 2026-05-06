@@ -8,6 +8,17 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0-alpha.25 (2026-05-06)
+
+### Bugfix
+
+- Fix Footer aligned with content @iRohitSingh [#838](https://github.com/kitconcept/volto-light-theme/pull/838)
+- Fixed a bug that closed the Navigation when scrolling down with the scrollbar. @ TimoBroeskamp 
+- Fixed underlined items in the controlpanel and the contents tab. @TimoBroeskamp 
+- Upgrade Volto 19a33.
+  Upgrade `volto-calendar-block` 1.0.0a9
+  https://github.com/plone/volto/releases/tag/19.0.0-alpha.33 @sneridagh 
+
 ## 8.0.0-alpha.24 (2026-04-30)
 
 ### Bugfix

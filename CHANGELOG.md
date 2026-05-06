@@ -1,6 +1,35 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 8.0.0a25 (2026-05-06)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Fix Footer aligned with content @iRohitSingh [#838](https://github.com/kitconcept/volto-light-theme/pull/838)
+- Fixed a bug that closed the Navigation when scrolling down with the scrollbar. @ TimoBroeskamp 
+- Fixed underlined items in the controlpanel and the contents tab. @TimoBroeskamp 
+- Upgrade Volto 19a33.
+  Upgrade `volto-calendar-block` 1.0.0a9
+  https://github.com/plone/volto/releases/tag/19.0.0-alpha.33 @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 8.0.0a24 (2026-04-30)
 
 ### Backend
