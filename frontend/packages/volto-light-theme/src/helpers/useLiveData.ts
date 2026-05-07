@@ -13,11 +13,10 @@ type FormState = {
 };
 
 export function useLiveData<T>(
-  bbbContent: Content,
+  content: Content,
   behavior: string | undefined,
   field: string,
 ) {
-  const content = useSelector((state: FormState) => state.content?.data);
   const errorContext = useSelector((state: FormState) => state.errorContext);
   const context = content ?? errorContext;
 
