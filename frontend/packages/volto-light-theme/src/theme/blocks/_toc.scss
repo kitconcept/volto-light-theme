@@ -1,8 +1,9 @@
 .table-of-contents {
   .ui.bulleted.list {
     li {
+      line-height: 30px;
       a {
-        text-decoration: underline;
+        line-height: inherit;
       }
 
       &::before {
