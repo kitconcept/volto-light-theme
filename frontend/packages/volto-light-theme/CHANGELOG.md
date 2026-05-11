@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 7.8.5 (2026-05-11)
+
+### Bugfix
+
+- Fixed a bug that closed the Navigation when scrolling down with the scrollbar. @ TimoBroeskamp 
+
 ## 7.8.4 (2026-04-02)
 
 ### Bugfix

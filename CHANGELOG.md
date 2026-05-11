@@ -1,6 +1,30 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 7.8.5 (2026-05-11)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Fixed a bug that closed the Navigation when scrolling down with the scrollbar. @ TimoBroeskamp 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 7.8.4 (2026-04-02)
 
 ### Backend

@@ -5,7 +5,7 @@ from zope.i18nmessageid import MessageFactory
 import logging
 
 
-__version__ = "7.8.4"
+__version__ = "7.8.5"
 
 PACKAGE_NAME = "kitconcept.voltolighttheme"
 
