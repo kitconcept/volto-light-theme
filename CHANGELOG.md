@@ -1,6 +1,29 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 8.0.0a27 (2026-05-12)
+
+### Backend
+
+
+#### Bug fixes:
+
+- Fix edge cases when adding site customization fields to error responses. @davisagli 
+
+
+
+### Frontend
+
+No significant changes.
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 8.0.0a26 (2026-05-12)
 
 ### Backend
