@@ -1,6 +1,37 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 8.0.0a26 (2026-05-12)
+
+### Backend
+
+
+#### Bug fixes:
+
+- Include site customization fields in error responses. @davisagli 
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Fix Mobile layout of social media icons @iRohitSingh [#852](https://github.com/kitconcept/volto-light-theme/pull/852)
+- Fix social media icon color @iRohitSingh [#854](https://github.com/kitconcept/volto-light-theme/pull/854)
+- Fix loading of inherited site customization fields on error views. @davisagli 
+- Fixed not working combinations with the richtext-widget in the text-block and updated line-height of ToC block according to figma. @TimoBroeskamp 
+- Update Volto to 19a36.
+  See https://github.com/plone/volto/releases/tag/19.0.0-alpha.36 @sneridagh 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 8.0.0a25 (2026-05-06)
 
 ### Backend
