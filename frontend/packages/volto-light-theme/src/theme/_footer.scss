@@ -236,11 +236,22 @@
         flex-direction: column;
         justify-content: center;
         text-align: center;
+        ul.social-networks {
+          flex-wrap: wrap;
+          gap: 10px;
+          li {
+            margin-right: 0;
+          }
+        }
       }
 
       .footer-links {
         ul {
-          justify-content: center;
+          flex-wrap: wrap;
+          gap: 10px;
+          li {
+            margin-right: 0;
+          }
         }
       }
 
