@@ -270,7 +270,8 @@ class ISiteFooterCustomizationSettings(model.Schema):
             {
                 "children": [
                     {
-                        "text": "Powered by Plone and Volto Light Theme\nThe Plone® Open Source CMS/WCM is © 2000-2026 by the "
+                        "text": "Powered by Plone and Volto Light Theme\n"
+                        "The Plone® Open Source CMS/WCM is © 2000-2026 by the "
                     },
                     {
                         "children": [{"text": "Plone Foundation"}],
