@@ -17,10 +17,14 @@ class VLTErrorHandling(ErrorHandling):
 
         # Find the closest visible context,
         # and add its data from the `inherit` expander
-        closest_context = self._get_closest_visible_context()
-        if closest_context is not None:
-            expander = InheritedBehaviorExpander(closest_context, self.request)
-            result["@components"] = expander(expand=True)
+        if result is not None:
+            try:
+                closest_context = self._get_closest_visible_context()
+                if closest_context is not None:
+                    expander = InheritedBehaviorExpander(closest_context, self.request)
+                    result["@components"] = expander(expand=True)
+            except Exception:
+                pass
 
         return result
 
