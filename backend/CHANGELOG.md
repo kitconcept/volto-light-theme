@@ -2,6 +2,20 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0a27 (2026-05-12)
+
+
+### Bug fixes:
+
+- Fix edge cases when adding site customization fields to error responses. @davisagli 
+
+## 8.0.0a26 (2026-05-12)
+
+
+### Bug fixes:
+
+- Include site customization fields in error responses. @davisagli 
+
 ## 8.0.0a25 (2026-05-06)
 
 No significant changes.
