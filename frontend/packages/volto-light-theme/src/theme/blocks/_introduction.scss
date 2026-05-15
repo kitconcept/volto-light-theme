@@ -25,21 +25,16 @@
   .slate-editor ol li {
     margin: 0;
     @include introduction();
-    strong,
-    strong span {
-      font-weight: bold;
-    }
-    em,
-    em span {
-      font-style: italic;
-    }
   }
-  .block-container sup a,
-  .block-container sub a,
-  .slate-editor sup a,
-  .slate-editor sub a {
-    font-size: 18px;
+  .block-container sup,
+  .block-container sub,
+  .slate-editor sup,
+  .slate-editor sub {
+    font-size: 75%;
     line-height: 0;
+    a {
+      font: inherit;
+    }
   }
 
   .block-container p:empty {
@@ -58,9 +53,9 @@
       @media only screen and (max-width: $largest-mobile-screen) {
         margin-bottom: $spacing-medium;
       }
-      a {
-        font: inherit;
-      }
+    }
+    a {
+      font: inherit;
     }
   }
 }
