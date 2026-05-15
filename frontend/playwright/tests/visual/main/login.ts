@@ -13,7 +13,7 @@ function getDefaults(options: LoginOptions) {
   // @ts-ignore
   const hostname = process.env.BACKEND_HOST || '127.0.0.1';
   // @ts-ignore
-  const siteId = 'Plone';
+  const siteId = process.env.SITE_ID || 'Plone';
 
   const apiURL =
     options.apiURL ||
