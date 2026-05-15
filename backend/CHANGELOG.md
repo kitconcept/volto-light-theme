@@ -2,6 +2,59 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0a27 (2026-05-12)
+
+
+### Bug fixes:
+
+- Fix edge cases when adding site customization fields to error responses. @davisagli 
+
+## 8.0.0a26 (2026-05-12)
+
+
+### Bug fixes:
+
+- Include site customization fields in error responses. @davisagli 
+
+## 8.0.0a25 (2026-05-06)
+
+No significant changes.
+
+
+## 8.0.0a24 (2026-04-30)
+
+No significant changes.
+
+
+## 8.0.0a23 (2026-04-29)
+
+No significant changes.
+
+
+## 8.0.0a22 (2026-04-29)
+
+No significant changes.
+
+
+## 8.0.0a21 (2026-04-22)
+
+
+### Internal:
+
+- Re-release of 8a20. @sneridagh 
+
+## 8.0.0a20 (2026-04-21)
+
+No significant changes.
+
+
+## 8.0.0a19 (2026-04-17)
+
+
+### New features:
+
+- Add default colophon text. @danalvrz 
+
 ## 8.0.0a18 (2026-03-14)
 
 

@@ -47,7 +47,7 @@ test = [
     "plone.exportimport",
     "plone.restapi[test]",
     "pytest-cov",
-    "pytest-plone>=0.5.0",
+    "pytest-plone>=1.0.0a3",
     "pytest",
 ]
 

@@ -9,11 +9,12 @@ myst:
 
 # useLiveData Hook
 
-The `useLiveData` hook is a utility in volto-light-them project that provides a **single source of truth** for field values while creating or editing content.
-It ensures that values are always **up-to-date** in both:
+The `useLiveData` hook is a utility `volto-light-theme` that provides a **single source of truth** for field values while creating or editing content.
+It ensures that values are always **up-to-date**:
 
-- **Add/Edit mode** → reads live values from the Redux form store.
+- **Add/Edit mode** → reads live values from the Redux form state.
 - **View mode** → falls back to the content object or inherited behavior data.
+- **Error views** → falls back to inherited behavior data from errorContext in the Redux store.
 
 This allows components to display field values that update immediately as the user types or updates value.
 
@@ -36,6 +37,7 @@ function useLiveData<T>(
 3. Otherwise → return the live form value if present, else fallback to:
    - Behavior data  if behaviour is defined(`content['@components'].inherit[behavior].data[field]`)
    - Or get the direct field value on the content object.
+   - Or get the field value from `state.errorContext` if there is no content object.
 
 This ensures the value is **reactive** to user input while editing and **correctly reflects stored content** in view mode.
 

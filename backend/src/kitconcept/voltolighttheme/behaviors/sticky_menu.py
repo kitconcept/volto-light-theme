@@ -42,7 +42,8 @@ class IStickyMenuSettings(model.Schema):
         ),
         description=_(
             "help_mobile_sticky_menu_enabled",
-            default="If enabled, a sticky menu will be shown at the bottom of the screen.",
+            default="If enabled, a sticky menu will be shown "
+            "at the bottom of the screen.",
         ),
         required=False,
         default=False,
