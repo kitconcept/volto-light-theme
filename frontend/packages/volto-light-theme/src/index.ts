@@ -14,6 +14,8 @@ import installWidgets from './config/widgets';
 import installSlots from './config/slots';
 import installSummary from './config/summary';
 
+import reducers from './reducers';
+
 import '@plone/components/dist/basic.css';
 
 import type {
@@ -97,6 +99,11 @@ const applyConfig = (config: ConfigType) => {
   });
 
   config.views.contentTypesViews.Event = EventView;
+
+  config.addonReducers = {
+    ...config.addonReducers,
+    ...reducers,
+  };
 
   return config;
 };

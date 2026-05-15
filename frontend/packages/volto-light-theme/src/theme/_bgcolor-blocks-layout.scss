@@ -1327,7 +1327,7 @@
 
           & > button:not(:hover, :active, :focus) {
             svg path {
-              fill: var(--secondary-foreground-color);
+              fill: var(--search-foreground);
             }
           }
         }
