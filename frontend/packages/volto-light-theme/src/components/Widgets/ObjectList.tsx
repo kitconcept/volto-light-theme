@@ -16,10 +16,11 @@ import deleteSVG from '@plone/volto/icons/delete.svg';
 import addSVG from '@plone/volto/icons/add.svg';
 import dragSVG from '@plone/volto/icons/drag.svg';
 import { v4 as uuid } from 'uuid';
-import type { BlockConfigBase, Content, JSONSchema } from '@plone/types';
+import type { Content, JSONSchema } from '@plone/types';
 import type { IntlShape } from 'react-intl';
 import config from '@plone/volto/registry';
 import isEmpty from 'lodash/isEmpty';
+import { type DragEndEvent } from '@dnd-kit/core';
 
 const messages = defineMessages({
   labelRemoveItem: {
@@ -114,11 +115,22 @@ export type ObjectListWidgetProps = {
    */
   schemaEnhancer?: (args: {
     schema: JSONSchema & { addMessage: string };
-    formData: BlockConfigBase;
+    formData: object;
     intl: IntlShape;
-    navRoot: Content;
-    contentType: string;
+    navRoot?: Content;
+    contentType?: string;
   }) => JSONSchema;
+  /**
+   * Another optional function to enhance the schema.
+   * (Deprecated API with fewer supported arguments.
+   * This is here for backwards-compatibility
+   * with the ObjectListWidget in Volto.)
+   */
+  schemaExtender?: (
+    schema: JSONSchema,
+    formData: object,
+    intl: IntlShape,
+  ) => JSONSchema;
 };
 
 const EMPTY_SCHEMA = {
@@ -141,14 +153,16 @@ const ObjectListWidget = (props: ObjectListWidgetProps) => {
     value = [],
     onChange,
     schemaEnhancer,
+    schemaExtender,
     schemaName,
   } = props;
 
   const schema =
-    config.getUtility({
-      type: 'schema',
-      name: schemaName,
-    }).method ||
+    (schemaName &&
+      config.getUtility({
+        type: 'schema',
+        name: schemaName,
+      }).method) ||
     props.schema ||
     EMPTY_SCHEMA;
 
@@ -170,7 +184,7 @@ const ObjectListWidget = (props: ObjectListWidgetProps) => {
 
   const intl = useIntl();
 
-  function handleChangeActiveObject(index) {
+  function handleChangeActiveObject(index: number) {
     const newIndex = activeObject === index ? -1 : index;
 
     setActiveObject(newIndex);
@@ -178,13 +192,22 @@ const ObjectListWidget = (props: ObjectListWidgetProps) => {
 
   const objectSchema =
     typeof schema === 'function' ? schema({ ...props, activeObject }) : schema;
+  const getEnhancedSchema = (data: object) => {
+    const enhancedSchema = schemaEnhancer
+      ? schemaEnhancer({ schema: objectSchema, formData: data, intl })
+      : objectSchema;
+    const extendedSchema = schemaExtender
+      ? schemaExtender(objectSchema, data, intl)
+      : enhancedSchema;
+    return extendedSchema;
+  };
 
-  function handleDragEnd(event) {
+  function handleDragEnd(event: DragEndEvent) {
     const { active, over } = event;
 
-    if (active.id !== over.id) {
+    if (active.id !== over?.id) {
       const source = value.findIndex((item) => item['@id'] === active.id);
-      const destination = value.findIndex((item) => item['@id'] === over.id);
+      const destination = value.findIndex((item) => item['@id'] === over?.id);
 
       const newValue = reorderArray(value, source, destination);
       onChange(id, newValue);
@@ -205,13 +228,9 @@ const ObjectListWidget = (props: ObjectListWidgetProps) => {
                 '@id': uuid(),
               };
 
-              const objSchema = schemaEnhancer
-                ? // @ts-ignore - TODO Make sure this continues to have sense
-                  schemaEnhancer({ schema: objectSchema, formData: data, intl })
-                : objectSchema;
               const dataWithDefaults = applySchemaDefaults({
                 data,
-                schema: objSchema,
+                schema: getEnhancedSchema(data),
                 intl,
               });
 
@@ -318,16 +337,7 @@ const ObjectListWidget = (props: ObjectListWidgetProps) => {
                       id={`${uid}`}
                       key={`olw-${uid}`}
                       block={block}
-                      schema={
-                        schemaEnhancer
-                          ? // @ts-ignore - TODO Make sure this continues to have sense
-                            schemaEnhancer({
-                              schema: objectSchema,
-                              formData: item,
-                              intl,
-                            })
-                          : objectSchema
-                      }
+                      schema={getEnhancedSchema(item)}
                       value={item}
                       onChange={(fieldId: string, fieldValue: any) => {
                         const newvalue = value.map((v, i) =>
