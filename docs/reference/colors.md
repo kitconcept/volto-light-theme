@@ -90,3 +90,51 @@ For the Blocks the system considers a list of theme objects. These themes and co
     },
   ];
 ```
+
+## Recommended usage
+
+VLT splits its color tokens into two families with distinct, non-overlapping responsibilities. Picking the right family for a given element keeps the site's theming consistent and predictable.
+
+### Use `--theme-*` properties to style blocks
+
+The custom properties prefixed with `--theme-` (`--theme-color`, `--theme-foreground-color`, `--theme-high-contrast-color`, `--theme-low-contrast-foreground-color`) are meant to style blocks.
+They are driven by the block theme selected through the `color_picker` widget and are scoped to the block they apply to, so a block adapts to whichever theme an editor assigns to it.
+
+When you author a custom block or override block styles, read colors from the `--theme-*` properties so the block respects the editor's theme choice:
+
+```scss
+.block.myCustomBlock {
+  background-color: var(--theme-color);
+  color: var(--theme-foreground-color);
+}
+```
+
+### Use `--primary-*`, `--secondary-*`, and `--accent-*` for the main layout
+
+The main color pairs (`--primary-color` / `--primary-foreground-color`, `--secondary-color` / `--secondary-foreground-color`, and `--accent-color` / `--accent-foreground-color`) are meant for the site's main layout elements, such as the header, footer, navigation, fat menu, and breadcrumbs.
+They are site-wide and not tied to any individual block.
+
+```scss
+// ❌ Avoid this — main colors do not follow the block's theme
+.block.myCustomBlock {
+  background-color: var(--primary-color);
+  color: var(--primary-foreground-color);
+}
+
+// ✅ Do this instead — block colors follow the editor's theme choice
+.block.myCustomBlock {
+  background-color: var(--theme-color);
+  color: var(--theme-foreground-color);
+}
+```
+
+Conversely, do not use `--theme-*` properties for layout elements — they are only defined in the scope of a block and carry no meaningful value at the layout level.
+
+```{note}
+There could be deliberate exceptions. If you want a fixed, site-wide color that stays the same in a block across every block theme, for example a brand accent, you could use `--accent-color` (and `--accent-foreground-color`) inside a block. Be aware of the trade-off: because this color is not part of the block theme, it will **not** change when an editor switches the block theme with the `color_picker` widget.
+```
+
+## See also
+
+- {doc}`../conceptual-guides/site-customization` — how editors customize the site theme's main colors through the site root.
+- {doc}`widgets` — the `color_picker` widget used to expose block themes and color definitions to editors.
