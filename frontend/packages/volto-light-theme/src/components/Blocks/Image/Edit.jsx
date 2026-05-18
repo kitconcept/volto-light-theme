@@ -53,24 +53,14 @@ function Edit(props) {
       <div className={cx('block image')}>
         {data.url ? (
           <figure
-            className={cx('figure', {
-              // START CUSTOMIZATION
-              // 'full-width': data.align === 'full',
-              // END CUSTOMIZATION
+            // START CUSTOMIZATION
+            className={cx({
               large: data.size === 'l' || !data.size,
               medium: data.size === 'm',
               small: data.size === 's',
             })}
           >
             <Image
-              // START CUSTOMIZATION - Moved to the figure
-              // className={cx({
-              //   'full-width': data.align === 'full',
-              //   large: data.size === 'l',
-              //   medium: data.size === 'm',
-              //   small: data.size === 's',
-              // })}
-              // END CUSTOMIZATION
               item={
                 data.image_scales
                   ? {
@@ -80,6 +70,7 @@ function Edit(props) {
                     }
                   : undefined
               }
+              // END CUSTOMIZATION
               src={
                 data.image_scales
                   ? undefined

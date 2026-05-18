@@ -1,0 +1,69 @@
+import { describe, it, expect, vi } from 'vitest';
+import { MapsBlockDataAdapter } from './adapter';
+
+const alignRight = {
+  'align:noprefix': { '--block-alignment': 'var(--align-right)' },
+};
+const alignCenter = {
+  'align:noprefix': { '--block-alignment': 'var(--align-center)' },
+};
+
+describe('MapsBlockDataAdapter', () => {
+  it('applies the default width for a floating map', () => {
+    const onChangeBlock = vi.fn();
+
+    MapsBlockDataAdapter({
+      block: 'block-1',
+      data: { '@type': 'maps', styles: { ...alignRight } },
+      id: 'url',
+      onChangeBlock,
+      value: 'https://maps.example.com',
+    });
+
+    expect(onChangeBlock).toHaveBeenCalledWith('block-1', {
+      '@type': 'maps',
+      url: 'https://maps.example.com',
+      styles: {
+        ...alignRight,
+        'blockWidth:noprefix': {
+          '--block-width': 'var(--default-container-width)',
+        },
+      },
+    });
+  });
+
+  it('leaves the styles untouched for a non-floating map', () => {
+    const onChangeBlock = vi.fn();
+
+    MapsBlockDataAdapter({
+      block: 'block-1',
+      data: { '@type': 'maps', styles: { ...alignCenter } },
+      id: 'url',
+      onChangeBlock,
+      value: 'https://maps.example.com',
+    });
+
+    expect(onChangeBlock).toHaveBeenCalledWith('block-1', {
+      '@type': 'maps',
+      url: 'https://maps.example.com',
+      styles: { ...alignCenter },
+    });
+  });
+
+  it('leaves the styles untouched when no alignment is set', () => {
+    const onChangeBlock = vi.fn();
+
+    MapsBlockDataAdapter({
+      block: 'block-1',
+      data: { '@type': 'maps' },
+      id: 'url',
+      onChangeBlock,
+      value: 'https://maps.example.com',
+    });
+
+    expect(onChangeBlock).toHaveBeenCalledWith('block-1', {
+      '@type': 'maps',
+      url: 'https://maps.example.com',
+    });
+  });
+});

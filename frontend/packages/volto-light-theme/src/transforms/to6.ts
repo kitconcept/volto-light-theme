@@ -15,12 +15,6 @@ function* visitBlocks(blocks) {
   }
 }
 
-function getAlignmentValue(align: string | undefined): string {
-  if (align === 'left') return 'var(--align-left)';
-  if (align === 'right') return 'var(--align-right)';
-  return 'var(--align-center)';
-}
-
 export function migrateToVLT6ColorAndWidthModel(data: BlocksFormData) {
   const NORMALIZED_WIDTHS = [
     ...config.blocks.widths,
@@ -75,59 +69,24 @@ export function migrateToVLT6ColorAndWidthModel(data: BlocksFormData) {
       delete block.styles.align;
     }
 
-    if (block['@type'] === 'image') {
-      const align = block?.align;
-      const isFloating = align === 'left' || align === 'right';
-      const alignmentValue = getAlignmentValue(align);
-
-      const isFloatingLarge =
-        isFloating &&
-        (block?.styles?.['size:noprefix'] === 'var(--size-large)' ||
-          block?.size === 'l');
-
-      const blockWidthValue =
-        align === 'wide' || isFloatingLarge
-          ? { '--block-width': 'var(--default-container-width)' }
-          : align === 'full'
-            ? { '--block-width': '100%' }
-            : { '--block-width': 'var(--narrow-container-width)' };
-
+    if (
+      block['@type'] === 'image' &&
+      !['left', 'right'].includes(block?.align)
+    ) {
       block.styles = {
-        ...block?.styles,
-        'align:noprefix': block?.styles?.['align:noprefix'] ?? {
-          '--block-alignment': alignmentValue,
-        },
-        'blockWidth:noprefix': isFloating
-          ? blockWidthValue
-          : block?.styles?.['blockWidth:noprefix'] ?? blockWidthValue,
+        ...block.styles,
+        'blockWidth:noprefix':
+          block.styles?.['blockWidth:noprefix'] ??
+          findStyleByName(
+            NORMALIZED_WIDTHS,
+            block?.align === 'wide'
+              ? 'default'
+              : block?.align === 'center'
+                ? 'narrow'
+                : block.align,
+          ),
       };
-
-      delete block.align;
-    }
-
-    if (block['@type'] === 'video' || block['@type'] === 'maps') {
-      const align = block?.align;
-      const isFloating = align === 'left' || align === 'right';
-      const alignmentValue = getAlignmentValue(align);
-
-      const blockWidthValue =
-        isFloating || align === 'wide'
-          ? { '--block-width': 'var(--default-container-width)' }
-          : align === 'full'
-            ? { '--block-width': '100%' }
-            : { '--block-width': 'var(--narrow-container-width)' };
-
-      block.styles = {
-        ...block?.styles,
-        'align:noprefix': block?.styles?.['align:noprefix'] ?? {
-          '--block-alignment': alignmentValue,
-        },
-        'blockWidth:noprefix': isFloating
-          ? blockWidthValue
-          : block?.styles?.['blockWidth:noprefix'] ?? blockWidthValue,
-      };
-
-      delete block.align;
+      block.align = 'center';
     }
   }
 }
