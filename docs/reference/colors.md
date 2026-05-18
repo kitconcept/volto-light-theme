@@ -33,34 +33,65 @@ The site theme considers three main color pairs:
 
 ### Color mapping to site layout elements
 
-As an additional layer on top of this, some semantic custom properties for the basic layout sections have been set in place in a way we feel helps create a cohesive final design.
+VLT defines a semantic layer of custom properties — one pair per main layout section (header, footer, fat menu, breadcrumbs, and search bar) — that point to the main color pairs. The layout CSS reads these semantic properties rather than the main pairs directly. For the rationale behind this indirection, see {doc}`../conceptual-guides/color-system`.
 
-#### Navigation text color:
-`--primary-foreground-color`
+The semantic properties and the main pairs they point to:
 
-#### Fat menu and breadcrumbs text color
-`--accent-foreground-color`
+| Layout section | Background property | Foreground (text) property | Resolves to |
+| --- | --- | --- | --- |
+| Header | `--header-background` | `--header-foreground` | `--primary-color` / `--primary-foreground-color` |
+| Footer (main) | `--footer-background` | `--footer-foreground` | `--secondary-color` / `--secondary-foreground-color` |
+| Fat menu | `--fatmenu-background` | `--fatmenu-foreground` | `--accent-color` / `--accent-foreground-color` |
+| Breadcrumbs | `--breadcrumbs-background` | `--breadcrumbs-foreground` | `--accent-color` / `--accent-foreground-color` |
+| Search bar | `--search-background` | `--search-foreground` | `--accent-color` / `--accent-foreground-color` |
 
-#### Fat menu background color
-`--accent-color`
-
-#### Footer font color
-`--secondary-foreground-color`
-
-#### Footer background color
-`--secondary-color`
-
-For example, in the case of the site's Header and Footer:
+For example, the header and footer mappings effectively resolve to:
 
 ```scss
   // Header
   --header-background: var(--primary-color);
   --header-foreground: var(--primary-foreground-color);
 
-  // Footer
+  // Footer (main)
   --footer-background: var(--secondary-color);
   --footer-foreground: var(--secondary-foreground-color);
 ```
+
+```{note}
+The background mappings (and the footer, fat menu, breadcrumbs, and search foregrounds) are declared in `:root`. `--header-foreground` is the exception: it is not declared by default, and the header reads it with a fallback (`var(--header-foreground, var(--primary-foreground-color))`), so it still resolves to `--primary-foreground-color` unless you set it explicitly.
+```
+
+The following sections describe where each semantic property is applied.
+
+#### Navigation text color
+
+`--header-foreground` (resolves to `--primary-foreground-color`)
+
+Applied to the text of the top-level navigation menu items in the site header, as well as the header tools (such as the personal tools and language selector). The matching header background is `--header-background` (`--primary-color`).
+
+#### Fat menu and breadcrumbs text color
+
+`--fatmenu-foreground` and `--breadcrumbs-foreground` (both resolve to `--accent-foreground-color`)
+
+Applied to the text inside the fat menu (the expanded mega-menu dropdown panel) and to the breadcrumbs.
+
+#### Fat menu background color
+
+`--fatmenu-background` and `--breadcrumbs-background` (both resolve to `--accent-color`)
+
+Applied to the background of the fat menu dropdown panel and of the breadcrumbs bar.
+
+#### Footer font color
+
+`--footer-foreground`
+
+Applied to the text of the **main footer**, where it resolves to `--secondary-foreground-color`. The footer is split into three regions — the pre-footer, the main footer, and the post-footer — and each region sets `--footer-foreground` itself. Only the main footer uses the secondary color pair; the pre-footer and post-footer use the primary color pair instead.
+
+#### Footer background color
+
+`--footer-background`
+
+Applied to the background of the **main footer**, where it resolves to `--secondary-color` (see the note above about the pre-footer and post-footer using the primary pair).
 
 ## Block themes
 
@@ -91,50 +122,8 @@ For the Blocks the system considers a list of theme objects. These themes and co
   ];
 ```
 
-## Recommended usage
-
-VLT splits its color tokens into two families with distinct, non-overlapping responsibilities. Picking the right family for a given element keeps the site's theming consistent and predictable.
-
-### Use `--theme-*` properties to style blocks
-
-The custom properties prefixed with `--theme-` (`--theme-color`, `--theme-foreground-color`, `--theme-high-contrast-color`, `--theme-low-contrast-foreground-color`) are meant to style blocks.
-They are driven by the block theme selected through the `color_picker` widget and are scoped to the block they apply to, so a block adapts to whichever theme an editor assigns to it.
-
-When you author a custom block or override block styles, read colors from the `--theme-*` properties so the block respects the editor's theme choice:
-
-```scss
-.block.myCustomBlock {
-  background-color: var(--theme-color);
-  color: var(--theme-foreground-color);
-}
-```
-
-### Use `--primary-*`, `--secondary-*`, and `--accent-*` for the main layout
-
-The main color pairs (`--primary-color` / `--primary-foreground-color`, `--secondary-color` / `--secondary-foreground-color`, and `--accent-color` / `--accent-foreground-color`) are meant for the site's main layout elements, such as the header, footer, navigation, fat menu, and breadcrumbs.
-They are site-wide and not tied to any individual block.
-
-```scss
-// ❌ Avoid this — main colors do not follow the block's theme
-.block.myCustomBlock {
-  background-color: var(--primary-color);
-  color: var(--primary-foreground-color);
-}
-
-// ✅ Do this instead — block colors follow the editor's theme choice
-.block.myCustomBlock {
-  background-color: var(--theme-color);
-  color: var(--theme-foreground-color);
-}
-```
-
-Conversely, do not use `--theme-*` properties for layout elements — they are only defined in the scope of a block and carry no meaningful value at the layout level.
-
-```{note}
-There could be deliberate exceptions. If you want a fixed, site-wide color that stays the same in a block across every block theme, for example a brand accent, you could use `--accent-color` (and `--accent-foreground-color`) inside a block. Be aware of the trade-off: because this color is not part of the block theme, it will **not** change when an editor switches the block theme with the `color_picker` widget.
-```
-
 ## See also
 
+- {doc}`../conceptual-guides/color-system` — how VLT's color system is organized, and when to use block colors versus layout colors.
 - {doc}`../conceptual-guides/site-customization` — how editors customize the site theme's main colors through the site root.
 - {doc}`widgets` — the `color_picker` widget used to expose block themes and color definitions to editors.
