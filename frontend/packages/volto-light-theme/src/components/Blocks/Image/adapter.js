@@ -17,10 +17,8 @@ export const ImageBlockDataAdapter = ({
     [id]: value,
   };
 
-  const alignStyle =
-    dataSaved.styles?.['align:noprefix']?.['--block-alignment'];
-  const isFloating =
-    alignStyle === 'var(--align-left)' || alignStyle === 'var(--align-right)';
+  const align = dataSaved.styles?.['align:noprefix'];
+  const isFloating = align === 'left' || align === 'right';
   const isLarge =
     dataSaved.size === 'l' ||
     dataSaved.styles?.['size:noprefix'] === 'var(--size-large)';
@@ -41,9 +39,7 @@ export const ImageBlockDataAdapter = ({
       styles: {
         ...dataSaved.styles,
         'size:noprefix': SIZEMAP[dataSaved.size] || 'large',
-        'blockWidth:noprefix': {
-          '--block-width': 'var(--narrow-container-width)',
-        },
+        'blockWidth:noprefix': 'narrow',
       },
     };
   }
@@ -53,9 +49,7 @@ export const ImageBlockDataAdapter = ({
       styles: {
         ...dataSaved.styles,
         'size:noprefix': SIZEMAP['l'],
-        'blockWidth:noprefix': {
-          '--block-width': 'var(--default-container-width)',
-        },
+        'blockWidth:noprefix': 'default',
       },
     };
   }

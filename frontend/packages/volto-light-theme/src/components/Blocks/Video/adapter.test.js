@@ -1,12 +1,8 @@
 import { describe, it, expect, vi } from 'vitest';
 import { VideoBlockDataAdapter } from './adapter';
 
-const alignLeft = {
-  'align:noprefix': { '--block-alignment': 'var(--align-left)' },
-};
-const alignCenter = {
-  'align:noprefix': { '--block-alignment': 'var(--align-center)' },
-};
+const alignLeft = { 'align:noprefix': 'left' };
+const alignCenter = { 'align:noprefix': 'center' };
 
 describe('VideoBlockDataAdapter', () => {
   it('applies the default width for a floating video', () => {
@@ -25,9 +21,7 @@ describe('VideoBlockDataAdapter', () => {
       url: 'https://example.com/video',
       styles: {
         ...alignLeft,
-        'blockWidth:noprefix': {
-          '--block-width': 'var(--default-container-width)',
-        },
+        'blockWidth:noprefix': 'default',
       },
     });
   });

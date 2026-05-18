@@ -1,12 +1,8 @@
 import { describe, it, expect, vi } from 'vitest';
 import { MapsBlockDataAdapter } from './adapter';
 
-const alignRight = {
-  'align:noprefix': { '--block-alignment': 'var(--align-right)' },
-};
-const alignCenter = {
-  'align:noprefix': { '--block-alignment': 'var(--align-center)' },
-};
+const alignRight = { 'align:noprefix': 'right' };
+const alignCenter = { 'align:noprefix': 'center' };
 
 describe('MapsBlockDataAdapter', () => {
   it('applies the default width for a floating map', () => {
@@ -25,9 +21,7 @@ describe('MapsBlockDataAdapter', () => {
       url: 'https://maps.example.com',
       styles: {
         ...alignRight,
-        'blockWidth:noprefix': {
-          '--block-width': 'var(--default-container-width)',
-        },
+        'blockWidth:noprefix': 'default',
       },
     });
   });

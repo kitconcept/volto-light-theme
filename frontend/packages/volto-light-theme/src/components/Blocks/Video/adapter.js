@@ -11,19 +11,15 @@ export const VideoBlockDataAdapter = ({
     [id]: value,
   };
 
-  const alignStyle =
-    dataSaved.styles?.['align:noprefix']?.['--block-alignment'];
-  const isFloating =
-    alignStyle === 'var(--align-left)' || alignStyle === 'var(--align-right)';
+  const align = dataSaved.styles?.['align:noprefix'];
+  const isFloating = align === 'left' || align === 'right';
 
   if (isFloating) {
     dataSaved = {
       ...dataSaved,
       styles: {
         ...dataSaved.styles,
-        'blockWidth:noprefix': {
-          '--block-width': 'var(--default-container-width)',
-        },
+        'blockWidth:noprefix': 'default',
       },
     };
   }

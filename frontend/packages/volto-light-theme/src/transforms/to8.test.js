@@ -1,24 +1,13 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, beforeAll } from 'vitest';
+import config from '@plone/volto/registry';
 import { migrateToVLT8FloatingBlocks } from './to8';
 
-const alignLeft = {
-  'align:noprefix': { '--block-alignment': 'var(--align-left)' },
-};
-const alignRight = {
-  'align:noprefix': { '--block-alignment': 'var(--align-right)' },
-};
-const alignCenter = {
-  'align:noprefix': { '--block-alignment': 'var(--align-center)' },
-};
-const narrowWidth = {
-  'blockWidth:noprefix': { '--block-width': 'var(--narrow-container-width)' },
-};
-const defaultWidth = {
-  'blockWidth:noprefix': { '--block-width': 'var(--default-container-width)' },
-};
-const fullWidth = {
-  'blockWidth:noprefix': { '--block-width': '100%' },
-};
+const alignLeft = { 'align:noprefix': 'left' };
+const alignRight = { 'align:noprefix': 'right' };
+const alignCenter = { 'align:noprefix': 'center' };
+const narrowWidth = { 'blockWidth:noprefix': 'narrow' };
+const defaultWidth = { 'blockWidth:noprefix': 'default' };
+const fullWidth = { 'blockWidth:noprefix': 'full' };
 
 // Wraps a single block in the `data` shape the transform expects and runs it.
 const migrate = (block) => {
@@ -26,6 +15,29 @@ const migrate = (block) => {
   migrateToVLT8FloatingBlocks(data);
   return data.blocks['block-1'];
 };
+
+beforeAll(() => {
+  config.blocks.widths = [
+    {
+      name: 'narrow',
+      style: { '--block-width': 'var(--narrow-container-width)' },
+    },
+    {
+      name: 'default',
+      style: { '--block-width': 'var(--default-container-width)' },
+    },
+    {
+      name: 'layout',
+      style: { '--block-width': 'var(--layout-container-width)' },
+    },
+    { name: 'full', style: { '--block-width': '100%' } },
+  ];
+  config.blocks.alignments = [
+    { name: 'left', style: { '--block-alignment': 'var(--align-left)' } },
+    { name: 'center', style: { '--block-alignment': 'var(--align-center)' } },
+    { name: 'right', style: { '--block-alignment': 'var(--align-right)' } },
+  ];
+});
 
 describe('migrateToVLT8FloatingBlocks', () => {
   it('centers a non-floating image and applies the narrow width', () => {
@@ -110,8 +122,34 @@ describe('migrateToVLT8FloatingBlocks', () => {
     });
   });
 
+  it('migrates the button inneralign to the align literal', () => {
+    expect(migrate({ '@type': '__button', inneralign: 'right' })).toEqual({
+      '@type': '__button',
+      styles: { ...alignRight },
+    });
+  });
+
+  it('keeps an existing button alignment over the legacy inneralign', () => {
+    expect(
+      migrate({
+        '@type': '__button',
+        inneralign: 'right',
+        styles: { ...alignLeft },
+      }),
+    ).toEqual({
+      '@type': '__button',
+      styles: { ...alignLeft },
+    });
+  });
+
+  it('drops the button inneralign property when it has no value', () => {
+    expect(migrate({ '@type': '__button', inneralign: '' })).toEqual({
+      '@type': '__button',
+    });
+  });
+
   it('leaves an already migrated block untouched', () => {
-    // No legacy `align`, alignment and width already live in `styles`.
+    // No legacy `align`, alignment and width already stored as literals.
     expect(
       migrate({ '@type': 'image', styles: { ...alignLeft, ...defaultWidth } }),
     ).toEqual({

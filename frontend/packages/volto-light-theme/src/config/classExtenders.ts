@@ -1,6 +1,5 @@
 import type { ConfigType } from '@plone/registry';
 import { getPreviousNextBlock } from '@plone/volto/helpers/Blocks/Blocks';
-import { getCurrentStyleByName } from '../helpers/helpers';
 
 export default function install(config: ConfigType) {
   // Register custom StyleWrapper ClassNames
@@ -71,36 +70,17 @@ export default function install(config: ConfigType) {
   config.settings.styleClassNameExtenders.push(
     ({ data, classNames }: { data: any; classNames: Array<string> }) => {
       const currentBlockWidth =
-        getCurrentStyleByName(
-          config.blocks.widths,
-          'blockWidth:noprefix',
-          data,
-        ) || 'default';
-      if (currentBlockWidth) {
-        return [...classNames, `has--block-width--${currentBlockWidth}`];
-      }
-      return classNames;
+        data?.styles?.['blockWidth:noprefix'] || 'default';
+      return [...classNames, `has--block-width--${currentBlockWidth}`];
     },
   );
 
   // Blocks alignment convenience classes injection
-  const alignmentDefinitions = [
-    { style: { '--block-alignment': 'var(--align-left)' }, name: 'left' },
-    { style: { '--block-alignment': 'var(--align-center)' }, name: 'center' },
-    { style: { '--block-alignment': 'var(--align-right)' }, name: 'right' },
-  ];
   config.settings.styleClassNameExtenders.push(
     ({ data, classNames }: { data: any; classNames: Array<string> }) => {
       const currentBlockAlignment =
-        getCurrentStyleByName(alignmentDefinitions, 'align:noprefix', data) ||
-        'center';
-      if (currentBlockAlignment) {
-        return [
-          ...classNames,
-          `has--block-alignment--${currentBlockAlignment}`,
-        ];
-      }
-      return classNames;
+        data?.styles?.['align:noprefix'] || 'center';
+      return [...classNames, `has--block-alignment--${currentBlockAlignment}`];
     },
   );
 

@@ -68,6 +68,7 @@ declare module '@plone/types' {
   }
   export interface BlockConfigBase {
     themes?: StyleDefinition[];
+    alignments?: StyleDefinition[];
     defaultTheme: string;
     allowedBlocks?: string[];
     allowed_headline_tags?: string[][];
@@ -82,6 +83,10 @@ declare module '@plone/types' {
 
   export interface SettingsConfig {
     blockModel?: number;
+  }
+
+  export interface BlocksConfig {
+    alignments: StyleDefinition[];
   }
 }
 
@@ -149,6 +154,31 @@ export default function install(config: ConfigType) {
     },
   ];
 
+  // Default block alignments
+  config.blocks.alignments = [
+    {
+      style: {
+        '--block-alignment': 'var(--align-left)',
+      },
+      name: 'left',
+      label: 'Left',
+    },
+    {
+      style: {
+        '--block-alignment': 'var(--align-center)',
+      },
+      name: 'center',
+      label: 'Center',
+    },
+    {
+      style: {
+        '--block-alignment': 'var(--align-right)',
+      },
+      name: 'right',
+      label: 'Right',
+    },
+  ];
+
   config.registerUtility({
     name: 'blockThemesEnhancer',
     type: 'styleWrapperStyleObjectEnhancer',
@@ -159,6 +189,20 @@ export default function install(config: ConfigType) {
     name: 'styleDefinitionsEnhancer',
     type: 'styleWrapperStyleObjectEnhancer',
     method: styleDefinitionsEnhancer,
+  });
+
+  config.registerUtility({
+    name: 'align:noprefix',
+    type: 'styleFieldDefinition',
+    method: ({ data }: { data: { '@type'?: string } }) =>
+      config.blocks.blocksConfig?.[data?.['@type'] ?? '']?.alignments ||
+      config.blocks.alignments,
+  });
+
+  config.registerUtility({
+    name: 'blockWidth:noprefix',
+    type: 'styleFieldDefinition',
+    method: () => config.blocks.widths,
   });
 
   // No required blocks except eventMetadata

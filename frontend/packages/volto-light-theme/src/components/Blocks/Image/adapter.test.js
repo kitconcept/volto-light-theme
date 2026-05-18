@@ -1,12 +1,8 @@
 import { describe, it, expect, vi } from 'vitest';
 import { ImageBlockDataAdapter } from './adapter';
 
-const alignLeft = {
-  'align:noprefix': { '--block-alignment': 'var(--align-left)' },
-};
-const alignRight = {
-  'align:noprefix': { '--block-alignment': 'var(--align-right)' },
-};
+const alignLeft = { 'align:noprefix': 'left' };
+const alignRight = { 'align:noprefix': 'right' };
 
 describe('ImageBlockDataAdapter', () => {
   it('forces a large size for non-floating images', () => {
@@ -46,9 +42,7 @@ describe('ImageBlockDataAdapter', () => {
       styles: {
         ...alignLeft,
         'size:noprefix': 'medium',
-        'blockWidth:noprefix': {
-          '--block-width': 'var(--narrow-container-width)',
-        },
+        'blockWidth:noprefix': 'narrow',
       },
     });
   });
@@ -71,9 +65,7 @@ describe('ImageBlockDataAdapter', () => {
       styles: {
         ...alignRight,
         'size:noprefix': 'large',
-        'blockWidth:noprefix': {
-          '--block-width': 'var(--default-container-width)',
-        },
+        'blockWidth:noprefix': 'default',
       },
     });
   });
@@ -98,9 +90,7 @@ describe('ImageBlockDataAdapter', () => {
       styles: {
         ...alignLeft,
         'size:noprefix': 'large',
-        'blockWidth:noprefix': {
-          '--block-width': 'var(--default-container-width)',
-        },
+        'blockWidth:noprefix': 'default',
       },
     });
   });

@@ -19,9 +19,8 @@ export const videoBlockSchemaEnhancer = ({ formData, schema, intl }) => {
     (f) => f !== 'align',
   );
 
-  const alignStyle = formData.styles?.['align:noprefix']?.['--block-alignment'];
-  const isFloating =
-    alignStyle === 'var(--align-left)' || alignStyle === 'var(--align-right)';
+  const align = formData.styles?.['align:noprefix'];
+  const isFloating = align === 'left' || align === 'right';
 
   schema.properties.styles.schema.fieldsets[0].fields = [
     'align:noprefix',
@@ -32,13 +31,13 @@ export const videoBlockSchemaEnhancer = ({ formData, schema, intl }) => {
     widget: 'blockAlignment',
     title: intl.formatMessage(messages.Alignment),
     default: 'center',
+    actions: config.blocks.alignments.map((alignment) => alignment.name),
   };
   schema.properties.styles.schema.properties['blockWidth:noprefix'] = {
     widget: 'blockWidth',
     title: intl.formatMessage(messages.BlockWidth),
     default: 'default',
-    filterActions: ['narrow', 'default', 'layout', 'full'],
-    actions: config.blocks.widths,
+    actions: config.blocks.widths.map((width) => width.name),
   };
   schema.properties.styles.schema.properties['blockWidth:noprefix'].disabled =
     isFloating;
