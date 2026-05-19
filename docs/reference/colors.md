@@ -86,13 +86,15 @@ Applied to the background of the fat menu dropdown panel and of the breadcrumbs 
 
 `--footer-foreground`
 
-Applied to the text of the **main footer**, where it resolves to `--secondary-foreground-color`. The footer is split into three regions — the pre-footer, the main footer, and the post-footer — and each region sets `--footer-foreground` itself. Only the main footer uses the secondary color pair; the pre-footer and post-footer use the primary color pair instead.
+Applied to the text of the footer. The footer can have up to three regions — an optional pre-footer, the **main footer**, and an optional post-footer — and each region sets `--footer-foreground` itself.
+
+The main footer is always present and uses the secondary color pair, so there `--footer-foreground` resolves to `--secondary-foreground-color`. The pre-footer and post-footer are optional; when a site includes them, they use the primary color pair instead, so `--footer-foreground` resolves to `--primary-foreground-color` in those regions.
 
 ### Footer background color
 
 `--footer-background`
 
-Applied to the background of the **main footer**, where it resolves to `--secondary-color` (see the note above about the pre-footer and post-footer using the primary pair).
+Applied to the background of the footer. As with `--footer-foreground`, the value depends on the region: the always-present **main footer** resolves it to `--secondary-color`, while the optional pre-footer and post-footer, when a site includes them, resolve it to `--primary-color`.
 
 ## Block themes
 

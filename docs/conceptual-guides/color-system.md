@@ -34,9 +34,17 @@ When you author a custom block or override block styles, read colors from the `-
 
 ### Layout colors: the main color pairs
 
-The three main color pairs — `--primary-color` / `--primary-foreground-color`, `--secondary-color` / `--secondary-foreground-color`, and `--accent-color` / `--accent-foreground-color` — style the site's main layout elements: the header, footer, navigation, fat menu, breadcrumbs, and search bar.
+The main color pairs style the site's main layout elements: the header, footer, navigation, fat menu, breadcrumbs, and search bar. To see why there are exactly three of them, it helps to build a page up from nothing.
 
-They are site-wide and not tied to any individual block. An editor's block theme choice does not, and should not, affect them.
+Picture the simplest possible page: a header, a main content area, and a footer. At its plainest, that page needs only two colors — one for the background and one for the foreground (text, icons) that sits on it. That is the **primary** pair, `--primary-color` and `--primary-foreground-color`, typically a white background with a black foreground. On a minimal site, every layout section could be painted with this single pair.
+
+Now suppose you want the footer to stand apart from the rest of the page. You can't simply pick a new background color on its own: a background is only usable once it has a foreground color that stays legible on top of it. A distinct section therefore calls for a distinct pair. That is the **secondary** pair, `--secondary-color` and `--secondary-foreground-color`, which VLT applies to the main footer.
+
+Finally, you may want an element that adds a branding hint — a touch of flavor that goes beyond plain background and text. That is the **accent** pair, `--accent-color` and `--accent-foreground-color`. VLT uses it for the fat menu, the breadcrumbs, and the search bar.
+
+The three pairs are intentionally a small, fixed budget. Each one is a self-contained background-and-foreground combination that is guaranteed to be legible, and keeping the set small gives a layout visual structure without turning every section into a separate styling decision. The pairs do not map one-to-one to sections: a single pair can dress several sections — the accent pair, for instance, is shared by the fat menu, the breadcrumbs, and the search bar.
+
+These pairs are site-wide and not tied to any individual block. An editor's block theme choice does not, and should not, affect them.
 
 ### Choosing the right family
 
