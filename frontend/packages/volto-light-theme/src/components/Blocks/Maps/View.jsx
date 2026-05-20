@@ -8,6 +8,7 @@ import { injectIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { compose } from 'redux';
+import Body from '@plone/volto/components/manage/Blocks/Maps/Body';
 import { withBlockExtensions } from '@plone/volto/helpers/Extensions';
 
 /**
@@ -21,13 +22,7 @@ const View = ({ data, intl, style, className }) => (
   <div className={cx('block maps', className)} style={style}>
     {/* // END CUSTOMIZATION */}
     <div className="maps-inner">
-      <iframe
-        title={data.title}
-        src={data.url}
-        className="google-map"
-        frameBorder="0"
-        allowFullScreen
-      />
+      <Body data={data} />
     </div>
   </div>
 );
