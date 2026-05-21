@@ -21,9 +21,7 @@ const View = ({ data, intl, style, className }) => (
   // START CUSTOMIZATION
   <div className={cx('block maps', className)} style={style}>
     {/* // END CUSTOMIZATION */}
-    <div className="maps-inner">
-      <Body data={data} />
-    </div>
+    <Body data={data} />
   </div>
 );
 
