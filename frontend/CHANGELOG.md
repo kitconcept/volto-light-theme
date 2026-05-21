@@ -8,6 +8,13 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0-alpha.28 (2026-05-15)
+
+### Bugfix
+
+- Fix Search icon color changes when changing footer font color @iRohitSingh [#850](https://github.com/kitconcept/volto-light-theme/pull/850)
+- Fix customized ObjectListWidget to support the `schemaExtender` prop. @davisagli 
+
 ## 8.0.0-alpha.27 (2026-05-12)
 
 ## 8.0.0-alpha.26 (2026-05-12)

@@ -59,6 +59,7 @@ conceptual-guides/requirements-and-specifications
 conceptual-guides/layout
 conceptual-guides/vertical-spacing
 conceptual-guides/site-customization
+conceptual-guides/color-system
 conceptual-guides/block-model-v3
 ```
 
