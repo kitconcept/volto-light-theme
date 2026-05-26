@@ -433,12 +433,12 @@ describe('Event Calendar Block Tests', () => {
     cy.wait('@content');
     cy.url().should('eq', Cypress.config().baseUrl + '/my-page');
     cy.get('a[href="/my-second-event"]')
-      .next('div.card-inner')
+      .closest('.card')
       .find('.date-inset')
       .should('not.have.class', 'has-end-date');
 
     cy.get('a[href="/my-first-event"]')
-      .next('div.card-inner')
+      .closest('.card')
       .find('.date-inset')
       .should('have.class', 'has-end-date');
   });

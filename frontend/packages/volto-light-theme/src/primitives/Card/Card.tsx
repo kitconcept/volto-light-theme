@@ -97,58 +97,35 @@ const LinkIconButton = ({ item }: { item?: Partial<ObjectBrowserItem> }) => {
   );
 };
 const Card = (props: CardProps) => {
-  const { className, openLinkInNewTab, href, item, showLink } = props;
+  const hasItem = !!props.item;
+  const item = hasItem ? props.item : undefined;
+  const href = !hasItem ? props.href : undefined;
+  const { className, openLinkInNewTab, showLink } = props;
 
   const a11yLabelId = React.useId();
-  const linkRef = React.useRef<HTMLAnchorElement>(null);
 
-  const triggerNavigation = () => {
-    // Only navigate if there is *no* text selection
-    const hasSelection = !!window.getSelection()?.toString();
-    if (!hasSelection) {
-      linkRef.current?.click();
-    }
-  };
+  const isInteractive = !!props.href || !!props.item || showLink;
 
-  const isInteractive = showLink;
-
-  const onClick: React.MouseEventHandler<HTMLDivElement> = (e) => {
-    if (!isInteractive) return;
-    if (e.defaultPrevented) return;
-    if (e.target instanceof Element) {
-      const anchor = e.target.closest('a');
-      if (anchor && anchor !== linkRef.current) return;
-    }
-    triggerNavigation();
-  };
-
-  const onKeyDown: React.KeyboardEventHandler<HTMLDivElement> = (e) => {
-    if (!isInteractive) return;
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      triggerNavigation();
-    }
-  };
-
+  const LinkToItem = React.useCallback(
+    ({ children }: { children: React.ReactNode }) => {
+      return (
+        <ConditionalLink
+          className="card-primary-link"
+          condition={isInteractive}
+          href={href}
+          item={item}
+          openLinkInNewTab={openLinkInNewTab}
+        >
+          {children}
+        </ConditionalLink>
+      );
+    },
+    [href, item, isInteractive, openLinkInNewTab],
+  );
   return (
-    <div
-      className={cx('card', className)}
-      onClick={isInteractive ? onClick : undefined}
-      onKeyDown={isInteractive ? onKeyDown : undefined}
-      role={isInteractive ? 'link' : undefined}
-      tabIndex={isInteractive ? 0 : undefined}
-    >
-      {/* @ts-expect-error since this has no children, should fail */}
-      <ConditionalLink
-        aria-labelledby={a11yLabelId}
-        condition={isInteractive}
-        href={href}
-        item={item}
-        openLinkInNewTab={openLinkInNewTab}
-        ref={linkRef}
-      />
+    <div className={cx('card', className)}>
       <div className="card-inner">
-        {childrenWithProps(props.children, { a11yLabelId, item })}
+        {childrenWithProps(props.children, { a11yLabelId, LinkToItem, item })}
       </div>
     </div>
   );
@@ -201,17 +178,18 @@ type CardSummaryProps = {
   /** The ID of the element that labels the card. */
   a11yLabelId?: string;
   item?: Partial<ObjectBrowserItem>;
+  LinkToItem?: React.ElementType;
   children?: React.ReactNode;
 };
 
 const CardSummary = (props: CardSummaryProps) => {
-  const { children, a11yLabelId, item } = props;
-
+  const { children, a11yLabelId, item, LinkToItem } = props;
   return (
     <div className="card-summary">
       <LinkIconButton item={item} />
       {childrenWithProps(children, {
         a11yLabelId: a11yLabelId,
+        LinkToItem,
       })}
     </div>
   );

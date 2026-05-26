@@ -47,7 +47,7 @@ how-to-guides/acceptance-tests
 how-to-guides/visual-regression-tests
 how-to-guides/contributing
 how-to-guides/develop-add-ons
-how-to-guides/releases
+how-to-guides/release
 how-to-guides/upgrade-guide
 ```
 
@@ -59,6 +59,7 @@ conceptual-guides/requirements-and-specifications
 conceptual-guides/layout
 conceptual-guides/vertical-spacing
 conceptual-guides/site-customization
+conceptual-guides/color-system
 conceptual-guides/block-model-v3
 ```
 

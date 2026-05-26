@@ -15,6 +15,7 @@
   <include file="profiles.zcml" />
 
   <include package=".behaviors" />
+  <include package=".browser" />
 
   <include package="plone.volto.cors" />
 

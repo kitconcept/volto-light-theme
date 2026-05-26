@@ -2,11 +2,10 @@
 #page-add,
 #page-edit {
   .block.search {
+    &.next--has--same--backgroundColor.next--is--same--block-type {
+      margin-bottom: $spacing-xlarge;
+    }
     &.grid {
-      .card-container > img {
-        width: 100% !important;
-      }
-
       .listing-item:last-child {
         padding-bottom: 0;
         border-bottom: none;

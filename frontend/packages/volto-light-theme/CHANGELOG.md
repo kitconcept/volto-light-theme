@@ -8,6 +8,99 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0-alpha.28 (2026-05-15)
+
+### Bugfix
+
+- Fix Search icon color changes when changing footer font color @iRohitSingh [#850](https://github.com/kitconcept/volto-light-theme/pull/850)
+- Fix customized ObjectListWidget to support the `schemaExtender` prop. @davisagli 
+
+## 8.0.0-alpha.27 (2026-05-12)
+
+## 8.0.0-alpha.26 (2026-05-12)
+
+### Bugfix
+
+- Fix Mobile layout of social media icons @iRohitSingh [#852](https://github.com/kitconcept/volto-light-theme/pull/852)
+- Fix social media icon color @iRohitSingh [#854](https://github.com/kitconcept/volto-light-theme/pull/854)
+- Fix loading of inherited site customization fields on error views. @davisagli 
+- Fixed not working combinations with the richtext-widget in the text-block and updated line-height of ToC block according to figma. @TimoBroeskamp 
+- Update Volto to 19a36.
+  See https://github.com/plone/volto/releases/tag/19.0.0-alpha.36 @sneridagh 
+
+## 8.0.0-alpha.25 (2026-05-06)
+
+### Bugfix
+
+- Fix Footer aligned with content @iRohitSingh [#838](https://github.com/kitconcept/volto-light-theme/pull/838)
+- Fixed a bug that closed the Navigation when scrolling down with the scrollbar. @ TimoBroeskamp 
+- Fixed underlined items in the controlpanel and the contents tab. @TimoBroeskamp 
+- Upgrade Volto 19a33.
+  Upgrade `volto-calendar-block` 1.0.0a9
+  https://github.com/plone/volto/releases/tag/19.0.0-alpha.33 @sneridagh 
+
+## 8.0.0-alpha.24 (2026-04-30)
+
+### Bugfix
+
+- Remove the padding added by header-wrapper for search-wrapper and center ther search. @Tishasoumya-02 [#846](https://github.com/kitconcept/volto-light-theme/pull/846)
+
+## 8.0.0-alpha.23 (2026-04-29)
+
+### Breaking
+
+- Upgrade to Volto 19a31.
+  Forces `react-aria-components` from the catalog in Volto so projects using it have to be updated to at least this Volto version. @sneridagh 
+
+## 8.0.0-alpha.22 (2026-04-29)
+
+### Bugfix
+
+- Added translation for the social media section in the footer. @jnptk 
+
+### Documentation
+
+- Updated docs on how to release the packages. @sneridagh [#842](https://github.com/kitconcept/volto-light-theme/pull/842)
+
+## 8.0.0-alpha.21 (2026-04-22)
+
+### Internal
+
+- Re-release of 8a20. @sneridagh 
+
+## 8.0.0-alpha.20 (2026-04-21)
+
+### Bugfix
+
+- Allow address in Footer to take all available space based on number of links columns. @danalvrz 
+
+## 8.0.0-alpha.19 (2026-04-17)
+
+### Breaking
+
+- Improve Card component link handling by using a CSS stretched-link pattern & other minor style fixes for consistency. Breaking: custom `Summary` components must now accept and use the `LinkToItem` prop; category labels changed from heading tags to `<ul>` elements. See the upgrade guide for migration steps. @danalvrz 
+
+### Bugfix
+
+- Fixed the font-color in the table block with h2 or h3 font-size. @TimoBroeskamp [#820](https://github.com/kitconcept/volto-light-theme/pull/820)
+- + display footer links with an underline, remove gap between seperate lines in footer colophon text and fixed richtext-editor combinations to work together. @TimoBroeskamp 
+- Fix navigation text color not loading on hard reload. @iFlameing 
+- Fix spacings for navigation items when using the Intranet header. @danlavrz 
+- Fix styles for text in colophon. @danalvrz 
+
+## 8.0.0-alpha.18 (2026-03-14)
+
+### Feature
+
+- Improve layout for full-width blocks when in Edit mode. @danalvrz 
+
+### Bugfix
+
+- Fix font size for control panel view headers. @danalvrz [#fixControlPanelFontSize](https://github.com/kitconcept/volto-light-theme/pull/fixControlPanelFontSize)
+- Fix css of External link icon indicator for teaser and grid-teaser @iRohitSingh [#797](https://github.com/kitconcept/volto-light-theme/pull/797)
+- Fix undefined error when pressing enter in footer site colophon input. @iFlameing 
+- Improve styles for Export Import control panel & several color fixes. @danalvrz 
+
 ## 8.0.0-alpha.17 (2026-03-03)
 
 ### Feature
