@@ -49,7 +49,7 @@
     padding-top: $spacing-medium;
   }
   .card-summary {
-    position: relative; 
+    position: relative;
     @container (max-width: #{$largest-mobile-screen}) {
       padding-top: $spacing-small !important;
     }
