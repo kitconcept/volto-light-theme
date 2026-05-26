@@ -1,6 +1,31 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 8.0.0a28 (2026-05-15)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Fix Search icon color changes when changing footer font color @iRohitSingh [#850](https://github.com/kitconcept/volto-light-theme/pull/850)
+- Fix customized ObjectListWidget to support the `schemaExtender` prop. @davisagli 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 8.0.0a27 (2026-05-12)
 
 ### Backend
