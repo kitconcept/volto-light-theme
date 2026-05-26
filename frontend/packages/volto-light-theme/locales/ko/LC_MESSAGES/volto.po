@@ -1,0 +1,645 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Plone\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-16T14:21:29.474Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language: ko\n"
+"Language-Team: \n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Language-Code: ko\n"
+"Language-Name: ko\n"
+"Preferred-Encodings: utf-8\n"
+"Domain: DOMAIN\n"
+
+#. Default: "Action"
+#: components/Widgets/schema/headerActionsSchema
+msgid "Action"
+msgstr "작업"
+
+#. Default: "Add"
+#: components/Widgets/BlocksObject
+#: components/Widgets/ObjectList
+msgid "Add (object list)"
+msgstr "추가"
+
+#. Default: "Add action"
+#: components/Widgets/schema/headerActionsSchema
+msgid "Add action"
+msgstr "작업이 추가되었습니다"
+
+#. Default: "Add item"
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Add item"
+msgstr "항목 추가"
+
+#. Default: "Add link"
+#: components/Widgets/schema/footerLinksSchema
+msgid "Add link"
+msgstr "링크 추가"
+
+#. Default: "Add logo"
+#: components/Widgets/schema/footerLogosSchema
+msgid "Add logo"
+msgstr "로고 추가"
+
+#. Default: "Advanced facet?"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Advanced facet?"
+msgstr "고급 패싯?"
+
+#. Default: "Advanced facets are initially hidden and displayed on demand"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Advanced facets are initially hidden and displayed on demand"
+msgstr "고급 패싯은 처음에는 숨겨져 있다가 요청 시 표시됩니다"
+
+#. Default: "Alt text"
+#: components/Widgets/schema/footerLogosSchema
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Alt text"
+msgstr "대체 텍스트"
+
+#. Default: "Ascending"
+#: components/Blocks/EventCalendar/Search/components/SortOn
+msgid "Ascending"
+msgstr "오름차순"
+
+#. Default: "Back"
+#: components/MobileNavigation/MobileNavigation
+msgid "Back"
+msgstr "뒤로"
+
+#. Default: "Background color"
+#: components/Blocks/schema
+msgid "Background color"
+msgstr "배경 색상"
+
+#. Default: "Base search query"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Base search query"
+msgstr "기본 검색 쿼리"
+
+#. Default: "Block Width"
+#: components/Blocks/Image/schema
+msgid "Block Width"
+msgstr "블록 너비"
+
+#. Default: "Breadcrumbs"
+#: components/Breadcrumbs/Breadcrumbs
+msgid "Breadcrumbs"
+msgstr "경로"
+
+#. Default: "Cancel search"
+#: components/Blocks/EventCalendar/Search/components/SearchInput
+msgid "Cancel search"
+msgstr "검색 취소"
+
+#. Default: "Close menu"
+#: components/MobileNavigation/MobileNavigation
+#: components/Navigation/Navigation
+msgid "Close menu"
+msgstr "메뉴 닫기"
+
+#. Default: "Collapse item"
+#: components/Widgets/BlocksObject
+#: components/Widgets/ObjectList
+msgid "Collapse item"
+msgstr "항목 접기"
+
+#. Default: "The color contrast ratio {contrastRatio}:1 might not be accessible for all. WCAG Level: {complianceLevel}"
+#: components/Widgets/ColorContrastChecker
+msgid "ColorContrastCheckerMessage"
+msgstr "색상 대비율 {contrastRatio}:1이(가) 모든 사용자에게 접근 가능하지 않을 수 있습니다. WCAG 수준: {complianceLevel}"
+
+#. Default: "Contact"
+#: components/Blocks/EventMetadata/View
+msgid "Contact"
+msgstr "연락처"
+
+#. Default: "Controls"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Controls"
+msgstr "제어"
+
+#. Default: "Copyright"
+#: components/Footer/slots/Copyright
+msgid "Copyright"
+msgstr "저작권"
+
+#. Default: "Descending"
+#: components/Blocks/EventCalendar/Search/components/SortOn
+msgid "Descending"
+msgstr "내림차순"
+
+#. Default: "Description"
+#: components/Blocks/Image/schema
+#: components/Widgets/schema/footerLogosSchema
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Description"
+msgstr "설명"
+
+#. Default: "Distributed under the {license}."
+#: components/Footer/slots/Copyright
+msgid "Distributed under the {license}."
+msgstr "{license}에 따라 배포됩니다."
+
+#. Default: "Download file"
+#: components/Theme/FileView
+msgid "Download file"
+msgstr "파일 다운로드"
+
+#. Default: "E-mail"
+#: components/Summary/PersonSummary
+msgid "E-mail"
+msgstr "이메일"
+
+#. Default: "Empty object list"
+#: components/Widgets/BlocksObject
+#: components/Widgets/ObjectList
+msgid "Empty object list"
+msgstr "빈 객체 목록"
+
+#. Default: "End"
+#: components/Blocks/EventMetadata/View
+msgid "End"
+msgstr "종료"
+
+#. Default: "Facet"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Facet"
+msgstr "패싯"
+
+#. Default: "Facet widget"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Facet widget"
+msgstr "패싯 위젯"
+
+#. Default: "Facets"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Facets"
+msgstr "패싯"
+
+#. Default: "Field"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Field"
+msgstr "필드"
+
+#. Default: "Follow us:"
+#: components/Footer/slots/FollowUsLogoAndLinks
+msgid "Follow us:"
+msgstr "팔로우:"
+
+#. Default: "GNU GPL v2 license"
+#: components/Footer/slots/Copyright
+msgid "GNU GPL license"
+msgstr "GNU GPL 라이선스"
+
+#. Default: "Headline"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Headline"
+msgstr "제목"
+
+#. Default: "Hidden facets will still filter the results if proper parameters are passed in URLs"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Hidden facets will still filter the results if proper parameters are passed in URLs"
+msgstr "숨겨진 패싯은 URL에 적절한 매개변수가 전달되면 여전히 결과를 필터링합니다"
+
+#. Default: "Hide facet?"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Hide facet?"
+msgstr "패싯 숨기기?"
+
+#. Default: "Home"
+#: components/Breadcrumbs/Breadcrumbs
+#: components/Logo/Logo
+#: components/MobileNavigation/MobileNavigation
+msgid "Home"
+msgstr "홈"
+
+#. Default: "ICS Download"
+#: components/Blocks/EventMetadata/View
+msgid "ICS-Download"
+msgstr "ICS 다운로드"
+
+#. Default: "Icon"
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Icon"
+msgstr "아이콘"
+
+#. Default: "Image"
+#: components/Blocks/Image/ImageSidebar
+msgid "Image"
+msgstr "이미지"
+
+#. Default: "Invalid block - Will be removed on saving"
+#: components/Theme/RenderBlocks
+#: components/Theme/RenderBlocksV2
+msgid "Invalid Block"
+msgstr "잘못된 블록 — 저장 시 제거됩니다"
+
+#. Default: "Item"
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Item"
+msgstr "항목"
+
+#. Default: "Label"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Label"
+msgstr "레이블"
+
+#. Default: "Link"
+#: components/Widgets/schema/footerLinksSchema
+msgid "Link"
+msgstr "링크"
+
+#. Default: "List"
+#: index
+msgid "List"
+msgstr "목록"
+
+#. Default: "List with images"
+#: index
+msgid "List with images"
+msgstr "이미지 목록"
+
+#. Default: "Location"
+#: components/Blocks/EventMetadata/View
+msgid "Location"
+msgstr "위치"
+
+#. Default: "Log in"
+#: components/Anontools/Anontools
+msgid "Log in"
+msgstr "로그인"
+
+#. Default: "Log out"
+#: components/Anontools/Anontools
+msgid "Log out"
+msgstr "로그아웃"
+
+#. Default: "Logo"
+#: components/Widgets/schema/footerLogosSchema
+msgid "Logo"
+msgstr "로고"
+
+#. Default: "Logo image"
+#: components/Widgets/schema/footerLogosSchema
+msgid "Logo image"
+msgstr "로고 이미지"
+
+#. Default: "Logo of"
+#: components/Logo/Logo
+msgid "Logo of"
+msgstr "로고"
+
+#. Default: "Move down"
+#: components/Blocks/Block/Edit
+msgid "Move down"
+msgstr "아래로 이동"
+
+#. Default: "Move up"
+#: components/Blocks/Block/Edit
+msgid "Move up"
+msgstr "위로 이동"
+
+#. Default: "Multiple choices?"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Multiple choices?"
+msgstr "다중 선택?"
+
+#. Default: "Next Page"
+#: components/Blocks/Listing/ListingBody
+msgid "Next Page"
+msgstr "다음 페이지"
+
+#. Default: "No image selected"
+#: components/Blocks/Image/ImageSidebar
+msgid "No image selected"
+msgstr "선택한 이미지가 없습니다"
+
+#. Default: "No items found in this container."
+#: components/Blocks/Listing/ListingBody
+msgid "No items found in this container."
+msgstr "이 컨테이너에서 항목을 찾을 수 없습니다."
+
+#. Default: "No selection"
+#: components/Blocks/EventCalendar/Search/components/SortOn
+msgid "No selection"
+msgstr "선택 없음"
+
+#. Default: "Open configuration"
+#: components/Widgets/ModalJSONEditor
+msgid "Open configuration"
+msgstr "구성 열기"
+
+#. Default: "Open in a new tab"
+#: components/Widgets/schema/footerLinksSchema
+#: components/Widgets/schema/footerLogosSchema
+#: components/Widgets/schema/headerActionsSchema
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Open in a new tab"
+msgstr "새 탭에서 열기"
+
+#. Default: "Open menu"
+#: components/MobileNavigation/MobileNavigation
+#: components/Navigation/Navigation
+msgid "Open menu"
+msgstr "메뉴 열기"
+
+#. Default: "Overview"
+#: components/MobileNavigation/MobileNavigation
+msgid "Overview"
+msgstr "개요"
+
+#. Default: "Pagination Navigation"
+#: components/Blocks/Listing/ListingBody
+msgid "Pagination Navigation"
+msgstr "페이지 탐색"
+
+#. Default: "Pagination Navigation for {headline}"
+#: components/Blocks/Listing/ListingBody
+msgid "Pagination Navigation for {headline}"
+msgstr "{headline} 페이지 탐색"
+
+#. Default: "Phone"
+#: components/Blocks/EventMetadata/View
+#: components/Summary/PersonSummary
+msgid "Phone"
+msgstr "전화"
+
+#. Default: "Please choose an existing content as source for this element"
+#: components/Blocks/Teaser/Body
+msgid "Please choose an existing content as source for this element"
+msgstr "이 요소의 소스로 기존 콘텐츠를 선택하세요。"
+
+#. Default: "Plone Foundation"
+#: components/Footer/slots/Copyright
+msgid "Plone Foundation"
+msgstr "Plone Foundation"
+
+#. Default: "Plone{reg} Open Source CMS/WCM"
+#: components/Footer/slots/Copyright
+msgid "Plone{reg} Open Source CMS/WCM"
+msgstr "Plone{reg} 오픈 소스 CMS/WCM"
+
+#. Default: "Press"
+#: index
+msgid "Press"
+msgstr "보도"
+
+#. Default: "Previous Page"
+#: components/Blocks/Listing/ListingBody
+msgid "Previous Page"
+msgstr "이전 페이지"
+
+#. Default: "Register"
+#: components/Anontools/Anontools
+msgid "Register"
+msgstr "등록"
+
+#. Default: "Remove item"
+#: components/Widgets/BlocksObject
+#: components/Widgets/ObjectList
+msgid "Remove item"
+msgstr "항목 제거"
+
+#. Default: "Result"
+#: components/Blocks/Listing/ListingBody
+msgid "Result"
+msgstr "결과"
+
+#. Default: "Room"
+#: components/Summary/PersonSummary
+msgid "Room"
+msgstr "사무실"
+
+#. Default: "Search"
+#: components/Blocks/EventCalendar/Search/components/SearchInput
+#: components/Blocks/EventCalendar/Search/schema
+#: components/Blocks/Search/components/SearchInput
+#: components/Blocks/Search/TopSideFacets
+#: components/MobileNavigation/MobileNavigation
+#: components/SearchWidget/IntranetSearchWidget
+#: components/SearchWidget/SearchWidget
+msgid "Search"
+msgstr "검색"
+
+#. Default: "Search Site"
+#: components/SearchWidget/IntranetSearchWidget
+#: components/SearchWidget/SearchWidget
+msgid "Search Site"
+msgstr "사이트 검색"
+
+#. Default: "Search block"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Search block"
+msgstr "검색 블록"
+
+#. Default: "Search button label"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Search button label"
+msgstr "검색 버튼 레이블"
+
+#. Default: "Search for People, E-Mail Address, Phone Number, ..."
+#: components/SearchWidget/IntranetSearchWidget
+msgid "Search for People, E-Mail Address, Phone Number, ..."
+msgstr "사람, 이메일 주소, 전화번호 검색..."
+
+#. Default: "Search input label"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Search input label"
+msgstr "검색 입력 레이블"
+
+#. Default: "Search results"
+#: components/Blocks/Search/components/SearchDetails
+msgid "Search results"
+msgstr "검색 결과"
+
+#. Default: "Searched for"
+#: components/Blocks/Search/components/SearchDetails
+msgid "Searched for"
+msgstr "검색어"
+
+#. Default: "Section title"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Section title"
+msgstr "섹션 제목"
+
+#. Default: "Show item"
+#: components/Widgets/BlocksObject
+#: components/Widgets/ObjectList
+msgid "Show item"
+msgstr "항목 표시"
+
+#. Default: "Show search button?"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Show search button?"
+msgstr "검색 버튼 표시?"
+
+#. Default: "Show search input?"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Show search input?"
+msgstr "검색 입력 표시?"
+
+#. Default: "Show sorting?"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Show sorting?"
+msgstr "정렬 표시?"
+
+#. Default: "Show total results"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Show total results"
+msgstr "총 결과 표시"
+
+#. Default: "Simple"
+#: index
+msgid "Simple"
+msgstr "간단"
+
+#. Default: "Site Setup"
+#: components/Breadcrumbs/Breadcrumbs
+msgid "Site Setup"
+msgstr "사이트 설정"
+
+#. Default: "Sitemap"
+#: index
+msgid "Sitemap"
+msgstr "사이트맵"
+
+#. Default: "Sort on"
+#: components/Blocks/EventCalendar/Search/components/SortOn
+msgid "Sort on"
+msgstr "정렬 기준"
+
+#. Default: "Sort on options"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Sort on options"
+msgstr "정렬 기준 옵션"
+
+#. Default: "Sorted on"
+#: components/Blocks/EventCalendar/Search/components/SortOn
+msgid "Sorted on"
+msgstr "정렬 기준"
+
+#. Default: "Sorting"
+#: components/Blocks/Search/TopSideFacets
+msgid "Sorting"
+msgstr "정렬"
+
+#. Default: "Sponsored by:"
+#: components/Footer/slots/FollowUsLogoAndLinks
+msgid "Sponsored by:"
+msgstr "후원:"
+
+#. Default: "Start"
+#: components/Blocks/EventMetadata/View
+msgid "Start"
+msgstr "시작"
+
+#. Default: "Switch to"
+#: components/LanguageSelector/LanguageSelector
+msgid "Switch to"
+msgstr ""
+
+#. Default: "Target"
+#: components/Widgets/schema/footerLinksSchema
+#: components/Widgets/schema/footerLogosSchema
+#: components/Widgets/schema/headerActionsSchema
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Target"
+msgstr "대상"
+
+#. Default: "The button presence disables the live search, the query is issued when you press ENTER"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "The button presence disables the live search, the query is issued when you press ENTER"
+msgstr "버튼이 있으면 라이브 검색이 비활성화되고 ENTER를 누르면 쿼리가 실행됩니다。"
+
+#. Default: "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
+#: components/Footer/slots/Copyright
+msgid "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
+msgstr "{plonecms}은(는) {plonefoundation} 및 친구들이 2000년부터 {current_year}년까지 {copyright}합니다."
+
+#. Default: "Title"
+#: components/Blocks/Image/schema
+#: components/Widgets/schema/footerLinksSchema
+#: components/Widgets/schema/footerLogosSchema
+#: components/Widgets/schema/headerActionsSchema
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Title"
+msgstr "제목"
+
+#. Default: "Unknown Block {block}"
+#: components/Blocks/Block/Edit
+#: components/Theme/RenderBlocks
+#: components/Theme/RenderBlocksV2
+msgid "Unknown Block"
+msgstr "알 수 없는 블록 {block}"
+
+#. Default: "Website"
+#: components/Blocks/EventMetadata/View
+msgid "Website"
+msgstr "웹사이트"
+
+#. Default: "Available views"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "availableViews"
+msgstr "사용 가능한 보기"
+
+#. Default: "The {type} block with the id {block} has encountered an error.{lineBreak}You can try to undo your changes (via the undo toolbar or pressing {shortcut}), or try to delete the block and recreate it again."
+#: components/Blocks/Block/ErrorBoundaryMessage
+msgid "blockErrorBoundaryDescription"
+msgstr "ID가 {block}인 {type} 블록에서 오류가 발생했습니다.{lineBreak}실행 취소 도구 모음 또는 {shortcut}을(를) 눌러 변경 사항을 취소하거나, 블록을 삭제하고 다시 만들어 보세요."
+
+#. Default: "Block error:"
+#: components/Blocks/Block/ErrorBoundaryMessage
+msgid "blockErrorBoundaryTitle"
+msgstr "블록 오류:"
+
+#. Default: "The {type} block with the id {block} errored and cannot be displayed.{lineBreak}Please contact the site administrator for further assistance."
+#: components/Blocks/Block/ErrorBoundaryMessage
+msgid "blockErrorBoundaryViewDescription"
+msgstr "ID가 {block}인 {type} 블록에서 오류가 발생하여 표시할 수 없습니다.{lineBreak}추가 지원이 필요하시면 사이트 관리자에게 문의하세요."
+
+#. Default: "Delete"
+#: components/Blocks/Block/Edit
+msgid "delete"
+msgstr "삭제"
+
+#. Default: "delete {type} block"
+#: components/Blocks/Block/EditBlockWrapper
+msgid "delete_block"
+msgstr "{type} 블록 삭제"
+
+#. Default: "drag {type} block"
+#: components/Blocks/Block/EditBlockWrapper
+msgid "drag_block"
+msgstr "{type} 블록 끌기"
+
+#. Default: "Clear image"
+#: components/Blocks/Image/ImageSidebar
+msgid "image_block_clear"
+msgstr "이미지 지우기"
+
+#. Default: "Image preview"
+#: components/Blocks/Image/ImageSidebar
+msgid "image_block_preview"
+msgstr "이미지 미리보기"
+
+#. Default: "Loading"
+#: components/Blocks/Listing/ListingBody
+msgid "loading"
+msgstr "로딩 중"
+
+#. Default: "of"
+#: components/Blocks/Listing/ListingBody
+msgid "of"
+msgstr "/"
+
+#. Default: "Views"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "views"
+msgstr "보기"

@@ -1,0 +1,645 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Plone\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-16T14:21:29.474Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language: th\n"
+"Language-Team: \n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Language-Code: th\n"
+"Language-Name: th\n"
+"Preferred-Encodings: utf-8\n"
+"Domain: DOMAIN\n"
+
+#. Default: "Action"
+#: components/Widgets/schema/headerActionsSchema
+msgid "Action"
+msgstr "การกระทำ"
+
+#. Default: "Add"
+#: components/Widgets/BlocksObject
+#: components/Widgets/ObjectList
+msgid "Add (object list)"
+msgstr "เพิ่ม"
+
+#. Default: "Add action"
+#: components/Widgets/schema/headerActionsSchema
+msgid "Add action"
+msgstr "เพิ่มแอ็กชันแล้ว"
+
+#. Default: "Add item"
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Add item"
+msgstr "เพิ่มรายการ"
+
+#. Default: "Add link"
+#: components/Widgets/schema/footerLinksSchema
+msgid "Add link"
+msgstr "เพิ่มลิงก์"
+
+#. Default: "Add logo"
+#: components/Widgets/schema/footerLogosSchema
+msgid "Add logo"
+msgstr "เพิ่มโลโก้"
+
+#. Default: "Advanced facet?"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Advanced facet?"
+msgstr "แฟซเซตขั้นสูง?"
+
+#. Default: "Advanced facets are initially hidden and displayed on demand"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Advanced facets are initially hidden and displayed on demand"
+msgstr "แฟซเซตขั้นสูงจะถูกซ่อนไว้ในตอนแรกและแสดงเมื่อมีการร้องขอ"
+
+#. Default: "Alt text"
+#: components/Widgets/schema/footerLogosSchema
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Alt text"
+msgstr "ข้อความทางเลือก"
+
+#. Default: "Ascending"
+#: components/Blocks/EventCalendar/Search/components/SortOn
+msgid "Ascending"
+msgstr "จากน้อยไปมาก"
+
+#. Default: "Back"
+#: components/MobileNavigation/MobileNavigation
+msgid "Back"
+msgstr "ย้อนกลับ"
+
+#. Default: "Background color"
+#: components/Blocks/schema
+msgid "Background color"
+msgstr "สีพื้นหลัง"
+
+#. Default: "Base search query"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Base search query"
+msgstr "คิวรีค้นหาพื้นฐาน"
+
+#. Default: "Block Width"
+#: components/Blocks/Image/schema
+msgid "Block Width"
+msgstr "ความกว้างบล็อก"
+
+#. Default: "Breadcrumbs"
+#: components/Breadcrumbs/Breadcrumbs
+msgid "Breadcrumbs"
+msgstr "เบรดครัมบ์"
+
+#. Default: "Cancel search"
+#: components/Blocks/EventCalendar/Search/components/SearchInput
+msgid "Cancel search"
+msgstr "ยกเลิกการค้นหา"
+
+#. Default: "Close menu"
+#: components/MobileNavigation/MobileNavigation
+#: components/Navigation/Navigation
+msgid "Close menu"
+msgstr "ปิดเมนู"
+
+#. Default: "Collapse item"
+#: components/Widgets/BlocksObject
+#: components/Widgets/ObjectList
+msgid "Collapse item"
+msgstr "ยุบรายการ"
+
+#. Default: "The color contrast ratio {contrastRatio}:1 might not be accessible for all. WCAG Level: {complianceLevel}"
+#: components/Widgets/ColorContrastChecker
+msgid "ColorContrastCheckerMessage"
+msgstr "อัตราส่วนความคมชัดของสี {contrastRatio}:1 อาจไม่สามารถเข้าถึงได้สำหรับทุกคน ระดับ WCAG: {complianceLevel}"
+
+#. Default: "Contact"
+#: components/Blocks/EventMetadata/View
+msgid "Contact"
+msgstr "ติดต่อ"
+
+#. Default: "Controls"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Controls"
+msgstr "ตัวควบคุม"
+
+#. Default: "Copyright"
+#: components/Footer/slots/Copyright
+msgid "Copyright"
+msgstr "ลิขสิทธิ์"
+
+#. Default: "Descending"
+#: components/Blocks/EventCalendar/Search/components/SortOn
+msgid "Descending"
+msgstr "จากมากไปน้อย"
+
+#. Default: "Description"
+#: components/Blocks/Image/schema
+#: components/Widgets/schema/footerLogosSchema
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Description"
+msgstr "คำอธิบาย"
+
+#. Default: "Distributed under the {license}."
+#: components/Footer/slots/Copyright
+msgid "Distributed under the {license}."
+msgstr "เผยแพร่ภายใต้ {license}"
+
+#. Default: "Download file"
+#: components/Theme/FileView
+msgid "Download file"
+msgstr "ดาวน์โหลดไฟล์"
+
+#. Default: "E-mail"
+#: components/Summary/PersonSummary
+msgid "E-mail"
+msgstr "อีเมล"
+
+#. Default: "Empty object list"
+#: components/Widgets/BlocksObject
+#: components/Widgets/ObjectList
+msgid "Empty object list"
+msgstr "รายการวัตถุว่างเปล่า"
+
+#. Default: "End"
+#: components/Blocks/EventMetadata/View
+msgid "End"
+msgstr "สิ้นสุด"
+
+#. Default: "Facet"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Facet"
+msgstr "แฟซเซต"
+
+#. Default: "Facet widget"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Facet widget"
+msgstr "วิดเจ็ตแฟซเซต"
+
+#. Default: "Facets"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Facets"
+msgstr "แฟซเซต"
+
+#. Default: "Field"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Field"
+msgstr "ฟิลด์"
+
+#. Default: "Follow us:"
+#: components/Footer/slots/FollowUsLogoAndLinks
+msgid "Follow us:"
+msgstr "ติดตามเรา:"
+
+#. Default: "GNU GPL v2 license"
+#: components/Footer/slots/Copyright
+msgid "GNU GPL license"
+msgstr "สัญญาอนุญาต GNU GPL"
+
+#. Default: "Headline"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Headline"
+msgstr "พาดหัว"
+
+#. Default: "Hidden facets will still filter the results if proper parameters are passed in URLs"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Hidden facets will still filter the results if proper parameters are passed in URLs"
+msgstr "แฟซเซตที่ซ่อนไว้จะยังคงกรองผลลัพธ์หากมีการส่งพารามิเตอร์ที่เหมาะสมใน URL"
+
+#. Default: "Hide facet?"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Hide facet?"
+msgstr "ซ่อนแฟซเซต?"
+
+#. Default: "Home"
+#: components/Breadcrumbs/Breadcrumbs
+#: components/Logo/Logo
+#: components/MobileNavigation/MobileNavigation
+msgid "Home"
+msgstr "หน้าแรก"
+
+#. Default: "ICS Download"
+#: components/Blocks/EventMetadata/View
+msgid "ICS-Download"
+msgstr "ดาวน์โหลด ICS"
+
+#. Default: "Icon"
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Icon"
+msgstr "ไอคอน"
+
+#. Default: "Image"
+#: components/Blocks/Image/ImageSidebar
+msgid "Image"
+msgstr "รูปภาพ"
+
+#. Default: "Invalid block - Will be removed on saving"
+#: components/Theme/RenderBlocks
+#: components/Theme/RenderBlocksV2
+msgid "Invalid Block"
+msgstr "บล็อกไม่ถูกต้อง — จะถูกลบออกเมื่อบันทึก"
+
+#. Default: "Item"
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Item"
+msgstr "รายการ"
+
+#. Default: "Label"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Label"
+msgstr "ป้ายกำกับ"
+
+#. Default: "Link"
+#: components/Widgets/schema/footerLinksSchema
+msgid "Link"
+msgstr "ลิงก์"
+
+#. Default: "List"
+#: index
+msgid "List"
+msgstr "รายการ"
+
+#. Default: "List with images"
+#: index
+msgid "List with images"
+msgstr "รายการพร้อมรูปภาพ"
+
+#. Default: "Location"
+#: components/Blocks/EventMetadata/View
+msgid "Location"
+msgstr "ที่ตั้ง"
+
+#. Default: "Log in"
+#: components/Anontools/Anontools
+msgid "Log in"
+msgstr "เข้าสู่ระบบ"
+
+#. Default: "Log out"
+#: components/Anontools/Anontools
+msgid "Log out"
+msgstr "ล็อกเอาต์"
+
+#. Default: "Logo"
+#: components/Widgets/schema/footerLogosSchema
+msgid "Logo"
+msgstr "โลโก้"
+
+#. Default: "Logo image"
+#: components/Widgets/schema/footerLogosSchema
+msgid "Logo image"
+msgstr "รูปโลโก้"
+
+#. Default: "Logo of"
+#: components/Logo/Logo
+msgid "Logo of"
+msgstr "โลโก้ของ"
+
+#. Default: "Move down"
+#: components/Blocks/Block/Edit
+msgid "Move down"
+msgstr "เลื่อนลง"
+
+#. Default: "Move up"
+#: components/Blocks/Block/Edit
+msgid "Move up"
+msgstr "เลื่อนขึ้น"
+
+#. Default: "Multiple choices?"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Multiple choices?"
+msgstr "เลือกหลายรายการ?"
+
+#. Default: "Next Page"
+#: components/Blocks/Listing/ListingBody
+msgid "Next Page"
+msgstr "หน้าถัดไป"
+
+#. Default: "No image selected"
+#: components/Blocks/Image/ImageSidebar
+msgid "No image selected"
+msgstr "ไม่ได้เลือกรูปภาพ"
+
+#. Default: "No items found in this container."
+#: components/Blocks/Listing/ListingBody
+msgid "No items found in this container."
+msgstr "ไม่พบรายการในคอนเทนเนอร์นี้"
+
+#. Default: "No selection"
+#: components/Blocks/EventCalendar/Search/components/SortOn
+msgid "No selection"
+msgstr "ไม่ได้เลือก"
+
+#. Default: "Open configuration"
+#: components/Widgets/ModalJSONEditor
+msgid "Open configuration"
+msgstr "เปิดการตั้งค่า"
+
+#. Default: "Open in a new tab"
+#: components/Widgets/schema/footerLinksSchema
+#: components/Widgets/schema/footerLogosSchema
+#: components/Widgets/schema/headerActionsSchema
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Open in a new tab"
+msgstr "เปิดในแท็บใหม่"
+
+#. Default: "Open menu"
+#: components/MobileNavigation/MobileNavigation
+#: components/Navigation/Navigation
+msgid "Open menu"
+msgstr "เปิดเมนู"
+
+#. Default: "Overview"
+#: components/MobileNavigation/MobileNavigation
+msgid "Overview"
+msgstr "ภาพรวม"
+
+#. Default: "Pagination Navigation"
+#: components/Blocks/Listing/ListingBody
+msgid "Pagination Navigation"
+msgstr "การนำทางหน้า"
+
+#. Default: "Pagination Navigation for {headline}"
+#: components/Blocks/Listing/ListingBody
+msgid "Pagination Navigation for {headline}"
+msgstr "การนำทางหน้าสำหรับ {headline}"
+
+#. Default: "Phone"
+#: components/Blocks/EventMetadata/View
+#: components/Summary/PersonSummary
+msgid "Phone"
+msgstr "โทรศัพท์"
+
+#. Default: "Please choose an existing content as source for this element"
+#: components/Blocks/Teaser/Body
+msgid "Please choose an existing content as source for this element"
+msgstr "กรุณาเลือกเนื้อหาที่มีอยู่เป็นแหล่งที่มาสำหรับองค์ประกอบนี้"
+
+#. Default: "Plone Foundation"
+#: components/Footer/slots/Copyright
+msgid "Plone Foundation"
+msgstr "Plone Foundation"
+
+#. Default: "Plone{reg} Open Source CMS/WCM"
+#: components/Footer/slots/Copyright
+msgid "Plone{reg} Open Source CMS/WCM"
+msgstr "Plone{reg} ระบบจัดการเนื้อหาโอเพนซอร์ส/WCM"
+
+#. Default: "Press"
+#: index
+msgid "Press"
+msgstr "สื่อมวลชน"
+
+#. Default: "Previous Page"
+#: components/Blocks/Listing/ListingBody
+msgid "Previous Page"
+msgstr "หน้าก่อนหน้า"
+
+#. Default: "Register"
+#: components/Anontools/Anontools
+msgid "Register"
+msgstr "ลงทะเบียน"
+
+#. Default: "Remove item"
+#: components/Widgets/BlocksObject
+#: components/Widgets/ObjectList
+msgid "Remove item"
+msgstr "นำรายการออก"
+
+#. Default: "Result"
+#: components/Blocks/Listing/ListingBody
+msgid "Result"
+msgstr "ผลลัพธ์"
+
+#. Default: "Room"
+#: components/Summary/PersonSummary
+msgid "Room"
+msgstr "ห้อง"
+
+#. Default: "Search"
+#: components/Blocks/EventCalendar/Search/components/SearchInput
+#: components/Blocks/EventCalendar/Search/schema
+#: components/Blocks/Search/components/SearchInput
+#: components/Blocks/Search/TopSideFacets
+#: components/MobileNavigation/MobileNavigation
+#: components/SearchWidget/IntranetSearchWidget
+#: components/SearchWidget/SearchWidget
+msgid "Search"
+msgstr "ค้นหา"
+
+#. Default: "Search Site"
+#: components/SearchWidget/IntranetSearchWidget
+#: components/SearchWidget/SearchWidget
+msgid "Search Site"
+msgstr "ค้นหาไซต์"
+
+#. Default: "Search block"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Search block"
+msgstr "บล็อกค้นหา"
+
+#. Default: "Search button label"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Search button label"
+msgstr "ป้ายปุ่มค้นหา"
+
+#. Default: "Search for People, E-Mail Address, Phone Number, ..."
+#: components/SearchWidget/IntranetSearchWidget
+msgid "Search for People, E-Mail Address, Phone Number, ..."
+msgstr "ค้นหาบุคคล, ที่อยู่อีเมล, หมายเลขโทรศัพท์, ..."
+
+#. Default: "Search input label"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Search input label"
+msgstr "ป้ายช่องค้นหา"
+
+#. Default: "Search results"
+#: components/Blocks/Search/components/SearchDetails
+msgid "Search results"
+msgstr "ผลการค้นหา"
+
+#. Default: "Searched for"
+#: components/Blocks/Search/components/SearchDetails
+msgid "Searched for"
+msgstr "ค้นหาสำหรับ"
+
+#. Default: "Section title"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Section title"
+msgstr "ชื่อหัวข้อ"
+
+#. Default: "Show item"
+#: components/Widgets/BlocksObject
+#: components/Widgets/ObjectList
+msgid "Show item"
+msgstr "แสดงรายการ"
+
+#. Default: "Show search button?"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Show search button?"
+msgstr "แสดงปุ่มค้นหา?"
+
+#. Default: "Show search input?"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Show search input?"
+msgstr "แสดงช่องค้นหา?"
+
+#. Default: "Show sorting?"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Show sorting?"
+msgstr "แสดงการเรียงลำดับ?"
+
+#. Default: "Show total results"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Show total results"
+msgstr "แสดงผลลัพธ์ทั้งหมด"
+
+#. Default: "Simple"
+#: index
+msgid "Simple"
+msgstr "เรียบง่าย"
+
+#. Default: "Site Setup"
+#: components/Breadcrumbs/Breadcrumbs
+msgid "Site Setup"
+msgstr "ตั้งค่าไซท์"
+
+#. Default: "Sitemap"
+#: index
+msgid "Sitemap"
+msgstr "แผนผังไซต์"
+
+#. Default: "Sort on"
+#: components/Blocks/EventCalendar/Search/components/SortOn
+msgid "Sort on"
+msgstr "เรียงตาม"
+
+#. Default: "Sort on options"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Sort on options"
+msgstr "ตัวเลือกการเรียง"
+
+#. Default: "Sorted on"
+#: components/Blocks/EventCalendar/Search/components/SortOn
+msgid "Sorted on"
+msgstr "เรียงตาม"
+
+#. Default: "Sorting"
+#: components/Blocks/Search/TopSideFacets
+msgid "Sorting"
+msgstr "การเรียงลำดับ"
+
+#. Default: "Sponsored by:"
+#: components/Footer/slots/FollowUsLogoAndLinks
+msgid "Sponsored by:"
+msgstr "สนับสนุนโดย:"
+
+#. Default: "Start"
+#: components/Blocks/EventMetadata/View
+msgid "Start"
+msgstr "เริ่มต้น"
+
+#. Default: "Switch to"
+#: components/LanguageSelector/LanguageSelector
+msgid "Switch to"
+msgstr ""
+
+#. Default: "Target"
+#: components/Widgets/schema/footerLinksSchema
+#: components/Widgets/schema/footerLogosSchema
+#: components/Widgets/schema/headerActionsSchema
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Target"
+msgstr "เป้าหมาย"
+
+#. Default: "The button presence disables the live search, the query is issued when you press ENTER"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "The button presence disables the live search, the query is issued when you press ENTER"
+msgstr "การมีปุ่มจะปิดใช้งานการค้นหาแบบสด การสอบถามจะถูกส่งเมื่อคุณกด ENTER"
+
+#. Default: "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
+#: components/Footer/slots/Copyright
+msgid "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
+msgstr "{plonecms} เป็น {copyright} 2000-{current_year} โดย {plonefoundation} และเพื่อน ๆ"
+
+#. Default: "Title"
+#: components/Blocks/Image/schema
+#: components/Widgets/schema/footerLinksSchema
+#: components/Widgets/schema/footerLogosSchema
+#: components/Widgets/schema/headerActionsSchema
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Title"
+msgstr "ชื่อเรื่อง"
+
+#. Default: "Unknown Block {block}"
+#: components/Blocks/Block/Edit
+#: components/Theme/RenderBlocks
+#: components/Theme/RenderBlocksV2
+msgid "Unknown Block"
+msgstr "บล็อกที่ไม่รู้จัก {block}"
+
+#. Default: "Website"
+#: components/Blocks/EventMetadata/View
+msgid "Website"
+msgstr "เว็บไซต์"
+
+#. Default: "Available views"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "availableViews"
+msgstr "มุมมองที่พร้อมใช้งาน"
+
+#. Default: "The {type} block with the id {block} has encountered an error.{lineBreak}You can try to undo your changes (via the undo toolbar or pressing {shortcut}), or try to delete the block and recreate it again."
+#: components/Blocks/Block/ErrorBoundaryMessage
+msgid "blockErrorBoundaryDescription"
+msgstr "บล็อก {type} ที่มี id {block} พบข้อผิดพลาด{lineBreak}คุณสามารถลองเลิกทำการเปลี่ยนแปลง (ผ่านแถบเครื่องมือเลิกทำหรือกด {shortcut}) หรือลองลบบล็อกและสร้างใหม่อีกครั้ง"
+
+#. Default: "Block error:"
+#: components/Blocks/Block/ErrorBoundaryMessage
+msgid "blockErrorBoundaryTitle"
+msgstr "ข้อผิดพลาดบล็อก:"
+
+#. Default: "The {type} block with the id {block} errored and cannot be displayed.{lineBreak}Please contact the site administrator for further assistance."
+#: components/Blocks/Block/ErrorBoundaryMessage
+msgid "blockErrorBoundaryViewDescription"
+msgstr "บล็อก {type} ที่มี id {block} เกิดข้อผิดพลาดและไม่สามารถแสดงผลได้{lineBreak}กรุณาติดต่อผู้ดูแลระบบไซต์เพื่อขอความช่วยเหลือเพิ่มเติม"
+
+#. Default: "Delete"
+#: components/Blocks/Block/Edit
+msgid "delete"
+msgstr "ลบ"
+
+#. Default: "delete {type} block"
+#: components/Blocks/Block/EditBlockWrapper
+msgid "delete_block"
+msgstr "ลบบล็อก {type}"
+
+#. Default: "drag {type} block"
+#: components/Blocks/Block/EditBlockWrapper
+msgid "drag_block"
+msgstr "ลากบล็อก {type}"
+
+#. Default: "Clear image"
+#: components/Blocks/Image/ImageSidebar
+msgid "image_block_clear"
+msgstr "ล้างรูปภาพ"
+
+#. Default: "Image preview"
+#: components/Blocks/Image/ImageSidebar
+msgid "image_block_preview"
+msgstr "ตัวอย่างรูปภาพ"
+
+#. Default: "Loading"
+#: components/Blocks/Listing/ListingBody
+msgid "loading"
+msgstr "กำลังโหลด"
+
+#. Default: "of"
+#: components/Blocks/Listing/ListingBody
+msgid "of"
+msgstr "จาก"
+
+#. Default: "Views"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "views"
+msgstr "มุมมอง"

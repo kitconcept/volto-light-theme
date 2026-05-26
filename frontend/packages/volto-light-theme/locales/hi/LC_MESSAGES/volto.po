@@ -1,0 +1,645 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Plone\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-16T14:21:29.474Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language: hi\n"
+"Language-Team: \n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Language-Code: hi\n"
+"Language-Name: hi\n"
+"Preferred-Encodings: utf-8\n"
+"Domain: DOMAIN\n"
+
+#. Default: "Action"
+#: components/Widgets/schema/headerActionsSchema
+msgid "Action"
+msgstr "कार्रवाई"
+
+#. Default: "Add"
+#: components/Widgets/BlocksObject
+#: components/Widgets/ObjectList
+msgid "Add (object list)"
+msgstr "जोड़े (वस्तु सूची)"
+
+#. Default: "Add action"
+#: components/Widgets/schema/headerActionsSchema
+msgid "Add action"
+msgstr "कार्रवाई जोड़ी गई"
+
+#. Default: "Add item"
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Add item"
+msgstr "आइटम जोड़ें"
+
+#. Default: "Add link"
+#: components/Widgets/schema/footerLinksSchema
+msgid "Add link"
+msgstr "लिंक जोड़ें"
+
+#. Default: "Add logo"
+#: components/Widgets/schema/footerLogosSchema
+msgid "Add logo"
+msgstr "लोगो जोड़ें"
+
+#. Default: "Advanced facet?"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Advanced facet?"
+msgstr "उन्नत पहलू?"
+
+#. Default: "Advanced facets are initially hidden and displayed on demand"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Advanced facets are initially hidden and displayed on demand"
+msgstr "उन्नत पहलू आरंभ में छिपे होते हैं और मांग पर प्रदर्शित किए जाते हैं"
+
+#. Default: "Alt text"
+#: components/Widgets/schema/footerLogosSchema
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Alt text"
+msgstr "वैकल्पिक पाठ"
+
+#. Default: "Ascending"
+#: components/Blocks/EventCalendar/Search/components/SortOn
+msgid "Ascending"
+msgstr "आरोही"
+
+#. Default: "Back"
+#: components/MobileNavigation/MobileNavigation
+msgid "Back"
+msgstr "पिछले"
+
+#. Default: "Background color"
+#: components/Blocks/schema
+msgid "Background color"
+msgstr "पृष्ठभूमि रंग"
+
+#. Default: "Base search query"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Base search query"
+msgstr "मूल खोज क्वेरी"
+
+#. Default: "Block Width"
+#: components/Blocks/Image/schema
+msgid "Block Width"
+msgstr "ब्लॉक चौड़ाई"
+
+#. Default: "Breadcrumbs"
+#: components/Breadcrumbs/Breadcrumbs
+msgid "Breadcrumbs"
+msgstr "ब्रेडक्रंब्स"
+
+#. Default: "Cancel search"
+#: components/Blocks/EventCalendar/Search/components/SearchInput
+msgid "Cancel search"
+msgstr "खोज रद्द करें"
+
+#. Default: "Close menu"
+#: components/MobileNavigation/MobileNavigation
+#: components/Navigation/Navigation
+msgid "Close menu"
+msgstr "मेनू बंद करें"
+
+#. Default: "Collapse item"
+#: components/Widgets/BlocksObject
+#: components/Widgets/ObjectList
+msgid "Collapse item"
+msgstr "आइटम को संकुचित करें"
+
+#. Default: "The color contrast ratio {contrastRatio}:1 might not be accessible for all. WCAG Level: {complianceLevel}"
+#: components/Widgets/ColorContrastChecker
+msgid "ColorContrastCheckerMessage"
+msgstr "रंग कंट्रास्ट अनुपात {contrastRatio}:1 सभी के लिए सुलभ नहीं हो सकता। WCAG स्तर: {complianceLevel}"
+
+#. Default: "Contact"
+#: components/Blocks/EventMetadata/View
+msgid "Contact"
+msgstr "संपर्क"
+
+#. Default: "Controls"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Controls"
+msgstr "नियंत्रण"
+
+#. Default: "Copyright"
+#: components/Footer/slots/Copyright
+msgid "Copyright"
+msgstr "कॉपीराइट"
+
+#. Default: "Descending"
+#: components/Blocks/EventCalendar/Search/components/SortOn
+msgid "Descending"
+msgstr "अवरोही"
+
+#. Default: "Description"
+#: components/Blocks/Image/schema
+#: components/Widgets/schema/footerLogosSchema
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Description"
+msgstr "विवरण"
+
+#. Default: "Distributed under the {license}."
+#: components/Footer/slots/Copyright
+msgid "Distributed under the {license}."
+msgstr "{license} के तहत वितरित।"
+
+#. Default: "Download file"
+#: components/Theme/FileView
+msgid "Download file"
+msgstr "फ़ाइल डाउनलोड करें"
+
+#. Default: "E-mail"
+#: components/Summary/PersonSummary
+msgid "E-mail"
+msgstr "ईमेल"
+
+#. Default: "Empty object list"
+#: components/Widgets/BlocksObject
+#: components/Widgets/ObjectList
+msgid "Empty object list"
+msgstr "खाली ऑब्जेक्ट सूची"
+
+#. Default: "End"
+#: components/Blocks/EventMetadata/View
+msgid "End"
+msgstr "समाप्ति"
+
+#. Default: "Facet"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Facet"
+msgstr "विशेषता"
+
+#. Default: "Facet widget"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Facet widget"
+msgstr "विशेषता विजेट"
+
+#. Default: "Facets"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Facets"
+msgstr "विशेषताएं"
+
+#. Default: "Field"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Field"
+msgstr "क्षेत्र"
+
+#. Default: "Follow us:"
+#: components/Footer/slots/FollowUsLogoAndLinks
+msgid "Follow us:"
+msgstr "हमें फ़ॉलो करें:"
+
+#. Default: "GNU GPL v2 license"
+#: components/Footer/slots/Copyright
+msgid "GNU GPL license"
+msgstr "जीएनयू जीपीएल लाइसेंस"
+
+#. Default: "Headline"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Headline"
+msgstr "शीर्षक"
+
+#. Default: "Hidden facets will still filter the results if proper parameters are passed in URLs"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Hidden facets will still filter the results if proper parameters are passed in URLs"
+msgstr "यदि यूआरएल में सही पैरामीटर्स पारित किए जाते हैं तो छिपी हुई विशेषताएँ फिर भी परिणामों को फ़िल्टर करेंगी"
+
+#. Default: "Hide facet?"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Hide facet?"
+msgstr "विशेषता छिपाएँ?"
+
+#. Default: "Home"
+#: components/Breadcrumbs/Breadcrumbs
+#: components/Logo/Logo
+#: components/MobileNavigation/MobileNavigation
+msgid "Home"
+msgstr "होम"
+
+#. Default: "ICS Download"
+#: components/Blocks/EventMetadata/View
+msgid "ICS-Download"
+msgstr "ICS डाउनलोड"
+
+#. Default: "Icon"
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Icon"
+msgstr "आइकन"
+
+#. Default: "Image"
+#: components/Blocks/Image/ImageSidebar
+msgid "Image"
+msgstr "छवि"
+
+#. Default: "Invalid block - Will be removed on saving"
+#: components/Theme/RenderBlocks
+#: components/Theme/RenderBlocksV2
+msgid "Invalid Block"
+msgstr "अमान्य ब्लॉक — सहेजते समय हटा दिया जाएगा."
+
+#. Default: "Item"
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Item"
+msgstr "आइटम"
+
+#. Default: "Label"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Label"
+msgstr "लेबल"
+
+#. Default: "Link"
+#: components/Widgets/schema/footerLinksSchema
+msgid "Link"
+msgstr "लिंक"
+
+#. Default: "List"
+#: index
+msgid "List"
+msgstr "सूची"
+
+#. Default: "List with images"
+#: index
+msgid "List with images"
+msgstr "चित्रों सहित सूची"
+
+#. Default: "Location"
+#: components/Blocks/EventMetadata/View
+msgid "Location"
+msgstr "स्थान"
+
+#. Default: "Log in"
+#: components/Anontools/Anontools
+msgid "Log in"
+msgstr "लॉग इन"
+
+#. Default: "Log out"
+#: components/Anontools/Anontools
+msgid "Log out"
+msgstr "लॉग आउट"
+
+#. Default: "Logo"
+#: components/Widgets/schema/footerLogosSchema
+msgid "Logo"
+msgstr "लोगो"
+
+#. Default: "Logo image"
+#: components/Widgets/schema/footerLogosSchema
+msgid "Logo image"
+msgstr "लोगो चित्र"
+
+#. Default: "Logo of"
+#: components/Logo/Logo
+msgid "Logo of"
+msgstr "लोगो का"
+
+#. Default: "Move down"
+#: components/Blocks/Block/Edit
+msgid "Move down"
+msgstr "नीचे ले जाएँ"
+
+#. Default: "Move up"
+#: components/Blocks/Block/Edit
+msgid "Move up"
+msgstr "ऊपर ले जाएँ"
+
+#. Default: "Multiple choices?"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Multiple choices?"
+msgstr "कई विकल्प?"
+
+#. Default: "Next Page"
+#: components/Blocks/Listing/ListingBody
+msgid "Next Page"
+msgstr "अगला पृष्ठ"
+
+#. Default: "No image selected"
+#: components/Blocks/Image/ImageSidebar
+msgid "No image selected"
+msgstr "कोई छवि चयनित नहीं है"
+
+#. Default: "No items found in this container."
+#: components/Blocks/Listing/ListingBody
+msgid "No items found in this container."
+msgstr "इस कंटेनर में कोई आइटम नहीं मिला।"
+
+#. Default: "No selection"
+#: components/Blocks/EventCalendar/Search/components/SortOn
+msgid "No selection"
+msgstr "कोई चयन नहीं"
+
+#. Default: "Open configuration"
+#: components/Widgets/ModalJSONEditor
+msgid "Open configuration"
+msgstr "कॉन्फ़िगरेशन खोलें"
+
+#. Default: "Open in a new tab"
+#: components/Widgets/schema/footerLinksSchema
+#: components/Widgets/schema/footerLogosSchema
+#: components/Widgets/schema/headerActionsSchema
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Open in a new tab"
+msgstr "नई टैब में खोलें"
+
+#. Default: "Open menu"
+#: components/MobileNavigation/MobileNavigation
+#: components/Navigation/Navigation
+msgid "Open menu"
+msgstr "मेन्यू खोलें"
+
+#. Default: "Overview"
+#: components/MobileNavigation/MobileNavigation
+msgid "Overview"
+msgstr "अवलोकन"
+
+#. Default: "Pagination Navigation"
+#: components/Blocks/Listing/ListingBody
+msgid "Pagination Navigation"
+msgstr "पृष्ठ संचालन"
+
+#. Default: "Pagination Navigation for {headline}"
+#: components/Blocks/Listing/ListingBody
+msgid "Pagination Navigation for {headline}"
+msgstr "{headline} के लिए पृष्ठ संचालन"
+
+#. Default: "Phone"
+#: components/Blocks/EventMetadata/View
+#: components/Summary/PersonSummary
+msgid "Phone"
+msgstr "फ़ोन"
+
+#. Default: "Please choose an existing content as source for this element"
+#: components/Blocks/Teaser/Body
+msgid "Please choose an existing content as source for this element"
+msgstr "कृपया इस तत्व के लिए मौजूदा कंटेंट को उपयोग के लिए चयन करें."
+
+#. Default: "Plone Foundation"
+#: components/Footer/slots/Copyright
+msgid "Plone Foundation"
+msgstr "Plone Foundation"
+
+#. Default: "Plone{reg} Open Source CMS/WCM"
+#: components/Footer/slots/Copyright
+msgid "Plone{reg} Open Source CMS/WCM"
+msgstr "प्लोन{reg} ओपन सोर्स सीएमएस/डब्ल्यूसीएम"
+
+#. Default: "Press"
+#: index
+msgid "Press"
+msgstr "प्रेस"
+
+#. Default: "Previous Page"
+#: components/Blocks/Listing/ListingBody
+msgid "Previous Page"
+msgstr "पिछला पृष्ठ"
+
+#. Default: "Register"
+#: components/Anontools/Anontools
+msgid "Register"
+msgstr "रजिस्टर करें"
+
+#. Default: "Remove item"
+#: components/Widgets/BlocksObject
+#: components/Widgets/ObjectList
+msgid "Remove item"
+msgstr "आइटम हटाएं"
+
+#. Default: "Result"
+#: components/Blocks/Listing/ListingBody
+msgid "Result"
+msgstr "परिणाम"
+
+#. Default: "Room"
+#: components/Summary/PersonSummary
+msgid "Room"
+msgstr "कक्ष"
+
+#. Default: "Search"
+#: components/Blocks/EventCalendar/Search/components/SearchInput
+#: components/Blocks/EventCalendar/Search/schema
+#: components/Blocks/Search/components/SearchInput
+#: components/Blocks/Search/TopSideFacets
+#: components/MobileNavigation/MobileNavigation
+#: components/SearchWidget/IntranetSearchWidget
+#: components/SearchWidget/SearchWidget
+msgid "Search"
+msgstr "खोज"
+
+#. Default: "Search Site"
+#: components/SearchWidget/IntranetSearchWidget
+#: components/SearchWidget/SearchWidget
+msgid "Search Site"
+msgstr "साइट खोजें"
+
+#. Default: "Search block"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Search block"
+msgstr "खोज ब्लॉक"
+
+#. Default: "Search button label"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Search button label"
+msgstr "खोज बटन लेबल"
+
+#. Default: "Search for People, E-Mail Address, Phone Number, ..."
+#: components/SearchWidget/IntranetSearchWidget
+msgid "Search for People, E-Mail Address, Phone Number, ..."
+msgstr "लोगों, ईमेल पता, फ़ोन नंबर, ... खोजें"
+
+#. Default: "Search input label"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Search input label"
+msgstr "खोज इनपुट लेबल"
+
+#. Default: "Search results"
+#: components/Blocks/Search/components/SearchDetails
+msgid "Search results"
+msgstr "खोज परिणाम"
+
+#. Default: "Searched for"
+#: components/Blocks/Search/components/SearchDetails
+msgid "Searched for"
+msgstr "खोजा गया"
+
+#. Default: "Section title"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Section title"
+msgstr "खंड शीर्षक"
+
+#. Default: "Show item"
+#: components/Widgets/BlocksObject
+#: components/Widgets/ObjectList
+msgid "Show item"
+msgstr "आइटम दिखाएं"
+
+#. Default: "Show search button?"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Show search button?"
+msgstr "खोज बटन दिखाएं?"
+
+#. Default: "Show search input?"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Show search input?"
+msgstr "खोज इनपुट दिखाएं?"
+
+#. Default: "Show sorting?"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Show sorting?"
+msgstr "क्रमबद्ध करने का विकल्प दिखाएं?"
+
+#. Default: "Show total results"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Show total results"
+msgstr "कुल परिणाम दिखाएं"
+
+#. Default: "Simple"
+#: index
+msgid "Simple"
+msgstr "सादा"
+
+#. Default: "Site Setup"
+#: components/Breadcrumbs/Breadcrumbs
+msgid "Site Setup"
+msgstr "साइट सेटअप"
+
+#. Default: "Sitemap"
+#: index
+msgid "Sitemap"
+msgstr "साइटमैप"
+
+#. Default: "Sort on"
+#: components/Blocks/EventCalendar/Search/components/SortOn
+msgid "Sort on"
+msgstr "क्रमबद्ध करें द्वारा"
+
+#. Default: "Sort on options"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Sort on options"
+msgstr "क्रमबद्ध करें द्वारा विकल्प"
+
+#. Default: "Sorted on"
+#: components/Blocks/EventCalendar/Search/components/SortOn
+msgid "Sorted on"
+msgstr "इस पर क्रमबद्ध"
+
+#. Default: "Sorting"
+#: components/Blocks/Search/TopSideFacets
+msgid "Sorting"
+msgstr "क्रमबद्ध करना"
+
+#. Default: "Sponsored by:"
+#: components/Footer/slots/FollowUsLogoAndLinks
+msgid "Sponsored by:"
+msgstr "प्रायोजित:"
+
+#. Default: "Start"
+#: components/Blocks/EventMetadata/View
+msgid "Start"
+msgstr "आरंभ"
+
+#. Default: "Switch to"
+#: components/LanguageSelector/LanguageSelector
+msgid "Switch to"
+msgstr ""
+
+#. Default: "Target"
+#: components/Widgets/schema/footerLinksSchema
+#: components/Widgets/schema/footerLogosSchema
+#: components/Widgets/schema/headerActionsSchema
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Target"
+msgstr "लक्ष्य"
+
+#. Default: "The button presence disables the live search, the query is issued when you press ENTER"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "The button presence disables the live search, the query is issued when you press ENTER"
+msgstr "बटन की उपस्थिति लाइव खोज को अक्षम करती है, प्रश्न ENTER दबाने पर जारी किया जाता है."
+
+#. Default: "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
+#: components/Footer/slots/Copyright
+msgid "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
+msgstr "{plonecms} {copyright} 2000-{current_year} {plonefoundation} और दोस्तों द्वारा है।"
+
+#. Default: "Title"
+#: components/Blocks/Image/schema
+#: components/Widgets/schema/footerLinksSchema
+#: components/Widgets/schema/footerLogosSchema
+#: components/Widgets/schema/headerActionsSchema
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Title"
+msgstr "शीर्षक"
+
+#. Default: "Unknown Block {block}"
+#: components/Blocks/Block/Edit
+#: components/Theme/RenderBlocks
+#: components/Theme/RenderBlocksV2
+msgid "Unknown Block"
+msgstr "अज्ञात ब्लॉक {block}"
+
+#. Default: "Website"
+#: components/Blocks/EventMetadata/View
+msgid "Website"
+msgstr "वेबसाइट"
+
+#. Default: "Available views"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "availableViews"
+msgstr "उपलब्ध दृश्य"
+
+#. Default: "The {type} block with the id {block} has encountered an error.{lineBreak}You can try to undo your changes (via the undo toolbar or pressing {shortcut}), or try to delete the block and recreate it again."
+#: components/Blocks/Block/ErrorBoundaryMessage
+msgid "blockErrorBoundaryDescription"
+msgstr "{type} ब्लॉक जिसकी आईडी {block} है, में एक त्रुटि आई है।{lineBreak}आप अपने बदलाव पूर्ववत करने का प्रयास कर सकते हैं (पूर्ववत सरगल या {shortcut} दबाकर), या ब्लॉक हटाकर पुनः बनाने का प्रयास कर सकते हैं।."
+
+#. Default: "Block error:"
+#: components/Blocks/Block/ErrorBoundaryMessage
+msgid "blockErrorBoundaryTitle"
+msgstr "ब्लॉक त्रुटि:"
+
+#. Default: "The {type} block with the id {block} errored and cannot be displayed.{lineBreak}Please contact the site administrator for further assistance."
+#: components/Blocks/Block/ErrorBoundaryMessage
+msgid "blockErrorBoundaryViewDescription"
+msgstr "{type} ब्लॉक जिसकी आईडी {block} है, में त्रुटि आई और इसे प्रदर्शित नहीं किया जा सकता।{lineBreak}कृपया अतिरिक्त सहायता के लिए साइट प्रशासक से संपर्क करें।."
+
+#. Default: "Delete"
+#: components/Blocks/Block/Edit
+msgid "delete"
+msgstr "हटाएँ"
+
+#. Default: "delete {type} block"
+#: components/Blocks/Block/EditBlockWrapper
+msgid "delete_block"
+msgstr "{type} ब्लॉक हटाएँ"
+
+#. Default: "drag {type} block"
+#: components/Blocks/Block/EditBlockWrapper
+msgid "drag_block"
+msgstr "{type} ब्लॉक खींचें"
+
+#. Default: "Clear image"
+#: components/Blocks/Image/ImageSidebar
+msgid "image_block_clear"
+msgstr "स्पष्ट छवि"
+
+#. Default: "Image preview"
+#: components/Blocks/Image/ImageSidebar
+msgid "image_block_preview"
+msgstr "छवि पूर्वावलोकन"
+
+#. Default: "Loading"
+#: components/Blocks/Listing/ListingBody
+msgid "loading"
+msgstr "लोड हो रहा है"
+
+#. Default: "of"
+#: components/Blocks/Listing/ListingBody
+msgid "of"
+msgstr "का"
+
+#. Default: "Views"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "views"
+msgstr "दृश्य"

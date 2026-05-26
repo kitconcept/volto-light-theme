@@ -1,0 +1,645 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Plone\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-16T14:21:29.474Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language: fu\n"
+"Language-Team: \n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Language-Code: fu\n"
+"Language-Name: fu\n"
+"Preferred-Encodings: utf-8\n"
+"Domain: DOMAIN\n"
+
+#. Default: "Action"
+#: components/Widgets/schema/headerActionsSchema
+msgid "Action"
+msgstr "Azion"
+
+#. Default: "Add"
+#: components/Widgets/BlocksObject
+#: components/Widgets/ObjectList
+msgid "Add (object list)"
+msgstr "Zonte"
+
+#. Default: "Add action"
+#: components/Widgets/schema/headerActionsSchema
+msgid "Add action"
+msgstr "Azion zontade"
+
+#. Default: "Add item"
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Add item"
+msgstr "Zontâ element"
+
+#. Default: "Add link"
+#: components/Widgets/schema/footerLinksSchema
+msgid "Add link"
+msgstr "Zontâ leam"
+
+#. Default: "Add logo"
+#: components/Widgets/schema/footerLogosSchema
+msgid "Add logo"
+msgstr "Zontâ logo"
+
+#. Default: "Advanced facet?"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Advanced facet?"
+msgstr "Facete avanzade?"
+
+#. Default: "Advanced facets are initially hidden and displayed on demand"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Advanced facets are initially hidden and displayed on demand"
+msgstr "Lis facetis avanzadis a son inizialmenti platadis e mostradis su domande"
+
+#. Default: "Alt text"
+#: components/Widgets/schema/footerLogosSchema
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Alt text"
+msgstr "Test alternatîf"
+
+#. Default: "Ascending"
+#: components/Blocks/EventCalendar/Search/components/SortOn
+msgid "Ascending"
+msgstr "Cressint"
+
+#. Default: "Back"
+#: components/MobileNavigation/MobileNavigation
+msgid "Back"
+msgstr "Indaûr"
+
+#. Default: "Background color"
+#: components/Blocks/schema
+msgid "Background color"
+msgstr "Colôr di sfont"
+
+#. Default: "Base search query"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Base search query"
+msgstr "Ricercje di base"
+
+#. Default: "Block Width"
+#: components/Blocks/Image/schema
+msgid "Block Width"
+msgstr "Largjece dal bloc"
+
+#. Default: "Breadcrumbs"
+#: components/Breadcrumbs/Breadcrumbs
+msgid "Breadcrumbs"
+msgstr "Percors di navigazion"
+
+#. Default: "Cancel search"
+#: components/Blocks/EventCalendar/Search/components/SearchInput
+msgid "Cancel search"
+msgstr "Anule ricercje"
+
+#. Default: "Close menu"
+#: components/MobileNavigation/MobileNavigation
+#: components/Navigation/Navigation
+msgid "Close menu"
+msgstr "Siere menù"
+
+#. Default: "Collapse item"
+#: components/Widgets/BlocksObject
+#: components/Widgets/ObjectList
+msgid "Collapse item"
+msgstr "Strenç element"
+
+#. Default: "The color contrast ratio {contrastRatio}:1 might not be accessible for all. WCAG Level: {complianceLevel}"
+#: components/Widgets/ColorContrastChecker
+msgid "ColorContrastCheckerMessage"
+msgstr "Il rapuart di contrast dal colôr {contrastRatio}:1 al podarès no jessi acessibil par ducj. Nivel WCAG: {complianceLevel}"
+
+#. Default: "Contact"
+#: components/Blocks/EventMetadata/View
+msgid "Contact"
+msgstr "Contat"
+
+#. Default: "Controls"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Controls"
+msgstr "Controls"
+
+#. Default: "Copyright"
+#: components/Footer/slots/Copyright
+msgid "Copyright"
+msgstr "Copyright (c)"
+
+#. Default: "Descending"
+#: components/Blocks/EventCalendar/Search/components/SortOn
+msgid "Descending"
+msgstr "Calant"
+
+#. Default: "Description"
+#: components/Blocks/Image/schema
+#: components/Widgets/schema/footerLogosSchema
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Description"
+msgstr "Descrizion"
+
+#. Default: "Distributed under the {license}."
+#: components/Footer/slots/Copyright
+msgid "Distributed under the {license}."
+msgstr "Distribuît sot la {license}."
+
+#. Default: "Download file"
+#: components/Theme/FileView
+msgid "Download file"
+msgstr "Discjame file"
+
+#. Default: "E-mail"
+#: components/Summary/PersonSummary
+msgid "E-mail"
+msgstr "Email"
+
+#. Default: "Empty object list"
+#: components/Widgets/BlocksObject
+#: components/Widgets/ObjectList
+msgid "Empty object list"
+msgstr "Liste di ogjets vuede"
+
+#. Default: "End"
+#: components/Blocks/EventMetadata/View
+msgid "End"
+msgstr "Fin"
+
+#. Default: "Facet"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Facet"
+msgstr "Facete"
+
+#. Default: "Facet widget"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Facet widget"
+msgstr "Widget facete"
+
+#. Default: "Facets"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Facets"
+msgstr "Facetis"
+
+#. Default: "Field"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Field"
+msgstr "Cjamp"
+
+#. Default: "Follow us:"
+#: components/Footer/slots/FollowUsLogoAndLinks
+msgid "Follow us:"
+msgstr "Seguìnus:"
+
+#. Default: "GNU GPL v2 license"
+#: components/Footer/slots/Copyright
+msgid "GNU GPL license"
+msgstr "GNU GPL"
+
+#. Default: "Headline"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Headline"
+msgstr "Titolâr"
+
+#. Default: "Hidden facets will still filter the results if proper parameters are passed in URLs"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Hidden facets will still filter the results if proper parameters are passed in URLs"
+msgstr "Lis facetis platadis a filtraran distès i risultâts se i parametris juscj a vegnin passâts tai URL"
+
+#. Default: "Hide facet?"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Hide facet?"
+msgstr "Plate facete?"
+
+#. Default: "Home"
+#: components/Breadcrumbs/Breadcrumbs
+#: components/Logo/Logo
+#: components/MobileNavigation/MobileNavigation
+msgid "Home"
+msgstr "Portâl"
+
+#. Default: "ICS Download"
+#: components/Blocks/EventMetadata/View
+msgid "ICS-Download"
+msgstr "Discjamâ ICS"
+
+#. Default: "Icon"
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Icon"
+msgstr "Icone"
+
+#. Default: "Image"
+#: components/Blocks/Image/ImageSidebar
+msgid "Image"
+msgstr "Imagjin"
+
+#. Default: "Invalid block - Will be removed on saving"
+#: components/Theme/RenderBlocks
+#: components/Theme/RenderBlocksV2
+msgid "Invalid Block"
+msgstr "Bloc no valit — Al sarà gjavât cuant che si salve."
+
+#. Default: "Item"
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Item"
+msgstr "Element"
+
+#. Default: "Label"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Label"
+msgstr "Etichete"
+
+#. Default: "Link"
+#: components/Widgets/schema/footerLinksSchema
+msgid "Link"
+msgstr "Leam"
+
+#. Default: "List"
+#: index
+msgid "List"
+msgstr "Liste"
+
+#. Default: "List with images"
+#: index
+msgid "List with images"
+msgstr "Liste cun imagjins"
+
+#. Default: "Location"
+#: components/Blocks/EventMetadata/View
+msgid "Location"
+msgstr "Posizion"
+
+#. Default: "Log in"
+#: components/Anontools/Anontools
+msgid "Log in"
+msgstr "Jentre"
+
+#. Default: "Log out"
+#: components/Anontools/Anontools
+msgid "Log out"
+msgstr "Jessî"
+
+#. Default: "Logo"
+#: components/Widgets/schema/footerLogosSchema
+msgid "Logo"
+msgstr "Logo"
+
+#. Default: "Logo image"
+#: components/Widgets/schema/footerLogosSchema
+msgid "Logo image"
+msgstr "Imagjin dal logo"
+
+#. Default: "Logo of"
+#: components/Logo/Logo
+msgid "Logo of"
+msgstr "Logo di"
+
+#. Default: "Move down"
+#: components/Blocks/Block/Edit
+msgid "Move down"
+msgstr "Sposte jù"
+
+#. Default: "Move up"
+#: components/Blocks/Block/Edit
+msgid "Move up"
+msgstr "Sposte sù"
+
+#. Default: "Multiple choices?"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Multiple choices?"
+msgstr "Sieltis multiplis?"
+
+#. Default: "Next Page"
+#: components/Blocks/Listing/ListingBody
+msgid "Next Page"
+msgstr "Pagjine dopo"
+
+#. Default: "No image selected"
+#: components/Blocks/Image/ImageSidebar
+msgid "No image selected"
+msgstr "Nissune imagjin selezionade"
+
+#. Default: "No items found in this container."
+#: components/Blocks/Listing/ListingBody
+msgid "No items found in this container."
+msgstr "Nissun element cjatât in chest contignidôr."
+
+#. Default: "No selection"
+#: components/Blocks/EventCalendar/Search/components/SortOn
+msgid "No selection"
+msgstr "Nissune selezion"
+
+#. Default: "Open configuration"
+#: components/Widgets/ModalJSONEditor
+msgid "Open configuration"
+msgstr "Vierzi configurazion"
+
+#. Default: "Open in a new tab"
+#: components/Widgets/schema/footerLinksSchema
+#: components/Widgets/schema/footerLogosSchema
+#: components/Widgets/schema/headerActionsSchema
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Open in a new tab"
+msgstr "Vierç intun gnûf tab"
+
+#. Default: "Open menu"
+#: components/MobileNavigation/MobileNavigation
+#: components/Navigation/Navigation
+msgid "Open menu"
+msgstr "Vierç menù"
+
+#. Default: "Overview"
+#: components/MobileNavigation/MobileNavigation
+msgid "Overview"
+msgstr "Panoramiche"
+
+#. Default: "Pagination Navigation"
+#: components/Blocks/Listing/ListingBody
+msgid "Pagination Navigation"
+msgstr "Navigazion di paginazion"
+
+#. Default: "Pagination Navigation for {headline}"
+#: components/Blocks/Listing/ListingBody
+msgid "Pagination Navigation for {headline}"
+msgstr "Navigazion di paginazion par {headline}"
+
+#. Default: "Phone"
+#: components/Blocks/EventMetadata/View
+#: components/Summary/PersonSummary
+msgid "Phone"
+msgstr "Telefon"
+
+#. Default: "Please choose an existing content as source for this element"
+#: components/Blocks/Teaser/Body
+msgid "Please choose an existing content as source for this element"
+msgstr "Par plasê sielç un contegnût esistint come font par chest element."
+
+#. Default: "Plone Foundation"
+#: components/Footer/slots/Copyright
+msgid "Plone Foundation"
+msgstr "Plone Foundation"
+
+#. Default: "Plone{reg} Open Source CMS/WCM"
+#: components/Footer/slots/Copyright
+msgid "Plone{reg} Open Source CMS/WCM"
+msgstr "Plone{reg} Open Source CMS/WCM"
+
+#. Default: "Press"
+#: index
+msgid "Press"
+msgstr "Stampe"
+
+#. Default: "Previous Page"
+#: components/Blocks/Listing/ListingBody
+msgid "Previous Page"
+msgstr "Pagjine prime"
+
+#. Default: "Register"
+#: components/Anontools/Anontools
+msgid "Register"
+msgstr "Conferme la iscrizion"
+
+#. Default: "Remove item"
+#: components/Widgets/BlocksObject
+#: components/Widgets/ObjectList
+msgid "Remove item"
+msgstr "Gjave element"
+
+#. Default: "Result"
+#: components/Blocks/Listing/ListingBody
+msgid "Result"
+msgstr "Risultât"
+
+#. Default: "Room"
+#: components/Summary/PersonSummary
+msgid "Room"
+msgstr "Sale"
+
+#. Default: "Search"
+#: components/Blocks/EventCalendar/Search/components/SearchInput
+#: components/Blocks/EventCalendar/Search/schema
+#: components/Blocks/Search/components/SearchInput
+#: components/Blocks/Search/TopSideFacets
+#: components/MobileNavigation/MobileNavigation
+#: components/SearchWidget/IntranetSearchWidget
+#: components/SearchWidget/SearchWidget
+msgid "Search"
+msgstr "Cîr"
+
+#. Default: "Search Site"
+#: components/SearchWidget/IntranetSearchWidget
+#: components/SearchWidget/SearchWidget
+msgid "Search Site"
+msgstr "Cîr tal sît"
+
+#. Default: "Search block"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Search block"
+msgstr "Bloc di ricercje"
+
+#. Default: "Search button label"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Search button label"
+msgstr "Etichete dal boton di ricercje"
+
+#. Default: "Search for People, E-Mail Address, Phone Number, ..."
+#: components/SearchWidget/IntranetSearchWidget
+msgid "Search for People, E-Mail Address, Phone Number, ..."
+msgstr "Cîr personis, adreçs email, numars di telefon, ..."
+
+#. Default: "Search input label"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Search input label"
+msgstr "Etichete dal input di ricercje"
+
+#. Default: "Search results"
+#: components/Blocks/Search/components/SearchDetails
+msgid "Search results"
+msgstr "Risultâts de ricercje"
+
+#. Default: "Searched for"
+#: components/Blocks/Search/components/SearchDetails
+msgid "Searched for"
+msgstr "Cirût par"
+
+#. Default: "Section title"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Section title"
+msgstr "Titul de sezion"
+
+#. Default: "Show item"
+#: components/Widgets/BlocksObject
+#: components/Widgets/ObjectList
+msgid "Show item"
+msgstr "Mostre element"
+
+#. Default: "Show search button?"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Show search button?"
+msgstr "Mostrâ il boton di ricercje?"
+
+#. Default: "Show search input?"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Show search input?"
+msgstr "Mostrâ il input di ricercje?"
+
+#. Default: "Show sorting?"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Show sorting?"
+msgstr "Mostrâ l'ordenament?"
+
+#. Default: "Show total results"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Show total results"
+msgstr "Mostre totâl dai risultâts"
+
+#. Default: "Simple"
+#: index
+msgid "Simple"
+msgstr "Sempliç"
+
+#. Default: "Site Setup"
+#: components/Breadcrumbs/Breadcrumbs
+msgid "Site Setup"
+msgstr "Configurazion dal sît"
+
+#. Default: "Sitemap"
+#: index
+msgid "Sitemap"
+msgstr "Mape dal sît"
+
+#. Default: "Sort on"
+#: components/Blocks/EventCalendar/Search/components/SortOn
+msgid "Sort on"
+msgstr "Ordene par"
+
+#. Default: "Sort on options"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "Sort on options"
+msgstr "Opzions di ordenament"
+
+#. Default: "Sorted on"
+#: components/Blocks/EventCalendar/Search/components/SortOn
+msgid "Sorted on"
+msgstr "Ordenât par"
+
+#. Default: "Sorting"
+#: components/Blocks/Search/TopSideFacets
+msgid "Sorting"
+msgstr "Ordenament"
+
+#. Default: "Sponsored by:"
+#: components/Footer/slots/FollowUsLogoAndLinks
+msgid "Sponsored by:"
+msgstr "Sponsorizât di:"
+
+#. Default: "Start"
+#: components/Blocks/EventMetadata/View
+msgid "Start"
+msgstr "Inizi"
+
+#. Default: "Switch to"
+#: components/LanguageSelector/LanguageSelector
+msgid "Switch to"
+msgstr ""
+
+#. Default: "Target"
+#: components/Widgets/schema/footerLinksSchema
+#: components/Widgets/schema/footerLogosSchema
+#: components/Widgets/schema/headerActionsSchema
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Target"
+msgstr "Destinazion"
+
+#. Default: "The button presence disables the live search, the query is issued when you press ENTER"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "The button presence disables the live search, the query is issued when you press ENTER"
+msgstr "La presince dal boton e disative la ricercje in direte, la ricercje e ven fissade cuant che tu fracjis ENTER."
+
+#. Default: "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
+#: components/Footer/slots/Copyright
+msgid "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
+msgstr "Il {plonecms} al è {copyright} 2000-{current_year} de {plonefoundation} e amîs."
+
+#. Default: "Title"
+#: components/Blocks/Image/schema
+#: components/Widgets/schema/footerLinksSchema
+#: components/Widgets/schema/footerLogosSchema
+#: components/Widgets/schema/headerActionsSchema
+#: components/Widgets/schema/iconLinkListSchema
+msgid "Title"
+msgstr "Titul"
+
+#. Default: "Unknown Block {block}"
+#: components/Blocks/Block/Edit
+#: components/Theme/RenderBlocks
+#: components/Theme/RenderBlocksV2
+msgid "Unknown Block"
+msgstr "Bloc no cognossût {block}"
+
+#. Default: "Website"
+#: components/Blocks/EventMetadata/View
+msgid "Website"
+msgstr "Sît web"
+
+#. Default: "Available views"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "availableViews"
+msgstr "Viodudis disponibilis"
+
+#. Default: "The {type} block with the id {block} has encountered an error.{lineBreak}You can try to undo your changes (via the undo toolbar or pressing {shortcut}), or try to delete the block and recreate it again."
+#: components/Blocks/Block/ErrorBoundaryMessage
+msgid "blockErrorBoundaryDescription"
+msgstr "Il bloc {type} cul id {block} al à vût un erôr.{lineBreak}Tu puedis provâ a anulâ lis modifichis (cul sbare di anulâ o fracant {shortcut}), o provâ a eliminâ il bloc e creâlu di gnûf."
+
+#. Default: "Block error:"
+#: components/Blocks/Block/ErrorBoundaryMessage
+msgid "blockErrorBoundaryTitle"
+msgstr "Erôr dal bloc:"
+
+#. Default: "The {type} block with the id {block} errored and cannot be displayed.{lineBreak}Please contact the site administrator for further assistance."
+#: components/Blocks/Block/ErrorBoundaryMessage
+msgid "blockErrorBoundaryViewDescription"
+msgstr "Il bloc {type} cul id {block} al à vût un erôr e nol pues jessi visualizât.{lineBreak}Par plasê contatâ il aministradôr dal sît par vê jutôri."
+
+#. Default: "Delete"
+#: components/Blocks/Block/Edit
+msgid "delete"
+msgstr "elimine"
+
+#. Default: "delete {type} block"
+#: components/Blocks/Block/EditBlockWrapper
+msgid "delete_block"
+msgstr "eliminâ bloc {type}"
+
+#. Default: "drag {type} block"
+#: components/Blocks/Block/EditBlockWrapper
+msgid "drag_block"
+msgstr "strissâ bloc {type}"
+
+#. Default: "Clear image"
+#: components/Blocks/Image/ImageSidebar
+msgid "image_block_clear"
+msgstr "Nete imagjin"
+
+#. Default: "Image preview"
+#: components/Blocks/Image/ImageSidebar
+msgid "image_block_preview"
+msgstr "Anteprime de imagjin"
+
+#. Default: "Loading"
+#: components/Blocks/Listing/ListingBody
+msgid "loading"
+msgstr "Cjamant"
+
+#. Default: "of"
+#: components/Blocks/Listing/ListingBody
+msgid "of"
+msgstr "di"
+
+#. Default: "Views"
+#: components/Blocks/EventCalendar/Search/schema
+msgid "views"
+msgstr "Viodudis"
