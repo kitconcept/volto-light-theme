@@ -104,7 +104,7 @@ const Card = (props: CardProps) => {
 
   const a11yLabelId = React.useId();
 
-  const isInteractive = !!props.href || !!props.item || showLink;
+  const isInteractive = !!href || showLink;
 
   const LinkToItem = React.useCallback(
     ({ children }: { children: React.ReactNode }) => {
