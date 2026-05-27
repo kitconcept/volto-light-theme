@@ -1090,11 +1090,13 @@
       .title.accordion-title {
         background: var(--theme-color);
 
-        & > span {
+        & > span,
+        input {
           color: var(--theme-low-contrast-foreground-color);
         }
 
-        &.active > span {
+        &.active > span,
+        input {
           color: var(--theme-foreground-color);
         }
 
