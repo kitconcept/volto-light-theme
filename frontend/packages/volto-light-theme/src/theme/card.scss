@@ -222,7 +222,7 @@
   display: none;
 }
 
-// Cards in columns. 
+// Cards in columns.
 @container (min-width: #{$largest-mobile-screen}) {
   .card {
     .card-inner {
