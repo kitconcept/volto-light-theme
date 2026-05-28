@@ -332,11 +332,22 @@ export type BlocksObjectWidgetProps = {
    */
   schemaEnhancer?: (args: {
     schema: JSONSchema & { addMessage: string };
-    formData: BlockConfigBase;
+    formData: object;
     intl: IntlShape;
     navRoot: Content;
     contentType: string;
   }) => JSONSchema;
+  /**
+   * Another optional function to enhance the schema.
+   * (Deprecated API with fewer supported arguments.
+   * This is here for backwards-compatibility
+   * with the ObjectListWidget in Volto.)
+   */
+  schemaExtender?: (
+    schema: JSONSchema,
+    formData: object,
+    intl: IntlShape,
+  ) => JSONSchema;
 };
 ```
 

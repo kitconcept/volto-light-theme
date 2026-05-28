@@ -1,10 +1,17 @@
+import * as React from 'react';
 import { parseDateFromCatalog } from '@kitconcept/volto-light-theme/helpers/dates';
 import FormattedDate from '@plone/volto/components/theme/FormattedDate/FormattedDate';
 import type { DefaultSummaryProps } from './DefaultSummary';
 import { smartTextRenderer } from '../../helpers/smartText';
 
 const NewsItemSummary = (props: DefaultSummaryProps) => {
-  const { item, HeadingTag = 'h3', a11yLabelId, hide_description } = props;
+  const {
+    item,
+    LinkToItem = React.Fragment,
+    HeadingTag = 'div',
+    a11yLabelId,
+    hide_description,
+  } = props;
 
   const effective = parseDateFromCatalog(item.effective);
   const headline = [
@@ -31,9 +38,9 @@ const NewsItemSummary = (props: DefaultSummaryProps) => {
     <>
       {headline.length ? <div className="headline">{headline}</div> : null}
       <HeadingTag className="title" id={a11yLabelId}>
-        {item.title ? item.title : item.id}
+        <LinkToItem>{item.title ? item.title : item.id}</LinkToItem>
       </HeadingTag>
-      {!hide_description && (
+      {!hide_description && item?.description !== '' && (
         <p className="description">{smartTextRenderer(item.description)}</p>
       )}
     </>

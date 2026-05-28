@@ -42,6 +42,90 @@ The recommended add-ons are listed in the {doc}`../reference/recommended-addons`
 All custom code related to the slider block has been moved to the `@kitconcept/volto-slider-block` add-on.
 If you have customized the slider block in your project, you will need to move your customizations shadows to the `@kitconcept/volto-slider-block` add-on as well.
 
+### Card link handling changed to CSS stretched-link pattern
+
+```{versionadded} 8.0.0-alpha.19
+```
+
+The `Card` component no longer uses JavaScript click handlers to make the whole card interactive (`role="link"`, `tabIndex`, `onClick`, `onKeyDown`).
+Instead, it uses a CSS stretched-link pattern: it creates a `LinkToItem` component (a `ConditionalLink` with the `card-primary-link` class) and passes it down through `Card.Summary` to its `Summary` children.
+
+If you have a custom `Summary` component, you must update it to accept and use the `LinkToItem` prop to wrap the item title.
+
+Old component signature:
+
+```tsx
+const MySummary = ({ item, HeadingTag = 'div', a11yLabelId }) => (
+  <>
+    <HeadingTag className="title" id={a11yLabelId}>
+      {item.title}
+    </HeadingTag>
+  </>
+);
+```
+
+New component signature:
+
+```tsx
+const MySummary = ({
+  item,
+  LinkToItem = React.Fragment,
+  HeadingTag = 'div',
+  a11yLabelId,
+}) => (
+  <>
+    <HeadingTag className="title" id={a11yLabelId}>
+      <LinkToItem>{item.title}</LinkToItem>
+    </HeadingTag>
+  </>
+);
+```
+
+If you do not use `LinkToItem`, the title will still render correctly, but the stretched-link click target will be missing and the card will not be interactive.
+
+### Card title tag changed from heading to `div`
+
+```{versionadded} 8.0.0-alpha.19
+```
+
+The default value of `HeadingTag` in all built-in `Summary` components has changed from `h3` to `div`.
+Callers (listing templates, Teaser block) no longer pass `HeadingTag="h2"` or `HeadingTag="h3"` to `Summary` components.
+
+If you have CSS selectors targeting heading tags inside cards or listing items (such as `.card-summary h2`, `.listing-item h2.title`, or `.block.teaser .card-summary h2`), you must update them to target the `.title` class instead:
+
+```css
+/* Before */
+.card-summary h2 { ... }
+.listing-item h2.title { ... }
+
+/* After */
+.card-summary .title { ... }
+.listing-item .title { ... }
+```
+
+### Listing item markup changed from `div` to `ul`/`li`
+
+```{versionadded} 8.0.0-alpha.19
+```
+
+All base listing templates (Default, Grid, Summary) now render the item list as a `<ul>` element with `<li>` children instead of nested `<div>` elements.
+
+If you have CSS targeting `div.items` or `div.listing-item`, update those selectors to use the element-agnostic class selectors `.items` and `.listing-item`.
+
+If you have customized a listing template by shadowing it, review your copy and update the wrapper elements accordingly:
+
+```html
+<!-- Before -->
+<div class="items">
+  <div class="listing-item">...</div>
+</div>
+
+<!-- After -->
+<ul class="items">
+  <li class="listing-item">...</li>
+</ul>
+```
+
 ## volto-light-theme 7.0.0
 
 ### The card primitive has been applied to the Teaser block

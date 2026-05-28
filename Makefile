@@ -130,6 +130,13 @@ lint:  ## Format codebase
 	$(MAKE) -C "./frontend/" lint
 
 ###########################################
+# Release
+###########################################
+.PHONY: release
+release:  ## Release backend and frontend packages with repoplone
+	uvx repoplone release
+
+###########################################
 # i18n
 ###########################################
 .PHONY: i18n

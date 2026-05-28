@@ -49,7 +49,7 @@ const EventItem = ({ item, lang, isEditMode }) => {
               <span className="event-title">{item.head_title}</span>
             )}
           </div>
-          <DefaultSummary item={item} HeadingTag="h2" />
+          <DefaultSummary item={item} />
         </Card.Summary>
       </Card>
     </div>
