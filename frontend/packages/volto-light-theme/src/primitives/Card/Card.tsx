@@ -6,7 +6,7 @@ import cx from 'classnames';
 import type { ObjectBrowserItem } from '@plone/types';
 import linkSVG from '@plone/volto/icons/link.svg';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
-import { Button, Link } from '@plone/components';
+import { Button } from '@plone/components';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { useLocation, useHistory } from 'react-router-dom';
 
