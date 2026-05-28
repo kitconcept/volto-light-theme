@@ -6,7 +6,7 @@ import cx from 'classnames';
 import type { ObjectBrowserItem } from '@plone/types';
 import linkSVG from '@plone/volto/icons/link.svg';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
-import { Button } from '@plone/components';
+import { Button, Link } from '@plone/components';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { useLocation, useHistory } from 'react-router-dom';
 
@@ -97,14 +97,10 @@ const LinkIconButton = ({ item }: { item?: Partial<ObjectBrowserItem> }) => {
   );
 };
 const Card = (props: CardProps) => {
-  const hasItem = !!props.item;
-  const item = hasItem ? props.item : undefined;
-  const href = !hasItem ? props.href : undefined;
-  const { className, openLinkInNewTab, showLink } = props;
+  const { className, openLinkInNewTab, href, item, showLink } = props;
 
   const a11yLabelId = React.useId();
-
-  const isInteractive = !!href || showLink;
+  const isInteractive = !!props.href || (!!props.item && showLink !== false);
 
   const LinkToItem = React.useCallback(
     ({ children }: { children: React.ReactNode }) => {
@@ -122,10 +118,15 @@ const Card = (props: CardProps) => {
     },
     [href, item, isInteractive, openLinkInNewTab],
   );
+
   return (
     <div className={cx('card', className)}>
       <div className="card-inner">
-        {childrenWithProps(props.children, { a11yLabelId, LinkToItem, item })}
+        {childrenWithProps(props.children, {
+          a11yLabelId,
+          LinkToItem,
+          item,
+        })}
       </div>
     </div>
   );
@@ -184,6 +185,7 @@ type CardSummaryProps = {
 
 const CardSummary = (props: CardSummaryProps) => {
   const { children, a11yLabelId, item, LinkToItem } = props;
+
   return (
     <div className="card-summary">
       <LinkIconButton item={item} />

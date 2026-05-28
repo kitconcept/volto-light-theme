@@ -25,6 +25,10 @@
   .image-wrapper {
     width: 100%;
 
+    &:hover .link-icon-summary,
+    &:focus-within .link-icon-summary {
+      opacity: 1;
+    }
     img {
       display: block;
       // Beware of this, it can cause issues with some images, added back on 2025-09-30 @sneridagh
@@ -50,6 +54,9 @@
   }
   .card-summary {
     position: relative;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
     @container (max-width: #{$largest-mobile-screen}) {
       padding-top: $spacing-small !important;
     }
@@ -80,6 +87,7 @@
       }
     }
   }
+
   // Common styles for link icon overlay
   .card-link-icon {
     position: absolute;
@@ -188,6 +196,7 @@
     }
   }
 }
+
 // Link Icon visibility
 .block.teaser .card .image-wrapper .card-link-icon {
   display: none;
@@ -212,7 +221,6 @@
 #page-add .card-link-icon {
   display: none;
 }
-
 // Cards in columns
 @container (min-width: #{$largest-mobile-screen}) {
   .card {
