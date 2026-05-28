@@ -8,6 +8,26 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0-alpha.28 (2026-05-15)
+
+### Bugfix
+
+- Fix Search icon color changes when changing footer font color @iRohitSingh [#850](https://github.com/kitconcept/volto-light-theme/pull/850)
+- Fix customized ObjectListWidget to support the `schemaExtender` prop. @davisagli 
+
+## 8.0.0-alpha.27 (2026-05-12)
+
+## 8.0.0-alpha.26 (2026-05-12)
+
+### Bugfix
+
+- Fix Mobile layout of social media icons @iRohitSingh [#852](https://github.com/kitconcept/volto-light-theme/pull/852)
+- Fix social media icon color @iRohitSingh [#854](https://github.com/kitconcept/volto-light-theme/pull/854)
+- Fix loading of inherited site customization fields on error views. @davisagli 
+- Fixed not working combinations with the richtext-widget in the text-block and updated line-height of ToC block according to figma. @TimoBroeskamp 
+- Update Volto to 19a36.
+  See https://github.com/plone/volto/releases/tag/19.0.0-alpha.36 @sneridagh 
+
 ## 8.0.0-alpha.25 (2026-05-06)
 
 ### Bugfix
