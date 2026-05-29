@@ -44,7 +44,7 @@ jobs:
       contents: write # needs to push changes
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Load images
         run: |
@@ -52,7 +52,7 @@ jobs:
           docker pull ${{ needs.config.outputs.image-name-prefix }}-frontend:${{ needs.config.outputs.base-tag }}
 
       - name: Checkout visual regression assets
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: kitconcept/vlt-visual-regression
           ref: main
@@ -66,7 +66,7 @@ jobs:
           git config --global user.email "${{ env.AUTHOR_EMAIL }}"
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NODE_VERSION }}
 
@@ -78,7 +78,7 @@ jobs:
         run: |
           echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         name: Setup pnpm cache
         with:
           path: ${{ env.STORE_PATH }}
@@ -93,7 +93,7 @@ jobs:
         working-directory: frontend/packages/volto-light-theme
         run: pnpm exec playwright install --with-deps chromium
 
-      - uses: JarvusInnovations/background-action@v1
+      - uses: JarvusInnovations/background-action@v1.0.7
         name: Start Servers - Volto and Plone
         with:
           run: |
@@ -152,7 +152,7 @@ jobs:
 
       - name: Upload Playwright artifacts
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: visual-regression-results
           path: frontend/playwright/results
