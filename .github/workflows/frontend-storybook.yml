@@ -12,7 +12,7 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Set up Node.js environment
         uses: ./.github/actions/node_setup
@@ -24,7 +24,7 @@ jobs:
         run: cp -r .storybook-build storybook-build
 
       # Upload Storybook build
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: success()
         with:
           name: storybook-build
