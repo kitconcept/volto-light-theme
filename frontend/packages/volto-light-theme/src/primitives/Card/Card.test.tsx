@@ -1,16 +1,7 @@
 import React from 'react';
 import { describe, it, expect, vi } from 'vitest';
 import { render } from '@testing-library/react';
-import configureStore from 'redux-mock-store';
-import { Provider } from 'react-intl-redux';
-import { MemoryRouter } from 'react-router-dom';
 import Card from './Card';
-
-const mockStore = configureStore();
-const store = mockStore({
-  site: { data: {} },
-  intl: { locale: 'en', messages: {} },
-});
 
 vi.mock(
   '@plone/volto/components/manage/ConditionalLink/ConditionalLink',
@@ -69,16 +60,12 @@ const BodyContent = () => <div>Body content</div>;
 describe('Card', () => {
   const renderCard = (props: React.ComponentProps<typeof Card>) =>
     render(
-      <Provider store={store}>
-        <MemoryRouter>
-          <Card {...props}>
-            <Card.Summary>
-              <SummaryContent />
-            </Card.Summary>
-            <BodyContent />
-          </Card>
-        </MemoryRouter>
-      </Provider>,
+      <Card {...props}>
+        <Card.Summary>
+          <SummaryContent />
+        </Card.Summary>
+        <BodyContent />
+      </Card>,
     );
 
   it('is interactive when an href is provided', () => {

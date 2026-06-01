@@ -53,8 +53,6 @@
     padding-top: $spacing-medium;
   }
   .card-summary {
-    position: relative;
-
     @container (max-width: #{$largest-mobile-screen}) {
       padding-top: $spacing-small !important;
     }
@@ -195,40 +193,12 @@
   }
 }
 
-// Link Icon visibility
-.block.teaser .card .image-wrapper .card-link-icon {
-  display: none;
-}
-
-.gridBlock .teaser .card {
-  .image-wrapper .card-link-icon {
-    display: block;
-  }
-  .card-summary .card-link-icon {
-    display: none;
-  }
-}
-
-.block.listing.grid .card .card-summary .card-link-icon,
-.block.listing.summary .card .card-summary .card-link-icon {
-  display: none;
-}
-
 // Hides the link icon in edit and add page
 #page-edit .card-link-icon,
 #page-add .card-link-icon {
   display: none;
 }
 
-// At small viewport, move card-link-icon from cardSummary to cardImage for teaser blocks
-@media (max-width: #{$largest-mobile-screen}) {
-  .block.teaser .card .image-wrapper .card-link-icon {
-    display: block;
-  }
-  .block.teaser .card .card-summary .card-link-icon {
-    display: none;
-  }
-}
 // Cards in columns
 @container (min-width: #{$largest-mobile-screen}) {
   .card {
