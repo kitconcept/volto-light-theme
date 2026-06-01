@@ -3,340 +3,338 @@ msgstr ""
 "Project-Id-Version: Plone\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-16T14:21:29.474Z\n"
-"PO-Revision-Date: 2025-07-07 15:40+0200\n"
-"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
-"Language: es\n"
-"Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language: bn\n"
+"Language-Team: \n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Language-Code: es\n"
-"Language-Name: Español\n"
+"Language-Code: bn\n"
+"Language-Name: bn\n"
 "Preferred-Encodings: utf-8\n"
-"Domain: volto\n"
-"X-Generator: Poedit 3.6\n"
-"X-Is-Fallback-For: es-ar es-bo es-cl es-co es-cr es-do es-ec es-es es-sv es-gt es-hn es-mx es-ni es-pa es-py es-pe es-pr es-us es-uy es-ve\n"
+"Domain: DOMAIN\n"
 
 #. Default: "Action"
 #: components/Widgets/schema/headerActionsSchema
 msgid "Action"
-msgstr "Acción"
+msgstr "ক্রিয়া"
 
 #. Default: "Add"
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
 msgid "Add (object list)"
-msgstr "Añadir (lista objecto)"
+msgstr "যোগ করুন"
 
 #. Default: "Add action"
 #: components/Widgets/schema/headerActionsSchema
 msgid "Add action"
-msgstr "Añadir acción"
+msgstr "ক্রিয়া যোগ করুন"
 
 #. Default: "Add item"
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Add item"
-msgstr "Añadir elemento"
+msgstr "আইটেম যোগ করুন"
 
 #. Default: "Add link"
 #: components/Widgets/schema/footerLinksSchema
 msgid "Add link"
-msgstr "Añadir enlace"
+msgstr "লিঙ্ক যোগ করুন"
 
 #. Default: "Add logo"
 #: components/Widgets/schema/footerLogosSchema
 msgid "Add logo"
-msgstr "Añadir logo"
+msgstr "লোগো যোগ করুন"
 
 #. Default: "Advanced facet?"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Advanced facet?"
-msgstr "¿Faceta avanzada?"
+msgstr "উন্নত ফ্যাসেট?"
 
 #. Default: "Advanced facets are initially hidden and displayed on demand"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Advanced facets are initially hidden and displayed on demand"
-msgstr "Las facetas avanzadas se ocultan inicialmente y se muestran cuando se solicitan"
+msgstr "উন্নত ফ্যাসেটগুলি প্রাথমিকভাবে লুকানো থাকে এবং চাহিদা অনুযায়ী প্রদর্শিত হয়"
 
 #. Default: "Alt text"
 #: components/Widgets/schema/footerLogosSchema
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Alt text"
-msgstr "Texto alternativo"
+msgstr "Alt টেক্সট"
 
 #. Default: "Ascending"
 #: components/Blocks/EventCalendar/Search/components/SortOn
 msgid "Ascending"
-msgstr "Ascendente"
+msgstr "আরোহী"
 
 #. Default: "Back"
 #: components/MobileNavigation/MobileNavigation
 msgid "Back"
-msgstr "Volver"
+msgstr "পিছনে"
 
 #. Default: "Background color"
 #: components/Blocks/schema
 msgid "Background color"
-msgstr "Color de fondo"
+msgstr "পটভূমির রঙ"
 
 #. Default: "Base search query"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Base search query"
-msgstr "Consulta base de la búsqueda"
+msgstr "মূল অনুসন্ধান কোয়েরি"
 
 #. Default: "Block Width"
 #: components/Blocks/Image/schema
 msgid "Block Width"
-msgstr "Ancho de bloque"
+msgstr "ব্লকের প্রস্থ"
 
 #. Default: "Breadcrumbs"
 #: components/Breadcrumbs/Breadcrumbs
 msgid "Breadcrumbs"
-msgstr "Rastro de migas"
+msgstr "ব্রেডক্রাম্বস"
 
 #. Default: "Cancel search"
 #: components/Blocks/EventCalendar/Search/components/SearchInput
 msgid "Cancel search"
-msgstr "Cancelar búsqueda"
+msgstr "অনুসন্ধান বাতিল করুন"
 
 #. Default: "Close menu"
 #: components/MobileNavigation/MobileNavigation
 #: components/Navigation/Navigation
 msgid "Close menu"
-msgstr "Cerrar menú"
+msgstr "মেনু বন্ধ করুন"
 
 #. Default: "Collapse item"
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
 msgid "Collapse item"
-msgstr "Contraer elemento"
+msgstr "আইটেম সংকুচিত করুন"
 
 #. Default: "The color contrast ratio {contrastRatio}:1 might not be accessible for all. WCAG Level: {complianceLevel}"
 #: components/Widgets/ColorContrastChecker
 msgid "ColorContrastCheckerMessage"
-msgstr "La relación de contraste de color {contrastRatio}:1 puede no ser accesible para todos. Nivel WCAG: {complianceLevel}"
+msgstr "রঙের বৈপরীত্য অনুপাত {contrastRatio}:1 সকলের জন্য অ্যাক্সেসযোগ্য নাও হতে পারে। WCAG স্তর: {complianceLevel}"
 
 #. Default: "Contact"
 #: components/Blocks/EventMetadata/View
 msgid "Contact"
-msgstr "Contacto"
+msgstr "যোগাযোগ"
 
 #. Default: "Controls"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Controls"
-msgstr "Controles"
+msgstr "নিয়ন্ত্রণসমূহ"
 
 #. Default: "Copyright"
 #: components/Footer/slots/Copyright
 msgid "Copyright"
-msgstr "Copyright"
+msgstr "কপিরাইট"
 
 #. Default: "Descending"
 #: components/Blocks/EventCalendar/Search/components/SortOn
 msgid "Descending"
-msgstr "Descendente"
+msgstr "অবরোহী"
 
 #. Default: "Description"
 #: components/Blocks/Image/schema
 #: components/Widgets/schema/footerLogosSchema
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Description"
-msgstr "Descripción"
+msgstr "বিবরণ"
 
 #. Default: "Distributed under the {license}."
 #: components/Footer/slots/Copyright
 msgid "Distributed under the {license}."
-msgstr "Distribuido bajo {license}"
+msgstr "{license}-এর অধীনে বিতরণকৃত।"
 
 #. Default: "Download file"
 #: components/Theme/FileView
 msgid "Download file"
-msgstr "Descargar archivo"
+msgstr "ফাইল ডাউনলোড করুন"
 
 #. Default: "E-mail"
 #: components/Summary/PersonSummary
 msgid "E-mail"
-msgstr "Email"
+msgstr "ইমেইল"
 
 #. Default: "Empty object list"
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
 msgid "Empty object list"
-msgstr "Lista de objetos vacía"
+msgstr "খালি অবজেক্ট তালিকা"
 
 #. Default: "End"
 #: components/Blocks/EventMetadata/View
 msgid "End"
-msgstr "Fin"
+msgstr "শেষ"
 
 #. Default: "Facet"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Facet"
-msgstr "Faceta"
+msgstr "ফেসেট"
 
 #. Default: "Facet widget"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Facet widget"
-msgstr "Widget de la faceta"
+msgstr "ফ্যাসেট উইজেট"
 
 #. Default: "Facets"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Facets"
-msgstr "Facetas"
+msgstr "ফেসেটগুলি"
 
 #. Default: "Field"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Field"
-msgstr "Campo"
+msgstr "ক্ষেত্র"
 
 #. Default: "Follow us:"
 #: components/Footer/slots/FollowUsLogoAndLinks
 msgid "Follow us:"
-msgstr "Síguenos:"
+msgstr "আমাদের অনুসরণ করুন:"
 
 #. Default: "GNU GPL v2 license"
 #: components/Footer/slots/Copyright
 msgid "GNU GPL license"
-msgstr "Licencia GNU GPL"
+msgstr "GNU GPL লাইসেন্স"
 
 #. Default: "Headline"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Headline"
-msgstr "Encabezado"
+msgstr "শিরোনাম"
 
 #. Default: "Hidden facets will still filter the results if proper parameters are passed in URLs"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Hidden facets will still filter the results if proper parameters are passed in URLs"
-msgstr "Las facetas ocultas aplicarán los filtros si los parámetros adecuados se pasan en la URL"
+msgstr "লুকানো ফ্যাসেটগুলি এখনও ফলাফল ফিল্টার করবে যদি URL-এ সঠিক প্যারামিটার পাস করা হয়"
 
 #. Default: "Hide facet?"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Hide facet?"
-msgstr "¿Ocultar la faceta?"
+msgstr "ফ্যাসেট লুকান?"
 
 #. Default: "Home"
 #: components/Breadcrumbs/Breadcrumbs
 #: components/Logo/Logo
 #: components/MobileNavigation/MobileNavigation
 msgid "Home"
-msgstr "Inicio"
+msgstr "হোম"
 
 #. Default: "ICS Download"
 #: components/Blocks/EventMetadata/View
 msgid "ICS-Download"
-msgstr "Descargar archivo ICS"
+msgstr "ICS ডাউনলোড"
 
 #. Default: "Icon"
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Icon"
-msgstr "Icon"
+msgstr "আইকন"
 
 #. Default: "Image"
 #: components/Blocks/Image/ImageSidebar
 msgid "Image"
-msgstr "Imagen"
+msgstr "ছবি"
 
 #. Default: "Invalid block - Will be removed on saving"
 #: components/Theme/RenderBlocks
 #: components/Theme/RenderBlocksV2
 msgid "Invalid Block"
-msgstr "Bloque no válido: se eliminará al guardar."
+msgstr "অবৈধ ব্লক — সংরক্ষণ করার সময় সরানো হবে."
 
 #. Default: "Item"
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Item"
-msgstr "Elemento"
+msgstr "আইটেম"
 
 #. Default: "Label"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Label"
-msgstr "Etiqueta"
+msgstr "লেবেল"
 
 #. Default: "Link"
 #: components/Widgets/schema/footerLinksSchema
 msgid "Link"
-msgstr "Enlace"
+msgstr "লিঙ্ক"
 
 #. Default: "List"
 #: index
 msgid "List"
-msgstr "Lista"
+msgstr "তালিকা"
 
 #. Default: "List with images"
 #: index
 msgid "List with images"
-msgstr "Lista con imágenes"
+msgstr "ছবি সহ তালিকা"
 
 #. Default: "Location"
 #: components/Blocks/EventMetadata/View
 msgid "Location"
-msgstr "Ubicación"
+msgstr "অবস্থান"
 
 #. Default: "Log in"
 #: components/Anontools/Anontools
 msgid "Log in"
-msgstr "Entrar"
+msgstr "লগইন করুন"
 
 #. Default: "Log out"
 #: components/Anontools/Anontools
 msgid "Log out"
-msgstr "Cerrar sesión"
+msgstr "লগ আউট"
 
 #. Default: "Logo"
 #: components/Widgets/schema/footerLogosSchema
 msgid "Logo"
-msgstr "Logo"
+msgstr "লোগো"
 
 #. Default: "Logo image"
 #: components/Widgets/schema/footerLogosSchema
 msgid "Logo image"
-msgstr "Imagen del logo"
+msgstr "লোগো ছবি"
 
 #. Default: "Logo of"
 #: components/Logo/Logo
 msgid "Logo of"
-msgstr "Logotipo de"
+msgstr "লোগো"
 
 #. Default: "Move down"
 #: components/Blocks/Block/Edit
 msgid "Move down"
-msgstr "Mover hacia abajo"
+msgstr "নিচে সরান"
 
 #. Default: "Move up"
 #: components/Blocks/Block/Edit
 msgid "Move up"
-msgstr "Mover hacia arriba"
+msgstr "উপরে সরান"
 
 #. Default: "Multiple choices?"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Multiple choices?"
-msgstr "¿Múltiples opciones?"
+msgstr "একাধিক পছন্দ?"
 
 #. Default: "Next Page"
 #: components/Blocks/Listing/ListingBody
 msgid "Next Page"
-msgstr "Página siguiente"
+msgstr "পরবর্তী পৃষ্ঠা"
 
 #. Default: "No image selected"
 #: components/Blocks/Image/ImageSidebar
 msgid "No image selected"
-msgstr "No se ha seleccionado imagen"
+msgstr "কোনো ছবি নির্বাচন করা হয়নি"
 
 #. Default: "No items found in this container."
 #: components/Blocks/Listing/ListingBody
 msgid "No items found in this container."
-msgstr "No se han encontrado elementos en este contenedor."
+msgstr "এই কন্টেইনারে কোনো আইটেম পাওয়া যায়নি।"
 
 #. Default: "No selection"
 #: components/Blocks/EventCalendar/Search/components/SortOn
 msgid "No selection"
-msgstr "No hay selección"
+msgstr "কোনো নির্বাচন নেই"
 
 #. Default: "Open configuration"
 #: components/Widgets/ModalJSONEditor
 msgid "Open configuration"
-msgstr "Abrir configuración"
+msgstr "কনফিগারেশন খুলুন"
 
 #. Default: "Open in a new tab"
 #: components/Widgets/schema/footerLinksSchema
@@ -344,80 +342,80 @@ msgstr "Abrir configuración"
 #: components/Widgets/schema/headerActionsSchema
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Open in a new tab"
-msgstr "Abrir en una nueva pestaña"
+msgstr "নতুন ট্যাবে খুলুন"
 
 #. Default: "Open menu"
 #: components/MobileNavigation/MobileNavigation
 #: components/Navigation/Navigation
 msgid "Open menu"
-msgstr "Abrir menú"
+msgstr "মেনু খুলুন"
 
 #. Default: "Overview"
 #: components/MobileNavigation/MobileNavigation
 msgid "Overview"
-msgstr "Resumen"
+msgstr "সংক্ষিপ্ত বিবরণ"
 
 #. Default: "Pagination Navigation"
 #: components/Blocks/Listing/ListingBody
 msgid "Pagination Navigation"
-msgstr "Navegación de paginación"
+msgstr "পৃষ্ঠা নেভিগেশন"
 
 #. Default: "Pagination Navigation for {headline}"
 #: components/Blocks/Listing/ListingBody
 msgid "Pagination Navigation for {headline}"
-msgstr "Navegación de paginación para {headline}"
+msgstr "{headline}-এর জন্য পৃষ্ঠা নেভিগেশন"
 
 #. Default: "Phone"
 #: components/Blocks/EventMetadata/View
 #: components/Summary/PersonSummary
 msgid "Phone"
-msgstr "Teléfono"
+msgstr "ফোন"
 
 #. Default: "Please choose an existing content as source for this element"
 #: components/Blocks/Teaser/Body
 msgid "Please choose an existing content as source for this element"
-msgstr "Elija un contenido para utilizarlo como fuente de datos para este elemento"
+msgstr "অনুগ্রহ করে এই উপাদানের উৎস হিসেবে একটি বিদ্যমান কন্টেন্ট নির্বাচন করুন."
 
 #. Default: "Plone Foundation"
 #: components/Footer/slots/Copyright
 msgid "Plone Foundation"
-msgstr "Fundación Plone"
+msgstr "Plone Foundation"
 
 #. Default: "Plone{reg} Open Source CMS/WCM"
 #: components/Footer/slots/Copyright
 msgid "Plone{reg} Open Source CMS/WCM"
-msgstr "Plone{reg} Gestor de Contenido de Código Abierto"
+msgstr "Plone{reg} Open Source CMS/WCM"
 
 #. Default: "Press"
 #: index
 msgid "Press"
-msgstr "Pulsar"
+msgstr "সংবাদ"
 
 #. Default: "Previous Page"
 #: components/Blocks/Listing/ListingBody
 msgid "Previous Page"
-msgstr "Página anterior"
+msgstr "পূর্ববর্তী পৃষ্ঠা"
 
 #. Default: "Register"
 #: components/Anontools/Anontools
 msgid "Register"
-msgstr "Registrar usuario"
+msgstr "রেজিষ্টার"
 
 #. Default: "Remove item"
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
 msgid "Remove item"
-msgstr "Eliminar elemento"
+msgstr "আইটেম সরান"
 
 #. Default: "Result"
 #: components/Blocks/Listing/ListingBody
 msgid "Result"
-msgstr "Resultado"
+msgstr "ফলাফল"
 
 #. Default: "Room"
 #: components/Summary/PersonSummary
 msgid "Room"
-msgstr "Sala"
+msgstr "কক্ষ"
 
 #. Default: "Search"
 #: components/Blocks/EventCalendar/Search/components/SearchInput
@@ -428,119 +426,119 @@ msgstr "Sala"
 #: components/SearchWidget/IntranetSearchWidget
 #: components/SearchWidget/SearchWidget
 msgid "Search"
-msgstr "Buscar"
+msgstr "সার্চ"
 
 #. Default: "Search Site"
 #: components/SearchWidget/IntranetSearchWidget
 #: components/SearchWidget/SearchWidget
 msgid "Search Site"
-msgstr "Buscar en el Sitio"
+msgstr "সার্চ"
 
 #. Default: "Search block"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Search block"
-msgstr "Bloque de búsqueda"
+msgstr "ব্লক অনুসন্ধান করুন"
 
 #. Default: "Search button label"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Search button label"
-msgstr "Etiqueta del botón de búsqueda"
+msgstr "অনুসন্ধান বাটন লেবেল"
 
 #. Default: "Search for People, E-Mail Address, Phone Number, ..."
 #: components/SearchWidget/IntranetSearchWidget
 msgid "Search for People, E-Mail Address, Phone Number, ..."
-msgstr "Busca personas, dirección de correo electrónico, teléfonos, ..."
+msgstr "মানুষ, ইমেইল ঠিকানা, ফোন নম্বর খুঁজুন, ..."
 
 #. Default: "Search input label"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Search input label"
-msgstr "Etiqueta del campo de búsqueda"
+msgstr "অনুসন্ধান ইনপুট লেবেল"
 
 #. Default: "Search results"
 #: components/Blocks/Search/components/SearchDetails
 msgid "Search results"
-msgstr "Resultados de búsqueda"
+msgstr "পরিণাম সার্চ করুন"
 
 #. Default: "Searched for"
 #: components/Blocks/Search/components/SearchDetails
 msgid "Searched for"
-msgstr "Ha buscado"
+msgstr "অনুসন্ধান করা হয়েছে"
 
 #. Default: "Section title"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Section title"
-msgstr "Título de la sección"
+msgstr "বিভাগের শিরোনাম"
 
 #. Default: "Show item"
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
 msgid "Show item"
-msgstr "Ver elemento"
+msgstr "আইটেম দেখান"
 
 #. Default: "Show search button?"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Show search button?"
-msgstr "¿Mostrar botón de búsqueda?"
+msgstr "অনুসন্ধান বাটন দেখান?"
 
 #. Default: "Show search input?"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Show search input?"
-msgstr "¿Mostrar campo de búsqueda?"
+msgstr "অনুসন্ধান ইনপুট দেখান?"
 
 #. Default: "Show sorting?"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Show sorting?"
-msgstr "¿Mostrar criterios de ordenación?"
+msgstr "সাজানো দেখান?"
 
 #. Default: "Show total results"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Show total results"
-msgstr "Mostrar resultados totales"
+msgstr "মোট ফলাফল দেখান"
 
 #. Default: "Simple"
 #: index
 msgid "Simple"
-msgstr "Simple"
+msgstr "সাধারণ"
 
 #. Default: "Site Setup"
 #: components/Breadcrumbs/Breadcrumbs
 msgid "Site Setup"
-msgstr "Configuración del sitio"
+msgstr "সাইট সেটআপ"
 
 #. Default: "Sitemap"
 #: index
 msgid "Sitemap"
-msgstr "Mapa del sitio"
+msgstr "সাইটম্যাপ"
 
 #. Default: "Sort on"
 #: components/Blocks/EventCalendar/Search/components/SortOn
 msgid "Sort on"
-msgstr "Ordenar por"
+msgstr "এতে সাজান"
 
 #. Default: "Sort on options"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Sort on options"
-msgstr "Ordenar por opciones"
+msgstr "সাজানোর বিকল্প"
 
 #. Default: "Sorted on"
 #: components/Blocks/EventCalendar/Search/components/SortOn
 msgid "Sorted on"
-msgstr "Ordenado por"
+msgstr "এতে সাজানো"
 
 #. Default: "Sorting"
 #: components/Blocks/Search/TopSideFacets
 msgid "Sorting"
-msgstr "Ordenación"
+msgstr "সাজানো"
 
 #. Default: "Sponsored by:"
 #: components/Footer/slots/FollowUsLogoAndLinks
 msgid "Sponsored by:"
-msgstr "Patrocinado por:"
+msgstr "স্পনসর:"
 
 #. Default: "Start"
 #: components/Blocks/EventMetadata/View
 msgid "Start"
-msgstr "Inicio"
+msgstr "শুরু"
 
 #. Default: "Switch to"
 #: components/LanguageSelector/LanguageSelector
@@ -553,17 +551,17 @@ msgstr ""
 #: components/Widgets/schema/headerActionsSchema
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Target"
-msgstr "Destino"
+msgstr "লক্ষ্য"
 
 #. Default: "The button presence disables the live search, the query is issued when you press ENTER"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "The button presence disables the live search, the query is issued when you press ENTER"
-msgstr "Si se muestra el botón se desactiva la búsqueda en vivo, la búsqueda se realiza cuando se pulsa ENTER."
+msgstr "বোতামের উপস্থিতি লাইভ অনুসন্ধান নিষ্ক্রিয় করে, আপনি ENTER চাপলে কোয়েরি জারি হয়."
 
 #. Default: "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
 #: components/Footer/slots/Copyright
 msgid "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
-msgstr "{plonecms} es {copyright} 2000-{current_year} de la {plonefoundation} y amigos."
+msgstr "{plonecms} হলো {copyright} 2000-{current_year} {plonefoundation} এবং বন্ধুদের দ্বারা।"
 
 #. Default: "Title"
 #: components/Blocks/Image/schema
@@ -572,76 +570,76 @@ msgstr "{plonecms} es {copyright} 2000-{current_year} de la {plonefoundation} y 
 #: components/Widgets/schema/headerActionsSchema
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Title"
-msgstr "Título"
+msgstr "টাইটেল"
 
 #. Default: "Unknown Block {block}"
 #: components/Blocks/Block/Edit
 #: components/Theme/RenderBlocks
 #: components/Theme/RenderBlocksV2
 msgid "Unknown Block"
-msgstr "Bloque desconocido {block}"
+msgstr "অজানা ব্লক {block}"
 
 #. Default: "Website"
 #: components/Blocks/EventMetadata/View
 msgid "Website"
-msgstr "Sitio web"
+msgstr "ওয়েবসাইট"
 
 #. Default: "Available views"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "availableViews"
-msgstr "Vistas disponibles"
+msgstr "উপলব্ধ ভিউ"
 
 #. Default: "The {type} block with the id {block} has encountered an error.{lineBreak}You can try to undo your changes (via the undo toolbar or pressing {shortcut}), or try to delete the block and recreate it again."
 #: components/Blocks/Block/ErrorBoundaryMessage
 msgid "blockErrorBoundaryDescription"
-msgstr "El bloque {type} con el id {block} ha encontrado un error.{lineBreak}Puede intentar deshacer los cambios (a través de la barra de herramientas de deshacer o presionando {shortcut}), o intentar eliminar el bloque y volver a crearlo."
+msgstr "{type} ব্লকটি আইডি {block} সহ একটি ত্রুটির সম্মুখীন হয়েছে।{lineBreak}আপনি আপনার পরিবর্তনগুলি পূর্বাবস্থায় ফেরাতে পারেন (পূর্বাবস্থায় ফেরানোর টুলবার বা {shortcut} চেপে), অথবা ব্লকটি মুছে আবার তৈরি করার চেষ্টা করতে পারেন।."
 
 #. Default: "Block error:"
 #: components/Blocks/Block/ErrorBoundaryMessage
 msgid "blockErrorBoundaryTitle"
-msgstr "Error de bloque:"
+msgstr "ব্লক ত্রুটি:"
 
 #. Default: "The {type} block with the id {block} errored and cannot be displayed.{lineBreak}Please contact the site administrator for further assistance."
 #: components/Blocks/Block/ErrorBoundaryMessage
 msgid "blockErrorBoundaryViewDescription"
-msgstr "El bloque {type} con el id {block} ha fallado y no puede mostrarse.{lineBreak}Contacte al administrador del sitio para obtener más ayuda."
+msgstr "{type} ব্লকটি আইডি {block} সহ ত্রুটি ঘটেছে এবং প্রদর্শন করা যাচ্ছে না।{lineBreak}আরও সহায়তার জন্য অনুগ্রহ করে সাইট প্রশাসকের সাথে যোগাযোগ করুন।."
 
 #. Default: "Delete"
 #: components/Blocks/Block/Edit
 msgid "delete"
-msgstr "eliminar"
+msgstr "মুছুন"
 
 #. Default: "delete {type} block"
 #: components/Blocks/Block/EditBlockWrapper
 msgid "delete_block"
-msgstr "eliminar bloque de {type}"
+msgstr "{type} ব্লক মুছুন"
 
 #. Default: "drag {type} block"
 #: components/Blocks/Block/EditBlockWrapper
 msgid "drag_block"
-msgstr "arrastrar bloque de {type}"
+msgstr "{type} ব্লক টানুন"
 
 #. Default: "Clear image"
 #: components/Blocks/Image/ImageSidebar
 msgid "image_block_clear"
-msgstr "Limpiar imagen"
+msgstr "ছবি পরিষ্কার করুন"
 
 #. Default: "Image preview"
 #: components/Blocks/Image/ImageSidebar
 msgid "image_block_preview"
-msgstr "Previsualización de la imagen"
+msgstr "ছবির পূর্বরূপ"
 
 #. Default: "Loading"
 #: components/Blocks/Listing/ListingBody
 msgid "loading"
-msgstr "Cargando"
+msgstr "লোড হচ্ছে"
 
 #. Default: "of"
 #: components/Blocks/Listing/ListingBody
 msgid "of"
-msgstr "de"
+msgstr "এর"
 
 #. Default: "Views"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "views"
-msgstr "Vistas"
+msgstr "ভিউসমূহ"

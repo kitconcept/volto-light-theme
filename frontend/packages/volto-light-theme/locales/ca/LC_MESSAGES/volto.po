@@ -3,129 +3,127 @@ msgstr ""
 "Project-Id-Version: Plone\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-16T14:21:29.474Z\n"
-"PO-Revision-Date: 2025-07-07 15:40+0200\n"
-"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
-"Language: es\n"
-"Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language: ca\n"
+"Language-Team: \n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Language-Code: es\n"
-"Language-Name: Español\n"
+"Language-Code: ca\n"
+"Language-Name: ca\n"
 "Preferred-Encodings: utf-8\n"
-"Domain: volto\n"
-"X-Generator: Poedit 3.6\n"
-"X-Is-Fallback-For: es-ar es-bo es-cl es-co es-cr es-do es-ec es-es es-sv es-gt es-hn es-mx es-ni es-pa es-py es-pe es-pr es-us es-uy es-ve\n"
+"Domain: DOMAIN\n"
 
 #. Default: "Action"
 #: components/Widgets/schema/headerActionsSchema
 msgid "Action"
-msgstr "Acción"
+msgstr "Acció"
 
 #. Default: "Add"
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
 msgid "Add (object list)"
-msgstr "Añadir (lista objecto)"
+msgstr "Afegeix"
 
 #. Default: "Add action"
 #: components/Widgets/schema/headerActionsSchema
 msgid "Add action"
-msgstr "Añadir acción"
+msgstr "Acció afegida"
 
 #. Default: "Add item"
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Add item"
-msgstr "Añadir elemento"
+msgstr "Afegeix un element"
 
 #. Default: "Add link"
 #: components/Widgets/schema/footerLinksSchema
 msgid "Add link"
-msgstr "Añadir enlace"
+msgstr "Afegeix un enllaç"
 
 #. Default: "Add logo"
 #: components/Widgets/schema/footerLogosSchema
 msgid "Add logo"
-msgstr "Añadir logo"
+msgstr "Afegeix un logotip"
 
 #. Default: "Advanced facet?"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Advanced facet?"
-msgstr "¿Faceta avanzada?"
+msgstr "Faceta avançada?"
 
 #. Default: "Advanced facets are initially hidden and displayed on demand"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Advanced facets are initially hidden and displayed on demand"
-msgstr "Las facetas avanzadas se ocultan inicialmente y se muestran cuando se solicitan"
+msgstr "Les facetes avançades estan amagades inicialment i es mostren sota demanda"
 
 #. Default: "Alt text"
 #: components/Widgets/schema/footerLogosSchema
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Alt text"
-msgstr "Texto alternativo"
+msgstr "Text alternatiu (alt)"
 
 #. Default: "Ascending"
 #: components/Blocks/EventCalendar/Search/components/SortOn
 msgid "Ascending"
-msgstr "Ascendente"
+msgstr "Ascendent"
 
 #. Default: "Back"
 #: components/MobileNavigation/MobileNavigation
 msgid "Back"
-msgstr "Volver"
+msgstr "Enrere"
 
 #. Default: "Background color"
 #: components/Blocks/schema
 msgid "Background color"
-msgstr "Color de fondo"
+msgstr "Color de fons"
 
 #. Default: "Base search query"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Base search query"
-msgstr "Consulta base de la búsqueda"
+msgstr "Base de cerca"
 
 #. Default: "Block Width"
 #: components/Blocks/Image/schema
 msgid "Block Width"
-msgstr "Ancho de bloque"
+msgstr "Amplada del bloc"
 
 #. Default: "Breadcrumbs"
 #: components/Breadcrumbs/Breadcrumbs
 msgid "Breadcrumbs"
-msgstr "Rastro de migas"
+msgstr "Barra de ruta"
 
 #. Default: "Cancel search"
 #: components/Blocks/EventCalendar/Search/components/SearchInput
 msgid "Cancel search"
-msgstr "Cancelar búsqueda"
+msgstr "Cancel·la la cerca"
 
 #. Default: "Close menu"
 #: components/MobileNavigation/MobileNavigation
 #: components/Navigation/Navigation
 msgid "Close menu"
-msgstr "Cerrar menú"
+msgstr "Tanca el menú"
 
 #. Default: "Collapse item"
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
 msgid "Collapse item"
-msgstr "Contraer elemento"
+msgstr "Replega l'element"
 
 #. Default: "The color contrast ratio {contrastRatio}:1 might not be accessible for all. WCAG Level: {complianceLevel}"
 #: components/Widgets/ColorContrastChecker
 msgid "ColorContrastCheckerMessage"
-msgstr "La relación de contraste de color {contrastRatio}:1 puede no ser accesible para todos. Nivel WCAG: {complianceLevel}"
+msgstr "La proporció de contrast de color {contrastRatio}:1 podria no ser accessible per a tothom. Nivell WCAG: {complianceLevel}"
 
 #. Default: "Contact"
 #: components/Blocks/EventMetadata/View
 msgid "Contact"
-msgstr "Contacto"
+msgstr "Contacte"
 
 #. Default: "Controls"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Controls"
-msgstr "Controles"
+msgstr "Controls"
 
 #. Default: "Copyright"
 #: components/Footer/slots/Copyright
@@ -135,40 +133,40 @@ msgstr "Copyright"
 #. Default: "Descending"
 #: components/Blocks/EventCalendar/Search/components/SortOn
 msgid "Descending"
-msgstr "Descendente"
+msgstr "Descendent"
 
 #. Default: "Description"
 #: components/Blocks/Image/schema
 #: components/Widgets/schema/footerLogosSchema
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Description"
-msgstr "Descripción"
+msgstr "Descripció"
 
 #. Default: "Distributed under the {license}."
 #: components/Footer/slots/Copyright
 msgid "Distributed under the {license}."
-msgstr "Distribuido bajo {license}"
+msgstr "Distribuït sota la {license}."
 
 #. Default: "Download file"
 #: components/Theme/FileView
 msgid "Download file"
-msgstr "Descargar archivo"
+msgstr "Baixa fitxer"
 
 #. Default: "E-mail"
 #: components/Summary/PersonSummary
 msgid "E-mail"
-msgstr "Email"
+msgstr "correu electrònic"
 
 #. Default: "Empty object list"
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
 msgid "Empty object list"
-msgstr "Lista de objetos vacía"
+msgstr "Llista d'objectes buida"
 
 #. Default: "End"
 #: components/Blocks/EventMetadata/View
 msgid "End"
-msgstr "Fin"
+msgstr "Final"
 
 #. Default: "Facet"
 #: components/Blocks/EventCalendar/Search/schema
@@ -178,75 +176,75 @@ msgstr "Faceta"
 #. Default: "Facet widget"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Facet widget"
-msgstr "Widget de la faceta"
+msgstr "Giny de faceta"
 
 #. Default: "Facets"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Facets"
-msgstr "Facetas"
+msgstr "Facetes"
 
 #. Default: "Field"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Field"
-msgstr "Campo"
+msgstr "Camp"
 
 #. Default: "Follow us:"
 #: components/Footer/slots/FollowUsLogoAndLinks
 msgid "Follow us:"
-msgstr "Síguenos:"
+msgstr "Seguiu-nos:"
 
 #. Default: "GNU GPL v2 license"
 #: components/Footer/slots/Copyright
 msgid "GNU GPL license"
-msgstr "Licencia GNU GPL"
+msgstr "Llicència GNU GPL"
 
 #. Default: "Headline"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Headline"
-msgstr "Encabezado"
+msgstr "Titular"
 
 #. Default: "Hidden facets will still filter the results if proper parameters are passed in URLs"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Hidden facets will still filter the results if proper parameters are passed in URLs"
-msgstr "Las facetas ocultas aplicarán los filtros si los parámetros adecuados se pasan en la URL"
+msgstr "Les facetes ocultes encara filtraran els resultats si es passen els paràmetres adequats als URL"
 
 #. Default: "Hide facet?"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Hide facet?"
-msgstr "¿Ocultar la faceta?"
+msgstr "Amagar la faceta?"
 
 #. Default: "Home"
 #: components/Breadcrumbs/Breadcrumbs
 #: components/Logo/Logo
 #: components/MobileNavigation/MobileNavigation
 msgid "Home"
-msgstr "Inicio"
+msgstr "Inici"
 
 #. Default: "ICS Download"
 #: components/Blocks/EventMetadata/View
 msgid "ICS-Download"
-msgstr "Descargar archivo ICS"
+msgstr "Baixa ICS"
 
 #. Default: "Icon"
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Icon"
-msgstr "Icon"
+msgstr "Icona"
 
 #. Default: "Image"
 #: components/Blocks/Image/ImageSidebar
 msgid "Image"
-msgstr "Imagen"
+msgstr "imatge"
 
 #. Default: "Invalid block - Will be removed on saving"
 #: components/Theme/RenderBlocks
 #: components/Theme/RenderBlocksV2
 msgid "Invalid Block"
-msgstr "Bloque no válido: se eliminará al guardar."
+msgstr "Bloc no vàlid: s'eliminarà en desar."
 
 #. Default: "Item"
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Item"
-msgstr "Elemento"
+msgstr "Element"
 
 #. Default: "Label"
 #: components/Blocks/EventCalendar/Search/schema
@@ -256,87 +254,87 @@ msgstr "Etiqueta"
 #. Default: "Link"
 #: components/Widgets/schema/footerLinksSchema
 msgid "Link"
-msgstr "Enlace"
+msgstr "Enllaç"
 
 #. Default: "List"
 #: index
 msgid "List"
-msgstr "Lista"
+msgstr "Llista"
 
 #. Default: "List with images"
 #: index
 msgid "List with images"
-msgstr "Lista con imágenes"
+msgstr "Llista amb imatges"
 
 #. Default: "Location"
 #: components/Blocks/EventMetadata/View
 msgid "Location"
-msgstr "Ubicación"
+msgstr "Ubicació"
 
 #. Default: "Log in"
 #: components/Anontools/Anontools
 msgid "Log in"
-msgstr "Entrar"
+msgstr "Iniciar Sessió"
 
 #. Default: "Log out"
 #: components/Anontools/Anontools
 msgid "Log out"
-msgstr "Cerrar sesión"
+msgstr "Surt"
 
 #. Default: "Logo"
 #: components/Widgets/schema/footerLogosSchema
 msgid "Logo"
-msgstr "Logo"
+msgstr "Logotip"
 
 #. Default: "Logo image"
 #: components/Widgets/schema/footerLogosSchema
 msgid "Logo image"
-msgstr "Imagen del logo"
+msgstr "Imatge del logotip"
 
 #. Default: "Logo of"
 #: components/Logo/Logo
 msgid "Logo of"
-msgstr "Logotipo de"
+msgstr "Logotip de"
 
 #. Default: "Move down"
 #: components/Blocks/Block/Edit
 msgid "Move down"
-msgstr "Mover hacia abajo"
+msgstr "Mou avall"
 
 #. Default: "Move up"
 #: components/Blocks/Block/Edit
 msgid "Move up"
-msgstr "Mover hacia arriba"
+msgstr "Mou amunt"
 
 #. Default: "Multiple choices?"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Multiple choices?"
-msgstr "¿Múltiples opciones?"
+msgstr "Múltiples opcions?"
 
 #. Default: "Next Page"
 #: components/Blocks/Listing/ListingBody
 msgid "Next Page"
-msgstr "Página siguiente"
+msgstr "Pàgina següent"
 
 #. Default: "No image selected"
 #: components/Blocks/Image/ImageSidebar
 msgid "No image selected"
-msgstr "No se ha seleccionado imagen"
+msgstr "No s'ha seleccionat cap imatge"
 
 #. Default: "No items found in this container."
 #: components/Blocks/Listing/ListingBody
 msgid "No items found in this container."
-msgstr "No se han encontrado elementos en este contenedor."
+msgstr "No s'han trobat articles en aquest contenidor."
 
 #. Default: "No selection"
 #: components/Blocks/EventCalendar/Search/components/SortOn
 msgid "No selection"
-msgstr "No hay selección"
+msgstr "Sense selecció"
 
 #. Default: "Open configuration"
 #: components/Widgets/ModalJSONEditor
 msgid "Open configuration"
-msgstr "Abrir configuración"
+msgstr "Obre la configuració"
 
 #. Default: "Open in a new tab"
 #: components/Widgets/schema/footerLinksSchema
@@ -344,75 +342,75 @@ msgstr "Abrir configuración"
 #: components/Widgets/schema/headerActionsSchema
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Open in a new tab"
-msgstr "Abrir en una nueva pestaña"
+msgstr "Obre en una pestanya nova"
 
 #. Default: "Open menu"
 #: components/MobileNavigation/MobileNavigation
 #: components/Navigation/Navigation
 msgid "Open menu"
-msgstr "Abrir menú"
+msgstr "Obre el menú"
 
 #. Default: "Overview"
 #: components/MobileNavigation/MobileNavigation
 msgid "Overview"
-msgstr "Resumen"
+msgstr "Resum"
 
 #. Default: "Pagination Navigation"
 #: components/Blocks/Listing/ListingBody
 msgid "Pagination Navigation"
-msgstr "Navegación de paginación"
+msgstr "Navegació de paginació"
 
 #. Default: "Pagination Navigation for {headline}"
 #: components/Blocks/Listing/ListingBody
 msgid "Pagination Navigation for {headline}"
-msgstr "Navegación de paginación para {headline}"
+msgstr "Navegació de paginació per a {headline}"
 
 #. Default: "Phone"
 #: components/Blocks/EventMetadata/View
 #: components/Summary/PersonSummary
 msgid "Phone"
-msgstr "Teléfono"
+msgstr "Telèfon"
 
 #. Default: "Please choose an existing content as source for this element"
 #: components/Blocks/Teaser/Body
 msgid "Please choose an existing content as source for this element"
-msgstr "Elija un contenido para utilizarlo como fuente de datos para este elemento"
+msgstr "Trieu un contingut existent com a font per a aquest element."
 
 #. Default: "Plone Foundation"
 #: components/Footer/slots/Copyright
 msgid "Plone Foundation"
-msgstr "Fundación Plone"
+msgstr "Plone Foundation"
 
 #. Default: "Plone{reg} Open Source CMS/WCM"
 #: components/Footer/slots/Copyright
 msgid "Plone{reg} Open Source CMS/WCM"
-msgstr "Plone{reg} Gestor de Contenido de Código Abierto"
+msgstr "Plone{reg} CMS/WCM de codi obert"
 
 #. Default: "Press"
 #: index
 msgid "Press"
-msgstr "Pulsar"
+msgstr "Premsa"
 
 #. Default: "Previous Page"
 #: components/Blocks/Listing/ListingBody
 msgid "Previous Page"
-msgstr "Página anterior"
+msgstr "Pàgina anterior"
 
 #. Default: "Register"
 #: components/Anontools/Anontools
 msgid "Register"
-msgstr "Registrar usuario"
+msgstr "Registrar-se"
 
 #. Default: "Remove item"
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
 msgid "Remove item"
-msgstr "Eliminar elemento"
+msgstr "Elimina l'element"
 
 #. Default: "Result"
 #: components/Blocks/Listing/ListingBody
 msgid "Result"
-msgstr "Resultado"
+msgstr "Resultat"
 
 #. Default: "Room"
 #: components/Summary/PersonSummary
@@ -428,74 +426,74 @@ msgstr "Sala"
 #: components/SearchWidget/IntranetSearchWidget
 #: components/SearchWidget/SearchWidget
 msgid "Search"
-msgstr "Buscar"
+msgstr "Cerca"
 
 #. Default: "Search Site"
 #: components/SearchWidget/IntranetSearchWidget
 #: components/SearchWidget/SearchWidget
 msgid "Search Site"
-msgstr "Buscar en el Sitio"
+msgstr "Cerca al lloc"
 
 #. Default: "Search block"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Search block"
-msgstr "Bloque de búsqueda"
+msgstr "Bloc de cerca"
 
 #. Default: "Search button label"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Search button label"
-msgstr "Etiqueta del botón de búsqueda"
+msgstr "Etiqueta del botó de cerca"
 
 #. Default: "Search for People, E-Mail Address, Phone Number, ..."
 #: components/SearchWidget/IntranetSearchWidget
 msgid "Search for People, E-Mail Address, Phone Number, ..."
-msgstr "Busca personas, dirección de correo electrónico, teléfonos, ..."
+msgstr "Cerca persones, adreça de correu electrònic, número de telèfon, ..."
 
 #. Default: "Search input label"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Search input label"
-msgstr "Etiqueta del campo de búsqueda"
+msgstr "Cerca l'etiqueta d'entrada"
 
 #. Default: "Search results"
 #: components/Blocks/Search/components/SearchDetails
 msgid "Search results"
-msgstr "Resultados de búsqueda"
+msgstr "Resultats de la cerca"
 
 #. Default: "Searched for"
 #: components/Blocks/Search/components/SearchDetails
 msgid "Searched for"
-msgstr "Ha buscado"
+msgstr "Cercat"
 
 #. Default: "Section title"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Section title"
-msgstr "Título de la sección"
+msgstr "Títol de la secció"
 
 #. Default: "Show item"
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
 msgid "Show item"
-msgstr "Ver elemento"
+msgstr "Mostra l'element"
 
 #. Default: "Show search button?"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Show search button?"
-msgstr "¿Mostrar botón de búsqueda?"
+msgstr "Mostra el botó de cerca?"
 
 #. Default: "Show search input?"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Show search input?"
-msgstr "¿Mostrar campo de búsqueda?"
+msgstr "Mostra l'entrada de cerca?"
 
 #. Default: "Show sorting?"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Show sorting?"
-msgstr "¿Mostrar criterios de ordenación?"
+msgstr "Mostra l'ordenació?"
 
 #. Default: "Show total results"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Show total results"
-msgstr "Mostrar resultados totales"
+msgstr "Mostra resultats totals"
 
 #. Default: "Simple"
 #: index
@@ -505,42 +503,42 @@ msgstr "Simple"
 #. Default: "Site Setup"
 #: components/Breadcrumbs/Breadcrumbs
 msgid "Site Setup"
-msgstr "Configuración del sitio"
+msgstr "Configuració del lloc"
 
 #. Default: "Sitemap"
 #: index
 msgid "Sitemap"
-msgstr "Mapa del sitio"
+msgstr "Mapa del lloc"
 
 #. Default: "Sort on"
 #: components/Blocks/EventCalendar/Search/components/SortOn
 msgid "Sort on"
-msgstr "Ordenar por"
+msgstr "Ordena"
 
 #. Default: "Sort on options"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Sort on options"
-msgstr "Ordenar por opciones"
+msgstr "Ordena les opcions"
 
 #. Default: "Sorted on"
 #: components/Blocks/EventCalendar/Search/components/SortOn
 msgid "Sorted on"
-msgstr "Ordenado por"
+msgstr "Ordenat per"
 
 #. Default: "Sorting"
 #: components/Blocks/Search/TopSideFacets
 msgid "Sorting"
-msgstr "Ordenación"
+msgstr "Ordenació"
 
 #. Default: "Sponsored by:"
 #: components/Footer/slots/FollowUsLogoAndLinks
 msgid "Sponsored by:"
-msgstr "Patrocinado por:"
+msgstr "Patrocinat per:"
 
 #. Default: "Start"
 #: components/Blocks/EventMetadata/View
 msgid "Start"
-msgstr "Inicio"
+msgstr "Inici"
 
 #. Default: "Switch to"
 #: components/LanguageSelector/LanguageSelector
@@ -553,17 +551,17 @@ msgstr ""
 #: components/Widgets/schema/headerActionsSchema
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Target"
-msgstr "Destino"
+msgstr "Destinació"
 
 #. Default: "The button presence disables the live search, the query is issued when you press ENTER"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "The button presence disables the live search, the query is issued when you press ENTER"
-msgstr "Si se muestra el botón se desactiva la búsqueda en vivo, la búsqueda se realiza cuando se pulsa ENTER."
+msgstr "La presència del botó desactiva la cerca en directe, la consulta s'emet quan premeu INTRO."
 
 #. Default: "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
 #: components/Footer/slots/Copyright
 msgid "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
-msgstr "{plonecms} es {copyright} 2000-{current_year} de la {plonefoundation} y amigos."
+msgstr "El {plonecms} és {copyright} 2000-{current_year} per {plonefoundation} i amics."
 
 #. Default: "Title"
 #: components/Blocks/Image/schema
@@ -572,69 +570,69 @@ msgstr "{plonecms} es {copyright} 2000-{current_year} de la {plonefoundation} y 
 #: components/Widgets/schema/headerActionsSchema
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Title"
-msgstr "Título"
+msgstr "Títol"
 
 #. Default: "Unknown Block {block}"
 #: components/Blocks/Block/Edit
 #: components/Theme/RenderBlocks
 #: components/Theme/RenderBlocksV2
 msgid "Unknown Block"
-msgstr "Bloque desconocido {block}"
+msgstr "Bloc desconegut {block}"
 
 #. Default: "Website"
 #: components/Blocks/EventMetadata/View
 msgid "Website"
-msgstr "Sitio web"
+msgstr "Lloc web"
 
 #. Default: "Available views"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "availableViews"
-msgstr "Vistas disponibles"
+msgstr "Vistes disponibles"
 
 #. Default: "The {type} block with the id {block} has encountered an error.{lineBreak}You can try to undo your changes (via the undo toolbar or pressing {shortcut}), or try to delete the block and recreate it again."
 #: components/Blocks/Block/ErrorBoundaryMessage
 msgid "blockErrorBoundaryDescription"
-msgstr "El bloque {type} con el id {block} ha encontrado un error.{lineBreak}Puede intentar deshacer los cambios (a través de la barra de herramientas de deshacer o presionando {shortcut}), o intentar eliminar el bloque y volver a crearlo."
+msgstr "El bloc {type} amb l'identificador {block} ha trobat un error.{lineBreak}Podeu intentar desfer els canvis (mitjançant la barra de desfer o prement {shortcut}), o podeu intentar suprimir el bloc i tornar-lo a crear."
 
 #. Default: "Block error:"
 #: components/Blocks/Block/ErrorBoundaryMessage
 msgid "blockErrorBoundaryTitle"
-msgstr "Error de bloque:"
+msgstr "Error de bloc:"
 
 #. Default: "The {type} block with the id {block} errored and cannot be displayed.{lineBreak}Please contact the site administrator for further assistance."
 #: components/Blocks/Block/ErrorBoundaryMessage
 msgid "blockErrorBoundaryViewDescription"
-msgstr "El bloque {type} con el id {block} ha fallado y no puede mostrarse.{lineBreak}Contacte al administrador del sitio para obtener más ayuda."
+msgstr "El bloc {type} amb l'identificador {block} ha donat un error i no es pot mostrar.{lineBreak}Contacteu amb l'administrador del lloc per obtenir més ajuda."
 
 #. Default: "Delete"
 #: components/Blocks/Block/Edit
 msgid "delete"
-msgstr "eliminar"
+msgstr "suprimeix"
 
 #. Default: "delete {type} block"
 #: components/Blocks/Block/EditBlockWrapper
 msgid "delete_block"
-msgstr "eliminar bloque de {type}"
+msgstr "suprimeix el bloc {type}"
 
 #. Default: "drag {type} block"
 #: components/Blocks/Block/EditBlockWrapper
 msgid "drag_block"
-msgstr "arrastrar bloque de {type}"
+msgstr "arrossega el bloc {type}"
 
 #. Default: "Clear image"
 #: components/Blocks/Image/ImageSidebar
 msgid "image_block_clear"
-msgstr "Limpiar imagen"
+msgstr "Neteja imatge"
 
 #. Default: "Image preview"
 #: components/Blocks/Image/ImageSidebar
 msgid "image_block_preview"
-msgstr "Previsualización de la imagen"
+msgstr "Previsualització d'imatge"
 
 #. Default: "Loading"
 #: components/Blocks/Listing/ListingBody
 msgid "loading"
-msgstr "Cargando"
+msgstr "Carregant"
 
 #. Default: "of"
 #: components/Blocks/Listing/ListingBody
@@ -644,4 +642,4 @@ msgstr "de"
 #. Default: "Views"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "views"
-msgstr "Vistas"
+msgstr "Vistes"

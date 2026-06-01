@@ -3,340 +3,338 @@ msgstr ""
 "Project-Id-Version: Plone\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-16T14:21:29.474Z\n"
-"PO-Revision-Date: 2025-07-07 15:40+0200\n"
-"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
-"Language: es\n"
-"Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language: zh-TW\n"
+"Language-Team: \n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
-"Language-Code: es\n"
-"Language-Name: Español\n"
+"Language-Code: zh-TW\n"
+"Language-Name: zh-TW\n"
 "Preferred-Encodings: utf-8\n"
-"Domain: volto\n"
-"X-Generator: Poedit 3.6\n"
-"X-Is-Fallback-For: es-ar es-bo es-cl es-co es-cr es-do es-ec es-es es-sv es-gt es-hn es-mx es-ni es-pa es-py es-pe es-pr es-us es-uy es-ve\n"
+"Domain: DOMAIN\n"
 
 #. Default: "Action"
 #: components/Widgets/schema/headerActionsSchema
 msgid "Action"
-msgstr "Acción"
+msgstr "動作"
 
 #. Default: "Add"
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
 msgid "Add (object list)"
-msgstr "Añadir (lista objecto)"
+msgstr "新增"
 
 #. Default: "Add action"
 #: components/Widgets/schema/headerActionsSchema
 msgid "Add action"
-msgstr "Añadir acción"
+msgstr "動作已新增"
 
 #. Default: "Add item"
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Add item"
-msgstr "Añadir elemento"
+msgstr "新增項目"
 
 #. Default: "Add link"
 #: components/Widgets/schema/footerLinksSchema
 msgid "Add link"
-msgstr "Añadir enlace"
+msgstr "新增連結"
 
 #. Default: "Add logo"
 #: components/Widgets/schema/footerLogosSchema
 msgid "Add logo"
-msgstr "Añadir logo"
+msgstr "新增標誌"
 
 #. Default: "Advanced facet?"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Advanced facet?"
-msgstr "¿Faceta avanzada?"
+msgstr "進階分面？"
 
 #. Default: "Advanced facets are initially hidden and displayed on demand"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Advanced facets are initially hidden and displayed on demand"
-msgstr "Las facetas avanzadas se ocultan inicialmente y se muestran cuando se solicitan"
+msgstr "進階分面最初處於隱藏狀態，並會按需顯示"
 
 #. Default: "Alt text"
 #: components/Widgets/schema/footerLogosSchema
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Alt text"
-msgstr "Texto alternativo"
+msgstr "替代文字"
 
 #. Default: "Ascending"
 #: components/Blocks/EventCalendar/Search/components/SortOn
 msgid "Ascending"
-msgstr "Ascendente"
+msgstr "遞增"
 
 #. Default: "Back"
 #: components/MobileNavigation/MobileNavigation
 msgid "Back"
-msgstr "Volver"
+msgstr "返回"
 
 #. Default: "Background color"
 #: components/Blocks/schema
 msgid "Background color"
-msgstr "Color de fondo"
+msgstr "背景顏色"
 
 #. Default: "Base search query"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Base search query"
-msgstr "Consulta base de la búsqueda"
+msgstr "基本搜尋查詢"
 
 #. Default: "Block Width"
 #: components/Blocks/Image/schema
 msgid "Block Width"
-msgstr "Ancho de bloque"
+msgstr "區塊寬度"
 
 #. Default: "Breadcrumbs"
 #: components/Breadcrumbs/Breadcrumbs
 msgid "Breadcrumbs"
-msgstr "Rastro de migas"
+msgstr "麵包屑導覽"
 
 #. Default: "Cancel search"
 #: components/Blocks/EventCalendar/Search/components/SearchInput
 msgid "Cancel search"
-msgstr "Cancelar búsqueda"
+msgstr "取消搜尋"
 
 #. Default: "Close menu"
 #: components/MobileNavigation/MobileNavigation
 #: components/Navigation/Navigation
 msgid "Close menu"
-msgstr "Cerrar menú"
+msgstr "關閉選單"
 
 #. Default: "Collapse item"
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
 msgid "Collapse item"
-msgstr "Contraer elemento"
+msgstr "收合項目"
 
 #. Default: "The color contrast ratio {contrastRatio}:1 might not be accessible for all. WCAG Level: {complianceLevel}"
 #: components/Widgets/ColorContrastChecker
 msgid "ColorContrastCheckerMessage"
-msgstr "La relación de contraste de color {contrastRatio}:1 puede no ser accesible para todos. Nivel WCAG: {complianceLevel}"
+msgstr "色彩對比度 {contrastRatio}:1 可能無法滿足所有人的無障礙需求。WCAG 級別：{complianceLevel}"
 
 #. Default: "Contact"
 #: components/Blocks/EventMetadata/View
 msgid "Contact"
-msgstr "Contacto"
+msgstr "聯絡人"
 
 #. Default: "Controls"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Controls"
-msgstr "Controles"
+msgstr "控制項"
 
 #. Default: "Copyright"
 #: components/Footer/slots/Copyright
 msgid "Copyright"
-msgstr "Copyright"
+msgstr "版權"
 
 #. Default: "Descending"
 #: components/Blocks/EventCalendar/Search/components/SortOn
 msgid "Descending"
-msgstr "Descendente"
+msgstr "遞減"
 
 #. Default: "Description"
 #: components/Blocks/Image/schema
 #: components/Widgets/schema/footerLogosSchema
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Description"
-msgstr "Descripción"
+msgstr "描述"
 
 #. Default: "Distributed under the {license}."
 #: components/Footer/slots/Copyright
 msgid "Distributed under the {license}."
-msgstr "Distribuido bajo {license}"
+msgstr "依據 {license} 發布。"
 
 #. Default: "Download file"
 #: components/Theme/FileView
 msgid "Download file"
-msgstr "Descargar archivo"
+msgstr "下載檔案"
 
 #. Default: "E-mail"
 #: components/Summary/PersonSummary
 msgid "E-mail"
-msgstr "Email"
+msgstr "電子郵件"
 
 #. Default: "Empty object list"
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
 msgid "Empty object list"
-msgstr "Lista de objetos vacía"
+msgstr "空的物件清單"
 
 #. Default: "End"
 #: components/Blocks/EventMetadata/View
 msgid "End"
-msgstr "Fin"
+msgstr "結束"
 
 #. Default: "Facet"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Facet"
-msgstr "Faceta"
+msgstr "分面"
 
 #. Default: "Facet widget"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Facet widget"
-msgstr "Widget de la faceta"
+msgstr "篩選組件"
 
 #. Default: "Facets"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Facets"
-msgstr "Facetas"
+msgstr "分面"
 
 #. Default: "Field"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Field"
-msgstr "Campo"
+msgstr "欄位"
 
 #. Default: "Follow us:"
 #: components/Footer/slots/FollowUsLogoAndLinks
 msgid "Follow us:"
-msgstr "Síguenos:"
+msgstr "關注我們："
 
 #. Default: "GNU GPL v2 license"
 #: components/Footer/slots/Copyright
 msgid "GNU GPL license"
-msgstr "Licencia GNU GPL"
+msgstr "GNU 通用公共授權條款"
 
 #. Default: "Headline"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Headline"
-msgstr "Encabezado"
+msgstr "標題"
 
 #. Default: "Hidden facets will still filter the results if proper parameters are passed in URLs"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Hidden facets will still filter the results if proper parameters are passed in URLs"
-msgstr "Las facetas ocultas aplicarán los filtros si los parámetros adecuados se pasan en la URL"
+msgstr "若在 URL 中傳遞適當的參數,隱藏的面向仍會篩選結果"
 
 #. Default: "Hide facet?"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Hide facet?"
-msgstr "¿Ocultar la faceta?"
+msgstr "隱藏分面？"
 
 #. Default: "Home"
 #: components/Breadcrumbs/Breadcrumbs
 #: components/Logo/Logo
 #: components/MobileNavigation/MobileNavigation
 msgid "Home"
-msgstr "Inicio"
+msgstr "首頁"
 
 #. Default: "ICS Download"
 #: components/Blocks/EventMetadata/View
 msgid "ICS-Download"
-msgstr "Descargar archivo ICS"
+msgstr "ICS 下載"
 
 #. Default: "Icon"
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Icon"
-msgstr "Icon"
+msgstr "圖示"
 
 #. Default: "Image"
 #: components/Blocks/Image/ImageSidebar
 msgid "Image"
-msgstr "Imagen"
+msgstr "圖檔"
 
 #. Default: "Invalid block - Will be removed on saving"
 #: components/Theme/RenderBlocks
 #: components/Theme/RenderBlocksV2
 msgid "Invalid Block"
-msgstr "Bloque no válido: se eliminará al guardar."
+msgstr "無效的區塊 — 儲存時將被移除"
 
 #. Default: "Item"
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Item"
-msgstr "Elemento"
+msgstr "項目"
 
 #. Default: "Label"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Label"
-msgstr "Etiqueta"
+msgstr "標籤"
 
 #. Default: "Link"
 #: components/Widgets/schema/footerLinksSchema
 msgid "Link"
-msgstr "Enlace"
+msgstr "連結"
 
 #. Default: "List"
 #: index
 msgid "List"
-msgstr "Lista"
+msgstr "列表"
 
 #. Default: "List with images"
 #: index
 msgid "List with images"
-msgstr "Lista con imágenes"
+msgstr "附圖片列表"
 
 #. Default: "Location"
 #: components/Blocks/EventMetadata/View
 msgid "Location"
-msgstr "Ubicación"
+msgstr "地點"
 
 #. Default: "Log in"
 #: components/Anontools/Anontools
 msgid "Log in"
-msgstr "Entrar"
+msgstr "登入"
 
 #. Default: "Log out"
 #: components/Anontools/Anontools
 msgid "Log out"
-msgstr "Cerrar sesión"
+msgstr "登出"
 
 #. Default: "Logo"
 #: components/Widgets/schema/footerLogosSchema
 msgid "Logo"
-msgstr "Logo"
+msgstr "標誌"
 
 #. Default: "Logo image"
 #: components/Widgets/schema/footerLogosSchema
 msgid "Logo image"
-msgstr "Imagen del logo"
+msgstr "標誌圖片"
 
 #. Default: "Logo of"
 #: components/Logo/Logo
 msgid "Logo of"
-msgstr "Logotipo de"
+msgstr "標誌"
 
 #. Default: "Move down"
 #: components/Blocks/Block/Edit
 msgid "Move down"
-msgstr "Mover hacia abajo"
+msgstr "下移"
 
 #. Default: "Move up"
 #: components/Blocks/Block/Edit
 msgid "Move up"
-msgstr "Mover hacia arriba"
+msgstr "上移"
 
 #. Default: "Multiple choices?"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Multiple choices?"
-msgstr "¿Múltiples opciones?"
+msgstr "多選？"
 
 #. Default: "Next Page"
 #: components/Blocks/Listing/ListingBody
 msgid "Next Page"
-msgstr "Página siguiente"
+msgstr "下一頁"
 
 #. Default: "No image selected"
 #: components/Blocks/Image/ImageSidebar
 msgid "No image selected"
-msgstr "No se ha seleccionado imagen"
+msgstr "未選取圖片"
 
 #. Default: "No items found in this container."
 #: components/Blocks/Listing/ListingBody
 msgid "No items found in this container."
-msgstr "No se han encontrado elementos en este contenedor."
+msgstr "此容器中找不到項目。"
 
 #. Default: "No selection"
 #: components/Blocks/EventCalendar/Search/components/SortOn
 msgid "No selection"
-msgstr "No hay selección"
+msgstr "未選取"
 
 #. Default: "Open configuration"
 #: components/Widgets/ModalJSONEditor
 msgid "Open configuration"
-msgstr "Abrir configuración"
+msgstr "開啟設定"
 
 #. Default: "Open in a new tab"
 #: components/Widgets/schema/footerLinksSchema
@@ -344,80 +342,80 @@ msgstr "Abrir configuración"
 #: components/Widgets/schema/headerActionsSchema
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Open in a new tab"
-msgstr "Abrir en una nueva pestaña"
+msgstr "在新分頁開啟"
 
 #. Default: "Open menu"
 #: components/MobileNavigation/MobileNavigation
 #: components/Navigation/Navigation
 msgid "Open menu"
-msgstr "Abrir menú"
+msgstr "開啟選單"
 
 #. Default: "Overview"
 #: components/MobileNavigation/MobileNavigation
 msgid "Overview"
-msgstr "Resumen"
+msgstr "總覽"
 
 #. Default: "Pagination Navigation"
 #: components/Blocks/Listing/ListingBody
 msgid "Pagination Navigation"
-msgstr "Navegación de paginación"
+msgstr "分頁導覽"
 
 #. Default: "Pagination Navigation for {headline}"
 #: components/Blocks/Listing/ListingBody
 msgid "Pagination Navigation for {headline}"
-msgstr "Navegación de paginación para {headline}"
+msgstr "「{headline}」的分頁導覽"
 
 #. Default: "Phone"
 #: components/Blocks/EventMetadata/View
 #: components/Summary/PersonSummary
 msgid "Phone"
-msgstr "Teléfono"
+msgstr "電話"
 
 #. Default: "Please choose an existing content as source for this element"
 #: components/Blocks/Teaser/Body
 msgid "Please choose an existing content as source for this element"
-msgstr "Elija un contenido para utilizarlo como fuente de datos para este elemento"
+msgstr "請選擇現有內容作為此元素的來源"
 
 #. Default: "Plone Foundation"
 #: components/Footer/slots/Copyright
 msgid "Plone Foundation"
-msgstr "Fundación Plone"
+msgstr "Plone Foundation"
 
 #. Default: "Plone{reg} Open Source CMS/WCM"
 #: components/Footer/slots/Copyright
 msgid "Plone{reg} Open Source CMS/WCM"
-msgstr "Plone{reg} Gestor de Contenido de Código Abierto"
+msgstr "Plone{reg} 開放原始碼 CMS/WCM"
 
 #. Default: "Press"
 #: index
 msgid "Press"
-msgstr "Pulsar"
+msgstr "新聞"
 
 #. Default: "Previous Page"
 #: components/Blocks/Listing/ListingBody
 msgid "Previous Page"
-msgstr "Página anterior"
+msgstr "上一頁"
 
 #. Default: "Register"
 #: components/Anontools/Anontools
 msgid "Register"
-msgstr "Registrar usuario"
+msgstr "註冊"
 
 #. Default: "Remove item"
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
 msgid "Remove item"
-msgstr "Eliminar elemento"
+msgstr "移除項目"
 
 #. Default: "Result"
 #: components/Blocks/Listing/ListingBody
 msgid "Result"
-msgstr "Resultado"
+msgstr "結果"
 
 #. Default: "Room"
 #: components/Summary/PersonSummary
 msgid "Room"
-msgstr "Sala"
+msgstr "房間"
 
 #. Default: "Search"
 #: components/Blocks/EventCalendar/Search/components/SearchInput
@@ -428,119 +426,119 @@ msgstr "Sala"
 #: components/SearchWidget/IntranetSearchWidget
 #: components/SearchWidget/SearchWidget
 msgid "Search"
-msgstr "Buscar"
+msgstr "搜尋"
 
 #. Default: "Search Site"
 #: components/SearchWidget/IntranetSearchWidget
 #: components/SearchWidget/SearchWidget
 msgid "Search Site"
-msgstr "Buscar en el Sitio"
+msgstr "搜尋網站"
 
 #. Default: "Search block"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Search block"
-msgstr "Bloque de búsqueda"
+msgstr "搜尋區塊"
 
 #. Default: "Search button label"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Search button label"
-msgstr "Etiqueta del botón de búsqueda"
+msgstr "搜尋按鈕標籤"
 
 #. Default: "Search for People, E-Mail Address, Phone Number, ..."
 #: components/SearchWidget/IntranetSearchWidget
 msgid "Search for People, E-Mail Address, Phone Number, ..."
-msgstr "Busca personas, dirección de correo electrónico, teléfonos, ..."
+msgstr "搜尋人員、電子郵件地址、電話號碼⋯⋯"
 
 #. Default: "Search input label"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Search input label"
-msgstr "Etiqueta del campo de búsqueda"
+msgstr "搜尋輸入標籤"
 
 #. Default: "Search results"
 #: components/Blocks/Search/components/SearchDetails
 msgid "Search results"
-msgstr "Resultados de búsqueda"
+msgstr "搜尋結果"
 
 #. Default: "Searched for"
 #: components/Blocks/Search/components/SearchDetails
 msgid "Searched for"
-msgstr "Ha buscado"
+msgstr "搜尋了"
 
 #. Default: "Section title"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Section title"
-msgstr "Título de la sección"
+msgstr "區段標題"
 
 #. Default: "Show item"
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
 msgid "Show item"
-msgstr "Ver elemento"
+msgstr "顯示項目"
 
 #. Default: "Show search button?"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Show search button?"
-msgstr "¿Mostrar botón de búsqueda?"
+msgstr "顯示搜尋按鈕？"
 
 #. Default: "Show search input?"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Show search input?"
-msgstr "¿Mostrar campo de búsqueda?"
+msgstr "顯示搜尋輸入？"
 
 #. Default: "Show sorting?"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Show sorting?"
-msgstr "¿Mostrar criterios de ordenación?"
+msgstr "顯示排序？"
 
 #. Default: "Show total results"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Show total results"
-msgstr "Mostrar resultados totales"
+msgstr "顯示總結果數"
 
 #. Default: "Simple"
 #: index
 msgid "Simple"
-msgstr "Simple"
+msgstr "簡單"
 
 #. Default: "Site Setup"
 #: components/Breadcrumbs/Breadcrumbs
 msgid "Site Setup"
-msgstr "Configuración del sitio"
+msgstr "網站設定"
 
 #. Default: "Sitemap"
 #: index
 msgid "Sitemap"
-msgstr "Mapa del sitio"
+msgstr "Sitemap"
 
 #. Default: "Sort on"
 #: components/Blocks/EventCalendar/Search/components/SortOn
 msgid "Sort on"
-msgstr "Ordenar por"
+msgstr "排序"
 
 #. Default: "Sort on options"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Sort on options"
-msgstr "Ordenar por opciones"
+msgstr "排序選項"
 
 #. Default: "Sorted on"
 #: components/Blocks/EventCalendar/Search/components/SortOn
 msgid "Sorted on"
-msgstr "Ordenado por"
+msgstr "排序依據"
 
 #. Default: "Sorting"
 #: components/Blocks/Search/TopSideFacets
 msgid "Sorting"
-msgstr "Ordenación"
+msgstr "排序"
 
 #. Default: "Sponsored by:"
 #: components/Footer/slots/FollowUsLogoAndLinks
 msgid "Sponsored by:"
-msgstr "Patrocinado por:"
+msgstr "贊助者："
 
 #. Default: "Start"
 #: components/Blocks/EventMetadata/View
 msgid "Start"
-msgstr "Inicio"
+msgstr "開始"
 
 #. Default: "Switch to"
 #: components/LanguageSelector/LanguageSelector
@@ -553,17 +551,17 @@ msgstr ""
 #: components/Widgets/schema/headerActionsSchema
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Target"
-msgstr "Destino"
+msgstr "目標"
 
 #. Default: "The button presence disables the live search, the query is issued when you press ENTER"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "The button presence disables the live search, the query is issued when you press ENTER"
-msgstr "Si se muestra el botón se desactiva la búsqueda en vivo, la búsqueda se realiza cuando se pulsa ENTER."
+msgstr "按鈕的存在會停用即時搜尋,當您按下 ENTER 時才會發出查詢。"
 
 #. Default: "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
 #: components/Footer/slots/Copyright
 msgid "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
-msgstr "{plonecms} es {copyright} 2000-{current_year} de la {plonefoundation} y amigos."
+msgstr "{plonecms} 的 {copyright} 2000-{current_year} 由 {plonefoundation} 及其朋友們持有。"
 
 #. Default: "Title"
 #: components/Blocks/Image/schema
@@ -572,76 +570,76 @@ msgstr "{plonecms} es {copyright} 2000-{current_year} de la {plonefoundation} y 
 #: components/Widgets/schema/headerActionsSchema
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Title"
-msgstr "Título"
+msgstr "標題"
 
 #. Default: "Unknown Block {block}"
 #: components/Blocks/Block/Edit
 #: components/Theme/RenderBlocks
 #: components/Theme/RenderBlocksV2
 msgid "Unknown Block"
-msgstr "Bloque desconocido {block}"
+msgstr "未知區塊 {block}"
 
 #. Default: "Website"
 #: components/Blocks/EventMetadata/View
 msgid "Website"
-msgstr "Sitio web"
+msgstr "網站"
 
 #. Default: "Available views"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "availableViews"
-msgstr "Vistas disponibles"
+msgstr "可用的檢視"
 
 #. Default: "The {type} block with the id {block} has encountered an error.{lineBreak}You can try to undo your changes (via the undo toolbar or pressing {shortcut}), or try to delete the block and recreate it again."
 #: components/Blocks/Block/ErrorBoundaryMessage
 msgid "blockErrorBoundaryDescription"
-msgstr "El bloque {type} con el id {block} ha encontrado un error.{lineBreak}Puede intentar deshacer los cambios (a través de la barra de herramientas de deshacer o presionando {shortcut}), o intentar eliminar el bloque y volver a crearlo."
+msgstr "ID 為 {block} 的 {type} 區塊發生錯誤。{lineBreak}您可以嘗試復原變更（透過復原工具列或按下 {shortcut}），或嘗試刪除區塊並重新建立。"
 
 #. Default: "Block error:"
 #: components/Blocks/Block/ErrorBoundaryMessage
 msgid "blockErrorBoundaryTitle"
-msgstr "Error de bloque:"
+msgstr "區塊錯誤："
 
 #. Default: "The {type} block with the id {block} errored and cannot be displayed.{lineBreak}Please contact the site administrator for further assistance."
 #: components/Blocks/Block/ErrorBoundaryMessage
 msgid "blockErrorBoundaryViewDescription"
-msgstr "El bloque {type} con el id {block} ha fallado y no puede mostrarse.{lineBreak}Contacte al administrador del sitio para obtener más ayuda."
+msgstr "ID 為 {block} 的 {type} 區塊發生錯誤，無法顯示。{lineBreak}請聯絡網站管理員以取得進一步的協助。"
 
 #. Default: "Delete"
 #: components/Blocks/Block/Edit
 msgid "delete"
-msgstr "eliminar"
+msgstr "刪除"
 
 #. Default: "delete {type} block"
 #: components/Blocks/Block/EditBlockWrapper
 msgid "delete_block"
-msgstr "eliminar bloque de {type}"
+msgstr "刪除 {type} 區塊"
 
 #. Default: "drag {type} block"
 #: components/Blocks/Block/EditBlockWrapper
 msgid "drag_block"
-msgstr "arrastrar bloque de {type}"
+msgstr "拖曳 {type} 區塊"
 
 #. Default: "Clear image"
 #: components/Blocks/Image/ImageSidebar
 msgid "image_block_clear"
-msgstr "Limpiar imagen"
+msgstr "清除圖片"
 
 #. Default: "Image preview"
 #: components/Blocks/Image/ImageSidebar
 msgid "image_block_preview"
-msgstr "Previsualización de la imagen"
+msgstr "圖片預覽"
 
 #. Default: "Loading"
 #: components/Blocks/Listing/ListingBody
 msgid "loading"
-msgstr "Cargando"
+msgstr "載入中"
 
 #. Default: "of"
 #: components/Blocks/Listing/ListingBody
 msgid "of"
-msgstr "de"
+msgstr "的"
 
 #. Default: "Views"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "views"
-msgstr "Vistas"
+msgstr "檢視"
