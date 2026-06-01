@@ -2,6 +2,135 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0a28 (2026-05-15)
+
+No significant changes.
+
+
+## 8.0.0a27 (2026-05-12)
+
+
+### Bug fixes:
+
+- Fix edge cases when adding site customization fields to error responses. @davisagli 
+
+## 8.0.0a26 (2026-05-12)
+
+
+### Bug fixes:
+
+- Include site customization fields in error responses. @davisagli 
+
+## 8.0.0a25 (2026-05-06)
+
+No significant changes.
+
+
+## 8.0.0a24 (2026-04-30)
+
+No significant changes.
+
+
+## 8.0.0a23 (2026-04-29)
+
+No significant changes.
+
+
+## 8.0.0a22 (2026-04-29)
+
+No significant changes.
+
+
+## 8.0.0a21 (2026-04-22)
+
+
+### Internal:
+
+- Re-release of 8a20. @sneridagh 
+
+## 8.0.0a20 (2026-04-21)
+
+No significant changes.
+
+
+## 8.0.0a19 (2026-04-17)
+
+
+### New features:
+
+- Add default colophon text. @danalvrz 
+
+## 8.0.0a18 (2026-03-14)
+
+
+### Internal:
+
+- Fix css of External link icon indicator for teaser and grid-teaser @iRohitSingh [#797](https://github.com/kitconcept/volto-light-theme/issues/797)
+
+## 8.0.0a17 (2026-03-03)
+
+
+### Bug fixes:
+
+- Move primary_foreground_color value to header_foreground @iFlameing 
+
+
+### Internal:
+
+- Add missing pt_br translations. [#804](https://github.com/kitconcept/volto-light-theme/issues/804)
+- Updated to use Plone 6.1.4. @sneridagh 
+
+## 8.0.0a16 (2026-02-16)
+
+
+### Internal:
+
+- Update Banner Block Example Content @Tishasoumya-02 
+
+## 8.0.0a15 (2026-02-06)
+
+No significant changes.
+
+
+## 8.0.0a14 (2026-02-05)
+
+
+### New features:
+
+- Add a boolean field to enable or disable the mobile sticky menu. @iFlameing 
+
+## 8.0.0a13 (2026-01-26)
+
+
+### Bug fixes:
+
+- Change footer colophon widget from Input to Richtext. @iFlameing 
+
+## 8.0.0a12 (2026-01-15)
+
+No significant changes.
+
+
+## 8.0.0a11 (2026-01-14)
+
+No significant changes.
+
+
+## 8.0.0a10 (2026-01-14)
+
+No significant changes.
+
+
+## 8.0.0a9 (2025-12-08)
+
+No significant changes.
+
+
+## 8.0.0a8 (2025-12-01)
+
+No significant changes.
+
+
 ## 8.0.0a7 (2025-11-24)
 
 No significant changes.

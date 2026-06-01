@@ -16,6 +16,7 @@ import RenderEmptyBlock from '@plone/volto/components/theme/View/RenderEmptyBloc
 import cx from 'classnames';
 import { groupByBGColor } from '../../helpers/grouping';
 import ErrorBoundary from '../Blocks/Block/ErrorBoundary';
+import StyleWrapperV3 from './StyleWrapperV3';
 
 const messages = defineMessages({
   unknownBlock: {
@@ -68,6 +69,9 @@ const RenderBlocks = (props) => {
             }
           >
             {group.map((block) => {
+              const currentBlockModel =
+                blocksConfig[content[blocksFieldname]?.[block]?.['@type']]
+                  ?.blockModel;
               const Block =
                 blocksConfig[content[blocksFieldname]?.[block]?.['@type']]
                   ?.view || ViewDefaultBlock;
@@ -104,23 +108,42 @@ const RenderBlocks = (props) => {
                       condition={blockWrapperTag}
                       as={blockWrapperTag}
                     >
-                      <StyleWrapper
-                        key={block}
-                        {...props}
-                        id={block}
-                        block={block}
-                        data={blockData}
-                        isContainer={isContainer}
-                      >
-                        <Block
-                          id={block}
-                          metadata={metadata}
-                          properties={content}
+                      {currentBlockModel === 3 ? (
+                        <StyleWrapperV3
+                          block={block}
+                          content={content}
                           data={blockData}
-                          path={getBaseUrl(location?.pathname || '')}
                           blocksConfig={blocksConfig}
-                        />
-                      </StyleWrapper>
+                          isContainer={isContainer}
+                        >
+                          <Block
+                            id={block}
+                            metadata={metadata}
+                            properties={content}
+                            data={blockData}
+                            path={getBaseUrl(location?.pathname || '')}
+                            blocksConfig={blocksConfig}
+                          />
+                        </StyleWrapperV3>
+                      ) : (
+                        <StyleWrapper
+                          key={block}
+                          {...props}
+                          id={block}
+                          block={block}
+                          data={blockData}
+                          isContainer={isContainer}
+                        >
+                          <Block
+                            id={block}
+                            metadata={metadata}
+                            properties={content}
+                            data={blockData}
+                            path={getBaseUrl(location?.pathname || '')}
+                            blocksConfig={blocksConfig}
+                          />
+                        </StyleWrapper>
+                      )}
                     </MaybeWrap>
                   </ErrorBoundary>
                 );

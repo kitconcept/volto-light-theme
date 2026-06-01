@@ -21,9 +21,6 @@ const NewsItemView = ({ content }) => {
   return (
     <Container id="page-document" className="view-wrapper newsitem-view">
       <div className="dates">
-        {content?.head_title && (
-          <span className="head-title"> {content?.head_title}</span>
-        )}{' '}
         {content.effective ? (
           <FormattedDate
             key="day"
@@ -35,7 +32,10 @@ const NewsItemView = ({ content }) => {
             }}
             className="day"
           />
-        ) : null}
+        ) : null}{' '}
+        {content?.head_title && (
+          <span className="head-title"> {content?.head_title}</span>
+        )}
       </div>
       <RenderBlocks content={content} />
     </Container>

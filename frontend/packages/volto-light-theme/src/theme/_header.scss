@@ -15,13 +15,14 @@
       max-height: 80px;
       flex: 1 1 0;
       align-self: center;
-
       a {
         display: block;
 
         img {
+          width: auto;
           max-width: 100%;
           height: auto;
+          max-height: 80px;
         }
       }
     }
@@ -157,6 +158,10 @@
           height 600ms ease-in-out;
         transition-property: top, height;
 
+        @media only screen and (max-width: ($large-monitor-width + 36px)) {
+          left: -1em;
+          width: calc(100% + 2em);
+        }
         &.active {
           top: 0;
           height: 188px;
@@ -183,7 +188,6 @@
               padding-bottom: 0.5rem;
               border-bottom: 2px solid $black;
               border-left: none;
-              margin-left: 12.6rem;
 
               @media only screen and (max-width: $tablet-breakpoint) {
                 padding-top: 2rem;
@@ -238,7 +242,6 @@
   .tools-wrapper {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-between;
     padding-top: 16px;
 
     .intranet-flag {
@@ -272,6 +275,7 @@
     }
 
     .language-selector a {
+      color: $black;
       text-transform: uppercase;
     }
 
@@ -370,7 +374,7 @@
       flex: 3.5 1 0;
       align-self: center;
       justify-content: center;
-      margin-bottom: 40px;
+      margin-bottom: 11px;
 
       @media only screen and (max-width: $largest-mobile-screen) {
         display: none;
@@ -410,6 +414,18 @@
           }
         }
       }
+      .desktop-menu {
+        .item {
+          padding-top: 15px;
+          &:hover::before,
+          &.active::before {
+            bottom: -20px;
+          }
+        }
+        .submenu-wrapper {
+          margin-top: 11px;
+        }
+      }
     }
 
     .complementary-logo {
@@ -417,6 +433,10 @@
       max-width: 200px;
       flex: 1 1 auto;
       flex-direction: row-reverse;
+
+      @media only screen and (max-width: $largest-mobile-screen) {
+        display: none;
+      }
 
       @media only screen and (max-width: $computer-breakpoint) {
         flex: 0 1 55px;
@@ -587,7 +607,7 @@ body.has-toolbar.has-sidebar {
       }
     }
 
-    & > li:first-child > button {
+    & > li:first-child > .item {
       margin-left: 0;
     }
 

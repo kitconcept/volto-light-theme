@@ -130,6 +130,13 @@ lint:  ## Format codebase
 	$(MAKE) -C "./frontend/" lint
 
 ###########################################
+# Release
+###########################################
+.PHONY: release
+release:  ## Release backend and frontend packages with repoplone
+	uvx repoplone release
+
+###########################################
 # i18n
 ###########################################
 .PHONY: i18n
@@ -262,8 +269,14 @@ acceptance-a11y-test:
 # Visual Regression Tests
 ###########################################
 
+sync-visual-regression-snapshots:
+	$(MAKE) -C frontend sync-visual-regression-snapshots
+
 acceptance-visual-frontend-prod-start:
 	$(MAKE) -C frontend acceptance-a11y-frontend-prod-start
 
 acceptance-visual-test:
-	$(MAKE) -C frontend acceptance-test-visual
+	$(MAKE) -C frontend acceptance-visual-test
+
+acceptance-visual-test-storybook:
+	$(MAKE) -C frontend acceptance-visual-test-storybook

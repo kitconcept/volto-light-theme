@@ -10,7 +10,7 @@ body.cms-ui .sticky-menu {
   transform: translateY(-50%);
   transition: all 0.2s linear;
 
-  @media (min-height: 920px) {
+  @media (min-height: 969px) {
     top: 373px;
     transform: none;
   }

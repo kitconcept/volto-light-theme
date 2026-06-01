@@ -1,6 +1,6 @@
 {
   "name": "@kitconcept/volto-light-theme-dev",
-  "version": "8.0.0-alpha.7",
+  "version": "8.0.0-alpha.28",
   "description": "Volto Light Theme by kitconcept",
   "main": "src/index.js",
   "types": "src/types/index.d.ts",
@@ -44,21 +44,24 @@
     "release-major-alpha": "pnpm --filter @kitconcept/volto-light-theme run release-major-alpha",
     "release-alpha": "pnpm --filter @kitconcept/volto-light-theme run release-alpha",
     "storybook": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto storybook dev -p 6006 -c $(pwd)/.storybook",
-    "storybook-build": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto build-storybook -c $(pwd)/.storybook"
+    "storybook-build": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto build-storybook -c $(pwd)/.storybook",
+    "test:visual": "playwright test playwright/tests/visual/main/*.test.{ts,tsx}",
+    "test:visual:ui": "playwright test --ui",
+    "update:browserlist": "pnpm --filter @plone/volto add caniuse-lite && pnpm --filter @plone/volto remove caniuse-lite"
   },
   "devDependencies": {
     "@cypress/skip-test": "2.6.1",
-    "@frsource/cypress-plugin-visual-regression-diff": "3.2.8",
     "mrs-developer": "^2.2.0"
   },
   "dependencies": {
     "@plone/registry": "workspace:*",
     "@plone/volto": "workspace:*",
     "@kitconcept/volto-light-theme": "workspace:*",
-    "@eeacms/volto-accordion-block": "^10.4.6",
+    "@eeacms/volto-accordion-block": "^12.0.0",
     "@kitconcept/volto-banner-block": "workspace:*",
     "@kitconcept/volto-bm3-compat": "workspace:*",
     "@kitconcept/volto-button-block": "workspace:*",
+    "@kitconcept/volto-calendar-block": "workspace:*",
     "@kitconcept/volto-carousel-block": "workspace:*",
     "@kitconcept/volto-dsgvo-banner": "workspace:*",
     "@kitconcept/volto-heading-block": "workspace:*",

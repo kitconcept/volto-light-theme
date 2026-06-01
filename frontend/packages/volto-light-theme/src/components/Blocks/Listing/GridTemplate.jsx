@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
 import Card from '../../../primitives/Card/Card';
 import { flattenToAppURL, isInternalURL } from '@plone/volto/helpers/Url/Url';
@@ -11,6 +12,8 @@ const GridTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
   let link = null;
   let href = linkHref?.[0]?.['@id'] || '';
   const PreviewImageComponent = config.getComponent('PreviewImage').component;
+  const site = useSelector((state) => state.site?.data);
+  const hideProfileLinks = site?.['kitconcept.disable_profile_links'];
 
   if (isInternalURL(href)) {
     link = (
@@ -24,7 +27,7 @@ const GridTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
 
   return (
     <>
-      <div className="items">
+      <ul className="items">
         {items.map((item) => {
           const CustomItemBodyTemplate = config.getComponent({
             name: 'GridListingItemTemplate',
@@ -35,7 +38,10 @@ const GridTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
               name: 'Summary',
               dependencies: [item['@type']],
             }).component || DefaultSummary;
-          const showLink = !Summary.hideLink && !isEditMode;
+          let showLink = !Summary.hideLink && !isEditMode;
+          if (item['@type'] === 'Person' && hideProfileLinks !== undefined) {
+            showLink = !hideProfileLinks && !isEditMode;
+          }
 
           const ItemBodyTemplate = (props) =>
             CustomItemBodyTemplate ? (
@@ -50,14 +56,17 @@ const GridTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
                     sizes="auto, (max-width: 940px) 100vw, 940px"
                   />
                 )}
-                <Card.Summary a11yLabelId={props.a11yLabelId}>
-                  <Summary item={item} HeadingTag="h2" />
+                <Card.Summary
+                  a11yLabelId={props.a11yLabelId}
+                  LinkToItem={props.LinkToItem}
+                >
+                  <Summary item={item} />
                 </Card.Summary>
               </>
             );
 
           return (
-            <div
+            <li
               className={cx('listing-item', {
                 [`${item['@type']?.toLowerCase()}-listing`]: item['@type'],
               })}
@@ -66,10 +75,10 @@ const GridTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
               <Card item={showLink ? item : null}>
                 <ItemBodyTemplate item={item} />
               </Card>
-            </div>
+            </li>
           );
         })}
-      </div>
+      </ul>
 
       {link && <div className="footer">{link}</div>}
     </>

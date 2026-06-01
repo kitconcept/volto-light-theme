@@ -73,14 +73,14 @@ const EventView = (props) => {
   return (
     <Container id="page-document" className="view-wrapper event-view">
       <div className="dates">
-        {content?.head_title && (
-          <span className="head-title"> {content?.head_title}</span>
-        )}{' '}
         {formattedDate ? (
           <span className="day" suppressHydrationWarning>
             {formattedDate}
           </span>
-        ) : null}
+        ) : null}{' '}
+        {content?.head_title && (
+          <span className="head-title"> {content?.head_title}</span>
+        )}
       </div>
       {hasBlocksData(content) ? (
         <>

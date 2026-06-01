@@ -115,7 +115,7 @@ class ISiteThemeCustomizationSettings(model.Schema):
         "theming",
         label=_("Theming"),
         fields=[
-            "primary_foreground_color",
+            "header_foreground",
             "accent_foreground_color",
             "accent_color",
             # "primary_color", # Not used in PiK
@@ -141,12 +141,10 @@ class ISiteThemeCustomizationSettings(model.Schema):
         required=False,
     )
 
-    directives.widget(
-        "primary_foreground_color", frontendOptions={"widget": "colorPicker"}
-    )
-    primary_foreground_color = TextLine(
+    directives.widget("header_foreground", frontendOptions={"widget": "colorPicker"})
+    header_foreground = TextLine(
         title=_(
-            "label_primary_foreground_color",
+            "label_header_foreground",
             default="Navigation Text Color",
         ),
         required=False,
@@ -254,12 +252,44 @@ class ISiteFooterCustomizationSettings(model.Schema):
         required=False,
         widget="",
     )
+    directives.widget(
+        "footer_colophon_text",
+        frontendOptions={
+            "widget": "slate_richtext",
+        },
+    )
 
-    footer_colophon_text = TextLine(
+    footer_colophon_text = JSONField(
         title=_("Footer colophon text"),
         description=_(
             "help_footer_colophon_text",
             default="The text that shows in the footer colophon.",
         ),
+        schema=OBJECT_LIST,
+        default=[
+            {
+                "children": [
+                    {
+                        "text": "Powered by Plone and Volto Light Theme\n"
+                        "The Plone® Open Source CMS/WCM is © 2000-2026 by the "
+                    },
+                    {
+                        "children": [{"text": "Plone Foundation"}],
+                        "data": {"url": "http://plone.org"},
+                        "type": "link",
+                    },
+                    {"text": " and friends.\nDistributed under the "},
+                    {
+                        "children": [{"text": "GNU GPL v2 license"}],
+                        "data": {
+                            "url": "https://www.gnu.org/licenses/old-licenses/lgpl-2.0.html"
+                        },
+                        "type": "link",
+                    },
+                    {"text": "."},
+                ],
+                "type": "p",
+            }
+        ],
         required=False,
     )

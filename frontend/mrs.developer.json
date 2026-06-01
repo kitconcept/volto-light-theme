@@ -4,7 +4,7 @@
     "package": "@plone/volto",
     "url": "git@github.com:plone/volto.git",
     "https": "https://github.com/plone/volto.git",
-    "tag": "19.0.0-alpha.17",
+    "tag": "19.1.1",
     "filterBlobs": true
   },
   "volto-banner-block": {
@@ -13,7 +13,7 @@
     "package": "@kitconcept/volto-banner-block",
     "url": "git@github.com:kitconcept/volto-banner-block.git",
     "https": "https://github.com/kitconcept/volto-banner-block.git",
-    "tag": "1.1.0"
+    "tag": "1.2.0"
   },
   "volto-bm3-compat": {
     "develop": true,
@@ -29,7 +29,15 @@
     "package": "@kitconcept/volto-button-block",
     "url": "git@github.com:kitconcept/volto-button-block.git",
     "https": "https://github.com/kitconcept/volto-button-block.git",
-    "tag": "5.0.0-alpha.0"
+    "tag": "5.0.0-alpha.2"
+  },
+  "volto-calendar-block": {
+    "develop": true,
+    "output": "packages",
+    "package": "@kitconcept/volto-calendar-block",
+    "url": "git@github.com:kitconcept/volto-calendar-block.git",
+    "https": "https://github.com/kitconcept/volto-calendar-block.git",
+    "tag": "1.0.0-alpha.9"
   },
   "volto-carousel-block": {
     "develop": true,
@@ -37,7 +45,7 @@
     "package": "@kitconcept/volto-carousel-block",
     "url": "git@github.com:kitconcept/volto-carousel-block.git",
     "https": "https://github.com/kitconcept/volto-carousel-block.git",
-    "tag": "3.0.0-alpha.0"
+    "tag": "3.0.0-alpha.1"
   },
   "volto-dsgvo-banner": {
     "develop": true,
@@ -61,7 +69,7 @@
     "package": "@kitconcept/volto-highlight-block",
     "url": "git@github.com:kitconcept/volto-highlight-block.git",
     "https": "https://github.com/kitconcept/volto-highlight-block.git",
-    "tag": "4.5.0"
+    "tag": "4.5.1"
   },
   "volto-introduction-block": {
     "develop": true,
@@ -69,7 +77,7 @@
     "package": "@kitconcept/volto-introduction-block",
     "url": "git@github.com:kitconcept/volto-introduction-block.git",
     "https": "https://github.com/kitconcept/volto-introduction-block.git",
-    "tag": "1.1.0"
+    "tag": "1.4.1"
   },
   "volto-logos-block": {
     "develop": true,
@@ -77,7 +85,7 @@
     "package": "@kitconcept/volto-logos-block",
     "url": "git@github.com:kitconcept/volto-logos-block.git",
     "https": "https://github.com/kitconcept/volto-logos-block.git",
-    "tag": "4.0.0-alpha.0"
+    "tag": "4.0.0-alpha.1"
   },
   "volto-separator-block": {
     "develop": true,
@@ -93,7 +101,7 @@
     "package": "@kitconcept/volto-slider-block",
     "url": "git@github.com:kitconcept/volto-slider-block.git",
     "https": "https://github.com/kitconcept/volto-slider-block.git",
-    "tag": "7.0.0-alpha.0"
+    "tag": "7.0.0-alpha.1"
   },
   "volto-social-media": {
     "develop": false,

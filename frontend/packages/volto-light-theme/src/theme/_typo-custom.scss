@@ -27,13 +27,20 @@ li::marker {
   line-height: 32px;
 }
 
-.content-area,
-.breadcrumbs {
-  p > a,
-  li > a,
-  .breadcrumb a {
-    color: $blue-for-grey-contrast;
-    text-decoration: underline;
+header .navigation .item {
+  font-family: $page-font;
+}
+
+.public-ui,
+.cms-ui.view-editview {
+  .content-area,
+  .breadcrumbs {
+    a:not(.card-primary-link, .label, .item, .link-container) {
+      color: var(--link-foreground-color, var(--theme-foreground-color));
+      font: inherit;
+      line-height: inherit;
+      text-decoration: underline;
+    }
   }
 }
 
@@ -91,7 +98,8 @@ h1.documentFirstHeading:last-child {
 }
 
 // Block Title
-.block h2.headline {
+.block h2.headline,
+.block h2.block-title {
   @include block-title();
   @include vertical-space-block-title();
 }
@@ -169,5 +177,13 @@ h4 {
   .head-title,
   .head-title span {
     user-select: none;
+  }
+}
+
+// Control panel view
+body.view-controlpanelview {
+  h3.ui.icon.header {
+    @include add(size, s);
+    @include add(height, m);
   }
 }

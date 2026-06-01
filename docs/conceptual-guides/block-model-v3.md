@@ -42,7 +42,7 @@ Block Model v3 introduces a unified container architecture (block anatomy) that 
 
 ## History and Evolution
 
-### DLR Block Model (v1)
+### Block Model (v1)
 The block contained all rendering information but required exhaustive, error-prone rules that were difficult to maintain comprehensively.
 
 ### VLT Block Model (v2)

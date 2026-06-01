@@ -1,8 +1,8 @@
 const addons = [
   '@plonegovbr/volto-social-media',
   '@eeacms/volto-accordion-block',
-  '@kitconcept/volto-banner-block',
   '@kitconcept/volto-button-block',
+  '@kitconcept/volto-calendar-block',
   '@kitconcept/volto-carousel-block',
   '@kitconcept/volto-heading-block',
   '@kitconcept/volto-highlight-block',

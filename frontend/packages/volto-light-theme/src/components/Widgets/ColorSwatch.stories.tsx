@@ -1,5 +1,4 @@
 import React from 'react';
-import { fn } from '@storybook/test';
 import type { Meta, StoryObj } from '@storybook/react';
 import Wrapper from '@plone/volto/storybook';
 import type { StyleDefinition } from '@plone/types';
@@ -53,6 +52,27 @@ const themePalettes: StyleDefinition[] = [
   },
 ];
 
+const palettesWithoutDefault: StyleDefinition[] = [
+  {
+    name: 'primary',
+    label: 'Primary',
+    style: {
+      '--theme-color': '#333333',
+      '--theme-foreground-color': '#f2f2f2',
+      '--theme-low-contrast-foreground-color': '#d9d9d9',
+    },
+  },
+  {
+    name: 'secondary',
+    label: 'Secondary',
+    style: {
+      '--theme-color': '#666666',
+      '--theme-foreground-color': '#ffffff',
+      '--theme-low-contrast-foreground-color': '#f0f0f0',
+    },
+  },
+];
+
 const meta = {
   title: 'Widgets/ColorSwatch',
   component: ColorSwatch,
@@ -74,33 +94,63 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const resolveSelectedColorName = (
+  args: ColorSwatchProps,
+  value: string | undefined,
+) => {
+  const colors = args.themes || args.colors || [];
+  const selectedColorName = colors.find(({ name }) => name === value)?.name;
+  const defaultSelectedColorName =
+    !selectedColorName && typeof args.default === 'string'
+      ? colors.find(({ name }) => name === args.default)?.name
+      : undefined;
+
+  if (selectedColorName || defaultSelectedColorName) {
+    return selectedColorName ?? defaultSelectedColorName;
+  }
+
+  return colors.find(({ name }) => name === 'default')?.name ?? colors[0]?.name;
+};
+
 const InteractiveColorSwatch = (args: ColorSwatchProps) => {
-  const [value, setValue] = React.useState(args.value || args.default);
+  const [value, setValue] = React.useState(args.value);
+  const selectedValue = resolveSelectedColorName(args, value);
 
   return (
     <>
       <ColorSwatch
         {...args}
+        value={value}
         onChange={(id, selectedValue) => {
           setValue(selectedValue);
           args.onChange?.(id, selectedValue);
         }}
       />
       <div style={{ marginTop: '10px' }}>
-        The selected value is: <strong>{value}</strong>
+        The selected value is: <strong>{selectedValue || 'none'}</strong>
       </div>
     </>
   );
+};
+
+export const NoPalettes: Story = {
+  render: (args) => <InteractiveColorSwatch {...args} />,
+  args: {
+    id: 'color',
+    label: 'Theme',
+    title: 'Theme',
+    themes: [],
+  },
 };
 
 export const DefaultPalette: Story = {
   render: (args) => <InteractiveColorSwatch {...args} />,
   args: {
     id: 'color',
+    label: 'Color palette',
     title: 'Color palette',
     value: 'default',
     colors: palettes,
-    onChange: fn(),
   },
 };
 
@@ -108,10 +158,10 @@ export const ThemePalette: Story = {
   render: (args) => <InteractiveColorSwatch {...args} />,
   args: {
     id: 'theme',
+    label: 'Theme palette',
     title: 'Theme palette',
     value: 'ocean',
     themes: themePalettes,
-    onChange: fn(),
   },
 };
 
@@ -119,10 +169,10 @@ export const ColorPaletteWithDefault: Story = {
   render: (args) => <InteractiveColorSwatch {...args} />,
   args: {
     id: 'color',
+    label: 'Color palette',
     title: 'Color palette',
     colors: palettes,
     default: 'warm',
-    onChange: fn(),
   },
 };
 
@@ -130,9 +180,9 @@ export const ColorPaletteNoValueNoDefault: Story = {
   render: (args) => <InteractiveColorSwatch {...args} />,
   args: {
     id: 'color',
+    label: 'Color palette',
     title: 'Color palette',
     colors: palettes,
-    onChange: fn(),
   },
 };
 
@@ -140,8 +190,8 @@ export const ColorPaletteNoValueNoDefaultWithFallbackToFirst: Story = {
   render: (args) => <InteractiveColorSwatch {...args} />,
   args: {
     id: 'color',
+    label: 'Color palette',
     title: 'Color palette',
-    themes: themePalettes,
-    onChange: fn(),
+    colors: palettesWithoutDefault,
   },
 };

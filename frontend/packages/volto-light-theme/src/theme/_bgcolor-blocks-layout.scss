@@ -17,22 +17,12 @@
   & > strong,
   & > em,
   & > figcaption,
-  & > a:not(.item),
+  & > a,
   & > blockquote,
   & > h2,
   & > h3,
   & > h1 {
     color: var(--theme-foreground-color);
-  }
-
-  :not(.teaser-item)
-    > a:not(.item):not(
-      :has(> .teaser-item),
-      :has(> .listing-body),
-      :has(> .card-container)
-    ) {
-    color: var(--link-foreground-color, --theme-foreground-color);
-    text-decoration: underline;
   }
 
   &:first-child:has(> .documentFirstHeading) {
@@ -407,6 +397,14 @@
   }
 }
 
+// Banner block, if next block has different bgcolor it snaps to the bottom
+#page-document
+  .blocks-group-wrapper:has(
+    :last-child.banner.next--has--different--backgroundColor
+  ) {
+  padding-bottom: 0;
+}
+
 // Color map
 @mixin use-theme-colors() {
   #page-document {
@@ -439,7 +437,8 @@
     &.__button {
       & > .button.container,
       & > .block-inner-container {
-        & button {
+        & button,
+        a {
           border-color: var(--theme-foreground-color);
           background-color: var(--theme-color);
 
@@ -494,7 +493,8 @@
     &.listing,
     &.search,
     &.rssBlock {
-      h2.headline {
+      h2.headline,
+      h2.block-title {
         color: var(--theme-foreground-color);
       }
 
@@ -505,40 +505,26 @@
       .listing-item {
         border-bottom-color: var(--theme-foreground-color) !important;
 
-        a > .listing-body {
-          .headline,
-          h3,
-          h2,
-          a,
-          p,
-          span {
-            color: var(--theme-foreground-color);
-          }
+        .headline,
+        h3,
+        h2,
+        a,
+        p,
+        span {
+          color: var(--theme-foreground-color);
         }
 
         .head-title span,
         .head-title {
           color: var(--theme-foreground-color);
         }
-
-        .card-container {
-          background-color: var(--theme-high-contrast-color);
-
-          .content,
-          .content p {
-            color: var(--theme-foreground-color);
-          }
-        }
       }
-      /* I have removed the .card-container className that's why I have to write this css
-       * I will remove all the .card-container className from repo.
-      */
       &.grid .card,
       & .grid-variation .card {
         background-color: var(--theme-high-contrast-color);
 
-        .content,
-        .content p {
+        .card-summary,
+        .card-summary p {
           color: var(--theme-foreground-color);
         }
       }
@@ -1122,19 +1108,28 @@
     }
   }
 
-  table.ui.table.slate-table-block {
-    border-color: var(--theme-low-contrast-foreground-color);
+  table.ui.celled.table.slate-table-block {
+    border-color: color-mix(
+      in srgb,
+      var(--theme-color) 75%,
+      var(--theme-foreground-color)
+    );
 
     tr td,
     th {
-      border-color: var(--theme-low-contrast-foreground-color);
+      border-color: color-mix(
+        in srgb,
+        var(--theme-color) 75%,
+        var(--theme-foreground-color)
+      );
     }
 
     th {
       background-color: var(--theme-high-contrast-color) !important;
+      color: var(--theme-low-contrast-foreground-color);
 
-      p {
-        color: var(--theme-low-contrast-foreground-color) !important;
+      * {
+        color: inherit;
       }
     }
 
@@ -1269,12 +1264,15 @@
             color: var(--header-foreground);
           }
         }
+        .language-selector a {
+          color: var(--header-foreground);
+        }
       }
 
       // Navigation
       nav.navigation {
-        button.item {
-          color: var(--header-foreground);
+        .item {
+          color: var(--header-foreground, var(--primary-foreground-color));
         }
         .submenu-wrapper {
           .submenu.active {
@@ -1329,7 +1327,7 @@
 
           & > button:not(:hover, :active, :focus) {
             svg path {
-              fill: var(--secondary-foreground-color);
+              fill: var(--search-foreground);
             }
           }
         }
@@ -1426,12 +1424,12 @@
     }
 
     a.section {
-      color: var(--link-foreground-color, --breadcrumbs-foreground);
+      color: var(--breadcrumbs-foreground, --link-foreground-color);
     }
 
     a.home {
       svg {
-        fill: var(--link-foreground-color, --breadcrumbs-foreground) !important;
+        fill: var(--breadcrumbs-foreground, --link-foreground-color) !important;
       }
     }
   }

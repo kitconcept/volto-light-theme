@@ -68,6 +68,7 @@
 
       .block.image {
         figure {
+          margin-top: 0;
           &.right {
             margin-left: 20px;
           }
@@ -92,13 +93,18 @@
         }
       }
 
-      .block.teaser {
+      .block.teaser,
+      .block.listing {
         .card-inner .card-summary {
-          h2.title {
-            padding: 0px;
-            margin-bottom: 20px !important;
+          .title {
+            padding: 0;
             background: none;
             text-transform: none;
+            @include text-heading-h2();
+
+            @container (max-width: #{$largest-mobile-screen}) {
+              @include text-heading-h3();
+            }
           }
         }
       }

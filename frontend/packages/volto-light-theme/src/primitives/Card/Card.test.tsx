@@ -1,6 +1,6 @@
 import React from 'react';
 import { describe, it, expect, vi } from 'vitest';
-import { render, fireEvent } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import Card from './Card';
 
 vi.mock(
@@ -43,10 +43,16 @@ vi.mock(
 
 type SummaryProps = {
   a11yLabelId?: string;
+  LinkToItem?: React.ElementType;
 };
 
-const SummaryContent = ({ a11yLabelId }: SummaryProps) => (
-  <h3 id={a11yLabelId}>Card title</h3>
+const SummaryContent = ({
+  a11yLabelId,
+  LinkToItem = React.Fragment,
+}: SummaryProps) => (
+  <h3 id={a11yLabelId}>
+    <LinkToItem>Card title</LinkToItem>
+  </h3>
 );
 
 const BodyContent = () => <div>Body content</div>;
@@ -64,26 +70,20 @@ describe('Card', () => {
 
   it('is interactive when an href is provided', () => {
     const { container } = renderCard({ href: '/target', className: 'custom' });
-    const card = container.querySelector('.card') as HTMLElement;
-
-    expect(card).toHaveAttribute('role', 'link');
-    expect(card).toHaveAttribute('tabindex', '0');
 
     const anchor = container.querySelector('a');
     expect(anchor).not.toBeNull();
     expect(anchor).toHaveAttribute('href', '/target');
+    expect(anchor).toHaveClass('card-primary-link');
   });
 
   it('is interactive when an item is provided', () => {
     const { container } = renderCard({ item: { '@id': '/item-target' } });
-    const card = container.querySelector('.card') as HTMLElement;
-
-    expect(card).toHaveAttribute('role', 'link');
-    expect(card).toHaveAttribute('tabindex', '0');
 
     const anchor = container.querySelector('a');
     expect(anchor).not.toBeNull();
     expect(anchor).toHaveAttribute('href', '/item-target');
+    expect(anchor).toHaveClass('card-primary-link');
   });
 
   it('is not interactive when neither href nor item is provided', () => {
@@ -111,27 +111,5 @@ describe('Card', () => {
     expect(card).not.toHaveAttribute('role');
     expect(card).not.toHaveAttribute('tabindex');
     expect(container.querySelector('a')).toBeNull();
-  });
-
-  it('triggers navigation handlers when interactive', () => {
-    const clickSpy = vi
-      .spyOn(HTMLAnchorElement.prototype, 'click')
-      .mockImplementation(() => {});
-    const selectionSpy = vi
-      .spyOn(window, 'getSelection')
-      .mockReturnValue({ toString: () => '' } as unknown as Selection);
-
-    const { container } = renderCard({ href: '/target' });
-    const card = container.querySelector('.card') as HTMLElement;
-
-    fireEvent.click(card);
-    fireEvent.keyDown(card, { key: 'Enter' });
-    fireEvent.keyDown(card, { key: ' ' });
-    fireEvent.keyDown(card, { key: 'Escape' });
-
-    expect(clickSpy).toHaveBeenCalledTimes(3);
-
-    clickSpy.mockRestore();
-    selectionSpy.mockRestore();
   });
 });

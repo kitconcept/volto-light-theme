@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
 import Card from '../../../primitives/Card/Card';
 import { flattenToAppURL, isInternalURL } from '@plone/volto/helpers/Url/Url';
@@ -8,6 +9,8 @@ import DefaultSummary from '@kitconcept/volto-light-theme/components/Summary/Def
 import cx from 'classnames';
 
 const SummaryTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
+  const site = useSelector((state) => state.site?.data);
+  const hideProfileLinks = site?.['kitconcept.disable_profile_links'];
   let link = null;
   let href = linkHref?.[0]?.['@id'] || '';
   const PreviewImageComponent = config.getComponent('PreviewImage').component;
@@ -23,7 +26,7 @@ const SummaryTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
 
   return (
     <>
-      <div className="items">
+      <ul className="items">
         {items.map((item) => {
           const CustomItemBodyTemplate = config.getComponent({
             name: 'SummaryListingItemTemplate',
@@ -34,7 +37,10 @@ const SummaryTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
               name: 'Summary',
               dependencies: [item['@type']],
             }).component || DefaultSummary;
-          const showLink = !Summary.hideLink && !isEditMode;
+          let showLink = !Summary.hideLink && !isEditMode;
+          if (item['@type'] === 'Person' && hideProfileLinks !== undefined) {
+            showLink = !hideProfileLinks && !isEditMode;
+          }
           const ItemBodyTemplate = (props) =>
             CustomItemBodyTemplate ? (
               <CustomItemBodyTemplate item={item} />
@@ -46,13 +52,16 @@ const SummaryTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
                   imageComponent={PreviewImageComponent}
                   sizes="auto, (max-width: 768px) 100vw, 220px"
                 />
-                <Card.Summary a11yLabelId={props.a11yLabelId}>
-                  <Summary item={item} HeadingTag="h3" />
+                <Card.Summary
+                  a11yLabelId={props.a11yLabelId}
+                  LinkToItem={props.LinkToItem}
+                >
+                  <Summary item={item} />
                 </Card.Summary>
               </>
             );
           return (
-            <div
+            <li
               className={cx('listing-item has--align--left', {
                 [`${item['@type']?.toLowerCase()}-listing`]: item['@type'],
               })}
@@ -61,10 +70,10 @@ const SummaryTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
               <Card item={showLink ? item : null}>
                 <ItemBodyTemplate item={item} />
               </Card>
-            </div>
+            </li>
           );
         })}
-      </div>
+      </ul>
 
       {link && <div className="footer">{link}</div>}
     </>

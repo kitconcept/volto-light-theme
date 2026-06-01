@@ -13,6 +13,7 @@ import Caption from '../../Caption/Caption';
 function Edit(props) {
   const { data } = props;
   const Image = config.getComponent({ name: 'Image' }).component;
+
   const onSelectItem = React.useCallback(
     (url, item) => {
       const dataAdapter = props.blocksConfig[props.data['@type']].dataAdapter;

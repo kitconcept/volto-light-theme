@@ -35,7 +35,12 @@ jobs:
     name: ${{ inputs.name }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
+
+      - name: Set artifact name
+        run: |
+          ARTIFACT_NAME=$(echo "${{ inputs.short-name }}" | sed 's/\//-/g')
+          echo "ARTIFACT_NAME=$ARTIFACT_NAME" >> $GITHUB_ENV
 
       - name: Load images
         run: |
@@ -45,7 +50,7 @@ jobs:
           docker image ls -a
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NODE_VERSION }}
 
@@ -57,7 +62,7 @@ jobs:
         run: |
           echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         name: Setup pnpm cache
         with:
           path: ${{ env.STORE_PATH }}
@@ -67,7 +72,7 @@ jobs:
 
       - name: Cache Cypress Binary
         id: cache-cypress-binary
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ~/.cache/Cypress
           key: binary-${{ env.NODE_VERSION }}-${{ hashFiles('**/pnpm-lock.yaml') }}
@@ -80,7 +85,7 @@ jobs:
         working-directory: ./frontend/core/packages/volto
         run: make cypress-install
 
-      - uses: JarvusInnovations/background-action@v1
+      - uses: JarvusInnovations/background-action@v1.0.7
         name: Start Servers
         if: ${{ inputs.a11y == false || inputs.a11y == 'false' || inputs.a11y == null }}
         with:
@@ -115,13 +120,13 @@ jobs:
 
           # working-directory: backend
 
-      - uses: JarvusInnovations/background-action@v1
+      - uses: JarvusInnovations/background-action@v1.0.7
         name: Start Servers
         if: ${{inputs.a11y == true || inputs.a11y == 'true' }}
         with:
           run: |
             docker run -i --net=host --rm --name=backend ${{ inputs.image-name-prefix }}-backend:${{ inputs.image-tag }} &
-            docker run -i --net=host --rm --name=frontend ${{ inputs.image-name-prefix }}-frontend:${{ inputs.image-tag }} &
+            docker run -i --net=host --rm --name=frontend -e RAZZLE_INTERNAL_API_PATH=http://127.0.0.1:8080/Plone ${{ inputs.image-name-prefix }}-frontend:${{ inputs.image-tag }} &
           wait-on: |
             http-get://localhost:8080/Plone
             http://localhost:3000
@@ -137,15 +142,15 @@ jobs:
         if: ${{ inputs.a11y == true || inputs.a11y == 'true' }}
 
       # Upload Cypress screenshots
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: failure()
         with:
-          name: cypress-screenshots-acceptance-${{ inputs.short-name }}
+          name: cypress-screenshots-acceptance-${{ env.ARTIFACT_NAME }}
           path: frontend/cypress/screenshots
 
       # Upload Cypress videos
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: failure()
         with:
-          name: cypress-videos-acceptance-${{ inputs.short-name }}
+          name: cypress-videos-acceptance-${{ env.ARTIFACT_NAME }}
           path: frontend/cypress/videos

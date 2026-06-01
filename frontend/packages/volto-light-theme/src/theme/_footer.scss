@@ -13,8 +13,8 @@
     --footer-foreground: var(--primary-foreground-color, #{$black});
   }
 
-  .container {
-    padding: 0 1rem;
+  .container:not(:has(.container)) {
+    padding: 0;
   }
 
   & > :first-child:not(:empty) {
@@ -35,7 +35,10 @@
     --footer-background: var(--secondary-color, #{$white});
     --footer-foreground: var(--secondary-foreground-color, #{$black});
 
-    padding: $spacing-xlarge 2rem;
+    padding: $spacing-xlarge 2rem 100px 2rem;
+    @media only screen and (max-width: $largest-mobile-screen) {
+      padding: $spacing-xlarge $spacing-small;
+    }
     background: var(--footer-background);
     color: var(--footer-foreground, $black);
 
@@ -94,13 +97,12 @@
 
     .logo {
       display: flex;
-      justify-content: center;
-      margin: 5rem 0 1.8rem 0;
-
+      max-width: 300px;
+      max-height: 90px;
+      margin-bottom: $spacing-medium;
       a {
         display: block;
-        max-width: 200px;
-        max-height: 80px;
+        max-width: 100%;
 
         img {
           max-width: 100%;
@@ -111,8 +113,10 @@
 
     .footer-grid {
       display: grid;
-      gap: 1rem;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: $spacing-small;
+      grid-auto-columns: 1fr;
+      grid-auto-flow: column;
+      grid-template-columns: auto;
       text-align: left;
 
       h2 {
@@ -128,8 +132,8 @@
         list-style: none;
 
         li {
-          padding: 0 7px;
           font-size: 18px;
+          line-height: 30px;
 
           a {
             text-decoration: underline;
@@ -141,34 +145,48 @@
         justify-self: start;
         @include body-text();
 
-        img {
-          margin-bottom: 38px;
+        &:has(~ div li),
+        &:has(~ div h2) {
+          width: 380px;
+          .logo ~ * {
+            padding-right: $spacing-xlarge;
+          }
+        }
+      }
+
+      .column-left,
+      .column-middle,
+      .column-right {
+        &:has(ul:empty):not(:has(h2)) {
+          display: none;
         }
       }
 
       @media only screen and (max-width: $largest-mobile-screen) {
-        gap: $spacing-xlarge;
-
-        text-align: center;
+        gap: $spacing-medium;
+        grid-auto-flow: row;
+        grid-template-columns: 1fr;
 
         .address-column {
           display: flex;
+          width: 100% !important;
           flex-direction: column;
-          align-items: center;
+          align-items: flex-start;
+          margin-bottom: $spacing-medium;
         }
 
         .address-column,
         .column-left,
         .column-middle,
         .column-right {
-          justify-self: center;
+          justify-self: start;
         }
       }
     }
   }
 
   .post-footer {
-    padding: $spacing-xlarge 2rem;
+    padding: $spacing-xlarge $spacing-small;
     background: var(--footer-background);
     color: var(--footer-foreground, $black);
     font-size: 18px;
@@ -218,11 +236,22 @@
         flex-direction: column;
         justify-content: center;
         text-align: center;
+        ul.social-networks {
+          flex-wrap: wrap;
+          gap: 10px;
+          li {
+            margin-right: 0;
+          }
+        }
       }
 
       .footer-links {
         ul {
-          justify-content: center;
+          flex-wrap: wrap;
+          gap: 10px;
+          li {
+            margin-right: 0;
+          }
         }
       }
 
@@ -293,6 +322,7 @@
         @include add(size, xs);
         @include add(height, s);
         color: var(--footer-foreground);
+        text-decoration: underline;
       }
     }
   }
@@ -320,11 +350,33 @@
     @include add(size, xs);
     @include add(height, s);
 
-    a {
+    .slate.widget {
+      width: fit-content;
+      margin-right: auto;
+      margin-left: auto;
       @include add(size, xs);
       @include add(height, s);
+      ul,
+      ol,
+      li,
+      p,
+      a {
+        margin-bottom: 0;
+        font: inherit;
+        line-height: inherit;
+      }
+    }
+
+    a {
       color: var(--footer-foreground);
+      font: inherit;
       text-decoration: underline;
+    }
+
+    p {
+      @include add(size, xs);
+      @include add(height, s);
+      margin-bottom: 0;
     }
 
     img {
@@ -338,11 +390,16 @@
       content: '';
       @include default-container-width();
     }
+    &:has(.slate p:only-child:empty) {
+      display: none;
+    }
   }
 
   .main-footer + .post-footer {
     background-color: var(--primary-color, $white);
     color: var(--primary-foreground-color, $black);
+    --social-network-icon-color-main: #{$black};
+    --social-network-icon-color-hover: #{$black};
   }
 }
 

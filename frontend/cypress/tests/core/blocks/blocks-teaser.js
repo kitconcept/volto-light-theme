@@ -65,7 +65,7 @@ context('Blocks Acceptance Tests', () => {
         expect($img[0].naturalHeight).to.be.greaterThan(0);
       })
       .should('have.attr', 'src');
-    cy.get('.block.teaser .card-summary h2').contains('Blue Orchids');
+    cy.get('.block.teaser .card-summary .title').contains('Blue Orchids');
     cy.get('.block.teaser .card-summary p').contains(
       'are growing on the mountain tops',
     );
@@ -97,7 +97,7 @@ context('Blocks Acceptance Tests', () => {
 
     cy.navigate('/document');
     cy.wait('@content');
-    cy.get('.block.teaser .card-summary h2').contains('Blue Orchids');
+    cy.get('.block.teaser .card-summary .title').contains('Blue Orchids');
     cy.get('.block.teaser .card-summary p').contains(
       'are growing on the mountain tops',
     );
@@ -113,7 +113,7 @@ context('Blocks Acceptance Tests', () => {
     // THEN I can see the updated content in the teaser
     cy.navigate('/document');
     cy.wait('@content');
-    cy.get('.block.teaser .card-summary h2').contains(
+    cy.get('.block.teaser .card-summary .title').contains(
       'Blue Orchids and Tulips',
     );
     cy.get('.block.teaser .card-summary p').contains(
@@ -145,7 +145,7 @@ context('Blocks Acceptance Tests', () => {
     cy.get('#sidebar-properties #field-title').type(' and Tulips');
     cy.get('#toolbar-save').click();
     cy.visit('/document');
-    cy.get('.block.teaser .card-summary h2').contains(
+    cy.get('.block.teaser .card-summary .title').contains(
       'Blue Orchids and Tulips',
     );
 
@@ -156,7 +156,7 @@ context('Blocks Acceptance Tests', () => {
     cy.get('.documentFirstHeading').contains('Blue Orchids but no Tulips');
     // THEN I still see the overwritten content in the teaser
     cy.visit('/document');
-    cy.get('.block.teaser .card-summary h2').contains(
+    cy.get('.block.teaser .card-summary .title').contains(
       'Blue Orchids and Tulips',
     );
   });
@@ -197,6 +197,6 @@ context('Blocks Acceptance Tests', () => {
         'include',
         'https://github.com/plone/volto/raw/main/logos/volto-colorful.png',
       );
-    cy.get('.block.teaser .card-summary h2').contains('Blue Orchids');
+    cy.get('.block.teaser .card-summary .title').contains('Blue Orchids');
   });
 });
