@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-08T13:36:14.317Z\n"
+"POT-Creation-Date: 2026-02-16T14:21:29.474Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language: eu\n"
@@ -504,7 +504,7 @@ msgstr "Sinplea"
 #. Default: "Site Setup"
 #: components/Breadcrumbs/Breadcrumbs
 msgid "Site Setup"
-msgstr ""
+msgstr "Atariaren konfigurazioa"
 
 #. Default: "Sitemap"
 #: index
@@ -593,17 +593,17 @@ msgstr "Bistak"
 #. Default: "The {type} block with the id {block} has encountered an error.{lineBreak}You can try to undo your changes (via the undo toolbar or pressing {shortcut}), or try to delete the block and recreate it again."
 #: components/Blocks/Block/ErrorBoundaryMessage
 msgid "blockErrorBoundaryDescription"
-msgstr ""
+msgstr "{type} blokeak {block} identifikatzailearekin errore bat aurkitu du.{lineBreak}Zure aldaketak desegiten saia zaitezke (desegin tresna-barraren bidez edo {shortcut} sakatuz), edo blokea ezabatu eta berriro sortu."
 
 #. Default: "Block error:"
 #: components/Blocks/Block/ErrorBoundaryMessage
 msgid "blockErrorBoundaryTitle"
-msgstr ""
+msgstr "Bloke-errorea:"
 
 #. Default: "The {type} block with the id {block} errored and cannot be displayed.{lineBreak}Please contact the site administrator for further assistance."
 #: components/Blocks/Block/ErrorBoundaryMessage
 msgid "blockErrorBoundaryViewDescription"
-msgstr ""
+msgstr "{type} blokeak {block} identifikatzailearekin errore bat izan du eta ezin da bistaratu.{lineBreak}Mesedez, jarri harremanetan gunearen administratzailearekin laguntza gehiagorako."
 
 #. Default: "Delete"
 #: components/Blocks/Block/Edit
@@ -613,12 +613,12 @@ msgstr "Ezabatu"
 #. Default: "delete {type} block"
 #: components/Blocks/Block/EditBlockWrapper
 msgid "delete_block"
-msgstr ""
+msgstr "ezabatu {type} blokea"
 
 #. Default: "drag {type} block"
 #: components/Blocks/Block/EditBlockWrapper
 msgid "drag_block"
-msgstr ""
+msgstr "arrastatu {type} blokea"
 
 #. Default: "Clear image"
 #: components/Blocks/Image/ImageSidebar
