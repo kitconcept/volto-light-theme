@@ -192,10 +192,12 @@
 
   .follow-us-links-and-logo {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    margin-bottom: $spacing-large;
     grid-template-areas:
       'social logo'
       'links  links';
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 
     .follow-us {
       grid-area: social;
@@ -214,8 +216,6 @@
       grid-column: 1 / -1;
       justify-self: center;
     }
-
-    margin-bottom: $spacing-large;
     .follow-us {
       display: flex;
       flex-direction: column;
@@ -229,12 +229,12 @@
     }
 
     @media only screen and (max-width: $largest-mobile-screen) {
-      grid-template-columns: minmax(0, 1fr);
+      align-items: center;
       grid-template-areas:
         'social'
         'logo'
         'links';
-      align-items: center;
+      grid-template-columns: minmax(0, 1fr);
 
       .follow-us {
         display: flex;
@@ -278,11 +278,11 @@
   .follow-us {
     ul {
       display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       padding-left: 0;
       margin: 0;
       list-style: none;
-      flex-wrap: wrap;
-      justify-content: center;
     }
   }
 
@@ -339,8 +339,8 @@
   .footer-logo {
     display: flex;
     max-width: 200px;
-    margin-bottom: $spacing-large;
     flex-direction: column;
+    margin-bottom: $spacing-large;
     justify-self: end;
     span {
       display: block;

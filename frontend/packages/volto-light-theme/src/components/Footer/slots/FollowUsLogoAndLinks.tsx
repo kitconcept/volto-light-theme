@@ -1,5 +1,4 @@
 import { FormattedMessage } from 'react-intl';
-import cx from 'classnames';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
 import { Container } from '@plone/components';
