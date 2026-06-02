@@ -6,6 +6,7 @@ import { Container } from '@plone/components';
 import EventView from './components/Theme/EventView';
 
 import { migrateToVLT6ColorAndWidthModel } from './transforms/to6';
+import { migrateToVLT8FloatingBlocks } from './transforms/to8';
 
 import installSettings from './config/settings';
 import installBlocks from './config/blocks';
@@ -96,6 +97,13 @@ const applyConfig = (config: ConfigType) => {
     type: 'transform',
     dependencies: { reducer: 'content' },
     method: migrateToVLT6ColorAndWidthModel,
+  });
+
+  config.registerUtility({
+    name: 'migrateToVLT8FloatingBlocks',
+    type: 'transform',
+    dependencies: { reducer: 'content' },
+    method: migrateToVLT8FloatingBlocks,
   });
 
   config.views.contentTypesViews.Event = EventView;

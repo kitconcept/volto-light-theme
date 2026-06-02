@@ -454,3 +454,24 @@ $line-heights: (
     no-repeat center;
   white-space: nowrap;
 }
+
+@mixin floated-figure($align) {
+  max-width: calc(var(--default-container-width) / 2 - 10px);
+  height: auto;
+  margin-bottom: $spacing-small;
+
+  @if $align == 'right' {
+    margin-left: $spacing-small;
+    float: right;
+  } @else {
+    margin-right: $spacing-small;
+    float: left;
+  }
+
+  @media only screen and (max-width: #{$largest-mobile-screen}) {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    float: none;
+  }
+}

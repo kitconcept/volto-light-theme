@@ -1,7 +1,14 @@
+import {
+  pickSidebarButton,
+  save,
+  assertBlockStyle,
+} from '../../../support/block-helpers';
+
 describe('Map Block Tests', () => {
   beforeEach(() => {
     cy.intercept('GET', `/**/*?expand*`).as('content');
     cy.intercept('GET', '/**/Document').as('schema');
+    cy.intercept('PATCH', '/**/my-page').as('save');
     // given a logged in editor and a page in edit mode
     cy.autologin();
     cy.createContent({
@@ -52,5 +59,97 @@ describe('Map Block Tests', () => {
     cy.get('#page-document iframe')
       .should('have.attr', 'src')
       .and('match', /\/\/www.openstreetmap.org\/export\/embed/);
+  });
+
+  // Adds a maps block pointing at a Google Maps embed.
+  const addMapsBlock = () => {
+    cy.addNewBlock('maps');
+    cy.get(`.block.maps .toolbar-inner .ui.input input`)
+      .type(
+        '<iframe src="https://www.google.com/maps/embed?pb=" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>',
+      )
+      .type('{enter}');
+  };
+
+  it('A centered map keeps the narrow block width', () => {
+    addMapsBlock();
+    pickSidebarButton('Center');
+    pickSidebarButton('Narrow');
+    save();
+
+    assertBlockStyle('.block.maps', {
+      alignment: 'var(--align-center)',
+      width: 'var(--narrow-container-width)',
+    });
+  });
+
+  it('A centered map keeps the default block width', () => {
+    addMapsBlock();
+    pickSidebarButton('Center');
+    pickSidebarButton('Default');
+    save();
+
+    assertBlockStyle('.block.maps', {
+      alignment: 'var(--align-center)',
+      width: 'var(--default-container-width)',
+    });
+  });
+
+  it('A centered map keeps the layout block width', () => {
+    addMapsBlock();
+    pickSidebarButton('Center');
+    pickSidebarButton('Layout');
+    save();
+
+    assertBlockStyle('.block.maps', {
+      alignment: 'var(--align-center)',
+      width: 'var(--layout-container-width)',
+    });
+  });
+
+  it('A centered map keeps the full block width', () => {
+    addMapsBlock();
+    pickSidebarButton('Center');
+    pickSidebarButton('Full');
+    save();
+
+    assertBlockStyle('.block.maps', {
+      alignment: 'var(--align-center)',
+      width: '100%',
+    });
+  });
+
+  it('A left aligned map floats and gets the default container width', () => {
+    addMapsBlock();
+    // pick a non-default width first so the assertion proves the adapter
+    // overrode it on float, not that it was left at the default
+    pickSidebarButton('Full');
+    pickSidebarButton('Left');
+
+    // when floating, the block width is driven by the adapter, not the widget
+    cy.get(
+      '#sidebar .buttons-widget-option input[aria-label="Default"]',
+    ).should('be.disabled');
+
+    save();
+
+    assertBlockStyle('.block.maps', {
+      alignment: 'var(--align-left)',
+      width: 'var(--default-container-width)',
+    });
+  });
+
+  it('A right aligned map floats and gets the default container width', () => {
+    addMapsBlock();
+    // pick a non-default width first so the assertion proves the adapter
+    // overrode it on float, not that it was left at the default
+    pickSidebarButton('Full');
+    pickSidebarButton('Right');
+    save();
+
+    assertBlockStyle('.block.maps', {
+      alignment: 'var(--align-right)',
+      width: 'var(--default-container-width)',
+    });
   });
 });
