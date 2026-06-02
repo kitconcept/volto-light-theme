@@ -16,6 +16,7 @@ defaults:
 
 env:
   PLONE_VERSION: ${{ inputs.plone-version }}
+  UV_CACHE_DIR: /tmp/.uv-cache
 
 jobs:
 
@@ -23,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         - name: Checkout
-          uses: actions/checkout@v4
+          uses: actions/checkout@v6
 
         - name: Install the latest version of uv
           uses: astral-sh/setup-uv@v5
@@ -32,12 +33,12 @@ jobs:
             enable-cache: false
 
         - name: Restore uv cache
-          uses: actions/cache@v4
+          uses: actions/cache@v5
           with:
-            path: /tmp/.uv-cache
-            key: uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.plone-version }}-${{ hashFiles('pyproject.toml') }}
+            path: ${{ env.UV_CACHE_DIR }}
+            key: uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.plone-version }}-${{ hashFiles('backend/pyproject.toml') }}
             restore-keys: |
-              uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.plone-version }}-${{ hashFiles('pyproject.toml') }}
+              uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.plone-version }}-${{ hashFiles('backend/pyproject.toml') }}
               uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.plone-version }}
 
         - name: Install Plone and package

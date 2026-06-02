@@ -1,6 +1,5 @@
 import type { ConfigType } from '@plone/registry';
 import { getPreviousNextBlock } from '@plone/volto/helpers/Blocks/Blocks';
-import { getCurrentStyleByName } from '../helpers/helpers';
 
 export default function install(config: ConfigType) {
   // Register custom StyleWrapper ClassNames
@@ -71,15 +70,17 @@ export default function install(config: ConfigType) {
   config.settings.styleClassNameExtenders.push(
     ({ data, classNames }: { data: any; classNames: Array<string> }) => {
       const currentBlockWidth =
-        getCurrentStyleByName(
-          config.blocks.widths,
-          'blockWidth:noprefix',
-          data,
-        ) || 'default';
-      if (currentBlockWidth) {
-        return [...classNames, `has--block-width--${currentBlockWidth}`];
-      }
-      return classNames;
+        data?.styles?.['blockWidth:noprefix'] || 'default';
+      return [...classNames, `has--block-width--${currentBlockWidth}`];
+    },
+  );
+
+  // Blocks alignment convenience classes injection
+  config.settings.styleClassNameExtenders.push(
+    ({ data, classNames }: { data: any; classNames: Array<string> }) => {
+      const currentBlockAlignment =
+        data?.styles?.['align:noprefix'] || 'center';
+      return [...classNames, `has--block-alignment--${currentBlockAlignment}`];
     },
   );
 

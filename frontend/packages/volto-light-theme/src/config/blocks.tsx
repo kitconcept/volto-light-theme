@@ -30,6 +30,8 @@ import {
   standAloneImageBlockSchemaEnhancer,
 } from '../components/Blocks/Image/schema';
 import { ImageBlockDataAdapter } from '../components/Blocks/Image/adapter';
+import { VideoBlockDataAdapter } from '../components/Blocks/Video/adapter';
+import { MapsBlockDataAdapter } from '../components/Blocks/Maps/adapter';
 
 import { AccordionSchemaEnhancer } from '../components/Blocks/Accordion/schema';
 
@@ -66,6 +68,7 @@ declare module '@plone/types' {
   }
   export interface BlockConfigBase {
     themes?: StyleDefinition[];
+    alignments?: StyleDefinition[];
     defaultTheme: string;
     allowedBlocks?: string[];
     allowed_headline_tags?: string[][];
@@ -80,6 +83,10 @@ declare module '@plone/types' {
 
   export interface SettingsConfig {
     blockModel?: number;
+  }
+
+  export interface BlocksConfig {
+    alignments: StyleDefinition[];
   }
 }
 
@@ -147,6 +154,31 @@ export default function install(config: ConfigType) {
     },
   ];
 
+  // Default block alignments
+  config.blocks.alignments = [
+    {
+      style: {
+        '--block-alignment': 'var(--align-left)',
+      },
+      name: 'left',
+      label: 'Left',
+    },
+    {
+      style: {
+        '--block-alignment': 'var(--align-center)',
+      },
+      name: 'center',
+      label: 'Center',
+    },
+    {
+      style: {
+        '--block-alignment': 'var(--align-right)',
+      },
+      name: 'right',
+      label: 'Right',
+    },
+  ];
+
   config.registerUtility({
     name: 'blockThemesEnhancer',
     type: 'styleWrapperStyleObjectEnhancer',
@@ -157,6 +189,20 @@ export default function install(config: ConfigType) {
     name: 'styleDefinitionsEnhancer',
     type: 'styleWrapperStyleObjectEnhancer',
     method: styleDefinitionsEnhancer,
+  });
+
+  config.registerUtility({
+    name: 'align:noprefix',
+    type: 'styleFieldDefinition',
+    method: ({ data }: { data: { '@type'?: string } }) =>
+      config.blocks.blocksConfig?.[data?.['@type'] ?? '']?.alignments ||
+      config.blocks.alignments,
+  });
+
+  config.registerUtility({
+    name: 'blockWidth:noprefix',
+    type: 'styleFieldDefinition',
+    method: () => config.blocks.widths,
   });
 
   // No required blocks except eventMetadata
@@ -332,6 +378,7 @@ export default function install(config: ConfigType) {
 
   config.blocks.blocksConfig.video = {
     ...config.blocks.blocksConfig.video,
+    dataAdapter: VideoBlockDataAdapter,
     schemaEnhancer: composeSchema(
       defaultStylingSchema,
       videoBlockSchemaEnhancer,
@@ -339,6 +386,7 @@ export default function install(config: ConfigType) {
   };
   config.blocks.blocksConfig.maps = {
     ...config.blocks.blocksConfig.maps,
+    dataAdapter: MapsBlockDataAdapter,
     schemaEnhancer: composeSchema(
       defaultStylingSchema,
       mapsBlockSchemaEnhancer,
