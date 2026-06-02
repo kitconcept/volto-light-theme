@@ -85,7 +85,7 @@ jobs:
         working-directory: ./frontend/core/packages/volto
         run: make cypress-install
 
-      - uses: JarvusInnovations/background-action@v1
+      - uses: JarvusInnovations/background-action@v1.0.7
         name: Start Servers
         if: ${{ inputs.a11y == false || inputs.a11y == 'false' || inputs.a11y == null }}
         with:
@@ -120,7 +120,7 @@ jobs:
 
           # working-directory: backend
 
-      - uses: JarvusInnovations/background-action@v1
+      - uses: JarvusInnovations/background-action@v1.0.7
         name: Start Servers
         if: ${{inputs.a11y == true || inputs.a11y == 'true' }}
         with:

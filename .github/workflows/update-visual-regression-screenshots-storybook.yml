@@ -87,7 +87,7 @@ jobs:
           path: frontend/storybook-build
 
       - name: Start Servers - Storybook
-        uses: JarvusInnovations/background-action@v1
+        uses: JarvusInnovations/background-action@v1.0.7
         with:
           run: |
             python3 -m http.server 6006 -d frontend/storybook-build &

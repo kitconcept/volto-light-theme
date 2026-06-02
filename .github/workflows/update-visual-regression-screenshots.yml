@@ -93,7 +93,7 @@ jobs:
         working-directory: frontend/packages/volto-light-theme
         run: pnpm exec playwright install --with-deps chromium
 
-      - uses: JarvusInnovations/background-action@v1
+      - uses: JarvusInnovations/background-action@v1.0.7
         name: Start Servers - Volto and Plone
         with:
           run: |
