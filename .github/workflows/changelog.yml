@@ -19,9 +19,9 @@ jobs:
       repository: ${{ steps.filter.outputs.repository }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
-      - uses: dorny/paths-filter@v3.0.2
+      - uses: dorny/paths-filter@v4.0.1
         id: filter
         with:
           filters: |
@@ -41,7 +41,7 @@ jobs:
     needs:
       - config
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           # Fetch all history
           fetch-depth: '0'
@@ -67,7 +67,7 @@ jobs:
       run:
         working-directory: ./frontend
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           # Fetch all history
           fetch-depth: '0'
@@ -76,7 +76,7 @@ jobs:
         run: pip install towncrier
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NODE_VERSION }}
 
@@ -88,7 +88,7 @@ jobs:
         run: |
           echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         name: Setup pnpm cache
         with:
           path: ${{ env.STORE_PATH }}
@@ -115,7 +115,7 @@ jobs:
     needs:
       - config
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           # Fetch all history
           fetch-depth: '0'
