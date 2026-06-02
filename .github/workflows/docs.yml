@@ -15,6 +15,8 @@ jobs:
   docs:
     name: Documentation
     runs-on: ubuntu-latest
+    env:
+      UV_CACHE_DIR: /tmp/.uv-cache
     steps:
       - uses: actions/checkout@v6
 
@@ -28,9 +30,9 @@ jobs:
         uses: actions/cache@v5
         with:
           path: ${{ env.UV_CACHE_DIR }}
-          key: uv-${{ runner.os }}-${{ inputs.python-version }}-${{ hashFiles('uv.lock') }}
+          key: uv-${{ runner.os }}-${{ inputs.python-version }}-${{ hashFiles('docs/uv.lock') }}
           restore-keys: |
-            uv-${{ runner.os }}-${{ inputs.python-version }}-${{ hashFiles('uv.lock') }}
+            uv-${{ runner.os }}-${{ inputs.python-version }}-${{ hashFiles('docs/uv.lock') }}
             uv-${{ runner.os }}-${{ inputs.python-version }}
 
       - name: Install Dependencies

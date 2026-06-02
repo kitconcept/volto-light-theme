@@ -21,6 +21,7 @@ jobs:
     env:
       PYTHON_VERSION: ${{ inputs.python-version }}
       PLONE_VERSION: ${{ inputs.plone-version }}
+      UV_CACHE_DIR: /tmp/.uv-cache
     steps:
 
         - name: Checkout
@@ -36,9 +37,9 @@ jobs:
           uses: actions/cache@v5
           with:
             path: ${{ env.UV_CACHE_DIR }}
-            key: uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.plone-version }}-${{ hashFiles('pyproject.toml') }}
+            key: uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.plone-version }}-${{ hashFiles('backend/pyproject.toml') }}
             restore-keys: |
-              uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.plone-version }}-${{ hashFiles('pyproject.toml') }}
+              uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.plone-version }}-${{ hashFiles('backend/pyproject.toml') }}
               uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.plone-version }}
 
         - name: Install Plone and package
