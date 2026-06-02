@@ -34,27 +34,12 @@ const FollowUsPostFooterLogoAndLinks = ({ content }: { content: Content }) => {
     : flattenToAppURL(post_footer_logo?.download);
 
   return content ? (
-    <Container
-      className={cx('default follow-us-links-and-logo', {
-        'no-logo': !post_footer_logo?.data && !post_footer_logo?.download,
-      })}
-    >
-      <div className="followus-and-links">
-        {social_links?.length > 0 && (
-          <div className="follow-us">
-            <span>
-              <FormattedMessage id="Follow us:" defaultMessage="Follow us:" />
-            </span>
-            <SlotRenderer name="followUs" content={content} />
-          </div>
-        )}
-        {footer_links?.length > 0 && (
-          <div className="footer-links">
-            <SlotRenderer name="footerLinks" content={content} />
-            <LinkList links={footer_links} />
-          </div>
-        )}
-      </div>
+    <Container className="default follow-us-links-and-logo">
+      {social_links?.length > 0 && (
+        <div className="follow-us">
+          <SlotRenderer name="followUs" content={content} />
+        </div>
+      )}
       {post_footer_logo?.data || post_footer_logo?.download ? (
         <div className="footer-logo">
           <span>
@@ -63,7 +48,6 @@ const FollowUsPostFooterLogoAndLinks = ({ content }: { content: Content }) => {
               defaultMessage="Sponsored by:"
             />
           </span>
-          {/* @ts-ignore */}
           <ConditionalLink
             condition={content?.post_footer_logo_link}
             to={content?.post_footer_logo_link}
@@ -73,6 +57,12 @@ const FollowUsPostFooterLogoAndLinks = ({ content }: { content: Content }) => {
           </ConditionalLink>
         </div>
       ) : null}
+      {footer_links?.length > 0 && (
+        <div className="footer-links">
+          <SlotRenderer name="footerLinks" content={content} />
+          <LinkList links={footer_links} />
+        </div>
+      )}
     </Container>
   ) : null;
 };
