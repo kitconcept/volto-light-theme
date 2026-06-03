@@ -16,7 +16,6 @@ defaults:
 
 env:
   PLONE_VERSION: ${{ inputs.plone-version }}
-  UV_CACHE_DIR: /tmp/.uv-cache
 
 jobs:
 
@@ -27,19 +26,10 @@ jobs:
           uses: actions/checkout@v6
 
         - name: Install the latest version of uv
-          uses: astral-sh/setup-uv@v5
+          uses: astral-sh/setup-uv@v8.1.0
           with:
             python-version: ${{ inputs.python-version }}
-            enable-cache: false
-
-        - name: Restore uv cache
-          uses: actions/cache@v5
-          with:
-            path: ${{ env.UV_CACHE_DIR }}
-            key: uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.plone-version }}-${{ hashFiles('backend/pyproject.toml') }}
-            restore-keys: |
-              uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.plone-version }}-${{ hashFiles('backend/pyproject.toml') }}
-              uv-${{ runner.os }}-${{ inputs.python-version }}-${{ inputs.plone-version }}
+            cache-suffix: ${{ inputs.plone-version }}
 
         - name: Install Plone and package
           run: make install
