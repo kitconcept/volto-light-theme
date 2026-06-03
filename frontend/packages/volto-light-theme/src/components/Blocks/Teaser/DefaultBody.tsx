@@ -19,7 +19,7 @@ const TeaserDefaultTemplate = (props) => {
   const hideProfileLinks = site?.['kitconcept.disable_profile_links'];
   const { data, isEditMode, isContainer } = props;
   const columns = useContext(GridContext);
-  const sizes = config.blocks.blocksConfig.teaser.getSizes({
+  const sizes = config.blocks.blocksConfig.teaser?.getSizes?.({
     data,
     inGrid: isContainer,
     columns,
