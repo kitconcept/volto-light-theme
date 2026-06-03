@@ -216,16 +216,6 @@ External & Mail link removal for all the blocks.
   & > p,
   & > span,
   & > blockquote,
-  & > .block.image.align.left.medium,
-  & > .block.image.align.left.small,
-  & > .block.image.align.right.medium,
-  & > .block.video.align.left,
-  & > .block.video.align.right,
-  & > .block.maps.align.left,
-  & > .block.maps.align.right,
-  & > .block.image.align.right.small,
-  & > .block.video.align.center .video-inner,
-  & > .block.maps.align.center .maps-inner,
   .download-event,
   .block.separator.has--align--left .line,
   .block.separator.has--align--center .line,
@@ -238,16 +228,6 @@ External & Mail link removal for all the blocks.
   }
 
   & > h1.documentFirstHeading,
-  & > .block.image.align.left,
-  & > .block.image.align.right,
-  & > .block.image.align.center,
-  & > .block.image.align.wide figure,
-  & > .block.video.align.left,
-  & > .block.video.align.right,
-  & > .block.maps.align.left,
-  & > .block.maps.align.right,
-  & > .block.video.align.wide .video-inner,
-  & > .block.maps.align.wide .maps-inner,
   & > .block.__button,
   & > .block.eventMetadata .details-container,
   & > .block.listing .listing-item,
@@ -272,21 +252,7 @@ External & Mail link removal for all the blocks.
     @include adjustMarginsToContainer($default-container-width);
   }
 
-  & > .block.image.align.full,
-  & > .block.video.align.full,
-  & > .block.maps.align.full {
-    @include layout-container-width();
-  }
-
   /* Styling align left and right in mobile view */
-  .block.video.align.right .video-inner,
-  .block.video.align.left .video-inner,
-  .block.maps.align.right iframe,
-  .block.maps.align.left iframe {
-    @container (max-width: #{$largest-mobile-screen}) {
-      width: 100%;
-    }
-  }
 
   & > h1.documentFirstHeading {
     @include adjustMarginsToContainer($default-container-width);
@@ -340,14 +306,6 @@ External & Mail link removal for all the blocks.
 #page-add,
 #page-edit {
   .block.slate .slate-editor,
-  .block-editor-image.left.medium,
-  .block-editor-image.left.small,
-  .block-editor-image.right.medium,
-  .block-editor-image.right.small,
-  .block-editor-video.align.left,
-  .block-editor-video.align.right,
-  .block-editor-video.center .video-inner,
-  .block.maps.align.center .maps-inner,
   .block-editor-separator.has--align--left
     .block.separator.inner
     .block.separator
@@ -366,17 +324,6 @@ External & Mail link removal for all the blocks.
   }
 
   .block-editor-title h1,
-  .block-editor-image.left.large,
-  .block-editor-image.right.large,
-  .block-editor-image.wide figure, // Wide images are always large
-  .block-editor-image.wide.large figure,
-  .block-editor-video.align.left,
-  .block-editor-video.align.right,
-  .block.maps.align.left,
-  .block.maps.align.right,
-  .block.video.align.wide .video-inner,
-  .block.maps.align.wide .maps-inner,
-
   .block.introduction .slate-editor,
   .block.heading .heading-wrapper,
   .block-editor-listing .items,
@@ -397,20 +344,11 @@ External & Mail link removal for all the blocks.
   }
 
   .block-editor-slate,
-  .block-editor-image,
   .block-editor-slider,
   .block-editor-teaser,
   .block-editor-separator.has--align--left {
     @include layout-container-width();
     @include adjustMarginsToEditContainer($layout-container-width);
-  }
-
-  /* Styling align left and right in mobile view */
-  .block.video.align.right .video-inner,
-  .block.video.align.left .video-inner {
-    @container (max-width: #{$largest-mobile-screen}) {
-      width: 100%;
-    }
   }
 }
 
