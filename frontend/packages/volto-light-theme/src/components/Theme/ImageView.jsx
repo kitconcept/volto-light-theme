@@ -23,6 +23,7 @@ const ImageView = ({ content }) => {
   const Image = config.getComponent('Image').component;
   const Container =
     config.getComponent({ name: 'Container' }).component || SemanticContainer;
+  const width = config.settings.layout.defaultContainerWidth;
 
   return (
     <Container id="page-document" className="view-wrapper image-view">
@@ -35,7 +36,7 @@ const ImageView = ({ content }) => {
             imageField="image"
             alt=""
             responsive={true}
-            sizes="(max-width: 940px) 100vw, 940px"
+            sizes={`(max-width: ${width}px) 100vw, ${width}px`}
           />
           <Caption
             title={content.title}

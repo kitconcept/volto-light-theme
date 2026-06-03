@@ -1,3 +1,4 @@
+import { useContext } from 'react';
 import { useSelector } from 'react-redux';
 import type { GetSiteResponse } from '@plone/types';
 import { isInternalURL } from '@plone/volto/helpers/Url/Url';
@@ -5,6 +6,7 @@ import DefaultSummary from '@kitconcept/volto-light-theme/components/Summary/Def
 import type { SummaryComponentType } from '@kitconcept/volto-light-theme/components/Summary/DefaultSummary';
 import Card from '../../../primitives/Card/Card';
 import config from '@plone/volto/registry';
+import { GridContext } from '@plone/volto/components/manage/Blocks/Grid/context';
 
 type FormState = {
   site: { data: GetSiteResponse };
@@ -15,7 +17,13 @@ const TeaserDefaultTemplate = (props) => {
     (state) => state.site?.data,
   );
   const hideProfileLinks = site?.['kitconcept.disable_profile_links'];
-  const { data, isEditMode } = props;
+  const { data, isEditMode, isContainer } = props;
+  const columns = useContext(GridContext);
+  const sizes = config.blocks.blocksConfig.teaser.getSizes({
+    data,
+    inGrid: isContainer,
+    columns,
+  });
   const href = data.href?.[0] || {};
   const image = data.preview_image?.[0];
   const url = data.preview_image?.[0]?.['@id'];
@@ -50,7 +58,7 @@ const TeaserDefaultTemplate = (props) => {
         item={!data.overwrite ? href : { ...href, ...localOverrides }}
         image={data.overwrite ? image : undefined}
         imageComponent={Image}
-        sizes="auto, (max-width: 940px) 100w, 940px"
+        sizes={sizes}
       />
       <Card.Summary>
         <Summary

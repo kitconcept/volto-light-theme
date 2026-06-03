@@ -53,7 +53,7 @@ const GridTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
                     className="item-image"
                     item={item}
                     imageComponent={PreviewImageComponent}
-                    sizes="auto, (max-width: 940px) 100vw, 940px"
+                    sizes="(max-width: 768px) 100vw, 470px"
                   />
                 )}
                 <Card.Summary
