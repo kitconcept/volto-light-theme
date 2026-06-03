@@ -262,6 +262,13 @@ External & Mail link removal for all the blocks.
     // This is the default spacing in between same-color blocks
     margin-bottom: $block-vertical-space;
 
+    // Listing followed by another listing (same bg) without headline: 40px gap
+    &.listing.next--has--same--backgroundColor.next--is--same--block-type:has(
+        + .block.listing:not(.has--headline)
+      ) {
+      margin-bottom: $spacing-medium;
+    }
+
     // Default side margins on smaller screens
     &.has--block-width--narrow {
       @include adjustMarginsToContainer($narrow-container-width);

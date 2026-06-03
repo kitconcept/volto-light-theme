@@ -29,6 +29,10 @@
         padding-bottom: 0;
         border-bottom: none;
         margin-bottom: 0;
+
+        .card-inner {
+          padding-bottom: 0;
+        }
       }
     }
   }
@@ -39,6 +43,9 @@
   &.next--is--__button {
     .items > .listing-item:last-child {
       border-bottom: 1px solid var(--theme-font-color, black);
+      .card-inner {
+        padding-bottom: $spacing-medium;
+      }
     }
   }
   &.next--is--__button {
@@ -50,7 +57,7 @@
 
   .listing-item {
     border-bottom: 1px solid $black;
-    margin-bottom: 40px;
+    margin-bottom: $spacing-medium;
     .card-summary {
       padding: 0;
 
@@ -161,6 +168,7 @@
       .card {
         flex-grow: 1;
         .card-inner {
+          padding-bottom: $spacing-medium !important;
           .image-wrapper {
             img {
               margin: 0;
