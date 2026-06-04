@@ -53,7 +53,7 @@ const GridTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
                     className="item-image"
                     item={item}
                     imageComponent={PreviewImageComponent}
-                    sizes="(max-width: 768px) 100vw, 470px"
+                    sizes={`(max-width: ${config.settings.layout.tabletBreakpoint}px) 100vw, ${Math.trunc(config.settings.layout.defaultContainerWidth / 2)}px`}
                   />
                 )}
                 <Card.Summary
