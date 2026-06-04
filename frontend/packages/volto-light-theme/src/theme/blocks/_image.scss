@@ -313,3 +313,12 @@ figcaption {
     }
   }
 }
+
+#sidebar-properties,
+#sidebar-metadata {
+  .field-wrapper-size {
+    .eight.wide.column > .ui.grid {
+      margin-top: 0;
+    }
+  }
+}
