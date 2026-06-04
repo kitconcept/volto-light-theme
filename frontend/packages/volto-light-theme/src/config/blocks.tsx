@@ -369,10 +369,19 @@ export default function install(config: ConfigType) {
     category: 'title',
   };
 
+  const getTeaserSizes = ({ inGrid = false, columns = 1 } = {}) => {
+    const { defaultContainerWidth, tabletBreakpoint } = config.settings.layout;
+    const desktopWidth = Math.floor(
+      defaultContainerWidth / (inGrid ? columns : 2),
+    );
+    return `(max-width: ${tabletBreakpoint}px) 100vw, ${desktopWidth}px`;
+  };
+
   config.blocks.blocksConfig.teaser = {
     ...config.blocks.blocksConfig.teaser,
     group: 'teasers',
     imageScale: 'larger',
+    getSizes: getTeaserSizes,
     schemaEnhancer: composeSchema(defaultStylingSchema, teaserSchemaEnhancer),
   };
 
