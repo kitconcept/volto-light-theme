@@ -6,8 +6,11 @@
       @include highlight-title();
     }
     .description {
-      @include introduction();
       --link-foreground-color: var(--theme-foreground-color);
+
+      p {
+        @include introduction();
+      }
     }
 
     .button a {
