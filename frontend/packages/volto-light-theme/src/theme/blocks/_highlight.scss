@@ -6,12 +6,8 @@
       @include highlight-title();
     }
     .description {
-      a,
-      p,
-      span {
-        @include introduction();
-        --link-foreground-color: var(--theme-foreground-color);
-      }
+      @include introduction();
+      --link-foreground-color: var(--theme-foreground-color);
     }
 
     .button a {
@@ -19,8 +15,12 @@
       text-decoration: none;
     }
   }
+  .block-inner-container {
+    max-width: var(--layout-container-width);
+  }
 }
-.block.highlight.has--descriptionColor--highlight-custom-color-2,
-.block-editor-highlight.has--descriptionColor--highlight-custom-color-2 .block {
-  --theme-foreground-color: #fff;
+.color-swatch-widget[class*='field-wrapper-descriptionColor'] {
+  & + .color-swatch-widget.field-wrapper-theme {
+    padding-top: 16px;
+  }
 }
