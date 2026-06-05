@@ -467,5 +467,11 @@ export default function install(config: ConfigType) {
     schemaEnhancer: sliderBlockSchemaEnhancer,
   };
 
+  // Highlight Block
+  config.blocks.blocksConfig.highlight = {
+    ...config.blocks.blocksConfig.highlight,
+    schemaEnhancer: defaultStylingSchema,
+  };
+
   return config;
 }
