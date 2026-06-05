@@ -23,6 +23,7 @@ const ImageView = ({ content }) => {
   const Image = config.getComponent('Image').component;
   const Container =
     config.getComponent({ name: 'Container' }).component || SemanticContainer;
+  const width = config.settings.layout.defaultContainerWidth;
 
   return (
     <Container id="page-document" className="view-wrapper image-view">
@@ -30,7 +31,13 @@ const ImageView = ({ content }) => {
       <h1 className="documentFirstHeading">{content.title}</h1>
       {content?.image?.download && (
         <figure>
-          <Image item={content} imageField="image" alt="" responsive={true} />
+          <Image
+            item={content}
+            imageField="image"
+            alt=""
+            responsive={true}
+            sizes={`(max-width: ${width}px) 100vw, ${width}px`}
+          />
           <Caption
             title={content.title}
             description={content.description}
