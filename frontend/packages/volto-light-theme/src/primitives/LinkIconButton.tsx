@@ -38,10 +38,9 @@ const LinkIconButton = ({ item }: { item?: Partial<ObjectBrowserItem> }) => {
     (state) => state.site?.data,
   );
   const hideProfileLinks = site?.['kitconcept.disable_profile_links'];
-  const isPersonProfile = item?.['@type'] === 'Person' && hideProfileLinks;
   const handleLinkIconClick = useLinkIconNavigation(item);
   return (
-    isPersonProfile && (
+    hideProfileLinks && (
       <div className="card-link-icon">
         <Button aria-label="link" onClick={handleLinkIconClick}>
           <Icon name={linkSVG} size="33px" />
