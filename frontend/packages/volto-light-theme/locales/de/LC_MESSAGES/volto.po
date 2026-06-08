@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-27T19:30:59.079Z\n"
+"POT-Creation-Date: 2026-02-16T14:21:29.474Z\n"
 "PO-Revision-Date: 2016-10-22 16:41-0500\n"
 "Last-Translator: German <plone-i18n@lists.sf.net>\n"
 "Language: de\n"
@@ -14,6 +14,7 @@ msgstr ""
 "Language-Code: de\n"
 "Language-Name: Deutsch\n"
 "Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
 "X-Is-Fallback-For: de-at de-li de-lu de-ch de-de\n"
 
 #. Default: "Action"
@@ -25,7 +26,7 @@ msgstr "Aktion"
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
 msgid "Add (object list)"
-msgstr ""
+msgstr "Hinzufügen"
 
 #. Default: "Add action"
 #: components/Widgets/schema/headerActionsSchema
@@ -50,12 +51,12 @@ msgstr "Logo hinzufügen"
 #. Default: "Advanced facet?"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Advanced facet?"
-msgstr ""
+msgstr "Erweiterte Facette?"
 
 #. Default: "Advanced facets are initially hidden and displayed on demand"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Advanced facets are initially hidden and displayed on demand"
-msgstr ""
+msgstr "Erweiterte Facetten sind zunächst verborgen und werden auf Anforderung angezeigt."
 
 #. Default: "Alt text"
 #: components/Widgets/schema/footerLogosSchema
@@ -66,7 +67,7 @@ msgstr "ALT-Text"
 #. Default: "Ascending"
 #: components/Blocks/EventCalendar/Search/components/SortOn
 msgid "Ascending"
-msgstr ""
+msgstr "Aufsteigend"
 
 #. Default: "Back"
 #: components/MobileNavigation/MobileNavigation
@@ -81,7 +82,7 @@ msgstr "Hintergrundfarbe"
 #. Default: "Base search query"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Base search query"
-msgstr ""
+msgstr "Basis Suchfilter"
 
 #. Default: "Block Width"
 #: components/Blocks/Image/schema
@@ -96,7 +97,7 @@ msgstr "Brotkrumen"
 #. Default: "Cancel search"
 #: components/Blocks/EventCalendar/Search/components/SearchInput
 msgid "Cancel search"
-msgstr ""
+msgstr "Suche abbrechen"
 
 #. Default: "Close menu"
 #: components/MobileNavigation/MobileNavigation
@@ -108,7 +109,7 @@ msgstr "Menü schließen"
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
 msgid "Collapse item"
-msgstr ""
+msgstr "Element einklappen"
 
 #. Default: "The color contrast ratio {contrastRatio}:1 might not be accessible for all. WCAG Level: {complianceLevel}"
 #: components/Widgets/ColorContrastChecker
@@ -123,7 +124,7 @@ msgstr "Kontakt"
 #. Default: "Controls"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Controls"
-msgstr ""
+msgstr "Einstellungen"
 
 #. Default: "Copyright"
 #: components/Footer/slots/Copyright
@@ -133,7 +134,7 @@ msgstr "Urheberrechte"
 #. Default: "Descending"
 #: components/Blocks/EventCalendar/Search/components/SortOn
 msgid "Descending"
-msgstr ""
+msgstr "Absteigend"
 
 #. Default: "Description"
 #: components/Blocks/Image/schema
@@ -155,13 +156,13 @@ msgstr "Datei herunterladen"
 #. Default: "E-mail"
 #: components/Summary/PersonSummary
 msgid "E-mail"
-msgstr ""
+msgstr "E-mail"
 
 #. Default: "Empty object list"
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
 msgid "Empty object list"
-msgstr ""
+msgstr "Leere Liste von Elementen"
 
 #. Default: "End"
 #: components/Blocks/EventMetadata/View
@@ -171,22 +172,22 @@ msgstr "Ende"
 #. Default: "Facet"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Facet"
-msgstr ""
+msgstr "Facette"
 
 #. Default: "Facet widget"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Facet widget"
-msgstr ""
+msgstr "Facetten-Widget"
 
 #. Default: "Facets"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Facets"
-msgstr ""
+msgstr "Facetten"
 
 #. Default: "Field"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Field"
-msgstr ""
+msgstr "Feld"
 
 #. Default: "Follow us:"
 #: components/Footer/slots/FollowUsLogoAndLinks
@@ -206,12 +207,12 @@ msgstr "Überschrift"
 #. Default: "Hidden facets will still filter the results if proper parameters are passed in URLs"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Hidden facets will still filter the results if proper parameters are passed in URLs"
-msgstr ""
+msgstr "Versteckte Facetten können die Ergebnisse weiterhin filtern, wenn die entsprechenden Parameter in der URL angehängt werden"
 
 #. Default: "Hide facet?"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Hide facet?"
-msgstr ""
+msgstr "Facette verstecken"
 
 #. Default: "Home"
 #: components/Breadcrumbs/Breadcrumbs
@@ -228,7 +229,7 @@ msgstr "ICS-Download"
 #. Default: "Icon"
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Icon"
-msgstr ""
+msgstr "Icon"
 
 #. Default: "Image"
 #: components/Blocks/Image/ImageSidebar
@@ -239,22 +240,22 @@ msgstr "Bild"
 #: components/Theme/RenderBlocks
 #: components/Theme/RenderBlocksV2
 msgid "Invalid Block"
-msgstr ""
+msgstr "Ungültiger Block — Wird beim Speichern entfernt."
 
 #. Default: "Item"
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Item"
-msgstr ""
+msgstr "Element"
 
 #. Default: "Label"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Label"
-msgstr ""
+msgstr "Bezeichnung"
 
 #. Default: "Link"
 #: components/Widgets/schema/footerLinksSchema
 msgid "Link"
-msgstr ""
+msgstr "Link"
 
 #. Default: "List"
 #: index
@@ -284,7 +285,7 @@ msgstr "Ausloggen"
 #. Default: "Logo"
 #: components/Widgets/schema/footerLogosSchema
 msgid "Logo"
-msgstr ""
+msgstr "Logo"
 
 #. Default: "Logo image"
 #: components/Widgets/schema/footerLogosSchema
@@ -299,17 +300,17 @@ msgstr "Logo von"
 #. Default: "Move down"
 #: components/Blocks/Block/Edit
 msgid "Move down"
-msgstr ""
+msgstr "Nach unten bewegen"
 
 #. Default: "Move up"
 #: components/Blocks/Block/Edit
 msgid "Move up"
-msgstr ""
+msgstr "Nach oben bewegen"
 
 #. Default: "Multiple choices?"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Multiple choices?"
-msgstr ""
+msgstr "Mehrfachauswahl?"
 
 #. Default: "Next Page"
 #: components/Blocks/Listing/ListingBody
@@ -329,7 +330,7 @@ msgstr "Keine Elemente im Ordner gefunden."
 #. Default: "No selection"
 #: components/Blocks/EventCalendar/Search/components/SortOn
 msgid "No selection"
-msgstr ""
+msgstr "Keine Auswahl"
 
 #. Default: "Open configuration"
 #: components/Widgets/ModalJSONEditor
@@ -342,7 +343,7 @@ msgstr "Konfiguration öffnen"
 #: components/Widgets/schema/headerActionsSchema
 #: components/Widgets/schema/iconLinkListSchema
 msgid "Open in a new tab"
-msgstr ""
+msgstr "In neuem Browser-Tab öffnen"
 
 #. Default: "Open menu"
 #: components/MobileNavigation/MobileNavigation
@@ -379,12 +380,12 @@ msgstr "Bitte wählen sie einen bestehenden Inhalt als Quelle für dieses Elemen
 #. Default: "Plone Foundation"
 #: components/Footer/slots/Copyright
 msgid "Plone Foundation"
-msgstr ""
+msgstr "Plone Foundation"
 
 #. Default: "Plone{reg} Open Source CMS/WCM"
 #: components/Footer/slots/Copyright
 msgid "Plone{reg} Open Source CMS/WCM"
-msgstr ""
+msgstr "Plone{reg} Open Source CMS/WCM"
 
 #. Default: "Press"
 #: index
@@ -405,7 +406,7 @@ msgstr "Registrieren"
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
 msgid "Remove item"
-msgstr ""
+msgstr "Element entfernen"
 
 #. Default: "Result"
 #: components/Blocks/Listing/ListingBody
@@ -437,12 +438,12 @@ msgstr "Seite durchsuchen"
 #. Default: "Search block"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Search block"
-msgstr ""
+msgstr "Such-Block"
 
 #. Default: "Search button label"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Search button label"
-msgstr ""
+msgstr "Label Such-Button"
 
 #. Default: "Search for People, E-Mail Address, Phone Number, ..."
 #: components/SearchWidget/IntranetSearchWidget
@@ -452,7 +453,7 @@ msgstr "Suche nach Personen, E-Mail-Adresse, Telefonnummer, ..."
 #. Default: "Search input label"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Search input label"
-msgstr ""
+msgstr "Label Suchfeld"
 
 #. Default: "Search results"
 #: components/Blocks/Search/components/SearchDetails
@@ -467,33 +468,33 @@ msgstr "Gesucht für"
 #. Default: "Section title"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Section title"
-msgstr ""
+msgstr "Abschnittstitel"
 
 #. Default: "Show item"
 #: components/Widgets/BlocksObject
 #: components/Widgets/ObjectList
 msgid "Show item"
-msgstr ""
+msgstr "Element anzeigen"
 
 #. Default: "Show search button?"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Show search button?"
-msgstr ""
+msgstr "Such-Button anzeigen?"
 
 #. Default: "Show search input?"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Show search input?"
-msgstr ""
+msgstr "Such-Eingabe anzeigen?"
 
 #. Default: "Show sorting?"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Show sorting?"
-msgstr ""
+msgstr "Sortieroption anzeigen?"
 
 #. Default: "Show total results"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Show total results"
-msgstr ""
+msgstr "Anzahl an Ergebnissen anzeigen"
 
 #. Default: "Simple"
 #: index
@@ -503,7 +504,7 @@ msgstr "Einfach"
 #. Default: "Site Setup"
 #: components/Breadcrumbs/Breadcrumbs
 msgid "Site Setup"
-msgstr ""
+msgstr "Systemeinstellungen"
 
 #. Default: "Sitemap"
 #: index
@@ -513,17 +514,17 @@ msgstr "Übersicht"
 #. Default: "Sort on"
 #: components/Blocks/EventCalendar/Search/components/SortOn
 msgid "Sort on"
-msgstr ""
+msgstr "Sortieren nach"
 
 #. Default: "Sort on options"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "Sort on options"
-msgstr ""
+msgstr "Sortieroptionen"
 
 #. Default: "Sorted on"
 #: components/Blocks/EventCalendar/Search/components/SortOn
 msgid "Sorted on"
-msgstr ""
+msgstr "Sortiert nach"
 
 #. Default: "Sorting"
 #: components/Blocks/Search/TopSideFacets
@@ -533,7 +534,7 @@ msgstr "Sortierung"
 #. Default: "Sponsored by:"
 #: components/Footer/slots/FollowUsLogoAndLinks
 msgid "Sponsored by:"
-msgstr ""
+msgstr "Gesponsert von:"
 
 #. Default: "Start"
 #: components/Blocks/EventMetadata/View
@@ -556,12 +557,12 @@ msgstr "Ziel"
 #. Default: "The button presence disables the live search, the query is issued when you press ENTER"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "The button presence disables the live search, the query is issued when you press ENTER"
-msgstr ""
+msgstr "Der Button deaktiviert die Live-Suche, die Suchanfrage wird abgeschickt wenn die ENTER-Taste gedrückt wird."
 
 #. Default: "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
 #: components/Footer/slots/Copyright
 msgid "The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
-msgstr ""
+msgstr "{plonecms} {copyright} 2000-{current_year} {plonefoundation} und Freunde."
 
 #. Default: "Title"
 #: components/Blocks/Image/schema
@@ -577,7 +578,7 @@ msgstr "Titel"
 #: components/Theme/RenderBlocks
 #: components/Theme/RenderBlocksV2
 msgid "Unknown Block"
-msgstr ""
+msgstr "Unbekannter Block {block}"
 
 #. Default: "Website"
 #: components/Blocks/EventMetadata/View
@@ -587,37 +588,37 @@ msgstr "Webseite"
 #. Default: "Available views"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "availableViews"
-msgstr ""
+msgstr "Verfügbare Ansichten"
 
 #. Default: "The {type} block with the id {block} has encountered an error.{lineBreak}You can try to undo your changes (via the undo toolbar or pressing {shortcut}), or try to delete the block and recreate it again."
 #: components/Blocks/Block/ErrorBoundaryMessage
 msgid "blockErrorBoundaryDescription"
-msgstr ""
+msgstr "Der {type}-Block mit der ID {block} hat einen Fehler verursacht.{lineBreak}Sie können versuchen, Ihre Änderungen rückgängig zu machen (über die Rückgängig-Werkzeugleiste oder durch Drücken von {shortcut}), oder den Block löschen und neu erstellen."
 
 #. Default: "Block error:"
 #: components/Blocks/Block/ErrorBoundaryMessage
 msgid "blockErrorBoundaryTitle"
-msgstr ""
+msgstr "Block-Fehler:"
 
 #. Default: "The {type} block with the id {block} errored and cannot be displayed.{lineBreak}Please contact the site administrator for further assistance."
 #: components/Blocks/Block/ErrorBoundaryMessage
 msgid "blockErrorBoundaryViewDescription"
-msgstr ""
+msgstr "Der {type}-Block mit der ID {block} ist fehlerhaft und kann nicht angezeigt werden.{lineBreak}Bitte wenden Sie sich an den Website-Administrator für weitere Unterstützung."
 
 #. Default: "Delete"
 #: components/Blocks/Block/Edit
 msgid "delete"
-msgstr ""
+msgstr "Löschen"
 
 #. Default: "delete {type} block"
 #: components/Blocks/Block/EditBlockWrapper
 msgid "delete_block"
-msgstr ""
+msgstr "{type}-Block löschen"
 
 #. Default: "drag {type} block"
 #: components/Blocks/Block/EditBlockWrapper
 msgid "drag_block"
-msgstr ""
+msgstr "{type}-Block ziehen"
 
 #. Default: "Clear image"
 #: components/Blocks/Image/ImageSidebar
@@ -642,4 +643,4 @@ msgstr "von"
 #. Default: "Views"
 #: components/Blocks/EventCalendar/Search/schema
 msgid "views"
-msgstr ""
+msgstr "Ansichten"

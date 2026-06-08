@@ -17,25 +17,39 @@ export const ImageBlockDataAdapter = ({
     [id]: value,
   };
 
-  if (id === 'align' && !(value === 'left' || value === 'right')) {
-    if (data.size !== 'l') {
-      dataSaved = {
-        ...dataSaved,
-        size: 'l',
-        styles: {
-          ...dataSaved.styles,
-          'size:noprefix': SIZEMAP['l'],
-        },
-      };
-    }
-  }
+  const align = dataSaved.styles?.['align:noprefix'];
+  const isFloating = align === 'left' || align === 'right';
+  const isLarge =
+    dataSaved.size === 'l' ||
+    dataSaved.styles?.['size:noprefix'] === 'var(--size-large)';
 
-  if (id === 'size') {
+  if (!isFloating) {
+    dataSaved = {
+      ...dataSaved,
+      size: 'l',
+      styles: {
+        ...dataSaved.styles,
+        'size:noprefix': SIZEMAP['l'],
+      },
+    };
+  }
+  if (!isLarge && isFloating) {
     dataSaved = {
       ...dataSaved,
       styles: {
         ...dataSaved.styles,
-        'size:noprefix': SIZEMAP[value],
+        'size:noprefix': SIZEMAP[dataSaved.size] || 'large',
+        'blockWidth:noprefix': 'narrow',
+      },
+    };
+  }
+  if (isLarge && isFloating) {
+    dataSaved = {
+      ...dataSaved,
+      styles: {
+        ...dataSaved.styles,
+        'size:noprefix': SIZEMAP['l'],
+        'blockWidth:noprefix': 'default',
       },
     };
   }

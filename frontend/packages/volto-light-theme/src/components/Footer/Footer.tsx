@@ -20,9 +20,9 @@ const Footer = () => {
 
   return (
     <footer id="footer">
-      <div className="pre-footer">
+      <Container className="pre-footer">
         <SlotRenderer name="preFooter" content={content} />
-      </div>
+      </Container>
       <SlotRenderer name="footer" content={content} />
       <Container className="post-footer">
         <SlotRenderer name="postFooter" content={content} />
