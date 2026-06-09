@@ -79,6 +79,30 @@
       }
     }
   }
+
+  // Common styles for link icon overlay
+  .card-link-icon {
+    position: absolute;
+    z-index: 10;
+    top: 0px;
+    right: 0px;
+    filter: drop-shadow(3px 3px 12px rgba(0, 0, 0, 0.5));
+    opacity: 0;
+    transition: opacity 0.2s ease;
+
+    button {
+      border: none;
+      border-radius: 50%;
+      background: rgba(236, 235, 235, 0.75);
+      cursor: pointer;
+    }
+  }
+
+  &:hover .card-link-icon,
+  &:focus-within .card-link-icon {
+    opacity: 1;
+  }
+
   // Additional links within the card
   a:not(.card-primary-link) {
     position: relative;
@@ -163,6 +187,12 @@
       padding: 0;
     }
   }
+}
+
+// Hides the link icon in edit and add page
+#page-edit .card-link-icon,
+#page-add .card-link-icon {
+  display: none;
 }
 
 // Cards in columns
