@@ -32,6 +32,11 @@ figure {
   &.has--block-alignment--left,
   &.has--block-alignment--right {
     margin-bottom: 0 !important;
+    
+    &:has(+ h2) {
+      margin-top: $spacing-xlarge;
+    }
+    
     figure {
       margin-top: 0 !important;
       margin-bottom: $spacing-small;
