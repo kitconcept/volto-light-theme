@@ -1,7 +1,6 @@
 import { useSelector } from 'react-redux';
 import { useLocation, useHistory } from 'react-router-dom';
-import type { ObjectBrowserItem } from '@plone/types';
-import type { GetSiteResponse } from '@plone/types';
+import type { ObjectBrowserItem, GetSiteResponse } from '@plone/types';
 import linkSVG from '@plone/volto/icons/link.svg';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import { Button } from '@plone/components';
