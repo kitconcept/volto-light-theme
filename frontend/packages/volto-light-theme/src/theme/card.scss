@@ -99,7 +99,7 @@
   }
 
   &:hover .card-link-icon,
-  &:focus .card-link-icon {
+  &:focus-within .card-link-icon {
     opacity: 1;
   }
 
