@@ -131,25 +131,22 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
       margin-bottom: 0;
       container-name: slider;
       container-type: inline-size;
-      @media only screen and (max-width: $computer-width) {
-        margin-bottom: $spacing-medium;
-      }
     }
     .teaser-item {
       display: grid;
       min-width: 0;
       align-items: center;
-      padding: 0 clamp(20px, 8vw, 130px);
+      padding: 0 130px;
       aspect-ratio: 2/1;
       background-color: var(--theme-color);
-      gap: clamp(30px, 4vw, 60px);
+      gap: clamp(30px, 4vw, 57px);
       grid-template-areas: 'images content';
       grid-template-rows: auto;
+
       @media only screen and (max-width: $computer-width) {
-        display: flex;
+        display: inline-block;
         padding: 0 0;
         aspect-ratio: auto;
-        gap: 0;
       }
 
       &.has--slider--flagAlign--right {
@@ -171,10 +168,10 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         #page-edit &,
         #page-add & {
           &.has--slider--flagAlign--right {
-            grid-template-columns: minmax(0, 60%) minmax(0, 40%) !important;
+            grid-template-columns: minmax(0, 60%) minmax(0, 40%);
           }
           &.has--slider--flagAlign--left {
-            grid-template-columns: minmax(0, 40%) minmax(0, 60%) !important;
+            grid-template-columns: minmax(0, 40%) minmax(0, 60%);
           }
         }
       }
