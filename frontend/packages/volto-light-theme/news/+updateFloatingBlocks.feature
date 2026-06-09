@@ -1,1 +1,0 @@
-Unify css and alignment/width data handling for floating image, map and video blocks. @TimoBroeskamp @danalvrz

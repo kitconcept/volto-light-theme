@@ -1,1 +1,0 @@
-Update Highlight block version to 5.x in recommended list. @danalvrz

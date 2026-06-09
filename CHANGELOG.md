@@ -1,6 +1,68 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 8.0.0a29 (2026-06-09)
+
+### Backend
+
+
+#### Internal:
+
+- Fix Python version used in CI. @davisagli 
+- Upgrade Plone 6.2.0 final. @sneridagh 
+
+
+
+### Frontend
+
+#### Breaking
+
+- Footer: Removed the "Follow us" literal above the social icons. @iRohitSingh [#838](https://github.com/kitconcept/volto-light-theme/pull/838)
+
+#### Feature
+
+- Provide proper image sizes to the `Image` component. @davisagli @sneridagh [#664](https://github.com/kitconcept/volto-light-theme/pull/664)
+- Translate the package to the languages provided by Polyglot project @erral 
+- Unify css and alignment/width data handling for floating image, map and video blocks. @TimoBroeskamp @danalvrz 
+- Update Highlight block version to 5.x. @danalvrz 
+- Update de translation from Polyglot @erral 
+- Update es translation from Polyglot @erral 
+- Update eu translation from Polyglot @erral 
+
+#### Bugfix
+
+- Fix Footer aligned with content @iRohitSingh [#838](https://github.com/kitconcept/volto-light-theme/pull/838)
+- Upgrade playwright and latest Volto 19.1.0 @sneridagh [#873](https://github.com/kitconcept/volto-light-theme/pull/873)
+- Fix last item of a listing with no pagination padding is broken @iRohitSingh [#874](https://github.com/kitconcept/volto-light-theme/pull/874)
+- Remove underline regression from Slider block Simple variation. @danalvrz 
+
+#### Internal
+
+- Upgrade Volto 19 final. @sneridagh 
+
+
+
+### Project
+
+
+#### Feature
+
+- Update Highlight block version to 5.x in recommended list. @danalvrz 
+
+
+#### Internal
+
+- Update GH actions in CI. @sneridagh 
+- Update lock file. @danalvrz 
+- Update setup-uv action for CI. @davisagli 
+
+
+#### Documentation
+
+- Add a "Color system" conceptual guide and expand the colors reference. @danalvrz 
+
+
+
 ## 8.0.0a28 (2026-05-15)
 
 ### Backend
