@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import isEmpty from 'lodash/isEmpty';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { NavLink } from 'react-router-dom';
@@ -116,22 +116,25 @@ const Navigation = ({ pathname }: NavigationProps) => {
     return clickedVerticalScrollbar || clickedHorizontalScrollbar;
   };
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (navigation.current && doesNodeContainClick(navigation.current, event))
+  const handleClickOutside = useCallback(
+    (e: MouseEvent) => {
+      const target = e.target;
+      if (
+        (navigation.current && doesNodeContainClick(navigation.current, e)) ||
+        (target instanceof Element && target.parentElement === null)
+      )
         return;
-      // check if scrollbar is clicked
-      if (doesScrollbarContainClick(event)) return;
-
       closeMenu();
-    };
+    },
+    [closeMenu],
+  );
 
+  useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside, false);
-
     return () => {
       document.removeEventListener('mousedown', handleClickOutside, false);
     };
-  }, []);
+  }, [handleClickOutside]);
 
   useEffect(() => {
     if (!hasApiExpander('navigation', getBaseUrl(pathname))) {
