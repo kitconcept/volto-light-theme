@@ -98,23 +98,10 @@ const Navigation = ({ pathname }: NavigationProps) => {
     shallowEqual,
   );
 
-  const closeMenu = () => {
+  const closeMenu = useCallback(() => {
     setDesktopMenuOpen(null);
     setCurrentOpenIndex(null);
-  };
-
-  // this function doesn't close the navigation when clicking the scrollbar
-  const doesScrollbarContainClick = (event: MouseEvent): boolean => {
-    const clickedVerticalScrollbar =
-      event.clientX >= document.documentElement.clientWidth &&
-      event.clientX <= window.innerWidth;
-
-    const clickedHorizontalScrollbar =
-      event.clientY >= document.documentElement.clientHeight &&
-      event.clientY <= window.innerHeight;
-
-    return clickedVerticalScrollbar || clickedHorizontalScrollbar;
-  };
+  }, [setDesktopMenuOpen, setCurrentOpenIndex]);
 
   const handleClickOutside = useCallback(
     (e: MouseEvent) => {
@@ -167,6 +154,7 @@ const Navigation = ({ pathname }: NavigationProps) => {
     return () => {
       window.removeEventListener('keydown', handleEsc);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
