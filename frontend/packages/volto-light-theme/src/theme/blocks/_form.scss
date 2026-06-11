@@ -1,0 +1,350 @@
+%form-outlined-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 20px;
+  border: 1px solid var(--theme-foreground-color);
+  border-radius: 0;
+  margin: 0;
+  background-color: var(--theme-color);
+  color: var(--theme-foreground-color);
+
+  @include body-text-bold();
+
+  &:hover,
+  &:active,
+  &:focus {
+    border-color: var(--theme-foreground-color);
+    background-color: var(--theme-foreground-color);
+    color: var(--theme-color);
+  }
+}
+
+.block.schemaForm {
+  --form-error-foreground: #cc0000;
+  --form-error-background: #f2cecd;
+
+  & > h2,
+  & > p,
+  & > .formDescription,
+  & > .container {
+    @include default-container-width();
+    @include adjustMarginsToContainer($default-container-width);
+  }
+
+  h2 {
+    @include block-title();
+
+    margin-bottom: $spacing-small;
+  }
+
+  .formDescription {
+    margin-bottom: $spacing-medium;
+  }
+
+  form.ui.form {
+    fieldset {
+      padding: 0;
+      border: 0;
+      margin: 0;
+    }
+
+    .ui.segments,
+    .ui.raised.segments,
+    .ui.segment {
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      margin: 0;
+      background: none;
+      box-shadow: none;
+
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+
+    .field {
+      padding-bottom: 0 !important;
+      margin-bottom: $spacing-small;
+
+      .ui.grid {
+        display: block;
+        margin: 0;
+
+        > .row {
+          display: block;
+          padding: 0;
+        }
+
+        > .row > .column {
+          width: 100% !important;
+          padding: 0;
+        }
+      }
+
+      .wrapper > label {
+        display: block;
+        margin-bottom: 0;
+
+        @include add(size, xs);
+        @include add(height, s);
+        @include add(weight, bold);
+
+        color: var(--theme-low-contrast-foreground-color);
+        opacity: 0.9;
+      }
+
+      &:focus-within .wrapper > label {
+        color: var(--theme-foreground-color);
+        opacity: 1;
+      }
+
+      &.required .wrapper > label::after {
+        margin-left: 2px;
+        background: none;
+        content: '*';
+      }
+
+      &.required .wrapper .ui.checkbox::after {
+        margin-left: 2px;
+        background: none;
+        content: '*';
+      }
+
+      .help {
+        border-bottom: none;
+        margin: 0;
+
+        color: var(--theme-low-contrast-foreground-color);
+
+        @include add(size, xs);
+        @include add(height, m);
+      }
+
+      &.error {
+        .wrapper > label,
+        .help {
+          color: var(--form-error-foreground);
+        }
+
+        .ui.input > input,
+        input[type='text'],
+        input[type='email'],
+        input[type='number'],
+        input[type='password'],
+        textarea,
+        .react-select__control,
+        .DateInput_input,
+        .rc-time-picker-input {
+          background: var(--form-error-background);
+          color: var(--form-error-foreground);
+
+          &::placeholder {
+            color: var(--form-error-foreground);
+          }
+        }
+      }
+
+      &.textarea .wrapper {
+        margin-top: 0;
+      }
+    }
+
+    .ui.input {
+      width: 100%;
+    }
+
+    .ui.input > input,
+    input[type='text'],
+    input[type='email'],
+    input[type='number'],
+    input[type='password'],
+    textarea,
+    .react-select__control,
+    .DateInput_input,
+    .rc-time-picker-input {
+      width: 100%;
+      padding: $spacing-small;
+      border: 0;
+      border-radius: 0;
+      background: var(--theme-high-contrast-color);
+      box-shadow: none;
+      color: var(--theme-foreground-color);
+
+      @include body-text();
+
+      &::placeholder {
+        color: var(--theme-low-contrast-foreground-color);
+        opacity: 0.6;
+      }
+
+      &:focus,
+      &:focus-visible {
+        outline: 2px solid var(--theme-foreground-color);
+        outline-offset: -2px;
+      }
+    }
+
+    textarea {
+      min-height: 180px;
+      margin-top: 5px;
+      resize: vertical;
+    }
+
+    .react-select__control {
+      display: flex;
+      min-height: auto;
+      padding: $spacing-small;
+
+      .react-select__value-container {
+        padding: 0;
+      }
+
+      .react-select__single-value {
+        color: var(--theme-foreground-color);
+      }
+
+      .react-select__placeholder {
+        color: var(--theme-low-contrast-foreground-color);
+        opacity: 0.6;
+      }
+
+      .react-select__indicator-separator {
+        display: none;
+      }
+
+      .react-select__indicator svg path {
+        fill: var(--theme-foreground-color);
+      }
+    }
+
+    .react-select__menu {
+      border-radius: 0;
+      margin: 0;
+      background: var(--theme-high-contrast-color);
+      box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.25);
+    }
+
+    .react-select__menu-list {
+      padding: 0;
+    }
+
+    .react-select__option {
+      padding: 12px $spacing-small;
+      background: transparent;
+      color: var(--theme-foreground-color);
+      cursor: pointer;
+
+      @include body-text();
+
+      &.react-select__option--is-focused,
+      &.react-select__option--is-selected {
+        background: var(--theme-foreground-color);
+        color: var(--theme-high-contrast-color);
+      }
+    }
+
+    .date-time-widget-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: $spacing-small;
+
+      .DateInput {
+        width: 140px;
+      }
+      .time-input input {
+        width: 90px !important;
+      }
+    }
+
+    .file-widget-dropzone {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: $spacing-small;
+      cursor: pointer;
+      gap: $spacing-small;
+
+      .dropzone-placeholder {
+        width: 100%;
+        padding: $spacing-medium;
+        margin-top: 0;
+        background: var(--theme-high-contrast-color);
+      }
+
+      .dropzone-text {
+        margin: 0;
+
+        @include body-text();
+
+        color: var(--theme-low-contrast-foreground-color);
+      }
+
+      .label-file-widget-input {
+        @extend %form-outlined-button;
+      }
+    }
+
+    .field.help .file-widget-dropzone {
+      margin-bottom: 0;
+    }
+
+    .ui.segment.actions {
+      display: flex;
+      padding: 0;
+      margin-top: $spacing-xlarge;
+      gap: $spacing-small;
+
+      &::after {
+        display: none;
+      }
+
+      button {
+        @extend %form-outlined-button;
+
+        float: none !important;
+
+        &:not(.primary) {
+          border-color: var(--theme-low-contrast-foreground-color);
+          color: var(--theme-low-contrast-foreground-color);
+
+          &:hover,
+          &:active,
+          &:focus {
+            border-color: var(--theme-low-contrast-foreground-color);
+            background-color: var(--theme-low-contrast-foreground-color);
+            color: var(--theme-color);
+          }
+        }
+      }
+    }
+  }
+
+  .inline.field .wrapper {
+    min-height: auto;
+    border-bottom: none;
+  }
+
+  .field-file-name:empty {
+    display: none;
+  }
+
+  .negative.attached.message {
+    flex-direction: row;
+  }
+}
+
+#page-edit,
+#page-add {
+  .block.schemaForm {
+    .field {
+      .toolbar {
+        display: flex;
+        align-items: flex-start;
+        margin-top: 15px;
+      }
+    }
+  }
+}
