@@ -450,6 +450,10 @@
             border-color: var(--theme-foreground-color);
             background-color: var(--theme-foreground-color);
             color: var(--theme-color);
+
+            &::after {
+              background-color: var(--theme-color);
+            }
           }
         }
       }
