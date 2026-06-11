@@ -1,6 +1,6 @@
 // SemanticUI-free pre-@plone/components
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import isEmpty from 'lodash/isEmpty';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
@@ -50,34 +50,6 @@ const Navigation = ({ pathname }) => {
   const token = useSelector((state) => state.userSession.token, shallowEqual);
   const items = useSelector((state) => state.navigation.items, shallowEqual);
 
-  // this function doesn't close the navigation when clicking the scrollbar
-  const doesScrollbarContainClick = (e) => {
-    const clickedVerticalScrollbar =
-      e.clientX >= document.documentElement.clientWidth &&
-      e.clientX <= window.innerWidth;
-
-    const clickedHorizontalScrollbar =
-      e.clientY >= document.documentElement.clientHeight &&
-      e.clientY <= window.innerHeight;
-
-    return clickedVerticalScrollbar || clickedHorizontalScrollbar;
-  };
-
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (navigation.current && doesNodeContainClick(navigation.current, e))
-        return;
-      if (doesScrollbarContainClick(e)) return;
-      closeMenu();
-    };
-
-    document.addEventListener('mousedown', handleClickOutside, false);
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside, false);
-    };
-  }, []);
-
   useEffect(() => {
     if (!hasApiExpander('navigation', getBaseUrl(pathname))) {
       dispatch(getNavigation(getBaseUrl(pathname), config.settings.navDepth));
@@ -98,10 +70,29 @@ const Navigation = ({ pathname }) => {
     }
   };
 
-  const closeMenu = (index) => {
+  const closeMenu = useCallback(() => {
     setDesktopMenuOpen(null);
     setCurrentOpenIndex(null);
-  };
+  }, []);
+
+  const handleClickOutside = useCallback(
+    (e) => {
+      if (
+        (navigation.current && doesNodeContainClick(navigation.current, e)) ||
+        e.target.parentElement === null
+      )
+        return;
+      closeMenu();
+    },
+    [closeMenu],
+  );
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside, false);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside, false);
+    };
+  }, [handleClickOutside]);
 
   useEffect(() => {
     const handleEsc = (event) => {
