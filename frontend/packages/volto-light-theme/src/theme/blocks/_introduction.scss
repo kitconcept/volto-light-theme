@@ -26,16 +26,6 @@
     margin: 0;
     @include introduction();
   }
-  .block-container sup,
-  .block-container sub,
-  .slate-editor sup,
-  .slate-editor sub {
-    font-size: 75%;
-    line-height: 0;
-    a {
-      font: inherit;
-    }
-  }
 
   .block-container p:empty {
     margin-bottom: $block-vertical-space;
