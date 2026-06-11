@@ -105,6 +105,7 @@ const Navigation = ({ pathname }) => {
     return () => {
       window.removeEventListener('keydown', handleEsc);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
