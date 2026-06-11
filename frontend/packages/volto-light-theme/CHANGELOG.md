@@ -8,6 +8,19 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0-alpha.30 (2026-06-11)
+
+### Feature
+
+- Add basic VLT styles for Form Block. @danalvrz 
+- Add link icon to Card component @Tishasoumya-02 
+
+### Bugfix
+
+- refactor closing logic for fatnav to ignore all clicks on scrollbar @jackahl [#834](https://github.com/kitconcept/volto-light-theme/pull/834)
+- Fix icon in search @iRohitSingh [#879](https://github.com/kitconcept/volto-light-theme/pull/879)
+- Fix top margin for floated images when following an H2. @danlavrz 
+
 ## 8.0.0-alpha.29 (2026-06-09)
 
 ### Breaking
