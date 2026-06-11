@@ -31,6 +31,12 @@ BACKEND_FOLDER=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 PLONE_VERSION=$(shell cat $(BACKEND_FOLDER)/version.txt)
 EXAMPLE_CONTENT_FOLDER=${BACKEND_FOLDER}/src/kitconcept/voltolighttheme/setuphandlers/examplecontent
 
+ifdef CI
+UV_VENV_ARGS :=
+else
+UV_VENV_ARGS := --python=$(PYTHON_VERSION)
+endif
+
 GIT_FOLDER=$(BACKEND_FOLDER)/.git
 VENV_FOLDER=$(BACKEND_FOLDER)/.venv
 export VIRTUAL_ENV=$(VENV_FOLDER)
@@ -55,7 +61,7 @@ requirements-mxdev.txt: mx.ini ## Generate constraints file
 
 $(VENV_FOLDER): requirements-mxdev.txt ## Install dependencies
 	@echo "$(GREEN)==> Install environment$(RESET)"
-	@uv venv --python=3.12 $(VENV_FOLDER)
+	@if [[ -d "$(VENV_FOLDER)" ]]; then echo "$(YELLOW)==> Environment already exists at $(VENV_FOLDER)$(RESET)"; else uv venv $(UV_VENV_ARGS) $(VENV_FOLDER); fi
 	@uv pip install -r requirements-mxdev.txt
 
 .PHONY: sync

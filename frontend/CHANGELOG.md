@@ -8,6 +8,33 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0-alpha.29 (2026-06-09)
+
+### Breaking
+
+- Footer: Removed the "Follow us" literal above the social icons. @iRohitSingh [#838](https://github.com/kitconcept/volto-light-theme/pull/838)
+
+### Feature
+
+- Provide proper image sizes to the `Image` component. @davisagli @sneridagh [#664](https://github.com/kitconcept/volto-light-theme/pull/664)
+- Translate the package to the languages provided by Polyglot project @erral 
+- Unify css and alignment/width data handling for floating image, map and video blocks. @TimoBroeskamp @danalvrz 
+- Update Highlight block version to 5.x. @danalvrz 
+- Update de translation from Polyglot @erral 
+- Update es translation from Polyglot @erral 
+- Update eu translation from Polyglot @erral 
+
+### Bugfix
+
+- Fix Footer aligned with content @iRohitSingh [#838](https://github.com/kitconcept/volto-light-theme/pull/838)
+- Upgrade playwright and latest Volto 19.1.0 @sneridagh [#873](https://github.com/kitconcept/volto-light-theme/pull/873)
+- Fix last item of a listing with no pagination padding is broken @iRohitSingh [#874](https://github.com/kitconcept/volto-light-theme/pull/874)
+- Remove underline regression from Slider block Simple variation. @danalvrz 
+
+### Internal
+
+- Upgrade Volto 19 final. @sneridagh 
+
 ## 8.0.0-alpha.28 (2026-05-15)
 
 ### Bugfix

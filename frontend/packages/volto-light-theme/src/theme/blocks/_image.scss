@@ -4,145 +4,85 @@ figure {
   margin: 0;
 }
 
-.block.image.has--block-width--full figcaption {
-  padding-right: 25px;
-  padding-left: 25px;
-}
-
-.block.image {
+.block.image,
+.block-editor-image {
+  --align-left: left;
+  --align-center: none;
+  --align-right: right;
   margin: 0;
+  margin-top: $spacing-large;
 
-  &.align.left,
-  &.align.right {
-    // This is to equal the heading margin in case of the
-    // floating image + heading use case
-    // It matches the mocks for standalone images anyways
-    margin-top: $spacing-large;
-    margin-bottom: 0 !important;
+  &.has--block-width--full {
+    figcaption {
+      padding-right: 25px;
+      padding-left: 25px;
+    }
   }
 
   &.has--block-width--default,
+  &.has--block-width--layout,
   &.has--block-width--narrow,
   &.has--block-width--full {
-    figure:not(.left, .right) {
+    figure {
       margin-top: $spacing-large;
       margin-bottom: $spacing-large;
+    }
+  }
+
+  &.has--block-alignment--left,
+  &.has--block-alignment--right {
+    margin-bottom: 0 !important;
+
+    &:has(+ h2) {
+      margin-top: $spacing-xlarge;
+    }
+
+    figure {
+      margin-top: 0 !important;
+      margin-bottom: $spacing-small;
+      @container (max-width: #{$largest-mobile-screen}) {
+        max-width: unset !important;
+        margin-bottom: $spacing-large;
+      }
+
+      img {
+        margin: 0 !important;
+        float: none;
+      }
+    }
+    &.small {
+      figure {
+        max-width: 220px;
+      }
+    }
+
+    &.medium {
+      figure {
+        max-width: 300px;
+      }
+    }
+  }
+
+  &.has--block-alignment--left {
+    figure {
+      @include floated-figure('left');
+    }
+  }
+
+  &.has--block-alignment--right {
+    figure {
+      @include floated-figure('right');
     }
   }
 
   figure {
+    width: 100%;
     img {
       width: 100% !important;
+      max-width: 100% !important;
       height: auto;
       aspect-ratio: var(--image-aspect-ratio, auto);
     }
-
-    &.right {
-      margin-bottom: 20px;
-      margin-left: 20px;
-      float: right;
-
-      @container (max-width: #{$largest-mobile-screen}) {
-        margin-bottom: $spacing-large;
-      }
-
-      img {
-        margin-right: 0 !important;
-        margin-bottom: 0px;
-        margin-left: 0 !important;
-        float: none;
-      }
-    }
-
-    &.left {
-      margin-right: 20px;
-      margin-bottom: 20px;
-      float: left;
-
-      @container (max-width: #{$largest-mobile-screen}) {
-        margin-bottom: $spacing-large;
-      }
-
-      img {
-        margin-right: 0 !important;
-        margin-bottom: 0px;
-        float: none;
-      }
-    }
-
-    &.left,
-    &.right {
-      &.large {
-        width: 50%;
-        height: auto;
-
-        @media only screen and (max-width: 768px) {
-          width: 100%;
-        }
-      }
-
-      &.medium {
-        width: 50%;
-        height: auto;
-        @media only screen and (max-width: 768px) {
-          width: 100%;
-        }
-      }
-
-      &.small {
-        width: 25%;
-        height: auto;
-        @media only screen and (max-width: 768px) {
-          width: 100%;
-        }
-      }
-    }
-
-    &.wide,
-    &.full {
-      margin-top: $spacing-large;
-      margin-bottom: $spacing-large;
-    }
-
-    &.center {
-      width: 100% !important;
-      margin-right: auto !important;
-      margin-bottom: $spacing-large;
-      margin-left: auto !important;
-      object-fit: cover;
-
-      img {
-        height: auto;
-        margin-right: initial;
-        margin-left: initial;
-      }
-
-      &.large,
-      &.medium,
-      &.small {
-        width: 100% !important;
-      }
-
-      &.large {
-        figcaption {
-          text-align: start;
-        }
-      }
-
-      &.medium {
-        figcaption {
-          width: 100%;
-          margin-right: auto;
-          margin-left: auto;
-          text-align: start;
-        }
-      }
-    }
-  }
-
-  img {
-    max-width: 100% !important;
-    height: auto;
   }
 }
 
@@ -181,72 +121,36 @@ figcaption {
 
 // video block
 
-#page-document .block.video.align.left,
-.block.video.align.left,
-#page-document .block.video.align.right,
-.block.video.align.right {
-  @include default-container-width;
-}
+.block.video,
+.block-editor-video {
+  margin-top: $spacing-large;
+  .video-inner {
+    @include variable-container-width();
 
-#page-document .block.video.align.center figure,
-.block.video.align.center figure {
-  @include default-container-width;
-}
+    .placeholder {
+      width: 100% !important;
+    }
+  }
+  &.has--block-alignment--left {
+    .video-inner {
+      width: 100%;
+      @include floated-figure('left');
+    }
+  }
 
-.block.video {
-  .figure {
+  &.has--block-alignment--right {
+    .video-inner {
+      width: 100%;
+      @include floated-figure('right');
+    }
+  }
+  figure {
     width: 100%;
   }
 
-  &.full figcaption {
+  &.has--block-width--full figcaption {
     padding-right: 25px;
     padding-left: 25px;
-  }
-
-  &.wide,
-  &.full,
-  &.center {
-    margin-top: $spacing-large;
-    margin-bottom: $spacing-large;
-  }
-
-  &.align.left.has--backgroundColor--grey figure,
-  &.align.right.has--backgroundColor--grey figure {
-    padding-top: 25px;
-  }
-
-  &.align.left.has--backgroundColor--grey,
-  &.align.right.has--backgroundColor--grey {
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
-  &.align.left,
-  &.align.right {
-    margin-top: $spacing-large;
-    margin-bottom: 0 !important;
-
-    .video-inner {
-      margin-bottom: 20px !important;
-      @media only screen and (max-width: $tablet-breakpoint) {
-        width: 100%;
-      }
-      @container (max-width: #{$largest-mobile-screen}) {
-        margin-bottom: $spacing-large !important;
-      }
-    }
-
-    img {
-      margin: 0 !important;
-    }
-  }
-
-  &.align.left .video-inner {
-    margin-right: 20px !important;
-  }
-
-  &.align.right .video-inner {
-    margin-left: 20px !important;
   }
 }
 
@@ -371,35 +275,46 @@ figcaption {
   }
 }
 
-// Image block overrides
-#page-edit,
-#page-add {
-  .block-editor-image figure.center {
-    @include variable-container-width();
-  }
-
-  .block-editor-image.default figure {
-    max-width: var(--default-container-width);
-  }
-}
-
-#page-document .blocks-group-wrapper > .block.image.align.center {
-  @include variable-container-width();
-}
-#page-document .blocks-group-wrapper > .block.image.align.center figure {
+#page-document .blocks-group-wrapper > .block.image,
+#page-document .blocks-group-wrapper > .block.video {
   @include variable-container-width();
 }
 
 #page-document .blocks-group-wrapper {
-  & > .block.image.align.center.has--block-width--default {
-    // Unfortunately needed to have more specificity than the top one
-    // TODO: Remove when using layers and the BMv3
+  // Unfortunately needed to have more specificity than the top one
+  // TODO: Remove when using layers and the BMv3
+  & > .block.image.has--block-width--default,
+  & > .block.video.has--block-width--default {
     @include adjustMarginsToContainer($default-container-width);
   }
-  & > .block.image.align.center.has--block-width--layout {
+  & > .block.image.has--block-width--layout,
+  & > .block.video.has--block-width--layout {
     @include adjustMarginsToContainer($layout-container-width);
   }
-  & > .block.image.align.center.has--block-width--narrow {
+  & > .block.image.has--block-width--narrow,
+  & > .block.video.has--block-width--narrow {
     @include adjustMarginsToContainer($narrow-container-width);
+  }
+}
+
+// Edit block overrides
+#page-edit,
+#page-add {
+  .block-editor-image,
+  .block-editor-video {
+    &.has--block-alignment--right,
+    &.has--block-alignment--left {
+      .block .block:not(.inner)::before {
+        z-index: 1;
+      }
+    }
+    .block.inner .block .block {
+      z-index: 2;
+      @include variable-container-width();
+
+      &:before {
+        display: none;
+      }
+    }
   }
 }

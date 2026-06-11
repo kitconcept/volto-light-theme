@@ -2,6 +2,14 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0a29 (2026-06-09)
+
+
+### Internal:
+
+- Fix Python version used in CI. @davisagli 
+- Upgrade Plone 6.2.0 final. @sneridagh 
+
 ## 8.0.0a28 (2026-05-15)
 
 No significant changes.

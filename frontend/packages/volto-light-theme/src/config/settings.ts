@@ -28,6 +28,12 @@ export default function install(config: ConfigType) {
   config.settings.contentMetadataTagsImageField = 'preview_image';
   config.settings.querystringSearchGet = true;
 
+  config.settings.layout = {
+    ...config.settings.layout,
+    defaultContainerWidth: 940,
+    tabletBreakpoint: 768,
+  };
+
   config.settings.slidingSearchAnimation = true;
   config.settings.openExternalLinkInNewTab = true;
 
