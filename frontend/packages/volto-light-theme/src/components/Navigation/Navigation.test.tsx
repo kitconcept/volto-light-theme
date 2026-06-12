@@ -31,10 +31,14 @@ vi.mock('@plone/volto/actions/navigation/navigation', () => ({
   getNavigation: vi.fn(() => ({ type: 'GET_NAVIGATION' })),
 }));
 
-vi.mock('@plone/volto/helpers/Url/Url', () => ({
-  getBaseUrl: vi.fn((path: string) => path),
-  isInternalURL: vi.fn(() => true),
-}));
+vi.mock('@plone/volto/helpers/Url/Url', async (importOriginal) => {
+  const actual =
+    await importOriginal<typeof import('@plone/volto/helpers/Url/Url')>();
+  return {
+    ...actual,
+    getBaseUrl: vi.fn((path: string) => path),
+  };
+});
 
 vi.mock('@plone/volto/helpers/Utils/Utils', () => ({
   hasApiExpander: vi.fn(() => false),
