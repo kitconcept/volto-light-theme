@@ -33,6 +33,7 @@ vi.mock('@plone/volto/actions/navigation/navigation', () => ({
 
 vi.mock('@plone/volto/helpers/Url/Url', () => ({
   getBaseUrl: vi.fn((path: string) => path),
+  isInternalURL: vi.fn(() => true),
 }));
 
 vi.mock('@plone/volto/helpers/Utils/Utils', () => ({
