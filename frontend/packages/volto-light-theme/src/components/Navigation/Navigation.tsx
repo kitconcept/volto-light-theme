@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import isEmpty from 'lodash/isEmpty';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { NavLink } from 'react-router-dom';
@@ -98,40 +98,30 @@ const Navigation = ({ pathname }: NavigationProps) => {
     shallowEqual,
   );
 
-  const closeMenu = () => {
+  const closeMenu = useCallback(() => {
     setDesktopMenuOpen(null);
     setCurrentOpenIndex(null);
-  };
+  }, [setDesktopMenuOpen, setCurrentOpenIndex]);
 
-  // this function doesn't close the navigation when clicking the scrollbar
-  const doesScrollbarContainClick = (event: MouseEvent): boolean => {
-    const clickedVerticalScrollbar =
-      event.clientX >= document.documentElement.clientWidth &&
-      event.clientX <= window.innerWidth;
-
-    const clickedHorizontalScrollbar =
-      event.clientY >= document.documentElement.clientHeight &&
-      event.clientY <= window.innerHeight;
-
-    return clickedVerticalScrollbar || clickedHorizontalScrollbar;
-  };
+  const handleClickOutside = useCallback(
+    (e: MouseEvent) => {
+      const target = e.target;
+      if (
+        (navigation.current && doesNodeContainClick(navigation.current, e)) ||
+        (target instanceof Element && target.parentElement === null)
+      )
+        return;
+      closeMenu();
+    },
+    [closeMenu],
+  );
 
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (navigation.current && doesNodeContainClick(navigation.current, event))
-        return;
-      // check if scrollbar is clicked
-      if (doesScrollbarContainClick(event)) return;
-
-      closeMenu();
-    };
-
     document.addEventListener('mousedown', handleClickOutside, false);
-
     return () => {
       document.removeEventListener('mousedown', handleClickOutside, false);
     };
-  }, []);
+  }, [handleClickOutside]);
 
   useEffect(() => {
     if (!hasApiExpander('navigation', getBaseUrl(pathname))) {
@@ -164,6 +154,7 @@ const Navigation = ({ pathname }: NavigationProps) => {
     return () => {
       window.removeEventListener('keydown', handleEsc);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

@@ -12,6 +12,9 @@ on:
       image-name-suffix:
         required: true
         type: string
+      cache-key-refname:
+        required: true
+        type: string
       plone-version:
         required: true
         type: string
@@ -68,7 +71,7 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           push: true
-          cache-from: type=registry,ref=${{ inputs.image-name-prefix }}-${{ inputs.image-name-suffix }}:buildcache-${{ github.ref_name }}
+          cache-from: type=registry,ref=${{ inputs.image-name-prefix }}-${{ inputs.image-name-suffix }}:buildcache-${{ inputs.cache-key-refname }}
           cache-to: type=registry,ref=${{ inputs.image-name-prefix }}-${{ inputs.image-name-suffix }}:buildcache-${{ inputs.base-tag }},mode=max
           build-args: |
             PLONE_VERSION=${{ inputs.plone-version }}
@@ -120,7 +123,7 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           push: true
-          cache-from: type=registry,ref=${{ inputs.image-name-prefix }}-${{ inputs.image-name-suffix }}-acceptance:buildcache-${{ github.ref_name }}
+          cache-from: type=registry,ref=${{ inputs.image-name-prefix }}-${{ inputs.image-name-suffix }}-acceptance:buildcache-${{ inputs.cache-key-refname }}
           cache-to: type=registry,ref=${{ inputs.image-name-prefix }}-${{ inputs.image-name-suffix }}-acceptance:buildcache-${{ inputs.base-tag }},mode=max
           build-args: |
             PLONE_VERSION=${{ inputs.plone-version }}

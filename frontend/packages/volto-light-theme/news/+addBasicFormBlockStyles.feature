@@ -1,1 +1,0 @@
-Add basic VLT styles for Form Block. @danalvrz
