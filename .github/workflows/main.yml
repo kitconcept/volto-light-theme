@@ -67,6 +67,7 @@ jobs:
       base-tag: ${{ needs.config.outputs.base-tag }}
       image-name-prefix: ${{ needs.config.outputs.image-name-prefix }}
       image-name-suffix: backend
+      cache-key-refname: ${{ needs.config.outputs.cache-key-refname }}
       plone-version: ${{ needs.config.outputs.plone-version }}
 
   frontend-lint:
@@ -112,6 +113,7 @@ jobs:
       base-tag: ${{ needs.config.outputs.base-tag }}
       image-name-prefix: ${{ needs.config.outputs.image-name-prefix }}
       image-name-suffix: frontend
+      cache-key-refname: ${{ needs.config.outputs.cache-key-refname }}
       node-version: ${{ needs.config.outputs.node-version }}
       volto-version: ${{ needs.config.outputs.volto-version }}
     permissions:
@@ -226,6 +228,7 @@ jobs:
       base-tag: ${{ needs.config.outputs.base-tag }}
       image-name-prefix: ${{ needs.config.outputs.image-name-prefix }}
       image-name-suffix: backend
+      cache-key-refname: ${{ needs.config.outputs.cache-key-refname }}
       push: ${{ (github.event_name != 'pull_request') && !contains(needs.*.result, 'failure') }}
       plone-version: ${{ needs.config.outputs.plone-version }}
 
@@ -242,6 +245,7 @@ jobs:
       base-tag: ${{ needs.config.outputs.base-tag }}
       image-name-prefix: ${{ needs.config.outputs.image-name-prefix }}
       image-name-suffix: frontend
+      cache-key-refname: ${{ needs.config.outputs.cache-key-refname }}
       push: ${{ (github.event_name != 'pull_request') && !contains(needs.*.result, 'failure') }}
       volto-version: ${{ needs.config.outputs.volto-version }}
     permissions:
