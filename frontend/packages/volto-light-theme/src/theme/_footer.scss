@@ -215,6 +215,10 @@
     &:not(:has(.follow-us)) .footer-logo {
       grid-column: 1 / -1;
       justify-self: center;
+
+      span {
+        text-align: center;
+      }
     }
     .follow-us {
       display: flex;
