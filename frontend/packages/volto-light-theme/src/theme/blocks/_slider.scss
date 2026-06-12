@@ -143,6 +143,10 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
       grid-template-areas: 'images content';
       grid-template-rows: auto;
 
+      @media only screen and (min-width: $large-monitor-width) {
+        align-content: center;
+      }
+
       @media only screen and (max-width: $computer-width) {
         display: inline-block;
         padding: 0 0;
@@ -178,6 +182,9 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
 
       .highlight-image-wrapper {
         grid-area: images;
+        @media only screen and (min-width: $large-monitor-width) {
+          align-self: start;
+        }
         img {
           aspect-ratio: var(
             --image-aspect-ratio,
@@ -199,6 +206,10 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         color: var(--theme-foreground-color);
         grid-area: content;
         transform: none;
+
+        @media only screen and (min-width: $large-monitor-width) {
+          align-content: start;
+        }
 
         @media only screen and (max-width: $computer-width) {
           height: 100%;
@@ -224,8 +235,8 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         }
         p {
           color: var(--theme-foreground-color);
-          -webkit-line-clamp: 10;
-          line-clamp: 10;
+          -webkit-line-clamp: 3;
+          line-clamp: 3;
         }
       }
       .slider-description {
