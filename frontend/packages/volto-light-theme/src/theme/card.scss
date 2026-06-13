@@ -62,6 +62,7 @@
     .title {
       margin-top: 0;
       margin-bottom: $spacing-small !important; // Override margin from volto
+      overflow-wrap: anywhere;
       @include text-heading-h2();
 
       @container (max-width: #{$largest-mobile-screen}) {
