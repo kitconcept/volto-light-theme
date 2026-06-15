@@ -20,7 +20,7 @@ from pathlib import Path
 
 project = "Volto Light Theme documentation"
 copyright = "kitconcept"
-author = "kitconcept, GmbH"
+author = "kitconcept, GmbH - VLT is an open source project created and maintained by kitconcept."
 trademark_name = "kitconcept"
 now = datetime.now()
 year = str(now.year)
@@ -114,17 +114,17 @@ suppress_warnings = [
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 html_theme = "plone_sphinx_theme"
-html_logo = "_static/logo.svg"
+# html_logo = "_static/kitconcept-black.svg"
 html_favicon = "_static/favicon.ico"
 html_theme_options = {
     "article_header_start": ["toggle-primary-sidebar"],
-    "extra_footer": """<p>The text and illustrations in this website are licensed by the Plone Foundation under a Creative Commons Attribution 4.0 International license. Plone and the Plone® logo are registered trademarks of the Plone Foundation, registered in the United States and other countries. For guidelines on the permitted uses of the Plone trademarks, see <a href="https://plone.org/foundation/logo">https://plone.org/foundation/logo</a>. All other trademarks are owned by their respective owners.</p>
+    "extra_footer": """<p>The text and illustrations in this website are licensed by <strong>kitconcept, GmbH</strong> under a Creative Commons Attribution 4.0 International license. Plone and the Plone® logo are registered trademarks of the Plone Foundation, registered in the United States and other countries. For guidelines on the permitted uses of the Plone trademarks, see <a href="https://plone.org/foundation/logo">https://plone.org/foundation/logo</a>. All other trademarks are owned by their respective owners.</p>
 <p>Pull request previews by <a href="https://readthedocs.org/" target="_blank">Read the Docs</a>.</p>""",
     "footer_end": ["version.html"],
     "icon_links": [
         {
             "name": "GitHub",
-            "url": "https://github.com/plone/volto",
+            "url": "https://github.com/kitconcept/volto-light-theme",
             "icon": "fa-brands fa-square-github",
             "type": "fontawesome",
             "attributes": {
@@ -145,8 +145,8 @@ html_theme_options = {
             },
         },
         {
-            "name": "Twitter",
-            "url": "https://twitter.com/plone",
+            "name": "X",
+            "url": "https://x.com/plone",
             "icon": "fa-brands fa-square-twitter",
             "type": "fontawesome",
             "attributes": {
@@ -158,6 +158,8 @@ html_theme_options = {
     ],
     "logo": {
         "text": "Volto Light Theme Documentation",
+        "image_light": "_static/kitconcept-black.svg",
+        "image_dark": "_static/kitconcept-white.svg",
     },
     "navigation_with_keys": True,
     "path_to_docs": "docs",
@@ -226,9 +228,7 @@ intersphinx_mapping = {
 
 ogp_site_url = "https://volto-light-theme.readthedocs.io/"
 ogp_description_length = 200
-ogp_image = (
-    "https://volto-light-theme.readthedocs.io/en/latest/_static/Plone_logo_square.png"
-)
+ogp_image = "https://kitconcept.com/kitconcept-black.svg"
 ogp_site_name = "@kitconcept/volto-light-theme Documentation"
 ogp_type = "website"
 ogp_custom_meta_tags = [
