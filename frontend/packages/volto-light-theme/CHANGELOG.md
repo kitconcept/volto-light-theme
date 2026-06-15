@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 7.8.6 (2026-06-15)
+
+### Bugfix
+
+- refactor closing logic for fatnav to ignore all clicks on scrollbar @jackahl [#834](https://github.com/kitconcept/volto-light-theme/pull/834)
+
 ## 7.8.5 (2026-05-11)
 
 ### Bugfix

@@ -1,1 +1,0 @@
-Sanitized the Docker buildcache key derived from `github.ref_name` so refs containing a slash (e.g. `feature/foo`) no longer fail `docker/build-push-action`. @ericof

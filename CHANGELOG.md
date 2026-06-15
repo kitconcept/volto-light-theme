@@ -1,6 +1,32 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 7.8.6 (2026-06-15)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- refactor closing logic for fatnav to ignore all clicks on scrollbar @jackahl [#834](https://github.com/kitconcept/volto-light-theme/pull/834)
+
+
+
+### Project
+
+
+#### Internal
+
+- Sanitized the Docker buildcache key derived from `github.ref_name` so refs containing a slash (e.g. `feature/foo`) no longer fail `docker/build-push-action`. @ericof [#887](https://github.com/kitconcept/volto-light-theme/pull/887)
+
+
+
 ## 7.8.5 (2026-05-11)
 
 ### Backend
