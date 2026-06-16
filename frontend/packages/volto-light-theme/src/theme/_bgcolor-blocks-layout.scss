@@ -792,6 +792,21 @@
           color: var(--theme-low-contrast-foreground-color);
         }
 
+        .toggle-advanced-facets button {
+          border: 1px solid var(--theme-foreground-color);
+          border-radius: unset;
+          border-color: var(--theme-foreground-color);
+          background-color: var(--theme-color);
+
+          color: var(--theme-foreground-color);
+
+          &:hover {
+            border-color: var(--theme-foreground-color);
+            background-color: var(--theme-foreground-color);
+            color: var(--theme-color);
+          }
+        }
+
         .react-select-container {
           .react-select__menu {
             background-color: var(--theme-high-contrast-color);
