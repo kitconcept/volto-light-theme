@@ -1,6 +1,39 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 8.0.0a30 (2026-06-11)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Feature
+
+- Add basic VLT styles for Form Block. @danalvrz 
+- Add link icon to Card component @Tishasoumya-02 
+
+#### Bugfix
+
+- refactor closing logic for fatnav to ignore all clicks on scrollbar @jackahl [#834](https://github.com/kitconcept/volto-light-theme/pull/834)
+- Fix icon in search @iRohitSingh [#879](https://github.com/kitconcept/volto-light-theme/pull/879)
+- Fix top margin for floated images when following an H2. @danlavrz 
+
+
+
+### Project
+
+
+#### Internal
+
+- Sanitized the Docker buildcache key derived from `github.ref_name` so refs containing a slash (e.g. `feature/foo`) no longer fail `docker/build-push-action`. @ericof [#887](https://github.com/kitconcept/volto-light-theme/pull/887)
+
+
+
 ## 8.0.0a29 (2026-06-09)
 
 ### Backend

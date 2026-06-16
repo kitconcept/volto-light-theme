@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import isEmpty from 'lodash/isEmpty';
 import { useDispatch, useSelector, shallowEqual } from 'react-redux';
-import { NavLink } from 'react-router-dom';
 import doesNodeContainClick from '../../helpers/doesNodeContainClick';
 import { useIntl, defineMessages } from 'react-intl';
 import cx from 'classnames';
@@ -13,6 +12,7 @@ import { getNavigation } from '@plone/volto/actions/navigation/navigation';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import clearSVG from '@plone/volto/icons/clear.svg';
 import NavItem from '@plone/volto/components/theme/Navigation/NavItem';
+import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 
 const messages = defineMessages({
   closeMenu: {
@@ -98,40 +98,30 @@ const Navigation = ({ pathname }: NavigationProps) => {
     shallowEqual,
   );
 
-  const closeMenu = () => {
+  const closeMenu = useCallback(() => {
     setDesktopMenuOpen(null);
     setCurrentOpenIndex(null);
-  };
+  }, [setDesktopMenuOpen, setCurrentOpenIndex]);
 
-  // this function doesn't close the navigation when clicking the scrollbar
-  const doesScrollbarContainClick = (event: MouseEvent): boolean => {
-    const clickedVerticalScrollbar =
-      event.clientX >= document.documentElement.clientWidth &&
-      event.clientX <= window.innerWidth;
-
-    const clickedHorizontalScrollbar =
-      event.clientY >= document.documentElement.clientHeight &&
-      event.clientY <= window.innerHeight;
-
-    return clickedVerticalScrollbar || clickedHorizontalScrollbar;
-  };
+  const handleClickOutside = useCallback(
+    (e: MouseEvent) => {
+      const target = e.target;
+      if (
+        (navigation.current && doesNodeContainClick(navigation.current, e)) ||
+        (target instanceof Element && target.parentElement === null)
+      )
+        return;
+      closeMenu();
+    },
+    [closeMenu],
+  );
 
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (navigation.current && doesNodeContainClick(navigation.current, event))
-        return;
-      // check if scrollbar is clicked
-      if (doesScrollbarContainClick(event)) return;
-
-      closeMenu();
-    };
-
     document.addEventListener('mousedown', handleClickOutside, false);
-
     return () => {
       document.removeEventListener('mousedown', handleClickOutside, false);
     };
-  }, []);
+  }, [handleClickOutside]);
 
   useEffect(() => {
     if (!hasApiExpander('navigation', getBaseUrl(pathname))) {
@@ -139,8 +129,15 @@ const Navigation = ({ pathname }: NavigationProps) => {
     }
   }, [pathname, token, dispatch]);
 
-  const isActive = (url: string) => {
+  const isExact = (url: string) => {
     return (url === '' && pathname === '/') || (url !== '' && pathname === url);
+  };
+
+  const isActive = (url: string) => {
+    return (
+      (url === '' && pathname === '/') ||
+      (url !== '' && (pathname === url || pathname.startsWith(url + '/')))
+    );
   };
 
   const openMenu = (index: number) => {
@@ -164,6 +161,7 @@ const Navigation = ({ pathname }: NavigationProps) => {
     return () => {
       window.removeEventListener('keydown', handleEsc);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -199,13 +197,15 @@ const Navigation = ({ pathname }: NavigationProps) => {
                       })}
                     >
                       <div className="submenu-inner">
-                        <NavLink
-                          to={item.url === '' ? '/' : item.url}
+                        <UniversalLink
+                          href={item.url === '' ? '/' : item.url}
                           onClick={() => closeMenu()}
-                          className="submenu-header"
+                          className={cx('submenu-header', {
+                            active: isActive(item.url),
+                          })}
                         >
                           <h2>{item.nav_title ?? item.title}</h2>
-                        </NavLink>
+                        </UniversalLink>
                         <button
                           className="close"
                           onClick={closeMenu}
@@ -218,18 +218,22 @@ const Navigation = ({ pathname }: NavigationProps) => {
                             item.items.length > 0 &&
                             item.items.map((subitem) => (
                               <li className="subitem-wrapper" key={subitem.url}>
-                                <NavLink
-                                  to={subitem.url}
+                                <UniversalLink
+                                  href={subitem.url}
                                   onClick={() => closeMenu()}
                                   className={cx({
-                                    current: isActive(subitem.url),
+                                    current: isExact(subitem.url),
+                                    active: isActive(subitem.url),
                                   })}
+                                  {...(isExact(subitem.url)
+                                    ? { 'aria-current': 'page' }
+                                    : {})}
                                 >
                                   <span className="left-arrow">&#8212;</span>
                                   <span>
                                     {subitem.nav_title || subitem.title}
                                   </span>
-                                </NavLink>
+                                </UniversalLink>
                                 <div className="sub-submenu">
                                   <ul>
                                     {subitem.items &&
@@ -239,12 +243,16 @@ const Navigation = ({ pathname }: NavigationProps) => {
                                           className="subsubitem-wrapper"
                                           key={subsubitem.url}
                                         >
-                                          <NavLink
-                                            to={subsubitem.url}
+                                          <UniversalLink
+                                            href={subsubitem.url}
                                             onClick={() => closeMenu()}
                                             className={cx({
-                                              current: isActive(subsubitem.url),
+                                              current: isExact(subsubitem.url),
+                                              active: isActive(subsubitem.url),
                                             })}
+                                            {...(isExact(subsubitem.url)
+                                              ? { 'aria-current': 'page' }
+                                              : {})}
                                           >
                                             <span className="left-arrow">
                                               &#8212;
@@ -253,7 +261,7 @@ const Navigation = ({ pathname }: NavigationProps) => {
                                               {subsubitem.nav_title ||
                                                 subsubitem.title}
                                             </span>
-                                          </NavLink>
+                                          </UniversalLink>
                                         </li>
                                       ))}
                                   </ul>
