@@ -30,7 +30,10 @@ function renderUseLiveData<T>({
   storeState: StoreState;
   pathname?: string;
 }) {
-  const store = mockStore({ intl: { locale: 'en', messages: {} }, ...storeState });
+  const store = mockStore({
+    intl: { locale: 'en', messages: {} },
+    ...storeState,
+  });
   const wrapper = ({ children }: { children: React.ReactNode }) => (
     <Provider store={store}>
       <MemoryRouter initialEntries={[pathname]}>{children}</MemoryRouter>
