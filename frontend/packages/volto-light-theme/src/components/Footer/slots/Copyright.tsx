@@ -47,7 +47,7 @@ const Copyright = () => {
             license: (
               <a
                 className="item"
-                href="https://www.gnu.org/licenses/old-licenses/lgpl-2.0.html"
+                href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
               >
                 <FormattedMessage
                   id="GNU GPL license"
