@@ -2,6 +2,7 @@ import * as React from 'react';
 import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
 import cx from 'classnames';
 import type { ObjectBrowserItem } from '@plone/types';
+import profilePlaceholder from './profile-placeholder.svg';
 
 type BaseCardProps = {
   /** Optional additional CSS class names to apply to the card. */
@@ -101,11 +102,29 @@ const CardImage = (props: CardImageProps) => {
   const { src, item, image, imageComponent, showPlaceholderImage, sizes } =
     props;
   const Image = imageComponent || DefaultImage;
+  const contentItem = image || item;
+  const imageField = image ? image.image_field : item?.image_field;
+  const personPlaceholderSrc =
+    showPlaceholderImage &&
+    !src &&
+    !imageField &&
+    contentItem?.['@type'] === 'Person'
+      ? profilePlaceholder
+      : undefined;
 
   return (
     <div className="image-wrapper">
-      {src ? (
-        <Image src={src} alt="" loading="lazy" responsive={true} />
+      {src || personPlaceholderSrc ? (
+        personPlaceholderSrc ? (
+          <DefaultImage
+            src={personPlaceholderSrc}
+            alt=""
+            loading="lazy"
+            responsive={true}
+          />
+        ) : (
+          <Image src={src} alt="" loading="lazy" responsive={true} />
+        )
       ) : item || image ? (
         (item?.hasPreviewImage ||
           item?.image_field ||
