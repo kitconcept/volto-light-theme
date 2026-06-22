@@ -45,10 +45,24 @@ const TopSideFacets = (props) => {
   const isLive = !showSearchButton;
   const intl = useIntl();
 
-  const FacetWrapper = ({ children }) => {
+  const FacetWrapper = ({ children, facetSettings = {}, visible }) => {
+    const { advanced, field = {} } = facetSettings;
     const colWidth = data.facets.length < 5 ? 12 / data.facets.length : 4;
+    const className = [
+      'facet',
+      field.value ? `facet-index-${field.value}` : '',
+      advanced ? 'advanced-facet' : '',
+      !visible ? 'advanced-facet-hidden' : '',
+    ]
+      .filter(Boolean)
+      .join(' ');
     return (
-      <Grid.Column mobile={12} tablet={colWidth} computer={colWidth}>
+      <Grid.Column
+        mobile={12}
+        tablet={colWidth}
+        computer={colWidth}
+        className={className}
+      >
         {children}
       </Grid.Column>
     );
