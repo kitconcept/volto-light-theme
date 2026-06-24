@@ -51,8 +51,7 @@ const TeaserDefaultTemplate = (props) => {
     head_title: data.head_title || '',
   };
 
-  const placeholderSrc =
-              config.settings.placeholderImages?.[href['@type']];
+  const placeholderSrc = config.settings.placeholderImages?.[href['@type']];
 
   return (
     <Card item={showLink ? href : null} openLinkInNewTab={openLinkInNewTab}>
