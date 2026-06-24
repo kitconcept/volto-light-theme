@@ -42,20 +42,19 @@ const GridTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
           if (item['@type'] === 'Person' && hideProfileLinks !== undefined) {
             showLink = !hideProfileLinks && !isEditMode;
           }
-
-          const showPersonCardImage =
-            item.image_field !== '' || item['@type'] === 'Person';
-
+          const placeholderSrc =
+            config.settings.placeholderImages?.[item['@type']];
           const ItemBodyTemplate = (props) =>
             CustomItemBodyTemplate ? (
               <CustomItemBodyTemplate item={item} />
             ) : (
               <>
-                {showPersonCardImage && (
+                {(item.image_field !== '' || placeholderSrc) && (
                   <Card.Image
                     className="item-image"
                     item={item}
-                    showPlaceholderImage={item['@type'] === 'Person'}
+                    showPlaceholderImage={true}
+                    placeholderSrc={placeholderSrc}
                     imageComponent={PreviewImageComponent}
                     sizes={`(max-width: ${config.settings.layout.tabletBreakpoint}px) 100vw, ${Math.trunc(config.settings.layout.defaultContainerWidth / 2)}px`}
                   />

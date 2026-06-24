@@ -41,6 +41,8 @@ const SummaryTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
           if (item['@type'] === 'Person' && hideProfileLinks !== undefined) {
             showLink = !hideProfileLinks && !isEditMode;
           }
+          const placeholderSrc =
+            config.settings.placeholderImages?.[item['@type']];
           const ItemBodyTemplate = (props) =>
             CustomItemBodyTemplate ? (
               <CustomItemBodyTemplate item={item} />
@@ -49,6 +51,7 @@ const SummaryTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
                 <Card.Image
                   item={item}
                   showPlaceholderImage={true}
+                  placeholderSrc={placeholderSrc}
                   imageComponent={PreviewImageComponent}
                   sizes={`(max-width: ${config.settings.layout.tabletBreakpoint}px) 100vw, 220px`}
                 />
