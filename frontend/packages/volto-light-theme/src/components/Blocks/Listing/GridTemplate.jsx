@@ -43,15 +43,19 @@ const GridTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
             showLink = !hideProfileLinks && !isEditMode;
           }
 
+          const showPersonCardImage =
+            item.image_field !== '' || item['@type'] === 'Person';
+
           const ItemBodyTemplate = (props) =>
             CustomItemBodyTemplate ? (
               <CustomItemBodyTemplate item={item} />
             ) : (
               <>
-                {item.image_field !== '' && (
+                {showPersonCardImage && (
                   <Card.Image
                     className="item-image"
                     item={item}
+                    showPlaceholderImage={item['@type'] === 'Person'}
                     imageComponent={PreviewImageComponent}
                     sizes={`(max-width: ${config.settings.layout.tabletBreakpoint}px) 100vw, ${Math.trunc(config.settings.layout.defaultContainerWidth / 2)}px`}
                   />
