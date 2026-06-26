@@ -9,6 +9,11 @@ figure {
   --align-left: left;
   --align-center: none;
   --align-right: right;
+  // Floating image sizes, referenced by the `--media-size` style variable
+  --size-small: 220px;
+  --size-medium: 300px;
+  --size-large: calc(var(--default-container-width) / 2 - 10px);
+
   margin: 0;
   margin-top: $spacing-large;
 
@@ -48,17 +53,6 @@ figure {
       img {
         margin: 0 !important;
         float: none;
-      }
-    }
-    &.small {
-      figure {
-        max-width: 220px;
-      }
-    }
-
-    &.medium {
-      figure {
-        max-width: 300px;
       }
     }
   }
