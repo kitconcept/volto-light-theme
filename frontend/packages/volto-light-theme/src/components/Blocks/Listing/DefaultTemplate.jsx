@@ -13,7 +13,7 @@ const DefaultTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
   let link = null;
   let href = linkHref?.[0]?.['@id'] || '';
   const site = useSelector((state) => state.site?.data);
-  const hideProfileLinks = site?.['kitconcept.disable_profile_links'];
+  const showProfileLinks = site?.['kitconcept.clickable_profile_links'];
 
   if (isInternalURL(href)) {
     link = (
@@ -35,8 +35,8 @@ const DefaultTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
               dependencies: [item['@type']],
             }).component || DefaultSummary;
           let showLink = !Summary.hideLink && !isEditMode;
-          if (item['@type'] === 'Person' && hideProfileLinks !== undefined) {
-            showLink = !hideProfileLinks && !isEditMode;
+          if (item['@type'] === 'Person' && showProfileLinks !== undefined) {
+            showLink = showProfileLinks && !isEditMode;
           }
           return (
             <li
