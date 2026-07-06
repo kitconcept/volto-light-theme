@@ -13,7 +13,7 @@ const DefaultTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
   let link = null;
   let href = linkHref?.[0]?.['@id'] || '';
   const site = useSelector((state) => state.site?.data);
-  const showProfileLinks = site?.['kitconcept.clickable_profile_links'];
+  const showProfileLinks = !site?.['kitconcept.clickable_profile_links'];
 
   if (isInternalURL(href)) {
     link = (

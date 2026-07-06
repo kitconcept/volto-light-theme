@@ -13,7 +13,7 @@ const GridTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
   let href = linkHref?.[0]?.['@id'] || '';
   const PreviewImageComponent = config.getComponent('PreviewImage').component;
   const site = useSelector((state) => state.site?.data);
-  const showProfileLinks = site?.['kitconcept.clickable_profile_links'];
+  const showProfileLinks = !site?.['kitconcept.clickable_profile_links'];
 
   if (isInternalURL(href)) {
     link = (

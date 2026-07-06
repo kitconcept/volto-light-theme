@@ -16,7 +16,7 @@ const TeaserDefaultTemplate = (props) => {
   const site = useSelector<FormState, GetSiteResponse>(
     (state) => state.site?.data,
   );
-  const showProfileLinks = site?.['kitconcept.clickable_profile_links'];
+  const showProfileLinks = !site?.['kitconcept.clickable_profile_links'];
   const { data, isEditMode, isContainer } = props;
   const columns = useContext(GridContext);
   const sizes = config.blocks.blocksConfig.teaser?.getSizes?.({

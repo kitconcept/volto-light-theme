@@ -10,7 +10,7 @@ import cx from 'classnames';
 
 const SummaryTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
   const site = useSelector((state) => state.site?.data);
-  const showProfileLinks = site?.['kitconcept.clickable_profile_links'];
+  const showProfileLinks = !site?.['kitconcept.clickable_profile_links'];
   let link = null;
   let href = linkHref?.[0]?.['@id'] || '';
   const PreviewImageComponent = config.getComponent('PreviewImage').component;

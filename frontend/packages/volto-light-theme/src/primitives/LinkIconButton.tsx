@@ -36,10 +36,10 @@ const LinkIconButton = ({ item }: { item?: Partial<ObjectBrowserItem> }) => {
   const site = useSelector<FormState, GetSiteResponse>(
     (state) => state.site?.data,
   );
-  const showProfileLinks = site?.['kitconcept.clickable_profile_links'];
+  const showProfileLinks = !site?.['kitconcept.clickable_profile_links'];
   const handleLinkIconClick = useLinkIconNavigation(item);
   return (
-    !showProfileLinks && (
+    showProfileLinks && (
       <div className="card-link-icon">
         <Button aria-label="link" onClick={handleLinkIconClick}>
           <Icon name={linkSVG} size="33px" />
