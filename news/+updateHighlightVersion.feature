@@ -1,0 +1,1 @@
+Update version of Highlight block in recommended addons list. @danalvrz
