@@ -1,0 +1,1 @@
+Add image zoom feature @Tishasoumya-02
