@@ -84,6 +84,57 @@ figure {
       aspect-ratio: var(--image-aspect-ratio, auto);
     }
   }
+
+  .image-zoom-wrapper {
+    position: relative;
+
+    [data-rmiz] {
+      display: block;
+    }
+
+    // While not zoomed the image must not advertise a zoom-in cursor over its
+    // whole area; only the magnifier button triggers zoom.
+    [data-rmiz-content] img {
+      cursor: pointer;
+    }
+
+    .image-zoom-button {
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      display: flex;
+      width: 36px;
+      height: 36px;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+      border: none;
+      border-radius: 4px;
+      background-color: rgba(0, 0, 0, 0.55);
+      color: #fff;
+      cursor: pointer;
+      opacity: 0;
+      transition:
+        opacity 0.15s ease,
+        background-color 0.15s ease;
+
+      svg {
+        width: 24px;
+        height: 24px;
+        fill: currentColor;
+      }
+
+      &:hover,
+      &:focus-visible {
+        background-color: rgba(0, 0, 0, 0.75);
+      }
+    }
+
+    &:hover .image-zoom-button,
+    .image-zoom-button:focus-visible {
+      opacity: 1;
+    }
+  }
 }
 
 // image/video captions

@@ -11,6 +11,7 @@ import Caption from '../../Caption/Caption';
 import { flattenToAppURL, isInternalURL } from '@plone/volto/helpers/Url/Url';
 import { withBlockExtensions } from '@plone/volto/helpers/Extensions';
 import config from '@plone/volto/registry';
+import ImageZoom from './ImageZoom';
 
 /**
  * View image block class.
@@ -59,43 +60,45 @@ export const ImageView = ({ className, data, detached, properties, style }) => {
                 })}
                 // END CUSTOMIZATION
               >
-                <Image
-                  item={
-                    data.image_scales
-                      ? {
-                          '@id': data.url,
-                          image_field: data.image_field,
-                          image_scales: data.image_scales,
-                        }
-                      : undefined
-                  }
-                  src={
-                    data.image_scales
-                      ? undefined
-                      : isInternalURL(data.url)
-                        ? // Backwards compat in the case that the block is storing the full server URL
-                          (() => {
-                            if (data.size === 'l')
-                              return `${flattenToAppURL(
-                                data.url,
-                              )}/@@images/image`;
-                            if (data.size === 'm')
-                              return `${flattenToAppURL(
-                                data.url,
-                              )}/@@images/image/preview`;
-                            if (data.size === 's')
-                              return `${flattenToAppURL(
-                                data.url,
-                              )}/@@images/image/mini`;
-                            return `${flattenToAppURL(data.url)}/@@images/image`;
-                          })()
-                        : data.url
-                  }
-                  sizes={config.blocks.blocksConfig.image.getSizes(data)}
-                  alt={data.alt || ''}
-                  loading="lazy"
-                  responsive={true}
-                />
+                <ImageZoom>
+                  <Image
+                    item={
+                      data.image_scales
+                        ? {
+                            '@id': data.url,
+                            image_field: data.image_field,
+                            image_scales: data.image_scales,
+                          }
+                        : undefined
+                    }
+                    src={
+                      data.image_scales
+                        ? undefined
+                        : isInternalURL(data.url)
+                          ? // Backwards compat in the case that the block is storing the full server URL
+                            (() => {
+                              if (data.size === 'l')
+                                return `${flattenToAppURL(
+                                  data.url,
+                                )}/@@images/image`;
+                              if (data.size === 'm')
+                                return `${flattenToAppURL(
+                                  data.url,
+                                )}/@@images/image/preview`;
+                              if (data.size === 's')
+                                return `${flattenToAppURL(
+                                  data.url,
+                                )}/@@images/image/mini`;
+                              return `${flattenToAppURL(data.url)}/@@images/image`;
+                            })()
+                          : data.url
+                    }
+                    sizes={config.blocks.blocksConfig.image.getSizes(data)}
+                    alt={data.alt || ''}
+                    loading="lazy"
+                    responsive={true}
+                  />
+                </ImageZoom>
                 {shouldRenderCaption && (
                   <Caption
                     title={data.title}
