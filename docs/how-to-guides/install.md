@@ -87,7 +87,7 @@ Nevertheless, you can choose to install only those you want to use.
     "@kitconcept/volto-carousel-block": "^2.0.0-alpha.3",
     "@kitconcept/volto-dsgvo-banner": "^2.5.1",
     "@kitconcept/volto-heading-block": "^2.5.0",
-    "@kitconcept/volto-highlight-block": "^4.4.0",
+    "@kitconcept/volto-highlight-block": "^5.0.0-alpha.2",
     "@kitconcept/volto-introduction-block": "^1.1.0",
     "@kitconcept/volto-logos-block": "^3.0.0-alpha.1",
     "@kitconcept/volto-separator-block": "^4.2.1",
