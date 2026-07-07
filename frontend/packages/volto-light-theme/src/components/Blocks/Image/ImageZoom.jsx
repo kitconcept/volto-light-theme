@@ -17,9 +17,7 @@ const ImageZoom = ({ children, hasLink = false }) => {
   };
 
   return (
-    <div
-      className={`image-zoom-wrapper${hasLink ? ' has-link' : ''}`}
-    >
+    <div className={`image-zoom-wrapper${hasLink ? ' has-link' : ''}`}>
       <ControlledZoom
         isZoomed={isZoomed}
         onZoomChange={setIsZoomed}
