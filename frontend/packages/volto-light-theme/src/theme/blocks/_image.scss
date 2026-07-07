@@ -93,8 +93,13 @@ figure {
     }
 
     // While not zoomed the image must not advertise a zoom-in cursor over its
-    // whole area; only the magnifier button triggers zoom.
+    // whole area; only the magnifier button triggers zoom. Pointer only when
+    // the image is linked (href), default cursor otherwise.
     [data-rmiz-content] img {
+      cursor: default;
+    }
+
+    &.has-link [data-rmiz-content] img {
       cursor: pointer;
     }
 

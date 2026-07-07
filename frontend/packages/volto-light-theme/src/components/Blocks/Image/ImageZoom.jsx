@@ -5,7 +5,7 @@ import 'react-medium-image-zoom/dist/styles.css';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import zoomInSVG from '@plone/volto/icons/zoom-in.svg';
 
-const ImageZoom = ({ children }) => {
+const ImageZoom = ({ children, hasLink = false }) => {
   const [isZoomed, setIsZoomed] = React.useState(false);
 
   const openZoom = (e) => {
@@ -17,7 +17,9 @@ const ImageZoom = ({ children }) => {
   };
 
   return (
-    <div className="image-zoom-wrapper">
+    <div
+      className={`image-zoom-wrapper${hasLink ? ' has-link' : ''}`}
+    >
       <ControlledZoom
         isZoomed={isZoomed}
         onZoomChange={setIsZoomed}
@@ -39,6 +41,7 @@ const ImageZoom = ({ children }) => {
 
 ImageZoom.propTypes = {
   children: PropTypes.node.isRequired,
+  hasLink: PropTypes.bool,
 };
 
 export default ImageZoom;

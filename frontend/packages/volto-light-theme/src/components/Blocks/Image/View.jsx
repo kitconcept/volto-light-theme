@@ -60,7 +60,7 @@ export const ImageView = ({ className, data, detached, properties, style }) => {
                 })}
                 // END CUSTOMIZATION
               >
-                <ImageZoom>
+                <ImageZoom hasLink={!!href}>
                   <Image
                     item={
                       data.image_scales
