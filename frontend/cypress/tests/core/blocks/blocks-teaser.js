@@ -133,7 +133,7 @@ context('Blocks Acceptance Tests', () => {
       },
       path: '/document',
     });
-    cy.visit('/document/edit');
+    cy.navigate('/document/edit');
     // WHEN I create a Teaser block and change the data of the referenced object
     cy.addNewBlock('teaser');
     cy.get(
