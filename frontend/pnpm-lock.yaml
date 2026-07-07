@@ -1742,6 +1742,9 @@ importers:
       react-intl:
         specifier: ^3.12.1
         version: 3.12.1(@types/react@18.3.27)(react@18.2.0)
+      react-medium-image-zoom:
+        specifier: ^5.4.8
+        version: 5.4.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react-redux:
         specifier: ^8.1.2
         version: 8.1.2(@types/react-dom@18.3.7(@types/react@18.3.27))(@types/react@18.3.27)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
@@ -10311,6 +10314,12 @@ packages:
       prop-types: ^15.5.8
       react: ^16.0.0
       react-dom: ^16.0.0
+
+  react-medium-image-zoom@5.4.8:
+    resolution: {integrity: sha512-72CIldEUaPejjcaDOYIeDsGlWzNKpmxyKgiPi1LBCkWCIGHDLlA2KTeo2uNtmN/m72Y3k/2uWDfon9SDiPbHaA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   react-moment-proptypes@1.8.1:
     resolution: {integrity: sha512-Er940DxWoObfIqPrZNfwXKugjxMIuk1LAuEzn23gytzV6hKS/sw108wibi9QubfMN4h+nrlje8eUCSbQRJo2fQ==}
@@ -22370,6 +22379,11 @@ snapshots:
   react-medium-image-zoom@3.0.15(prop-types@15.7.2)(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
       prop-types: 15.7.2
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+
+  react-medium-image-zoom@5.4.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+    dependencies:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
