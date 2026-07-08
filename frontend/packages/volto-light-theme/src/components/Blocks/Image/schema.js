@@ -20,6 +20,10 @@ const messages = defineMessages({
     id: 'Alignment',
     defaultMessage: 'Alignment',
   },
+  size: {
+    id: 'Image size',
+    defaultMessage: 'Image size',
+  },
 });
 
 export const imageBlockSchemaEnhancer = ({ formData, schema, intl }) => {
@@ -54,16 +58,17 @@ export const standAloneImageBlockSchemaEnhancer = ({
 }) => {
   if (formData.url) {
     schema.fieldsets[0].fields = schema.fieldsets[0].fields.filter(
-      (f) => f !== 'align',
+      (f) => f !== 'align' && f !== 'size',
     );
+    delete schema.properties.size;
 
     const align = formData.styles?.['align:noprefix'];
     const isFloating = align === 'left' || align === 'right';
 
-    schema.properties.size.default = 'l';
     schema.properties.styles.schema.fieldsets[0].fields = [
-      'align:noprefix',
       'blockWidth:noprefix',
+      'align:noprefix',
+      'size:noprefix',
       ...schema.properties.styles.schema.fieldsets[0].fields,
     ];
 
@@ -81,9 +86,23 @@ export const standAloneImageBlockSchemaEnhancer = ({
       actions: config.blocks.widths.map((width) => width.name),
     };
 
+    schema.properties.styles.schema.properties['size:noprefix'] = {
+      widget: 'image_size',
+      title: intl.formatMessage(messages.size),
+      default: 'l',
+    };
+
     schema.properties.styles.schema.properties['blockWidth:noprefix'].disabled =
       isFloating;
-    schema.properties.size.disabled = !isFloating;
+    schema.properties.styles.schema.properties['size:noprefix'].disabled =
+      !isFloating;
+
+    // Show the `styling` fieldset after `default`.
+    const stylingIndex = schema.fieldsets.findIndex((f) => f.id === 'styling');
+    if (stylingIndex > -1) {
+      const [styling] = schema.fieldsets.splice(stylingIndex, 1);
+      schema.fieldsets.splice(1, 0, styling);
+    }
   }
   return schema;
 };

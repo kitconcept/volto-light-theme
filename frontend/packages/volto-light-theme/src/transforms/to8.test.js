@@ -64,16 +64,14 @@ describe('migrateToVLT8FloatingBlocks', () => {
   it('applies the narrow width to a small floating image', () => {
     expect(migrate({ '@type': 'image', align: 'left', size: 'm' })).toEqual({
       '@type': 'image',
-      size: 'm',
-      styles: { ...alignLeft, ...narrowWidth },
+      styles: { ...alignLeft, ...narrowWidth, 'size:noprefix': 'm' },
     });
   });
 
   it('applies the default width to a floating image that is large by size', () => {
     expect(migrate({ '@type': 'image', align: 'right', size: 'l' })).toEqual({
       '@type': 'image',
-      size: 'l',
-      styles: { ...alignRight, ...defaultWidth },
+      styles: { ...alignRight, ...defaultWidth, 'size:noprefix': 'l' },
     });
   });
 
@@ -86,11 +84,7 @@ describe('migrateToVLT8FloatingBlocks', () => {
       }),
     ).toEqual({
       '@type': 'image',
-      styles: {
-        'size:noprefix': 'var(--size-large)',
-        ...alignLeft,
-        ...defaultWidth,
-      },
+      styles: { 'size:noprefix': 'l', ...alignLeft, ...defaultWidth },
     });
   });
 
