@@ -200,3 +200,8 @@ def install_kitconcept_voltolighttheme(context):
     setup_tool = api.portal.get_tool("portal_setup")
     setup_tool.runAllImportStepsFromProfile("profile-kitconcept.voltolighttheme:default")
 ```
+
+## Site customizations
+
+If you want to add the VLT behaviors to your Plone site, you can follow the instructions in the {doc}`../conceptual-guides/site-customization` section.
+They will allow you to customize the header, footer, and theme of your Plone site using easy knobs in the content type applied to (Plone site/Subsite).
