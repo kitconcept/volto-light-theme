@@ -73,7 +73,7 @@ module.exports = {
 };
 ```
 
-## VLT recommended add-ons
+### VLT recommended add-ons
 
 `@kitconcept/volto-light-theme` supports all core blocks and it also supports blocks from selected Volto add-ons.
 The recommended add-ons are listed in the {doc}`../reference/recommended-addons` section.
