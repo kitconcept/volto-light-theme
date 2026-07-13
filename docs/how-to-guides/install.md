@@ -8,8 +8,21 @@ myst:
 ---
 
 # Install
+
+## Frontend
+
 `@kitconcept/volto-light-theme` is a Volto add-on.
 It should be installed as any other add-on using the `dependencies` key in your project's add-on file {file}`packages/<name_of_your_project_addon>/package.json`.
+
+```{code-block} json
+:caption: {file}`packages/<name_of_addon>/package.json`
+{
+  "dependencies": {
+    "@kitconcept/volto-light-theme": "^8.0.0-alpha.0",
+    // other dependencies
+  }
+}
+```
 
 You should also configure `@kitconcept/volto-light-theme` as a Volto add-on using the `addons` key in your project add-on file {file}`packages/<name_of_your_project_addon>/package.json`.
 
@@ -21,18 +34,6 @@ You should also configure `@kitconcept/volto-light-theme` as a Volto add-on usin
   // if it's defined in `volto.config.js`
   "@kitconcept/volto-light-theme",
 ],
-```
-
-Since `@kitconcept/volto-light-theme` is also a theme add-on, you should declare it in your project's {file}`volto.config.js`.
-
-```js
-const addons = ['<name_of_your_project_addon>'];
-const theme = '@kitconcept/volto-light-theme';
-
-module.exports = {
-  addons,
-  theme,
-};
 ```
 
 ```{versionadded} 18.29.1
@@ -60,6 +61,18 @@ The following snippet shows example configuration.
 }
 ```
 
+If you are in an older version of Volto, since `@kitconcept/volto-light-theme` is also a theme add-on, you should declare it in your project's {file}`volto.config.js` `theme` key.
+
+```js
+const addons = ['<name_of_your_project_addon>'];
+const theme = '@kitconcept/volto-light-theme';
+
+module.exports = {
+  addons,
+  theme,
+};
+```
+
 ## VLT recommended add-ons
 
 `@kitconcept/volto-light-theme` supports all core blocks and it also supports blocks from selected Volto add-ons.
@@ -80,19 +93,20 @@ Nevertheless, you can choose to install only those you want to use.
 :caption: {file}`packages/<name_of_addon>/package.json`
 {
   "dependencies": {
-    "@eeacms/volto-accordion-block": "^10.4.6",
-    "@kitconcept/volto-banner-block": "^1.1.0",
-    "@kitconcept/volto-bm3-compat": "^1.0.0-alpha.1",
-    "@kitconcept/volto-button-block": "^4.0.0-alpha.0",
-    "@kitconcept/volto-carousel-block": "^2.0.0-alpha.3",
-    "@kitconcept/volto-dsgvo-banner": "^2.5.1",
-    "@kitconcept/volto-heading-block": "^2.5.0",
-    "@kitconcept/volto-highlight-block": "^5.0.0-alpha.2",
-    "@kitconcept/volto-introduction-block": "^1.1.0",
-    "@kitconcept/volto-logos-block": "^3.0.0-alpha.1",
-    "@kitconcept/volto-separator-block": "^4.2.1",
-    "@kitconcept/volto-slider-block": "^6.4.0",
-    "@plonegovbr/volto-social-media": "^2.0.0-alpha.10"
+  "@eeacms/volto-accordion-block": "^12.0.0",
+  "@kitconcept/volto-banner-block": "^1.2.0",
+  "@kitconcept/volto-bm3-compat": "^1.0.0-alpha.1",
+  "@kitconcept/volto-button-block": "5.0.0-alpha.2",
+  "@kitconcept/volto-calendar-block": "^1.0.0-alpha.9",
+  "@kitconcept/volto-carousel-block": "^3.0.0-alpha.1",
+  "@kitconcept/volto-dsgvo-banner": "^4.0.0-alpha.2",
+  "@kitconcept/volto-heading-block": "^2.5.0",
+  "@kitconcept/volto-highlight-block": "^5.0.0-alpha.2",
+  "@kitconcept/volto-introduction-block": "^1.4.1",
+  "@kitconcept/volto-logos-block": "^4.0.0-alpha.1",
+  "@kitconcept/volto-separator-block": "^5.0.0-alpha.0",
+  "@kitconcept/volto-slider-block": "^7.0.0-alpha.1",
+  "@plonegovbr/volto-social-media": "^3.0.0-alpha.0"
     // other dependencies
   }
 }
@@ -130,4 +144,59 @@ Find the full list of the {doc}`../reference/recommended-addons`.
 
 ```{note}
 If you don't want to use any of the recommended add-ons, then remove them and don't declare them as add-ons in your project, leaving only those that you want.
+```
+
+## Backend
+
+VLT has a Plone backend add-on that is required to be installed in your Plone backend.
+The backend add-on is called `kitconcept.voltolighttheme` you need to take these steps to install it:
+
+1. Pull it as a dependency in your Plone backend add-on {file}`pyproject.toml`:
+
+```toml
+[project]
+dependencies = [
+    <!-- Other deps here -->
+    "kitconcept.voltolighttheme = "^8.0.0"
+]
+```
+
+2. Run `make install` in your Plone backend folder to install the dependency.
+
+3a. Install it in your Plone backend site using the Add-ons control panel.
+
+3b. or alternatively, if you have an existing site and do you want to install it programmatically using GenericSetup in `metadata.xml`:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+  <version>20260714001</version>
+  <dependencies>
+    <dependency>profile-kitconcept.voltolighttheme:default</dependency>
+  </dependencies>
+</metadata>
+```
+
+then in `upgrades.zcml`:
+
+```xml
+<genericsetup:upgradeStep
+    title="Install kitconcept.voltolighttheme dependency"
+    description="Install the newly required kitconcept.voltolighttheme profile."
+    source="1000"
+    destination="20260714001"
+    handler=".upgrades.install_kitconcept_voltolighttheme"
+    profile="your.package:default"
+/>
+```
+
+and in `upgrades.py`:
+
+```python
+from plone import api
+
+def install_kitconcept_voltolighttheme(context):
+    """Install the kitconcept.voltolighttheme profile."""
+    setup_tool = api.portal.get_tool("portal_setup")
+    setup_tool.runAllImportStepsFromProfile("profile-kitconcept.voltolighttheme:default")
 ```
