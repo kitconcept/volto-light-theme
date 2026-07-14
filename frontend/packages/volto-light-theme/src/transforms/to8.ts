@@ -75,6 +75,18 @@ function migrateMediaBlock(block: any, sizeAware: boolean) {
       : block?.styles?.['blockWidth:noprefix'] ?? width,
   };
 
+  // Migrates the legacy `size` field to `size:noprefix`, resolved to the
+  // `--media-size` CSS variable just like width & alignment.
+  if (sizeAware) {
+    const size =
+      block?.size ??
+      (block.styles['size:noprefix'] === 'var(--size-large)' ? 'l' : undefined);
+    if (size) {
+      block.styles['size:noprefix'] = size;
+    }
+    delete block.size;
+  }
+
   delete block.align;
 }
 

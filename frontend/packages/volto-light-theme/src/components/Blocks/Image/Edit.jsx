@@ -13,6 +13,7 @@ import Caption from '../../Caption/Caption';
 function Edit(props) {
   const { data } = props;
   const Image = config.getComponent({ name: 'Image' }).component;
+  const size = data.styles?.['size:noprefix'] ?? data.size;
 
   const onSelectItem = React.useCallback(
     (url, item) => {
@@ -52,14 +53,9 @@ function Edit(props) {
     <>
       <div className={cx('block image')}>
         {data.url ? (
-          <figure
-            // START CUSTOMIZATION
-            className={cx({
-              large: data.size === 'l' || !data.size,
-              medium: data.size === 'm',
-              small: data.size === 's',
-            })}
-          >
+          // START CUSTOMIZATION
+          <figure>
+            {/* END CUSTOMIZATION */}
             <Image
               item={
                 data.image_scales
@@ -70,20 +66,19 @@ function Edit(props) {
                     }
                   : undefined
               }
-              // END CUSTOMIZATION
               src={
                 data.image_scales
                   ? undefined
                   : isInternalURL(data.url)
                     ? // Backwards compat in the case that the block is storing the full server URL
                       (() => {
-                        if (data.size === 'l')
+                        if (size === 'l')
                           return `${flattenToAppURL(data.url)}/@@images/image`;
-                        if (data.size === 'm')
+                        if (size === 'm')
                           return `${flattenToAppURL(
                             data.url,
                           )}/@@images/image/preview`;
-                        if (data.size === 's')
+                        if (size === 's')
                           return `${flattenToAppURL(data.url)}/@@images/image/mini`;
                         return `${flattenToAppURL(data.url)}/@@images/image`;
                       })()

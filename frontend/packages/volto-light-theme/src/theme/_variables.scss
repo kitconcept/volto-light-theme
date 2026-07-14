@@ -456,7 +456,8 @@ $line-heights: (
 }
 
 @mixin floated-figure($align) {
-  max-width: calc(var(--default-container-width) / 2 - 10px);
+  // `--media-size` is set (small/medium/large) via the `size:noprefix` style field.
+  max-width: var(--media-size, calc(var(--default-container-width) / 2 - 10px));
   height: auto;
   margin-bottom: $spacing-small;
 
