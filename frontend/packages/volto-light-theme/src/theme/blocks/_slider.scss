@@ -52,7 +52,7 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
       width: 570px;
       min-height: 321px;
       padding: 60px 50px 60px 100px;
-      background: rgba(0, 0, 0, 0.75);
+      background-color: var(--flagColor);
       color: white;
       transform: translateY(-50%);
 
@@ -138,7 +138,7 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
       align-items: center;
       padding: 0 130px;
       aspect-ratio: 2/1;
-      background-color: var(--theme-color);
+      background-color: var(--flagColor);
       gap: clamp(30px, 4vw, 57px);
       grid-template-areas: 'images content';
       grid-template-rows: auto;
