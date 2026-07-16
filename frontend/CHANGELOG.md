@@ -8,6 +8,27 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0-alpha.31 (2026-07-16)
+
+### Feature
+
+- Let projects choose the structural components (header, navigation, mobile navigation, footer, breadcrumbs, language selector, logo, search widget, and tags) through the registry, selecting each one via `config.settings.vlt.components` instead of shadowing. @ericof [#904](https://github.com/kitconcept/volto-light-theme/pull/904)
+- Migrate the Image block size to a `size:noprefix` style field, resolving sizes via a `--media-size` CSS variable. @danalvrz 
+- Update Highlight block to 5.0.0-alpha.2. @danalvrz 
+
+### Bugfix
+
+- Update use of clickable_profile_link @Tishasoumya-02 [#update-use-of-clickable-profile-link](https://github.com/kitconcept/volto-light-theme/pull/update-use-of-clickable-profile-link)
+- Fix grid Teaser title overflows @iRohitSingh [#894](https://github.com/kitconcept/volto-light-theme/pull/894)
+- Fix Link content type URL(external) in navigation being appended to the existing URL instead of replacing it. @iFlameing 
+- Fix advanced facet toggle not working in Search block. @iFlameing 
+- Fix loss of live data in Add mode & add unit lest to useLiveData hook. @danalvrz 
+- Fix the changing width layout induced by simple slider variant @Tishasoumya-02 
+
+### Internal
+
+- Update volto-dsgvo-banner to 4.0.0-alpha.2. @iFlameing 
+
 ## 8.0.0-alpha.30 (2026-06-11)
 
 ### Feature

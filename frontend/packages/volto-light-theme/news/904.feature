@@ -1,1 +1,0 @@
-Let projects choose the structural components (header, navigation, mobile navigation, footer, breadcrumbs, language selector, logo, search widget, and tags) through the registry, selecting each one via `config.settings.vlt.components` instead of shadowing. @ericof
