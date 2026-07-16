@@ -1,10 +1,12 @@
 import type { ConfigType } from '@plone/registry';
+import type { VLTSettings } from '../types';
 
 declare module '@plone/types' {
   export interface SettingsConfig {
     slate: {
       useLinkedHeadings: boolean;
     };
+    vlt?: VLTSettings;
   }
 }
 
@@ -23,6 +25,19 @@ export default function install(config: ConfigType) {
   const EXPANDERS_INHERIT_BEHAVIORS =
     'voltolighttheme.header,voltolighttheme.theme,voltolighttheme.footer,kitconcept.footer,kitconcept.sticky_menu';
   config.settings.enableAutoBlockGroupingByBackgroundColor = true;
+  config.settings.vlt = {
+    components: {
+      breadcrumbs: 'vlt',
+      footer: 'vlt',
+      header: 'vlt',
+      languageSelector: 'vlt',
+      logo: 'vlt',
+      mobileNavigation: 'vlt',
+      navigation: 'vlt',
+      searchWidget: 'vlt',
+      tags: 'vlt',
+    },
+  };
   config.settings.navDepth = 3;
   config.settings.slate.useLinkedHeadings = false;
   config.settings.contentMetadataTagsImageField = 'preview_image';

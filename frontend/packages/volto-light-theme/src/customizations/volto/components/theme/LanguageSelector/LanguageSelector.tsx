@@ -1,10 +1,16 @@
 /**
  * OVERRIDE LanguageSelector.tsx
- * REASON: Show only two letters of the native language name.
- * SemanticUI-free located at the components folder.
- * To override it, override the @kitconcept/volto-light-theme one instead of
- * this one.
+ * REASON: VLT resolves the language selector through the component registry so
+ * a project can swap it via `config.settings.vlt.components.languageSelector`
+ * instead of shadowing this file. To replace it, register your own utility and
+ * flip the setting.
  */
-import LanguageSelector from '../../../../../components/LanguageSelector/LanguageSelector';
+
+import { getVLTComponent } from '@kitconcept/volto-light-theme/helpers/settings';
+
+const LanguageSelector = (props) => {
+  const LanguageSelectorComponent = getVLTComponent('languageSelector');
+  return <LanguageSelectorComponent {...props} />;
+};
 
 export default LanguageSelector;
