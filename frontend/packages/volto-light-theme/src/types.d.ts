@@ -116,4 +116,11 @@ declare module '@plone/types' {
     sticky_menu: Array<stickyMenu>;
     footer_links: Array<Link>;
   }
+  export interface SettingsConfig {
+    /**
+     * Maps a content type to the placeholder image, shown in Cards when
+     * an item has no image of its own. If undefined, it falls back to the default placeholder image.
+     */
+    placeholderImages?: Record<string, string>;
+  }
 }
