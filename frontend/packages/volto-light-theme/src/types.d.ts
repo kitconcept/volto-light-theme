@@ -96,6 +96,20 @@ export type CustomInheritBehavior<T> = {
   };
 };
 
+export type VLTSettings = {
+  components: {
+    breadcrumbs: string;
+    footer: string;
+    header: string;
+    languageSelector: string;
+    logo: string;
+    mobileNavigation: string;
+    navigation: string;
+    searchWidget: string;
+    tags: string;
+  };
+};
+
 declare module '@plone/types' {
   export interface Content {
     footer_logos: Array<footerLogo>;

@@ -9,6 +9,7 @@ import { migrateToVLT6ColorAndWidthModel } from './transforms/to6';
 import { migrateToVLT8FloatingBlocks } from './transforms/to8';
 
 import installSettings from './config/settings';
+import installComponents from './config/components';
 import installBlocks from './config/blocks';
 import installClassExtenders from './config/classExtenders';
 import installWidgets from './config/widgets';
@@ -80,6 +81,7 @@ declare module '@plone/types' {
 
 const applyConfig = (config: ConfigType) => {
   installSettings(config);
+  installComponents(config);
   installBlocks(config);
   installClassExtenders(config);
   installWidgets(config);
