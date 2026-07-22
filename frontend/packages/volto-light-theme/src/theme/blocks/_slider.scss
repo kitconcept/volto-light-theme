@@ -52,8 +52,8 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
       width: 570px;
       min-height: 321px;
       padding: 60px 50px 60px 100px;
-      background: rgba(0, 0, 0, 0.75);
-      color: white;
+      background-color: var(--flagColor);
+      color: var(--flagColor-foreground, var(--theme-foreground-color));
       transform: translateY(-50%);
 
       @container (max-width: 1024px) {
@@ -86,7 +86,7 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
           @include text-heading-h2();
           margin-top: 0px;
           margin-bottom: $spacing-medium;
-          color: $white;
+          color: var(--flagColor-foreground, var(--theme-foreground-color));
         }
       }
       p {
@@ -95,7 +95,7 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         overflow: hidden;
         margin-bottom: 50px;
         -webkit-box-orient: vertical;
-        color: $white;
+        color: var(--flagColor-foreground, var(--theme-foreground-color));
         -webkit-line-clamp: 5;
         text-overflow: ellipsis;
         @media only screen and (max-width: $computer-width) {
@@ -119,7 +119,7 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
     border: 1px solid currentColor;
     border-radius: 0;
     background-color: transparent;
-    color: $white;
+    color: var(--flagColor-foreground, var(--theme-foreground-color));
     font-size: 16px;
     font-weight: 900;
     line-height: 20px;
@@ -138,7 +138,7 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
       align-items: center;
       padding: 0 130px;
       aspect-ratio: 2/1;
-      background-color: var(--theme-color);
+      background-color: var(--flagColor);
       gap: clamp(30px, 4vw, 57px);
       grid-template-areas: 'images content';
       grid-template-rows: auto;
@@ -203,7 +203,7 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         align-content: center;
         padding: 0;
         background: none;
-        color: var(--theme-foreground-color);
+        color: var(--flagColor-foreground, var(--theme-foreground-color));
         grid-area: content;
         transform: none;
 
@@ -233,11 +233,11 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
 
         .title {
           h2 {
-            color: var(--theme-foreground-color);
+            color: var(--flagColor-foreground, var(--theme-foreground-color));
           }
         }
         p {
-          color: var(--theme-foreground-color);
+          color: var(--flagColor-foreground, var(--theme-foreground-color));
           -webkit-line-clamp: 3;
           line-clamp: 3;
         }
@@ -263,14 +263,14 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         width: 50px !important;
         height: 50px !important;
         padding: 40px;
-        color: var(--theme-foreground-color);
+        color: var(--flagColor-foreground, var(--theme-foreground-color));
       }
       @media only screen and (max-width: $computer-width) {
         display: none;
       }
     }
     button {
-      color: var(--theme-foreground-color);
+      color: var(--flagColor-foreground, var(--theme-foreground-color));
     }
   }
 }
