@@ -300,11 +300,19 @@ External & Mail link removal for all the blocks.
 // Excluding the contained (blocks in block) ones
 #page-add,
 #page-edit {
-  [class*='block-editor-']:not(.contained) {
+  [class*='block-editor-']:not(.contained, .block-editor-banner) {
     @include layout-container-width();
     @include adjustMarginsToEditContainer($layout-container-width);
     &.has--block-width--full {
       @include adjustEditContainerFullWidth();
+    }
+  }
+
+  .block-editor-banner {
+    @include layout-container-width();
+    @include adjustMarginsToEditContainer($layout-container-width);
+    &.has--block-width--full {
+      max-width: var(--layout-container-width);
     }
   }
 }
