@@ -23,6 +23,7 @@ import { disableBgColorSchema } from '../components/Blocks/disableBgColorSchema'
 import TopSideFacets from '../components/Blocks/Search/TopSideFacets';
 
 import GridListingBlockTemplate from '../components/Blocks/Listing/GridTemplate';
+import { BannerStylingSchema } from '../components/Blocks/Banner/schema';
 import { ButtonStylingSchema } from '../components/Blocks/Button/schema';
 import { SeparatorStylingSchema } from '../components/Blocks/Separator/schema';
 
@@ -388,7 +389,7 @@ export default function install(config: ConfigType) {
 
   config.blocks.blocksConfig.banner = {
     ...config.blocks.blocksConfig.banner,
-    schemaEnhancer: defaultStylingSchema,
+    schemaEnhancer: BannerStylingSchema,
   };
   config.blocks.blocksConfig.introduction = {
     ...config.blocks.blocksConfig.introduction,
