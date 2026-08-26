@@ -1,6 +1,6 @@
 {
   "name": "@kitconcept/volto-light-theme-dev",
-  "version": "8.0.0-alpha.30",
+  "version": "8.0.0-alpha.31",
   "description": "Volto Light Theme by kitconcept",
   "main": "src/index.js",
   "types": "src/types/index.d.ts",
@@ -47,6 +47,8 @@
     "storybook-build": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto build-storybook -c $(pwd)/.storybook",
     "test:visual": "playwright test playwright/tests/visual/main/*.test.{ts,tsx}",
     "test:visual:ui": "playwright test --ui",
+    "test:acceptance": "playwright test -c playwright-acceptance.config.ts",
+    "test:acceptance:ui": "playwright test -c playwright-acceptance.config.ts --ui",
     "update:browserlist": "pnpm --filter @plone/volto add caniuse-lite && pnpm --filter @plone/volto remove caniuse-lite"
   },
   "devDependencies": {

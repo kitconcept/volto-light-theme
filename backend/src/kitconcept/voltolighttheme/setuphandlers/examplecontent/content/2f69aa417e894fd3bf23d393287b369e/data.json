@@ -7,7 +7,9 @@
     "0126e819-d955-41c5-a736-2f0b5ffda8a1": {
       "@type": "separator",
       "styles": {
-        "align": "full"
+        "align:noprefix": "left",
+        "blockWidth:noprefix": "default",
+        "shortLine": false
       }
     },
     "06a960a6-795c-409d-a55f-94d5047e3514": {
@@ -33,7 +35,7 @@
           "head_title": null,
           "href": [
             {
-              "@id": "resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+              "@id": "../../resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
               "@type": "Document",
               "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
               "Title": "Page",
@@ -44,6 +46,7 @@
               "title": "Page"
             }
           ],
+          "overwrite": true,
           "styles": {
             "align": "left"
           },
@@ -83,10 +86,12 @@
     "4a0352d5-89df-48aa-944e-7270e81351d4": {
       "@type": "separator",
       "styles": {
-        "align": "full",
-        "backgroundColor": "transparent",
-        "noLine": false
-      }
+        "align:noprefix": "left",
+        "blockWidth:noprefix": "default",
+        "noLine": false,
+        "shortLine": false
+      },
+      "theme": "default"
     },
     "7a405d27-e5ca-426c-bca4-e40cc338f7ba": {
       "@type": "slate",
@@ -133,11 +138,20 @@
     "e328753b-d914-4bcb-8b8b-2d5060476efe": {
       "@type": "separator",
       "styles": {
-        "align": "full"
-      }
+        "align:noprefix": "left",
+        "blockWidth:noprefix": "default",
+        "shortLine": false
+      },
+      "theme": "default"
     },
     "e58cca3c-95d4-4819-951d-48415706bf41": {
       "@type": "title"
+    },
+    "e70b81d8-4a04-4be0-986f-5a2c29243faa": {
+      "@type": "heading",
+      "heading": "Heading block",
+      "styles": {},
+      "theme": "default"
     },
     "faabad67-4aa2-4774-a48c-b1accf288700": {
       "@type": "introduction",
@@ -156,7 +170,9 @@
     "fe637263-126e-4a7f-b4aa-36369c5155cc": {
       "@type": "separator",
       "styles": {
-        "align": "full"
+        "align:noprefix": "left",
+        "blockWidth:noprefix": "default",
+        "shortLine": false
       }
     }
   },
@@ -168,6 +184,7 @@
       "fe637263-126e-4a7f-b4aa-36369c5155cc",
       "36960cee-ec85-458b-b0be-d2e7a5a41e5f",
       "e328753b-d914-4bcb-8b8b-2d5060476efe",
+      "e70b81d8-4a04-4be0-986f-5a2c29243faa",
       "06a960a6-795c-409d-a55f-94d5047e3514",
       "b4691078-153d-451f-9b47-fa6f852a1e6c",
       "7a405d27-e5ca-426c-bca4-e40cc338f7ba",
@@ -196,7 +213,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2025-10-06T20:03:30+00:00",
+  "modified": "2026-07-20T11:57:21+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "review_state": "published",

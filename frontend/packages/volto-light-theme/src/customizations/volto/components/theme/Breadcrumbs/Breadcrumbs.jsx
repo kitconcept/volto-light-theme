@@ -1,11 +1,16 @@
 /**
  * OVERRIDE Breadcrumbs.jsx
- * REASON: This theme uses a custom pre-@plone/components component
- * SemanticUI-free located at the components folder.
- * To override it, override the @kitconcept/volto-light-theme one instead of
- * this one.
+ * REASON: VLT resolves the breadcrumbs through the component registry so a
+ * project can swap it via `config.settings.vlt.components.breadcrumbs` instead
+ * of shadowing this file. To replace it, register your own utility and flip the
+ * setting.
  */
 
-import Breadcrumbs from '../../../../../components/Breadcrumbs/Breadcrumbs';
+import { getVLTComponent } from '@kitconcept/volto-light-theme/helpers/settings';
+
+const Breadcrumbs = (props) => {
+  const BreadcrumbsComponent = getVLTComponent('breadcrumbs');
+  return <BreadcrumbsComponent {...props} />;
+};
 
 export default Breadcrumbs;

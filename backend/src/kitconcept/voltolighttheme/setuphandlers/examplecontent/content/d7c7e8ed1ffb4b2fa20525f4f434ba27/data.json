@@ -13,7 +13,7 @@
           "head_title": null,
           "href": [
             {
-              "@id": "resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+              "@id": "../../resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
               "@type": "Document",
               "Description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
               "Title": "Inhaltstyp: Seite (Page)",
@@ -24,6 +24,7 @@
               "title": "Inhaltstyp: Seite (Page)"
             }
           ],
+          "overwrite": true,
           "styles": {
             "align": "left"
           },
@@ -35,7 +36,7 @@
           "head_title": null,
           "href": [
             {
-              "@id": "resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+              "@id": "../../resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
               "@type": "Document",
               "Description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
               "Title": "Inhaltstyp: Seite (Page)",
@@ -46,6 +47,7 @@
               "title": "Inhaltstyp: Seite (Page)"
             }
           ],
+          "overwrite": true,
           "styles": {
             "align": "left"
           },
@@ -59,152 +61,6 @@
         ]
       },
       "styles": {}
-    },
-    "429c0a28-cf90-4d4d-ad8a-acc904bf3070": {
-      "@type": "highlight",
-      "allow_image_download": true,
-      "alt": "",
-      "blurhash": "1.3398:L89aT~e:0MMcRln3MwSiZ~EQs6x]",
-      "button": true,
-      "buttonLink": [
-        {
-          "@id": "resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
-          "@type": "Document",
-          "CreationDate": "2023-07-06T23:35:20+02:00",
-          "Creator": "admin",
-          "Date": "2023-07-06T18:35:00+02:00",
-          "Description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
-          "EffectiveDate": "2023-07-06T18:35:00+02:00",
-          "ExpirationDate": "None",
-          "ModificationDate": "2023-09-22T16:25:49+02:00",
-          "Subject": [],
-          "Title": "Page",
-          "Type": "Page",
-          "UID": "7ab9c48ede33415fa2a66a99549c8f70",
-          "author_name": null,
-          "cmf_uid": null,
-          "commentators": [],
-          "created": "2023-07-06T21:35:20+00:00",
-          "description": "The Page content type can be used to display content on a single page of the website. Pages can be structured using text, images and blocks.",
-          "effective": "2023-07-06T16:35:00+00:00",
-          "end": null,
-          "exclude_from_nav": false,
-          "expires": "2499-12-30T22:00:00+00:00",
-          "getIcon": null,
-          "getId": "page",
-          "getObjSize": "676.8 KB",
-          "getPath": "/Plone/content-types/page",
-          "getRemoteUrl": null,
-          "getURL": "http://localhost:8080/Plone/content-types/page",
-          "hasPreviewImage": true,
-          "head_title": null,
-          "id": "page",
-          "image_field": "preview_image_link",
-          "in_response_to": null,
-          "is_folderish": true,
-          "last_comment_date": null,
-          "listCreators": [
-            "admin"
-          ],
-          "location": null,
-          "mime_type": "text/plain",
-          "modified": "2023-09-22T14:25:49+00:00",
-          "nav_title": null,
-          "portal_type": "Document",
-          "review_state": "published",
-          "start": null,
-          "sync_uid": null,
-          "title": "Page",
-          "total_comments": 0,
-          "type_title": "Page"
-        }
-      ],
-      "buttonText": "Other button text",
-      "credit": {
-        "data": "<a href=\"/de/service/impressum\">DLR (CC BY-NC-ND 3.0)</a>"
-      },
-      "description_color": "blue3",
-      "image_field": "image",
-      "image_scales": {
-        "image": [
-          {
-            "content-type": "image/jpeg",
-            "download": "@@images/image-2400-59ba0e28b8fb813be7e18935e5f63a59.jpeg",
-            "filename": "black-starry-night.jpg",
-            "height": 1708,
-            "scales": {
-              "great": {
-                "download": "@@images/image-1200-7cca3b5b9ba61195f9190c32b3a54ec9.jpeg",
-                "height": 854,
-                "width": 1200
-              },
-              "huge": {
-                "download": "@@images/image-1600-6ff92f1800f77515dde1be81b0fdd72a.jpeg",
-                "height": 1138,
-                "width": 1600
-              },
-              "icon": {
-                "download": "@@images/image-32-2a46e7a6b76a8db3a7941215c4de8a01.jpeg",
-                "height": 22,
-                "width": 32
-              },
-              "large": {
-                "download": "@@images/image-800-3a7c82cae430c36e707b83909a496b32.jpeg",
-                "height": 569,
-                "width": 800
-              },
-              "larger": {
-                "download": "@@images/image-1000-f4a4c8b8e8e5ffebfbdbcff0115bfc09.jpeg",
-                "height": 711,
-                "width": 1000
-              },
-              "mini": {
-                "download": "@@images/image-200-3bdc6d1e0c48ce4430f75a4ac55b939e.jpeg",
-                "height": 142,
-                "width": 200
-              },
-              "preview": {
-                "download": "@@images/image-400-71bf22b0c5006001209fc8fadb40b10a.jpeg",
-                "height": 284,
-                "width": 400
-              },
-              "teaser": {
-                "download": "@@images/image-600-75bdd455dcec596851abe1b072dc76fe.jpeg",
-                "height": 427,
-                "width": 600
-              },
-              "thumb": {
-                "download": "@@images/image-128-fc31735ade965dca8ce6946f7746c583.jpeg",
-                "height": 91,
-                "width": 128
-              },
-              "tile": {
-                "download": "@@images/image-64-598079775de66e3ee3d5a51362938e1a.jpeg",
-                "height": 45,
-                "width": 64
-              }
-            },
-            "size": 693013,
-            "width": 2400
-          }
-        ]
-      },
-      "plaintext": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.",
-      "styles": {
-        "descriptionColor": "highlight-custom-color-4"
-      },
-      "title": "Highlight-Block",
-      "url": "resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
-      "value": [
-        {
-          "children": [
-            {
-              "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt."
-            }
-          ],
-          "type": "p"
-        }
-      ]
     },
     "4974677f-f93a-41ba-9136-73c7b487754f": {
       "@type": "slate",
@@ -220,6 +76,29 @@
         }
       ]
     },
+    "9ae0f5e0-e7e8-4421-b156-7c84a621e122": {
+      "@type": "highlight",
+      "button": true,
+      "buttonText": "Other button text",
+      "image_field": "image",
+      "plaintext": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.",
+      "styles": {
+        "descriptionColor": "highlight-custom-color-4"
+      },
+      "theme": "default",
+      "title": "Highlight-Block",
+      "url": "../../resolveuid/970ec24c76784c66a06d8c8d8b6522b2",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
     "a117798d-06a3-4c57-92a9-672f1ce5dc90": {
       "@type": "highlight",
       "allow_image_download": true,
@@ -228,7 +107,7 @@
       "button": true,
       "buttonLink": [
         {
-          "@id": "resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+          "@id": "../../resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
           "@type": "Document",
           "CreationDate": "2023-07-06T23:35:20+02:00",
           "Creator": "admin",
@@ -285,66 +164,12 @@
       },
       "description_color": "blue3",
       "image_field": "image",
-      "image_scales": {
-        "image": [
-          {
-            "content-type": "image/jpeg",
-            "download": "@@images/image-1126-7b90bd2f737fb08f5e2c5719f2f8bc14.jpeg",
-            "filename": "image-light.jpg",
-            "height": 633,
-            "scales": {
-              "icon": {
-                "download": "@@images/image-32-5de0f24798404cddd70cc1d15b1213ba.jpeg",
-                "height": 17,
-                "width": 32
-              },
-              "large": {
-                "download": "@@images/image-800-728b0edae32e307d8123462b48fafeaa.jpeg",
-                "height": 449,
-                "width": 800
-              },
-              "larger": {
-                "download": "@@images/image-1000-19685fe0e43ca671a6f6a973c7d1f0f5.jpeg",
-                "height": 562,
-                "width": 1000
-              },
-              "mini": {
-                "download": "@@images/image-200-cfd42d570345d1134d9b2d0f5726bb2e.jpeg",
-                "height": 112,
-                "width": 200
-              },
-              "preview": {
-                "download": "@@images/image-400-a35b24fd0dbe867083f962cf69f19c2a.jpeg",
-                "height": 224,
-                "width": 400
-              },
-              "teaser": {
-                "download": "@@images/image-600-702ac2045d4ca6fc61c52749e8c2f24d.jpeg",
-                "height": 337,
-                "width": 600
-              },
-              "thumb": {
-                "download": "@@images/image-128-06fa281eabe3bbba6eea685ce60d08f1.jpeg",
-                "height": 71,
-                "width": 128
-              },
-              "tile": {
-                "download": "@@images/image-64-f0e777433e3a4227dab46fe8cac688a6.jpeg",
-                "height": 35,
-                "width": 64
-              }
-            },
-            "size": 475285,
-            "width": 1126
-          }
-        ]
-      },
       "plaintext": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.",
       "styles": {
         "descriptionColor": "highlight-custom-color-1"
       },
       "title": "Highlight-Block",
-      "url": "resolveuid/eec82559bf3242a6be4d43bc2096f399",
+      "url": "../../resolveuid/eec82559bf3242a6be4d43bc2096f399",
       "value": [
         {
           "children": [
@@ -365,7 +190,7 @@
           "head_title": null,
           "href": [
             {
-              "@id": "resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+              "@id": "../../resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
               "@type": "Document",
               "Description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
               "Title": "Inhaltstyp: Seite (Page)",
@@ -376,6 +201,7 @@
               "title": "Inhaltstyp: Seite (Page)"
             }
           ],
+          "overwrite": true,
           "styles": {
             "align": "left"
           },
@@ -387,7 +213,7 @@
           "head_title": null,
           "href": [
             {
-              "@id": "resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
+              "@id": "../../resolveuid/7ab9c48ede33415fa2a66a99549c8f70",
               "@type": "Document",
               "Description": "Der Inhaltstyp Seite kann verwendet werden Inhalte auf einer Einzelseite der Webseite darzustellen. Seiten k\u00f6nnen mit Hilfe von Text, Bildern und Bl\u00f6cken strukturiert werden.",
               "Title": "Inhaltstyp: Seite (Page)",
@@ -398,6 +224,7 @@
               "title": "Inhaltstyp: Seite (Page)"
             }
           ],
+          "overwrite": true,
           "styles": {
             "align": "left"
           },
@@ -415,6 +242,8 @@
     "c9a5a276-8e30-4cec-b5e2-d1c2c29d130c": {
       "@type": "slate",
       "plaintext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat. Pellentesque in ipsum id orci porta dapibus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.",
+      "styles": {},
+      "theme": "default",
       "value": [
         {
           "children": [
@@ -436,7 +265,7 @@
       "a117798d-06a3-4c57-92a9-672f1ce5dc90",
       "16e0d40e-9da7-4523-9cb0-43cf2bfc5fc4",
       "c9a5a276-8e30-4cec-b5e2-d1c2c29d130c",
-      "429c0a28-cf90-4d4d-ad8a-acc904bf3070",
+      "9ae0f5e0-e7e8-4421-b156-7c84a621e122",
       "b249bf0e-2f21-4c54-bfac-d847a473bb0d",
       "4974677f-f93a-41ba-9136-73c7b487754f"
     ]
@@ -461,7 +290,7 @@
     "locked": false,
     "stealable": true
   },
-  "modified": "2023-09-30T06:55:06+00:00",
+  "modified": "2026-07-21T11:01:09+00:00",
   "nav_title": null,
   "preview_caption_link": null,
   "review_state": "published",

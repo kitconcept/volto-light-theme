@@ -42,6 +42,7 @@ _Volto Light Theme_
 how-to-guides/install
 how-to-guides/summary
 how-to-guides/remove-colophon
+how-to-guides/swap-structural-components
 how-to-guides/social-media
 how-to-guides/acceptance-tests
 how-to-guides/visual-regression-tests

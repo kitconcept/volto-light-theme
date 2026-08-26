@@ -1,0 +1,1 @@
+Add a Playwright-based acceptance test setup under `frontend/acceptance` (backend reset fixture, login/content/accessibility utilities and a basic test suite), with Makefile targets and a CI workflow to run them. @sneridagh

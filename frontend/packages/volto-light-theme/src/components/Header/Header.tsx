@@ -10,16 +10,12 @@ import {
   setMetadataFocus,
 } from '@plone/volto/actions/sidebar/sidebar';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
-import LanguageSelector from '@plone/volto/components/theme/LanguageSelector/LanguageSelector';
-import Logo from '@plone/volto/components/theme/Logo/Logo';
-import Navigation from '@plone/volto/components/theme/Navigation/Navigation';
-import SearchWidget from '@plone/volto/components/theme/SearchWidget/SearchWidget';
 import UniversalLink from '@plone/volto/components/manage/UniversalLink/UniversalLink';
 import SlotRenderer from '@plone/volto/components/theme/SlotRenderer/SlotRenderer';
 
 import { useLiveData } from '@kitconcept/volto-light-theme/helpers/useLiveData';
+import { getVLTComponent } from '@kitconcept/volto-light-theme/helpers/settings';
 
-import MobileNavigation from '../MobileNavigation/MobileNavigation';
 import IntranetSearchWidget from '../SearchWidget/IntranetSearchWidget';
 
 import type { SiteHeaderSettings } from '../../types';
@@ -40,6 +36,11 @@ type FormState = {
 };
 
 const InternetHeader = ({ pathname, content }) => {
+  const Logo = getVLTComponent('logo');
+  const Navigation = getVLTComponent('navigation');
+  const MobileNavigation = getVLTComponent('mobileNavigation');
+  const LanguageSelector = getVLTComponent('languageSelector');
+  const SearchWidget = getVLTComponent('searchWidget');
   const [isClient, setIsClient] = useState(false);
   useEffect(() => {
     setIsClient(true);
@@ -124,6 +125,10 @@ const InternetHeader = ({ pathname, content }) => {
 };
 
 const IntranetHeader = ({ pathname, content }) => {
+  const Logo = getVLTComponent('logo');
+  const Navigation = getVLTComponent('navigation');
+  const MobileNavigation = getVLTComponent('mobileNavigation');
+  const LanguageSelector = getVLTComponent('languageSelector');
   const [isClient, setIsClient] = useState(false);
   useEffect(() => {
     setIsClient(true);
