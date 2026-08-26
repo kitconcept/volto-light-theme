@@ -81,12 +81,18 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
           letter-spacing: 1px;
           line-height: 18px;
           text-transform: uppercase;
+          @media only screen and (max-width: $computer-width) {
+            color: $white;
+          }
         }
         h2 {
           @include text-heading-h2();
           margin-top: 0px;
           margin-bottom: $spacing-medium;
           color: var(--flagColor-foreground, var(--theme-foreground-color));
+          @media only screen and (max-width: $computer-width) {
+            color: $white;
+          }
         }
       }
       p {
@@ -100,6 +106,7 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         text-overflow: ellipsis;
         @media only screen and (max-width: $computer-width) {
           margin-bottom: $spacing-large;
+          color: $white;
         }
       }
     }
@@ -124,9 +131,26 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
     font-weight: 900;
     line-height: 20px;
     text-align: center;
+    @media only screen and (max-width: $computer-width) {
+      color: $white;
+    }
   }
 
   &.simple {
+    background-color: var(--flagColor);
+
+    .slider-dots .slider-dot::after {
+      background: color-mix(
+        in srgb,
+        var(--flagColor-foreground, var(--theme-foreground-color)) 50%,
+        var(--flagColor)
+      );
+    }
+
+    .slider-dots .slider-dot--selected::after {
+      background: var(--flagColor-foreground, var(--theme-foreground-color));
+    }
+
     .slider-viewport {
       margin-bottom: 0;
       container-name: slider;
@@ -218,12 +242,16 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
           height: 100%;
           align-content: start;
           padding: 60px 20px;
-          background: var(--theme-color);
-          color: var(--theme-foreground-color);
+          background: var(--flagColor);
+          color: var(--flagColor-foreground, var(--theme-foreground-color));
+          .title > .supertitle,
           button,
           .title > h2,
           p.slider-description {
-            color: var(--theme-foreground-color) !important;
+            color: var(
+              --flagColor-foreground,
+              var(--theme-foreground-color)
+            ) !important;
           }
           p.slider-description {
             -webkit-line-clamp: 8;
