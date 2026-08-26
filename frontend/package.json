@@ -47,6 +47,8 @@
     "storybook-build": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto build-storybook -c $(pwd)/.storybook",
     "test:visual": "playwright test playwright/tests/visual/main/*.test.{ts,tsx}",
     "test:visual:ui": "playwright test --ui",
+    "test:acceptance": "playwright test -c playwright-acceptance.config.ts",
+    "test:acceptance:ui": "playwright test -c playwright-acceptance.config.ts --ui",
     "update:browserlist": "pnpm --filter @plone/volto add caniuse-lite && pnpm --filter @plone/volto remove caniuse-lite"
   },
   "devDependencies": {
