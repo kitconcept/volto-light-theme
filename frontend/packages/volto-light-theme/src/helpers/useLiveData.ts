@@ -31,7 +31,7 @@ export function useLiveData<T>(
     (state) => state.form.global?.[field],
   );
 
-  if (addMode) return formData;
+  if (addMode && !behavior) return formData;
 
   const data = formData ?? current;
 

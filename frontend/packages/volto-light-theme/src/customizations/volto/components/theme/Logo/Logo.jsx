@@ -1,11 +1,15 @@
 /**
  * OVERRIDE Logo.jsx
- * REASON: This theme uses a custom pre-@plone/components component
- * SemanticUI-free located at the components folder.
- * To override it, override the @kitconcept/volto-light-theme one instead of
- * this one.
+ * REASON: VLT resolves the logo through the component registry so a project can
+ * swap it via `config.settings.vlt.components.logo` instead of shadowing this
+ * file. To replace it, register your own utility and flip the setting.
  */
 
-import Logo from '../../../../../components/Logo/Logo';
+import { getVLTComponent } from '@kitconcept/volto-light-theme/helpers/settings';
+
+const Logo = (props) => {
+  const LogoComponent = getVLTComponent('logo');
+  return <LogoComponent {...props} />;
+};
 
 export default Logo;

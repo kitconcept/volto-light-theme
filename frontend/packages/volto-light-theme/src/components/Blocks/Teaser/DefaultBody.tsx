@@ -16,7 +16,7 @@ const TeaserDefaultTemplate = (props) => {
   const site = useSelector<FormState, GetSiteResponse>(
     (state) => state.site?.data,
   );
-  const hideProfileLinks = site?.['kitconcept.disable_profile_links'];
+  const showProfileLinks = site?.['kitconcept.clickable_profile_links'];
   const { data, isEditMode, isContainer } = props;
   const columns = useContext(GridContext);
   const sizes = config.blocks.blocksConfig.teaser?.getSizes?.({
@@ -34,8 +34,8 @@ const TeaserDefaultTemplate = (props) => {
     dependencies: [href['@type']],
   }).component || DefaultSummary) as SummaryComponentType;
   let showLink = !Summary.hideLink && !isEditMode;
-  if (href['@type'] === 'Person' && hideProfileLinks !== undefined) {
-    showLink = !hideProfileLinks && !isEditMode;
+  if (href['@type'] === 'Person' && showProfileLinks !== undefined) {
+    showLink = showProfileLinks && !isEditMode;
   }
   const { openExternalLinkInNewTab } = config.settings;
   const openLinkInNewTab =
@@ -51,6 +51,8 @@ const TeaserDefaultTemplate = (props) => {
     head_title: data.head_title || '',
   };
 
+  const placeholderSrc = config.settings.placeholderImages?.[href['@type']];
+
   return (
     <Card item={showLink ? href : null} openLinkInNewTab={openLinkInNewTab}>
       <Card.Image
@@ -58,6 +60,8 @@ const TeaserDefaultTemplate = (props) => {
         item={!data.overwrite ? href : { ...href, ...localOverrides }}
         image={data.overwrite ? image : undefined}
         imageComponent={Image}
+        showPlaceholderImage={Boolean(placeholderSrc)}
+        placeholderSrc={placeholderSrc}
         sizes={sizes}
       />
       <Card.Summary>

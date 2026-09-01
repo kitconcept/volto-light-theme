@@ -19,17 +19,19 @@ describe('ImageBlockDataAdapter', () => {
     expect(onChangeBlock).toHaveBeenCalledWith('block-1', {
       '@type': 'image',
       align: 'center',
-      size: 'l',
-      styles: { 'size:noprefix': 'large' },
+      styles: { 'size:noprefix': 'l' },
     });
   });
 
-  it('maps the current size and applies a narrow width for a floating, non-large image', () => {
+  it('keeps the current size and applies a narrow width for a floating, non-large image', () => {
     const onChangeBlock = vi.fn();
 
     ImageBlockDataAdapter({
       block: 'block-1',
-      data: { '@type': 'image', size: 'm', styles: { ...alignLeft } },
+      data: {
+        '@type': 'image',
+        styles: { ...alignLeft, 'size:noprefix': 'm' },
+      },
       id: 'align',
       onChangeBlock,
       value: 'left',
@@ -38,10 +40,9 @@ describe('ImageBlockDataAdapter', () => {
     expect(onChangeBlock).toHaveBeenCalledWith('block-1', {
       '@type': 'image',
       align: 'left',
-      size: 'm',
       styles: {
         ...alignLeft,
-        'size:noprefix': 'medium',
+        'size:noprefix': 'm',
         'blockWidth:noprefix': 'narrow',
       },
     });
@@ -52,7 +53,10 @@ describe('ImageBlockDataAdapter', () => {
 
     ImageBlockDataAdapter({
       block: 'block-1',
-      data: { '@type': 'image', size: 'l', styles: { ...alignRight } },
+      data: {
+        '@type': 'image',
+        styles: { ...alignRight, 'size:noprefix': 'l' },
+      },
       id: 'align',
       onChangeBlock,
       value: 'right',
@@ -61,16 +65,15 @@ describe('ImageBlockDataAdapter', () => {
     expect(onChangeBlock).toHaveBeenCalledWith('block-1', {
       '@type': 'image',
       align: 'right',
-      size: 'l',
       styles: {
         ...alignRight,
-        'size:noprefix': 'large',
+        'size:noprefix': 'l',
         'blockWidth:noprefix': 'default',
       },
     });
   });
 
-  it('applies the default width for a floating image that is large by style', () => {
+  it('normalizes the legacy size CSS-var literal to a large, default-width image', () => {
     const onChangeBlock = vi.fn();
 
     ImageBlockDataAdapter({
@@ -89,7 +92,7 @@ describe('ImageBlockDataAdapter', () => {
       align: 'left',
       styles: {
         ...alignLeft,
-        'size:noprefix': 'large',
+        'size:noprefix': 'l',
         'blockWidth:noprefix': 'default',
       },
     });
@@ -117,8 +120,7 @@ describe('ImageBlockDataAdapter', () => {
     expect(onChangeBlock).toHaveBeenCalledWith('block-1', {
       '@type': 'image',
       url: '/an-image',
-      size: 'l',
-      styles: { 'size:noprefix': 'large' },
+      styles: { 'size:noprefix': 'l' },
       credit: { data: 'A photographer' },
       description: 'A description',
       title: 'A title',
@@ -149,8 +151,7 @@ describe('ImageBlockDataAdapter', () => {
     expect(onChangeBlock).toHaveBeenCalledWith('block-1', {
       '@type': 'image',
       url: '',
-      size: 'l',
-      styles: { 'size:noprefix': 'large' },
+      styles: { 'size:noprefix': 'l' },
     });
   });
 });

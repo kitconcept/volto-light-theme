@@ -13,7 +13,7 @@ const GridTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
   let href = linkHref?.[0]?.['@id'] || '';
   const PreviewImageComponent = config.getComponent('PreviewImage').component;
   const site = useSelector((state) => state.site?.data);
-  const hideProfileLinks = site?.['kitconcept.disable_profile_links'];
+  const showProfileLinks = site?.['kitconcept.clickable_profile_links'];
 
   if (isInternalURL(href)) {
     link = (
@@ -39,19 +39,22 @@ const GridTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
               dependencies: [item['@type']],
             }).component || DefaultSummary;
           let showLink = !Summary.hideLink && !isEditMode;
-          if (item['@type'] === 'Person' && hideProfileLinks !== undefined) {
-            showLink = !hideProfileLinks && !isEditMode;
+          if (item['@type'] === 'Person' && showProfileLinks !== undefined) {
+            showLink = showProfileLinks && !isEditMode;
           }
-
+          const placeholderSrc =
+            config.settings.placeholderImages?.[item['@type']];
           const ItemBodyTemplate = (props) =>
             CustomItemBodyTemplate ? (
               <CustomItemBodyTemplate item={item} />
             ) : (
               <>
-                {item.image_field !== '' && (
+                {(item.image_field !== '' || placeholderSrc) && (
                   <Card.Image
                     className="item-image"
                     item={item}
+                    showPlaceholderImage={true}
+                    placeholderSrc={placeholderSrc}
                     imageComponent={PreviewImageComponent}
                     sizes={`(max-width: ${config.settings.layout.tabletBreakpoint}px) 100vw, ${Math.trunc(config.settings.layout.defaultContainerWidth / 2)}px`}
                   />

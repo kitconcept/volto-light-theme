@@ -6,12 +6,6 @@ export const ImageBlockDataAdapter = ({
   onChangeBlock,
   value,
 }) => {
-  const SIZEMAP = {
-    l: 'large',
-    m: 'medium',
-    s: 'small',
-  };
-
   let dataSaved = {
     ...data,
     [id]: value,
@@ -19,36 +13,36 @@ export const ImageBlockDataAdapter = ({
 
   const align = dataSaved.styles?.['align:noprefix'];
   const isFloating = align === 'left' || align === 'right';
-  const isLarge =
-    dataSaved.size === 'l' ||
-    dataSaved.styles?.['size:noprefix'] === 'var(--size-large)';
+  const sizeSaved = dataSaved.styles?.['size:noprefix'] ?? dataSaved.size;
+  const size =
+    !sizeSaved || sizeSaved === 'var(--size-large)' ? 'l' : sizeSaved;
+  const isLarge = size === 'l';
 
   if (!isFloating) {
     dataSaved = {
       ...dataSaved,
-      size: 'l',
       styles: {
         ...dataSaved.styles,
-        'size:noprefix': SIZEMAP['l'],
+        'size:noprefix': 'l',
       },
     };
   }
-  if (!isLarge && isFloating) {
+  if (isFloating && !isLarge) {
     dataSaved = {
       ...dataSaved,
       styles: {
         ...dataSaved.styles,
-        'size:noprefix': SIZEMAP[dataSaved.size] || 'large',
+        'size:noprefix': size,
         'blockWidth:noprefix': 'narrow',
       },
     };
   }
-  if (isLarge && isFloating) {
+  if (isFloating && isLarge) {
     dataSaved = {
       ...dataSaved,
       styles: {
         ...dataSaved.styles,
-        'size:noprefix': SIZEMAP['l'],
+        'size:noprefix': 'l',
         'blockWidth:noprefix': 'default',
       },
     };

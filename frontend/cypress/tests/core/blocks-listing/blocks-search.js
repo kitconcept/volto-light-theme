@@ -427,7 +427,7 @@ describe('Search Block Tests', () => {
       .and('contain', 'Search results');
   });
 
-  it.only('Search block - test on edit sort on and sort order', () => {
+  it('Search block - test on edit sort on and sort order', () => {
     // Publish the created contents with different effective dates
     cy.setWorkflow({
       path: 'my-page',

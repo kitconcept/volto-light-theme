@@ -96,10 +96,31 @@ export type CustomInheritBehavior<T> = {
   };
 };
 
+export type VLTSettings = {
+  components: {
+    breadcrumbs: string;
+    footer: string;
+    header: string;
+    languageSelector: string;
+    logo: string;
+    mobileNavigation: string;
+    navigation: string;
+    searchWidget: string;
+    tags: string;
+  };
+};
+
 declare module '@plone/types' {
   export interface Content {
     footer_logos: Array<footerLogo>;
     sticky_menu: Array<stickyMenu>;
     footer_links: Array<Link>;
+  }
+  export interface SettingsConfig {
+    /**
+     * Maps a content type to the placeholder image, shown in Cards when
+     * an item has no image of its own. If undefined, it falls back to the default placeholder image.
+     */
+    placeholderImages?: Record<string, string>;
   }
 }

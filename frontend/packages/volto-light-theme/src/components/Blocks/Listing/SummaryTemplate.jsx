@@ -10,7 +10,7 @@ import cx from 'classnames';
 
 const SummaryTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
   const site = useSelector((state) => state.site?.data);
-  const hideProfileLinks = site?.['kitconcept.disable_profile_links'];
+  const showProfileLinks = site?.['kitconcept.clickable_profile_links'];
   let link = null;
   let href = linkHref?.[0]?.['@id'] || '';
   const PreviewImageComponent = config.getComponent('PreviewImage').component;
@@ -38,9 +38,11 @@ const SummaryTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
               dependencies: [item['@type']],
             }).component || DefaultSummary;
           let showLink = !Summary.hideLink && !isEditMode;
-          if (item['@type'] === 'Person' && hideProfileLinks !== undefined) {
-            showLink = !hideProfileLinks && !isEditMode;
+          if (item['@type'] === 'Person' && showProfileLinks !== undefined) {
+            showLink = showProfileLinks && !isEditMode;
           }
+          const placeholderSrc =
+            config.settings.placeholderImages?.[item['@type']];
           const ItemBodyTemplate = (props) =>
             CustomItemBodyTemplate ? (
               <CustomItemBodyTemplate item={item} />
@@ -49,6 +51,7 @@ const SummaryTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
                 <Card.Image
                   item={item}
                   showPlaceholderImage={true}
+                  placeholderSrc={placeholderSrc}
                   imageComponent={PreviewImageComponent}
                   sizes={`(max-width: ${config.settings.layout.tabletBreakpoint}px) 100vw, 220px`}
                 />

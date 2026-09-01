@@ -18,6 +18,7 @@ import config from '@plone/volto/registry';
  * @extends Component
  */
 export const ImageView = ({ className, data, detached, properties, style }) => {
+  const size = data.styles?.['size:noprefix'] ?? data.size;
   let href;
   if (data.href?.length > 0) {
     if (typeof data.href === 'object') {
@@ -49,16 +50,9 @@ export const ImageView = ({ className, data, detached, properties, style }) => {
         <>
           {(() => {
             const image = (
-              <figure
-                // START CUSTOMIZATION
-                className={cx({
-                  detached,
-                  large: data.size === 'l' || !data.size,
-                  medium: data.size === 'm',
-                  small: data.size === 's',
-                })}
-                // END CUSTOMIZATION
-              >
+              // START CUSTOMIZATION
+              <figure className={cx({ detached })}>
+                {/* END CUSTOMIZATION */}
                 <Image
                   item={
                     data.image_scales
@@ -75,15 +69,15 @@ export const ImageView = ({ className, data, detached, properties, style }) => {
                       : isInternalURL(data.url)
                         ? // Backwards compat in the case that the block is storing the full server URL
                           (() => {
-                            if (data.size === 'l')
+                            if (size === 'l')
                               return `${flattenToAppURL(
                                 data.url,
                               )}/@@images/image`;
-                            if (data.size === 'm')
+                            if (size === 'm')
                               return `${flattenToAppURL(
                                 data.url,
                               )}/@@images/image/preview`;
-                            if (data.size === 's')
+                            if (size === 's')
                               return `${flattenToAppURL(
                                 data.url,
                               )}/@@images/image/mini`;

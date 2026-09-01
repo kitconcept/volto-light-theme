@@ -17,6 +17,7 @@ import {
 import { videoBlockSchemaEnhancer } from '../components/Blocks/Video/schema';
 
 import { gridImageDisableSizeAndPositionHandlersSchema } from '@plone/volto/components/manage/Blocks/Image/schema';
+import { getImageBlockSizes } from '@plone/volto/components/manage/Blocks/Image/utils';
 import { disableBgColorSchema } from '../components/Blocks/disableBgColorSchema';
 
 import TopSideFacets from '../components/Blocks/Search/TopSideFacets';
@@ -87,6 +88,7 @@ declare module '@plone/types' {
 
   export interface BlocksConfig {
     alignments: StyleDefinition[];
+    sizes: StyleDefinition[];
   }
 }
 
@@ -179,6 +181,32 @@ export default function install(config: ConfigType) {
     },
   ];
 
+  // The size field stores only the token literal (`s`/`m`/`l`) and resolves it at runtime to the `--media-size`
+  // CSS variable through the `size:noprefix` styleFieldDefinition below.
+  config.blocks.sizes = [
+    {
+      style: {
+        '--media-size': 'var(--size-small)',
+      },
+      name: 's',
+      label: 'Small',
+    },
+    {
+      style: {
+        '--media-size': 'var(--size-medium)',
+      },
+      name: 'm',
+      label: 'Medium',
+    },
+    {
+      style: {
+        '--media-size': 'var(--size-large)',
+      },
+      name: 'l',
+      label: 'Large',
+    },
+  ];
+
   config.registerUtility({
     name: 'blockThemesEnhancer',
     type: 'styleWrapperStyleObjectEnhancer',
@@ -203,6 +231,12 @@ export default function install(config: ConfigType) {
     name: 'blockWidth:noprefix',
     type: 'styleFieldDefinition',
     method: () => config.blocks.widths,
+  });
+
+  config.registerUtility({
+    name: 'size:noprefix',
+    type: 'styleFieldDefinition',
+    method: () => config.blocks.sizes,
   });
 
   // No required blocks except eventMetadata
@@ -294,6 +328,13 @@ export default function install(config: ConfigType) {
       standAloneImageBlockSchemaEnhancer,
     ),
     dataAdapter: ImageBlockDataAdapter,
+    // The size token now lives in the `size:noprefix` style field
+    getSizes: (data: any) =>
+      getImageBlockSizes({
+        ...data,
+        size: data.styles?.['size:noprefix'] ?? data.size,
+        align: data.styles?.['align:noprefix'] ?? data.align,
+      }),
   };
 
   // Accordion internal `blocksConfig` amendments
