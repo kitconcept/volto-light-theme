@@ -251,6 +251,11 @@ export default function install(config: ConfigType) {
     config.blocks.blocksConfig.hero.restricted = true;
   }
 
+  // Remove HTML block
+  if (config.blocks.blocksConfig?.html) {
+    config.blocks.blocksConfig.html.restricted = true;
+  }
+
   // Default Blocks configuration
 
   config.blocks.blocksConfig.eventCalendar = {

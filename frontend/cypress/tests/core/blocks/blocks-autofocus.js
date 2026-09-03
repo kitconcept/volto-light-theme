@@ -123,17 +123,6 @@ describe('New Block Auto Focus Tests', () => {
       });
   });
 
-  it('Press Enter on a html block adds new autofocused default block', () => {
-    cy.addNewBlock('html');
-    cy.get('.block-editor-html').first().click().type('{enter}');
-    cy.wait(500);
-    cy.get('*[class*="block-editor-"]')
-      .eq(2)
-      .within(() => {
-        return cy.get('.selected');
-      });
-  });
-
   it('Press Enter on a search block adds new autofocused default block', () => {
     cy.addNewBlock('search');
     cy.get('.block-editor-search').first().click().type('{enter}');
