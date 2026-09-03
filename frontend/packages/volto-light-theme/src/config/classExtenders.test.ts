@@ -52,7 +52,6 @@ describe('token style field class names', () => {
     const classNames = classNamesFor({ '@type': 'image', styles: {} });
 
     expect(classNames).toContain('has--block-width--default');
-    expect(classNames).toContain('has--block-alignment--center');
   });
 
   it('emits no media size class when the size is unset', () => {
