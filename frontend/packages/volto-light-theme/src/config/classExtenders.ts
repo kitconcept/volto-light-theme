@@ -1,7 +1,42 @@
 import type { ConfigType } from '@plone/registry';
 import { getPreviousNextBlock } from '@plone/volto/helpers/Blocks/Blocks';
 
+type StyleClassNameConverter = (
+  name: string,
+  value: unknown,
+  prefix?: string,
+) => string | null;
+
+/**
+ * Style fields whose value is a token literal (`narrow`, `left`, `l`) that a
+ * `styleFieldDefinition` utility resolves at runtime into CSS custom
+ * properties.
+ *
+ * They are declared with the `:noprefix` marker suffix, which core turns into
+ * a class name equal to the raw token (`narrow`, `left`, `l`). We suppress
+ * that and emit a single `has--<alias>--<token>` class per field from the
+ * extender below instead.
+ */
+const STYLE_TOKEN_FIELDS: Record<string, { alias: string; fallback?: string }> =
+  {
+    blockWidth: { alias: 'block-width', fallback: 'default' },
+    align: { alias: 'block-alignment' },
+    size: { alias: 'media-size' },
+  };
+
 export default function install(config: ConfigType) {
+  const converters = config.settings.styleClassNameConverters as Record<
+    string,
+    StyleClassNameConverter
+  >;
+  config.settings.styleClassNameConverters = {
+    ...converters,
+    noprefix: (name: string, value: unknown, prefix?: string) =>
+      Object.prototype.hasOwnProperty.call(STYLE_TOKEN_FIELDS, name)
+        ? null
+        : converters.noprefix(name, value, prefix), // call original converter from core
+  };
+
   // Register custom StyleWrapper ClassNames
   config.settings.styleClassNameExtenders = [
     ({ block, content, data, classNames }) => {
@@ -66,22 +101,21 @@ export default function install(config: ConfigType) {
     },
   ];
 
-  // Blocks width convenience classes injection
+  // Convenience classes injection for the token style fields (block width,
+  // alignment, and media size). We keep only these classnames and supress the bare token classnames.
   config.settings.styleClassNameExtenders.push(
-    ({ data, classNames }: { data: any; classNames: Array<string> }) => {
-      const currentBlockWidth =
-        data?.styles?.['blockWidth:noprefix'] || 'default';
-      return [...classNames, `has--block-width--${currentBlockWidth}`];
-    },
-  );
+    ({ data, classNames }: { data: any; classNames: Array<string> }) => [
+      ...classNames,
+      ...Object.entries(STYLE_TOKEN_FIELDS).flatMap(
+        ([field, { alias, fallback }]) => {
+          const stored = data?.styles?.[`${field}:noprefix`];
 
-  // Blocks alignment convenience classes injection
-  config.settings.styleClassNameExtenders.push(
-    ({ data, classNames }: { data: any; classNames: Array<string> }) => {
-      const currentBlockAlignment =
-        data?.styles?.['align:noprefix'] || 'center';
-      return [...classNames, `has--block-alignment--${currentBlockAlignment}`];
-    },
+          if (stored != null && typeof stored !== 'string') return [];
+          const token = stored || fallback;
+          return token ? [`has--${alias}--${token}`] : [];
+        },
+      ),
+    ],
   );
 
   config.settings.styleClassNameExtenders.push(
