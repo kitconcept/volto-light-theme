@@ -111,6 +111,7 @@ context('Blocks Acceptance Tests', () => {
 
     cy.get('.documentFirstHeading').contains('Blue Orchids and Tulips');
     // THEN I can see the updated content in the teaser
+    cy.wait(500);
     cy.navigate('/document');
     cy.wait('@content');
     cy.get('.block.teaser .card-summary .title').contains(
