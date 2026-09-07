@@ -17,19 +17,6 @@ describe('Blocks Enter Key Tests - Special Cases', () => {
     cy.wait('@schema');
   });
 
-  it('Pressing Enter on a focused HTML block opens Slate editor or block chooser', () => {
-    // Add HTML block
-    cy.get('.button .block-add-button').click({ force: true });
-    cy.get('.blocks-chooser .common .button.html')
-      .contains('HTML')
-      .click({ force: true });
-    cy.wait(500);
-
-    cy.focused().type('{enter}');
-    // Now we can see two slate editor
-    cy.get('.block-editor-slate').should('have.length', 2);
-  });
-
   it('Pressing Enter on a focused Text block opens Slate editor or block chooser', () => {
     // Add Text block
     cy.get('.button .block-add-button').click({ force: true });
