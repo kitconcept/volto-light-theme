@@ -1,3 +1,7 @@
+#page-search.q.container {
+  @include layout-container-width();
+}
+
 .q.container,
 .a.container {
   container-type: inline-size;
