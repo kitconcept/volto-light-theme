@@ -34,6 +34,14 @@
         }
       ]
     },
+    "59842716-5aa5-455c-b7ca-5d6f19746b51": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "OpenStreetMap",
+      "styles": {},
+      "tag": "h2",
+      "theme": "default"
+    },
     "642c75ac-0c4a-4138-8ad7-954a3fa561e6": {
       "@type": "maps",
       "align": "left",
@@ -66,6 +74,21 @@
         }
       ]
     },
+    "7e9eae1a-1772-4c03-b3fe-bda52abd46fc": {
+      "@type": "maps",
+      "align": "wide",
+      "styles": {},
+      "theme": "grey",
+      "title": "kitconcept GmbH, Bonn (OpenStreetMap)",
+      "url": "https://www.openstreetmap.org/export/embed.html?bbox=7.09846%2C50.72757%2C7.10692%2C50.73096&layer=mapnik&marker=50.72926%2C7.10274"
+    },
+    "8019a7ab-8e74-464e-a06a-315648126075": {
+      "@type": "maps",
+      "align": "wide",
+      "styles": {},
+      "title": "kitconcept GmbH, Bonn (OpenStreetMap)",
+      "url": "https://www.openstreetmap.org/export/embed.html?bbox=7.09846%2C50.72757%2C7.10692%2C50.73096&layer=mapnik&marker=50.72926%2C7.10274"
+    },
     "96789bf6-953b-4777-a022-0f4cd852be64": {
       "@type": "separator",
       "styles": {
@@ -77,6 +100,22 @@
         },
         "shortLine": false
       }
+    },
+    "9b9a10d0-08bd-4ee5-9d78-c5a3fcd68f55": {
+      "@type": "slate",
+      "plaintext": "The maps block also supports OpenStreetMap embeds. Paste the embed code from openstreetmap.org and the block extracts the map URL.",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "The maps block also supports OpenStreetMap embeds. Paste the embed code from openstreetmap.org and the block extracts the map URL."
+            }
+          ],
+          "type": "p"
+        }
+      ]
     },
     "aaf7adb1-00b2-4cc2-8729-91c33ea8fe6a": {
       "@type": "slate",
@@ -150,6 +189,30 @@
         "shortLine": true
       }
     },
+    "d79b5864-cb5b-4bed-862e-3cd4f32f5355": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "Grey Background",
+      "styles": {},
+      "tag": "h2",
+      "theme": "grey"
+    },
+    "d7d38e6f-1fd8-46aa-b31d-59a1b277e425": {
+      "@type": "slate",
+      "plaintext": "An OpenStreetMap embed displayed on a grey background.",
+      "styles": {},
+      "theme": "grey",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "An OpenStreetMap embed displayed on a grey background."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
     "e36a9020-5e7e-4ef5-97f7-862c45fea81c": {
       "@type": "maps",
       "align": "wide",
@@ -177,7 +240,13 @@
       "aaf7adb1-00b2-4cc2-8729-91c33ea8fe6a",
       "43a4b392-f0c3-4b8d-a17d-9b4ddea3f0f0",
       "ceee1cfa-80ff-44f1-b3af-3cfd4be3f4ba",
-      "f9dec030-b72d-4940-af4c-6dc123cea7a6"
+      "f9dec030-b72d-4940-af4c-6dc123cea7a6",
+      "59842716-5aa5-455c-b7ca-5d6f19746b51",
+      "9b9a10d0-08bd-4ee5-9d78-c5a3fcd68f55",
+      "8019a7ab-8e74-464e-a06a-315648126075",
+      "d79b5864-cb5b-4bed-862e-3cd4f32f5355",
+      "d7d38e6f-1fd8-46aa-b31d-59a1b277e425",
+      "7e9eae1a-1772-4c03-b3fe-bda52abd46fc"
     ]
   },
   "changeNote": "",
