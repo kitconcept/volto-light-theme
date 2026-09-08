@@ -57,7 +57,10 @@ export const Right: Story = {
 export const Narrow: Story = {
   render,
   args: {
-    data: withStyles({ 'align:noprefix': 'center', 'blockWidth:noprefix': 'narrow' }),
+    data: withStyles({
+      'align:noprefix': 'center',
+      'blockWidth:noprefix': 'narrow',
+    }),
   },
 };
 

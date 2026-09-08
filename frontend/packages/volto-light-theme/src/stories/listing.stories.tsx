@@ -6,10 +6,10 @@ import { listingBlockPerson } from './mocks';
 import Wrapper from '@plone/volto/storybook';
 import BlockWrapper from './BlockWrapper';
 
+import type { Meta, StoryObj } from '@storybook/react';
+
 const listingVariation = (id: string) =>
   config.blocks.blocksConfig.listing.variations.find((v) => v.id === id);
-
-import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
   title: 'Blocks/Listing',
@@ -35,7 +35,13 @@ const makeRender =
     </BlockWrapper>
   );
 
-const decorators = [(Story) => <Wrapper><Story /></Wrapper>];
+const decorators = [
+  (Story) => (
+    <Wrapper>
+      <Story />
+    </Wrapper>
+  ),
+];
 
 const summaryVariation = {
   id: 'summary',

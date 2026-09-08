@@ -57,7 +57,13 @@ const BlockWrapper = (props) => {
           style={findStyleByName(themes, theme)}
         >
           {width ? (
-            <div style={{ maxWidth: width, marginRight: 'auto', marginLeft: 'auto' }}>
+            <div
+              style={{
+                maxWidth: width,
+                marginRight: 'auto',
+                marginLeft: 'auto',
+              }}
+            >
               {styleWrapper}
             </div>
           ) : (

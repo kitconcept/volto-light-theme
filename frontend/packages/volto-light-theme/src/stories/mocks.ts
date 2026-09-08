@@ -445,12 +445,36 @@ export const bannerBlock = {
 };
 
 export const socialNetworks = [
-  { id: 'facebook', title: 'Facebook', href: [{ '@id': 'https://facebook.com/plone' }] },
-  { id: 'instagram', title: 'Instagram', href: [{ '@id': 'https://instagram.com/plone' }] },
-  { id: 'mastodon', title: 'Mastodon', href: [{ '@id': 'https://plone.social/@plone' }] },
-  { id: 'bluesky', title: 'Bluesky', href: [{ '@id': 'https://bsky.app/profile/plone.org' }] },
-  { id: 'youtube', title: 'YouTube', href: [{ '@id': 'https://youtube.com/@plone' }] },
-  { id: 'github', title: 'GitHub', href: [{ '@id': 'https://github.com/plone' }] },
+  {
+    id: 'facebook',
+    title: 'Facebook',
+    href: [{ '@id': 'https://facebook.com/plone' }],
+  },
+  {
+    id: 'instagram',
+    title: 'Instagram',
+    href: [{ '@id': 'https://instagram.com/plone' }],
+  },
+  {
+    id: 'mastodon',
+    title: 'Mastodon',
+    href: [{ '@id': 'https://plone.social/@plone' }],
+  },
+  {
+    id: 'bluesky',
+    title: 'Bluesky',
+    href: [{ '@id': 'https://bsky.app/profile/plone.org' }],
+  },
+  {
+    id: 'youtube',
+    title: 'YouTube',
+    href: [{ '@id': 'https://youtube.com/@plone' }],
+  },
+  {
+    id: 'github',
+    title: 'GitHub',
+    href: [{ '@id': 'https://github.com/plone' }],
+  },
 ];
 
 export const followUsBlock = {

@@ -26,11 +26,7 @@ const defaultVariation = config.blocks.blocksConfig.toc.variations[0];
 const render = (args) => (
   <Wrapper>
     <BlockWrapper {...args}>
-      <TocView
-        {...args}
-        properties={tocContent}
-        variation={defaultVariation}
-      />
+      <TocView {...args} properties={tocContent} variation={defaultVariation} />
     </BlockWrapper>
   </Wrapper>
 );
