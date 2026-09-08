@@ -124,6 +124,11 @@ storybook-build: ## Build Storybook
 	mkdir -p $(CURRENT_DIR)/.storybook-build
 	pnpm run storybook-build -o $(CURRENT_DIR)/.storybook-build
 
+.PHONY: design-catalog
+design-catalog: ## Generate the VLT design-reference block catalog (HTML + screenshots) from a running Storybook (make storybook-start)
+	@echo "$(GREEN)==> Generate VLT design catalog$(RESET)"
+	node $(CURRENT_DIR)/scripts/generate-design-catalog.mjs
+
 ## Acceptance
 .PHONY: acceptance-frontend-dev-start
 acceptance-frontend-dev-start: ## Start acceptance frontend in development mode

@@ -264,6 +264,485 @@ export const personBlock = {
   title: 'Headline H2',
 };
 
+function slideImageScales(image = demoImage) {
+  return {
+    preview_image: [
+      {
+        'content-type': 'image/jpeg',
+        download: image,
+        filename: 'black-starry-night.jpg',
+        height: 1708,
+        scales: {
+          great: { download: image, height: 854, width: 1200 },
+          huge: { download: image, height: 1138, width: 1600 },
+          icon: { download: image, height: 22, width: 32 },
+          large: { download: image, height: 569, width: 800 },
+          larger: { download: image, height: 711, width: 1000 },
+          mini: { download: image, height: 142, width: 200 },
+          preview: { download: image, height: 284, width: 400 },
+          teaser: { download: image, height: 427, width: 600 },
+          thumb: { download: image, height: 91, width: 128 },
+          tile: { download: image, height: 45, width: 64 },
+        },
+        size: 693013,
+        width: 2400,
+      },
+    ],
+  };
+}
+
+export const eventMetadataContent = {
+  '@id': 'https://plone.org/events/conference',
+  '@type': 'Event',
+  title: 'Plone Conference 2026',
+  start: '2026-10-08T09:00:00',
+  end: '2026-10-12T18:00:00',
+  whole_day: false,
+  open_end: false,
+  location: 'Vigo, Spain',
+  event_url: 'https://plone.org/events/conference',
+  contact_name: 'Conference Team',
+  contact_email: 'conference@plone.org',
+  contact_phone: '+34 555 010 100',
+};
+
+function searchResult(id, title, description) {
+  return {
+    '@id': `https://plone.org/${id}`,
+    '@type': 'Document',
+    id,
+    title,
+    description,
+    review_state: 'published',
+  };
+}
+
+export const searchResultItems = [
+  searchResult(
+    'about',
+    'About Plone',
+    'Plone is a free and open source content management system.',
+  ),
+  searchResult(
+    'features',
+    'Features',
+    'Discover the powerful features that make Plone stand out.',
+  ),
+  searchResult(
+    'documentation',
+    'Documentation',
+    'Everything you need to get started and go deep with Plone.',
+  ),
+  searchResult(
+    'community',
+    'Community',
+    'Meet the people and organisations behind Plone.',
+  ),
+];
+
+function eventItem(id, title, head_title, description, start, end) {
+  return {
+    '@id': `https://plone.org/events/${id}`,
+    '@type': 'Event',
+    id,
+    title,
+    head_title,
+    description,
+    start,
+    end,
+    review_state: 'published',
+  };
+}
+
+// Events used to feed the eventCalendar listing (the block reads them from the
+// redux `querystringsearch` results, injected via the Wrapper's `customStore`).
+export const eventCalendarItems = [
+  eventItem(
+    'event-1',
+    'Annual Community Meetup',
+    'Conference',
+    'A full day of talks, workshops and networking for the community.',
+    '2026-09-15T09:00:00',
+    '2026-09-15T17:00:00',
+  ),
+  eventItem(
+    'event-2',
+    'Autumn Training Days',
+    'Workshop',
+    'A hands-on, multi-day training covering the fundamentals and beyond.',
+    '2026-09-20T09:00:00',
+    '2026-09-22T16:00:00',
+  ),
+  eventItem(
+    'event-3',
+    'Release Party',
+    'Celebration',
+    'Join us to celebrate the newest release with the whole team.',
+    '2026-10-05T18:00:00',
+    '2026-10-05T22:00:00',
+  ),
+  eventItem(
+    'event-4',
+    'Open Sprint',
+    'Sprint',
+    'A collaborative sprint focused on documentation and testing.',
+    '2026-10-18T09:00:00',
+    '2026-10-20T18:00:00',
+  ),
+];
+
+function carouselColumn(id, title, description) {
+  return {
+    '@id': id,
+    '@type': 'teaser',
+    head_title: 'Kicker',
+    title,
+    description,
+    styles: { align: 'center' },
+    href: [
+      {
+        '@id': '.',
+        '@type': 'Document',
+        title,
+        Title: title,
+        description,
+        Description: description,
+        hasPreviewImage: true,
+        head_title: 'Kicker',
+        image_field: 'preview_image',
+        image_scales: slideImageScales(),
+      },
+    ],
+  };
+}
+
+const carouselColumns = [
+  carouselColumn('col-1', 'First card', 'Lorem ipsum dolor sit amet.'),
+  carouselColumn('col-2', 'Second card', 'Consetetur sadipscing elitr.'),
+  carouselColumn('col-3', 'Third card', 'Sed diam nonumy eirmod tempor.'),
+  carouselColumn('col-4', 'Fourth card', 'Invidunt ut labore et dolore.'),
+  carouselColumn('col-5', 'Fifth card', 'Magna aliquyam erat, sed diam.'),
+  carouselColumn('col-6', 'Sixth card', 'At vero eos et accusam et justo.'),
+];
+
+export const carouselBlock = {
+  '@type': 'carousel',
+  items_to_show: 4,
+  columns: carouselColumns,
+};
+
+export const bannerBlock = {
+  '@type': 'banner',
+  // The View builds the image src as `${url}/@@images/image`; a matching static
+  // file exists at stories/static/demo-banner/@@images/image.
+  url: 'demo-banner',
+  alt: 'Starry night banner',
+  text: 'Discover the night sky',
+  additionalText: 'A journey through the stars above us',
+  styles: {
+    'blockWidth:noprefix': 'layout',
+  },
+};
+
+export const socialNetworks = [
+  {
+    id: 'facebook',
+    title: 'Facebook',
+    href: [{ '@id': 'https://facebook.com/plone' }],
+  },
+  {
+    id: 'instagram',
+    title: 'Instagram',
+    href: [{ '@id': 'https://instagram.com/plone' }],
+  },
+  {
+    id: 'mastodon',
+    title: 'Mastodon',
+    href: [{ '@id': 'https://plone.social/@plone' }],
+  },
+  {
+    id: 'bluesky',
+    title: 'Bluesky',
+    href: [{ '@id': 'https://bsky.app/profile/plone.org' }],
+  },
+  {
+    id: 'youtube',
+    title: 'YouTube',
+    href: [{ '@id': 'https://youtube.com/@plone' }],
+  },
+  {
+    id: 'github',
+    title: 'GitHub',
+    href: [{ '@id': 'https://github.com/plone' }],
+  },
+];
+
+export const followUsBlock = {
+  '@type': 'followUsBlock',
+  title: 'Follow us',
+  animate: false,
+  allowedNetworks: [],
+  styles: {},
+};
+
+function accordionPanel(id, title, text) {
+  const slateId = `${id}-slate`;
+  return {
+    '@type': 'accordionPanel',
+    title,
+    blocks: {
+      [slateId]: {
+        '@type': 'slate',
+        value: [{ type: 'p', children: [{ text }] }],
+        plaintext: text,
+      },
+    },
+    blocks_layout: { items: [slateId] },
+  };
+}
+
+export const accordionBlock = {
+  '@type': 'accordion',
+  title_size: 'h3',
+  collapsed: false,
+  data: {
+    blocks: {
+      'panel-1': accordionPanel(
+        'panel-1',
+        'What is Plone?',
+        'Plone is a free and open source content management system built on top of the Zope application server. Plone is positioned as an enterprise CMS.',
+      ),
+      'panel-2': accordionPanel(
+        'panel-2',
+        'How do I create content?',
+        'Content is created using blocks. Each block can hold text, images, teasers and many other kinds of content, arranged however you like.',
+      ),
+      'panel-3': accordionPanel(
+        'panel-3',
+        'Is it accessible?',
+        'Accessibility is a first-class concern. Components ship with sensible semantics and keyboard support out of the box.',
+      ),
+    },
+    blocks_layout: { items: ['panel-1', 'panel-2', 'panel-3'] },
+  },
+};
+
+export const buttonBlock = {
+  '@type': '__button',
+  title: 'Read more',
+  href: [{ '@id': 'https://plone.org', title: 'Plone' }],
+  styles: {
+    'align:noprefix': 'left',
+  },
+};
+
+export const headingBlock = {
+  '@type': 'heading',
+  tag: 'h2',
+  heading: 'This is a section heading',
+};
+
+export const slateBlock = {
+  '@type': 'slate',
+  value: [
+    { type: 'h2', children: [{ text: 'A rich text section' }] },
+    {
+      type: 'p',
+      children: [
+        { text: 'Lorem ipsum dolor sit amet, ' },
+        { type: 'strong', children: [{ text: 'consetetur sadipscing' }] },
+        { text: ' elitr, sed diam ' },
+        { type: 'em', children: [{ text: 'nonumy eirmod' }] },
+        {
+          text: ' tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+        },
+      ],
+    },
+    {
+      type: 'ul',
+      children: [
+        { type: 'li', children: [{ text: 'First list item' }] },
+        { type: 'li', children: [{ text: 'Second list item' }] },
+        { type: 'li', children: [{ text: 'Third list item' }] },
+      ],
+    },
+  ],
+  plaintext: 'A rich text section Lorem ipsum dolor sit amet...',
+};
+
+export const imageBlock = {
+  '@type': 'image',
+  url: '.',
+  image_field: 'preview_image',
+  image_scales: slideImageScales(),
+  alt: 'A starry night sky',
+  styles: {
+    'size:noprefix': 'l',
+    'align:noprefix': 'center',
+  },
+};
+
+export const videoBlock = {
+  '@type': 'video',
+  url: 'https://www.youtube.com/watch?v=RQERWhVcYqE',
+  align: 'center',
+};
+
+export const tocContent = {
+  blocks: {
+    'h-1': { '@type': 'heading', tag: 'h2', heading: 'Introduction' },
+    'h-2': { '@type': 'heading', tag: 'h2', heading: 'Getting started' },
+    'h-3': { '@type': 'heading', tag: 'h2', heading: 'Configuration' },
+    'h-4': { '@type': 'heading', tag: 'h2', heading: 'Advanced topics' },
+  },
+  blocks_layout: {
+    items: ['h-1', 'h-2', 'h-3', 'h-4'],
+  },
+};
+
+export const tocBlock = {
+  '@type': 'toc',
+  title: 'Table of contents',
+  levels: ['h2'],
+};
+
+export const highlightBlock = {
+  '@type': 'highlight',
+  url: '.',
+  image_field: 'preview_image',
+  image_scales: slideImageScales(),
+  headtitle: 'Kicker',
+  title: 'This is a highlight headline',
+  value: [
+    {
+      type: 'p',
+      children: [
+        {
+          text: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+        },
+      ],
+    },
+  ],
+  button: true,
+  buttonText: 'Continue reading',
+  buttonLink: [{ '@id': 'https://plone.org', title: 'Plone' }],
+  styles: {
+    descriptionColor: 'highlight-custom-color-1',
+  },
+};
+
+function sliderSlide(id, title, description) {
+  return {
+    '@id': id,
+    head_title: 'Kicker',
+    title,
+    description,
+    buttonText: 'Continue reading',
+    href: [
+      {
+        '@id': '.',
+        '@type': 'Document',
+        title,
+        Title: title,
+        description,
+        Description: description,
+        getRemoteUrl: null,
+        hasPreviewImage: true,
+        head_title: 'Kicker',
+        image_field: 'preview_image',
+        image_scales: slideImageScales(),
+      },
+    ],
+  };
+}
+
+export const sliderBlock = {
+  '@type': 'slider',
+  variation: 'default',
+  // In production the slider always renders inside a `.blocks-group-wrapper`,
+  // which defines the `--theme-*` variables. The slider dots depend on those
+  // variables for their color, so the wrapper (added by BlockWrapper when a
+  // `theme` is present) is required for the dots to be visible.
+  theme: 'default',
+  slides: [
+    sliderSlide(
+      'slide-1',
+      'First slide headline',
+      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+    ),
+    sliderSlide(
+      'slide-2',
+      'Second slide headline',
+      'At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+    ),
+    sliderSlide(
+      'slide-3',
+      'Third slide headline',
+      'Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.',
+    ),
+  ],
+};
+
+export const separatorBlock = {
+  '@type': 'separator',
+  styles: {},
+};
+
+export const introductionBlock = {
+  '@type': 'introduction',
+  value: [
+    {
+      type: 'p',
+      children: [
+        {
+          text: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, ',
+        },
+        { type: 'strong', children: [{ text: 'sed diam voluptua' }] },
+        { text: '. At vero eos et accusam et justo duo dolores et ea rebum, ' },
+        { type: 'em', children: [{ text: 'stet clita kasd gubergren' }] },
+        { text: ', no sea takimata sanctus est Lorem ipsum dolor sit amet.' },
+      ],
+    },
+  ],
+};
+
+function logoItem(id, alt, image) {
+  return {
+    '@id': id,
+    alt,
+    logo: [
+      {
+        '@id': '',
+        image_field: 'image',
+        image_scales: {
+          image: [
+            {
+              download: image,
+              filename: image,
+              'content-type': 'image/jpeg',
+            },
+          ],
+        },
+      },
+    ],
+    href: [{ '@id': 'https://plone.org', title: alt }],
+  };
+}
+
+export const logosBlock = {
+  '@type': 'logos',
+  logos_size: 's',
+  logos_container_width: 'default',
+  logos: [
+    logoItem('logo-1', 'Logo one', 'image-light.jpg'),
+    logoItem('logo-2', 'Logo two', 'black-starry-night.jpg'),
+    logoItem('logo-3', 'Logo three', 'person.png'),
+    logoItem('logo-4', 'Logo four', 'image-light.jpg'),
+    logoItem('logo-5', 'Logo five', 'black-starry-night.jpg'),
+    logoItem('logo-6', 'Logo six', 'person.png'),
+  ],
+};
+
 const altPersonBlock = cloneDeep(personBlock);
 
 altPersonBlock.href[0].image_scales.preview_image[0] = {
