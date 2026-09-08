@@ -82,7 +82,7 @@
   }
   #content {
     #content-core {
-      max-width: var(--layout-container-width);
+      max-width: var(--default-container-width);
       &.layout-grid {
         // Person results
         .tileItem.personResultItem {
