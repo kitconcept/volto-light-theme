@@ -16,7 +16,7 @@ const TeaserDefaultTemplate = (props) => {
   const site = useSelector<FormState, GetSiteResponse>(
     (state) => state.site?.data,
   );
-  const showProfileLinks = !site?.['kitconcept.clickable_profile_links'];
+  const showProfileLinks = site?.['kitconcept.clickable_profile_links'];
   const { data, isEditMode, isContainer } = props;
   const columns = useContext(GridContext);
   const sizes = config.blocks.blocksConfig.teaser?.getSizes?.({
@@ -51,6 +51,8 @@ const TeaserDefaultTemplate = (props) => {
     head_title: data.head_title || '',
   };
 
+  const placeholderSrc = config.settings.placeholderImages?.[href['@type']];
+
   return (
     <Card item={showLink ? href : null} openLinkInNewTab={openLinkInNewTab}>
       <Card.Image
@@ -58,6 +60,8 @@ const TeaserDefaultTemplate = (props) => {
         item={!data.overwrite ? href : { ...href, ...localOverrides }}
         image={data.overwrite ? image : undefined}
         imageComponent={Image}
+        showPlaceholderImage={Boolean(placeholderSrc)}
+        placeholderSrc={placeholderSrc}
         sizes={sizes}
       />
       <Card.Summary>

@@ -279,7 +279,8 @@ External & Mail link removal for all the blocks.
         .teaser,
         .gridBlock,
         .slider,
-        .listing
+        .listing,
+        .heading
       ).has--block-width--default {
       @include adjustMarginsToContainer($default-container-width);
     }

@@ -155,6 +155,19 @@ jobs:
       image-tag: ${{ needs.config.outputs.base-tag }}
       a11y: ${{ matrix.a11y || false }}
 
+  playwright-acceptance:
+    name: "Playwright Acceptance"
+    if: ${{ needs.config.outputs.acceptance == 'true' && (always() && !contains(needs.*.result, 'failure'))}}
+    uses: ./.github/workflows/frontend-playwright.yml
+    needs:
+      - config
+      - backend-build
+      - frontend-build
+    with:
+      node-version: ${{ needs.config.outputs.node-version }}
+      image-name-prefix: ${{ needs.config.outputs.image-name-prefix }}
+      image-tag: ${{ needs.config.outputs.base-tag }}
+
   storybook:
     name: "Storybook Build"
     if: ${{ needs.config.outputs.acceptance == 'true' && (always() && !contains(needs.*.result, 'failure'))}}
@@ -195,6 +208,7 @@ jobs:
     needs:
       - config
       - acceptance
+      - playwright-acceptance
       - backend-build
       - visual-regression
     with:
@@ -213,6 +227,7 @@ jobs:
       - config
       - frontend-build
       - acceptance
+      - playwright-acceptance
       - visual-regression
     with:
       base-tag: ${{ needs.config.outputs.base-tag }}
@@ -272,6 +287,7 @@ jobs:
       - frontend-i18n
       - frontend-build
       - acceptance
+      - playwright-acceptance
       - visual-regression
       - backend-release
       - frontend-release
@@ -293,6 +309,7 @@ jobs:
           echo '| frontend-i18n | ${{ needs.frontend-i18n.result }} |' >> $GITHUB_STEP_SUMMARY
           echo '| frontend-build | ${{ needs.frontend-build.result }} |' >> $GITHUB_STEP_SUMMARY
           echo '| acceptance | ${{ needs.acceptance.result }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| playwright-acceptance | ${{ needs.playwright-acceptance.result }} |' >> $GITHUB_STEP_SUMMARY
           echo '| visual-regression | ${{ needs.visual-regression.result }} |' >> $GITHUB_STEP_SUMMARY
           echo '| backend-release | ${{ needs.backend-release.result }} |' >> $GITHUB_STEP_SUMMARY
           echo '| frontend-release | ${{ needs.frontend-release.result }} |' >> $GITHUB_STEP_SUMMARY

@@ -1,0 +1,1 @@
+Add missing placeholder image for person grid variation of a listing @iRohitSingh

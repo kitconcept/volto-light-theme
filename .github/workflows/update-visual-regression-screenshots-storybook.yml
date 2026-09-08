@@ -44,10 +44,10 @@ jobs:
       contents: write # needs to push changes
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Checkout visual regression assets
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           repository: kitconcept/vlt-visual-regression
           ref: main
@@ -61,7 +61,7 @@ jobs:
           git config --global user.email "${{ env.AUTHOR_EMAIL }}"
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: ${{ env.NODE_VERSION }}
 
@@ -73,7 +73,7 @@ jobs:
         run: |
           echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
-      - uses: actions/cache@v5
+      - uses: actions/cache@v6
         name: Setup pnpm cache
         with:
           path: ${{ env.STORE_PATH }}
@@ -87,7 +87,7 @@ jobs:
           path: frontend/storybook-build
 
       - name: Start Servers - Storybook
-        uses: JarvusInnovations/background-action@v1.0.7
+        uses: JarvusInnovations/background-action@v2
         with:
           run: |
             python3 -m http.server 6006 -d frontend/storybook-build &

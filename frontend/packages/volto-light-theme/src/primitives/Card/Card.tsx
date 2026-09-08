@@ -2,6 +2,7 @@ import * as React from 'react';
 import ConditionalLink from '@plone/volto/components/manage/ConditionalLink/ConditionalLink';
 import cx from 'classnames';
 import type { ObjectBrowserItem } from '@plone/types';
+import defaultPlaceholderSVG from '@plone/volto/components/manage/Blocks/Listing/default-image.svg';
 
 type BaseCardProps = {
   /** Optional additional CSS class names to apply to the card. */
@@ -93,33 +94,49 @@ type CardImageProps = {
   /** A custom React component to render the image. */
   imageComponent?: React.ComponentType<any>;
   children?: React.ReactNode;
+  /** Show a placeholder image when the item has no image of its own. */
   showPlaceholderImage?: boolean;
+  /**
+   * Optional custom image configurable per content type at config.settings.placeholderImages.[type]. Falls back to the default placeholder image.
+   */
+  placeholderSrc?: string;
   sizes?: string;
 };
 
 const CardImage = (props: CardImageProps) => {
-  const { src, item, image, imageComponent, showPlaceholderImage, sizes } =
-    props;
+  const {
+    src,
+    item,
+    image,
+    imageComponent,
+    showPlaceholderImage,
+    placeholderSrc,
+    sizes,
+  } = props;
   const Image = imageComponent || DefaultImage;
+  const imageField = image ? image.image_field : item?.image_field;
+  const hasItemImage = item?.hasPreviewImage || imageField || image;
 
   return (
     <div className="image-wrapper">
       {src ? (
         <Image src={src} alt="" loading="lazy" responsive={true} />
-      ) : item || image ? (
-        (item?.hasPreviewImage ||
-          item?.image_field ||
-          image ||
-          showPlaceholderImage) && (
-          <Image
-            item={image || item}
-            imageField={image ? image.image_field : item?.image_field}
-            alt=""
-            loading="lazy"
-            responsive={true}
-            sizes={sizes}
-          />
-        )
+      ) : showPlaceholderImage && !hasItemImage ? (
+        <DefaultImage
+          src={placeholderSrc || defaultPlaceholderSVG}
+          alt=""
+          loading="lazy"
+          responsive={true}
+        />
+      ) : hasItemImage ? (
+        <Image
+          item={image || item}
+          imageField={imageField}
+          alt=""
+          loading="lazy"
+          responsive={true}
+          sizes={sizes}
+        />
       ) : (
         props.children
       )}

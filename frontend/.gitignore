@@ -10,6 +10,10 @@ public
 pyvenv.cfg
 docs/_build
 cypress/downloads/
+acceptance/results/
+playwright/results/
+playwright-report/
+test-results/
 
 packages/*
 !packages/volto-light-theme

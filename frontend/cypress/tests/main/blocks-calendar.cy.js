@@ -252,7 +252,7 @@ describe('Event Calendar Block Tests', () => {
     cy.wait('@schema');
     cy.get('.block-editor-eventCalendar').click();
     cy.get('#field-limit-3-query').clear().type('0');
-    cy.get('#field-b_size-4-query').type('2');
+    cy.get('#field-b_size-5-query').type('2');
     cy.get('#toolbar-save').click();
     cy.wait('@save');
     cy.wait('@content');
