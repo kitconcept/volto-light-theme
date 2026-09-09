@@ -21,7 +21,7 @@ const meta = {
   title: 'Blocks/Grid Teaser',
   component: GridBlockView,
   parameters: {
-    layout: 'centered',
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
 } satisfies Meta<typeof GridBlockView>;
@@ -29,424 +29,119 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const One: Story = {
-  render: (args) => (
+// `person-squared-images` is a content-area modifier (it only sets CSS
+// variables), reproduced on `#page-document` via BlockWrapper's `pageClassName`.
+const makeRender =
+  (opts: { pageClassName?: string } = {}) =>
+  (args) => (
     <Wrapper>
-      <div
-        style={{
-          containerType: 'inline-size',
-          width: 'var(--default-container-width)',
-        }}
-      >
-        <BlockWrapper {...args}>
-          <GridBlockView {...args} />
-        </BlockWrapper>
-      </div>
+      <BlockWrapper {...args} {...opts}>
+        <GridBlockView {...args} />
+      </BlockWrapper>
     </Wrapper>
-  ),
-  args: {
-    data: gridBlockOne,
-  },
+  );
+
+const render = makeRender();
+const renderSquared = makeRender({ pageClassName: 'person-squared-images' });
+
+export const One: Story = {
+  render,
+  args: { data: gridBlockOne },
 };
 
 export const Two: Story = {
-  render: (args) => (
-    <Wrapper>
-      <div
-        style={{
-          containerType: 'inline-size',
-          width: 'var(--default-container-width)',
-        }}
-      >
-        <BlockWrapper {...args}>
-          <GridBlockView {...args} />
-        </BlockWrapper>
-      </div>
-    </Wrapper>
-  ),
-  args: {
-    data: gridBlockTwo,
-  },
+  render,
+  args: { data: gridBlockTwo },
 };
 
 export const Three: Story = {
-  render: (args) => (
-    <Wrapper>
-      <div
-        style={{
-          containerType: 'inline-size',
-          width: 'var(--default-container-width)',
-        }}
-      >
-        <BlockWrapper {...args}>
-          <GridBlockView {...args} />
-        </BlockWrapper>
-      </div>
-    </Wrapper>
-  ),
-  args: {
-    data: gridBlockThree,
-  },
+  render,
+  args: { data: gridBlockThree },
 };
 
 export const Four: Story = {
-  render: (args) => (
-    <Wrapper>
-      <div
-        style={{
-          containerType: 'inline-size',
-          width: 'var(--default-container-width)',
-        }}
-      >
-        <BlockWrapper {...args}>
-          <GridBlockView {...args} />
-        </BlockWrapper>
-      </div>
-    </Wrapper>
-  ),
-  args: {
-    data: gridBlockFour,
-  },
+  render,
+  args: { data: gridBlockFour },
 };
 
+// Inversed = grey background band, painted by the real `.blocks-group-wrapper`
+// (via `data.theme: 'grey'`).
 export const OneInversed: Story = {
-  parameters: {
-    layout: 'fullscreen',
-  },
-  render: (args) => (
-    <Wrapper>
-      <div
-        style={{
-          containerType: 'inline-size',
-          padding: '40px',
-          backgroundColor: '#ecebeb',
-        }}
-      >
-        <BlockWrapper {...args}>
-          <GridBlockView {...args} />
-        </BlockWrapper>
-      </div>
-    </Wrapper>
-  ),
-  args: {
-    data: { ...gridBlockOne, theme: 'grey' },
-  },
+  render,
+  args: { data: { ...gridBlockOne, theme: 'grey' } },
 };
 
 export const TwoInversed: Story = {
-  parameters: {
-    layout: 'fullscreen',
-  },
-  render: (args) => (
-    <Wrapper>
-      <div
-        style={{
-          containerType: 'inline-size',
-          padding: '40px',
-          backgroundColor: '#ecebeb',
-        }}
-      >
-        <BlockWrapper {...args}>
-          <GridBlockView {...args} />
-        </BlockWrapper>
-      </div>
-    </Wrapper>
-  ),
-  args: {
-    data: { ...gridBlockTwo, theme: 'grey' },
-  },
+  render,
+  args: { data: { ...gridBlockTwo, theme: 'grey' } },
 };
 
 export const ThreeInversed: Story = {
-  parameters: {
-    layout: 'fullscreen',
-  },
-  render: (args) => (
-    <Wrapper>
-      <div
-        style={{
-          containerType: 'inline-size',
-          padding: '40px',
-          backgroundColor: '#ecebeb',
-        }}
-      >
-        <BlockWrapper {...args}>
-          <GridBlockView {...args} />
-        </BlockWrapper>
-      </div>
-    </Wrapper>
-  ),
-  args: {
-    data: { ...gridBlockThree, theme: 'grey' },
-  },
+  render,
+  args: { data: { ...gridBlockThree, theme: 'grey' } },
 };
 
 export const FourInversed: Story = {
-  parameters: {
-    layout: 'fullscreen',
-  },
-  render: (args) => (
-    <Wrapper>
-      <div
-        style={{
-          containerType: 'inline-size',
-          padding: '40px',
-          backgroundColor: '#ecebeb',
-        }}
-      >
-        <BlockWrapper {...args}>
-          <GridBlockView {...args} />
-        </BlockWrapper>
-      </div>
-    </Wrapper>
-  ),
-  args: {
-    data: { ...gridBlockFour, theme: 'grey' },
-  },
+  render,
+  args: { data: { ...gridBlockFour, theme: 'grey' } },
 };
 
 export const OnePerson: Story = {
-  render: (args) => (
-    <Wrapper>
-      <div
-        style={{
-          containerType: 'inline-size',
-          width: 'var(--default-container-width)',
-        }}
-      >
-        <BlockWrapper {...args}>
-          <GridBlockView {...args} />
-        </BlockWrapper>
-      </div>
-    </Wrapper>
-  ),
-  args: {
-    data: gridBlockOnePerson,
-  },
+  render,
+  args: { data: gridBlockOnePerson },
 };
 
 export const TwoPerson: Story = {
-  render: (args) => (
-    <Wrapper>
-      <div
-        style={{
-          containerType: 'inline-size',
-          width: 'var(--default-container-width)',
-        }}
-      >
-        <BlockWrapper {...args}>
-          <GridBlockView {...args} />
-        </BlockWrapper>
-      </div>
-    </Wrapper>
-  ),
-  args: {
-    data: gridBlockTwoPerson,
-  },
+  render,
+  args: { data: gridBlockTwoPerson },
 };
 
 export const TwoDocumentAndPerson: Story = {
-  render: (args) => (
-    <Wrapper>
-      <div
-        style={{
-          containerType: 'inline-size',
-          width: 'var(--default-container-width)',
-        }}
-      >
-        <BlockWrapper {...args}>
-          <GridBlockView {...args} />
-        </BlockWrapper>
-      </div>
-    </Wrapper>
-  ),
-  args: {
-    data: gridBlockTwoDocumentPerson,
-  },
+  render,
+  args: { data: gridBlockTwoDocumentPerson },
 };
 
 export const TwoPersonsDifferentImageRatio: Story = {
-  render: (args) => (
-    <Wrapper>
-      <div
-        style={{
-          containerType: 'inline-size',
-          width: 'var(--default-container-width)',
-        }}
-      >
-        <BlockWrapper {...args}>
-          <GridBlockView {...args} />
-        </BlockWrapper>
-      </div>
-    </Wrapper>
-  ),
-  args: {
-    data: gridBlockTwoPersonDifferentRatio,
-  },
+  render,
+  args: { data: gridBlockTwoPersonDifferentRatio },
 };
 
 export const ThreePerson: Story = {
-  render: (args) => (
-    <Wrapper>
-      <div
-        style={{
-          containerType: 'inline-size',
-          width: 'var(--default-container-width)',
-        }}
-      >
-        <BlockWrapper {...args}>
-          <GridBlockView {...args} />
-        </BlockWrapper>
-      </div>
-    </Wrapper>
-  ),
-  args: {
-    data: gridBlockThreePerson,
-  },
+  render,
+  args: { data: gridBlockThreePerson },
 };
 
 export const FourPerson: Story = {
-  render: (args) => (
-    <Wrapper>
-      <div
-        style={{
-          containerType: 'inline-size',
-          width: 'var(--default-container-width)',
-        }}
-      >
-        <BlockWrapper {...args}>
-          <GridBlockView {...args} />
-        </BlockWrapper>
-      </div>
-    </Wrapper>
-  ),
-  args: {
-    data: gridBlockFourPerson,
-  },
+  render,
+  args: { data: gridBlockFourPerson },
 };
 
 export const OnePersonSquared: Story = {
-  render: (args) => (
-    <Wrapper>
-      <div
-        className="person-squared-images"
-        style={{
-          containerType: 'inline-size',
-          width: 'var(--default-container-width)',
-        }}
-      >
-        <BlockWrapper {...args}>
-          <GridBlockView {...args} />
-        </BlockWrapper>
-      </div>
-    </Wrapper>
-  ),
-  args: {
-    data: gridBlockOnePerson,
-  },
+  render: renderSquared,
+  args: { data: gridBlockOnePerson },
 };
 
 export const TwoPersonSquared: Story = {
-  render: (args) => (
-    <Wrapper>
-      <div
-        className="person-squared-images"
-        style={{
-          containerType: 'inline-size',
-          width: 'var(--default-container-width)',
-        }}
-      >
-        <BlockWrapper {...args}>
-          <GridBlockView {...args} />
-        </BlockWrapper>
-      </div>
-    </Wrapper>
-  ),
-  args: {
-    data: gridBlockTwoPerson,
-  },
+  render: renderSquared,
+  args: { data: gridBlockTwoPerson },
 };
 
 export const TwoDocumentAndPersonSquared: Story = {
-  render: (args) => (
-    <Wrapper>
-      <div
-        className="person-squared-images"
-        style={{
-          containerType: 'inline-size',
-          width: 'var(--default-container-width)',
-        }}
-      >
-        <BlockWrapper {...args}>
-          <GridBlockView {...args} />
-        </BlockWrapper>
-      </div>
-    </Wrapper>
-  ),
-  args: {
-    data: gridBlockTwoDocumentPerson,
-  },
+  render: renderSquared,
+  args: { data: gridBlockTwoDocumentPerson },
 };
 
 export const TwoPersonsDifferentImageRatioSquared: Story = {
-  render: (args) => (
-    <Wrapper>
-      <div
-        className="person-squared-images"
-        style={{
-          containerType: 'inline-size',
-          width: 'var(--default-container-width)',
-        }}
-      >
-        <BlockWrapper {...args}>
-          <GridBlockView {...args} />
-        </BlockWrapper>
-      </div>
-    </Wrapper>
-  ),
-  args: {
-    data: gridBlockTwoPersonDifferentRatio,
-  },
+  render: renderSquared,
+  args: { data: gridBlockTwoPersonDifferentRatio },
 };
 
 export const ThreePersonSquared: Story = {
-  render: (args) => (
-    <Wrapper>
-      <div
-        className="person-squared-images"
-        style={{
-          containerType: 'inline-size',
-          width: 'var(--default-container-width)',
-        }}
-      >
-        <BlockWrapper {...args}>
-          <GridBlockView {...args} />
-        </BlockWrapper>
-      </div>
-    </Wrapper>
-  ),
-  args: {
-    data: gridBlockThreePerson,
-  },
+  render: renderSquared,
+  args: { data: gridBlockThreePerson },
 };
 
 export const FourPersonSquared: Story = {
-  render: (args) => (
-    <Wrapper>
-      <div
-        className="person-squared-images"
-        style={{
-          containerType: 'inline-size',
-          width: 'var(--default-container-width)',
-        }}
-      >
-        <BlockWrapper {...args}>
-          <GridBlockView {...args} />
-        </BlockWrapper>
-      </div>
-    </Wrapper>
-  ),
-  args: {
-    data: gridBlockFourPerson,
-  },
+  render: renderSquared,
+  args: { data: gridBlockFourPerson },
 };

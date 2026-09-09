@@ -4,6 +4,22 @@
   "UID": "77de6a96dadf457e8091cc4fee063273",
   "allow_discussion": null,
   "blocks": {
+    "0144efb9-898d-4c3c-b3ce-e11f0994993b": {
+      "@type": "slate",
+      "plaintext": "The event calendar block displayed on a grey background.",
+      "styles": {},
+      "theme": "grey",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "The event calendar block displayed on a grey background."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
     "0a4d6119-8af5-42dd-8a7f-43db3849693d": {
       "@type": "title"
     },
@@ -28,17 +44,42 @@
       "showSearchInput": true,
       "showTotalResults": true
     },
-    "undefined": {
+    "63cac87e-d31c-4228-b166-8fa21f7c9e3f": {
       "@type": "eventCalendar",
+      "facets": [
+        {
+          "@id": "b9d65d97-8032-4c81-9adb-a76bbb8381ec",
+          "advanced": false,
+          "field": {
+            "label": "Review state",
+            "value": "review_state"
+          },
+          "hidden": false,
+          "multiple": false,
+          "type": "selectFacet"
+        }
+      ],
       "showSearchInput": true,
-      "showTotalResults": true
+      "showTotalResults": true,
+      "theme": "grey"
+    },
+    "9fd93601-24b3-4471-890c-ee758f351ace": {
+      "@type": "heading",
+      "alignment": "left",
+      "heading": "Grey Background",
+      "styles": {},
+      "tag": "h2",
+      "theme": "grey"
     }
   },
   "blocks_layout": {
     "items": [
       "0a4d6119-8af5-42dd-8a7f-43db3849693d",
       "5175502b-8c90-4864-8bb1-ab9a974bebf1",
-      "18bde631-0220-45c8-9783-9f788845d2ac"
+      "18bde631-0220-45c8-9783-9f788845d2ac",
+      "9fd93601-24b3-4471-890c-ee758f351ace",
+      "0144efb9-898d-4c3c-b3ce-e11f0994993b",
+      "63cac87e-d31c-4228-b166-8fa21f7c9e3f"
     ]
   },
   "changeNote": "",
@@ -47,7 +88,7 @@
   "creators": [
     "admin"
   ],
-  "description": "",
+  "description": "The event calendar block can be used to search and display events in a listing format.",
   "effective": "2025-07-02T13:56:00+00:00",
   "exclude_from_nav": false,
   "expires": null,

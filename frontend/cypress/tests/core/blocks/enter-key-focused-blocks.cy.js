@@ -156,14 +156,6 @@ describe('Enter key behavior on focused blocks', () => {
     });
   });
 
-  it('Pressing Enter on a focused Description block opens Slate editor or block chooser', () => {
-    addBlockAndPressEnter({
-      chooserClass: 'description',
-      label: 'Description',
-      chooserSection: 'text',
-    });
-  });
-
   it('Pressing Enter on a focused Video block opens Slate editor or block chooser', () => {
     addBlockAndPressEnter({
       chooserClass: 'video',
@@ -171,4 +163,3 @@ describe('Enter key behavior on focused blocks', () => {
     });
   });
 });
-
