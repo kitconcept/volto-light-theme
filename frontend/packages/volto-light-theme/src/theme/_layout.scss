@@ -288,6 +288,15 @@ External & Mail link removal for all the blocks.
     &:not(.banner).has--block-width--layout {
       @include adjustMarginsToContainer($layout-container-width);
     }
+
+    // Table block has no explicit block width, so it never picks up the
+    // width-based rules above. Constrain it to the layout container and keep
+    // side margins on viewports narrower than 1440px.
+    &.table,
+    &.slate-table {
+      @include layout-container-width();
+      @include adjustMarginsToContainer($layout-container-width);
+    }
   }
 
   &:last-child {

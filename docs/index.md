@@ -68,6 +68,7 @@ conceptual-guides/block-model-v3
 :maxdepth: 1
 :hidden:
 :caption: Reference
+reference/design-system/index
 reference/colors
 reference/widgets
 reference/slots
