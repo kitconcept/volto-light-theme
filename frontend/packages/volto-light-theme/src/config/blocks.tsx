@@ -255,6 +255,10 @@ export default function install(config: ConfigType) {
   if (config.blocks.blocksConfig?.html) {
     config.blocks.blocksConfig.html.restricted = true;
   }
+  // Remove Description block
+  if (config.blocks.blocksConfig?.description) {
+    config.blocks.blocksConfig.description.restricted = true;
+  }
 
   // Default Blocks configuration
 
