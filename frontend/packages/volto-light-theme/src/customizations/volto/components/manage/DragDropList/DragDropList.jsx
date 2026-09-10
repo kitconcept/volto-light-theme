@@ -4,6 +4,8 @@
  *  Not moved to core yet, and as it's temporary, we keep it here.
  * DATE: 2025-12-01
  * DEVELOPER: @sneridagh
+ * FILE: https://github.com/plone/volto/blob/19.3.0/packages/volto/src/components/manage/DragDropList/DragDropList.jsx
+ * FILE VERSION: Volto 19.3.0
  */
 
 import React, { useRef } from 'react';

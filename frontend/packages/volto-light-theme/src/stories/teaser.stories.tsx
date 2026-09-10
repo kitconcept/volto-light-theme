@@ -10,7 +10,7 @@ const meta = {
   title: 'Blocks/Teaser',
   component: TeaserBody,
   parameters: {
-    layout: 'centered',
+    layout: 'fullscreen',
   },
   tags: ['autodocs'],
 } satisfies Meta<typeof TeaserBody>;
@@ -18,31 +18,37 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Left: Story = {
-  render: (args) => (
+// `person-squared-images` is a content-area modifier (it only sets CSS
+// variables); the narrow width demonstrates the person card in a half column.
+const makeRender =
+  (opts: { pageClassName?: string; width?: string } = {}) =>
+  (args) => (
     <Wrapper>
-      <div style={{ width: 'var(--default-container-width)' }}>
-        <BlockWrapper {...args}>
-          <TeaserBody {...args} />
-        </BlockWrapper>
-      </div>
+      <BlockWrapper {...args} {...opts}>
+        <TeaserBody {...args} />
+      </BlockWrapper>
     </Wrapper>
-  ),
+  );
+
+const render = makeRender();
+const renderNarrow = makeRender({
+  width: 'calc(var(--default-container-width) / 2)',
+});
+const renderSquared = makeRender({ pageClassName: 'person-squared-images' });
+const renderSquaredNarrow = makeRender({
+  pageClassName: 'person-squared-images',
+  width: 'calc(var(--default-container-width) / 2)',
+});
+
+export const Left: Story = {
+  render,
   args: {
     data: teaserBlock,
   },
 };
 
 export const Right: Story = {
-  render: (args) => (
-    <Wrapper>
-      <div style={{ width: 'var(--default-container-width)' }}>
-        <BlockWrapper {...args}>
-          <TeaserBody {...args} />
-        </BlockWrapper>
-      </div>
-    </Wrapper>
-  ),
+  render,
   args: {
     data: {
       ...teaserBlock,
@@ -54,15 +60,7 @@ export const Right: Story = {
 };
 
 export const Top: Story = {
-  render: (args) => (
-    <Wrapper>
-      <div style={{ width: 'var(--default-container-width)' }}>
-        <BlockWrapper {...args}>
-          <TeaserBody {...args} />
-        </BlockWrapper>
-      </div>
-    </Wrapper>
-  ),
+  render,
   args: {
     data: {
       ...teaserBlock,
@@ -73,31 +71,26 @@ export const Top: Story = {
   },
 };
 
+// The teaser's schemaEnhancer includes the theme, so it supports a grey band.
+export const Grey: Story = {
+  render,
+  args: {
+    data: {
+      ...teaserBlock,
+      theme: 'grey',
+    },
+  },
+};
+
 export const PersonTeaserLeft: Story = {
-  render: (args) => (
-    <Wrapper>
-      <div style={{ width: 'var(--default-container-width)' }}>
-        <BlockWrapper {...args}>
-          <TeaserBody {...args} />
-        </BlockWrapper>
-      </div>
-    </Wrapper>
-  ),
+  render,
   args: {
     data: personBlock,
   },
 };
 
 export const PersonTeaserTop: Story = {
-  render: (args) => (
-    <Wrapper>
-      <div style={{ width: 'calc(var(--default-container-width) / 2)' }}>
-        <BlockWrapper {...args}>
-          <TeaserBody {...args} />
-        </BlockWrapper>
-      </div>
-    </Wrapper>
-  ),
+  render: renderNarrow,
   args: {
     data: {
       ...personBlock,
@@ -109,15 +102,7 @@ export const PersonTeaserTop: Story = {
 };
 
 export const PersonTeaserRight: Story = {
-  render: (args) => (
-    <Wrapper>
-      <div style={{ width: 'var(--default-container-width)' }}>
-        <BlockWrapper {...args}>
-          <TeaserBody {...args} />
-        </BlockWrapper>
-      </div>
-    </Wrapper>
-  ),
+  render,
   args: {
     data: {
       ...personBlock,
@@ -129,36 +114,14 @@ export const PersonTeaserRight: Story = {
 };
 
 export const PersonTeaserLeftSquared: Story = {
-  render: (args) => (
-    <Wrapper>
-      <div
-        className="person-squared-images"
-        style={{ width: 'var(--default-container-width)' }}
-      >
-        <BlockWrapper {...args}>
-          <TeaserBody {...args} />
-        </BlockWrapper>
-      </div>
-    </Wrapper>
-  ),
+  render: renderSquared,
   args: {
     data: personBlock,
   },
 };
 
 export const PersonTeaserTopSquared: Story = {
-  render: (args) => (
-    <Wrapper>
-      <div
-        className="person-squared-images"
-        style={{ width: 'calc(var(--default-container-width) / 2)' }}
-      >
-        <BlockWrapper {...args}>
-          <TeaserBody {...args} />
-        </BlockWrapper>
-      </div>
-    </Wrapper>
-  ),
+  render: renderSquaredNarrow,
   args: {
     data: {
       ...personBlock,
@@ -170,18 +133,7 @@ export const PersonTeaserTopSquared: Story = {
 };
 
 export const PersonTeaserRightSquared: Story = {
-  render: (args) => (
-    <Wrapper>
-      <div
-        className="person-squared-images"
-        style={{ width: 'var(--default-container-width)' }}
-      >
-        <BlockWrapper {...args}>
-          <TeaserBody {...args} />
-        </BlockWrapper>
-      </div>
-    </Wrapper>
-  ),
+  render: renderSquared,
   args: {
     data: {
       ...personBlock,

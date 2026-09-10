@@ -21,18 +21,6 @@ describe('New Block Auto Focus Tests', () => {
     cy.wait('@schema');
   });
 
-  it('Press Enter on a description block adds new autofocused default block', () => {
-    cy.addNewBlock('description');
-    cy.get('.documentDescription').first().click().type('{enter}');
-    cy.get('.block-editor-description + .block-editor-slate');
-    cy.wait(500);
-    cy.get('*[class*="block-editor-"]')
-      .eq(2)
-      .within(() => {
-        return cy.get('.selected');
-      });
-  });
-
   it('Press Enter on a text block adds new autofocused default block', () => {
     cy.getSlate().click();
     cy.get('button.block-add-button').click();

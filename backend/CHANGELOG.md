@@ -2,6 +2,18 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0a32 (2026-09-10)
+
+
+### New features:
+
+- Add Heading block example to example page. @danalvrz 
+
+
+### Internal:
+
+- Adjust the Blocks example content: add missing block descriptions (banner, carousel, event calendar, logos), add banner variations, add grey background variants (carousel, event calendar, maps), add an OpenStreetMap example to the maps block, and remove an orphaned block from the event calendar page. 
+
 ## 8.0.0a31 (2026-07-16)
 
 No significant changes.

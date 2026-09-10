@@ -1,1 +1,0 @@
-Add Heading block example to example page. @danalvrz
