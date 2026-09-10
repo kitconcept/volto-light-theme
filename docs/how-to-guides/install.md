@@ -94,7 +94,7 @@ Nevertheless, you can choose to install only those you want to use.
 {
   "dependencies": {
   "@eeacms/volto-accordion-block": "^12.0.0",
-  "@kitconcept/volto-banner-block": "^1.2.0",
+  "@kitconcept/volto-banner-block": "^1.2.1",
   "@kitconcept/volto-bm3-compat": "^1.0.0-alpha.1",
   "@kitconcept/volto-button-block": "5.0.0-alpha.2",
   "@kitconcept/volto-calendar-block": "^1.0.0-alpha.9",
