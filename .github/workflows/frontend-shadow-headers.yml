@@ -1,0 +1,24 @@
+name: Shadow customization headers
+
+on:
+  workflow_call:
+    inputs:
+      node-version:
+        required: true
+        type: string
+
+jobs:
+  shadow-headers:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Main checkout
+        uses: actions/checkout@v7
+
+      - name: Use Node.js ${{ inputs.node-version }}
+        uses: actions/setup-node@v7
+        with:
+          node-version: ${{ inputs.node-version }}
+
+      - name: Check OVERRIDE headers on shadowed components
+        run: node .github/scripts/check-shadow-headers.mjs frontend/packages

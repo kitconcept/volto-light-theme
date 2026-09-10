@@ -1,6 +1,76 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 8.0.0a32 (2026-09-10)
+
+### Backend
+
+
+#### New features:
+
+- Add Heading block example to example page. @danalvrz 
+
+
+#### Internal:
+
+- Adjust the Blocks example content: add missing block descriptions (banner, carousel, event calendar, logos), add banner variations, add grey background variants (carousel, event calendar, maps), add an OpenStreetMap example to the maps block, and remove an orphaned block from the event calendar page. 
+
+
+
+### Frontend
+
+#### Feature
+
+- Add missing placeholder image for person grid variation of a listing @iRohitSingh [#897](https://github.com/kitconcept/volto-light-theme/pull/897)
+- Remove description block @iRohitSingh [#913](https://github.com/kitconcept/volto-light-theme/pull/913)
+- Add Storybook stories for every VLT block, with variants and mock data @sneridagh 
+- Add a Playwright-based acceptance test setup under `frontend/acceptance` (backend reset fixture, login/content/accessibility utilities and a basic test suite), with Makefile targets and a CI workflow to run them. @sneridagh 
+
+#### Bugfix
+
+- Fix regression in proxy object link @Tishasoumya-02 
+- Fix spacing for blocks wrapper in News Items content types. @danalvrz 
+- Fix the external link icon respect the link foreground color @iRohitSingh 
+- Remove HTML block @iRohitSingh 
+- Remove duplicated margin in mobile screen for Heading block. @danlavrz 
+- Table fix CSS for layout <1440 @sneridagh 
+
+#### Internal
+
+- Add missing Spanish translations. [#920](https://github.com/kitconcept/volto-light-theme/pull/920)
+- Adjusted the container-width of the search to be layout width. @TimoBroeskamp 
+- Enforce the mandatory OVERRIDE header on shadowed components in CI (shadow-headers check). 
+- Update Banner Block to 1.2.1 @Tishasoumya-02 
+- Update dsgvo-banner to 4.0.0-alpha.3 @iRohitSingh 
+- Upgrade Volto to 19.3.0. @sneridagh 
+
+#### Documentation
+
+- Add a VLT Design System reference (tokens, composition, block catalog) and a machine-extracted visual block catalog generated from Storybook (`make design-catalog`), published in the Sphinx docs @sneridagh 
+
+
+
+### Project
+
+
+#### Feature
+
+- Add Storybook stories with variants and mock data for every VLT block, and make BlockWrapper reproduce the real content-area structure so themed bands and block widths render faithfully. @sneridagh [#919](https://github.com/kitconcept/volto-light-theme/pull/919)
+
+
+#### Internal
+
+- Bump outdated GitHub Actions to their latest major versions: `actions/checkout` v6 -> v7, `actions/setup-node` v6 -> v7, `actions/cache` v5 -> v6, and `JarvusInnovations/background-action` v1 -> v2. @sneridagh [#915](https://github.com/kitconcept/volto-light-theme/pull/915)
+- Enforce the mandatory OVERRIDE header on shadowed components in CI (shadow-headers check). 
+- Update Banner Block to 1.2.1 @Tishasoumya-02 
+
+
+#### Documentation
+
+- Add a VLT Design System reference (tokens, composition, block catalog) plus a machine-extracted visual block catalog generated from Storybook (`make design-catalog`), published in the Sphinx docs. @sneridagh [#919](https://github.com/kitconcept/volto-light-theme/pull/919)
+
+
+
 ## 8.0.0a31 (2026-07-16)
 
 ### Backend
