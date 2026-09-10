@@ -9,6 +9,9 @@
  * still using h2 and change it (if appropiate) when the change is made.
  * To override it, override the @kitconcept/volto-light-theme one instead of
  * this one.
+ * FILE: https://github.com/plone/volto/blob/19.3.0/packages/volto/src/components/manage/Blocks/Listing/DefaultTemplate.jsx
+ * FILE VERSION: Volto 19.3.0
+ * DATE: 2023-01-19
  */
 
 import DefaultTemplate from '../../../../../../components/Blocks/Listing/DefaultTemplate';
