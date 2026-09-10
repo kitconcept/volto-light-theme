@@ -60,8 +60,6 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
       width: 570px;
       min-height: 321px;
       padding: 60px 50px 60px 100px;
-      background-color: color-mix(in srgb, var(--flagColor) 75%, transparent);
-      color: var(--flagColor-foreground, var(--theme-foreground-color));
       transform: translateY(-50%);
 
       @container (max-width: 1024px) {
@@ -73,8 +71,6 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         width: 100%;
         height: 100%;
         padding: 60px 20px;
-        background: var(--flagColor);
-        color: var(--flagColor-foreground, var(--theme-foreground-color));
         transform: none;
       }
       &.has--slider--flagAlign--right {
@@ -90,15 +86,11 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
           letter-spacing: 1px;
           line-height: 18px;
           text-transform: uppercase;
-          @media only screen and (max-width: $computer-width) {
-            color: var(--flagColor-foreground, var(--theme-foreground-color));
-          }
         }
         h2 {
           @include text-heading-h2();
           margin-top: 0px;
           margin-bottom: $spacing-medium;
-          color: var(--flagColor-foreground, var(--theme-foreground-color));
         }
       }
       p {
@@ -107,7 +99,6 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         overflow: hidden;
         margin-bottom: 50px;
         -webkit-box-orient: vertical;
-        color: var(--flagColor-foreground, var(--theme-foreground-color));
         -webkit-line-clamp: 5;
         text-overflow: ellipsis;
         @media only screen and (max-width: $computer-width) {
@@ -130,8 +121,6 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
     padding: 8px 20px;
     border: 1px solid currentColor;
     border-radius: 0;
-    background-color: transparent;
-    color: var(--flagColor-foreground, var(--theme-foreground-color));
     font-size: 16px;
     font-weight: 900;
     line-height: 20px;
@@ -139,20 +128,6 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
   }
 
   &.simple {
-    background-color: var(--flagColor);
-
-    .slider-dots .slider-dot::after {
-      background: color-mix(
-        in srgb,
-        var(--flagColor-foreground, var(--theme-foreground-color)) 50%,
-        var(--flagColor)
-      );
-    }
-
-    .slider-dots .slider-dot--selected::after {
-      background: var(--flagColor-foreground, var(--theme-foreground-color));
-    }
-
     .slider-viewport {
       margin-bottom: 0;
       container-name: slider;
@@ -164,7 +139,6 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
       align-items: center;
       padding: 0 130px;
       aspect-ratio: 2/1;
-      background-color: var(--flagColor);
       gap: clamp(30px, 4vw, 57px);
       grid-template-areas: 'images content';
       grid-template-rows: auto;
@@ -228,8 +202,6 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         width: 100%;
         align-content: center;
         padding: 0;
-        background: none;
-        color: var(--flagColor-foreground, var(--theme-foreground-color));
         grid-area: content;
         transform: none;
 
@@ -244,30 +216,13 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
           height: 100%;
           align-content: start;
           padding: 60px 20px;
-          background: var(--flagColor);
-          color: var(--flagColor-foreground, var(--theme-foreground-color));
-          .title > .supertitle,
-          button,
-          .title > h2,
-          p.slider-description {
-            color: var(
-              --flagColor-foreground,
-              var(--theme-foreground-color)
-            ) !important;
-          }
           p.slider-description {
             -webkit-line-clamp: 8;
             line-clamp: 8;
           }
         }
 
-        .title {
-          h2 {
-            color: var(--flagColor-foreground, var(--theme-foreground-color));
-          }
-        }
         p {
-          color: var(--flagColor-foreground, var(--theme-foreground-color));
           -webkit-line-clamp: 3;
           line-clamp: 3;
         }
@@ -293,14 +248,10 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
         width: 50px !important;
         height: 50px !important;
         padding: 40px;
-        color: var(--flagColor-foreground, var(--theme-foreground-color));
       }
       @media only screen and (max-width: $computer-width) {
         display: none;
       }
-    }
-    button {
-      color: var(--flagColor-foreground, var(--theme-foreground-color));
     }
   }
 }
