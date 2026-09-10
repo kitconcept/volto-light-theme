@@ -8,6 +8,37 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0-alpha.32 (2026-09-10)
+
+### Feature
+
+- Add missing placeholder image for person grid variation of a listing @iRohitSingh [#897](https://github.com/kitconcept/volto-light-theme/pull/897)
+- Remove description block @iRohitSingh [#913](https://github.com/kitconcept/volto-light-theme/pull/913)
+- Add Storybook stories for every VLT block, with variants and mock data @sneridagh 
+- Add a Playwright-based acceptance test setup under `frontend/acceptance` (backend reset fixture, login/content/accessibility utilities and a basic test suite), with Makefile targets and a CI workflow to run them. @sneridagh 
+
+### Bugfix
+
+- Fix regression in proxy object link @Tishasoumya-02 
+- Fix spacing for blocks wrapper in News Items content types. @danalvrz 
+- Fix the external link icon respect the link foreground color @iRohitSingh 
+- Remove HTML block @iRohitSingh 
+- Remove duplicated margin in mobile screen for Heading block. @danlavrz 
+- Table fix CSS for layout <1440 @sneridagh 
+
+### Internal
+
+- Add missing Spanish translations. [#920](https://github.com/kitconcept/volto-light-theme/pull/920)
+- Adjusted the container-width of the search to be layout width. @TimoBroeskamp 
+- Enforce the mandatory OVERRIDE header on shadowed components in CI (shadow-headers check). 
+- Update Banner Block to 1.2.1 @Tishasoumya-02 
+- Update dsgvo-banner to 4.0.0-alpha.3 @iRohitSingh 
+- Upgrade Volto to 19.3.0. @sneridagh 
+
+### Documentation
+
+- Add a VLT Design System reference (tokens, composition, block catalog) and a machine-extracted visual block catalog generated from Storybook (`make design-catalog`), published in the Sphinx docs @sneridagh 
+
 ## 8.0.0-alpha.31 (2026-07-16)
 
 ### Feature

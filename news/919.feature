@@ -1,1 +1,0 @@
-Add Storybook stories with variants and mock data for every VLT block, and make BlockWrapper reproduce the real content-area structure so themed bands and block widths render faithfully. @sneridagh
