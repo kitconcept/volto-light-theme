@@ -35,6 +35,7 @@
     "test": "pnpm --filter @kitconcept/volto-light-theme exec vitest",
     "lint": "VOLTOCONFIG=$(pwd)/volto.config.js eslint --max-warnings=0 'packages/**/src/**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "VOLTOCONFIG=$(pwd)/volto.config.js eslint --fix 'packages/**/src/**/*.{js,jsx,ts,tsx}'",
+    "check:shadow": "node ../.github/scripts/check-shadow-headers.mjs packages",
     "prettier": "prettier --check 'packages/**/src/**/*.{js,jsx,ts,tsx}'",
     "prettier:fix": "prettier --write 'packages/**/src/**/*.{js,jsx,ts,tsx}' ",
     "stylelint": "stylelint 'packages/**/src/**/*.{css,scss,less}' --allow-empty-input",

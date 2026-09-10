@@ -100,6 +100,15 @@ jobs:
         node-version: ${{ needs.config.outputs.node-version }}
     if: ${{ needs.config.outputs.frontend == 'true' }}
 
+  frontend-shadow-headers:
+    name: "Frontend: Check shadow customization headers"
+    uses: ./.github/workflows/frontend-shadow-headers.yml
+    needs:
+        - config
+    with:
+        node-version: ${{ needs.config.outputs.node-version }}
+    if: ${{ needs.config.outputs.frontend == 'true' }}
+
   frontend-build:
     name: "Frontend: Build container image (${{ needs.config.outputs.base-tag }})"
     if: ${{ needs.config.outputs.acceptance == 'true' && (always() && !contains(needs.*.result, 'failure'))}}
@@ -109,6 +118,7 @@ jobs:
       - frontend-lint
       - frontend-i18n
       - frontend-unit
+      - frontend-shadow-headers
     with:
       base-tag: ${{ needs.config.outputs.base-tag }}
       image-name-prefix: ${{ needs.config.outputs.image-name-prefix }}
@@ -285,6 +295,7 @@ jobs:
       - frontend-lint
       - frontend-unit
       - frontend-i18n
+      - frontend-shadow-headers
       - frontend-build
       - acceptance
       - playwright-acceptance
@@ -307,6 +318,7 @@ jobs:
           echo '| frontend-lint | ${{ needs.frontend-lint.result }} |' >> $GITHUB_STEP_SUMMARY
           echo '| frontend-unit | ${{ needs.frontend-unit.result }} |' >> $GITHUB_STEP_SUMMARY
           echo '| frontend-i18n | ${{ needs.frontend-i18n.result }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| frontend-shadow-headers | ${{ needs.frontend-shadow-headers.result }} |' >> $GITHUB_STEP_SUMMARY
           echo '| frontend-build | ${{ needs.frontend-build.result }} |' >> $GITHUB_STEP_SUMMARY
           echo '| acceptance | ${{ needs.acceptance.result }} |' >> $GITHUB_STEP_SUMMARY
           echo '| playwright-acceptance | ${{ needs.playwright-acceptance.result }} |' >> $GITHUB_STEP_SUMMARY
