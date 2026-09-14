@@ -41,6 +41,7 @@ const MenuItem = ({
   handleLinkClicked,
   resetToRoot,
   pathname,
+  content,
 }) => {
   const [isSubMenuOpen, setSubMenuOpen] = useState(false);
   const isClient = useClient();
@@ -139,7 +140,7 @@ const MenuItem = ({
                 />
               ))}
           </ul>
-          <MobileToolsFooter />
+          <MobileToolsFooter content={content} />
         </div>
       </CSSTransition>
     </li>
@@ -285,10 +286,11 @@ const MobileNavigation = (props) => {
                   handleLinkClicked={handleLinkClicked}
                   resetToRoot={resetToRoot}
                   pathname={props.pathname}
+                  content={props.content}
                 />
               ))}
           </ul>
-          <Footer />
+          <Footer content={props.content} />
         </div>
       </CSSTransition>
     </div>
