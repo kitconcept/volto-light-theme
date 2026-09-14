@@ -934,8 +934,8 @@ body.has-toolbar.has-sidebar {
   }
 
   .spacer {
-    flex: 1 0 80px;
     min-height: 80px;
+    flex: 1 0 80px;
   }
 
   .mobile-tools {
@@ -959,8 +959,8 @@ body.has-toolbar.has-sidebar {
     }
 
     .language-selector {
-      margin: 0;
       display: flex;
+      margin: 0;
 
       *:not(:last-child):after {
         margin-right: 5px;
