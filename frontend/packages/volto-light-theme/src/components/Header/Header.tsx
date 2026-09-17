@@ -72,7 +72,7 @@ const InternetHeader = ({ pathname, content }) => {
   return (
     <>
       <div className="header">
-        <div className="tools-wrapper">
+        <div className="tools-wrapper computer large screen widescreen only">
           <LanguageSelector />
 
           <div className="tools">
@@ -112,7 +112,7 @@ const InternetHeader = ({ pathname, content }) => {
             <Logo />
           </div>
           <Navigation pathname={pathname} />
-          <MobileNavigation pathname={pathname} />
+          <MobileNavigation pathname={pathname} content={content} />
           <div className="search-wrapper navigation-desktop">
             <div className="search">
               <SearchWidget />
