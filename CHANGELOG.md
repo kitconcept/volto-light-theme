@@ -3,23 +3,249 @@
 <!-- towncrier release notes start -->
 ## 8.0.0 (2026-09-17)
 
+This entry aggregates all the changes introduced during the 8.0.0 alpha series (8.0.0a0 → 8.0.0a33).
+Please refer to the [upgrade guide](https://volto-light-theme.readthedocs.io/how-to-guides/upgrade-guide.html) for more information on how to migrate your site to this version.
+
 ### Backend
 
-No significant changes.
+#### Breaking
 
+- We renamed three fields in the `kitconcept.footer` behavior. @sneridagh
+  `footer_main_logo_inversed` => `footer_logo`
+  `footer_logo` => `post_footer_logo`
+  `footer_logo_link` => `post_footer_logo_link`
+  NOTE: This behavior is not used by default in VLT and it's only used and supported in kitconcept distributions.
+
+#### Feature
+
+- Add Heading block example to example page. @danalvrz
+- Add default colophon text. @danalvrz
+- Add a boolean field to enable or disable the mobile sticky menu. @iFlameing
+- Move to native namespaces. @sneridagh
+
+#### Bugfix
+
+- Fix edge cases when adding site customization fields to error responses. @davisagli
+- Include site customization fields in error responses. @davisagli
+- Move `primary_foreground_color` value to `header_foreground`. @iFlameing
+- Change footer colophon widget from Input to Richtext. @iFlameing
+
+#### Internal
+
+- Adjust the Blocks example content: add missing block descriptions (banner, carousel, event calendar, logos), add banner variations, add grey background variants (carousel, event calendar, maps), add an OpenStreetMap example to the maps block, and remove an orphaned block from the event calendar page.
+- Fix Python version used in CI. @davisagli
+- Upgrade Plone 6.2.0 final. @sneridagh
+- Re-release of 8a20. @sneridagh
+- Fix css of External link icon indicator for teaser and grid-teaser. @iRohitSingh [#797](https://github.com/kitconcept/volto-light-theme/issues/797)
+- Add missing pt_br translations. [#804](https://github.com/kitconcept/volto-light-theme/issues/804)
+- Updated to use Plone 6.1.4. @sneridagh
+- Update Banner Block Example Content. @Tishasoumya-02
+- gitignore mxdev control files. @sneridagh [#694](https://github.com/kitconcept/volto-light-theme/issues/694)
+- Fixed example content for internal link because the exported data was incorrect. @sneridagh [#693](https://github.com/kitconcept/volto-light-theme/issues/693)
 
 
 
 ### Frontend
 
-No significant changes.
+#### Breaking
+
+- Use Volto 19a9. Use `@plone/components` 4.0.0 alpha. Recommended add-ons are not included by default as `peerDependencies`. Please, check the [upgrade guide](https://volto-light-theme.readthedocs.io/how-to-guides/upgrade-guide.html) for more information. @sneridagh [#693](https://github.com/kitconcept/volto-light-theme/pull/693)
+- Transfer all custom code related to slider to the add-on. @sneridagh [#694](https://github.com/kitconcept/volto-light-theme/pull/694)
+- Upgrade to Volto 19a31. Forces `react-aria-components` from the catalog in Volto so projects using it have to be updated to at least this Volto version. @sneridagh
+- Improve Card component link handling by using a CSS stretched-link pattern & other minor style fixes for consistency. Breaking: custom `Summary` components must now accept and use the `LinkToItem` prop; category labels changed from heading tags to `<ul>` elements. See the upgrade guide for migration steps. @danalvrz
+- Footer: Removed the "Follow us" literal above the social icons. @iRohitSingh [#838](https://github.com/kitconcept/volto-light-theme/pull/838)
+- Slider flag color styling has moved from Volto Light Theme to the `@kitconcept/volto-slider-block` add-on. @Tishasoumya-02
+
+#### Feature
+
+- To reduce the size of the main VLT repository, snapshots for visual regression testing are now stored in a separate repository (kitconcept/vlt-visual-regression). @sneridagh [#690](https://github.com/kitconcept/volto-light-theme/pull/690)
+- Refactor `volto-button-block`, transfer all the customizations to the block. @sneridagh [#697](https://github.com/kitconcept/volto-light-theme/pull/697)
+- Refactor `volto-separator-block`, transfer all the customizations to the block. @sneridagh [#698](https://github.com/kitconcept/volto-light-theme/pull/698)
+- Recoverable Block Error Boundaries. @sneridagh [#708](https://github.com/kitconcept/volto-light-theme/pull/708)
+- Update `Buttons` widget to the one proposed for the Volto PR #7555. @sneridagh
+- Registry color definitions support for ColorSwatch widget. @sneridagh [#723](https://github.com/kitconcept/volto-light-theme/pull/723)
+- Add `volto-calendar-block`. @iRohitSingh
+- Added cross language support for blocks chooser search. @Tishasoumya-02 [#7657](https://github.com/plone/volto/issues/7657)
+- Added support for selecting Path and Depth in the Listing Block's Location criteria using the ObjectBrowserWidget and NumberWidget. @iFlameing @giuliaghisini [#7661](https://github.com/plone/volto/issues/7661)
+- Added feature of drag and drop files in folder contents (Update to Volto 19a9). @Tishasoumya-02 @sneridagh
+- Remove the black overlay when no caption for images in grid. @Tishasoumya-02 [#767](https://github.com/kitconcept/volto-light-theme/pull/767)
+- Add mail-icon next to mailto links. @Tishasoumya-02 [#774](https://github.com/kitconcept/volto-light-theme/pull/774)
+- Add slot for listing disclaimers in ListingBody component. @danalvrz
+- Add soft_max_length warnings for text/textarea widget. @Tishasoumya-02
+- Hide profile links based on intranet controlpanel settings. @iFlameing
+- Create Introduction block on pressing Enter instead of default text block. @iRohitSingh [#780](https://github.com/kitconcept/volto-light-theme/pull/780)
+- Add sticky menu in mobile view. @iFlameing
+- Show only two letters of the native language name. @iRohitSingh [#785](https://github.com/kitconcept/volto-light-theme/pull/785), [#795](https://github.com/kitconcept/volto-light-theme/pull/795)
+- Improve styles for search results page. @danalvrz
+- Updated several add-ons: `volto-calendar-block` 1.0.0-alpha.7, `volto-button-block` 5.0.0-alpha.1, `volto-logos-block` 4.0.0-alpha.1, `volto-iframe-block` 2.4.0, `volto-introduction-block` 1.4.0, `volto-carousel-block` 3.0.0-alpha.1, `volto-slider-block` 7.0.0-alpha.1.
+- Improve layout for full-width blocks when in Edit mode. @danalvrz
+- Provide proper image sizes to the `Image` component. @davisagli @sneridagh [#664](https://github.com/kitconcept/volto-light-theme/pull/664)
+- Translate the package to the languages provided by Polyglot project. @erral
+- Unify css and alignment/width data handling for floating image, map and video blocks. @TimoBroeskamp @danalvrz
+- Update Highlight block version to 5.x. @danalvrz
+- Update de/es/eu translations from Polyglot. @erral
+- Add basic VLT styles for Form Block. @danalvrz
+- Add link icon to Card component. @Tishasoumya-02
+- Let projects choose the structural components (header, navigation, mobile navigation, footer, breadcrumbs, language selector, logo, search widget, and tags) through the registry, selecting each one via `config.settings.vlt.components` instead of shadowing. @ericof [#904](https://github.com/kitconcept/volto-light-theme/pull/904)
+- Migrate the Image block size to a `size:noprefix` style field, resolving sizes via a `--media-size` CSS variable. @danalvrz
+- Update Highlight block to 5.0.0-alpha.2. @danalvrz
+- Add missing placeholder image for person grid variation of a listing. @iRohitSingh [#897](https://github.com/kitconcept/volto-light-theme/pull/897)
+- Remove description block. @iRohitSingh [#913](https://github.com/kitconcept/volto-light-theme/pull/913)
+- Add Storybook stories for every VLT block, with variants and mock data. @sneridagh
+- Add a Playwright-based acceptance test setup under `frontend/acceptance` (backend reset fixture, login/content/accessibility utilities and a basic test suite), with Makefile targets and a CI workflow to run them. @sneridagh
+- Move tools & language selector into nav on mobile. @jnptk
+
+#### Bugfix
+
+- [#705](https://github.com/kitconcept/volto-light-theme/pull/705)
+- Fix Teaser Blocks for Person type email spacing in 4 columns gridBlock. @Tishasoumya-02
+- Fixed slider config, in case slider is not present. @sneridagh
+- Fixes text in the sticky menu if the text was long enough to wrap. @jnptk [#691](https://github.com/kitconcept/volto-light-theme/pull/691)
+- Identify intranet header with a className in `header header-intranet` div. @sneridagh
+- Missing `@kitconcept/volto-bm3-compat` as dep. @sneridagh [#726](https://github.com/kitconcept/volto-light-theme/pull/726)
+- Fix css of unauthorized Page. @iRohitSingh
+- Fixed Accordion arrow/buttons no longer shrink when the title text becomes too long. @jnptk
+- Improve block model 3 support across views. Fixed nasty BDandD console error. @sneridagh [#740](https://github.com/kitconcept/volto-light-theme/pull/740)
+- Fixed problem with the description not showing in rendering if the description was undefined. @sneridagh
+- Hide complementary logo in mobile devices. @Tishasoumya-02
+- Fixed highlight block ENTER, create a new block consistently. Update highlight block to 4.5.1. @sneridagh
+- Fixed introduction block error on pressing ENTER. Update add-on to 1.2.0. @sneridagh
+- Fix sticky menu cut off at the bottom on smaller screens. @iRohitSingh
+- Fixed double navigation in cards that contains inner links in its body. @sneridagh
+- Fixed rearrangement of files in drag-and-drop of folderish content. @Tishasoumya-02
+- Sync RAC VLT version to use the Volto 19a21 one (1.14.1). @sneridagh
+- Fix bug where markdown inline links in descriptions are rendered as a separate paragraph. [#751](https://github.com/kitconcept/volto-light-theme/pull/751)
+- Use the CSS prop `--breadcrumbs-foregound` for breadcrumbs links as default, with `--link-foreground-color` as fallback. @danalvrz
+- Fix header_actions results into undefined when deleting the target. @Tishasoumya-02 [#775](https://github.com/kitconcept/volto-light-theme/pull/775)
+- Change footer colophon widget from Input to Richtext. @iFlameing
+- Fixed accordion does not work with the "Order" tab. Use `@eea/volto-accordion-block` 12.0.0. @sneridagh
+- Fixed issue with navigation items custom color not changing without the fat menu enabled. @TimoBroeskamp
+- Fix mail icon appearing near share icon in engagement-section. @Tishasoumya-02 [#777](https://github.com/kitconcept/volto-light-theme/pull/777)
+- Fix actions menu going undefined on intranet header. @Tishasoumya-02 [#778](https://github.com/kitconcept/volto-light-theme/pull/778)
+- Fixed defaults in `Button` widgets. @iFlameing
+- Update `volto-calendar-block` to 1.0.6. @sneridagh
+- Make button anchor (a) (from a button if it's a navigation element for a11y purposes) has the same styling as a button. @sneridagh [#786](https://github.com/kitconcept/volto-light-theme/pull/786)
+- See Volto [19.0.0-alpha.24](https://github.com/plone/volto/releases/tag/19.0.0-alpha.24) and [19.0.0-alpha.25](https://github.com/plone/volto/releases/tag/19.0.0-alpha.25). @sneridagh
+- Fix social icons color in post-footer. @danalvrz
+- Move the head title after the date in NewsView and EventView, making it consistent with the listing view. @iFlameing
+- Fix color in language selector, and remove extra margin between Teaser and Button blocks. @danalvrz
+- Fix hydration errors in mobile navigation. @Tishasoumya-02
+- Fix image size grid-block in editmode. @TimoBroeskamp
+- Fix mobile sticky menu not showing from 768 to 620px. @iFlameing
+- Fix font size for control panel view headers. @danalvrz
+- Fix undefined error when pressing enter in footer site colophon input. @iFlameing
+- Improve styles for Export Import control panel & several color fixes. @danalvrz
+- Fixed the font-color in the table block with h2 or h3 font-size. @TimoBroeskamp [#820](https://github.com/kitconcept/volto-light-theme/pull/820)
+- Display footer links with an underline, remove gap between separate lines in footer colophon text and fixed richtext-editor combinations to work together. @TimoBroeskamp
+- Fix navigation text color not loading on hard reload. @iFlameing
+- Fix spacings for navigation items when using the Intranet header. @danalvrz
+- Fix styles for text in colophon. @danalvrz
+- Allow address in Footer to take all available space based on number of links columns. @danalvrz
+- Added translation for the social media section in the footer. @jnptk
+- Fix Footer aligned with content. @iRohitSingh [#838](https://github.com/kitconcept/volto-light-theme/pull/838)
+- Fixed a bug that closed the Navigation when scrolling down with the scrollbar. @TimoBroeskamp
+- Fixed underlined items in the controlpanel and the contents tab. @TimoBroeskamp
+- Upgrade Volto 19a33. Upgrade `volto-calendar-block` 1.0.0a9. @sneridagh
+- Remove the padding added by header-wrapper for search-wrapper and center the search. @Tishasoumya-02 [#846](https://github.com/kitconcept/volto-light-theme/pull/846)
+- Fix Mobile layout of social media icons. @iRohitSingh [#852](https://github.com/kitconcept/volto-light-theme/pull/852)
+- Fix social media icon color. @iRohitSingh [#854](https://github.com/kitconcept/volto-light-theme/pull/854)
+- Fix loading of inherited site customization fields on error views. @davisagli
+- Fixed not working combinations with the richtext-widget in the text-block and updated line-height of ToC block according to figma. @TimoBroeskamp
+- Update Volto to 19a36. See https://github.com/plone/volto/releases/tag/19.0.0-alpha.36. @sneridagh
+- Fix Search icon color changes when changing footer font color. @iRohitSingh [#850](https://github.com/kitconcept/volto-light-theme/pull/850)
+- Fix customized ObjectListWidget to support the `schemaExtender` prop. @davisagli
+- Upgrade playwright and latest Volto 19.1.0. @sneridagh [#873](https://github.com/kitconcept/volto-light-theme/pull/873)
+- Fix last item of a listing with no pagination padding is broken. @iRohitSingh [#874](https://github.com/kitconcept/volto-light-theme/pull/874)
+- Remove underline regression from Slider block Simple variation. @danalvrz
+- refactor closing logic for fatnav to ignore all clicks on scrollbar. @jackahl [#834](https://github.com/kitconcept/volto-light-theme/pull/834)
+- Fix icon in search. @iRohitSingh [#879](https://github.com/kitconcept/volto-light-theme/pull/879)
+- Fix top margin for floated images when following an H2. @danalvrz
+- Update use of clickable_profile_link. @Tishasoumya-02
+- Fix grid Teaser title overflows. @iRohitSingh [#894](https://github.com/kitconcept/volto-light-theme/pull/894)
+- Fix Link content type URL (external) in navigation being appended to the existing URL instead of replacing it. @iFlameing
+- Fix advanced facet toggle not working in Search block. @iFlameing
+- Fix loss of live data in Add mode & add unit test to useLiveData hook. @danalvrz
+- Fix the changing width layout induced by simple slider variant. @Tishasoumya-02
+- Fix regression in proxy object link. @Tishasoumya-02
+- Fix spacing for blocks wrapper in News Items content types. @danalvrz
+- Fix the external link icon respect the link foreground color. @iRohitSingh
+- Remove HTML block. @iRohitSingh
+- Remove duplicated margin in mobile screen for Heading block. @danalvrz
+- Table fix CSS for layout <1440. @sneridagh
+- Fix header actions overflowing on mobile. @jnptk
+- Fix positioning of language selector on mobile. @jnptk
+
+#### Internal
+
+- Add css for NotFound Page. @Tishasoumya-02
+- Updated volto-dsgvo-banner baseline to latest (3.x series). @sneridagh
+- Normalize all remaining add-ons to be "alpha" versions exclusively for vlt8. @sneridagh
+- Refactoring to TS some components. @sneridagh [#731](https://github.com/kitconcept/volto-light-theme/pull/731)
+- Update to latest RAC to match the `@plone/components` one. @sneridagh
+- Use forked Razzle. Update to use Volto 19a14. @sneridagh
+- Add Cypress tests for Enter key behavior on focused blocks. @iRohitSingh
+- New visual regression tests. @sneridagh
+- Add missing pt_br translations. @humanaice [#804](https://github.com/kitconcept/volto-light-theme/pull/804)
+- Update translation. @iFlameing
+- Remove space after banner block when bg color is not white. @Tishasoumya-02 [#761](https://github.com/kitconcept/volto-light-theme/pull/761)
+- Upgrade Volto 19 final. @sneridagh
+- Update volto-dsgvo-banner to 4.0.0-alpha.2. @iFlameing
+- Add missing Spanish translations. [#920](https://github.com/kitconcept/volto-light-theme/pull/920)
+- Adjusted the container-width of the search to be layout width. @TimoBroeskamp
+- Enforce the mandatory OVERRIDE header on shadowed components in CI (shadow-headers check).
+- Update Banner Block to 1.2.1. @Tishasoumya-02
+- Update dsgvo-banner to 4.0.0-alpha.3. @iRohitSingh
+- Upgrade Volto to 19.3.0. @sneridagh
+- Re-release of 8a20. @sneridagh
+- Preparing for final release, use final versions in add-ons. @sneridagh
+- Update Slider Block version 7.0.0a2. @Tishasoumya-02
+
+#### Documentation
+
+- Updated docs on how to release the packages. @sneridagh [#842](https://github.com/kitconcept/volto-light-theme/pull/842)
+- Add a VLT Design System reference (tokens, composition, block catalog) and a machine-extracted visual block catalog generated from Storybook (`make design-catalog`), published in the Sphinx docs. @sneridagh
+
 
 
 ### Project
 
-No significant changes.
+#### Feature
 
+- Update docs on Card and Summary components and upgrade guide. @danalvrz
+- Improve documentation on VLT Layout concepts. @danalvrz
+- Update Highlight block version to 5.x in recommended list. @danalvrz
+- Update version of Highlight block in recommended addons list. @danalvrz
+- Add Storybook stories with variants and mock data for every VLT block, and make BlockWrapper reproduce the real content-area structure so themed bands and block widths render faithfully. @sneridagh [#919](https://github.com/kitconcept/volto-light-theme/pull/919)
 
+#### Internal
+
+- Added a CI workflow for checking the consistency of the mrs.developer.json versions and the recommendedAddons.json one. @sneridagh [#694](https://github.com/kitconcept/volto-light-theme/pull/694)
+- Added CI job for checking if there's a `.only` in Cypress tests. @sneridagh [#697](https://github.com/kitconcept/volto-light-theme/pull/697)
+- Moved check-recommended-addons check to a unit test. @sneridagh
+- Re-release of 8a20. @sneridagh
+- Sanitized the Docker buildcache key derived from `github.ref_name` so refs containing a slash (e.g. `feature/foo`) no longer fail `docker/build-push-action`. @ericof [#887](https://github.com/kitconcept/volto-light-theme/pull/887)
+- Update GH actions in CI. @sneridagh
+- Update lock file. @danalvrz
+- Update setup-uv action for CI. @davisagli
+- Update volto-dsgvo-banner to 4.0.0-alpha.2. @iFlameing
+- Bump outdated GitHub Actions to their latest major versions: `actions/checkout` v6 -> v7, `actions/setup-node` v6 -> v7, `actions/cache` v5 -> v6, and `JarvusInnovations/background-action` v1 -> v2. @sneridagh [#915](https://github.com/kitconcept/volto-light-theme/pull/915)
+- Enforce the mandatory OVERRIDE header on shadowed components in CI (shadow-headers check).
+- Update Banner Block to 1.2.1. @Tishasoumya-02
+- Update recommendedAddons.json. @sneridagh
+
+#### Documentation
+
+- Added documentation for acceptance, a11y, and visual regression tests. @sneridagh [#690](https://github.com/kitconcept/volto-light-theme/pull/690)
+- Added several breaking change notices for VLT 8. @sneridagh [#693](https://github.com/kitconcept/volto-light-theme/pull/693)
+- Added documentation for transfering the slider features to the add-on and the corresponding breaking change notice. @sneridagh [#694](https://github.com/kitconcept/volto-light-theme/pull/694)
+- Improve the recommended addons paragraphs. @sneridagh
+- Better install section. @sneridagh
+- Refactored visual regressions tests documentation. @sneridagh
+- Added section for the use case of creating new VRT. @sneridagh
+- Updated docs on how to release the packages. @sneridagh [#842](https://github.com/kitconcept/volto-light-theme/pull/842)
+- Added a how-to guide explaining how to swap structural components through the registry. @ericof [#904](https://github.com/kitconcept/volto-light-theme/pull/904)
+- Add a "Color system" conceptual guide and expand the colors reference. @danalvrz
+- Add a VLT Design System reference (tokens, composition, block catalog) plus a machine-extracted visual block catalog generated from Storybook (`make design-catalog`), published in the Sphinx docs. @sneridagh [#919](https://github.com/kitconcept/volto-light-theme/pull/919)
 
 
 ## 8.0.0a33 (2026-09-17)
@@ -35,21 +261,21 @@ No significant changes.
 
 #### Breaking
 
-- Slider flag color styling has moved from Volto Light Theme to the `@kitconcept/volto-slider-block` add-on. @Tishasoumya-02 
+- Slider flag color styling has moved from Volto Light Theme to the `@kitconcept/volto-slider-block` add-on. @Tishasoumya-02
 
 #### Feature
 
-- Move tools & language selector into nav on mobile. @jnptk 
+- Move tools & language selector into nav on mobile. @jnptk
 
 #### Bugfix
 
-- Fix header actions overflowing on mobile. @jnptk 
-- Fix positioning of language selector on mobile. @jnptk 
+- Fix header actions overflowing on mobile. @jnptk
+- Fix positioning of language selector on mobile. @jnptk
 
 #### Internal
 
-- Preparing for final release, use final versions in add-ons. @sneridagh 
-- Update Slider Block version 7.0.0a2 @Tishasoumya-02 
+- Preparing for final release, use final versions in add-ons. @sneridagh
+- Update Slider Block version 7.0.0a2 @Tishasoumya-02
 
 
 
@@ -58,7 +284,7 @@ No significant changes.
 
 #### Internal
 
-- Update recommendedAddons.json @sneridagh 
+- Update recommendedAddons.json @sneridagh
 
 
 
@@ -69,12 +295,12 @@ No significant changes.
 
 #### New features:
 
-- Add Heading block example to example page. @danalvrz 
+- Add Heading block example to example page. @danalvrz
 
 
 #### Internal:
 
-- Adjust the Blocks example content: add missing block descriptions (banner, carousel, event calendar, logos), add banner variations, add grey background variants (carousel, event calendar, maps), add an OpenStreetMap example to the maps block, and remove an orphaned block from the event calendar page. 
+- Adjust the Blocks example content: add missing block descriptions (banner, carousel, event calendar, logos), add banner variations, add grey background variants (carousel, event calendar, maps), add an OpenStreetMap example to the maps block, and remove an orphaned block from the event calendar page.
 
 
 
@@ -84,30 +310,30 @@ No significant changes.
 
 - Add missing placeholder image for person grid variation of a listing @iRohitSingh [#897](https://github.com/kitconcept/volto-light-theme/pull/897)
 - Remove description block @iRohitSingh [#913](https://github.com/kitconcept/volto-light-theme/pull/913)
-- Add Storybook stories for every VLT block, with variants and mock data @sneridagh 
-- Add a Playwright-based acceptance test setup under `frontend/acceptance` (backend reset fixture, login/content/accessibility utilities and a basic test suite), with Makefile targets and a CI workflow to run them. @sneridagh 
+- Add Storybook stories for every VLT block, with variants and mock data @sneridagh
+- Add a Playwright-based acceptance test setup under `frontend/acceptance` (backend reset fixture, login/content/accessibility utilities and a basic test suite), with Makefile targets and a CI workflow to run them. @sneridagh
 
 #### Bugfix
 
-- Fix regression in proxy object link @Tishasoumya-02 
-- Fix spacing for blocks wrapper in News Items content types. @danalvrz 
-- Fix the external link icon respect the link foreground color @iRohitSingh 
-- Remove HTML block @iRohitSingh 
-- Remove duplicated margin in mobile screen for Heading block. @danlavrz 
-- Table fix CSS for layout <1440 @sneridagh 
+- Fix regression in proxy object link @Tishasoumya-02
+- Fix spacing for blocks wrapper in News Items content types. @danalvrz
+- Fix the external link icon respect the link foreground color @iRohitSingh
+- Remove HTML block @iRohitSingh
+- Remove duplicated margin in mobile screen for Heading block. @danlavrz
+- Table fix CSS for layout <1440 @sneridagh
 
 #### Internal
 
 - Add missing Spanish translations. [#920](https://github.com/kitconcept/volto-light-theme/pull/920)
-- Adjusted the container-width of the search to be layout width. @TimoBroeskamp 
-- Enforce the mandatory OVERRIDE header on shadowed components in CI (shadow-headers check). 
-- Update Banner Block to 1.2.1 @Tishasoumya-02 
-- Update dsgvo-banner to 4.0.0-alpha.3 @iRohitSingh 
-- Upgrade Volto to 19.3.0. @sneridagh 
+- Adjusted the container-width of the search to be layout width. @TimoBroeskamp
+- Enforce the mandatory OVERRIDE header on shadowed components in CI (shadow-headers check).
+- Update Banner Block to 1.2.1 @Tishasoumya-02
+- Update dsgvo-banner to 4.0.0-alpha.3 @iRohitSingh
+- Upgrade Volto to 19.3.0. @sneridagh
 
 #### Documentation
 
-- Add a VLT Design System reference (tokens, composition, block catalog) and a machine-extracted visual block catalog generated from Storybook (`make design-catalog`), published in the Sphinx docs @sneridagh 
+- Add a VLT Design System reference (tokens, composition, block catalog) and a machine-extracted visual block catalog generated from Storybook (`make design-catalog`), published in the Sphinx docs @sneridagh
 
 
 
@@ -122,8 +348,8 @@ No significant changes.
 #### Internal
 
 - Bump outdated GitHub Actions to their latest major versions: `actions/checkout` v6 -> v7, `actions/setup-node` v6 -> v7, `actions/cache` v5 -> v6, and `JarvusInnovations/background-action` v1 -> v2. @sneridagh [#915](https://github.com/kitconcept/volto-light-theme/pull/915)
-- Enforce the mandatory OVERRIDE header on shadowed components in CI (shadow-headers check). 
-- Update Banner Block to 1.2.1 @Tishasoumya-02 
+- Enforce the mandatory OVERRIDE header on shadowed components in CI (shadow-headers check).
+- Update Banner Block to 1.2.1 @Tishasoumya-02
 
 
 #### Documentation
@@ -146,21 +372,21 @@ No significant changes.
 #### Feature
 
 - Let projects choose the structural components (header, navigation, mobile navigation, footer, breadcrumbs, language selector, logo, search widget, and tags) through the registry, selecting each one via `config.settings.vlt.components` instead of shadowing. @ericof [#904](https://github.com/kitconcept/volto-light-theme/pull/904)
-- Migrate the Image block size to a `size:noprefix` style field, resolving sizes via a `--media-size` CSS variable. @danalvrz 
-- Update Highlight block to 5.0.0-alpha.2. @danalvrz 
+- Migrate the Image block size to a `size:noprefix` style field, resolving sizes via a `--media-size` CSS variable. @danalvrz
+- Update Highlight block to 5.0.0-alpha.2. @danalvrz
 
 #### Bugfix
 
 - Update use of clickable_profile_link @Tishasoumya-02 [#update-use-of-clickable-profile-link](https://github.com/kitconcept/volto-light-theme/pull/update-use-of-clickable-profile-link)
 - Fix grid Teaser title overflows @iRohitSingh [#894](https://github.com/kitconcept/volto-light-theme/pull/894)
-- Fix Link content type URL(external) in navigation being appended to the existing URL instead of replacing it. @iFlameing 
-- Fix advanced facet toggle not working in Search block. @iFlameing 
-- Fix loss of live data in Add mode & add unit lest to useLiveData hook. @danalvrz 
-- Fix the changing width layout induced by simple slider variant @Tishasoumya-02 
+- Fix Link content type URL(external) in navigation being appended to the existing URL instead of replacing it. @iFlameing
+- Fix advanced facet toggle not working in Search block. @iFlameing
+- Fix loss of live data in Add mode & add unit lest to useLiveData hook. @danalvrz
+- Fix the changing width layout induced by simple slider variant @Tishasoumya-02
 
 #### Internal
 
-- Update volto-dsgvo-banner to 4.0.0-alpha.2. @iFlameing 
+- Update volto-dsgvo-banner to 4.0.0-alpha.2. @iFlameing
 
 
 
@@ -169,12 +395,12 @@ No significant changes.
 
 #### Feature
 
-- Update version of Highlight block in recommended addons list. @danalvrz 
+- Update version of Highlight block in recommended addons list. @danalvrz
 
 
 #### Internal
 
-- Update volto-dsgvo-banner to 4.0.0-alpha.2. @iFlameing 
+- Update volto-dsgvo-banner to 4.0.0-alpha.2. @iFlameing
 
 
 #### Documentation
@@ -196,14 +422,14 @@ No significant changes.
 
 #### Feature
 
-- Add basic VLT styles for Form Block. @danalvrz 
-- Add link icon to Card component @Tishasoumya-02 
+- Add basic VLT styles for Form Block. @danalvrz
+- Add link icon to Card component @Tishasoumya-02
 
 #### Bugfix
 
 - refactor closing logic for fatnav to ignore all clicks on scrollbar @jackahl [#834](https://github.com/kitconcept/volto-light-theme/pull/834)
 - Fix icon in search @iRohitSingh [#879](https://github.com/kitconcept/volto-light-theme/pull/879)
-- Fix top margin for floated images when following an H2. @danlavrz 
+- Fix top margin for floated images when following an H2. @danlavrz
 
 
 
@@ -223,8 +449,8 @@ No significant changes.
 
 #### Internal:
 
-- Fix Python version used in CI. @davisagli 
-- Upgrade Plone 6.2.0 final. @sneridagh 
+- Fix Python version used in CI. @davisagli
+- Upgrade Plone 6.2.0 final. @sneridagh
 
 
 
@@ -237,23 +463,23 @@ No significant changes.
 #### Feature
 
 - Provide proper image sizes to the `Image` component. @davisagli @sneridagh [#664](https://github.com/kitconcept/volto-light-theme/pull/664)
-- Translate the package to the languages provided by Polyglot project @erral 
-- Unify css and alignment/width data handling for floating image, map and video blocks. @TimoBroeskamp @danalvrz 
-- Update Highlight block version to 5.x. @danalvrz 
-- Update de translation from Polyglot @erral 
-- Update es translation from Polyglot @erral 
-- Update eu translation from Polyglot @erral 
+- Translate the package to the languages provided by Polyglot project @erral
+- Unify css and alignment/width data handling for floating image, map and video blocks. @TimoBroeskamp @danalvrz
+- Update Highlight block version to 5.x. @danalvrz
+- Update de translation from Polyglot @erral
+- Update es translation from Polyglot @erral
+- Update eu translation from Polyglot @erral
 
 #### Bugfix
 
 - Fix Footer aligned with content @iRohitSingh [#838](https://github.com/kitconcept/volto-light-theme/pull/838)
 - Upgrade playwright and latest Volto 19.1.0 @sneridagh [#873](https://github.com/kitconcept/volto-light-theme/pull/873)
 - Fix last item of a listing with no pagination padding is broken @iRohitSingh [#874](https://github.com/kitconcept/volto-light-theme/pull/874)
-- Remove underline regression from Slider block Simple variation. @danalvrz 
+- Remove underline regression from Slider block Simple variation. @danalvrz
 
 #### Internal
 
-- Upgrade Volto 19 final. @sneridagh 
+- Upgrade Volto 19 final. @sneridagh
 
 
 
@@ -262,19 +488,19 @@ No significant changes.
 
 #### Feature
 
-- Update Highlight block version to 5.x in recommended list. @danalvrz 
+- Update Highlight block version to 5.x in recommended list. @danalvrz
 
 
 #### Internal
 
-- Update GH actions in CI. @sneridagh 
-- Update lock file. @danalvrz 
-- Update setup-uv action for CI. @davisagli 
+- Update GH actions in CI. @sneridagh
+- Update lock file. @danalvrz
+- Update setup-uv action for CI. @davisagli
 
 
 #### Documentation
 
-- Add a "Color system" conceptual guide and expand the colors reference. @danalvrz 
+- Add a "Color system" conceptual guide and expand the colors reference. @danalvrz
 
 
 
@@ -292,7 +518,7 @@ No significant changes.
 #### Bugfix
 
 - Fix Search icon color changes when changing footer font color @iRohitSingh [#850](https://github.com/kitconcept/volto-light-theme/pull/850)
-- Fix customized ObjectListWidget to support the `schemaExtender` prop. @davisagli 
+- Fix customized ObjectListWidget to support the `schemaExtender` prop. @davisagli
 
 
 
@@ -310,7 +536,7 @@ No significant changes.
 
 #### Bug fixes:
 
-- Fix edge cases when adding site customization fields to error responses. @davisagli 
+- Fix edge cases when adding site customization fields to error responses. @davisagli
 
 
 
@@ -333,7 +559,7 @@ No significant changes.
 
 #### Bug fixes:
 
-- Include site customization fields in error responses. @davisagli 
+- Include site customization fields in error responses. @davisagli
 
 
 
@@ -343,10 +569,10 @@ No significant changes.
 
 - Fix Mobile layout of social media icons @iRohitSingh [#852](https://github.com/kitconcept/volto-light-theme/pull/852)
 - Fix social media icon color @iRohitSingh [#854](https://github.com/kitconcept/volto-light-theme/pull/854)
-- Fix loading of inherited site customization fields on error views. @davisagli 
-- Fixed not working combinations with the richtext-widget in the text-block and updated line-height of ToC block according to figma. @TimoBroeskamp 
+- Fix loading of inherited site customization fields on error views. @davisagli
+- Fixed not working combinations with the richtext-widget in the text-block and updated line-height of ToC block according to figma. @TimoBroeskamp
 - Update Volto to 19a36.
-  See https://github.com/plone/volto/releases/tag/19.0.0-alpha.36 @sneridagh 
+  See https://github.com/plone/volto/releases/tag/19.0.0-alpha.36 @sneridagh
 
 
 
@@ -371,11 +597,11 @@ No significant changes.
 #### Bugfix
 
 - Fix Footer aligned with content @iRohitSingh [#838](https://github.com/kitconcept/volto-light-theme/pull/838)
-- Fixed a bug that closed the Navigation when scrolling down with the scrollbar. @ TimoBroeskamp 
-- Fixed underlined items in the controlpanel and the contents tab. @TimoBroeskamp 
+- Fixed a bug that closed the Navigation when scrolling down with the scrollbar. @ TimoBroeskamp
+- Fixed underlined items in the controlpanel and the contents tab. @TimoBroeskamp
 - Upgrade Volto 19a33.
   Upgrade `volto-calendar-block` 1.0.0a9
-  https://github.com/plone/volto/releases/tag/19.0.0-alpha.33 @sneridagh 
+  https://github.com/plone/volto/releases/tag/19.0.0-alpha.33 @sneridagh
 
 
 
@@ -424,7 +650,7 @@ No significant changes.
 #### Breaking
 
 - Upgrade to Volto 19a31.
-  Forces `react-aria-components` from the catalog in Volto so projects using it have to be updated to at least this Volto version. @sneridagh 
+  Forces `react-aria-components` from the catalog in Volto so projects using it have to be updated to at least this Volto version. @sneridagh
 
 
 
@@ -448,7 +674,7 @@ No significant changes.
 
 #### Bugfix
 
-- Added translation for the social media section in the footer. @jnptk 
+- Added translation for the social media section in the footer. @jnptk
 
 #### Documentation
 
@@ -472,7 +698,7 @@ No significant changes.
 
 #### Internal:
 
-- Re-release of 8a20. @sneridagh 
+- Re-release of 8a20. @sneridagh
 
 
 
@@ -480,7 +706,7 @@ No significant changes.
 
 #### Internal
 
-- Re-release of 8a20. @sneridagh 
+- Re-release of 8a20. @sneridagh
 
 
 
@@ -489,7 +715,7 @@ No significant changes.
 
 #### Internal
 
-- Re-release of 8a20. @sneridagh 
+- Re-release of 8a20. @sneridagh
 
 
 
@@ -506,7 +732,7 @@ No significant changes.
 
 #### Bugfix
 
-- Allow address in Footer to take all available space based on number of links columns. @danalvrz 
+- Allow address in Footer to take all available space based on number of links columns. @danalvrz
 
 
 
@@ -524,7 +750,7 @@ No significant changes.
 
 #### New features:
 
-- Add default colophon text. @danalvrz 
+- Add default colophon text. @danalvrz
 
 
 
@@ -532,15 +758,15 @@ No significant changes.
 
 #### Breaking
 
-- Improve Card component link handling by using a CSS stretched-link pattern & other minor style fixes for consistency. Breaking: custom `Summary` components must now accept and use the `LinkToItem` prop; category labels changed from heading tags to `<ul>` elements. See the upgrade guide for migration steps. @danalvrz 
+- Improve Card component link handling by using a CSS stretched-link pattern & other minor style fixes for consistency. Breaking: custom `Summary` components must now accept and use the `LinkToItem` prop; category labels changed from heading tags to `<ul>` elements. See the upgrade guide for migration steps. @danalvrz
 
 #### Bugfix
 
 - Fixed the font-color in the table block with h2 or h3 font-size. @TimoBroeskamp [#820](https://github.com/kitconcept/volto-light-theme/pull/820)
-- + display footer links with an underline, remove gap between seperate lines in footer colophon text and fixed richtext-editor combinations to work together. @TimoBroeskamp 
-- Fix navigation text color not loading on hard reload. @iFlameing 
-- Fix spacings for navigation items when using the Intranet header. @danlavrz 
-- Fix styles for text in colophon. @danalvrz 
+- + display footer links with an underline, remove gap between seperate lines in footer colophon text and fixed richtext-editor combinations to work together. @TimoBroeskamp
+- Fix navigation text color not loading on hard reload. @iFlameing
+- Fix spacings for navigation items when using the Intranet header. @danlavrz
+- Fix styles for text in colophon. @danalvrz
 
 
 
@@ -549,7 +775,7 @@ No significant changes.
 
 #### Feature
 
-- Update docs on Card and Summary components and upgrade guide. @danalvrz 
+- Update docs on Card and Summary components and upgrade guide. @danalvrz
 
 
 
@@ -568,14 +794,14 @@ No significant changes.
 
 #### Feature
 
-- Improve layout for full-width blocks when in Edit mode. @danalvrz 
+- Improve layout for full-width blocks when in Edit mode. @danalvrz
 
 #### Bugfix
 
 - Fix font size for control panel view headers. @danalvrz [#fixControlPanelFontSize](https://github.com/kitconcept/volto-light-theme/pull/fixControlPanelFontSize)
 - Fix css of External link icon indicator for teaser and grid-teaser @iRohitSingh [#797](https://github.com/kitconcept/volto-light-theme/pull/797)
-- Fix undefined error when pressing enter in footer site colophon input. @iFlameing 
-- Improve styles for Export Import control panel & several color fixes. @danalvrz 
+- Fix undefined error when pressing enter in footer site colophon input. @iFlameing
+- Improve styles for Export Import control panel & several color fixes. @danalvrz
 
 
 
@@ -593,13 +819,13 @@ No significant changes.
 
 #### Bug fixes:
 
-- Move primary_foreground_color value to header_foreground @iFlameing 
+- Move primary_foreground_color value to header_foreground @iFlameing
 
 
 #### Internal:
 
 - Add missing pt_br translations. [#804](https://github.com/kitconcept/volto-light-theme/issues/804)
-- Updated to use Plone 6.1.4. @sneridagh 
+- Updated to use Plone 6.1.4. @sneridagh
 
 
 
@@ -607,7 +833,7 @@ No significant changes.
 
 #### Feature
 
-- Improve styles for search results page. @danalvrz 
+- Improve styles for search results page. @danalvrz
 - Updated several add-ons, for more information:
 
   https://github.com/kitconcept/volto-calendar-block/releases/tag/1.0.0-alpha.7
@@ -616,19 +842,19 @@ No significant changes.
   https://github.com/kitconcept/volto-iframe-block/releases/tag/2.4.0
   https://github.com/kitconcept/volto-introduction-block/releases/tag/1.4.0
   https://github.com/kitconcept/volto-carousel-block/releases/tag/3.0.0-alpha.1
-  https://github.com/kitconcept/volto-slider-block/releases/tag/7.0.0-alpha.1 
+  https://github.com/kitconcept/volto-slider-block/releases/tag/7.0.0-alpha.1
 
 #### Bugfix
 
-- Fix color in language selector, and remove extra margin between Teaser and Button blocks. @danalvrz 
-- Fix hydration errors in mobile navigation. @Tishasoumya-02 
-- Fix image size grid-block in editmode. @TimoBroeskamp 
-- Fix mobile sticky menu not showing from 768 to 620px. @iFlameing 
+- Fix color in language selector, and remove extra margin between Teaser and Button blocks. @danalvrz
+- Fix hydration errors in mobile navigation. @Tishasoumya-02
+- Fix image size grid-block in editmode. @TimoBroeskamp
+- Fix mobile sticky menu not showing from 768 to 620px. @iFlameing
 
 #### Internal
 
 - Add missing pt_br translations. @humanaice [#804](https://github.com/kitconcept/volto-light-theme/pull/804)
-- Update translation. @iFlameing 
+- Update translation. @iFlameing
 
 
 
@@ -637,7 +863,7 @@ No significant changes.
 
 #### Feature
 
-- Improve documentation on VLT Layout concepts. @danalvrz 
+- Improve documentation on VLT Layout concepts. @danalvrz
 
 
 
@@ -648,7 +874,7 @@ No significant changes.
 
 #### Internal:
 
-- Update Banner Block Example Content @Tishasoumya-02 
+- Update Banner Block Example Content @Tishasoumya-02
 
 
 
@@ -662,8 +888,8 @@ No significant changes.
 
 - See https://github.com/plone/volto/releases/tag/19.0.0-alpha.24
   https://github.com/plone/volto/releases/tag/19.0.0-alpha.25 @sneridagh [#volto19a24](https://github.com/kitconcept/volto-light-theme/pull/volto19a24)
-- Fix social icons color in post-footer. @danalvrz 
-- Move the head title after the date in NewsView and EventView, making it consistent with the listing view. @iFlameing 
+- Fix social icons color in post-footer. @danalvrz
+- Move the head title after the date in NewsView and EventView, making it consistent with the listing view. @iFlameing
 
 #### Internal
 
@@ -709,7 +935,7 @@ No significant changes.
 
 #### New features:
 
-- Add a boolean field to enable or disable the mobile sticky menu. @iFlameing 
+- Add a boolean field to enable or disable the mobile sticky menu. @iFlameing
 
 
 
@@ -718,14 +944,14 @@ No significant changes.
 #### Feature
 
 - Create Introduction block on pressing Enter instead of default text block @iRohitSingh [#780](https://github.com/kitconcept/volto-light-theme/pull/780)
-- Add sticky menu in mobile view. @iFlameing 
+- Add sticky menu in mobile view. @iFlameing
 
 #### Bugfix
 
 - Fix mail icon appearing near share icon in engagement-section @Tishasoumya-02 [#777](https://github.com/kitconcept/volto-light-theme/pull/777)
 - Fix actions menu going undefined on intranet header @Tishasoumya-02 [#778](https://github.com/kitconcept/volto-light-theme/pull/778)
-- Fixed defaults in `Button` widgets. @iFlameing 
-- Update `volto-calendar-block` to 1.0.6. @sneridagh 
+- Fixed defaults in `Button` widgets. @iFlameing
+- Update `volto-calendar-block` to 1.0.6. @sneridagh
 
 
 
@@ -734,7 +960,7 @@ No significant changes.
 
 #### Documentation
 
-- Added section for the use case of creating new VRT. @sneridagh 
+- Added section for the use case of creating new VRT. @sneridagh
 
 
 
@@ -745,7 +971,7 @@ No significant changes.
 
 #### Bug fixes:
 
-- Change footer colophon widget from Input to Richtext. @iFlameing 
+- Change footer colophon widget from Input to Richtext. @iFlameing
 
 
 
@@ -755,20 +981,20 @@ No significant changes.
 
 - Remove the black overlay when no caption for images in grid @Tishasoumya-02 [#767](https://github.com/kitconcept/volto-light-theme/pull/767)
 - Add mail-icon next to mailto links @Tishasoumya-02 [#774](https://github.com/kitconcept/volto-light-theme/pull/774)
-- Add slot for listing disclaimers in ListingBody component. @danalvrz 
-- Add soft_max_length warnings for text/textarea widget @Tishasoumya-02 
-- Hide profile links based on intranet controlpanel settings. @iFlameing 
+- Add slot for listing disclaimers in ListingBody component. @danalvrz
+- Add soft_max_length warnings for text/textarea widget @Tishasoumya-02
+- Hide profile links based on intranet controlpanel settings. @iFlameing
 
 #### Bugfix
 
 - Fix header_actions results into undefined when deleting the target @Tishasoumya-02 [#775](https://github.com/kitconcept/volto-light-theme/pull/775)
-- Change footer colophon widget from Input to Richtext. @iFlameing 
-- Fixed accordion does not work with the "Order" tab. Use `@eea/volto-accordion-block` 12.0.0. @sneridagh 
-- Fixed issue with navigation items custom color not changing without the fat menu enabled. @TimoBroeskamp 
+- Change footer colophon widget from Input to Richtext. @iFlameing
+- Fixed accordion does not work with the "Order" tab. Use `@eea/volto-accordion-block` 12.0.0. @sneridagh
+- Fixed issue with navigation items custom color not changing without the fat menu enabled. @TimoBroeskamp
 
 #### Internal
 
-- New visual regression tests. @sneridagh 
+- New visual regression tests. @sneridagh
 
 
 
@@ -777,7 +1003,7 @@ No significant changes.
 
 #### Documentation
 
-- Refactored visual regressions tests documentation. @sneridagh 
+- Refactored visual regressions tests documentation. @sneridagh
 
 
 
@@ -795,7 +1021,7 @@ No significant changes.
 #### Bugfix
 
 - - fix bug where markdown inline links in descriptions are rendered as a separate paragraph [#751](https://github.com/kitconcept/volto-light-theme/pull/751)
-- Use the CSS prop --breadcrumbs-foregound for breadcrumbs links as default, with --link-foreground-color as fallback. @danalvrz 
+- Use the CSS prop --breadcrumbs-foregound for breadcrumbs links as default, with --link-foreground-color as fallback. @danalvrz
 
 
 
@@ -819,7 +1045,7 @@ No significant changes.
 
 #### Internal
 
-- Sync RAC VLT version to use the Volto 19a21 one (1.14.1) @sneridagh 
+- Sync RAC VLT version to use the Volto 19a21 one (1.14.1) @sneridagh
 
 
 
@@ -843,13 +1069,13 @@ No significant changes.
 
 #### Bugfix
 
-- Fix sticky menu cut off at the bottom on smaller screens @iRohitSingh 
-- Fixed double navigation in cards that contains inner links in its body. @sneridagh 
-- Fixed rearrangement of files in drag-and-drop of folderish content. @Tishasoumya-02 
+- Fix sticky menu cut off at the bottom on smaller screens @iRohitSingh
+- Fixed double navigation in cards that contains inner links in its body. @sneridagh
+- Fixed rearrangement of files in drag-and-drop of folderish content. @Tishasoumya-02
 
 #### Internal
 
-- Add Cypress tests for Enter key behavior on focused blocks @iRohitSingh 
+- Add Cypress tests for Enter key behavior on focused blocks @iRohitSingh
 
 
 
@@ -873,16 +1099,16 @@ No significant changes.
 
 #### Feature
 
-- Add volto-calendar-block @iRohitSingh 
+- Add volto-calendar-block @iRohitSingh
 - Added cross language support for blocks chooser search @Tishasoumya-02 [#7657](https://github.com/plone/volto/issues/7657)
   Added support for selecting Path and Depth in the Listing Block’s Location criteria using the ObjectBrowserWidget and NumberWidget. @iFlameing @giuliaghisini [#7661](https://github.com/plone/volto/issues/7661)
   Added feature of drag and drop files in folder contents. @Tishasoumya-02
-  (Update to Volto 19a9) @sneridagh 
+  (Update to Volto 19a9) @sneridagh
 
 #### Bugfix
 
-- Fixed highlight block ENTER, create a new block consistently. Update highlight block to 4.5.1. @sneridagh 
-- Fixed introduction block error on pressing ENTER. Update add-on to 1.2.0. @sneridagh 
+- Fixed highlight block ENTER, create a new block consistently. Update highlight block to 4.5.1. @sneridagh
+- Fixed introduction block error on pressing ENTER. Update add-on to 1.2.0. @sneridagh
 
 
 
@@ -907,8 +1133,8 @@ No significant changes.
 #### Bugfix
 
 - Improve block model 3 support across views. Fixed nasty BDandD console error. @sneridagh [#740](https://github.com/kitconcept/volto-light-theme/pull/740)
-- Fixed problem with the description not showing in rendering if the description was undefined. @sneridagh 
-- Hide complementary logo in mobile devices @Tishasoumya-02 
+- Fixed problem with the description not showing in rendering if the description was undefined. @sneridagh
+- Hide complementary logo in mobile devices @Tishasoumya-02
 
 
 
@@ -933,13 +1159,13 @@ No significant changes.
 #### Bugfix
 
 - Fix css of unauthorized Page @iRohitSingh [#unauthorizedpageCss](https://github.com/kitconcept/volto-light-theme/pull/unauthorizedpageCss)
-- Fixed Accordion arrow/buttons no longer shrink when the title text becomes too long. @jnptk 
+- Fixed Accordion arrow/buttons no longer shrink when the title text becomes too long. @jnptk
 
 #### Internal
 
 - Refactoring to TS some components. @sneridagh [#731](https://github.com/kitconcept/volto-light-theme/pull/731)
-- Update to latest RAC to match the @plone/components one. @sneridagh 
-- Use forked Razzle. Update to use Volto 19a14. @sneridagh 
+- Update to latest RAC to match the @plone/components one. @sneridagh
+- Use forked Razzle. Update to use Volto 19a14. @sneridagh
 
 
 
@@ -948,7 +1174,7 @@ No significant changes.
 
 #### Internal
 
-- Moved check-recommended-addons check to a unit test. @sneridagh 
+- Moved check-recommended-addons check to a unit test. @sneridagh
 
 
 
@@ -983,7 +1209,7 @@ No significant changes.
 
 #### New features:
 
-- Move to native namespaces. @sneridagh 
+- Move to native namespaces. @sneridagh
 
 
 
@@ -996,11 +1222,11 @@ No significant changes.
 #### Bugfix
 
 - Fixes text in the sticky menu if the text was long enough to wrap. @jnptk [#691](https://github.com/kitconcept/volto-light-theme/pull/691)
-- Identify intranet header with a className in `header header-intranet` div. @sneridagh 
+- Identify intranet header with a className in `header header-intranet` div. @sneridagh
 
 #### Internal
 
-- Normalize all remaining add-ons to be "alpha" versions exclusively for vlt8. @sneridagh 
+- Normalize all remaining add-ons to be "alpha" versions exclusively for vlt8. @sneridagh
 
 
 
@@ -1024,11 +1250,11 @@ No significant changes.
 
 #### Bugfix
 
-- Fixed slider config, in case slider is not present. @sneridagh 
+- Fixed slider config, in case slider is not present. @sneridagh
 
 #### Internal
 
-- Updated volto-dsgvo-banner baseline to latest (3.x series). @sneridagh 
+- Updated volto-dsgvo-banner baseline to latest (3.x series). @sneridagh
 
 
 
@@ -1037,7 +1263,7 @@ No significant changes.
 
 #### Documentation
 
-- Better install section. @sneridagh 
+- Better install section. @sneridagh
 
 
 
@@ -1055,16 +1281,16 @@ No significant changes.
 #### Feature
 
 - Recoverable Block Error Boundaries. @sneridagh [#708](https://github.com/kitconcept/volto-light-theme/pull/708)
-- Update `Buttons` widget to the one proposed for the Volto PR: #7555 @sneridagh 
+- Update `Buttons` widget to the one proposed for the Volto PR: #7555 @sneridagh
 
 #### Bugfix
 
 -  [#705](https://github.com/kitconcept/volto-light-theme/pull/705)
-- Fix Teaser Blocks for Person type email spacing in 4 columns gridBlock @Tishasoumya-02 
+- Fix Teaser Blocks for Person type email spacing in 4 columns gridBlock @Tishasoumya-02
 
 #### Internal
 
-- Add css for NotFound Page @Tishasoumya-02 
+- Add css for NotFound Page @Tishasoumya-02
 
 
 
@@ -1103,7 +1329,7 @@ No significant changes.
 
 #### Documentation
 
-- Improve the recommended addons paragraphs. @sneridagh 
+- Improve the recommended addons paragraphs. @sneridagh
 
 
 
@@ -1184,7 +1410,7 @@ No significant changes.
 
 #### Internal:
 
-- Pin correctly plonegovbr.socialmedia>=2.0.0a10. @sneridagh 
+- Pin correctly plonegovbr.socialmedia>=2.0.0a10. @sneridagh
 
 
 
@@ -1192,7 +1418,7 @@ No significant changes.
 
 #### Bugfix
 
-- Several fixes. Update to use Volto 18.28.0. @sneridagh 
+- Several fixes. Update to use Volto 18.28.0. @sneridagh
 
 
 
@@ -1210,12 +1436,12 @@ No significant changes.
 
 #### Bug fixes:
 
-- Update socialmedia add-on to 2.0.0a10, Plone 6.1.3 and Volto to 18.27.3. @sneridagh 
+- Update socialmedia add-on to 2.0.0a10, Plone 6.1.3 and Volto to 18.27.3. @sneridagh
 
 
 #### Internal:
 
-- Replace "head title" with "kicker" in example content. @davisagli 
+- Replace "head title" with "kicker" in example content. @davisagli
 
 
 
@@ -1225,11 +1451,11 @@ No significant changes.
 
 - Pass down items to `Card` component, so it can pass it down to `UniversalLink`. @sneridagh [#684](https://github.com/kitconcept/volto-light-theme/pull/684)
 - Added addressable classNames to FileSummary headline. @sneridagh [#686](https://github.com/kitconcept/volto-light-theme/pull/686)
-- Update socialmedia add-on to 2.0.0a10 and Volto to 18.27.3. @sneridagh 
+- Update socialmedia add-on to 2.0.0a10 and Volto to 18.27.3. @sneridagh
 
 #### Internal
 
-- Replace "head title" with "kicker" in example content. @davisagli 
+- Replace "head title" with "kicker" in example content. @davisagli
 
 
 
@@ -1238,7 +1464,7 @@ No significant changes.
 
 #### Internal
 
-- Split core blocks acceptance tests. @sneridagh 
+- Split core blocks acceptance tests. @sneridagh
 
 
 
@@ -1296,12 +1522,12 @@ No significant changes.
 
 - Fix use Sass interpolation for CSS variable fallbacks @iRohitSingh [#673](https://github.com/kitconcept/volto-light-theme/pull/673)
 - Fix vertical spacing for first block in case that there is a change of color from default. @sneridagh [#676](https://github.com/kitconcept/volto-light-theme/pull/676)
-- Don't show parent tags when adding the child. @iFlameing 
+- Don't show parent tags when adding the child. @iFlameing
 
 #### Internal
 
 - Fix cypress test for calendar block. @iFlameing [#calendar-cypress](https://github.com/kitconcept/volto-light-theme/pull/calendar-cypress)
-- Misc bugfixes. Upgrade to Volto 18.27.2. @sneridagh 
+- Misc bugfixes. Upgrade to Volto 18.27.2. @sneridagh
 
 
 
