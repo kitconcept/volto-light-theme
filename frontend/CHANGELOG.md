@@ -8,6 +8,26 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.0-alpha.33 (2026-09-17)
+
+### Breaking
+
+- Slider flag color styling has moved from Volto Light Theme to the `@kitconcept/volto-slider-block` add-on. @Tishasoumya-02 
+
+### Feature
+
+- Move tools & language selector into nav on mobile. @jnptk 
+
+### Bugfix
+
+- Fix header actions overflowing on mobile. @jnptk 
+- Fix positioning of language selector on mobile. @jnptk 
+
+### Internal
+
+- Preparing for final release, use final versions in add-ons. @sneridagh 
+- Update Slider Block version 7.0.0a2 @Tishasoumya-02 
+
 ## 8.0.0-alpha.32 (2026-09-10)
 
 ### Feature
