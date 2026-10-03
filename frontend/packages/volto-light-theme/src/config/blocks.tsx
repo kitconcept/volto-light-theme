@@ -273,6 +273,13 @@ export default function install(config: ConfigType) {
     restricted: false,
     mostUsed: false,
     sidebarTab: 1,
+    variations: [
+      {
+        id: 'eventCalendar',
+        title: 'Event Calendar',
+        template: EventCalenderTemplate,
+      },
+    ],
   };
   config.blocks.blocksConfig.accordion = {
     ...config.blocks.blocksConfig.accordion,
@@ -312,11 +319,6 @@ export default function install(config: ConfigType) {
       id: 'grid',
       title: 'Grid',
       template: GridListingBlockTemplate,
-    },
-    {
-      id: 'eventCalendar',
-      title: 'Event Calendar',
-      template: EventCalenderTemplate,
     },
     ...config.blocks.blocksConfig.listing.variations.filter(
       (variation) => !['default', 'summary'].includes(variation.id),
@@ -389,10 +391,7 @@ export default function install(config: ConfigType) {
 
   config.blocks.blocksConfig.gridBlock.blocksConfig.listing.variations =
     cloneDeep(
-      listingBlockVariations.filter(
-        (variation) =>
-          variation.id !== 'grid' && variation.id !== 'eventCalendar',
-      ),
+      listingBlockVariations.filter((variation) => variation.id !== 'grid'),
     );
 
   config.blocks.blocksConfig.banner = {
