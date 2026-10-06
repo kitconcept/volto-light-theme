@@ -1810,24 +1810,27 @@ importers:
   packages/volto-logos-block/packages/volto-logos-block:
     dependencies:
       '@kitconcept/volto-light-theme':
-        specifier: ^8.0.0-alpha.32
-        version: 8.0.0-alpha.32(classnames@2.5.1)(embla-carousel@8.5.2)(lodash@4.17.21)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(@types/react@18.3.27)(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.3.7(@types/react@18.3.27))(@types/react@18.3.27)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router-dom@5.2.0(react@18.2.0))(react@18.2.0)
+        specifier: ^8.0.0
+        version: 8.0.0(classnames@2.5.1)(embla-carousel@8.5.2)(lodash@4.18.1)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(@types/react@18.3.27)(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.3.7(@types/react@18.3.27))(@types/react@18.3.27)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router-dom@5.2.0(react@18.2.0))(react@18.2.0)
       classnames:
         specifier: 2.5.1
         version: 2.5.1
       react:
-        specifier: 18.2.0
+        specifier: ^18.2.0
         version: 18.2.0
       react-dom:
-        specifier: 18.2.0
+        specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
       react-intl:
         specifier: ^3.12.1
         version: 3.12.1(@types/react@18.3.27)(react@18.2.0)
     devDependencies:
+      '@plone/registry':
+        specifier: workspace:*
+        version: link:../../../../core/packages/registry
       '@plone/scripts':
-        specifier: ^3.10.3
-        version: 3.10.3
+        specifier: workspace:*
+        version: link:../../../../core/packages/scripts
       '@plone/types':
         specifier: workspace:*
         version: link:../../../../core/packages/types
@@ -1844,19 +1847,13 @@ importers:
         specifier: ^24
         version: 24.10.1
       '@types/react':
-        specifier: ^18
+        specifier: ^18.3.1
         version: 18.3.27
       '@types/react-dom':
-        specifier: ^18
+        specifier: ^18.3.1
         version: 18.3.7(@types/react@18.3.27)
-      lodash:
-        specifier: 4.17.21
-        version: 4.17.21
-      react-redux:
-        specifier: 8.1.2
-        version: 8.1.2(@types/react-dom@18.3.7(@types/react@18.3.27))(@types/react@18.3.27)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
       release-it:
-        specifier: ^19.0.3
+        specifier: ^19.0.5
         version: 19.0.6(@types/node@24.10.1)(magicast@0.3.5)
       typescript:
         specifier: ^5.7.3
@@ -3884,8 +3881,8 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0
 
-  '@kitconcept/volto-light-theme@8.0.0-alpha.32':
-    resolution: {integrity: sha512-2XGNpzSrSr9JSK82iirC2WMHapDvBX/IaeVS/pjAMwGDdwpfqE+gSpsBUXr/b+uAPKn46+yql7a8R8EpxDLCWA==}
+  '@kitconcept/volto-light-theme@8.0.0':
+    resolution: {integrity: sha512-R2m+EUN5lKmaVhnI+JqOE7XRe5pV3FPSHV+pLFLJN81Py/LROKAKlNu0Ze+05zY9vQ2BKGYCRR+pQRM2xNxxzQ==}
     peerDependencies:
       classnames: ^2.5.1
       lodash: 4.17.21
@@ -15021,7 +15018,7 @@ snapshots:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
-  '@kitconcept/volto-light-theme@8.0.0-alpha.32(classnames@2.5.1)(embla-carousel@8.5.2)(lodash@4.17.21)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(@types/react@18.3.27)(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.3.7(@types/react@18.3.27))(@types/react@18.3.27)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router-dom@5.2.0(react@18.2.0))(react@18.2.0)':
+  '@kitconcept/volto-light-theme@8.0.0(classnames@2.5.1)(embla-carousel@8.5.2)(lodash@4.18.1)(react-dom@18.2.0(react@18.2.0))(react-intl@3.12.1(@types/react@18.3.27)(react@18.2.0))(react-redux@8.1.2(@types/react-dom@18.3.7(@types/react@18.3.27))(@types/react@18.3.27)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1))(react-router-dom@5.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       '@dnd-kit/core': 6.0.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@dnd-kit/sortable': 7.0.2(@dnd-kit/core@6.0.8(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)
@@ -15031,7 +15028,7 @@ snapshots:
       classnames: 2.5.1
       embla-carousel-autoplay: 8.5.2(embla-carousel@8.5.2)
       embla-carousel-react: 8.5.2(react@18.2.0)
-      lodash: 4.17.21
+      lodash: 4.18.1
       react: 18.2.0
       react-animate-height: 3.2.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react-aria-components: 1.17.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)

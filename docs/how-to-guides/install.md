@@ -103,7 +103,7 @@ Nevertheless, you can choose to install only those you want to use.
   "@kitconcept/volto-heading-block": "^2.5.0",
   "@kitconcept/volto-highlight-block": "^5.0.0-alpha.2",
   "@kitconcept/volto-introduction-block": "^1.4.1",
-  "@kitconcept/volto-logos-block": "^4.0.0-alpha.1",
+  "@kitconcept/volto-logos-block": "^4.0.1",
   "@kitconcept/volto-separator-block": "^5.0.0-alpha.0",
   "@kitconcept/volto-slider-block": "^7.0.0-alpha.1",
   "@plonegovbr/volto-social-media": "^3.0.0-alpha.0"
