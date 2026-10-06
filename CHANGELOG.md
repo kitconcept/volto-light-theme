@@ -1,6 +1,39 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 8.0.1 (2026-10-06)
+
+### Backend
+
+
+#### Internal:
+
+- Update to Plone 6.2.2 @sneridagh 
+
+
+
+### Frontend
+
+#### Internal
+
+- Update volto-logos-block to 4.0.1 @iRohitSingh 
+
+
+
+### Project
+
+
+#### Internal
+
+- Update volto-logos-block to 4.0.1 @iRohitSingh 
+
+
+#### Documentation
+
+- Use Python 3.13 to build the docs. @davisagli 
+
+
+
 ## 8.0.0 (2026-09-17)
 
 This entry aggregates all the changes introduced during the 8.0.0 alpha series (8.0.0a0 → 8.0.0a33).

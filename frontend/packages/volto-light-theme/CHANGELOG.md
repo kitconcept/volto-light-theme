@@ -7,6 +7,13 @@
 -->
 
 <!-- towncrier release notes start -->
+
+## 8.0.1 (2026-10-06)
+
+### Internal
+
+- Update volto-logos-block to 4.0.1 @iRohitSingh 
+
 ## 8.0.0 (2026-09-17)
 
 This entry aggregates all the changes introduced during the 8.0.0 alpha series (8.0.0a0 → 8.0.0a33).
