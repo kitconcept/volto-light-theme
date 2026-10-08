@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 8.0.2 (2026-10-08)
+
+### Bugfix
+
+- Fixed the tags overlapping the last block of a page when that block has a background color. @sneridagh [#941](https://github.com/kitconcept/volto-light-theme/pull/941)
+
 ## 8.0.1 (2026-10-06)
 
 ### Internal

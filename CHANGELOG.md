@@ -1,6 +1,30 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 8.0.2 (2026-10-08)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Fixed the tags overlapping the last block of a page when that block has a background color. @sneridagh [#941](https://github.com/kitconcept/volto-light-theme/pull/941)
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 8.0.1 (2026-10-06)
 
 ### Backend
