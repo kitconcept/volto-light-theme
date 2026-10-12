@@ -186,6 +186,19 @@
 }
 
 .contenttype-file {
+  #page-document.fileitem-view {
+    padding-bottom: $spacing-large;
+
+    figure {
+      margin-bottom: $spacing-small;
+    }
+
+    > p {
+      @include default-container-width();
+      @include adjustMarginsToContainer($default-container-width);
+    }
+  }
+
   .content-area {
     a {
       text-decoration: underline;
