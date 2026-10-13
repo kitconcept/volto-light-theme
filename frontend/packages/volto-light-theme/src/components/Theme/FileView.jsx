@@ -6,7 +6,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Container as SemanticContainer } from 'semantic-ui-react';
-import { flattenToAppURL } from '@plone/volto/helpers/';
+import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { FormattedMessage } from 'react-intl';
 import config from '@plone/volto/registry';
 import FileType from '../../helpers/Filetype';
@@ -18,14 +18,29 @@ import FileType from '../../helpers/Filetype';
  * @returns {string} Markup of the component.
  */
 const FileView = ({ content }) => {
+  const Image = config.getComponent({ name: 'Image' }).component;
   const Container =
     config.getComponent({ name: 'Container' }).component || SemanticContainer;
+  const previewImage = content.preview_image_link || content;
+  const previewImageField = content.preview_image_link
+    ? content.preview_image_link.image_field || 'image'
+    : 'preview_image';
   return (
     <Container id="page-document" className="view-wrapper fileitem-view">
       <h1 className="documentFirstHeading">
         {content.title}
         {content.subtitle && ` - ${content.subtitle}`}
       </h1>
+      {(content.preview_image_link || content.preview_image) && (
+        <figure>
+          <Image
+            item={previewImage}
+            imageField={previewImageField}
+            alt=""
+            responsive={true}
+          />
+        </figure>
+      )}
       {content.description && (
         <p className="documentDescription">{content.description}</p>
       )}
@@ -63,6 +78,8 @@ FileView.propTypes = {
   content: PropTypes.shape({
     title: PropTypes.string,
     description: PropTypes.string,
+    preview_image: PropTypes.object,
+    preview_image_link: PropTypes.object,
     file: PropTypes.shape({
       download: PropTypes.string,
       filename: PropTypes.string,

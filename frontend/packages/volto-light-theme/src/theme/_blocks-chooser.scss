@@ -1,3 +1,13 @@
 .blocks-chooser .ui.form .searchbox.field {
   height: unset !important;
 }
+.power-user-menu .ui.menu .item {
+  display: flex;
+  align-items: center;
+  hyphens: auto;
+  overflow-wrap: anywhere;
+
+  .icon {
+    flex-shrink: 0;
+  }
+}

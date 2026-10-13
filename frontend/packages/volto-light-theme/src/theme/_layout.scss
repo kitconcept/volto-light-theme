@@ -304,6 +304,16 @@ External & Mail link removal for all the blocks.
   }
 }
 
+// The tags are rendered right after the blocks. If the last block has a
+// background color, the negative margin above pulls them over it.
+#page-document:has(+ .tags) > .blocks-group-wrapper:last-child:not(.default) {
+  margin-bottom: 0 !important;
+}
+
+#page-document:has(> .blocks-group-wrapper:last-child:not(.default)) + .tags {
+  margin-top: 1rem;
+}
+
 // Setting a default, for all blocks
 // We want all blocks in edit go layout by default
 // But block's inner containers can go less (eg. grid)

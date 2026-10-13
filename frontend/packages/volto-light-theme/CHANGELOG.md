@@ -7,6 +7,39 @@
 -->
 
 <!-- towncrier release notes start -->
+
+## 8.1.1 (2026-10-13)
+
+### Bugfix
+
+- Fix some minor issues with styles in solr results page. @danalvrz 
+
+### Internal
+
+- Update volto-introduction-block to 1.4.2 @sneridagh 
+
+## 8.1.0 (2026-10-13)
+
+### Feature
+
+- Display the preview image in File view @iRohitSingh 
+
+### Bugfix
+
+- Fix alignment of wrapped item labels in the slash menu. @Tishasoumya-02 [#slashMenufix](https://github.com/kitconcept/volto-light-theme/pull/slashMenufix)
+
+## 8.0.2 (2026-10-08)
+
+### Bugfix
+
+- Fixed the tags overlapping the last block of a page when that block has a background color. @sneridagh [#941](https://github.com/kitconcept/volto-light-theme/pull/941)
+
+## 8.0.1 (2026-10-06)
+
+### Internal
+
+- Update volto-logos-block to 4.0.1 @iRohitSingh 
+
 ## 8.0.0 (2026-09-17)
 
 This entry aggregates all the changes introduced during the 8.0.0 alpha series (8.0.0a0 → 8.0.0a33).
