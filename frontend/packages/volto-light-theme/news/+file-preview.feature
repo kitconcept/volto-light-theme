@@ -1,1 +1,0 @@
-Display the preview image in File view @iRohitSingh

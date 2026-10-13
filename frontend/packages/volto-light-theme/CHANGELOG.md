@@ -8,6 +8,16 @@
 
 <!-- towncrier release notes start -->
 
+## 8.1.0 (2026-10-13)
+
+### Feature
+
+- Display the preview image in File view @iRohitSingh 
+
+### Bugfix
+
+- Fix alignment of wrapped item labels in the slash menu. @Tishasoumya-02 [#slashMenufix](https://github.com/kitconcept/volto-light-theme/pull/slashMenufix)
+
 ## 8.0.2 (2026-10-08)
 
 ### Bugfix

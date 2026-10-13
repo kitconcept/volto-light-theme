@@ -1,6 +1,34 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 8.1.0 (2026-10-13)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Feature
+
+- Display the preview image in File view @iRohitSingh 
+
+#### Bugfix
+
+- Fix alignment of wrapped item labels in the slash menu. @Tishasoumya-02 [#slashMenufix](https://github.com/kitconcept/volto-light-theme/pull/slashMenufix)
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 8.0.2 (2026-10-08)
 
 ### Backend
