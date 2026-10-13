@@ -82,7 +82,18 @@
   }
   #content {
     #content-core {
-      max-width: var(--default-container-width);
+      // We calculate default-container-width minus the width of the search conditions sidebar (265px) and the gap between the two (40px)
+      max-width: calc(var(--default-container-width) - 305px);
+      article.tileItem {
+        .tileBody:has(.description:empty) {
+          padding: 0;
+        }
+
+        p.url {
+          font-size: 14px;
+          line-height: 18px;
+        }
+      }
       &.layout-grid {
         // Person results
         .tileItem.personResultItem {
@@ -148,14 +159,24 @@
             line-height: 24px;
           }
           .jobTitle {
-            margin: 15px 0;
             margin-bottom: 15px;
             color: var(--primary-foreground-color);
             font-size: 18px;
             line-height: 24px; /* 133.333% */
           }
           .tileFooter {
+            .itemField {
+              font-size: 18px;
+              line-height: 24px; /* 133.333% */
+
+              &.itemEmail {
+                svg.icon {
+                  margin-top: 1.5px;
+                }
+              }
+            }
             svg.icon {
+              display: inline-block;
               width: 20px !important;
               margin-right: 10px;
               vertical-align: text-top;
@@ -207,6 +228,29 @@
             &::before {
               transform: scale(2) scaleX(-1);
             }
+          }
+        }
+      }
+      .searchConditionsFieldFooter {
+        display: flex;
+        justify-content: flex-end;
+        padding-bottom: $spacing-small;
+        border-bottom: 1px solid var(--primary-foreground-color);
+        margin-top: $spacing-small;
+        margin-right: 18px;
+        .showMoreIndicator {
+          display: inline-flex;
+          align-items: center;
+          cursor: pointer;
+          font-size: 18px;
+          gap: $spacing-small;
+          line-height: 24px; /* 133.333% */
+          svg.icon {
+            display: inline-block;
+            width: 15px !important;
+            height: 8px !important;
+            margin-left: 0;
+            fill: var(--primary-foreground-color);
           }
         }
       }
