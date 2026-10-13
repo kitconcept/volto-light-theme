@@ -86,7 +86,7 @@ const SearchBlockView = (props) => {
   const root = useSelector((state) => state.breadcrumbs.root);
   const listingBodyData = applyDefaults(searchData, root);
 
-  const { variations } = config.blocks.blocksConfig.listing;
+  const { variations } = config.blocks.blocksConfig.eventCalendar;
   const listingBodyVariation = variations.find(({ id }) => id === selectedView);
 
   return (

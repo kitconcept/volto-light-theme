@@ -45,7 +45,8 @@ const SearchBlockEdit = (props) => {
   //   intl,
   //   title: { id: intl.formatMessage(messages.template) },
   // });
-  const listingVariations = config.blocks.blocksConfig?.listing?.variations;
+  const listingVariations =
+    config.blocks.blocksConfig?.eventCalendar?.variations;
   let activeItem = listingVariations.find(
     (item) => item.id === data.listingBodyTemplate,
   );
