@@ -8,6 +8,16 @@
 
 <!-- towncrier release notes start -->
 
+## 8.1.1 (2026-10-13)
+
+### Bugfix
+
+- Fix some minor issues with styles in solr results page. @danalvrz 
+
+### Internal
+
+- Update volto-introduction-block to 1.4.2 @sneridagh 
+
 ## 8.1.0 (2026-10-13)
 
 ### Feature

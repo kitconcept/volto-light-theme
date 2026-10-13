@@ -1,6 +1,36 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 8.1.1 (2026-10-13)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Fix some minor issues with styles in solr results page. @danalvrz 
+
+#### Internal
+
+- Update volto-introduction-block to 1.4.2 @sneridagh 
+
+
+
+### Project
+
+
+#### Internal
+
+- Update volto-introduction-block to 1.4.2 @sneridagh 
+
+
+
 ## 8.1.0 (2026-10-13)
 
 ### Backend
