@@ -162,7 +162,9 @@ selection. Grid blocks are inserted through the slash menu and their children
 through the chooser, matching the original interactions.
 The text-link scenario advances Playwright's browser clock through Slate's
 200ms saved-selection debounce after selecting the word, without a wall-clock
-sleep or access to private editor state.
+sleep or access to private editor state. Slate ignores `selectionchange`
+while syncing its own DOM selection after typing, so the test reapplies the
+same selection until Slate's `.highlight-selection` decoration acknowledges it.
 
 The complete migrated suite contains 101 scenarios. Accessibility-module migration
 is deferred pending discussion of programmatic canned content; it must not assume
