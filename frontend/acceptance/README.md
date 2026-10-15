@@ -206,7 +206,32 @@ separately: current Chromium serializes the inactive outline width as `3px`
 rather than the source's `0px`, although neither renders an outline. No theme
 styles are changed.
 
-The complete migrated suite contains 131 scenarios. Accessibility-module migration
+The second `core/blocks` batch preserves all 21 active image and video scenarios:
+
+| Cypress spec | Playwright spec | Scenarios |
+| --- | --- | --- |
+| `core/blocks/blocks-image.js` | `tests/core/blocks/blocks-image.test.ts` | External URL with focus and loaded-image checks; upload and saved source; upload in a new unsaved document; initially empty alt field; centered Narrow/Default/Layout/Full widths; left/right floats overriding Full to Default (left disables the width control); Small floating image using Narrow (11) |
+| `core/blocks/blocks-video.js` | `tests/core/blocks/blocks-video.test.ts` | YouTube placeholder; custom YouTube placeholder; Vimeo placeholder; MP4 source; centered Narrow/Default/Layout/Full widths; left/right floats overriding Full to Default (left disables the width control) (10) |
+
+The source image spec also contains two entirely commented-out historical
+drag-and-drop tests; these are not counted or resurrected. There are no skipped
+active source scenarios. Four centered widths and two float directions are
+generated per spec in Playwright, retaining a separate test for each source case.
+`tests/core/blocks/media.ts` shares the sidebar radio interaction and exact inline
+`--block-alignment`/`--block-width` assertions, including the original CSS variable
+values rather than approximate rendered dimensions.
+
+External image and video placeholder URLs are entered through the UI and their
+requests fulfilled with the local PNG fixture. The MP4 URL receives an empty
+response: as in Cypress, the assertion checks the configured video `src`, not
+decoding, playback, provider consent, or third-party service availability.
+Provider sources and uploaded images are also checked after reload. Uploads use
+the real file input and backend; API calls only create the initial page fixture.
+The unsaved-document upload case deliberately remains in edit mode, matching
+the source, and the alt case checks the initial empty field rather than implying
+coverage of editing alternative text.
+
+The complete migrated suite contains 152 scenarios. Accessibility-module migration
 is deferred pending discussion of programmatic canned content; it must not assume
 a separate example-content server.
 
