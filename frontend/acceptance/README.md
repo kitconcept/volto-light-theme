@@ -103,6 +103,22 @@ reselected through the object browser so API-created absolute backend URLs are
 normalized to the editor's link format and the relation survives the UI save.
 Assertions identify both the target and referring document;
 the nested-grid relation checks the complete fixture title.
+
+The fourth `core/basic` batch preserves all nine workflow and editing scenarios:
+
+| Cypress spec | Playwright spec | Scenarios |
+| --- | --- | --- |
+| `core/basic/workflow.js` | `tests/core/basic/workflow.test.ts` | Change the selected page's workflow state to Published (1) |
+| `core/basic/sharing.js` | `tests/core/basic/sharing.test.ts` | Access sharing; grant another user view permission and log in as that user; persist disabled permission inheritance (3) |
+| `core/basic/history.js` | `tests/core/basic/history.test.ts` | Create a page through the editor and access its history (1) |
+| `core/basic/metadata.js` | `tests/core/basic/metadata.test.ts` | Persist effective date/time; switch to Page metadata on validation errors; type into Slate after removing a creator widget value (3) |
+| `core/basic/form-undo.js` | `tests/core/basic/form-undo.test.ts` | Undo and redo individual typed characters, then save the resulting text (1) |
+
+`tests/core/basic/page.ts` shares the UI page creation and active-navigation
+assertions used by history and sharing. The workflow scenario retains the
+original selection/state dialog interaction; recursive parent/child publishing
+is covered in `folder-contents.test.ts`. Fixed Cypress waits are replaced by
+editor readiness and web-first assertions.
 Other `core/basic` specs are not migrated yet.
 
 Cypress originals and their CI modules remain enabled until the Playwright
