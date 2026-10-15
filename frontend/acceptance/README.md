@@ -183,7 +183,30 @@ fulfilled with empty local HTML: the original scenarios assert iframe source
 configuration, not rendering or availability of third-party map providers.
 Both provider URLs are checked in edit mode, after saving and after reloading.
 
-The complete migrated suite contains 119 scenarios. Accessibility-module migration
+The first `core/blocks` batch preserves all 12 active source scenarios (no
+generated or skipped source cases):
+
+| Cypress spec | Playwright spec | Scenarios |
+| --- | --- | --- |
+| `core/blocks/blocks.js` | `tests/core/blocks/blocks.test.ts` | Render an unknown block's type in the page view (1) |
+| `core/blocks/blocks-chooser.js` | `tests/core/blocks/blocks-chooser.test.ts` | Add an external image through the chooser and URL toolbar; add a Listing through Common and press Enter for a selected, focused default block (2) |
+| `core/blocks/blocks-autofocus.js` | `tests/core/blocks/blocks-autofocus.test.ts` | Press Enter after adding Text through its chooser group or Image, Video, Listing, Table of contents, Maps and Search through the slash menu; verify the third block is selected and its text editor is focused (7) |
+| `core/blocks/blocks-title.js` | `tests/core/blocks/blocks-title.test.ts` | Focus the title and check its absent outline and original outline color (1) |
+| `core/blocks/blocks-indexing.js` | `tests/core/blocks/blocks-indexing.test.ts` | Save text and find the page by a body-only word through the header search UI (1) |
+
+`tests/core/blocks/editor.ts` shares fixture setup, mounted-toolbar edit
+navigation and selected/focused default-block assertions. The external image
+retains the original URL, entered through the UI, with its network response
+fulfilled from the local PNG fixture so loading assertions do not depend on
+GitHub availability. Its source and loaded dimensions are also checked after
+reload. Autofocus image-placeholder readiness uses loaded-image assertions
+instead of the original fixed delays.
+The title assertion checks `outline-style: none` and the original black color
+separately: current Chromium serializes the inactive outline width as `3px`
+rather than the source's `0px`, although neither renders an outline. No theme
+styles are changed.
+
+The complete migrated suite contains 131 scenarios. Accessibility-module migration
 is deferred pending discussion of programmatic canned content; it must not assume
 a separate example-content server.
 
