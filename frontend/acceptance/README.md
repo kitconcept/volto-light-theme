@@ -86,6 +86,23 @@ Creation-date sorting uses explicit, year-separated fixture dates. Reordering
 creates 56 uniquely identified fixture documents plus the initial document and
 a UI-created page, and checks both pages of the 58-item listing. All actions
 under test still use the UI; API calls only set up fixtures.
+
+The third `core/basic` batch preserves all 23 link-integrity scenarios:
+
+| Cypress spec | Playwright spec | Scenarios |
+| --- | --- | --- |
+| `core/basic/linkIntegrityView.js` | `tests/core/basic/linkIntegrityView.test.ts` | Toolbar access; richtext references to Document, News Item, Event, File, Image and Link; teaser target, UI-selected teaser image override, image source, image link and nested-grid teaser (12) |
+| `core/basic/deleteItemModal.js` | `tests/core/basic/deleteItemModal.test.ts` | Deletion warnings for the same six richtext content types and five block forms (11) |
+
+`tests/relations.ts` shares typed relation fixtures and the teaser image override
+interaction, reusing the content, object-browser and save helpers. The override
+links view checks the image relation; the override deletion scenario still
+selects the referenced document, matching the original behavior despite its
+image-oriented name. Before choosing the override, the same document is
+reselected through the object browser so API-created absolute backend URLs are
+normalized to the editor's link format and the relation survives the UI save.
+Assertions identify both the target and referring document;
+the nested-grid relation checks the complete fixture title.
 Other `core/basic` specs are not migrated yet.
 
 Cypress originals and their CI modules remain enabled until the Playwright
