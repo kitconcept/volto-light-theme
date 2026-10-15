@@ -1,0 +1,3 @@
+Port all 12 core/basic actions and folder-contents acceptance scenarios to
+Playwright, retaining UI interactions, recursive workflow changes, persistent
+columns, and paginated and filtered reordering while keeping Cypress enabled.
