@@ -146,7 +146,25 @@ selector is replaced by the explicit add-date input. The monthly source's saved
 count is corrected from six to seven: six regular occurrences plus the explicitly
 added October 8 date.
 
-The complete migrated suite contains 92 scenarios. Accessibility-module migration
+The first `main` batch preserves all nine active source scenarios (no generated
+or skipped cases):
+
+| Cypress spec | Playwright spec | Scenarios |
+| --- | --- | --- |
+| `main/basic.cy.js` | `tests/main/basic.test.ts` | Add a page with text; select text and insert an external link through the Slate toolbar (2) |
+| `main/nav.cy.js` | `tests/main/nav.test.ts` | Show the third navigation level; open second- and third-level pages (3) |
+| `main/site-action.cy.js` | `tests/main/site-action.test.ts` | Show configured Github and Sitemap header actions (1) |
+| `main/listing-grid.cy.js` | `tests/main/listing-grid.test.ts` | Select Grid variation and Page criteria; check first result before and after saving, including its link (1) |
+| `main/Grid/image.cy.js` | `tests/main/Grid/image.test.ts` | Select images in both grid columns; configure Page listings in both columns and verify saved content (2) |
+
+`tests/main/listing.ts` shares child-page fixtures and the UI Type/Page criterion
+selection. Grid blocks are inserted through the slash menu and their children
+through the chooser, matching the original interactions.
+The text-link scenario advances Playwright's browser clock through Slate's
+200ms saved-selection debounce after selecting the word, without a wall-clock
+sleep or access to private editor state.
+
+The complete migrated suite contains 101 scenarios. Accessibility-module migration
 is deferred pending discussion of programmatic canned content; it must not assume
 a separate example-content server.
 
