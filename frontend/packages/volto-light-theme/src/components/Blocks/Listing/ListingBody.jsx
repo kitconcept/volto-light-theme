@@ -90,11 +90,14 @@ export const ListingBody = (props) => {
     : config.blocks?.blocksConfig['listing'].noResultsComponent;
 
   const HeadlineTag = data.headlineTag || 'h2';
-  const paginationLabel = data.headline
-    ? props.intl.formatMessage(messages.PaginationNavigationFor, {
-        headline: data.headline,
-      })
-    : props.intl.formatMessage(messages.PaginationNavigation);
+  const paginationLabel =
+    totalPages > 1
+      ? data.headline
+        ? props.intl.formatMessage(messages.PaginationNavigationFor, {
+            headline: data.headline,
+          })
+        : props.intl.formatMessage(messages.PaginationNavigation)
+      : undefined;
   return (
     <>
       {data.headline && (
