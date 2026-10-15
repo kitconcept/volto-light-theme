@@ -233,13 +233,16 @@ The unsaved-document upload case deliberately remains in edit mode, matching
 the source, and the alt case checks the initial empty field rather than implying
 coverage of editing alternative text.
 
-The complete migrated suite contains 152 scenarios. Accessibility-module migration
-is deferred pending discussion of programmatic canned content; it must not assume
-a separate example-content server.
+The a11y module runs in Playwright against the same acceptance backend as the
+rest of this suite. Its worker-scoped fixture resets the backend once, installs
+the VLT demo profile through RobotRemote, and reuses that example content for all
+29 read-only checks. The regular per-test reset fixture is not used by these
+checks, so the demo content is not re-imported between pages.
 
-Cypress originals and their CI modules remain enabled until the Playwright
-replacements achieve CI parity. Unmigrated modules stay unchanged; the existing
-Playwright CI job automatically discovers nested specs.
+The a11y Cypress specs and their separate-backend CI module are replaced by this
+Playwright suite. Cypress originals for other modules stay enabled until their
+Playwright replacements achieve CI parity; unmigrated modules stay unchanged.
+The existing Playwright CI job automatically discovers nested specs.
 
 ## Configuration
 

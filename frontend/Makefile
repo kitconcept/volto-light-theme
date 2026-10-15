@@ -168,21 +168,9 @@ ci-acceptance-test: ## Run cypress tests in headless mode for CI
 	pnpm --filter @plone/volto exec cypress run --config-file $(CURRENT_DIR)/cypress.config.js --config specPattern='$(SPEC)'
 
 # a11y tests
-.PHONY: acceptance-a11y-frontend-prod-start
-acceptance-a11y-frontend-prod-start: ## Start a11y acceptance frontend in prod mode
-	pnpm build && pnpm start:prod
-
-.PHONY: ci-acceptance-a11y-backend-start
-ci-acceptance-a11y-backend-start: ## Start acceptance a11y server in CI mode (no terminal attached)
-	docker run -i --rm --name=backend -p 8080:8080 -e SITE=Plone -e ADDONS='$(KGS)' $(IMAGE_NAME)-backend
-
 .PHONY: acceptance-a11y-test
-acceptance-a11y-test: ## Start a11y Cypress in interactive mode
-	CYPRESS_a11y=1 CYPRESS_API_PATH=http://localhost:8080/Plone pnpm exec cypress open specPattern=$(CURRENT_DIR)'/cypress/tests/a11y/**/*.{js,jsx,ts,tsx}'
-
-.PHONY: ci-acceptance-a11y-test
-ci-acceptance-a11y-test: ## Run a11y cypress tests in headless mode for CI
-	CYPRESS_a11y=1 CYPRESS_API_PATH=http://localhost:8080/Plone pnpm exec cypress run --config specPattern='$(SPEC)'
+acceptance-a11y-test: ## Run Playwright a11y tests against the acceptance servers
+	pnpm exec playwright test -c $(CURRENT_DIR)/playwright-acceptance.config.ts $(CURRENT_DIR)/acceptance/tests/a11y.test.ts --ui
 
 ### Visual acceptance tests ###
 # Keep local snapshots aligned with the shared visual regression repository.

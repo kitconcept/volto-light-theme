@@ -276,9 +276,6 @@ ci-acceptance-playwright-test: ## Run Playwright acceptance tests against the ac
 # A11y Tests
 ###########################################
 
-acceptance-a11y-frontend-prod-start:
-	$(MAKE) -C frontend acceptance-a11y-frontend-prod-start
-
 acceptance-a11y-test:
 	$(MAKE) -C frontend acceptance-a11y-test
 
@@ -290,7 +287,7 @@ sync-visual-regression-snapshots:
 	$(MAKE) -C frontend sync-visual-regression-snapshots
 
 acceptance-visual-frontend-prod-start:
-	$(MAKE) -C frontend acceptance-a11y-frontend-prod-start
+	$(MAKE) -C frontend acceptance-frontend-prod-start
 
 acceptance-visual-test:
 	$(MAKE) -C frontend acceptance-visual-test

@@ -17,14 +17,10 @@ beforeEach(function () {
   cy.setCookie('confirm_facebook', '1', { sameSite: 'lax' });
   cy.setCookie('confirm_youtube', '1', { sameSite: 'lax' });
   cy.log('Setting up API fixture');
-  if (!Cypress.env('a11y')) {
-    setup();
-  }
+  setup();
 });
 
 afterEach(function () {
   cy.log('Tearing down API fixture');
-  if (!Cypress.env('a11y')) {
-    teardown();
-  }
+  teardown();
 });

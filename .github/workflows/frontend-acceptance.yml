@@ -8,9 +8,6 @@ on:
       short-name:
         required: true
         type: string
-      a11y:
-        required: true
-        type: boolean
       node-version:
         required: true
         type: string
@@ -45,7 +42,6 @@ jobs:
       - name: Load images
         run: |
           docker pull ${{ inputs.image-name-prefix }}-backend-acceptance:${{ inputs.image-tag }}
-          docker pull ${{ inputs.image-name-prefix }}-backend:${{ inputs.image-tag }}
           docker pull ${{ inputs.image-name-prefix }}-frontend:${{ inputs.image-tag }}
           docker image ls -a
 
@@ -86,8 +82,7 @@ jobs:
         run: make cypress-install
 
       - uses: JarvusInnovations/background-action@v2
-        name: Start Servers
-        if: ${{ inputs.a11y == false || inputs.a11y == 'false' || inputs.a11y == null }}
+        name: Start acceptance servers
         with:
           run: |
             docker run -i --net=host --rm --name=backend ${{ inputs.image-name-prefix }}-backend-acceptance:${{ inputs.image-tag }} &
@@ -120,26 +115,7 @@ jobs:
 
           # working-directory: backend
 
-      - uses: JarvusInnovations/background-action@v2
-        name: Start Servers
-        if: ${{inputs.a11y == true || inputs.a11y == 'true' }}
-        with:
-          run: |
-            docker run -i --net=host --rm --name=backend ${{ inputs.image-name-prefix }}-backend:${{ inputs.image-tag }} &
-            docker run -i --net=host --rm --name=frontend -e RAZZLE_INTERNAL_API_PATH=http://127.0.0.1:8080/Plone ${{ inputs.image-name-prefix }}-frontend:${{ inputs.image-tag }} &
-          wait-on: |
-            http-get://localhost:8080/Plone
-            http://localhost:3000
-          tail: true
-          log-output-resume: stderr
-          wait-for: 10m
-          log-output: stderr,stdout
-          log-output-if: failure
-
       - run: make ci-acceptance-test SPEC='${{ github.workspace }}/frontend/cypress/tests/${{ inputs.short-name }}/**/*.{js,jsx,ts,tsx}'
-        if: ${{ inputs.a11y == false || inputs.a11y == 'false' || inputs.a11y == null }}
-      - run: make ci-acceptance-a11y-test SPEC='${{ github.workspace }}/frontend/cypress/tests/${{ inputs.short-name }}/**/*.{js,jsx,ts,tsx}'
-        if: ${{ inputs.a11y == true || inputs.a11y == 'true' }}
 
       # Upload Cypress screenshots
       - uses: actions/upload-artifact@v7
