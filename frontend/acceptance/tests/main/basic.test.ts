@@ -37,32 +37,38 @@ test.describe('Basic Acceptance Tests - Text Block Tests', () => {
     const editor = page.locator('.block.slate [contenteditable=true]');
     await editor.click();
     await editor.pressSequentially('Colorless green ideas sleep furiously.');
-    await editor.evaluate((element) => {
-      const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
-      let node = walker.nextNode();
-      while (node) {
-        const start = node.textContent?.indexOf('furiously') ?? -1;
-        if (start !== -1) {
-          const selection = window.getSelection();
-          if (!selection) throw new Error('Browser selection is unavailable');
-          selection.setBaseAndExtent(
-            node,
-            start,
-            node,
-            start + 'furiously'.length,
-          );
-          return;
+    // Slate ignores selectionchange events while it is syncing its own DOM
+    // selection after typing, so reapply the same selection until Slate's
+    // selection decoration acknowledges it.
+    await expect(async () => {
+      await editor.evaluate((element) => {
+        const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
+        let node = walker.nextNode();
+        while (node) {
+          const start = node.textContent?.indexOf('furiously') ?? -1;
+          if (start !== -1) {
+            const selection = window.getSelection();
+            if (!selection) throw new Error('Browser selection is unavailable');
+            selection.setBaseAndExtent(
+              node,
+              start,
+              node,
+              start + 'furiously'.length,
+            );
+            return;
+          }
+          node = walker.nextNode();
         }
-        node = walker.nextNode();
-      }
-      throw new Error('Cannot select furiously in the Slate editor');
-    });
-    await expect
-      .poll(() => page.evaluate(() => window.getSelection()?.toString()))
-      .toBe('furiously');
-    await expect(editor.locator('.highlight-selection')).toHaveText(
-      'furiously',
-    );
+        throw new Error('Cannot select furiously in the Slate editor');
+      });
+      await expect
+        .poll(() => page.evaluate(() => window.getSelection()?.toString()))
+        .toBe('furiously');
+      await expect(editor.locator('.highlight-selection')).toHaveText(
+        'furiously',
+        { timeout: 1000 },
+      );
+    }).toPass();
     // Slate persists the selection in a 200ms onSelect debounce.
     await page.clock.runFor(200);
     await page
