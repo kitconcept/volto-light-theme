@@ -166,7 +166,26 @@ sleep or access to private editor state. Slate ignores `selectionchange`
 while syncing its own DOM selection after typing, so the test reapplies the
 same selection until Slate's `.highlight-selection` decoration acknowledges it.
 
-The complete migrated suite contains 101 scenarios. Accessibility-module migration
+The second `main` batch preserves all 18 active source scenarios (no generated
+or skipped source cases):
+
+| Cypress spec | Playwright spec | Scenarios |
+| --- | --- | --- |
+| `main/blocks-calendar.cy.js` | `tests/main/blocks-calendar.test.ts` | Search; date range; review-state facets; query criteria; limits and pagination; combined date/facet/search and reset; short-name criterion; single/multi-day date display; folder order and reversed order (9) |
+| `main/blocks-map.cy.js` | `tests/main/blocks-map.test.ts` | Enter Google Maps and OpenStreetMap iframe embeds through the block toolbar and verify the saved source (2) |
+| `main/blocks-table.cy.js` | `tests/main/blocks-table.test.ts` | Enter four cell values, insert columns/rows, save, reopen, delete inserted columns/rows and verify retained values (1) |
+| `main/blocks-teaser-types.js` | `tests/main/blocks-teaser-types.test.ts` | Select Document, Event, News Item and File targets through the object browser; center alignment, title, applicable description/image/date checks (4) |
+| `main/blocks-slider-variant.js` | `tests/main/blocks-slider-variant.test.ts` | Simple side variation with kicker, button visibility/text, alignment and second-slide title/description/image overrides; refresh source content (2) |
+
+`tests/main/teaser.ts` shares the teaser/slider image fixture and loaded-image
+assertion. Calendar event dates follow the current UTC month. All filtering,
+sorting, pagination, block configuration and refresh actions use the UI; API calls
+only create fixtures (including their workflow state). Map iframe requests are
+fulfilled with empty local HTML: the original scenarios assert iframe source
+configuration, not rendering or availability of third-party map providers.
+Both provider URLs are checked in edit mode, after saving and after reloading.
+
+The complete migrated suite contains 119 scenarios. Accessibility-module migration
 is deferred pending discussion of programmatic canned content; it must not assume
 a separate example-content server.
 
