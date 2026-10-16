@@ -23,6 +23,8 @@ their own `playwright.config.ts`. Acceptance tests use
 - `tests/blocks.ts` — block chooser/slash-menu interactions and saving edited
   content, waiting for a successful PATCH and navigation to view mode.
 - `tests/object-browser.ts` — selecting internal links through the object browser.
+- `tests/contents.ts` — row-scoped selection, popup actions, rename and delete
+  confirmations shared by the folder-management scenarios.
 - `tests/**/*.test.ts` — the tests themselves. Migrated modules mirror the
   folder structure under `../cypress/tests/`.
 - `fixtures/` — files used by acceptance tests, independent of Cypress.
@@ -71,7 +73,20 @@ anonymous-user test names. Each creates private documents, edits and saves their
 text through the Slate editor, and checks the complete result order. The
 effective-date scenario supplies the original effective/expiration dates through
 the existing content helper. `tests/core/basic/auth.ts` shares form login and
-toolbar logout interactions. Other `core/basic` specs are not migrated yet.
+toolbar logout interactions.
+
+The second `core/basic` batch preserves all 12 folder-management scenarios:
+
+| Cypress spec | Playwright spec | Scenarios |
+| --- | --- | --- |
+| `core/basic/actions.js` | `tests/core/basic/actions.test.ts` | Copy and cut via row popups (including paste back into the same folder); delete and rename selected content |
+| `core/basic/folder-contents.js` | `tests/core/basic/folder-contents.test.ts` | Rename; copy in place; cut into another item; delete; recursively publish a parent and child; creation-date sorting; remember the Creator column across folders; paginated top/bottom reordering including filtered search |
+
+Creation-date sorting uses explicit, year-separated fixture dates. Reordering
+creates 56 uniquely identified fixture documents plus the initial document and
+a UI-created page, and checks both pages of the 58-item listing. All actions
+under test still use the UI; API calls only set up fixtures.
+Other `core/basic` specs are not migrated yet.
 
 Cypress originals and their CI modules remain enabled until the Playwright
 replacements achieve CI parity. Unmigrated modules stay unchanged; the existing
