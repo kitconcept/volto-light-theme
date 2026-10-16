@@ -80,7 +80,12 @@ You need separate server pairs to run multiple shards concurrently on one machin
 
 CI uploads a blob report and failure traces for each shard, then merges the blob reports into the `playwright-acceptance-report` HTML artifact.
 The merge job runs after failed tests as well, so you can review results from all completed shards in one report.
-The `PLAYWRIGHT_REPORTER` Make variable defaults to `list,html`; CI sets it to `list,blob` for merging.
+The `PLAYWRIGHT_REPORTER` Make variable defaults to `list,html`; CI sets it to `list,github,blob` for failure annotations and report merging.
+CI retries a failed test once and limits each shard's test run to ten minutes.
+Playwright's global timeout ends the run gracefully so reporters can write partial results and traces.
+The test step has a twelve-minute fallback, and the job has a twenty-minute limit.
+Failed shards also upload backend logs, frontend logs, and container state with their test artifacts.
+The live reporter counts retry attempts, so its counter can exceed the number of distinct tests in a shard.
 
 ## Run visual regression tests
 

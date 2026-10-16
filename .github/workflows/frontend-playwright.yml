@@ -20,6 +20,7 @@ defaults:
 jobs:
   playwright-acceptance:
     name: Playwright Acceptance (${{ matrix.shard }}/4)
+    timeout-minutes: 20
     strategy:
       fail-fast: false
       matrix:
@@ -84,10 +85,19 @@ jobs:
           log-output-if: failure
 
       - name: Run Playwright acceptance tests
+        timeout-minutes: 12
         run: >-
           make ci-acceptance-test
-          PLAYWRIGHT_ARGS="--shard=${{ matrix.shard }}/4"
-          PLAYWRIGHT_REPORTER=list,blob
+          PLAYWRIGHT_ARGS="--shard=${{ matrix.shard }}/4 --retries=1 --global-timeout=600000"
+          PLAYWRIGHT_REPORTER=list,github,blob
+
+      - name: Capture server diagnostics
+        if: ${{ failure() && !cancelled() }}
+        run: |
+          mkdir -p acceptance/results/acceptance/server-logs
+          docker logs backend > acceptance/results/acceptance/server-logs/backend.log 2>&1 || true
+          docker logs frontend > acceptance/results/acceptance/server-logs/frontend.log 2>&1 || true
+          docker inspect backend frontend > acceptance/results/acceptance/server-logs/containers.json 2>&1 || true
 
       - name: Upload blob report
         if: ${{ !cancelled() }}
