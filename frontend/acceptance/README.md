@@ -56,6 +56,23 @@ The `core/content` module preserves the three original Cypress specs and their
 | `core/content/content.js` | `tests/core/content/content.test.ts` | Add files, pages, text, related-item references, images, news items, events, and external/internal links through the editor |
 | `core/content/delete.js` | `tests/core/content/delete.test.ts` | Delete a selected item from the contents view |
 
+The first focused `core/basic` batch preserves nine scenarios:
+
+| Cypress spec | Playwright spec | Scenarios |
+| --- | --- | --- |
+| `core/basic/login.js` | `tests/core/basic/login.test.ts` | Log in through the form and verify authenticated UI |
+| `core/basic/logout.js` | `tests/core/basic/logout.test.ts` | Log out through personal tools, verify `auth_token` removal and loss of authenticated UI, including after reload |
+| `core/basic/autologin.js` | `tests/core/basic/autologin.test.ts` | Authenticate through the API and open personal tools |
+| `core/basic/navigation.js` | `tests/core/basic/navigation.test.ts` | Private navigation entry disappears after logout; hamburger navigation at iphone-xr (414 x 896) and ipad-mini (768 x 1024) viewport sizes |
+| `core/basic/search.js` | `tests/core/basic/search.test.ts` | Search rank, alphabetic, and effective-date (newest first) ordering |
+
+Search scenarios remain authenticated, matching the original setup despite its
+anonymous-user test names. Each creates private documents, edits and saves their
+text through the Slate editor, and checks the complete result order. The
+effective-date scenario supplies the original effective/expiration dates through
+the existing content helper. `tests/core/basic/auth.ts` shares form login and
+toolbar logout interactions. Other `core/basic` specs are not migrated yet.
+
 Cypress originals and their CI modules remain enabled until the Playwright
 replacements achieve CI parity. Unmigrated modules stay unchanged; the existing
 Playwright CI job automatically discovers nested specs.
@@ -99,6 +116,7 @@ Run only a migrated module against already-running acceptance servers:
 cd frontend
 pnpm test:acceptance addons
 pnpm test:acceptance core/content
+pnpm test:acceptance core/basic
 ```
 
 The container-based CI-mode alternative builds on the existing acceptance images:
