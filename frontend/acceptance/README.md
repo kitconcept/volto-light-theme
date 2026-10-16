@@ -119,7 +119,36 @@ assertions used by history and sharing. The workflow scenario retains the
 original selection/state dialog interaction; recursive parent/child publishing
 is covered in `folder-contents.test.ts`. Fixed Cypress waits are replaced by
 editor readiness and web-first assertions.
-Other `core/basic` specs are not migrated yet.
+
+The final `core/basic` batch ports the six remaining specs and all 16 source
+scenarios (including the five previously skipped recurrence scenarios):
+
+| Cypress spec | Playwright spec | Scenarios |
+| --- | --- | --- |
+| `core/basic/FileWidget.js` | `tests/core/basic/FileWidget.test.ts` | Upload an image through the news-item file widget and verify its preview (1) |
+| `core/basic/aliasesContext.js` | `tests/core/basic/aliasesContext.test.ts` | Add an alternative URL through the aliases form and verify persistence (1) |
+| `core/basic/locking.js` | `tests/core/basic/locking.test.ts` | Lock as the first editor, show the lock notice to another editor, expose Unlock, then unlock and save as the second editor (3) |
+| `core/basic/objectBrowser.js` | `tests/core/basic/objectBrowser.test.ts` | Relative and full API URL searches; focus on opening search; image-only text search excluding documents, then select and save the image (4) |
+| `core/basic/recurrence-widget.js` | `tests/core/basic/recurrence-widget.test.ts` | Daily, Monday/Friday, weekday, weekly, monthly and yearly recurrence: intervals, end dates/counts, day/month choices, exclude/re-include, additional dates and saved occurrence lists (6) |
+| `core/basic/set-registry.js` | `tests/core/basic/set-registry.test.ts` | Set the site-title registry fixture and verify its value in the site control panel (1) |
+
+All `core/basic` Cypress specs now have Playwright replacements. Lock acquisition
+waits for the successful `@lock` response instead of a fixed delay. The second
+editor opens the page through navigation after the app has mounted, so lock
+notifications are observed with the toast container already ready. Users and
+registry settings are API fixtures reset by the shared backend fixture; unlocking,
+editing, aliases, uploads, object selection and recurrence configuration use the
+UI. Recurrence dates are entered through the event form, not preseeded through
+the API. This spec uses UTC and fixes the browser date to May 1, 2020 so the
+source's exact weekday assertions and no-past-dates picker remain deterministic.
+Timers still run normally. The skipped daily source's ambiguous `.modal input`
+selector is replaced by the explicit add-date input. The monthly source's saved
+count is corrected from six to seven: six regular occurrences plus the explicitly
+added October 8 date.
+
+The complete migrated suite contains 92 scenarios. Accessibility-module migration
+is deferred pending discussion of programmatic canned content; it must not assume
+a separate example-content server.
 
 Cypress originals and their CI modules remain enabled until the Playwright
 replacements achieve CI parity. Unmigrated modules stay unchanged; the existing
