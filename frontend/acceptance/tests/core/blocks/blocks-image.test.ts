@@ -1,3 +1,4 @@
+import { fixturePath } from '../../fixtures';
 import type { Page } from '@playwright/test';
 import { expect, test } from '../../test';
 import { addBlockFromChooser, save } from '../../blocks';
@@ -15,7 +16,7 @@ async function uploadImage(page: Page) {
   await addBlockFromChooser(page, 'Image');
   await page
     .locator('.block-editor-image input[type=file]')
-    .setInputFiles('acceptance/fixtures/image.png');
+    .setInputFiles(fixturePath('image.png'));
   const image = page.locator('.block.image img');
   await expect(image).toHaveAttribute('src', /\/image\.png\/@@images\/image-/);
   await expectLoadedImage(image);

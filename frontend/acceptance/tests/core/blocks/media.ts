@@ -1,3 +1,4 @@
+import { fixturePath } from '../../fixtures';
 import type { Locator, Page } from '@playwright/test';
 import { expect } from '../../test';
 
@@ -14,7 +15,7 @@ export async function routeExternalMedia(page: Page) {
   ]) {
     await page.route(url, (route) =>
       route.fulfill({
-        path: 'acceptance/fixtures/image.png',
+        path: fixturePath('image.png'),
         contentType: 'image/png',
       }),
     );

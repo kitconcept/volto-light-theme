@@ -1,3 +1,4 @@
+import { fixturePath } from '../../fixtures';
 import { expect, test } from '../../test';
 import { createContent } from '../../content';
 import { login } from '../../login';
@@ -14,9 +15,7 @@ test.describe('Add content through the editor', () => {
     await page.locator('#toolbar-add-file').click();
     await page.locator('input[name="title"]').fill('My File');
     await expect(page.locator('input[name="title"]')).toHaveValue('My File');
-    await page
-      .locator('#field-file')
-      .setInputFiles('acceptance/fixtures/file.pdf');
+    await page.locator('#field-file').setInputFiles(fixturePath('file.pdf'));
 
     await page.locator('#toolbar-save').click();
 
@@ -99,9 +98,7 @@ test.describe('Add content through the editor', () => {
     await page.locator('#toolbar-add').click();
     await page.locator('#toolbar-add-image').click();
     await page.locator('input[name="title"]').fill('My image');
-    await page
-      .locator('#field-image')
-      .setInputFiles('acceptance/fixtures/image.png');
+    await page.locator('#field-image').setInputFiles(fixturePath('image.png'));
     await expect(page.locator('#field-image')).toHaveValue(/image\.png$/);
     await expect(page.locator('#field-image-image')).toHaveAttribute(
       'src',

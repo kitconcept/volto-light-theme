@@ -1,3 +1,4 @@
+import { fixturePath } from './fixtures';
 import { readFile } from 'node:fs/promises';
 import type { APIRequestContext, Page } from '@playwright/test';
 
@@ -97,9 +98,7 @@ export async function createContent(
       },
     });
   } else if (contentType === 'Image') {
-    const image = await readFile(
-      `${process.cwd()}/acceptance/fixtures/image.png`,
-    );
+    const image = await readFile(fixturePath('image.png'));
     body = bodyModifier({
       ...defaultBody,
       image: {
