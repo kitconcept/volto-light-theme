@@ -89,4 +89,4 @@ jobs:
           name: playwright-acceptance-report
           path: |
             frontend/playwright-report
-            frontend/acceptance/results
+            frontend/acceptance/results/acceptance

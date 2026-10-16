@@ -176,16 +176,16 @@ acceptance-a11y-test: ## Run Playwright a11y tests against the acceptance server
 # Keep local snapshots aligned with the shared visual regression repository.
 .PHONY: sync-visual-regression-snapshots
 sync-visual-regression-snapshots:
-	@if [ -d playwright/__screenshots__/.git ]; then \
-		if git -C playwright/__screenshots__ status --porcelain | grep -q .; then \
+	@if [ -d acceptance/__screenshots__/.git ]; then \
+		if git -C acceptance/__screenshots__ status --porcelain | grep -q .; then \
 			echo "Skipping snapshot sync: local changes detected"; \
 		else \
-			git -C playwright/__screenshots__ fetch origin main; \
-			git -C playwright/__screenshots__ reset --hard origin/main; \
+			git -C acceptance/__screenshots__ fetch origin main; \
+			git -C acceptance/__screenshots__ reset --hard origin/main; \
 		fi; \
 	else \
-		rm -rf playwright/__screenshots__; \
-		git clone --branch main git@github.com:kitconcept/vlt-visual-regression.git playwright/__screenshots__; \
+		rm -rf acceptance/__screenshots__; \
+		git clone --branch main git@github.com:kitconcept/vlt-visual-regression.git acceptance/__screenshots__; \
 	fi
 
 .PHONY: acceptance-visual-test

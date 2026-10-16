@@ -1,16 +1,24 @@
-# Playwright acceptance tests
+# Playwright tests
 
-End-to-end acceptance tests driven by [Playwright](https://playwright.dev/),
-running against a Plone **acceptance** backend (with `RobotRemote` enabled, so
-the backend can be reset between tests) and a running Volto frontend.
+This directory contains the Playwright acceptance, accessibility, and visual regression suites.
+Acceptance and accessibility tests run against a Plone **acceptance** backend with `RobotRemote` enabled and a running Volto frontend.
+Visual regression tests run against the demo site or Storybook.
 
 All Playwright suites share `../playwright.config.ts`.
 The `acceptance` project runs the tests in `tests/` with one worker because they share a backend.
-The `visual` and `storybook` projects run the visual regression tests in `../playwright/tests/visual`.
+The `visual` and `storybook` projects run the visual regression tests in `visual/main/` and `visual/storybook/`, respectively.
 Select a project with the commands below or with `pnpm exec playwright test --project=<name>`.
 Select one project per run because acceptance and Volto visual tests require different backend fixtures.
 
 ## Layout
+
+- `tests/` — acceptance and accessibility tests and their shared helpers.
+- `visual/main/` — visual regression tests for the demo site.
+- `visual/storybook/` — visual regression tests for Storybook.
+- `__screenshots__/` — the separate visual regression baseline repository, retaining its `main/` and `storybook/` layout.
+- `results/acceptance/` and `results/visual/` — generated artifacts for each suite.
+
+### Acceptance helpers
 
 - `tests/reset-fixture.ts` — `setup`/`teardown` helpers that call `RobotRemote`
   to reset the backend ZODB to a known state.

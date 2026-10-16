@@ -3,8 +3,8 @@ import { defineConfig, devices } from '@playwright/test';
 const isCI = !!process.env.CI || !!process.env.GITHUB_ACTIONS;
 
 const visualProject = {
-  testDir: 'playwright/tests/visual',
-  outputDir: 'playwright/results',
+  testDir: 'acceptance/visual',
+  outputDir: 'acceptance/results/visual',
   expect: {
     timeout: 10_000,
     // Allow local exploration without changing the strict CI baselines.
@@ -12,7 +12,7 @@ const visualProject = {
   },
   // Keep the existing baseline filenames when selecting a named project.
   snapshotPathTemplate:
-    '{testDir}/../../__screenshots__/{testFilePath}/{arg}-chromium{ext}',
+    '{testDir}/../__screenshots__/{testFilePath}/{arg}-chromium{ext}',
 };
 
 export default defineConfig({
@@ -29,7 +29,7 @@ export default defineConfig({
       name: 'acceptance',
       testDir: 'acceptance/tests',
       testMatch: ['**/*.{spec,test}.{ts,tsx}'],
-      outputDir: 'acceptance/results',
+      outputDir: 'acceptance/results/acceptance',
       // The tests share a backend that is reset between tests.
       workers: 1,
       retries: isCI ? 3 : 0,

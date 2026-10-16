@@ -1,1 +1,2 @@
 Unify the Playwright acceptance, visual regression, and Storybook suites in one configuration with explicit project selection in scripts, Makefiles, and CI. @sneridagh
+Group all Playwright suites under `frontend/acceptance/`, keeping acceptance/a11y and visual regression tests in separate directories and projects. @sneridagh

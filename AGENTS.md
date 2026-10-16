@@ -93,7 +93,8 @@ pnpm test:acceptance      # headless
 pnpm test:acceptance:ui   # interactive UI
 ```
 
-Playwright tests live under `frontend/acceptance/tests`.
+Playwright tests live under `frontend/acceptance/`.
+Acceptance and a11y tests live in `tests/`; visual regression tests live in `visual/main/` and `visual/storybook/`.
 All suites use `frontend/playwright.config.ts`: select the `acceptance`, `visual`, or `storybook` project.
 The `acceptance` project uses one worker because tests can conflict while creating and deleting content.
 Accessibility assertions are built into the Playwright tests via the `expectNoAccessibilityViolations` helper (`frontend/acceptance/tests/accessibility.ts`); there is no separate Playwright a11y command.
