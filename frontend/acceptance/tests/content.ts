@@ -1,3 +1,4 @@
+import { readFile } from 'node:fs/promises';
 import type { APIRequestContext, Page } from '@playwright/test';
 
 export type RequestOptions = {
@@ -85,7 +86,30 @@ export async function createContent(
 
   let body: Record<string, unknown>;
 
-  if (['Document', 'News Item', 'Folder'].includes(contentType)) {
+  if (contentType === 'File') {
+    body = bodyModifier({
+      ...defaultBody,
+      file: {
+        data: 'dGVzdGZpbGUK',
+        encoding: 'base64',
+        filename: 'lorem.txt',
+        'content-type': 'text/plain',
+      },
+    });
+  } else if (contentType === 'Image') {
+    const image = await readFile(
+      `${process.cwd()}/acceptance/fixtures/image.png`,
+    );
+    body = bodyModifier({
+      ...defaultBody,
+      image: {
+        data: image.toString('base64'),
+        encoding: 'base64',
+        filename: 'image.png',
+        'content-type': 'image/png',
+      },
+    });
+  } else if (['Document', 'News Item', 'Folder'].includes(contentType)) {
     body = bodyModifier({
       ...defaultBody,
       blocks: {

@@ -47,9 +47,18 @@ assert both slide titles, the slide count, and that the preview image loads.
 The accessibility scenario checks the whole page without disabling axe rules,
 matching the original Cypress scenario.
 
-Cypress originals and their CI module remain enabled during the pilot. Retire
-them after the Playwright replacements also pass in CI. Unmigrated modules stay
-unchanged; the existing Playwright CI job automatically discovers nested specs.
+The `core/content` module preserves the three original Cypress specs and their
+16 scenarios:
+
+| Cypress spec | Playwright spec | Scenarios |
+| --- | --- | --- |
+| `core/content/createContent.js` | `tests/core/content/createContent.test.ts` | Create documents (including nested paths and custom IDs), news items, files, and images through the REST API |
+| `core/content/content.js` | `tests/core/content/content.test.ts` | Add files, pages, text, related-item references, images, news items, events, and external/internal links through the editor |
+| `core/content/delete.js` | `tests/core/content/delete.test.ts` | Delete a selected item from the contents view |
+
+Cypress originals and their CI modules remain enabled until the Playwright
+replacements achieve CI parity. Unmigrated modules stay unchanged; the existing
+Playwright CI job automatically discovers nested specs.
 
 ## Configuration
 
@@ -84,11 +93,12 @@ To iterate interactively (with the Playwright UI) against these servers:
 make acceptance-playwright-test
 ```
 
-Run only the add-ons module against already-running acceptance servers:
+Run only a migrated module against already-running acceptance servers:
 
 ```bash
 cd frontend
 pnpm test:acceptance addons
+pnpm test:acceptance core/content
 ```
 
 The container-based CI-mode alternative builds on the existing acceptance images:
