@@ -1,6 +1,7 @@
 // Styles for kitconcept.solr search page
 .section-search #page-search {
-  & > .ui.container {
+  & > .ui.container,
+  &.ui.container {
     max-width: var(--default-container-width) !important;
     padding: 0 !important;
   }
