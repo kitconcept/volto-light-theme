@@ -4,7 +4,7 @@ myst:
     "description": "How to contribute to Volto Light Theme"
     "property=og:description": "How to contribute to Volto Light Theme"
     "property=og:title": "Contributing"
-    "keywords": "Volto Light Theme, Contributing, Makefile, make, lint, format, i18n, tests, unit, Cypress, acceptance"
+    "keywords": "Volto Light Theme, Contributing, Makefile, make, lint, format, i18n, tests, unit, Playwright, acceptance"
 ---
 
 # How to develop add-ons

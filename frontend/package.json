@@ -55,7 +55,6 @@
     "update:browserlist": "pnpm --filter @plone/volto add caniuse-lite && pnpm --filter @plone/volto remove caniuse-lite"
   },
   "devDependencies": {
-    "@cypress/skip-test": "2.6.1",
     "mrs-developer": "^2.2.0"
   },
   "dependencies": {
@@ -81,9 +80,11 @@
     "overrides": {
       "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
       "react-refresh": "^0.14.2",
-      "cypress": "^15.0.3",
-      "@testing-library/cypress": "^10.1.0",
-      "@types/node": "^24"
+      "cypress": "-",
+      "@testing-library/cypress": "-",
+      "@types/node": "^24",
+      "cypress-axe": "-",
+      "cypress-file-upload": "-"
     },
     "ignoredBuiltDependencies": [
       "@parcel/watcher"
@@ -91,7 +92,6 @@
     "onlyBuiltDependencies": [
       "core-js",
       "core-js-pure",
-      "cypress",
       "es5-ext",
       "esbuild",
       "full-icu",

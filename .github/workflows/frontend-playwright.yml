@@ -80,7 +80,7 @@ jobs:
           log-output-if: failure
 
       - name: Run Playwright acceptance tests
-        run: make ci-acceptance-playwright-test
+        run: make ci-acceptance-test
 
       - name: Upload Playwright artifacts
         if: ${{ !cancelled() }}

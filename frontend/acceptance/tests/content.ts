@@ -52,7 +52,7 @@ function normalizePath(value?: string) {
 }
 
 /**
- * Creates content through the REST API (same behavior as cy.createContent).
+ * Creates content through the REST API.
  * Content types that support blocks get a default title + slate scaffold,
  * which can be overridden through `bodyModifier`.
  */

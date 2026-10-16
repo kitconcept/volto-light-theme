@@ -4,7 +4,7 @@ myst:
     "description": "How to contribute to Volto Light Theme"
     "property=og:description": "How to contribute to Volto Light Theme"
     "property=og:title": "Contributing"
-    "keywords": "Volto Light Theme, Contributing, Makefile, make, lint, format, i18n, tests, unit, Cypress, acceptance"
+    "keywords": "Volto Light Theme, Contributing, Makefile, make, lint, format, i18n, tests, unit, Playwright, acceptance"
 ---
 
 # Contributing
@@ -44,12 +44,9 @@ acceptance-frontend-dev-start         Start acceptance frontend in development m
 acceptance-frontend-prod-start        Start acceptance frontend in production mode
 acceptance-backend-start              Start backend acceptance server
 ci-acceptance-backend-start           Start backend acceptance server in headless mode for CI
-acceptance-test                       Start Cypress in interactive mode
-ci-acceptance-test                    Run cypress tests in headless mode for CI
-acceptance-a11y-frontend-prod-start   Start a11y acceptance frontend in prod mode
-ci-acceptance-a11y-backend-start      Start acceptance a11y server in CI mode (no terminal attached)
-acceptance-a11y-test                  Start a11y Cypress in interactive mode
-ci-acceptance-a11y-test               Run a11y cypress tests in headless mode for CI
+acceptance-test                       Start Playwright in interactive mode
+ci-acceptance-test                    Run Playwright tests in headless mode for CI
+acceptance-a11y-test                  Run Playwright a11y tests against the acceptance servers
 ```
 
 
@@ -112,7 +109,7 @@ make test
 ```
 
 
-## Run Cypress tests
+## Run Playwright tests
 
 
 In one terminal session, start the frontend server in dev mode.
@@ -124,10 +121,10 @@ make acceptance-frontend-dev-start
 In a second terminal session, start the backend acceptance server.
 
 ```shell
-make acceptance-backend-start
+make acceptance-backend-dev-start
 ```
 
-In a third terminal session, start the Cypress interactive test runner.
+In a third terminal session, start the Playwright interactive test runner.
 
 ```shell
 make acceptance-test

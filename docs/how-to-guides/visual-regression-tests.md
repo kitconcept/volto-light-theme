@@ -24,9 +24,7 @@ When a visual regression test fails, the CI job generates artifacts that you can
 ## Review and update visual test results
 
 ```{note}
-In the previous incarnation of the visual regression tests, we used Cypress and we saved the screenshots in development time.
-However, this approach had some drawbacks, since CI might have different rendering results than local machines because of different operating systems, browser versions, fonts, and other factors.
-Therefore, we switched to a CI-only based approach using Playwright, where the screenshots are generated and compared only in the CI environment.
+CI generates and compares the authoritative baselines with consistent operating system, browser, and font versions.
 You can still develop, run, and review visual regression tests locally using Playwright's UI mode or headless mode.
 ```
 
