@@ -115,7 +115,7 @@ jobs:
           log-output-if: failure
 
       - name: Update Visual Regression Screenshots
-        run: pnpm exec playwright test playwright/tests/visual/main/${{ inputs.short-name }}.test.{js,jsx,ts,tsx} --update-snapshots
+        run: pnpm test:visual playwright/tests/visual/main/${{ inputs.short-name }}.test.{js,jsx,ts,tsx} --update-snapshots
 
       # check what changed
       - name: Check for changes

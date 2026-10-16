@@ -4,9 +4,11 @@ End-to-end acceptance tests driven by [Playwright](https://playwright.dev/),
 running against a Plone **acceptance** backend (with `RobotRemote` enabled, so
 the backend can be reset between tests) and a running Volto frontend.
 
-These are separate from the visual regression tests (`../playwright`), which use
-their own `playwright.config.ts`. Acceptance tests use
-`../playwright-acceptance.config.ts` and live in `tests/`.
+All Playwright suites share `../playwright.config.ts`.
+The `acceptance` project runs the tests in `tests/` with one worker because they share a backend.
+The `visual` and `storybook` projects run the visual regression tests in `../playwright/tests/visual`.
+Select a project with the commands below or with `pnpm exec playwright test --project=<name>`.
+Select one project per run because acceptance and Volto visual tests require different backend fixtures.
 
 ## Layout
 

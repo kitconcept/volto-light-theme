@@ -94,7 +94,8 @@ pnpm test:acceptance:ui   # interactive UI
 ```
 
 Playwright tests live under `frontend/acceptance/tests`.
-They run through `frontend/playwright-acceptance.config.ts` (kept separate from the visual-regression `frontend/playwright.config.ts`) and are configured serially (`workers: 1`) because tests can conflict while creating and deleting content.
+All suites use `frontend/playwright.config.ts`: select the `acceptance`, `visual`, or `storybook` project.
+The `acceptance` project uses one worker because tests can conflict while creating and deleting content.
 Accessibility assertions are built into the Playwright tests via the `expectNoAccessibilityViolations` helper (`frontend/acceptance/tests/accessibility.ts`); there is no separate Playwright a11y command.
 
 Cypress commands:

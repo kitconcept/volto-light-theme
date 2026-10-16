@@ -150,7 +150,7 @@ Follow these steps to run visual regression tests:
 Alternatively, you can run Playwright visual tests, narrowing down to an individual test file, for example, {file}`playwright/tests/visual/main/blocks.test.ts`:
 
 ```shell
-pnpm exec playwright test playwright/tests/visual/main --ui
+pnpm test:visual:ui playwright/tests/visual/main/blocks.test.ts
 ```
 
 ## Storybook visual regression tests

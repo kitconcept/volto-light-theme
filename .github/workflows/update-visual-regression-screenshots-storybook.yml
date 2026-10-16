@@ -107,7 +107,7 @@ jobs:
         run: pnpm exec playwright install --with-deps chromium
 
       - name: Update Visual Regression Screenshots - Storybook
-        run: pnpm exec playwright test playwright/tests/visual/storybook/${{ inputs.short-name }}.test.{js,jsx,ts,tsx} --update-snapshots
+        run: pnpm test:storybook playwright/tests/visual/storybook/${{ inputs.short-name }}.test.{js,jsx,ts,tsx} --update-snapshots
 
       # check what changed
       - name: Check for changes

@@ -46,10 +46,12 @@
     "release-alpha": "pnpm --filter @kitconcept/volto-light-theme run release-alpha",
     "storybook": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto storybook dev -p 6006 -c $(pwd)/.storybook",
     "storybook-build": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto build-storybook -c $(pwd)/.storybook",
-    "test:visual": "playwright test playwright/tests/visual/main/*.test.{ts,tsx}",
-    "test:visual:ui": "playwright test --ui",
-    "test:acceptance": "playwright test -c playwright-acceptance.config.ts",
-    "test:acceptance:ui": "playwright test -c playwright-acceptance.config.ts --ui",
+    "test:visual": "playwright test --project=visual",
+    "test:visual:ui": "playwright test --project=visual --ui",
+    "test:storybook": "playwright test --project=storybook",
+    "test:storybook:ui": "playwright test --project=storybook --ui",
+    "test:acceptance": "playwright test --project=acceptance",
+    "test:acceptance:ui": "playwright test --project=acceptance --ui",
     "update:browserlist": "pnpm --filter @plone/volto add caniuse-lite && pnpm --filter @plone/volto remove caniuse-lite"
   },
   "devDependencies": {

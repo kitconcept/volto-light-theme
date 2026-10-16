@@ -157,11 +157,11 @@ install-playwright: ## Install the Playwright browsers used by the acceptance te
 
 .PHONY: acceptance-playwright-test
 acceptance-playwright-test: ## Start Playwright acceptance tests in interactive (UI) mode
-	pnpm exec playwright test -c $(CURRENT_DIR)/playwright-acceptance.config.ts --ui
+	pnpm test:acceptance:ui
 
 .PHONY: ci-acceptance-playwright-test
 ci-acceptance-playwright-test: ## Run Playwright acceptance tests in headless mode for CI
-	pnpm exec playwright test -c $(CURRENT_DIR)/playwright-acceptance.config.ts --reporter=list,html
+	pnpm test:acceptance --reporter=list,html
 
 .PHONY: ci-acceptance-test
 ci-acceptance-test: ## Run cypress tests in headless mode for CI
@@ -170,7 +170,7 @@ ci-acceptance-test: ## Run cypress tests in headless mode for CI
 # a11y tests
 .PHONY: acceptance-a11y-test
 acceptance-a11y-test: ## Run Playwright a11y tests against the acceptance servers
-	pnpm exec playwright test -c $(CURRENT_DIR)/playwright-acceptance.config.ts $(CURRENT_DIR)/acceptance/tests/a11y.test.ts --ui
+	pnpm test:acceptance:ui acceptance/tests/a11y.test.ts
 
 ### Visual acceptance tests ###
 # Keep local snapshots aligned with the shared visual regression repository.
@@ -189,9 +189,9 @@ sync-visual-regression-snapshots:
 	fi
 
 .PHONY: acceptance-visual-test
-acceptance-visual-test: sync-visual-regression-snapshots ## Start visual Cypress Acceptance Tests
-	pnpm exec playwright test playwright/tests/visual/main --ui
+acceptance-visual-test: sync-visual-regression-snapshots ## Start Playwright visual regression tests
+	pnpm test:visual:ui
 
 .PHONY: acceptance-visual-test-storybook
-acceptance-visual-test-storybook: sync-visual-regression-snapshots ## Start visual Cypress Acceptance Tests for Storybook
-	pnpm exec playwright test playwright/tests/visual/storybook --ui
+acceptance-visual-test-storybook: sync-visual-regression-snapshots ## Start Playwright visual regression tests for Storybook
+	pnpm test:storybook:ui
