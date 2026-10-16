@@ -26,9 +26,6 @@ defaults:
   run:
     working-directory: ./frontend
 
-env:
-  CYPRESS_A11Y: true
-
 jobs:
 
   visual-regression-tests:

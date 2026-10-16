@@ -9,7 +9,6 @@ public
 /lib
 pyvenv.cfg
 docs/_build
-cypress/downloads/
 acceptance/results/
 playwright-report/
 test-results/
@@ -17,3 +16,7 @@ test-results/
 packages/*
 !packages/volto-light-theme
 /.storybook-build
+
+# Intermediate Playwright reports for CI shards
+/blob-report/
+/all-blob-reports/

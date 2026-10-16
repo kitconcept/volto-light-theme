@@ -20,6 +20,8 @@ RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
 
 NODEBIN = ./node_modules/.bin
+PLAYWRIGHT_ARGS ?=
+PLAYWRIGHT_REPORTER ?= list,html
 
 PLONE_VERSION=6
 IMAGE_NAME=ghcr.io/kitconcept/voltolighttheme
@@ -147,8 +149,7 @@ ci-acceptance-backend-start: ## Start backend acceptance server in headless mode
 	docker run -i --rm -p 55001:55001 $(DOCKER_IMAGE_ACCEPTANCE)
 
 .PHONY: acceptance-test
-acceptance-test: ## Start Cypress in interactive mode
-	pnpm --filter @plone/volto exec cypress open --config-file $(CURRENT_DIR)/cypress.config.js --config specPattern=$(CURRENT_DIR)'/cypress/tests/**/*.{js,jsx,ts,tsx}'
+acceptance-test: acceptance-playwright-test ## Start Playwright acceptance tests in interactive mode
 
 ## Playwright acceptance tests
 .PHONY: install-playwright
@@ -161,11 +162,10 @@ acceptance-playwright-test: ## Start Playwright acceptance tests in interactive 
 
 .PHONY: ci-acceptance-playwright-test
 ci-acceptance-playwright-test: ## Run Playwright acceptance tests in headless mode for CI
-	pnpm test:acceptance --reporter=list,html
+	pnpm test:acceptance --reporter=$(PLAYWRIGHT_REPORTER) $(PLAYWRIGHT_ARGS)
 
 .PHONY: ci-acceptance-test
-ci-acceptance-test: ## Run cypress tests in headless mode for CI
-	pnpm --filter @plone/volto exec cypress run --config-file $(CURRENT_DIR)/cypress.config.js --config specPattern='$(SPEC)'
+ci-acceptance-test: ci-acceptance-playwright-test ## Run Playwright acceptance tests in headless mode
 
 # a11y tests
 .PHONY: acceptance-a11y-test
