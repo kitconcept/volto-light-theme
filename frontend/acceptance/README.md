@@ -61,6 +61,27 @@ pnpm test:acceptance acceptance/tests/a11y.test.ts
 
 Use `make acceptance-a11y-test` to open just the accessibility suite in UI mode.
 
+## Run a CI shard
+
+CI splits the acceptance project across four jobs with Playwright's file-based sharding.
+Each job starts its own Plone and Volto containers and runs one worker, so backend resets cannot affect another shard.
+Files stay together, including the accessibility checks that share one example-content import per worker.
+All shards finish even if another shard fails.
+
+Run one shard against your local acceptance servers:
+
+```sh
+make -C frontend ci-acceptance-test PLAYWRIGHT_ARGS="--shard=1/4"
+```
+
+Use the same `PLAYWRIGHT_ARGS` value with the root `ci-acceptance-test` target to start and stop containers around a shard.
+Omit it to run the full suite.
+You need separate server pairs to run multiple shards concurrently on one machine.
+
+CI uploads a blob report and failure traces for each shard, then merges the blob reports into the `playwright-acceptance-report` HTML artifact.
+The merge job runs after failed tests as well, so you can review results from all completed shards in one report.
+The `PLAYWRIGHT_REPORTER` Make variable defaults to `list,html`; CI sets it to `list,blob` for merging.
+
 ## Run visual regression tests
 
 Start the demo backend and frontend, then run `make acceptance-visual-test` from the repository root.

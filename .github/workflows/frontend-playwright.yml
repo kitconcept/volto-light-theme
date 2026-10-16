@@ -19,7 +19,11 @@ defaults:
 
 jobs:
   playwright-acceptance:
-    name: Playwright Acceptance
+    name: Playwright Acceptance (${{ matrix.shard }}/4)
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3, 4]
     runs-on: ubuntu-latest
 
     steps:
@@ -80,13 +84,73 @@ jobs:
           log-output-if: failure
 
       - name: Run Playwright acceptance tests
-        run: make ci-acceptance-test
+        run: >-
+          make ci-acceptance-test
+          PLAYWRIGHT_ARGS="--shard=${{ matrix.shard }}/4"
+          PLAYWRIGHT_REPORTER=list,blob
+
+      - name: Upload blob report
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: playwright-acceptance-blob-${{ matrix.shard }}
+          path: frontend/blob-report
+          retention-days: 14
 
       - name: Upload Playwright artifacts
         if: ${{ !cancelled() }}
         uses: actions/upload-artifact@v7
         with:
+          name: playwright-acceptance-results-${{ matrix.shard }}
+          path: frontend/acceptance/results/acceptance
+          retention-days: 14
+
+  merge-reports:
+    name: Merge Playwright acceptance reports
+    needs: playwright-acceptance
+    if: ${{ !cancelled() && needs.playwright-acceptance.result != 'skipped' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Use Node.js ${{ inputs.node-version }}
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ inputs.node-version }}
+
+      - name: Enable corepack
+        run: npm i -g corepack@latest && corepack enable
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - uses: actions/cache@v5
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: make install
+
+      - name: Download blob reports
+        uses: actions/download-artifact@v8
+        with:
+          pattern: playwright-acceptance-blob-*
+          path: frontend/all-blob-reports
+          merge-multiple: true
+
+      - name: Merge HTML report
+        run: pnpm exec playwright merge-reports --config=playwright.config.ts --reporter=html all-blob-reports
+
+      - name: Upload combined HTML report
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v7
+        with:
           name: playwright-acceptance-report
-          path: |
-            frontend/playwright-report
-            frontend/acceptance/results/acceptance
+          path: frontend/playwright-report
+          retention-days: 14

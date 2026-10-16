@@ -30,7 +30,9 @@ export default defineConfig({
       testDir: 'acceptance/tests',
       testMatch: ['**/*.{spec,test}.{ts,tsx}'],
       outputDir: 'acceptance/results/acceptance',
-      // The tests share a backend that is reset between tests.
+      // Each CI shard has its own backend; tests within a shard share it.
+      // Keep files together so a11y can reuse its worker-scoped demo content.
+      fullyParallel: false,
       workers: 1,
       retries: isCI ? 3 : 0,
       use: { viewport: { width: 1440, height: 1000 } },

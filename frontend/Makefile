@@ -20,6 +20,8 @@ RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
 
 NODEBIN = ./node_modules/.bin
+PLAYWRIGHT_ARGS ?=
+PLAYWRIGHT_REPORTER ?= list,html
 
 PLONE_VERSION=6
 IMAGE_NAME=ghcr.io/kitconcept/voltolighttheme
@@ -160,7 +162,7 @@ acceptance-playwright-test: ## Start Playwright acceptance tests in interactive 
 
 .PHONY: ci-acceptance-playwright-test
 ci-acceptance-playwright-test: ## Run Playwright acceptance tests in headless mode for CI
-	pnpm test:acceptance --reporter=list,html
+	pnpm test:acceptance --reporter=$(PLAYWRIGHT_REPORTER) $(PLAYWRIGHT_ARGS)
 
 .PHONY: ci-acceptance-test
 ci-acceptance-test: ci-acceptance-playwright-test ## Run Playwright acceptance tests in headless mode
