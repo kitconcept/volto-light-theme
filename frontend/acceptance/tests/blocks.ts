@@ -12,10 +12,14 @@ export async function addBlockFromChooser(page: Page, title: string) {
     .click();
 }
 
-export async function addBlockFromSlashMenu(page: Page, blockType: string) {
+export async function addBlockFromSlashMenu(
+  page: Page,
+  blockType: string,
+  searchTerm = blockType,
+) {
   const editor = page.locator('.block .slate-editor [contenteditable=true]');
   await editor.click();
-  await editor.pressSequentially(`/${blockType}`);
+  await editor.pressSequentially(`/${searchTerm}`);
   await expect(
     page.locator(`.power-user-menu .item.active.${blockType}`),
   ).toBeVisible();
