@@ -1,3 +1,4 @@
+import { fixturePath } from '../../fixtures';
 import { expect, test } from '../../test';
 import { login } from '../../login';
 
@@ -10,7 +11,7 @@ test('As editor I am able to see the preview of uploading image', async ({
   await page.locator('#toolbar-add-news-item').click();
   await page
     .locator('input#field-image')
-    .setInputFiles('acceptance/fixtures/image.png');
+    .setInputFiles(fixturePath('image.png'));
   const preview = page.locator('#field-image-image');
   await expect(preview).toHaveAttribute('src', /.+/);
   await expect(preview).toBeVisible();

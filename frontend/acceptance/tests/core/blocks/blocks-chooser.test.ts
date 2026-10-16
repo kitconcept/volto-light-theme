@@ -1,3 +1,4 @@
+import { fixturePath } from '../../fixtures';
 import { expect, test } from '../../test';
 import { addBlockFromChooser, save } from '../../blocks';
 import { expectLoadedImage } from '../../main/teaser';
@@ -13,7 +14,7 @@ test.describe('Blocks Tests', () => {
       'https://github.com/plone/volto/raw/main/logos/volto-colorful.png';
     await page.route(imageURL, (route) =>
       route.fulfill({
-        path: 'acceptance/fixtures/image.png',
+        path: fixturePath('image.png'),
         contentType: 'image/png',
       }),
     );

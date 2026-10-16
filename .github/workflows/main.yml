@@ -130,41 +130,6 @@ jobs:
       contents: read
       packages: write
 
-  acceptance:
-    name: "Acceptance: ${{ matrix.name }}"
-    if: ${{ needs.config.outputs.acceptance == 'true' && (always() && !contains(needs.*.result, 'failure'))}}
-    uses: ./.github/workflows/frontend-acceptance.yml
-    needs:
-      - config
-      - backend-build
-      - frontend-build
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - name: "Main"
-            short-name: main
-          - name: "Core - Basic"
-            short-name: core/basic
-          - name: "Core - Blocks"
-            short-name: core/blocks
-          - name: "Core - Blocks - Listing"
-            short-name: core/blocks-listing
-          - name: "Core - Content"
-            short-name: core/content
-          - name: "Add-ons"
-            short-name: addons
-          - name: "a11y"
-            short-name: a11y
-            a11y: true
-    with:
-      name: ${{ matrix.name }}
-      short-name: ${{ matrix.short-name }}
-      node-version: ${{ needs.config.outputs.node-version }}
-      image-name-prefix: ${{ needs.config.outputs.image-name-prefix }}
-      image-tag: ${{ needs.config.outputs.base-tag }}
-      a11y: ${{ matrix.a11y || false }}
-
   playwright-acceptance:
     name: "Playwright Acceptance"
     if: ${{ needs.config.outputs.acceptance == 'true' && (always() && !contains(needs.*.result, 'failure'))}}
@@ -217,7 +182,6 @@ jobs:
     if: ${{ needs.config.outputs.acceptance == 'true' && (always() && !contains(needs.*.result, 'failure'))}}
     needs:
       - config
-      - acceptance
       - playwright-acceptance
       - backend-build
       - visual-regression
@@ -236,7 +200,6 @@ jobs:
     needs:
       - config
       - frontend-build
-      - acceptance
       - playwright-acceptance
       - visual-regression
     with:
@@ -297,7 +260,6 @@ jobs:
       - frontend-i18n
       - frontend-shadow-headers
       - frontend-build
-      - acceptance
       - playwright-acceptance
       - visual-regression
       - backend-release
@@ -320,7 +282,6 @@ jobs:
           echo '| frontend-i18n | ${{ needs.frontend-i18n.result }} |' >> $GITHUB_STEP_SUMMARY
           echo '| frontend-shadow-headers | ${{ needs.frontend-shadow-headers.result }} |' >> $GITHUB_STEP_SUMMARY
           echo '| frontend-build | ${{ needs.frontend-build.result }} |' >> $GITHUB_STEP_SUMMARY
-          echo '| acceptance | ${{ needs.acceptance.result }} |' >> $GITHUB_STEP_SUMMARY
           echo '| playwright-acceptance | ${{ needs.playwright-acceptance.result }} |' >> $GITHUB_STEP_SUMMARY
           echo '| visual-regression | ${{ needs.visual-regression.result }} |' >> $GITHUB_STEP_SUMMARY
           echo '| backend-release | ${{ needs.backend-release.result }} |' >> $GITHUB_STEP_SUMMARY

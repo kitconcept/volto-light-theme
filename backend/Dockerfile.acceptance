@@ -13,7 +13,9 @@ COPY . src
 RUN <<EOT
     set -e
     bin/pip install mxdev uv
-    sed -i 's/-e .\[test\]/./g' src/mx.ini
+    # The Playwright a11y suite installs the demo profile on the acceptance server.
+    # Keep the test extras and add the demo importer needed for that profile.
+    sed -i 's/-e .\[test\]/.[test,demo]/g' src/mx.ini
     cd /app/src
     # remove potentially existing virtualenv from local build
     rm -rf .venv

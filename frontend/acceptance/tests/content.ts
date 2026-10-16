@@ -1,3 +1,4 @@
+import { fixturePath } from './fixtures';
 import { readFile } from 'node:fs/promises';
 import type { APIRequestContext, Page } from '@playwright/test';
 
@@ -51,7 +52,7 @@ function normalizePath(value?: string) {
 }
 
 /**
- * Creates content through the REST API (same behavior as cy.createContent).
+ * Creates content through the REST API.
  * Content types that support blocks get a default title + slate scaffold,
  * which can be overridden through `bodyModifier`.
  */
@@ -97,9 +98,7 @@ export async function createContent(
       },
     });
   } else if (contentType === 'Image') {
-    const image = await readFile(
-      `${process.cwd()}/acceptance/fixtures/image.png`,
-    );
+    const image = await readFile(fixturePath('image.png'));
     body = bodyModifier({
       ...defaultBody,
       image: {

@@ -51,7 +51,7 @@ jobs:
         with:
           repository: kitconcept/vlt-visual-regression
           ref: main
-          path: frontend/playwright/__screenshots__
+          path: frontend/acceptance/__screenshots__
           fetch-depth: 0
           token: ${{ secrets.VRT_GITHUB_TOKEN }}
 
@@ -107,12 +107,12 @@ jobs:
         run: pnpm exec playwright install --with-deps chromium
 
       - name: Update Visual Regression Screenshots - Storybook
-        run: pnpm exec playwright test playwright/tests/visual/storybook/${{ inputs.short-name }}.test.{js,jsx,ts,tsx} --update-snapshots
+        run: pnpm test:storybook acceptance/visual/storybook/${{ inputs.short-name }}.test.{js,jsx,ts,tsx} --update-snapshots
 
       # check what changed
       - name: Check for changes
         id: check_changes
-        working-directory: frontend/playwright/__screenshots__
+        working-directory: frontend/acceptance/__screenshots__
         run: |
           CHANGED_FILES=$(git status --porcelain | awk '{print $2}')
           if [ "${CHANGED_FILES:+x}" ]; then
@@ -132,14 +132,14 @@ jobs:
       # commit if there are changes
       - name: Commit changes
         if: steps.check_changes.outputs.changes == 'true'
-        working-directory: frontend/playwright/__screenshots__
+        working-directory: frontend/acceptance/__screenshots__
         run: |
           git add -A
           git commit -m "${{ env.COMMIT_MESSAGE }}"
 
       - name: Push changes
         if: steps.check_changes.outputs.changes == 'true'
-        working-directory: frontend/playwright/__screenshots__
+        working-directory: frontend/acceptance/__screenshots__
         run: git push origin
 
       - name: Upload Playwright artifacts
@@ -147,7 +147,7 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: visual-regression-results
-          path: frontend/playwright/results
+          path: frontend/acceptance/results/visual
 
       # pretty summary for humans
       - name: Summary

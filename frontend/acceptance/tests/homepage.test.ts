@@ -12,7 +12,7 @@ test.describe('Homepage', () => {
 
     await expectNoAccessibilityViolations(page, {
       // The example homepage intentionally omits an h1, matching the
-      // longstanding Cypress a11y baseline for this repo.
+      // existing a11y baseline for this repo.
       disabledRules: ['page-has-heading-one'],
     });
   });

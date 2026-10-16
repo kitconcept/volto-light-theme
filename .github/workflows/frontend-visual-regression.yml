@@ -26,9 +26,6 @@ defaults:
   run:
     working-directory: ./frontend
 
-env:
-  CYPRESS_A11Y: true
-
 jobs:
 
   visual-regression-tests:
@@ -43,7 +40,7 @@ jobs:
         with:
           repository: kitconcept/vlt-visual-regression
           ref: main
-          path: frontend/playwright/__screenshots__
+          path: frontend/acceptance/__screenshots__
           fetch-depth: 0
 
       - name: Load images
@@ -104,7 +101,7 @@ jobs:
 
       - name: Run visual regression tests Storybook
         if: ${{ inputs.storybook == true || inputs.storybook == 'true' }}
-        run: pnpm exec playwright test playwright/tests/visual/storybook/${{ inputs.short-name }}.test.{js,jsx,ts,tsx}
+        run: pnpm test:storybook acceptance/visual/storybook/${{ inputs.short-name }}.test.{js,jsx,ts,tsx}
 
       # Volto TESTS
       - uses: JarvusInnovations/background-action@v2
@@ -131,11 +128,11 @@ jobs:
 
       - name: Run visual regression tests - Volto
         if: ${{ inputs.storybook == false || inputs.storybook == 'false' || inputs.storybook == null }}
-        run: pnpm exec playwright test playwright/tests/visual/main/${{ inputs.short-name }}.test.{js,jsx,ts,tsx}
+        run: pnpm test:visual acceptance/visual/main/${{ inputs.short-name }}.test.{js,jsx,ts,tsx}
 
       - name: Upload Playwright artifacts
         if: failure()
         uses: actions/upload-artifact@v7
         with:
           name: ${{ (inputs.storybook == true || inputs.storybook == 'true') && 'visual-regression-results-storybook' || 'visual-regression-results' }}
-          path: frontend/playwright/results
+          path: frontend/acceptance/results/visual

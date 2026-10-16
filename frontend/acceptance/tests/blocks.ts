@@ -29,6 +29,7 @@ export async function addBlockFromSlashMenu(
 export async function save(page: Page) {
   const contentURL = new URL(page.url());
   contentURL.pathname = contentURL.pathname.replace(/\/edit$/, '');
+  contentURL.search = '';
   const saved = page.waitForResponse(
     (response) =>
       response.request().method() === 'PATCH' &&
