@@ -20,6 +20,8 @@ RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
 
 NODEBIN = ./node_modules/.bin
+PLAYWRIGHT_ARGS ?=
+PLAYWRIGHT_REPORTER ?= list,html
 
 PLONE_VERSION=6
 IMAGE_NAME=ghcr.io/kitconcept/voltolighttheme
@@ -132,7 +134,7 @@ design-catalog: ## Generate the VLT design-reference block catalog (HTML + scree
 ## Acceptance
 .PHONY: acceptance-frontend-dev-start
 acceptance-frontend-dev-start: ## Start acceptance frontend in development mode
-	RAZZLE_INTERNAL_API_PATH=http://127.0.0.1:55001/plone NODE_OPTIONS=--dns-result-order=ipv4first pnpm start
+	HOST=127.0.0.1 RAZZLE_INTERNAL_API_PATH=http://127.0.0.1:55001/plone NODE_OPTIONS=--dns-result-order=ipv4first pnpm start
 
 .PHONY: acceptance-frontend-prod-start
 acceptance-frontend-prod-start: ## Start acceptance frontend in production mode
@@ -147,8 +149,7 @@ ci-acceptance-backend-start: ## Start backend acceptance server in headless mode
 	docker run -i --rm -p 55001:55001 $(DOCKER_IMAGE_ACCEPTANCE)
 
 .PHONY: acceptance-test
-acceptance-test: ## Start Cypress in interactive mode
-	pnpm --filter @plone/volto exec cypress open --config-file $(CURRENT_DIR)/cypress.config.js --config specPattern=$(CURRENT_DIR)'/cypress/tests/**/*.{js,jsx,ts,tsx}'
+acceptance-test: acceptance-playwright-test ## Start Playwright acceptance tests in interactive mode
 
 ## Playwright acceptance tests
 .PHONY: install-playwright
@@ -157,53 +158,40 @@ install-playwright: ## Install the Playwright browsers used by the acceptance te
 
 .PHONY: acceptance-playwright-test
 acceptance-playwright-test: ## Start Playwright acceptance tests in interactive (UI) mode
-	pnpm exec playwright test -c $(CURRENT_DIR)/playwright-acceptance.config.ts --ui
+	pnpm test:acceptance:ui
 
 .PHONY: ci-acceptance-playwright-test
 ci-acceptance-playwright-test: ## Run Playwright acceptance tests in headless mode for CI
-	pnpm exec playwright test -c $(CURRENT_DIR)/playwright-acceptance.config.ts --reporter=list,html
+	pnpm test:acceptance --reporter=$(PLAYWRIGHT_REPORTER) $(PLAYWRIGHT_ARGS)
 
 .PHONY: ci-acceptance-test
-ci-acceptance-test: ## Run cypress tests in headless mode for CI
-	pnpm --filter @plone/volto exec cypress run --config-file $(CURRENT_DIR)/cypress.config.js --config specPattern='$(SPEC)'
+ci-acceptance-test: ci-acceptance-playwright-test ## Run Playwright acceptance tests in headless mode
 
 # a11y tests
-.PHONY: acceptance-a11y-frontend-prod-start
-acceptance-a11y-frontend-prod-start: ## Start a11y acceptance frontend in prod mode
-	pnpm build && pnpm start:prod
-
-.PHONY: ci-acceptance-a11y-backend-start
-ci-acceptance-a11y-backend-start: ## Start acceptance a11y server in CI mode (no terminal attached)
-	docker run -i --rm --name=backend -p 8080:8080 -e SITE=Plone -e ADDONS='$(KGS)' $(IMAGE_NAME)-backend
-
 .PHONY: acceptance-a11y-test
-acceptance-a11y-test: ## Start a11y Cypress in interactive mode
-	CYPRESS_a11y=1 CYPRESS_API_PATH=http://localhost:8080/Plone pnpm exec cypress open specPattern=$(CURRENT_DIR)'/cypress/tests/a11y/**/*.{js,jsx,ts,tsx}'
-
-.PHONY: ci-acceptance-a11y-test
-ci-acceptance-a11y-test: ## Run a11y cypress tests in headless mode for CI
-	CYPRESS_a11y=1 CYPRESS_API_PATH=http://localhost:8080/Plone pnpm exec cypress run --config specPattern='$(SPEC)'
+acceptance-a11y-test: ## Run Playwright a11y tests against the acceptance servers
+	pnpm test:acceptance:ui acceptance/tests/a11y.test.ts
 
 ### Visual acceptance tests ###
 # Keep local snapshots aligned with the shared visual regression repository.
 .PHONY: sync-visual-regression-snapshots
 sync-visual-regression-snapshots:
-	@if [ -d playwright/__screenshots__/.git ]; then \
-		if git -C playwright/__screenshots__ status --porcelain | grep -q .; then \
+	@if [ -d acceptance/__screenshots__/.git ]; then \
+		if git -C acceptance/__screenshots__ status --porcelain | grep -q .; then \
 			echo "Skipping snapshot sync: local changes detected"; \
 		else \
-			git -C playwright/__screenshots__ fetch origin main; \
-			git -C playwright/__screenshots__ reset --hard origin/main; \
+			git -C acceptance/__screenshots__ fetch origin main; \
+			git -C acceptance/__screenshots__ reset --hard origin/main; \
 		fi; \
 	else \
-		rm -rf playwright/__screenshots__; \
-		git clone --branch main git@github.com:kitconcept/vlt-visual-regression.git playwright/__screenshots__; \
+		rm -rf acceptance/__screenshots__; \
+		git clone --branch main git@github.com:kitconcept/vlt-visual-regression.git acceptance/__screenshots__; \
 	fi
 
 .PHONY: acceptance-visual-test
-acceptance-visual-test: sync-visual-regression-snapshots ## Start visual Cypress Acceptance Tests
-	pnpm exec playwright test playwright/tests/visual/main --ui
+acceptance-visual-test: sync-visual-regression-snapshots ## Start Playwright visual regression tests
+	pnpm test:visual:ui
 
 .PHONY: acceptance-visual-test-storybook
-acceptance-visual-test-storybook: sync-visual-regression-snapshots ## Start visual Cypress Acceptance Tests for Storybook
-	pnpm exec playwright test playwright/tests/visual/storybook --ui
+acceptance-visual-test-storybook: sync-visual-regression-snapshots ## Start Playwright visual regression tests for Storybook
+	pnpm test:storybook:ui

@@ -1,0 +1,2 @@
+The a11y checks now run with Playwright against the acceptance backend and load
+the VLT demo content once per worker instead of using a separate demo server.

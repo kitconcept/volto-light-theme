@@ -46,14 +46,15 @@
     "release-alpha": "pnpm --filter @kitconcept/volto-light-theme run release-alpha",
     "storybook": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto storybook dev -p 6006 -c $(pwd)/.storybook",
     "storybook-build": "VOLTOCONFIG=$(pwd)/volto.config.js pnpm --filter @plone/volto build-storybook -c $(pwd)/.storybook",
-    "test:visual": "playwright test playwright/tests/visual/main/*.test.{ts,tsx}",
-    "test:visual:ui": "playwright test --ui",
-    "test:acceptance": "playwright test -c playwright-acceptance.config.ts",
-    "test:acceptance:ui": "playwright test -c playwright-acceptance.config.ts --ui",
+    "test:visual": "playwright test --project=visual",
+    "test:visual:ui": "playwright test --project=visual --ui",
+    "test:storybook": "playwright test --project=storybook",
+    "test:storybook:ui": "playwright test --project=storybook --ui",
+    "test:acceptance": "playwright test --project=acceptance",
+    "test:acceptance:ui": "playwright test --project=acceptance --ui",
     "update:browserlist": "pnpm --filter @plone/volto add caniuse-lite && pnpm --filter @plone/volto remove caniuse-lite"
   },
   "devDependencies": {
-    "@cypress/skip-test": "2.6.1",
     "mrs-developer": "^2.2.0"
   },
   "dependencies": {
@@ -79,9 +80,11 @@
     "overrides": {
       "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
       "react-refresh": "^0.14.2",
-      "cypress": "^15.0.3",
-      "@testing-library/cypress": "^10.1.0",
-      "@types/node": "^24"
+      "cypress": "-",
+      "@testing-library/cypress": "-",
+      "@types/node": "^24",
+      "cypress-axe": "-",
+      "cypress-file-upload": "-"
     },
     "ignoredBuiltDependencies": [
       "@parcel/watcher"
@@ -89,7 +92,6 @@
     "onlyBuiltDependencies": [
       "core-js",
       "core-js-pure",
-      "cypress",
       "es5-ext",
       "esbuild",
       "full-icu",

@@ -1,46 +1,53 @@
-# How to Run Acceptance Tests
+# Run acceptance tests
 
-Follow these steps to run the acceptance tests:
+Run acceptance and accessibility tests against the same Plone acceptance backend and Volto frontend.
 
-1. Start the backend for acceptance testing
+1. Install Chromium.
+
+   ```shell
+   make -C frontend install-playwright
+   ```
+
+2. Start the acceptance backend in one terminal.
 
    ```shell
    make acceptance-backend-dev-start
    ```
 
-2. Start the frontend for acceptance testing
+3. Start the frontend in another terminal.
 
    ```shell
    make acceptance-frontend-dev-start
    ```
 
-3. Open Cypress in the browser.
-   Run the following command to open Cypress and execute the acceptance tests:
+4. Open the Playwright interactive runner.
 
    ```shell
    make acceptance-test
    ```
 
----
+To run headlessly against those servers, use `make -C frontend ci-acceptance-test`.
+To start acceptance containers, run the suite, and stop the containers, use `make ci-acceptance-test` from the repository root.
 
-## How to Run Accessibility (a11y) Tests
+## Run accessibility tests
 
-Follow these steps to run accessibility tests using Cypress:
+Start the same acceptance servers, then open the accessibility suite:
 
-1. Start the backend
+```shell
+make acceptance-a11y-test
+```
 
-   ```shell
-   make backend-start
-   ```
+To run it headlessly, run these commands from the repository root:
 
-2. Start the frontend
+```shell
+cd frontend
+pnpm test:acceptance acceptance/tests/a11y.test.ts
+```
 
-   ```shell
-   make acceptance-a11y-frontend-prod-start
-   ```
+The accessibility fixture imports the example content once per worker and reuses it across the read-only checks.
+You do not need a separate backend image or persistent demo site.
 
-3. Run Cypress for accessibility testing
+## Run visual regression tests
 
-   ```shell
-   make acceptance-a11y-test
-   ```
+Use the separate `visual` and `storybook` Playwright projects for screenshot comparisons.
+See {doc}`visual-regression-tests` for their server setup and baseline workflows.

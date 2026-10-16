@@ -206,9 +206,7 @@ acceptance-frontend-dev-start:
 	$(MAKE) -C "./frontend/" acceptance-frontend-dev-start
 
 .PHONY: acceptance-test
-acceptance-test:
-	@echo "Start acceptance tests in interactive mode"
-	$(MAKE) -C "./frontend/" acceptance-test
+acceptance-test: acceptance-playwright-test
 
 # Build Docker images
 .PHONY: acceptance-frontend-image-build
@@ -248,12 +246,7 @@ acceptance-containers-stop: ## Stop Acceptance containers
 	@docker stop vlt-backend-acceptance
 
 .PHONY: ci-acceptance-test
-ci-acceptance-test:
-	@echo "Run acceptance tests in CI mode"
-	$(MAKE) acceptance-containers-start
-	pnpm dlx wait-on --httpTimeout 20000 http-get://localhost:55001/plone http://localhost:3000
-	$(MAKE) -C "./frontend/" ci-acceptance-test
-	$(MAKE) acceptance-containers-stop
+ci-acceptance-test: ci-acceptance-playwright-test
 
 ###########################################
 # Playwright Acceptance Tests
@@ -276,9 +269,6 @@ ci-acceptance-playwright-test: ## Run Playwright acceptance tests against the ac
 # A11y Tests
 ###########################################
 
-acceptance-a11y-frontend-prod-start:
-	$(MAKE) -C frontend acceptance-a11y-frontend-prod-start
-
 acceptance-a11y-test:
 	$(MAKE) -C frontend acceptance-a11y-test
 
@@ -290,7 +280,7 @@ sync-visual-regression-snapshots:
 	$(MAKE) -C frontend sync-visual-regression-snapshots
 
 acceptance-visual-frontend-prod-start:
-	$(MAKE) -C frontend acceptance-a11y-frontend-prod-start
+	$(MAKE) -C frontend acceptance-frontend-prod-start
 
 acceptance-visual-test:
 	$(MAKE) -C frontend acceptance-visual-test

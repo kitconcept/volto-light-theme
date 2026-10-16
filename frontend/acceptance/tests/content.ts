@@ -1,3 +1,5 @@
+import { fixturePath } from './fixtures';
+import { readFile } from 'node:fs/promises';
 import type { APIRequestContext, Page } from '@playwright/test';
 
 export type RequestOptions = {
@@ -50,7 +52,7 @@ function normalizePath(value?: string) {
 }
 
 /**
- * Creates content through the REST API (same behavior as cy.createContent).
+ * Creates content through the REST API.
  * Content types that support blocks get a default title + slate scaffold,
  * which can be overridden through `bodyModifier`.
  */
@@ -85,7 +87,28 @@ export async function createContent(
 
   let body: Record<string, unknown>;
 
-  if (['Document', 'News Item', 'Folder'].includes(contentType)) {
+  if (contentType === 'File') {
+    body = bodyModifier({
+      ...defaultBody,
+      file: {
+        data: 'dGVzdGZpbGUK',
+        encoding: 'base64',
+        filename: 'lorem.txt',
+        'content-type': 'text/plain',
+      },
+    });
+  } else if (contentType === 'Image') {
+    const image = await readFile(fixturePath('image.png'));
+    body = bodyModifier({
+      ...defaultBody,
+      image: {
+        data: image.toString('base64'),
+        encoding: 'base64',
+        filename: 'image.png',
+        'content-type': 'image/png',
+      },
+    });
+  } else if (['Document', 'News Item', 'Folder'].includes(contentType)) {
     body = bodyModifier({
       ...defaultBody,
       blocks: {

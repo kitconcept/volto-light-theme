@@ -72,41 +72,29 @@ make -C frontend lint
 
 ## Acceptance Tests
 
-There are two acceptance-test paths in this repo:
+Playwright runs all browser acceptance, accessibility, and visual regression tests.
+All suites use `frontend/playwright.config.ts` with separate `acceptance`, `visual`, and `storybook` projects.
+Acceptance and a11y tests live in `frontend/acceptance/tests/`; visual tests live in `frontend/acceptance/visual/main/` and `frontend/acceptance/visual/storybook/`.
+The acceptance project uses one worker because tests share a backend that resets between tests.
 
-- Cypress: the established, comprehensive acceptance and a11y suite (run by the `acceptance` matrix in CI)
-- Playwright: a newer path, added for future acceptance coverage
-
-Prefer Playwright for new acceptance coverage. Cypress remains the primary suite today and is still fully supported; keep existing Cypress specs working and extend them when a scenario is not yet covered by the Playwright setup.
-
-Primary Playwright commands:
+Primary commands:
 
 ```sh
-make ci-acceptance-playwright-test          # CI mode: start acceptance containers, run headless, stop
-make -C frontend acceptance-playwright-test # interactive (UI) mode against already-running servers
+make acceptance-test                       # UI against already-running acceptance servers
+make -C frontend ci-acceptance-test          # Headless against already-running acceptance servers
+make ci-acceptance-test                      # Start containers, run headless, stop containers
+make acceptance-a11y-test                    # Accessibility checks in UI mode
+make acceptance-visual-test                  # Site visual regression tests in UI mode
+make acceptance-visual-test-storybook        # Storybook visual regression tests in UI mode
 ```
 
-You can also run the Playwright CLI directly from `frontend/`:
+Install Chromium with `make -C frontend install-playwright`.
+The `acceptance-playwright-test` and `ci-acceptance-playwright-test` targets remain available as aliases for the same suite.
+You can also run `pnpm test:acceptance`, `pnpm test:visual`, or `pnpm test:storybook` from `frontend/`.
 
-```sh
-pnpm test:acceptance      # headless
-pnpm test:acceptance:ui   # interactive UI
-```
-
-Playwright tests live under `frontend/acceptance/tests`.
-They run through `frontend/playwright-acceptance.config.ts` (kept separate from the visual-regression `frontend/playwright.config.ts`) and are configured serially (`workers: 1`) because tests can conflict while creating and deleting content.
-Accessibility assertions are built into the Playwright tests via the `expectNoAccessibilityViolations` helper (`frontend/acceptance/tests/accessibility.ts`); there is no separate Playwright a11y command.
-
-Cypress commands:
-
-```sh
-make -C frontend acceptance-test
-make -C frontend ci-acceptance-test
-make -C frontend acceptance-a11y-test
-make -C frontend ci-acceptance-a11y-test
-```
-
-Cypress specs live under `frontend/cypress/tests`.
+Import acceptance fixtures from `frontend/acceptance/tests/test.ts` to reset the backend around each test.
+The read-only a11y suite uses `a11y-test.ts` to import example content once per worker and reuse it across its checks.
+Use the `expectNoAccessibilityViolations` helper for accessibility assertions and `fixturePath` for local fixture files.
 
 ## Editing Rules
 
