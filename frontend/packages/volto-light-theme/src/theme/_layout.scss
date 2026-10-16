@@ -138,6 +138,9 @@ footer {
 #page-history > * {
   @include layout-container-width();
 }
+#page-sharing > * {
+  @include layout-container-width();
+}
 
 #page-contents > * {
   @include layout-container-width();
