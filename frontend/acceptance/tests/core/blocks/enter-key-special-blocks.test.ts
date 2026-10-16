@@ -13,7 +13,14 @@ for (const [name, type, label, section, count] of [
     page,
   }) => {
     await chooseBlock(page, type, label, section);
-    await page.keyboard.press('Enter');
+    if (type === 'slate') {
+      const editor = page.locator('.block-editor-slate [contenteditable=true]').first();
+      await editor.click();
+      await expect(editor).toBeFocused();
+      await editor.press('Enter');
+    } else {
+      await page.keyboard.press('Enter');
+    }
     await expect(page.locator('.block-editor-slate')).toHaveCount(count);
   });
 }
