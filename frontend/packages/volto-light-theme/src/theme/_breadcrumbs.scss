@@ -4,6 +4,24 @@ body.view-contentsview {
   #main .breadcrumbs {
     display: none;
   }
+
+  #page-history,
+  #page-sharing,
+  #aliases,
+  #linkstoitem,
+  #page-controlpanel,
+  #page-addons,
+  #database-page,
+  #page-aliases,
+  #page-undo,
+  #page-block_types, //this one looks completly different then the other controlpanels
+  #page-rules,
+  .users-control-panel, //user-control-panel has some extra margin somewhere
+  .relations-control-panel,
+  .types-control-panel,
+  .controlpanel {
+    padding-top: 0rem;
+  }
 }
 
 #main .breadcrumbs {
