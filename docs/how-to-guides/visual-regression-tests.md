@@ -24,9 +24,7 @@ When a visual regression test fails, the CI job generates artifacts that you can
 ## Review and update visual test results
 
 ```{note}
-In the previous incarnation of the visual regression tests, we used Cypress and we saved the screenshots in development time.
-However, this approach had some drawbacks, since CI might have different rendering results than local machines because of different operating systems, browser versions, fonts, and other factors.
-Therefore, we switched to a CI-only based approach using Playwright, where the screenshots are generated and compared only in the CI environment.
+CI generates and compares the authoritative baselines with consistent operating system, browser, and font versions.
 You can still develop, run, and review visual regression tests locally using Playwright's UI mode or headless mode.
 ```
 
@@ -111,7 +109,7 @@ This section describes how to set up and run visual regression tests locally.
 ### Prerequisites
 
 The screenshots directory contains the baseline screenshots used for comparison during the visual regression tests and it is stored in a separate git repository.
-It is checked out into {file}`frontend/playwright/__screenshots__`.
+It is checked out into {file}`frontend/acceptance/__screenshots__`.
 You can also set up the visual regression tests manually with the following command.
 
 ```shell
@@ -147,10 +145,10 @@ Follow these steps to run visual regression tests:
    make acceptance-visual-test
    ```
 
-Alternatively, you can run Playwright visual tests, narrowing down to an individual test file, for example, {file}`playwright/tests/visual/main/blocks.test.ts`:
+Alternatively, you can run Playwright visual tests, narrowing down to an individual test file, for example, {file}`acceptance/visual/main/blocks.test.ts`:
 
 ```shell
-pnpm exec playwright test playwright/tests/visual/main --ui
+pnpm test:visual:ui acceptance/visual/main/blocks.test.ts
 ```
 
 ## Storybook visual regression tests
@@ -175,7 +173,7 @@ You can also run visual regression tests for Storybook:
 ## Create new visual regression tests
 
 To create new visual regression tests, you can follow the existing test files as examples as references.
-Visual regression tests are located in the {file}`frontend/playwright/tests/visual` directory.
+Visual regression tests are located in the {file}`frontend/acceptance/visual` directory.
 You can create new test files or add new test cases to existing files, depending on your needs.
 
 This is a basic example of a visual regression test:

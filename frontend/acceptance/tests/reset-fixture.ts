@@ -19,6 +19,19 @@ const SETUP_BODY =
 const TEARDOWN_BODY =
   '<?xml version="1.0"?><methodCall><methodName>run_keyword</methodName><params><param><value><string>remote_zodb_teardown</string></value></param><param><value><array><data><value><string>plone.app.robotframework.testing.PLONE_ROBOT_TESTING</string></value></data></array></value></param></params></methodCall>';
 
+function xmlRpcString(value: string) {
+  const escaped = value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+  return `<value><string>${escaped}</string></value>`;
+}
+
+function runKeywordBody(keyword: string, args: string[]) {
+  const values = args.map(xmlRpcString).join('');
+  return `<?xml version="1.0"?><methodCall><methodName>run_keyword</methodName><params><param>${xmlRpcString(keyword)}</param><param><value><array><data>${values}</data></array></value></param></params></methodCall>`;
+}
+
 async function callRobotRemote(
   request: APIRequestContext,
   apiURL: string,
@@ -37,6 +50,40 @@ async function callRobotRemote(
   }
 
   return response;
+}
+
+export async function runRobotKeyword(
+  requestOrPage: APIRequestContext | Page,
+  keyword: string,
+  args: string[] = [],
+  apiURL: string = getDefaultApiURL(),
+) {
+  const request = getRequestContext(requestOrPage);
+  const response = await callRobotRemote(
+    request,
+    apiURL,
+    runKeywordBody(keyword, args),
+  );
+  const body = await response.text();
+  const status = body.match(
+    /<name>status<\/name>\s*<value><string>(.*?)<\/string>/,
+  );
+  if (status?.[1] !== 'PASS') {
+    const error = body.match(
+      /<name>error<\/name>\s*<value><string>(.*?)<\/string>/,
+    );
+    throw new Error(
+      `RobotRemote keyword ${keyword} failed: ${error?.[1] ?? body}`,
+    );
+  }
+}
+
+export async function applyProfile(
+  requestOrPage: APIRequestContext | Page,
+  profile: string,
+  apiURL: string = getDefaultApiURL(),
+) {
+  return runRobotKeyword(requestOrPage, 'apply_profile', [profile], apiURL);
 }
 
 export async function setup(

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import loadable from '@loadable/component';
 import 'react-image-gallery/styles/css/image-gallery.css';
@@ -74,6 +74,7 @@ const renderFullscreenButton = (onClick, isFullscreen) => {
 };
 
 const ImageGalleryTemplate = ({ items }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
   const { settings } = config;
   const renderItems = items.filter(
     (content) =>
@@ -87,20 +88,14 @@ const ImageGalleryTemplate = ({ items }) => {
       thumbnail: `${flattenToAppURL(item['@id'])}/@@images/${
         item.image_field
       }/thumb`,
+      downloadUrl: `${flattenToAppURL(item['@id'])}/@@images/${
+        item.image_field
+      }/huge`,
+      title: item.title,
       description: (
         <>
           <div className="title">{item.title}</div>
           <div className="description">{item.description}</div>
-          <div className="download">
-            <a
-              href={`${flattenToAppURL(item['@id'])}/@@images/${
-                item.image_field
-              }/huge`}
-              download
-            >
-              download
-            </a>
-          </div>
           <div className="credits">{item.copyright_and_sources}</div>
         </>
       ),
@@ -109,14 +104,24 @@ const ImageGalleryTemplate = ({ items }) => {
 
   return (
     renderItems.length > 0 && (
-      <ImageGallery
-        items={imagesInfo}
-        renderLeftNav={renderLeftNav}
-        renderRightNav={renderRightNav}
-        renderPlayPauseButton={renderPlayPauseButton}
-        renderFullscreenButton={renderFullscreenButton}
-        lazyLoad={true}
-      />
+      <>
+        <ImageGallery
+          items={imagesInfo}
+          renderLeftNav={renderLeftNav}
+          renderRightNav={renderRightNav}
+          renderPlayPauseButton={renderPlayPauseButton}
+          renderFullscreenButton={renderFullscreenButton}
+          onSlide={setCurrentIndex}
+          lazyLoad={true}
+        />
+        {imagesInfo[currentIndex] && (
+          <p className="image-gallery-download">
+            <a href={imagesInfo[currentIndex].downloadUrl} download>
+              Download image
+            </a>
+          </p>
+        )}
+      </>
     )
   );
 };

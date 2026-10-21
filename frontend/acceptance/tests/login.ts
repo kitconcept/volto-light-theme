@@ -29,7 +29,7 @@ function getDefaults(options: LoginOptions) {
 
 /**
  * Logs in by POSTing to `${apiURL}/@login` and setting the `auth_token`
- * cookie in the current browser context (same behavior as cy.autologin).
+ * cookie in the current browser context.
  */
 export async function login(page: Page, options: LoginOptions = {}) {
   const { apiURL, username, password, frontendURL } = getDefaults(options);
