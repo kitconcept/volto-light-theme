@@ -139,6 +139,27 @@ footer {
   @include layout-container-width();
 }
 
+#aliases.ui.container,
+#linkstoitem.ui.container {
+  @include layout-container-width();
+  width: min(100%, var(--layout-container-width)) !important;
+}
+
+#page-sharing {
+  @include layout-container-width();
+
+  .ui.table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+
+    th,
+    td {
+      white-space: nowrap;
+    }
+  }
+}
+
 #page-contents > * {
   @include layout-container-width();
 }
