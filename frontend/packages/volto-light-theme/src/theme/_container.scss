@@ -18,21 +18,3 @@
     @include narrow-container-width;
   }
 }
-
-#page-history,
-#page-sharing,
-#aliases,
-#linkstoitem,
-#page-controlpanel,
-#page-addons,
-#database-page,
-#page-aliases,
-#page-undo,
-#page-block_types, //this one looks completly different then the other controlpanels
-#page-rules,
-.users-control-panel,
-.relations-control-panel,
-.types-control-panel,
-.controlpanel {
-  padding-top: 1rem;
-}
