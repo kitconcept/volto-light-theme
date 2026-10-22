@@ -1,6 +1,63 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 8.1.2 (2026-10-22)
+
+### Backend
+
+
+#### Internal:
+
+- The acceptance image keeps its test dependencies and adds the demo importer so Playwright can install the demo profile on demand. 
+
+
+
+### Frontend
+
+#### Bugfix
+
+- Fix sharing page width to match the site layout @iRohitSingh [#sharing_layout](https://github.com/kitconcept/volto-light-theme/pull/sharing_layout)
+- Separate configuration for eventCalendar block variations from listing block variations. @davisagli [#933](https://github.com/kitconcept/volto-light-theme/pull/933)
+- Fix accordion width in edit @iRohitSingh 
+
+#### Internal
+
+- Port workflow, sharing, history, metadata and form undo/redo acceptance scenarios from Cypress to Playwright. [#952](https://github.com/kitconcept/volto-light-theme/pull/952)
+- Migrate nine main text, navigation, site-action, listing-grid and grid scenarios to Playwright while retaining the Cypress originals. 
+- Migrate the 21 active core image and video Cypress scenarios to Playwright. 
+- Migrate the core block editor basics, chooser, autofocus, title and indexing acceptance scenarios from Cypress to Playwright. 
+- Port all 12 core/basic actions and folder-contents acceptance scenarios to
+  Playwright, retaining UI interactions, recursive workflow changes, persistent
+  columns, and paginated and filtered reordering while keeping Cypress enabled. 
+- Port nine core/basic login, logout, autologin, navigation, and search acceptance
+  scenarios to Playwright while retaining Cypress coverage. 
+- Port the 23 Cypress link-integrity view and deletion-warning scenarios to Playwright while retaining the Cypress originals and CI coverage. 
+- Port the add-on acceptance scenarios for button, separator, and slider blocks to Playwright, preserving slider accessibility coverage and adding reusable block and object-browser helpers. Keep Cypress coverage during the migration pilot. 
+- Port the core content-creation, editor, and deletion acceptance scenarios from
+  Cypress to Playwright, preserving the original coverage. 
+- Port the remaining 18 main-module calendar, map, table, teaser-type and slider-variant Cypress scenarios to Playwright, preserving UI operations and assertions. 
+- Port the remaining 71 core block, listing, and search acceptance scenarios to Playwright, including clipboard operations, Enter-key behavior, teaser updates, pagination, facets, and server-rendered listing checks. Record the complete source-to-target coverage inventory. @sneridagh 
+- Port the remaining basic Cypress acceptance specs to Playwright: file preview,
+  aliases, locking, object browser, all recurrence modes and registry settings. 
+- Remove the Cypress suite, configuration, CI matrix, focused-test workflow, dependencies, binary build permission, and hoisting after preserving all scenarios in Playwright. Route generic acceptance commands to Playwright and update contributor documentation. @sneridagh 
+- Resolve Playwright fixture files relative to the acceptance suite so local runs from the repository root and editors work like CI. Pin the acceptance development asset host to IPv4 to avoid loading another local project through localhost IPv6. @sneridagh 
+- Shard Playwright acceptance tests across four isolated CI jobs, bound their runtime, and collect merged reports and failure diagnostics. 
+- The a11y checks now run with Playwright against the acceptance backend and load
+  the VLT demo content once per worker instead of using a separate demo server. 
+- Unify the Playwright acceptance, visual regression, and Storybook suites in one configuration with explicit project selection in scripts, Makefiles, and CI. @sneridagh
+  Group all Playwright suites under `frontend/acceptance/`, keeping acceptance/a11y and visual regression tests in separate directories and projects. @sneridagh 
+
+
+
+### Project
+
+
+#### Internal
+
+- Migrate browser acceptance and accessibility coverage to Playwright, remove Cypress infrastructure, and shard acceptance CI with merged reports and failure diagnostics. [#947](https://github.com/kitconcept/volto-light-theme/pull/947)
+
+
+
 ## 8.1.1 (2026-10-13)
 
 ### Backend

@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 8.1.2 (2026-10-22)
+
+
+### Internal:
+
+- The acceptance image keeps its test dependencies and adds the demo importer so Playwright can install the demo profile on demand. 
+
 ## 8.1.1 (2026-10-13)
 
 No significant changes.
