@@ -1086,11 +1086,13 @@
       .title.accordion-title {
         background: var(--theme-color);
 
-        & > span {
+        & > span,
+        & .input-accordion-title > input {
           color: var(--theme-low-contrast-foreground-color);
         }
 
-        &.active > span {
+        &.active > span,
+        &.active > .input-accordion-title > input {
           color: var(--theme-foreground-color);
         }
 
