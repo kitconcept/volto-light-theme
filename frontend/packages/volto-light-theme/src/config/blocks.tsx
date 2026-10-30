@@ -61,6 +61,7 @@ declare module '@plone/types' {
     __button: BlockConfigBase;
     separator: BlockConfigBase;
     slider: BlockConfigBase;
+    infoboxBlock: BlockConfigBase;
     eventMetadata: BlockConfigBase;
     accordion: BlockConfigBase;
     hero: BlockConfigBase;
@@ -519,6 +520,12 @@ export default function install(config: ConfigType) {
   // Highlight Block
   config.blocks.blocksConfig.highlight = {
     ...config.blocks.blocksConfig.highlight,
+    schemaEnhancer: defaultStylingSchema,
+  };
+
+  // Infobox Block
+  config.blocks.blocksConfig.infoboxBlock = {
+    ...config.blocks.blocksConfig.infoboxBlock,
     schemaEnhancer: defaultStylingSchema,
   };
 

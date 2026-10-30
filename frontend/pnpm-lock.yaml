@@ -139,6 +139,9 @@ importers:
       '@kitconcept/volto-highlight-block':
         specifier: workspace:*
         version: link:packages/volto-highlight-block/packages/volto-highlight-block
+      '@kitconcept/volto-infobox-block':
+        specifier: workspace:*
+        version: link:packages/volto-infobox-block/packages/volto-infobox-block
       '@kitconcept/volto-introduction-block':
         specifier: workspace:*
         version: link:packages/volto-introduction-block/packages/volto-introduction-block
@@ -1652,6 +1655,49 @@ importers:
         version: 5.9.3
       vitest:
         specifier: ^3.2.4
+        version: 3.2.4(@types/debug@4.1.12)(@types/node@24.10.1)(@vitest/ui@3.2.4)(jiti@2.6.1)(jsdom@28.1.0)(less@3.13.1)(lightningcss@1.30.2)(sass@1.58.0)(terser@5.46.0)(yaml@2.8.1)
+
+  packages/volto-infobox-block/packages/volto-infobox-block:
+    dependencies:
+      '@kitconcept/volto-bm3-compat':
+        specifier: 1.0.0-alpha.1
+        version: 1.0.0-alpha.1(classnames@2.5.1)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      classnames:
+        specifier: ^2.5.1
+        version: 2.5.1
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
+    devDependencies:
+      '@plone/registry':
+        specifier: workspace:*
+        version: link:../../../../core/packages/registry
+      '@plone/scripts':
+        specifier: workspace:*
+        version: link:../../../../core/packages/scripts
+      '@plone/types':
+        specifier: workspace:*
+        version: link:../../../../core/packages/types
+      '@testing-library/react':
+        specifier: ^16.2.0
+        version: 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@18.3.7(@types/react@18.3.27))(@types/react@18.3.27)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@types/react':
+        specifier: ^18.3.1
+        version: 18.3.27
+      '@types/react-dom':
+        specifier: ^18.3.1
+        version: 18.3.7(@types/react@18.3.27)
+      release-it:
+        specifier: ^19.0.5
+        version: 19.0.6(@types/node@24.10.1)(magicast@0.3.5)
+      typescript:
+        specifier: ^5.7.3
+        version: 5.9.3
+      vitest:
+        specifier: ^3.1.2
         version: 3.2.4(@types/debug@4.1.12)(@types/node@24.10.1)(@vitest/ui@3.2.4)(jiti@2.6.1)(jsdom@28.1.0)(less@3.13.1)(lightningcss@1.30.2)(sass@1.58.0)(terser@5.46.0)(yaml@2.8.1)
 
   packages/volto-introduction-block/packages/volto-introduction-block:
