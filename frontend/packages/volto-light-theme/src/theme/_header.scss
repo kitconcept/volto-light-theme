@@ -880,7 +880,7 @@ body.has-toolbar.has-sidebar {
   right: 0;
   display: flex;
   width: 100vw;
-  height: calc(100vh - 110px);
+  height: calc(100% - 110px);
   flex-direction: column;
   /* line-height: 70px; */
   background-color: #f4f7f8;
