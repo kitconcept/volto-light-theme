@@ -40,6 +40,7 @@ const checks: AccessibilityCheck[] = [
   { name: 'Heading block', path: '/block/heading-block' },
   { name: 'Highlight block', path: '/block/highlight-block' },
   { name: 'Image block', path: '/block/image-block' },
+  { name: 'Infobox block', path: '/block/infobox-block' },
   { name: 'Image content type', path: '/content-types/image' },
   { name: 'Introduction block', path: '/block/introduction-block' },
   { name: 'Internal link content type', path: '/content-types/internal-link' },
