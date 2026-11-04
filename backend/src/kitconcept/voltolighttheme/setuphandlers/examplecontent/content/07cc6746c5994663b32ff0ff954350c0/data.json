@@ -1,0 +1,467 @@
+{
+  "@id": "/block/infobox-block",
+  "@type": "Document",
+  "UID": "07cc6746c5994663b32ff0ff954350c0",
+  "allow_discussion": null,
+  "blocks": {
+    "00a5dda4-d2eb-41bb-bd09-cffe25831e17": {
+      "@type": "title"
+    },
+    "1661de15-e081-4425-972c-5247e5c579f9": {
+      "@type": "infoboxBlock",
+      "align": "left",
+      "plaintext": " Lorem ipsum dolor sit amet adipiscing Diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum.\nDolor sit amet adipiscing elit Sed diam nonummy nibh euismod Tincidunt ut laoreet dolore magna Dolor sit amet adipiscing elit Sed diam nonummy nibh euismod",
+      "theme": "default",
+      "title": "Headline lorem ipsum dolor",
+      "value": [
+        {
+          "children": [
+            {
+              "text": ""
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum dolor sit amet adipiscing"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": "\nDiam "
+            },
+            {
+              "children": [
+                {
+                  "text": "nonummy"
+                }
+              ],
+              "data": {
+                "url": "/"
+              },
+              "type": "link"
+            },
+            {
+              "text": " nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Dolor sit amet adipiscing elit "
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "text": "Sed diam nonummy nibh euismod "
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "text": "Tincidunt ut laoreet dolore magna"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "text": "Dolor sit amet adipiscing elit "
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "text": "Sed diam nonummy nibh euismod"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        }
+      ]
+    },
+    "2aa574e3-be13-41d7-8c5d-37a8acb6cb52": {
+      "@type": "infoboxBlock",
+      "align": "right",
+      "plaintext": " Lorem ipsum dolor sit amet adipiscing Diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum.\nDolor sit amet adipiscing elit Sed diam nonummy nibh euismod Tincidunt ut laoreet dolore magna Dolor sit amet adipiscing elit Sed diam nonummy nibh euismod",
+      "theme": "default",
+      "title": "Headline lorem ipsum dolor",
+      "value": [
+        {
+          "children": [
+            {
+              "text": ""
+            },
+            {
+              "children": [
+                {
+                  "text": "Lorem ipsum dolor sit amet adipiscing"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": "\nDiam "
+            },
+            {
+              "children": [
+                {
+                  "text": "nonummy"
+                }
+              ],
+              "data": {
+                "url": "/"
+              },
+              "type": "link"
+            },
+            {
+              "text": " nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum."
+            }
+          ],
+          "type": "p"
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "text": "Dolor sit amet adipiscing elit "
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "text": "Sed diam nonummy nibh euismod "
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "text": "Tincidunt ut laoreet dolore magna"
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "text": "Dolor sit amet adipiscing elit "
+                }
+              ],
+              "type": "li"
+            },
+            {
+              "children": [
+                {
+                  "text": "Sed diam nonummy nibh euismod"
+                }
+              ],
+              "type": "li"
+            }
+          ],
+          "type": "ul"
+        }
+      ]
+    },
+    "39e812d7-0508-455b-8b43-086f1b5956a3": {
+      "@type": "slate",
+      "plaintext": "Headline H3",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Headline H3"
+            }
+          ],
+          "type": "h3"
+        }
+      ]
+    },
+    "495a5366-6b5c-4662-ad9b-9a88f8e71017": {
+      "@type": "slate",
+      "plaintext": "Headline H3",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Headline H3"
+            }
+          ],
+          "type": "h3"
+        }
+      ]
+    },
+    "7e832aaa-9573-46e7-af7a-0ba9131b377c": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam. Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam. Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "8a53c768-c400-4f39-8a4e-91c4f4b697a6": {
+      "@type": "slate",
+      "plaintext": "Headline H2",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Headline H2"
+            }
+          ],
+          "type": "h2"
+        }
+      ]
+    },
+    "92a65bb6-ffc9-46a4-9c4b-af30827ba2b8": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "9dead6e0-48f3-48d7-a00d-d5cf81d4ab34": {
+      "@type": "infoboxBlock",
+      "align": "center",
+      "buttonText": "Call to Action",
+      "icon": [
+        {
+          "@id": "../../resolveuid/eec82559bf3242a6be4d43bc2096f399",
+          "image_field": "image",
+          "title": "Image - Light"
+        }
+      ],
+      "plaintext": " L  orem ipsum dolor sit amet adipiscing Diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum.",
+      "theme": "default",
+      "title": "Headline lorem ipsum dolor",
+      "value": [
+        {
+          "children": [
+            {
+              "text": ""
+            },
+            {
+              "children": [
+                {
+                  "text": "L"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": ""
+            },
+            {
+              "children": [
+                {
+                  "text": "orem ipsum dolor sit amet adipiscing"
+                }
+              ],
+              "type": "strong"
+            },
+            {
+              "text": "\nDiam "
+            },
+            {
+              "children": [
+                {
+                  "text": "nonummy"
+                }
+              ],
+              "data": {
+                "url": "/"
+              },
+              "type": "link"
+            },
+            {
+              "text": " nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "a155ff0d-8642-4e81-bc25-d7be168d4d04": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in.",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "c37948ea-163c-484b-894d-95ccfe37bf03": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "ccd099f1-b6db-437b-b2f8-66cd5bd3ba38": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in.",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "cd97b2ca-807e-47f3-9e24-518ecb42165f": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam. Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam. Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    },
+    "da8e8d7d-f613-4755-8df6-bbdf8f74f843": {
+      "@type": "slate",
+      "plaintext": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.",
+      "styles": {},
+      "theme": "default",
+      "value": [
+        {
+          "children": [
+            {
+              "text": "Lorem ipsum dolor sit amet adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+            }
+          ],
+          "type": "p"
+        }
+      ]
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "00a5dda4-d2eb-41bb-bd09-cffe25831e17",
+      "8a53c768-c400-4f39-8a4e-91c4f4b697a6",
+      "92a65bb6-ffc9-46a4-9c4b-af30827ba2b8",
+      "9dead6e0-48f3-48d7-a00d-d5cf81d4ab34",
+      "da8e8d7d-f613-4755-8df6-bbdf8f74f843",
+      "c37948ea-163c-484b-894d-95ccfe37bf03",
+      "39e812d7-0508-455b-8b43-086f1b5956a3",
+      "a155ff0d-8642-4e81-bc25-d7be168d4d04",
+      "2aa574e3-be13-41d7-8c5d-37a8acb6cb52",
+      "cd97b2ca-807e-47f3-9e24-518ecb42165f",
+      "495a5366-6b5c-4662-ad9b-9a88f8e71017",
+      "ccd099f1-b6db-437b-b2f8-66cd5bd3ba38",
+      "1661de15-e081-4425-972c-5247e5c579f9",
+      "7e832aaa-9573-46e7-af7a-0ba9131b377c"
+    ]
+  },
+  "changeNote": "",
+  "contributors": [],
+  "created": "2026-11-04T09:49:56+00:00",
+  "creators": [
+    "admin"
+  ],
+  "description": "",
+  "effective": null,
+  "exclude_from_nav": false,
+  "expires": null,
+  "exportimport.constrains": {},
+  "exportimport.conversation": [],
+  "id": "infobox-block",
+  "is_folderish": true,
+  "language": "##DEFAULT##",
+  "layout": "document_view",
+  "lock": {
+    "locked": false,
+    "stealable": true
+  },
+  "modified": "2026-11-04T10:35:39+00:00",
+  "nav_title": null,
+  "preview_caption_link": null,
+  "review_state": "private",
+  "rights": "",
+  "subjects": [],
+  "title": "Infobox Block",
+  "type_title": "Page",
+  "version": "current",
+  "versioning_enabled": true,
+  "workflow_history": {
+    "simple_publication_workflow": [
+      {
+        "action": null,
+        "actor": "admin",
+        "comments": "",
+        "review_state": "private",
+        "time": "2026-11-04T09:49:56+00:00"
+      }
+    ]
+  },
+  "working_copy": null,
+  "working_copy_of": null
+}
