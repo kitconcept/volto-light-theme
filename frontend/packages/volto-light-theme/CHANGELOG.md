@@ -8,6 +8,12 @@
 
 <!-- towncrier release notes start -->
 
+## 8.1.3 (2026-11-04)
+
+### Bugfix
+
+- Fix mobile navigation overflowing the viewport. @TimoBroeskamp [#24](https://github.com/kitconcept/volto-light-theme/pull/24)
+
 ## 8.1.2 (2026-10-22)
 
 ### Bugfix
