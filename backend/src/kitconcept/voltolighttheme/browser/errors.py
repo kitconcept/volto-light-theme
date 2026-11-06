@@ -23,7 +23,7 @@ class VLTErrorHandling(ErrorHandling):
                 if closest_context is not None:
                     expander = InheritedBehaviorExpander(closest_context, self.request)
                     result["@components"] = expander(expand=True)
-            except Exception:
+            except Exception:  # noqa: S110
                 pass
 
         return result
