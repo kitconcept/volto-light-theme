@@ -78,14 +78,14 @@ livehtml: $(VENV_FOLDER)  ## Rebuild Sphinx documentation on changes, with live-
 
 .PHONY: linkcheck
 linkcheck: $(VENV_FOLDER)  ## Run linkcheck
-	@uv run sphinxbuild-b linkcheck $(ALLSPHINXOPTS) $(BUILDDIR)/linkcheck
+	@uv run sphinx-build -b linkcheck $(ALLSPHINXOPTS) $(BUILDDIR)/linkcheck
 	@echo
 	@echo "Link check complete; look for any errors in the above output " \
 		"or in $(BUILDDIR)/linkcheck/ ."
 
 .PHONY: linkcheckbroken
 linkcheckbroken: $(VENV_FOLDER)  ## Run linkcheck and show only broken links
-	@uv run sphinxbuild-b linkcheck $(ALLSPHINXOPTS) $(BUILDDIR)/linkcheck | GREP_COLORS='0;31' grep -wi "broken\|redirect" --color=always | GREP_COLORS='0;31' grep -vi "https://github.com/plone/volto/issues/" --color=always && if test $$? -eq 0; then exit 1; fi || test $$? -ne 0
+	@uv run sphinx-build -b linkcheck $(ALLSPHINXOPTS) $(BUILDDIR)/linkcheck | GREP_COLORS='0;31' grep -wi "broken\|redirect" --color=always | GREP_COLORS='0;31' grep -vi "https://github.com/plone/volto/issues/" --color=always && if test $$? -eq 0; then exit 1; fi || test $$? -ne 0
 
 .PHONY: vale
 vale: $(VENV_FOLDER)  ## Install (once) and run Vale style, grammar, and spell checks

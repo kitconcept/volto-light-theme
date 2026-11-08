@@ -80,6 +80,8 @@ linkcheck_ignore = [
     r"https://github.com/kitconcept/volto-light-theme/issues/new",  # requires auth
     # Ignore github.com pages with anchors
     r"https://github.com/.*#.*",
+    # npmjs.com answers 403 to automated requests
+    r"https://www.npmjs.com/",
     # Ignore other specific anchors
 ]
 linkcheck_anchors = True
@@ -102,7 +104,7 @@ master_doc = "index"
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = []
+exclude_patterns = [".venv", "_build"]
 
 suppress_warnings = [
     # "toc.excluded",  # Suppress `WARNING: document isn't included in any toctree`

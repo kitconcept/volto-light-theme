@@ -1,0 +1,64 @@
+name: "VLT: Backend CI"
+
+on:
+  workflow_call:
+    inputs:
+      python-version:
+        required: true
+        type: string
+      plone-version:
+        required: true
+        type: string
+      working-directory:
+        required: false
+        type: string
+        default: backend
+
+jobs:
+
+  lint:
+    name: "Backend: Lint"
+    uses: plone/meta/.github/workflows/backend-lint.yml@2.x
+    with:
+      python-version: ${{ inputs.python-version }}
+      plone-version: ${{ inputs.plone-version }}
+      working-directory: ${{ inputs.working-directory }}
+
+  test:
+    name: "Backend: Test"
+    uses: plone/meta/.github/workflows/backend-pytest.yml@2.x
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.13", "3.12"]
+        plone-version: ["6.2-latest", "6.1-latest", "6.0-latest"]
+    with:
+      python-version: ${{ matrix.python-version }}
+      plone-version: ${{ matrix.plone-version }}
+      working-directory: ${{ inputs.working-directory }}
+
+  coverage:
+    name: "Backend: Coverage"
+    uses: plone/meta/.github/workflows/backend-pytest-coverage.yml@2.x
+    with:
+      python-version: ${{ inputs.python-version }}
+      plone-version: ${{ inputs.plone-version }}
+      working-directory: ${{ inputs.working-directory }}
+
+  report:
+    name: "Final report"
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    needs:
+      - lint
+      - test
+      - coverage
+    steps:
+      - name: Write report
+        run: |
+          echo '# Workflow Report' >> $GITHUB_STEP_SUMMARY
+          echo '| Job ID | Conclusion |' >> $GITHUB_STEP_SUMMARY
+          echo '| --- | --- |' >> $GITHUB_STEP_SUMMARY
+          echo '| lint | ${{ needs.lint.result }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| test | ${{ needs.test.result }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| coverage | ${{ needs.coverage.result }} |' >> $GITHUB_STEP_SUMMARY
