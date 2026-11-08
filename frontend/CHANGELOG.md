@@ -8,6 +8,13 @@
 
 <!-- towncrier release notes start -->
 
+## 8.1.4 (2026-11-08)
+
+### Internal
+
+- Upgrades `@plonegovbr/volto-social-media` to 3.1.0. Its Follow Us sidebar form now reads the schema from the block configuration. @ericof [#966](https://github.com/kitconcept/volto-light-theme/pull/966)
+- Upgrade the block add-ons and Volto to 19.6.1, and test that the `@blocks-schema` endpoint answers for each of them. @ericof [#969](https://github.com/kitconcept/volto-light-theme/pull/969)
+
 ## 8.1.3 (2026-11-04)
 
 ### Bugfix

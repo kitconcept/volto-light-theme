@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 8.1.4 (2026-11-08)
+
+
+### Internal:
+
+- Upgrades the `plonegovbr.socialmedia` dependency to 3.1.0. Existing sites need its upgrade step to profile version 1001. @ericof [#966](https://github.com/kitconcept/volto-light-theme/issues/966)
+
 ## 8.1.3 (2026-11-04)
 
 No significant changes.
