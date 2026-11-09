@@ -1,8 +1,16 @@
+#main .breadcrumbs + .content-area > main .ui.container {
+  margin-top: 1em;
+}
+
 body.contenttype-plone-site,
 body.contenttype-lrf,
 body.view-contentsview {
   #main .breadcrumbs {
     display: none;
+
+    & + .content-area > main .ui.container {
+      margin-top: 0;
+    }
   }
 }
 
