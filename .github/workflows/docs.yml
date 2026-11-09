@@ -1,4 +1,4 @@
-name: Documentation
+name: "VLT: Documentation"
 
 on:
   workflow_call:
@@ -6,28 +6,19 @@ on:
       python-version:
         required: true
         type: string
-
-defaults:
-  run:
-    working-directory: docs
+      working-directory:
+        required: false
+        type: string
+        default: docs
 
 jobs:
-  docs:
-    name: Documentation
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
 
-      - name: Install the latest version of uv
-        uses: astral-sh/setup-uv@v8.1.0
-        with:
-          python-version: ${{ inputs.python-version }}
-
-      - name: Install Dependencies
-        run: make install
-
-      - name: Check for broken links
-        run: make linkcheckbroken
-
-      - name: Build HTML documentation
-        run: make build
+  build:
+    name: "Docs: Build"
+    uses: plone/meta/.github/workflows/docs-build.yml@2.x
+    with:
+      python-version: ${{ inputs.python-version }}
+      working-directory: ${{ inputs.working-directory }}
+      # Vale is not a dependency of the docs project yet, so `make vale`
+      # cannot run in CI.
+      check-vale: false

@@ -1,4 +1,4 @@
-name: Changelog check
+name: "VLT: Changelog"
 on:
   pull_request:
     types: [assigned, opened, synchronize, reopened, labeled, unlabeled]
@@ -6,37 +6,19 @@ on:
       - main
 
 env:
-  NODE_VERSION: 24.x
-  ADDON_NAME: volto-light-theme
-  BASE_BRANCH: main
+  base-branch: main
+  path-frontend-package: frontend/packages/volto-light-theme
+
+permissions:
+  contents: read
+  pull-requests: read
 
 jobs:
   config:
-    runs-on: ubuntu-latest
-    outputs:
-      backend: ${{ steps.filter.outputs.backend }}
-      frontend: ${{ steps.filter.outputs.frontend }}
-      repository: ${{ steps.filter.outputs.repository }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v7
+    if: ${{ !contains(github.event.pull_request.labels.*.name, 'skip changelog') }}
+    uses: ./.github/workflows/config.yml
 
-      - uses: dorny/paths-filter@v4
-        id: filter
-        with:
-          filters: |
-            backend:
-              - 'backend/**'
-            repository:
-              - '.github/**'
-              - '.devops/**'
-              - '.docs/**'
-              - '.vscode/**'
-            frontend:
-              - 'frontend/**'
-
-  backend:
-    if: ${{ needs.config.outputs.backend == 'true' }}
+  checks:
     runs-on: ubuntu-latest
     needs:
       - config
@@ -46,88 +28,41 @@ jobs:
           # Fetch all history
           fetch-depth: '0'
 
-      - name: Install pipx
-        run: pip install towncrier
-
-      - name: Check for presence of a Change Log fragment (only pull requests)
-        if: github.event_name == 'pull_request'
-        run: |
-          # Fetch the pull request' base branch so towncrier will be able to
-          # compare the current branch with the base branch.
-          # Source: https://github.com/actions/checkout/#fetch-all-branches.
-          git fetch --no-tags origin ${BASE_BRANCH}
-          towncrier check  --compare-with origin/${{ env.BASE_BRANCH }} --config backend/pyproject.toml --dir backend/
-
-  frontend:
-    if: ${{ needs.config.outputs.frontend == 'true' }}
-    runs-on: ubuntu-latest
-    needs:
-      - config
-    defaults:
-      run:
-        working-directory: ./frontend
-    steps:
-      - uses: actions/checkout@v7
+      - name: Setup uv
+        uses: plone/meta/.github/actions/setup_uv@2.x
         with:
-          # Fetch all history
-          fetch-depth: '0'
+          python-version: ${{ needs.config.outputs.python-version }}
+          working-directory: '.'
 
-      - name: Install pipx
-        run: pip install towncrier
-
-      - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v7
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-
-      - name: Enable corepack
-        run: npm i -g corepack@latest && corepack enable
-
-      - name: Get pnpm store directory
-        shell: bash
+      - name: "Fetch base branch"
         run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+          # Reference: https://github.com/actions/checkout/#fetch-all-branches.
+          git fetch --no-tags origin ${{ env.base-branch }}
 
-      - uses: actions/cache@v6
-        name: Setup pnpm cache
-        with:
-          path: ${{ env.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-
-      - name: Install dependencies
-        run: make install
-
-      - name: Check for presence of a Change Log fragment (only pull requests)
-        if: github.event_name == 'pull_request'
+      - name: "Backend: Check"
+        id: backend-changelog
+        if: ${{ always() && needs.config.outputs.changelog-backend == 'true' }}
         run: |
-          # Fetch the pull request' base branch so towncrier will be able to
-          # compare the current branch with the base branch.
-          # Source: https://github.com/actions/checkout/#fetch-all-branches.
-          git fetch --no-tags origin ${BASE_BRANCH}
-          cd ..
-          towncrier check --compare-with origin/${{ env.BASE_BRANCH }} --config frontend/packages/${{ env.ADDON_NAME }}/towncrier.toml --dir frontend/packages/${{ env.ADDON_NAME }}
+          uvx towncrier check --compare-with origin/${{ env.base-branch }} --config backend/pyproject.toml --dir backend/
 
-  repository:
-    if: ${{ needs.config.outputs.repository == 'true' }}
-    runs-on: ubuntu-latest
-    needs:
-      - config
-    steps:
-      - uses: actions/checkout@v7
-        with:
-          # Fetch all history
-          fetch-depth: '0'
-
-      - name: Install pipx
-        run: pip install towncrier
-
-      - name: Check for presence of a Change Log fragment (only pull requests)
-        if: github.event_name == 'pull_request'
+      - name: "Frontend: Check"
+        id: frontend-changelog
+        if: ${{ always() && needs.config.outputs.changelog-frontend == 'true' }}
         run: |
-          # Fetch the pull request' base branch so towncrier will be able to
-          # compare the current branch with the base branch.
-          # Source: https://github.com/actions/checkout/#fetch-all-branches.
-          git fetch --no-tags origin ${BASE_BRANCH}
-          towncrier check  --compare-with origin/${{ env.BASE_BRANCH }} --config towncrier.toml --dir .
+          uvx towncrier check --compare-with origin/${{ env.base-branch }} --config ${{ env.path-frontend-package }}/towncrier.toml --dir ${{ env.path-frontend-package }}
+
+      - name: "Repository: Check"
+        id: repository-changelog
+        if: ${{ always() && needs.config.outputs.changelog-repository == 'true' }}
+        run: |
+          uvx towncrier check --compare-with origin/${{ env.base-branch }} --config towncrier.toml --dir .
+
+      - name: "Report check"
+        if: ${{ always() }}
+        run: |
+          echo '# Workflow Report' >> $GITHUB_STEP_SUMMARY
+          echo '| Job ID | Conclusion |' >> $GITHUB_STEP_SUMMARY
+          echo '| --- | --- |' >> $GITHUB_STEP_SUMMARY
+          echo '| backend | ${{ steps.backend-changelog.conclusion }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| frontend | ${{ steps.frontend-changelog.conclusion }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| repository | ${{ steps.repository-changelog.conclusion }} |' >> $GITHUB_STEP_SUMMARY

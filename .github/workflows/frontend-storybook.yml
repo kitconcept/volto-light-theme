@@ -1,6 +1,11 @@
 name: Storybook Build
 on:
   workflow_call:
+    inputs:
+      node-version:
+        required: false
+        type: string
+        default: "24.x"
 
 defaults:
   run:
@@ -14,8 +19,11 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
-      - name: Set up Node.js environment
-        uses: ./.github/actions/node_setup
+      - name: Setup codebase
+        uses: plone/meta/.github/actions/setup_frontend@2.x
+        with:
+          node-version: ${{ inputs.node-version }}
+          working-directory: frontend
 
       - name: Build Storybook
         run: make storybook-build
