@@ -28,7 +28,8 @@ endif
 
 PLONE_SITE_ID=Plone
 BACKEND_FOLDER=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
-PLONE_VERSION=$(shell cat $(BACKEND_FOLDER)/version.txt)
+# CI sets PLONE_VERSION to test against other Plone releases
+PLONE_VERSION?=$(shell cat $(BACKEND_FOLDER)/version.txt)
 EXAMPLE_CONTENT_FOLDER=${BACKEND_FOLDER}/src/kitconcept/voltolighttheme/setuphandlers/examplecontent
 
 ifdef CI

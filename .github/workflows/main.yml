@@ -20,33 +20,9 @@ jobs:
         python-version: "3.13"
     if: ${{ needs.config.outputs.docs == 'true' }}
 
-  backend-lint:
-    name: "Backend: Run lint checkers"
-    uses: ./.github/workflows/backend-lint.yml
-    needs:
-        - config
-    with:
-        python-version: ${{ needs.config.outputs.python-version }}
-        plone-version: ${{ needs.config.outputs.plone-version }}
-    if: ${{ needs.config.outputs.backend == 'true' }}
-
-  backend-test:
-    name: "Backend: Run tests"
-    uses: ./.github/workflows/backend-test.yml
-    needs:
-        - config
-    strategy:
-      matrix:
-        python-version: ["3.13", "3.12"]
-        plone-version: ["6.1-latest", "6.0-latest"]
-    with:
-        python-version: ${{ matrix.python-version }}
-        plone-version: ${{ matrix.plone-version }}
-    if: ${{ needs.config.outputs.backend == 'true' }}
-
-  backend-coverage:
-    name: "Backend: Run test coverage"
-    uses: ./.github/workflows/backend-coverage.yml
+  backend:
+    name: "Backend"
+    uses: ./.github/workflows/backend.yml
     needs:
         - config
     with:
@@ -60,9 +36,7 @@ jobs:
     uses: ./.github/workflows/backend-image-build.yml
     needs:
       - config
-      - backend-lint
-      - backend-test
-      - backend-coverage
+      - backend
     with:
       base-tag: ${{ needs.config.outputs.base-tag }}
       image-name-prefix: ${{ needs.config.outputs.image-name-prefix }}
@@ -70,39 +44,9 @@ jobs:
       cache-key-refname: ${{ needs.config.outputs.cache-key-refname }}
       plone-version: ${{ needs.config.outputs.plone-version }}
 
-  frontend-lint:
-    name: "Frontend: Run lint checkers"
-    uses: ./.github/workflows/frontend-lint.yml
-    needs:
-        - config
-    with:
-        node-version: ${{ needs.config.outputs.node-version }}
-    if: ${{ needs.config.outputs.frontend == 'true' }}
-    permissions:
-      contents: read
-      packages: write
-
-  frontend-unit:
-    name: "Frontend: Run unit tests"
-    uses: ./.github/workflows/frontend-unit.yml
-    needs:
-        - config
-    with:
-        node-version: ${{ needs.config.outputs.node-version }}
-    if: ${{ needs.config.outputs.frontend == 'true' }}
-
-  frontend-i18n:
-    name: "Frontend: Run i18n checks"
-    uses: ./.github/workflows/frontend-i18n.yml
-    needs:
-        - config
-    with:
-        node-version: ${{ needs.config.outputs.node-version }}
-    if: ${{ needs.config.outputs.frontend == 'true' }}
-
-  frontend-shadow-headers:
-    name: "Frontend: Check shadow customization headers"
-    uses: ./.github/workflows/frontend-shadow-headers.yml
+  frontend:
+    name: "Frontend"
+    uses: ./.github/workflows/frontend.yml
     needs:
         - config
     with:
@@ -115,10 +59,7 @@ jobs:
     uses: ./.github/workflows/frontend-image-build.yml
     needs:
       - config
-      - frontend-lint
-      - frontend-i18n
-      - frontend-unit
-      - frontend-shadow-headers
+      - frontend
     with:
       base-tag: ${{ needs.config.outputs.base-tag }}
       image-name-prefix: ${{ needs.config.outputs.image-name-prefix }}
@@ -251,14 +192,9 @@ jobs:
     needs:
       - config
       - docs
-      - backend-lint
-      - backend-test
-      - backend-coverage
+      - backend
       - backend-build
-      - frontend-lint
-      - frontend-unit
-      - frontend-i18n
-      - frontend-shadow-headers
+      - frontend
       - frontend-build
       - playwright-acceptance
       - visual-regression
@@ -273,14 +209,9 @@ jobs:
           echo '| --- | --- |' >> $GITHUB_STEP_SUMMARY
           echo '| config | ${{ needs.config.result }} |' >> $GITHUB_STEP_SUMMARY
           echo '| docs | ${{ needs.docs.result }} |' >> $GITHUB_STEP_SUMMARY
-          echo '| backend-lint | ${{ needs.backend-lint.result }} |' >> $GITHUB_STEP_SUMMARY
-          echo '| backend-test | ${{ needs.backend-test.result }} |' >> $GITHUB_STEP_SUMMARY
-          echo '| backend-coverage | ${{ needs.backend-coverage.result }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| backend | ${{ needs.backend.result }} |' >> $GITHUB_STEP_SUMMARY
           echo '| backend-build | ${{ needs.backend-build.result }} |' >> $GITHUB_STEP_SUMMARY
-          echo '| frontend-lint | ${{ needs.frontend-lint.result }} |' >> $GITHUB_STEP_SUMMARY
-          echo '| frontend-unit | ${{ needs.frontend-unit.result }} |' >> $GITHUB_STEP_SUMMARY
-          echo '| frontend-i18n | ${{ needs.frontend-i18n.result }} |' >> $GITHUB_STEP_SUMMARY
-          echo '| frontend-shadow-headers | ${{ needs.frontend-shadow-headers.result }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| frontend | ${{ needs.frontend.result }} |' >> $GITHUB_STEP_SUMMARY
           echo '| frontend-build | ${{ needs.frontend-build.result }} |' >> $GITHUB_STEP_SUMMARY
           echo '| playwright-acceptance | ${{ needs.playwright-acceptance.result }} |' >> $GITHUB_STEP_SUMMARY
           echo '| visual-regression | ${{ needs.visual-regression.result }} |' >> $GITHUB_STEP_SUMMARY

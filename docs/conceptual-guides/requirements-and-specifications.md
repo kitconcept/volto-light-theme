@@ -20,7 +20,7 @@ In preparation for this, VLT uses no Semantic UI component, nor any related styl
 The Plone 7 strategy includes the following principles.
 
 -   Provide a very basic, structural, vanilla collection of components to build upon theming and the CMS UI, as implemented in [`@plone/components`](https://github.com/plone/volto/tree/main/packages/components).
--   These components will be based upon a headless component system [React Aria Components](https://react-spectrum.adobe.com/react-aria/components.html).
+-   These components will be based upon a headless component system [React Aria Components](https://react-aria.adobe.com/).
 -   Volto projects can be themed using `@plone/components` as a base, or use a completely different design or component system of the developer's or integrator's choice.
 
 

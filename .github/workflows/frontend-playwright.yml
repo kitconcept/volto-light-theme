@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Load images
         run: |
@@ -36,34 +36,16 @@ jobs:
           docker pull ${{ inputs.image-name-prefix }}-frontend:${{ inputs.image-tag }}
           docker image ls -a
 
-      - name: Use Node.js ${{ inputs.node-version }}
-        uses: actions/setup-node@v6
+      - name: Setup codebase
+        uses: plone/meta/.github/actions/setup_frontend@2.x
         with:
           node-version: ${{ inputs.node-version }}
-
-      - name: Enable corepack
-        run: npm i -g corepack@latest && corepack enable
-
-      - name: Get pnpm store directory
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-
-      - uses: actions/cache@v5
-        name: Setup pnpm cache
-        with:
-          path: ${{ env.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-
-      - name: Install dependencies
-        run: make install
+          working-directory: frontend
 
       - name: Install Playwright browsers
         run: pnpm exec playwright install --with-deps chromium
 
-      - uses: JarvusInnovations/background-action@v1.0.7
+      - uses: JarvusInnovations/background-action@v2
         name: Start Servers - Volto and Plone (acceptance)
         with:
           run: |
@@ -121,31 +103,13 @@ jobs:
     if: ${{ !cancelled() && needs.playwright-acceptance.result != 'skipped' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
-      - name: Use Node.js ${{ inputs.node-version }}
-        uses: actions/setup-node@v6
+      - name: Setup codebase
+        uses: plone/meta/.github/actions/setup_frontend@2.x
         with:
           node-version: ${{ inputs.node-version }}
-
-      - name: Enable corepack
-        run: npm i -g corepack@latest && corepack enable
-
-      - name: Get pnpm store directory
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-
-      - uses: actions/cache@v5
-        name: Setup pnpm cache
-        with:
-          path: ${{ env.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-
-      - name: Install dependencies
-        run: make install
+          working-directory: frontend
 
       - name: Download blob reports
         uses: actions/download-artifact@v8

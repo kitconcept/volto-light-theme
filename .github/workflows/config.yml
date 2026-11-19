@@ -78,6 +78,15 @@ on:
       cache-key-refname:
         description: "Cache key based on the ref name"
         value: ${{ jobs.config.outputs.cache-key-refname }}
+      changelog-backend:
+        description: "Flag reporting if we should run changelog jobs for the backend"
+        value: ${{ jobs.config.outputs.changelog-backend }}
+      changelog-frontend:
+        description: "Flag reporting if we should run changelog jobs for the frontend"
+        value: ${{ jobs.config.outputs.changelog-frontend }}
+      changelog-repository:
+        description: "Flag reporting if we should run changelog jobs for the repository"
+        value: ${{ jobs.config.outputs.changelog-repository }}
 
 jobs:
   config:
@@ -95,6 +104,9 @@ jobs:
       stack-name: ${{ steps.vars.outputs.STACK_NAME }}
       stack-file: ${{ steps.vars.outputs.STACK_FILE }}
       cache-key-refname: ${{ steps.vars.outputs.cache-key-refname }}
+      changelog-backend: ${{ steps.filter.outputs.changelog-backend }}
+      changelog-frontend: ${{ steps.filter.outputs.changelog-frontend }}
+      changelog-repository: ${{ steps.filter.outputs.changelog-repository }}
 
     steps:
       - name: Checkout
@@ -110,7 +122,6 @@ jobs:
           echo "BASE_TAG=sha-$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
           echo "PLONE_VERSION=$(cat backend/version.txt)" >> $GITHUB_OUTPUT
           python3 -c 'import json; data = json.load(open("./frontend/mrs.developer.json")); print("VOLTO_VERSION=" + (data["core"].get("tag") or "latest"))' >> $GITHUB_OUTPUT
-          echo "FIREFOX=$(firefox --version)" >> $GITHUB_OUTPUT
           ENVIRONMENT=${{ inputs.hostname }}
           STACK_FILE=${{ inputs.stack-file }}
           echo "ENVIRONMENT=${ENVIRONMENT}" >> $GITHUB_OUTPUT
@@ -139,6 +150,17 @@ jobs:
             frontend:
               - 'frontend/**'
               - '.github/workflows/frontend*'
+            changelog-backend:
+              - 'backend/**'
+            changelog-frontend:
+              - 'frontend/**'
+            changelog-repository:
+              - '.github/**'
+              - '.vscode/**'
+              - 'devops/**'
+              - 'docs/**'
+              - 'docker-compose*.yml'
+              - 'README.md'
 
       - name: Test vars
         run: |
@@ -148,10 +170,12 @@ jobs:
           echo 'ENVIRONMENT: ${{ steps.vars.outputs.ENVIRONMENT }}'
           echo 'STACK_NAME: ${{ steps.vars.outputs.STACK_NAME }}'
           echo 'STACK_FILE: ${{ steps.vars.outputs.STACK_FILE }}'
-          echo 'FIREFOX: ${{ steps.vars.outputs.FIREFOX }}'
           echo 'event-name: ${{ github.event_name }}'
           echo 'Paths - acceptance: ${{ steps.filter.outputs.acceptance }}'
           echo 'Paths - backend: ${{ steps.filter.outputs.backend }}'
           echo 'Paths - devops: ${{ steps.filter.outputs.devops }}'
           echo 'Paths - docs: ${{ steps.filter.outputs.docs }}'
           echo 'Paths - frontend: ${{ steps.filter.outputs.frontend }}'
+          echo 'Paths - changelog-backend: ${{ steps.filter.outputs.changelog-backend }}'
+          echo 'Paths - changelog-frontend: ${{ steps.filter.outputs.changelog-frontend }}'
+          echo 'Paths - changelog-repository: ${{ steps.filter.outputs.changelog-repository }}'

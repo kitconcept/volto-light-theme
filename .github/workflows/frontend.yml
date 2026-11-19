@@ -1,0 +1,60 @@
+name: "VLT: Frontend CI"
+
+on:
+  workflow_call:
+    inputs:
+      node-version:
+        required: true
+        type: string
+      working-directory:
+        required: false
+        type: string
+        default: frontend
+
+jobs:
+  code-analysis:
+    name: "Frontend: Codeanalysis"
+    uses: plone/meta/.github/workflows/frontend-code.yml@2.x
+    with:
+      node-version: ${{ inputs.node-version }}
+      working-directory: ${{ inputs.working-directory }}
+
+  i18n:
+    name: "Frontend: i18n"
+    uses: plone/meta/.github/workflows/frontend-i18n.yml@2.x
+    with:
+      node-version: ${{ inputs.node-version }}
+      working-directory: ${{ inputs.working-directory }}
+
+  unit:
+    name: "Frontend: Unit tests"
+    uses: plone/meta/.github/workflows/frontend-unit.yml@2.x
+    with:
+      node-version: ${{ inputs.node-version }}
+      working-directory: ${{ inputs.working-directory }}
+
+  shadow-headers:
+    name: "Frontend: Check shadow customization headers"
+    uses: ./.github/workflows/frontend-shadow-headers.yml
+    with:
+      node-version: ${{ inputs.node-version }}
+
+  report:
+    name: "Final report"
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    needs:
+      - code-analysis
+      - i18n
+      - unit
+      - shadow-headers
+    steps:
+      - name: Write report
+        run: |
+          echo '# Workflow Report' >> $GITHUB_STEP_SUMMARY
+          echo '| Job ID | Conclusion |' >> $GITHUB_STEP_SUMMARY
+          echo '| --- | --- |' >> $GITHUB_STEP_SUMMARY
+          echo '| code-analysis | ${{ needs.code-analysis.result }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| i18n | ${{ needs.i18n.result }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| unit | ${{ needs.unit.result }} |' >> $GITHUB_STEP_SUMMARY
+          echo '| shadow-headers | ${{ needs.shadow-headers.result }} |' >> $GITHUB_STEP_SUMMARY

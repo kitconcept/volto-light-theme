@@ -94,19 +94,19 @@ Nevertheless, you can choose to install only those you want to use.
 {
   "dependencies": {
   "@eeacms/volto-accordion-block": "^12.0.0",
-  "@kitconcept/volto-banner-block": "^1.2.1",
+  "@kitconcept/volto-banner-block": "^1.3.0",
   "@kitconcept/volto-bm3-compat": "^1.0.0-alpha.1",
-  "@kitconcept/volto-button-block": "5.0.0-alpha.2",
-  "@kitconcept/volto-calendar-block": "^1.0.0-alpha.9",
-  "@kitconcept/volto-carousel-block": "^3.0.0-alpha.1",
+  "@kitconcept/volto-button-block": "^5.1.0",
+  "@kitconcept/volto-calendar-block": "^1.1.0",
+  "@kitconcept/volto-carousel-block": "^3.1.0",
   "@kitconcept/volto-dsgvo-banner": "^4.0.0-alpha.3",
-  "@kitconcept/volto-heading-block": "^2.5.0",
-  "@kitconcept/volto-highlight-block": "^5.0.0-alpha.2",
+  "@kitconcept/volto-heading-block": "^2.6.0",
+  "@kitconcept/volto-highlight-block": "^5.2.0",
   "@kitconcept/volto-infobox-block": "^1.0.0-alpha.1",
-  "@kitconcept/volto-introduction-block": "^1.4.2",
-  "@kitconcept/volto-logos-block": "^4.0.1",
-  "@kitconcept/volto-separator-block": "^5.0.0-alpha.0",
-  "@kitconcept/volto-slider-block": "^7.0.0-alpha.1",
+  "@kitconcept/volto-introduction-block": "^1.5.0",
+  "@kitconcept/volto-logos-block": "^4.1.0",
+  "@kitconcept/volto-separator-block": "^5.1.0",
+  "@kitconcept/volto-slider-block": "^7.1.0",
   "@plonegovbr/volto-social-media": "^3.0.0-alpha.0"
     // other dependencies
   }
@@ -132,7 +132,6 @@ Along with the `@kitconcept/volto-light-theme` package, you should also declare 
     "@kitconcept/volto-dsgvo-banner",
     "@kitconcept/volto-heading-block",
     "@kitconcept/volto-highlight-block",
-    "@kitconcept/volto-infobox-block",
     "@kitconcept/volto-introduction-block",
     "@kitconcept/volto-logos-block",
     "@kitconcept/volto-separator-block",
