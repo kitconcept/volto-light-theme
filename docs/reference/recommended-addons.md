@@ -16,6 +16,7 @@ myst:
 -   [Carousel Block](https://www.npmjs.com/package/@kitconcept/volto-carousel-block)
 -   [Heading Block](https://www.npmjs.com/package/@kitconcept/volto-heading-block)
 -   [Highlight Block](https://www.npmjs.com/package/@kitconcept/volto-highlight-block)
+-   [Infobox Block](https://www.npmjs.com/package/@kitconcept/volto-infobox-block)
 -   [Introduction Block](https://www.npmjs.com/package/@kitconcept/volto-introduction-block)
 -   [Logos Block](https://www.npmjs.com/package/@kitconcept/volto-logos-block)
 -   [Separator Block](https://www.npmjs.com/package/@kitconcept/volto-separator-block)
