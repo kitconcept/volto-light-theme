@@ -358,7 +358,6 @@ export default function install(config: ConfigType) {
   config.blocks.blocksConfig.accordion.blocksConfig.teaser.schemaEnhancer =
     composeSchema(teaserSchemaEnhancer, disableBgColorSchema);
 
-  config.blocks.blocksConfig.gridBlock.themes = config.blocks.themes;
   config.blocks.blocksConfig.gridBlock.schemaEnhancer = defaultStylingSchema;
   config.blocks.blocksConfig.gridBlock.icon = gridSVG;
   config.blocks.blocksConfig.gridBlock.category = 'cards';
