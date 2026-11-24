@@ -1,6 +1,42 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 8.1.5 (2026-11-24)
+
+### Backend
+
+
+#### Internal:
+
+- Lets the `PLONE_VERSION` environment variable override `version.txt` in the Makefile, so the CI test matrix runs against Plone 6.0, 6.1 and 6.2 instead of the pinned release only. Adds Python 3.14, tested with Plone 6.2. @ericof [#971](https://github.com/kitconcept/volto-light-theme/issues/971)
+
+
+
+### Frontend
+
+
+#### Bugfix
+
+- Let the Grid block fall back to `config.blocks.themes` instead of keeping its own copy of them, so changes to the site-wide themes after startup, for example through the web, reach it. @sneridagh [#974](https://github.com/kitconcept/volto-light-theme/pull/974)
+
+
+#### Internal
+
+- Upgrade `@kitconcept/volto-highlight-block` to 5.3.0 and `@kitconcept/volto-slider-block` to 7.2.0, so their colors can be changed through the web with the blocks configuration of kitconcept-core. @sneridagh [#975](https://github.com/kitconcept/volto-light-theme/pull/975)
+- Upgraded Playwright to 1.65.1 to fix CI on Ubuntu 26.04 runners. @iFlameing 
+
+
+
+### Project
+
+
+#### Internal
+
+- Aligns the GitHub Actions workflows with cookieplone-templates: backend, frontend and docs checks run through the shared `plone/meta` workflows, the changelog check honours the `skip changelog` label and covers `devops/` and `docs/`, and Dependabot now reads its configuration from `.github/dependabot.yml` and labels its pull requests. The documentation link check runs again, and skips the virtual environment and npmjs.com. @ericof [#971](https://github.com/kitconcept/volto-light-theme/pull/971)
+- Upgrade `@kitconcept/volto-highlight-block` to 5.3.0 and `@kitconcept/volto-slider-block` to 7.2.0, so their colors can be changed through the web with the blocks configuration of kitconcept-core. @sneridagh [#975](https://github.com/kitconcept/volto-light-theme/pull/975)
+
+
+
 ## 8.1.4 (2026-11-08)
 
 ### Backend

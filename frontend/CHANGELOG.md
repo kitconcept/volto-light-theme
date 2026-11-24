@@ -8,6 +8,19 @@
 
 <!-- towncrier release notes start -->
 
+## 8.1.5 (2026-11-24)
+
+
+### Bugfix
+
+- Let the Grid block fall back to `config.blocks.themes` instead of keeping its own copy of them, so changes to the site-wide themes after startup, for example through the web, reach it. @sneridagh [#974](https://github.com/kitconcept/volto-light-theme/pull/974)
+
+
+### Internal
+
+- Upgrade `@kitconcept/volto-highlight-block` to 5.3.0 and `@kitconcept/volto-slider-block` to 7.2.0, so their colors can be changed through the web with the blocks configuration of kitconcept-core. @sneridagh [#975](https://github.com/kitconcept/volto-light-theme/pull/975)
+- Upgraded Playwright to 1.65.1 to fix CI on Ubuntu 26.04 runners. @iFlameing 
+
 ## 8.1.4 (2026-11-08)
 
 ### Internal

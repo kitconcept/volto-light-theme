@@ -1,1 +1,0 @@
-Let the Grid block fall back to `config.blocks.themes` instead of keeping its own copy of them, so changes to the site-wide themes after startup, for example through the web, reach it. @sneridagh
