@@ -1,23 +1,10 @@
-import { useSelector, shallowEqual } from 'react-redux';
 import { useLiveData } from '@kitconcept/volto-light-theme/helpers/useLiveData';
 import LogosContainer from '../../LogosContainer/LogosContainer';
-import type { Content } from '@plone/types';
 import type { SiteFooterSettings } from '../../../types';
-
-type FormState = {
-  content: {
-    data: Content;
-  };
-  form: {
-    global: Content;
-  };
-};
+import { useStickyContent } from '@kitconcept/volto-light-theme/helpers/useStickyContent';
 
 const FooterLogos = () => {
-  const content = useSelector<FormState, Content>(
-    (state) => state.content.data,
-    shallowEqual,
-  );
+  const content = useStickyContent();
 
   const footer_logos = useLiveData<SiteFooterSettings['footer_logos']>(
     content,

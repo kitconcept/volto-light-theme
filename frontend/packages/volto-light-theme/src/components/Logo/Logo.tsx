@@ -1,12 +1,13 @@
 // SemanticUI-free pre-@plone/components
 import { defineMessages, useIntl } from 'react-intl';
-import { useSelector, shallowEqual } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import LogoImage from '@plone/volto/components/theme/Logo/Logo.svg';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { useLiveData } from '@kitconcept/volto-light-theme/helpers/useLiveData';
 import type { SiteHeaderSettings, SiteFooterSettings } from '../../types';
 import type { Content } from '@plone/types';
+import { useStickyContent } from '@kitconcept/volto-light-theme/helpers/useStickyContent';
 
 const messages = defineMessages({
   home: {
@@ -44,10 +45,7 @@ const Logo = ({ isFooterLogo }: { isFooterLogo: boolean }) => {
   );
   const navRootPath = flattenToAppURL(navroot?.navroot?.['@id']) || '/';
 
-  const content = useSelector<FormState, Content>(
-    (state) => state.content.data,
-    shallowEqual,
-  );
+  const content = useStickyContent();
 
   const logo = useLiveData<SiteHeaderSettings['logo']>(
     content,
