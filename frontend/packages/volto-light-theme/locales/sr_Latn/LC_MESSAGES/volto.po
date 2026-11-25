@@ -57,6 +57,13 @@ msgstr "Napredni faset?"
 msgid "Advanced facets are initially hidden and displayed on demand"
 msgstr "Advanced facets su initially hidden i displayed na demand"
 
+#. Default: "Alignment"
+#: components/Blocks/Image/schema
+#: components/Blocks/Maps/schema
+#: components/Blocks/Video/schema
+msgid "Alignment"
+msgstr ""
+
 #. Default: "Alt text"
 #: components/Widgets/schema/footerLogosSchema
 #: components/Widgets/schema/iconLinkListSchema
@@ -85,6 +92,8 @@ msgstr "Osnovni upit pretrage"
 
 #. Default: "Block Width"
 #: components/Blocks/Image/schema
+#: components/Blocks/Maps/schema
+#: components/Blocks/Video/schema
 msgid "Block Width"
 msgstr "Širina bloka"
 
@@ -188,11 +197,6 @@ msgstr "Faceti"
 msgid "Field"
 msgstr "Polje"
 
-#. Default: "Follow us:"
-#: components/Footer/slots/FollowUsLogoAndLinks
-msgid "Follow us:"
-msgstr "Pratite nas:"
-
 #. Default: "GNU GPL v2 license"
 #: components/Footer/slots/Copyright
 msgid "GNU GPL license"
@@ -234,6 +238,11 @@ msgstr "Ikona"
 #: components/Blocks/Image/ImageSidebar
 msgid "Image"
 msgstr "Slika"
+
+#. Default: "Image size"
+#: components/Blocks/Image/schema
+msgid "Image size"
+msgstr ""
 
 #. Default: "Invalid block - Will be removed on saving"
 #: components/Theme/RenderBlocks
@@ -296,6 +305,11 @@ msgstr "Slika logotipa"
 msgid "Logo of"
 msgstr "Logo"
 
+#. Default: "Maps"
+#: components/Blocks/Maps/MapsSidebar
+msgid "Maps"
+msgstr ""
+
 #. Default: "Move down"
 #: components/Blocks/Block/Edit
 msgid "Move down"
@@ -316,6 +330,11 @@ msgstr "Višestruki izbor?"
 msgid "Next Page"
 msgstr "Sledeća stranica"
 
+#. Default: "No Video selected"
+#: components/Blocks/Video/VideoSidebar
+msgid "No Video selected"
+msgstr ""
+
 #. Default: "No image selected"
 #: components/Blocks/Image/ImageSidebar
 msgid "No image selected"
@@ -325,6 +344,11 @@ msgstr "Ne image selected"
 #: components/Blocks/Listing/ListingBody
 msgid "No items found in this container."
 msgstr "Ne stavke found u ovo container."
+
+#. Default: "No map selected"
+#: components/Blocks/Maps/MapsSidebar
+msgid "No map selected"
+msgstr ""
 
 #. Default: "No selection"
 #: components/Blocks/EventCalendar/Search/components/SortOn
@@ -578,6 +602,11 @@ msgstr "Naslov"
 #: components/Theme/RenderBlocksV2
 msgid "Unknown Block"
 msgstr "Nepoznato block{block}"
+
+#. Default: "Video"
+#: components/Blocks/Video/VideoSidebar
+msgid "Video"
+msgstr ""
 
 #. Default: "Website"
 #: components/Blocks/EventMetadata/View

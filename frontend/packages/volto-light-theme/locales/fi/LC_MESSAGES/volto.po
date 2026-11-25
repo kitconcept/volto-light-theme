@@ -57,6 +57,13 @@ msgstr "Edistynyt suodatin?"
 msgid "Advanced facets are initially hidden and displayed on demand"
 msgstr "Edistyneet suodattimet ovat aluksi piilossa ja näytetään pyynnöstä"
 
+#. Default: "Alignment"
+#: components/Blocks/Image/schema
+#: components/Blocks/Maps/schema
+#: components/Blocks/Video/schema
+msgid "Alignment"
+msgstr ""
+
 #. Default: "Alt text"
 #: components/Widgets/schema/footerLogosSchema
 #: components/Widgets/schema/iconLinkListSchema
@@ -85,6 +92,8 @@ msgstr "Perushakukysely"
 
 #. Default: "Block Width"
 #: components/Blocks/Image/schema
+#: components/Blocks/Maps/schema
+#: components/Blocks/Video/schema
 msgid "Block Width"
 msgstr "Palikan leveys"
 
@@ -188,11 +197,6 @@ msgstr "Fasetit"
 msgid "Field"
 msgstr "Kenttä"
 
-#. Default: "Follow us:"
-#: components/Footer/slots/FollowUsLogoAndLinks
-msgid "Follow us:"
-msgstr "Seuraa meitä:"
-
 #. Default: "GNU GPL v2 license"
 #: components/Footer/slots/Copyright
 msgid "GNU GPL license"
@@ -234,6 +238,11 @@ msgstr "Icon"
 #: components/Blocks/Image/ImageSidebar
 msgid "Image"
 msgstr "Kuva"
+
+#. Default: "Image size"
+#: components/Blocks/Image/schema
+msgid "Image size"
+msgstr ""
 
 #. Default: "Invalid block - Will be removed on saving"
 #: components/Theme/RenderBlocks
@@ -296,6 +305,11 @@ msgstr "Logokuva"
 msgid "Logo of"
 msgstr "Logo kohteelle"
 
+#. Default: "Maps"
+#: components/Blocks/Maps/MapsSidebar
+msgid "Maps"
+msgstr ""
+
 #. Default: "Move down"
 #: components/Blocks/Block/Edit
 msgid "Move down"
@@ -316,6 +330,11 @@ msgstr "Monivalinta?"
 msgid "Next Page"
 msgstr "Seuraava sivu"
 
+#. Default: "No Video selected"
+#: components/Blocks/Video/VideoSidebar
+msgid "No Video selected"
+msgstr ""
+
 #. Default: "No image selected"
 #: components/Blocks/Image/ImageSidebar
 msgid "No image selected"
@@ -325,6 +344,11 @@ msgstr "Kuvaa ei ole määritety"
 #: components/Blocks/Listing/ListingBody
 msgid "No items found in this container."
 msgstr "Ei sisältöä"
+
+#. Default: "No map selected"
+#: components/Blocks/Maps/MapsSidebar
+msgid "No map selected"
+msgstr ""
 
 #. Default: "No selection"
 #: components/Blocks/EventCalendar/Search/components/SortOn
@@ -578,6 +602,11 @@ msgstr "Nimike"
 #: components/Theme/RenderBlocksV2
 msgid "Unknown Block"
 msgstr "Tunnistamaton palikka {block}"
+
+#. Default: "Video"
+#: components/Blocks/Video/VideoSidebar
+msgid "Video"
+msgstr ""
 
 #. Default: "Website"
 #: components/Blocks/EventMetadata/View

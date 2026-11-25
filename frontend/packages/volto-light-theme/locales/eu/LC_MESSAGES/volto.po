@@ -58,6 +58,13 @@ msgstr "Fazeta aurreratua?"
 msgid "Advanced facets are initially hidden and displayed on demand"
 msgstr "Fazeta aurreratuak ezkutatuta daude hasieran eta eskatu ahala erakusten dira"
 
+#. Default: "Alignment"
+#: components/Blocks/Image/schema
+#: components/Blocks/Maps/schema
+#: components/Blocks/Video/schema
+msgid "Alignment"
+msgstr ""
+
 #. Default: "Alt text"
 #: components/Widgets/schema/footerLogosSchema
 #: components/Widgets/schema/iconLinkListSchema
@@ -86,6 +93,8 @@ msgstr "Oinarrizko bilaketa"
 
 #. Default: "Block Width"
 #: components/Blocks/Image/schema
+#: components/Blocks/Maps/schema
+#: components/Blocks/Video/schema
 msgid "Block Width"
 msgstr "Blokearen zabalera"
 
@@ -189,11 +198,6 @@ msgstr "Fazetak"
 msgid "Field"
 msgstr "Eremua"
 
-#. Default: "Follow us:"
-#: components/Footer/slots/FollowUsLogoAndLinks
-msgid "Follow us:"
-msgstr "Jarrai gaitzazu"
-
 #. Default: "GNU GPL v2 license"
 #: components/Footer/slots/Copyright
 msgid "GNU GPL license"
@@ -235,6 +239,11 @@ msgstr "Ikonoa"
 #: components/Blocks/Image/ImageSidebar
 msgid "Image"
 msgstr "Irudia"
+
+#. Default: "Image size"
+#: components/Blocks/Image/schema
+msgid "Image size"
+msgstr ""
 
 #. Default: "Invalid block - Will be removed on saving"
 #: components/Theme/RenderBlocks
@@ -297,6 +306,11 @@ msgstr "Logoaren irudia"
 msgid "Logo of"
 msgstr "Logoa"
 
+#. Default: "Maps"
+#: components/Blocks/Maps/MapsSidebar
+msgid "Maps"
+msgstr ""
+
 #. Default: "Move down"
 #: components/Blocks/Block/Edit
 msgid "Move down"
@@ -317,6 +331,11 @@ msgstr "Aukera anitzak?"
 msgid "Next Page"
 msgstr "Hurrengo orria"
 
+#. Default: "No Video selected"
+#: components/Blocks/Video/VideoSidebar
+msgid "No Video selected"
+msgstr ""
+
 #. Default: "No image selected"
 #: components/Blocks/Image/ImageSidebar
 msgid "No image selected"
@@ -326,6 +345,11 @@ msgstr "Ez da irudirik aukeratu"
 #: components/Blocks/Listing/ListingBody
 msgid "No items found in this container."
 msgstr "Ez dago elementurik"
+
+#. Default: "No map selected"
+#: components/Blocks/Maps/MapsSidebar
+msgid "No map selected"
+msgstr ""
 
 #. Default: "No selection"
 #: components/Blocks/EventCalendar/Search/components/SortOn
@@ -579,6 +603,11 @@ msgstr "Izenburua"
 #: components/Theme/RenderBlocksV2
 msgid "Unknown Block"
 msgstr "Bloke ezezaguna"
+
+#. Default: "Video"
+#: components/Blocks/Video/VideoSidebar
+msgid "Video"
+msgstr ""
 
 #. Default: "Website"
 #: components/Blocks/EventMetadata/View
