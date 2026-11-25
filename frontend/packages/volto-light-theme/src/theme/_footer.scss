@@ -106,6 +106,9 @@
         img {
           max-width: 100%;
           max-height: 90px;
+          width: auto;
+          height: auto;
+          object-fit: contain;
         }
       }
     }
