@@ -69,10 +69,12 @@ const Logo = ({ isFooterLogo }: { isFooterLogo: boolean }) => {
     ? `data:${footer_logo['content-type']};base64,${footer_logo.data}`
     : flattenToAppURL(footer_logo?.download);
 
-  const logoSrc = isFooterLogo && FooterLogoSrc ? FooterLogoSrc : MainLogoSrc;
+  const useFooterLogo = isFooterLogo && !!FooterLogoSrc;
+  const logoSrc = useFooterLogo ? FooterLogoSrc : MainLogoSrc;
+  const activeLogo = useFooterLogo ? footer_logo : logo;
 
-  const logoWidth = logo?.width || null;
-  const logoHeight = logo?.height || null;
+  const logoWidth = activeLogo?.width || null;
+  const logoHeight = activeLogo?.height || null;
 
   return (
     <Link to={navRootPath} aria-label={intl.formatMessage(messages.home)}>
