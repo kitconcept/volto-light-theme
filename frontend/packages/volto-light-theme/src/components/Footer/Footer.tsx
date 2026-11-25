@@ -1,22 +1,9 @@
-import { useSelector, shallowEqual } from 'react-redux';
 import { Container } from '@plone/components';
 import SlotRenderer from '@plone/volto/components/theme/SlotRenderer/SlotRenderer';
-import type { Content } from '@plone/types';
-
-type FormState = {
-  content: {
-    data: Content;
-  };
-  form: {
-    global: Content;
-  };
-};
+import { useStickyContent } from '@kitconcept/volto-light-theme/helpers/useStickyContent';
 
 const Footer = () => {
-  const content = useSelector<FormState, Content>(
-    (state) => state.content.data,
-    shallowEqual,
-  );
+  const content = useStickyContent();
 
   return (
     <footer id="footer">

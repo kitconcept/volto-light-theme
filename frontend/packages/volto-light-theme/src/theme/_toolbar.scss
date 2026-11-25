@@ -1,3 +1,16 @@
 #toolbar .toolbar-content {
   z-index: 100;
 }
+
+// Keep the toolbar's space for authenticated users while Volto swaps the
+// toolbar between routes, so the page doesn't shift left and back.
+// The body classes come from `ToolbarSpace`.
+@media only screen and (min-width: 768px) {
+  body.vlt-toolbar-expanded #toolbar:empty {
+    min-width: 80px;
+  }
+
+  body.vlt-toolbar-collapsed #toolbar:empty {
+    min-width: 20px;
+  }
+}

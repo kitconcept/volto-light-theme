@@ -1,6 +1,6 @@
 // SemanticUI-free pre-@plone/components
 import { useEffect, useState } from 'react';
-import { useSelector, useDispatch, shallowEqual } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Button, Container } from '@plone/components';
 import isEmpty from 'lodash/isEmpty';
 import cx from 'classnames';
@@ -20,6 +20,7 @@ import IntranetSearchWidget from '../SearchWidget/IntranetSearchWidget';
 
 import type { SiteHeaderSettings } from '../../types';
 import type { Content } from '@plone/types';
+import { useStickyContent } from '@kitconcept/volto-light-theme/helpers/useStickyContent';
 
 type FormState = {
   content: {
@@ -227,10 +228,7 @@ const IntranetHeader = ({ pathname, content }) => {
 
 const Header = (props) => {
   const { pathname } = props;
-  const content = useSelector<FormState, Content>(
-    (state) => state.content.data,
-    shallowEqual,
-  );
+  const content = useStickyContent();
 
   const navRoot = useSelector<FormState, Content>(
     (state) => state.navroot?.data?.navroot,

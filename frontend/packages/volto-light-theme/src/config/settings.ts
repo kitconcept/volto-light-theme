@@ -1,5 +1,6 @@
 import type { ConfigType } from '@plone/registry';
 import type { VLTSettings } from '../types';
+import ToolbarSpace from '../components/Toolbar/ToolbarSpace';
 
 declare module '@plone/types' {
   export interface SettingsConfig {
@@ -38,6 +39,11 @@ export default function install(config: ConfigType) {
       tags: 'vlt',
     },
   };
+  config.settings.appExtras = [
+    ...(config.settings.appExtras || []),
+    { match: '', component: ToolbarSpace },
+  ];
+
   config.settings.navDepth = 3;
   config.settings.slate.useLinkedHeadings = false;
   config.settings.contentMetadataTagsImageField = 'preview_image';
