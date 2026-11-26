@@ -104,8 +104,11 @@
         max-width: 100%;
 
         img {
+          width: auto;
           max-width: 100%;
+          height: auto;
           max-height: 90px;
+          object-fit: contain;
         }
       }
     }

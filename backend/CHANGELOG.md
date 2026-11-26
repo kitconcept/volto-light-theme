@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 8.1.5 (2026-11-24)
+
+
+### Internal:
+
+- Lets the `PLONE_VERSION` environment variable override `version.txt` in the Makefile, so the CI test matrix runs against Plone 6.0, 6.1 and 6.2 instead of the pinned release only. Adds Python 3.14, tested with Plone 6.2. @ericof [#971](https://github.com/kitconcept/volto-light-theme/issues/971)
+
 ## 8.1.4 (2026-11-08)
 
 
