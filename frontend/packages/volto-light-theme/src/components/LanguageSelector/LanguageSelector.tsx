@@ -61,22 +61,24 @@ const LanguageSelector = ({
         const translation = translations?.find(
           (t: { language: string }) => t.language === lang,
         );
+        const nativeName = langmap[langKey]?.nativeName || langKey;
+        // The link shows only the two-letter code, so the accessible name
+        // must include it too (WCAG 2.5.3, Label in Name).
+        const code = langKey.slice(0, 2);
         return (
           <Link
             aria-label={`${intl.formatMessage(
               messages.switchLanguageTo,
-            )} ${(langmap[langKey]?.nativeName || langKey).toLowerCase()}`}
+            )} ${nativeName} (${code})`}
             className={cx({ selected: toReactIntlLang(lang) === currentLang })}
             to={translation ? flattenToAppURL(translation['@id']) : `/${lang}`}
-            title={langmap[langKey]?.nativeName || langKey}
+            title={nativeName}
             onClick={() => {
               onClickAction();
             }}
             key={`language-selector-${lang}`}
           >
-            {/* START CUSTOMIZATION */}
-            {langKey.slice(0, 2)}
-            {/*  END CUSTOMIZATION} */}
+            {code}
           </Link>
         );
       })}
