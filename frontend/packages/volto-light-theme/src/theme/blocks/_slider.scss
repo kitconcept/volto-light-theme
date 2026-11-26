@@ -120,12 +120,22 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
   }
 
   &.simple {
+    .slider-dots {
+      @media only screen and (width > $computer-width) {
+        padding-top: $spacing-xlarge;
+      }
+    }
+
+    .slider-wrapper:has(+ .slider-dots) .teaser-item {
+      aspect-ratio: auto;
+    }
+
     .slider-viewport {
       margin-bottom: 0;
-      container-name: slider;
-      container-type: inline-size;
     }
     .teaser-item {
+      $image-column: minmax(0, min(592px, 55%));
+
       display: grid;
       min-width: 0;
       align-items: center;
@@ -147,29 +157,11 @@ $sliderImagesAspectRatio: var(--slider-images-aspect-ratio, 16/9);
 
       &.has--slider--flagAlign--right {
         grid-template-areas: 'content images';
-        grid-template-columns: minmax(0, clamp(300px, 40vw, 600px)) minmax(
-            0,
-            1fr
-          );
+        grid-template-columns: minmax(0, 1fr) $image-column;
       }
       &.has--slider--flagAlign--left {
         grid-template-areas: 'images content';
-        grid-template-columns: minmax(0, 1fr) minmax(
-            0,
-            clamp(300px, 40vw, 600px)
-          );
-      }
-
-      @container slider (max-width: #{$layout-container-width}) {
-        #page-edit &,
-        #page-add & {
-          &.has--slider--flagAlign--right {
-            grid-template-columns: minmax(0, 60%) minmax(0, 40%);
-          }
-          &.has--slider--flagAlign--left {
-            grid-template-columns: minmax(0, 40%) minmax(0, 60%);
-          }
-        }
+        grid-template-columns: $image-column minmax(0, 1fr);
       }
 
       .highlight-image-wrapper {
