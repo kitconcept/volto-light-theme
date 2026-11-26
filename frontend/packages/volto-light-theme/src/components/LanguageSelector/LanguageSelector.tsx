@@ -63,13 +63,14 @@ const LanguageSelector = ({
         );
         const nativeName = langmap[langKey]?.nativeName || langKey;
         // The link shows only the two-letter code, so the accessible name
-        // must include it too (WCAG 2.5.3, Label in Name).
+        // must include it too (WCAG 2.5.3, Label in Name). Don't put the
+        // code in parentheses: axe ignores parenthesized text when matching.
         const code = langKey.slice(0, 2);
         return (
           <Link
             aria-label={`${intl.formatMessage(
               messages.switchLanguageTo,
-            )} ${nativeName} (${code})`}
+            )} ${nativeName} – ${code}`}
             className={cx({ selected: toReactIntlLang(lang) === currentLang })}
             to={translation ? flattenToAppURL(translation['@id']) : `/${lang}`}
             title={nativeName}
