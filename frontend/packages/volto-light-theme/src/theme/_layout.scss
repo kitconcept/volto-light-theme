@@ -311,12 +311,12 @@ External & Mail link removal for all the blocks.
     }
 
     // Table block has no explicit block width, so it never picks up the
-    // width-based rules above. Constrain it to the layout container and keep
-    // side margins on viewports narrower than 1440px.
+    // width-based rules above. Constrain it to the default container, as in
+    // the edit form, and keep side margins on narrower viewports.
     &.table,
     &.slate-table {
-      @include layout-container-width();
-      @include adjustMarginsToContainer($layout-container-width);
+      @include default-container-width();
+      @include adjustMarginsToContainer($default-container-width);
     }
   }
 

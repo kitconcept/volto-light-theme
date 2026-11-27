@@ -57,6 +57,13 @@ msgstr "उन्नत पहलू?"
 msgid "Advanced facets are initially hidden and displayed on demand"
 msgstr "उन्नत पहलू आरंभ में छिपे होते हैं और मांग पर प्रदर्शित किए जाते हैं"
 
+#. Default: "Alignment"
+#: components/Blocks/Image/schema
+#: components/Blocks/Maps/schema
+#: components/Blocks/Video/schema
+msgid "Alignment"
+msgstr ""
+
 #. Default: "Alt text"
 #: components/Widgets/schema/footerLogosSchema
 #: components/Widgets/schema/iconLinkListSchema
@@ -85,6 +92,8 @@ msgstr "मूल खोज क्वेरी"
 
 #. Default: "Block Width"
 #: components/Blocks/Image/schema
+#: components/Blocks/Maps/schema
+#: components/Blocks/Video/schema
 msgid "Block Width"
 msgstr "ब्लॉक चौड़ाई"
 
@@ -188,11 +197,6 @@ msgstr "विशेषताएं"
 msgid "Field"
 msgstr "क्षेत्र"
 
-#. Default: "Follow us:"
-#: components/Footer/slots/FollowUsLogoAndLinks
-msgid "Follow us:"
-msgstr "हमें फ़ॉलो करें:"
-
 #. Default: "GNU GPL v2 license"
 #: components/Footer/slots/Copyright
 msgid "GNU GPL license"
@@ -234,6 +238,11 @@ msgstr "आइकन"
 #: components/Blocks/Image/ImageSidebar
 msgid "Image"
 msgstr "छवि"
+
+#. Default: "Image size"
+#: components/Blocks/Image/schema
+msgid "Image size"
+msgstr ""
 
 #. Default: "Invalid block - Will be removed on saving"
 #: components/Theme/RenderBlocks
@@ -296,6 +305,11 @@ msgstr "लोगो चित्र"
 msgid "Logo of"
 msgstr "लोगो का"
 
+#. Default: "Maps"
+#: components/Blocks/Maps/MapsSidebar
+msgid "Maps"
+msgstr ""
+
 #. Default: "Move down"
 #: components/Blocks/Block/Edit
 msgid "Move down"
@@ -316,6 +330,11 @@ msgstr "कई विकल्प?"
 msgid "Next Page"
 msgstr "अगला पृष्ठ"
 
+#. Default: "No Video selected"
+#: components/Blocks/Video/VideoSidebar
+msgid "No Video selected"
+msgstr ""
+
 #. Default: "No image selected"
 #: components/Blocks/Image/ImageSidebar
 msgid "No image selected"
@@ -325,6 +344,11 @@ msgstr "कोई छवि चयनित नहीं है"
 #: components/Blocks/Listing/ListingBody
 msgid "No items found in this container."
 msgstr "इस कंटेनर में कोई आइटम नहीं मिला।"
+
+#. Default: "No map selected"
+#: components/Blocks/Maps/MapsSidebar
+msgid "No map selected"
+msgstr ""
 
 #. Default: "No selection"
 #: components/Blocks/EventCalendar/Search/components/SortOn
@@ -578,6 +602,11 @@ msgstr "शीर्षक"
 #: components/Theme/RenderBlocksV2
 msgid "Unknown Block"
 msgstr "अज्ञात ब्लॉक {block}"
+
+#. Default: "Video"
+#: components/Blocks/Video/VideoSidebar
+msgid "Video"
+msgstr ""
 
 #. Default: "Website"
 #: components/Blocks/EventMetadata/View

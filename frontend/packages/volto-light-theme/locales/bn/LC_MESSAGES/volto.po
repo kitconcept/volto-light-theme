@@ -57,6 +57,13 @@ msgstr "উন্নত ফ্যাসেট?"
 msgid "Advanced facets are initially hidden and displayed on demand"
 msgstr "উন্নত ফ্যাসেটগুলি প্রাথমিকভাবে লুকানো থাকে এবং চাহিদা অনুযায়ী প্রদর্শিত হয়"
 
+#. Default: "Alignment"
+#: components/Blocks/Image/schema
+#: components/Blocks/Maps/schema
+#: components/Blocks/Video/schema
+msgid "Alignment"
+msgstr ""
+
 #. Default: "Alt text"
 #: components/Widgets/schema/footerLogosSchema
 #: components/Widgets/schema/iconLinkListSchema
@@ -85,6 +92,8 @@ msgstr "মূল অনুসন্ধান কোয়েরি"
 
 #. Default: "Block Width"
 #: components/Blocks/Image/schema
+#: components/Blocks/Maps/schema
+#: components/Blocks/Video/schema
 msgid "Block Width"
 msgstr "ব্লকের প্রস্থ"
 
@@ -188,11 +197,6 @@ msgstr "ফেসেটগুলি"
 msgid "Field"
 msgstr "ক্ষেত্র"
 
-#. Default: "Follow us:"
-#: components/Footer/slots/FollowUsLogoAndLinks
-msgid "Follow us:"
-msgstr "আমাদের অনুসরণ করুন:"
-
 #. Default: "GNU GPL v2 license"
 #: components/Footer/slots/Copyright
 msgid "GNU GPL license"
@@ -234,6 +238,11 @@ msgstr "আইকন"
 #: components/Blocks/Image/ImageSidebar
 msgid "Image"
 msgstr "ছবি"
+
+#. Default: "Image size"
+#: components/Blocks/Image/schema
+msgid "Image size"
+msgstr ""
 
 #. Default: "Invalid block - Will be removed on saving"
 #: components/Theme/RenderBlocks
@@ -296,6 +305,11 @@ msgstr "লোগো ছবি"
 msgid "Logo of"
 msgstr "লোগো"
 
+#. Default: "Maps"
+#: components/Blocks/Maps/MapsSidebar
+msgid "Maps"
+msgstr ""
+
 #. Default: "Move down"
 #: components/Blocks/Block/Edit
 msgid "Move down"
@@ -316,6 +330,11 @@ msgstr "একাধিক পছন্দ?"
 msgid "Next Page"
 msgstr "পরবর্তী পৃষ্ঠা"
 
+#. Default: "No Video selected"
+#: components/Blocks/Video/VideoSidebar
+msgid "No Video selected"
+msgstr ""
+
 #. Default: "No image selected"
 #: components/Blocks/Image/ImageSidebar
 msgid "No image selected"
@@ -325,6 +344,11 @@ msgstr "কোনো ছবি নির্বাচন করা হয়ন�
 #: components/Blocks/Listing/ListingBody
 msgid "No items found in this container."
 msgstr "এই কন্টেইনারে কোনো আইটেম পাওয়া যায়নি।"
+
+#. Default: "No map selected"
+#: components/Blocks/Maps/MapsSidebar
+msgid "No map selected"
+msgstr ""
 
 #. Default: "No selection"
 #: components/Blocks/EventCalendar/Search/components/SortOn
@@ -578,6 +602,11 @@ msgstr "টাইটেল"
 #: components/Theme/RenderBlocksV2
 msgid "Unknown Block"
 msgstr "অজানা ব্লক {block}"
+
+#. Default: "Video"
+#: components/Blocks/Video/VideoSidebar
+msgid "Video"
+msgstr ""
 
 #. Default: "Website"
 #: components/Blocks/EventMetadata/View
