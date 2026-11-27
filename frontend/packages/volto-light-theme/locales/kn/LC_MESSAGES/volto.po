@@ -57,6 +57,13 @@ msgstr "ಪ್ರಗತ ಮುಖ?"
 msgid "Advanced facets are initially hidden and displayed on demand"
 msgstr "ಪ್ರಗತ ಮುಖಗಳನ್ನು ಆರಂಭದಲ್ಲಿ ಮರೆಮಾಡಲಾಗಿದೆ ಮತ್ತು ಬೇಡಿಕೆಯ ಮೇರೆಗೆ ತೋರಿಸಲಾಗುತ್ತದೆ"
 
+#. Default: "Alignment"
+#: components/Blocks/Image/schema
+#: components/Blocks/Maps/schema
+#: components/Blocks/Video/schema
+msgid "Alignment"
+msgstr ""
+
 #. Default: "Alt text"
 #: components/Widgets/schema/footerLogosSchema
 #: components/Widgets/schema/iconLinkListSchema
@@ -85,6 +92,8 @@ msgstr "ಮೂಲ ಹುಡುಕಾಟ ಪ್ರಶ್ನೆ"
 
 #. Default: "Block Width"
 #: components/Blocks/Image/schema
+#: components/Blocks/Maps/schema
+#: components/Blocks/Video/schema
 msgid "Block Width"
 msgstr "ಬ್ಲಾಕ್ ಅಗಲ"
 
@@ -188,11 +197,6 @@ msgstr "ಮುಖಗಳು"
 msgid "Field"
 msgstr "ಕ್ಷೇತ್ರ"
 
-#. Default: "Follow us:"
-#: components/Footer/slots/FollowUsLogoAndLinks
-msgid "Follow us:"
-msgstr "ನಮ್ಮನ್ನು ಅನುಸರಿಸಿ:"
-
 #. Default: "GNU GPL v2 license"
 #: components/Footer/slots/Copyright
 msgid "GNU GPL license"
@@ -234,6 +238,11 @@ msgstr "ಐಕಾನ್"
 #: components/Blocks/Image/ImageSidebar
 msgid "Image"
 msgstr "ಚಿತ್ರ"
+
+#. Default: "Image size"
+#: components/Blocks/Image/schema
+msgid "Image size"
+msgstr ""
 
 #. Default: "Invalid block - Will be removed on saving"
 #: components/Theme/RenderBlocks
@@ -296,6 +305,11 @@ msgstr "ಲೋಗೋ ಚಿತ್ರ"
 msgid "Logo of"
 msgstr "ಇದರ ಲೋಗೋ"
 
+#. Default: "Maps"
+#: components/Blocks/Maps/MapsSidebar
+msgid "Maps"
+msgstr ""
+
 #. Default: "Move down"
 #: components/Blocks/Block/Edit
 msgid "Move down"
@@ -316,6 +330,11 @@ msgstr "ಬಹು ಆಯ್ಕೆಗಳು?"
 msgid "Next Page"
 msgstr "ಮುಂದಿನ ಪುಟ"
 
+#. Default: "No Video selected"
+#: components/Blocks/Video/VideoSidebar
+msgid "No Video selected"
+msgstr ""
+
 #. Default: "No image selected"
 #: components/Blocks/Image/ImageSidebar
 msgid "No image selected"
@@ -325,6 +344,11 @@ msgstr "ಯಾವುದೇ ಚಿತ್ರ ಆಯ್ಕೆ ಮಾಡಿಲ್ಲ
 #: components/Blocks/Listing/ListingBody
 msgid "No items found in this container."
 msgstr "ಈ ಧಾರಕದಲ್ಲಿ ಯಾವುದೇ ಐಟಂಗಳು ಕಂಡುಬಂದಿಲ್ಲ."
+
+#. Default: "No map selected"
+#: components/Blocks/Maps/MapsSidebar
+msgid "No map selected"
+msgstr ""
 
 #. Default: "No selection"
 #: components/Blocks/EventCalendar/Search/components/SortOn
@@ -578,6 +602,11 @@ msgstr "ಶೀರ್ಷಿಕೆ"
 #: components/Theme/RenderBlocksV2
 msgid "Unknown Block"
 msgstr "ಅಜ್ಞಾತ ಬ್ಲಾಕ್ {block}"
+
+#. Default: "Video"
+#: components/Blocks/Video/VideoSidebar
+msgid "Video"
+msgstr ""
 
 #. Default: "Website"
 #: components/Blocks/EventMetadata/View

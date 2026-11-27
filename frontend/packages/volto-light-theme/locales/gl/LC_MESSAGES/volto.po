@@ -57,6 +57,13 @@ msgstr "Faceta avanzada?"
 msgid "Advanced facets are initially hidden and displayed on demand"
 msgstr "As facetas avanzadas están ocultas inicialmente e móstranse baixo demanda"
 
+#. Default: "Alignment"
+#: components/Blocks/Image/schema
+#: components/Blocks/Maps/schema
+#: components/Blocks/Video/schema
+msgid "Alignment"
+msgstr ""
+
 #. Default: "Alt text"
 #: components/Widgets/schema/footerLogosSchema
 #: components/Widgets/schema/iconLinkListSchema
@@ -85,6 +92,8 @@ msgstr "Consulta de busca base"
 
 #. Default: "Block Width"
 #: components/Blocks/Image/schema
+#: components/Blocks/Maps/schema
+#: components/Blocks/Video/schema
 msgid "Block Width"
 msgstr "Ancho do bloque"
 
@@ -188,11 +197,6 @@ msgstr "Facetas"
 msgid "Field"
 msgstr "Campo"
 
-#. Default: "Follow us:"
-#: components/Footer/slots/FollowUsLogoAndLinks
-msgid "Follow us:"
-msgstr "Síganos:"
-
 #. Default: "GNU GPL v2 license"
 #: components/Footer/slots/Copyright
 msgid "GNU GPL license"
@@ -234,6 +238,11 @@ msgstr "Icona"
 #: components/Blocks/Image/ImageSidebar
 msgid "Image"
 msgstr "Imaxe"
+
+#. Default: "Image size"
+#: components/Blocks/Image/schema
+msgid "Image size"
+msgstr ""
 
 #. Default: "Invalid block - Will be removed on saving"
 #: components/Theme/RenderBlocks
@@ -296,6 +305,11 @@ msgstr "Imaxe do logotipo"
 msgid "Logo of"
 msgstr "Logotipo de"
 
+#. Default: "Maps"
+#: components/Blocks/Maps/MapsSidebar
+msgid "Maps"
+msgstr ""
+
 #. Default: "Move down"
 #: components/Blocks/Block/Edit
 msgid "Move down"
@@ -316,6 +330,11 @@ msgstr "Opcións múltiples?"
 msgid "Next Page"
 msgstr "Páxina seguinte"
 
+#. Default: "No Video selected"
+#: components/Blocks/Video/VideoSidebar
+msgid "No Video selected"
+msgstr ""
+
 #. Default: "No image selected"
 #: components/Blocks/Image/ImageSidebar
 msgid "No image selected"
@@ -325,6 +344,11 @@ msgstr "Ningunha imaxe seleccionada"
 #: components/Blocks/Listing/ListingBody
 msgid "No items found in this container."
 msgstr "Non se atoparon elementos neste contedor."
+
+#. Default: "No map selected"
+#: components/Blocks/Maps/MapsSidebar
+msgid "No map selected"
+msgstr ""
 
 #. Default: "No selection"
 #: components/Blocks/EventCalendar/Search/components/SortOn
@@ -578,6 +602,11 @@ msgstr "Título"
 #: components/Theme/RenderBlocksV2
 msgid "Unknown Block"
 msgstr "Bloque descoñecido {block}"
+
+#. Default: "Video"
+#: components/Blocks/Video/VideoSidebar
+msgid "Video"
+msgstr ""
 
 #. Default: "Website"
 #: components/Blocks/EventMetadata/View

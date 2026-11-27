@@ -1,9 +1,24 @@
 // SemanticUI-free pre-@plone/components
 import { Link } from 'react-router-dom';
-import { FormattedMessage } from 'react-intl';
+import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
 import { flattenToAppURL } from '@plone/volto/helpers/Url/Url';
 import { useSelector, shallowEqual } from 'react-redux';
 import type { ActionsResponse, Content } from '@plone/types';
+
+const messages = defineMessages({
+  login: {
+    id: 'Log in',
+    defaultMessage: 'Log in',
+  },
+  register: {
+    id: 'Register',
+    defaultMessage: 'Register',
+  },
+  logout: {
+    id: 'Log out',
+    defaultMessage: 'Log out',
+  },
+});
 
 type FormState = {
   content: {
@@ -15,6 +30,7 @@ type FormState = {
 };
 
 const Anontools = () => {
+  const intl = useIntl();
   const content = useSelector<FormState, Content>(
     (state) => state.content.data,
     shallowEqual,
@@ -31,25 +47,25 @@ const Anontools = () => {
   return (
     <>
       {registerAction && (
-        <Link aria-label="register" to="/register">
-          <FormattedMessage id="Register" defaultMessage="Register" />
+        <Link aria-label={intl.formatMessage(messages.register)} to="/register">
+          <FormattedMessage {...messages.register} />
         </Link>
       )}
       {loginAction && (
         <Link
-          aria-label="login"
+          aria-label={intl.formatMessage(messages.login)}
           to={`/login${
             content?.['@id']
               ? `?return_url=${flattenToAppURL(content['@id'])}`
               : ''
           }`}
         >
-          <FormattedMessage id="Log in" defaultMessage="Log in" />
+          <FormattedMessage {...messages.login} />
         </Link>
       )}
       {logoutAction && (
-        <Link aria-label="logout" to="/logout">
-          <FormattedMessage id="Log out" defaultMessage="Log out" />
+        <Link aria-label={intl.formatMessage(messages.logout)} to="/logout">
+          <FormattedMessage {...messages.logout} />
         </Link>
       )}
     </>

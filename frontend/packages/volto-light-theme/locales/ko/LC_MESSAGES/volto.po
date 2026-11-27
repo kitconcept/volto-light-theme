@@ -57,6 +57,13 @@ msgstr "고급 패싯?"
 msgid "Advanced facets are initially hidden and displayed on demand"
 msgstr "고급 패싯은 처음에는 숨겨져 있다가 요청 시 표시됩니다"
 
+#. Default: "Alignment"
+#: components/Blocks/Image/schema
+#: components/Blocks/Maps/schema
+#: components/Blocks/Video/schema
+msgid "Alignment"
+msgstr ""
+
 #. Default: "Alt text"
 #: components/Widgets/schema/footerLogosSchema
 #: components/Widgets/schema/iconLinkListSchema
@@ -85,6 +92,8 @@ msgstr "기본 검색 쿼리"
 
 #. Default: "Block Width"
 #: components/Blocks/Image/schema
+#: components/Blocks/Maps/schema
+#: components/Blocks/Video/schema
 msgid "Block Width"
 msgstr "블록 너비"
 
@@ -188,11 +197,6 @@ msgstr "패싯"
 msgid "Field"
 msgstr "필드"
 
-#. Default: "Follow us:"
-#: components/Footer/slots/FollowUsLogoAndLinks
-msgid "Follow us:"
-msgstr "팔로우:"
-
 #. Default: "GNU GPL v2 license"
 #: components/Footer/slots/Copyright
 msgid "GNU GPL license"
@@ -234,6 +238,11 @@ msgstr "아이콘"
 #: components/Blocks/Image/ImageSidebar
 msgid "Image"
 msgstr "이미지"
+
+#. Default: "Image size"
+#: components/Blocks/Image/schema
+msgid "Image size"
+msgstr ""
 
 #. Default: "Invalid block - Will be removed on saving"
 #: components/Theme/RenderBlocks
@@ -296,6 +305,11 @@ msgstr "로고 이미지"
 msgid "Logo of"
 msgstr "로고"
 
+#. Default: "Maps"
+#: components/Blocks/Maps/MapsSidebar
+msgid "Maps"
+msgstr ""
+
 #. Default: "Move down"
 #: components/Blocks/Block/Edit
 msgid "Move down"
@@ -316,6 +330,11 @@ msgstr "다중 선택?"
 msgid "Next Page"
 msgstr "다음 페이지"
 
+#. Default: "No Video selected"
+#: components/Blocks/Video/VideoSidebar
+msgid "No Video selected"
+msgstr ""
+
 #. Default: "No image selected"
 #: components/Blocks/Image/ImageSidebar
 msgid "No image selected"
@@ -325,6 +344,11 @@ msgstr "선택한 이미지가 없습니다"
 #: components/Blocks/Listing/ListingBody
 msgid "No items found in this container."
 msgstr "이 컨테이너에서 항목을 찾을 수 없습니다."
+
+#. Default: "No map selected"
+#: components/Blocks/Maps/MapsSidebar
+msgid "No map selected"
+msgstr ""
 
 #. Default: "No selection"
 #: components/Blocks/EventCalendar/Search/components/SortOn
@@ -578,6 +602,11 @@ msgstr "제목"
 #: components/Theme/RenderBlocksV2
 msgid "Unknown Block"
 msgstr "알 수 없는 블록 {block}"
+
+#. Default: "Video"
+#: components/Blocks/Video/VideoSidebar
+msgid "Video"
+msgstr ""
 
 #. Default: "Website"
 #: components/Blocks/EventMetadata/View
