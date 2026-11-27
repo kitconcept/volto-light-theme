@@ -57,6 +57,13 @@ msgstr "Facet nâng cao?"
 msgid "Advanced facets are initially hidden and displayed on demand"
 msgstr "Các khía cạnh nâng cao ban đầu được ẩn và hiển thị theo yêu cầu"
 
+#. Default: "Alignment"
+#: components/Blocks/Image/schema
+#: components/Blocks/Maps/schema
+#: components/Blocks/Video/schema
+msgid "Alignment"
+msgstr ""
+
 #. Default: "Alt text"
 #: components/Widgets/schema/footerLogosSchema
 #: components/Widgets/schema/iconLinkListSchema
@@ -85,6 +92,8 @@ msgstr "Truy vấn tìm kiếm cơ bản"
 
 #. Default: "Block Width"
 #: components/Blocks/Image/schema
+#: components/Blocks/Maps/schema
+#: components/Blocks/Video/schema
 msgid "Block Width"
 msgstr "Chiều rộng khối"
 
@@ -188,11 +197,6 @@ msgstr "Các khía cạnh"
 msgid "Field"
 msgstr "Trường"
 
-#. Default: "Follow us:"
-#: components/Footer/slots/FollowUsLogoAndLinks
-msgid "Follow us:"
-msgstr "Theo dõi chúng tôi:"
-
 #. Default: "GNU GPL v2 license"
 #: components/Footer/slots/Copyright
 msgid "GNU GPL license"
@@ -234,6 +238,11 @@ msgstr "Biểu tượng"
 #: components/Blocks/Image/ImageSidebar
 msgid "Image"
 msgstr "Hình ảnh"
+
+#. Default: "Image size"
+#: components/Blocks/Image/schema
+msgid "Image size"
+msgstr ""
 
 #. Default: "Invalid block - Will be removed on saving"
 #: components/Theme/RenderBlocks
@@ -296,6 +305,11 @@ msgstr "Hình ảnh logo"
 msgid "Logo of"
 msgstr "Logo của"
 
+#. Default: "Maps"
+#: components/Blocks/Maps/MapsSidebar
+msgid "Maps"
+msgstr ""
+
 #. Default: "Move down"
 #: components/Blocks/Block/Edit
 msgid "Move down"
@@ -316,6 +330,11 @@ msgstr "Cho phép chọn nhiều?"
 msgid "Next Page"
 msgstr "Trang tiếp theo"
 
+#. Default: "No Video selected"
+#: components/Blocks/Video/VideoSidebar
+msgid "No Video selected"
+msgstr ""
+
 #. Default: "No image selected"
 #: components/Blocks/Image/ImageSidebar
 msgid "No image selected"
@@ -325,6 +344,11 @@ msgstr "Chưa chọn hình ảnh nào"
 #: components/Blocks/Listing/ListingBody
 msgid "No items found in this container."
 msgstr "Không tìm thấy mục nào trong container này."
+
+#. Default: "No map selected"
+#: components/Blocks/Maps/MapsSidebar
+msgid "No map selected"
+msgstr ""
 
 #. Default: "No selection"
 #: components/Blocks/EventCalendar/Search/components/SortOn
@@ -578,6 +602,11 @@ msgstr "Tiêu đề"
 #: components/Theme/RenderBlocksV2
 msgid "Unknown Block"
 msgstr "Khối không xác định {block}"
+
+#. Default: "Video"
+#: components/Blocks/Video/VideoSidebar
+msgid "Video"
+msgstr ""
 
 #. Default: "Website"
 #: components/Blocks/EventMetadata/View
