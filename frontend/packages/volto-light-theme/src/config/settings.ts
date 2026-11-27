@@ -1,10 +1,13 @@
 import type { ConfigType } from '@plone/registry';
 import type { VLTSettings } from '../types';
+import { replaceTableEmitter, withTablePaste } from '../helpers/tablePaste';
 
 declare module '@plone/types' {
   export interface SettingsConfig {
     slate: {
       useLinkedHeadings: boolean;
+      textblockExtensions: Array<(editor: any) => any>;
+      voltoBlockEmiters: Array<(editor: any, pathRef: any) => any[]>;
     };
     vlt?: VLTSettings;
   }
@@ -40,6 +43,15 @@ export default function install(config: ConfigType) {
   };
   config.settings.navDepth = 3;
   config.settings.slate.useLinkedHeadings = false;
+  // Pasted tables become Table blocks instead of tables inside a Text block
+  config.settings.slate.textblockExtensions = [
+    ...(config.settings.slate.textblockExtensions || []),
+    withTablePaste,
+  ];
+  // ...with the settings of a newly added Table block
+  config.settings.slate.voltoBlockEmiters = replaceTableEmitter(
+    config.settings.slate.voltoBlockEmiters,
+  );
   config.settings.contentMetadataTagsImageField = 'preview_image';
   config.settings.querystringSearchGet = true;
 
