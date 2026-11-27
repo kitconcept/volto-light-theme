@@ -25,14 +25,6 @@
   .slate-editor ol li {
     margin: 0;
     @include introduction();
-    strong,
-    strong span {
-      font-weight: bold;
-    }
-    em,
-    em span {
-      font-style: italic;
-    }
   }
 
   .block-container p:empty {
@@ -43,11 +35,17 @@
     @include default-container-width();
   }
 
-  h2 {
-    @include highlight-title();
-    margin-bottom: $spacing-large;
-    @media only screen and (max-width: $largest-mobile-screen) {
-      margin-bottom: $spacing-medium;
+  .block-container,
+  .slate-editor {
+    h2 {
+      @include highlight-title();
+      margin-bottom: $spacing-large;
+      @media only screen and (max-width: $largest-mobile-screen) {
+        margin-bottom: $spacing-medium;
+      }
+    }
+    a {
+      font: inherit;
     }
   }
 }
