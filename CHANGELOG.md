@@ -1,6 +1,40 @@
 # kitconcept's volto-light-theme Release Notes
 
 <!-- towncrier release notes start -->
+## 8.2.0 (2026-11-27)
+
+### Backend
+
+No significant changes.
+
+
+
+
+### Frontend
+
+
+#### Feature
+
+- Pasting a table into a Text block now creates a Table block, whether the Text block is empty or not. Tab-separated plain text is pasted as a table too. @jnptk 
+
+
+#### Bugfix
+
+- Fixes the breadcumbs to not overflow on small mobile screens. @TimoBroeskamp [#26](https://github.com/kitconcept/volto-light-theme/pull/26)
+- Fix actions aria-labels not translated in Anontools component. @jnptk 
+- Fixed the Table block being wider in view mode than in the edit form: it now uses the default container width (940px) in both. @jnptk 
+- Fixed the footer logo fallback stretching when a separate footer logo is uploaded: it now uses its own width and height instead of the header logo's. @jnptk 
+- Fixed the language selector links failing the "Label in Name" accessibility check: their accessible name now includes the visible two-letter language code, for example "Switch to Deutsch – de". @ericof 
+
+
+
+### Project
+
+No significant changes.
+
+
+
+
 ## 8.1.5 (2026-11-24)
 
 ### Backend
