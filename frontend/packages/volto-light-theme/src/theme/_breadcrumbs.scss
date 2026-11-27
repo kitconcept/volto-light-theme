@@ -12,6 +12,7 @@ body.view-contentsview {
 
   .breadcrumb {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
 
     .divider {
